@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State;Lcom/iMe/model/catalog/CampaignItem;)V
     .locals 1
 
-    .line 165
+    .line 183
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "setupCampaignInfo"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 167
+    .line 185
     iput-object p2, p0, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$SetupCampaignInfoCommand;->campaignItem:Lcom/iMe/model/catalog/CampaignItem;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/catalog/details/ChannelDetailsView;)V
     .locals 1
 
-    .line 172
+    .line 190
     iget-object v0, p0, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$SetupCampaignInfoCommand;->campaignItem:Lcom/iMe/model/catalog/CampaignItem;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/catalog/details/ChannelDetailsView;->setupCampaignInfo(Lcom/iMe/model/catalog/CampaignItem;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 161
+    .line 179
     check-cast p1, Lcom/iMe/ui/catalog/details/ChannelDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$SetupCampaignInfoCommand;->apply(Lcom/iMe/ui/catalog/details/ChannelDetailsView;)V

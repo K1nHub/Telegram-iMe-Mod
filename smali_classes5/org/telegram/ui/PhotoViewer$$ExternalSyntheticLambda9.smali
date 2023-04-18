@@ -39,7 +39,7 @@
 
     iget v2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda9;->f$2:F
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$Szxf85HUYjwz8izPkKdTa5mBa-Q(Lorg/telegram/ui/PhotoViewer;FFLandroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$kriU_BjUZ0UH1aPIQTqQMvTD77U(Lorg/telegram/ui/PhotoViewer;FFLandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

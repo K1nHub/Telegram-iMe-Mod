@@ -3,14 +3,14 @@ package kotlinx.coroutines;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.RangesKt;
+import kotlin.ranges.RangesKt___RangesKt;
 import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 import kotlinx.coroutines.internal.Symbol;
 import kotlinx.coroutines.internal.ThreadSafeHeap;
 import kotlinx.coroutines.internal.ThreadSafeHeapNode;
 /* compiled from: EventLoop.common.kt */
 /* loaded from: classes4.dex */
-public abstract class EventLoopImplBase extends EventLoopImplPlatform {
+public abstract class EventLoopImplBase extends EventLoopImplPlatform implements Delay {
     private static final /* synthetic */ AtomicReferenceFieldUpdater _queue$FU = AtomicReferenceFieldUpdater.newUpdater(EventLoopImplBase.class, Object.class, "_queue");
     private static final /* synthetic */ AtomicReferenceFieldUpdater _delayed$FU = AtomicReferenceFieldUpdater.newUpdater(EventLoopImplBase.class, Object.class, "_delayed");
     private volatile /* synthetic */ Object _queue = null;
@@ -52,6 +52,8 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
 
     @Override // kotlinx.coroutines.EventLoop
     protected long getNextTime() {
+        DelayedTask peek;
+        long coerceAtLeast;
         Symbol symbol;
         if (super.getNextTime() == 0) {
             return 0L;
@@ -66,17 +68,17 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
             }
         }
         DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) this._delayed;
-        DelayedTask peek = delayedTaskQueue == null ? null : delayedTaskQueue.peek();
-        if (peek == null) {
+        if (delayedTaskQueue == null || (peek = delayedTaskQueue.peek()) == null) {
             return Long.MAX_VALUE;
         }
         long j = peek.nanoTime;
         AbstractTimeSourceKt.getTimeSource();
-        return RangesKt.coerceAtLeast(j - System.nanoTime(), 0L);
+        coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(j - System.nanoTime(), 0L);
+        return coerceAtLeast;
     }
 
     @Override // kotlinx.coroutines.EventLoop
-    protected void shutdown() {
+    public void shutdown() {
         ThreadLocalEventLoop.INSTANCE.resetEventLoop$kotlinx_coroutines_core();
         setCompleted(true);
         closeQueue();
@@ -150,11 +152,11 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public final void mo1585dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public final void mo1566dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         enqueue(runnable);
     }
 
-    public final void enqueue(Runnable runnable) {
+    public void enqueue(Runnable runnable) {
         if (enqueueImpl(runnable)) {
             unpark();
         } else {
@@ -208,7 +210,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
 
     private final boolean shouldUnpark(DelayedTask delayedTask) {
         DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) this._delayed;
-        return (delayedTaskQueue == null ? null : delayedTaskQueue.peek()) == delayedTask;
+        return (delayedTaskQueue != null ? delayedTaskQueue.peek() : null) == delayedTask;
     }
 
     private final int scheduleImpl(long j, DelayedTask delayedTask) {
@@ -218,8 +220,9 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
         DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) this._delayed;
         if (delayedTaskQueue == null) {
             _delayed$FU.compareAndSet(this, null, new DelayedTaskQueue(j));
-            delayedTaskQueue = (DelayedTaskQueue) this._delayed;
-            Intrinsics.checkNotNull(delayedTaskQueue);
+            Object obj = this._delayed;
+            Intrinsics.checkNotNull(obj);
+            delayedTaskQueue = (DelayedTaskQueue) obj;
         }
         return delayedTask.scheduleTask(j, delayedTaskQueue, this);
     }
@@ -231,12 +234,12 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
     }
 
     private final void rescheduleAllDelayed() {
+        DelayedTask removeFirstOrNull;
         AbstractTimeSourceKt.getTimeSource();
         long nanoTime = System.nanoTime();
         while (true) {
             DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) this._delayed;
-            DelayedTask removeFirstOrNull = delayedTaskQueue == null ? null : delayedTaskQueue.removeFirstOrNull();
-            if (removeFirstOrNull == null) {
+            if (delayedTaskQueue == null || (removeFirstOrNull = delayedTaskQueue.removeFirstOrNull()) == null) {
                 return;
             }
             reschedule(nanoTime, removeFirstOrNull);
@@ -246,7 +249,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
     /* compiled from: EventLoop.common.kt */
     /* loaded from: classes4.dex */
     public static abstract class DelayedTask implements Runnable, Comparable<DelayedTask>, DisposableHandle, ThreadSafeHeapNode {
-        private Object _heap;
+        private volatile Object _heap;
         private int index;
         public long nanoTime;
 

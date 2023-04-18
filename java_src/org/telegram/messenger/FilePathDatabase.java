@@ -12,7 +12,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLiteException;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.CacheByChatsController;
-import org.telegram.p048ui.Storage.CacheModel;
+import org.telegram.p044ui.Storage.CacheModel;
 /* loaded from: classes4.dex */
 public class FilePathDatabase {
     private static final String DATABASE_BACKUP_NAME = "file_to_path_backup";
@@ -668,15 +668,15 @@ public class FilePathDatabase {
     public static class PathData {
 
         /* renamed from: dc */
-        public final int f1431dc;
+        public final int f1356dc;
 
         /* renamed from: id */
-        public final long f1432id;
+        public final long f1357id;
         public final int type;
 
         public PathData(long j, int i, int i2) {
-            this.f1432id = j;
-            this.f1431dc = i;
+            this.f1357id = j;
+            this.f1356dc = i;
             this.type = i2;
         }
     }

@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,26:1\n148#2,14:27\n162#2,2:57\n148#2,14:59\n162#2,2:89\n148#2,14:91\n162#2,2:121\n148#2,14:123\n162#2,2:153\n217#3:41\n218#3:56\n217#3:73\n218#3:88\n217#3:105\n218#3:120\n217#3:137\n218#3:152\n102#4,14:42\n102#4,14:74\n102#4,14:106\n102#4,14:138\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1\n*L\n10#1:27,14\n10#1:57,2\n11#1:59,14\n11#1:89,2\n15#1:91,14\n15#1:121,2\n18#1:123,14\n18#1:153,2\n10#1:41\n10#1:56\n11#1:73\n11#1:88\n15#1:105\n15#1:120\n18#1:137\n18#1:152\n10#1:42,14\n11#1:74,14\n15#1:106,14\n18#1:138,14\n*E\n"
+    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,26:1\n147#2,14:27\n161#2,2:57\n147#2,14:59\n161#2,2:89\n147#2,14:91\n161#2,2:121\n147#2,14:123\n161#2,2:153\n216#3:41\n217#3:56\n216#3:73\n217#3:88\n216#3:105\n217#3:120\n216#3:137\n217#3:152\n105#4,14:42\n105#4,14:74\n105#4,14:106\n105#4,14:138\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1\n*L\n10#1:27,14\n10#1:57,2\n11#1:59,14\n11#1:89,2\n15#1:91,14\n15#1:121,2\n18#1:123,14\n18#1:153,2\n10#1:41\n10#1:56\n11#1:73\n11#1:88\n15#1:105\n15#1:120\n18#1:137\n18#1:152\n10#1:42,14\n11#1:74,14\n15#1:106,14\n18#1:138,14\n*E\n"
 .end annotation
 
 
@@ -83,25 +83,25 @@
     .line 10
     sget-object v5, Lcom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1$1;->INSTANCE:Lcom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1$1;
 
-    .line 152
+    .line 151
     sget-object v0, Lorg/koin/core/registry/ScopeRegistry;->Companion:Lorg/koin/core/registry/ScopeRegistry$Companion;
 
     invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v2
 
-    .line 217
+    .line 216
     sget-object v13, Lorg/koin/core/definition/Kind;->Factory:Lorg/koin/core/definition/Kind;
 
-    .line 106
+    .line 109
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v7
 
-    .line 109
+    .line 112
     new-instance v8, Lorg/koin/core/definition/BeanDefinition;
 
-    .line 110
+    .line 113
     const-class v1, Lcom/iMe/manager/notifications/PushNotificationsManager;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -114,39 +114,39 @@
 
     move-object v6, v13
 
-    .line 109
+    .line 112
     invoke-direct/range {v1 .. v7}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
 
-    .line 218
+    .line 217
     new-instance v1, Lorg/koin/core/instance/FactoryInstanceFactory;
 
     invoke-direct {v1, v8}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
 
-    .line 162
+    .line 161
     invoke-virtual {p1, v1}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 163
-    new-instance v2, Lkotlin/Pair;
+    .line 162
+    new-instance v2, Lorg/koin/core/definition/KoinDefinition;
 
-    invoke-direct {v2, p1, v1}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, p1, v1}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
     .line 11
     sget-object v10, Lcom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1$2;->INSTANCE:Lcom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1$2;
 
-    .line 152
+    .line 151
     invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v7
 
-    .line 106
+    .line 109
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v12
 
-    .line 109
+    .line 112
     new-instance v1, Lorg/koin/core/definition/BeanDefinition;
 
-    .line 110
+    .line 113
     const-class v2, Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -159,39 +159,39 @@
 
     move-object v11, v13
 
-    .line 109
+    .line 112
     invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
 
-    .line 218
+    .line 217
     new-instance v2, Lorg/koin/core/instance/FactoryInstanceFactory;
 
     invoke-direct {v2, v1}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
 
-    .line 162
+    .line 161
     invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 163
-    new-instance v1, Lkotlin/Pair;
+    .line 162
+    new-instance v1, Lorg/koin/core/definition/KoinDefinition;
 
-    invoke-direct {v1, p1, v2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
     .line 15
     sget-object v10, Lcom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1$3;->INSTANCE:Lcom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1$3;
 
-    .line 152
+    .line 151
     invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v7
 
-    .line 106
+    .line 109
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v12
 
-    .line 109
+    .line 112
     new-instance v1, Lorg/koin/core/definition/BeanDefinition;
 
-    .line 110
+    .line 113
     const-class v2, Lcom/iMe/manager/crypto/pay/BinancePayProcessManager;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -200,39 +200,39 @@
 
     move-object v6, v1
 
-    .line 109
+    .line 112
     invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
 
-    .line 218
+    .line 217
     new-instance v2, Lorg/koin/core/instance/FactoryInstanceFactory;
 
     invoke-direct {v2, v1}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
 
-    .line 162
+    .line 161
     invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 163
-    new-instance v1, Lkotlin/Pair;
+    .line 162
+    new-instance v1, Lorg/koin/core/definition/KoinDefinition;
 
-    invoke-direct {v1, p1, v2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
     .line 18
     sget-object v10, Lcom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1$4;->INSTANCE:Lcom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1$4;
 
-    .line 152
+    .line 151
     invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v7
 
-    .line 106
+    .line 109
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v12
 
-    .line 109
+    .line 112
     new-instance v0, Lorg/koin/core/definition/BeanDefinition;
 
-    .line 110
+    .line 113
     const-class v1, Lcom/iMe/manager/wallet/create/WalletCreateManager;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -241,21 +241,21 @@
 
     move-object v6, v0
 
-    .line 109
+    .line 112
     invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
 
-    .line 218
+    .line 217
     new-instance v1, Lorg/koin/core/instance/FactoryInstanceFactory;
 
     invoke-direct {v1, v0}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
 
-    .line 162
+    .line 161
     invoke-virtual {p1, v1}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 163
-    new-instance v0, Lkotlin/Pair;
+    .line 162
+    new-instance v0, Lorg/koin/core/definition/KoinDefinition;
 
-    invoke-direct {v0, p1, v1}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v0, p1, v1}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
     return-void
 .end method

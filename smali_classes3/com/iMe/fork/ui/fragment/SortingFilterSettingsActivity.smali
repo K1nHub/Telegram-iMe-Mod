@@ -1,5 +1,5 @@
 .class public final Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
-.super Lorg/telegram/ui/ActionBar/BaseFragment;
+.super Lcom/iMe/ui/base/mvp/MvpFragment;
 .source "SortingFilterSettingsActivity.kt"
 
 
@@ -12,8 +12,21 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSortingFilterSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SortingFilterSettingsActivity.kt\ncom/iMe/fork/ui/fragment/SortingFilterSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,320:1\n1#2:321\n191#3,4:322\n*S KotlinDebug\n*F\n+ 1 SortingFilterSettingsActivity.kt\ncom/iMe/fork/ui/fragment/SortingFilterSettingsActivity\n*L\n65#1:322,4\n*E\n"
+    value = "SMAP\nSortingFilterSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SortingFilterSettingsActivity.kt\ncom/iMe/fork/ui/fragment/SortingFilterSettingsActivity\n+ 2 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,325:1\n205#2,4:326\n*S KotlinDebug\n*F\n+ 1 SortingFilterSettingsActivity.kt\ncom/iMe/fork/ui/fragment/SortingFilterSettingsActivity\n*L\n70#1:326,4\n*E\n"
 .end annotation
+
+
+# static fields
+.field static final synthetic $$delegatedProperties:[Lkotlin/reflect/KProperty;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Lkotlin/reflect/KProperty<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
@@ -27,11 +40,11 @@
 
 .field private enableSectionRow:I
 
-.field private final listAdapter$delegate:Lkotlin/Lazy;
+.field private final listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-.field private final listView$delegate:Lkotlin/Lazy;
+.field private final listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-.field private final rootView$delegate:Lkotlin/Lazy;
+.field private final rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
 .field private rowCount:I
 
@@ -43,18 +56,83 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$qhyWZ45JouzvLDAe3Zb_5qg1FN0(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$2VmY5lZbLX8UmMM43GQ_rknGCzk(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->initListView$lambda$8$lambda$7(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getThemeDescriptions$lambda$2(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$x-RxYnfTUHS-rGG6oCX9Yy6Lid8(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
+.method public static synthetic $r8$lambda$Pjs9xm0xNN6ReUQ_Lqp45GgCl7c(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getThemeDescriptions$lambda$3(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->initListView$lambda$7$lambda$6(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
+
+    return-void
+.end method
+
+.method static constructor <clinit>()V
+    .locals 6
+
+    const-class v0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Lkotlin/reflect/KProperty;
+
+    .line 39
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "rootView"
+
+    const-string v4, "getRootView()Landroid/widget/FrameLayout;"
+
+    const/4 v5, 0x0
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v2
+
+    aput-object v2, v1, v5
+
+    .line 40
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "listView"
+
+    const-string v4, "getListView()Lorg/telegram/ui/Components/RecyclerListView;"
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    aput-object v2, v1, v3
+
+    .line 41
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "listAdapter"
+
+    const-string v4, "getListAdapter()Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;"
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v0
+
+    const/4 v2, 0x2
+
+    aput-object v0, v1, v2
+
+    sput-object v1, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
     return-void
 .end method
@@ -74,46 +152,50 @@
 .end method
 
 .method public constructor <init>(Z)V
-    .locals 0
+    .locals 2
+
+    .line 36
+    invoke-direct {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;-><init>()V
 
     .line 35
-    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
-
-    .line 34
     iput-boolean p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->currentArchive:Z
 
-    .line 38
+    .line 39
     new-instance p1, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$rootView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$rootView$2;-><init>(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    invoke-static {p0, v0, p1, v1, v0}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->rootView$delegate:Lkotlin/Lazy;
+    iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 39
+    .line 40
     new-instance p1, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$listView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$listView$2;-><init>(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v0, p1, v1, v0}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->listView$delegate:Lkotlin/Lazy;
+    iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 40
+    .line 41
     new-instance p1, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$listAdapter$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$listAdapter$2;-><init>(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v0, p1, v1, v0}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->listAdapter$delegate:Lkotlin/Lazy;
+    iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     return-void
 .end method
@@ -127,7 +209,7 @@
 
     const/4 p1, 0x0
 
-    .line 33
+    .line 34
     :cond_0
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;-><init>(Z)V
 
@@ -137,7 +219,7 @@
 .method public static final synthetic access$getArchiveSwitchTopicsBarRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
     .locals 0
 
-    .line 33
+    .line 34
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->archiveSwitchTopicsBarRow:I
 
     return p0
@@ -146,7 +228,7 @@
 .method public static final synthetic access$getDragAndDropInfoRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
     .locals 0
 
-    .line 33
+    .line 34
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->dragAndDropInfoRow:I
 
     return p0
@@ -155,7 +237,7 @@
 .method public static final synthetic access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
     .locals 0
 
-    .line 33
+    .line 34
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->enableRow:I
 
     return p0
@@ -164,7 +246,7 @@
 .method public static final synthetic access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
     .locals 0
 
-    .line 33
+    .line 34
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->enableSectionRow:I
 
     return p0
@@ -173,7 +255,7 @@
 .method public static final synthetic access$getListAdapter(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;
     .locals 0
 
-    .line 33
+    .line 34
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;
 
     move-result-object p0
@@ -184,7 +266,7 @@
 .method public static final synthetic access$getListView(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 33
+    .line 34
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
@@ -195,7 +277,7 @@
 .method public static final synthetic access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
     .locals 0
 
-    .line 33
+    .line 34
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->rowCount:I
 
     return p0
@@ -204,7 +286,7 @@
 .method public static final synthetic access$getSortingIndexByPosition(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)I
     .locals 0
 
-    .line 33
+    .line 34
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getSortingIndexByPosition(I)I
 
     move-result p0
@@ -215,7 +297,7 @@
 .method public static final synthetic access$initListView(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 33
+    .line 34
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->initListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
@@ -226,7 +308,7 @@
 .method public static final synthetic access$initRootView(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 33
+    .line 34
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->initRootView()Landroid/widget/FrameLayout;
 
     move-result-object p0
@@ -237,7 +319,7 @@
 .method public static final synthetic access$isClickableViewType(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)Z
     .locals 0
 
-    .line 33
+    .line 34
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->isClickableViewType(I)Z
 
     move-result p0
@@ -248,7 +330,7 @@
 .method public static final synthetic access$needDivider(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)Z
     .locals 0
 
-    .line 33
+    .line 34
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->needDivider(I)Z
 
     move-result p0
@@ -259,7 +341,7 @@
 .method public static final synthetic access$setArchiveSwitchTopicsBarRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
     .locals 0
 
-    .line 33
+    .line 34
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->archiveSwitchTopicsBarRow:I
 
     return-void
@@ -268,7 +350,7 @@
 .method public static final synthetic access$setDragAndDropInfoRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
     .locals 0
 
-    .line 33
+    .line 34
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->dragAndDropInfoRow:I
 
     return-void
@@ -277,7 +359,7 @@
 .method public static final synthetic access$setEnableRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
     .locals 0
 
-    .line 33
+    .line 34
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->enableRow:I
 
     return-void
@@ -286,7 +368,7 @@
 .method public static final synthetic access$setEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
     .locals 0
 
-    .line 33
+    .line 34
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->enableSectionRow:I
 
     return-void
@@ -295,7 +377,7 @@
 .method public static final synthetic access$setRowCount$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
     .locals 0
 
-    .line 33
+    .line 34
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->rowCount:I
 
     return-void
@@ -304,7 +386,7 @@
 .method public static final synthetic access$setTabsRowEnd$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
     .locals 0
 
-    .line 33
+    .line 34
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->tabsRowEnd:I
 
     return-void
@@ -313,7 +395,7 @@
 .method public static final synthetic access$setTabsRowStart$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
     .locals 0
 
-    .line 33
+    .line 34
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->tabsRowStart:I
 
     return-void
@@ -322,19 +404,25 @@
 .method public static final synthetic access$setTopicsBar$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;Lcom/iMe/fork/ui/view/ArchiveSwitchTopicsBar;)V
     .locals 0
 
-    .line 33
+    .line 34
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->topicsBar:Lcom/iMe/fork/ui/view/ArchiveSwitchTopicsBar;
 
     return-void
 .end method
 
 .method private final getListAdapter()Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;
-    .locals 1
+    .locals 3
 
-    .line 40
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->listAdapter$delegate:Lkotlin/Lazy;
+    .line 41
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x2
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -344,12 +432,18 @@
 .end method
 
 .method private final getListView()Lorg/telegram/ui/Components/RecyclerListView;
-    .locals 1
+    .locals 3
 
-    .line 39
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->listView$delegate:Lkotlin/Lazy;
+    .line 40
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x1
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -359,12 +453,18 @@
 .end method
 
 .method private final getRootView()Landroid/widget/FrameLayout;
-    .locals 1
+    .locals 3
 
-    .line 38
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->rootView$delegate:Lkotlin/Lazy;
+    .line 39
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x0
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -376,7 +476,7 @@
 .method private final getSortingIndexByPosition(I)I
     .locals 1
 
-    .line 158
+    .line 163
     iget v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->tabsRowStart:I
 
     sub-int/2addr p1, v0
@@ -384,69 +484,61 @@
     return p1
 .end method
 
-.method private static final getThemeDescriptions$lambda$3(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
-    .locals 5
+.method private static final getThemeDescriptions$lambda$2(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
+    .locals 4
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 64
+    .line 69
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->topicsBar:Lcom/iMe/fork/ui/view/ArchiveSwitchTopicsBar;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    if-nez v0, :cond_0
-
-    const-string v0, "topicsBar"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    move-object v0, v1
-
-    :cond_0
     invoke-virtual {v0}, Lcom/iMe/fork/ui/view/ArchiveSwitchTopicsBar;->updateSelectedTopicAndColors()V
 
-    .line 65
+    .line 70
+    :cond_0
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
 
     const/4 v0, 0x0
 
-    .line 191
+    .line 205
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
-    move-result v2
+    move-result v1
 
     :goto_0
-    if-ge v0, v2, :cond_3
+    if-ge v0, v1, :cond_3
 
-    .line 192
+    .line 206
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v2
 
-    const-string v4, "getChildAt(i)"
+    const-string v3, "getChildAt(i)"
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
-    instance-of v4, v3, Lcom/iMe/fork/ui/view/SortingFilterCell;
+    .line 70
+    instance-of v3, v2, Lcom/iMe/fork/ui/view/SortingFilterCell;
 
-    if-eqz v4, :cond_1
+    if-eqz v3, :cond_1
 
-    check-cast v3, Lcom/iMe/fork/ui/view/SortingFilterCell;
+    check-cast v2, Lcom/iMe/fork/ui/view/SortingFilterCell;
 
     goto :goto_1
 
     :cond_1
-    move-object v3, v1
+    const/4 v2, 0x0
 
     :goto_1
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
-    invoke-virtual {v3}, Lcom/iMe/fork/ui/view/SortingFilterCell;->updateColors()V
+    invoke-virtual {v2}, Lcom/iMe/fork/ui/view/SortingFilterCell;->updateColors()V
 
     :cond_2
     add-int/lit8 v0, v0, 0x1
@@ -460,7 +552,7 @@
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 110
+    .line 115
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -471,10 +563,10 @@
 
     const/4 v1, 0x1
 
-    .line 111
+    .line 116
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setFocusable(Z)V
 
-    .line 112
+    .line 117
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -485,14 +577,14 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 113
+    .line 118
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 114
+    .line 119
     new-instance v1, Landroidx/recyclerview/widget/ItemTouchHelper;
 
     new-instance v2, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$TouchHelperCallback;
@@ -503,7 +595,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/ItemTouchHelper;->attachToRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
 
-    .line 115
+    .line 120
     new-instance v1, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
@@ -513,26 +605,26 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda$8$lambda$7(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$7$lambda$6(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
     .locals 1
 
     const-string p4, "this$0"
 
     invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 117
+    .line 122
     instance-of p4, p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     const/4 v0, 0x0
 
     if-eqz p4, :cond_1
 
-    .line 118
+    .line 123
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckbox()V
 
-    .line 119
+    .line 124
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object p2
@@ -541,18 +633,18 @@
 
     invoke-virtual {p2, p3}, Lcom/iMe/fork/controller/FiltersController;->toggleSortingEnabled(Z)V
 
-    .line 120
+    .line 125
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;
 
     move-result-object p2
 
-    .line 121
+    .line 126
     iget p3, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->rowCount:I
 
-    .line 122
+    .line 127
     invoke-virtual {p2}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->updateRows()V
 
-    .line 123
+    .line 128
     iget p4, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->rowCount:I
 
     sub-int/2addr p3, p4
@@ -561,14 +653,14 @@
 
     move-result p3
 
-    .line 124
+    .line 129
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->isChecked()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 125
+    .line 130
     iget p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->enableSectionRow:I
 
     add-int/lit8 p1, p1, 0x1
@@ -577,7 +669,7 @@
 
     goto :goto_0
 
-    .line 127
+    .line 132
     :cond_0
     iget p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->enableSectionRow:I
 
@@ -585,16 +677,16 @@
 
     invoke-virtual {p2, p1, p3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    .line 129
+    .line 134
     :goto_0
     iget p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->enableSectionRow:I
 
     invoke-virtual {p2, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 131
+    .line 136
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->updateChatSwipeAction()V
 
-    .line 132
+    .line 137
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -607,13 +699,13 @@
 
     goto :goto_1
 
-    .line 134
+    .line 139
     :cond_1
     instance-of p4, p1, Lcom/iMe/fork/ui/view/SortingFilterCell;
 
     if-eqz p4, :cond_3
 
-    .line 135
+    .line 140
     check-cast p1, Lcom/iMe/fork/ui/view/SortingFilterCell;
 
     invoke-virtual {p1, p3}, Lcom/iMe/fork/ui/view/SortingFilterCell;->checkFabTouch(F)Z
@@ -624,7 +716,7 @@
 
     return-void
 
-    .line 138
+    .line 143
     :cond_2
     invoke-virtual {p1}, Lcom/iMe/fork/ui/view/SortingFilterCell;->isChecked()Z
 
@@ -634,7 +726,7 @@
 
     invoke-virtual {p1, p3}, Lcom/iMe/fork/ui/view/SortingFilterCell;->setChecked(Z)V
 
-    .line 139
+    .line 144
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object p1
@@ -647,10 +739,10 @@
 
     invoke-virtual {p1, p3, p2}, Lcom/iMe/fork/controller/FiltersController;->switchSortingFilterEnabled(ZI)V
 
-    .line 140
+    .line 145
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->updateChatSwipeAction()V
 
-    .line 141
+    .line 146
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -669,7 +761,7 @@
 .method private final initRootView()Landroid/widget/FrameLayout;
     .locals 2
 
-    .line 106
+    .line 111
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -680,7 +772,7 @@
 
     const-string v1, "windowBackgroundGray"
 
-    .line 107
+    .line 112
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
@@ -693,7 +785,7 @@
 .method private final isClickableViewType(I)Z
     .locals 1
 
-    .line 160
+    .line 165
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     if-eq p1, v0, :cond_1
@@ -720,7 +812,7 @@
 .method private final needDivider(I)Z
     .locals 1
 
-    .line 162
+    .line 167
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
     if-eq p1, v0, :cond_0
@@ -743,20 +835,20 @@
 .method private final setupActionBar()V
     .locals 2
 
-    .line 92
+    .line 97
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 93
+    .line 98
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 94
+    .line 99
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 95
+    .line 100
     sget v1, Lorg/telegram/messenger/R$string;->folder_tabs_sorting_settings:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -765,7 +857,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 96
+    .line 101
     new-instance v1, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$setupActionBar$1$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$setupActionBar$1$1;-><init>(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
@@ -778,14 +870,14 @@
 .method private final updateChatSwipeAction()V
     .locals 4
 
-    .line 148
+    .line 153
     iget-boolean v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->currentArchive:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 151
+    .line 156
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
@@ -826,7 +918,7 @@
     :cond_1
     move v0, v2
 
-    .line 152
+    .line 157
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
@@ -850,7 +942,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 153
+    .line 158
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->getChatSwipeAction(I)I
@@ -859,7 +951,7 @@
 
     if-eq v0, v2, :cond_4
 
-    .line 154
+    .line 159
     :cond_3
     invoke-static {v2}, Lorg/telegram/messenger/SharedConfig;->updateChatListSwipeSetting(I)V
 
@@ -869,49 +961,10 @@
 
 
 # virtual methods
-.method public bridge synthetic createView(Landroid/content/Context;)Landroid/view/View;
-    .locals 0
-
-    .line 33
-    invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->createView(Landroid/content/Context;)Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public createView(Landroid/content/Context;)Landroid/widget/FrameLayout;
-    .locals 1
-
-    const-string v0, "context"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 52
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getRootView()Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    .line 53
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->setupActionBar()V
-
-    .line 54
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
-
-    .line 55
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
-
-    return-object p1
-.end method
-
 .method public final getCurrentArchive()Z
     .locals 1
 
-    .line 34
+    .line 35
     iget-boolean v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->currentArchive:Z
 
     return v0
@@ -934,14 +987,14 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 63
+    .line 68
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 62
+    .line 67
     new-instance v8, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {v8, v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
@@ -956,14 +1009,14 @@
 
     move-object v2, v10
 
-    .line 63
+    .line 68
     invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
 
     const/4 v2, 0x0
 
     aput-object v10, v1, v2
 
-    .line 67
+    .line 72
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -988,7 +1041,7 @@
 
     aput-object v3, v1, v4
 
-    .line 68
+    .line 73
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1013,7 +1066,7 @@
 
     aput-object v3, v1, v5
 
-    .line 69
+    .line 74
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1032,7 +1085,7 @@
 
     aput-object v3, v1, v5
 
-    .line 70
+    .line 75
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1049,7 +1102,7 @@
 
     aput-object v3, v1, v5
 
-    .line 71
+    .line 76
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1068,7 +1121,7 @@
 
     aput-object v3, v1, v5
 
-    .line 72
+    .line 77
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1087,7 +1140,7 @@
 
     aput-object v3, v1, v5
 
-    .line 73
+    .line 78
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1114,7 +1167,7 @@
 
     aput-object v3, v1, v5
 
-    .line 74
+    .line 79
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1145,7 +1198,7 @@
 
     aput-object v3, v1, v5
 
-    .line 75
+    .line 80
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1174,7 +1227,7 @@
 
     aput-object v3, v1, v5
 
-    .line 76
+    .line 81
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1207,7 +1260,7 @@
 
     aput-object v3, v1, v5
 
-    .line 77
+    .line 82
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1236,7 +1289,7 @@
 
     aput-object v3, v1, v6
 
-    .line 78
+    .line 83
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1267,7 +1320,7 @@
 
     aput-object v3, v1, v6
 
-    .line 79
+    .line 84
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1294,7 +1347,7 @@
 
     aput-object v3, v1, v6
 
-    .line 80
+    .line 85
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1321,7 +1374,7 @@
 
     aput-object v3, v1, v6
 
-    .line 81
+    .line 86
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1348,7 +1401,7 @@
 
     aput-object v3, v1, v6
 
-    .line 82
+    .line 87
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1375,7 +1428,7 @@
 
     aput-object v3, v1, v5
 
-    .line 83
+    .line 88
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1404,7 +1457,7 @@
 
     aput-object v3, v1, v5
 
-    .line 84
+    .line 89
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1437,7 +1490,7 @@
 
     aput-object v3, v1, v2
 
-    .line 62
+    .line 67
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -1445,18 +1498,60 @@
     return-object v1
 .end method
 
+.method public bridge synthetic onCreateView(Landroid/content/Context;)Landroid/view/View;
+    .locals 0
+
+    .line 34
+    invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
+    .locals 1
+
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 53
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getRootView()Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    .line 54
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->setupActionBar()V
+
+    .line 55
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    return-object p1
+.end method
+
 .method public onFragmentDestroy()V
     .locals 1
 
-    .line 58
+    .line 63
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/iMe/fork/controller/FiltersController;->saveConfig()V
 
-    .line 59
-    invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
+    .line 64
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
+
+    return-void
+.end method
+
+.method public onViewReady()V
+    .locals 0
 
     return-void
 .end method
@@ -1464,7 +1559,7 @@
 .method public final setCurrentArchive(Z)V
     .locals 0
 
-    .line 34
+    .line 35
     iput-boolean p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->currentArchive:Z
 
     return-void

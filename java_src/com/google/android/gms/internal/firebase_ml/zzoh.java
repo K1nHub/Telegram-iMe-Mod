@@ -4,8 +4,8 @@ import android.net.Uri;
 import com.google.android.exoplayer2.source.rtsp.RtspHeaders;
 import com.google.android.gms.common.internal.GmsLogger;
 import com.google.android.gms.internal.firebase_ml.zzlu;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseRemoteModel;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseRemoteModel;
 import javax.net.ssl.HttpsURLConnection;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
@@ -22,7 +22,7 @@ public final class zzoh {
         String headerField2 = zza.getHeaderField("ETag");
         GmsLogger gmsLogger = zzass;
         String valueOf = String.valueOf(headerField);
-        gmsLogger.m799d("BaseModelInfoRetriever", valueOf.length() != 0 ? "Received download URL: ".concat(valueOf) : new String("Received download URL: "));
+        gmsLogger.m785d("BaseModelInfoRetriever", valueOf.length() != 0 ? "Received download URL: ".concat(valueOf) : new String("Received download URL: "));
         if (headerField == null) {
             return null;
         }

@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 65320
+    .line 65332
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;
     .locals 1
 
-    .line 65329
+    .line 65341
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -47,7 +47,7 @@
 
     return-object p0
 
-    .line 65331
+    .line 65343
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -73,13 +73,13 @@
 
     throw p0
 
-    .line 65336
+    .line 65348
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;-><init>()V
 
-    .line 65337
+    .line 65349
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -90,7 +90,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 65342
+    .line 65354
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -112,7 +112,7 @@
     :cond_0
     move v1, v2
 
-    .line 65343
+    .line 65355
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;->inactive:Z
 
@@ -122,11 +122,11 @@
 
     move v2, v3
 
-    .line 65344
+    .line 65356
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;->request_write_access:Z
 
-    .line 65345
+    .line 65357
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -143,12 +143,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 65349
+    .line 65361
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 65350
+    .line 65362
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;->inactive:Z
 
     if-eqz v0, :cond_0
@@ -167,7 +167,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;->flags:I
 
-    .line 65351
+    .line 65363
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;->request_write_access:Z
 
     if-eqz v1, :cond_1
@@ -182,10 +182,10 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;->flags:I
 
-    .line 65352
+    .line 65364
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 65353
+    .line 65365
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;->app:Lorg/telegram/tgnet/TLRPC$BotApp;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

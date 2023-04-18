@@ -63,7 +63,7 @@
 
     iget-object v7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda216;->f$6:Ljava/util/ArrayList;
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$8kKVMGAXGk7ac7YBf2fZU46gqV8(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$photos_Photos;ZJIILjava/util/ArrayList;)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$rsqD9igaIcZty79C_y-KP7grD7A(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$photos_Photos;ZJIILjava/util/ArrayList;)V
 
     return-void
 .end method

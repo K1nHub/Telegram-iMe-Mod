@@ -46,7 +46,7 @@
 
     move-object v4, p1
 
-    .line 757
+    .line 758
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/QRCodeBottomSheet;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-void
@@ -57,7 +57,7 @@
 .method public getCustomQrCenterImageRes()I
     .locals 2
 
-    .line 764
+    .line 765
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsFragment$showQrReceiveDialog$1;->$networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     sget-object v1, Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsFragment$showQrReceiveDialog$1$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -76,7 +76,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 767
+    .line 768
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsFragment$showQrReceiveDialog$1;->$code:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
@@ -93,7 +93,7 @@
 
     goto :goto_0
 
-    .line 766
+    .line 767
     :cond_0
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;
 
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 765
+    .line 766
     :cond_1
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$ETH;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$ETH;
 

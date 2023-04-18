@@ -21,6 +21,12 @@
 .field public static final enum CLOUD:Lcom/iMe/fork/enums/LockedSection;
 
 
+# instance fields
+.field private final iconResId:I
+
+.field private final nameResId:I
+
+
 # direct methods
 .method private static final synthetic $values()[Lcom/iMe/fork/enums/LockedSection;
     .locals 3
@@ -45,27 +51,35 @@
 .end method
 
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 5
 
-    .line 4
+    .line 8
     new-instance v0, Lcom/iMe/fork/enums/LockedSection;
 
-    const-string v1, "ARCHIVE"
+    sget v1, Lorg/telegram/messenger/R$string;->settings_section_passcode_archive:I
 
-    const/4 v2, 0x0
+    sget v2, Lorg/telegram/messenger/R$drawable;->msg_archive:I
 
-    invoke-direct {v0, v1, v2}, Lcom/iMe/fork/enums/LockedSection;-><init>(Ljava/lang/String;I)V
+    const-string v3, "ARCHIVE"
+
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/fork/enums/LockedSection;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/fork/enums/LockedSection;->ARCHIVE:Lcom/iMe/fork/enums/LockedSection;
 
-    .line 5
+    .line 9
     new-instance v0, Lcom/iMe/fork/enums/LockedSection;
 
-    const-string v1, "CLOUD"
+    sget v1, Lorg/telegram/messenger/R$string;->settings_section_passcode_cloud:I
 
-    const/4 v2, 0x1
+    sget v2, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_cloud:I
 
-    invoke-direct {v0, v1, v2}, Lcom/iMe/fork/enums/LockedSection;-><init>(Ljava/lang/String;I)V
+    const-string v3, "CLOUD"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/fork/enums/LockedSection;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/fork/enums/LockedSection;->CLOUD:Lcom/iMe/fork/enums/LockedSection;
 
@@ -78,16 +92,20 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;III)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()V"
+            "(II)V"
         }
     .end annotation
 
-    .line 3
+    .line 7
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput p3, p0, Lcom/iMe/fork/enums/LockedSection;->nameResId:I
+
+    iput p4, p0, Lcom/iMe/fork/enums/LockedSection;->iconResId:I
 
     return-void
 .end method
@@ -118,4 +136,24 @@
     check-cast v0, [Lcom/iMe/fork/enums/LockedSection;
 
     return-object v0
+.end method
+
+
+# virtual methods
+.method public final getIconResId()I
+    .locals 1
+
+    .line 7
+    iget v0, p0, Lcom/iMe/fork/enums/LockedSection;->iconResId:I
+
+    return v0
+.end method
+
+.method public final getNameResId()I
+    .locals 1
+
+    .line 7
+    iget v0, p0, Lcom/iMe/fork/enums/LockedSection;->nameResId:I
+
+    return v0
 .end method

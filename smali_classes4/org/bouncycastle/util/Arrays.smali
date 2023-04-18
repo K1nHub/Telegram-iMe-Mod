@@ -12,305 +12,96 @@
 
 # direct methods
 .method public static areEqual([B[B)Z
-    .locals 5
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([B[B)Z
 
-    if-ne p0, p1, :cond_0
+    move-result p0
 
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p0, :cond_5
-
-    if-nez p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    array-length v2, p0
-
-    array-length v3, p1
-
-    if-eq v2, v3, :cond_2
-
-    return v1
-
-    :cond_2
-    move v2, v1
-
-    :goto_0
-    array-length v3, p0
-
-    if-eq v2, v3, :cond_4
-
-    aget-byte v3, p0, v2
-
-    aget-byte v4, p1, v2
-
-    if-eq v3, v4, :cond_3
-
-    return v1
-
-    :cond_3
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    return v0
-
-    :cond_5
-    :goto_1
-    return v1
+    return p0
 .end method
 
 .method public static areEqual([C[C)Z
-    .locals 5
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([C[C)Z
 
-    if-ne p0, p1, :cond_0
+    move-result p0
 
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p0, :cond_5
-
-    if-nez p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    array-length v2, p0
-
-    array-length v3, p1
-
-    if-eq v2, v3, :cond_2
-
-    return v1
-
-    :cond_2
-    move v2, v1
-
-    :goto_0
-    array-length v3, p0
-
-    if-eq v2, v3, :cond_4
-
-    aget-char v3, p0, v2
-
-    aget-char v4, p1, v2
-
-    if-eq v3, v4, :cond_3
-
-    return v1
-
-    :cond_3
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    return v0
-
-    :cond_5
-    :goto_1
-    return v1
-.end method
-
-.method public static areEqual([I[I)Z
-    .locals 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p0, :cond_5
-
-    if-nez p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    array-length v2, p0
-
-    array-length v3, p1
-
-    if-eq v2, v3, :cond_2
-
-    return v1
-
-    :cond_2
-    move v2, v1
-
-    :goto_0
-    array-length v3, p0
-
-    if-eq v2, v3, :cond_4
-
-    aget v3, p0, v2
-
-    aget v4, p1, v2
-
-    if-eq v3, v4, :cond_3
-
-    return v1
-
-    :cond_3
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    return v0
-
-    :cond_5
-    :goto_1
-    return v1
+    return p0
 .end method
 
 .method public static areEqual([S[S)Z
-    .locals 5
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([S[S)Z
 
-    if-ne p0, p1, :cond_0
+    move-result p0
 
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p0, :cond_5
-
-    if-nez p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    array-length v2, p0
-
-    array-length v3, p1
-
-    if-eq v2, v3, :cond_2
-
-    return v1
-
-    :cond_2
-    move v2, v1
-
-    :goto_0
-    array-length v3, p0
-
-    if-eq v2, v3, :cond_4
-
-    aget-short v3, p0, v2
-
-    aget-short v4, p1, v2
-
-    if-eq v3, v4, :cond_3
-
-    return v1
-
-    :cond_3
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    return v0
-
-    :cond_5
-    :goto_1
-    return v1
+    return p0
 .end method
 
 .method public static clone([B)[B
-    .locals 3
+    .locals 0
 
     if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
-    return-object p0
+    goto :goto_0
 
     :cond_0
-    array-length v0, p0
+    invoke-virtual {p0}, [B->clone()Ljava/lang/Object;
 
-    new-array v0, v0, [B
+    move-result-object p0
 
-    array-length v1, p0
+    check-cast p0, [B
 
-    const/4 v2, 0x0
-
-    invoke-static {p0, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object v0
-.end method
-
-.method public static clone([I)[I
-    .locals 3
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
+    :goto_0
     return-object p0
-
-    :cond_0
-    array-length v0, p0
-
-    new-array v0, v0, [I
-
-    array-length v1, p0
-
-    const/4 v2, 0x0
-
-    invoke-static {p0, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object v0
 .end method
 
 .method public static clone([S)[S
-    .locals 3
+    .locals 0
 
     if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
-    return-object p0
+    goto :goto_0
 
     :cond_0
-    array-length v0, p0
+    invoke-virtual {p0}, [S->clone()Ljava/lang/Object;
 
-    new-array v0, v0, [S
+    move-result-object p0
 
-    array-length v1, p0
+    check-cast p0, [S
 
-    const/4 v2, 0x0
-
-    invoke-static {p0, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object v0
+    :goto_0
+    return-object p0
 .end method
 
 .method public static concatenate([B[B)[B
     .locals 3
 
-    if-eqz p0, :cond_0
+    if-nez p0, :cond_0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
 
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    invoke-static {p0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
     array-length v0, p0
 
     array-length v1, p1
@@ -332,26 +123,10 @@
     invoke-static {p1, v2, v0, p0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-object v0
-
-    :cond_0
-    if-eqz p1, :cond_1
-
-    invoke-static {p1}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_1
-    invoke-static {p0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object p0
-
-    return-object p0
 .end method
 
 .method public static copyOfRange([BII)[B
-    .locals 3
+    .locals 2
 
     invoke-static {p1, p2}, Lorg/bouncycastle/util/Arrays;->getLength(II)I
 
@@ -363,37 +138,22 @@
 
     sub-int/2addr v1, p1
 
-    const/4 v2, 0x0
+    invoke-static {v1, p2}, Ljava/lang/Math;->min(II)I
 
-    if-ge v1, p2, :cond_0
+    move-result p2
 
-    array-length p2, p0
+    const/4 v1, 0x0
 
-    sub-int/2addr p2, p1
-
-    :cond_0
-    invoke-static {p0, p1, v0, v2, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p0, p1, v0, v1, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-object v0
 .end method
 
 .method public static fill([BB)V
-    .locals 2
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-static {p0, p1}, Ljava/util/Arrays;->fill([BB)V
 
-    :goto_0
-    array-length v1, p0
-
-    if-ge v0, v1, :cond_0
-
-    aput-byte p1, p0, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
     return-void
 .end method
 
@@ -459,6 +219,37 @@
     return v1
 .end method
 
+.method public static hashCode([BII)I
+    .locals 2
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    add-int/lit8 v0, p2, 0x1
+
+    :goto_0
+    add-int/lit8 p2, p2, -0x1
+
+    if-ltz p2, :cond_1
+
+    mul-int/lit16 v0, v0, 0x101
+
+    add-int v1, p1, p2
+
+    aget-byte v1, p0, v1
+
+    xor-int/2addr v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    return v0
+.end method
+
 .method public static hashCode([C)I
     .locals 3
 
@@ -519,80 +310,6 @@
 
     :cond_1
     return v1
-.end method
-
-.method public static hashCode([III)I
-    .locals 2
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_0
-    add-int/lit8 v0, p2, 0x1
-
-    :goto_0
-    add-int/lit8 p2, p2, -0x1
-
-    if-ltz p2, :cond_1
-
-    mul-int/lit16 v0, v0, 0x101
-
-    add-int v1, p1, p2
-
-    aget v1, p0, v1
-
-    xor-int/2addr v0, v1
-
-    goto :goto_0
-
-    :cond_1
-    return v0
-.end method
-
-.method public static hashCode([JII)I
-    .locals 4
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_0
-    add-int/lit8 v0, p2, 0x1
-
-    :goto_0
-    add-int/lit8 p2, p2, -0x1
-
-    if-ltz p2, :cond_1
-
-    add-int v1, p1, p2
-
-    aget-wide v1, p0, v1
-
-    mul-int/lit16 v0, v0, 0x101
-
-    long-to-int v3, v1
-
-    xor-int/2addr v0, v3
-
-    mul-int/lit16 v0, v0, 0x101
-
-    const/16 v3, 0x20
-
-    ushr-long/2addr v1, v3
-
-    long-to-int v1, v1
-
-    xor-int/2addr v0, v1
-
-    goto :goto_0
-
-    :cond_1
-    return v0
 .end method
 
 .method public static hashCode([S)I

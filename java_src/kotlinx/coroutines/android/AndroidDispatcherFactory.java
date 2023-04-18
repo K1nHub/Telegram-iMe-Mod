@@ -19,12 +19,11 @@ public final class AndroidDispatcherFactory implements MainDispatcherFactory {
     }
 
     @Override // kotlinx.coroutines.internal.MainDispatcherFactory
-    public /* bridge */ /* synthetic */ MainCoroutineDispatcher createDispatcher(List list) {
-        return createDispatcher((List<? extends MainDispatcherFactory>) list);
-    }
-
-    @Override // kotlinx.coroutines.internal.MainDispatcherFactory
-    public HandlerContext createDispatcher(List<? extends MainDispatcherFactory> list) {
-        return new HandlerContext(HandlerDispatcherKt.asHandler(Looper.getMainLooper(), true), null, 2, null);
+    public MainCoroutineDispatcher createDispatcher(List<? extends MainDispatcherFactory> list) {
+        Looper mainLooper = Looper.getMainLooper();
+        if (mainLooper == null) {
+            throw new IllegalStateException("The main looper is not available");
+        }
+        return new HandlerContext(HandlerDispatcherKt.asHandler(mainLooper, true), null, 2, null);
     }
 }

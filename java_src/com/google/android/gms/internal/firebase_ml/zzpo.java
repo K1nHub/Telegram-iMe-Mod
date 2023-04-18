@@ -19,7 +19,7 @@ public final class zzpo implements zzot {
             sb.append("The model is INCOMPATIBLE. It may contain unrecognized custom ops, or not FlatBuffer format: ");
             sb.append(valueOf);
             String sb2 = sb.toString();
-            zzass.m797e("CustomCompatChecker", sb2);
+            zzass.m783e("CustomCompatChecker", sb2);
             zzpaVar.zza(zzmc.INCOMPATIBLE_TFLITE_VERSION, TensorFlowLite.version(), false, zzor.CUSTOM);
             return new zzow(zzov.TFLITE_VERSION_INCOMPATIBLE, sb2);
         }

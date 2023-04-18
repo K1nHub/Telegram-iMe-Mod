@@ -12,11 +12,6 @@ public final class XMSSNode implements Serializable {
         this.value = bArr;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public XMSSNode clone() {
-        return new XMSSNode(getHeight(), getValue());
-    }
-
     public int getHeight() {
         return this.height;
     }

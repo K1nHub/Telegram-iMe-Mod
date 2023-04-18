@@ -326,7 +326,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->passcodeRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->passcodeArchiveRow:I
 
     return p0
 .end method
@@ -335,7 +335,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->passwordRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->passcodeCloudRow:I
 
     return p0
 .end method
@@ -344,7 +344,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->callsRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->lastSeenRow:I
 
     return p0
 .end method
@@ -364,7 +364,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->profilePhotoRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->callsRow:I
 
     return p0
 .end method
@@ -384,7 +384,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->forwardsRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->profilePhotoRow:I
 
     return p0
 .end method
@@ -404,7 +404,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->phoneNumberRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->forwardsRow:I
 
     return p0
 .end method
@@ -424,7 +424,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->voicesRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->phoneNumberRow:I
 
     return p0
 .end method
@@ -444,7 +444,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->blockedRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->passcodeRow:I
 
     return p0
 .end method
@@ -453,7 +453,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->deleteAccountRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->voicesRow:I
 
     return p0
 .end method
@@ -473,7 +473,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->newChatsRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->deleteAccountRow:I
 
     return p0
 .end method
@@ -493,25 +493,27 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->emailLoginRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->newChatsRow:I
 
     return p0
 .end method
 
-.method static synthetic access$2500(Lorg/telegram/ui/PrivacySettingsActivity;)I
+.method static synthetic access$2500(Lorg/telegram/ui/PrivacySettingsActivity;)Lorg/telegram/messenger/ContactsController;
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->paymentsClearRow:I
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContactsController()Lorg/telegram/messenger/ContactsController;
 
-    return p0
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method static synthetic access$2600(Lorg/telegram/ui/PrivacySettingsActivity;)I
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->secretMapRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->emailLoginRow:I
 
     return p0
 .end method
@@ -520,7 +522,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->contactsSyncRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->paymentsClearRow:I
 
     return p0
 .end method
@@ -529,7 +531,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->passportRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->secretMapRow:I
 
     return p0
 .end method
@@ -538,7 +540,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->contactsDeleteRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->contactsSyncRow:I
 
     return p0
 .end method
@@ -547,7 +549,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->sessionsRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->passwordRow:I
 
     return p0
 .end method
@@ -556,7 +558,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->contactsSuggestRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->passportRow:I
 
     return p0
 .end method
@@ -565,7 +567,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->autoDeleteMesages:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->contactsDeleteRow:I
 
     return p0
 .end method
@@ -574,31 +576,27 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->rowCount:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->contactsSuggestRow:I
 
     return p0
 .end method
 
-.method static synthetic access$3300(Lorg/telegram/ui/PrivacySettingsActivity;)Lorg/telegram/messenger/ContactsController;
+.method static synthetic access$3300(Lorg/telegram/ui/PrivacySettingsActivity;)I
     .locals 0
 
     .line 69
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContactsController()Lorg/telegram/messenger/ContactsController;
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->autoDeleteMesages:I
 
-    move-result-object p0
-
-    return-object p0
+    return p0
 .end method
 
-.method static synthetic access$3400(Lorg/telegram/ui/PrivacySettingsActivity;)Lorg/telegram/messenger/ContactsController;
+.method static synthetic access$3400(Lorg/telegram/ui/PrivacySettingsActivity;)I
     .locals 0
 
     .line 69
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContactsController()Lorg/telegram/messenger/ContactsController;
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->rowCount:I
 
-    move-result-object p0
-
-    return-object p0
+    return p0
 .end method
 
 .method static synthetic access$3500(Lorg/telegram/ui/PrivacySettingsActivity;)Lorg/telegram/messenger/ContactsController;
@@ -660,7 +658,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->secretWebpageRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->blockedRow:I
 
     return p0
 .end method
@@ -687,7 +685,29 @@
     return-object p0
 .end method
 
-.method static synthetic access$4200(Lorg/telegram/ui/PrivacySettingsActivity;)Z
+.method static synthetic access$4200(Lorg/telegram/ui/PrivacySettingsActivity;)Lorg/telegram/messenger/ContactsController;
+    .locals 0
+
+    .line 69
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContactsController()Lorg/telegram/messenger/ContactsController;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method static synthetic access$4300(Lorg/telegram/ui/PrivacySettingsActivity;)Lorg/telegram/messenger/ContactsController;
+    .locals 0
+
+    .line 69
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContactsController()Lorg/telegram/messenger/ContactsController;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method static synthetic access$4400(Lorg/telegram/ui/PrivacySettingsActivity;)Z
     .locals 0
 
     .line 69
@@ -696,7 +716,7 @@
     return p0
 .end method
 
-.method static synthetic access$4202(Lorg/telegram/ui/PrivacySettingsActivity;Z)Z
+.method static synthetic access$4402(Lorg/telegram/ui/PrivacySettingsActivity;Z)Z
     .locals 0
 
     .line 69
@@ -705,7 +725,7 @@
     return p1
 .end method
 
-.method static synthetic access$4300(Lorg/telegram/ui/PrivacySettingsActivity;)Z
+.method static synthetic access$4500(Lorg/telegram/ui/PrivacySettingsActivity;)Z
     .locals 0
 
     .line 69
@@ -714,7 +734,7 @@
     return p0
 .end method
 
-.method static synthetic access$4302(Lorg/telegram/ui/PrivacySettingsActivity;Z)Z
+.method static synthetic access$4502(Lorg/telegram/ui/PrivacySettingsActivity;Z)Z
     .locals 0
 
     .line 69
@@ -723,7 +743,7 @@
     return p1
 .end method
 
-.method static synthetic access$4400(Lorg/telegram/ui/PrivacySettingsActivity;)I
+.method static synthetic access$4600(Lorg/telegram/ui/PrivacySettingsActivity;)I
     .locals 0
 
     .line 69
@@ -732,7 +752,7 @@
     return p0
 .end method
 
-.method static synthetic access$4500(Lorg/telegram/ui/PrivacySettingsActivity;)I
+.method static synthetic access$4700(Lorg/telegram/ui/PrivacySettingsActivity;)I
     .locals 0
 
     .line 69
@@ -741,7 +761,7 @@
     return p0
 .end method
 
-.method static synthetic access$4600(Lorg/telegram/ui/PrivacySettingsActivity;)I
+.method static synthetic access$4800(Lorg/telegram/ui/PrivacySettingsActivity;)I
     .locals 0
 
     .line 69
@@ -750,7 +770,7 @@
     return p0
 .end method
 
-.method static synthetic access$4700(Lorg/telegram/ui/PrivacySettingsActivity;)I
+.method static synthetic access$4900(Lorg/telegram/ui/PrivacySettingsActivity;)I
     .locals 0
 
     .line 69
@@ -759,29 +779,11 @@
     return p0
 .end method
 
-.method static synthetic access$4800(Lorg/telegram/ui/PrivacySettingsActivity;)I
-    .locals 0
-
-    .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->botsDetailRow:I
-
-    return p0
-.end method
-
-.method static synthetic access$4900(Lorg/telegram/ui/PrivacySettingsActivity;)I
-    .locals 0
-
-    .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->contactsDetailRow:I
-
-    return p0
-.end method
-
 .method static synthetic access$500(Lorg/telegram/ui/PrivacySettingsActivity;)I
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->webSessionsRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->sessionsRow:I
 
     return p0
 .end method
@@ -790,7 +792,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->newChatsSectionRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->botsDetailRow:I
 
     return p0
 .end method
@@ -799,7 +801,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->privacySectionRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->contactsDetailRow:I
 
     return p0
 .end method
@@ -808,7 +810,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->securitySectionRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->newChatsSectionRow:I
 
     return p0
 .end method
@@ -817,7 +819,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->advancedSectionRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->privacySectionRow:I
 
     return p0
 .end method
@@ -826,7 +828,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->secretSectionRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->securitySectionRow:I
 
     return p0
 .end method
@@ -835,7 +837,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->botsSectionRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->advancedSectionRow:I
 
     return p0
 .end method
@@ -844,7 +846,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->contactsSectionRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->secretSectionRow:I
 
     return p0
 .end method
@@ -853,25 +855,25 @@
     .locals 0
 
     .line 69
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->botsSectionRow:I
+
+    return p0
+.end method
+
+.method static synthetic access$5800(Lorg/telegram/ui/PrivacySettingsActivity;)I
+    .locals 0
+
+    .line 69
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->contactsSectionRow:I
+
+    return p0
+.end method
+
+.method static synthetic access$5900(Lorg/telegram/ui/PrivacySettingsActivity;)I
+    .locals 0
+
+    .line 69
     iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->newChatsHeaderRow:I
-
-    return p0
-.end method
-
-.method static synthetic access$5800(Lorg/telegram/ui/PrivacySettingsActivity;)Z
-    .locals 0
-
-    .line 69
-    iget-boolean p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->newSync:Z
-
-    return p0
-.end method
-
-.method static synthetic access$5900(Lorg/telegram/ui/PrivacySettingsActivity;)Z
-    .locals 0
-
-    .line 69
-    iget-boolean p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->newSuggest:Z
 
     return p0
 .end method
@@ -880,7 +882,7 @@
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->groupsRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->secretWebpageRow:I
 
     return p0
 .end method
@@ -889,25 +891,25 @@
     .locals 0
 
     .line 69
+    iget-boolean p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->newSync:Z
+
+    return p0
+.end method
+
+.method static synthetic access$6100(Lorg/telegram/ui/PrivacySettingsActivity;)Z
+    .locals 0
+
+    .line 69
+    iget-boolean p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->newSuggest:Z
+
+    return p0
+.end method
+
+.method static synthetic access$6200(Lorg/telegram/ui/PrivacySettingsActivity;)Z
+    .locals 0
+
+    .line 69
     iget-boolean p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->archiveChats:Z
-
-    return p0
-.end method
-
-.method static synthetic access$6100(Lorg/telegram/ui/PrivacySettingsActivity;)I
-    .locals 0
-
-    .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->passcodeCloudRow:I
-
-    return p0
-.end method
-
-.method static synthetic access$6200(Lorg/telegram/ui/PrivacySettingsActivity;)I
-    .locals 0
-
-    .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->passcodeArchiveRow:I
 
     return p0
 .end method
@@ -930,22 +932,20 @@
     return p0
 .end method
 
-.method static synthetic access$700(Lorg/telegram/ui/PrivacySettingsActivity;)Lorg/telegram/messenger/ContactsController;
+.method static synthetic access$700(Lorg/telegram/ui/PrivacySettingsActivity;)I
     .locals 0
 
     .line 69
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContactsController()Lorg/telegram/messenger/ContactsController;
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->webSessionsRow:I
 
-    move-result-object p0
-
-    return-object p0
+    return p0
 .end method
 
 .method static synthetic access$800(Lorg/telegram/ui/PrivacySettingsActivity;)I
     .locals 0
 
     .line 69
-    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->lastSeenRow:I
+    iget p0, p0, Lorg/telegram/ui/PrivacySettingsActivity;->groupsRow:I
 
     return p0
 .end method
@@ -4747,12 +4747,12 @@
 
     move-object/from16 v0, p0
 
-    .line 1287
+    .line 1281
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1289
+    .line 1283
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4795,7 +4795,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1290
+    .line 1284
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -4818,7 +4818,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1292
+    .line 1286
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4835,7 +4835,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1293
+    .line 1287
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4850,7 +4850,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1294
+    .line 1288
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4865,7 +4865,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1295
+    .line 1289
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4880,7 +4880,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1296
+    .line 1290
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4895,7 +4895,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1298
+    .line 1292
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4910,7 +4910,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1300
+    .line 1294
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4933,7 +4933,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1302
+    .line 1296
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4964,7 +4964,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1303
+    .line 1297
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5001,7 +5001,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1305
+    .line 1299
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5026,7 +5026,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1307
+    .line 1301
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5053,7 +5053,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1308
+    .line 1302
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5078,7 +5078,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1310
+    .line 1304
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5109,7 +5109,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1311
+    .line 1305
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5134,7 +5134,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1312
+    .line 1306
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5163,7 +5163,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1313
+    .line 1307
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PrivacySettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;

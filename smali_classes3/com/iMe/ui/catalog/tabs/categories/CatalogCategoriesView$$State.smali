@@ -13,6 +13,7 @@
         Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreErrorCommand;,
         Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreCompleteCommand;,
         Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreItemsCommand;,
+        Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ShowErrorToastCommand;,
         Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ShowLoadingDialogCommand;,
         Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ShowToastCommand;,
         Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OpenCampaignDetailsScreenCommand;,
@@ -34,7 +35,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 18
+    .line 20
     invoke-direct {p0}, Lmoxy/viewstate/MvpViewState;-><init>()V
 
     return-void
@@ -61,17 +62,17 @@
 .method public onLoadMoreComplete()V
     .locals 3
 
-    .line 198
+    .line 216
     new-instance v0, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreCompleteCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreCompleteCommand;-><init>(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State;)V
 
-    .line 199
+    .line 217
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 201
+    .line 219
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -84,7 +85,7 @@
 
     return-void
 
-    .line 205
+    .line 223
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -105,12 +106,12 @@
 
     check-cast v2, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;
 
-    .line 206
+    .line 224
     invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreComplete()V
 
     goto :goto_0
 
-    .line 209
+    .line 227
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -122,17 +123,17 @@
 .method public onLoadMoreError()V
     .locals 3
 
-    .line 214
+    .line 232
     new-instance v0, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreErrorCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreErrorCommand;-><init>(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State;)V
 
-    .line 215
+    .line 233
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 217
+    .line 235
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -145,7 +146,7 @@
 
     return-void
 
-    .line 221
+    .line 239
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -166,12 +167,12 @@
 
     check-cast v2, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;
 
-    .line 222
+    .line 240
     invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreError()V
 
     goto :goto_0
 
-    .line 225
+    .line 243
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -191,17 +192,17 @@
         }
     .end annotation
 
-    .line 182
+    .line 200
     new-instance v0, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreItemsCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreItemsCommand;-><init>(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State;Ljava/util/List;)V
 
-    .line 183
+    .line 201
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 185
+    .line 203
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -214,7 +215,7 @@
 
     return-void
 
-    .line 189
+    .line 207
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -235,12 +236,12 @@
 
     check-cast v2, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;
 
-    .line 190
+    .line 208
     invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreItems(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 193
+    .line 211
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -276,17 +277,17 @@
 .method public openCampaignDetailsScreen(Lcom/iMe/model/catalog/CampaignItem;Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/storage/domain/model/catalog/ChatType;)V
     .locals 3
 
-    .line 37
+    .line 39
     new-instance v0, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OpenCampaignDetailsScreenCommand;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OpenCampaignDetailsScreenCommand;-><init>(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State;Lcom/iMe/model/catalog/CampaignItem;Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/storage/domain/model/catalog/ChatType;)V
 
-    .line 38
+    .line 40
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 40
+    .line 42
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -299,7 +300,7 @@
 
     return-void
 
-    .line 44
+    .line 46
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -320,12 +321,12 @@
 
     check-cast v2, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;
 
-    .line 45
+    .line 47
     invoke-interface {v2, p1, p2, p3}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;->openCampaignDetailsScreen(Lcom/iMe/model/catalog/CampaignItem;Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/storage/domain/model/catalog/ChatType;)V
 
     goto :goto_0
 
-    .line 48
+    .line 50
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -345,17 +346,17 @@
         }
     .end annotation
 
-    .line 21
+    .line 23
     new-instance v0, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$RenderNodesCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$RenderNodesCommand;-><init>(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State;Ljava/util/List;)V
 
-    .line 22
+    .line 24
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 24
+    .line 26
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -368,7 +369,7 @@
 
     return-void
 
-    .line 28
+    .line 30
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -389,12 +390,12 @@
 
     check-cast v2, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;
 
-    .line 29
+    .line 31
     invoke-interface {v2, p1}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;->renderNodes(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 32
+    .line 34
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -406,17 +407,17 @@
 .method public resetLoadMore()V
     .locals 3
 
-    .line 230
+    .line 248
     new-instance v0, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ResetLoadMoreCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ResetLoadMoreCommand;-><init>(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State;)V
 
-    .line 231
+    .line 249
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 233
+    .line 251
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -429,7 +430,7 @@
 
     return-void
 
-    .line 237
+    .line 255
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -450,12 +451,12 @@
 
     check-cast v2, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;
 
-    .line 238
+    .line 256
     invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->resetLoadMore()V
 
     goto :goto_0
 
-    .line 241
+    .line 259
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -464,20 +465,31 @@
     return-void
 .end method
 
-.method public showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
+.method public showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/iMe/storage/domain/model/Result$Error<",
+            "+TT;>;",
+            "Lcom/iMe/storage/domain/utils/system/ResourceManager;",
+            ")V"
+        }
+    .end annotation
 
-    .line 69
-    new-instance v0, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ShowLoadingDialogCommand;
+    .line 87
+    new-instance v0, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ShowErrorToastCommand;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ShowLoadingDialogCommand;-><init>(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State;ZZLio/reactivex/disposables/Disposable;)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ShowErrorToastCommand;-><init>(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State;Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
-    .line 70
+    .line 88
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 72
+    .line 90
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -490,7 +502,7 @@
 
     return-void
 
-    .line 76
+    .line 94
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -511,12 +523,73 @@
 
     check-cast v2, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;
 
-    .line 77
+    .line 95
+    invoke-interface {v2, p1, p2}, Lcom/iMe/ui/base/mvp/base/BaseView;->showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+
+    goto :goto_0
+
+    .line 98
+    :cond_1
+    iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {p1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
+    .locals 3
+
+    .line 71
+    new-instance v0, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ShowLoadingDialogCommand;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ShowLoadingDialogCommand;-><init>(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State;ZZLio/reactivex/disposables/Disposable;)V
+
+    .line 72
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
+
+    .line 74
+    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    .line 78
+    :cond_0
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;
+
+    .line 79
     invoke-interface {v2, p1, p2, p3}, Lcom/iMe/ui/base/mvp/base/BaseView;->showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
 
     goto :goto_0
 
-    .line 80
+    .line 82
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -528,17 +601,17 @@
 .method public showToast(Ljava/lang/String;)V
     .locals 3
 
-    .line 53
+    .line 55
     new-instance v0, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ShowToastCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ShowToastCommand;-><init>(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State;Ljava/lang/String;)V
 
-    .line 54
+    .line 56
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 56
+    .line 58
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -551,7 +624,7 @@
 
     return-void
 
-    .line 60
+    .line 62
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -572,12 +645,12 @@
 
     check-cast v2, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;
 
-    .line 61
+    .line 63
     invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 64
+    .line 66
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

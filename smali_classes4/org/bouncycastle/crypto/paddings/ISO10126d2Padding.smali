@@ -64,16 +64,10 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {}, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->getSecureRandom()Ljava/security/SecureRandom;
+    invoke-static {p1}, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->getSecureRandom(Ljava/security/SecureRandom;)Ljava/security/SecureRandom;
 
     move-result-object p1
 
-    :goto_0
     iput-object p1, p0, Lorg/bouncycastle/crypto/paddings/ISO10126d2Padding;->random:Ljava/security/SecureRandom;
 
     return-void

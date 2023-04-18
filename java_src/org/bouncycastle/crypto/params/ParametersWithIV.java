@@ -5,7 +5,7 @@ import org.bouncycastle.crypto.CipherParameters;
 public class ParametersWithIV implements CipherParameters {
 
     /* renamed from: iv */
-    private byte[] f1309iv;
+    private byte[] f1289iv;
     private CipherParameters parameters;
 
     public ParametersWithIV(CipherParameters cipherParameters, byte[] bArr) {
@@ -14,13 +14,13 @@ public class ParametersWithIV implements CipherParameters {
 
     public ParametersWithIV(CipherParameters cipherParameters, byte[] bArr, int i, int i2) {
         byte[] bArr2 = new byte[i2];
-        this.f1309iv = bArr2;
+        this.f1289iv = bArr2;
         this.parameters = cipherParameters;
         System.arraycopy(bArr, i, bArr2, 0, i2);
     }
 
     public byte[] getIV() {
-        return this.f1309iv;
+        return this.f1289iv;
     }
 
     public CipherParameters getParameters() {

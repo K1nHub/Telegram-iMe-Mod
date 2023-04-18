@@ -221,7 +221,7 @@
 
     iget-object v0, p0, Lorg/bouncycastle/pqc/math/linearalgebra/Permutation;->perm:[I
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->hashCode([I)I
 
     move-result v0
 

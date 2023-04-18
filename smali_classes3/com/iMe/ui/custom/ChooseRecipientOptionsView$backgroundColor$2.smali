@@ -48,7 +48,7 @@
 .method public final invoke()Ljava/lang/Integer;
     .locals 2
 
-    .line 38
+    .line 36
     iget-object v0, p0, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$backgroundColor$2;->this$0:Lcom/iMe/ui/custom/ChooseRecipientOptionsView;
 
     const-string v1, "chats_actionBackground"
@@ -67,7 +67,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 38
+    .line 36
     invoke-virtual {p0}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$backgroundColor$2;->invoke()Ljava/lang/Integer;
 
     move-result-object v0

@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 195
+    .line 214
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "setWalletAddress"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 197
+    .line 216
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$SetWalletAddressCommand;->address:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;)V
     .locals 1
 
-    .line 202
+    .line 221
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$SetWalletAddressCommand;->address:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->setWalletAddress(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 191
+    .line 210
     check-cast p1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$SetWalletAddressCommand;->apply(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;)V

@@ -35,7 +35,7 @@
 .method public final format(I)Ljava/lang/String;
     .locals 0
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$dinuxN4vOFZN-xP17EUTM6jXyWQ(I)Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$UAKChBWV61PUwBidcN2AJW6BM_g(I)Ljava/lang/String;
 
     move-result-object p1
 

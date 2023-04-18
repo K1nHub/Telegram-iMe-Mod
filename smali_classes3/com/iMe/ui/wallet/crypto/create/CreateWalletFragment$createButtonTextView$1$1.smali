@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCreateWalletFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1363:1\n1864#2,3:1364\n1549#2:1367\n1620#2,3:1368\n*S KotlinDebug\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1\n*L\n754#1:1364,3\n776#1:1367\n776#1:1368,3\n*E\n"
+    value = "SMAP\nCreateWalletFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1337:1\n1864#2,3:1338\n1549#2:1341\n1620#2,3:1342\n*S KotlinDebug\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1\n*L\n738#1:1338,3\n760#1:1341\n760#1:1342,3\n*E\n"
 .end annotation
 
 
@@ -67,7 +67,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 729
+    .line 713
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->invoke(Landroid/view/View;)V
@@ -84,7 +84,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 730
+    .line 714
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -95,20 +95,20 @@
 
     return-void
 
-    .line 731
+    .line 715
     :cond_0
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$hideHint(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
 
-    .line 732
+    .line 716
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
     move-result-object p1
 
-    .line 733
+    .line 717
     instance-of v0, p1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
 
     const/4 v1, 0x1
@@ -117,7 +117,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 734
+    .line 718
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
@@ -126,7 +126,7 @@
 
     check-cast p1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
 
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->getAddress()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->getPassword()Ljava/lang/String;
 
     move-result-object p1
 
@@ -134,7 +134,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_1
+    if-lez p1, :cond_1
 
     goto :goto_0
 
@@ -144,16 +144,16 @@
     :goto_0
     if-eqz v1, :cond_2
 
-    .line 735
+    .line 719
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 736
+    .line 720
     sget-object v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->Companion:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$Companion;
 
-    .line 737
+    .line 721
     new-instance v1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;
 
-    .line 738
+    .line 722
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
     move-result-object v2
@@ -164,7 +164,7 @@
 
     move-result-object v2
 
-    .line 739
+    .line 723
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
@@ -177,7 +177,7 @@
 
     move-result-object v3
 
-    .line 740
+    .line 724
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
@@ -190,26 +190,26 @@
 
     move-result-object v4
 
-    .line 737
+    .line 721
     invoke-direct {v1, v2, v3, v4}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 736
+    .line 720
     invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$Companion;->newInstance(Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     move-result-object v0
 
-    .line 742
+    .line 726
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 743
+    .line 727
     invoke-static {v0, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$setFragmentToRemove$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
 
-    .line 735
+    .line 719
     invoke-virtual {p1, v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto/16 :goto_4
 
-    .line 747
+    .line 731
     :cond_2
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -217,13 +217,13 @@
 
     goto/16 :goto_4
 
-    .line 750
+    .line 734
     :cond_3
     instance-of v0, p1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;
 
     if-eqz v0, :cond_8
 
-    .line 751
+    .line 735
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$checkEditTexts(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Z
@@ -234,7 +234,7 @@
 
     return-void
 
-    .line 754
+    .line 738
     :cond_4
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -275,7 +275,7 @@
 
     move-result v3
 
-    .line 755
+    .line 739
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
     move-result-object v5
@@ -314,48 +314,48 @@
 
     if-nez v1, :cond_6
 
-    .line 757
+    .line 741
     new-instance p1, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 758
+    .line 742
     sget v1, Lorg/telegram/messenger/R$string;->wallet_backup_test_time_alert_title:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 759
+    .line 743
     sget v3, Lorg/telegram/messenger/R$string;->wallet_backup_test_time_alert_text:I
 
     invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 760
+    .line 744
     sget v4, Lorg/telegram/messenger/R$string;->wallet_backup_test_time_alert_button_see:I
 
     invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 761
+    .line 745
     sget v5, Lorg/telegram/messenger/R$string;->wallet_backup_test_time_alert_button_try:I
 
     invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 757
+    .line 741
     invoke-direct {p1, v1, v3, v4, v5}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1$$ExternalSyntheticLambda1;->INSTANCE:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1$$ExternalSyntheticLambda1;
 
-    .line 764
+    .line 748
     new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1$$ExternalSyntheticLambda0;
 
     invoke-direct {v3, v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
 
-    .line 756
+    .line 740
     invoke-virtual {v0, p1, v1, v3, v2}, Lcom/iMe/ui/base/mvp/MvpFragment;->showAlertDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;Z)V
 
     return-void
@@ -365,7 +365,7 @@
 
     goto :goto_1
 
-    .line 770
+    .line 754
     :cond_7
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -377,13 +377,13 @@
 
     goto :goto_4
 
-    .line 772
+    .line 756
     :cond_8
     instance-of v0, p1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;
 
     if-eqz v0, :cond_b
 
-    .line 773
+    .line 757
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$checkEditTexts(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Z
@@ -394,7 +394,7 @@
 
     return-void
 
-    .line 776
+    .line 760
     :cond_9
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -438,7 +438,7 @@
     .line 1621
     check-cast v2, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
-    .line 776
+    .line 760
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -452,7 +452,7 @@
 
     goto :goto_2
 
-    .line 776
+    .line 760
     :cond_a
     invoke-static {v1}, Lcom/iMe/storage/data/utils/extentions/StringExtKt;->joinBySpace(Ljava/util/List;)Ljava/lang/String;
 
@@ -462,7 +462,7 @@
 
     goto :goto_4
 
-    .line 778
+    .line 762
     :cond_b
     instance-of v0, p1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Ready;
 
@@ -470,7 +470,7 @@
 
     goto :goto_3
 
-    .line 779
+    .line 763
     :cond_c
     instance-of v1, p1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$TooBad;
 

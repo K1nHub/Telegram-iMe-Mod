@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.mlkit.common.sdkinternal.MlKitContext;
-import com.google.mlkit.p023nl.languageid.LanguageIdentification;
+import com.google.mlkit.p022nl.languageid.LanguageIdentification;
 import org.telegram.messenger.LanguageDetector;
 /* loaded from: classes4.dex */
 public class LanguageDetector {

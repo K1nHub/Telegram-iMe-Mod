@@ -1225,10 +1225,6 @@
     long-to-int v0, v0
 
     .line 17
-    sget-boolean v1, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
-
-    if-nez v1, :cond_0
-
     sget v1, Lorg/telegram/messenger/SharedConfig;->lastKeepMediaCheckTime:I
 
     sub-int v1, v0, v1

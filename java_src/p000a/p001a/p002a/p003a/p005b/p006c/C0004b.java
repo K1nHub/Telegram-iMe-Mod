@@ -21,16 +21,16 @@ public final class C0004b implements View$OnClickListenerC0005a.InterfaceC0006a 
 
     @Override // p000a.p001a.p002a.p003a.p005b.p007d.View$OnClickListenerC0005a.InterfaceC0006a
     /* renamed from: a */
-    public void mo859a(View view) {
+    public void mo844a(View view) {
         Intrinsics.checkParameterIsNotNull(view, "view");
         this.f9b.dismiss();
-        this.f8a.m850a();
+        this.f8a.m835a();
         this.f8a.finish();
     }
 
     @Override // p000a.p001a.p002a.p003a.p005b.p007d.View$OnClickListenerC0005a.InterfaceC0006a
     /* renamed from: b */
-    public void mo858b(View view) {
+    public void mo843b(View view) {
         Intrinsics.checkParameterIsNotNull(view, "view");
         this.f9b.dismiss();
         this.f8a.finish();

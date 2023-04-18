@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import p035j$.util.DesugarCollections;
+import p034j$.util.DesugarCollections;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
 public final class RtspMessageChannel implements Closeable {

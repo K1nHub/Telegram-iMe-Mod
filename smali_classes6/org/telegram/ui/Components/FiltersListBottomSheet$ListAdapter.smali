@@ -24,12 +24,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/FiltersListBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 381
+    .line 383
     iput-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 382
+    .line 384
     iput-object p2, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$ListAdapter;->context:Landroid/content/Context;
 
     return-void
@@ -40,7 +40,7 @@
 .method public getItem(I)Lorg/telegram/messenger/MessagesController$DialogFilter;
     .locals 1
 
-    .line 386
+    .line 388
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2700(Lorg/telegram/ui/Components/FiltersListBottomSheet;)Ljava/util/ArrayList;
@@ -53,7 +53,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 387
+    .line 389
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2700(Lorg/telegram/ui/Components/FiltersListBottomSheet;)Ljava/util/ArrayList;
@@ -77,7 +77,7 @@
 .method public getItemCount()I
     .locals 3
 
-    .line 394
+    .line 396
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2700(Lorg/telegram/ui/Components/FiltersListBottomSheet;)Ljava/util/ArrayList;
@@ -88,7 +88,7 @@
 
     move-result v0
 
-    .line 401
+    .line 403
     iget-object v1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2800(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
@@ -144,12 +144,12 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 4
 
-    .line 428
+    .line 430
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;
 
-    .line 429
+    .line 431
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2700(Lorg/telegram/ui/Components/FiltersListBottomSheet;)Ljava/util/ArrayList;
@@ -162,7 +162,7 @@
 
     if-ge p2, v0, :cond_6
 
-    .line 430
+    .line 432
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->getImageView()Landroid/widget/ImageView;
 
     move-result-object v0
@@ -181,7 +181,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 431
+    .line 433
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2700(Lorg/telegram/ui/Components/FiltersListBottomSheet;)Ljava/util/ArrayList;
@@ -196,14 +196,14 @@
 
     const-string v0, "dialogTextBlack"
 
-    .line 432
+    .line 434
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->setTextColor(I)V
 
-    .line 434
+    .line 436
     iget v0, p2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ALL_CHATS:I
@@ -218,12 +218,12 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 435
+    .line 437
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_openprofile:I
 
     goto :goto_0
 
-    .line 436
+    .line 438
     :cond_0
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_READ:I
 
@@ -237,12 +237,12 @@
 
     if-ne v2, v1, :cond_1
 
-    .line 437
+    .line 439
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_markunread:I
 
     goto :goto_0
 
-    .line 438
+    .line 440
     :cond_1
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ALL_CHATS:I
 
@@ -252,12 +252,12 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 439
+    .line 441
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_channel:I
 
     goto :goto_0
 
-    .line 440
+    .line 442
     :cond_2
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ALL_CHATS:I
 
@@ -267,12 +267,12 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 441
+    .line 443
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_groups:I
 
     goto :goto_0
 
-    .line 442
+    .line 444
     :cond_3
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ALL_CHATS:I
 
@@ -282,12 +282,12 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 443
+    .line 445
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_contacts:I
 
     goto :goto_0
 
-    .line 444
+    .line 446
     :cond_4
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ALL_CHATS:I
 
@@ -297,16 +297,16 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 445
+    .line 447
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_bots:I
 
     goto :goto_0
 
-    .line 447
+    .line 449
     :cond_5
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_folders:I
 
-    .line 449
+    .line 451
     :goto_0
     iget-object p2, p2, Lorg/telegram/messenger/MessagesController$DialogFilter;->name:Ljava/lang/String;
 
@@ -314,7 +314,7 @@
 
     goto :goto_1
 
-    .line 451
+    .line 453
     :cond_6
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->getImageView()Landroid/widget/ImageView;
 
@@ -324,7 +324,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 452
+    .line 454
     iget-object p2, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$ListAdapter;->context:Landroid/content/Context;
 
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -337,7 +337,7 @@
 
     move-result-object p2
 
-    .line 453
+    .line 455
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$ListAdapter;->context:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -350,7 +350,7 @@
 
     move-result-object v0
 
-    .line 454
+    .line 456
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     const-string v2, "switchTrackChecked"
@@ -365,7 +365,7 @@
 
     invoke-virtual {p2, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 455
+    .line 457
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     const-string v2, "checkboxCheck"
@@ -380,21 +380,21 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 456
+    .line 458
     new-instance v1, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-direct {v1, p2, v0}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     const-string p2, "windowBackgroundWhiteBlueText4"
 
-    .line 457
+    .line 459
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->setTextColor(I)V
 
-    .line 458
+    .line 460
     sget p2, Lorg/telegram/messenger/R$string;->CreateNewFilter:I
 
     const-string v0, "CreateNewFilter"
@@ -412,7 +412,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    .line 420
+    .line 422
     new-instance p1, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$ListAdapter;->context:Landroid/content/Context;
@@ -423,10 +423,10 @@
 
     const/4 p2, 0x0
 
-    .line 421
+    .line 423
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 422
+    .line 424
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x1
@@ -437,7 +437,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 423
+    .line 425
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

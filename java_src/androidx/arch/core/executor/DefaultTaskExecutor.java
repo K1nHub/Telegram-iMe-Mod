@@ -18,7 +18,7 @@ public class DefaultTaskExecutor extends TaskExecutor {
         @Override // java.util.concurrent.ThreadFactory
         public Thread newThread(Runnable runnable) {
             Thread thread = new Thread(runnable);
-            thread.setName(String.format("arch_disk_io_%d", Integer.valueOf(this.mThreadId.getAndIncrement())));
+            thread.setName("arch_disk_io_" + this.mThreadId.getAndIncrement());
             return thread;
         }
     });
@@ -48,9 +48,9 @@ public class DefaultTaskExecutor extends TaskExecutor {
     private static Handler createAsync(Looper looper) {
         int i = Build.VERSION.SDK_INT;
         if (i >= 28) {
-            return Handler.createAsync(looper);
+            return Api28Impl.createAsync(looper);
         }
-        if (i >= 16) {
+        if (i >= 17) {
             try {
                 return (Handler) Handler.class.getDeclaredConstructor(Looper.class, Handler.Callback.class, Boolean.TYPE).newInstance(looper, null, Boolean.TRUE);
             } catch (IllegalAccessException | InstantiationException | NoSuchMethodException unused) {
@@ -59,5 +59,13 @@ public class DefaultTaskExecutor extends TaskExecutor {
             }
         }
         return new Handler(looper);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes.dex */
+    public static class Api28Impl {
+        public static Handler createAsync(Looper looper) {
+            return Handler.createAsync(looper);
+        }
     }
 }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FiltersListBottomSheet;)V
     .locals 0
 
-    .line 218
+    .line 220
     iput-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$3;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 221
+    .line 223
     iget-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$3;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$800(Lorg/telegram/ui/Components/FiltersListBottomSheet;)V

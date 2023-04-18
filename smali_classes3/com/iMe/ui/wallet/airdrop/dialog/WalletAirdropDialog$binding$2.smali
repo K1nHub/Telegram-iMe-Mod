@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 50
+    .line 49
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$binding$2;->invoke()Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;
     .locals 2
 
-    .line 50
+    .line 49
     iget-object v0, p0, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$binding$2;->this$0:Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;

@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/contacts/ContactsView$$State;)V
     .locals 1
 
-    .line 156
+    .line 174
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "closeActionMode"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/contacts/ContactsView;)V
     .locals 0
 
-    .line 161
+    .line 179
     invoke-interface {p1}, Lcom/iMe/ui/contacts/ContactsView;->closeActionMode()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 154
+    .line 172
     check-cast p1, Lcom/iMe/ui/contacts/ContactsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/contacts/ContactsView$$State$CloseActionModeCommand;->apply(Lcom/iMe/ui/contacts/ContactsView;)V

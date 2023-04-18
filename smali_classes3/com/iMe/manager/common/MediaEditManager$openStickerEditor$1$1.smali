@@ -64,28 +64,34 @@
     .line 303
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    if-nez p5, :cond_0
+    if-nez v0, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    if-nez p5, :cond_1
 
     const/4 p5, 0x1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     const/4 p5, 0x0
 
     :goto_0
     iput-boolean p5, v0, Lorg/telegram/messenger/VideoEditedInfo;->muted:Z
 
     .line 304
+    :goto_1
     invoke-static {p1}, Lcom/iMe/manager/common/MediaEditManager;->access$getDelegate$p(Lcom/iMe/manager/common/MediaEditManager;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
 
     move-result-object p1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     invoke-interface {p1, p0, p2, p3, p4}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->sendEditedSticker(Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;ZILjava/lang/String;)V
 
-    :cond_1
+    :cond_2
     return-void
 .end method
 

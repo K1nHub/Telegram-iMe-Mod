@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DilogCacheBottomSheet;)V
     .locals 0
 
-    .line 51
+    .line 66
     iput-object p1, p0, Lorg/telegram/ui/DilogCacheBottomSheet$1;->this$0:Lorg/telegram/ui/DilogCacheBottomSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 96
+    .line 111
     iget-object v0, p0, Lorg/telegram/ui/DilogCacheBottomSheet$1;->this$0:Lorg/telegram/ui/DilogCacheBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/DilogCacheBottomSheet;->access$200(Lorg/telegram/ui/DilogCacheBottomSheet;)Lorg/telegram/ui/Storage/CacheModel;
@@ -84,7 +84,7 @@
 
     if-nez p2, :cond_0
 
-    .line 63
+    .line 78
     iget-object p1, p0, Lorg/telegram/ui/DilogCacheBottomSheet$1;->this$0:Lorg/telegram/ui/DilogCacheBottomSheet;
 
     iget-object p1, p1, Lorg/telegram/ui/DilogCacheBottomSheet;->linearLayout:Landroid/widget/LinearLayout;
@@ -96,12 +96,12 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 65
+    .line 80
     iget-object p1, p0, Lorg/telegram/ui/DilogCacheBottomSheet$1;->this$0:Lorg/telegram/ui/DilogCacheBottomSheet;
 
     iget-object p1, p1, Lorg/telegram/ui/DilogCacheBottomSheet;->cachedMediaLayout:Lorg/telegram/ui/CachedMediaLayout;
 
-    .line 66
+    .line 81
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x1
@@ -110,7 +110,7 @@
 
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
-    .line 67
+    .line 82
     iget-object v0, p0, Lorg/telegram/ui/DilogCacheBottomSheet$1;->this$0:Lorg/telegram/ui/DilogCacheBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/DilogCacheBottomSheet;->access$000(Lorg/telegram/ui/DilogCacheBottomSheet;)I
@@ -119,7 +119,7 @@
 
     iput v0, p2, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 68
+    .line 83
     iget-object v0, p0, Lorg/telegram/ui/DilogCacheBottomSheet$1;->this$0:Lorg/telegram/ui/DilogCacheBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/DilogCacheBottomSheet;->access$100(Lorg/telegram/ui/DilogCacheBottomSheet;)I
@@ -128,12 +128,12 @@
 
     iput v0, p2, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 69
+    .line 84
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_0
 
-    .line 71
+    .line 86
     :cond_1
     new-instance p2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -145,24 +145,24 @@
 
     const/16 v0, 0xc
 
-    .line 72
+    .line 87
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 73
+    .line 88
     new-instance v0, Lorg/telegram/ui/Components/CombinedDrawable;
 
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
     const-string v2, "windowBackgroundGray"
 
-    .line 74
+    .line 89
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v2
 
     invoke-direct {v1, v2}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    .line 75
+    .line 90
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -179,15 +179,15 @@
 
     const/4 p1, 0x1
 
-    .line 77
+    .line 92
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
 
-    .line 78
+    .line 93
     invoke-virtual {p2, v0}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     move-object p1, p2
 
-    .line 81
+    .line 96
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

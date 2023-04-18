@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Pair;
 import android.util.Xml;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.drm.DrmInitData;
@@ -48,10 +48,10 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
     private static final int[] MPEG_CHANNEL_CONFIGURATION_MAPPING = {-1, 1, 2, 3, 4, 5, 6, 8, 2, 3, 4, 7, 8, 24, 8, 12, 10, 12, 14, 12, 14};
 
     private static long getFinalAvailabilityTimeOffset(long j, long j2) {
-        if (j2 != C0482C.TIME_UNSET) {
+        if (j2 != C0470C.TIME_UNSET) {
             j = j2;
         }
-        return j == Long.MAX_VALUE ? C0482C.TIME_UNSET : j;
+        return j == Long.MAX_VALUE ? C0470C.TIME_UNSET : j;
     }
 
     public DashManifestParser() {
@@ -114,9 +114,9 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
         while (true) {
             xmlPullParser.next();
             if (XmlPullParserUtil.isStartTag(xmlPullParser, "Latency")) {
-                j = parseLong(xmlPullParser, "target", C0482C.TIME_UNSET);
-                j2 = parseLong(xmlPullParser, "min", C0482C.TIME_UNSET);
-                j3 = parseLong(xmlPullParser, "max", C0482C.TIME_UNSET);
+                j = parseLong(xmlPullParser, "target", C0470C.TIME_UNSET);
+                j2 = parseLong(xmlPullParser, "min", C0470C.TIME_UNSET);
+                j3 = parseLong(xmlPullParser, "max", C0470C.TIME_UNSET);
             } else if (XmlPullParserUtil.isStartTag(xmlPullParser, "PlaybackRate")) {
                 f = parseFloat(xmlPullParser, "min", -3.4028235E38f);
                 f2 = parseFloat(xmlPullParser, "max", -3.4028235E38f);
@@ -150,9 +150,9 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
         Object obj2 = null;
         String attributeValue = xmlPullParser2.getAttributeValue(null, TtmlNode.ATTR_ID);
         long parseDuration = parseDuration(xmlPullParser2, TtmlNode.START, j);
-        long j7 = C0482C.TIME_UNSET;
-        long j8 = j3 != C0482C.TIME_UNSET ? j3 + parseDuration : -9223372036854775807L;
-        long parseDuration2 = parseDuration(xmlPullParser2, "duration", C0482C.TIME_UNSET);
+        long j7 = C0470C.TIME_UNSET;
+        long j8 = j3 != C0470C.TIME_UNSET ? j3 + parseDuration : -9223372036854775807L;
+        long parseDuration2 = parseDuration(xmlPullParser2, "duration", C0470C.TIME_UNSET);
         ArrayList arrayList4 = new ArrayList();
         ArrayList arrayList5 = new ArrayList();
         ArrayList arrayList6 = new ArrayList();
@@ -196,26 +196,26 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
                         singleSegmentBase = parseSegmentBase(xmlPullParser2, null);
                         obj = null;
                         j9 = j5;
-                        j6 = C0482C.TIME_UNSET;
+                        j6 = C0470C.TIME_UNSET;
                     } else {
                         arrayList3 = arrayList7;
                         if (XmlPullParserUtil.isStartTag(xmlPullParser2, "SegmentList")) {
-                            long parseAvailabilityTimeOffsetUs = parseAvailabilityTimeOffsetUs(xmlPullParser2, C0482C.TIME_UNSET);
+                            long parseAvailabilityTimeOffsetUs = parseAvailabilityTimeOffsetUs(xmlPullParser2, C0470C.TIME_UNSET);
                             obj = null;
                             parseSegmentTemplate = parseSegmentList(xmlPullParser, null, j8, parseDuration2, j5, parseAvailabilityTimeOffsetUs, j4);
                             j10 = parseAvailabilityTimeOffsetUs;
                             j9 = j5;
-                            j6 = C0482C.TIME_UNSET;
+                            j6 = C0470C.TIME_UNSET;
                         } else {
                             obj = null;
                             if (XmlPullParserUtil.isStartTag(xmlPullParser2, "SegmentTemplate")) {
-                                long parseAvailabilityTimeOffsetUs2 = parseAvailabilityTimeOffsetUs(xmlPullParser2, C0482C.TIME_UNSET);
+                                long parseAvailabilityTimeOffsetUs2 = parseAvailabilityTimeOffsetUs(xmlPullParser2, C0470C.TIME_UNSET);
                                 j6 = -9223372036854775807L;
-                                parseSegmentTemplate = parseSegmentTemplate(xmlPullParser, null, ImmutableList.m754of(), j8, parseDuration2, j5, parseAvailabilityTimeOffsetUs2, j4);
+                                parseSegmentTemplate = parseSegmentTemplate(xmlPullParser, null, ImmutableList.m740of(), j8, parseDuration2, j5, parseAvailabilityTimeOffsetUs2, j4);
                                 j10 = parseAvailabilityTimeOffsetUs2;
                                 j9 = j5;
                             } else {
-                                j6 = C0482C.TIME_UNSET;
+                                j6 = C0470C.TIME_UNSET;
                                 if (XmlPullParserUtil.isStartTag(xmlPullParser2, "AssetIdentifier")) {
                                     descriptor = parseDescriptor(xmlPullParser2, "AssetIdentifier");
                                 } else {
@@ -228,7 +228,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
                     }
                 }
                 obj = null;
-                j6 = C0482C.TIME_UNSET;
+                j6 = C0470C.TIME_UNSET;
                 j9 = j5;
             }
             if (XmlPullParserUtil.isEndTag(xmlPullParser2, "Period")) {
@@ -404,7 +404,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
     protected SegmentBase.SegmentList parseSegmentList(XmlPullParser xmlPullParser, SegmentBase.SegmentList segmentList, long j, long j2, long j3, long j4, long j5) throws XmlPullParserException, IOException {
         long parseLong = parseLong(xmlPullParser, "timescale", segmentList != null ? segmentList.timescale : 1L);
         long parseLong2 = parseLong(xmlPullParser, "presentationTimeOffset", segmentList != null ? segmentList.presentationTimeOffset : 0L);
-        long parseLong3 = parseLong(xmlPullParser, "duration", segmentList != null ? segmentList.duration : C0482C.TIME_UNSET);
+        long parseLong3 = parseLong(xmlPullParser, "duration", segmentList != null ? segmentList.duration : C0470C.TIME_UNSET);
         long parseLong4 = parseLong(xmlPullParser, "startNumber", segmentList != null ? segmentList.startNumber : 1L);
         long finalAvailabilityTimeOffset = getFinalAvailabilityTimeOffset(j3, j4);
         List<SegmentBase.SegmentTimelineElement> list = null;
@@ -446,7 +446,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
     protected SegmentBase.SegmentTemplate parseSegmentTemplate(XmlPullParser xmlPullParser, SegmentBase.SegmentTemplate segmentTemplate, List<Descriptor> list, long j, long j2, long j3, long j4, long j5) throws XmlPullParserException, IOException {
         long parseLong = parseLong(xmlPullParser, "timescale", segmentTemplate != null ? segmentTemplate.timescale : 1L);
         long parseLong2 = parseLong(xmlPullParser, "presentationTimeOffset", segmentTemplate != null ? segmentTemplate.presentationTimeOffset : 0L);
-        long parseLong3 = parseLong(xmlPullParser, "duration", segmentTemplate != null ? segmentTemplate.duration : C0482C.TIME_UNSET);
+        long parseLong3 = parseLong(xmlPullParser, "duration", segmentTemplate != null ? segmentTemplate.duration : C0470C.TIME_UNSET);
         long parseLong4 = parseLong(xmlPullParser, "startNumber", segmentTemplate != null ? segmentTemplate.startNumber : 1L);
         long parseLastSegmentNumberSupplementalProperty = parseLastSegmentNumberSupplementalProperty(list);
         long finalAvailabilityTimeOffset = getFinalAvailabilityTimeOffset(j3, j4);
@@ -529,7 +529,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
 
     protected Pair<Long, EventMessage> parseEvent(XmlPullParser xmlPullParser, String str, String str2, long j, long j2, ByteArrayOutputStream byteArrayOutputStream) throws IOException, XmlPullParserException {
         long parseLong = parseLong(xmlPullParser, TtmlNode.ATTR_ID, 0L);
-        long parseLong2 = parseLong(xmlPullParser, "duration", C0482C.TIME_UNSET);
+        long parseLong2 = parseLong(xmlPullParser, "duration", C0470C.TIME_UNSET);
         long parseLong3 = parseLong(xmlPullParser, "presentationTime", 0L);
         long scaleLargeTimestamp = Util.scaleLargeTimestamp(parseLong2, 1000L, j);
         long scaleLargeTimestamp2 = Util.scaleLargeTimestamp(parseLong3 - j2, 1000000L, j);
@@ -605,14 +605,14 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
         do {
             xmlPullParser.next();
             if (XmlPullParserUtil.isStartTag(xmlPullParser, "S")) {
-                long parseLong = parseLong(xmlPullParser, "t", C0482C.TIME_UNSET);
+                long parseLong = parseLong(xmlPullParser, "t", C0470C.TIME_UNSET);
                 if (z) {
                     j3 = addSegmentTimelineElementsToList(arrayList, j3, j4, i, parseLong);
                 }
-                if (parseLong == C0482C.TIME_UNSET) {
+                if (parseLong == C0470C.TIME_UNSET) {
                     parseLong = j3;
                 }
-                j4 = parseLong(xmlPullParser, "d", C0482C.TIME_UNSET);
+                j4 = parseLong(xmlPullParser, "d", C0470C.TIME_UNSET);
                 i = parseInt(xmlPullParser, "r", 0);
                 z = true;
                 j3 = parseLong;
@@ -1120,7 +1120,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
                 break;
             }
             DrmInitData.SchemeData schemeData = arrayList.get(i);
-            if (C0482C.CLEARKEY_UUID.equals(schemeData.uuid) && (str = schemeData.licenseServerUrl) != null) {
+            if (C0470C.CLEARKEY_UUID.equals(schemeData.uuid) && (str = schemeData.licenseServerUrl) != null) {
                 arrayList.remove(i);
                 break;
             }
@@ -1131,8 +1131,8 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
         }
         for (int i2 = 0; i2 < arrayList.size(); i2++) {
             DrmInitData.SchemeData schemeData2 = arrayList.get(i2);
-            if (C0482C.COMMON_PSSH_UUID.equals(schemeData2.uuid) && schemeData2.licenseServerUrl == null) {
-                arrayList.set(i2, new DrmInitData.SchemeData(C0482C.CLEARKEY_UUID, str, schemeData2.mimeType, schemeData2.data));
+            if (C0470C.COMMON_PSSH_UUID.equals(schemeData2.uuid) && schemeData2.licenseServerUrl == null) {
+                arrayList.set(i2, new DrmInitData.SchemeData(C0470C.CLEARKEY_UUID, str, schemeData2.mimeType, schemeData2.data));
             }
         }
     }
@@ -1195,7 +1195,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
                 if (matcher.matches()) {
                     return Integer.parseInt(matcher.group(1));
                 }
-                Log.m806w(TAG, "Unable to parse CEA-608 channel number from: " + descriptor.value);
+                Log.m792w(TAG, "Unable to parse CEA-608 channel number from: " + descriptor.value);
             }
         }
         return -1;
@@ -1210,7 +1210,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
                 if (matcher.matches()) {
                     return Integer.parseInt(matcher.group(1));
                 }
-                Log.m806w(TAG, "Unable to parse CEA-708 service block number from: " + descriptor.value);
+                Log.m792w(TAG, "Unable to parse CEA-708 service block number from: " + descriptor.value);
             }
         }
         return -1;

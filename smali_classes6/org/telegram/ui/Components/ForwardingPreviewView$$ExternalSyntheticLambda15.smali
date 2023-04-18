@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->$r8$lambda$0IMJUPqIIHBa72oCdqtig_Vc67Y(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ForwardingPreviewView;->$r8$lambda$jkJV6d-zVqYUK03W6mUcy5T2X2c(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

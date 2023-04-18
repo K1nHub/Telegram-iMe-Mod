@@ -35,10 +35,10 @@ public final class ModuleKt {
                 throw new IllegalStateException("Flatten - No head element in list".toString());
             }
             modules = modules.subList(1, modules.size());
-            if (module.getIncludedModules$koin_core().isEmpty()) {
+            if (module.getIncludedModules().isEmpty()) {
                 newModules = SetsKt___SetsKt.plus(newModules, module);
             } else {
-                modules = CollectionsKt___CollectionsKt.plus((Collection) module.getIncludedModules$koin_core(), (Iterable) modules);
+                modules = CollectionsKt___CollectionsKt.plus((Collection) module.getIncludedModules(), (Iterable) modules);
                 newModules = SetsKt___SetsKt.plus(newModules, module);
             }
         }

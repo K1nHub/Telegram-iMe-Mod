@@ -48,11 +48,9 @@ public final class CryptoWalletsManagerImpl implements CryptoWalletsManager {
     }
 
     @Override // com.iMe.storage.domain.manager.crypto.CryptoWalletsManager
-    public Observable<Result<Wallet>> createWallet(String guid, String password, BlockchainType blockchainType) {
-        Intrinsics.checkNotNullParameter(guid, "guid");
-        Intrinsics.checkNotNullParameter(password, "password");
+    public Observable<Result<Wallet>> createWallet(BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        return getWalletManager(blockchainType).createWallet(guid, password);
+        return getWalletManager(blockchainType).createWallet();
     }
 
     @Override // com.iMe.storage.domain.manager.crypto.CryptoWalletsManager
@@ -86,14 +84,6 @@ public final class CryptoWalletsManagerImpl implements CryptoWalletsManager {
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         return getWalletManager(blockchainType).generateAddressByMnemonic(mnemonic);
-    }
-
-    @Override // com.iMe.storage.domain.manager.crypto.CryptoWalletsManager
-    public Observable<Result<String>> generateMnemonic(String guid, String password, BlockchainType blockchainType) {
-        Intrinsics.checkNotNullParameter(guid, "guid");
-        Intrinsics.checkNotNullParameter(password, "password");
-        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        return getWalletManager(blockchainType).generateMnemonic(guid, password);
     }
 
     @Override // com.iMe.storage.domain.manager.crypto.CryptoWalletsManager

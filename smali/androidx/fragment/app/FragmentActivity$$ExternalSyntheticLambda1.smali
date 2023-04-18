@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
+.implements Landroidx/core/util/Consumer;
 
 
 # instance fields
@@ -22,14 +22,14 @@
 
 
 # virtual methods
-.method public final saveState()Landroid/os/Bundle;
+.method public final accept(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Landroidx/fragment/app/FragmentActivity$$ExternalSyntheticLambda1;->f$0:Landroidx/fragment/app/FragmentActivity;
 
-    invoke-static {v0}, Landroidx/fragment/app/FragmentActivity;->$r8$lambda$t3WwJ1XbNlapyNW0l552nMkkXdo(Landroidx/fragment/app/FragmentActivity;)Landroid/os/Bundle;
+    check-cast p1, Landroid/content/Intent;
 
-    move-result-object v0
+    invoke-static {v0, p1}, Landroidx/fragment/app/FragmentActivity;->$r8$lambda$SP1hanWdTqO_BoGCQWOxhjR39jQ(Landroidx/fragment/app/FragmentActivity;Landroid/content/Intent;)V
 
-    return-object v0
+    return-void
 .end method

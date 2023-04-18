@@ -12,7 +12,7 @@ public abstract class EventLoop extends CoroutineDispatcher {
         return z ? 4294967296L : 1L;
     }
 
-    protected void shutdown() {
+    public void shutdown() {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -46,10 +46,10 @@ public abstract class EventLoop extends CoroutineDispatcher {
 
     public final boolean isUnconfinedQueueEmpty() {
         ArrayQueue<DispatchedTask<?>> arrayQueue = this.unconfinedQueue;
-        if (arrayQueue == null) {
-            return true;
+        if (arrayQueue != null) {
+            return arrayQueue.isEmpty();
         }
-        return arrayQueue.isEmpty();
+        return true;
     }
 
     public static /* synthetic */ void incrementUseCount$default(EventLoop eventLoop, boolean z, int i, Object obj) {

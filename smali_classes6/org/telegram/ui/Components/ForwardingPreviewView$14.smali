@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Components/ForwardingPreviewView$14;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "ForwardingPreviewView.java"
-
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ForwardingPreviewView;-><init>(Landroid/content/Context;Lorg/telegram/messenger/ForwardingMessagesParams;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;ILorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;)V
+    value = Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,29 +22,42 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
     .locals 0
 
-    .line 979
+    .line 1041
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$14;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    .line 982
+    .line 1044
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$14;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getAlpha()F
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
-    move-result v0
+    move-result-object p1
 
-    const/4 v1, 0x1
+    if-eqz p1, :cond_0
 
-    invoke-virtual {p1, v1, v0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->onTransitionAnimationProgress(ZF)V
+    .line 1045
+    iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$14;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/ViewGroup;
+
+    .line 1046
+    iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$14;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
+
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    :cond_0
     return-void
 .end method

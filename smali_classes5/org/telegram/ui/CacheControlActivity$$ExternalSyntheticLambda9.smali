@@ -6,16 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/CacheControlActivity;
+.field public final synthetic f$0:Lorg/telegram/messenger/Utilities$Callback;
+
+.field public final synthetic f$1:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/CacheControlActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/Utilities$Callback;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/CacheControlActivity;
+    iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/messenger/Utilities$Callback;
+
+    iput-wide p2, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda9;->f$1:J
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/CacheControlActivity;
+    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/messenger/Utilities$Callback;
 
-    invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$hifz9AxYrlDIPUyUAyOYFEAF-Hs(Lorg/telegram/ui/CacheControlActivity;)V
+    iget-wide v1, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda9;->f$1:J
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$Pq0qh-4k6_-BEKsB_zjGEgtZhz4(Lorg/telegram/messenger/Utilities$Callback;J)V
 
     return-void
 .end method

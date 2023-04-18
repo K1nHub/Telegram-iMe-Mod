@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/twitter/auth/TwitterAuthView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 115
+    .line 133
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showToast"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 117
+    .line 135
     iput-object p2, p0, Lcom/iMe/ui/twitter/auth/TwitterAuthView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/twitter/auth/TwitterAuthView;)V
     .locals 1
 
-    .line 122
+    .line 140
     iget-object v0, p0, Lcom/iMe/ui/twitter/auth/TwitterAuthView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 111
+    .line 129
     check-cast p1, Lcom/iMe/ui/twitter/auth/TwitterAuthView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/twitter/auth/TwitterAuthView$$State$ShowToastCommand;->apply(Lcom/iMe/ui/twitter/auth/TwitterAuthView;)V

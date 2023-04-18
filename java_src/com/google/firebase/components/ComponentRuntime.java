@@ -51,8 +51,8 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
         EventBus eventBus = new EventBus(executor);
         this.eventBus = eventBus;
         ArrayList arrayList = new ArrayList();
-        arrayList.add(Component.m740of(eventBus, EventBus.class, Subscriber.class, Publisher.class));
-        arrayList.add(Component.m740of(this, ComponentLoader.class, new Class[0]));
+        arrayList.add(Component.m726of(eventBus, EventBus.class, Subscriber.class, Publisher.class));
+        arrayList.add(Component.m726of(this, ComponentLoader.class, new Class[0]));
         for (Component<?> component : collection) {
             if (component != null) {
                 arrayList.add(component);
@@ -211,7 +211,7 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
         if (provider instanceof OptionalProvider) {
             return (OptionalProvider) provider;
         }
-        return OptionalProvider.m739of(provider);
+        return OptionalProvider.m725of(provider);
     }
 
     @Override // com.google.firebase.components.ComponentContainer

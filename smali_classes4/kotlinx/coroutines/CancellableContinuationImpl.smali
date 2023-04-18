@@ -22,7 +22,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCancellableContinuationImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CancellableContinuationImpl.kt\nkotlinx/coroutines/CancellableContinuationImpl\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 AtomicFU.common.kt\nkotlinx/atomicfu/AtomicFU_commonKt\n+ 4 CompletionHandler.kt\nkotlinx/coroutines/CompletionHandlerKt\n+ 5 StackTraceRecovery.kt\nkotlinx/coroutines/internal/StackTraceRecoveryKt\n*L\n1#1,594:1\n197#1,2:600\n199#1,8:603\n197#1,10:611\n1#2:595\n155#3,2:596\n155#3,2:598\n351#3,2:621\n351#3,2:623\n155#3,2:630\n155#3,2:632\n155#3,2:634\n22#4:602\n13#4:629\n57#5,2:625\n57#5,2:627\n57#5,2:636\n*S KotlinDebug\n*F\n+ 1 CancellableContinuationImpl.kt\nkotlinx/coroutines/CancellableContinuationImpl\n*L\n213#1:600,2\n213#1:603,8\n216#1:611,10\n141#1:596,2\n175#1:598,2\n237#1:621,2\n247#1:623,2\n336#1:630,2\n426#1:632,2\n461#1:634,2\n213#1:602\n311#1:629\n290#1:625,2\n300#1:627,2\n537#1:636,2\n*E\n"
+    value = "SMAP\nCancellableContinuationImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CancellableContinuationImpl.kt\nkotlinx/coroutines/CancellableContinuationImpl\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 AtomicFU.common.kt\nkotlinx/atomicfu/AtomicFU_commonKt\n+ 4 CompletionHandler.kt\nkotlinx/coroutines/CompletionHandlerKt\n+ 5 StackTraceRecovery.kt\nkotlinx/coroutines/internal/StackTraceRecoveryKt\n*L\n1#1,593:1\n196#1,2:599\n198#1,8:602\n196#1,10:610\n1#2:594\n155#3,2:595\n155#3,2:597\n351#3,2:620\n351#3,2:622\n155#3,2:629\n155#3,2:631\n155#3,2:633\n22#4:601\n13#4:628\n57#5,2:624\n57#5,2:626\n57#5,2:635\n*S KotlinDebug\n*F\n+ 1 CancellableContinuationImpl.kt\nkotlinx/coroutines/CancellableContinuationImpl\n*L\n212#1:599,2\n212#1:602,8\n215#1:610,10\n141#1:595,2\n174#1:597,2\n236#1:620,2\n246#1:622,2\n335#1:629,2\n425#1:631,2\n460#1:633,2\n212#1:601\n310#1:628\n289#1:624,2\n299#1:626,2\n536#1:635,2\n*E\n"
 .end annotation
 
 
@@ -81,16 +81,24 @@
 .end method
 
 .method private final alreadyResumedError(Ljava/lang/Object;)Ljava/lang/Void;
-    .locals 1
-
-    const-string v0, "Already resumed, but proposed with update "
-
-    .line 483
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
+    .locals 3
 
     new-instance v0, Ljava/lang/IllegalStateException;
+
+    .line 482
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Already resumed, but proposed with update "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -104,7 +112,7 @@
 .method private final detachChildIfNonResuable()V
     .locals 1
 
-    .line 489
+    .line 488
     invoke-direct {p0}, Lkotlinx/coroutines/CancellableContinuationImpl;->isReusable()Z
 
     move-result v0
@@ -120,7 +128,7 @@
 .method private final dispatchResume(I)V
     .locals 1
 
-    .line 396
+    .line 395
     invoke-direct {p0}, Lkotlinx/coroutines/CancellableContinuationImpl;->tryResume()Z
 
     move-result v0
@@ -129,7 +137,7 @@
 
     return-void
 
-    .line 398
+    .line 397
     :cond_0
     invoke-static {p0, p1}, Lkotlinx/coroutines/DispatchedTaskKt;->dispatch(Lkotlinx/coroutines/DispatchedTask;I)V
 
@@ -171,18 +179,22 @@
 .end method
 
 .method private final isReusable()Z
-    .locals 2
+    .locals 1
 
     .line 110
+    iget v0, p0, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
+
+    invoke-static {v0}, Lkotlinx/coroutines/DispatchedTaskKt;->isReusableMode(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
     iget-object v0, p0, Lkotlinx/coroutines/CancellableContinuationImpl;->delegate:Lkotlin/coroutines/Continuation;
-
-    instance-of v1, v0, Lkotlinx/coroutines/internal/DispatchedContinuation;
-
-    if-eqz v1, :cond_0
 
     check-cast v0, Lkotlinx/coroutines/internal/DispatchedContinuation;
 
-    invoke-virtual {v0, p0}, Lkotlinx/coroutines/internal/DispatchedContinuation;->isReusable(Lkotlinx/coroutines/CancellableContinuationImpl;)Z
+    invoke-virtual {v0}, Lkotlinx/coroutines/internal/DispatchedContinuation;->isReusable()Z
 
     move-result v0
 
@@ -214,16 +226,16 @@
         }
     .end annotation
 
-    .line 633
-    :goto_0
+    .line 632
+    :cond_0
     iget-object v0, p0, Lkotlinx/coroutines/CancellableContinuationImpl;->_state:Ljava/lang/Object;
 
-    .line 428
+    .line 427
     instance-of v1, v0, Lkotlinx/coroutines/NotCompleted;
 
     if-eqz v1, :cond_1
 
-    .line 429
+    .line 428
     move-object v3, v0
 
     check-cast v3, Lkotlinx/coroutines/NotCompleted;
@@ -242,33 +254,30 @@
 
     move-result-object v1
 
-    .line 430
+    .line 429
     sget-object v2, Lkotlinx/coroutines/CancellableContinuationImpl;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     invoke-virtual {v2, p0, v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    .line 431
-    :cond_0
+    .line 430
     invoke-direct {p0}, Lkotlinx/coroutines/CancellableContinuationImpl;->detachChildIfNonResuable()V
 
-    .line 432
+    .line 431
     invoke-direct {p0, p2}, Lkotlinx/coroutines/CancellableContinuationImpl;->dispatchResume(I)V
 
     return-void
 
-    .line 435
+    .line 434
     :cond_1
     instance-of p2, v0, Lkotlinx/coroutines/CancelledContinuation;
 
     if-eqz p2, :cond_3
 
-    .line 441
+    .line 440
     check-cast v0, Lkotlinx/coroutines/CancelledContinuation;
 
     invoke-virtual {v0}, Lkotlinx/coroutines/CancelledContinuation;->makeResumed()Z
@@ -277,20 +286,17 @@
 
     if-eqz p2, :cond_3
 
-    if-nez p3, :cond_2
+    if-eqz p3, :cond_2
 
-    goto :goto_1
-
-    .line 443
-    :cond_2
+    .line 442
     iget-object p1, v0, Lkotlinx/coroutines/CompletedExceptionally;->cause:Ljava/lang/Throwable;
 
     invoke-virtual {p0, p3, p1}, Lkotlinx/coroutines/CancellableContinuationImpl;->callOnCancellation(Lkotlin/jvm/functions/Function1;Ljava/lang/Throwable;)V
 
-    :goto_1
+    :cond_2
     return-void
 
-    .line 448
+    .line 447
     :cond_3
     invoke-direct {p0, p1}, Lkotlinx/coroutines/CancellableContinuationImpl;->alreadyResumedError(Ljava/lang/Object;)Ljava/lang/Void;
 
@@ -312,7 +318,7 @@
 
     const/4 p3, 0x0
 
-    .line 421
+    .line 420
     :cond_0
     invoke-direct {p0, p1, p2, p3}, Lkotlinx/coroutines/CancellableContinuationImpl;->resumeImpl(Ljava/lang/Object;ILkotlin/jvm/functions/Function1;)V
 
@@ -347,12 +353,12 @@
         }
     .end annotation
 
-    .line 408
+    .line 407
     instance-of v0, p2, Lkotlinx/coroutines/CompletedExceptionally;
 
     if-eqz v0, :cond_5
 
-    .line 409
+    .line 408
     invoke-static {}, Lkotlinx/coroutines/DebugKt;->getASSERTIONS_ENABLED()Z
 
     move-result p1
@@ -384,7 +390,7 @@
 
     throw p1
 
-    .line 410
+    .line 409
     :cond_2
     :goto_1
     invoke-static {}, Lkotlinx/coroutines/DebugKt;->getASSERTIONS_ENABLED()Z
@@ -412,7 +418,7 @@
 
     throw p1
 
-    .line 413
+    .line 412
     :cond_5
     invoke-static {p3}, Lkotlinx/coroutines/DispatchedTaskKt;->isCancellableMode(I)Z
 
@@ -427,7 +433,7 @@
     :cond_6
     if-nez p4, :cond_8
 
-    .line 414
+    .line 413
     instance-of p3, p1, Lkotlinx/coroutines/CancelHandler;
 
     if-eqz p3, :cond_7
@@ -437,7 +443,7 @@
     :cond_7
     if-eqz p5, :cond_a
 
-    .line 417
+    .line 416
     :cond_8
     :goto_3
     new-instance p3, Lkotlinx/coroutines/CompletedContinuation;
@@ -482,7 +488,7 @@
 .method private final tryResume()Z
     .locals 4
 
-    .line 624
+    .line 623
     :cond_0
     iget v0, p0, Lkotlinx/coroutines/CancellableContinuationImpl;->_decision:I
 
@@ -496,12 +502,13 @@
 
     return v1
 
-    .line 251
+    .line 249
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Already resumed"
 
+    .line 250
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -510,7 +517,7 @@
 
     throw v0
 
-    .line 249
+    .line 248
     :cond_2
     sget-object v0, Lkotlinx/coroutines/CancellableContinuationImpl;->_decision$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
@@ -528,9 +535,9 @@
 
 # virtual methods
 .method public final callCancelHandler(Lkotlinx/coroutines/CancelHandler;Ljava/lang/Throwable;)V
-    .locals 2
+    .locals 3
 
-    .line 216
+    .line 215
     :try_start_0
     invoke-virtual {p1, p2}, Lkotlinx/coroutines/CancelHandlerBase;->invoke(Ljava/lang/Throwable;)V
     :try_end_0
@@ -541,23 +548,31 @@
     :catchall_0
     move-exception p1
 
-    .line 202
+    .line 201
     invoke-virtual {p0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p2
 
-    .line 203
+    .line 202
     new-instance v0, Lkotlinx/coroutines/CompletionHandlerException;
 
-    const-string v1, "Exception in invokeOnCancellation handler for "
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Exception in invokeOnCancellation handler for "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-direct {v0, v1, p1}, Lkotlinx/coroutines/CompletionHandlerException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 201
+    .line 200
     invoke-static {p2, v0}, Lkotlinx/coroutines/CoroutineExceptionHandlerKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     :goto_0
@@ -565,7 +580,7 @@
 .end method
 
 .method public final callOnCancellation(Lkotlin/jvm/functions/Function1;Ljava/lang/Throwable;)V
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -579,7 +594,7 @@
         }
     .end annotation
 
-    .line 220
+    .line 219
     :try_start_0
     invoke-interface {p1, p2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
@@ -590,23 +605,31 @@
     :catchall_0
     move-exception p1
 
-    .line 224
+    .line 223
     invoke-virtual {p0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p2
 
-    .line 225
+    .line 224
     new-instance v0, Lkotlinx/coroutines/CompletionHandlerException;
 
-    const-string v1, "Exception in resume onCancellation handler for "
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Exception in resume onCancellation handler for "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-direct {v0, v1, p1}, Lkotlinx/coroutines/CompletionHandlerException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 223
+    .line 222
     invoke-static {p2, v0}, Lkotlinx/coroutines/CoroutineExceptionHandlerKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     :goto_0
@@ -616,7 +639,7 @@
 .method public cancelCompletedResult$kotlinx_coroutines_core(Ljava/lang/Object;Ljava/lang/Throwable;)V
     .locals 10
 
-    .line 597
+    .line 596
     :cond_0
     iget-object p1, p0, Lkotlinx/coroutines/CancellableContinuationImpl;->_state:Ljava/lang/Object;
 
@@ -750,18 +773,18 @@
 .method public final detachChild$kotlinx_coroutines_core()V
     .locals 1
 
-    .line 496
+    .line 495
     iget-object v0, p0, Lkotlinx/coroutines/CancellableContinuationImpl;->parentHandle:Lkotlinx/coroutines/DisposableHandle;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 497
+    .line 496
     :cond_0
     invoke-interface {v0}, Lkotlinx/coroutines/DisposableHandle;->dispose()V
 
-    .line 498
+    .line 497
     sget-object v0, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
     iput-object v0, p0, Lkotlinx/coroutines/CancellableContinuationImpl;->parentHandle:Lkotlinx/coroutines/DisposableHandle;
@@ -818,21 +841,14 @@
 .method public getExceptionalResult$kotlinx_coroutines_core(Ljava/lang/Object;)Ljava/lang/Throwable;
     .locals 2
 
-    .line 537
+    .line 536
     invoke-super {p0, p1}, Lkotlinx/coroutines/DispatchedTask;->getExceptionalResult$kotlinx_coroutines_core(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_1
 
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getDelegate$kotlinx_coroutines_core()Lkotlin/coroutines/Continuation;
-
-    move-result-object v0
+    iget-object v0, p0, Lkotlinx/coroutines/CancellableContinuationImpl;->delegate:Lkotlin/coroutines/Continuation;
 
     .line 57
     invoke-static {}, Lkotlinx/coroutines/DebugKt;->getRECOVER_STACK_TRACES()Z
@@ -843,17 +859,22 @@
 
     instance-of v1, v0, Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
 
-    if-nez v1, :cond_1
+    if-nez v1, :cond_0
 
     goto :goto_0
 
     .line 58
-    :cond_1
+    :cond_0
     check-cast v0, Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
 
     invoke-static {p1, v0}, Lkotlinx/coroutines/internal/StackTraceRecoveryKt;->access$recoverFromStackFrame(Ljava/lang/Throwable;Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;)Ljava/lang/Throwable;
 
     move-result-object p1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p1, 0x0
 
     :cond_2
     :goto_0
@@ -889,7 +910,7 @@
         }
     .end annotation
 
-    .line 530
+    .line 529
     instance-of v0, p1, Lkotlinx/coroutines/CompletedContinuation;
 
     if-eqz v0, :cond_0
@@ -913,7 +934,7 @@
 .method public resumeWith(Ljava/lang/Object;)V
     .locals 6
 
-    .line 329
+    .line 328
     invoke-static {p1, p0}, Lkotlinx/coroutines/CompletionStateKt;->toState(Ljava/lang/Object;Lkotlinx/coroutines/CancellableContinuation;)Ljava/lang/Object;
 
     move-result-object v1
@@ -947,7 +968,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 541
+    .line 540
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

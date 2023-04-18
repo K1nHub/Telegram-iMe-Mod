@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Objects;
 import java.util.ServiceLoader;
 import java.util.Set;
 import java.util.jar.JarFile;
@@ -17,7 +16,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt__MutableCollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.p036io.CloseableKt;
+import kotlin.p035io.CloseableKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
 /* compiled from: FastServiceLoader.kt */
@@ -48,10 +47,10 @@ public final class FastServiceLoader {
                 mainDispatcherFactory2 = (MainDispatcherFactory) MainDispatcherFactory.class.cast(Class.forName("kotlinx.coroutines.test.internal.TestMainDispatcherFactory", true, MainDispatcherFactory.class.getClassLoader()).getDeclaredConstructor(new Class[0]).newInstance(new Object[0]));
             } catch (ClassNotFoundException unused2) {
             }
-            if (mainDispatcherFactory2 == null) {
+            if (mainDispatcherFactory2 != null) {
+                arrayList.add(mainDispatcherFactory2);
                 return arrayList;
             }
-            arrayList.add(mainDispatcherFactory2);
             return arrayList;
         } catch (Throwable unused3) {
             return load(MainDispatcherFactory.class, MainDispatcherFactory.class.getClassLoader());
@@ -71,8 +70,8 @@ public final class FastServiceLoader {
     public final <S> List<S> loadProviders$kotlinx_coroutines_core(Class<S> cls, ClassLoader classLoader) {
         Set<String> set;
         int collectionSizeOrDefault;
-        ArrayList<URL> list = Collections.list(classLoader.getResources(Intrinsics.stringPlus("META-INF/services/", cls.getName())));
-        Intrinsics.checkNotNullExpressionValue(list, "java.util.Collections.list(this)");
+        ArrayList<URL> list = Collections.list(classLoader.getResources("META-INF/services/" + cls.getName()));
+        Intrinsics.checkNotNullExpressionValue(list, "list(this)");
         ArrayList arrayList = new ArrayList();
         for (URL url : list) {
             CollectionsKt__MutableCollectionsKt.addAll(arrayList, INSTANCE.parse(url));
@@ -154,7 +153,6 @@ public final class FastServiceLoader {
             String readLine = bufferedReader.readLine();
             if (readLine != null) {
                 substringBefore$default = StringsKt__StringsKt.substringBefore$default(readLine, "#", (String) null, 2, (Object) null);
-                Objects.requireNonNull(substringBefore$default, "null cannot be cast to non-null type kotlin.CharSequence");
                 trim = StringsKt__StringsKt.trim(substringBefore$default);
                 String obj = trim.toString();
                 int i = 0;
@@ -171,7 +169,7 @@ public final class FastServiceLoader {
                     i++;
                 }
                 if (!z) {
-                    throw new IllegalArgumentException(Intrinsics.stringPlus("Illegal service provider class name: ", obj).toString());
+                    throw new IllegalArgumentException(("Illegal service provider class name: " + obj).toString());
                 }
                 if (obj.length() > 0) {
                     linkedHashSet.add(obj);

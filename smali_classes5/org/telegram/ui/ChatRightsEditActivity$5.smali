@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatRightsEditActivity;)V
     .locals 0
 
-    .line 530
+    .line 531
     iput-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$5;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 534
+    .line 535
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$5;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;

@@ -67,10 +67,10 @@ public abstract class BasePreference implements BasePreferenceHelper {
     public String withTgAccount(String key, String userId) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(userId, "userId");
-        if (Intrinsics.areEqual(userId, "")) {
-            return getActualTgAccount() + '_' + key;
+        if (userId.length() == 0) {
+            userId = getActualTgAccount();
         }
-        return userId + '_' + key;
+        return withPrefix(userId, key);
     }
 
     @Override // com.iMe.storage.domain.storage.BasePreferenceHelper
@@ -81,6 +81,7 @@ public abstract class BasePreference implements BasePreferenceHelper {
     }
 
     private final String getActualTgAccount() {
-        return getTempOneActionUserId().length() > 0 ? getTempOneActionUserId() : String.valueOf(this.telegramGateway.getSelectedAccountId());
+        String tempOneActionUserId = getTempOneActionUserId();
+        return tempOneActionUserId.length() == 0 ? String.valueOf(this.telegramGateway.getSelectedAccountId()) : tempOneActionUserId;
     }
 }

@@ -116,14 +116,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$YKcXOdHqKWF5nInDa9I_72VJUIM(Lorg/telegram/ui/Cells/SharedAudioCell;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/SharedAudioCell;->onSubItemClick(I)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$mWx8axiDyYsxmWu0rNDCrwh4oxI(Lorg/telegram/ui/Cells/SharedAudioCell;Ljava/util/ArrayList;Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
     .locals 0
 
@@ -2160,761 +2152,6 @@
     return-void
 .end method
 
-.method private onSubItemClick(I)V
-    .locals 7
-
-    .line 95
-    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    if-eqz v0, :cond_19
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    instance-of v0, v0, Lorg/telegram/ui/LaunchActivity;
-
-    if-nez v0, :cond_0
-
-    goto/16 :goto_7
-
-    .line 98
-    :cond_0
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lorg/telegram/ui/LaunchActivity;
-
-    .line 99
-    sget v0, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_MUSIC_PLAYLIST:I
-
-    const/4 v1, 0x1
-
-    if-ne p1, v0, :cond_2
-
-    .line 100
-    iget p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
-
-    invoke-static {p1}, Lcom/iMe/fork/controller/MusicController;->getInstance(I)Lcom/iMe/fork/controller/MusicController;
-
-    move-result-object p1
-
-    .line 101
-    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
-
-    move-result-wide v2
-
-    .line 102
-    iget-boolean v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->isInPlaylist:Z
-
-    if-eqz v0, :cond_1
-
-    .line 103
-    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getId()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v2, v3, v0}, Lcom/iMe/fork/controller/MusicController;->removePlaylistMessage(JLjava/util/List;)V
-
-    goto :goto_0
-
-    .line 105
-    :cond_1
-    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v2, v3, v0}, Lcom/iMe/fork/controller/MusicController;->addPlaylistMessage(JLjava/util/List;)V
-
-    .line 107
-    :goto_0
-    iget-boolean p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->isInPlaylist:Z
-
-    xor-int/2addr p1, v1
-
-    iput-boolean p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->isInPlaylist:Z
-
-    .line 108
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
-
-    goto/16 :goto_7
-
-    .line 109
-    :cond_2
-    sget v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
-
-    if-ne p1, v0, :cond_4
-
-    .line 110
-    new-instance p1, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda1;
-
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Cells/SharedAudioCell;)V
-
-    .line 111
-    sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isCloudAlbumsEnabled:Z
-
-    if-eqz v0, :cond_3
-
-    .line 112
-    invoke-virtual {v2}, Lorg/telegram/ui/LaunchActivity;->getActionBarLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    move-result-object v0
-
-    .line 113
-    new-instance v1, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;
-
-    invoke-direct {v1, v0, p1}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
-
-    goto/16 :goto_7
-
-    .line 115
-    :cond_3
-    iget v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
-
-    invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
-
-    move-result-wide v0
-
-    invoke-interface {p1, v0, v1}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;->didSelectCloudDialog(J)V
-
-    goto/16 :goto_7
-
-    :cond_4
-    if-ne p1, v1, :cond_6
-
-    .line 118
-    sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
-
-    iget v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
-
-    if-eq p1, v0, :cond_5
-
-    .line 119
-    invoke-virtual {v2, v0, v1}, Lorg/telegram/ui/LaunchActivity;->switchToAccount(IZ)V
-
-    .line 121
-    :cond_5
-    new-instance p1, Landroid/os/Bundle;
-
-    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
-
-    const-string v0, "onlySelect"
-
-    .line 122
-    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
-
-    const/4 v0, 0x3
-
-    const-string v1, "dialogsType"
-
-    .line 123
-    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
-
-    .line 124
-    new-instance v0, Lorg/telegram/ui/DialogsActivity;
-
-    invoke-direct {v0, p1}, Lorg/telegram/ui/DialogsActivity;-><init>(Landroid/os/Bundle;)V
-
-    .line 125
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    .line 126
-    iget-object v1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 127
-    new-instance v1, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda4;
-
-    invoke-direct {v1, p1}, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda4;-><init>(Ljava/util/ArrayList;)V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/DialogsActivity;->setCustomForwardDelegate(Lorg/telegram/ui/DialogsActivity$CustomForwardDelegate;)V
-
-    .line 128
-    new-instance v1, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda5;
-
-    invoke-direct {v1, p0, p1, v2}, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Cells/SharedAudioCell;Ljava/util/ArrayList;Lorg/telegram/ui/LaunchActivity;)V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/DialogsActivity;->setDelegate(Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;)V
-
-    .line 160
-    invoke-virtual {v2, v0}, Lorg/telegram/ui/LaunchActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
-
-    goto/16 :goto_7
-
-    :cond_6
-    const/4 v0, 0x2
-
-    const/4 v3, 0x0
-
-    if-ne p1, v0, :cond_c
-
-    .line 165
-    :try_start_0
-    iget-object p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
-
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_7
-
-    .line 166
-    new-instance p1, Ljava/io/File;
-
-    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
-
-    invoke-direct {p1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 167
-    invoke-virtual {p1}, Ljava/io/File;->exists()Z
-
-    move-result v0
-
-    if-nez v0, :cond_8
-
-    :cond_7
-    move-object p1, v3
-
-    :cond_8
-    if-nez p1, :cond_9
-
-    .line 172
-    iget p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
-
-    invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    invoke-virtual {p1, v0}, Lorg/telegram/messenger/FileLoader;->getPathToMessage(Lorg/telegram/tgnet/TLRPC$Message;)Ljava/io/File;
-
-    move-result-object p1
-
-    .line 175
-    :cond_9
-    invoke-virtual {p1}, Ljava/io/File;->exists()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_b
-
-    .line 176
-    new-instance v0, Landroid/content/Intent;
-
-    const-string v3, "android.intent.action.SEND"
-
-    invoke-direct {v0, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 177
-    iget-object v3, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getMimeType()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 178
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
-
-    const/16 v4, 0x18
-
-    const-string v5, "android.intent.extra.STREAM"
-
-    if-lt v3, v4, :cond_a
-
-    .line 180
-    :try_start_1
-    sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getApplicationId()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v6, ".provider"
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4, p1}, Landroidx/core/content/FileProvider;->getUriForFile(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Landroid/net/Uri;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v5, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    .line 181
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_1
-
-    .line 183
-    :catch_0
-    :try_start_2
-    invoke-static {p1}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
-
-    move-result-object p1
-
-    invoke-virtual {v0, v5, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    goto :goto_1
-
-    .line 186
-    :cond_a
-    invoke-static {p1}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
-
-    move-result-object p1
-
-    invoke-virtual {v0, v5, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    :goto_1
-    const-string p1, "ShareFile"
-
-    .line 189
-    sget v1, Lorg/telegram/messenger/R$string;->ShareFile:I
-
-    invoke-static {p1, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {v0, p1}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
-
-    move-result-object p1
-
-    const/16 v0, 0x1f4
-
-    invoke-virtual {v2, p1, v0}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
-
-    goto/16 :goto_7
-
-    .line 191
-    :cond_b
-    new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
-
-    invoke-direct {p1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
-
-    const-string v0, "AppName"
-
-    .line 192
-    sget v1, Lorg/telegram/messenger/R$string;->AppName:I
-
-    invoke-static {v0, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
-
-    const-string v0, "OK"
-
-    .line 193
-    sget v1, Lorg/telegram/messenger/R$string;->OK:I
-
-    invoke-static {v0, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
-
-    const-string v0, "PleaseDownload"
-
-    .line 194
-    sget v1, Lorg/telegram/messenger/R$string;->PleaseDownload:I
-
-    invoke-static {v0, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
-
-    .line 195
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
-
-    goto/16 :goto_7
-
-    :catch_1
-    move-exception p1
-
-    .line 198
-    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    goto/16 :goto_7
-
-    :cond_c
-    const/4 v0, 0x4
-
-    if-ne p1, v0, :cond_11
-
-    .line 201
-    sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
-
-    iget v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
-
-    if-eq p1, v0, :cond_d
-
-    .line 202
-    invoke-virtual {v2, v0, v1}, Lorg/telegram/ui/LaunchActivity;->switchToAccount(IZ)V
-
-    .line 205
-    :cond_d
-    new-instance p1, Landroid/os/Bundle;
-
-    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
-
-    .line 206
-    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
-
-    move-result-wide v0
-
-    .line 207
-    invoke-static {v0, v1}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_e
-
-    .line 208
-    invoke-static {v0, v1}, Lorg/telegram/messenger/DialogObject;->getEncryptedChatId(J)I
-
-    move-result v0
-
-    const-string v1, "enc_id"
-
-    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
-
-    goto :goto_2
-
-    .line 209
-    :cond_e
-    invoke-static {v0, v1}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_f
-
-    const-string v3, "user_id"
-
-    .line 210
-    invoke-virtual {p1, v3, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-
-    goto :goto_2
-
-    .line 212
-    :cond_f
-    iget v3, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
-
-    invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v3
-
-    neg-long v4, v0
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_10
-
-    .line 213
-    iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$Chat;->migrated_to:Lorg/telegram/tgnet/TLRPC$InputChannel;
-
-    if-eqz v4, :cond_10
-
-    const-string v4, "migrated_to"
-
-    .line 214
-    invoke-virtual {p1, v4, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-
-    .line 215
-    iget-object v0, v3, Lorg/telegram/tgnet/TLRPC$Chat;->migrated_to:Lorg/telegram/tgnet/TLRPC$InputChannel;
-
-    iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$InputChannel;->channel_id:J
-
-    neg-long v0, v0
-
-    :cond_10
-    neg-long v0, v0
-
-    const-string v3, "chat_id"
-
-    .line 217
-    invoke-virtual {p1, v3, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-
-    .line 219
-    :goto_2
-    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getId()I
-
-    move-result v0
-
-    const-string v1, "message_id"
-
-    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
-
-    .line 220
-    iget v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
-
-    invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v0
-
-    sget v1, Lorg/telegram/messenger/NotificationCenter;->closeChats:I
-
-    const/4 v3, 0x0
-
-    new-array v4, v3, [Ljava/lang/Object;
-
-    invoke-virtual {v0, v1, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
-
-    .line 221
-    new-instance v0, Lorg/telegram/ui/ChatActivity;
-
-    invoke-direct {v0, p1}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
-
-    invoke-virtual {v2, v0, v3, v3}, Lorg/telegram/ui/LaunchActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;ZZ)Z
-
-    goto/16 :goto_7
-
-    :cond_11
-    const/4 v1, 0x5
-
-    if-ne p1, v1, :cond_19
-
-    .line 223
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt p1, v1, :cond_13
-
-    const/16 v1, 0x1c
-
-    if-le p1, v1, :cond_12
-
-    sget-boolean p1, Lorg/telegram/messenger/BuildVars;->NO_SCOPED_STORAGE:Z
-
-    if-eqz p1, :cond_13
-
-    :cond_12
-    const-string p1, "android.permission.WRITE_EXTERNAL_STORAGE"
-
-    invoke-virtual {v2, p1}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
-
-    move-result v1
-
-    if-eqz v1, :cond_13
-
-    .line 224
-    filled-new-array {p1}, [Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v2, p1, v0}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
-
-    return-void
-
-    .line 227
-    :cond_13
-    iget-object p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getDocumentFileName(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 228
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_14
-
-    .line 229
-    iget-object p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getFileName()Ljava/lang/String;
-
-    move-result-object p1
-
-    :cond_14
-    move-object v4, p1
-
-    .line 231
-    iget-object p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
-
-    if-eqz p1, :cond_15
-
-    .line 232
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    if-lez v0, :cond_15
-
-    .line 233
-    new-instance v0, Ljava/io/File;
-
-    invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 234
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
-
-    move-result v0
-
-    if-nez v0, :cond_15
-
-    goto :goto_3
-
-    :cond_15
-    move-object v3, p1
-
-    :goto_3
-    if-eqz v3, :cond_17
-
-    .line 238
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result p1
-
-    if-nez p1, :cond_16
-
-    goto :goto_4
-
-    :cond_16
-    move-object v1, v3
-
-    goto :goto_5
-
-    .line 239
-    :cond_17
-    :goto_4
-    iget p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
-
-    invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    invoke-virtual {p1, v0}, Lorg/telegram/messenger/FileLoader;->getPathToMessage(Lorg/telegram/tgnet/TLRPC$Message;)Ljava/io/File;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/io/File;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    move-object v1, p1
-
-    :goto_5
-    const/4 v3, 0x3
-
-    .line 241
-    iget-object p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_18
-
-    iget-object p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
-
-    move-result-object p1
-
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
-
-    goto :goto_6
-
-    :cond_18
-    const-string p1, ""
-
-    :goto_6
-    move-object v5, p1
-
-    new-instance v6, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda2;
-
-    invoke-direct {v6, p0}, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Cells/SharedAudioCell;)V
-
-    invoke-static/range {v1 .. v6}, Lorg/telegram/messenger/MediaController;->saveFile(Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;)V
-
-    :cond_19
-    :goto_7
-    return-void
-.end method
-
 
 # virtual methods
 .method public didPressedButton()V
@@ -4538,6 +3775,761 @@
 .method public onProgressUpload(Ljava/lang/String;JJZ)V
     .locals 0
 
+    return-void
+.end method
+
+.method public onSubItemClick(I)V
+    .locals 7
+
+    .line 95
+    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    if-eqz v0, :cond_19
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    instance-of v0, v0, Lorg/telegram/ui/LaunchActivity;
+
+    if-nez v0, :cond_0
+
+    goto/16 :goto_7
+
+    .line 98
+    :cond_0
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Lorg/telegram/ui/LaunchActivity;
+
+    .line 99
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_MUSIC_PLAYLIST:I
+
+    const/4 v1, 0x1
+
+    if-ne p1, v0, :cond_2
+
+    .line 100
+    iget p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
+
+    invoke-static {p1}, Lcom/iMe/fork/controller/MusicController;->getInstance(I)Lcom/iMe/fork/controller/MusicController;
+
+    move-result-object p1
+
+    .line 101
+    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
+
+    move-result-wide v2
+
+    .line 102
+    iget-boolean v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->isInPlaylist:Z
+
+    if-eqz v0, :cond_1
+
+    .line 103
+    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getId()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v2, v3, v0}, Lcom/iMe/fork/controller/MusicController;->removePlaylistMessage(JLjava/util/List;)V
+
+    goto :goto_0
+
+    .line 105
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v2, v3, v0}, Lcom/iMe/fork/controller/MusicController;->addPlaylistMessage(JLjava/util/List;)V
+
+    .line 107
+    :goto_0
+    iget-boolean p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->isInPlaylist:Z
+
+    xor-int/2addr p1, v1
+
+    iput-boolean p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->isInPlaylist:Z
+
+    .line 108
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    goto/16 :goto_7
+
+    .line 109
+    :cond_2
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+
+    if-ne p1, v0, :cond_4
+
+    .line 110
+    new-instance p1, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda1;
+
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Cells/SharedAudioCell;)V
+
+    .line 111
+    sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isCloudAlbumsEnabled:Z
+
+    if-eqz v0, :cond_3
+
+    .line 112
+    invoke-virtual {v2}, Lorg/telegram/ui/LaunchActivity;->getActionBarLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    move-result-object v0
+
+    .line 113
+    new-instance v1, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;
+
+    invoke-direct {v1, v0, p1}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
+
+    goto/16 :goto_7
+
+    .line 115
+    :cond_3
+    iget v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
+
+    move-result-wide v0
+
+    invoke-interface {p1, v0, v1}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;->didSelectCloudDialog(J)V
+
+    goto/16 :goto_7
+
+    :cond_4
+    if-ne p1, v1, :cond_6
+
+    .line 118
+    sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+
+    iget v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
+
+    if-eq p1, v0, :cond_5
+
+    .line 119
+    invoke-virtual {v2, v0, v1}, Lorg/telegram/ui/LaunchActivity;->switchToAccount(IZ)V
+
+    .line 121
+    :cond_5
+    new-instance p1, Landroid/os/Bundle;
+
+    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
+
+    const-string v0, "onlySelect"
+
+    .line 122
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const/4 v0, 0x3
+
+    const-string v1, "dialogsType"
+
+    .line 123
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    .line 124
+    new-instance v0, Lorg/telegram/ui/DialogsActivity;
+
+    invoke-direct {v0, p1}, Lorg/telegram/ui/DialogsActivity;-><init>(Landroid/os/Bundle;)V
+
+    .line 125
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 126
+    iget-object v1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 127
+    new-instance v1, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda4;
+
+    invoke-direct {v1, p1}, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda4;-><init>(Ljava/util/ArrayList;)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/DialogsActivity;->setCustomForwardDelegate(Lorg/telegram/ui/DialogsActivity$CustomForwardDelegate;)V
+
+    .line 128
+    new-instance v1, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda5;
+
+    invoke-direct {v1, p0, p1, v2}, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Cells/SharedAudioCell;Ljava/util/ArrayList;Lorg/telegram/ui/LaunchActivity;)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/DialogsActivity;->setDelegate(Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;)V
+
+    .line 160
+    invoke-virtual {v2, v0}, Lorg/telegram/ui/LaunchActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+
+    goto/16 :goto_7
+
+    :cond_6
+    const/4 v0, 0x2
+
+    const/4 v3, 0x0
+
+    if-ne p1, v0, :cond_c
+
+    .line 165
+    :try_start_0
+    iget-object p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+
+    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
+
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_7
+
+    .line 166
+    new-instance p1, Ljava/io/File;
+
+    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
+
+    invoke-direct {p1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 167
+    invoke-virtual {p1}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    :cond_7
+    move-object p1, v3
+
+    :cond_8
+    if-nez p1, :cond_9
+
+    .line 172
+    iget p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
+
+    invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+
+    invoke-virtual {p1, v0}, Lorg/telegram/messenger/FileLoader;->getPathToMessage(Lorg/telegram/tgnet/TLRPC$Message;)Ljava/io/File;
+
+    move-result-object p1
+
+    .line 175
+    :cond_9
+    invoke-virtual {p1}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    .line 176
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v3, "android.intent.action.SEND"
+
+    invoke-direct {v0, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 177
+    iget-object v3, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getMimeType()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 178
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    const/16 v4, 0x18
+
+    const-string v5, "android.intent.extra.STREAM"
+
+    if-lt v3, v4, :cond_a
+
+    .line 180
+    :try_start_1
+    sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getApplicationId()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, ".provider"
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4, p1}, Landroidx/core/content/FileProvider;->getUriForFile(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Landroid/net/Uri;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v5, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    .line 181
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_1
+
+    .line 183
+    :catch_0
+    :try_start_2
+    invoke-static {p1}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
+
+    move-result-object p1
+
+    invoke-virtual {v0, v5, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    goto :goto_1
+
+    .line 186
+    :cond_a
+    invoke-static {p1}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
+
+    move-result-object p1
+
+    invoke-virtual {v0, v5, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    :goto_1
+    const-string p1, "ShareFile"
+
+    .line 189
+    sget v1, Lorg/telegram/messenger/R$string;->ShareFile:I
+
+    invoke-static {p1, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {v0, p1}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
+
+    move-result-object p1
+
+    const/16 v0, 0x1f4
+
+    invoke-virtual {v2, p1, v0}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
+
+    goto/16 :goto_7
+
+    .line 191
+    :cond_b
+    new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    invoke-direct {p1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const-string v0, "AppName"
+
+    .line 192
+    sget v1, Lorg/telegram/messenger/R$string;->AppName:I
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    const-string v0, "OK"
+
+    .line 193
+    sget v1, Lorg/telegram/messenger/R$string;->OK:I
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    const-string v0, "PleaseDownload"
+
+    .line 194
+    sget v1, Lorg/telegram/messenger/R$string;->PleaseDownload:I
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    .line 195
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+
+    goto/16 :goto_7
+
+    :catch_1
+    move-exception p1
+
+    .line 198
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    goto/16 :goto_7
+
+    :cond_c
+    const/4 v0, 0x4
+
+    if-ne p1, v0, :cond_11
+
+    .line 201
+    sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+
+    iget v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
+
+    if-eq p1, v0, :cond_d
+
+    .line 202
+    invoke-virtual {v2, v0, v1}, Lorg/telegram/ui/LaunchActivity;->switchToAccount(IZ)V
+
+    .line 205
+    :cond_d
+    new-instance p1, Landroid/os/Bundle;
+
+    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
+
+    .line 206
+    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
+
+    move-result-wide v0
+
+    .line 207
+    invoke-static {v0, v1}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_e
+
+    .line 208
+    invoke-static {v0, v1}, Lorg/telegram/messenger/DialogObject;->getEncryptedChatId(J)I
+
+    move-result v0
+
+    const-string v1, "enc_id"
+
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    goto :goto_2
+
+    .line 209
+    :cond_e
+    invoke-static {v0, v1}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_f
+
+    const-string v3, "user_id"
+
+    .line 210
+    invoke-virtual {p1, v3, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+
+    goto :goto_2
+
+    .line 212
+    :cond_f
+    iget v3, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
+
+    invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v3
+
+    neg-long v4, v0
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_10
+
+    .line 213
+    iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$Chat;->migrated_to:Lorg/telegram/tgnet/TLRPC$InputChannel;
+
+    if-eqz v4, :cond_10
+
+    const-string v4, "migrated_to"
+
+    .line 214
+    invoke-virtual {p1, v4, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+
+    .line 215
+    iget-object v0, v3, Lorg/telegram/tgnet/TLRPC$Chat;->migrated_to:Lorg/telegram/tgnet/TLRPC$InputChannel;
+
+    iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$InputChannel;->channel_id:J
+
+    neg-long v0, v0
+
+    :cond_10
+    neg-long v0, v0
+
+    const-string v3, "chat_id"
+
+    .line 217
+    invoke-virtual {p1, v3, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+
+    .line 219
+    :goto_2
+    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getId()I
+
+    move-result v0
+
+    const-string v1, "message_id"
+
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    .line 220
+    iget v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object v0
+
+    sget v1, Lorg/telegram/messenger/NotificationCenter;->closeChats:I
+
+    const/4 v3, 0x0
+
+    new-array v4, v3, [Ljava/lang/Object;
+
+    invoke-virtual {v0, v1, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+
+    .line 221
+    new-instance v0, Lorg/telegram/ui/ChatActivity;
+
+    invoke-direct {v0, p1}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
+
+    invoke-virtual {v2, v0, v3, v3}, Lorg/telegram/ui/LaunchActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;ZZ)Z
+
+    goto/16 :goto_7
+
+    :cond_11
+    const/4 v1, 0x5
+
+    if-ne p1, v1, :cond_19
+
+    .line 223
+    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x17
+
+    if-lt p1, v1, :cond_13
+
+    const/16 v1, 0x1c
+
+    if-le p1, v1, :cond_12
+
+    sget-boolean p1, Lorg/telegram/messenger/BuildVars;->NO_SCOPED_STORAGE:Z
+
+    if-eqz p1, :cond_13
+
+    :cond_12
+    const-string p1, "android.permission.WRITE_EXTERNAL_STORAGE"
+
+    invoke-virtual {v2, p1}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v1
+
+    if-eqz v1, :cond_13
+
+    .line 224
+    filled-new-array {p1}, [Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v2, p1, v0}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
+
+    return-void
+
+    .line 227
+    :cond_13
+    iget-object p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getDocumentFileName(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 228
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_14
+
+    .line 229
+    iget-object p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getFileName()Ljava/lang/String;
+
+    move-result-object p1
+
+    :cond_14
+    move-object v4, p1
+
+    .line 231
+    iget-object p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+
+    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
+
+    if-eqz p1, :cond_15
+
+    .line 232
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_15
+
+    .line 233
+    new-instance v0, Ljava/io/File;
+
+    invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 234
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-nez v0, :cond_15
+
+    goto :goto_3
+
+    :cond_15
+    move-object v3, p1
+
+    :goto_3
+    if-eqz v3, :cond_17
+
+    .line 238
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    if-nez p1, :cond_16
+
+    goto :goto_4
+
+    :cond_16
+    move-object v1, v3
+
+    goto :goto_5
+
+    .line 239
+    :cond_17
+    :goto_4
+    iget p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
+
+    invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+
+    invoke-virtual {p1, v0}, Lorg/telegram/messenger/FileLoader;->getPathToMessage(Lorg/telegram/tgnet/TLRPC$Message;)Ljava/io/File;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/io/File;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    move-object v1, p1
+
+    :goto_5
+    const/4 v3, 0x3
+
+    .line 241
+    iget-object p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_18
+
+    iget-object p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
+
+    goto :goto_6
+
+    :cond_18
+    const-string p1, ""
+
+    :goto_6
+    move-object v5, p1
+
+    new-instance v6, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda2;
+
+    invoke-direct {v6, p0}, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Cells/SharedAudioCell;)V
+
+    invoke-static/range {v1 .. v6}, Lorg/telegram/messenger/MediaController;->saveFile(Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;)V
+
+    :cond_19
+    :goto_7
     return-void
 .end method
 

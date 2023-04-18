@@ -854,7 +854,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 778
+    .line 783
     iget v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;->emptyRow:I
 
     if-ne p1, v0, :cond_0
@@ -863,7 +863,7 @@
 
     return p1
 
-    .line 780
+    .line 785
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;->lastRow:I
 
@@ -873,7 +873,7 @@
 
     return p1
 
-    .line 783
+    .line 788
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;->globalStartRow:I
 
@@ -1063,18 +1063,18 @@
 
     goto/16 :goto_4
 
-    .line 758
+    .line 763
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/GraySectionCell;
 
-    .line 759
+    .line 764
     iget v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;->groupStartRow:I
 
     if-ne p2, v0, :cond_1
 
-    .line 760
+    .line 765
     sget p2, Lorg/telegram/messenger/R$string;->ChannelMembers:I
 
     const-string v0, "ChannelMembers"
@@ -1087,13 +1087,13 @@
 
     goto/16 :goto_4
 
-    .line 761
+    .line 766
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;->globalStartRow:I
 
-    if-ne p2, v0, :cond_c
+    if-ne p2, v0, :cond_d
 
-    .line 762
+    .line 767
     sget p2, Lorg/telegram/messenger/R$string;->GlobalSearch:I
 
     const-string v0, "GlobalSearch"
@@ -1161,7 +1161,7 @@
     :cond_4
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$ChatParticipant;
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_d
 
     .line 690
     iget-object v2, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
@@ -1186,13 +1186,18 @@
 
     move-result-object v0
 
-    .line 695
     :goto_0
+    if-nez v0, :cond_5
+
+    return-void
+
+    .line 700
+    :cond_5
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 699
+    .line 704
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getGroupSearch()Ljava/util/ArrayList;
@@ -1207,13 +1212,13 @@
 
     const/4 v5, 0x0
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
     add-int/2addr v3, v1
 
-    if-le v3, p2, :cond_5
+    if-le v3, p2, :cond_6
 
-    .line 704
+    .line 709
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getLastFoundChannel()Ljava/lang/String;
@@ -1224,10 +1229,10 @@
 
     goto :goto_1
 
-    :cond_5
+    :cond_6
     sub-int/2addr p2, v3
 
-    :cond_6
+    :cond_7
     move v6, v4
 
     move-object v3, v5
@@ -1239,11 +1244,11 @@
 
     const/4 v9, -0x1
 
-    if-nez v6, :cond_a
+    if-nez v6, :cond_b
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_b
 
-    .line 711
+    .line 716
     iget-object v6, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v6}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getGlobalSearch()Ljava/util/ArrayList;
@@ -1254,13 +1259,13 @@
 
     move-result v6
 
-    if-eqz v6, :cond_a
+    if-eqz v6, :cond_b
 
     add-int/2addr v6, v1
 
-    if-le v6, p2, :cond_a
+    if-le v6, p2, :cond_b
 
-    .line 714
+    .line 719
     iget-object v6, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v6}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getLastFoundUsername()Ljava/lang/String;
@@ -1269,53 +1274,53 @@
 
     const-string v10, "@"
 
-    .line 715
+    .line 720
     invoke-virtual {v6, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v11
 
-    if-eqz v11, :cond_7
+    if-eqz v11, :cond_8
 
-    .line 716
+    .line 721
     invoke-virtual {v6, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 720
-    :cond_7
+    .line 725
+    :cond_8
     :try_start_0
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v1}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 721
+    .line 726
     invoke-virtual {v1, v10}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 722
+    .line 727
     invoke-virtual {v1, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 723
+    .line 728
     invoke-static {v2, v6}, Lorg/telegram/messenger/AndroidUtilities;->indexOfIgnoreCase(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v10
 
-    if-eq v10, v9, :cond_9
+    if-eq v10, v9, :cond_a
 
-    .line 724
+    .line 729
     invoke-virtual {v6}, Ljava/lang/String;->length()I
 
     move-result v6
 
-    if-nez v10, :cond_8
+    if-nez v10, :cond_9
 
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_2
 
-    :cond_8
+    :cond_9
     add-int/lit8 v10, v10, 0x1
 
-    .line 730
+    .line 735
     :goto_2
     new-instance v11, Landroid/text/style/ForegroundColorSpan;
 
@@ -1331,7 +1336,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_9
+    :cond_a
     move-object v2, v1
 
     goto :goto_3
@@ -1339,35 +1344,35 @@
     :catch_0
     move-exception v1
 
-    .line 735
+    .line 740
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_3
 
-    :cond_a
+    :cond_b
     move-object v2, v5
 
     :goto_3
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_c
 
-    .line 742
+    .line 747
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->getUserName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 743
+    .line 748
     new-instance v5, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v5, v1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 744
+    .line 749
     invoke-static {v1, v3}, Lorg/telegram/messenger/AndroidUtilities;->indexOfIgnoreCase(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v1
 
-    if-eq v1, v9, :cond_b
+    if-eq v1, v9, :cond_c
 
-    .line 746
+    .line 751
     new-instance v6, Landroid/text/style/ForegroundColorSpan;
 
     invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1384,20 +1389,20 @@
 
     invoke-virtual {v5, v6, v1, v3, v7}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 750
-    :cond_b
+    .line 755
+    :cond_c
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
-    .line 751
+    .line 756
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 752
+    .line 757
     iget-object p2, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$500(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)Ljava/util/HashSet;
@@ -1416,10 +1421,10 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setCustomImageVisible(Z)V
 
-    .line 753
+    .line 758
     invoke-virtual {p1, v0, v5, v2, v4}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
-    :cond_c
+    :cond_d
     :goto_4
     return-void
 .end method
@@ -1553,14 +1558,14 @@
 .method public onViewRecycled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 771
+    .line 776
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     if-eqz v0, :cond_0
 
-    .line 772
+    .line 777
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->recycle()V

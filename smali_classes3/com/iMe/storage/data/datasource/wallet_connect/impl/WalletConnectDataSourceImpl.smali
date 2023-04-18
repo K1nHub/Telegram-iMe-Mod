@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectDataSourceImpl.kt\ncom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,67:1\n14#2:68\n11#3:69\n18#4:70\n*S KotlinDebug\n*F\n+ 1 WalletConnectDataSourceImpl.kt\ncom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl\n*L\n29#1:68\n44#1:69\n44#1:70\n*E\n"
+    value = "SMAP\nWalletConnectDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectDataSourceImpl.kt\ncom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,62:1\n14#2:63\n11#3:64\n18#4:65\n*S KotlinDebug\n*F\n+ 1 WalletConnectDataSourceImpl.kt\ncom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl\n*L\n29#1:63\n56#1:64\n56#1:65\n*E\n"
 .end annotation
 
 
@@ -69,97 +69,6 @@
     return-object p0
 .end method
 
-.method private final createTransactionByType(Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;)Lorg/web3j/crypto/RawTransaction;
-    .locals 7
-
-    .line 52
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getData()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "0x"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 54
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getNonce()Ljava/math/BigInteger;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getGasPrice()Ljava/math/BigInteger;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getGasLimit()Ljava/math/BigInteger;
-
-    move-result-object v2
-
-    .line 55
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getRecipientAddress()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getAmount()Ljava/math/BigInteger;
-
-    move-result-object p1
-
-    .line 53
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/web3j/crypto/RawTransaction;->createEtherTransaction(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/math/BigInteger;)Lorg/web3j/crypto/RawTransaction;
-
-    move-result-object p1
-
-    const-string v0, "{\n            RawTransac\u2026t\n            )\n        }"
-
-    .line 52
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 59
-    :cond_0
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getNonce()Ljava/math/BigInteger;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getGasPrice()Ljava/math/BigInteger;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getGasLimit()Ljava/math/BigInteger;
-
-    move-result-object v3
-
-    .line 60
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getRecipientAddress()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getAmount()Ljava/math/BigInteger;
-
-    move-result-object v5
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getData()Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 58
-    invoke-static/range {v1 .. v6}, Lorg/web3j/crypto/RawTransaction;->createTransaction(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/math/BigInteger;Ljava/lang/String;)Lorg/web3j/crypto/RawTransaction;
-
-    move-result-object p1
-
-    const-string v0, "{\n            RawTransac\u2026a\n            )\n        }"
-
-    .line 57
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :goto_0
-    return-object p1
-.end method
-
 
 # virtual methods
 .method public sendTransaction(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
@@ -206,7 +115,7 @@
 .end method
 
 .method public sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
-    .locals 3
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -226,50 +135,124 @@
     .line 38
     instance-of v0, p1, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     .line 40
-    check-cast p1, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;
+    iget-object v0, p0, Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    invoke-direct {p0, p1}, Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;->createTransactionByType(Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;)Lorg/web3j/crypto/RawTransaction;
+    invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getEVMWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
 
     move-result-object v0
 
-    .line 41
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getChainId()J
+    if-eqz v0, :cond_0
 
-    move-result-wide v1
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getPrivateKeyBytes()[B
 
-    iget-object p1, p0, Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    move-result-object v0
 
-    invoke-interface {p1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getEVMWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getCredentials()Lorg/web3j/crypto/Credentials;
-
-    move-result-object p1
-
-    goto :goto_0
+    if-nez v0, :cond_1
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
-    :goto_0
-    invoke-static {v0, v1, v2, p1}, Lorg/web3j/crypto/TransactionEncoder;->signMessage(Lorg/web3j/crypto/RawTransaction;JLorg/web3j/crypto/Credentials;)[B
+    new-array v0, v0, [B
 
-    move-result-object p1
+    :cond_1
+    move-object v9, v0
+
+    .line 42
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;
+
+    .line 43
+    invoke-static {}, Lwallet/core/jni/proto/Ethereum$Transaction;->newBuilder()Lwallet/core/jni/proto/Ethereum$Transaction$Builder;
+
+    move-result-object v0
+
+    .line 45
+    invoke-static {}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;->newBuilder()Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
+
+    move-result-object v1
+
+    .line 46
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getData()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->hexToByteString(Ljava/lang/String;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;->setData(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
+
+    move-result-object v1
+
+    .line 47
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getAmount()Ljava/math/BigInteger;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->toByteString(Ljava/math/BigInteger;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;->setAmount(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
+
+    move-result-object v1
+
+    .line 48
+    invoke-virtual {v1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object v1
+
+    check-cast v1, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;
 
     .line 44
-    invoke-static {p1}, Lorg/web3j/utils/Numeric;->toHexString([B)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lwallet/core/jni/proto/Ethereum$Transaction$Builder;->setContractGeneric(Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;)Lwallet/core/jni/proto/Ethereum$Transaction$Builder;
+
+    move-result-object v0
+
+    .line 50
+    invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object v0
+
+    move-object v8, v0
+
+    check-cast v8, Lwallet/core/jni/proto/Ethereum$Transaction;
+
+    .line 52
+    sget-object v1, Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;
+
+    .line 53
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getChainId()J
+
+    move-result-wide v2
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getGasPrice()Ljava/math/BigInteger;
+
+    move-result-object v4
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getGasLimit()Ljava/math/BigInteger;
+
+    move-result-object v5
+
+    .line 54
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getNonce()Ljava/math/BigInteger;
+
+    move-result-object v6
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getRecipientAddress()Ljava/lang/String;
+
+    move-result-object v7
+
+    const-string p1, "transaction"
+
+    invoke-static {v8, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 52
+    invoke-virtual/range {v1 .. v9}, Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;->sign(JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Lwallet/core/jni/proto/Ethereum$Transaction;[B)Ljava/lang/String;
 
     move-result-object p1
-
-    const-string v0, "toHexString(signedTransaction)"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 11
     sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
@@ -290,7 +273,7 @@
     return-object p1
 
     .line 38
-    :cond_1
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Incorrect transfer args passed"

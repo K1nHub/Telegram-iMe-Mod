@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static final encoder:Lorg/bouncycastle/util/encoders/Encoder;
+.field private static final encoder:Lorg/bouncycastle/util/encoders/HexEncoder;
 
 
 # direct methods
@@ -14,28 +14,28 @@
 
     invoke-direct {v0}, Lorg/bouncycastle/util/encoders/HexEncoder;-><init>()V
 
-    sput-object v0, Lorg/bouncycastle/util/encoders/Hex;->encoder:Lorg/bouncycastle/util/encoders/Encoder;
+    sput-object v0, Lorg/bouncycastle/util/encoders/Hex;->encoder:Lorg/bouncycastle/util/encoders/HexEncoder;
 
     return-void
 .end method
 
-.method public static decode(Ljava/lang/String;)[B
+.method public static decodeStrict(Ljava/lang/String;)[B
     .locals 3
 
-    new-instance v0, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
     :try_start_0
-    sget-object v1, Lorg/bouncycastle/util/encoders/Hex;->encoder:Lorg/bouncycastle/util/encoders/Encoder;
+    sget-object v0, Lorg/bouncycastle/util/encoders/Hex;->encoder:Lorg/bouncycastle/util/encoders/HexEncoder;
 
-    invoke-interface {v1, p0, v0}, Lorg/bouncycastle/util/encoders/Encoder;->decode(Ljava/lang/String;Ljava/io/OutputStream;)I
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-virtual {v0, p0, v1, v2}, Lorg/bouncycastle/util/encoders/HexEncoder;->decodeStrict(Ljava/lang/String;II)[B
 
     move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
@@ -89,9 +89,9 @@
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
     :try_start_0
-    sget-object v1, Lorg/bouncycastle/util/encoders/Hex;->encoder:Lorg/bouncycastle/util/encoders/Encoder;
+    sget-object v1, Lorg/bouncycastle/util/encoders/Hex;->encoder:Lorg/bouncycastle/util/encoders/HexEncoder;
 
-    invoke-interface {v1, p0, p1, p2, v0}, Lorg/bouncycastle/util/encoders/Encoder;->encode([BIILjava/io/OutputStream;)I
+    invoke-virtual {v1, p0, p1, p2, v0}, Lorg/bouncycastle/util/encoders/HexEncoder;->encode([BIILjava/io/OutputStream;)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

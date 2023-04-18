@@ -7,14 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl$Companion;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nEthWalletCancelDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EthWalletCancelDataSourceImpl.kt\ncom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n*L\n1#1,80:1\n70#2:81\n*S KotlinDebug\n*F\n+ 1 EthWalletCancelDataSourceImpl.kt\ncom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl\n*L\n49#1:81\n*E\n"
+    value = "SMAP\nEthWalletCancelDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EthWalletCancelDataSourceImpl.kt\ncom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,64:1\n14#2:65\n11#3:66\n18#4:67\n*S KotlinDebug\n*F\n+ 1 EthWalletCancelDataSourceImpl.kt\ncom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl\n*L\n29#1:65\n58#1:66\n58#1:67\n*E\n"
 .end annotation
 
 
@@ -27,18 +21,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl$Companion;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    return-void
-.end method
-
 .method public constructor <init>(Lcom/iMe/storage/data/network/api/own/CancelApi;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
     .locals 1
 
@@ -54,201 +36,47 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
+    .line 19
     iput-object p1, p0, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->cancelApi:Lcom/iMe/storage/data/network/api/own/CancelApi;
 
-    .line 25
+    .line 20
     iput-object p2, p0, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 26
+    .line 21
     iput-object p3, p0, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     return-void
 .end method
 
-.method private final createSmartFunctionParams(Ljava/lang/String;Ljava/math/BigInteger;)Ljava/lang/String;
-    .locals 2
+.method public static final synthetic access$getCancelApi$p(Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;)Lcom/iMe/storage/data/network/api/own/CancelApi;
+    .locals 0
 
-    const/4 v0, 0x2
+    .line 18
+    iget-object p0, p0, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->cancelApi:Lcom/iMe/storage/data/network/api/own/CancelApi;
 
-    new-array v0, v0, [Lorg/web3j/abi/datatypes/Type;
-
-    .line 71
-    new-instance v1, Lorg/web3j/abi/datatypes/Address;
-
-    invoke-direct {v1, p1}, Lorg/web3j/abi/datatypes/Address;-><init>(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    aput-object v1, v0, p1
-
-    new-instance p1, Lorg/web3j/abi/datatypes/generated/Uint256;
-
-    invoke-direct {p1, p2}, Lorg/web3j/abi/datatypes/generated/Uint256;-><init>(Ljava/math/BigInteger;)V
-
-    const/4 p2, 0x1
-
-    aput-object p1, v0, p2
-
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p1
-
-    const-string p2, "transfer"
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x4
-
-    invoke-static {p2, p1, v0, v1, v0}, Lcom/iMe/storage/data/utils/extentions/Web3jExtKt;->createSmartFunctionDataFor$default(Ljava/lang/String;Ljava/util/List;Ljava/util/List;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
+    return-object p0
 .end method
 
-.method private final createTransactionByType(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;)Lorg/web3j/crypto/RawTransaction;
-    .locals 8
+.method public static final synthetic access$getFirebaseErrorHandler$p(Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    .locals 0
 
-    .line 57
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getContractAddress()Ljava/lang/String;
+    .line 18
+    iget-object p0, p0, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
-    const-string v1, "{\n            RawTransac\u2026)\n            )\n        }"
-
-    if-eqz v0, :cond_2
-
-    .line 59
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getNonce()Ljava/math/BigInteger;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getGasPrice()Ljava/math/BigInteger;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getGasLimit()Ljava/math/BigInteger;
-
-    move-result-object v3
-
-    .line 60
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getRecipientAddress()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getAmount()D
-
-    move-result-wide v5
-
-    invoke-static {v5, v6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v5
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
-
-    move-result-object p1
-
-    invoke-static {v5, p1}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->convertToWei(Ljava/lang/Number;Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;)Ljava/math/BigInteger;
-
-    move-result-object p1
-
-    .line 58
-    invoke-static {v0, v2, v3, v4, p1}, Lorg/web3j/crypto/RawTransaction;->createEtherTransaction(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/math/BigInteger;)Lorg/web3j/crypto/RawTransaction;
-
-    move-result-object p1
-
-    .line 57
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_2
-
-    .line 64
-    :cond_2
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getNonce()Ljava/math/BigInteger;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getGasPrice()Ljava/math/BigInteger;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getGasLimit()Ljava/math/BigInteger;
-
-    move-result-object v3
-
-    .line 65
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getContractAddress()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getRecipientAddress()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getAmount()D
-
-    move-result-wide v6
-
-    invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v6
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
-
-    move-result-object p1
-
-    invoke-static {v6, p1}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->convertToWei(Ljava/lang/Number;Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;)Ljava/math/BigInteger;
-
-    move-result-object p1
-
-    invoke-direct {p0, v5, p1}, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->createSmartFunctionParams(Ljava/lang/String;Ljava/math/BigInteger;)Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 63
-    invoke-static {v0, v2, v3, v4, p1}, Lorg/web3j/crypto/RawTransaction;->createTransaction(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;)Lorg/web3j/crypto/RawTransaction;
-
-    move-result-object p1
-
-    .line 62
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :goto_2
-    return-object p1
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public cancel(Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;)Lio/reactivex/Observable;
-    .locals 4
+.method public cancel(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;",
+            "Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -261,119 +89,216 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
+    .line 27
     instance-of v0, p1, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
+    .line 29
+    invoke-virtual {p0, p1}, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    .line 14
+    new-instance v1, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl$cancel$$inlined$flatMapSuccess$1;
+
+    invoke-direct {v1, p0, p1}, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl$cancel$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)V
+
+    new-instance p1, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v1}, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string v0, "crossinline body: (T) ->\u2026e.empty()\n        }\n    }"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p1
+
+    .line 27
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Incorrect cancel args passed"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p1}, Lio/reactivex/Observable;->error(Ljava/lang/Throwable;)Lio/reactivex/Observable;
+    throw p1
+.end method
+
+.method public sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
+    .locals 11
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/lang/String;",
+            ">;>;"
+        }
+    .end annotation
+
+    const-string v0, "args"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 42
+    instance-of v0, p1, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
+
+    if-eqz v0, :cond_5
+
+    .line 44
+    iget-object v0, p0, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+
+    invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getEVMWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getPrivateKeyBytes()[B
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    new-array v0, v1, [B
+
+    :cond_1
+    move-object v10, v0
+
+    .line 46
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getTransferArgs()Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;
 
     move-result-object p1
 
-    const-string v0, "error(IllegalStateExcept\u2026elDataSource.ARGS_ERROR))"
+    .line 47
+    sget-object v2, Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;
+
+    .line 48
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;->getConvertedAmount()Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    .line 49
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getRecipientAddress()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 50
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getContractAddress()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 47
+    invoke-virtual {v2, v0, v3, v4}, Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;->createTransferTransactionByType(Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;)Lwallet/core/jni/proto/Ethereum$Transaction;
+
+    move-result-object v9
+
+    .line 52
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getContractAddress()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    :cond_2
+    const/4 v1, 0x1
+
+    :cond_3
+    if-eqz v1, :cond_4
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getRecipientAddress()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getContractAddress()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    move-object v8, v0
+
+    .line 55
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getChainId()J
+
+    move-result-wide v3
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getGasPrice()Ljava/math/BigInteger;
+
+    move-result-object v5
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getGasLimit()Ljava/math/BigInteger;
+
+    move-result-object v6
+
+    .line 56
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getNonce()Ljava/math/BigInteger;
+
+    move-result-object v7
+
+    .line 54
+    invoke-virtual/range {v2 .. v10}, Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;->sign(JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Lwallet/core/jni/proto/Ethereum$Transaction;[B)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 11
+    sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
+
+    invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+
+    move-result-object p1
+
+    .line 18
+    invoke-static {p1}, Lio/reactivex/Observable;->just(Ljava/lang/Object;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string v0, "just(this)"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 
-    .line 34
-    :cond_0
-    check-cast p1, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getTransferArgs()Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->createTransactionByType(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;)Lorg/web3j/crypto/RawTransaction;
-
-    move-result-object v0
-
-    .line 37
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getTransferArgs()Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getChainId()J
-
-    move-result-wide v1
-
-    .line 38
-    iget-object v3, p0, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
-    invoke-interface {v3}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getEVMWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getCredentials()Lorg/web3j/crypto/Credentials;
-
-    move-result-object v3
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v3, 0x0
-
-    .line 35
-    :goto_0
-    invoke-static {v0, v1, v2, v3}, Lorg/web3j/crypto/TransactionEncoder;->signMessage(Lorg/web3j/crypto/RawTransaction;JLorg/web3j/crypto/Credentials;)[B
-
-    move-result-object v0
-
     .line 42
-    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/cancel/SendEthereumCancelOrBoostTransactionRequest;
+    :cond_5
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    .line 43
-    invoke-static {v0}, Lorg/web3j/utils/Numeric;->toHexString([B)Ljava/lang/String;
+    const-string v0, "Incorrect cancel args passed"
 
-    move-result-object v0
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "toHexString(signedTransaction)"
+    throw p1
+.end method
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+.method public bridge synthetic sign(Ljava/lang/Object;)Lio/reactivex/Observable;
+    .locals 0
 
-    .line 44
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getOldTxHash()Ljava/lang/String;
+    .line 18
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
 
-    move-result-object p1
-
-    .line 42
-    invoke-direct {v1, v0, p1}, Lcom/iMe/storage/data/network/model/request/crypto/cancel/SendEthereumCancelOrBoostTransactionRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 47
-    iget-object p1, p0, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->cancelApi:Lcom/iMe/storage/data/network/api/own/CancelApi;
-
-    .line 48
-    invoke-interface {p1, v1}, Lcom/iMe/storage/data/network/api/own/CancelApi;->sendEthereumCancelTransaction(Lcom/iMe/storage/data/network/model/request/crypto/cancel/SendEthereumCancelOrBoostTransactionRequest;)Lio/reactivex/Observable;
+    invoke-virtual {p0, p1}, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
-
-    .line 49
-    iget-object v0, p0, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
-
-    .line 70
-    new-instance v1, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl$cancel$$inlined$mapSuccess$1;
-
-    invoke-direct {v1, v0}, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl$cancel$$inlined$mapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
-
-    new-instance v0, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
-
-    invoke-direct {v0, v1}, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    const-string v0, "errorHandler: FirebaseFu\u2026response).toError()\n    }"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method

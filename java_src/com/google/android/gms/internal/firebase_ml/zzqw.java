@@ -11,15 +11,15 @@ import com.google.android.gms.dynamite.DynamiteModule;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.vision.Frame;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseLocalModel;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseModelManager;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseRemoteModel;
-import com.google.firebase.p021ml.vision.automl.internal.IOnDeviceAutoMLImageLabeler;
-import com.google.firebase.p021ml.vision.automl.internal.OnDeviceAutoMLImageLabelerOptionsParcel;
-import com.google.firebase.p021ml.vision.automl.internal.zzh;
-import com.google.firebase.p021ml.vision.label.FirebaseVisionImageLabel;
-import com.google.firebase.p021ml.vision.label.FirebaseVisionOnDeviceAutoMLImageLabelerOptions;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseLocalModel;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseModelManager;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseRemoteModel;
+import com.google.firebase.p020ml.vision.automl.internal.IOnDeviceAutoMLImageLabeler;
+import com.google.firebase.p020ml.vision.automl.internal.OnDeviceAutoMLImageLabelerOptionsParcel;
+import com.google.firebase.p020ml.vision.automl.internal.zzh;
+import com.google.firebase.p020ml.vision.label.FirebaseVisionImageLabel;
+import com.google.firebase.p020ml.vision.label.FirebaseVisionOnDeviceAutoMLImageLabelerOptions;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -75,13 +75,13 @@ public final class zzqw implements zzno<List<FirebaseVisionImageLabel>, zzqp>, z
                 IObjectWrapper wrap = ObjectWrapper.wrap(zzqpVar.zzbay.getBitmap());
                 IOnDeviceAutoMLImageLabeler iOnDeviceAutoMLImageLabeler = this.zzbdb;
                 Frame.Metadata metadata = zzqpVar.zzbay.getMetadata();
-                com.google.firebase.p021ml.vision.automl.internal.zzf[] zza = iOnDeviceAutoMLImageLabeler.zza(wrap, new zzh(metadata.getWidth(), metadata.getHeight(), metadata.getId(), metadata.getTimestampMillis(), metadata.getRotation()));
+                com.google.firebase.p020ml.vision.automl.internal.zzf[] zza = iOnDeviceAutoMLImageLabeler.zza(wrap, new zzh(metadata.getWidth(), metadata.getHeight(), metadata.getId(), metadata.getTimestampMillis(), metadata.getRotation()));
                 zza(zzmc.NO_ERROR, elapsedRealtime, z, zzqpVar);
                 if (zza == null) {
                     return zzlh.zzih();
                 }
                 ArrayList arrayList = new ArrayList();
-                for (com.google.firebase.p021ml.vision.automl.internal.zzf zzfVar : zza) {
+                for (com.google.firebase.p020ml.vision.automl.internal.zzf zzfVar : zza) {
                     arrayList.add(FirebaseVisionImageLabel.zza(zzfVar));
                 }
                 zzaxr.set(false);
@@ -100,7 +100,7 @@ public final class zzqw implements zzno<List<FirebaseVisionImageLabel>, zzqp>, z
             try {
                 try {
                     if (this.zzbdb == null) {
-                        com.google.firebase.p021ml.vision.automl.internal.zza asInterface = com.google.firebase.p021ml.vision.automl.internal.zzd.asInterface(DynamiteModule.load(this.firebaseApp.getApplicationContext(), DynamiteModule.PREFER_LOCAL, "com.google.firebase.ml.vision.dynamite.automl").instantiate("com.google.firebase.ml.vision.automl.OnDeviceAutoMLImageLabelerCreator"));
+                        com.google.firebase.p020ml.vision.automl.internal.zza asInterface = com.google.firebase.p020ml.vision.automl.internal.zzd.asInterface(DynamiteModule.load(this.firebaseApp.getApplicationContext(), DynamiteModule.PREFER_LOCAL, "com.google.firebase.ml.vision.dynamite.automl").instantiate("com.google.firebase.ml.vision.automl.OnDeviceAutoMLImageLabelerCreator"));
                         if (asInterface == null) {
                             Log.e("ODAutoMLImgLabelerTask", "Error when creating on device AutoML Image Labeler creator.");
                             throw new FirebaseMLException("Can not create on device AutoML Image Labeler.", 14);

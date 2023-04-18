@@ -22,14 +22,14 @@ public final class ApicFrame extends Id3Frame {
     };
 
     /* renamed from: ID */
-    public static final String f112ID = "APIC";
+    public static final String f109ID = "APIC";
     public final String description;
     public final String mimeType;
     public final byte[] pictureData;
     public final int pictureType;
 
     public ApicFrame(String str, String str2, int i, byte[] bArr) {
-        super(f112ID);
+        super(f109ID);
         this.mimeType = str;
         this.description = str2;
         this.pictureType = i;
@@ -37,7 +37,7 @@ public final class ApicFrame extends Id3Frame {
     }
 
     ApicFrame(Parcel parcel) {
-        super(f112ID);
+        super(f109ID);
         this.mimeType = (String) Util.castNonNull(parcel.readString());
         this.description = parcel.readString();
         this.pictureType = parcel.readInt();
@@ -70,7 +70,7 @@ public final class ApicFrame extends Id3Frame {
 
     @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame
     public String toString() {
-        return this.f117id + ": mimeType=" + this.mimeType + ", description=" + this.description;
+        return this.f114id + ": mimeType=" + this.mimeType + ", description=" + this.description;
     }
 
     @Override // android.os.Parcelable

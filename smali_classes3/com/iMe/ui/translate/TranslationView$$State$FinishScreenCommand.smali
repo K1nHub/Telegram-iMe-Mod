@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/translate/TranslationView$$State;)V
     .locals 1
 
-    .line 341
+    .line 377
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "finishScreen"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/translate/TranslationView;)V
     .locals 0
 
-    .line 346
+    .line 382
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->finishScreen()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 339
+    .line 375
     check-cast p1, Lcom/iMe/ui/translate/TranslationView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/translate/TranslationView$$State$FinishScreenCommand;->apply(Lcom/iMe/ui/translate/TranslationView;)V

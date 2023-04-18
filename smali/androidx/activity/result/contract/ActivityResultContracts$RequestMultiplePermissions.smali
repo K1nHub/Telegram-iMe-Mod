@@ -23,7 +23,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nActivityResultContracts.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ActivityResultContracts.kt\nandroidx/activity/result/contract/ActivityResultContracts$RequestMultiplePermissions\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,588:1\n12530#2,2:589\n8669#2,2:591\n9351#2,4:593\n11358#2:597\n11693#2,3:598\n*S KotlinDebug\n*F\n+ 1 ActivityResultContracts.kt\nandroidx/activity/result/contract/ActivityResultContracts$RequestMultiplePermissions\n*L\n179#1:589,2\n186#1:591,2\n186#1:593,4\n199#1:597\n199#1:598,3\n*E\n"
+    value = "SMAP\nActivityResultContracts.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ActivityResultContracts.kt\nandroidx/activity/result/contract/ActivityResultContracts$RequestMultiplePermissions\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,796:1\n12537#2,2:797\n8676#2,2:799\n9358#2,4:801\n11365#2:805\n11700#2,3:806\n*S KotlinDebug\n*F\n+ 1 ActivityResultContracts.kt\nandroidx/activity/result/contract/ActivityResultContracts$RequestMultiplePermissions\n*L\n182#1:797,2\n189#1:799,2\n189#1:801,4\n202#1:805\n202#1:806,3\n*E\n"
 .end annotation
 
 
@@ -49,7 +49,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 128
+    .line 131
     invoke-direct {p0}, Landroidx/activity/result/contract/ActivityResultContract;-><init>()V
 
     return-void
@@ -60,7 +60,7 @@
 .method public bridge synthetic createIntent(Landroid/content/Context;Ljava/lang/Object;)Landroid/content/Intent;
     .locals 0
 
-    .line 127
+    .line 130
     check-cast p2, [Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Landroidx/activity/result/contract/ActivityResultContracts$RequestMultiplePermissions;->createIntent(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
@@ -81,7 +81,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 169
+    .line 172
     sget-object p1, Landroidx/activity/result/contract/ActivityResultContracts$RequestMultiplePermissions;->Companion:Landroidx/activity/result/contract/ActivityResultContracts$RequestMultiplePermissions$Companion;
 
     invoke-virtual {p1, p2}, Landroidx/activity/result/contract/ActivityResultContracts$RequestMultiplePermissions$Companion;->createIntent$activity_release([Ljava/lang/String;)Landroid/content/Intent;
@@ -94,7 +94,7 @@
 .method public bridge synthetic getSynchronousResult(Landroid/content/Context;Ljava/lang/Object;)Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;
     .locals 0
 
-    .line 127
+    .line 130
     check-cast p2, [Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Landroidx/activity/result/contract/ActivityResultContracts$RequestMultiplePermissions;->getSynchronousResult(Landroid/content/Context;[Ljava/lang/String;)Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;
@@ -129,7 +129,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 176
+    .line 179
     array-length v0, p2
 
     const/4 v1, 0x1
@@ -148,7 +148,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 177
+    .line 180
     new-instance p1, Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;
 
     invoke-static {}, Lkotlin/collections/MapsKt;->emptyMap()Ljava/util/Map;
@@ -159,7 +159,7 @@
 
     return-object p1
 
-    .line 589
+    .line 797
     :cond_1
     array-length v0, p2
 
@@ -170,7 +170,7 @@
 
     aget-object v4, p2, v3
 
-    .line 180
+    .line 183
     invoke-static {p1, v4}, Landroidx/core/content/ContextCompat;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v4
@@ -200,7 +200,7 @@
     :goto_3
     if-eqz v1, :cond_6
 
-    .line 591
+    .line 8676
     array-length p1, p2
 
     invoke-static {p1}, Lkotlin/collections/MapsKt;->mapCapacity(I)I
@@ -213,12 +213,12 @@
 
     move-result p1
 
-    .line 592
+    .line 8677
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0, p1}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 593
+    .line 9358
     array-length p1, p2
 
     :goto_4
@@ -226,7 +226,7 @@
 
     aget-object v1, p2, v2
 
-    .line 186
+    .line 189
     sget-object v3, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
@@ -264,7 +264,7 @@
 .method public bridge synthetic parseResult(ILandroid/content/Intent;)Ljava/lang/Object;
     .locals 0
 
-    .line 127
+    .line 130
     invoke-virtual {p0, p1, p2}, Landroidx/activity/result/contract/ActivityResultContracts$RequestMultiplePermissions;->parseResult(ILandroid/content/Intent;)Ljava/util/Map;
 
     move-result-object p1
@@ -290,7 +290,7 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 194
+    .line 197
     invoke-static {}, Lkotlin/collections/MapsKt;->emptyMap()Ljava/util/Map;
 
     move-result-object p1
@@ -300,7 +300,7 @@
     :cond_0
     if-nez p2, :cond_1
 
-    .line 195
+    .line 198
     invoke-static {}, Lkotlin/collections/MapsKt;->emptyMap()Ljava/util/Map;
 
     move-result-object p1
@@ -310,14 +310,14 @@
     :cond_1
     const-string p1, "androidx.activity.result.contract.extra.PERMISSIONS"
 
-    .line 196
+    .line 199
     invoke-virtual {p2, p1}, Landroid/content/Intent;->getStringArrayExtra(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p1
 
     const-string v0, "androidx.activity.result.contract.extra.PERMISSION_GRANT_RESULTS"
 
-    .line 197
+    .line 200
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getIntArrayExtra(Ljava/lang/String;)[I
 
     move-result-object p2
@@ -328,7 +328,7 @@
 
     goto :goto_2
 
-    .line 597
+    .line 11365
     :cond_2
     new-instance v0, Ljava/util/ArrayList;
 
@@ -336,7 +336,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 598
+    .line 11700
     array-length v1, p2
 
     const/4 v2, 0x0
@@ -357,7 +357,7 @@
     :cond_3
     move v4, v2
 
-    .line 200
+    .line 203
     :goto_1
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -369,7 +369,7 @@
 
     goto :goto_0
 
-    .line 202
+    .line 205
     :cond_4
     invoke-static {p1}, Lkotlin/collections/ArraysKt;->filterNotNull([Ljava/lang/Object;)Ljava/util/List;
 
@@ -385,7 +385,7 @@
 
     return-object p1
 
-    .line 198
+    .line 201
     :cond_5
     :goto_2
     invoke-static {}, Lkotlin/collections/MapsKt;->emptyMap()Ljava/util/Map;

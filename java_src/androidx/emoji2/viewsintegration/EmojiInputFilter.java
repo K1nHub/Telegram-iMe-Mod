@@ -65,10 +65,11 @@ final class EmojiInputFilter implements InputFilter {
 
         @Override // androidx.emoji2.text.EmojiCompat.InitCallback
         public void onInitialized() {
+            CharSequence text;
+            CharSequence process;
             super.onInitialized();
             TextView textView = this.mViewRef.get();
-            if (isInputFilterCurrentlyRegisteredOnTextView(textView, this.mEmojiInputFilterReference.get()) && textView.isAttachedToWindow()) {
-                CharSequence process = EmojiCompat.get().process(textView.getText());
+            if (isInputFilterCurrentlyRegisteredOnTextView(textView, this.mEmojiInputFilterReference.get()) && textView.isAttachedToWindow() && text != (process = EmojiCompat.get().process((text = textView.getText())))) {
                 int selectionStart = Selection.getSelectionStart(process);
                 int selectionEnd = Selection.getSelectionEnd(process);
                 textView.setText(process);

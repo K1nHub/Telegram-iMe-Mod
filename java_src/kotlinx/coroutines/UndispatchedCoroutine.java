@@ -1,5 +1,7 @@
 package kotlinx.coroutines;
 
+import kotlin.Pair;
+import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
@@ -8,8 +10,7 @@ import kotlinx.coroutines.internal.ThreadContextKt;
 /* compiled from: CoroutineContext.kt */
 /* loaded from: classes4.dex */
 public final class UndispatchedCoroutine<T> extends ScopeCoroutine<T> {
-    private CoroutineContext savedContext;
-    private Object savedOldValue;
+    private ThreadLocal<Pair<CoroutineContext, Object>> threadStateToRecover;
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
@@ -21,36 +22,49 @@ public final class UndispatchedCoroutine<T> extends ScopeCoroutine<T> {
             r2 = this;
             kotlinx.coroutines.UndispatchedMarker r0 = kotlinx.coroutines.UndispatchedMarker.INSTANCE
             kotlin.coroutines.CoroutineContext$Element r1 = r3.get(r0)
-            if (r1 != 0) goto Lc
-            kotlin.coroutines.CoroutineContext r3 = r3.plus(r0)
-        Lc:
-            r2.<init>(r3, r4)
+            if (r1 != 0) goto Ld
+            kotlin.coroutines.CoroutineContext r0 = r3.plus(r0)
+            goto Le
+        Ld:
+            r0 = r3
+        Le:
+            r2.<init>(r0, r4)
+            java.lang.ThreadLocal r0 = new java.lang.ThreadLocal
+            r0.<init>()
+            r2.threadStateToRecover = r0
+            kotlin.coroutines.CoroutineContext r4 = r4.getContext()
+            kotlin.coroutines.ContinuationInterceptor$Key r0 = kotlin.coroutines.ContinuationInterceptor.Key
+            kotlin.coroutines.CoroutineContext$Element r4 = r4.get(r0)
+            boolean r4 = r4 instanceof kotlinx.coroutines.CoroutineDispatcher
+            if (r4 != 0) goto L31
+            r4 = 0
+            java.lang.Object r4 = kotlinx.coroutines.internal.ThreadContextKt.updateThreadContext(r3, r4)
+            kotlinx.coroutines.internal.ThreadContextKt.restoreThreadContext(r3, r4)
+            r2.saveThreadContext(r3, r4)
+        L31:
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.UndispatchedCoroutine.<init>(kotlin.coroutines.CoroutineContext, kotlin.coroutines.Continuation):void");
     }
 
     public final void saveThreadContext(CoroutineContext coroutineContext, Object obj) {
-        this.savedContext = coroutineContext;
-        this.savedOldValue = obj;
+        this.threadStateToRecover.set(TuplesKt.m80to(coroutineContext, obj));
     }
 
     public final boolean clearThreadContext() {
-        if (this.savedContext == null) {
+        if (this.threadStateToRecover.get() == null) {
             return false;
         }
-        this.savedContext = null;
-        this.savedOldValue = null;
+        this.threadStateToRecover.set(null);
         return true;
     }
 
     @Override // kotlinx.coroutines.internal.ScopeCoroutine, kotlinx.coroutines.AbstractCoroutine
     protected void afterResume(Object obj) {
-        CoroutineContext coroutineContext = this.savedContext;
-        if (coroutineContext != null) {
-            ThreadContextKt.restoreThreadContext(coroutineContext, this.savedOldValue);
-            this.savedContext = null;
-            this.savedOldValue = null;
+        Pair<CoroutineContext, Object> pair = this.threadStateToRecover.get();
+        if (pair != null) {
+            ThreadContextKt.restoreThreadContext(pair.component1(), pair.component2());
+            this.threadStateToRecover.set(null);
         }
         Object recoverResult = CompletionStateKt.recoverResult(obj, this.uCont);
         Continuation<T> continuation = this.uCont;

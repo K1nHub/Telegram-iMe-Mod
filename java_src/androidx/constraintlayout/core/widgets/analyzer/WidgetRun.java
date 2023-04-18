@@ -58,7 +58,7 @@ public abstract class WidgetRun implements Dependency {
             return null;
         }
         ConstraintWidget constraintWidget = constraintAnchor2.mOwner;
-        int i = C01091.f30x6930e354[constraintAnchor2.mType.ordinal()];
+        int i = C01051.f30x6930e354[constraintAnchor2.mType.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
@@ -80,7 +80,7 @@ public abstract class WidgetRun implements Dependency {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: androidx.constraintlayout.core.widgets.analyzer.WidgetRun$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C01091 {
+    public static /* synthetic */ class C01051 {
 
         /* renamed from: $SwitchMap$androidx$constraintlayout$core$widgets$ConstraintAnchor$Type */
         static final /* synthetic */ int[] f30x6930e354;
@@ -220,7 +220,7 @@ public abstract class WidgetRun implements Dependency {
         }
         ConstraintWidget constraintWidget = constraintAnchor2.mOwner;
         WidgetRun widgetRun = i == 0 ? constraintWidget.horizontalRun : constraintWidget.verticalRun;
-        int i2 = C01091.f30x6930e354[constraintAnchor2.mType.ordinal()];
+        int i2 = C01051.f30x6930e354[constraintAnchor2.mType.ordinal()];
         if (i2 != 1) {
             if (i2 != 2) {
                 if (i2 != 3) {

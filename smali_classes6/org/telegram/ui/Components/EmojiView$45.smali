@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/EmojiView$45;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroidx/recyclerview/widget/LinearSmoothScroller;
 .source "EmojiView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EmojiView;->showStickerSettingsButton(ZZ)V
+    value = Lorg/telegram/ui/Components/EmojiView;->animateSearchField(IZI)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,46 +15,55 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Components/EmojiView;
-
-.field final synthetic val$show:Z
+.field final synthetic val$tabsMinusDy:I
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Z)V
+.method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;I)V
     .locals 0
 
-    .line 5678
-    iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$45;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    .line 5665
+    iput p3, p0, Lorg/telegram/ui/Components/EmojiView$45;->val$tabsMinusDy:I
 
-    iput-boolean p2, p0, Lorg/telegram/ui/Components/EmojiView$45;->val$show:Z
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0, p2}, Landroidx/recyclerview/widget/LinearSmoothScroller;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public calculateDtToFit(IIIII)I
+    .locals 0
+
+    .line 5678
+    invoke-super/range {p0 .. p5}, Landroidx/recyclerview/widget/LinearSmoothScroller;->calculateDtToFit(IIIII)I
+
+    move-result p1
+
+    iget p2, p0, Lorg/telegram/ui/Components/EmojiView$45;->val$tabsMinusDy:I
+
+    add-int/2addr p1, p2
+
+    return p1
+.end method
+
+.method protected calculateTimeForDeceleration(I)I
+    .locals 0
+
+    .line 5673
+    invoke-super {p0, p1}, Landroidx/recyclerview/widget/LinearSmoothScroller;->calculateTimeForDeceleration(I)I
+
+    move-result p1
+
+    mul-int/lit8 p1, p1, 0x10
+
+    return p1
+.end method
+
+.method protected getVerticalSnapPreference()I
     .locals 1
 
-    .line 5681
-    iget-boolean p1, p0, Lorg/telegram/ui/Components/EmojiView$45;->val$show:Z
+    const/4 v0, -0x1
 
-    if-nez p1, :cond_0
-
-    .line 5682
-    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$45;->this$0:Lorg/telegram/ui/Components/EmojiView;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$15800(Lorg/telegram/ui/Components/EmojiView;)Landroid/widget/ImageView;
-
-    move-result-object p1
-
-    const/4 v0, 0x4
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    :cond_0
-    return-void
+    return v0
 .end method

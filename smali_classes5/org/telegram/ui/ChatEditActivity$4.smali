@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatEditActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 545
+    .line 546
     iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$4;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public invalidate()V
     .locals 1
 
-    .line 548
+    .line 549
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$4;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->access$1000(Lorg/telegram/ui/ChatEditActivity;)Landroid/view/View;
@@ -44,7 +44,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 549
+    .line 550
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$4;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->access$1000(Lorg/telegram/ui/ChatEditActivity;)Landroid/view/View;
@@ -53,7 +53,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 551
+    .line 552
     :cond_0
     invoke-super {p0}, Landroid/view/View;->invalidate()V
 
@@ -63,7 +63,7 @@
 .method public invalidate(IIII)V
     .locals 1
 
-    .line 556
+    .line 557
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$4;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->access$1000(Lorg/telegram/ui/ChatEditActivity;)Landroid/view/View;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 557
+    .line 558
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$4;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->access$1000(Lorg/telegram/ui/ChatEditActivity;)Landroid/view/View;
@@ -81,7 +81,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 559
+    .line 560
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->invalidate(IIII)V
 

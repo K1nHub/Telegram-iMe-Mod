@@ -4,7 +4,7 @@ import com.iMe.storage.data.utils.system.AndroidActivityHolder;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.google.DynamicLinkData;
 import com.iMe.storage.domain.repository.firebase.DynamicLinksRepository;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DynamicLinksInteractor.kt */
@@ -23,7 +23,7 @@ public final class DynamicLinksInteractor {
     public final Observable<Result<DynamicLinkData>> getLink(AndroidActivityHolder holder, String url) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(url, "url");
-        Observable<Result<DynamicLinkData>> subscribeOn = this.dynamicLinksRepository.getLink(holder, url).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<DynamicLinkData>> subscribeOn = this.dynamicLinksRepository.getLink(holder, url).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "dynamicLinksRepository\n …(schedulersProvider.io())");
         return subscribeOn;
     }

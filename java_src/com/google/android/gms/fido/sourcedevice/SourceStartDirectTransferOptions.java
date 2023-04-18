@@ -14,15 +14,15 @@ public class SourceStartDirectTransferOptions extends AbstractSafeParcelable imp
     public static final int CALLER_TYPE_BROWSER = 2;
     public static final int CALLER_TYPE_UNKNOWN = 0;
     public static final Parcelable.Creator<SourceStartDirectTransferOptions> CREATOR = new zzb();
-    @SafeParcelable.Field(defaultValueUnchecked = "SourceStartDirectTransferOptions.CALLER_TYPE_UNKNOWN", getter = "getCallerType", m789id = 1)
+    @SafeParcelable.Field(defaultValueUnchecked = "SourceStartDirectTransferOptions.CALLER_TYPE_UNKNOWN", getter = "getCallerType", m775id = 1)
     private int zza;
-    @SafeParcelable.Field(defaultValueUnchecked = "false", getter = "getIsUserPresenceVerified", m789id = 2)
+    @SafeParcelable.Field(defaultValueUnchecked = "false", getter = "getIsUserPresenceVerified", m775id = 2)
     private boolean zzb;
-    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getAccountListForAuthentication", m789id = 3)
+    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getAccountListForAuthentication", m775id = 3)
     private List zzc;
-    @SafeParcelable.Field(defaultValueUnchecked = "false", getter = "getIsUserVerified", m789id = 4)
+    @SafeParcelable.Field(defaultValueUnchecked = "false", getter = "getIsUserVerified", m775id = 4)
     private boolean zzd;
-    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getUserVerificationOrigin", m789id = 5)
+    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getUserVerificationOrigin", m775id = 5)
     private String zze;
 
     public SourceStartDirectTransferOptions(int i) {
@@ -43,7 +43,7 @@ public class SourceStartDirectTransferOptions extends AbstractSafeParcelable imp
     }
 
     @SafeParcelable.Constructor
-    public SourceStartDirectTransferOptions(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) boolean z, @SafeParcelable.Param(m788id = 3) List list, @SafeParcelable.Param(m788id = 4) boolean z2, @SafeParcelable.Param(m788id = 5) String str) {
+    public SourceStartDirectTransferOptions(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) boolean z, @SafeParcelable.Param(m774id = 3) List list, @SafeParcelable.Param(m774id = 4) boolean z2, @SafeParcelable.Param(m774id = 5) String str) {
         this.zza = i;
         this.zzb = z;
         this.zzc = list;

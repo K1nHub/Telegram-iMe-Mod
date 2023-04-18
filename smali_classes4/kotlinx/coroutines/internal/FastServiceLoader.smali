@@ -267,7 +267,6 @@
     :catchall_1
     move-exception v0
 
-    .line 143
     :try_start_4
     throw v0
     :try_end_4
@@ -404,10 +403,6 @@
 
     move-result-object v1
 
-    const-string v2, "null cannot be cast to non-null type kotlin.CharSequence"
-
-    invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     invoke-static {v1}, Lkotlin/text/StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -491,11 +486,19 @@
 
     goto :goto_0
 
-    :cond_7
-    const-string p1, "Illegal service provider class name: "
-
     .line 153
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    :cond_7
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "Illegal service provider class name: "
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -600,16 +603,13 @@
     move-object v2, v3
 
     :goto_0
-    if-nez v2, :cond_1
-
-    goto :goto_1
+    if-eqz v2, :cond_1
 
     .line 60
-    :cond_1
     :try_start_2
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :goto_1
+    :cond_1
     const-string v2, "kotlinx.coroutines.test.internal.TestMainDispatcherFactory"
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -649,18 +649,15 @@
     move-object v3, v2
 
     :catch_1
-    if-nez v3, :cond_2
-
-    goto :goto_2
+    if-eqz v3, :cond_2
 
     .line 61
-    :cond_2
     :try_start_4
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    goto :goto_2
+    goto :goto_1
 
     .line 65
     :catchall_0
@@ -672,7 +669,8 @@
 
     move-result-object v1
 
-    :goto_2
+    :cond_2
+    :goto_1
     return-object v1
 .end method
 
@@ -693,13 +691,21 @@
     .end annotation
 
     .line 96
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "META-INF/services/"
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -713,7 +719,7 @@
 
     move-result-object v0
 
-    const-string v1, "java.util.Collections.list(this)"
+    const-string v1, "list(this)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

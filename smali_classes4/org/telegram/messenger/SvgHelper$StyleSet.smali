@@ -31,10 +31,10 @@
 .method private constructor <init>(Ljava/lang/String;)V
     .locals 7
 
-    .line 981
+    .line 1001
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 975
+    .line 995
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -43,12 +43,12 @@
 
     const-string v0, ";"
 
-    .line 982
+    .line 1002
     invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p1
 
-    .line 983
+    .line 1003
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -62,19 +62,19 @@
 
     const-string v4, ":"
 
-    .line 984
+    .line 1004
     invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v3
 
-    .line 985
+    .line 1005
     array-length v4, v3
 
     const/4 v5, 0x2
 
     if-ne v4, v5, :cond_0
 
-    .line 986
+    .line 1006
     iget-object v4, p0, Lorg/telegram/messenger/SvgHelper$StyleSet;->styleMap:Ljava/util/HashMap;
 
     aget-object v5, v3, v1
@@ -105,7 +105,7 @@
 .method synthetic constructor <init>(Ljava/lang/String;Lorg/telegram/messenger/SvgHelper$1;)V
     .locals 0
 
-    .line 974
+    .line 994
     invoke-direct {p0, p1}, Lorg/telegram/messenger/SvgHelper$StyleSet;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -114,17 +114,17 @@
 .method private constructor <init>(Lorg/telegram/messenger/SvgHelper$StyleSet;)V
     .locals 1
 
-    .line 977
+    .line 997
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 975
+    .line 995
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/SvgHelper$StyleSet;->styleMap:Ljava/util/HashMap;
 
-    .line 978
+    .line 998
     iget-object p1, p1, Lorg/telegram/messenger/SvgHelper$StyleSet;->styleMap:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
@@ -137,7 +137,7 @@
 .method public getStyle(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    .line 992
+    .line 1012
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$StyleSet;->styleMap:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;

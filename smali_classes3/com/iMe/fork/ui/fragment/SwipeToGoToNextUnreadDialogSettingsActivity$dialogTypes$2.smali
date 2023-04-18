@@ -59,7 +59,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 32
+    .line 33
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$dialogTypes$2;->invoke()[Lcom/iMe/fork/enums/DialogType;
 
     move-result-object v0
@@ -70,7 +70,7 @@
 .method public final invoke()[Lcom/iMe/fork/enums/DialogType;
     .locals 1
 
-    .line 32
+    .line 33
     invoke-static {}, Lcom/iMe/fork/enums/DialogType;->values()[Lcom/iMe/fork/enums/DialogType;
 
     move-result-object v0

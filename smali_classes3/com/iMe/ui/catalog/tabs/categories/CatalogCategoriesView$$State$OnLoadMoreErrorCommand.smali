@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State;)V
     .locals 1
 
-    .line 440
+    .line 476
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onLoadMoreError"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;)V
     .locals 0
 
-    .line 445
+    .line 481
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreError()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 438
+    .line 474
     check-cast p1, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreErrorCommand;->apply(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;)V

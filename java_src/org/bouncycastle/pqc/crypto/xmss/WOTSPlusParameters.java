@@ -1,21 +1,23 @@
 package org.bouncycastle.pqc.crypto.xmss;
 
 import java.util.Objects;
+import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.crypto.Digest;
 /* loaded from: classes4.dex */
 final class WOTSPlusParameters {
-    private final Digest digest;
     private final int digestSize;
     private final int len;
     private final int len1;
     private final int len2;
     private final XMSSOid oid;
+    private final ASN1ObjectIdentifier treeDigest;
     private final int winternitzParameter;
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public WOTSPlusParameters(Digest digest) {
-        Objects.requireNonNull(digest, "digest == null");
-        this.digest = digest;
+    public WOTSPlusParameters(ASN1ObjectIdentifier aSN1ObjectIdentifier) {
+        Objects.requireNonNull(aSN1ObjectIdentifier, "treeDigest == null");
+        this.treeDigest = aSN1ObjectIdentifier;
+        Digest digest = DigestUtil.getDigest(aSN1ObjectIdentifier);
         int digestSize = XMSSUtil.getDigestSize(digest);
         this.digestSize = digestSize;
         this.winternitzParameter = 16;
@@ -34,18 +36,17 @@ final class WOTSPlusParameters {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public Digest getDigest() {
-        return this.digest;
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public int getDigestSize() {
-        return this.digestSize;
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
     public int getLen() {
         return this.len;
+    }
+
+    public ASN1ObjectIdentifier getTreeDigest() {
+        return this.treeDigest;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public int getTreeDigestSize() {
+        return this.digestSize;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

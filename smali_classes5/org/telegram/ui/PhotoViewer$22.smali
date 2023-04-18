@@ -24,17 +24,17 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;Z)V
     .locals 0
 
-    .line 5448
+    .line 5451
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/FadingTextViewLayout;-><init>(Landroid/content/Context;Z)V
 
     const/4 p1, 0x0
 
-    .line 5450
+    .line 5453
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$22;->lastLocaleInfo:Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
     const/4 p1, 0x0
 
-    .line 5451
+    .line 5454
     iput p1, p0, Lorg/telegram/ui/PhotoViewer$22;->staticCharsCount:I
 
     return-void
@@ -45,7 +45,7 @@
 .method protected getStaticCharsCount()I
     .locals 5
 
-    .line 5465
+    .line 5468
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v0
@@ -54,15 +54,15 @@
 
     move-result-object v0
 
-    .line 5466
+    .line 5469
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$22;->lastLocaleInfo:Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
     if-eq v1, v0, :cond_0
 
-    .line 5467
+    .line 5470
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$22;->lastLocaleInfo:Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
-    .line 5468
+    .line 5471
     sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
     const/4 v1, 0x2
@@ -117,7 +117,7 @@
 
     iput v0, p0, Lorg/telegram/ui/PhotoViewer$22;->staticCharsCount:I
 
-    .line 5470
+    .line 5473
     :cond_0
     iget v0, p0, Lorg/telegram/ui/PhotoViewer$22;->staticCharsCount:I
 
@@ -127,29 +127,29 @@
 .method protected onTextViewCreated(Landroid/widget/TextView;)V
     .locals 2
 
-    .line 5455
+    .line 5458
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/FadingTextViewLayout;->onTextViewCreated(Landroid/widget/TextView;)V
 
     const/4 v0, 0x1
 
     const/high16 v1, 0x41500000    # 13.0f
 
-    .line 5456
+    .line 5459
     invoke-virtual {p1, v0, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 5457
+    .line 5460
     sget-object v0, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     const/4 v0, -0x1
 
-    .line 5458
+    .line 5461
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
     const-string v0, "fonts/rmedium.ttf"
 
-    .line 5459
+    .line 5462
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
@@ -158,7 +158,7 @@
 
     const/4 v0, 0x3
 
-    .line 5460
+    .line 5463
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setGravity(I)V
 
     return-void
@@ -171,21 +171,21 @@
 
     if-eqz p2, :cond_2
 
-    .line 5477
+    .line 5480
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/4 v1, 0x1
 
     if-eqz p2, :cond_0
 
-    .line 5478
+    .line 5481
     invoke-virtual {p0}, Lorg/telegram/ui/PhotoViewer$22;->getStaticCharsCount()I
 
     move-result p2
 
     if-lez p2, :cond_0
 
-    .line 5480
+    .line 5483
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
@@ -213,14 +213,14 @@
     :cond_0
     move v0, v1
 
-    .line 5485
+    .line 5488
     :cond_1
     :goto_0
     invoke-virtual {p0, p1, v1, v0}, Lorg/telegram/ui/Components/FadingTextViewLayout;->setText(Ljava/lang/CharSequence;ZZ)V
 
     goto :goto_1
 
-    .line 5487
+    .line 5490
     :cond_2
     invoke-virtual {p0, p1, v0, v0}, Lorg/telegram/ui/Components/FadingTextViewLayout;->setText(Ljava/lang/CharSequence;ZZ)V
 

@@ -7,8 +7,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.collection.SimpleArrayMap;
 import androidx.core.p010os.ConfigurationCompat;
-import com.google.android.gms.base.C0704R;
-import com.google.android.gms.common.C0710R;
+import com.google.android.gms.base.C0689R;
+import com.google.android.gms.common.C0695R;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.util.DeviceProperties;
 import com.google.android.gms.common.wrappers.Wrappers;
@@ -30,7 +30,7 @@ public final class zac {
     }
 
     public static String zab(Context context) {
-        return context.getResources().getString(C0704R.string.common_google_play_services_notification_channel_name);
+        return context.getResources().getString(C0689R.string.common_google_play_services_notification_channel_name);
     }
 
     public static String zac(Context context, int i) {
@@ -38,13 +38,13 @@ public final class zac {
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
-                    return resources.getString(C0704R.string.common_google_play_services_enable_button);
+                    return resources.getString(C0689R.string.common_google_play_services_enable_button);
                 }
                 return resources.getString(17039370);
             }
-            return resources.getString(C0704R.string.common_google_play_services_update_button);
+            return resources.getString(C0689R.string.common_google_play_services_update_button);
         }
-        return resources.getString(C0704R.string.common_google_play_services_install_button);
+        return resources.getString(C0689R.string.common_google_play_services_install_button);
     }
 
     public static String zad(Context context, int i) {
@@ -52,7 +52,7 @@ public final class zac {
         String zaa2 = zaa(context);
         if (i != 1) {
             if (i == 2) {
-                return DeviceProperties.isWearableWithoutPlayStore(context) ? resources.getString(C0704R.string.common_google_play_services_wear_update_text) : resources.getString(C0704R.string.common_google_play_services_update_text, zaa2);
+                return DeviceProperties.isWearableWithoutPlayStore(context) ? resources.getString(C0689R.string.common_google_play_services_wear_update_text) : resources.getString(C0689R.string.common_google_play_services_update_text, zaa2);
             } else if (i != 3) {
                 if (i != 5) {
                     if (i != 7) {
@@ -66,21 +66,21 @@ public final class zac {
                                 case 17:
                                     return zah(context, "common_google_play_services_sign_in_failed_text", zaa2);
                                 case 18:
-                                    return resources.getString(C0704R.string.common_google_play_services_updating_text, zaa2);
+                                    return resources.getString(C0689R.string.common_google_play_services_updating_text, zaa2);
                                 default:
-                                    return resources.getString(C0710R.string.common_google_play_services_unknown_issue, zaa2);
+                                    return resources.getString(C0695R.string.common_google_play_services_unknown_issue, zaa2);
                             }
                         }
-                        return resources.getString(C0704R.string.common_google_play_services_unsupported_text, zaa2);
+                        return resources.getString(C0689R.string.common_google_play_services_unsupported_text, zaa2);
                     }
                     return zah(context, "common_google_play_services_network_error_text", zaa2);
                 }
                 return zah(context, "common_google_play_services_invalid_account_text", zaa2);
             } else {
-                return resources.getString(C0704R.string.common_google_play_services_enable_text, zaa2);
+                return resources.getString(C0689R.string.common_google_play_services_enable_text, zaa2);
             }
         }
-        return resources.getString(C0704R.string.common_google_play_services_install_text, zaa2);
+        return resources.getString(C0689R.string.common_google_play_services_install_text, zaa2);
     }
 
     public static String zaf(Context context, int i) {
@@ -90,18 +90,18 @@ public final class zac {
         } else {
             zag = zag(context, i);
         }
-        return zag == null ? context.getResources().getString(C0704R.string.common_google_play_services_notification_ticker) : zag;
+        return zag == null ? context.getResources().getString(C0689R.string.common_google_play_services_notification_ticker) : zag;
     }
 
     public static String zag(Context context, int i) {
         Resources resources = context.getResources();
         switch (i) {
             case 1:
-                return resources.getString(C0704R.string.common_google_play_services_install_title);
+                return resources.getString(C0689R.string.common_google_play_services_install_title);
             case 2:
-                return resources.getString(C0704R.string.common_google_play_services_update_title);
+                return resources.getString(C0689R.string.common_google_play_services_update_title);
             case 3:
-                return resources.getString(C0704R.string.common_google_play_services_enable_title);
+                return resources.getString(C0689R.string.common_google_play_services_enable_title);
             case 4:
             case 6:
             case 18:
@@ -148,7 +148,7 @@ public final class zac {
         Resources resources = context.getResources();
         String zai = zai(context, str);
         if (zai == null) {
-            zai = resources.getString(C0710R.string.common_google_play_services_unknown_issue);
+            zai = resources.getString(C0695R.string.common_google_play_services_unknown_issue);
         }
         return String.format(resources.getConfiguration().locale, zai, str2);
     }

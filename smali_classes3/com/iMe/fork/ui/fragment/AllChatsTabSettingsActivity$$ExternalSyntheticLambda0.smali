@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/util/Set;
 
-    invoke-static {v0, p1}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->$r8$lambda$wxgEm0dsha-Q-MbF6yM-LJedjas(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
+    invoke-static {v0, p1}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->$r8$lambda$O4Ez70XnbeLxAfnMl7fdAn9pbXI(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
 
     return-void
 .end method

@@ -3,7 +3,7 @@ package com.iMe.manager;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.fork.utils.CollectionsUtilsKt;
 import com.iMe.storage.domain.gateway.TelegramGateway;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Completable;
 import io.reactivex.CompletableEmitter;
 import io.reactivex.CompletableOnSubscribe;
@@ -76,7 +76,7 @@ public final class TelegramApiManager implements TelegramApi {
             public final void subscribe(ObservableEmitter observableEmitter) {
                 TelegramApiManager.getChatInfoByUsername$lambda$1(TelegramApiManager.this, correctApiUsername, observableEmitter);
             }
-        }).subscribeOn(this.schedulersProvider.mo708io());
+        }).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "create<TLRPC.Chat> { emi…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -94,7 +94,7 @@ public final class TelegramApiManager implements TelegramApi {
         }
         TLRPC$TL_contacts_resolveUsername tLRPC$TL_contacts_resolveUsername = new TLRPC$TL_contacts_resolveUsername();
         tLRPC$TL_contacts_resolveUsername.username = correctUsername;
-        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(tLRPC$TL_contacts_resolveUsername, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda17
+        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(tLRPC$TL_contacts_resolveUsername, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda18
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
                 TelegramApiManager.getChatInfoByUsername$lambda$1$lambda$0(ObservableEmitter.this, this$0, tLObject, tLRPC$TL_error);
@@ -138,14 +138,84 @@ public final class TelegramApiManager implements TelegramApi {
     }
 
     @Override // com.iMe.manager.TelegramApi
+    public Observable<TLRPC$User> getUserInfoByUsername(final String username) {
+        Intrinsics.checkNotNullParameter(username, "username");
+        Observable<TLRPC$User> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda3
+            @Override // io.reactivex.ObservableOnSubscribe
+            public final void subscribe(ObservableEmitter observableEmitter) {
+                TelegramApiManager.getUserInfoByUsername$lambda$3(TelegramApiManager.this, username, observableEmitter);
+            }
+        }).subscribeOn(this.schedulersProvider.mo694io());
+        Intrinsics.checkNotNullExpressionValue(subscribeOn, "create { emitter ->\n    …(schedulersProvider.io())");
+        return subscribeOn;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void getUserInfoByUsername$lambda$3(final TelegramApiManager this$0, String username, final ObservableEmitter emitter) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(username, "$username");
+        Intrinsics.checkNotNullParameter(emitter, "emitter");
+        String correctApiUsername = this$0.getCorrectApiUsername(username);
+        TLObject userOrChat = this$0.getMessagesController().getUserOrChat(correctApiUsername);
+        if (userOrChat != null && (userOrChat instanceof TLRPC$User) && this$0.getMessagesController().getUser(Long.valueOf(((TLRPC$User) userOrChat).f1567id)) != null) {
+            emitter.onNext(userOrChat);
+            emitter.onComplete();
+            return;
+        }
+        TLRPC$TL_contacts_resolveUsername tLRPC$TL_contacts_resolveUsername = new TLRPC$TL_contacts_resolveUsername();
+        tLRPC$TL_contacts_resolveUsername.username = correctApiUsername;
+        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(tLRPC$TL_contacts_resolveUsername, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda19
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+                TelegramApiManager.getUserInfoByUsername$lambda$3$lambda$2(ObservableEmitter.this, this$0, tLObject, tLRPC$TL_error);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void getUserInfoByUsername$lambda$3$lambda$2(ObservableEmitter emitter, TelegramApiManager this$0, TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+        Intrinsics.checkNotNullParameter(emitter, "$emitter");
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        if (tLRPC$TL_error != null) {
+            if (emitter.isDisposed()) {
+                return;
+            }
+            emitter.onError(new Exception(tLRPC$TL_error.text));
+            return;
+        }
+        try {
+            Intrinsics.checkNotNull(tLObject, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.TL_contacts_resolvedPeer");
+            TLRPC$TL_contacts_resolvedPeer tLRPC$TL_contacts_resolvedPeer = (TLRPC$TL_contacts_resolvedPeer) tLObject;
+            MessagesStorage.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).putUsersAndChats(tLRPC$TL_contacts_resolvedPeer.users, tLRPC$TL_contacts_resolvedPeer.chats, false, true);
+            this$0.getMessagesController().putUsers(tLRPC$TL_contacts_resolvedPeer.users, false);
+            this$0.getMessagesController().putChats(tLRPC$TL_contacts_resolvedPeer.chats, false);
+            ArrayList<TLRPC$User> arrayList = tLRPC$TL_contacts_resolvedPeer.users;
+            Intrinsics.checkNotNullExpressionValue(arrayList, "res.users");
+            if (!arrayList.isEmpty()) {
+                ArrayList<TLRPC$User> arrayList2 = tLRPC$TL_contacts_resolvedPeer.users;
+                Intrinsics.checkNotNullExpressionValue(arrayList2, "res.users");
+                emitter.onNext(CollectionsKt.first((List<? extends Object>) arrayList2));
+                emitter.onComplete();
+            } else {
+                emitter.onError(new IllegalStateException("Telegram API: Empty result"));
+            }
+        } catch (Exception e) {
+            if (emitter.isDisposed()) {
+                return;
+            }
+            emitter.onError(e);
+        }
+    }
+
+    @Override // com.iMe.manager.TelegramApi
     public Observable<List<TLRPC$User>> getUsersByIds(final List<Long> usersIds) {
         Intrinsics.checkNotNullParameter(usersIds, "usersIds");
-        Observable<List<TLRPC$User>> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda7
+        Observable<List<TLRPC$User>> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda8
             @Override // io.reactivex.ObservableOnSubscribe
             public final void subscribe(ObservableEmitter observableEmitter) {
                 TelegramApiManager.getUsersByIds$lambda$7(usersIds, this, observableEmitter);
             }
-        }).subscribeOn(this.schedulersProvider.mo708io());
+        }).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "create<List<TLRPC.User>>…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -163,8 +233,8 @@ public final class TelegramApiManager implements TelegramApi {
         while (it.hasNext()) {
             arrayList.add(this$0.getMessagesController().getInputUser(((Number) it.next()).longValue()));
         }
-        tLRPC$TL_users_getUsers.f1639id = CollectionsUtilsKt.toArrayList(arrayList);
-        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(tLRPC$TL_users_getUsers, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda16
+        tLRPC$TL_users_getUsers.f1564id = CollectionsUtilsKt.toArrayList(arrayList);
+        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(tLRPC$TL_users_getUsers, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda17
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
                 TelegramApiManager.getUsersByIds$lambda$7$lambda$6(ObservableEmitter.this, this$0, tLObject, tLRPC$TL_error);
@@ -195,12 +265,8 @@ public final class TelegramApiManager implements TelegramApi {
                     }
                 }
                 this$0.getMessagesController().putUsers(CollectionsUtilsKt.toArrayList(arrayList2), false);
-                if (!arrayList2.isEmpty()) {
-                    emitter.onNext(arrayList2);
-                    emitter.onComplete();
-                    return;
-                }
-                emitter.onError(new IllegalStateException("Telegram API: Empty result"));
+                emitter.onNext(arrayList2);
+                emitter.onComplete();
             }
         } catch (Exception e) {
             if (emitter.isDisposed()) {
@@ -213,12 +279,12 @@ public final class TelegramApiManager implements TelegramApi {
     @Override // com.iMe.manager.TelegramApi
     public Observable<TLRPC$Chat> subscribeToChannel(final TLRPC$Chat channel) {
         Intrinsics.checkNotNullParameter(channel, "channel");
-        Observable<TLRPC$Chat> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda8
+        Observable<TLRPC$Chat> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda9
             @Override // io.reactivex.ObservableOnSubscribe
             public final void subscribe(ObservableEmitter observableEmitter) {
                 TelegramApiManager.subscribeToChannel$lambda$11(TLRPC$Chat.this, this, observableEmitter);
             }
-        }).timeout(30L, TimeUnit.SECONDS).subscribeOn(this.schedulersProvider.mo708io());
+        }).timeout(30L, TimeUnit.SECONDS).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "create<TLRPC.Chat> { emi…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -229,7 +295,7 @@ public final class TelegramApiManager implements TelegramApi {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(emitter, "emitter");
         if (ChatObject.isNotInChat(channel)) {
-            MessagesController.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).addUserToChat(channel.f1502id, UserConfig.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).getCurrentUser(), 0, null, null, new Runnable() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda11
+            MessagesController.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).addUserToChat(channel.f1427id, UserConfig.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).getCurrentUser(), 0, null, null, new Runnable() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
                     TelegramApiManager.subscribeToChannel$lambda$11$lambda$10(ObservableEmitter.this, channel);
@@ -252,12 +318,12 @@ public final class TelegramApiManager implements TelegramApi {
     @Override // com.iMe.manager.TelegramApi
     public Observable<TLRPC$Chat> unsubscribeFromChannel(final TLRPC$Chat channel) {
         Intrinsics.checkNotNullParameter(channel, "channel");
-        Observable<TLRPC$Chat> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda9
+        Observable<TLRPC$Chat> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda10
             @Override // io.reactivex.ObservableOnSubscribe
             public final void subscribe(ObservableEmitter observableEmitter) {
                 TelegramApiManager.unsubscribeFromChannel$lambda$13(TLRPC$Chat.this, this, observableEmitter);
             }
-        }).timeout(30L, TimeUnit.SECONDS).subscribeOn(this.schedulersProvider.mo708io());
+        }).timeout(30L, TimeUnit.SECONDS).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "create<TLRPC.Chat> { emi…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -272,7 +338,7 @@ public final class TelegramApiManager implements TelegramApi {
             emitter.onComplete();
             return;
         }
-        MessagesController.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).deleteParticipantFromChat(channel.f1502id, UserConfig.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).getCurrentUser(), channel, false, false, new Runnable() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda10
+        MessagesController.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).deleteParticipantFromChat(channel.f1427id, UserConfig.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).getCurrentUser(), channel, false, false, new Runnable() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 TelegramApiManager.unsubscribeFromChannel$lambda$13$lambda$12(ObservableEmitter.this, channel);
@@ -304,12 +370,12 @@ public final class TelegramApiManager implements TelegramApi {
             tLRPC$TL_messages_acceptUrlAuth.flags |= 2;
         }
         tLRPC$TL_messages_acceptUrlAuth.write_allowed = true;
-        Observable<String> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda5
+        Observable<String> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda6
             @Override // io.reactivex.ObservableOnSubscribe
             public final void subscribe(ObservableEmitter observableEmitter) {
                 TelegramApiManager.acceptUrlAuth$lambda$16(TelegramApiManager.this, tLRPC$TL_messages_acceptUrlAuth, buttonUrl, buttonReq, observableEmitter);
             }
-        }).subscribeOn(this.schedulersProvider.mo708io());
+        }).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "create<String> { emitter…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -321,7 +387,7 @@ public final class TelegramApiManager implements TelegramApi {
         Intrinsics.checkNotNullParameter(buttonUrl, "$buttonUrl");
         Intrinsics.checkNotNullParameter(buttonReq, "$buttonReq");
         Intrinsics.checkNotNullParameter(emitter, "emitter");
-        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(req, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda18
+        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(req, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda20
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
                 TelegramApiManager.acceptUrlAuth$lambda$16$lambda$15(ObservableEmitter.this, buttonUrl, buttonReq, tLObject, tLRPC$TL_error);
@@ -364,12 +430,12 @@ public final class TelegramApiManager implements TelegramApi {
             inputPeer = getMessagesController().getInputPeer(j);
         }
         tLRPC$TL_messages_getInlineBotResults.peer = inputPeer;
-        Observable<TLRPC$messages_BotResults> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda6
+        Observable<TLRPC$messages_BotResults> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda7
             @Override // io.reactivex.ObservableOnSubscribe
             public final void subscribe(ObservableEmitter observableEmitter) {
                 TelegramApiManager.getInlineBot$lambda$19(TelegramApiManager.this, tLRPC$TL_messages_getInlineBotResults, observableEmitter);
             }
-        }).subscribeOn(this.schedulersProvider.mo708io());
+        }).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "create<TLRPC.messages_Bo…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -379,7 +445,7 @@ public final class TelegramApiManager implements TelegramApi {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(req, "$req");
         Intrinsics.checkNotNullParameter(emitter, "emitter");
-        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(req, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda13
+        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(req, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda14
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
                 TelegramApiManager.getInlineBot$lambda$19$lambda$18(ObservableEmitter.this, tLObject, tLRPC$TL_error);
@@ -426,16 +492,16 @@ public final class TelegramApiManager implements TelegramApi {
             Intrinsics.checkNotNullExpressionValue(chat, "messagesController.getCh…rn Observable.just(false)");
             inputPeer = MessagesController.getInputPeer(chat);
         }
-        tLRPC$TL_contacts_unblock.f1552id = inputPeer;
+        tLRPC$TL_contacts_unblock.f1477id = inputPeer;
         messagesController.totalBlockedCount--;
         messagesController.blockePeers.delete(j);
         NotificationCenter.getInstance(this.telegramGateway.getSelectedAccountIndex()).postNotificationName(NotificationCenter.blockedUsersDidLoad, new Object[0]);
-        Observable<Boolean> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda4
+        Observable<Boolean> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda5
             @Override // io.reactivex.ObservableOnSubscribe
             public final void subscribe(ObservableEmitter observableEmitter) {
                 TelegramApiManager.unblockPeer$lambda$23(TelegramApiManager.this, tLRPC$TL_contacts_unblock, observableEmitter);
             }
-        }).subscribeOn(this.schedulersProvider.mo708io());
+        }).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "create<Boolean> { emitte…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -445,7 +511,7 @@ public final class TelegramApiManager implements TelegramApi {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(req, "$req");
         Intrinsics.checkNotNullParameter(emitter, "emitter");
-        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(req, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda14
+        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(req, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda15
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
                 TelegramApiManager.unblockPeer$lambda$23$lambda$22(ObservableEmitter.this, tLObject, tLRPC$TL_error);
@@ -478,12 +544,12 @@ public final class TelegramApiManager implements TelegramApi {
     public Observable<TLRPC$TL_exportedMessageLink> getMessageLinkPattern(final MessageObject message, final TLRPC$Chat currentChat) {
         Intrinsics.checkNotNullParameter(message, "message");
         Intrinsics.checkNotNullParameter(currentChat, "currentChat");
-        Observable<TLRPC$TL_exportedMessageLink> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda3
+        Observable<TLRPC$TL_exportedMessageLink> subscribeOn = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda4
             @Override // io.reactivex.ObservableOnSubscribe
             public final void subscribe(ObservableEmitter observableEmitter) {
                 TelegramApiManager.getMessageLinkPattern$lambda$28(TelegramApiManager.this, message, currentChat, observableEmitter);
             }
-        }).subscribeOn(this.schedulersProvider.mo708io());
+        }).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "create<TLRPC.TL_exported…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -495,9 +561,9 @@ public final class TelegramApiManager implements TelegramApi {
         Intrinsics.checkNotNullParameter(currentChat, "$currentChat");
         Intrinsics.checkNotNullParameter(emitter, "emitter");
         TLRPC$TL_channels_exportMessageLink tLRPC$TL_channels_exportMessageLink = new TLRPC$TL_channels_exportMessageLink();
-        tLRPC$TL_channels_exportMessageLink.f1540id = message.getId();
+        tLRPC$TL_channels_exportMessageLink.f1465id = message.getId();
         tLRPC$TL_channels_exportMessageLink.channel = MessagesController.getInputChannel(currentChat);
-        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(tLRPC$TL_channels_exportMessageLink, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda15
+        ConnectionsManager.getInstance(this$0.telegramGateway.getSelectedAccountIndex()).sendRequest(tLRPC$TL_channels_exportMessageLink, new RequestDelegate() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda16
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
                 TelegramApiManager.getMessageLinkPattern$lambda$28$lambda$27(ObservableEmitter.this, tLObject, tLRPC$TL_error);
@@ -508,7 +574,7 @@ public final class TelegramApiManager implements TelegramApi {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void getMessageLinkPattern$lambda$28$lambda$27(final ObservableEmitter emitter, final TLObject tLObject, final TLRPC$TL_error tLRPC$TL_error) {
         Intrinsics.checkNotNullParameter(emitter, "$emitter");
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda12
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.manager.TelegramApiManager$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
                 TelegramApiManager.getMessageLinkPattern$lambda$28$lambda$27$lambda$26(TLObject.this, emitter, tLRPC$TL_error);
@@ -544,7 +610,7 @@ public final class TelegramApiManager implements TelegramApi {
             public final void subscribe(CompletableEmitter completableEmitter) {
                 TelegramApiManager.deleteUsers$lambda$30(TelegramApiManager.this, users, completableEmitter);
             }
-        }).subscribeOn(this.schedulersProvider.mo708io());
+        }).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "create { source ->\n     …(schedulersProvider.io())");
         return subscribeOn;
     }

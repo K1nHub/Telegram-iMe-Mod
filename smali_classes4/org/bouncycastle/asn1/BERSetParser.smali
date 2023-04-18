@@ -2,8 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/bouncycastle/asn1/ASN1Encodable;
-.implements Lorg/bouncycastle/asn1/InMemoryRepresentable;
+.implements Lorg/bouncycastle/asn1/ASN1SetParser;
 
 
 # instance fields

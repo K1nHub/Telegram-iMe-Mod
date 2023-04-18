@@ -15,103 +15,67 @@
 
 
 # instance fields
-.field private final address:Ljava/lang/String;
-
 .field private final password:Ljava/lang/String;
 
 .field private final pin:Ljava/lang/String;
 
-.field private final secretWords:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final wallet:Lcom/iMe/storage/domain/model/crypto/Wallet;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Wallet;)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ")V"
-        }
-    .end annotation
-
-    const-string v0, "secretWords"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "address"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "password"
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "pin"
 
-    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "wallet"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
-    .line 16
+    .line 17
     invoke-direct {p0, v0}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 12
-    iput-object p1, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->secretWords:Ljava/util/List;
-
-    .line 13
-    iput-object p2, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->address:Ljava/lang/String;
-
     .line 14
-    iput-object p3, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->password:Ljava/lang/String;
+    iput-object p1, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->password:Ljava/lang/String;
 
     .line 15
-    iput-object p4, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->pin:Ljava/lang/String;
+    iput-object p2, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->pin:Ljava/lang/String;
+
+    .line 16
+    iput-object p3, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->wallet:Lcom/iMe/storage/domain/model/crypto/Wallet;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Wallet;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 1
 
-    and-int/lit8 p6, p5, 0x2
+    and-int/lit8 p5, p4, 0x1
 
     const-string v0, ""
 
-    if-eqz p6, :cond_0
+    if-eqz p5, :cond_0
+
+    move-object p1, v0
+
+    :cond_0
+    and-int/lit8 p4, p4, 0x2
+
+    if-eqz p4, :cond_1
 
     move-object p2, v0
 
-    :cond_0
-    and-int/lit8 p6, p5, 0x4
-
-    if-eqz p6, :cond_1
-
-    move-object p3, v0
-
+    .line 13
     :cond_1
-    and-int/lit8 p5, p5, 0x8
-
-    if-eqz p5, :cond_2
-
-    move-object p4, v0
-
-    .line 11
-    :cond_2
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Wallet;)V
 
     return-void
 .end method
@@ -121,8 +85,12 @@
 .method public final getAddress()Ljava/lang/String;
     .locals 1
 
-    .line 13
-    iget-object v0, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->address:Ljava/lang/String;
+    .line 21
+    iget-object v0, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->wallet:Lcom/iMe/storage/domain/model/crypto/Wallet;
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -156,8 +124,16 @@
         }
     .end annotation
 
-    .line 12
-    iget-object v0, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->secretWords:Ljava/util/List;
+    .line 19
+    iget-object v0, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->wallet:Lcom/iMe/storage/domain/model/crypto/Wallet;
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getMnemonic()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/iMe/storage/data/utils/extentions/StringExtKt;->splitBySpace(Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v0
 
     return-object v0
 .end method

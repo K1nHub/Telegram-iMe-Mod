@@ -80,32 +80,32 @@
         }
     .end annotation
 
-    .line 554
+    .line 572
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openSelectTokenDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 556
+    .line 574
     iput-object p2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSelectTokenDialogCommand;->side:Lcom/iMe/model/wallet/swap/SwapSide;
 
-    .line 557
+    .line 575
     iput-object p3, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSelectTokenDialogCommand;->selectedToken:Lcom/iMe/model/wallet/select/SelectableToken;
 
-    .line 558
+    .line 576
     iput-object p4, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSelectTokenDialogCommand;->tokens:Ljava/util/List;
 
-    .line 559
+    .line 577
     iput-object p5, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSelectTokenDialogCommand;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
-    .line 560
+    .line 578
     iput-object p6, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSelectTokenDialogCommand;->type:Lcom/iMe/model/wallet/select/SelectableType;
 
-    .line 561
+    .line 579
     iput-boolean p7, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSelectTokenDialogCommand;->onlyPositiveBalance:Z
 
-    .line 562
+    .line 580
     iput-object p8, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSelectTokenDialogCommand;->action:Lkotlin/jvm/functions/Function1;
 
     return-void
@@ -116,7 +116,7 @@
 .method public apply(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;)V
     .locals 8
 
-    .line 567
+    .line 585
     iget-object v1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSelectTokenDialogCommand;->side:Lcom/iMe/model/wallet/swap/SwapSide;
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSelectTokenDialogCommand;->selectedToken:Lcom/iMe/model/wallet/select/SelectableToken;
@@ -141,7 +141,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 536
+    .line 554
     check-cast p1, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSelectTokenDialogCommand;->apply(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;)V

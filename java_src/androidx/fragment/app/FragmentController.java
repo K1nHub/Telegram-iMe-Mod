@@ -1,10 +1,7 @@
 package androidx.fragment.app;
 
 import android.content.Context;
-import android.content.res.Configuration;
 import android.util.AttributeSet;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.core.util.Preconditions;
@@ -65,40 +62,8 @@ public class FragmentController {
         this.mHost.mFragmentManager.dispatchDestroy();
     }
 
-    public void dispatchMultiWindowModeChanged(boolean z) {
-        this.mHost.mFragmentManager.dispatchMultiWindowModeChanged(z);
-    }
-
-    public void dispatchPictureInPictureModeChanged(boolean z) {
-        this.mHost.mFragmentManager.dispatchPictureInPictureModeChanged(z);
-    }
-
-    public void dispatchConfigurationChanged(Configuration configuration) {
-        this.mHost.mFragmentManager.dispatchConfigurationChanged(configuration);
-    }
-
-    public void dispatchLowMemory() {
-        this.mHost.mFragmentManager.dispatchLowMemory();
-    }
-
-    public boolean dispatchCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
-        return this.mHost.mFragmentManager.dispatchCreateOptionsMenu(menu, menuInflater);
-    }
-
-    public boolean dispatchPrepareOptionsMenu(Menu menu) {
-        return this.mHost.mFragmentManager.dispatchPrepareOptionsMenu(menu);
-    }
-
-    public boolean dispatchOptionsItemSelected(MenuItem menuItem) {
-        return this.mHost.mFragmentManager.dispatchOptionsItemSelected(menuItem);
-    }
-
     public boolean dispatchContextItemSelected(MenuItem menuItem) {
         return this.mHost.mFragmentManager.dispatchContextItemSelected(menuItem);
-    }
-
-    public void dispatchOptionsMenuClosed(Menu menu) {
-        this.mHost.mFragmentManager.dispatchOptionsMenuClosed(menu);
     }
 
     public boolean execPendingActions() {

@@ -22,7 +22,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDispatchedContinuation.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DispatchedContinuation.kt\nkotlinx/coroutines/internal/DispatchedContinuation\n+ 2 AtomicFU.common.kt\nkotlinx/atomicfu/AtomicFU_commonKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 DispatchedContinuation.kt\nkotlinx/coroutines/internal/DispatchedContinuationKt\n+ 5 DispatchedTask.kt\nkotlinx/coroutines/DispatchedTaskKt\n+ 6 CoroutineContext.kt\nkotlinx/coroutines/CoroutineContextKt\n*L\n1#1,327:1\n253#1,8:399\n265#1:407\n266#1,2:418\n268#1:422\n155#2,2:328\n155#2,2:330\n155#2,2:332\n155#2,2:334\n1#3:336\n1#3:342\n1#3:383\n307#4,5:337\n312#4,12:343\n324#4:377\n307#4,5:378\n312#4,12:384\n324#4:437\n199#5,3:355\n202#5,14:363\n199#5,3:396\n202#5,14:423\n43#6,5:358\n55#6,10:408\n66#6,2:420\n55#6,13:438\n*S KotlinDebug\n*F\n+ 1 DispatchedContinuation.kt\nkotlinx/coroutines/internal/DispatchedContinuation\n*L\n235#1:399,8\n236#1:407\n236#1:418,2\n236#1:422\n89#1:328,2\n115#1:330,2\n159#1:332,2\n179#1:334,2\n213#1:342\n234#1:383\n213#1:337,5\n213#1:343,12\n213#1:377\n234#1:378,5\n234#1:384,12\n234#1:437\n213#1:355,3\n213#1:363,14\n234#1:396,3\n234#1:423,14\n214#1:358,5\n236#1:408,10\n236#1:420,2\n265#1:438,13\n*E\n"
+    value = "SMAP\nDispatchedContinuation.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DispatchedContinuation.kt\nkotlinx/coroutines/internal/DispatchedContinuation\n+ 2 AtomicFU.common.kt\nkotlinx/atomicfu/AtomicFU_commonKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 DispatchedContinuation.kt\nkotlinx/coroutines/internal/DispatchedContinuationKt\n+ 5 DispatchedTask.kt\nkotlinx/coroutines/DispatchedTaskKt\n+ 6 CoroutineContext.kt\nkotlinx/coroutines/CoroutineContextKt\n*L\n1#1,317:1\n243#1,8:389\n255#1:397\n256#1,2:408\n258#1:413\n155#2,2:318\n155#2,2:320\n155#2,2:322\n155#2,2:324\n1#3:326\n1#3:332\n1#3:373\n297#4,5:327\n302#4,12:333\n314#4:367\n297#4,5:368\n302#4,12:374\n314#4:428\n199#5,3:345\n202#5,14:353\n199#5,3:386\n202#5,14:414\n95#6,5:348\n107#6,10:398\n118#6,2:410\n117#6:412\n107#6,13:429\n*S KotlinDebug\n*F\n+ 1 DispatchedContinuation.kt\nkotlinx/coroutines/internal/DispatchedContinuation\n*L\n225#1:389,8\n226#1:397\n226#1:408,2\n226#1:413\n79#1:318,2\n105#1:320,2\n149#1:322,2\n169#1:324,2\n203#1:332\n224#1:373\n203#1:327,5\n203#1:333,12\n203#1:367\n224#1:368,5\n224#1:374,12\n224#1:428\n203#1:345,3\n203#1:353,14\n224#1:386,3\n224#1:414,14\n204#1:348,5\n226#1:398,10\n226#1:410,2\n226#1:412\n255#1:429,13\n*E\n"
 .end annotation
 
 
@@ -108,16 +108,44 @@
     return-void
 .end method
 
+.method private final getReusableCancellableContinuation()Lkotlinx/coroutines/CancellableContinuationImpl;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlinx/coroutines/CancellableContinuationImpl<",
+            "*>;"
+        }
+    .end annotation
+
+    .line 62
+    iget-object v0, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation:Ljava/lang/Object;
+
+    instance-of v1, v0, Lkotlinx/coroutines/CancellableContinuationImpl;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lkotlinx/coroutines/CancellableContinuationImpl;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+.end method
+
 
 # virtual methods
 .method public final awaitReusability()V
     .locals 2
 
-    .line 329
+    .line 319
     :cond_0
     iget-object v0, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation:Ljava/lang/Object;
 
-    .line 90
+    .line 80
     sget-object v1, Lkotlinx/coroutines/internal/DispatchedContinuationKt;->REUSABLE_CLAIMED:Lkotlinx/coroutines/internal/Symbol;
 
     if-eq v0, v1, :cond_0
@@ -128,12 +156,12 @@
 .method public cancelCompletedResult$kotlinx_coroutines_core(Ljava/lang/Object;Ljava/lang/Throwable;)V
     .locals 1
 
-    .line 246
+    .line 236
     instance-of v0, p1, Lkotlinx/coroutines/CompletedWithCancellation;
 
     if-eqz v0, :cond_0
 
-    .line 247
+    .line 237
     check-cast p1, Lkotlinx/coroutines/CompletedWithCancellation;
 
     iget-object p1, p1, Lkotlinx/coroutines/CompletedWithCancellation;->onCancellation:Lkotlin/jvm/functions/Function1;
@@ -190,34 +218,6 @@
     return-object p0
 .end method
 
-.method public final getReusableCancellableContinuation()Lkotlinx/coroutines/CancellableContinuationImpl;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lkotlinx/coroutines/CancellableContinuationImpl<",
-            "*>;"
-        }
-    .end annotation
-
-    .line 62
-    iget-object v0, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation:Ljava/lang/Object;
-
-    instance-of v1, v0, Lkotlinx/coroutines/CancellableContinuationImpl;
-
-    if-eqz v1, :cond_0
-
-    check-cast v0, Lkotlinx/coroutines/CancellableContinuationImpl;
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-.end method
-
 .method public getStackTraceElement()Ljava/lang/StackTraceElement;
     .locals 1
 
@@ -226,70 +226,48 @@
     return-object v0
 .end method
 
-.method public final isReusable(Lkotlinx/coroutines/CancellableContinuationImpl;)Z
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlinx/coroutines/CancellableContinuationImpl<",
-            "*>;)Z"
-        }
-    .end annotation
+.method public final isReusable()Z
+    .locals 1
 
-    .line 78
+    .line 71
     iget-object v0, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation:Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    if-nez v0, :cond_0
+    const/4 v0, 0x1
 
-    return v1
+    goto :goto_0
 
-    .line 79
     :cond_0
-    instance-of v2, v0, Lkotlinx/coroutines/CancellableContinuationImpl;
+    const/4 v0, 0x0
 
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_2
-
-    if-ne v0, p1, :cond_1
-
-    move v1, v3
-
-    :cond_1
-    return v1
-
-    :cond_2
-    return v3
+    :goto_0
+    return v0
 .end method
 
 .method public final release()V
     .locals 1
 
-    .line 100
+    .line 90
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/DispatchedContinuation;->awaitReusability()V
 
-    .line 101
-    invoke-virtual {p0}, Lkotlinx/coroutines/internal/DispatchedContinuation;->getReusableCancellableContinuation()Lkotlinx/coroutines/CancellableContinuationImpl;
+    .line 91
+    invoke-direct {p0}, Lkotlinx/coroutines/internal/DispatchedContinuation;->getReusableCancellableContinuation()Lkotlinx/coroutines/CancellableContinuationImpl;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->detachChild$kotlinx_coroutines_core()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
 .method public resumeWith(Ljava/lang/Object;)V
     .locals 6
 
-    .line 206
+    .line 196
     iget-object v0, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->continuation:Lkotlin/coroutines/Continuation;
 
     invoke-interface {v0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
@@ -300,12 +278,12 @@
 
     const/4 v2, 0x1
 
-    .line 207
+    .line 197
     invoke-static {p1, v1, v2, v1}, Lkotlinx/coroutines/CompletionStateKt;->toState$default(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 208
+    .line 198
     iget-object v4, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->dispatcher:Lkotlinx/coroutines/CoroutineDispatcher;
 
     invoke-virtual {v4, v0}, Lkotlinx/coroutines/CoroutineDispatcher;->isDispatchNeeded(Lkotlin/coroutines/CoroutineContext;)Z
@@ -316,46 +294,46 @@
 
     if-eqz v4, :cond_0
 
-    .line 209
+    .line 199
     iput-object v3, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_state:Ljava/lang/Object;
 
-    .line 210
+    .line 200
     iput v5, p0, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
 
-    .line 211
+    .line 201
     iget-object p1, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->dispatcher:Lkotlinx/coroutines/CoroutineDispatcher;
 
     invoke-virtual {p1, v0, p0}, Lkotlinx/coroutines/CoroutineDispatcher;->dispatch(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
 
     goto :goto_1
 
-    .line 311
+    .line 301
     :cond_0
     invoke-static {}, Lkotlinx/coroutines/DebugKt;->getASSERTIONS_ENABLED()Z
 
     move-result v0
 
-    .line 312
+    .line 302
     sget-object v0, Lkotlinx/coroutines/ThreadLocalEventLoop;->INSTANCE:Lkotlinx/coroutines/ThreadLocalEventLoop;
 
     invoke-virtual {v0}, Lkotlinx/coroutines/ThreadLocalEventLoop;->getEventLoop$kotlinx_coroutines_core()Lkotlinx/coroutines/EventLoop;
 
     move-result-object v0
 
-    .line 315
+    .line 305
     invoke-virtual {v0}, Lkotlinx/coroutines/EventLoop;->isUnconfinedLoopActive()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 317
+    .line 307
     iput-object v3, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_state:Ljava/lang/Object;
 
-    .line 318
+    .line 308
     iput v5, p0, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
 
-    .line 319
+    .line 309
     invoke-virtual {v0, p0}, Lkotlinx/coroutines/EventLoop;->dispatchUnconfined(Lkotlinx/coroutines/DispatchedTask;)V
 
     goto :goto_1
@@ -364,7 +342,7 @@
     :cond_1
     invoke-virtual {v0, v2}, Lkotlinx/coroutines/EventLoop;->incrementUseCount(Z)V
 
-    .line 214
+    .line 204
     :try_start_0
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/DispatchedContinuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
@@ -372,25 +350,25 @@
 
     iget-object v4, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->countOrElement:Ljava/lang/Object;
 
-    .line 43
+    .line 95
     invoke-static {v3, v4}, Lkotlinx/coroutines/internal/ThreadContextKt;->updateThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 215
+    .line 205
     :try_start_1
     iget-object v5, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->continuation:Lkotlin/coroutines/Continuation;
 
     invoke-interface {v5, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    .line 216
+    .line 206
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 47
+    .line 99
     :try_start_2
     invoke-static {v3, v4}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
 
@@ -407,7 +385,7 @@
     :catchall_0
     move-exception p1
 
-    .line 47
+    .line 99
     invoke-static {v3, v4}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
 
     throw p1
@@ -441,10 +419,10 @@
 .method public takeState$kotlinx_coroutines_core()Ljava/lang/Object;
     .locals 2
 
-    .line 196
+    .line 186
     iget-object v0, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_state:Ljava/lang/Object;
 
-    .line 197
+    .line 187
     invoke-static {}, Lkotlinx/coroutines/DebugKt;->getASSERTIONS_ENABLED()Z
 
     move-result v1
@@ -476,7 +454,7 @@
 
     throw v0
 
-    .line 198
+    .line 188
     :cond_2
     :goto_1
     invoke-static {}, Lkotlinx/coroutines/internal/DispatchedContinuationKt;->access$getUNDEFINED$p()Lkotlinx/coroutines/internal/Symbol;
@@ -491,7 +469,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 278
+    .line 268
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

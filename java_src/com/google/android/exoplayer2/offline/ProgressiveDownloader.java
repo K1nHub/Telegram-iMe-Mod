@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.offline;
 
+import androidx.profileinstaller.ProfileInstallReceiver$$ExternalSyntheticLambda0;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.offline.Downloader;
 import com.google.android.exoplayer2.upstream.DataSpec;
@@ -24,7 +25,7 @@ public final class ProgressiveDownloader implements Downloader {
     private Downloader.ProgressListener progressListener;
 
     public ProgressiveDownloader(MediaItem mediaItem, CacheDataSource.Factory factory) {
-        this(mediaItem, factory, DefaultDownloaderFactory$$ExternalSyntheticLambda0.INSTANCE);
+        this(mediaItem, factory, ProfileInstallReceiver$$ExternalSyntheticLambda0.INSTANCE);
     }
 
     public ProgressiveDownloader(MediaItem mediaItem, CacheDataSource.Factory factory, Executor executor) {

@@ -32,7 +32,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
+    .line 33
     invoke-virtual {p2}, Lwallet/core/jni/HDWallet;->mnemonic()Ljava/lang/String;
 
     move-result-object v3
@@ -41,7 +41,7 @@
 
     invoke-static {v3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 33
+    .line 34
     sget-object v0, Lwallet/core/jni/CoinType;->TRON:Lwallet/core/jni/CoinType;
 
     invoke-virtual {p2, v0}, Lwallet/core/jni/HDWallet;->getAddressForCoin(Lwallet/core/jni/CoinType;)Ljava/lang/String;
@@ -52,7 +52,7 @@
 
     invoke-static {v4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 35
     sget-object v5, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TRON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     const/4 v6, 0x0
@@ -61,13 +61,13 @@
 
     move-object v2, p1
 
-    .line 30
+    .line 31
     invoke-direct/range {v1 .. v6}, Lcom/iMe/storage/domain/model/crypto/Wallet;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 28
+    .line 29
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TRON;->guid:Ljava/lang/String;
 
-    .line 29
+    .line 30
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TRON;->hdWallet:Lwallet/core/jni/HDWallet;
 
     return-void
@@ -194,7 +194,7 @@
 .method public getGuid()Ljava/lang/String;
     .locals 1
 
-    .line 28
+    .line 29
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TRON;->guid:Ljava/lang/String;
 
     return-object v0
@@ -203,7 +203,7 @@
 .method public final getHdWallet()Lwallet/core/jni/HDWallet;
     .locals 1
 
-    .line 29
+    .line 30
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TRON;->hdWallet:Lwallet/core/jni/HDWallet;
 
     return-object v0

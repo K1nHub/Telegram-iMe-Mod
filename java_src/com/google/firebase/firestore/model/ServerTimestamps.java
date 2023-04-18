@@ -1,8 +1,8 @@
 package com.google.firebase.firestore.model;
 
 import com.google.firebase.Timestamp;
-import com.google.firestore.p022v1.MapValue;
-import com.google.firestore.p022v1.Value;
+import com.google.firestore.p021v1.MapValue;
+import com.google.firestore.p021v1.Value;
 /* loaded from: classes3.dex */
 public final class ServerTimestamps {
     public static boolean isServerTimestamp(Value value) {

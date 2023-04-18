@@ -296,17 +296,6 @@
 
     move-result-object p1
 
-    sget v5, Lorg/telegram/messenger/NotificationCenter;->themeChanged:I
-
-    new-array v6, v1, [Ljava/lang/Object;
-
-    invoke-virtual {p1, v5, v6}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
-
-    .line 597
-    invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object p1
-
     sget v5, Lorg/telegram/messenger/NotificationCenter;->needSetDayNightTheme:I
 
     new-array v4, v4, [Ljava/lang/Object;
@@ -345,7 +334,7 @@
 
     invoke-virtual {p1, v5, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 598
+    .line 597
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$5;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -357,7 +346,7 @@
 
     if-ne p1, v0, :cond_14
 
-    .line 600
+    .line 599
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$5;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -368,13 +357,13 @@
 
     return-void
 
-    .line 604
+    .line 603
     :cond_a
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 605
+    .line 604
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$5;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$3000(Lorg/telegram/ui/ThemePreviewActivity;)Z
@@ -385,10 +374,10 @@
 
     const-string v0, "blur"
 
-    .line 606
+    .line 605
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 608
+    .line 607
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$5;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -398,7 +387,7 @@
 
     if-eqz v0, :cond_d
 
-    .line 609
+    .line 608
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v0
@@ -407,16 +396,16 @@
 
     const-string v0, "+"
 
-    .line 610
+    .line 609
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_c
     const-string v0, "motion"
 
-    .line 612
+    .line 611
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 614
+    .line 613
     :cond_d
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$5;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -428,7 +417,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 615
+    .line 614
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$5;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$3100(Lorg/telegram/ui/ThemePreviewActivity;)Ljava/lang/Object;
@@ -437,7 +426,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
-    .line 616
+    .line 615
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -472,14 +461,14 @@
 
     move-result-object v0
 
-    .line 617
+    .line 616
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
 
     if-lez v1, :cond_e
 
-    .line 618
+    .line 617
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -506,7 +495,7 @@
 
     goto/16 :goto_5
 
-    .line 620
+    .line 619
     :cond_f
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$5;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -518,7 +507,7 @@
 
     if-eqz p1, :cond_11
 
-    .line 621
+    .line 620
     new-instance p1, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
 
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$5;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -593,7 +582,7 @@
 
     invoke-direct/range {v2 .. v11}, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;-><init>(Ljava/lang/String;IIIIIFZLjava/io/File;)V
 
-    .line 622
+    .line 621
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$5;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$2400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
@@ -602,20 +591,20 @@
 
     iput-object v0, p1, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->pattern:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
-    .line 623
+    .line 622
     invoke-virtual {p1}, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->getUrl()Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_1
 
-    .line 625
+    .line 624
     :cond_11
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-eqz p1, :cond_14
 
-    .line 626
+    .line 625
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getActiveTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object p1
@@ -626,7 +615,7 @@
 
     if-eqz p1, :cond_14
 
-    .line 628
+    .line 627
     new-instance v0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
 
     iget-object v3, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
@@ -659,7 +648,7 @@
 
     invoke-direct/range {v2 .. v11}, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;-><init>(Ljava/lang/String;IIIIIFZLjava/io/File;)V
 
-    .line 629
+    .line 628
     iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$5;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ThemePreviewActivity;->access$3800(Lorg/telegram/ui/ThemePreviewActivity;)Ljava/util/ArrayList;
@@ -673,7 +662,7 @@
     :goto_3
     if-ge v1, v2, :cond_13
 
-    .line 630
+    .line 629
     iget-object v3, p0, Lorg/telegram/ui/ThemePreviewActivity$5;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ThemePreviewActivity;->access$3800(Lorg/telegram/ui/ThemePreviewActivity;)Ljava/util/ArrayList;
@@ -686,12 +675,12 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
-    .line 631
+    .line 630
     iget-boolean v4, v3, Lorg/telegram/tgnet/TLRPC$WallPaper;->pattern:Z
 
     if-eqz v4, :cond_12
 
-    .line 632
+    .line 631
     iget-object v4, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
     iget-object v5, v3, Lorg/telegram/tgnet/TLRPC$WallPaper;->slug:Ljava/lang/String;
@@ -702,7 +691,7 @@
 
     if-eqz v4, :cond_12
 
-    .line 633
+    .line 632
     iput-object v3, v0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->pattern:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
     goto :goto_4
@@ -712,7 +701,7 @@
 
     goto :goto_3
 
-    .line 638
+    .line 637
     :cond_13
     :goto_4
     invoke-virtual {v0}, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->getUrl()Ljava/lang/String;
@@ -721,7 +710,7 @@
 
     goto/16 :goto_1
 
-    .line 646
+    .line 645
     :goto_5
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$5;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 

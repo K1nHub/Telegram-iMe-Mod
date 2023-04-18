@@ -7,9 +7,9 @@ import java.util.List;
 /* compiled from: TonController.kt */
 /* loaded from: classes3.dex */
 public interface TonController {
-    Observable<Result<Wallet>> createWallet(String str);
+    Observable<Result<Wallet>> createWallet();
 
-    Observable<Result<Wallet>> importWallet(String str, List<String> list);
+    Observable<Result<Wallet.TON>> importWallet(List<String> list);
 
     Observable<Result<Boolean>> isValidWalletAddress(String str);
 

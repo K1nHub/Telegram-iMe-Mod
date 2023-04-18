@@ -1,6 +1,6 @@
 .class public interface abstract Landroidx/lifecycle/LifecycleOwner;
 .super Ljava/lang/Object;
-.source "LifecycleOwner.java"
+.source "LifecycleOwner.kt"
 
 
 # virtual methods

@@ -29,10 +29,10 @@
 .method constructor <init>(Ljava/lang/String;I)V
     .locals 1
 
-    .line 18
+    .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 12
+    .line 10
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -41,23 +41,23 @@
 
     const/high16 v0, 0x100000
 
-    .line 14
+    .line 12
     iput v0, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->PRIORITY_VALUE_MAX:I
 
     const/high16 v0, 0x10000
 
-    .line 15
+    .line 13
     iput v0, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->PRIORITY_VALUE_NORMAL:I
 
     const/4 v0, 0x0
 
-    .line 16
+    .line 14
     iput v0, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->PRIORITY_VALUE_LOW:I
 
-    .line 19
+    .line 17
     iput-object p1, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->name:Ljava/lang/String;
 
-    .line 20
+    .line 18
     iput p2, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->maxActiveOperationsCount:I
 
     return-void
@@ -77,7 +77,7 @@
 
     move v1, v0
 
-    .line 28
+    .line 26
     :goto_0
     iget-object v2, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->allOperations:Ljava/util/ArrayList;
 
@@ -87,7 +87,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 29
+    .line 27
     iget-object v2, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->allOperations:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -96,7 +96,7 @@
 
     if-ne v2, p1, :cond_1
 
-    .line 30
+    .line 28
     iget-object v2, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->allOperations:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -108,7 +108,7 @@
 
     goto :goto_0
 
-    .line 34
+    .line 32
     :cond_2
     :goto_1
     iget-object v1, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->allOperations:Ljava/util/ArrayList;
@@ -119,7 +119,7 @@
 
     if-ge v0, v1, :cond_4
 
-    .line 35
+    .line 33
     invoke-virtual {p1}, Lorg/telegram/messenger/FileLoadOperation;->getPriority()I
 
     move-result v1
@@ -151,14 +151,14 @@
     :goto_2
     if-ltz v0, :cond_5
 
-    .line 41
+    .line 39
     iget-object v1, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->allOperations:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     goto :goto_3
 
-    .line 43
+    .line 41
     :cond_5
     iget-object v0, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->allOperations:Ljava/util/ArrayList;
 
@@ -175,7 +175,7 @@
 
     return-void
 
-    .line 51
+    .line 49
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->allOperations:Ljava/util/ArrayList;
 
@@ -185,7 +185,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 52
+    .line 50
     invoke-virtual {p1}, Lorg/telegram/messenger/FileLoadOperation;->cancel()V
 
     :cond_1
@@ -195,7 +195,7 @@
 .method public checkLoadingOperations()V
     .locals 6
 
-    .line 60
+    .line 58
     iget v0, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->maxActiveOperationsCount:I
 
     const/4 v1, 0x0
@@ -204,7 +204,7 @@
 
     move v3, v2
 
-    .line 61
+    .line 59
     :goto_0
     iget-object v4, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->allOperations:Ljava/util/ArrayList;
 
@@ -214,7 +214,7 @@
 
     if-ge v1, v4, :cond_4
 
-    .line 62
+    .line 60
     iget-object v4, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->allOperations:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -227,7 +227,7 @@
 
     if-nez v2, :cond_0
 
-    .line 64
+    .line 62
     iget v5, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->PRIORITY_VALUE_LOW:I
 
     if-le v3, v5, :cond_0
@@ -242,7 +242,7 @@
 
     const/4 v2, 0x1
 
-    .line 68
+    .line 66
     :cond_0
     iget-boolean v3, v4, Lorg/telegram/messenger/FileLoadOperation;->preFinished:Z
 
@@ -257,12 +257,12 @@
 
     if-ge v1, v0, :cond_2
 
-    .line 73
+    .line 71
     invoke-virtual {v4}, Lorg/telegram/messenger/FileLoadOperation;->start()Z
 
     goto :goto_1
 
-    .line 76
+    .line 74
     :cond_2
     invoke-virtual {v4}, Lorg/telegram/messenger/FileLoadOperation;->wasStarted()Z
 
@@ -270,10 +270,10 @@
 
     if-eqz v3, :cond_3
 
-    .line 77
+    .line 75
     invoke-virtual {v4}, Lorg/telegram/messenger/FileLoadOperation;->pause()V
 
-    .line 80
+    .line 78
     :cond_3
     :goto_1
     invoke-virtual {v4}, Lorg/telegram/messenger/FileLoadOperation;->getPriority()I
@@ -291,7 +291,7 @@
 .method public getCount()I
     .locals 1
 
-    .line 96
+    .line 90
     iget-object v0, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->allOperations:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -304,7 +304,7 @@
 .method public getPosition(Lorg/telegram/messenger/FileLoadOperation;)I
     .locals 1
 
-    .line 100
+    .line 94
     iget-object v0, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->allOperations:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -315,36 +315,14 @@
 .end method
 
 .method public remove(Lorg/telegram/messenger/FileLoadOperation;)V
-    .locals 2
+    .locals 1
 
     if-nez p1, :cond_0
 
     return-void
 
-    .line 88
+    .line 86
     :cond_0
-    iget v0, p1, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
-
-    invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    .line 89
-    invoke-virtual {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getConnectionState()I
-
-    move-result v0
-
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_1
-
-    .line 90
-    invoke-virtual {p1}, Lorg/telegram/messenger/FileLoadOperation;->cancel()V
-
-    .line 92
-    :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/FileLoaderPriorityQueue;->allOperations:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z

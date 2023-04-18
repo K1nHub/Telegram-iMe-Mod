@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/lang/String;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$gDrwOM2rokxGK4rX6O2MfwmVLB4(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$g3U3G9eUqF5Z77pbHNeqWPze8x4(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;)V
 
     return-void
 .end method

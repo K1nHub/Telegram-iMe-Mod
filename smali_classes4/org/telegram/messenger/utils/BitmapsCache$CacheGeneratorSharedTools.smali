@@ -285,8 +285,10 @@
 
     goto :goto_0
 
-    .line 643
     :cond_2
+    if-eqz v2, :cond_3
+
+    .line 643
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0

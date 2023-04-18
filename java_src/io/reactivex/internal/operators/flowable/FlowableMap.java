@@ -58,7 +58,7 @@ public final class FlowableMap<T, U> extends AbstractFlowableWithUpstream<T, U> 
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public U poll() throws Exception {
-            T poll = this.f479qs.poll();
+            T poll = this.f474qs.poll();
             if (poll != null) {
                 return (U) ObjectHelper.requireNonNull(this.mapper.apply(poll), "The mapper function returned a null value.");
             }
@@ -111,7 +111,7 @@ public final class FlowableMap<T, U> extends AbstractFlowableWithUpstream<T, U> 
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public U poll() throws Exception {
-            T poll = this.f478qs.poll();
+            T poll = this.f473qs.poll();
             if (poll != null) {
                 return (U) ObjectHelper.requireNonNull(this.mapper.apply(poll), "The mapper function returned a null value.");
             }

@@ -9,11 +9,23 @@ public class ASN1UTCTime extends ASN1Primitive {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ASN1UTCTime(byte[] bArr) {
+        if (bArr.length < 2) {
+            throw new IllegalArgumentException("UTCTime string too short");
+        }
         this.time = bArr;
+        if (!isDigit(0) || !isDigit(1)) {
+            throw new IllegalArgumentException("illegal characters in UTCTime string");
+        }
     }
 
+    private boolean isDigit(int i) {
+        byte[] bArr = this.time;
+        return bArr.length > i && bArr[i] >= 48 && bArr[i] <= 57;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    boolean asn1Equals(ASN1Primitive aSN1Primitive) {
+    public boolean asn1Equals(ASN1Primitive aSN1Primitive) {
         if (aSN1Primitive instanceof ASN1UTCTime) {
             return Arrays.areEqual(this.time, ((ASN1UTCTime) aSN1Primitive).time);
         }
@@ -22,13 +34,8 @@ public class ASN1UTCTime extends ASN1Primitive {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    public void encode(ASN1OutputStream aSN1OutputStream) throws IOException {
-        aSN1OutputStream.write(23);
-        int length = this.time.length;
-        aSN1OutputStream.writeLength(length);
-        for (int i = 0; i != length; i++) {
-            aSN1OutputStream.write(this.time[i]);
-        }
+    public void encode(ASN1OutputStream aSN1OutputStream, boolean z) throws IOException {
+        aSN1OutputStream.writeEncoded(z, 23, this.time);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

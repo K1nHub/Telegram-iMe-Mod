@@ -6,13 +6,12 @@ import java.util.HashSet;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.Reflection;
 import org.koin.core.definition.BeanDefinition;
 import org.koin.core.definition.BeanDefinitionKt;
 import org.koin.core.instance.InstanceFactory;
 import org.koin.core.instance.SingleInstanceFactory;
 import org.koin.core.qualifier.Qualifier;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: Module.kt */
 /* loaded from: classes4.dex */
 public final class Module {
@@ -20,7 +19,7 @@ public final class Module {
     private HashSet<SingleInstanceFactory<?>> eagerInstances;
 
     /* renamed from: id */
-    private final String f1422id;
+    private final String f1346id;
     private final List<Module> includedModules;
     private final HashMap<String, InstanceFactory<?>> mappings;
     private final HashSet<Qualifier> scopes;
@@ -31,7 +30,7 @@ public final class Module {
 
     public Module(boolean z) {
         this._createdAtStart = z;
-        this.f1422id = KoinPlatformTools.INSTANCE.generateId();
+        this.f1346id = KoinPlatformTools.INSTANCE.generateId();
         this.eagerInstances = new HashSet<>();
         this.mappings = new HashMap<>();
         this.scopes = new HashSet<>();
@@ -58,14 +57,14 @@ public final class Module {
         return this.scopes;
     }
 
-    public final List<Module> getIncludedModules$koin_core() {
+    public final List<Module> getIncludedModules() {
         return this.includedModules;
     }
 
     public final void indexPrimaryType(InstanceFactory<?> instanceFactory) {
         Intrinsics.checkNotNullParameter(instanceFactory, "instanceFactory");
         BeanDefinition<?> beanDefinition = instanceFactory.getBeanDefinition();
-        saveMapping$default(this, BeanDefinitionKt.indexKey(beanDefinition.getPrimaryType(), beanDefinition.getQualifier(), beanDefinition.getScopeQualifier()), instanceFactory, false, 4, null);
+        saveMapping(BeanDefinitionKt.indexKey(beanDefinition.getPrimaryType(), beanDefinition.getQualifier(), beanDefinition.getScopeQualifier()), instanceFactory);
     }
 
     public final void prepareForCreationAtStart(SingleInstanceFactory<?> instanceFactory) {
@@ -73,19 +72,9 @@ public final class Module {
         this.eagerInstances.add(instanceFactory);
     }
 
-    public static /* synthetic */ void saveMapping$default(Module module, String str, InstanceFactory instanceFactory, boolean z, int i, Object obj) {
-        if ((i & 4) != 0) {
-            z = false;
-        }
-        module.saveMapping(str, instanceFactory, z);
-    }
-
-    public final void saveMapping(String mapping, InstanceFactory<?> factory, boolean z) {
+    public final void saveMapping(String mapping, InstanceFactory<?> factory) {
         Intrinsics.checkNotNullParameter(mapping, "mapping");
         Intrinsics.checkNotNullParameter(factory, "factory");
-        if (!z && this.mappings.containsKey(mapping)) {
-            ModuleKt.overrideError(factory, mapping);
-        }
         this.mappings.put(mapping, factory);
     }
 
@@ -93,10 +82,10 @@ public final class Module {
         if (this == obj) {
             return true;
         }
-        return obj != null && Intrinsics.areEqual(Reflection.getOrCreateKotlinClass(Module.class), Reflection.getOrCreateKotlinClass(obj.getClass())) && Intrinsics.areEqual(this.f1422id, ((Module) obj).f1422id);
+        return obj != null && Module.class == obj.getClass() && Intrinsics.areEqual(this.f1346id, ((Module) obj).f1346id);
     }
 
     public int hashCode() {
-        return this.f1422id.hashCode();
+        return this.f1346id.hashCode();
     }
 }

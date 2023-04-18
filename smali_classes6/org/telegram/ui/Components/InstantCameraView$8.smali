@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InstantCameraView;Ljava/io/File;Ljava/lang/String;)V
     .locals 0
 
-    .line 617
+    .line 618
     invoke-direct {p0, p2, p3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     return-void
@@ -29,17 +29,17 @@
 .method public delete()Z
     .locals 1
 
-    .line 620
+    .line 621
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "delete camera file"
 
-    .line 621
+    .line 622
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 623
+    .line 624
     :cond_0
     invoke-super {p0}, Ljava/io/File;->delete()Z
 

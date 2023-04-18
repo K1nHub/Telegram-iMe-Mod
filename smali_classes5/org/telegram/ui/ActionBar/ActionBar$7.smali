@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBar;ZZ)V
     .locals 0
 
-    .line 1703
+    .line 1674
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$7;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ActionBar/ActionBar$7;->val$crossfade:Z
@@ -43,7 +43,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1706
+    .line 1677
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$7;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$500(Lorg/telegram/ui/ActionBar/ActionBar;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -70,7 +70,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1707
+    .line 1678
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$7;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$500(Lorg/telegram/ui/ActionBar/ActionBar;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -85,7 +85,7 @@
 
     check-cast p1, Landroid/view/ViewGroup;
 
-    .line 1708
+    .line 1679
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBar$7;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$500(Lorg/telegram/ui/ActionBar/ActionBar;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -96,7 +96,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1710
+    .line 1681
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$7;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -108,14 +108,14 @@
 
     aput-object v1, p1, v0
 
-    .line 1711
+    .line 1682
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$7;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->access$1202(Lorg/telegram/ui/ActionBar/ActionBar;Z)Z
 
-    .line 1713
+    .line 1684
     iget-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$7;->val$crossfade:Z
 
     if-eqz p1, :cond_1
@@ -124,7 +124,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1714
+    .line 1685
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$7;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$600(Lorg/telegram/ui/ActionBar/ActionBar;)Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -135,7 +135,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1717
+    .line 1688
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$7;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 

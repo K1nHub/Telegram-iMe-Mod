@@ -1,17 +1,19 @@
 package org.bouncycastle.pqc.crypto.xmss;
 
 import java.util.Objects;
+import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.crypto.Xof;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
-final class KeyedHashFunctions {
+public final class KeyedHashFunctions {
     private final Digest digest;
     private final int digestSize;
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public KeyedHashFunctions(Digest digest, int i) {
-        Objects.requireNonNull(digest, "digest == null");
-        this.digest = digest;
+    public KeyedHashFunctions(ASN1ObjectIdentifier aSN1ObjectIdentifier, int i) {
+        Objects.requireNonNull(aSN1ObjectIdentifier, "digest == null");
+        this.digest = DigestUtil.getDigest(aSN1ObjectIdentifier);
         this.digestSize = i;
     }
 

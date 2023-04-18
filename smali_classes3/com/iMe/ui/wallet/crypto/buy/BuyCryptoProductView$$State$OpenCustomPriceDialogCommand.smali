@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State;Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;)V
     .locals 1
 
-    .line 287
+    .line 305
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openCustomPriceDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 289
+    .line 307
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$OpenCustomPriceDialogCommand;->lowerPriceItem:Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;)V
     .locals 1
 
-    .line 294
+    .line 312
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$OpenCustomPriceDialogCommand;->lowerPriceItem:Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;->openCustomPriceDialog(Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 283
+    .line 301
     check-cast p1, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$OpenCustomPriceDialogCommand;->apply(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;)V

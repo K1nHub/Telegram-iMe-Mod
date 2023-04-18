@@ -1,12 +1,12 @@
 package org.bouncycastle.asn1;
 
-import java.io.ByteArrayOutputStream;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
 import org.bouncycastle.util.Arrays;
-import org.bouncycastle.util.p046io.Streams;
+import org.bouncycastle.util.p042io.Streams;
 /* loaded from: classes4.dex */
 public abstract class ASN1BitString extends ASN1Primitive {
     private static final char[] table = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -14,7 +14,7 @@ public abstract class ASN1BitString extends ASN1Primitive {
     protected final int padBits;
 
     public ASN1BitString(byte[] bArr, int i) {
-        Objects.requireNonNull(bArr, "data cannot be null");
+        Objects.requireNonNull(bArr, "'data' cannot be null");
         if (bArr.length == 0 && i != 0) {
             throw new IllegalArgumentException("zero length data with non-zero pad bits");
         }
@@ -23,16 +23,6 @@ public abstract class ASN1BitString extends ASN1Primitive {
         }
         this.data = Arrays.clone(bArr);
         this.padBits = i;
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public static byte[] derForm(byte[] bArr, int i) {
-        byte[] clone = Arrays.clone(bArr);
-        if (i > 0) {
-            int length = bArr.length - 1;
-            clone[length] = (byte) ((255 << i) & clone[length]);
-        }
-        return clone;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -57,17 +47,45 @@ public abstract class ASN1BitString extends ASN1Primitive {
         throw new IllegalArgumentException("truncated BIT STRING detected");
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    protected boolean asn1Equals(ASN1Primitive aSN1Primitive) {
+    public boolean asn1Equals(ASN1Primitive aSN1Primitive) {
         if (aSN1Primitive instanceof ASN1BitString) {
             ASN1BitString aSN1BitString = (ASN1BitString) aSN1Primitive;
-            return this.padBits == aSN1BitString.padBits && Arrays.areEqual(getBytes(), aSN1BitString.getBytes());
+            if (this.padBits != aSN1BitString.padBits) {
+                return false;
+            }
+            byte[] bArr = this.data;
+            byte[] bArr2 = aSN1BitString.data;
+            int length = bArr.length;
+            if (length != bArr2.length) {
+                return false;
+            }
+            int i = length - 1;
+            if (i < 0) {
+                return true;
+            }
+            for (int i2 = 0; i2 < i; i2++) {
+                if (bArr[i2] != bArr2[i2]) {
+                    return false;
+                }
+            }
+            byte b = bArr[i];
+            int i3 = this.padBits;
+            return ((byte) (b & (255 << i3))) == ((byte) (bArr2[i] & (255 << i3)));
         }
         return false;
     }
 
     public byte[] getBytes() {
-        return derForm(this.data, this.padBits);
+        byte[] bArr = this.data;
+        if (bArr.length == 0) {
+            return bArr;
+        }
+        byte[] clone = Arrays.clone(bArr);
+        int length = this.data.length - 1;
+        clone[length] = (byte) (clone[length] & (255 << this.padBits));
+        return clone;
     }
 
     public byte[] getOctets() {
@@ -77,20 +95,14 @@ public abstract class ASN1BitString extends ASN1Primitive {
         throw new IllegalStateException("attempt to get non-octet aligned data from BIT STRING");
     }
 
-    public int getPadBits() {
-        return this.padBits;
-    }
-
     public String getString() {
         StringBuffer stringBuffer = new StringBuffer("#");
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         try {
-            new ASN1OutputStream(byteArrayOutputStream).writeObject(this);
-            byte[] byteArray = byteArrayOutputStream.toByteArray();
-            for (int i = 0; i != byteArray.length; i++) {
+            byte[] encoded = getEncoded();
+            for (int i = 0; i != encoded.length; i++) {
                 char[] cArr = table;
-                stringBuffer.append(cArr[(byteArray[i] >>> 4) & 15]);
-                stringBuffer.append(cArr[byteArray[i] & 15]);
+                stringBuffer.append(cArr[(encoded[i] >>> 4) & 15]);
+                stringBuffer.append(cArr[encoded[i] & 15]);
             }
             return stringBuffer.toString();
         } catch (IOException e) {
@@ -100,7 +112,12 @@ public abstract class ASN1BitString extends ASN1Primitive {
 
     @Override // org.bouncycastle.asn1.ASN1Object
     public int hashCode() {
-        return this.padBits ^ Arrays.hashCode(getBytes());
+        byte[] bArr = this.data;
+        int length = bArr.length - 1;
+        if (length < 0) {
+            return 1;
+        }
+        return ((Arrays.hashCode(bArr, 0, length) * TsExtractor.TS_STREAM_TYPE_AIT) ^ ((byte) (bArr[length] & (255 << this.padBits)))) ^ this.padBits;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

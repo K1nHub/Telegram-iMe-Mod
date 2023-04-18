@@ -74,24 +74,24 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 1432
+    .line 1433
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 v0, 0x2d
 
-    .line 1414
+    .line 1415
     iput v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundRotation:I
 
     const-string v0, ""
 
-    .line 1415
+    .line 1416
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
     const/4 v0, 0x3
 
     new-array v0, v0, [F
 
-    .line 1794
+    .line 1795
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     return-void
@@ -123,13 +123,13 @@
 
     move v5, v4
 
-    .line 1865
+    .line 1866
     :goto_0
     array-length v6, p2
 
     if-ge v1, v6, :cond_1
 
-    .line 1866
+    .line 1867
     aget-object v6, p2, v1
 
     invoke-virtual {p1, v6}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -140,7 +140,7 @@
 
     goto :goto_1
 
-    .line 1870
+    .line 1871
     :cond_0
     :try_start_0
     aget-object v6, p2, v1
@@ -155,21 +155,21 @@
 
     move-result v6
 
-    .line 1871
+    .line 1872
     invoke-static {v6}, Landroid/graphics/Color;->red(I)I
 
     move-result v7
 
     add-int/2addr v3, v7
 
-    .line 1872
+    .line 1873
     invoke-static {v6}, Landroid/graphics/Color;->green(I)I
 
     move-result v7
 
     add-int/2addr v4, v7
 
-    .line 1873
+    .line 1874
     invoke-static {v6}, Landroid/graphics/Color;->blue(I)I
 
     move-result v6
@@ -194,7 +194,7 @@
     :cond_2
     const/16 p1, 0xff
 
-    .line 1880
+    .line 1881
     div-int/2addr v3, v2
 
     div-int/2addr v4, v2
@@ -211,22 +211,22 @@
 .method private bubbleSelectedOverlay(II)I
     .locals 4
 
-    .line 1809
+    .line 1810
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p2, v0}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1810
+    .line 1811
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 v0, 0x0
 
     aget v1, p2, v0
 
-    .line 1811
+    .line 1812
     invoke-static {p1, p2}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1812
+    .line 1813
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p2, 0x1
@@ -239,10 +239,10 @@
 
     if-gtz v2, :cond_0
 
-    .line 1813
+    .line 1814
     aput v1, p1, v0
 
-    .line 1815
+    .line 1816
     :cond_0
     aget v0, p1, p2
 
@@ -262,7 +262,7 @@
 
     aput v0, p1, p2
 
-    .line 1816
+    .line 1817
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p2, 0x2
@@ -285,7 +285,7 @@
 
     const/16 p1, 0x1e
 
-    .line 1817
+    .line 1818
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p1, p2}, Landroid/graphics/Color;->HSVToColor(I[F)I
@@ -298,12 +298,12 @@
 .method private getHue(I)F
     .locals 1
 
-    .line 1805
+    .line 1806
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p1, v0}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1806
+    .line 1807
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 v0, 0x0
@@ -318,7 +318,7 @@
 
     const/high16 v0, 0x3e800000    # 0.25f
 
-    .line 1842
+    .line 1843
     invoke-static {p1, p2, v0}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result p1
@@ -327,7 +327,7 @@
 
     invoke-static {p1, p2}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1843
+    .line 1844
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p2, 0x1
@@ -352,7 +352,7 @@
 
     aput v0, p1, p2
 
-    .line 1844
+    .line 1845
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p2, 0x2
@@ -381,7 +381,7 @@
 
     const/16 p1, 0x33
 
-    .line 1845
+    .line 1846
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p1, p2}, Landroid/graphics/Color;->HSVToColor(I[F)I
@@ -400,13 +400,13 @@
 
     return p1
 
-    .line 1851
+    .line 1852
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p2, p3}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1852
+    .line 1853
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p3, 0x1
@@ -439,7 +439,7 @@
 
     goto :goto_0
 
-    .line 1856
+    .line 1857
     :cond_1
     aget p1, p2, v2
 
@@ -453,7 +453,7 @@
 
     aput p1, p2, v2
 
-    .line 1857
+    .line 1858
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     aget p2, p1, p3
@@ -470,17 +470,17 @@
 
     goto :goto_1
 
-    .line 1853
+    .line 1854
     :cond_2
     :goto_0
     aput p1, p2, v2
 
     const p1, 0x3e4ccccd    # 0.2f
 
-    .line 1854
+    .line 1855
     aput p1, p2, p3
 
-    .line 1859
+    .line 1860
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
@@ -498,7 +498,7 @@
 
     const/16 p1, 0x5a
 
-    .line 1860
+    .line 1861
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p1, p2}, Landroid/graphics/Color;->HSVToColor(I[F)I
@@ -511,22 +511,22 @@
 .method private textSelectionBackground(ZII)I
     .locals 4
 
-    .line 1820
+    .line 1821
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p3, p1}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1821
+    .line 1822
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p3, 0x0
 
     aget v0, p1, p3
 
-    .line 1822
+    .line 1823
     invoke-static {p2, p1}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1823
+    .line 1824
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p2, 0x1
@@ -555,11 +555,11 @@
 
     if-gez v1, :cond_1
 
-    .line 1824
+    .line 1825
     :cond_0
     aput v0, p1, p3
 
-    .line 1826
+    .line 1827
     :cond_1
     aget p3, p1, p2
 
@@ -595,7 +595,7 @@
 
     aput p3, p1, p2
 
-    .line 1827
+    .line 1828
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     aget p2, p1, v0
@@ -616,7 +616,7 @@
 
     const/16 p1, 0x50
 
-    .line 1828
+    .line 1829
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p1, p2}, Landroid/graphics/Color;->HSVToColor(I[F)I
@@ -629,22 +629,22 @@
 .method private textSelectionHandle(II)I
     .locals 6
 
-    .line 1831
+    .line 1832
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p2, v0}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1832
+    .line 1833
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 v0, 0x0
 
     aget v1, p2, v0
 
-    .line 1833
+    .line 1834
     invoke-static {p1, p2}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1834
+    .line 1835
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 v2, 0x1
@@ -673,11 +673,11 @@
 
     if-gez v3, :cond_1
 
-    .line 1835
+    .line 1836
     :cond_0
     aput v1, p2, v0
 
-    .line 1837
+    .line 1838
     :cond_1
     aget v0, p2, v2
 
@@ -697,7 +697,7 @@
 
     aput v0, p2, v2
 
-    .line 1838
+    .line 1839
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 v0, 0x2
@@ -734,7 +734,7 @@
 
     const/16 p2, 0xff
 
-    .line 1839
+    .line 1840
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p2, v0}, Landroid/graphics/Color;->HSVToColor(I[F)I
@@ -774,38 +774,38 @@
 
     const/4 v3, 0x1
 
-    .line 1467
+    .line 1468
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->access$900(I)[F
 
     move-result-object v4
 
     const/4 v5, 0x2
 
-    .line 1468
+    .line 1469
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->access$900(I)[F
 
     move-result-object v5
 
-    .line 1470
+    .line 1471
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     iget v6, v6, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->accentBaseColor:I
 
     invoke-static {v6, v4}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1471
+    .line 1472
     iget v6, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
     invoke-static {v6, v5}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1472
+    .line 1473
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     invoke-virtual {v6}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->isDark()Z
 
     move-result v6
 
-    .line 1474
+    .line 1475
     iget v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
@@ -818,13 +818,13 @@
 
     if-eqz v7, :cond_4
 
-    .line 1475
+    .line 1476
     :cond_0
     invoke-virtual/range {p1 .. p1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
     move-result-object v7
 
-    .line 1476
+    .line 1477
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()Ljava/util/HashMap;
 
     move-result-object v8
@@ -833,7 +833,7 @@
 
     move-result-object v8
 
-    .line 1477
+    .line 1478
     new-instance v9, Ljava/util/HashSet;
 
     invoke-interface {v7}, Ljava/util/Set;->size()I
@@ -848,20 +848,20 @@
 
     invoke-direct {v9, v10}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 1478
+    .line 1479
     invoke-virtual {v9, v7}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
 
-    .line 1479
+    .line 1480
     invoke-virtual {v9, v8}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
 
-    .line 1480
+    .line 1481
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1100()Ljava/util/HashSet;
 
     move-result-object v7
 
     invoke-virtual {v9, v7}, Ljava/util/HashSet;->removeAll(Ljava/util/Collection;)Z
 
-    .line 1482
+    .line 1483
     invoke-virtual {v9}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v7
@@ -880,7 +880,7 @@
 
     check-cast v8, Ljava/lang/String;
 
-    .line 1483
+    .line 1484
     invoke-virtual {v1, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v9
@@ -889,7 +889,7 @@
 
     if-nez v9, :cond_2
 
-    .line 1485
+    .line 1486
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Ljava/util/HashMap;
 
     move-result-object v10
@@ -902,7 +902,7 @@
 
     if-eqz v10, :cond_2
 
-    .line 1486
+    .line 1487
     invoke-virtual {v1, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v10
@@ -914,7 +914,7 @@
     :cond_2
     if-nez v9, :cond_3
 
-    .line 1491
+    .line 1492
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()Ljava/util/HashMap;
 
     move-result-object v9
@@ -925,7 +925,7 @@
 
     check-cast v9, Ljava/lang/Integer;
 
-    .line 1494
+    .line 1495
     :cond_3
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
@@ -935,14 +935,14 @@
 
     move-result v10
 
-    .line 1495
+    .line 1496
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v9
 
     if-eq v10, v9, :cond_1
 
-    .line 1496
+    .line 1497
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
@@ -951,7 +951,7 @@
 
     goto :goto_0
 
-    .line 1500
+    .line 1501
     :cond_4
     iget v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
@@ -963,7 +963,7 @@
 
     if-nez v7, :cond_5
 
-    .line 1501
+    .line 1502
     iget v11, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
     if-eqz v11, :cond_c
@@ -977,11 +977,11 @@
 
     goto :goto_1
 
-    .line 1502
+    .line 1503
     :cond_6
     iget v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
-    .line 1503
+    .line 1504
     :goto_1
     invoke-virtual {v1, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -991,7 +991,7 @@
 
     if-nez v11, :cond_7
 
-    .line 1505
+    .line 1506
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()Ljava/util/HashMap;
 
     move-result-object v11
@@ -1002,7 +1002,7 @@
 
     check-cast v11, Ljava/lang/Integer;
 
-    .line 1507
+    .line 1508
     :cond_7
     invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
 
@@ -1012,24 +1012,24 @@
 
     move-result v12
 
-    .line 1508
+    .line 1509
     invoke-static {v7, v12}, Lorg/telegram/messenger/AndroidUtilities;->getColorDistance(II)I
 
     move-result v12
 
-    .line 1509
+    .line 1510
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor1:I
 
     invoke-static {v7, v13}, Lorg/telegram/messenger/AndroidUtilities;->getColorDistance(II)I
 
     move-result v13
 
-    .line 1512
+    .line 1513
     iget v14, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
 
     if-eqz v14, :cond_a
 
-    .line 1513
+    .line 1514
     iget v14, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
     iget v15, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor1:I
@@ -1038,24 +1038,24 @@
 
     move-result v14
 
-    .line 1514
+    .line 1515
     iget v15, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
 
     invoke-static {v14, v15}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
 
     move-result v14
 
-    .line 1515
+    .line 1516
     iget v15, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor3:I
 
     if-eqz v15, :cond_8
 
-    .line 1516
+    .line 1517
     invoke-static {v14, v15}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
 
     move-result v14
 
-    .line 1518
+    .line 1519
     :cond_8
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->computePerceivedBrightness(I)F
 
@@ -1074,7 +1074,7 @@
 
     goto :goto_2
 
-    .line 1520
+    .line 1521
     :cond_a
     iget v14, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
@@ -1100,7 +1100,7 @@
     :cond_b
     move v12, v10
 
-    .line 1527
+    .line 1528
     :goto_3
     invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
 
@@ -1118,7 +1118,7 @@
     :goto_4
     if-eqz v7, :cond_f
 
-    .line 1529
+    .line 1530
     iget-object v11, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     iget v11, v11, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->accentBaseColor:I
@@ -1145,27 +1145,27 @@
     :goto_5
     if-nez v11, :cond_10
 
-    .line 1530
+    .line 1531
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor2:I
 
     if-eqz v13, :cond_1b
 
-    .line 1531
+    .line 1532
     :cond_10
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor2:I
 
     if-eqz v13, :cond_11
 
-    .line 1532
+    .line 1533
     invoke-static {v13, v5}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
     goto :goto_6
 
-    .line 1534
+    .line 1535
     :cond_11
     invoke-static {v7, v5}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1537
+    .line 1538
     :goto_6
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1400()Ljava/util/HashSet;
 
@@ -1188,7 +1188,7 @@
 
     check-cast v14, Ljava/lang/String;
 
-    .line 1538
+    .line 1539
     invoke-virtual {v1, v14}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v15
@@ -1197,7 +1197,7 @@
 
     if-nez v15, :cond_12
 
-    .line 1540
+    .line 1541
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Ljava/util/HashMap;
 
     move-result-object v3
@@ -1210,7 +1210,7 @@
 
     if-eqz v3, :cond_12
 
-    .line 1541
+    .line 1542
     invoke-virtual {v1, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -1222,7 +1222,7 @@
     :cond_12
     if-nez v15, :cond_13
 
-    .line 1546
+    .line 1547
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()Ljava/util/HashMap;
 
     move-result-object v3
@@ -1244,7 +1244,7 @@
 
     goto :goto_7
 
-    .line 1551
+    .line 1552
     :cond_15
     invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
 
@@ -1254,14 +1254,14 @@
 
     move-result v3
 
-    .line 1552
+    .line 1553
     invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
 
     move-result v15
 
     if-eq v3, v15, :cond_14
 
-    .line 1553
+    .line 1554
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -1273,10 +1273,10 @@
     :cond_16
     if-eqz v11, :cond_1b
 
-    .line 1558
+    .line 1559
     invoke-static {v7, v5}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1559
+    .line 1560
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1500()Ljava/util/HashSet;
 
     move-result-object v3
@@ -1299,7 +1299,7 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 1560
+    .line 1561
     invoke-virtual {v1, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v11
@@ -1308,7 +1308,7 @@
 
     if-nez v11, :cond_18
 
-    .line 1562
+    .line 1563
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Ljava/util/HashMap;
 
     move-result-object v13
@@ -1321,7 +1321,7 @@
 
     if-eqz v13, :cond_18
 
-    .line 1563
+    .line 1564
     invoke-virtual {v1, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v13
@@ -1333,7 +1333,7 @@
     :cond_18
     if-nez v11, :cond_19
 
-    .line 1568
+    .line 1569
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()Ljava/util/HashMap;
 
     move-result-object v11
@@ -1349,7 +1349,7 @@
 
     goto :goto_9
 
-    .line 1573
+    .line 1574
     :cond_1a
     invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
 
@@ -1359,14 +1359,14 @@
 
     move-result v13
 
-    .line 1574
+    .line 1575
     invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
 
     move-result v11
 
     if-eq v13, v11, :cond_17
 
-    .line 1575
+    .line 1576
     invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -1384,41 +1384,41 @@
 
     if-nez v12, :cond_21
 
-    .line 1581
+    .line 1582
     iget v5, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor1:I
 
     if-eqz v5, :cond_21
 
-    .line 1586
+    .line 1587
     iget v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
 
     if-eqz v7, :cond_1e
 
-    .line 1587
+    .line 1588
     iget v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
     invoke-static {v7, v5}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
 
     move-result v5
 
-    .line 1588
+    .line 1589
     iget v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
 
     invoke-static {v5, v7}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
 
     move-result v5
 
-    .line 1589
+    .line 1590
     iget v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor3:I
 
     if-eqz v7, :cond_1c
 
-    .line 1590
+    .line 1591
     invoke-static {v5, v7}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
 
     move-result v5
 
-    .line 1592
+    .line 1593
     :cond_1c
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->computePerceivedBrightness(I)F
 
@@ -1437,7 +1437,7 @@
 
     goto :goto_a
 
-    .line 1594
+    .line 1595
     :cond_1e
     iget v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
@@ -1463,13 +1463,13 @@
 
     move v5, v1
 
-    .line 1606
+    .line 1607
     :goto_b
     iget v11, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor2:I
 
     if-nez v11, :cond_20
 
-    .line 1607
+    .line 1608
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -1478,7 +1478,7 @@
 
     invoke-virtual {v2, v13, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1608
+    .line 1609
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -1487,7 +1487,7 @@
 
     invoke-virtual {v2, v13, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1609
+    .line 1610
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -1496,7 +1496,7 @@
 
     invoke-virtual {v2, v13, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1610
+    .line 1611
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -1505,7 +1505,7 @@
 
     invoke-virtual {v2, v13, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1611
+    .line 1612
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -1514,7 +1514,7 @@
 
     invoke-virtual {v2, v13, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1612
+    .line 1613
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -1523,7 +1523,7 @@
 
     invoke-virtual {v2, v13, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1614
+    .line 1615
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -1532,7 +1532,7 @@
 
     invoke-virtual {v2, v13, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1615
+    .line 1616
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1541,7 +1541,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1616
+    .line 1617
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1550,14 +1550,14 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1618
+    .line 1619
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
     invoke-virtual {v2, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1619
+    .line 1620
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1566,7 +1566,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1620
+    .line 1621
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1575,7 +1575,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1621
+    .line 1622
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1584,7 +1584,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1622
+    .line 1623
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1593,7 +1593,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1624
+    .line 1625
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1602,7 +1602,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1625
+    .line 1626
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1611,7 +1611,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1626
+    .line 1627
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1620,7 +1620,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1627
+    .line 1628
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1629,7 +1629,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1628
+    .line 1629
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1638,7 +1638,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1630
+    .line 1631
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1647,7 +1647,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1631
+    .line 1632
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1656,7 +1656,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1633
+    .line 1634
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1665,7 +1665,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1634
+    .line 1635
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1674,7 +1674,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1635
+    .line 1636
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1683,7 +1683,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1637
+    .line 1638
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1692,7 +1692,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1638
+    .line 1639
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1701,7 +1701,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1640
+    .line 1641
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1710,7 +1710,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1641
+    .line 1642
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1719,7 +1719,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1643
+    .line 1644
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1728,7 +1728,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1644
+    .line 1645
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1737,7 +1737,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1646
+    .line 1647
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1746,7 +1746,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1647
+    .line 1648
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1755,7 +1755,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1649
+    .line 1650
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1764,7 +1764,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1650
+    .line 1651
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1773,7 +1773,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1652
+    .line 1653
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1782,7 +1782,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1653
+    .line 1654
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1791,7 +1791,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1655
+    .line 1656
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1800,7 +1800,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1656
+    .line 1657
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1809,7 +1809,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1658
+    .line 1659
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1818,7 +1818,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1659
+    .line 1660
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1827,7 +1827,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1661
+    .line 1662
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1836,7 +1836,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1662
+    .line 1663
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1845,7 +1845,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1664
+    .line 1665
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1854,7 +1854,7 @@
 
     invoke-virtual {v2, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1665
+    .line 1666
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -1863,30 +1863,19 @@
 
     invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1668
+    .line 1669
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
     invoke-virtual {v2, v4, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1669
+    .line 1670
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
     const-string v8, "chat_outLoaderSelected"
-
-    invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 1670
-    iget v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
-
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    const-string v8, "chat_outFileProgress"
 
     invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1897,7 +1886,7 @@
 
     move-result-object v7
 
-    const-string v8, "chat_outFileProgressSelected"
+    const-string v8, "chat_outFileProgress"
 
     invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1908,7 +1897,7 @@
 
     move-result-object v7
 
-    const-string v8, "chat_outMediaIcon"
+    const-string v8, "chat_outFileProgressSelected"
 
     invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1919,11 +1908,22 @@
 
     move-result-object v7
 
+    const-string v8, "chat_outMediaIcon"
+
+    invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1674
+    iget v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
     const-string v8, "chat_outMediaIconSelected"
 
     invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1676
+    .line 1677
     :cond_20
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1933,7 +1933,7 @@
 
     invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1677
+    .line 1678
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -1942,7 +1942,7 @@
 
     invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1678
+    .line 1679
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -1951,7 +1951,7 @@
 
     invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1679
+    .line 1680
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -1963,14 +1963,14 @@
     :cond_21
     if-eqz v12, :cond_23
 
-    .line 1683
+    .line 1684
     invoke-virtual {v2, v4}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_22
 
-    .line 1684
+    .line 1685
     invoke-virtual {v2, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
@@ -1986,7 +1986,7 @@
     :cond_22
     move v4, v10
 
-    .line 1686
+    .line 1687
     :goto_c
     invoke-static {v1, v4}, Lorg/telegram/messenger/AndroidUtilities;->getColorDistance(II)I
 
@@ -1998,7 +1998,7 @@
 
     move v12, v10
 
-    .line 1690
+    .line 1691
     :cond_23
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
@@ -2008,14 +2008,14 @@
 
     if-eqz v4, :cond_25
 
-    .line 1691
+    .line 1692
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {v2, v9, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1692
+    .line 1693
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor1:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2026,12 +2026,12 @@
 
     invoke-virtual {v2, v4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1693
+    .line 1694
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
 
     if-eqz v1, :cond_24
 
-    .line 1694
+    .line 1695
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -2040,12 +2040,12 @@
 
     invoke-virtual {v2, v4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1695
+    .line 1696
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor3:I
 
     if-eqz v1, :cond_24
 
-    .line 1696
+    .line 1697
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -2054,7 +2054,7 @@
 
     invoke-virtual {v2, v4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1699
+    .line 1700
     :cond_24
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAnimated:Z
 
@@ -2066,7 +2066,7 @@
 
     invoke-virtual {v2, v4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1701
+    .line 1702
     :cond_25
     iget-wide v4, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
@@ -2078,7 +2078,7 @@
 
     if-eqz v1, :cond_26
 
-    .line 1703
+    .line 1704
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -2092,10 +2092,10 @@
 
     if-eqz v1, :cond_27
 
-    .line 1705
+    .line 1706
     invoke-virtual {v2, v7}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1707
+    .line 1708
     :cond_27
     :goto_d
     iget-wide v4, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
@@ -2106,7 +2106,7 @@
 
     if-eqz v1, :cond_28
 
-    .line 1709
+    .line 1710
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -2120,10 +2120,10 @@
 
     if-eqz v1, :cond_29
 
-    .line 1711
+    .line 1712
     invoke-virtual {v2, v8}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1713
+    .line 1714
     :cond_29
     :goto_e
     iget-wide v4, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
@@ -2134,7 +2134,7 @@
 
     if-eqz v1, :cond_2a
 
-    .line 1715
+    .line 1716
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -2148,10 +2148,10 @@
 
     if-eqz v1, :cond_2b
 
-    .line 1717
+    .line 1718
     invoke-virtual {v2, v11}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1719
+    .line 1720
     :cond_2b
     :goto_f
     iget-wide v4, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
@@ -2162,7 +2162,7 @@
 
     if-eqz v1, :cond_2c
 
-    .line 1721
+    .line 1722
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -2176,10 +2176,10 @@
 
     if-eqz v1, :cond_2d
 
-    .line 1723
+    .line 1724
     invoke-virtual {v2, v15}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1725
+    .line 1726
     :cond_2d
     :goto_10
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundRotation:I
@@ -2188,7 +2188,7 @@
 
     if-eq v1, v4, :cond_2e
 
-    .line 1726
+    .line 1727
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -2197,7 +2197,7 @@
 
     invoke-virtual {v2, v4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1729
+    .line 1730
     :cond_2e
     invoke-virtual {v2, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2207,7 +2207,7 @@
 
     if-nez v1, :cond_2f
 
-    .line 1731
+    .line 1732
     invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
@@ -2219,7 +2219,7 @@
     :cond_2f
     const-string v4, "chat_inBubble"
 
-    .line 1733
+    .line 1734
     invoke-virtual {v2, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
@@ -2228,7 +2228,7 @@
 
     if-nez v5, :cond_30
 
-    .line 1735
+    .line 1736
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v4
@@ -2237,11 +2237,11 @@
 
     move-result-object v5
 
-    .line 1738
+    .line 1739
     :cond_30
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    .line 1739
+    .line 1740
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->info:Lorg/telegram/tgnet/TLRPC$TL_theme;
 
     if-eqz v4, :cond_33
@@ -2254,10 +2254,10 @@
 
     const-string v4, "chat_selectedBackground"
 
-    .line 1740
+    .line 1741
     invoke-virtual {v2, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1741
+    .line 1742
     filled-new-array {v8, v11, v15}, [Ljava/lang/String;
 
     move-result-object v4
@@ -2268,7 +2268,7 @@
 
     if-nez v4, :cond_31
 
-    .line 1743
+    .line 1744
     filled-new-array {v7}, [Ljava/lang/String;
 
     move-result-object v4
@@ -2280,10 +2280,10 @@
     :cond_31
     if-nez v4, :cond_32
 
-    .line 1746
+    .line 1747
     iget v4, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
-    .line 1749
+    .line 1750
     :cond_32
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -2293,7 +2293,7 @@
 
     move-result v4
 
-    .line 1750
+    .line 1751
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -2302,7 +2302,7 @@
 
     invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1751
+    .line 1752
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -2311,7 +2311,7 @@
 
     invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1752
+    .line 1753
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
@@ -2328,7 +2328,7 @@
 
     invoke-virtual {v2, v7, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1754
+    .line 1755
     invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
@@ -2339,7 +2339,7 @@
 
     move-result v4
 
-    .line 1755
+    .line 1756
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -2348,7 +2348,7 @@
 
     invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1756
+    .line 1757
     invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
@@ -2368,7 +2368,7 @@
     :cond_33
     if-nez v6, :cond_34
 
-    .line 1760
+    .line 1761
     invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
@@ -2387,7 +2387,7 @@
 
     invoke-virtual {v2, v7, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1761
+    .line 1762
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
@@ -2408,7 +2408,7 @@
 
     invoke-virtual {v2, v7, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1762
+    .line 1763
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
@@ -2430,7 +2430,7 @@
     :cond_34
     const-string v4, "windowBackgroundWhiteBlueText"
 
-    .line 1765
+    .line 1766
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v4
@@ -2439,7 +2439,7 @@
 
     move-result v4
 
-    .line 1766
+    .line 1767
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
@@ -2456,7 +2456,7 @@
 
     invoke-virtual {v2, v8, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1767
+    .line 1768
     invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
@@ -2475,7 +2475,7 @@
 
     const-string v4, "chat_messageLinkIn"
 
-    .line 1769
+    .line 1770
     invoke-virtual {v2, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v7
@@ -2484,7 +2484,7 @@
 
     if-nez v7, :cond_35
 
-    .line 1771
+    .line 1772
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v4
@@ -2493,7 +2493,7 @@
 
     move-result-object v7
 
-    .line 1773
+    .line 1774
     :cond_35
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2503,7 +2503,7 @@
 
     if-nez v4, :cond_36
 
-    .line 1775
+    .line 1776
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v3
@@ -2512,7 +2512,7 @@
 
     move-result-object v4
 
-    .line 1777
+    .line 1778
     :cond_36
     invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
@@ -2534,7 +2534,7 @@
 
     invoke-virtual {v2, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1778
+    .line 1779
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -2557,7 +2557,7 @@
 
     const-string v1, "actionBarDefaultSubmenuBackground"
 
-    .line 1780
+    .line 1781
     invoke-virtual {v2, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -2566,7 +2566,7 @@
 
     if-nez v3, :cond_37
 
-    .line 1782
+    .line 1783
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
@@ -2575,7 +2575,7 @@
 
     move-result-object v3
 
-    .line 1785
+    .line 1786
     :cond_37
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
@@ -2585,7 +2585,7 @@
 
     move-result v1
 
-    .line 1786
+    .line 1787
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
@@ -2600,7 +2600,7 @@
 
     move-result v4
 
-    .line 1787
+    .line 1788
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v5
@@ -2615,7 +2615,7 @@
 
     move-result v5
 
-    .line 1788
+    .line 1789
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -2630,7 +2630,7 @@
 
     move-result v3
 
-    .line 1784
+    .line 1785
     invoke-static {v1, v4, v5, v3}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v1
@@ -2653,7 +2653,7 @@
 .method public getPathToWallpaper()Ljava/io/File;
     .locals 8
 
-    .line 1884
+    .line 1885
     iget v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->id:I
 
     const/4 v1, 0x2
@@ -2670,7 +2670,7 @@
 
     if-ge v0, v6, :cond_1
 
-    .line 1885
+    .line 1886
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -2720,7 +2720,7 @@
     :cond_0
     return-object v5
 
-    .line 1887
+    .line 1888
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
@@ -2777,15 +2777,15 @@
 
     move-object/from16 v1, p0
 
-    .line 1892
+    .line 1893
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getSharingDirectory()Ljava/io/File;
 
     move-result-object v0
 
-    .line 1893
+    .line 1894
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 1894
+    .line 1895
     new-instance v2, Ljava/io/File;
 
     sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -2802,14 +2802,14 @@
 
     const/4 v7, 0x0
 
-    .line 1913
+    .line 1914
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
     aput-object v6, v5, v7
 
-    .line 1894
+    .line 1895
     iget v6, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->id:I
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2828,7 +2828,7 @@
 
     invoke-direct {v2, v0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1896
+    .line 1897
     iget-object v0, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->assetName:Ljava/lang/String;
@@ -2839,15 +2839,15 @@
 
     move-result-object v0
 
-    .line 1897
+    .line 1898
     new-instance v5, Ljava/util/HashMap;
 
     invoke-direct {v5, v0}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-    .line 1898
+    .line 1899
     invoke-virtual {v1, v0, v5}, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->fillAccentColors(Ljava/util/HashMap;Ljava/util/HashMap;)Z
 
-    .line 1902
+    .line 1903
     iget-object v0, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -2864,22 +2864,22 @@
 
     if-nez v0, :cond_c
 
-    .line 1903
+    .line 1904
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1904
+    .line 1905
     iget-boolean v13, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternMotion:Z
 
     if-eqz v13, :cond_0
 
     const-string v13, "motion"
 
-    .line 1905
+    .line 1906
     invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1907
+    .line 1908
     :cond_0
     invoke-virtual {v5, v12}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2891,12 +2891,12 @@
 
     const/4 v13, -0x1
 
-    .line 1909
+    .line 1910
     invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v13
 
-    .line 1911
+    .line 1912
     :cond_1
     invoke-virtual {v5, v11}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2908,7 +2908,7 @@
 
     move-object v14, v8
 
-    .line 1915
+    .line 1916
     :cond_2
     invoke-virtual {v5, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2920,7 +2920,7 @@
 
     move-object v15, v8
 
-    .line 1919
+    .line 1920
     :cond_3
     invoke-virtual {v5, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2938,7 +2938,7 @@
     :goto_0
     const-string v3, "chat_wallpaper_gradient_rotation"
 
-    .line 1923
+    .line 1924
     invoke-virtual {v5, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -2949,7 +2949,7 @@
 
     const/16 v3, 0x2d
 
-    .line 1925
+    .line 1926
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -2959,7 +2959,7 @@
 
     new-array v9, v4, [Ljava/lang/Object;
 
-    .line 1927
+    .line 1928
     invoke-virtual {v13}, Ljava/lang/Integer;->intValue()I
 
     move-result v18
@@ -3020,7 +3020,7 @@
 
     move-result-object v9
 
-    .line 1928
+    .line 1929
     invoke-virtual {v14}, Ljava/lang/Integer;->intValue()I
 
     move-result v13
@@ -3096,7 +3096,7 @@
     :cond_6
     const/4 v7, 0x0
 
-    .line 1929
+    .line 1930
     :goto_1
     invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
 
@@ -3173,7 +3173,7 @@
     :cond_7
     const/4 v13, 0x0
 
-    .line 1930
+    .line 1931
     :goto_2
     invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
 
@@ -3259,7 +3259,7 @@
 
     if-eqz v4, :cond_9
 
-    .line 1933
+    .line 1934
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -3284,7 +3284,7 @@
 
     goto :goto_4
 
-    .line 1935
+    .line 1936
     :cond_9
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -3309,7 +3309,7 @@
     :cond_a
     if-eqz v7, :cond_b
 
-    .line 1938
+    .line 1939
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3326,7 +3326,7 @@
 
     move-result-object v4
 
-    .line 1939
+    .line 1940
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -3343,7 +3343,7 @@
 
     move-result-object v9
 
-    .line 1941
+    .line 1942
     :cond_b
     :goto_4
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3382,14 +3382,14 @@
 
     move-result-object v3
 
-    .line 1942
+    .line 1943
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
     if-lez v4, :cond_d
 
-    .line 1943
+    .line 1944
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3415,14 +3415,14 @@
     :cond_c
     const/4 v3, 0x0
 
-    .line 1947
+    .line 1948
     :cond_d
     :goto_5
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1948
+    .line 1949
     invoke-virtual {v5}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v4
@@ -3447,7 +3447,7 @@
 
     check-cast v5, Ljava/util/Map$Entry;
 
-    .line 1949
+    .line 1950
     invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v8
@@ -3456,7 +3456,7 @@
 
     if-eqz v3, :cond_f
 
-    .line 1951
+    .line 1952
     invoke-virtual {v12, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
@@ -3483,7 +3483,7 @@
 
     goto :goto_6
 
-    .line 1955
+    .line 1956
     :cond_f
     invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3501,7 +3501,7 @@
 
     goto :goto_6
 
-    .line 1959
+    .line 1960
     :cond_10
     :try_start_0
     new-instance v4, Ljava/io/FileOutputStream;
@@ -3511,7 +3511,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 1960
+    .line 1961
     :try_start_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -3523,14 +3523,14 @@
 
     invoke-virtual {v4, v0}, Ljava/io/FileOutputStream;->write([B)V
 
-    .line 1961
+    .line 1962
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_11
 
-    .line 1962
+    .line 1963
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3556,7 +3556,7 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1969
+    .line 1970
     :cond_11
     :try_start_2
     invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
@@ -3595,7 +3595,7 @@
 
     const/4 v3, 0x0
 
-    .line 1965
+    .line 1966
     :goto_7
     :try_start_3
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -3604,7 +3604,7 @@
 
     if-eqz v3, :cond_12
 
-    .line 1969
+    .line 1970
     :try_start_4
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
@@ -3617,7 +3617,7 @@
 
     move-object v3, v0
 
-    .line 1972
+    .line 1973
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_12
@@ -3632,7 +3632,7 @@
     :goto_9
     if-eqz v3, :cond_13
 
-    .line 1969
+    .line 1970
     :try_start_5
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_5
@@ -3645,10 +3645,10 @@
 
     move-object v3, v0
 
-    .line 1972
+    .line 1973
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1974
+    .line 1975
     :cond_13
     :goto_a
     throw v2

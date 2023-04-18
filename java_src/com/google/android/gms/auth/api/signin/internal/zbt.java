@@ -33,11 +33,11 @@ public final class zbt extends zbo {
     @Override // com.google.android.gms.auth.api.signin.internal.zbp
     public final void zbc() {
         zbd();
-        C0703Storage c0703Storage = C0703Storage.getInstance(this.zba);
-        GoogleSignInAccount savedDefaultGoogleSignInAccount = c0703Storage.getSavedDefaultGoogleSignInAccount();
+        C0688Storage c0688Storage = C0688Storage.getInstance(this.zba);
+        GoogleSignInAccount savedDefaultGoogleSignInAccount = c0688Storage.getSavedDefaultGoogleSignInAccount();
         GoogleSignInOptions googleSignInOptions = GoogleSignInOptions.DEFAULT_SIGN_IN;
         if (savedDefaultGoogleSignInAccount != null) {
-            googleSignInOptions = c0703Storage.getSavedDefaultGoogleSignInOptions();
+            googleSignInOptions = c0688Storage.getSavedDefaultGoogleSignInOptions();
         }
         GoogleSignInClient client = GoogleSignIn.getClient(this.zba, googleSignInOptions);
         if (savedDefaultGoogleSignInAccount != null) {

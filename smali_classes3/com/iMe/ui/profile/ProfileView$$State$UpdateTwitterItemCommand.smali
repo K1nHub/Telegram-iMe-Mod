@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/profile/ProfileView$$State;)V
     .locals 1
 
-    .line 307
+    .line 325
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "updateTwitterItem"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/profile/ProfileView;)V
     .locals 0
 
-    .line 312
+    .line 330
     invoke-interface {p1}, Lcom/iMe/ui/profile/ProfileView;->updateTwitterItem()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 305
+    .line 323
     check-cast p1, Lcom/iMe/ui/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/profile/ProfileView$$State$UpdateTwitterItemCommand;->apply(Lcom/iMe/ui/profile/ProfileView;)V

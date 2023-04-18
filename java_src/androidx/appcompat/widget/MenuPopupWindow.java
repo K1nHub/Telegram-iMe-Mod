@@ -46,13 +46,13 @@ public class MenuPopupWindow extends ListPopupWindow implements MenuItemHoverLis
 
     public void setEnterTransition(Object obj) {
         if (Build.VERSION.SDK_INT >= 23) {
-            this.mPopup.setEnterTransition((Transition) obj);
+            Api23Impl.setEnterTransition(this.mPopup, (Transition) obj);
         }
     }
 
     public void setExitTransition(Object obj) {
         if (Build.VERSION.SDK_INT >= 23) {
-            this.mPopup.setExitTransition((Transition) obj);
+            Api23Impl.setExitTransition(this.mPopup, (Transition) obj);
         }
     }
 
@@ -74,7 +74,7 @@ public class MenuPopupWindow extends ListPopupWindow implements MenuItemHoverLis
             }
             return;
         }
-        this.mPopup.setTouchModal(z);
+        Api29Impl.setTouchModal(this.mPopup, z);
     }
 
     @Override // androidx.appcompat.widget.MenuItemHoverListener
@@ -108,7 +108,7 @@ public class MenuPopupWindow extends ListPopupWindow implements MenuItemHoverLis
         public MenuDropDownListView(Context context, boolean z) {
             super(context, z);
             Configuration configuration = context.getResources().getConfiguration();
-            if (Build.VERSION.SDK_INT >= 17 && 1 == configuration.getLayoutDirection()) {
+            if (Build.VERSION.SDK_INT >= 17 && 1 == Api17Impl.getLayoutDirection(configuration)) {
                 this.mAdvanceKey = 21;
                 this.mRetreatKey = 22;
                 return;
@@ -178,6 +178,31 @@ public class MenuPopupWindow extends ListPopupWindow implements MenuItemHoverLis
                 }
             }
             return super.onHoverEvent(motionEvent);
+        }
+
+        /* loaded from: classes.dex */
+        static class Api17Impl {
+            static int getLayoutDirection(Configuration configuration) {
+                return configuration.getLayoutDirection();
+            }
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api23Impl {
+        static void setEnterTransition(PopupWindow popupWindow, Transition transition) {
+            popupWindow.setEnterTransition(transition);
+        }
+
+        static void setExitTransition(PopupWindow popupWindow, Transition transition) {
+            popupWindow.setExitTransition(transition);
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api29Impl {
+        static void setTouchModal(PopupWindow popupWindow, boolean z) {
+            popupWindow.setTouchModal(z);
         }
     }
 }

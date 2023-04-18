@@ -32,6 +32,9 @@
 .method public abstract getNotificationCenterInstance(I)Lorg/telegram/messenger/NotificationCenter;
 .end method
 
+.method public abstract getNotificationsController(I)Lorg/telegram/messenger/NotificationsController;
+.end method
+
 .method public abstract getSendMessagesHelper(I)Lorg/telegram/messenger/SendMessagesHelper;
 .end method
 

@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;
     .locals 2
 
-    .line 32
+    .line 33
     new-instance v0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$listAdapter$2;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 32
+    .line 33
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$listAdapter$2;->invoke()Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;
 
     move-result-object v0

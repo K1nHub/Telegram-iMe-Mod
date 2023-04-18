@@ -12,7 +12,7 @@
 
 
 # virtual methods
-.method public abstract goToBackUpTutorial(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public abstract goToBackUpTutorial(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Wallet;)V
 .end method
 
 .method public abstract onCodeErrorShake()V

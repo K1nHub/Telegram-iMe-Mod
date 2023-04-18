@@ -10,7 +10,7 @@ public final class CryptoInfo {
     private final MediaCodec.CryptoInfo frameworkCryptoInfo;
 
     /* renamed from: iv */
-    public byte[] f107iv;
+    public byte[] f104iv;
     public byte[] key;
     public int mode;
     public int[] numBytesOfClearData;
@@ -29,7 +29,7 @@ public final class CryptoInfo {
         this.numBytesOfClearData = iArr;
         this.numBytesOfEncryptedData = iArr2;
         this.key = bArr;
-        this.f107iv = bArr2;
+        this.f104iv = bArr2;
         this.mode = i2;
         this.encryptedBlocks = i3;
         this.clearBlocks = i4;

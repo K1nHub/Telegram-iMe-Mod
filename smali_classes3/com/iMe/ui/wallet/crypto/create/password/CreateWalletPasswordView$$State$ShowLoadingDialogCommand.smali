@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State;ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 186
+    .line 204
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showLoadingDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 188
+    .line 206
     iput-boolean p2, p0, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State$ShowLoadingDialogCommand;->show:Z
 
-    .line 189
+    .line 207
     iput-boolean p3, p0, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State$ShowLoadingDialogCommand;->cancellable:Z
 
-    .line 190
+    .line 208
     iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State$ShowLoadingDialogCommand;->actionToCancel:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView;)V
     .locals 3
 
-    .line 195
+    .line 213
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State$ShowLoadingDialogCommand;->show:Z
 
     iget-boolean v1, p0, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State$ShowLoadingDialogCommand;->cancellable:Z
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 178
+    .line 196
     check-cast p1, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State$ShowLoadingDialogCommand;->apply(Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView;)V

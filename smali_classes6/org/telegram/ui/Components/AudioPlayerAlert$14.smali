@@ -32,14 +32,14 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;Landroid/content/Context;F)V
     .locals 0
 
-    .line 1038
+    .line 1049
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     iput p3, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->val$touchSlop:F
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
-    .line 1044
+    .line 1055
     new-instance p1, Lorg/telegram/ui/Components/AudioPlayerAlert$14$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/AudioPlayerAlert$14$1;-><init>(Lorg/telegram/ui/Components/AudioPlayerAlert$14;)V
@@ -54,12 +54,12 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 1125
+    .line 1136
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const/16 v0, 0x10
 
-    .line 1126
+    .line 1137
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     return-void
@@ -68,10 +68,10 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 6
 
-    .line 1073
+    .line 1084
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5500(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/Components/SeekBarView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5400(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/Components/SeekBarView;
 
     move-result-object v0
 
@@ -93,18 +93,18 @@
 
     goto/16 :goto_1
 
-    .line 1076
+    .line 1087
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v0
 
-    .line 1077
+    .line 1088
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v2
 
-    .line 1079
+    .line 1090
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
@@ -125,13 +125,13 @@
 
     goto/16 :goto_0
 
-    .line 1091
+    .line 1102
     :cond_1
     iget p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->startX:F
 
     sub-float/2addr v0, p1
 
-    .line 1092
+    .line 1103
     iget p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->startY:F
 
     sub-float/2addr v2, p1
@@ -142,7 +142,7 @@
 
     add-float/2addr v0, v2
 
-    .line 1094
+    .line 1105
     iget p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->val$touchSlop:F
 
     mul-float/2addr p1, p1
@@ -155,17 +155,17 @@
 
     if-nez p1, :cond_7
 
-    .line 1095
+    .line 1106
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->pressedRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1096
+    .line 1107
     invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setPressed(Z)V
 
     goto/16 :goto_0
 
-    .line 1101
+    .line 1112
     :cond_2
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->pressed:Z
 
@@ -183,17 +183,17 @@
 
     if-eqz p1, :cond_3
 
-    .line 1102
+    .line 1113
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/messenger/MediaController;->playNextMessage()V
 
-    .line 1103
+    .line 1114
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5800(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/Components/RLottieImageView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5700(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object p1
 
@@ -201,29 +201,29 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 1104
+    .line 1115
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5800(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/Components/RLottieImageView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5700(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 1106
+    .line 1117
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->pressedRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1107
+    .line 1118
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     iget p1, p1, Lorg/telegram/ui/Components/AudioPlayerAlert;->rewindingForwardPressedCount:I
 
     if-lez p1, :cond_4
 
-    .line 1108
+    .line 1119
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v4, v0}, Lorg/telegram/messenger/MediaController;->setPlaybackSpeed(ZF)V
 
-    .line 1109
+    .line 1120
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -243,59 +243,59 @@
 
     if-eqz p1, :cond_4
 
-    .line 1110
+    .line 1121
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     const-wide/16 v2, 0x0
 
     iput-wide v2, p1, Lorg/telegram/ui/Components/AudioPlayerAlert;->lastUpdateRewindingPlayerTime:J
 
-    .line 1111
+    .line 1122
     invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$100(Lorg/telegram/ui/Components/AudioPlayerAlert;)Ljava/lang/Runnable;
 
     move-result-object p1
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 1114
+    .line 1125
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     iput v1, p1, Lorg/telegram/ui/Components/AudioPlayerAlert;->rewindingState:I
 
-    .line 1115
+    .line 1126
     invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setPressed(Z)V
 
-    .line 1116
+    .line 1127
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     iput v1, p1, Lorg/telegram/ui/Components/AudioPlayerAlert;->rewindingForwardPressedCount:I
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 1117
+    .line 1128
     iput v0, p1, Lorg/telegram/ui/Components/AudioPlayerAlert;->rewindingProgress:F
 
     goto :goto_0
 
-    .line 1081
+    .line 1092
     :cond_5
     iput-boolean v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->pressed:Z
 
-    .line 1082
+    .line 1093
     iput v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->startX:F
 
-    .line 1083
+    .line 1094
     iput v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->startY:F
 
-    .line 1084
+    .line 1095
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$14;->pressedRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v0, 0x12c
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 1085
+    .line 1096
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x15
@@ -308,7 +308,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 1086
+    .line 1097
     invoke-virtual {p0}, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
@@ -319,7 +319,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
-    .line 1088
+    .line 1099
     :cond_6
     invoke-virtual {p0, v4}, Landroid/widget/ImageView;->setPressed(Z)V
 

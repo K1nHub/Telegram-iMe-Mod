@@ -3,27 +3,17 @@
 .source "Fragment.java"
 
 # interfaces
-.implements Landroidx/arch/core/util/Function;
+.implements Landroidx/lifecycle/LifecycleEventObserver;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/fragment/app/Fragment;->registerForActivityResult(Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
+    value = Landroidx/fragment/app/Fragment;->performCreate(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x0
     name = null
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroidx/arch/core/util/Function<",
-        "Ljava/lang/Void;",
-        "Landroidx/activity/result/ActivityResultRegistry;",
-        ">;"
-    }
 .end annotation
 
 
@@ -35,7 +25,7 @@
 .method constructor <init>(Landroidx/fragment/app/Fragment;)V
     .locals 0
 
-    .line 3446
+    .line 3077
     iput-object p1, p0, Landroidx/fragment/app/Fragment$6;->this$0:Landroidx/fragment/app/Fragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,49 +35,24 @@
 
 
 # virtual methods
-.method public apply(Ljava/lang/Void;)Landroidx/activity/result/ActivityResultRegistry;
-    .locals 2
-
-    .line 3449
-    iget-object p1, p0, Landroidx/fragment/app/Fragment$6;->this$0:Landroidx/fragment/app/Fragment;
-
-    iget-object v0, p1, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-
-    instance-of v1, v0, Landroidx/activity/result/ActivityResultRegistryOwner;
-
-    if-eqz v1, :cond_0
-
-    .line 3450
-    check-cast v0, Landroidx/activity/result/ActivityResultRegistryOwner;
-
-    invoke-interface {v0}, Landroidx/activity/result/ActivityResultRegistryOwner;->getActivityResultRegistry()Landroidx/activity/result/ActivityResultRegistry;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 3452
-    :cond_0
-    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroidx/activity/ComponentActivity;->getActivityResultRegistry()Landroidx/activity/result/ActivityResultRegistry;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
     .locals 0
 
-    .line 3446
-    check-cast p1, Ljava/lang/Void;
+    .line 3081
+    sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
 
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment$6;->apply(Ljava/lang/Void;)Landroidx/activity/result/ActivityResultRegistry;
+    if-ne p2, p1, :cond_0
 
-    move-result-object p1
+    .line 3082
+    iget-object p1, p0, Landroidx/fragment/app/Fragment$6;->this$0:Landroidx/fragment/app/Fragment;
 
-    return-object p1
+    iget-object p1, p1, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz p1, :cond_0
+
+    .line 3083
+    invoke-static {p1}, Landroidx/fragment/app/Fragment$Api19Impl;->cancelPendingInputEvents(Landroid/view/View;)V
+
+    :cond_0
+    return-void
 .end method

@@ -7,5 +7,9 @@ import android.view.MenuItem;
 public interface MenuProvider {
     void onCreateMenu(Menu menu, MenuInflater menuInflater);
 
+    void onMenuClosed(Menu menu);
+
     boolean onMenuItemSelected(MenuItem menuItem);
+
+    void onPrepareMenu(Menu menu);
 }

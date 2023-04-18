@@ -10,8 +10,9 @@ public class DERGraphicString extends ASN1Primitive {
         this.string = Arrays.clone(bArr);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    boolean asn1Equals(ASN1Primitive aSN1Primitive) {
+    public boolean asn1Equals(ASN1Primitive aSN1Primitive) {
         if (aSN1Primitive instanceof DERGraphicString) {
             return Arrays.areEqual(this.string, ((DERGraphicString) aSN1Primitive).string);
         }
@@ -20,8 +21,8 @@ public class DERGraphicString extends ASN1Primitive {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    public void encode(ASN1OutputStream aSN1OutputStream) throws IOException {
-        aSN1OutputStream.writeEncoded(25, this.string);
+    public void encode(ASN1OutputStream aSN1OutputStream, boolean z) throws IOException {
+        aSN1OutputStream.writeEncoded(z, 25, this.string);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

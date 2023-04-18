@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/profile/ProfileView$$State;)V
     .locals 1
 
-    .line 372
+    .line 390
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showTwitterAccountActionsDialog"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/profile/ProfileView;)V
     .locals 0
 
-    .line 377
+    .line 395
     invoke-interface {p1}, Lcom/iMe/ui/profile/ProfileView;->showTwitterAccountActionsDialog()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 370
+    .line 388
     check-cast p1, Lcom/iMe/ui/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/profile/ProfileView$$State$ShowTwitterAccountActionsDialogCommand;->apply(Lcom/iMe/ui/profile/ProfileView;)V

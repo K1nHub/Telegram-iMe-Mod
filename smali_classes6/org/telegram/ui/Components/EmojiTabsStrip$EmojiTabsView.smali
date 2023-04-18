@@ -36,20 +36,20 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/EmojiTabsStrip;Landroid/content/Context;)V
     .locals 11
 
-    .line 1285
+    .line 1290
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
-    .line 1286
+    .line 1291
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 1368
+    .line 1373
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$900(Lorg/telegram/ui/Components/EmojiTabsStrip;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->shown:Z
 
-    .line 1369
+    .line 1374
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$900(Lorg/telegram/ui/Components/EmojiTabsStrip;)Z
 
     move-result v0
@@ -68,28 +68,28 @@
 
     const/4 v0, 0x1
 
-    .line 1287
+    .line 1292
     invoke-virtual {p0, v0}, Landroid/widget/HorizontalScrollView;->setSmoothScrollingEnabled(Z)V
 
     const/4 v1, 0x0
 
-    .line 1288
+    .line 1293
     invoke-virtual {p0, v1}, Landroid/widget/HorizontalScrollView;->setHorizontalScrollBarEnabled(Z)V
 
-    .line 1289
+    .line 1294
     invoke-virtual {p0, v1}, Landroid/widget/HorizontalScrollView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 1290
+    .line 1295
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x15
 
     if-lt v2, v3, :cond_1
 
-    .line 1291
+    .line 1296
     invoke-virtual {p0, v0}, Landroid/widget/HorizontalScrollView;->setNestedScrollingEnabled(Z)V
 
-    .line 1293
+    .line 1298
     :cond_1
     new-instance v0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView$1;
 
@@ -97,10 +97,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->contentView:Landroid/widget/LinearLayout;
 
-    .line 1317
+    .line 1322
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1318
+    .line 1323
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->contentView:Landroid/widget/LinearLayout;
 
     new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
@@ -113,7 +113,7 @@
 
     invoke-virtual {p0, v0, v2}, Landroid/widget/HorizontalScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1320
+    .line 1325
     :goto_1
     invoke-static {}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$1600()[I
 
@@ -123,7 +123,7 @@
 
     if-ge v1, v0, :cond_2
 
-    .line 1321
+    .line 1326
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->contentView:Landroid/widget/LinearLayout;
 
     new-instance v10, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView$2;
@@ -167,7 +167,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;Landroid/view/MotionEvent;)V
     .locals 0
 
-    .line 1282
+    .line 1287
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->intercept(Landroid/view/MotionEvent;)V
 
     return-void
@@ -176,7 +176,7 @@
 .method private intercept(Landroid/view/MotionEvent;)V
     .locals 2
 
-    .line 1345
+    .line 1350
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->shown:Z
 
     if-eqz v0, :cond_3
@@ -185,7 +185,7 @@
 
     if-nez v0, :cond_3
 
-    .line 1346
+    .line 1351
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
@@ -205,24 +205,24 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 1348
+    .line 1353
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->touching:Z
 
     goto :goto_0
 
-    .line 1352
+    .line 1357
     :cond_1
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->touching:Z
 
-    .line 1353
+    .line 1358
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->scrollingAnimation:Z
 
     if-nez p1, :cond_2
 
-    .line 1354
+    .line 1359
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->resetScrollTo()V
 
-    .line 1356
+    .line 1361
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
@@ -236,7 +236,7 @@
 .method private synthetic lambda$show$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1386
+    .line 1391
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -249,16 +249,16 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->showT:F
 
-    .line 1387
+    .line 1392
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->invalidate()V
 
-    .line 1388
+    .line 1393
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->requestLayout()V
 
-    .line 1389
+    .line 1394
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->updateButtonsVisibility()V
 
-    .line 1390
+    .line 1395
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->contentView:Landroid/widget/LinearLayout;
@@ -273,7 +273,7 @@
 .method public maxWidth()I
     .locals 2
 
-    .line 1341
+    .line 1346
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->contentView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getChildCount()I
@@ -304,7 +304,7 @@
 
     const/16 p1, 0x1e
 
-    .line 1334
+    .line 1339
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -325,7 +325,7 @@
 
     move-result p2
 
-    .line 1335
+    .line 1340
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -334,7 +334,7 @@
 
     move-result p1
 
-    .line 1333
+    .line 1338
     invoke-super {p0, p2, p1}, Landroid/widget/HorizontalScrollView;->onMeasure(II)V
 
     return-void
@@ -343,10 +343,10 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 1364
+    .line 1369
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->intercept(Landroid/view/MotionEvent;)V
 
-    .line 1365
+    .line 1370
     invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -357,14 +357,14 @@
 .method public show(ZZ)V
     .locals 4
 
-    .line 1372
+    .line 1377
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->shown:Z
 
     if-ne p1, v0, :cond_0
 
     return-void
 
-    .line 1375
+    .line 1380
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->shown:Z
 
@@ -372,16 +372,16 @@
 
     if-nez p1, :cond_1
 
-    .line 1377
+    .line 1382
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->scrollTo(I)V
 
-    .line 1380
+    .line 1385
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->showAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v1, :cond_2
 
-    .line 1381
+    .line 1386
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_2
@@ -395,7 +395,7 @@
 
     new-array p2, p2, [F
 
-    .line 1384
+    .line 1389
     iget v3, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->showT:F
 
     aput v3, p2, v0
@@ -418,28 +418,28 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->showAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1385
+    .line 1390
     new-instance p2, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1392
+    .line 1397
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->showAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x1db
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1393
+    .line 1398
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->showAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1394
+    .line 1399
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->showAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -454,20 +454,20 @@
     :cond_5
     move v1, v2
 
-    .line 1396
+    .line 1401
     :goto_1
     iput v1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->showT:F
 
-    .line 1397
+    .line 1402
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->invalidate()V
 
-    .line 1398
+    .line 1403
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->requestLayout()V
 
-    .line 1399
+    .line 1404
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->updateButtonsVisibility()V
 
-    .line 1400
+    .line 1405
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->contentView:Landroid/widget/LinearLayout;

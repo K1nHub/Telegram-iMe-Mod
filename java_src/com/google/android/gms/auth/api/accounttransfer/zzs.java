@@ -16,17 +16,17 @@ import java.util.Map;
 public final class zzs extends zzbz {
     public static final Parcelable.Creator<zzs> CREATOR = new zzt();
     private static final ArrayMap zzb;
-    @SafeParcelable.VersionField(m786id = 1)
+    @SafeParcelable.VersionField(m772id = 1)
     final int zza;
-    @SafeParcelable.Field(getter = "getRegisteredAccountTypes", m789id = 2)
+    @SafeParcelable.Field(getter = "getRegisteredAccountTypes", m775id = 2)
     private List zzc;
-    @SafeParcelable.Field(getter = "getInProgressAccountTypes", m789id = 3)
+    @SafeParcelable.Field(getter = "getInProgressAccountTypes", m775id = 3)
     private List zzd;
-    @SafeParcelable.Field(getter = "getSuccessAccountTypes", m789id = 4)
+    @SafeParcelable.Field(getter = "getSuccessAccountTypes", m775id = 4)
     private List zze;
-    @SafeParcelable.Field(getter = "getFailedAccountTypes", m789id = 5)
+    @SafeParcelable.Field(getter = "getFailedAccountTypes", m775id = 5)
     private List zzf;
-    @SafeParcelable.Field(getter = "getEscrowedAccountTypes", m789id = 6)
+    @SafeParcelable.Field(getter = "getEscrowedAccountTypes", m775id = 6)
     private List zzg;
 
     static {
@@ -108,7 +108,7 @@ public final class zzs extends zzbz {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzs(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) List list, @SafeParcelable.Param(m788id = 3) List list2, @SafeParcelable.Param(m788id = 4) List list3, @SafeParcelable.Param(m788id = 5) List list4, @SafeParcelable.Param(m788id = 6) List list5) {
+    public zzs(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) List list, @SafeParcelable.Param(m774id = 3) List list2, @SafeParcelable.Param(m774id = 4) List list3, @SafeParcelable.Param(m774id = 5) List list4, @SafeParcelable.Param(m774id = 6) List list5) {
         this.zza = i;
         this.zzc = list;
         this.zzd = list2;

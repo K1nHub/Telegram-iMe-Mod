@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;Landroid/content/Context;ILandroid/graphics/Rect;)V
     .locals 0
 
-    .line 1591
+    .line 1590
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     iput p3, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->val$num:I
@@ -43,14 +43,14 @@
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 1594
+    .line 1593
     iget v0, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->val$num:I
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 1595
+    .line 1594
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$5600(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/graphics/drawable/Drawable;
@@ -97,7 +97,7 @@
 
     goto :goto_0
 
-    .line 1597
+    .line 1596
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -127,7 +127,7 @@
 
     invoke-virtual {v0, v2, v1, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1599
+    .line 1598
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 

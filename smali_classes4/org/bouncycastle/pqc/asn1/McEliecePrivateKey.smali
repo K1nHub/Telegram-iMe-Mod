@@ -74,11 +74,7 @@
 
     check-cast v0, Lorg/bouncycastle/asn1/ASN1Integer;
 
-    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Integer;->getValue()Ljava/math/BigInteger;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/math/BigInteger;->intValue()I
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Integer;->intValueExact()I
 
     move-result v0
 
@@ -92,11 +88,7 @@
 
     check-cast v0, Lorg/bouncycastle/asn1/ASN1Integer;
 
-    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Integer;->getValue()Ljava/math/BigInteger;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/math/BigInteger;->intValue()I
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Integer;->intValueExact()I
 
     move-result v0
 

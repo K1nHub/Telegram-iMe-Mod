@@ -64,7 +64,7 @@
 
     if-ltz p2, :cond_0
 
-    .line 152
+    .line 164
     invoke-static {p0, p1, p2}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;II)V
 
     goto :goto_0
@@ -72,7 +72,7 @@
     :cond_0
     if-ltz p1, :cond_1
 
-    .line 154
+    .line 166
     invoke-static {p0, p1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
     goto :goto_0
@@ -80,7 +80,7 @@
     :cond_1
     if-ltz p2, :cond_2
 
-    .line 156
+    .line 168
     invoke-static {p0, p2}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
     :cond_2

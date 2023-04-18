@@ -5,16 +5,16 @@ public class IdFabric$ServiceNotifications {
     public static final int contacts_processing;
 
     /* renamed from: id */
-    private static int f257id = -1073741824;
+    private static int f254id = -1073741824;
     public static final int service_messages_removing = -1073741824;
 
     static {
         int i = (-1073741824) + 1;
-        f257id = i;
+        f254id = i;
         int i2 = i + 1;
-        f257id = i2;
+        f254id = i2;
         chat_participants_processing = i;
-        f257id = i2 + 1;
+        f254id = i2 + 1;
         contacts_processing = i2;
     }
 }

@@ -9,7 +9,7 @@ import kotlin.TuplesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.LocaleController;
-import p035j$.util.DesugarTimeZone;
+import p034j$.util.DesugarTimeZone;
 /* compiled from: DateFormatter.kt */
 /* loaded from: classes4.dex */
 public final class DateFormatter {
@@ -61,7 +61,7 @@ public final class DateFormatter {
         HashMap<String, HashMap<DateType, SimpleDateFormat>> hashMap = availableLocalesFormatter;
         HashMap<DateType, SimpleDateFormat> hashMap2 = hashMap.get(str);
         if (hashMap2 == null) {
-            hashMap2 = MapsKt__MapsKt.hashMapOf(TuplesKt.m94to(dateType, INSTANCE.createFormatFor(dateType, str)));
+            hashMap2 = MapsKt__MapsKt.hashMapOf(TuplesKt.m80to(dateType, INSTANCE.createFormatFor(dateType, str)));
             hashMap.put(str, hashMap2);
         }
         HashMap<DateType, SimpleDateFormat> hashMap3 = hashMap2;

@@ -23,7 +23,7 @@
 
     const/4 v1, 0x0
 
-    .line 39
+    .line 32
     invoke-direct {p0, p1, v0, v1}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -34,7 +34,7 @@
 
     const/4 v0, 0x0
 
-    .line 47
+    .line 40
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -45,7 +45,7 @@
 
     const/4 v0, 0x0
 
-    .line 58
+    .line 51
     invoke-direct {p0, p1, p2, p3, v0}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -54,27 +54,27 @@
 .method public constructor <init>(Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 62
+    .line 55
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x1
 
-    .line 35
+    .line 28
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->top:Z
 
-    .line 36
+    .line 29
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->bottom:Z
 
-    .line 63
+    .line 56
     iput-object p4, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 64
+    .line 57
     iput p3, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->backgroundColor:I
 
-    .line 65
+    .line 58
     iput p2, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->size:I
 
-    .line 66
+    .line 59
     invoke-direct {p0}, Lorg/telegram/ui/Cells/ShadowSectionCell;->updateBackground()V
 
     return-void
@@ -83,24 +83,24 @@
 .method public constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 51
+    .line 44
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x1
 
-    .line 35
+    .line 28
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->top:Z
 
-    .line 36
+    .line 29
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->bottom:Z
 
-    .line 52
+    .line 45
     iput-object p3, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 53
+    .line 46
     iput p2, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->size:I
 
-    .line 54
+    .line 47
     invoke-direct {p0}, Lorg/telegram/ui/Cells/ShadowSectionCell;->updateBackground()V
 
     return-void
@@ -111,7 +111,7 @@
 
     const/16 v0, 0xc
 
-    .line 43
+    .line 36
     invoke-direct {p0, p1, v0, p2}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -120,7 +120,7 @@
 .method private getBackgroundResId()I
     .locals 2
 
-    .line 98
+    .line 91
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->top:Z
 
     if-eqz v0, :cond_0
@@ -129,7 +129,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 99
+    .line 92
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
     return v0
@@ -137,23 +137,23 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 101
+    .line 94
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
     return v0
 
-    .line 102
+    .line 95
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->bottom:Z
 
     if-eqz v0, :cond_2
 
-    .line 103
+    .line 96
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_top:I
 
     return v0
 
-    .line 105
+    .line 98
     :cond_2
     sget v0, Lorg/telegram/messenger/R$drawable;->transparent:I
 
@@ -163,14 +163,14 @@
 .method private updateBackground()V
     .locals 4
 
-    .line 78
+    .line 71
     iget v0, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->backgroundColor:I
 
     const-string v1, "windowBackgroundGrayShadow"
 
     if-nez v0, :cond_1
 
-    .line 79
+    .line 72
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->top:Z
 
     if-nez v0, :cond_0
@@ -181,12 +181,12 @@
 
     const/4 v0, 0x0
 
-    .line 80
+    .line 73
     invoke-virtual {p0, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
-    .line 82
+    .line 75
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -210,7 +210,7 @@
 
     goto :goto_0
 
-    .line 85
+    .line 78
     :cond_1
     iget-boolean v2, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->top:Z
 
@@ -220,12 +220,12 @@
 
     if-nez v2, :cond_2
 
-    .line 86
+    .line 79
     invoke-virtual {p0, v0}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_0
 
-    .line 88
+    .line 81
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -245,14 +245,14 @@
 
     move-result-object v0
 
-    .line 89
+    .line 82
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
     iget v2, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->backgroundColor:I
 
     invoke-direct {v1, v2}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    .line 90
+    .line 83
     new-instance v2, Lorg/telegram/ui/Components/CombinedDrawable;
 
     const/4 v3, 0x0
@@ -261,10 +261,10 @@
 
     const/4 v0, 0x1
 
-    .line 91
+    .line 84
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
 
-    .line 92
+    .line 85
     invoke-virtual {p0, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     :goto_0
@@ -276,7 +276,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 111
+    .line 104
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -305,7 +305,7 @@
 .method public setTopBottom(ZZ)V
     .locals 1
 
-    .line 70
+    .line 63
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->top:Z
 
     if-ne v0, p1, :cond_0
@@ -314,14 +314,14 @@
 
     if-eq v0, p2, :cond_1
 
-    .line 71
+    .line 64
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->top:Z
 
-    .line 72
+    .line 65
     iput-boolean p2, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->bottom:Z
 
-    .line 73
+    .line 66
     invoke-direct {p0}, Lorg/telegram/ui/Cells/ShadowSectionCell;->updateBackground()V
 
     :cond_1

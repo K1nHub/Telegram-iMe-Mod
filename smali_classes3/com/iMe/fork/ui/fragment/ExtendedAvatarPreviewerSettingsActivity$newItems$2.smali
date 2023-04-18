@@ -59,7 +59,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 34
+    .line 35
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$newItems$2;->invoke()Ljava/util/List;
 
     move-result-object v0
@@ -78,7 +78,7 @@
         }
     .end annotation
 
-    .line 34
+    .line 35
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedExtendedAvatarPreviewerItems:Ljava/util/List;
 
     const-string v1, "selectedExtendedAvatarPreviewerItems"

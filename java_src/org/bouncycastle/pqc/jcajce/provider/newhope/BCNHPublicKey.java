@@ -3,17 +3,21 @@ package org.bouncycastle.pqc.jcajce.provider.newhope;
 import java.io.IOException;
 import java.security.Key;
 import java.security.PublicKey;
-import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
-import org.bouncycastle.pqc.asn1.PQCObjectIdentifiers;
 import org.bouncycastle.pqc.crypto.newhope.NHPublicKeyParameters;
+import org.bouncycastle.pqc.crypto.util.PublicKeyFactory;
+import org.bouncycastle.pqc.crypto.util.SubjectPublicKeyInfoFactory;
 import org.bouncycastle.util.Arrays;
 /* loaded from: classes4.dex */
 public class BCNHPublicKey implements Key, PublicKey {
-    private final NHPublicKeyParameters params;
+    private transient NHPublicKeyParameters params;
 
-    public BCNHPublicKey(SubjectPublicKeyInfo subjectPublicKeyInfo) {
-        this.params = new NHPublicKeyParameters(subjectPublicKeyInfo.getPublicKeyData().getBytes());
+    public BCNHPublicKey(SubjectPublicKeyInfo subjectPublicKeyInfo) throws IOException {
+        init(subjectPublicKeyInfo);
+    }
+
+    private void init(SubjectPublicKeyInfo subjectPublicKeyInfo) throws IOException {
+        this.params = (NHPublicKeyParameters) PublicKeyFactory.createKey(subjectPublicKeyInfo);
     }
 
     public boolean equals(Object obj) {
@@ -31,7 +35,7 @@ public class BCNHPublicKey implements Key, PublicKey {
     @Override // java.security.Key
     public byte[] getEncoded() {
         try {
-            return new SubjectPublicKeyInfo(new AlgorithmIdentifier(PQCObjectIdentifiers.newHope), this.params.getPubData()).getEncoded();
+            return SubjectPublicKeyInfoFactory.createSubjectPublicKeyInfo(this.params).getEncoded();
         } catch (IOException unused) {
             return null;
         }

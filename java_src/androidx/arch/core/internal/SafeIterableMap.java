@@ -6,14 +6,13 @@ import java.util.WeakHashMap;
 /* loaded from: classes.dex */
 public class SafeIterableMap<K, V> implements Iterable<Map.Entry<K, V>> {
     private Entry<K, V> mEnd;
-    private WeakHashMap<SupportRemove<K, V>, Boolean> mIterators = new WeakHashMap<>();
+    private final WeakHashMap<SupportRemove<K, V>, Boolean> mIterators = new WeakHashMap<>();
     private int mSize = 0;
     Entry<K, V> mStart;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public interface SupportRemove<K, V> {
-        void supportRemove(Entry<K, V> entry);
+    public static abstract class SupportRemove<K, V> {
+        abstract void supportRemove(Entry<K, V> entry);
     }
 
     protected Entry<K, V> get(K k) {
@@ -33,7 +32,7 @@ public class SafeIterableMap<K, V> implements Iterable<Map.Entry<K, V>> {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public Entry<K, V> put(K k, V v) {
         Entry<K, V> entry = new Entry<>(k, v);
         this.mSize++;
@@ -155,7 +154,7 @@ public class SafeIterableMap<K, V> implements Iterable<Map.Entry<K, V>> {
     }
 
     /* loaded from: classes.dex */
-    private static abstract class ListIterator<K, V> implements Iterator<Map.Entry<K, V>>, SupportRemove<K, V> {
+    private static abstract class ListIterator<K, V> extends SupportRemove<K, V> implements Iterator<Map.Entry<K, V>> {
         Entry<K, V> mExpectedEnd;
         Entry<K, V> mNext;
 
@@ -240,9 +239,8 @@ public class SafeIterableMap<K, V> implements Iterable<Map.Entry<K, V>> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
-    public class IteratorWithAdditions implements Iterator<Map.Entry<K, V>>, SupportRemove<K, V> {
+    public class IteratorWithAdditions extends SupportRemove<K, V> implements Iterator<Map.Entry<K, V>> {
         private boolean mBeforeStart = true;
         private Entry<K, V> mCurrent;
 
@@ -250,7 +248,7 @@ public class SafeIterableMap<K, V> implements Iterable<Map.Entry<K, V>> {
         }
 
         @Override // androidx.arch.core.internal.SafeIterableMap.SupportRemove
-        public void supportRemove(Entry<K, V> entry) {
+        void supportRemove(Entry<K, V> entry) {
             Entry<K, V> entry2 = this.mCurrent;
             if (entry == entry2) {
                 Entry<K, V> entry3 = entry2.mPrevious;

@@ -195,18 +195,21 @@
 
     .line 52
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
+    .line 56
     :cond_2
+    invoke-virtual {v3}, Ljava/io/BufferedReader;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
     return-object v1
 
     :catch_0
     move-exception v0
 
-    .line 58
+    .line 59
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-object v2

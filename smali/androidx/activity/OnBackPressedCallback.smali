@@ -16,22 +16,32 @@
 
 .field private mEnabled:Z
 
+.field private mEnabledConsumer:Landroidx/core/util/Consumer;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/core/util/Consumer<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
 .method public constructor <init>(Z)V
     .locals 1
 
-    .line 54
+    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 50
     new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
     iput-object v0, p0, Landroidx/activity/OnBackPressedCallback;->mCancellables:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    .line 55
+    .line 60
     iput-boolean p1, p0, Landroidx/activity/OnBackPressedCallback;->mEnabled:Z
 
     return-void
@@ -42,7 +52,7 @@
 .method addCancellable(Landroidx/activity/Cancellable;)V
     .locals 1
 
-    .line 103
+    .line 112
     iget-object v0, p0, Landroidx/activity/OnBackPressedCallback;->mCancellables:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
@@ -56,7 +66,7 @@
 .method public final isEnabled()Z
     .locals 1
 
-    .line 82
+    .line 91
     iget-boolean v0, p0, Landroidx/activity/OnBackPressedCallback;->mEnabled:Z
 
     return v0
@@ -65,7 +75,7 @@
 .method public final remove()V
     .locals 2
 
-    .line 91
+    .line 100
     iget-object v0, p0, Landroidx/activity/OnBackPressedCallback;->mCancellables:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
@@ -85,7 +95,7 @@
 
     check-cast v1, Landroidx/activity/Cancellable;
 
-    .line 92
+    .line 101
     invoke-interface {v1}, Landroidx/activity/Cancellable;->cancel()V
 
     goto :goto_0
@@ -97,7 +107,7 @@
 .method removeCancellable(Landroidx/activity/Cancellable;)V
     .locals 1
 
-    .line 107
+    .line 116
     iget-object v0, p0, Landroidx/activity/OnBackPressedCallback;->mCancellables:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
@@ -106,10 +116,40 @@
 .end method
 
 .method public final setEnabled(Z)V
-    .locals 0
+    .locals 1
 
-    .line 71
+    .line 77
     iput-boolean p1, p0, Landroidx/activity/OnBackPressedCallback;->mEnabled:Z
+
+    .line 78
+    iget-object v0, p0, Landroidx/activity/OnBackPressedCallback;->mEnabledConsumer:Landroidx/core/util/Consumer;
+
+    if-eqz v0, :cond_0
+
+    .line 79
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method setIsEnabledConsumer(Landroidx/core/util/Consumer;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroidx/core/util/Consumer<",
+            "Ljava/lang/Boolean;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 120
+    iput-object p1, p0, Landroidx/activity/OnBackPressedCallback;->mEnabledConsumer:Landroidx/core/util/Consumer;
 
     return-void
 .end method

@@ -1,4 +1,6 @@
 package org.bouncycastle.pqc.math.linearalgebra;
+
+import org.bouncycastle.util.Arrays;
 /* loaded from: classes4.dex */
 public class Permutation {
     private int[] perm;
@@ -52,7 +54,7 @@ public class Permutation {
     }
 
     public int hashCode() {
-        return this.perm.hashCode();
+        return Arrays.hashCode(this.perm);
     }
 
     public String toString() {

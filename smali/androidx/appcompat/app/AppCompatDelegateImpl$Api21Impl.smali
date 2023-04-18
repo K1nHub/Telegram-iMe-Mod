@@ -18,10 +18,21 @@
 .method static isPowerSaveMode(Landroid/os/PowerManager;)Z
     .locals 0
 
-    .line 3545
+    .line 3940
     invoke-virtual {p0}, Landroid/os/PowerManager;->isPowerSaveMode()Z
 
     move-result p0
 
     return p0
+.end method
+
+.method static toLanguageTag(Ljava/util/Locale;)Ljava/lang/String;
+    .locals 0
+
+    .line 3945
+    invoke-virtual {p0}, Ljava/util/Locale;->toLanguageTag()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -40,4 +40,8 @@ public final class Callbacks<T> {
     public /* synthetic */ Callbacks(Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this((i & 1) != 0 ? null : function1);
     }
+
+    public final Function1<T, Unit> getOnClose() {
+        return this.onClose;
+    }
 }

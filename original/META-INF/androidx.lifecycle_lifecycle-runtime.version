@@ -1,1 +1,1 @@
-2.4.0
+task ':lifecycle:lifecycle-runtime:writeVersionFile' property 'version'

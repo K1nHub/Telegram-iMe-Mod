@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$21\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n42#2,2:434\n127#3,5:436\n127#3,5:441\n127#3,5:446\n127#3,5:451\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$21\n*L\n205#1:434,2\n207#1:436,5\n208#1:441,5\n209#1:446,5\n210#1:451,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$21\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n44#2,2:434\n129#3,5:436\n129#3,5:441\n129#3,5:446\n129#3,5:451\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$21\n*L\n205#1:434,2\n207#1:436,5\n208#1:441,5\n209#1:446,5\n210#1:451,5\n*E\n"
 .end annotation
 
 
@@ -78,7 +78,7 @@
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 44
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v3
@@ -95,7 +95,7 @@
 
     move-result-wide v5
 
-    .line 43
+    .line 45
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v2
@@ -115,7 +115,7 @@
     .line 206
     new-instance v1, Lcom/iMe/ui/profile/ProfilePresenter;
 
-    .line 131
+    .line 133
     const-class v2, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -132,7 +132,7 @@
 
     check-cast v9, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
-    .line 131
+    .line 133
     const-class v2, Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -175,7 +175,7 @@
 
     check-cast v12, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 131
+    .line 133
     const-class v2, Lcom/iMe/gateway/TelegramControllersGateway;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -218,7 +218,7 @@
 
     check-cast v15, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;
 
-    .line 131
+    .line 133
     const-class v2, Lcom/iMe/storage/domain/storage/TwitterPreferenceHelper;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

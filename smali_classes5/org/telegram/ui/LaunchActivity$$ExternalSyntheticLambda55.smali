@@ -12,11 +12,13 @@
 
 .field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_error;
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
+
+.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$TL_error;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_wallPaper;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +29,9 @@
 
     iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda55;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda55;->f$3:Lorg/telegram/tgnet/TLRPC$TL_error;
+    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda55;->f$3:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
+
+    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda55;->f$4:Lorg/telegram/tgnet/TLRPC$TL_error;
 
     return-void
 .end method
@@ -35,7 +39,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda55;->f$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -43,9 +47,11 @@
 
     iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda55;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    iget-object v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda55;->f$3:Lorg/telegram/tgnet/TLRPC$TL_error;
+    iget-object v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda55;->f$3:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$kg9LwWN60TG_-Wd6OeYRiafXwak(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda55;->f$4:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$EJuz6YwFvrn_VCdXzcEP2JJFnR8(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_wallPaper;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

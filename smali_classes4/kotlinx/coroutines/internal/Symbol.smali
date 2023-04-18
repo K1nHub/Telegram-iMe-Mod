@@ -4,14 +4,14 @@
 
 
 # instance fields
-.field private final symbol:Ljava/lang/String;
+.field public final symbol:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 12
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlinx/coroutines/internal/Symbol;->symbol:Ljava/lang/String;
@@ -24,7 +24,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 13
+    .line 15
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

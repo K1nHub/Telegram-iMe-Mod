@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramModule.kt\ncom/iMe/di/module/TelegramModuleKt$telegramModule$1$7\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,28:1\n127#2,5:29\n*S KotlinDebug\n*F\n+ 1 TelegramModule.kt\ncom/iMe/di/module/TelegramModuleKt$telegramModule$1$7\n*L\n26#1:29,5\n*E\n"
+    value = "SMAP\nTelegramModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramModule.kt\ncom/iMe/di/module/TelegramModuleKt$telegramModule$1$7\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,28:1\n129#2,5:29\n*S KotlinDebug\n*F\n+ 1 TelegramModule.kt\ncom/iMe/di/module/TelegramModuleKt$telegramModule$1$7\n*L\n26#1:29,5\n*E\n"
 .end annotation
 
 
@@ -75,7 +75,7 @@
     .line 26
     new-instance p2, Lcom/iMe/domain/contacts/ContactsInteractor;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/manager/contacts/SelectedContactsDataStore;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

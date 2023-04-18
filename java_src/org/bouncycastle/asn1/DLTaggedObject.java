@@ -3,37 +3,25 @@ package org.bouncycastle.asn1;
 import java.io.IOException;
 /* loaded from: classes4.dex */
 public class DLTaggedObject extends ASN1TaggedObject {
-    private static final byte[] ZERO_BYTES = new byte[0];
-
     public DLTaggedObject(boolean z, int i, ASN1Encodable aSN1Encodable) {
         super(z, i, aSN1Encodable);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    public void encode(ASN1OutputStream aSN1OutputStream) throws IOException {
-        if (this.empty) {
-            aSN1OutputStream.writeEncoded(160, this.tagNo, ZERO_BYTES);
-            return;
-        }
+    public void encode(ASN1OutputStream aSN1OutputStream, boolean z) throws IOException {
         ASN1Primitive dLObject = this.obj.toASN1Primitive().toDLObject();
-        if (!this.explicit) {
-            aSN1OutputStream.writeTag(dLObject.isConstructed() ? 160 : 128, this.tagNo);
-            aSN1OutputStream.writeImplicitObject(dLObject);
-            return;
+        aSN1OutputStream.writeTag(z, (this.explicit || dLObject.isConstructed()) ? 160 : 128, this.tagNo);
+        if (this.explicit) {
+            aSN1OutputStream.writeLength(dLObject.encodedLength());
         }
-        aSN1OutputStream.writeTag(160, this.tagNo);
-        aSN1OutputStream.writeLength(dLObject.encodedLength());
-        aSN1OutputStream.writeObject(dLObject);
+        aSN1OutputStream.getDLSubStream().writePrimitive(dLObject, this.explicit);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
     public int encodedLength() throws IOException {
         int calculateTagLength;
-        if (this.empty) {
-            return StreamUtil.calculateTagLength(this.tagNo) + 1;
-        }
         int encodedLength = this.obj.toASN1Primitive().toDLObject().encodedLength();
         if (this.explicit) {
             calculateTagLength = StreamUtil.calculateTagLength(this.tagNo) + StreamUtil.calculateBodyLength(encodedLength);
@@ -47,9 +35,11 @@ public class DLTaggedObject extends ASN1TaggedObject {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
     public boolean isConstructed() {
-        if (this.empty || this.explicit) {
-            return true;
-        }
-        return this.obj.toASN1Primitive().toDLObject().isConstructed();
+        return this.explicit || this.obj.toASN1Primitive().toDLObject().isConstructed();
+    }
+
+    @Override // org.bouncycastle.asn1.ASN1TaggedObject, org.bouncycastle.asn1.ASN1Primitive
+    ASN1Primitive toDLObject() {
+        return this;
     }
 }

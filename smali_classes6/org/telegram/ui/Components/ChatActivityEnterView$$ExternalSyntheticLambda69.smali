@@ -2,42 +2,56 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+.implements Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
+.field public final synthetic f$1:Lorg/telegram/messenger/MessageObject;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$KeyboardButton;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda69;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
+    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda69;->f$1:Lorg/telegram/messenger/MessageObject;
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda69;->f$2:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDate(ZILjava/lang/String;)V
-    .locals 1
+.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda69;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$qW7GHJRcSQDTK2_KNZlWhGGQ_k0(Lorg/telegram/ui/Components/ChatActivityEnterView;ZILjava/lang/String;)V
+    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda69;->f$1:Lorg/telegram/messenger/MessageObject;
 
-    return-void
-.end method
+    iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda69;->f$2:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
 
-.method public synthetic getSelectedDialogs()Ljava/util/ArrayList;
-    .locals 1
+    move-object v3, p1
 
-    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate$-CC;->$default$getSelectedDialogs(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)Ljava/util/ArrayList;
+    move-object v4, p2
 
-    move-result-object v0
+    move-object v5, p3
 
-    return-object v0
+    move v6, p4
+
+    move-object v7, p5
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$uK6MtuHHsnU78F-Hd9ArCoDzmp8(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$KeyboardButton;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+
+    move-result p1
+
+    return p1
 .end method

@@ -2,7 +2,7 @@ package com.iMe.manager.common;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p048ui.Components.ImageUpdater;
+import org.telegram.p044ui.Components.ImageUpdater;
 /* compiled from: MediaEditManager.kt */
 /* loaded from: classes3.dex */
 final class MediaEditManager$imageUpdater$2 extends Lambda implements Function0<ImageUpdater> {

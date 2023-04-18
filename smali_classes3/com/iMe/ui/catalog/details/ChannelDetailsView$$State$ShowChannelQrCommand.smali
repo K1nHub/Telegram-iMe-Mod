@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State;J)V
     .locals 1
 
-    .line 210
+    .line 228
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showChannelQr"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 212
+    .line 230
     iput-wide p2, p0, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$ShowChannelQrCommand;->chatId:J
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/catalog/details/ChannelDetailsView;)V
     .locals 2
 
-    .line 217
+    .line 235
     iget-wide v0, p0, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$ShowChannelQrCommand;->chatId:J
 
     invoke-interface {p1, v0, v1}, Lcom/iMe/ui/catalog/details/ChannelDetailsView;->showChannelQr(J)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 206
+    .line 224
     check-cast p1, Lcom/iMe/ui/catalog/details/ChannelDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$ShowChannelQrCommand;->apply(Lcom/iMe/ui/catalog/details/ChannelDetailsView;)V

@@ -35,7 +35,7 @@ public class VideoDecoderOutput {
         surfaceTexture.setOnFrameAvailableListener(new SurfaceTexture.OnFrameAvailableListener() { // from class: com.otaliastudios.gif.transcode.internal.VideoDecoderOutput.1
             @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
             public void onFrameAvailable(SurfaceTexture surfaceTexture2) {
-                VideoDecoderOutput.LOG.m698v("New frame available");
+                VideoDecoderOutput.LOG.m684v("New frame available");
                 synchronized (VideoDecoderOutput.this.mFrameAvailableLock) {
                     if (!VideoDecoderOutput.this.mFrameAvailable) {
                         VideoDecoderOutput.this.mFrameAvailable = true;

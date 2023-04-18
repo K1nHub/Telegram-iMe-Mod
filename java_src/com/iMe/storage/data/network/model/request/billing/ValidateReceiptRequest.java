@@ -82,7 +82,7 @@ public final class ValidateReceiptRequest {
     }
 
     public int hashCode() {
-        return (((((((((this.orderId.hashCode() * 31) + this.packageName.hashCode()) * 31) + this.productId.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.purchaseTime)) * 31) + this.purchaseState) * 31) + this.purchaseToken.hashCode();
+        return (((((((((this.orderId.hashCode() * 31) + this.packageName.hashCode()) * 31) + this.productId.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.purchaseTime)) * 31) + this.purchaseState) * 31) + this.purchaseToken.hashCode();
     }
 
     public String toString() {

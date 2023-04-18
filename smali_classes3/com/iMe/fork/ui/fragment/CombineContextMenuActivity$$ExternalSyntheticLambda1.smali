@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;
 
-    invoke-static {v0, p1, p2}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->$r8$lambda$gEaKMKefgTBQxA-LMwgVoom-msw(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->$r8$lambda$0JkgVpVtBw5fP_qiAOFCXpx7acc(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;Landroid/view/View;I)V
 
     return-void
 .end method

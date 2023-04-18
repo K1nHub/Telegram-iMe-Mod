@@ -365,12 +365,12 @@
 .method public dismiss()V
     .locals 1
 
-    .line 313
+    .line 318
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     const/4 v0, 0x0
 
-    .line 314
+    .line 319
     sput-object v0, Lorg/telegram/messenger/FilesMigrationService;->filesMigrationBottomSheet:Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet;
 
     return-void
@@ -386,9 +386,14 @@
 
     move-result-object v0
 
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
     const-string v1, "android.permission.WRITE_EXTERNAL_STORAGE"
 
-    .line 292
+    .line 297
     invoke-virtual {v0, v1}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v2
@@ -397,73 +402,73 @@
 
     const/4 v4, 0x0
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_1
 
     move v2, v3
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     move v2, v4
 
     :goto_0
     const-string v5, "android.permission.READ_EXTERNAL_STORAGE"
 
-    .line 293
+    .line 298
     invoke-virtual {v0, v5}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v6
 
-    if-nez v6, :cond_1
+    if-nez v6, :cond_2
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     move v3, v4
 
     :goto_1
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_4
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_3
 
     goto :goto_2
 
-    .line 307
-    :cond_2
+    .line 312
+    :cond_3
     invoke-static {}, Lorg/telegram/messenger/FilesMigrationService;->start()V
 
-    .line 308
+    .line 313
     invoke-virtual {p0}, Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet;->dismiss()V
 
     return-void
 
-    .line 296
-    :cond_3
+    .line 301
+    :cond_4
     :goto_2
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    if-nez v3, :cond_4
-
-    .line 298
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_4
-    if-nez v2, :cond_5
-
-    .line 301
-    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-nez v3, :cond_5
 
     .line 303
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
     :cond_5
+    if-nez v2, :cond_6
+
+    .line 306
+    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 308
+    :cond_6
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     new-array v1, v1, [Ljava/lang/String;
 
-    .line 304
+    .line 309
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v1

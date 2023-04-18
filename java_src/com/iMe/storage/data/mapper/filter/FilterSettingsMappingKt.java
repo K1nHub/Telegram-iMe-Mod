@@ -1,6 +1,6 @@
 package com.iMe.storage.data.mapper.filter;
 
-import com.iMe.storage.data.locale.p028db.model.filter.FilterSettingsDb;
+import com.iMe.storage.data.locale.p027db.model.filter.FilterSettingsDb;
 import com.iMe.storage.domain.model.filters.FilterFab;
 import com.iMe.storage.domain.model.filters.FilterIcon;
 import com.iMe.storage.domain.model.filters.FilterSettingsModel;

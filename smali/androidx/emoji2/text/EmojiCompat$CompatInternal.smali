@@ -22,10 +22,10 @@
 .method constructor <init>(Landroidx/emoji2/text/EmojiCompat;)V
     .locals 0
 
-    .line 1417
+    .line 1566
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1418
+    .line 1567
     iput-object p1, p0, Landroidx/emoji2/text/EmojiCompat$CompatInternal;->mEmojiCompat:Landroidx/emoji2/text/EmojiCompat;
 
     return-void
@@ -36,7 +36,7 @@
 .method loadMetadata()V
     .locals 1
 
-    .line 1423
+    .line 1572
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat$CompatInternal;->mEmojiCompat:Landroidx/emoji2/text/EmojiCompat;
 
     invoke-virtual {v0}, Landroidx/emoji2/text/EmojiCompat;->onMetadataLoadSuccess()V

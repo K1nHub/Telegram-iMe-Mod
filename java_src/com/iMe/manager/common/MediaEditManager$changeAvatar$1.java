@@ -3,7 +3,7 @@ package com.iMe.manager.common;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p048ui.ActionBar.BaseFragment;
+import org.telegram.p044ui.ActionBar.BaseFragment;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MediaEditManager.kt */
 /* loaded from: classes3.dex */

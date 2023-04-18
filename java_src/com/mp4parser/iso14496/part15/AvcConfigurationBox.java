@@ -1,6 +1,6 @@
 package com.mp4parser.iso14496.part15;
 
-import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.exoplayer2.metadata.icy.IcyHeaders;
 import com.googlecode.mp4parser.AbstractBox;
 import com.googlecode.mp4parser.RequiresParseDetailAspect;

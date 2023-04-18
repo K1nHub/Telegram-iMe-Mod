@@ -63,7 +63,7 @@
     .line 1619
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$8;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ManageLinksActivity;->access$1300(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {p2}, Lorg/telegram/ui/ManageLinksActivity;->access$1400(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result p2
 
@@ -78,7 +78,7 @@
 
     const/4 p2, 0x1
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->access$1400(Lorg/telegram/ui/ManageLinksActivity;Z)V
+    invoke-static {p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->access$1500(Lorg/telegram/ui/ManageLinksActivity;Z)V
 
     :cond_0
     return-void

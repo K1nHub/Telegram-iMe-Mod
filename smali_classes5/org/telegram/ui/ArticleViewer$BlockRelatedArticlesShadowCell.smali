@@ -22,10 +22,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
 
-    .line 9365
+    .line 9363
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 9367
+    .line 9365
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
     const/high16 v1, -0x1000000
@@ -34,7 +34,7 @@
 
     move-result-object p1
 
-    .line 9368
+    .line 9366
     new-instance v0, Lorg/telegram/ui/Components/CombinedDrawable;
 
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
@@ -53,10 +53,10 @@
 
     const/4 p1, 0x1
 
-    .line 9369
+    .line 9367
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
 
-    .line 9370
+    .line 9368
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockRelatedArticlesShadowCell;->shadowDrawable:Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
@@ -69,7 +69,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 9375
+    .line 9373
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -82,7 +82,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    .line 9376
+    .line 9374
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockRelatedArticlesShadowCell;->shadowDrawable:Lorg/telegram/ui/Components/CombinedDrawable;
 
     const-string p2, "windowBackgroundGray"

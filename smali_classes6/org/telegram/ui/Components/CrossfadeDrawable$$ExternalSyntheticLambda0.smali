@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/CrossfadeDrawable;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+    invoke-static {v0}, Lorg/telegram/ui/Components/CrossfadeDrawable;->$r8$lambda$f1cC1B-c_BHxEQf9VJVIbrx70NU(Lorg/telegram/ui/Components/CrossfadeDrawable;)V
 
     return-void
 .end method

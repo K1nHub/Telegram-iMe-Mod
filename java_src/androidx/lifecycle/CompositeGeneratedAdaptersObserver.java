@@ -1,24 +1,27 @@
 package androidx.lifecycle;
 
 import androidx.lifecycle.Lifecycle;
-/* JADX INFO: Access modifiers changed from: package-private */
+import kotlin.jvm.internal.Intrinsics;
+/* compiled from: CompositeGeneratedAdaptersObserver.kt */
 /* loaded from: classes.dex */
-public class CompositeGeneratedAdaptersObserver implements LifecycleEventObserver {
-    private final GeneratedAdapter[] mGeneratedAdapters;
+public final class CompositeGeneratedAdaptersObserver implements LifecycleEventObserver {
+    private final GeneratedAdapter[] generatedAdapters;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public CompositeGeneratedAdaptersObserver(GeneratedAdapter[] generatedAdapterArr) {
-        this.mGeneratedAdapters = generatedAdapterArr;
+    public CompositeGeneratedAdaptersObserver(GeneratedAdapter[] generatedAdapters) {
+        Intrinsics.checkNotNullParameter(generatedAdapters, "generatedAdapters");
+        this.generatedAdapters = generatedAdapters;
     }
 
     @Override // androidx.lifecycle.LifecycleEventObserver
-    public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+    public void onStateChanged(LifecycleOwner source, Lifecycle.Event event) {
+        Intrinsics.checkNotNullParameter(source, "source");
+        Intrinsics.checkNotNullParameter(event, "event");
         MethodCallsLogger methodCallsLogger = new MethodCallsLogger();
-        for (GeneratedAdapter generatedAdapter : this.mGeneratedAdapters) {
-            generatedAdapter.callMethods(lifecycleOwner, event, false, methodCallsLogger);
+        for (GeneratedAdapter generatedAdapter : this.generatedAdapters) {
+            generatedAdapter.callMethods(source, event, false, methodCallsLogger);
         }
-        for (GeneratedAdapter generatedAdapter2 : this.mGeneratedAdapters) {
-            generatedAdapter2.callMethods(lifecycleOwner, event, true, methodCallsLogger);
+        for (GeneratedAdapter generatedAdapter2 : this.generatedAdapters) {
+            generatedAdapter2.callMethods(source, event, true, methodCallsLogger);
         }
     }
 }

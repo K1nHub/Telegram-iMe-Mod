@@ -15,6 +15,7 @@ public final class Lists {
         return new ArrayList<>();
     }
 
+    @SafeVarargs
     public static <E> ArrayList<E> newArrayList(E... eArr) {
         Preconditions.checkNotNull(eArr);
         ArrayList<E> arrayList = new ArrayList<>(computeArrayListCapacity(eArr.length));

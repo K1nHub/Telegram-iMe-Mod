@@ -12,7 +12,7 @@ public abstract class BasicFuseableConditionalSubscriber<T, R> implements Condit
     protected final ConditionalSubscriber<? super R> downstream;
 
     /* renamed from: qs */
-    protected QueueSubscription<T> f478qs;
+    protected QueueSubscription<T> f473qs;
     protected int sourceMode;
     protected Subscription upstream;
 
@@ -32,7 +32,7 @@ public abstract class BasicFuseableConditionalSubscriber<T, R> implements Condit
         if (SubscriptionHelper.validate(this.upstream, subscription)) {
             this.upstream = subscription;
             if (subscription instanceof QueueSubscription) {
-                this.f478qs = (QueueSubscription) subscription;
+                this.f473qs = (QueueSubscription) subscription;
             }
             if (beforeDownstream()) {
                 this.downstream.onSubscribe(this);
@@ -69,7 +69,7 @@ public abstract class BasicFuseableConditionalSubscriber<T, R> implements Condit
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final int transitiveBoundaryFusion(int i) {
-        QueueSubscription<T> queueSubscription = this.f478qs;
+        QueueSubscription<T> queueSubscription = this.f473qs;
         if (queueSubscription == null || (i & 4) != 0) {
             return 0;
         }
@@ -92,12 +92,12 @@ public abstract class BasicFuseableConditionalSubscriber<T, R> implements Condit
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue
     public boolean isEmpty() {
-        return this.f478qs.isEmpty();
+        return this.f473qs.isEmpty();
     }
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue
     public void clear() {
-        this.f478qs.clear();
+        this.f473qs.clear();
     }
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue

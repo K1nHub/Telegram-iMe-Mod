@@ -34,7 +34,7 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 129
+    .line 132
     new-instance v0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
 
     const-string v1, "LINE"
@@ -63,7 +63,7 @@
 
     aput-object v1, v3, v4
 
-    .line 128
+    .line 131
     sput-object v3, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;->$VALUES:[Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
 
     return-void
@@ -77,7 +77,7 @@
         }
     .end annotation
 
-    .line 128
+    .line 131
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -86,7 +86,7 @@
 .method public static valueOf(Ljava/lang/String;)Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
     .locals 1
 
-    .line 128
+    .line 131
     const-class v0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -101,7 +101,7 @@
 .method public static values()[Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
     .locals 1
 
-    .line 128
+    .line 131
     sget-object v0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;->$VALUES:[Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
 
     invoke-virtual {v0}, [Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;->clone()Ljava/lang/Object;

@@ -58,7 +58,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 60
+    .line 63
     iget-object p1, p0, Lorg/koin/android/ext/koin/KoinExtKt$androidContext$1$1;->$androidContext:Landroid/content/Context;
 
     check-cast p1, Landroid/app/Application;
@@ -69,7 +69,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 60
+    .line 63
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatEditActivity;Landroid/content/Context;Landroid/graphics/Paint;)V
     .locals 0
 
-    .line 570
+    .line 571
     iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$5;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/ChatEditActivity$5;->val$paint:Landroid/graphics/Paint;
@@ -39,7 +39,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 573
+    .line 574
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$5;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->access$100(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/BackupImageView;
@@ -64,7 +64,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 574
+    .line 575
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$5;->val$paint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x42aa0000    # 85.0f
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 575
+    .line 576
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0

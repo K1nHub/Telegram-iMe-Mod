@@ -1,10 +1,10 @@
 package com.iMe.utils.extentions.common;
 
 import android.text.SpannableStringBuilder;
+import com.google.android.exoplayer2.source.rtsp.SessionDescription;
 import com.iMe.utils.formatter.DateFormatter;
 import java.util.Locale;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
 import kotlin.text.StringsKt___StringsKt;
 import org.telegram.messenger.MessageObject;
@@ -31,20 +31,22 @@ public final class StringExtKt {
 
     public static /* synthetic */ String stripZeros$default(String str, char c, int i, Object obj) {
         if ((i & 1) != 0) {
-            c = '.';
+            c = StringsKt___StringsKt.first(".");
         }
         return stripZeros(str, c);
     }
 
     public static final String stripZeros(String str, char c) {
         boolean contains$default;
+        char first;
         String trimEnd;
         char last;
         String dropLast;
         Intrinsics.checkNotNullParameter(str, "<this>");
         contains$default = StringsKt__StringsKt.contains$default((CharSequence) str, c, false, 2, (Object) null);
         if (contains$default) {
-            trimEnd = StringsKt__StringsKt.trimEnd(str, '0');
+            first = StringsKt___StringsKt.first(SessionDescription.SUPPORTED_SDP_VERSION);
+            trimEnd = StringsKt__StringsKt.trimEnd(str, first);
             last = StringsKt___StringsKt.last(trimEnd);
             if (last == c) {
                 dropLast = StringsKt___StringsKt.dropLast(trimEnd, 1);
@@ -63,7 +65,6 @@ public final class StringExtKt {
     }
 
     public static final String shortened(String str, int i) {
-        String repeat;
         Intrinsics.checkNotNullParameter(str, "<this>");
         if (str.length() <= i) {
             return str;
@@ -72,8 +73,7 @@ public final class StringExtKt {
         String substring = str.substring(0, i);
         Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
         sb.append(substring);
-        repeat = StringsKt__StringsJVMKt.repeat(".", 3);
-        sb.append(repeat);
+        sb.append("...");
         String substring2 = str.substring(str.length() - i, str.length());
         Intrinsics.checkNotNullExpressionValue(substring2, "this as java.lang.String…ing(startIndex, endIndex)");
         sb.append(substring2);

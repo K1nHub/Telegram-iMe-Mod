@@ -14,13 +14,13 @@ import java.lang.annotation.RetentionPolicy;
 /* loaded from: classes.dex */
 public final class CredentialPickerConfig extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<CredentialPickerConfig> CREATOR = new zbb();
-    @SafeParcelable.Field(m789id = 1000)
+    @SafeParcelable.Field(m775id = 1000)
     final int zba;
-    @SafeParcelable.Field(getter = "shouldShowAddAccountButton", m789id = 1)
+    @SafeParcelable.Field(getter = "shouldShowAddAccountButton", m775id = 1)
     private final boolean zbb;
-    @SafeParcelable.Field(getter = "shouldShowCancelButton", m789id = 2)
+    @SafeParcelable.Field(getter = "shouldShowCancelButton", m775id = 2)
     private final boolean zbc;
-    @SafeParcelable.Field(getter = "getPromptInternalId", m789id = 4)
+    @SafeParcelable.Field(getter = "getPromptInternalId", m775id = 4)
     private final int zbd;
 
     /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
@@ -67,7 +67,7 @@ public final class CredentialPickerConfig extends AbstractSafeParcelable impleme
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public CredentialPickerConfig(@SafeParcelable.Param(m788id = 1000) int i, @SafeParcelable.Param(m788id = 1) boolean z, @SafeParcelable.Param(m788id = 2) boolean z2, @SafeParcelable.Param(m788id = 3) boolean z3, @SafeParcelable.Param(m788id = 4) int i2) {
+    public CredentialPickerConfig(@SafeParcelable.Param(m774id = 1000) int i, @SafeParcelable.Param(m774id = 1) boolean z, @SafeParcelable.Param(m774id = 2) boolean z2, @SafeParcelable.Param(m774id = 3) boolean z3, @SafeParcelable.Param(m774id = 4) int i2) {
         this.zba = i;
         this.zbb = z;
         this.zbc = z2;

@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nUtilsModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UtilsModule.kt\ncom/iMe/storage/data/di/module/UtilsModuleKt$dataUtilsModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,15:1\n98#2,6:16\n104#2,5:43\n148#2,14:48\n162#2,2:78\n202#3,6:22\n208#3:42\n217#3:62\n218#3:77\n102#4,14:28\n102#4,14:63\n*S KotlinDebug\n*F\n+ 1 UtilsModule.kt\ncom/iMe/storage/data/di/module/UtilsModuleKt$dataUtilsModule$1\n*L\n11#1:16,6\n11#1:43,5\n12#1:48,14\n12#1:78,2\n11#1:22,6\n11#1:42\n12#1:62\n12#1:77\n11#1:28,14\n12#1:63,14\n*E\n"
+    value = "SMAP\nUtilsModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UtilsModule.kt\ncom/iMe/storage/data/di/module/UtilsModuleKt$dataUtilsModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,15:1\n103#2,6:16\n109#2,5:43\n147#2,14:48\n161#2,2:78\n201#3,6:22\n207#3:42\n216#3:62\n217#3:77\n105#4,14:28\n105#4,14:63\n*S KotlinDebug\n*F\n+ 1 UtilsModule.kt\ncom/iMe/storage/data/di/module/UtilsModuleKt$dataUtilsModule$1\n*L\n11#1:16,6\n11#1:43,5\n12#1:48,14\n12#1:78,2\n11#1:22,6\n11#1:42\n12#1:62\n12#1:77\n11#1:28,14\n12#1:63,14\n*E\n"
 .end annotation
 
 
@@ -83,25 +83,25 @@
     .line 11
     sget-object v5, Lcom/iMe/storage/data/di/module/UtilsModuleKt$dataUtilsModule$1$1;->INSTANCE:Lcom/iMe/storage/data/di/module/UtilsModuleKt$dataUtilsModule$1$1;
 
-    .line 205
+    .line 204
     sget-object v0, Lorg/koin/core/registry/ScopeRegistry;->Companion:Lorg/koin/core/registry/ScopeRegistry$Companion;
 
     invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v2
 
-    .line 207
+    .line 206
     sget-object v6, Lorg/koin/core/definition/Kind;->Singleton:Lorg/koin/core/definition/Kind;
 
-    .line 106
+    .line 109
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v7
 
-    .line 109
+    .line 112
     new-instance v8, Lorg/koin/core/definition/BeanDefinition;
 
-    .line 110
+    .line 113
     const-class v1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -112,55 +112,55 @@
 
     move-object v1, v8
 
-    .line 109
+    .line 112
     invoke-direct/range {v1 .. v7}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
 
-    .line 208
+    .line 207
     new-instance v1, Lorg/koin/core/instance/SingleInstanceFactory;
 
     invoke-direct {v1, v8}, Lorg/koin/core/instance/SingleInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
 
-    .line 104
+    .line 109
     invoke-virtual {p1, v1}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 105
+    .line 110
     invoke-virtual {p1}, Lorg/koin/core/module/Module;->get_createdAtStart()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 106
+    .line 111
     invoke-virtual {p1, v1}, Lorg/koin/core/module/Module;->prepareForCreationAtStart(Lorg/koin/core/instance/SingleInstanceFactory;)V
 
-    .line 108
+    .line 113
     :cond_0
-    new-instance v2, Lkotlin/Pair;
+    new-instance v2, Lorg/koin/core/definition/KoinDefinition;
 
-    invoke-direct {v2, p1, v1}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, p1, v1}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
     .line 12
     sget-object v7, Lcom/iMe/storage/data/di/module/UtilsModuleKt$dataUtilsModule$1$2;->INSTANCE:Lcom/iMe/storage/data/di/module/UtilsModuleKt$dataUtilsModule$1$2;
 
     const/4 v6, 0x0
 
-    .line 152
+    .line 151
     invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v4
 
-    .line 217
+    .line 216
     sget-object v8, Lorg/koin/core/definition/Kind;->Factory:Lorg/koin/core/definition/Kind;
 
-    .line 106
+    .line 109
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v9
 
-    .line 109
+    .line 112
     new-instance v0, Lorg/koin/core/definition/BeanDefinition;
 
-    .line 110
+    .line 113
     const-class v1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -169,21 +169,21 @@
 
     move-object v3, v0
 
-    .line 109
+    .line 112
     invoke-direct/range {v3 .. v9}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
 
-    .line 218
+    .line 217
     new-instance v1, Lorg/koin/core/instance/FactoryInstanceFactory;
 
     invoke-direct {v1, v0}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
 
-    .line 162
+    .line 161
     invoke-virtual {p1, v1}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 163
-    new-instance v0, Lkotlin/Pair;
+    .line 162
+    new-instance v0, Lorg/koin/core/definition/KoinDefinition;
 
-    invoke-direct {v0, p1, v1}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v0, p1, v1}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
     return-void
 .end method

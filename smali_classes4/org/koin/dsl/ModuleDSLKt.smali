@@ -22,12 +22,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 43
     new-instance v0, Lorg/koin/core/module/Module;
 
     invoke-direct {v0, p0}, Lorg/koin/core/module/Module;-><init>(Z)V
 
-    .line 37
+    .line 44
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object v0
@@ -42,7 +42,7 @@
 
     const/4 p0, 0x0
 
-    .line 35
+    .line 42
     :cond_0
     invoke-static {p0, p1}, Lorg/koin/dsl/ModuleDSLKt;->module(ZLkotlin/jvm/functions/Function1;)Lorg/koin/core/module/Module;
 

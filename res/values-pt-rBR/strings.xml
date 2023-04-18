@@ -5629,7 +5629,7 @@ Seu saldo será atualizado após a confirmação da transação na blockchain."<
     <string name="stickers_size_title">Tamanho do adesivo</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Considerar chats arquivados</string>
     <string name="swipe_to_next_unread_dialog_hint">Ative isso se quiser rolar seus bate-papos sem voltar à sua lista de bate-papo. Quando chegar ao final de um chat, suba para ir para o próximo chat não lido.</string>
-    <string name="swipe_to_next_unread_dialog_types">Tipos de diálogo</string>
+    <string name="swipe_to_next_unread_dialog_types">tipos de chat</string>
     <string name="text_recognition_bottom_sheet_title">Foto → Texto</string>
     <string name="topic">Tópico</string>
     <string name="topic_add_archived_chats_hint">Selecione chats da lista de arquivados que aparecerão neste tópico.</string>

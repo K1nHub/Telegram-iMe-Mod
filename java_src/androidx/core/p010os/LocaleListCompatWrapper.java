@@ -8,6 +8,7 @@ import java.util.Locale;
 final class LocaleListCompatWrapper implements LocaleListInterface {
     private static final Locale[] sEmptyList = new Locale[0];
     private final Locale[] mList;
+    private final String mStringRepresentation;
 
     @Override // androidx.core.p010os.LocaleListInterface
     public Object getLocaleList() {
@@ -29,6 +30,11 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
             }
         }
         return null;
+    }
+
+    @Override // androidx.core.p010os.LocaleListInterface
+    public boolean isEmpty() {
+        return this.mList.length == 0;
     }
 
     @Override // androidx.core.p010os.LocaleListInterface
@@ -87,10 +93,16 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
         }
     }
 
+    @Override // androidx.core.p010os.LocaleListInterface
+    public String toLanguageTags() {
+        return this.mStringRepresentation;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public LocaleListCompatWrapper(Locale... localeArr) {
         if (localeArr.length == 0) {
             this.mList = sEmptyList;
+            this.mStringRepresentation = "";
             return;
         }
         ArrayList arrayList = new ArrayList();
@@ -112,6 +124,7 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
             }
         }
         this.mList = (Locale[]) arrayList.toArray(new Locale[0]);
+        this.mStringRepresentation = sb.toString();
     }
 
     static void toLanguageTag(StringBuilder sb, Locale locale) {

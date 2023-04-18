@@ -4,8 +4,6 @@
 
 
 # static fields
-.field private static final LOADER:Lcom/google/android/exoplayer2/util/LibraryLoader;
-
 .field private static final TAG:Ljava/lang/String; = "FfmpegLibrary"
 
 .field private static inputBufferPaddingSize:I
@@ -15,29 +13,16 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     const-string v0, "goog.exo.ffmpeg"
 
-    .line 30
+    .line 31
     invoke-static {v0}, Lcom/google/android/exoplayer2/ExoPlayerLibraryInfo;->registerModule(Ljava/lang/String;)V
-
-    .line 35
-    new-instance v0, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary$1;
-
-    const-string v1, "ffmpegJNI"
-
-    filled-new-array {v1}, [Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary$1;-><init>([Ljava/lang/String;)V
-
-    sput-object v0, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->LOADER:Lcom/google/android/exoplayer2/util/LibraryLoader;
 
     const/4 v0, -0x1
 
-    .line 44
+    .line 37
     sput v0, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->inputBufferPaddingSize:I
 
     return-void
@@ -46,7 +31,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 46
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -64,7 +49,7 @@
 .method static getCodecName(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    .line 116
+    .line 109
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -490,7 +475,7 @@
 .method public static getInputBufferPaddingSize()I
     .locals 2
 
-    .line 81
+    .line 74
     invoke-static {}, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->isAvailable()Z
 
     move-result v0
@@ -501,20 +486,20 @@
 
     return v1
 
-    .line 84
+    .line 77
     :cond_0
     sget v0, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->inputBufferPaddingSize:I
 
     if-ne v0, v1, :cond_1
 
-    .line 85
+    .line 78
     invoke-static {}, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->ffmpegGetInputBufferPaddingSize()I
 
     move-result v0
 
     sput v0, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->inputBufferPaddingSize:I
 
-    .line 87
+    .line 80
     :cond_1
     sget v0, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->inputBufferPaddingSize:I
 
@@ -524,7 +509,7 @@
 .method public static getVersion()Ljava/lang/String;
     .locals 1
 
-    .line 67
+    .line 60
     invoke-static {}, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->isAvailable()Z
 
     move-result v0
@@ -535,20 +520,20 @@
 
     return-object v0
 
-    .line 70
+    .line 63
     :cond_0
     sget-object v0, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->version:Ljava/lang/String;
 
     if-nez v0, :cond_1
 
-    .line 71
+    .line 64
     invoke-static {}, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->ffmpegGetVersion()Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->version:Ljava/lang/String;
 
-    .line 73
+    .line 66
     :cond_1
     sget-object v0, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->version:Ljava/lang/String;
 
@@ -558,10 +543,8 @@
 .method public static isAvailable()Z
     .locals 1
 
-    .line 61
-    sget-object v0, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->LOADER:Lcom/google/android/exoplayer2/util/LibraryLoader;
-
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/LibraryLoader;->isAvailable()Z
+    .line 54
+    invoke-static {}, Lorg/telegram/messenger/NativeLoader;->loaded()Z
 
     move-result v0
 
@@ -569,12 +552,7 @@
 .end method
 
 .method public static varargs setLibraries([Ljava/lang/String;)V
-    .locals 1
-
-    .line 56
-    sget-object v0, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->LOADER:Lcom/google/android/exoplayer2/util/LibraryLoader;
-
-    invoke-virtual {v0, p0}, Lcom/google/android/exoplayer2/util/LibraryLoader;->setLibraries([Ljava/lang/String;)V
+    .locals 0
 
     return-void
 .end method
@@ -582,7 +560,7 @@
 .method public static supportsFormat(Ljava/lang/String;)Z
     .locals 3
 
-    .line 96
+    .line 89
     invoke-static {}, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->isAvailable()Z
 
     move-result v0
@@ -593,7 +571,7 @@
 
     return v1
 
-    .line 99
+    .line 92
     :cond_0
     invoke-static {p0}, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->getCodecName(Ljava/lang/String;)Ljava/lang/String;
 
@@ -603,7 +581,7 @@
 
     return v1
 
-    .line 103
+    .line 96
     :cond_1
     invoke-static {p0}, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegLibrary;->ffmpegHasDecoder(Ljava/lang/String;)Z
 
@@ -611,7 +589,7 @@
 
     if-nez v0, :cond_2
 
-    .line 104
+    .line 97
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

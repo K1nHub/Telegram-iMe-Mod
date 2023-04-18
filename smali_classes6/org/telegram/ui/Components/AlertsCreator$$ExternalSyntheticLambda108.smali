@@ -2,40 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
+.implements Landroid/widget/TextView$OnEditorActionListener;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
+.field public final synthetic f$1:Landroid/content/DialogInterface$OnClickListener;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/DialogInterface$OnClickListener;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$1:Landroid/content/DialogInterface$OnClickListener;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
+.method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
     .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$1:Landroid/content/DialogInterface$OnClickListener;
 
-    check-cast p1, Ljava/lang/Boolean;
+    invoke-static {v0, v1, p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$Qvzhr7WmkRMgJg69Q4kb1AXYO2U(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/DialogInterface$OnClickListener;Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$gmMb5E6WE2PqPfyIqwDeMXPm2iE(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Boolean;)V
+    move-result p1
 
-    return-void
+    return p1
 .end method

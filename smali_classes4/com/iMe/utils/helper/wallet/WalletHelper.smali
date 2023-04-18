@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHelper.kt\ncom/iMe/utils/helper/wallet/WalletHelper\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,141:1\n56#2,6:142\n56#2,6:148\n56#2,6:154\n*S KotlinDebug\n*F\n+ 1 WalletHelper.kt\ncom/iMe/utils/helper/wallet/WalletHelper\n*L\n29#1:142,6\n30#1:148,6\n31#1:154,6\n*E\n"
+    value = "SMAP\nWalletHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHelper.kt\ncom/iMe/utils/helper/wallet/WalletHelper\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,166:1\n1855#2,2:167\n56#3,6:169\n56#3,6:175\n56#3,6:181\n*S KotlinDebug\n*F\n+ 1 WalletHelper.kt\ncom/iMe/utils/helper/wallet/WalletHelper\n*L\n157#1:167,2\n37#1:169,6\n38#1:175,6\n39#1:181,6\n*E\n"
 .end annotation
 
 
@@ -23,50 +23,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$7eMMtdqjBwnjqpvMR3QhbryWf7o(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public static synthetic $r8$lambda$8cVJpAaQU6eVS4GyP8HZ8P7Ljco(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1$lambda$0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {p0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->safeRunWalletScreen$lambda$2(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$PEZXx-aPLiAEzimA6WMylX4l7F4()V
+.method public static synthetic $r8$lambda$CBLRXQfOIDcknfj4fUf1uuapWZY(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 0
 
-    invoke-static {}, Lcom/iMe/utils/helper/wallet/WalletHelper;->safeRunWalletScreen$lambda$3()V
+    invoke-static {p0, p1}, Lcom/iMe/utils/helper/wallet/WalletHelper;->showAuthDialog$lambda$5(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$S1lxUqALzYN1nmGm8zkuikCpzdw(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+.method public static synthetic $r8$lambda$bRTFiuVMlXWUHblHaFAV6SNS-U8(Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/utils/helper/wallet/WalletHelper;->showWalletAuthDialog$lambda$7(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-static {p0, p1}, Lcom/iMe/utils/helper/wallet/WalletHelper;->runWithCheckIsCryptoWalletCreated$lambda$1$lambda$0(Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$a_KYUJXO0BItrl7WvrEIikwdfts(Lorg/telegram/ui/LaunchActivity;)V
+.method public static synthetic $r8$lambda$q07Y4O68ogQPya4EmQmB_pbh88E(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->showAppUpdateDialog$lambda$6(Lorg/telegram/ui/LaunchActivity;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$jjJzeux1_0EbfzCvQYPFtuqg69A(Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/iMe/utils/helper/wallet/WalletHelper;->runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1(Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$nsU1Qcwm4ceuL5qjjwYO9hTkiMQ()V
-    .locals 0
-
-    invoke-static {}, Lcom/iMe/utils/helper/wallet/WalletHelper;->safeRunWalletScreen$lambda$4()V
+    invoke-static {p0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->showAppUpdateDialog$lambda$4(Lorg/telegram/ui/LaunchActivity;)V
 
     return-void
 .end method
@@ -98,7 +82,7 @@
 
     move-result-object v2
 
-    .line 29
+    .line 37
     sput-object v2, Lcom/iMe/utils/helper/wallet/WalletHelper;->cryptoAccessManager$delegate:Lkotlin/Lazy;
 
     .line 58
@@ -115,7 +99,7 @@
 
     move-result-object v2
 
-    .line 30
+    .line 38
     sput-object v2, Lcom/iMe/utils/helper/wallet/WalletHelper;->authManager$delegate:Lkotlin/Lazy;
 
     .line 58
@@ -132,7 +116,7 @@
 
     move-result-object v0
 
-    .line 31
+    .line 39
     sput-object v0, Lcom/iMe/utils/helper/wallet/WalletHelper;->walletFlowCoordinator$delegate:Lkotlin/Lazy;
 
     return-void
@@ -141,7 +125,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 26
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -150,7 +134,7 @@
 .method private final getAuthManager()Lcom/iMe/storage/domain/manager/auth/AuthManager;
     .locals 1
 
-    .line 30
+    .line 38
     sget-object v0, Lcom/iMe/utils/helper/wallet/WalletHelper;->authManager$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -162,10 +146,143 @@
     return-object v0
 .end method
 
+.method private final getAuthSpannableStringBuilder()Landroid/text/SpannableStringBuilder;
+    .locals 9
+
+    .line 147
+    sget v0, Lorg/telegram/messenger/R$string;->auth_dialog_description:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 148
+    new-instance v7, Landroid/text/SpannableStringBuilder;
+
+    invoke-direct {v7, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+    const-string v1, "descriptionText"
+
+    .line 149
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v2, "*"
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x6
+
+    const/4 v6, 0x0
+
+    move-object v1, v0
+
+    invoke-static/range {v1 .. v6}, Lkotlin/text/StringsKt;->indexOf$default(Ljava/lang/CharSequence;Ljava/lang/String;IZILjava/lang/Object;)I
+
+    move-result v8
+
+    const-string v2, "*"
+
+    .line 150
+    invoke-static/range {v1 .. v6}, Lkotlin/text/StringsKt;->lastIndexOf$default(Ljava/lang/CharSequence;Ljava/lang/String;IZILjava/lang/Object;)I
+
+    move-result v0
+
+    const/4 v1, -0x1
+
+    if-eq v8, v1, :cond_0
+
+    if-eq v0, v1, :cond_0
+
+    if-eq v8, v0, :cond_0
+
+    add-int/lit8 v1, v0, 0x1
+
+    const-string v2, ""
+
+    .line 152
+    invoke-virtual {v7, v0, v1, v2}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    add-int/lit8 v1, v8, 0x1
+
+    .line 153
+    invoke-virtual {v7, v8, v1, v2}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    .line 155
+    new-instance v3, Lorg/telegram/ui/Components/URLSpanNoUnderline;
+
+    sget v4, Lorg/telegram/messenger/R$string;->PrivacyPolicyUrl:I
+
+    const-string v5, "PrivacyPolicyUrl"
+
+    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Lorg/telegram/ui/Components/URLSpanNoUnderline;-><init>(Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    .line 156
+    new-instance v2, Landroid/text/style/ForegroundColorSpan;
+
+    const-string/jumbo v3, "windowBackgroundWhiteLinkText"
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+
+    move-result v3
+
+    invoke-direct {v2, v3}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+
+    const/4 v3, 0x1
+
+    aput-object v2, v1, v3
+
+    .line 154
+    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    .line 1855
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    add-int/lit8 v4, v0, -0x1
+
+    const/16 v5, 0x21
+
+    .line 158
+    invoke-virtual {v7, v2, v8, v4, v5}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    goto :goto_0
+
+    :cond_0
+    return-object v7
+.end method
+
 .method private final getCryptoAccessManager()Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
     .locals 1
 
-    .line 29
+    .line 37
     sget-object v0, Lcom/iMe/utils/helper/wallet/WalletHelper;->cryptoAccessManager$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -180,7 +297,7 @@
 .method private final getWalletFlowCoordinator()Lcom/iMe/navigation/wallet/coordinator/WalletFlowCoordinator;
     .locals 1
 
-    .line 31
+    .line 39
     sget-object v0, Lcom/iMe/utils/helper/wallet/WalletHelper;->walletFlowCoordinator$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -192,10 +309,27 @@
     return-object v0
 .end method
 
-.method private final isNeedUpdateApp()Z
+.method public static final isAuthorized()Z
+    .locals 1
+
+    .line 99
+    sget-object v0, Lcom/iMe/utils/helper/wallet/WalletHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/WalletHelper;
+
+    invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->getAuthManager()Lcom/iMe/storage/domain/manager/auth/AuthManager;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/iMe/storage/domain/manager/auth/AuthManager;->isAuthorized()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private final isUpdateRequired()Z
     .locals 2
 
-    .line 106
+    .line 113
     sget-object v0, Lcom/iMe/fork/controller/ForkCommonController;->Companion:Lcom/iMe/fork/controller/ForkCommonController$Companion;
 
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
@@ -210,7 +344,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 107
+    .line 114
     sget-object v1, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION_STRING:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -230,115 +364,6 @@
     return v0
 .end method
 
-.method public static final isWalletAuthBot(J)Z
-    .locals 2
-
-    const-wide/32 v0, 0x3b591fa2
-
-    cmp-long v0, p0, v0
-
-    if-eqz v0, :cond_1
-
-    const-wide/32 v0, 0x40254d83
-
-    cmp-long p0, p0, v0
-
-    if-nez p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    :goto_1
-    return p0
-.end method
-
-.method public static final isWalletAuthorized()Z
-    .locals 1
-
-    .line 92
-    sget-object v0, Lcom/iMe/utils/helper/wallet/WalletHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/WalletHelper;
-
-    invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->getAuthManager()Lcom/iMe/storage/domain/manager/auth/AuthManager;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/iMe/storage/domain/manager/auth/AuthManager;->isAuthorized()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static final isWalletIntent(Ljava/lang/String;)Z
-    .locals 1
-
-    const-string/jumbo v0, "url"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 64
-    invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
-
-    move-result-object p0
-
-    if-nez p0, :cond_0
-
-    const-string p0, ""
-
-    :cond_0
-    const-string v0, "ime_wallet"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static final openAuthBotChat(Lorg/telegram/ui/LaunchActivity;)V
-    .locals 3
-
-    const-string v0, "activity"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 96
-    invoke-virtual {p0}, Lorg/telegram/ui/LaunchActivity;->getActionBarLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    move-result-object p0
-
-    .line 97
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v0
-
-    invoke-static {}, Lcom/iMe/storage/common/AppConfiguration$Wallet;->getWalletBotUsernameLowerCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/16 v2, 0x63
-
-    invoke-virtual {v0, v1, p0, v2}, Lorg/telegram/messenger/MessagesController;->openByUserName(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;I)V
-
-    return-void
-.end method
-
 .method public static final runWithCheckIsCryptoWalletCreated(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 1
 
@@ -352,7 +377,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 43
+    .line 51
     sget-object v0, Lcom/iMe/utils/helper/wallet/WalletHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/WalletHelper;
 
     invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->getCryptoAccessManager()Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
@@ -365,7 +390,7 @@
 
     goto :goto_0
 
-    .line 45
+    .line 53
     :cond_0
     sget-object v0, Lcom/iMe/utils/helper/wallet/WalletHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/WalletHelper;
 
@@ -380,12 +405,12 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 48
+    .line 56
     invoke-interface {p3}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     goto :goto_1
 
-    .line 52
+    .line 60
     :cond_1
     new-instance p3, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda0;
 
@@ -395,15 +420,15 @@
 
     move-result-object p1
 
-    .line 51
+    .line 59
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     :goto_1
     return-void
 .end method
 
-.method private static final runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1(Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
-    .locals 7
+.method private static final runWithCheckIsCryptoWalletCreated$lambda$1$lambda$0(Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    .locals 1
 
     const-string v0, "$this_with"
 
@@ -411,38 +436,64 @@
 
     if-eqz p0, :cond_0
 
-    .line 53
+    .line 61
     invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     :cond_0
-    const/4 v2, 0x0
+    const/4 p0, 0x1
 
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    .line 54
-    new-instance v4, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda1;
-
-    invoke-direct {v4, p1}, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
-
-    const/4 v5, 0x3
-
-    const/4 v6, 0x0
-
-    move-object v1, p1
-
-    invoke-static/range {v1 .. v6}, Lcom/iMe/utils/helper/wallet/WalletHelper;->safeRunWalletScreen$default(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)V
+    .line 62
+    invoke-static {p1, v0, p0, v0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->safeRunWalletScreen$default(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method private static final runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1$lambda$0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
-    .locals 7
+.method public static final safeRunWalletScreen(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    .locals 1
 
-    const-string v0, "$this_with"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 55
+    const-string v0, "authorizedAction"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 81
+    invoke-static {p0, p1}, Lcom/iMe/utils/helper/wallet/WalletHelper;->safeRunWithActivationCheck(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+
+    return-void
+.end method
+
+.method public static synthetic safeRunWalletScreen$default(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)V
+    .locals 0
+
+    and-int/lit8 p2, p2, 0x1
+
+    if-eqz p2, :cond_0
+
+    .line 77
+    new-instance p1, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda1;
+
+    invoke-direct {p1, p0}, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+
+    .line 76
+    :cond_0
+    invoke-static {p0, p1}, Lcom/iMe/utils/helper/wallet/WalletHelper;->safeRunWalletScreen(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+
+    return-void
+.end method
+
+.method private static final safeRunWalletScreen$lambda$2(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    .locals 7
+
+    const-string v0, "$this_safeRunWalletScreen"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 78
     sget-object v0, Lcom/iMe/utils/helper/wallet/WalletHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/WalletHelper;
 
     invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->getWalletFlowCoordinator()Lcom/iMe/navigation/wallet/coordinator/WalletFlowCoordinator;
@@ -474,26 +525,18 @@
     return-void
 .end method
 
-.method public static final safeRunWalletScreen(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+.method public static final safeRunWithActivationCheck(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 1
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "dialogMessage"
+    const-string v0, "authorizedAction"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "activateClickAction"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string/jumbo v0, "walletAuthorizedAction"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 75
+    .line 86
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p0
@@ -512,35 +555,27 @@
     :goto_0
     if-eqz p0, :cond_1
 
-    invoke-static {p0, p1, p2, p3}, Lcom/iMe/utils/helper/wallet/WalletHelper;->safeRunWalletScreen(Lorg/telegram/ui/LaunchActivity;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-static {p0, p1}, Lcom/iMe/utils/helper/wallet/WalletHelper;->safeRunWithActivationCheck(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     :cond_1
     return-void
 .end method
 
-.method public static final safeRunWalletScreen(Lorg/telegram/ui/LaunchActivity;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+.method public static final safeRunWithActivationCheck(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 2
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "dialogMessage"
+    const-string v0, "authorizedAction"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "activateClickAction"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string/jumbo v0, "walletAuthorizedAction"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 85
+    .line 92
     sget-object v0, Lcom/iMe/utils/helper/wallet/WalletHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/WalletHelper;
 
-    invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->isNeedUpdateApp()Z
+    invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->isUpdateRequired()Z
 
     move-result v1
 
@@ -550,117 +585,64 @@
 
     goto :goto_0
 
-    .line 86
+    .line 93
     :cond_0
-    invoke-static {}, Lcom/iMe/utils/helper/wallet/WalletHelper;->isWalletAuthorized()Z
+    invoke-static {}, Lcom/iMe/utils/helper/wallet/WalletHelper;->isAuthorized()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    invoke-interface {p3}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
+    invoke-interface {p1}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     goto :goto_0
 
-    .line 87
+    .line 94
     :cond_1
-    invoke-direct {v0, p0, p1, p2}, Lcom/iMe/utils/helper/wallet/WalletHelper;->showWalletAuthDialog(Lorg/telegram/ui/LaunchActivity;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v0, p0, p1}, Lcom/iMe/utils/helper/wallet/WalletHelper;->showAuthDialog(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     :goto_0
-    return-void
-.end method
-
-.method public static synthetic safeRunWalletScreen$default(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)V
-    .locals 0
-
-    and-int/lit8 p5, p4, 0x1
-
-    if-eqz p5, :cond_0
-
-    .line 71
-    sget p1, Lorg/telegram/messenger/R$string;->wallet_auth_dialog_description:I
-
-    invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string p5, "getInternalString(R.stri\u2026_auth_dialog_description)"
-
-    invoke-static {p1, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_0
-    and-int/lit8 p5, p4, 0x2
-
-    if-eqz p5, :cond_1
-
-    .line 72
-    sget-object p2, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda4;->INSTANCE:Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda4;
-
-    :cond_1
-    and-int/lit8 p4, p4, 0x4
-
-    if-eqz p4, :cond_2
-
-    .line 73
-    sget-object p3, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda5;->INSTANCE:Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda5;
-
-    .line 70
-    :cond_2
-    invoke-static {p0, p1, p2, p3}, Lcom/iMe/utils/helper/wallet/WalletHelper;->safeRunWalletScreen(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)V
-
-    return-void
-.end method
-
-.method private static final safeRunWalletScreen$lambda$3()V
-    .locals 0
-
-    return-void
-.end method
-
-.method private static final safeRunWalletScreen$lambda$4()V
-    .locals 0
-
     return-void
 .end method
 
 .method private final showAppUpdateDialog(Lorg/telegram/ui/LaunchActivity;)V
     .locals 6
 
-    .line 113
+    .line 120
     new-instance v1, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 114
+    .line 121
     sget v0, Lorg/telegram/messenger/R$string;->wallet_app_update_dialog_title:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 115
+    .line 122
     sget v2, Lorg/telegram/messenger/R$string;->wallet_app_update_dialog_description:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 116
+    .line 123
     sget v3, Lorg/telegram/messenger/R$string;->common_cancel:I
 
     invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 117
+    .line 124
     sget v4, Lorg/telegram/messenger/R$string;->wallet_app_update_dialog_action_btn:I
 
     invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 113
+    .line 120
     invoke-direct {v1, v0, v2, v3, v4}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 111
+    .line 118
     new-instance v2, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda2;
 
     invoke-direct {v2, p1}, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/LaunchActivity;)V
@@ -677,20 +659,20 @@
 
     move-result-object p1
 
-    .line 120
+    .line 127
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
     return-void
 .end method
 
-.method private static final showAppUpdateDialog$lambda$6(Lorg/telegram/ui/LaunchActivity;)V
+.method private static final showAppUpdateDialog$lambda$4(Lorg/telegram/ui/LaunchActivity;)V
     .locals 1
 
     const-string v0, "$activity"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 119
+    .line 126
     sget-object v0, Lorg/telegram/messenger/BuildVars;->PLAYSTORE_APP_URL:Ljava/lang/String;
 
     invoke-static {p0, v0}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
@@ -698,63 +680,64 @@
     return-void
 .end method
 
-.method private final showWalletAuthDialog(Lorg/telegram/ui/LaunchActivity;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+.method private final showAuthDialog(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 6
 
-    .line 126
-    new-instance v1, Lcom/iMe/model/dialog/DialogModel;
+    .line 132
+    new-instance v0, Lcom/iMe/model/dialog/AnimatedSpannableDialogModel;
 
-    .line 127
-    sget v0, Lorg/telegram/messenger/R$string;->wallet_auth_dialog_title:I
+    .line 133
+    sget v1, Lorg/telegram/messenger/R$raw;->fork_auth:I
 
-    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 129
-    sget v2, Lorg/telegram/messenger/R$string;->wallet_auth_dialog_cancel_btn:I
+    .line 134
+    sget v2, Lorg/telegram/messenger/R$string;->auth_dialog_title:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 130
-    sget v3, Lorg/telegram/messenger/R$string;->wallet_auth_dialog_action_btn:I
+    const-string v3, "getInternalString(R.string.auth_dialog_title)"
 
-    invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 135
+    invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->getAuthSpannableStringBuilder()Landroid/text/SpannableStringBuilder;
 
     move-result-object v3
 
-    .line 126
-    invoke-direct {v1, v0, p2, v2, v3}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .line 136
+    sget v4, Lorg/telegram/messenger/R$string;->common_next:I
 
-    .line 124
-    new-instance v2, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda3;
+    invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    invoke-direct {v2, p1, p3}, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    move-result-object v4
 
-    const/4 v3, 0x0
+    const-string v5, "getInternalString(R.string.common_next)"
 
-    const/16 v4, 0x8
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v5, 0x0
+    .line 132
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/iMe/model/dialog/AnimatedSpannableDialogModel;-><init>(ILjava/lang/CharSequence;Landroid/text/SpannableStringBuilder;Ljava/lang/CharSequence;)V
 
-    move-object v0, p1
+    .line 131
+    new-instance v1, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda3;
 
-    invoke-static/range {v0 .. v5}, Lcom/iMe/utils/dialogs/DialogUtils;->createDialog$default(Landroid/content/Context;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-direct {v1, p1, p2}, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+
+    invoke-static {p1, v0, v1}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->createDialogWithAnimation(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/model/dialog/AnimatedSpannableDialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 136
+    .line 143
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
     return-void
 .end method
 
-.method private static final showWalletAuthDialog$lambda$7(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+.method private static final showAuthDialog$lambda$5(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 1
 
-    const-string v0, "$activity"
+    const-string v0, "$this_showAuthDialog"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -762,11 +745,19 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 133
-    invoke-static {p0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->openAuthBotChat(Lorg/telegram/ui/LaunchActivity;)V
+    .line 140
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/LaunchActivity;->getAuthDelegate(Lcom/iMe/fork/utils/Callbacks$Callback;)Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;
 
-    .line 134
-    invoke-interface {p1}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
+    move-result-object p0
+
+    const-string p1, "getAuthDelegate(activateClickAction)"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 p1, 0x1
+
+    .line 139
+    invoke-static {p0, p1}, Lcom/iMe/utils/helper/wallet/AuthHelper;->auth(Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;Z)V
 
     return-void
 .end method
@@ -776,7 +767,7 @@
 .method public getKoin()Lorg/koin/core/Koin;
     .locals 1
 
-    .line 26
+    .line 34
     invoke-static {p0}, Lorg/koin/core/component/KoinComponent$DefaultImpls;->getKoin(Lorg/koin/core/component/KoinComponent;)Lorg/koin/core/Koin;
 
     move-result-object v0

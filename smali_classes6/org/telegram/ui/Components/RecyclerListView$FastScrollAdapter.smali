@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 305
+    .line 292
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
 .method public getScrollProgress(Lorg/telegram/ui/Components/RecyclerListView;)F
     .locals 3
 
-    .line 323
+    .line 310
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->computeVerticalScrollOffset()I
 
     move-result v0
@@ -86,7 +86,7 @@
 .method public getTotalItemsCount()I
     .locals 1
 
-    .line 319
+    .line 306
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->getItemCount()I
 
     move-result v0

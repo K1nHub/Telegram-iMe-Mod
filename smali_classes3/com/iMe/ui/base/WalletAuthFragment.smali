@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletAuthFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAuthFragment.kt\ncom/iMe/ui/base/WalletAuthFragment\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 4 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,87:1\n56#2,6:88\n56#2,6:94\n56#2,6:100\n56#2,6:106\n56#2,6:112\n16#3,3:118\n39#4,8:121\n*S KotlinDebug\n*F\n+ 1 WalletAuthFragment.kt\ncom/iMe/ui/base/WalletAuthFragment\n*L\n20#1:88,6\n21#1:94,6\n22#1:100,6\n23#1:106,6\n24#1:112,6\n58#1:118,3\n59#1:121,8\n*E\n"
+    value = "SMAP\nWalletAuthFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAuthFragment.kt\ncom/iMe/ui/base/WalletAuthFragment\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 4 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,80:1\n56#2,6:81\n56#2,6:87\n56#2,6:93\n56#2,6:99\n56#2,6:105\n16#3,3:111\n39#4,8:114\n*S KotlinDebug\n*F\n+ 1 WalletAuthFragment.kt\ncom/iMe/ui/base/WalletAuthFragment\n*L\n19#1:81,6\n20#1:87,6\n21#1:93,6\n22#1:99,6\n23#1:105,6\n57#1:111,3\n58#1:114,8\n*E\n"
 .end annotation
 
 
@@ -33,7 +33,7 @@
 .method public constructor <init>()V
     .locals 4
 
-    .line 17
+    .line 16
     invoke-direct {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;-><init>()V
 
     .line 58
@@ -54,7 +54,7 @@
 
     move-result-object v1
 
-    .line 20
+    .line 19
     iput-object v1, p0, Lcom/iMe/ui/base/WalletAuthFragment;->rxEventBus$delegate:Lkotlin/Lazy;
 
     .line 58
@@ -71,7 +71,7 @@
 
     move-result-object v1
 
-    .line 21
+    .line 20
     iput-object v1, p0, Lcom/iMe/ui/base/WalletAuthFragment;->resourceManager$delegate:Lkotlin/Lazy;
 
     .line 58
@@ -88,7 +88,7 @@
 
     move-result-object v1
 
-    .line 22
+    .line 21
     iput-object v1, p0, Lcom/iMe/ui/base/WalletAuthFragment;->cryptoAccessManager$delegate:Lkotlin/Lazy;
 
     .line 58
@@ -105,7 +105,7 @@
 
     move-result-object v1
 
-    .line 23
+    .line 22
     iput-object v1, p0, Lcom/iMe/ui/base/WalletAuthFragment;->cryptoPreferenceHelper$delegate:Lkotlin/Lazy;
 
     .line 58
@@ -122,7 +122,7 @@
 
     move-result-object v0
 
-    .line 24
+    .line 23
     iput-object v0, p0, Lcom/iMe/ui/base/WalletAuthFragment;->pinCodeCoordinator$delegate:Lkotlin/Lazy;
 
     return-void
@@ -131,7 +131,7 @@
 .method private final checkWalletLock()V
     .locals 4
 
-    .line 77
+    .line 70
     invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getCryptoAccessManager()Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     move-result-object v0
@@ -166,10 +166,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 78
+    .line 71
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->dismissCurrentDialog()V
 
-    .line 79
+    .line 72
     invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getPinCodeCoordinator()Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;
 
     move-result-object v0
@@ -201,10 +201,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 31
+    .line 30
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
-    .line 32
+    .line 31
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     return-void
@@ -213,7 +213,7 @@
 .method private final listenGlobalRxEvents()V
     .locals 4
 
-    .line 57
+    .line 56
     invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getRxEventBus()Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     move-result-object v0
@@ -277,7 +277,7 @@
     .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 73
+    .line 66
     invoke-virtual {p0, v0}, Lcom/iMe/ui/base/mvp/MvpFragment;->autoDispose(Lio/reactivex/disposables/Disposable;)V
 
     return-void
@@ -300,7 +300,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 29
+    .line 28
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     invoke-interface {v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
@@ -323,7 +323,7 @@
 
     const-wide/16 v0, 0x12c
 
-    .line 30
+    .line 29
     new-instance v2, Lcom/iMe/ui/base/WalletAuthFragment$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p0, p1}, Lcom/iMe/ui/base/WalletAuthFragment$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/base/WalletAuthFragment;Lkotlin/jvm/functions/Function0;)V
@@ -332,7 +332,7 @@
 
     goto :goto_0
 
-    .line 35
+    .line 34
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
@@ -343,7 +343,7 @@
 .method protected final getCryptoAccessManager()Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
     .locals 1
 
-    .line 22
+    .line 21
     iget-object v0, p0, Lcom/iMe/ui/base/WalletAuthFragment;->cryptoAccessManager$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -358,7 +358,7 @@
 .method protected final getCryptoPreferenceHelper()Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
     .locals 1
 
-    .line 23
+    .line 22
     iget-object v0, p0, Lcom/iMe/ui/base/WalletAuthFragment;->cryptoPreferenceHelper$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -373,7 +373,7 @@
 .method protected final getPinCodeCoordinator()Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;
     .locals 1
 
-    .line 24
+    .line 23
     iget-object v0, p0, Lcom/iMe/ui/base/WalletAuthFragment;->pinCodeCoordinator$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -388,7 +388,7 @@
 .method protected final getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 1
 
-    .line 21
+    .line 20
     iget-object v0, p0, Lcom/iMe/ui/base/WalletAuthFragment;->resourceManager$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -403,7 +403,7 @@
 .method protected final getRxEventBus()Lcom/iMe/storage/domain/utils/rx/RxEventBus;
     .locals 1
 
-    .line 20
+    .line 19
     iget-object v0, p0, Lcom/iMe/ui/base/WalletAuthFragment;->rxEventBus$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -418,10 +418,10 @@
 .method public onResume()V
     .locals 0
 
-    .line 48
+    .line 47
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onResume()V
 
-    .line 49
+    .line 48
     invoke-direct {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->checkWalletLock()V
 
     return-void
@@ -430,7 +430,7 @@
 .method public onViewReady()V
     .locals 0
 
-    .line 44
+    .line 43
     invoke-direct {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->listenGlobalRxEvents()V
 
     return-void

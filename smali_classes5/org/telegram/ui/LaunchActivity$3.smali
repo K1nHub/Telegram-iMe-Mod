@@ -3,12 +3,12 @@
 .source "LaunchActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LaunchActivity;->onLockedSectionPause()V
+    value = Lorg/telegram/ui/LaunchActivity;->showDisableSideMenuArchiveButtonPopup(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,70 +18,84 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/LaunchActivity;
+.field private final popupRect:Landroid/graphics/Rect;
+
+.field final synthetic val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
+.method constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
     .locals 0
 
-    .line 673
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
+    .line 504
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$3;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 506
+    new-instance p1, Landroid/graphics/Rect;
+
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$3;->popupRect:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 1
 
-    .line 676
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
+    .line 510
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$500(Lorg/telegram/ui/LaunchActivity;)Ljava/lang/Runnable;
+    move-result v0
 
-    move-result-object v0
+    if-nez v0, :cond_0
 
-    if-ne v0, p0, :cond_1
+    .line 511
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 677
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$600(Lorg/telegram/ui/LaunchActivity;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    .line 678
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$700(Lorg/telegram/ui/LaunchActivity;)Lcom/iMe/fork/enums/LockedSection;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->needShowSectionPasscodeActivity(Lcom/iMe/fork/enums/LockedSection;)Z
+    invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 679
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
+    .line 512
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->popupRect:Landroid/graphics/Rect;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/LaunchActivity;->showLockedSectionPasscodeActivity()V
+    invoke-virtual {p1, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 681
+    .line 513
+    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$3;->popupRect:Landroid/graphics/Rect;
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v0
+
+    float-to-int v0, v0
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+
+    move-result p2
+
+    float-to-int p2, p2
+
+    invoke-virtual {p1, v0, p2}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    .line 514
+    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$3;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
+
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
+    const/4 p1, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/LaunchActivity;->access$502(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;)Ljava/lang/Runnable;
-
-    :cond_1
-    return-void
+    return p1
 .end method

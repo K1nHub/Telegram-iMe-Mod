@@ -1,6 +1,6 @@
 package com.iMe.storage.data.mapper.catalog;
 
-import com.iMe.storage.data.locale.p028db.model.catalog.CatalogLanguageDb;
+import com.iMe.storage.data.locale.p027db.model.catalog.CatalogLanguageDb;
 import com.iMe.storage.data.network.model.response.catalog.CatalogLanguageResponse;
 import com.iMe.storage.domain.model.catalog.CatalogLanguage;
 import kotlin.jvm.internal.Intrinsics;

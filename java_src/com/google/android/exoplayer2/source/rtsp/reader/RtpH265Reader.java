@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.rtsp.reader;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -27,7 +27,7 @@ final class RtpH265Reader implements RtpPayloadReader {
     private TrackOutput trackOutput;
     private final ParsableByteArray fuScratchBuffer = new ParsableByteArray();
     private final ParsableByteArray nalStartCodeArray = new ParsableByteArray(NalUnitUtil.NAL_START_CODE);
-    private long firstReceivedTimestamp = C0482C.TIME_UNSET;
+    private long firstReceivedTimestamp = C0470C.TIME_UNSET;
     private int previousSequenceNumber = -1;
 
     private static int getBufferFlagsFromNalType(int i) {
@@ -68,7 +68,7 @@ final class RtpH265Reader implements RtpPayloadReader {
             }
         }
         if (z) {
-            if (this.firstReceivedTimestamp == C0482C.TIME_UNSET) {
+            if (this.firstReceivedTimestamp == C0470C.TIME_UNSET) {
                 this.firstReceivedTimestamp = j;
             }
             this.trackOutput.sampleMetadata(RtpReaderUtils.toSampleTimeUs(this.startTimeOffsetUs, j, this.firstReceivedTimestamp, MEDIA_CLOCK_FREQUENCY), this.bufferFlags, this.fragmentedSampleSizeBytes, 0, null);
@@ -110,7 +110,7 @@ final class RtpH265Reader implements RtpPayloadReader {
         } else {
             int i4 = (this.previousSequenceNumber + 1) % RtpPacket.MAX_SEQUENCE_NUMBER;
             if (i != i4) {
-                Log.m806w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(i4), Integer.valueOf(i)));
+                Log.m792w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(i4), Integer.valueOf(i)));
                 return;
             } else {
                 this.fuScratchBuffer.reset(parsableByteArray.getData());

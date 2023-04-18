@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Exceptions.kt */
 /* loaded from: classes4.dex */
 public final class JobCancellationException extends CancellationException implements CopyableThrowable<JobCancellationException> {
-    public final Job job;
+    public final transient Job job;
 
     public JobCancellationException(String str, Throwable th, Job job) {
         super(str);
@@ -56,6 +56,6 @@ public final class JobCancellationException extends CancellationException implem
         Intrinsics.checkNotNull(message);
         int hashCode = ((message.hashCode() * 31) + this.job.hashCode()) * 31;
         Throwable cause = getCause();
-        return hashCode + (cause == null ? 0 : cause.hashCode());
+        return hashCode + (cause != null ? cause.hashCode() : 0);
     }
 }

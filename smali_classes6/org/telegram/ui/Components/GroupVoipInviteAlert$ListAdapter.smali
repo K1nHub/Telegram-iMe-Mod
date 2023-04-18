@@ -24,12 +24,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/GroupVoipInviteAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 794
+    .line 799
     iput-object p1, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 795
+    .line 800
     iput-object p2, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -40,7 +40,7 @@
 .method public getItem(I)Lorg/telegram/tgnet/TLObject;
     .locals 2
 
-    .line 942
+    .line 947
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$1100(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)I
@@ -57,7 +57,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 943
+    .line 948
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$1900(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)Ljava/util/ArrayList;
@@ -80,7 +80,7 @@
 
     return-object p1
 
-    .line 944
+    .line 949
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
@@ -98,7 +98,7 @@
 
     if-ge p1, v0, :cond_1
 
-    .line 945
+    .line 950
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$2600(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)Ljava/util/ArrayList;
@@ -130,7 +130,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 812
+    .line 817
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$1000(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)I
@@ -143,7 +143,7 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 924
+    .line 929
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$1100(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)I
@@ -165,7 +165,7 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
-    .line 925
+    .line 930
     invoke-static {v0}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$2200(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)I
 
     move-result v0
@@ -183,7 +183,7 @@
     :cond_1
     return v1
 
-    .line 927
+    .line 932
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
@@ -197,7 +197,7 @@
 
     return p1
 
-    .line 929
+    .line 934
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
@@ -217,7 +217,7 @@
 
     goto :goto_0
 
-    .line 931
+    .line 936
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
@@ -231,7 +231,7 @@
 
     return p1
 
-    .line 933
+    .line 938
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
@@ -245,7 +245,7 @@
 
     return p1
 
-    .line 935
+    .line 940
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
@@ -272,7 +272,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 5
 
-    .line 800
+    .line 805
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v1, v0, Lorg/telegram/ui/Cells/ManageChatUserCell;
@@ -281,10 +281,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 801
+    .line 806
     check-cast v0, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
-    .line 802
+    .line 807
     iget-object v1, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$500(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)Ljava/util/HashSet;
@@ -307,7 +307,7 @@
 
     return v2
 
-    .line 806
+    .line 811
     :cond_0
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -329,7 +329,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 9
 
-    .line 860
+    .line 865
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -348,13 +348,13 @@
 
     goto/16 :goto_3
 
-    .line 901
+    .line 906
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/GraySectionCell;
 
-    .line 902
+    .line 907
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$1800(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)I
@@ -363,7 +363,7 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 903
+    .line 908
     sget p2, Lorg/telegram/messenger/R$string;->ChannelOtherMembers:I
 
     const-string v0, "ChannelOtherMembers"
@@ -376,7 +376,7 @@
 
     goto/16 :goto_3
 
-    .line 904
+    .line 909
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
@@ -386,7 +386,7 @@
 
     if-ne p2, v0, :cond_c
 
-    .line 905
+    .line 910
     iget-object p2, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$2100(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)Z
@@ -395,7 +395,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 906
+    .line 911
     sget p2, Lorg/telegram/messenger/R$string;->YourContactsToInvite:I
 
     const-string v0, "YourContactsToInvite"
@@ -408,7 +408,7 @@
 
     goto/16 :goto_3
 
-    .line 908
+    .line 913
     :cond_2
     sget p2, Lorg/telegram/messenger/R$string;->GroupContacts:I
 
@@ -422,7 +422,7 @@
 
     goto/16 :goto_3
 
-    .line 894
+    .line 899
     :cond_3
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -430,7 +430,7 @@
 
     check-cast v3, Lorg/telegram/ui/Cells/ManageChatTextCell;
 
-    .line 895
+    .line 900
     iget-object p1, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$1500(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)I
@@ -439,7 +439,7 @@
 
     if-ne p2, p1, :cond_c
 
-    .line 896
+    .line 901
     iget-object p1, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$1600(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)Z
@@ -486,7 +486,7 @@
     :cond_5
     move v8, v1
 
-    .line 897
+    .line 902
     :goto_0
     sget p1, Lorg/telegram/messenger/R$string;->VoipGroupCopyInviteLink:I
 
@@ -506,25 +506,25 @@
 
     goto/16 :goto_3
 
-    .line 862
+    .line 867
     :cond_6
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
-    .line 863
+    .line 868
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 864
+    .line 869
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->getItem(I)Lorg/telegram/tgnet/TLObject;
 
     move-result-object v0
 
-    .line 867
+    .line 872
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$1100(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)I
@@ -541,7 +541,7 @@
 
     if-ge p2, v3, :cond_7
 
-    .line 868
+    .line 873
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$1200(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)I
@@ -550,7 +550,7 @@
 
     goto :goto_1
 
-    .line 870
+    .line 875
     :cond_7
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
@@ -558,44 +558,44 @@
 
     move-result v3
 
-    .line 874
+    .line 879
     :goto_1
     instance-of v4, v0, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
     if-eqz v4, :cond_8
 
-    .line 875
+    .line 880
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
-    .line 876
+    .line 881
     iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
 
     goto :goto_2
 
-    .line 877
+    .line 882
     :cond_8
     instance-of v4, v0, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v4, :cond_9
 
-    .line 878
+    .line 883
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 879
+    .line 884
     iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     goto :goto_2
 
-    .line 880
+    .line 885
     :cond_9
     instance-of v4, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     if-eqz v4, :cond_a
 
-    .line 881
+    .line 886
     check-cast v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 882
+    .line 887
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v0}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
@@ -604,14 +604,14 @@
 
     goto :goto_2
 
-    .line 884
+    .line 889
     :cond_a
     check-cast v0, Lorg/telegram/tgnet/TLRPC$ChatParticipant;
 
-    .line 885
+    .line 890
     iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
 
-    .line 887
+    .line 892
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
@@ -633,7 +633,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 889
+    .line 894
     iget-object v4, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/GroupVoipInviteAlert;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->access$500(Lorg/telegram/ui/Components/GroupVoipInviteAlert;)Ljava/util/HashSet;
@@ -661,7 +661,7 @@
     :cond_b
     const/4 p2, 0x0
 
-    .line 890
+    .line 895
     invoke-virtual {p1, v0, p2, p2, v1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     :cond_c
@@ -698,7 +698,7 @@
 
     if-eq p2, v1, :cond_0
 
-    .line 852
+    .line 857
     new-instance p1, Landroid/view/View;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->mContext:Landroid/content/Context;
@@ -707,7 +707,7 @@
 
     goto/16 :goto_1
 
-    .line 844
+    .line 849
     :cond_0
     new-instance p2, Lorg/telegram/ui/Components/FlickerLoadingView;
 
@@ -715,22 +715,22 @@
 
     invoke-direct {p2, v1}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;)V
 
-    .line 845
+    .line 850
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 846
+    .line 851
     invoke-virtual {p2, v3}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
 
     const-string v0, "voipgroup_inviteMembersBackground"
 
     const-string v1, "voipgroup_searchBackground"
 
-    .line 847
+    .line 852
     invoke-virtual {p2, v0, v1, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 840
+    .line 845
     :cond_1
     new-instance p1, Landroid/view/View;
 
@@ -738,7 +738,7 @@
 
     invoke-direct {p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 841
+    .line 846
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x1
@@ -755,7 +755,7 @@
 
     goto :goto_1
 
-    .line 834
+    .line 839
     :cond_2
     new-instance p2, Lorg/telegram/ui/Cells/GraySectionCell;
 
@@ -763,7 +763,7 @@
 
     invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/GraySectionCell;-><init>(Landroid/content/Context;)V
 
-    .line 835
+    .line 840
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
@@ -772,12 +772,12 @@
 
     const-string p1, "voipgroup_searchPlaceholder"
 
-    .line 836
+    .line 841
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/GraySectionCell;->setTextColor(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 828
+    .line 833
     :cond_3
     new-instance p2, Lorg/telegram/ui/Cells/ManageChatTextCell;
 
@@ -785,15 +785,15 @@
 
     invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/ManageChatTextCell;-><init>(Landroid/content/Context;)V
 
-    .line 829
+    .line 834
     invoke-virtual {p2, v2, v2}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 830
+    .line 835
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setDividerColor(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 820
+    .line 825
     :cond_4
     new-instance p2, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
@@ -803,14 +803,14 @@
 
     invoke-direct {p2, v3, v0, v1, v4}, Lorg/telegram/ui/Cells/ManageChatUserCell;-><init>(Landroid/content/Context;IIZ)V
 
-    .line 821
+    .line 826
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_invited:I
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setCustomRightImage(I)V
 
     const-string v0, "voipgroup_nameText"
 
-    .line 822
+    .line 827
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
@@ -819,7 +819,7 @@
 
     const-string v0, "voipgroup_lastSeenTextUnscrolled"
 
-    .line 823
+    .line 828
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
@@ -830,13 +830,13 @@
 
     invoke-virtual {p2, v0, v1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setStatusColors(II)V
 
-    .line 824
+    .line 829
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setDividerColor(Ljava/lang/String;)V
 
     :goto_0
     move-object p1, p2
 
-    .line 855
+    .line 860
     :goto_1
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -848,14 +848,14 @@
 .method public onViewRecycled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 917
+    .line 922
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     if-eqz v0, :cond_0
 
-    .line 918
+    .line 923
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->recycle()V

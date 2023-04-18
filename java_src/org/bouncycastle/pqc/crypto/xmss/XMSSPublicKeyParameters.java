@@ -1,9 +1,12 @@
 package org.bouncycastle.pqc.crypto.xmss;
 
+import java.io.IOException;
 import java.util.Objects;
-import org.bouncycastle.crypto.params.AsymmetricKeyParameter;
+import org.bouncycastle.util.Encodable;
+import org.bouncycastle.util.Pack;
 /* loaded from: classes4.dex */
-public final class XMSSPublicKeyParameters extends AsymmetricKeyParameter {
+public final class XMSSPublicKeyParameters extends XMSSKeyParameters implements Encodable {
+    private final int oid;
     private final XMSSParameters params;
     private final byte[] publicSeed;
     private final byte[] root;
@@ -23,6 +26,11 @@ public final class XMSSPublicKeyParameters extends AsymmetricKeyParameter {
             return new XMSSPublicKeyParameters(this);
         }
 
+        public Builder withPublicKey(byte[] bArr) {
+            this.publicKey = XMSSUtil.cloneArray(bArr);
+            return this;
+        }
+
         public Builder withPublicSeed(byte[] bArr) {
             this.publicSeed = XMSSUtil.cloneArray(bArr);
             return this;
@@ -35,36 +43,53 @@ public final class XMSSPublicKeyParameters extends AsymmetricKeyParameter {
     }
 
     private XMSSPublicKeyParameters(Builder builder) {
-        super(false);
+        super(false, builder.params.getTreeDigest());
         XMSSParameters xMSSParameters = builder.params;
         this.params = xMSSParameters;
         Objects.requireNonNull(xMSSParameters, "params == null");
-        int digestSize = xMSSParameters.getDigestSize();
+        int treeDigestSize = xMSSParameters.getTreeDigestSize();
         byte[] bArr = builder.publicKey;
         if (bArr != null) {
-            if (bArr.length != digestSize + digestSize) {
+            if (bArr.length == treeDigestSize + treeDigestSize) {
+                this.oid = 0;
+                this.root = XMSSUtil.extractBytesAtOffset(bArr, 0, treeDigestSize);
+                this.publicSeed = XMSSUtil.extractBytesAtOffset(bArr, treeDigestSize + 0, treeDigestSize);
+                return;
+            } else if (bArr.length != treeDigestSize + 4 + treeDigestSize) {
                 throw new IllegalArgumentException("public key has wrong size");
+            } else {
+                this.oid = Pack.bigEndianToInt(bArr, 0);
+                this.root = XMSSUtil.extractBytesAtOffset(bArr, 4, treeDigestSize);
+                this.publicSeed = XMSSUtil.extractBytesAtOffset(bArr, 4 + treeDigestSize, treeDigestSize);
+                return;
             }
-            this.root = XMSSUtil.extractBytesAtOffset(bArr, 0, digestSize);
-            this.publicSeed = XMSSUtil.extractBytesAtOffset(bArr, digestSize + 0, digestSize);
-            return;
+        }
+        if (xMSSParameters.getOid() != null) {
+            this.oid = xMSSParameters.getOid().getOid();
+        } else {
+            this.oid = 0;
         }
         byte[] bArr2 = builder.root;
         if (bArr2 == null) {
-            this.root = new byte[digestSize];
-        } else if (bArr2.length != digestSize) {
+            this.root = new byte[treeDigestSize];
+        } else if (bArr2.length != treeDigestSize) {
             throw new IllegalArgumentException("length of root must be equal to length of digest");
         } else {
             this.root = bArr2;
         }
         byte[] bArr3 = builder.publicSeed;
         if (bArr3 == null) {
-            this.publicSeed = new byte[digestSize];
-        } else if (bArr3.length != digestSize) {
+            this.publicSeed = new byte[treeDigestSize];
+        } else if (bArr3.length != treeDigestSize) {
             throw new IllegalArgumentException("length of publicSeed must be equal to length of digest");
         } else {
             this.publicSeed = bArr3;
         }
+    }
+
+    @Override // org.bouncycastle.util.Encodable
+    public byte[] getEncoded() throws IOException {
+        return toByteArray();
     }
 
     public XMSSParameters getParameters() {
@@ -80,10 +105,19 @@ public final class XMSSPublicKeyParameters extends AsymmetricKeyParameter {
     }
 
     public byte[] toByteArray() {
-        int digestSize = this.params.getDigestSize();
-        byte[] bArr = new byte[digestSize + digestSize];
-        XMSSUtil.copyBytesAtOffset(bArr, this.root, 0);
-        XMSSUtil.copyBytesAtOffset(bArr, this.publicSeed, digestSize + 0);
+        byte[] bArr;
+        int treeDigestSize = this.params.getTreeDigestSize();
+        int i = this.oid;
+        int i2 = 0;
+        if (i != 0) {
+            bArr = new byte[treeDigestSize + 4 + treeDigestSize];
+            Pack.intToBigEndian(i, bArr, 0);
+            i2 = 4;
+        } else {
+            bArr = new byte[treeDigestSize + treeDigestSize];
+        }
+        XMSSUtil.copyBytesAtOffset(bArr, this.root, i2);
+        XMSSUtil.copyBytesAtOffset(bArr, this.publicSeed, i2 + treeDigestSize);
         return bArr;
     }
 }

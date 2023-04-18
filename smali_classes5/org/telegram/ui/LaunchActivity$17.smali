@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 2197
+    .line 2045
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$17;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BlockingUpdateView;-><init>(Landroid/content/Context;)V
@@ -35,14 +35,14 @@
 .method public setVisibility(I)V
     .locals 2
 
-    .line 2200
+    .line 2048
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BlockingUpdateView;->setVisibility(I)V
 
     const/16 v0, 0x8
 
     if-ne p1, v0, :cond_0
 
-    .line 2202
+    .line 2050
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$17;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;

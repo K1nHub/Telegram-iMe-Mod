@@ -75,13 +75,13 @@
         }
     .end annotation
 
-    .line 362
+    .line 380
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 363
+    .line 381
     iput-object p1, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mKey:Ljava/lang/Object;
 
-    .line 364
+    .line 382
     iput-object p2, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mValue:Ljava/lang/Object;
 
     return-void
@@ -98,7 +98,7 @@
 
     return v0
 
-    .line 395
+    .line 413
     :cond_0
     instance-of v1, p1, Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
@@ -108,11 +108,11 @@
 
     return v2
 
-    .line 398
+    .line 416
     :cond_1
     check-cast p1, Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 399
+    .line 417
     iget-object v1, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mKey:Ljava/lang/Object;
 
     iget-object v3, p1, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mKey:Ljava/lang/Object;
@@ -150,7 +150,7 @@
         }
     .end annotation
 
-    .line 370
+    .line 388
     iget-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mKey:Ljava/lang/Object;
 
     return-object v0
@@ -164,7 +164,7 @@
         }
     .end annotation
 
-    .line 376
+    .line 394
     iget-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mValue:Ljava/lang/Object;
 
     return-object v0
@@ -173,7 +173,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 404
+    .line 422
     iget-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mKey:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -199,7 +199,7 @@
         }
     .end annotation
 
-    .line 381
+    .line 399
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string v0, "An entry modification is not supported"
@@ -212,7 +212,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 386
+    .line 404
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

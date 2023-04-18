@@ -99,7 +99,7 @@ public final class SsaStyle {
         int length = split.length;
         int i = format.length;
         if (length != i) {
-            Log.m806w(TAG, Util.formatInvariant("Skipping malformed 'Style:' line (expected %s values, found %s): '%s'", Integer.valueOf(i), Integer.valueOf(split.length), str));
+            Log.m792w(TAG, Util.formatInvariant("Skipping malformed 'Style:' line (expected %s values, found %s): '%s'", Integer.valueOf(i), Integer.valueOf(split.length), str));
             return null;
         }
         try {
@@ -123,7 +123,7 @@ public final class SsaStyle {
             int i10 = format.borderStyleIndex;
             return new SsaStyle(trim, parseAlignment, parseColor, parseColor2, parseFontSize, z, z2, z3, z4, i10 != -1 ? parseBorderStyle(split[i10].trim()) : -1);
         } catch (RuntimeException e) {
-            Log.m805w(TAG, "Skipping malformed 'Style:' line: '" + str + "'", e);
+            Log.m791w(TAG, "Skipping malformed 'Style:' line: '" + str + "'", e);
             return null;
         }
     }
@@ -137,7 +137,7 @@ public final class SsaStyle {
             }
         } catch (NumberFormatException unused) {
         }
-        Log.m806w(TAG, "Ignoring unknown alignment: " + str);
+        Log.m792w(TAG, "Ignoring unknown alignment: " + str);
         return -1;
     }
 
@@ -149,7 +149,7 @@ public final class SsaStyle {
             }
         } catch (NumberFormatException unused) {
         }
-        Log.m806w(TAG, "Ignoring unknown BorderStyle: " + str);
+        Log.m792w(TAG, "Ignoring unknown BorderStyle: " + str);
         return -1;
     }
 
@@ -164,7 +164,7 @@ public final class SsaStyle {
             Assertions.checkArgument(parseLong <= 4294967295L);
             return Integer.valueOf(Color.argb(Ints.checkedCast(((parseLong >> 24) & 255) ^ 255), Ints.checkedCast(parseLong & 255), Ints.checkedCast((parseLong >> 8) & 255), Ints.checkedCast((parseLong >> 16) & 255)));
         } catch (IllegalArgumentException e) {
-            Log.m805w(TAG, "Failed to parse color expression: '" + str + "'", e);
+            Log.m791w(TAG, "Failed to parse color expression: '" + str + "'", e);
             return null;
         }
     }
@@ -173,7 +173,7 @@ public final class SsaStyle {
         try {
             return Float.parseFloat(str);
         } catch (NumberFormatException e) {
-            Log.m805w(TAG, "Failed to parse font size: '" + str + "'", e);
+            Log.m791w(TAG, "Failed to parse font size: '" + str + "'", e);
             return -3.4028235E38f;
         }
     }
@@ -183,7 +183,7 @@ public final class SsaStyle {
             int parseInt = Integer.parseInt(str);
             return parseInt == 1 || parseInt == -1;
         } catch (NumberFormatException e) {
-            Log.m805w(TAG, "Failed to parse boolean value: '" + str + "'", e);
+            Log.m791w(TAG, "Failed to parse boolean value: '" + str + "'", e);
             return false;
         }
     }
@@ -401,7 +401,7 @@ public final class SsaStyle {
             boolean find2 = matcher2.find();
             if (find) {
                 if (find2) {
-                    Log.m808i(TAG, "Override has both \\pos(x,y) and \\move(x1,y1,x2,y2); using \\pos values. override='" + str + "'");
+                    Log.m794i(TAG, "Override has both \\pos(x,y) and \\move(x1,y1,x2,y2); using \\pos values. override='" + str + "'");
                 }
                 group = matcher.group(1);
                 group2 = matcher.group(2);

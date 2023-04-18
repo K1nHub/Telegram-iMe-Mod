@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroidx/core/util/Consumer;
+.implements Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
 
 
 # instance fields
@@ -22,14 +22,20 @@
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public final didSelectCloudDialog(J)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda134;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    check-cast p1, Ljava/lang/Integer;
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$ECqsCyZwn1GvDPPhj8jUN4XiS2o(Lorg/telegram/ui/ChatActivity;J)V
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$QI0supDgXewH8tawPN-B8oqCix0(Lorg/telegram/ui/ChatActivity;Ljava/lang/Integer;)V
+    return-void
+.end method
+
+.method public synthetic onAlbumCreatorOpened()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate$-CC;->$default$onAlbumCreatorOpened(Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
 
     return-void
 .end method

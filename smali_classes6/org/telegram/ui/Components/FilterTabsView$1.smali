@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FilterTabsView;)V
     .locals 0
 
-    .line 1123
+    .line 1124
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 5
 
-    .line 1126
+    .line 1127
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$2400(Lorg/telegram/ui/Components/FilterTabsView;)Z
@@ -49,13 +49,13 @@
 
     return-void
 
-    .line 1129
+    .line 1130
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 1130
+    .line 1131
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$3600(Lorg/telegram/ui/Components/FilterTabsView;)J
@@ -72,7 +72,7 @@
 
     move-wide v0, v2
 
-    .line 1134
+    .line 1135
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -84,7 +84,7 @@
 
     invoke-static {v2, v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$3716(Lorg/telegram/ui/Components/FilterTabsView;F)F
 
-    .line 1135
+    .line 1136
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$3800(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -103,7 +103,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/FilterTabsView;->setAnimationIdicatorProgress(F)V
 
-    .line 1136
+    .line 1137
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$3700(Lorg/telegram/ui/Components/FilterTabsView;)F
@@ -116,12 +116,12 @@
 
     if-lez v0, :cond_2
 
-    .line 1137
+    .line 1138
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$3702(Lorg/telegram/ui/Components/FilterTabsView;F)F
 
-    .line 1139
+    .line 1140
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -133,7 +133,7 @@
 
     if-gez v0, :cond_3
 
-    .line 1140
+    .line 1141
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$3900(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/Runnable;
@@ -144,7 +144,7 @@
 
     goto :goto_0
 
-    .line 1142
+    .line 1143
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -152,14 +152,14 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$2402(Lorg/telegram/ui/Components/FilterTabsView;Z)Z
 
-    .line 1143
+    .line 1144
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 1144
+    .line 1145
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$300(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$FilterTabsViewDelegate;
@@ -168,7 +168,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1145
+    .line 1146
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$1;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$300(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$FilterTabsViewDelegate;

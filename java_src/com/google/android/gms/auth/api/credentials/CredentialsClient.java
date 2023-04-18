@@ -8,7 +8,7 @@ import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.internal.ApiExceptionMapper;
 import com.google.android.gms.common.api.internal.StatusExceptionMapper;
 import com.google.android.gms.common.internal.PendingResultUtil;
-import com.google.android.gms.internal.p019authapi.zbn;
+import com.google.android.gms.internal.p018authapi.zbn;
 import com.google.android.gms.tasks.Task;
 /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
 @Deprecated

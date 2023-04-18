@@ -149,10 +149,10 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         MediaCodecInfo decryptOnlyDecoderInfo;
         String str = format.sampleMimeType;
         if (str == null) {
-            return ImmutableList.m754of();
+            return ImmutableList.m740of();
         }
         if (audioSink.supportsFormat(format) && (decryptOnlyDecoderInfo = MediaCodecUtil.getDecryptOnlyDecoderInfo()) != null) {
-            return ImmutableList.m753of(decryptOnlyDecoderInfo);
+            return ImmutableList.m739of(decryptOnlyDecoderInfo);
         }
         List<MediaCodecInfo> decoderInfos = mediaCodecSelector.getDecoderInfos(str, z, false);
         String alternativeCodecMimeType = MediaCodecUtil.getAlternativeCodecMimeType(format);
@@ -214,7 +214,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecRenderer
     protected void onCodecError(Exception exc) {
-        Log.m809e(TAG, "Audio codec error", exc);
+        Log.m795e(TAG, "Audio codec error", exc);
         this.eventDispatcher.audioCodecError(exc);
     }
 
@@ -578,7 +578,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
 
         @Override // com.google.android.exoplayer2.audio.AudioSink.Listener
         public void onAudioSinkError(Exception exc) {
-            Log.m809e(MediaCodecAudioRenderer.TAG, "Audio sink error", exc);
+            Log.m795e(MediaCodecAudioRenderer.TAG, "Audio sink error", exc);
             MediaCodecAudioRenderer.this.eventDispatcher.audioSinkError(exc);
         }
     }

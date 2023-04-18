@@ -138,10 +138,18 @@
 
     if-eqz v3, :cond_1
 
-    const-string p1, " with tag "
-
     .line 147
-    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string p2, " with tag "
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -163,7 +171,7 @@
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -341,13 +349,18 @@
 
     move-result-object v0
 
-    .line 211
     :goto_0
+    const-string v1, "if (applyWindowInsetsLis\u2026, insetsCompat)\n        }"
+
+    .line 204
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 211
     invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat;->isConsumed()Z
 
     move-result v1
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_1
 
     const/4 v1, 0x0
 
@@ -356,29 +369,21 @@
 
     move-result v2
 
-    if-lez v2, :cond_2
-
     :goto_1
-    add-int/lit8 v3, v1, 0x1
+    if-ge v1, v2, :cond_1
 
     .line 213
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-static {v1, v0}, Landroidx/core/view/ViewCompat;->dispatchApplyWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
+    invoke-static {v3, v0}, Landroidx/core/view/ViewCompat;->dispatchApplyWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
 
-    if-lt v3, v2, :cond_1
-
-    goto :goto_2
-
-    :cond_1
-    move v1, v3
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    :cond_2
-    :goto_2
+    :cond_1
     return-object p1
 .end method
 
@@ -558,35 +563,29 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    if-ltz v0, :cond_1
-
     :goto_0
-    add-int/lit8 v1, v0, -0x1
+    const/4 v1, -0x1
+
+    if-ge v1, v0, :cond_0
 
     .line 309
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v1
 
     const-string v2, "view"
 
     .line 310
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {p0, v0}, Landroidx/fragment/app/FragmentContainerView;->addDisappearingFragmentView(Landroid/view/View;)V
+    invoke-direct {p0, v1}, Landroidx/fragment/app/FragmentContainerView;->addDisappearingFragmentView(Landroid/view/View;)V
 
-    if-gez v1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    move v0, v1
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
     .line 312
-    :cond_1
-    :goto_1
+    :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->removeAllViewsInLayout()V
 
     return-void
@@ -650,37 +649,29 @@
 
     add-int v0, p1, p2
 
-    if-ge p1, v0, :cond_1
-
     move v1, p1
 
     :goto_0
-    add-int/lit8 v2, v1, 0x1
+    if-ge v1, v0, :cond_0
 
     .line 293
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
     const-string v3, "view"
 
     .line 294
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {p0, v1}, Landroidx/fragment/app/FragmentContainerView;->addDisappearingFragmentView(Landroid/view/View;)V
+    invoke-direct {p0, v2}, Landroidx/fragment/app/FragmentContainerView;->addDisappearingFragmentView(Landroid/view/View;)V
 
-    if-lt v2, v0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    move v1, v2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     .line 296
-    :cond_1
-    :goto_1
+    :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->removeViews(II)V
 
     return-void
@@ -691,37 +682,29 @@
 
     add-int v0, p1, p2
 
-    if-ge p1, v0, :cond_1
-
     move v1, p1
 
     :goto_0
-    add-int/lit8 v2, v1, 0x1
+    if-ge v1, v0, :cond_0
 
     .line 301
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
     const-string v3, "view"
 
     .line 302
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {p0, v1}, Landroidx/fragment/app/FragmentContainerView;->addDisappearingFragmentView(Landroid/view/View;)V
+    invoke-direct {p0, v2}, Landroidx/fragment/app/FragmentContainerView;->addDisappearingFragmentView(Landroid/view/View;)V
 
-    if-lt v2, v0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    move v1, v2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     .line 304
-    :cond_1
-    :goto_1
+    :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->removeViewsInLayout(II)V
 
     return-void

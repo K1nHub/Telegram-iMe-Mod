@@ -1,8 +1,8 @@
 package com.google.android.exoplayer2.source.hls.offline;
 
 import android.net.Uri;
+import androidx.profileinstaller.ProfileInstallReceiver$$ExternalSyntheticLambda0;
 import com.google.android.exoplayer2.MediaItem;
-import com.google.android.exoplayer2.offline.DefaultDownloaderFactory$$ExternalSyntheticLambda0;
 import com.google.android.exoplayer2.offline.SegmentDownloader;
 import com.google.android.exoplayer2.source.hls.playlist.HlsMediaPlaylist;
 import com.google.android.exoplayer2.source.hls.playlist.HlsMultivariantPlaylist;
@@ -22,7 +22,7 @@ import java.util.concurrent.Executor;
 /* loaded from: classes.dex */
 public final class HlsDownloader extends SegmentDownloader<HlsPlaylist> {
     public HlsDownloader(MediaItem mediaItem, CacheDataSource.Factory factory) {
-        this(mediaItem, factory, DefaultDownloaderFactory$$ExternalSyntheticLambda0.INSTANCE);
+        this(mediaItem, factory, ProfileInstallReceiver$$ExternalSyntheticLambda0.INSTANCE);
     }
 
     public HlsDownloader(MediaItem mediaItem, CacheDataSource.Factory factory, Executor executor) {

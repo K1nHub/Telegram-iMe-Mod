@@ -1,8 +1,8 @@
 package com.google.firebase.firestore.model;
 
 import com.google.firebase.firestore.util.Assert;
-import com.google.firestore.p022v1.MapValue;
-import com.google.firestore.p022v1.Value;
+import com.google.firestore.p021v1.MapValue;
+import com.google.firestore.p021v1.Value;
 import java.util.HashMap;
 import java.util.Map;
 /* loaded from: classes3.dex */
@@ -154,7 +154,7 @@ public final class ObjectValue implements Cloneable {
     }
 
     /* renamed from: clone */
-    public ObjectValue m1086clone() {
+    public ObjectValue m1080clone() {
         return new ObjectValue(buildProto());
     }
 }

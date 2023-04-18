@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 103
+    .line 102
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$4$1;->invoke(Landroid/view/View;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 104
+    .line 103
     iget-object p1, p0, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$4$1;->this$0:Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->access$getFragment$p(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -89,7 +89,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 105
+    .line 104
     iget-object p1, p0, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$4$1;->this$0:Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;
 
     invoke-virtual {p1}, Lcom/iMe/ui/base/mvp/MvpAlertDialog;->finishScreen()V

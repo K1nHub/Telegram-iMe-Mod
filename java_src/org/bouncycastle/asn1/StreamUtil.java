@@ -50,7 +50,7 @@ public class StreamUtil {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int findLimit(InputStream inputStream) {
         if (inputStream instanceof LimitedInputStream) {
-            return ((LimitedInputStream) inputStream).getRemaining();
+            return ((LimitedInputStream) inputStream).getLimit();
         }
         if (inputStream instanceof ASN1InputStream) {
             return ((ASN1InputStream) inputStream).getLimit();

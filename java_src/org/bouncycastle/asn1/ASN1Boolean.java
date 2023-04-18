@@ -1,49 +1,35 @@
 package org.bouncycastle.asn1;
 
 import java.io.IOException;
-import org.bouncycastle.util.Arrays;
 /* loaded from: classes4.dex */
 public class ASN1Boolean extends ASN1Primitive {
-    private final byte[] value;
-    private static final byte[] TRUE_VALUE = {-1};
-    private static final byte[] FALSE_VALUE = {0};
-    public static final ASN1Boolean FALSE = new ASN1Boolean(false);
-    public static final ASN1Boolean TRUE = new ASN1Boolean(true);
+    public static final ASN1Boolean FALSE = new ASN1Boolean((byte) 0);
+    public static final ASN1Boolean TRUE = new ASN1Boolean((byte) -1);
+    private final byte value;
 
-    public ASN1Boolean(boolean z) {
-        this.value = z ? TRUE_VALUE : FALSE_VALUE;
-    }
-
-    ASN1Boolean(byte[] bArr) {
-        if (bArr.length != 1) {
-            throw new IllegalArgumentException("byte value should have 1 byte in it");
-        }
-        if (bArr[0] == 0) {
-            this.value = FALSE_VALUE;
-        } else if ((bArr[0] & 255) == 255) {
-            this.value = TRUE_VALUE;
-        } else {
-            this.value = Arrays.clone(bArr);
-        }
+    private ASN1Boolean(byte b) {
+        this.value = b;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static ASN1Boolean fromOctetString(byte[] bArr) {
         if (bArr.length == 1) {
-            return bArr[0] == 0 ? FALSE : (bArr[0] & 255) == 255 ? TRUE : new ASN1Boolean(bArr);
+            byte b = bArr[0];
+            return b != -1 ? b != 0 ? new ASN1Boolean(b) : FALSE : TRUE;
         }
         throw new IllegalArgumentException("BOOLEAN value should have 1 byte in it");
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    protected boolean asn1Equals(ASN1Primitive aSN1Primitive) {
-        return (aSN1Primitive instanceof ASN1Boolean) && this.value[0] == ((ASN1Boolean) aSN1Primitive).value[0];
+    public boolean asn1Equals(ASN1Primitive aSN1Primitive) {
+        return (aSN1Primitive instanceof ASN1Boolean) && isTrue() == ((ASN1Boolean) aSN1Primitive).isTrue();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    public void encode(ASN1OutputStream aSN1OutputStream) throws IOException {
-        aSN1OutputStream.writeEncoded(1, this.value);
+    public void encode(ASN1OutputStream aSN1OutputStream, boolean z) throws IOException {
+        aSN1OutputStream.writeEncoded(z, 1, this.value);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -54,7 +40,7 @@ public class ASN1Boolean extends ASN1Primitive {
 
     @Override // org.bouncycastle.asn1.ASN1Object
     public int hashCode() {
-        return this.value[0];
+        return isTrue() ? 1 : 0;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -63,7 +49,17 @@ public class ASN1Boolean extends ASN1Primitive {
         return false;
     }
 
+    public boolean isTrue() {
+        return this.value != 0;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // org.bouncycastle.asn1.ASN1Primitive
+    public ASN1Primitive toDERObject() {
+        return isTrue() ? TRUE : FALSE;
+    }
+
     public String toString() {
-        return this.value[0] != 0 ? "TRUE" : "FALSE";
+        return isTrue() ? "TRUE" : "FALSE";
     }
 }

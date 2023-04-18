@@ -34,14 +34,14 @@ public final class BundleUtil {
                 method2.setAccessible(true);
                 method = getIBinderMethod;
             } catch (NoSuchMethodException e) {
-                Log.m807i(TAG, "Failed to retrieve getIBinder method", e);
+                Log.m793i(TAG, "Failed to retrieve getIBinder method", e);
                 return null;
             }
         }
         try {
             return (IBinder) method.invoke(bundle, str);
         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e2) {
-            Log.m807i(TAG, "Failed to invoke getIBinder via reflection", e2);
+            Log.m793i(TAG, "Failed to invoke getIBinder via reflection", e2);
             return null;
         }
     }
@@ -55,14 +55,14 @@ public final class BundleUtil {
                 method2.setAccessible(true);
                 method = putIBinderMethod;
             } catch (NoSuchMethodException e) {
-                Log.m807i(TAG, "Failed to retrieve putIBinder method", e);
+                Log.m793i(TAG, "Failed to retrieve putIBinder method", e);
                 return;
             }
         }
         try {
             method.invoke(bundle, str, iBinder);
         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e2) {
-            Log.m807i(TAG, "Failed to invoke putIBinder via reflection", e2);
+            Log.m793i(TAG, "Failed to invoke putIBinder via reflection", e2);
         }
     }
 

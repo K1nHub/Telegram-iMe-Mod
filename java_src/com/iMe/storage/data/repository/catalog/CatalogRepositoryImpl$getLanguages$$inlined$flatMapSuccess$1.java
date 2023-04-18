@@ -1,6 +1,6 @@
 package com.iMe.storage.data.repository.catalog;
 
-import com.iMe.storage.data.locale.p028db.dao.minor.catalog.CatalogLanguageDao;
+import com.iMe.storage.data.locale.p027db.dao.minor.catalog.CatalogLanguageDao;
 import com.iMe.storage.data.mapper.catalog.ChannelLanguageMappingKt;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
@@ -10,7 +10,7 @@ import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_fu
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.catalog.CatalogLanguage;
 import com.iMe.storage.domain.storage.PreferenceHelper;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
@@ -36,10 +36,10 @@ public final class CatalogRepositoryImpl$getLanguages$$inlined$flatMapSuccess$1 
     /* compiled from: FirebaseExt.kt */
     /* renamed from: com.iMe.storage.data.repository.catalog.CatalogRepositoryImpl$getLanguages$$inlined$flatMapSuccess$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C17901 extends Lambda implements Function1<List<? extends CatalogLanguage>, Result<? extends List<? extends CatalogLanguage>>> {
-        public static final C17901 INSTANCE = new C17901();
+    public static final class C17781 extends Lambda implements Function1<List<? extends CatalogLanguage>, Result<? extends List<? extends CatalogLanguage>>> {
+        public static final C17781 INSTANCE = new C17781();
 
-        public C17901() {
+        public C17781() {
             super(1);
         }
 
@@ -82,8 +82,8 @@ public final class CatalogRepositoryImpl$getLanguages$$inlined$flatMapSuccess$1 
         Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
         Observable andThen = rxInsert.andThen(just2);
         schedulersProvider = this.this$0.schedulersProvider;
-        Observable subscribeOn = andThen.subscribeOn(schedulersProvider.mo708io());
+        Observable subscribeOn = andThen.subscribeOn(schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "catalogLanguageDao\n     …(schedulersProvider.io())");
-        return subscribeOn.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(C17901.INSTANCE));
+        return subscribeOn.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(C17781.INSTANCE));
     }
 }

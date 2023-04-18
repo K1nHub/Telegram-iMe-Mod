@@ -4,14 +4,14 @@ import android.app.Activity;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.model.wallet.crypto.pin.EnterPinCodeScreenType;
 import com.iMe.navigation.wallet.coordinator.PinCodeCoordinator;
-import com.iMe.p032ui.base.WalletAuthFragment;
+import com.iMe.p031ui.base.WalletAuthFragment;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import kotlin.Lazy;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p048ui.ActionBar.INavigationLayout;
-import org.telegram.p048ui.LaunchActivity;
+import org.telegram.p044ui.ActionBar.INavigationLayout;
+import org.telegram.p044ui.LaunchActivity;
 /* compiled from: WalletFlowCoordinator.kt */
 /* loaded from: classes3.dex */
 public final class WalletFlowCoordinator {

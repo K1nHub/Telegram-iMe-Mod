@@ -10,28 +10,32 @@
 
 .field public static PROVIDER_NAME:Ljava/lang/String; = "BCPQC"
 
-.field private static info:Ljava/lang/String; = "BouncyCastle Post-Quantum Security Provider v1.60"
+.field private static info:Ljava/lang/String; = "BouncyCastle Post-Quantum Security Provider v1.67"
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 8
 
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    const-string v0, "Rainbow"
+    const-string v1, "Rainbow"
 
-    const-string v1, "McEliece"
+    const-string v2, "McEliece"
 
-    const-string v2, "SPHINCS"
+    const-string v3, "SPHINCS"
 
-    const-string v3, "NH"
+    const-string v4, "LMS"
 
-    const-string v4, "XMSS"
+    const-string v5, "NH"
 
-    filled-new-array {v0, v1, v2, v3, v4}, [Ljava/lang/String;
+    const-string v6, "XMSS"
+
+    const-string v7, "QTESLA"
+
+    filled-new-array/range {v1 .. v7}, [Ljava/lang/String;
 
     move-result-object v0
 
@@ -47,7 +51,7 @@
 
     sget-object v1, Lorg/bouncycastle/pqc/jcajce/provider/BouncyCastlePQCProvider;->info:Ljava/lang/String;
 
-    const-wide v2, 0x3ff999999999999aL    # 1.6
+    const-wide v2, 0x3ffab851eb851eb8L    # 1.67
 
     invoke-direct {p0, v0, v2, v3, v1}, Ljava/security/Provider;-><init>(Ljava/lang/String;DLjava/lang/String;)V
 

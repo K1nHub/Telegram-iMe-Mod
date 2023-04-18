@@ -19,17 +19,17 @@ public class SaveAccountLinkingTokenRequest extends AbstractSafeParcelable imple
     public static final Parcelable.Creator<SaveAccountLinkingTokenRequest> CREATOR = new zbj();
     public static final String EXTRA_TOKEN = "extra_token";
     public static final String TOKEN_TYPE_AUTH_CODE = "auth_code";
-    @SafeParcelable.Field(getter = "getConsentPendingIntent", m789id = 1)
+    @SafeParcelable.Field(getter = "getConsentPendingIntent", m775id = 1)
     private final PendingIntent zba;
-    @SafeParcelable.Field(getter = "getTokenType", m789id = 2)
+    @SafeParcelable.Field(getter = "getTokenType", m775id = 2)
     private final String zbb;
-    @SafeParcelable.Field(getter = "getServiceId", m789id = 3)
+    @SafeParcelable.Field(getter = "getServiceId", m775id = 3)
     private final String zbc;
-    @SafeParcelable.Field(getter = "getScopes", m789id = 4)
+    @SafeParcelable.Field(getter = "getScopes", m775id = 4)
     private final List zbd;
-    @SafeParcelable.Field(getter = "getSessionId", m789id = 5)
+    @SafeParcelable.Field(getter = "getSessionId", m775id = 5)
     private final String zbe;
-    @SafeParcelable.Field(getter = "getTheme", m789id = 6)
+    @SafeParcelable.Field(getter = "getTheme", m775id = 6)
     private final int zbf;
 
     /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
@@ -83,7 +83,7 @@ public class SaveAccountLinkingTokenRequest extends AbstractSafeParcelable imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public SaveAccountLinkingTokenRequest(@SafeParcelable.Param(m788id = 1) PendingIntent pendingIntent, @SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) String str2, @SafeParcelable.Param(m788id = 4) List list, @SafeParcelable.Param(m788id = 5) String str3, @SafeParcelable.Param(m788id = 6) int i) {
+    public SaveAccountLinkingTokenRequest(@SafeParcelable.Param(m774id = 1) PendingIntent pendingIntent, @SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) List list, @SafeParcelable.Param(m774id = 5) String str3, @SafeParcelable.Param(m774id = 6) int i) {
         this.zba = pendingIntent;
         this.zbb = str;
         this.zbc = str2;

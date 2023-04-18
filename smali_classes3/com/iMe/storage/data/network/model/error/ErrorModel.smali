@@ -3,6 +3,12 @@
 .source "ErrorModel.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nErrorModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ErrorModel.kt\ncom/iMe/storage/data/network/model/error/ErrorModel\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,47:1\n1#2:48\n*E\n"
+.end annotation
+
+
 # instance fields
 .field private final code:Ljava/lang/Integer;
 
@@ -186,10 +192,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 37
+    .line 35
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/error/ErrorModel;->status:Lcom/iMe/storage/data/network/model/error/IErrorStatus;
 
-    .line 38
+    .line 36
     sget-object v1, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->NO_CONNECTION:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     if-ne v0, v1, :cond_0
@@ -204,7 +210,7 @@
 
     goto :goto_0
 
-    .line 39
+    .line 37
     :cond_0
     sget-object v1, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->BAD_RESPONSE:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
@@ -220,7 +226,7 @@
 
     goto :goto_0
 
-    .line 40
+    .line 38
     :cond_1
     sget-object v1, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->TIMEOUT:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
@@ -236,7 +242,7 @@
 
     goto :goto_0
 
-    .line 41
+    .line 39
     :cond_2
     sget-object v1, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->EMPTY_RESPONSE:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
@@ -252,7 +258,7 @@
 
     goto :goto_0
 
-    .line 42
+    .line 40
     :cond_3
     sget-object v1, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->NOT_DEFINED:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
@@ -268,7 +274,7 @@
 
     goto :goto_0
 
-    .line 43
+    .line 41
     :cond_4
     sget-object v1, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->UNAUTHORIZED:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
@@ -284,7 +290,7 @@
 
     goto :goto_0
 
-    .line 44
+    .line 42
     :cond_5
     invoke-static {}, Lcom/iMe/storage/data/network/model/error/ErrorModelKt;->access$getNOT_DEFINED_ERROR_MESSAGE$p()I
 
@@ -299,23 +305,28 @@
 .end method
 
 .method public final getMessage(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     const-string v0, "resourceManager"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 30
+    .line 29
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/error/ErrorModel;->status:Lcom/iMe/storage/data/network/model/error/IErrorStatus;
 
-    .line 31
+    .line 30
     sget-object v1, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->NO_CONNECTION:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
 
     if-ne v0, v1, :cond_0
 
-    goto :goto_0
+    :goto_0
+    move v0, v3
+
+    goto :goto_1
 
     :cond_0
     sget-object v1, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->TIMEOUT:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
@@ -325,33 +336,56 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v0, v2
 
-    :goto_0
-    if-eqz v2, :cond_2
+    :goto_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;->getErrorMessage(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object p1
 
-    goto :goto_1
+    goto :goto_3
 
-    .line 32
+    .line 31
     :cond_2
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/error/ErrorModel;->errorMessage:Ljava/lang/String;
 
-    if-nez v0, :cond_3
+    if-eqz v0, :cond_6
 
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    move v2, v3
+
+    :cond_3
+    if-eqz v2, :cond_4
+
+    invoke-virtual {p0, p1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;->getErrorMessage(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_4
+    if-nez v0, :cond_5
+
+    goto :goto_2
+
+    :cond_5
+    move-object p1, v0
+
+    goto :goto_3
+
+    .line 32
+    :cond_6
+    :goto_2
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;->getErrorMessage(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object p1
 
-    goto :goto_1
-
-    :cond_3
-    move-object p1, v0
-
-    :goto_1
+    :goto_3
     return-object p1
 .end method
 
@@ -442,7 +476,7 @@
 .method public final isNoConnectionStatus()Z
     .locals 2
 
-    .line 48
+    .line 45
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/error/ErrorModel;->status:Lcom/iMe/storage/data/network/model/error/IErrorStatus;
 
     sget-object v1, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->NO_CONNECTION:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;

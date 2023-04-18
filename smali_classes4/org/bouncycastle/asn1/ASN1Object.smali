@@ -3,6 +3,7 @@
 
 # interfaces
 .implements Lorg/bouncycastle/asn1/ASN1Encodable;
+.implements Lorg/bouncycastle/util/Encodable;
 
 
 # direct methods
@@ -16,6 +17,40 @@
 
 
 # virtual methods
+.method public encodeTo(Ljava/io/OutputStream;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->create(Ljava/io/OutputStream;)Lorg/bouncycastle/asn1/ASN1OutputStream;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
+
+    return-void
+.end method
+
+.method public encodeTo(Ljava/io/OutputStream;Ljava/lang/String;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-static {p1, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->create(Ljava/io/OutputStream;Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1OutputStream;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
+
+    return-void
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
 
@@ -45,7 +80,7 @@
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
 
     move-result p1
 
@@ -53,7 +88,7 @@
 .end method
 
 .method public getEncoded()[B
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -64,11 +99,7 @@
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    new-instance v1, Lorg/bouncycastle/asn1/ASN1OutputStream;
-
-    invoke-direct {v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    invoke-virtual {v1, p0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    invoke-virtual {p0, v0}, Lorg/bouncycastle/asn1/ASN1Object;->encodeTo(Ljava/io/OutputStream;)V
 
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
@@ -85,54 +116,13 @@
         }
     .end annotation
 
-    const-string v0, "DER"
+    new-instance v0, Ljava/io/ByteArrayOutputStream;
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    move-result v0
+    invoke-virtual {p0, v0, p1}, Lorg/bouncycastle/asn1/ASN1Object;->encodeTo(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    if-eqz v0, :cond_0
-
-    new-instance p1, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {p1}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    new-instance v0, Lorg/bouncycastle/asn1/DEROutputStream;
-
-    invoke-direct {v0, p1}, Lorg/bouncycastle/asn1/DEROutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    invoke-virtual {v0, p0}, Lorg/bouncycastle/asn1/DEROutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    :goto_0
-    invoke-virtual {p1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_0
-    const-string v0, "DL"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    new-instance p1, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {p1}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    new-instance v0, Lorg/bouncycastle/asn1/DLOutputStream;
-
-    invoke-direct {v0, p1}, Lorg/bouncycastle/asn1/DLOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    invoke-virtual {v0, p0}, Lorg/bouncycastle/asn1/DLOutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Object;->getEncoded()[B
+    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p1
 

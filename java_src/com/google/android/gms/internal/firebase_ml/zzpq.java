@@ -2,8 +2,8 @@ package com.google.android.gms.internal.firebase_ml;
 
 import android.content.Context;
 import com.google.android.gms.common.internal.ImagesContract;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseLocalModel;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseLocalModel;
 import java.nio.MappedByteBuffer;
 /* loaded from: classes.dex */
 public final class zzpq implements zzpj {

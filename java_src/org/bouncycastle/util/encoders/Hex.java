@@ -4,13 +4,11 @@ import java.io.ByteArrayOutputStream;
 import org.bouncycastle.util.Strings;
 /* loaded from: classes4.dex */
 public class Hex {
-    private static final Encoder encoder = new HexEncoder();
+    private static final HexEncoder encoder = new HexEncoder();
 
-    public static byte[] decode(String str) {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+    public static byte[] decodeStrict(String str) {
         try {
-            encoder.decode(str, byteArrayOutputStream);
-            return byteArrayOutputStream.toByteArray();
+            return encoder.decodeStrict(str, 0, str.length());
         } catch (Exception e) {
             throw new DecoderException("exception decoding Hex string: " + e.getMessage(), e);
         }

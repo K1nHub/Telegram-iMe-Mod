@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$k2czJATu4hqxqFqQqUzLvcHUBu8(Lorg/telegram/ui/Components/AudioPlayerAlert;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$ke0CPtdEhawkD0ONYXkvBYJosGg(Lorg/telegram/ui/Components/AudioPlayerAlert;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
 
     return-void
 .end method

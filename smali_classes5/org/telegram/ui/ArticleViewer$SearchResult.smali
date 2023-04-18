@@ -26,7 +26,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 4010
+    .line 4008
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ArticleViewer$1;)V
     .locals 0
 
-    .line 4010
+    .line 4008
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$SearchResult;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/ArticleViewer$SearchResult;)Lorg/telegram/tgnet/TLRPC$PageBlock;
     .locals 0
 
-    .line 4010
+    .line 4008
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$SearchResult;->block:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     return-object p0
@@ -53,7 +53,7 @@
 .method static synthetic access$302(Lorg/telegram/ui/ArticleViewer$SearchResult;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
     .locals 0
 
-    .line 4010
+    .line 4008
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$SearchResult;->block:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     return-object p1
@@ -62,7 +62,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/ArticleViewer$SearchResult;)Ljava/lang/Object;
     .locals 0
 
-    .line 4010
+    .line 4008
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$SearchResult;->text:Ljava/lang/Object;
 
     return-object p0
@@ -71,7 +71,7 @@
 .method static synthetic access$402(Lorg/telegram/ui/ArticleViewer$SearchResult;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 4010
+    .line 4008
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$SearchResult;->text:Ljava/lang/Object;
 
     return-object p1
@@ -80,7 +80,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/ArticleViewer$SearchResult;)I
     .locals 0
 
-    .line 4010
+    .line 4008
     iget p0, p0, Lorg/telegram/ui/ArticleViewer$SearchResult;->index:I
 
     return p0
@@ -89,7 +89,7 @@
 .method static synthetic access$502(Lorg/telegram/ui/ArticleViewer$SearchResult;I)I
     .locals 0
 
-    .line 4010
+    .line 4008
     iput p1, p0, Lorg/telegram/ui/ArticleViewer$SearchResult;->index:I
 
     return p1

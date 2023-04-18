@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda116;->f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda116;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda116;->f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda116;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$MSH_0GNB92mO79kOWrI6V2VKoqc(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$RjLQeZvFRvtzE5U3kjrdYUeHVZo(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method

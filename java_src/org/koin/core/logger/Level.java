@@ -4,6 +4,7 @@ package org.koin.core.logger;
 public enum Level {
     DEBUG,
     INFO,
+    WARNING,
     ERROR,
     NONE
 }

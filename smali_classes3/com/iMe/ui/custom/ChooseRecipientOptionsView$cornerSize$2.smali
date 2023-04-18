@@ -48,7 +48,7 @@
 .method public final invoke()Ljava/lang/Integer;
     .locals 2
 
-    .line 37
+    .line 35
     iget-object v0, p0, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$cornerSize$2;->this$0:Lcom/iMe/ui/custom/ChooseRecipientOptionsView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
@@ -71,7 +71,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 37
+    .line 35
     invoke-virtual {p0}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$cornerSize$2;->invoke()Ljava/lang/Integer;
 
     move-result-object v0

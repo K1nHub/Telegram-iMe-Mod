@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import com.iMe.storage.domain.repository.wallet.WalletRepository;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
@@ -63,7 +63,7 @@ public final class WalletInteractor$getWalletBalance$$inlined$flatMapError$1 ext
                     }
                 });
                 schedulersProvider = this.this$0.schedulersProvider;
-                Observable subscribeOn = flatMap.subscribeOn(schedulersProvider.mo708io());
+                Observable subscribeOn = flatMap.subscribeOn(schedulersProvider.mo694io());
                 Intrinsics.checkNotNullExpressionValue(subscribeOn, "fun getWalletBalance(for…(schedulersProvider.io())");
                 return subscribeOn;
             }

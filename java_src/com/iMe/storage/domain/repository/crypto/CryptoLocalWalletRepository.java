@@ -8,9 +8,7 @@ import java.util.List;
 /* compiled from: CryptoLocalWalletRepository.kt */
 /* loaded from: classes3.dex */
 public interface CryptoLocalWalletRepository {
-    Observable<Result<Wallet>> createWallet(String str, String str2, BlockchainType blockchainType);
-
-    Observable<Result<String>> generateMnemonic(String str, String str2, BlockchainType blockchainType);
+    Observable<Result<Wallet>> createWallet(BlockchainType blockchainType);
 
     Observable<Result<Wallet>> importWallet(String str, String str2, String str3, BlockchainType blockchainType);
 

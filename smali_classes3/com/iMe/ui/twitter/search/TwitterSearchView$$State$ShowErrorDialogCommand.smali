@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/twitter/search/TwitterSearchView$$State;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 560
+    .line 596
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showErrorDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 562
+    .line 598
     iput-object p2, p0, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$ShowErrorDialogCommand;->title:Ljava/lang/String;
 
-    .line 563
+    .line 599
     iput-object p3, p0, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$ShowErrorDialogCommand;->description:Ljava/lang/String;
 
-    .line 564
+    .line 600
     iput-object p4, p0, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$ShowErrorDialogCommand;->buttonText:Ljava/lang/String;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/twitter/search/TwitterSearchView;)V
     .locals 3
 
-    .line 569
+    .line 605
     iget-object v0, p0, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$ShowErrorDialogCommand;->title:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$ShowErrorDialogCommand;->description:Ljava/lang/String;
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 552
+    .line 588
     check-cast p1, Lcom/iMe/ui/twitter/search/TwitterSearchView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$ShowErrorDialogCommand;->apply(Lcom/iMe/ui/twitter/search/TwitterSearchView;)V

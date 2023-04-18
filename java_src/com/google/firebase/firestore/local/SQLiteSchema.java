@@ -24,12 +24,12 @@ import java.util.List;
 public class SQLiteSchema {
 
     /* renamed from: db */
-    private final SQLiteDatabase f179db;
+    private final SQLiteDatabase f176db;
     private final LocalSerializer serializer;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SQLiteSchema(SQLiteDatabase sQLiteDatabase, LocalSerializer localSerializer) {
-        this.f179db = sQLiteDatabase;
+        this.f176db = sQLiteDatabase;
         this.serializer = localSerializer;
     }
 
@@ -118,13 +118,13 @@ public class SQLiteSchema {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createV1MutationQueue$0() {
-        this.f179db.execSQL("CREATE TABLE mutation_queues (uid TEXT PRIMARY KEY, last_acknowledged_batch_id INTEGER, last_stream_token BLOB)");
-        this.f179db.execSQL("CREATE TABLE mutations (uid TEXT, batch_id INTEGER, mutations BLOB, PRIMARY KEY (uid, batch_id))");
-        this.f179db.execSQL("CREATE TABLE document_mutations (uid TEXT, path TEXT, batch_id INTEGER, PRIMARY KEY (uid, path, batch_id))");
+        this.f176db.execSQL("CREATE TABLE mutation_queues (uid TEXT PRIMARY KEY, last_acknowledged_batch_id INTEGER, last_stream_token BLOB)");
+        this.f176db.execSQL("CREATE TABLE mutations (uid TEXT, batch_id INTEGER, mutations BLOB, PRIMARY KEY (uid, batch_id))");
+        this.f176db.execSQL("CREATE TABLE document_mutations (uid TEXT, path TEXT, batch_id INTEGER, PRIMARY KEY (uid, path, batch_id))");
     }
 
     private void removeAcknowledgedMutations() {
-        new SQLitePersistence.Query(this.f179db, "SELECT uid, last_acknowledged_batch_id FROM mutation_queues").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda3
+        new SQLitePersistence.Query(this.f176db, "SELECT uid, last_acknowledged_batch_id FROM mutation_queues").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda3
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteSchema.this.lambda$removeAcknowledgedMutations$2((Cursor) obj);
@@ -135,7 +135,7 @@ public class SQLiteSchema {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$removeAcknowledgedMutations$2(Cursor cursor) {
         final String string = cursor.getString(0);
-        new SQLitePersistence.Query(this.f179db, "SELECT batch_id FROM mutations WHERE uid = ? AND batch_id <= ?").binding(string, Long.valueOf(cursor.getLong(1))).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda4
+        new SQLitePersistence.Query(this.f176db, "SELECT batch_id FROM mutations WHERE uid = ? AND batch_id <= ?").binding(string, Long.valueOf(cursor.getLong(1))).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda4
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteSchema.this.lambda$removeAcknowledgedMutations$1(string, (Cursor) obj);
@@ -149,11 +149,11 @@ public class SQLiteSchema {
     }
 
     private void removeMutationBatch(String str, int i) {
-        SQLiteStatement compileStatement = this.f179db.compileStatement("DELETE FROM mutations WHERE uid = ? AND batch_id = ?");
+        SQLiteStatement compileStatement = this.f176db.compileStatement("DELETE FROM mutations WHERE uid = ? AND batch_id = ?");
         compileStatement.bindString(1, str);
         compileStatement.bindLong(2, i);
         Assert.hardAssert(compileStatement.executeUpdateDelete() != 0, "Mutatiohn batch (%s, %d) did not exist", str, Integer.valueOf(i));
-        this.f179db.execSQL("DELETE FROM document_mutations WHERE uid = ? AND batch_id = ?", new Object[]{str, Integer.valueOf(i)});
+        this.f176db.execSQL("DELETE FROM document_mutations WHERE uid = ? AND batch_id = ?", new Object[]{str, Integer.valueOf(i)});
     }
 
     private void createV1TargetCache() {
@@ -167,22 +167,22 @@ public class SQLiteSchema {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createV1TargetCache$3() {
-        this.f179db.execSQL("CREATE TABLE targets (target_id INTEGER PRIMARY KEY, canonical_id TEXT, snapshot_version_seconds INTEGER, snapshot_version_nanos INTEGER, resume_token BLOB, last_listen_sequence_number INTEGER,target_proto BLOB)");
-        this.f179db.execSQL("CREATE INDEX query_targets ON targets (canonical_id, target_id)");
-        this.f179db.execSQL("CREATE TABLE target_globals (highest_target_id INTEGER, highest_listen_sequence_number INTEGER, last_remote_snapshot_version_seconds INTEGER, last_remote_snapshot_version_nanos INTEGER)");
-        this.f179db.execSQL("CREATE TABLE target_documents (target_id INTEGER, path TEXT, PRIMARY KEY (target_id, path))");
-        this.f179db.execSQL("CREATE INDEX document_targets ON target_documents (path, target_id)");
+        this.f176db.execSQL("CREATE TABLE targets (target_id INTEGER PRIMARY KEY, canonical_id TEXT, snapshot_version_seconds INTEGER, snapshot_version_nanos INTEGER, resume_token BLOB, last_listen_sequence_number INTEGER,target_proto BLOB)");
+        this.f176db.execSQL("CREATE INDEX query_targets ON targets (canonical_id, target_id)");
+        this.f176db.execSQL("CREATE TABLE target_globals (highest_target_id INTEGER, highest_listen_sequence_number INTEGER, last_remote_snapshot_version_seconds INTEGER, last_remote_snapshot_version_nanos INTEGER)");
+        this.f176db.execSQL("CREATE TABLE target_documents (target_id INTEGER, path TEXT, PRIMARY KEY (target_id, path))");
+        this.f176db.execSQL("CREATE INDEX document_targets ON target_documents (path, target_id)");
     }
 
     private void dropV1TargetCache() {
         if (tableExists("targets")) {
-            this.f179db.execSQL("DROP TABLE targets");
+            this.f176db.execSQL("DROP TABLE targets");
         }
         if (tableExists("target_globals")) {
-            this.f179db.execSQL("DROP TABLE target_globals");
+            this.f176db.execSQL("DROP TABLE target_globals");
         }
         if (tableExists("target_documents")) {
-            this.f179db.execSQL("DROP TABLE target_documents");
+            this.f176db.execSQL("DROP TABLE target_documents");
         }
     }
 
@@ -197,7 +197,7 @@ public class SQLiteSchema {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createV1RemoteDocumentCache$4() {
-        this.f179db.execSQL("CREATE TABLE remote_documents (path TEXT PRIMARY KEY, contents BLOB)");
+        this.f176db.execSQL("CREATE TABLE remote_documents (path TEXT PRIMARY KEY, contents BLOB)");
     }
 
     private void createFieldIndex() {
@@ -211,32 +211,32 @@ public class SQLiteSchema {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createFieldIndex$5() {
-        this.f179db.execSQL("CREATE TABLE index_configuration (index_id INTEGER, collection_group TEXT, index_proto BLOB, active INTEGER, update_time_seconds INTEGER, update_time_nanos INTEGER, PRIMARY KEY (index_id))");
-        this.f179db.execSQL("CREATE TABLE index_entries (index_id INTEGER, index_value BLOB, uid TEXT, document_name TEXT, PRIMARY KEY (index_id, index_value, uid, document_name))");
+        this.f176db.execSQL("CREATE TABLE index_configuration (index_id INTEGER, collection_group TEXT, index_proto BLOB, active INTEGER, update_time_seconds INTEGER, update_time_nanos INTEGER, PRIMARY KEY (index_id))");
+        this.f176db.execSQL("CREATE TABLE index_entries (index_id INTEGER, index_value BLOB, uid TEXT, document_name TEXT, PRIMARY KEY (index_id, index_value, uid, document_name))");
     }
 
     private void ensureTargetGlobal() {
-        if (DatabaseUtils.queryNumEntries(this.f179db, "target_globals") == 1) {
+        if (DatabaseUtils.queryNumEntries(this.f176db, "target_globals") == 1) {
             return;
         }
-        this.f179db.execSQL("INSERT INTO target_globals (highest_target_id, highest_listen_sequence_number, last_remote_snapshot_version_seconds, last_remote_snapshot_version_nanos) VALUES (?, ?, ?, ?)", new String[]{SessionDescription.SUPPORTED_SDP_VERSION, SessionDescription.SUPPORTED_SDP_VERSION, SessionDescription.SUPPORTED_SDP_VERSION, SessionDescription.SUPPORTED_SDP_VERSION});
+        this.f176db.execSQL("INSERT INTO target_globals (highest_target_id, highest_listen_sequence_number, last_remote_snapshot_version_seconds, last_remote_snapshot_version_nanos) VALUES (?, ?, ?, ?)", new String[]{SessionDescription.SUPPORTED_SDP_VERSION, SessionDescription.SUPPORTED_SDP_VERSION, SessionDescription.SUPPORTED_SDP_VERSION, SessionDescription.SUPPORTED_SDP_VERSION});
     }
 
     private void addTargetCount() {
         if (!tableContainsColumn("target_globals", "target_count")) {
-            this.f179db.execSQL("ALTER TABLE target_globals ADD COLUMN target_count INTEGER");
+            this.f176db.execSQL("ALTER TABLE target_globals ADD COLUMN target_count INTEGER");
         }
-        long queryNumEntries = DatabaseUtils.queryNumEntries(this.f179db, "targets");
+        long queryNumEntries = DatabaseUtils.queryNumEntries(this.f176db, "targets");
         ContentValues contentValues = new ContentValues();
         contentValues.put("target_count", Long.valueOf(queryNumEntries));
-        this.f179db.update("target_globals", contentValues, null, null);
+        this.f176db.update("target_globals", contentValues, null, null);
     }
 
     private void addSequenceNumber() {
         if (tableContainsColumn("target_documents", "sequence_number")) {
             return;
         }
-        this.f179db.execSQL("ALTER TABLE target_documents ADD COLUMN sequence_number INTEGER");
+        this.f176db.execSQL("ALTER TABLE target_documents ADD COLUMN sequence_number INTEGER");
     }
 
     private boolean hasReadTime() {
@@ -247,12 +247,12 @@ public class SQLiteSchema {
     }
 
     private void addReadTime() {
-        this.f179db.execSQL("ALTER TABLE remote_documents ADD COLUMN read_time_seconds INTEGER");
-        this.f179db.execSQL("ALTER TABLE remote_documents ADD COLUMN read_time_nanos INTEGER");
+        this.f176db.execSQL("ALTER TABLE remote_documents ADD COLUMN read_time_seconds INTEGER");
+        this.f176db.execSQL("ALTER TABLE remote_documents ADD COLUMN read_time_nanos INTEGER");
     }
 
     private void dropLastLimboFreeSnapshotVersion() {
-        new SQLitePersistence.Query(this.f179db, "SELECT target_id, target_proto FROM targets").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda1
+        new SQLitePersistence.Query(this.f176db, "SELECT target_id, target_proto FROM targets").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda1
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteSchema.this.lambda$dropLastLimboFreeSnapshotVersion$6((Cursor) obj);
@@ -264,18 +264,18 @@ public class SQLiteSchema {
     public /* synthetic */ void lambda$dropLastLimboFreeSnapshotVersion$6(Cursor cursor) {
         int i = cursor.getInt(0);
         try {
-            this.f179db.execSQL("UPDATE targets SET target_proto = ? WHERE target_id = ?", new Object[]{Target.parseFrom(cursor.getBlob(1)).toBuilder().clearLastLimboFreeSnapshotVersion().build().toByteArray(), Integer.valueOf(i)});
+            this.f176db.execSQL("UPDATE targets SET target_proto = ? WHERE target_id = ?", new Object[]{Target.parseFrom(cursor.getBlob(1)).toBuilder().clearLastLimboFreeSnapshotVersion().build().toByteArray(), Integer.valueOf(i)});
         } catch (InvalidProtocolBufferException unused) {
             throw Assert.fail("Failed to decode Query data for target %s", Integer.valueOf(i));
         }
     }
 
     private void ensureSequenceNumbers() {
-        Long l = (Long) new SQLitePersistence.Query(this.f179db, "SELECT highest_listen_sequence_number FROM target_globals LIMIT 1").firstValue(SQLiteSchema$$ExternalSyntheticLambda8.INSTANCE);
+        Long l = (Long) new SQLitePersistence.Query(this.f176db, "SELECT highest_listen_sequence_number FROM target_globals LIMIT 1").firstValue(SQLiteSchema$$ExternalSyntheticLambda8.INSTANCE);
         Assert.hardAssert(l != null, "Missing highest sequence number", new Object[0]);
         final long longValue = l.longValue();
-        final SQLiteStatement compileStatement = this.f179db.compileStatement("INSERT INTO target_documents (target_id, path, sequence_number) VALUES (0, ?, ?)");
-        SQLitePersistence.Query binding = new SQLitePersistence.Query(this.f179db, "SELECT RD.path FROM remote_documents AS RD WHERE NOT EXISTS (SELECT TD.path FROM target_documents AS TD WHERE RD.path = TD.path AND TD.target_id = 0) LIMIT ?").binding(100);
+        final SQLiteStatement compileStatement = this.f176db.compileStatement("INSERT INTO target_documents (target_id, path, sequence_number) VALUES (0, ?, ?)");
+        SQLitePersistence.Query binding = new SQLitePersistence.Query(this.f176db, "SELECT RD.path FROM remote_documents AS RD WHERE NOT EXISTS (SELECT TD.path FROM target_documents AS TD WHERE RD.path = TD.path AND TD.target_id = 0) LIMIT ?").binding(100);
         final boolean[] zArr = new boolean[1];
         do {
             zArr[0] = false;
@@ -310,20 +310,20 @@ public class SQLiteSchema {
             }
         });
         final MemoryIndexManager.MemoryCollectionParentIndex memoryCollectionParentIndex = new MemoryIndexManager.MemoryCollectionParentIndex();
-        final SQLiteStatement compileStatement = this.f179db.compileStatement("INSERT OR REPLACE INTO collection_parents (collection_id, parent) VALUES (?, ?)");
+        final SQLiteStatement compileStatement = this.f176db.compileStatement("INSERT OR REPLACE INTO collection_parents (collection_id, parent) VALUES (?, ?)");
         final Consumer consumer = new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda0
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteSchema.lambda$createV8CollectionParentsIndex$10(MemoryIndexManager.MemoryCollectionParentIndex.this, compileStatement, (ResourcePath) obj);
             }
         };
-        new SQLitePersistence.Query(this.f179db, "SELECT path FROM remote_documents").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda5
+        new SQLitePersistence.Query(this.f176db, "SELECT path FROM remote_documents").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda5
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteSchema.lambda$createV8CollectionParentsIndex$11(Consumer.this, (Cursor) obj);
             }
         });
-        new SQLitePersistence.Query(this.f179db, "SELECT path FROM document_mutations").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda6
+        new SQLitePersistence.Query(this.f176db, "SELECT path FROM document_mutations").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda6
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteSchema.lambda$createV8CollectionParentsIndex$12(Consumer.this, (Cursor) obj);
@@ -333,7 +333,7 @@ public class SQLiteSchema {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createV8CollectionParentsIndex$9() {
-        this.f179db.execSQL("CREATE TABLE collection_parents (collection_id TEXT, parent TEXT, PRIMARY KEY(collection_id, parent))");
+        this.f176db.execSQL("CREATE TABLE collection_parents (collection_id TEXT, parent TEXT, PRIMARY KEY(collection_id, parent))");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -365,7 +365,7 @@ public class SQLiteSchema {
         ArrayList arrayList = new ArrayList();
         Cursor cursor = null;
         try {
-            SQLiteDatabase sQLiteDatabase = this.f179db;
+            SQLiteDatabase sQLiteDatabase = this.f176db;
             cursor = sQLiteDatabase.rawQuery("PRAGMA table_info(" + str + ")", null);
             int columnIndex = cursor.getColumnIndex(AppMeasurementSdk.ConditionalUserProperty.NAME);
             while (cursor.moveToNext()) {
@@ -382,7 +382,7 @@ public class SQLiteSchema {
     }
 
     private void rewriteCanonicalIds() {
-        new SQLitePersistence.Query(this.f179db, "SELECT target_id, target_proto FROM targets").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda2
+        new SQLitePersistence.Query(this.f176db, "SELECT target_id, target_proto FROM targets").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteSchema$$ExternalSyntheticLambda2
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteSchema.this.lambda$rewriteCanonicalIds$13((Cursor) obj);
@@ -394,7 +394,7 @@ public class SQLiteSchema {
     public /* synthetic */ void lambda$rewriteCanonicalIds$13(Cursor cursor) {
         int i = cursor.getInt(0);
         try {
-            this.f179db.execSQL("UPDATE targets SET canonical_id  = ? WHERE target_id = ?", new Object[]{this.serializer.decodeTargetData(Target.parseFrom(cursor.getBlob(1))).getTarget().getCanonicalId(), Integer.valueOf(i)});
+            this.f176db.execSQL("UPDATE targets SET canonical_id  = ? WHERE target_id = ?", new Object[]{this.serializer.decodeTargetData(Target.parseFrom(cursor.getBlob(1))).getTarget().getCanonicalId(), Integer.valueOf(i)});
         } catch (InvalidProtocolBufferException unused) {
             throw Assert.fail("Failed to decode Query data for target %s", Integer.valueOf(i));
         }
@@ -411,11 +411,11 @@ public class SQLiteSchema {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createBundleCache$14() {
-        this.f179db.execSQL("CREATE TABLE bundles (bundle_id TEXT PRIMARY KEY, create_time_seconds INTEGER, create_time_nanos INTEGER, schema_version INTEGER, total_documents INTEGER, total_bytes INTEGER)");
-        this.f179db.execSQL("CREATE TABLE named_queries (name TEXT PRIMARY KEY, read_time_seconds INTEGER, read_time_nanos INTEGER, bundled_query_proto BLOB)");
+        this.f176db.execSQL("CREATE TABLE bundles (bundle_id TEXT PRIMARY KEY, create_time_seconds INTEGER, create_time_nanos INTEGER, schema_version INTEGER, total_documents INTEGER, total_bytes INTEGER)");
+        this.f176db.execSQL("CREATE TABLE named_queries (name TEXT PRIMARY KEY, read_time_seconds INTEGER, read_time_nanos INTEGER, bundled_query_proto BLOB)");
     }
 
     private boolean tableExists(String str) {
-        return !new SQLitePersistence.Query(this.f179db, "SELECT 1=1 FROM sqlite_master WHERE tbl_name = ?").binding(str).isEmpty();
+        return !new SQLitePersistence.Query(this.f176db, "SELECT 1=1 FROM sqlite_master WHERE tbl_name = ?").binding(str).isEmpty();
     }
 }

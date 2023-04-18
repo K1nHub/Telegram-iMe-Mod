@@ -1,24 +1,28 @@
-.class Landroidx/lifecycle/SingleGeneratedAdapterObserver;
+.class public final Landroidx/lifecycle/SingleGeneratedAdapterObserver;
 .super Ljava/lang/Object;
-.source "SingleGeneratedAdapterObserver.java"
+.source "SingleGeneratedAdapterObserver.kt"
 
 # interfaces
 .implements Landroidx/lifecycle/LifecycleEventObserver;
 
 
 # instance fields
-.field private final mGeneratedAdapter:Landroidx/lifecycle/GeneratedAdapter;
+.field private final generatedAdapter:Landroidx/lifecycle/GeneratedAdapter;
 
 
 # direct methods
-.method constructor <init>(Landroidx/lifecycle/GeneratedAdapter;)V
-    .locals 0
+.method public constructor <init>(Landroidx/lifecycle/GeneratedAdapter;)V
+    .locals 1
 
-    .line 25
+    const-string v0, "generatedAdapter"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
-    iput-object p1, p0, Landroidx/lifecycle/SingleGeneratedAdapterObserver;->mGeneratedAdapter:Landroidx/lifecycle/GeneratedAdapter;
+    .line 19
+    iput-object p1, p0, Landroidx/lifecycle/SingleGeneratedAdapterObserver;->generatedAdapter:Landroidx/lifecycle/GeneratedAdapter;
 
     return-void
 .end method
@@ -28,8 +32,16 @@
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
     .locals 3
 
-    .line 31
-    iget-object v0, p0, Landroidx/lifecycle/SingleGeneratedAdapterObserver;->mGeneratedAdapter:Landroidx/lifecycle/GeneratedAdapter;
+    const-string v0, "source"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "event"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 22
+    iget-object v0, p0, Landroidx/lifecycle/SingleGeneratedAdapterObserver;->generatedAdapter:Landroidx/lifecycle/GeneratedAdapter;
 
     const/4 v1, 0x0
 
@@ -37,8 +49,8 @@
 
     invoke-interface {v0, p1, p2, v1, v2}, Landroidx/lifecycle/GeneratedAdapter;->callMethods(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;ZLandroidx/lifecycle/MethodCallsLogger;)V
 
-    .line 32
-    iget-object v0, p0, Landroidx/lifecycle/SingleGeneratedAdapterObserver;->mGeneratedAdapter:Landroidx/lifecycle/GeneratedAdapter;
+    .line 23
+    iget-object v0, p0, Landroidx/lifecycle/SingleGeneratedAdapterObserver;->generatedAdapter:Landroidx/lifecycle/GeneratedAdapter;
 
     const/4 v1, 0x1
 

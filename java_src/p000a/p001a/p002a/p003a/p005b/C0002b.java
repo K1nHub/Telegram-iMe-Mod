@@ -33,7 +33,7 @@ public final class C0002b implements BinancePay {
         Intrinsics.checkParameterIsNotNull(type, "type");
         Intrinsics.checkParameterIsNotNull(listener, "listener");
         this.f4a = listener;
-        BinancePayActivity.C0378a c0378a = BinancePayActivity.f53b;
+        BinancePayActivity.C0370a c0370a = BinancePayActivity.f53b;
         Context context = this.f5b;
         Intrinsics.checkParameterIsNotNull(context, "context");
         Intrinsics.checkParameterIsNotNull(orderId, "orderId");

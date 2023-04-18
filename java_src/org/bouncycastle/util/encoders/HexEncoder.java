@@ -2,8 +2,9 @@ package org.bouncycastle.util.encoders;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Objects;
 /* loaded from: classes4.dex */
-public class HexEncoder implements Encoder {
+public class HexEncoder {
     protected final byte[] encodingTable = {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 97, 98, 99, 100, 101, 102};
     protected final byte[] decodingTable = new byte[128];
 
@@ -11,47 +12,57 @@ public class HexEncoder implements Encoder {
         initialiseDecodingTable();
     }
 
-    private static boolean ignore(char c) {
-        return c == '\n' || c == '\r' || c == '\t' || c == ' ';
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public byte[] decodeStrict(String str, int i, int i2) throws IOException {
+        Objects.requireNonNull(str, "'str' cannot be null");
+        if (i < 0 || i2 < 0 || i > str.length() - i2) {
+            throw new IndexOutOfBoundsException("invalid offset and/or length specified");
+        }
+        if ((i2 & 1) == 0) {
+            int i3 = i2 >>> 1;
+            byte[] bArr = new byte[i3];
+            int i4 = 0;
+            while (i4 < i3) {
+                int i5 = i + 1;
+                int i6 = i5 + 1;
+                int i7 = (this.decodingTable[str.charAt(i)] << 4) | this.decodingTable[str.charAt(i5)];
+                if (i7 < 0) {
+                    throw new IOException("invalid characters encountered in Hex string");
+                }
+                bArr[i4] = (byte) i7;
+                i4++;
+                i = i6;
+            }
+            return bArr;
+        }
+        throw new IOException("a hexadecimal encoding must have an even number of characters");
     }
 
-    @Override // org.bouncycastle.util.encoders.Encoder
-    public int decode(String str, OutputStream outputStream) throws IOException {
-        int length = str.length();
-        while (length > 0 && ignore(str.charAt(length - 1))) {
-            length--;
-        }
-        int i = 0;
-        int i2 = 0;
-        while (i < length) {
-            while (i < length && ignore(str.charAt(i))) {
-                i++;
-            }
-            int i3 = i + 1;
-            byte b = this.decodingTable[str.charAt(i)];
-            while (i3 < length && ignore(str.charAt(i3))) {
-                i3++;
-            }
-            int i4 = i3 + 1;
-            byte b2 = this.decodingTable[str.charAt(i3)];
-            if ((b | b2) < 0) {
-                throw new IOException("invalid characters encountered in Hex string");
-            }
-            outputStream.write((b << 4) | b2);
-            i2++;
-            i = i4;
-        }
-        return i2;
-    }
-
-    @Override // org.bouncycastle.util.encoders.Encoder
     public int encode(byte[] bArr, int i, int i2, OutputStream outputStream) throws IOException {
-        for (int i3 = i; i3 < i + i2; i3++) {
-            int i4 = bArr[i3] & 255;
-            outputStream.write(this.encodingTable[i4 >>> 4]);
-            outputStream.write(this.encodingTable[i4 & 15]);
+        byte[] bArr2 = new byte[72];
+        while (i2 > 0) {
+            int min = Math.min(36, i2);
+            outputStream.write(bArr2, 0, encode(bArr, i, min, bArr2, 0));
+            i += min;
+            i2 -= min;
         }
         return i2 * 2;
+    }
+
+    public int encode(byte[] bArr, int i, int i2, byte[] bArr2, int i3) throws IOException {
+        int i4 = i2 + i;
+        int i5 = i3;
+        while (i < i4) {
+            int i6 = i + 1;
+            int i7 = bArr[i] & 255;
+            int i8 = i5 + 1;
+            byte[] bArr3 = this.encodingTable;
+            bArr2[i5] = bArr3[i7 >>> 4];
+            i5 = i8 + 1;
+            bArr2[i8] = bArr3[i7 & 15];
+            i = i6;
+        }
+        return i5 - i3;
     }
 
     protected void initialiseDecodingTable() {

@@ -3,6 +3,29 @@
 
 
 # direct methods
+.method public constructor <init>(Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-interface {p1}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p1
+
+    const-string v0, "DER"
+
+    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1Object;->getEncoded(Ljava/lang/String;)[B
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1OctetString;-><init>([B)V
+
+    return-void
+.end method
+
 .method public constructor <init>([B)V
     .locals 0
 
@@ -13,7 +36,7 @@
 
 
 # virtual methods
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -25,7 +48,7 @@
 
     const/4 v1, 0x4
 
-    invoke-virtual {p1, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(I[B)V
+    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZI[B)V
 
     return-void
 .end method
@@ -58,4 +81,16 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method toDERObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+    .locals 0
+
+    return-object p0
 .end method

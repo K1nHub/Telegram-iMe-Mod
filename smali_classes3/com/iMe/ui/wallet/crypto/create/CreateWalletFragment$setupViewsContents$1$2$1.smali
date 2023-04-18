@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 833
+    .line 817
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
@@ -66,7 +66,7 @@
 .method public final invoke(I)V
     .locals 1
 
-    .line 834
+    .line 818
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$2$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$fillEditTextContainer(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;I)V

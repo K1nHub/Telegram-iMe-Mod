@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTextView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TextView.kt\nandroidx/core/widget/TextViewKt$addTextChangedListener$textWatcher$1\n+ 2 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText\n+ 3 TextView.kt\nandroidx/core/widget/TextViewKt$addTextChangedListener$1\n+ 4 TextView.kt\nandroidx/core/widget/TextViewKt$addTextChangedListener$2\n*L\n1#1,97:1\n1246#2,20:98\n71#3:118\n77#4:119\n*E\n"
+    value = "SMAP\nTextView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TextView.kt\nandroidx/core/widget/TextViewKt$addTextChangedListener$textWatcher$1\n+ 2 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText\n+ 3 TextView.kt\nandroidx/core/widget/TextViewKt$addTextChangedListener$1\n+ 4 TextView.kt\nandroidx/core/widget/TextViewKt$addTextChangedListener$2\n*L\n1#1,97:1\n1221#2,20:98\n71#3:118\n77#4:119\n*E\n"
 .end annotation
 
 
@@ -184,13 +184,13 @@
     .line 115
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText$_init_$lambda$6$$inlined$doAfterTextChanged$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getHintAdapter(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
+    invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getHintsAdapter(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;
 
     move-result-object p1
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText$_init_$lambda$6$$inlined$doAfterTextChanged$1;->this$1$inlined:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
-    invoke-virtual {p1, v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;->searchHintsFor(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;)V
+    invoke-virtual {p1, v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->searchMnemonicWordsSuggestions(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;)V
 
     :cond_4
     :goto_2

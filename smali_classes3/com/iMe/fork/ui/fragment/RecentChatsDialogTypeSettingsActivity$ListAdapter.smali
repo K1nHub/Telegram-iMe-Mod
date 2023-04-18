@@ -43,12 +43,12 @@
         }
     .end annotation
 
-    .line 180
+    .line 178
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 183
+    .line 181
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->updateRows()V
 
     return-void
@@ -69,7 +69,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 275
+    .line 273
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextCheckCell2;->isChecked()Z
 
     move-result v0
@@ -80,10 +80,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 277
+    .line 275
     invoke-static {p1, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDialogTypesExpandableList$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;Z)V
 
-    .line 278
+    .line 276
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
 
     move-result-object v0
@@ -105,10 +105,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 280
+    .line 278
     invoke-static {p1, v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDialogTypesExpandableList$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;Z)V
 
-    .line 281
+    .line 279
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
 
     move-result-object v0
@@ -119,7 +119,7 @@
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 283
+    .line 281
     :goto_0
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
 
@@ -127,7 +127,7 @@
 
     invoke-virtual {p1}, Lcom/iMe/fork/controller/RecentChatsController;->saveConfig()V
 
-    .line 284
+    .line 282
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextCheckCell2;->isChecked()Z
 
     move-result p1
@@ -136,10 +136,10 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Cells/TextCheckCell2;->setChecked(Z)V
 
-    .line 285
+    .line 283
     invoke-virtual {p2}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->updateRows()V
 
-    .line 286
+    .line 284
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
@@ -160,7 +160,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 293
+    .line 291
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextCheckCell2;->isChecked()Z
 
     move-result v0
@@ -171,10 +171,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 295
+    .line 293
     invoke-static {p1, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDrawStatusTypesExpandableList$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;Z)V
 
-    .line 296
+    .line 294
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
 
     move-result-object v0
@@ -196,10 +196,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 298
+    .line 296
     invoke-static {p1, v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDrawStatusTypesExpandableList$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;Z)V
 
-    .line 299
+    .line 297
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
 
     move-result-object v0
@@ -210,7 +210,7 @@
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 301
+    .line 299
     :goto_0
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
 
@@ -218,7 +218,7 @@
 
     invoke-virtual {p1}, Lcom/iMe/fork/controller/RecentChatsController;->saveConfig()V
 
-    .line 302
+    .line 300
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextCheckCell2;->isChecked()Z
 
     move-result p1
@@ -227,10 +227,10 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Cells/TextCheckCell2;->setChecked(Z)V
 
-    .line 303
+    .line 301
     invoke-virtual {p2}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->updateRows()V
 
-    .line 304
+    .line 302
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
@@ -241,7 +241,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 225
+    .line 223
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -254,7 +254,7 @@
 .method public getItemViewType(I)I
     .locals 3
 
-    .line 228
+    .line 226
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -293,7 +293,7 @@
 
     goto :goto_6
 
-    .line 229
+    .line 227
     :cond_2
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
@@ -329,7 +329,7 @@
 
     goto :goto_6
 
-    .line 230
+    .line 228
     :cond_5
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
@@ -363,7 +363,7 @@
 
     goto :goto_6
 
-    .line 231
+    .line 229
     :cond_8
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->VIEW_TYPE_INNER_CHECK:I
 
@@ -378,7 +378,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 234
+    .line 232
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
@@ -399,7 +399,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 253
+    .line 251
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     add-int/lit8 v1, p2, 0x1
@@ -412,19 +412,19 @@
 
     move-result v0
 
-    .line 254
+    .line 252
     invoke-virtual {p0, p2}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->getItemViewType(I)I
 
     move-result v1
 
-    .line 255
+    .line 253
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v2, "holder.itemView"
 
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 257
+    .line 255
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->VIEW_TYPE_INNER_CHECK:I
 
     const/4 v3, 0x0
@@ -437,7 +437,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 258
+    .line 256
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -471,7 +471,7 @@
     :cond_0
     move v10, v3
 
-    .line 259
+    .line 257
     :goto_0
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -479,7 +479,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 260
+    .line 258
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getDialogsTypesSectionRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -488,7 +488,7 @@
 
     if-le p2, v0, :cond_1
 
-    .line 261
+    .line 259
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getDrawStatusTypes(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)[Lcom/iMe/fork/enums/DrawStatusType;
@@ -505,7 +505,7 @@
 
     aget-object p2, v0, p2
 
-    .line 262
+    .line 260
     move-object v5, p1
 
     check-cast v5, Lorg/telegram/ui/Cells/CheckBoxCell;
@@ -536,7 +536,7 @@
 
     goto/16 :goto_3
 
-    .line 264
+    .line 262
     :cond_1
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
@@ -554,7 +554,7 @@
 
     aget-object p2, v0, p2
 
-    .line 265
+    .line 263
     move-object v5, p1
 
     check-cast v5, Lorg/telegram/ui/Cells/CheckBoxCell;
@@ -585,7 +585,7 @@
 
     goto/16 :goto_3
 
-    .line 268
+    .line 266
     :cond_2
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->VIEW_TYPE_EXPANDABLE_SWITCH:I
 
@@ -595,12 +595,12 @@
 
     if-eqz v2, :cond_6
 
-    .line 269
+    .line 267
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell2;
 
-    .line 271
+    .line 269
     invoke-static {v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getDialogTypesExpandableListRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
 
     move-result v2
@@ -611,7 +611,7 @@
 
     if-ne p2, v2, :cond_4
 
-    .line 272
+    .line 270
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
 
     move-result-object p2
@@ -624,7 +624,7 @@
 
     move-result p2
 
-    .line 273
+    .line 271
     sget v2, Lorg/telegram/messenger/R$string;->swipe_to_next_unread_dialog_types:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -643,7 +643,7 @@
     :goto_1
     invoke-virtual {p1, v2, v7, v0, v4}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZZ)V
 
-    .line 274
+    .line 272
     sget-object v0, Lkotlin/jvm/internal/StringCompanionObject;->INSTANCE:Lkotlin/jvm/internal/StringCompanionObject;
 
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -680,7 +680,7 @@
 
     goto/16 :goto_3
 
-    .line 289
+    .line 287
     :cond_4
     invoke-static {v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getDrawStatusTypesExpandableListRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
 
@@ -688,7 +688,7 @@
 
     if-ne p2, v2, :cond_a
 
-    .line 290
+    .line 288
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
 
     move-result-object p2
@@ -701,7 +701,7 @@
 
     move-result p2
 
-    .line 291
+    .line 289
     sget v2, Lorg/telegram/messenger/R$string;->recent_chats_counters_and_reactions:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -720,7 +720,7 @@
     :goto_2
     invoke-virtual {p1, v2, v7, v0, v4}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZZ)V
 
-    .line 292
+    .line 290
     sget-object v0, Lkotlin/jvm/internal/StringCompanionObject;->INSTANCE:Lkotlin/jvm/internal/StringCompanionObject;
 
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -757,7 +757,7 @@
 
     goto/16 :goto_3
 
-    .line 310
+    .line 308
     :cond_6
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
@@ -767,22 +767,22 @@
 
     if-eqz v2, :cond_8
 
-    .line 311
+    .line 309
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 312
+    .line 310
     invoke-static {v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
 
     move-result v2
 
     if-ne p2, v2, :cond_7
 
-    .line 313
+    .line 311
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
-    .line 314
+    .line 312
     sget p2, Lorg/telegram/messenger/R$string;->settings_interface_recent_chats:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -801,7 +801,7 @@
 
     goto :goto_3
 
-    .line 315
+    .line 313
     :cond_7
     invoke-static {v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getEnableArchiveRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
 
@@ -809,10 +809,10 @@
 
     if-ne p2, v2, :cond_a
 
-    .line 316
+    .line 314
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
-    .line 317
+    .line 315
     sget p2, Lorg/telegram/messenger/R$string;->swipe_to_next_unread_dialog_consider_archive:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -831,7 +831,7 @@
 
     goto :goto_3
 
-    .line 321
+    .line 319
     :cond_8
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
@@ -841,12 +841,12 @@
 
     if-eqz v0, :cond_a
 
-    .line 322
+    .line 320
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 323
+    .line 321
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
 
     move-result v1
@@ -865,7 +865,7 @@
 
     if-nez p2, :cond_9
 
-    .line 324
+    .line 322
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p2
@@ -878,7 +878,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 325
+    .line 323
     sget p2, Lorg/telegram/messenger/R$string;->recent_chats_hint:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -887,12 +887,12 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 326
+    .line 324
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     goto :goto_3
 
-    .line 328
+    .line 326
     :cond_9
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -908,12 +908,12 @@
 
     const/4 p2, 0x0
 
-    .line 329
+    .line 327
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     const/16 p2, 0xc
 
-    .line 330
+    .line 328
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     :cond_a
@@ -924,7 +924,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 180
+    .line 178
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -939,7 +939,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 237
+    .line 235
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->VIEW_TYPE_INNER_CHECK:I
 
     const-string v0, "windowBackgroundWhite"
@@ -970,7 +970,7 @@
 
     invoke-direct {p1, p2, v1, v2, v3}, Lorg/telegram/ui/Cells/CheckBoxCell;-><init>(Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 238
+    .line 236
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/CheckBoxCell;->getCheckBoxRound()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object p2
@@ -979,7 +979,7 @@
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
-    .line 239
+    .line 237
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/CheckBoxCell;->getCheckBoxRound()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object p2
@@ -994,10 +994,10 @@
 
     const/4 p2, 0x1
 
-    .line 240
+    .line 238
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/CheckBoxCell;->setEnabled(Z)V
 
-    .line 241
+    .line 239
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -1006,7 +1006,7 @@
 
     goto :goto_0
 
-    .line 243
+    .line 241
     :cond_0
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
@@ -1024,7 +1024,7 @@
 
     goto :goto_0
 
-    .line 244
+    .line 242
     :cond_1
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
@@ -1042,7 +1042,7 @@
 
     goto :goto_0
 
-    .line 245
+    .line 243
     :cond_2
     new-instance p1, Lorg/telegram/ui/Cells/TextCheckCell2;
 
@@ -1054,14 +1054,14 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell2;-><init>(Landroid/content/Context;)V
 
-    .line 246
+    .line 244
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 249
+    .line 247
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -1073,7 +1073,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 236
+    .line 234
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -1084,14 +1084,14 @@
 .method public final updateRows()V
     .locals 3
 
-    .line 189
+    .line 187
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 190
+    .line 188
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -1104,7 +1104,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setEnableRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 191
+    .line 189
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -1117,29 +1117,29 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 193
+    .line 191
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     const/4 v1, -0x1
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDrawStatusTypesExpandableListStartRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 194
+    .line 192
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDrawStatusTypesExpandableListEndRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 195
+    .line 193
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDialogTypesStartRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 196
+    .line 194
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDialogTypesEndRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 198
+    .line 196
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
@@ -1152,7 +1152,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 199
+    .line 197
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -1165,7 +1165,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setEnableArchiveRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 200
+    .line 198
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -1178,7 +1178,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDialogTypesExpandableListRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 201
+    .line 199
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getDialogTypesExpandableList$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)Z
@@ -1187,7 +1187,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 202
+    .line 200
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -1196,7 +1196,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDialogTypesStartRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 203
+    .line 201
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -1215,7 +1215,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 204
+    .line 202
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -1224,7 +1224,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDialogTypesEndRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 206
+    .line 204
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
@@ -1238,7 +1238,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDialogsTypesSectionRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 207
+    .line 205
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -1251,7 +1251,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDrawStatusTypesExpandableListRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 208
+    .line 206
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getDrawStatusTypesExpandableList$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)Z
@@ -1260,7 +1260,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 209
+    .line 207
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -1269,7 +1269,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDrawStatusTypesExpandableListStartRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 210
+    .line 208
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -1288,7 +1288,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 211
+    .line 209
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
@@ -1299,23 +1299,23 @@
 
     goto :goto_0
 
-    .line 214
+    .line 212
     :cond_1
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setEnableArchiveRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 215
+    .line 213
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDrawStatusTypesExpandableListRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 216
+    .line 214
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDialogsTypesSectionRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V
 
-    .line 217
+    .line 215
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$setDialogTypesExpandableListRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;I)V

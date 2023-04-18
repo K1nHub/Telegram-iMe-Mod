@@ -8,22 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/ContactsController;
 
-.field public final synthetic f$1:I
+.field public final synthetic f$1:Landroid/content/SharedPreferences$Editor;
 
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;ILorg/telegram/ui/ActionBar/AlertDialog;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Landroid/content/SharedPreferences$Editor;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/messenger/ContactsController;
 
-    iput p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda15;->f$1:I
+    iput-object p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda15;->f$1:Landroid/content/SharedPreferences$Editor;
 
-    iput-object p3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda15;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
+    iput-object p3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda15;->f$2:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
@@ -35,11 +35,11 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/messenger/ContactsController;
 
-    iget v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda15;->f$1:I
+    iget-object v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda15;->f$1:Landroid/content/SharedPreferences$Editor;
 
-    iget-object v2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda15;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
+    iget-object v2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda15;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$KuyENjedMX5WmO3vwEhlVxlwDNU(Lorg/telegram/messenger/ContactsController;ILorg/telegram/ui/ActionBar/AlertDialog;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$Jo67JwwDuOev_McF2nAlNowOyLs(Lorg/telegram/messenger/ContactsController;Landroid/content/SharedPreferences$Editor;Lorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method

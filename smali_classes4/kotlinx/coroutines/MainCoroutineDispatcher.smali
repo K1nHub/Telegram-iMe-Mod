@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 13
+    .line 15
     invoke-direct {p0}, Lkotlinx/coroutines/CoroutineDispatcher;-><init>()V
 
     return-void
@@ -21,7 +21,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 52
+    .line 54
     invoke-virtual {p0}, Lkotlinx/coroutines/MainCoroutineDispatcher;->toStringInternalImpl()Ljava/lang/String;
 
     move-result-object v0
@@ -59,9 +59,7 @@
 .method protected final toStringInternalImpl()Ljava/lang/String;
     .locals 2
 
-    .line 61
-    sget-object v0, Lkotlinx/coroutines/Dispatchers;->INSTANCE:Lkotlinx/coroutines/Dispatchers;
-
+    .line 69
     invoke-static {}, Lkotlinx/coroutines/Dispatchers;->getMain()Lkotlinx/coroutines/MainCoroutineDispatcher;
 
     move-result-object v0
@@ -75,7 +73,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 64
+    .line 72
     :try_start_0
     invoke-virtual {v0}, Lkotlinx/coroutines/MainCoroutineDispatcher;->getImmediate()Lkotlinx/coroutines/MainCoroutineDispatcher;
 

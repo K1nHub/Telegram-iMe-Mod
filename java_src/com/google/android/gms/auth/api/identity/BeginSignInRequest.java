@@ -16,17 +16,17 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class BeginSignInRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<BeginSignInRequest> CREATOR = new zba();
-    @SafeParcelable.Field(getter = "getPasswordRequestOptions", m789id = 1)
+    @SafeParcelable.Field(getter = "getPasswordRequestOptions", m775id = 1)
     private final PasswordRequestOptions zba;
-    @SafeParcelable.Field(getter = "getGoogleIdTokenRequestOptions", m789id = 2)
+    @SafeParcelable.Field(getter = "getGoogleIdTokenRequestOptions", m775id = 2)
     private final GoogleIdTokenRequestOptions zbb;
-    @SafeParcelable.Field(getter = "getSessionId", m789id = 3)
+    @SafeParcelable.Field(getter = "getSessionId", m775id = 3)
     private final String zbc;
-    @SafeParcelable.Field(getter = "isAutoSelectEnabled", m789id = 4)
+    @SafeParcelable.Field(getter = "isAutoSelectEnabled", m775id = 4)
     private final boolean zbd;
-    @SafeParcelable.Field(getter = "getTheme", m789id = 5)
+    @SafeParcelable.Field(getter = "getTheme", m775id = 5)
     private final int zbe;
-    @SafeParcelable.Field(getter = "getPasskeysRequestOptions", m789id = 6)
+    @SafeParcelable.Field(getter = "getPasskeysRequestOptions", m775id = 6)
     private final PasskeysRequestOptions zbf;
 
     /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
@@ -91,19 +91,19 @@ public final class BeginSignInRequest extends AbstractSafeParcelable {
     /* loaded from: classes.dex */
     public static final class GoogleIdTokenRequestOptions extends AbstractSafeParcelable {
         public static final Parcelable.Creator<GoogleIdTokenRequestOptions> CREATOR = new zbg();
-        @SafeParcelable.Field(getter = "isSupported", m789id = 1)
+        @SafeParcelable.Field(getter = "isSupported", m775id = 1)
         private final boolean zba;
-        @SafeParcelable.Field(getter = "getServerClientId", m789id = 2)
+        @SafeParcelable.Field(getter = "getServerClientId", m775id = 2)
         private final String zbb;
-        @SafeParcelable.Field(getter = "getNonce", m789id = 3)
+        @SafeParcelable.Field(getter = "getNonce", m775id = 3)
         private final String zbc;
-        @SafeParcelable.Field(getter = "filterByAuthorizedAccounts", m789id = 4)
+        @SafeParcelable.Field(getter = "filterByAuthorizedAccounts", m775id = 4)
         private final boolean zbd;
-        @SafeParcelable.Field(getter = "getLinkedServiceId", m789id = 5)
+        @SafeParcelable.Field(getter = "getLinkedServiceId", m775id = 5)
         private final String zbe;
-        @SafeParcelable.Field(getter = "getIdTokenDepositionScopes", m789id = 6)
+        @SafeParcelable.Field(getter = "getIdTokenDepositionScopes", m775id = 6)
         private final List zbf;
-        @SafeParcelable.Field(getter = "requestVerifiedPhoneNumber", m789id = 7)
+        @SafeParcelable.Field(getter = "requestVerifiedPhoneNumber", m775id = 7)
         private final boolean zbg;
 
         /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
@@ -155,7 +155,7 @@ public final class BeginSignInRequest extends AbstractSafeParcelable {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         @SafeParcelable.Constructor
-        public GoogleIdTokenRequestOptions(@SafeParcelable.Param(m788id = 1) boolean z, @SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) String str2, @SafeParcelable.Param(m788id = 4) boolean z2, @SafeParcelable.Param(m788id = 5) String str3, @SafeParcelable.Param(m788id = 6) List list, @SafeParcelable.Param(m788id = 7) boolean z3) {
+        public GoogleIdTokenRequestOptions(@SafeParcelable.Param(m774id = 1) boolean z, @SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) boolean z2, @SafeParcelable.Param(m774id = 5) String str3, @SafeParcelable.Param(m774id = 6) List list, @SafeParcelable.Param(m774id = 7) boolean z3) {
             boolean z4 = true;
             if (z2 && z3) {
                 z4 = false;
@@ -242,11 +242,11 @@ public final class BeginSignInRequest extends AbstractSafeParcelable {
     /* loaded from: classes.dex */
     public static final class PasskeysRequestOptions extends AbstractSafeParcelable {
         public static final Parcelable.Creator<PasskeysRequestOptions> CREATOR = new zbh();
-        @SafeParcelable.Field(getter = "isSupported", m789id = 1)
+        @SafeParcelable.Field(getter = "isSupported", m775id = 1)
         private final boolean zba;
-        @SafeParcelable.Field(getter = "getChallenge", m789id = 2)
+        @SafeParcelable.Field(getter = "getChallenge", m775id = 2)
         private final byte[] zbb;
-        @SafeParcelable.Field(getter = "getRpId", m789id = 3)
+        @SafeParcelable.Field(getter = "getRpId", m775id = 3)
         private final String zbc;
 
         /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
@@ -278,7 +278,7 @@ public final class BeginSignInRequest extends AbstractSafeParcelable {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         @SafeParcelable.Constructor
-        public PasskeysRequestOptions(@SafeParcelable.Param(m788id = 1) boolean z, @SafeParcelable.Param(m788id = 2) byte[] bArr, @SafeParcelable.Param(m788id = 3) String str) {
+        public PasskeysRequestOptions(@SafeParcelable.Param(m774id = 1) boolean z, @SafeParcelable.Param(m774id = 2) byte[] bArr, @SafeParcelable.Param(m774id = 3) String str) {
             if (z) {
                 Preconditions.checkNotNull(bArr);
                 Preconditions.checkNotNull(str);
@@ -336,7 +336,7 @@ public final class BeginSignInRequest extends AbstractSafeParcelable {
     /* loaded from: classes.dex */
     public static final class PasswordRequestOptions extends AbstractSafeParcelable {
         public static final Parcelable.Creator<PasswordRequestOptions> CREATOR = new zbi();
-        @SafeParcelable.Field(getter = "isSupported", m789id = 1)
+        @SafeParcelable.Field(getter = "isSupported", m775id = 1)
         private final boolean zba;
 
         /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
@@ -356,7 +356,7 @@ public final class BeginSignInRequest extends AbstractSafeParcelable {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         @SafeParcelable.Constructor
-        public PasswordRequestOptions(@SafeParcelable.Param(m788id = 1) boolean z) {
+        public PasswordRequestOptions(@SafeParcelable.Param(m774id = 1) boolean z) {
             this.zba = z;
         }
 
@@ -386,7 +386,7 @@ public final class BeginSignInRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public BeginSignInRequest(@SafeParcelable.Param(m788id = 1) PasswordRequestOptions passwordRequestOptions, @SafeParcelable.Param(m788id = 2) GoogleIdTokenRequestOptions googleIdTokenRequestOptions, @SafeParcelable.Param(m788id = 3) String str, @SafeParcelable.Param(m788id = 4) boolean z, @SafeParcelable.Param(m788id = 5) int i, @SafeParcelable.Param(m788id = 6) PasskeysRequestOptions passkeysRequestOptions) {
+    public BeginSignInRequest(@SafeParcelable.Param(m774id = 1) PasswordRequestOptions passwordRequestOptions, @SafeParcelable.Param(m774id = 2) GoogleIdTokenRequestOptions googleIdTokenRequestOptions, @SafeParcelable.Param(m774id = 3) String str, @SafeParcelable.Param(m774id = 4) boolean z, @SafeParcelable.Param(m774id = 5) int i, @SafeParcelable.Param(m774id = 6) PasskeysRequestOptions passkeysRequestOptions) {
         this.zba = (PasswordRequestOptions) Preconditions.checkNotNull(passwordRequestOptions);
         this.zbb = (GoogleIdTokenRequestOptions) Preconditions.checkNotNull(googleIdTokenRequestOptions);
         this.zbc = str;

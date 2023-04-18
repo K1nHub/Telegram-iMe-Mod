@@ -2102,73 +2102,75 @@
 
 .field public static final view_tree_lifecycle_owner:I = 0x7f090447
 
-.field public static final view_tree_saved_state_registry_owner:I = 0x7f090448
+.field public static final view_tree_on_back_pressed_dispatcher_owner:I = 0x7f090448
 
-.field public static final view_tree_view_model_store_owner:I = 0x7f090449
+.field public static final view_tree_saved_state_registry_owner:I = 0x7f090449
 
-.field public static final view_tweet:I = 0x7f09044a
+.field public static final view_tree_view_model_store_owner:I = 0x7f09044a
 
-.field public static final view_wallet_cell:I = 0x7f09044b
+.field public static final view_tweet:I = 0x7f09044b
 
-.field public static final viewpager:I = 0x7f09044c
+.field public static final view_wallet_cell:I = 0x7f09044c
 
-.field public static final visible:I = 0x7f09044d
+.field public static final viewpager:I = 0x7f09044d
 
-.field public static final visible_removing_fragment_view_tag:I = 0x7f09044e
+.field public static final visible:I = 0x7f09044e
 
-.field public static final wallet_home_binance_pay:I = 0x7f09044f
+.field public static final visible_removing_fragment_view_tag:I = 0x7f09044f
 
-.field public static final wallet_home_crypto:I = 0x7f090450
+.field public static final wallet_home_binance_pay:I = 0x7f090450
 
-.field public static final wallet_home_internal_points:I = 0x7f090451
+.field public static final wallet_home_crypto:I = 0x7f090451
 
-.field public static final wallet_home_view_pager:I = 0x7f090452
+.field public static final wallet_home_internal_points:I = 0x7f090452
 
-.field public static final wallet_root_bottom_navigation_exchange:I = 0x7f090453
+.field public static final wallet_home_view_pager:I = 0x7f090453
 
-.field public static final wallet_root_bottom_navigation_home:I = 0x7f090454
+.field public static final wallet_root_bottom_navigation_exchange:I = 0x7f090454
 
-.field public static final wallet_root_bottom_navigation_settings:I = 0x7f090455
+.field public static final wallet_root_bottom_navigation_home:I = 0x7f090455
 
-.field public static final wallet_token_details_transactions_all:I = 0x7f090456
+.field public static final wallet_root_bottom_navigation_settings:I = 0x7f090456
 
-.field public static final wallet_token_details_transactions_incoming:I = 0x7f090457
+.field public static final wallet_token_details_transactions_all:I = 0x7f090457
 
-.field public static final wallet_token_details_transactions_outgoing:I = 0x7f090458
+.field public static final wallet_token_details_transactions_incoming:I = 0x7f090458
 
-.field public static final wallet_token_details_transactions_swap:I = 0x7f090459
+.field public static final wallet_token_details_transactions_outgoing:I = 0x7f090459
 
-.field public static final web_view:I = 0x7f09045a
+.field public static final wallet_token_details_transactions_swap:I = 0x7f09045a
 
-.field public static final west:I = 0x7f09045b
+.field public static final web_view:I = 0x7f09045b
 
-.field public static final wide:I = 0x7f09045c
+.field public static final west:I = 0x7f09045c
 
-.field public static final widget_deleted_text:I = 0x7f09045d
+.field public static final wide:I = 0x7f09045d
 
-.field public static final widget_edititem:I = 0x7f09045e
+.field public static final widget_deleted_text:I = 0x7f09045e
 
-.field public static final widget_edititem_text:I = 0x7f09045f
+.field public static final widget_edititem:I = 0x7f09045f
 
-.field public static final width_tag:I = 0x7f090460
+.field public static final widget_edititem_text:I = 0x7f090460
 
-.field public static final withinBounds:I = 0x7f090462
+.field public static final width_tag:I = 0x7f090461
 
-.field public static final worm_dot:I = 0x7f090463
+.field public static final withinBounds:I = 0x7f090463
 
-.field public static final wrap:I = 0x7f090464
+.field public static final worm_dot:I = 0x7f090464
 
-.field public static final wrap_content:I = 0x7f090465
+.field public static final wrap:I = 0x7f090465
 
-.field public static final wrap_content_constrained:I = 0x7f090466
+.field public static final wrap_content:I = 0x7f090466
 
-.field public static final wrap_reverse:I = 0x7f090467
+.field public static final wrap_content_constrained:I = 0x7f090467
 
-.field public static final x_left:I = 0x7f090468
+.field public static final wrap_reverse:I = 0x7f090468
 
-.field public static final x_right:I = 0x7f090469
+.field public static final x_left:I = 0x7f090469
 
-.field public static final zero_corner_chip:I = 0x7f09046a
+.field public static final x_right:I = 0x7f09046a
+
+.field public static final zero_corner_chip:I = 0x7f09046b
 
 
 # direct methods

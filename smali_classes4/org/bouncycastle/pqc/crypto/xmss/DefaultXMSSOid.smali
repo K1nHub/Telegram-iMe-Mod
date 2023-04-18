@@ -19,6 +19,8 @@
 
 
 # instance fields
+.field private final oid:I
+
 .field private final stringRepresentation:Ljava/lang/String;
 
 
@@ -46,9 +48,9 @@
 
     new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
-    const v8, 0x1000001
+    const/4 v8, 0x1
 
-    const-string v9, "XMSS_SHA2-256_W16_H10"
+    const-string v9, "XMSS_SHA2_10_256"
 
     invoke-direct {v7, v8, v9}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;-><init>(ILjava/lang/String;)V
 
@@ -60,9 +62,9 @@
 
     new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
-    const v8, 0x2000002
+    const/4 v8, 0x2
 
-    const-string v9, "XMSS_SHA2-256_W16_H16"
+    const-string v9, "XMSS_SHA2_16_256"
 
     invoke-direct {v7, v8, v9}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;-><init>(ILjava/lang/String;)V
 
@@ -76,9 +78,9 @@
 
     new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
-    const v8, 0x3000003
+    const/4 v8, 0x3
 
-    const-string v9, "XMSS_SHA2-256_W16_H20"
+    const-string v9, "XMSS_SHA2_20_256"
 
     invoke-direct {v7, v8, v9}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;-><init>(ILjava/lang/String;)V
 
@@ -96,9 +98,9 @@
 
     new-instance v10, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
-    const v11, 0x4000004
+    const/4 v11, 0x4
 
-    const-string v12, "XMSS_SHA2-512_W16_H10"
+    const-string v12, "XMSS_SHA2_10_512"
 
     invoke-direct {v10, v11, v12}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;-><init>(ILjava/lang/String;)V
 
@@ -110,9 +112,9 @@
 
     new-instance v10, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
-    const v11, 0x5000005
+    const/4 v11, 0x5
 
-    const-string v12, "XMSS_SHA2-512_W16_H16"
+    const-string v12, "XMSS_SHA2_16_512"
 
     invoke-direct {v10, v11, v12}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;-><init>(ILjava/lang/String;)V
 
@@ -124,9 +126,9 @@
 
     new-instance v9, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
-    const v10, 0x6000006
+    const/4 v10, 0x6
 
-    const-string v11, "XMSS_SHA2-512_W16_H20"
+    const-string v11, "XMSS_SHA2_20_512"
 
     invoke-direct {v9, v10, v11}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;-><init>(ILjava/lang/String;)V
 
@@ -140,9 +142,9 @@
 
     new-instance v10, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
-    const v11, 0x7000007
+    const/4 v11, 0x7
 
-    const-string v12, "XMSS_SHAKE128_W16_H10"
+    const-string v12, "XMSS_SHAKE_10_256"
 
     invoke-direct {v10, v11, v12}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;-><init>(ILjava/lang/String;)V
 
@@ -154,9 +156,9 @@
 
     new-instance v10, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
-    const v11, 0x8000008
+    const/16 v11, 0x8
 
-    const-string v12, "XMSS_SHAKE128_W16_H16"
+    const-string v12, "XMSS_SHAKE_16_256"
 
     invoke-direct {v10, v11, v12}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;-><init>(ILjava/lang/String;)V
 
@@ -168,9 +170,9 @@
 
     new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
-    const v4, 0x9000009
+    const/16 v4, 0x9
 
-    const-string v9, "XMSS_SHAKE128_W16_H20"
+    const-string v9, "XMSS_SHAKE_20_256"
 
     invoke-direct {v2, v4, v9}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;-><init>(ILjava/lang/String;)V
 
@@ -184,9 +186,7 @@
 
     new-instance v4, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
-    const v5, 0xa00000a
-
-    const-string v9, "XMSS_SHAKE256_W16_H10"
+    const-string v9, "XMSS_SHAKE_10_512"
 
     invoke-direct {v4, v5, v9}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;-><init>(ILjava/lang/String;)V
 
@@ -198,9 +198,9 @@
 
     new-instance v4, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
-    const v5, 0xb00000b
+    const/16 v5, 0xb
 
-    const-string v9, "XMSS_SHAKE256_W16_H16"
+    const-string v9, "XMSS_SHAKE_16_512"
 
     invoke-direct {v4, v5, v9}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;-><init>(ILjava/lang/String;)V
 
@@ -212,9 +212,9 @@
 
     new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
-    const v3, 0xc00000c
+    const/16 v3, 0xc
 
-    const-string v4, "XMSS_SHAKE256_W16_H20"
+    const-string v4, "XMSS_SHAKE_20_512"
 
     invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;-><init>(ILjava/lang/String;)V
 
@@ -233,6 +233,8 @@
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;->oid:I
 
     iput-object p2, p0, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;->stringRepresentation:Ljava/lang/String;
 
@@ -301,6 +303,14 @@
 
 
 # virtual methods
+.method public getOid()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;->oid:I
+
+    return v0
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 1
 

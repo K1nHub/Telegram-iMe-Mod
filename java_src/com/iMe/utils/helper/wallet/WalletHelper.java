@@ -1,32 +1,39 @@
 package com.iMe.utils.helper.wallet;
 
 import android.app.Activity;
-import android.net.Uri;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import com.iMe.fork.controller.ForkCommonController;
 import com.iMe.fork.utils.Callbacks$Callback;
+import com.iMe.model.dialog.AnimatedSpannableDialogModel;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.navigation.wallet.coordinator.WalletFlowCoordinator;
-import com.iMe.p032ui.wallet.common.WalletRootFragment;
-import com.iMe.storage.common.AppConfiguration$Wallet;
+import com.iMe.p031ui.wallet.common.WalletRootFragment;
 import com.iMe.storage.domain.manager.auth.AuthManager;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
+import com.iMe.utils.helper.wallet.AuthHelper;
+import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt__StringsKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.browser.Browser;
-import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.INavigationLayout;
-import org.telegram.p048ui.LaunchActivity;
+import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p044ui.ActionBar.INavigationLayout;
+import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p044ui.Components.URLSpanNoUnderline;
+import org.telegram.p044ui.LaunchActivity;
 /* compiled from: WalletHelper.kt */
 /* loaded from: classes4.dex */
 public final class WalletHelper implements KoinComponent {
@@ -34,16 +41,6 @@ public final class WalletHelper implements KoinComponent {
     private static final Lazy authManager$delegate;
     private static final Lazy cryptoAccessManager$delegate;
     private static final Lazy walletFlowCoordinator$delegate;
-
-    public static final boolean isWalletAuthBot(long j) {
-        return j == 995696546 || j == 1076186499;
-    }
-
-    public static final void safeRunWalletScreen$lambda$3() {
-    }
-
-    public static final void safeRunWalletScreen$lambda$4() {
-    }
 
     private WalletHelper() {
     }
@@ -80,31 +77,10 @@ public final class WalletHelper implements KoinComponent {
             fragment.showDialog(DialogsFactoryKt.createWalletCreatedRequiredDialog(fragment, blockchainType, new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda0
                 @Override // com.iMe.fork.utils.Callbacks$Callback
                 public final void invoke() {
-                    WalletHelper.runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1(Callbacks$Callback.this, fragment);
+                    WalletHelper.runWithCheckIsCryptoWalletCreated$lambda$1$lambda$0(Callbacks$Callback.this, fragment);
                 }
             }));
         }
-    }
-
-    public static final void runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1(Callbacks$Callback callbacks$Callback, final BaseFragment this_with) {
-        Intrinsics.checkNotNullParameter(this_with, "$this_with");
-        if (callbacks$Callback != null) {
-            callbacks$Callback.invoke();
-        }
-        safeRunWalletScreen$default(this_with, null, null, new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda1
-            @Override // com.iMe.fork.utils.Callbacks$Callback
-            public final void invoke() {
-                WalletHelper.runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1$lambda$0(BaseFragment.this);
-            }
-        }, 3, null);
-    }
-
-    public static final void runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1$lambda$0(BaseFragment this_with) {
-        Intrinsics.checkNotNullParameter(this_with, "$this_with");
-        WalletFlowCoordinator walletFlowCoordinator = INSTANCE.getWalletFlowCoordinator();
-        INavigationLayout parentLayout = this_with.getParentLayout();
-        Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
-        WalletFlowCoordinator.start$default(walletFlowCoordinator, parentLayout, WalletRootFragment.Companion.newInstance(), false, 4, null);
     }
 
     static {
@@ -122,98 +98,130 @@ public final class WalletHelper implements KoinComponent {
         walletFlowCoordinator$delegate = lazy3;
     }
 
-    public static final boolean isWalletIntent(String url) {
-        Intrinsics.checkNotNullParameter(url, "url");
-        String authority = Uri.parse(url).getAuthority();
-        if (authority == null) {
-            authority = "";
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void runWithCheckIsCryptoWalletCreated$lambda$1$lambda$0(Callbacks$Callback callbacks$Callback, BaseFragment this_with) {
+        Intrinsics.checkNotNullParameter(this_with, "$this_with");
+        if (callbacks$Callback != null) {
+            callbacks$Callback.invoke();
         }
-        return Intrinsics.areEqual(authority, "ime_wallet");
+        safeRunWalletScreen$default(this_with, null, 1, null);
     }
 
-    public static /* synthetic */ void safeRunWalletScreen$default(BaseFragment baseFragment, String str, Callbacks$Callback callbacks$Callback, Callbacks$Callback callbacks$Callback2, int i, Object obj) {
+    public static /* synthetic */ void safeRunWalletScreen$default(final BaseFragment baseFragment, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = LocaleController.getInternalString(C3316R.string.wallet_auth_dialog_description);
-            Intrinsics.checkNotNullExpressionValue(str, "getInternalString(R.stri…_auth_dialog_description)");
+            callbacks$Callback = new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda1
+                @Override // com.iMe.fork.utils.Callbacks$Callback
+                public final void invoke() {
+                    WalletHelper.safeRunWalletScreen$lambda$2(BaseFragment.this);
+                }
+            };
         }
-        if ((i & 2) != 0) {
-            callbacks$Callback = WalletHelper$$ExternalSyntheticLambda4.INSTANCE;
-        }
-        if ((i & 4) != 0) {
-            callbacks$Callback2 = WalletHelper$$ExternalSyntheticLambda5.INSTANCE;
-        }
-        safeRunWalletScreen(baseFragment, str, callbacks$Callback, callbacks$Callback2);
+        safeRunWalletScreen(baseFragment, callbacks$Callback);
     }
 
-    public static final void safeRunWalletScreen(BaseFragment baseFragment, String dialogMessage, Callbacks$Callback activateClickAction, Callbacks$Callback walletAuthorizedAction) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void safeRunWalletScreen$lambda$2(BaseFragment this_safeRunWalletScreen) {
+        Intrinsics.checkNotNullParameter(this_safeRunWalletScreen, "$this_safeRunWalletScreen");
+        WalletFlowCoordinator walletFlowCoordinator = INSTANCE.getWalletFlowCoordinator();
+        INavigationLayout parentLayout = this_safeRunWalletScreen.getParentLayout();
+        Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
+        WalletFlowCoordinator.start$default(walletFlowCoordinator, parentLayout, WalletRootFragment.Companion.newInstance(), false, 4, null);
+    }
+
+    public static final void safeRunWalletScreen(BaseFragment baseFragment, Callbacks$Callback authorizedAction) {
         Intrinsics.checkNotNullParameter(baseFragment, "<this>");
-        Intrinsics.checkNotNullParameter(dialogMessage, "dialogMessage");
-        Intrinsics.checkNotNullParameter(activateClickAction, "activateClickAction");
-        Intrinsics.checkNotNullParameter(walletAuthorizedAction, "walletAuthorizedAction");
+        Intrinsics.checkNotNullParameter(authorizedAction, "authorizedAction");
+        safeRunWithActivationCheck(baseFragment, authorizedAction);
+    }
+
+    public static final void safeRunWithActivationCheck(BaseFragment baseFragment, Callbacks$Callback authorizedAction) {
+        Intrinsics.checkNotNullParameter(baseFragment, "<this>");
+        Intrinsics.checkNotNullParameter(authorizedAction, "authorizedAction");
         Activity parentActivity = baseFragment.getParentActivity();
         LaunchActivity launchActivity = parentActivity instanceof LaunchActivity ? (LaunchActivity) parentActivity : null;
         if (launchActivity != null) {
-            safeRunWalletScreen(launchActivity, dialogMessage, activateClickAction, walletAuthorizedAction);
+            safeRunWithActivationCheck(launchActivity, authorizedAction);
         }
     }
 
-    public static final void safeRunWalletScreen(LaunchActivity launchActivity, String dialogMessage, Callbacks$Callback activateClickAction, Callbacks$Callback walletAuthorizedAction) {
+    public static final void safeRunWithActivationCheck(LaunchActivity launchActivity, Callbacks$Callback authorizedAction) {
         Intrinsics.checkNotNullParameter(launchActivity, "<this>");
-        Intrinsics.checkNotNullParameter(dialogMessage, "dialogMessage");
-        Intrinsics.checkNotNullParameter(activateClickAction, "activateClickAction");
-        Intrinsics.checkNotNullParameter(walletAuthorizedAction, "walletAuthorizedAction");
+        Intrinsics.checkNotNullParameter(authorizedAction, "authorizedAction");
         WalletHelper walletHelper = INSTANCE;
-        if (walletHelper.isNeedUpdateApp()) {
+        if (walletHelper.isUpdateRequired()) {
             walletHelper.showAppUpdateDialog(launchActivity);
-        } else if (isWalletAuthorized()) {
-            walletAuthorizedAction.invoke();
+        } else if (isAuthorized()) {
+            authorizedAction.invoke();
         } else {
-            walletHelper.showWalletAuthDialog(launchActivity, dialogMessage, activateClickAction);
+            walletHelper.showAuthDialog(launchActivity, authorizedAction);
         }
     }
 
-    public static final boolean isWalletAuthorized() {
+    public static final boolean isAuthorized() {
         return INSTANCE.getAuthManager().isAuthorized();
     }
 
-    public static final void openAuthBotChat(LaunchActivity activity) {
-        Intrinsics.checkNotNullParameter(activity, "activity");
-        BaseFragment lastFragment = activity.getActionBarLayout().getLastFragment();
-        lastFragment.getMessagesController().openByUserName(AppConfiguration$Wallet.getWalletBotUsernameLowerCase(), lastFragment, 99);
-    }
-
-    private final boolean isNeedUpdateApp() {
+    private final boolean isUpdateRequired() {
         String appVersionRequiredUpdate = ForkCommonController.Companion.getInstance(UserConfig.selectedAccount).getAppVersionRequiredUpdate();
         return appVersionRequiredUpdate != null && Intrinsics.areEqual(appVersionRequiredUpdate, BuildVars.BUILD_VERSION_STRING);
     }
 
     private final void showAppUpdateDialog(final LaunchActivity launchActivity) {
-        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3316R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3316R.string.wallet_app_update_dialog_description), LocaleController.getInternalString(C3316R.string.common_cancel), LocaleController.getInternalString(C3316R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda2
+        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3242R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3242R.string.wallet_app_update_dialog_description), LocaleController.getInternalString(C3242R.string.common_cancel), LocaleController.getInternalString(C3242R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda2
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletHelper.showAppUpdateDialog$lambda$6(LaunchActivity.this);
+                WalletHelper.showAppUpdateDialog$lambda$4(LaunchActivity.this);
             }
         }, null, 8, null).show();
     }
 
-    public static final void showAppUpdateDialog$lambda$6(LaunchActivity activity) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void showAppUpdateDialog$lambda$4(LaunchActivity activity) {
         Intrinsics.checkNotNullParameter(activity, "$activity");
         Browser.openUrl(activity, BuildVars.PLAYSTORE_APP_URL);
     }
 
-    private final void showWalletAuthDialog(final LaunchActivity launchActivity, String str, final Callbacks$Callback callbacks$Callback) {
-        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3316R.string.wallet_auth_dialog_title), str, LocaleController.getInternalString(C3316R.string.wallet_auth_dialog_cancel_btn), LocaleController.getInternalString(C3316R.string.wallet_auth_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda3
+    private final void showAuthDialog(final LaunchActivity launchActivity, final Callbacks$Callback callbacks$Callback) {
+        int i = C3242R.raw.fork_auth;
+        String internalString = LocaleController.getInternalString(C3242R.string.auth_dialog_title);
+        Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.auth_dialog_title)");
+        SpannableStringBuilder authSpannableStringBuilder = getAuthSpannableStringBuilder();
+        String internalString2 = LocaleController.getInternalString(C3242R.string.common_next);
+        Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.string.common_next)");
+        DialogsFactoryKt.createDialogWithAnimation(launchActivity, new AnimatedSpannableDialogModel(i, internalString, authSpannableStringBuilder, internalString2), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda3
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletHelper.showWalletAuthDialog$lambda$7(LaunchActivity.this, callbacks$Callback);
+                WalletHelper.showAuthDialog$lambda$5(LaunchActivity.this, callbacks$Callback);
             }
-        }, null, 8, null).show();
+        }).show();
     }
 
-    public static final void showWalletAuthDialog$lambda$7(LaunchActivity activity, Callbacks$Callback activateClickAction) {
-        Intrinsics.checkNotNullParameter(activity, "$activity");
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void showAuthDialog$lambda$5(LaunchActivity this_showAuthDialog, Callbacks$Callback activateClickAction) {
+        Intrinsics.checkNotNullParameter(this_showAuthDialog, "$this_showAuthDialog");
         Intrinsics.checkNotNullParameter(activateClickAction, "$activateClickAction");
-        openAuthBotChat(activity);
-        activateClickAction.invoke();
+        AuthHelper.Delegate authDelegate = this_showAuthDialog.getAuthDelegate(activateClickAction);
+        Intrinsics.checkNotNullExpressionValue(authDelegate, "getAuthDelegate(activateClickAction)");
+        AuthHelper.auth(authDelegate, true);
+    }
+
+    private final SpannableStringBuilder getAuthSpannableStringBuilder() {
+        int indexOf$default;
+        int lastIndexOf$default;
+        List<Object> listOf;
+        String descriptionText = LocaleController.getInternalString(C3242R.string.auth_dialog_description);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(descriptionText);
+        Intrinsics.checkNotNullExpressionValue(descriptionText, "descriptionText");
+        indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) descriptionText, "*", 0, false, 6, (Object) null);
+        lastIndexOf$default = StringsKt__StringsKt.lastIndexOf$default((CharSequence) descriptionText, "*", 0, false, 6, (Object) null);
+        if (indexOf$default != -1 && lastIndexOf$default != -1 && indexOf$default != lastIndexOf$default) {
+            spannableStringBuilder.replace(lastIndexOf$default, lastIndexOf$default + 1, (CharSequence) "");
+            spannableStringBuilder.replace(indexOf$default, indexOf$default + 1, (CharSequence) "");
+            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Object[]{new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3242R.string.PrivacyPolicyUrl)), new ForegroundColorSpan(Theme.getColor("windowBackgroundWhiteLinkText"))});
+            for (Object obj : listOf) {
+                spannableStringBuilder.setSpan(obj, indexOf$default, lastIndexOf$default - 1, 33);
+            }
+        }
+        return spannableStringBuilder;
     }
 }

@@ -1,6 +1,6 @@
 package com.iMe.storage.data.repository.catalog;
 
-import com.iMe.storage.data.locale.p028db.dao.minor.catalog.CatalogCategoryDao;
+import com.iMe.storage.data.locale.p027db.dao.minor.catalog.CatalogCategoryDao;
 import com.iMe.storage.data.mapper.catalog.ChannelCategoryMappingKt;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
@@ -8,7 +8,7 @@ import com.iMe.storage.data.network.model.response.catalog.CategoryWithCounterRe
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.catalog.CategoryWithCounter;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
@@ -34,10 +34,10 @@ public final class CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1
     /* compiled from: FirebaseExt.kt */
     /* renamed from: com.iMe.storage.data.repository.catalog.CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C17891 extends Lambda implements Function1<List<? extends CategoryWithCounter>, Result<? extends List<? extends CategoryWithCounter>>> {
-        public static final C17891 INSTANCE = new C17891();
+    public static final class C17771 extends Lambda implements Function1<List<? extends CategoryWithCounter>, Result<? extends List<? extends CategoryWithCounter>>> {
+        public static final C17771 INSTANCE = new C17771();
 
-        public C17891() {
+        public C17771() {
             super(1);
         }
 
@@ -77,11 +77,11 @@ public final class CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1
         }
         Completable andThen = rxDeleteCategories.andThen(catalogCategoryDao2.rxInsert((List) arrayList2));
         schedulersProvider = this.this$0.schedulersProvider;
-        Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo708io());
+        Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo694io());
         Observable just2 = Observable.just(arrayList);
         Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
         Observable andThen2 = subscribeOn.andThen(just2);
         Intrinsics.checkNotNullExpressionValue(andThen2, "catalogCategoryDao\n     …ategories.toObservable())");
-        return andThen2.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(C17891.INSTANCE));
+        return andThen2.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(C17771.INSTANCE));
     }
 }

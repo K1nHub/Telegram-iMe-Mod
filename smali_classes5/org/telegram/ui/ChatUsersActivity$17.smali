@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatUsersActivity;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
-    .line 1862
+    .line 1863
     iput-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$17;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatUsersActivity$17;->val$participant:Lorg/telegram/tgnet/TLObject;
@@ -42,7 +42,7 @@
 .method public didChangeOwner(Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 1
 
-    .line 1876
+    .line 1877
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$17;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ChatUsersActivity;->access$2000(Lorg/telegram/ui/ChatUsersActivity;Lorg/telegram/tgnet/TLRPC$User;)V
@@ -53,28 +53,28 @@
 .method public didSetRights(ILorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;)V
     .locals 8
 
-    .line 1865
+    .line 1866
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$17;->val$participant:Lorg/telegram/tgnet/TLObject;
 
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     if-eqz v0, :cond_0
 
-    .line 1866
+    .line 1867
     move-object v2, p1
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 1867
+    .line 1868
     iput-object p2, v2, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
-    .line 1868
+    .line 1869
     iput-object p3, v2, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
-    .line 1869
+    .line 1870
     iput-object p4, v2, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->rank:Ljava/lang/String;
 
-    .line 1870
+    .line 1871
     iget-object v1, p0, Lorg/telegram/ui/ChatUsersActivity$17;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     const-wide/16 v5, 0x0

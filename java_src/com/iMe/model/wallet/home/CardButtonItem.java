@@ -7,12 +7,12 @@ public final class CardButtonItem extends NoChildNode {
     private final int icon;
 
     /* renamed from: id */
-    private final int f281id;
+    private final int f276id;
     private final int titleResId;
 
     public static /* synthetic */ CardButtonItem copy$default(CardButtonItem cardButtonItem, int i, int i2, int i3, int i4, Object obj) {
         if ((i4 & 1) != 0) {
-            i = cardButtonItem.f281id;
+            i = cardButtonItem.f276id;
         }
         if ((i4 & 2) != 0) {
             i2 = cardButtonItem.icon;
@@ -24,7 +24,7 @@ public final class CardButtonItem extends NoChildNode {
     }
 
     public final int component1() {
-        return this.f281id;
+        return this.f276id;
     }
 
     public final int component2() {
@@ -45,21 +45,21 @@ public final class CardButtonItem extends NoChildNode {
         }
         if (obj instanceof CardButtonItem) {
             CardButtonItem cardButtonItem = (CardButtonItem) obj;
-            return this.f281id == cardButtonItem.f281id && this.icon == cardButtonItem.icon && this.titleResId == cardButtonItem.titleResId;
+            return this.f276id == cardButtonItem.f276id && this.icon == cardButtonItem.icon && this.titleResId == cardButtonItem.titleResId;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.f281id * 31) + this.icon) * 31) + this.titleResId;
+        return (((this.f276id * 31) + this.icon) * 31) + this.titleResId;
     }
 
     public String toString() {
-        return "CardButtonItem(id=" + this.f281id + ", icon=" + this.icon + ", titleResId=" + this.titleResId + ')';
+        return "CardButtonItem(id=" + this.f276id + ", icon=" + this.icon + ", titleResId=" + this.titleResId + ')';
     }
 
     public final int getId() {
-        return this.f281id;
+        return this.f276id;
     }
 
     public final int getIcon() {
@@ -71,7 +71,7 @@ public final class CardButtonItem extends NoChildNode {
     }
 
     public CardButtonItem(int i, int i2, int i3) {
-        this.f281id = i;
+        this.f276id = i;
         this.icon = i2;
         this.titleResId = i3;
     }

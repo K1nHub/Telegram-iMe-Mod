@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCreateWalletFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1\n+ 2 Animator.kt\nandroidx/core/animation/AnimatorKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1363:1\n32#2:1364\n95#2,14:1365\n1#3:1379\n*S KotlinDebug\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1\n*L\n571#1:1364\n571#1:1365,14\n*E\n"
+    value = "SMAP\nCreateWalletFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1\n+ 2 Animator.kt\nandroidx/core/animation/AnimatorKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1337:1\n32#2:1338\n95#2,14:1339\n1#3:1353\n*S KotlinDebug\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1\n*L\n569#1:1338\n569#1:1339,14\n*E\n"
 .end annotation
 
 
@@ -24,10 +24,6 @@
 .field private isLayoutDirty:Z
 
 .field private final location:[I
-
-.field private scrollingToChild:Landroid/view/View;
-
-.field private scrollingUp:I
 
 .field private final tempRect:Landroid/graphics/Rect;
 
@@ -40,17 +36,17 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 537
+    .line 535
     invoke-direct {p0, p2}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x2
 
     new-array p1, p1, [I
 
-    .line 538
+    .line 536
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->location:[I
 
-    .line 539
+    .line 537
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -59,7 +55,7 @@
 
     const/4 p1, 0x1
 
-    .line 540
+    .line 538
     iput-boolean p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->isLayoutDirty:Z
 
     return-void
@@ -68,7 +64,7 @@
 .method public static final synthetic access$getActionBarAnimator$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 537
+    .line 535
     iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->actionBarAnimator:Landroid/animation/AnimatorSet;
 
     return-object p0
@@ -77,7 +73,7 @@
 .method public static final synthetic access$setActionBarAnimator$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;Landroid/animation/AnimatorSet;)V
     .locals 0
 
-    .line 537
+    .line 535
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->actionBarAnimator:Landroid/animation/AnimatorSet;
 
     return-void
@@ -90,10 +86,10 @@
 
     const/4 v0, 0x0
 
-    .line 628
+    .line 612
     iput-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->isLayoutDirty:Z
 
-    .line 629
+    .line 613
     invoke-super/range {p0 .. p5}, Landroid/widget/ScrollView;->onLayout(ZIIII)V
 
     return-void
@@ -102,15 +98,15 @@
 .method protected onScrollChanged(IIII)V
     .locals 8
 
-    .line 546
+    .line 544
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ScrollView;->onScrollChanged(IIII)V
 
-    .line 547
+    .line 545
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$hideHint(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
 
-    .line 548
+    .line 546
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getTitleTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -121,7 +117,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->getLocationOnScreen([I)V
 
-    .line 549
+    .line 547
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->location:[I
 
     const/4 p2, 0x1
@@ -161,7 +157,7 @@
     :cond_0
     move p1, p4
 
-    .line 550
+    .line 548
     :goto_0
     iget-object p3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -185,7 +181,7 @@
     :goto_1
     if-eq p1, p3, :cond_7
 
-    .line 552
+    .line 550
     iget-object p3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getTitleTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -208,21 +204,21 @@
     :goto_2
     invoke-virtual {p3, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 553
+    .line 551
     iget-object p3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->actionBarAnimator:Landroid/animation/AnimatorSet;
 
     if-eqz p3, :cond_4
 
     if-eqz p3, :cond_3
 
-    .line 554
+    .line 552
     invoke-virtual {p3}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 555
+    .line 553
     :cond_3
     iput-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->actionBarAnimator:Landroid/animation/AnimatorSet;
 
-    .line 557
+    .line 555
     :cond_4
     new-instance p3, Landroid/animation/AnimatorSet;
 
@@ -234,12 +230,12 @@
 
     new-array v1, v1, [Landroid/animation/Animator;
 
-    .line 560
+    .line 558
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionBarBackground(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/view/View;
 
     move-result-object v2
 
-    .line 561
+    .line 559
     sget-object v3, Landroid/widget/ScrollView;->ALPHA:Landroid/util/Property;
 
     new-array v4, p2, [F
@@ -260,14 +256,14 @@
     :goto_3
     aput v7, v4, p4
 
-    .line 559
+    .line 557
     invoke-static {v2, v3, v4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
 
     aput-object v2, v1, p4
 
-    .line 565
+    .line 563
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionBar$p$s1606076837(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object v0
@@ -276,7 +272,7 @@
 
     move-result-object v0
 
-    .line 566
+    .line 564
     sget-object v2, Landroid/widget/ScrollView;->ALPHA:Landroid/util/Property;
 
     new-array v3, p2, [F
@@ -291,19 +287,19 @@
     :goto_4
     aput v5, v3, p4
 
-    .line 564
+    .line 562
     invoke-static {v0, v2, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p1
 
     aput-object p1, v1, p2
 
-    .line 558
+    .line 556
     invoke-virtual {p3, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const-wide/16 p1, 0x96
 
-    .line 570
+    .line 568
     invoke-virtual {p3, p1, p2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
     .line 101
@@ -314,10 +310,10 @@
     .line 107
     invoke-virtual {p3, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 576
+    .line 574
     invoke-virtual {p3}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 557
+    .line 555
     iput-object p3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->actionBarAnimator:Landroid/animation/AnimatorSet;
 
     :cond_7
@@ -335,126 +331,26 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 600
+    .line 598
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
     if-ge v0, v1, :cond_0
 
-    .line 601
+    .line 599
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->isLayoutDirty:Z
 
     if-nez v0, :cond_0
 
-    .line 602
+    .line 600
     invoke-virtual {p0, p2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->scrollToDescendant(Landroid/view/View;)V
 
-    .line 605
+    .line 603
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/ScrollView;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
 
     return-void
-.end method
-
-.method public requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
-    .locals 3
-
-    const-string v0, "child"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "rectangle"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 609
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-ge v0, v1, :cond_1
-
-    .line 610
-    iget v0, p2, Landroid/graphics/Rect;->bottom:I
-
-    .line 611
-    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
-
-    invoke-static {v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getEditTexts$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Ljava/util/List;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
-
-    invoke-static {v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getEditTexts$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lkotlin/collections/CollectionsKt;->getLastIndex(Ljava/util/List;)I
-
-    move-result v2
-
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
-
-    invoke-virtual {v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->scrollingToChild:Landroid/view/View;
-
-    if-ne v1, v2, :cond_0
-
-    const/16 v1, 0x5a
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v1, 0x10
-
-    .line 610
-    :goto_0
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    iput v0, p2, Landroid/graphics/Rect;->bottom:I
-
-    .line 613
-    iget v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->scrollingUp:I
-
-    if-eqz v1, :cond_1
-
-    .line 614
-    iget v2, p2, Landroid/graphics/Rect;->top:I
-
-    sub-int/2addr v2, v1
-
-    iput v2, p2, Landroid/graphics/Rect;->top:I
-
-    sub-int/2addr v0, v1
-
-    .line 615
-    iput v0, p2, Landroid/graphics/Rect;->bottom:I
-
-    const/4 v0, 0x0
-
-    .line 616
-    iput v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->scrollingUp:I
-
-    .line 619
-    :cond_1
-    invoke-super {p0, p1, p2, p3}, Landroid/widget/ScrollView;->requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
-
-    move-result p1
-
-    return p1
 .end method
 
 .method public requestLayout()V
@@ -462,10 +358,10 @@
 
     const/4 v0, 0x1
 
-    .line 623
+    .line 607
     iput-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->isLayoutDirty:Z
 
-    .line 624
+    .line 608
     invoke-super {p0}, Landroid/widget/ScrollView;->requestLayout()V
 
     return-void
@@ -478,25 +374,22 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 582
-    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->scrollingToChild:Landroid/view/View;
-
-    .line 583
+    .line 581
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->tempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 584
+    .line 582
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->tempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/ScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 585
+    .line 583
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->tempRect:Landroid/graphics/Rect;
 
     iget v1, v0, Landroid/graphics/Rect;->bottom:I
 
-    .line 586
+    .line 584
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getEditTexts$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Ljava/util/List;
@@ -532,7 +425,7 @@
     :cond_0
     const/16 v2, 0xa
 
-    .line 585
+    .line 583
     :goto_0
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -542,49 +435,39 @@
 
     iput v1, v0, Landroid/graphics/Rect;->bottom:I
 
-    .line 588
+    .line 586
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->tempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v0}, Landroid/widget/ScrollView;->computeScrollDeltaToGetChildRectOnScreen(Landroid/graphics/Rect;)I
 
     move-result v0
 
-    const/4 v1, 0x0
-
     if-gez v0, :cond_1
 
-    .line 590
+    .line 588
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getMeasuredHeight()I
 
-    move-result v2
+    move-result v1
 
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result p1
 
-    sub-int/2addr v2, p1
+    sub-int/2addr v1, p1
 
-    const/4 p1, 0x2
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    iput p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->scrollingUp:I
+    div-int/lit8 v1, v1, 0x2
 
-    sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    sub-int/2addr v0, v1
 
-    div-int/2addr v2, p1
-
-    sub-int/2addr v0, v2
-
-    goto :goto_1
-
-    .line 592
     :cond_1
-    iput v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScrollView$1;->scrollingUp:I
-
-    :goto_1
     if-eqz v0, :cond_2
 
-    .line 595
-    invoke-virtual {p0, v1, v0}, Landroid/widget/ScrollView;->smoothScrollBy(II)V
+    const/4 p1, 0x0
+
+    .line 593
+    invoke-virtual {p0, p1, v0}, Landroid/widget/ScrollView;->smoothScrollBy(II)V
 
     :cond_2
     return-void

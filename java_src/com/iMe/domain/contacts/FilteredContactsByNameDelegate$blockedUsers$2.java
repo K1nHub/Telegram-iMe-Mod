@@ -24,11 +24,11 @@ public final class FilteredContactsByNameDelegate$blockedUsers$2 extends Lambda 
     /* compiled from: FilteredContactsByNameDelegate.kt */
     /* renamed from: com.iMe.domain.contacts.FilteredContactsByNameDelegate$blockedUsers$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C14241 extends Lambda implements Function1<TLRPC$TL_contact, Boolean> {
+    public static final class C14091 extends Lambda implements Function1<TLRPC$TL_contact, Boolean> {
         final /* synthetic */ FilteredContactsByNameDelegate this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C14241(FilteredContactsByNameDelegate filteredContactsByNameDelegate) {
+        C14091(FilteredContactsByNameDelegate filteredContactsByNameDelegate) {
             super(1);
             this.this$0 = filteredContactsByNameDelegate;
         }
@@ -57,7 +57,7 @@ public final class FilteredContactsByNameDelegate$blockedUsers$2 extends Lambda 
     public final HashMap<String, ArrayList<TLRPC$TL_contact>> invoke() {
         HashMap<String, ArrayList<TLRPC$TL_contact>> usersByPredicate;
         FilteredContactsByNameDelegate filteredContactsByNameDelegate = this.this$0;
-        usersByPredicate = filteredContactsByNameDelegate.getUsersByPredicate(new C14241(filteredContactsByNameDelegate));
+        usersByPredicate = filteredContactsByNameDelegate.getUsersByPredicate(new C14091(filteredContactsByNameDelegate));
         return usersByPredicate;
     }
 }

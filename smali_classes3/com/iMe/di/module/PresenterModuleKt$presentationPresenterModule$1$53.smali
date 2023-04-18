@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$53\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n127#2,5:434\n127#2,5:439\n127#2,5:444\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$53\n*L\n329#1:434,5\n330#1:439,5\n331#1:444,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$53\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n129#2,5:434\n129#2,5:439\n129#2,5:444\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$53\n*L\n329#1:434,5\n330#1:439,5\n331#1:444,5\n*E\n"
 .end annotation
 
 
@@ -75,7 +75,7 @@
     .line 328
     new-instance p2, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -120,7 +120,7 @@
 
     check-cast v4, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -163,7 +163,7 @@
 
     check-cast v7, Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectManager;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

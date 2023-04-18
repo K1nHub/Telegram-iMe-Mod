@@ -697,7 +697,7 @@
 
     if-nez p1, :cond_3
 
-    .line 769
+    .line 768
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
 
     move-result-object p3
@@ -713,18 +713,6 @@
     if-eqz p3, :cond_2
 
     .line 770
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Lorg/telegram/messenger/AccountInstance;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Lorg/telegram/messenger/MediaDataController;->getPremiumPromo()Lorg/telegram/tgnet/TLRPC$TL_help_premiumPromo;
-
-    move-result-object p3
-
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$TL_help_premiumPromo;->period_options:Ljava/util/ArrayList;
 
     invoke-virtual {p3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -757,38 +745,43 @@
     :cond_2
     move p3, v0
 
-    .line 779
     :cond_3
+    if-nez p1, :cond_4
+
+    return-void
+
+    .line 785
+    :cond_4
     invoke-static {}, Lorg/telegram/ui/PremiumPreviewFragment;->sentPremiumButtonClick()V
 
-    .line 781
+    .line 787
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->useInvoiceBilling()Z
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_9
 
-    .line 782
+    .line 788
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    .line 783
+    .line 789
     instance-of v2, v1, Lorg/telegram/ui/LaunchActivity;
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_9
 
-    .line 784
+    .line 790
     check-cast v1, Lorg/telegram/ui/LaunchActivity;
 
-    .line 786
+    .line 792
     iget-object p3, p1, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->subscriptionOption:Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;
 
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;->bot_url:Ljava/lang/String;
 
-    if-nez p3, :cond_5
+    if-nez p3, :cond_6
 
-    .line 787
+    .line 793
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -801,12 +794,12 @@
 
     const-string p3, "android.intent.action.VIEW"
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_5
 
-    .line 788
+    .line 794
     invoke-virtual {v1, v0}, Lorg/telegram/ui/LaunchActivity;->setNavigateToPremiumBot(Z)V
 
-    .line 789
+    .line 795
     new-instance p1, Landroid/content/Intent;
 
     new-instance p4, Ljava/lang/StringBuilder;
@@ -845,8 +838,8 @@
 
     goto :goto_0
 
-    .line 790
-    :cond_4
+    .line 796
+    :cond_5
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -857,9 +850,9 @@
 
     move-result p1
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_8
 
-    .line 791
+    .line 797
     new-instance p1, Landroid/content/Intent;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -892,13 +885,13 @@
 
     goto :goto_0
 
-    .line 794
-    :cond_5
+    .line 800
+    :cond_6
     invoke-static {p3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p0
 
-    .line 795
+    .line 801
     invoke-virtual {p0}, Landroid/net/Uri;->getHost()Ljava/lang/String;
 
     move-result-object p2
@@ -909,9 +902,9 @@
 
     move-result p2
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_7
 
-    .line 796
+    .line 802
     invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object p2
@@ -922,7 +915,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_6
+    if-nez p2, :cond_7
 
     invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
@@ -934,71 +927,71 @@
 
     move-result p0
 
-    if-nez p0, :cond_6
+    if-nez p0, :cond_7
 
-    .line 797
+    .line 803
     invoke-virtual {v1, v0}, Lorg/telegram/ui/LaunchActivity;->setNavigateToPremiumBot(Z)V
 
-    .line 800
-    :cond_6
+    .line 806
+    :cond_7
     iget-object p0, p1, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->subscriptionOption:Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;
 
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;->bot_url:Ljava/lang/String;
 
     invoke-static {v1, p0}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
 
-    :cond_7
+    :cond_8
     :goto_0
     return-void
 
-    .line 806
-    :cond_8
+    .line 812
+    :cond_9
     sget-object p2, Lorg/telegram/messenger/BillingController;->PREMIUM_PRODUCT_DETAILS:Lcom/android/billingclient/api/ProductDetails;
 
-    if-nez p2, :cond_9
+    if-nez p2, :cond_a
 
     return-void
 
-    .line 810
-    :cond_9
+    .line 816
+    :cond_a
     invoke-virtual {p2}, Lcom/android/billingclient/api/ProductDetails;->getSubscriptionOfferDetails()Ljava/util/List;
 
     move-result-object p2
 
-    .line 811
+    .line 817
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
     move-result p2
 
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_b
 
     return-void
 
-    .line 815
-    :cond_a
-    invoke-virtual {p1}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getGooglePlayProductDetails()Lcom/android/billingclient/api/ProductDetails;
-
-    move-result-object p2
-
-    if-nez p2, :cond_b
-
-    .line 816
-    sget-object p2, Lorg/telegram/messenger/BillingController;->PREMIUM_PRODUCT_DETAILS:Lcom/android/billingclient/api/ProductDetails;
-
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->setGooglePlayProductDetails(Lcom/android/billingclient/api/ProductDetails;)V
-
-    .line 819
+    .line 821
     :cond_b
-    invoke-virtual {p1}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getOfferDetails()Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
+    invoke-virtual {p1}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getGooglePlayProductDetails()Lcom/android/billingclient/api/ProductDetails;
 
     move-result-object p2
 
     if-nez p2, :cond_c
 
+    .line 822
+    sget-object p2, Lorg/telegram/messenger/BillingController;->PREMIUM_PRODUCT_DETAILS:Lcom/android/billingclient/api/ProductDetails;
+
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->setGooglePlayProductDetails(Lcom/android/billingclient/api/ProductDetails;)V
+
+    .line 825
+    :cond_c
+    invoke-virtual {p1}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getOfferDetails()Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
+
+    move-result-object p2
+
+    if-nez p2, :cond_d
+
     return-void
 
-    .line 824
-    :cond_c
+    .line 830
+    :cond_d
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
 
     move-result-object p2
@@ -1038,7 +1031,7 @@
 .method private closeSetting()V
     .locals 2
 
-    .line 1689
+    .line 1695
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->settingsView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1760,7 +1753,7 @@
 .method public static getPremiumButtonText(ILorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;)Ljava/lang/String;
     .locals 0
 
-    .line 910
+    .line 916
     sget p0, Lorg/telegram/messenger/R$string;->Next:I
 
     const-string p1, "Next"
@@ -1775,7 +1768,7 @@
 .method private static synthetic lambda$buyPremium$10(Lorg/telegram/ui/ActionBar/BaseFragment;ZLcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
     .locals 8
 
-    .line 824
+    .line 830
     new-instance v7, Lorg/telegram/ui/PremiumPreviewFragment$$ExternalSyntheticLambda5;
 
     move-object v0, v7
@@ -1802,22 +1795,22 @@
 .method private static synthetic lambda$buyPremium$3(Lorg/telegram/ui/ActionBar/BaseFragment;Z)V
     .locals 2
 
-    .line 827
+    .line 833
     instance-of v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;
 
     if-eqz v0, :cond_1
 
-    .line 828
+    .line 834
     move-object v0, p0
 
     check-cast v0, Lorg/telegram/ui/PremiumPreviewFragment;
 
     if-eqz p1, :cond_0
 
-    .line 830
+    .line 836
     invoke-virtual {v0}, Lorg/telegram/ui/PremiumPreviewFragment;->setForcePremium()Lorg/telegram/ui/PremiumPreviewFragment;
 
-    .line 832
+    .line 838
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
@@ -1827,14 +1820,14 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/messenger/MediaDataController;->loadPremiumPromo(Z)V
 
-    .line 834
+    .line 840
     iget-object p1, v0, Lorg/telegram/ui/PremiumPreviewFragment;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1, v1}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollToPosition(I)V
 
     goto :goto_0
 
-    .line 836
+    .line 842
     :cond_1
     new-instance v0, Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -1844,14 +1837,14 @@
 
     if-eqz p1, :cond_2
 
-    .line 838
+    .line 844
     invoke-virtual {v0}, Lorg/telegram/ui/PremiumPreviewFragment;->setForcePremium()Lorg/telegram/ui/PremiumPreviewFragment;
 
-    .line 840
+    .line 846
     :cond_2
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 842
+    .line 848
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -1861,7 +1854,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 844
+    .line 850
     :try_start_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFragmentView()Landroid/view/View;
 
@@ -1875,7 +1868,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 847
+    .line 853
     :catch_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -1896,7 +1889,7 @@
 .method private static synthetic lambda$buyPremium$4(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;)V
     .locals 2
 
-    .line 868
+    .line 874
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
 
     move-result v0
@@ -1913,12 +1906,12 @@
 .method private static synthetic lambda$buyPremium$5(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 863
+    .line 869
     instance-of v0, p3, Lorg/telegram/tgnet/TLRPC$Updates;
 
     if-eqz v0, :cond_0
 
-    .line 864
+    .line 870
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
@@ -1929,7 +1922,7 @@
 
     invoke-virtual {p0, p3, p2}, Lorg/telegram/messenger/MessagesController;->processUpdates(Lorg/telegram/tgnet/TLRPC$Updates;Z)V
 
-    .line 866
+    .line 872
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     goto :goto_0
@@ -1937,7 +1930,7 @@
     :cond_0
     if-eqz p4, :cond_1
 
-    .line 868
+    .line 874
     new-instance p1, Lorg/telegram/ui/PremiumPreviewFragment$$ExternalSyntheticLambda7;
 
     invoke-direct {p1, p0, p4, p2}, Lorg/telegram/ui/PremiumPreviewFragment$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;)V
@@ -1952,14 +1945,14 @@
 .method private static synthetic lambda$buyPremium$6(Ljava/lang/Runnable;Lcom/android/billingclient/api/BillingResult;)V
     .locals 0
 
-    .line 878
+    .line 884
     invoke-virtual {p1}, Lcom/android/billingclient/api/BillingResult;->getResponseCode()I
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 879
+    .line 885
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     :cond_0
@@ -1969,12 +1962,12 @@
 .method private static synthetic lambda$buyPremium$7(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumSubscription;Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_payments_canPurchasePremium;)V
     .locals 7
 
-    .line 891
+    .line 897
     instance-of p0, p0, Lorg/telegram/tgnet/TLRPC$TL_boolTrue;
 
     if-eqz p0, :cond_0
 
-    .line 892
+    .line 898
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
 
     move-result-object v0
@@ -1987,19 +1980,19 @@
 
     move-result-object v2
 
-    .line 893
+    .line 899
     invoke-static {}, Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams;->newBuilder()Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams$Builder;
 
     move-result-object p0
 
     sget-object p1, Lorg/telegram/messenger/BillingController;->PREMIUM_PRODUCT_DETAILS:Lcom/android/billingclient/api/ProductDetails;
 
-    .line 894
+    .line 900
     invoke-virtual {p0, p1}, Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams$Builder;->setProductDetails(Lcom/android/billingclient/api/ProductDetails;)Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams$Builder;
 
     move-result-object p0
 
-    .line 895
+    .line 901
     invoke-virtual {p3}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getOfferDetails()Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
 
     move-result-object p1
@@ -2012,12 +2005,12 @@
 
     move-result-object p0
 
-    .line 896
+    .line 902
     invoke-virtual {p0}, Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams$Builder;->build()Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams;
 
     move-result-object p0
 
-    .line 892
+    .line 898
     invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v4
@@ -2032,7 +2025,7 @@
 
     goto :goto_0
 
-    .line 899
+    .line 905
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
 
@@ -2051,7 +2044,7 @@
 .method private static synthetic lambda$buyPremium$8(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumSubscription;Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;Lorg/telegram/tgnet/TLRPC$TL_payments_canPurchasePremium;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 9
 
-    .line 890
+    .line 896
     new-instance v8, Lorg/telegram/ui/PremiumPreviewFragment$$ExternalSyntheticLambda6;
 
     move-object v0, v8
@@ -2080,14 +2073,14 @@
 .method private static synthetic lambda$buyPremium$9(Lcom/android/billingclient/api/BillingResult;Lorg/telegram/ui/ActionBar/BaseFragment;ZLjava/util/List;Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;)V
     .locals 8
 
-    .line 825
+    .line 831
     invoke-virtual {p0}, Lcom/android/billingclient/api/BillingResult;->getResponseCode()I
 
     move-result p0
 
     if-nez p0, :cond_4
 
-    .line 826
+    .line 832
     new-instance p0, Lorg/telegram/ui/PremiumPreviewFragment$$ExternalSyntheticLambda8;
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/PremiumPreviewFragment$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Z)V
@@ -2098,7 +2091,7 @@
 
     if-eqz p3, :cond_2
 
-    .line 850
+    .line 856
     invoke-interface {p3}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
@@ -2115,7 +2108,7 @@
 
     if-nez v1, :cond_2
 
-    .line 851
+    .line 857
     invoke-interface {p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p3
@@ -2133,7 +2126,7 @@
 
     check-cast v1, Lcom/android/billingclient/api/Purchase;
 
-    .line 852
+    .line 858
     invoke-virtual {v1}, Lcom/android/billingclient/api/Purchase;->getProducts()Ljava/util/List;
 
     move-result-object v2
@@ -2144,43 +2137,43 @@
 
     if-eqz v2, :cond_0
 
-    .line 853
+    .line 859
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;-><init>()V
 
-    .line 854
+    .line 860
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;-><init>()V
 
     iput-object p3, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;->receipt:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
-    .line 855
+    .line 861
     invoke-virtual {v1}, Lcom/android/billingclient/api/Purchase;->getOriginalJson()Ljava/lang/String;
 
     move-result-object p5
 
     iput-object p5, p3, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;->data:Ljava/lang/String;
 
-    .line 856
+    .line 862
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumSubscription;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumSubscription;-><init>()V
 
-    .line 857
+    .line 863
     iput-boolean v0, p3, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumSubscription;->restore:Z
 
     if-eqz p4, :cond_1
 
-    .line 859
+    .line 865
     iput-boolean v0, p3, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumSubscription;->upgrade:Z
 
-    .line 861
+    .line 867
     :cond_1
     iput-object p3, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;->purpose:Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
 
-    .line 862
+    .line 868
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p3
@@ -2195,7 +2188,7 @@
 
     return-void
 
-    .line 877
+    .line 883
     :cond_2
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
 
@@ -2207,26 +2200,26 @@
 
     invoke-virtual {p3, p2, v1}, Lorg/telegram/messenger/BillingController;->addResultListener(Ljava/lang/String;Landroidx/core/util/Consumer;)V
 
-    .line 883
+    .line 889
     new-instance p0, Lorg/telegram/tgnet/TLRPC$TL_payments_canPurchasePremium;
 
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_payments_canPurchasePremium;-><init>()V
 
-    .line 884
+    .line 890
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumSubscription;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumSubscription;-><init>()V
 
     if-eqz p4, :cond_3
 
-    .line 886
+    .line 892
     iput-boolean v0, v4, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumSubscription;->upgrade:Z
 
-    .line 888
+    .line 894
     :cond_3
     iput-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_canPurchasePremium;->purpose:Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
 
-    .line 889
+    .line 895
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p2
@@ -2558,7 +2551,7 @@
 .method private synthetic lambda$updateButtonText$11(Landroid/view/View;)V
     .locals 0
 
-    .line 1600
+    .line 1606
     invoke-static {p0}, Lorg/telegram/ui/PremiumPreviewFragment;->buyPremium(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
@@ -2573,7 +2566,7 @@
 .method private synthetic lambda$updateButtonText$13(Landroid/view/View;)V
     .locals 3
 
-    .line 1610
+    .line 1616
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->subscriptionTiers:Ljava/util/ArrayList;
 
     iget v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->selectedTierIndex:I
@@ -2584,7 +2577,7 @@
 
     check-cast p1, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;
 
-    .line 1612
+    .line 1618
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->currentSubscriptionTier:Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;
 
     if-eqz v0, :cond_0
@@ -2597,12 +2590,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1613
+    .line 1619
     invoke-static {}, Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;->newBuilder()Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams$Builder;
 
     move-result-object v0
 
-    .line 1614
+    .line 1620
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
 
     move-result-object v1
@@ -2617,12 +2610,12 @@
 
     const/4 v1, 0x5
 
-    .line 1615
+    .line 1621
     invoke-virtual {v0, v1}, Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams$Builder;->setReplaceProrationMode(I)Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams$Builder;
 
     move-result-object v0
 
-    .line 1616
+    .line 1622
     invoke-virtual {v0}, Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams$Builder;->build()Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;
 
     move-result-object v0
@@ -2637,7 +2630,7 @@
 
     const-string v2, "settings"
 
-    .line 1618
+    .line 1624
     invoke-static {p0, p1, v2, v1, v0}, Lorg/telegram/ui/PremiumPreviewFragment;->buyPremium(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;Ljava/lang/String;ZLcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;)V
 
     return-void
@@ -2652,7 +2645,7 @@
 
     move v2, v1
 
-    .line 966
+    .line 972
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/PremiumPreviewFragment;->premiumFeatures:Ljava/util/ArrayList;
 
@@ -2662,7 +2655,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 967
+    .line 973
     iget-object v3, p0, Lorg/telegram/ui/PremiumPreviewFragment;->dummyCell:Lorg/telegram/ui/PremiumFeatureCell;
 
     iget-object v4, p0, Lorg/telegram/ui/PremiumPreviewFragment;->premiumFeatures:Ljava/util/ArrayList;
@@ -2675,7 +2668,7 @@
 
     invoke-virtual {v3, v4, v0}, Lorg/telegram/ui/PremiumFeatureCell;->setData(Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;Z)V
 
-    .line 968
+    .line 974
     iget-object v3, p0, Lorg/telegram/ui/PremiumPreviewFragment;->dummyCell:Lorg/telegram/ui/PremiumFeatureCell;
 
     const/high16 v4, 0x40000000    # 2.0f
@@ -2692,7 +2685,7 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 969
+    .line 975
     iget-object v3, p0, Lorg/telegram/ui/PremiumPreviewFragment;->premiumFeatures:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2703,7 +2696,7 @@
 
     iput v2, v3, Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;->yOffset:I
 
-    .line 970
+    .line 976
     iget-object v3, p0, Lorg/telegram/ui/PremiumPreviewFragment;->dummyCell:Lorg/telegram/ui/PremiumFeatureCell;
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -2716,7 +2709,7 @@
 
     goto :goto_0
 
-    .line 973
+    .line 979
     :cond_0
     iput v2, p0, Lorg/telegram/ui/PremiumPreviewFragment;->totalGradientHeight:I
 
@@ -2726,17 +2719,17 @@
 .method public static sentPremiumButtonClick()V
     .locals 4
 
-    .line 1760
+    .line 1766
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;-><init>()V
 
-    .line 1761
+    .line 1767
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;-><init>()V
 
-    .line 1762
+    .line 1768
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2753,22 +2746,22 @@
 
     const-string v2, "premium.promo_screen_accept"
 
-    .line 1763
+    .line 1769
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->type:Ljava/lang/String;
 
-    .line 1764
+    .line 1770
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_jsonNull;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_jsonNull;-><init>()V
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->data:Lorg/telegram/tgnet/TLRPC$JSONValue;
 
-    .line 1765
+    .line 1771
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;->events:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1767
+    .line 1773
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2785,17 +2778,17 @@
 .method public static sentPremiumBuyCanceled()V
     .locals 4
 
-    .line 1773
+    .line 1779
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;-><init>()V
 
-    .line 1774
+    .line 1780
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;-><init>()V
 
-    .line 1775
+    .line 1781
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2812,22 +2805,22 @@
 
     const-string v2, "premium.promo_screen_fail"
 
-    .line 1776
+    .line 1782
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->type:Ljava/lang/String;
 
-    .line 1777
+    .line 1783
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_jsonNull;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_jsonNull;-><init>()V
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->data:Lorg/telegram/tgnet/TLRPC$JSONValue;
 
-    .line 1778
+    .line 1784
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;->events:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1780
+    .line 1786
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2844,17 +2837,17 @@
 .method public static sentShowFeaturePreview(II)V
     .locals 5
 
-    .line 1786
+    .line 1792
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;-><init>()V
 
-    .line 1787
+    .line 1793
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;-><init>()V
 
-    .line 1788
+    .line 1794
     invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v2
@@ -2869,43 +2862,43 @@
 
     const-string v2, "premium.promo_screen_tap"
 
-    .line 1789
+    .line 1795
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->type:Ljava/lang/String;
 
-    .line 1790
+    .line 1796
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_jsonObject;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_jsonObject;-><init>()V
 
-    .line 1791
+    .line 1797
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->data:Lorg/telegram/tgnet/TLRPC$JSONValue;
 
-    .line 1792
+    .line 1798
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;-><init>()V
 
-    .line 1793
+    .line 1799
     invoke-static {p1}, Lorg/telegram/ui/PremiumPreviewFragment;->featureTypeToServerString(I)Ljava/lang/String;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 1795
+    .line 1801
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_jsonString;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_jsonString;-><init>()V
 
-    .line 1796
+    .line 1802
     iput-object p1, v4, Lorg/telegram/tgnet/TLRPC$TL_jsonString;->value:Ljava/lang/String;
 
-    .line 1797
+    .line 1803
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->value:Lorg/telegram/tgnet/TLRPC$JSONValue;
 
     goto :goto_0
 
-    .line 1799
+    .line 1805
     :cond_0
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_jsonNull;
 
@@ -2916,20 +2909,20 @@
     :goto_0
     const-string p1, "item"
 
-    .line 1801
+    .line 1807
     iput-object p1, v3, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->key:Ljava/lang/String;
 
-    .line 1802
+    .line 1808
     iget-object p1, v2, Lorg/telegram/tgnet/TLRPC$TL_jsonObject;->value:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1803
+    .line 1809
     iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;->events:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1805
+    .line 1811
     invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p0
@@ -2944,24 +2937,24 @@
 .method public static sentShowScreenStat(Ljava/lang/String;)V
     .locals 6
 
-    .line 1730
+    .line 1736
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v0
 
-    .line 1731
+    .line 1737
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;-><init>()V
 
-    .line 1732
+    .line 1738
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;-><init>()V
 
-    .line 1733
+    .line 1739
     invoke-virtual {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getCurrentTime()I
 
     move-result v3
@@ -2972,35 +2965,35 @@
 
     const-string v3, "premium.promo_screen_show"
 
-    .line 1734
+    .line 1740
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->type:Ljava/lang/String;
 
-    .line 1735
+    .line 1741
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_jsonObject;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_jsonObject;-><init>()V
 
-    .line 1736
+    .line 1742
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->data:Lorg/telegram/tgnet/TLRPC$JSONValue;
 
-    .line 1738
+    .line 1744
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;-><init>()V
 
     if-eqz p0, :cond_0
 
-    .line 1741
+    .line 1747
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_jsonString;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_jsonString;-><init>()V
 
-    .line 1742
+    .line 1748
     iput-object p0, v5, Lorg/telegram/tgnet/TLRPC$TL_jsonString;->value:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 1745
+    .line 1751
     :cond_0
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_jsonNull;
 
@@ -3009,23 +3002,23 @@
     :goto_0
     const-string p0, "source"
 
-    .line 1748
+    .line 1754
     iput-object p0, v4, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->key:Ljava/lang/String;
 
-    .line 1749
+    .line 1755
     iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->value:Lorg/telegram/tgnet/TLRPC$JSONValue;
 
-    .line 1751
+    .line 1757
     iget-object p0, v3, Lorg/telegram/tgnet/TLRPC$TL_jsonObject;->value:Ljava/util/ArrayList;
 
     invoke-virtual {p0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1752
+    .line 1758
     iget-object p0, v1, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;->events:Ljava/util/ArrayList;
 
     invoke-virtual {p0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1754
+    .line 1760
     sget-object p0, Lorg/telegram/ui/PremiumPreviewFragment$$ExternalSyntheticLambda16;->INSTANCE:Lorg/telegram/ui/PremiumPreviewFragment$$ExternalSyntheticLambda16;
 
     invoke-virtual {v0, v1, p0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
@@ -3586,7 +3579,7 @@
 .method private updateButtonText(Z)V
     .locals 5
 
-    .line 1593
+    .line 1599
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     if-eqz v0, :cond_5
@@ -3629,7 +3622,7 @@
 
     goto/16 :goto_0
 
-    .line 1596
+    .line 1602
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
@@ -3639,13 +3632,13 @@
 
     move p1, v1
 
-    .line 1599
+    .line 1605
     :cond_1
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->IS_BILLING_UNAVAILABLE:Z
 
     if-eqz v0, :cond_2
 
-    .line 1600
+    .line 1606
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
@@ -3672,7 +3665,7 @@
 
     return-void
 
-    .line 1603
+    .line 1609
     :cond_2
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->useInvoiceBilling()Z
 
@@ -3724,7 +3717,7 @@
 
     if-nez v0, :cond_4
 
-    .line 1604
+    .line 1610
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
@@ -3738,7 +3731,7 @@
 
     invoke-virtual {v0, v1, v2, p1}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->setButton(Ljava/lang/String;Landroid/view/View$OnClickListener;Z)V
 
-    .line 1605
+    .line 1611
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     const/4 v0, 0x1
@@ -3747,7 +3740,7 @@
 
     return-void
 
-    .line 1608
+    .line 1614
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->subscriptionTiers:Ljava/util/ArrayList;
 
@@ -3757,7 +3750,7 @@
 
     if-nez v0, :cond_5
 
-    .line 1609
+    .line 1615
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
@@ -3782,7 +3775,7 @@
 
     invoke-virtual {v0, v2, v3, p1}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->setButton(Ljava/lang/String;Landroid/view/View$OnClickListener;Z)V
 
-    .line 1620
+    .line 1626
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->setFlickerDisabled(Z)V
@@ -3795,7 +3788,7 @@
 .method private updateColors()V
     .locals 5
 
-    .line 1659
+    .line 1665
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     if-eqz v0, :cond_2
@@ -3809,7 +3802,7 @@
     :cond_0
     const-string v1, "premiumGradientBackgroundOverlay"
 
-    .line 1662
+    .line 1668
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v2
@@ -3818,7 +3811,7 @@
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    .line 1663
+    .line 1669
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -3833,7 +3826,7 @@
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
 
-    .line 1664
+    .line 1670
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->titleView:Landroid/widget/TextView;
@@ -3844,7 +3837,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1665
+    .line 1671
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-static {v0}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$1500(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;)Landroid/widget/TextView;
@@ -3857,14 +3850,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1666
+    .line 1672
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->particlesView:Lorg/telegram/ui/Components/Premium/StarParticlesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView;->drawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->updateColors()V
 
-    .line 1667
+    .line 1673
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-static {v0}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$100(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;)Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;
@@ -3875,7 +3868,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1668
+    .line 1674
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-static {v0}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$100(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;)Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;
@@ -3886,7 +3879,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->updateColors()V
 
-    .line 1670
+    .line 1676
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/PremiumPreviewFragment;->updateBackgroundImage()V
 
@@ -3898,15 +3891,15 @@
 .method private updateDialogVisibility(Z)V
     .locals 1
 
-    .line 1713
+    .line 1719
     iget-boolean v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->isDialogVisible:Z
 
     if-eq p1, v0, :cond_0
 
-    .line 1714
+    .line 1720
     iput-boolean p1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->isDialogVisible:Z
 
-    .line 1715
+    .line 1721
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-static {v0}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$100(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;)Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;
@@ -3915,12 +3908,12 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;->setDialogVisible(Z)V
 
-    .line 1716
+    .line 1722
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->particlesView:Lorg/telegram/ui/Components/Premium/StarParticlesView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Premium/StarParticlesView;->setPaused(Z)V
 
-    .line 1717
+    .line 1723
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->contentView:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -3934,15 +3927,15 @@
 
     const/4 v0, 0x0
 
-    .line 977
+    .line 983
     iput v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->rowCount:I
 
     const/4 v1, -0x1
 
-    .line 978
+    .line 984
     iput v1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->sectionRow:I
 
-    .line 979
+    .line 985
     iput v1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->privacyRow:I
 
     const/4 v1, 0x0
@@ -3951,15 +3944,15 @@
 
     add-int/2addr v1, v2
 
-    .line 981
+    .line 987
     iput v1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->rowCount:I
 
     iput v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->paddingRow:I
 
-    .line 982
+    .line 988
     iput v1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->featuresStartRow:I
 
-    .line 983
+    .line 989
     iget-object v3, p0, Lorg/telegram/ui/PremiumPreviewFragment;->premiumFeatures:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -3970,22 +3963,22 @@
 
     iput v1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->rowCount:I
 
-    .line 984
+    .line 990
     iput v1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->featuresEndRow:I
 
-    .line 986
+    .line 992
     iget-boolean v3, p0, Lorg/telegram/ui/PremiumPreviewFragment;->isSettingsMode:Z
 
     if-nez v3, :cond_0
 
     add-int/lit8 v3, v1, 0x1
 
-    .line 987
+    .line 993
     iput v3, p0, Lorg/telegram/ui/PremiumPreviewFragment;->rowCount:I
 
     iput v1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->statusRow:I
 
-    .line 988
+    .line 994
     :cond_0
     iget v1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->rowCount:I
 
@@ -3995,7 +3988,7 @@
 
     iput v1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->lastPaddingRow:I
 
-    .line 990
+    .line 996
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->buttonContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
@@ -4047,7 +4040,7 @@
 
     invoke-static {v1, v2, v3, v0}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
-    .line 992
+    .line 998
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->buttonContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -4067,20 +4060,20 @@
     :cond_3
     move v1, v0
 
-    .line 994
+    .line 1000
     :goto_1
     iget-boolean v2, p0, Lorg/telegram/ui/PremiumPreviewFragment;->isSettingsMode:Z
 
     if-eqz v2, :cond_4
 
-    .line 995
+    .line 1001
     iget-object v2, p0, Lorg/telegram/ui/PremiumPreviewFragment;->layoutManager:Lorg/telegram/ui/Components/FillLastLinearLayoutManager;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->setAdditionalHeight(I)V
 
     goto :goto_2
 
-    .line 997
+    .line 1003
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->layoutManager:Lorg/telegram/ui/Components/FillLastLinearLayoutManager;
 
@@ -4098,7 +4091,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->setAdditionalHeight(I)V
 
-    .line 998
+    .line 1004
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->layoutManager:Lorg/telegram/ui/Components/FillLastLinearLayoutManager;
 
@@ -4141,7 +4134,7 @@
 .method public canBeginSlide()Z
     .locals 1
 
-    .line 1646
+    .line 1652
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-static {v0}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$100(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;)Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;
@@ -4714,7 +4707,7 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 1036
+    .line 1042
     sget p2, Lorg/telegram/messenger/NotificationCenter;->billingProductDetailsUpdated:I
 
     if-eq p1, p2, :cond_0
@@ -4726,15 +4719,15 @@
     :cond_0
     const/4 p2, 0x0
 
-    .line 1037
+    .line 1043
     invoke-direct {p0, p2}, Lorg/telegram/ui/PremiumPreviewFragment;->updateButtonText(Z)V
 
-    .line 1038
+    .line 1044
     iget-object p2, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->updatePremiumTiers()V
 
-    .line 1040
+    .line 1046
     :cond_1
     sget p2, Lorg/telegram/messenger/NotificationCenter;->currentUserPremiumStatusChanged:I
 
@@ -4744,21 +4737,21 @@
 
     if-ne p1, p2, :cond_3
 
-    .line 1041
+    .line 1047
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->updateText()V
 
-    .line 1042
+    .line 1048
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->updatePremiumTiers()V
 
-    .line 1043
+    .line 1049
     invoke-direct {p0}, Lorg/telegram/ui/PremiumPreviewFragment;->updateRows()V
 
-    .line 1044
+    .line 1050
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
@@ -4782,7 +4775,7 @@
         }
     .end annotation
 
-    .line 1651
+    .line 1657
     new-instance v0, Lorg/telegram/ui/PremiumPreviewFragment$$ExternalSyntheticLambda17;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PremiumPreviewFragment$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/PremiumPreviewFragment;)V
@@ -4843,30 +4836,30 @@
 .method public onBackPressed()Z
     .locals 2
 
-    .line 1675
+    .line 1681
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->settingsView:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 1676
+    .line 1682
     invoke-direct {p0}, Lorg/telegram/ui/PremiumPreviewFragment;->closeSetting()V
 
     return v1
 
-    .line 1680
+    .line 1686
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->isSettingsMode:Z
 
     if-eqz v0, :cond_1
 
-    .line 1681
+    .line 1687
     invoke-direct {p0, v1}, Lorg/telegram/ui/PremiumPreviewFragment;->setSettingsMode(Z)V
 
     return v1
 
-    .line 1685
+    .line 1691
     :cond_1
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onBackPressed()Z
 
@@ -4878,12 +4871,12 @@
 .method protected onDialogDismiss(Landroid/app/Dialog;)V
     .locals 0
 
-    .line 1708
+    .line 1714
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->onDialogDismiss(Landroid/app/Dialog;)V
 
     const/4 p1, 0x0
 
-    .line 1709
+    .line 1715
     invoke-direct {p0, p1}, Lorg/telegram/ui/PremiumPreviewFragment;->updateDialogVisibility(Z)V
 
     return-void
@@ -4892,7 +4885,7 @@
 .method public onFragmentCreate()Z
     .locals 6
 
-    .line 1008
+    .line 1014
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -4905,7 +4898,7 @@
 
     return v1
 
-    .line 1011
+    .line 1017
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
@@ -4915,7 +4908,7 @@
 
     invoke-virtual {v0, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1012
+    .line 1018
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -4924,7 +4917,7 @@
 
     invoke-virtual {v0, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1013
+    .line 1019
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -4933,7 +4926,7 @@
 
     invoke-virtual {v0, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1015
+    .line 1021
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
     move-result-object v0
@@ -4944,7 +4937,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1016
+    .line 1022
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
     move-result-object v0
@@ -4972,7 +4965,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 1017
+    .line 1023
     iget v3, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -4993,7 +4986,7 @@
 
     goto :goto_0
 
-    .line 1021
+    .line 1027
     :cond_1
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentCreate()Z
 
@@ -5005,10 +4998,10 @@
 .method public onFragmentDestroy()V
     .locals 2
 
-    .line 1026
+    .line 1032
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
 
-    .line 1028
+    .line 1034
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -5017,7 +5010,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1029
+    .line 1035
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -5026,7 +5019,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1030
+    .line 1036
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -5041,10 +5034,10 @@
 .method public onPause()V
     .locals 2
 
-    .line 1639
+    .line 1645
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onPause()V
 
-    .line 1640
+    .line 1646
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-static {v0}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$100(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;)Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;
@@ -5055,7 +5048,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;->setDialogVisible(Z)V
 
-    .line 1641
+    .line 1647
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->particlesView:Lorg/telegram/ui/Components/Premium/StarParticlesView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Premium/StarParticlesView;->setPaused(Z)V
@@ -5066,10 +5059,10 @@
 .method public onResume()V
     .locals 2
 
-    .line 1631
+    .line 1637
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
 
-    .line 1632
+    .line 1638
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-static {v0}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$100(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;)Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;
@@ -5080,7 +5073,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;->setPaused(Z)V
 
-    .line 1633
+    .line 1639
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-static {v0}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$100(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;)Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;
@@ -5089,7 +5082,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;->setDialogVisible(Z)V
 
-    .line 1634
+    .line 1640
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->particlesView:Lorg/telegram/ui/Components/Premium/StarParticlesView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Premium/StarParticlesView;->setPaused(Z)V
@@ -5122,7 +5115,7 @@
 .method public showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
     .locals 1
 
-    .line 1701
+    .line 1707
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     move-result-object p1
@@ -5136,7 +5129,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1702
+    .line 1708
     :goto_0
     invoke-direct {p0, v0}, Lorg/telegram/ui/PremiumPreviewFragment;->updateDialogVisibility(Z)V
 

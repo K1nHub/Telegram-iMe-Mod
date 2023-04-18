@@ -14,13 +14,13 @@ import com.google.android.gms.fido.fido2.api.common.ResidentKeyRequirement;
 /* loaded from: classes.dex */
 public class AuthenticatorSelectionCriteria extends AbstractSafeParcelable {
     public static final Parcelable.Creator<AuthenticatorSelectionCriteria> CREATOR = new zzj();
-    @SafeParcelable.Field(getter = "getAttachmentAsString", m789id = 2, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getAttachmentAsString", m775id = 2, type = "java.lang.String")
     private final Attachment zza;
-    @SafeParcelable.Field(getter = "getRequireResidentKey", m789id = 3)
+    @SafeParcelable.Field(getter = "getRequireResidentKey", m775id = 3)
     private final Boolean zzb;
-    @SafeParcelable.Field(getter = "getRequireUserVerificationAsString", m789id = 4, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getRequireUserVerificationAsString", m775id = 4, type = "java.lang.String")
     private final zzat zzc;
-    @SafeParcelable.Field(getter = "getResidentKeyRequirementAsString", m789id = 5, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getResidentKeyRequirementAsString", m775id = 5, type = "java.lang.String")
     private final ResidentKeyRequirement zzd;
 
     /* compiled from: com.google.android.gms:play-services-fido@@19.0.0 */
@@ -56,7 +56,7 @@ public class AuthenticatorSelectionCriteria extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public AuthenticatorSelectionCriteria(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) Boolean bool, @SafeParcelable.Param(m788id = 4) String str2, @SafeParcelable.Param(m788id = 5) String str3) {
+    public AuthenticatorSelectionCriteria(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) Boolean bool, @SafeParcelable.Param(m774id = 4) String str2, @SafeParcelable.Param(m774id = 5) String str3) {
         Attachment fromString;
         ResidentKeyRequirement residentKeyRequirement = null;
         if (str == null) {

@@ -41,7 +41,7 @@ public class AlertDialog extends AppCompatDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // androidx.appcompat.app.AppCompatDialog, android.app.Dialog
+    @Override // androidx.appcompat.app.AppCompatDialog, androidx.activity.ComponentDialog, android.app.Dialog
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.mAlert.installContent();

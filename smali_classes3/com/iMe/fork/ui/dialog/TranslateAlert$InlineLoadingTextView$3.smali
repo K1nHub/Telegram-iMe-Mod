@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 1760
+    .line 1765
     iput-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView$3;->val$onLoadEnd:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,12 +35,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 1763
+    .line 1768
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView$3;->val$onLoadEnd:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_0
 
-    .line 1764
+    .line 1769
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_0

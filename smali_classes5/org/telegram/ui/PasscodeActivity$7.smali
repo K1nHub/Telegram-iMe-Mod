@@ -3,7 +3,7 @@
 .source "PasscodeActivity.java"
 
 # interfaces
-.implements Landroid/view/ActionMode$Callback;
+.implements Landroid/text/TextWatcher;
 
 
 # annotations
@@ -17,11 +17,17 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/PasscodeActivity;
+
+
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/PasscodeActivity;)V
     .locals 0
 
-    .line 1002
+    .line 947
+    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$7;->this$0:Lorg/telegram/ui/PasscodeActivity;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,32 +35,54 @@
 
 
 # virtual methods
-.method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public onDestroyActionMode(Landroid/view/ActionMode;)V
+.method public afterTextChanged(Landroid/text/Editable;)V
     .locals 0
 
     return-void
 .end method
 
-.method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
+.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    const/4 p1, 0x0
+    .line 950
+    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$7;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    return p1
+    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$1600(Lorg/telegram/ui/PasscodeActivity;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    .line 951
+    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$7;->this$0:Lorg/telegram/ui/PasscodeActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$600(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/CodeFieldContainer;
+
+    move-result-object p1
+
+    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$7;->this$0:Lorg/telegram/ui/PasscodeActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$1700(Lorg/telegram/ui/PasscodeActivity;)Ljava/lang/Runnable;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 952
+    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$7;->this$0:Lorg/telegram/ui/PasscodeActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$1700(Lorg/telegram/ui/PasscodeActivity;)Ljava/lang/Runnable;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public onTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
+
+    return-void
 .end method

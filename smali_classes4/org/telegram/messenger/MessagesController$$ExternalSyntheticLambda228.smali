@@ -99,7 +99,7 @@
 
     iget-object v13, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda228;->f$12:Ljava/util/HashMap;
 
-    invoke-static/range {v0 .. v13}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$v5nzbt6qlx2L-3VcYniMCFJnePU(Lorg/telegram/messenger/MessagesController;ZJZZLorg/telegram/tgnet/TLRPC$ChatFull;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;IZLjava/util/ArrayList;Ljava/util/HashMap;)V
+    invoke-static/range {v0 .. v13}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$7ZAJ-1l2IhAYzqdUJ_NzVqRBR5Y(Lorg/telegram/messenger/MessagesController;ZJZZLorg/telegram/tgnet/TLRPC$ChatFull;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;IZLjava/util/ArrayList;Ljava/util/HashMap;)V
 
     return-void
 .end method

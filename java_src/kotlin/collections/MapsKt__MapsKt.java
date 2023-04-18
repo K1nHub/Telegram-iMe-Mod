@@ -79,13 +79,13 @@ public class MapsKt__MapsKt extends MapsKt__MapsJVMKt {
                 return mapOf;
             } else {
                 mapCapacity = MapsKt__MapsJVMKt.mapCapacity(collection.size());
-                return MapsKt.toMap(iterable, new LinkedHashMap(mapCapacity));
+                return toMap(iterable, new LinkedHashMap(mapCapacity));
             }
         }
-        return optimizeReadOnlyMap(MapsKt.toMap(iterable, new LinkedHashMap()));
+        return optimizeReadOnlyMap(toMap(iterable, new LinkedHashMap()));
     }
 
-    public static <K, V, M extends Map<? super K, ? super V>> M toMap(Iterable<? extends Pair<? extends K, ? extends V>> iterable, M destination) {
+    public static final <K, V, M extends Map<? super K, ? super V>> M toMap(Iterable<? extends Pair<? extends K, ? extends V>> iterable, M destination) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Intrinsics.checkNotNullParameter(destination, "destination");
         putAll(destination, iterable);

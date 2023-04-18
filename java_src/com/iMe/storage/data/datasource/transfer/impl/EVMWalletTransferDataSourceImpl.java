@@ -5,9 +5,8 @@ import com.iMe.storage.data.network.api.own.CryptoWalletApi;
 import com.iMe.storage.data.network.api.own.WalletApi;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.request.crypto.wallet.GetDataForCryptoTransferRequest;
+import com.iMe.storage.data.utils.crypto.EthTransactionSigner;
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
-import com.iMe.storage.data.utils.extentions.NumberExtKt;
-import com.iMe.storage.data.utils.extentions.Web3jExtKt;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.NetworkType;
@@ -18,17 +17,8 @@ import com.iMe.storage.domain.model.crypto.send.TransferArgs;
 import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
-import java.math.BigInteger;
-import java.util.List;
-import kotlin.collections.CollectionsKt__CollectionsKt;
-import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.web3j.abi.datatypes.Address;
-import org.web3j.abi.datatypes.Type;
-import org.web3j.abi.datatypes.generated.Uint256;
-import org.web3j.crypto.RawTransaction;
-import org.web3j.crypto.TransactionEncoder;
-import org.web3j.utils.Numeric;
+import wallet.core.jni.proto.Ethereum;
 /* compiled from: EVMWalletTransferDataSourceImpl.kt */
 /* loaded from: classes3.dex */
 public final class EVMWalletTransferDataSourceImpl implements WalletTransferDataSource {
@@ -36,10 +26,6 @@ public final class EVMWalletTransferDataSourceImpl implements WalletTransferData
     private final CryptoWalletApi cryptoWalletApi;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
     private final WalletApi walletApi;
-
-    static {
-        new Companion(null);
-    }
 
     public EVMWalletTransferDataSourceImpl(FirebaseFunctionsErrorHandler firebaseErrorHandler, CryptoWalletApi cryptoWalletApi, CryptoAccessManager cryptoAccessManager, WalletApi walletApi) {
         Intrinsics.checkNotNullParameter(firebaseErrorHandler, "firebaseErrorHandler");
@@ -56,7 +42,7 @@ public final class EVMWalletTransferDataSourceImpl implements WalletTransferData
     public Observable<Result<CryptoTransferMetadata>> getTransferMetadata(TokenCode tokenCode, String str, String str2, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable map = this.walletApi.getEVMCryptoTransferData(new GetDataForCryptoTransferRequest(tokenCode.getName(), str, str2, networkType.name())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1557xf44f235e(this.firebaseErrorHandler)));
+        Observable map = this.walletApi.getEVMCryptoTransferData(new GetDataForCryptoTransferRequest(tokenCode.getName(), str, str2, networkType.name())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1543xf44f235e(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }
@@ -64,54 +50,30 @@ public final class EVMWalletTransferDataSourceImpl implements WalletTransferData
     @Override // com.iMe.storage.data.datasource.transfer.WalletTransferDataSource
     public Observable<Result<Boolean>> transfer(TransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1558xd8190810(this)));
+        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1544xd8190810(this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
 
     @Override // com.iMe.storage.data.datasource.base.SignTransactionDatasource
     public Observable<Result<String>> sign(TransactionArgs args) {
+        byte[] bArr;
         Intrinsics.checkNotNullParameter(args, "args");
         if (!(args instanceof TransferArgs.EVM)) {
             throw new IllegalStateException("Incorrect transfer args passed");
         }
-        TransferArgs.EVM evm = (TransferArgs.EVM) args;
-        RawTransaction createTransactionByType = createTransactionByType(evm);
-        long chainId = evm.getChainId();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        String hexString = Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet != null ? eVMWallet.getCredentials() : null));
-        Intrinsics.checkNotNullExpressionValue(hexString, "toHexString(signedTransaction)");
-        Observable<Result<String>> just = Observable.just(Result.Companion.success(hexString));
+        boolean z = false;
+        if (eVMWallet == null || (bArr = eVMWallet.getPrivateKeyBytes()) == null) {
+            bArr = new byte[0];
+        }
+        byte[] bArr2 = bArr;
+        TransferArgs.EVM evm = (TransferArgs.EVM) args;
+        EthTransactionSigner ethTransactionSigner = EthTransactionSigner.INSTANCE;
+        Ethereum.Transaction createTransferTransactionByType = ethTransactionSigner.createTransferTransactionByType(evm.getConvertedAmount(), evm.getRecipientAddress(), evm.getContractAddress());
+        String contractAddress = evm.getContractAddress();
+        Observable<Result<String>> just = Observable.just(Result.Companion.success(ethTransactionSigner.sign(evm.getChainId(), evm.getGasPrice(), evm.getGasLimit(), evm.getNonce(), (contractAddress == null || contractAddress.length() == 0) ? true : true ? evm.getRecipientAddress() : evm.getContractAddress(), createTransferTransactionByType, bArr2)));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
-    }
-
-    private final RawTransaction createTransactionByType(TransferArgs.EVM evm) {
-        String contractAddress = evm.getContractAddress();
-        if (contractAddress == null || contractAddress.length() == 0) {
-            RawTransaction createEtherTransaction = RawTransaction.createEtherTransaction(evm.getNonce(), evm.getGasPrice(), evm.getGasLimit(), evm.getRecipientAddress(), NumberExtKt.convertToWei(Double.valueOf(evm.getAmount()), evm.getWeiConvertUnit()));
-            Intrinsics.checkNotNullExpressionValue(createEtherTransaction, "{\n                RawTra…          )\n            }");
-            return createEtherTransaction;
-        }
-        RawTransaction createTransaction = RawTransaction.createTransaction(evm.getNonce(), evm.getGasPrice(), evm.getGasLimit(), evm.getContractAddress(), createSmartFunctionParams(evm.getRecipientAddress(), NumberExtKt.convertToWei(Double.valueOf(evm.getAmount()), evm.getWeiConvertUnit())));
-        Intrinsics.checkNotNullExpressionValue(createTransaction, "{\n                RawTra…          )\n            }");
-        return createTransaction;
-    }
-
-    private final String createSmartFunctionParams(String str, BigInteger bigInteger) {
-        List listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Type[]{new Address(str), new Uint256(bigInteger)});
-        return Web3jExtKt.createSmartFunctionDataFor$default("transfer", listOf, null, 4, null);
-    }
-
-    /* compiled from: EVMWalletTransferDataSourceImpl.kt */
-    /* loaded from: classes3.dex */
-    public static final class Companion {
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        private Companion() {
-        }
     }
 }

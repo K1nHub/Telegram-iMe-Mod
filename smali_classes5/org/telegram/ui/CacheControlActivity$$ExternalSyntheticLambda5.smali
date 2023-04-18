@@ -2,32 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/Utilities$Callback;
+.field public final synthetic f$0:Lorg/telegram/ui/CacheControlActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/Utilities$Callback;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/CacheControlActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/messenger/Utilities$Callback;
+    iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/CacheControlActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/messenger/Utilities$Callback;
+    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/CacheControlActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$KPInpu2MGn6J0F-Qeri5jqXquZk(Lorg/telegram/messenger/Utilities$Callback;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$YT4uUOeFrNxeJe_rLPw4lP1miYc(Lorg/telegram/ui/CacheControlActivity;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

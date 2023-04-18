@@ -146,89 +146,89 @@
 .method public constructor <init>(Lorg/telegram/ui/ArticleViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 5041
+    .line 5039
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 5025
+    .line 5023
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->localBlocks:Ljava/util/ArrayList;
 
-    .line 5026
+    .line 5024
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->blocks:Ljava/util/ArrayList;
 
-    .line 5027
+    .line 5025
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->photoBlocks:Ljava/util/ArrayList;
 
-    .line 5028
+    .line 5026
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchors:Ljava/util/HashMap;
 
-    .line 5029
+    .line 5027
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchorsOffset:Ljava/util/HashMap;
 
-    .line 5030
+    .line 5028
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchorsParent:Ljava/util/HashMap;
 
-    .line 5031
+    .line 5029
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->audioBlocks:Ljava/util/HashMap;
 
-    .line 5032
+    .line 5030
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->audioMessages:Ljava/util/ArrayList;
 
-    .line 5033
+    .line 5031
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->textToBlocks:Ljava/util/HashMap;
 
-    .line 5034
+    .line 5032
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->textBlocks:Ljava/util/ArrayList;
 
-    .line 5035
+    .line 5033
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->searchTextOffset:Ljava/util/HashMap;
 
-    .line 5042
+    .line 5040
     iput-object p2, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->context:Landroid/content/Context;
 
     return-void
@@ -237,7 +237,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Lorg/telegram/tgnet/TLRPC$WebPage;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->currentPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     return-object p0
@@ -246,7 +246,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$WebPage;)Lorg/telegram/tgnet/TLRPC$WebPage;
     .locals 0
 
-    .line 5022
+    .line 5020
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->currentPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     return-object p1
@@ -255,7 +255,7 @@
 .method static synthetic access$13400(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;J)Lorg/telegram/tgnet/TLRPC$Document;
     .locals 0
 
-    .line 5022
+    .line 5020
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->getDocumentWithId(J)Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object p0
@@ -266,7 +266,7 @@
 .method static synthetic access$14100(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Ljava/util/HashMap;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->audioBlocks:Ljava/util/HashMap;
 
     return-object p0
@@ -275,7 +275,7 @@
 .method static synthetic access$14400(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->audioMessages:Ljava/util/ArrayList;
 
     return-object p0
@@ -284,7 +284,7 @@
 .method static synthetic access$14500(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;J)Lorg/telegram/tgnet/TLRPC$Photo;
     .locals 0
 
-    .line 5022
+    .line 5020
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->getPhotoWithId(J)Lorg/telegram/tgnet/TLRPC$Photo;
 
     move-result-object p0
@@ -295,7 +295,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Ljava/util/HashMap;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->searchTextOffset:Ljava/util/HashMap;
 
     return-object p0
@@ -304,7 +304,7 @@
 .method static synthetic access$21100(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->photoBlocks:Ljava/util/ArrayList;
 
     return-object p0
@@ -313,7 +313,7 @@
 .method static synthetic access$21900(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Ljava/util/HashMap;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->textToBlocks:Ljava/util/HashMap;
 
     return-object p0
@@ -322,7 +322,7 @@
 .method static synthetic access$22000(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->textBlocks:Ljava/util/ArrayList;
 
     return-object p0
@@ -331,7 +331,7 @@
 .method static synthetic access$3400(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Ljava/util/HashMap;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchorsOffset:Ljava/util/HashMap;
 
     return-object p0
@@ -340,7 +340,7 @@
 .method static synthetic access$7100(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Z
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-boolean p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->isRtl:Z
 
     return p0
@@ -349,7 +349,7 @@
 .method static synthetic access$7102(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Z)Z
     .locals 0
 
-    .line 5022
+    .line 5020
     iput-boolean p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->isRtl:Z
 
     return p1
@@ -358,7 +358,7 @@
 .method static synthetic access$7200(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)V
     .locals 0
 
-    .line 5022
+    .line 5020
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->cleanup()V
 
     return-void
@@ -367,7 +367,7 @@
 .method static synthetic access$7300(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->channelBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;
 
     return-object p0
@@ -376,7 +376,7 @@
 .method static synthetic access$7302(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;
     .locals 0
 
-    .line 5022
+    .line 5020
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->channelBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;
 
     return-object p1
@@ -385,7 +385,7 @@
 .method static synthetic access$7400(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;III)V
     .locals 0
 
-    .line 5022
+    .line 5020
     invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;III)V
 
     return-void
@@ -394,7 +394,7 @@
 .method static synthetic access$7500(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Ljava/util/HashMap;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchors:Ljava/util/HashMap;
 
     return-object p0
@@ -403,7 +403,7 @@
 .method static synthetic access$7600(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Ljava/util/HashMap;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchorsParent:Ljava/util/HashMap;
 
     return-object p0
@@ -412,7 +412,7 @@
 .method static synthetic access$7700(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;)I
     .locals 0
 
-    .line 5022
+    .line 5020
     invoke-direct {p0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->getTypeForBlock(Lorg/telegram/tgnet/TLRPC$PageBlock;)I
 
     move-result p0
@@ -423,7 +423,7 @@
 .method static synthetic access$7800(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;ILandroidx/recyclerview/widget/RecyclerView$ViewHolder;Lorg/telegram/tgnet/TLRPC$PageBlock;II)V
     .locals 0
 
-    .line 5022
+    .line 5020
     invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->bindBlockToHolder(ILandroidx/recyclerview/widget/RecyclerView$ViewHolder;Lorg/telegram/tgnet/TLRPC$PageBlock;II)V
 
     return-void
@@ -432,7 +432,7 @@
 .method static synthetic access$8100(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->blocks:Ljava/util/ArrayList;
 
     return-object p0
@@ -441,7 +441,7 @@
 .method static synthetic access$8200(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)V
     .locals 0
 
-    .line 5022
+    .line 5020
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->updateRows()V
 
     return-void
@@ -450,7 +450,7 @@
 .method static synthetic access$8300(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 5022
+    .line 5020
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->localBlocks:Ljava/util/ArrayList;
 
     return-object p0
@@ -459,7 +459,7 @@
 .method private addAllMediaFromBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
     .locals 5
 
-    .line 5549
+    .line 5547
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
     const/16 v1, 0x38
@@ -468,12 +468,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 5550
+    .line 5548
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
-    .line 5551
+    .line 5549
     iget-wide v3, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;->photo_id:J
 
     invoke-direct {p0, v3, v4}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->getPhotoWithId(J)Lorg/telegram/tgnet/TLRPC$Photo;
@@ -482,7 +482,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 5553
+    .line 5551
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
     invoke-static {v3, v1, v2}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;IZ)Lorg/telegram/tgnet/TLRPC$PhotoSize;
@@ -491,17 +491,17 @@
 
     iput-object v1, p1, Lorg/telegram/tgnet/TLRPC$PageBlock;->thumb:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 5554
+    .line 5552
     iput-object v0, p1, Lorg/telegram/tgnet/TLRPC$PageBlock;->thumbObject:Lorg/telegram/tgnet/TLObject;
 
-    .line 5555
+    .line 5553
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->photoBlocks:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_2
 
-    .line 5557
+    .line 5555
     :cond_0
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
@@ -515,12 +515,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 5558
+    .line 5556
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
-    .line 5559
+    .line 5557
     iget-wide v3, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;->video_id:J
 
     invoke-direct {p0, v3, v4}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->getDocumentWithId(J)Lorg/telegram/tgnet/TLRPC$Document;
@@ -529,7 +529,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 5561
+    .line 5559
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     invoke-static {v3, v1, v2}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;IZ)Lorg/telegram/tgnet/TLRPC$PhotoSize;
@@ -538,17 +538,17 @@
 
     iput-object v1, p1, Lorg/telegram/tgnet/TLRPC$PageBlock;->thumb:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 5562
+    .line 5560
     iput-object v0, p1, Lorg/telegram/tgnet/TLRPC$PageBlock;->thumbObject:Lorg/telegram/tgnet/TLObject;
 
-    .line 5563
+    .line 5561
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->photoBlocks:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 5565
+    .line 5563
     :cond_1
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;
 
@@ -556,10 +556,10 @@
 
     if-eqz v0, :cond_3
 
-    .line 5566
+    .line 5564
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;
 
-    .line 5567
+    .line 5565
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -569,7 +569,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 5569
+    .line 5567
     iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -578,7 +578,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 5570
+    .line 5568
     iget-object v3, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v3}, Lorg/telegram/ui/ArticleViewer;->access$13300(Lorg/telegram/ui/ArticleViewer;)I
@@ -587,14 +587,14 @@
 
     iput v3, v2, Lorg/telegram/tgnet/TLRPC$PageBlock;->groupId:I
 
-    .line 5571
+    .line 5569
     invoke-direct {p0, p1, v2}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addAllMediaFromBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 5573
+    .line 5571
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
@@ -602,16 +602,16 @@
 
     goto :goto_2
 
-    .line 5574
+    .line 5572
     :cond_3
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
 
     if-eqz v0, :cond_5
 
-    .line 5575
+    .line 5573
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
 
-    .line 5576
+    .line 5574
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -621,7 +621,7 @@
     :goto_1
     if-ge v1, v0, :cond_4
 
-    .line 5578
+    .line 5576
     iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -630,7 +630,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 5579
+    .line 5577
     iget-object v3, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v3}, Lorg/telegram/ui/ArticleViewer;->access$13300(Lorg/telegram/ui/ArticleViewer;)I
@@ -639,14 +639,14 @@
 
     iput v3, v2, Lorg/telegram/tgnet/TLRPC$PageBlock;->groupId:I
 
-    .line 5580
+    .line 5578
     invoke-direct {p0, p1, v2}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addAllMediaFromBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 5582
+    .line 5580
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
@@ -654,16 +654,16 @@
 
     goto :goto_2
 
-    .line 5583
+    .line 5581
     :cond_5
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;
 
     if-eqz v0, :cond_6
 
-    .line 5584
+    .line 5582
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;
 
-    .line 5585
+    .line 5583
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;->cover:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addAllMediaFromBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
@@ -684,17 +684,17 @@
 
     move/from16 v9, p4
 
-    .line 5260
+    .line 5258
     instance-of v10, v8, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
     if-eqz v10, :cond_0
 
-    .line 5261
+    .line 5259
     move-object v1, v8
 
     check-cast v1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
-    .line 5262
+    .line 5260
     invoke-static {v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6600(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     move-result-object v1
@@ -704,7 +704,7 @@
     :cond_0
     move-object v1, v8
 
-    .line 5264
+    .line 5262
     :goto_0
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;
 
@@ -714,13 +714,13 @@
 
     if-nez v2, :cond_1
 
-    .line 5265
+    .line 5263
     invoke-direct {v7, v1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
-    .line 5266
+    .line 5264
     invoke-direct {v7, v0, v1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addAllMediaFromBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
-    .line 5268
+    .line 5266
     :cond_1
     iget-object v2, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
@@ -728,20 +728,20 @@
 
     move-result-object v1
 
-    .line 5269
+    .line 5267
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockUnsupported;
 
     if-eqz v2, :cond_2
 
     return-void
 
-    .line 5271
+    .line 5269
     :cond_2
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAnchor;
 
     if-eqz v2, :cond_3
 
-    .line 5272
+    .line 5270
     iget-object v0, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchors:Ljava/util/HashMap;
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAnchor;
@@ -766,7 +766,7 @@
 
     return-void
 
-    .line 5275
+    .line 5273
     :cond_3
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;
 
@@ -776,12 +776,12 @@
 
     if-nez v3, :cond_4
 
-    .line 5276
+    .line 5274
     iget-object v3, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 5279
+    .line 5277
     :cond_4
     instance-of v3, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;
 
@@ -791,20 +791,20 @@
 
     if-eqz v3, :cond_8
 
-    .line 5280
+    .line 5278
     move-object v0, v1
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;
 
-    .line 5281
+    .line 5279
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
-    .line 5282
+    .line 5280
     iput-boolean v12, v2, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 5283
+    .line 5281
     iget-wide v3, v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;->audio_id:J
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -821,21 +821,21 @@
 
     iput v3, v2, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 5284
+    .line 5282
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 5285
+    .line 5283
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 5286
+    .line 5284
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     iget-object v5, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -856,7 +856,7 @@
 
     iput-wide v5, v3, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 5287
+    .line 5285
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -871,29 +871,29 @@
 
     const-string v3, ""
 
-    .line 5288
+    .line 5286
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 5289
+    .line 5287
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;-><init>()V
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 5290
+    .line 5288
     iget-object v4, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->currentPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    .line 5291
+    .line 5289
     iget v4, v3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v4, v4, 0x3
 
     iput v4, v3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 5292
+    .line 5290
     iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;->audio_id:J
 
     invoke-direct {v7, v4, v5}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->getDocumentWithId(J)Lorg/telegram/tgnet/TLRPC$Document;
@@ -902,41 +902,41 @@
 
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 5293
+    .line 5291
     iget v3, v2, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     or-int/lit16 v3, v3, 0x300
 
     iput v3, v2, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 5294
+    .line 5292
     new-instance v3, Lorg/telegram/messenger/MessageObject;
 
     sget v4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-direct {v3, v4, v2, v11, v12}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 5295
+    .line 5293
     iget-object v2, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->audioMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 5296
+    .line 5294
     iget-object v2, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->audioBlocks:Ljava/util/HashMap;
 
     invoke-virtual {v2, v0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5298
+    .line 5296
     invoke-virtual {v3, v11}, Lorg/telegram/messenger/MessageObject;->getMusicAuthor(Z)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5299
+    .line 5297
     invoke-virtual {v3, v11}, Lorg/telegram/messenger/MessageObject;->getMusicTitle(Z)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 5300
+    .line 5298
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
@@ -949,7 +949,7 @@
 
     if-nez v3, :cond_29
 
-    .line 5302
+    .line 5300
     :cond_5
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -973,7 +973,7 @@
 
     const-string v0, "%s - %s"
 
-    .line 5303
+    .line 5301
     invoke-static {v0, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -982,7 +982,7 @@
 
     goto/16 :goto_15
 
-    .line 5304
+    .line 5302
     :cond_6
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -990,18 +990,18 @@
 
     if-nez v3, :cond_7
 
-    .line 5305
+    .line 5303
     invoke-direct {v7, v2, v1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_15
 
-    .line 5307
+    .line 5305
     :cond_7
     invoke-direct {v7, v0, v1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_15
 
-    .line 5311
+    .line 5309
     :cond_8
     instance-of v3, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;
 
@@ -1009,12 +1009,12 @@
 
     if-eqz v3, :cond_e
 
-    .line 5312
+    .line 5310
     move-object v2, v1
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;
 
-    .line 5313
+    .line 5311
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1025,10 +1025,10 @@
 
     const/4 v3, -0x1
 
-    .line 5314
+    .line 5312
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$PageBlock;->level:I
 
-    .line 5315
+    .line 5313
     :goto_1
     iget-object v1, v2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->blocks:Ljava/util/ArrayList;
 
@@ -1038,7 +1038,7 @@
 
     if-ge v11, v1, :cond_c
 
-    .line 5316
+    .line 5314
     iget-object v1, v2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1047,23 +1047,23 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 5317
+    .line 5315
     instance-of v3, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockUnsupported;
 
     if-eqz v3, :cond_9
 
     goto :goto_2
 
-    .line 5319
+    .line 5317
     :cond_9
     instance-of v3, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAnchor;
 
     if-eqz v3, :cond_a
 
-    .line 5320
+    .line 5318
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAnchor;
 
-    .line 5321
+    .line 5319
     iget-object v3, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchors:Ljava/util/HashMap;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAnchor;->name:Ljava/lang/String;
@@ -1086,11 +1086,11 @@
 
     goto :goto_2
 
-    .line 5324
+    .line 5322
     :cond_a
     iput v12, v1, Lorg/telegram/tgnet/TLRPC$PageBlock;->level:I
 
-    .line 5325
+    .line 5323
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -1101,16 +1101,16 @@
 
     if-ne v11, v3, :cond_b
 
-    .line 5326
+    .line 5324
     iput-boolean v12, v1, Lorg/telegram/tgnet/TLRPC$PageBlock;->bottom:Z
 
-    .line 5328
+    .line 5326
     :cond_b
     iget-object v3, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 5329
+    .line 5327
     invoke-direct {v7, v0, v1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addAllMediaFromBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     :goto_2
@@ -1118,7 +1118,7 @@
 
     goto :goto_1
 
-    .line 5331
+    .line 5329
     :cond_c
     iget-object v0, v2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
@@ -1148,45 +1148,45 @@
 
     if-nez v0, :cond_29
 
-    .line 5332
+    .line 5330
     :cond_d
     new-instance v0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockEmbedPostCaption;
 
     invoke-direct {v0, v13}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockEmbedPostCaption;-><init>(Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5333
+    .line 5331
     invoke-static {v0, v2}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockEmbedPostCaption;->access$11502(Lorg/telegram/ui/ArticleViewer$TL_pageBlockEmbedPostCaption;Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;
 
-    .line 5334
+    .line 5332
     iget-object v1, v2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
-    .line 5335
+    .line 5333
     iget-object v1, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_15
 
-    .line 5338
+    .line 5336
     :cond_e
     instance-of v3, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;
 
     if-eqz v3, :cond_10
 
-    .line 5339
+    .line 5337
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;
 
-    .line 5341
+    .line 5339
     new-instance v0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesShadow;
 
     invoke-direct {v0, v13}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesShadow;-><init>(Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5342
+    .line 5340
     invoke-static {v0, v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesShadow;->access$11702(Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesShadow;Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;
 
-    .line 5343
+    .line 5341
     iget-object v2, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -1197,7 +1197,7 @@
 
     invoke-virtual {v2, v3, v0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 5345
+    .line 5343
     iget-object v0, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;->articles:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1207,18 +1207,18 @@
     :goto_3
     if-ge v11, v0, :cond_f
 
-    .line 5346
+    .line 5344
     new-instance v2, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesChild;
 
     invoke-direct {v2, v13}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesChild;-><init>(Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5347
+    .line 5345
     invoke-static {v2, v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesChild;->access$8602(Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesChild;Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;
 
-    .line 5348
+    .line 5346
     invoke-static {v2, v11}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesChild;->access$8502(Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesChild;I)I
 
-    .line 5349
+    .line 5347
     iget-object v3, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1230,33 +1230,33 @@
     :cond_f
     if-nez p5, :cond_29
 
-    .line 5352
+    .line 5350
     new-instance v0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesShadow;
 
     invoke-direct {v0, v13}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesShadow;-><init>(Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5353
+    .line 5351
     invoke-static {v0, v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesShadow;->access$11702(Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesShadow;Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;
 
-    .line 5354
+    .line 5352
     iget-object v1, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_15
 
-    .line 5356
+    .line 5354
     :cond_10
     instance-of v3, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;
 
     if-eqz v3, :cond_11
 
-    .line 5357
+    .line 5355
     move-object v10, v1
 
     check-cast v10, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;
 
-    .line 5358
+    .line 5356
     iget-object v1, v10, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1266,15 +1266,15 @@
     :goto_4
     if-ge v11, v14, :cond_29
 
-    .line 5359
+    .line 5357
     new-instance v1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
     invoke-direct {v1, v13}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;-><init>(Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5360
+    .line 5358
     invoke-static {v1, v8}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6502(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 5361
+    .line 5359
     iget-object v2, v10, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1285,7 +1285,7 @@
 
     invoke-static {v1, v2}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6602(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 5362
+    .line 5360
     iget-object v2, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v2, v8, v1}, Lorg/telegram/ui/ArticleViewer;->access$12000(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/tgnet/TLRPC$PageBlock;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
@@ -1317,25 +1317,25 @@
 
     if-eqz v2, :cond_1b
 
-    .line 5378
+    .line 5376
     move-object v5, v1
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;
 
-    .line 5380
+    .line 5378
     new-instance v4, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;
 
     iget-object v1, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-direct {v4, v1, v13}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;-><init>(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5381
+    .line 5379
     invoke-static {v4, v5}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->access$8702(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;
 
-    .line 5382
+    .line 5380
     invoke-static {v4, v9}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->access$12202(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;I)I
 
-    .line 5384
+    .line 5382
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1347,7 +1347,7 @@
     :goto_5
     if-ge v2, v3, :cond_29
 
-    .line 5385
+    .line 5383
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1356,25 +1356,25 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$PageListItem;
 
-    .line 5387
+    .line 5385
     new-instance v11, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;
 
     iget-object v12, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-direct {v11, v12, v13}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;-><init>(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5388
+    .line 5386
     invoke-static {v11, v2}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->access$12302(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;I)I
 
-    .line 5389
+    .line 5387
     invoke-static {v11, v4}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->access$6802(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;)Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;
 
-    .line 5390
+    .line 5388
     iget-boolean v12, v5, Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;->ordered:Z
 
     if-eqz v12, :cond_13
 
-    .line 5391
+    .line 5389
     iget-boolean v12, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->isRtl:Z
 
     if-eqz v12, :cond_12
@@ -1385,7 +1385,7 @@
 
     add-int/lit8 v17, v2, 0x1
 
-    .line 5392
+    .line 5390
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v17
@@ -1411,7 +1411,7 @@
 
     add-int/lit8 v12, v2, 0x1
 
-    .line 5394
+    .line 5392
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v12
@@ -1429,10 +1429,10 @@
     :cond_13
     const-string v12, "\u2022"
 
-    .line 5397
+    .line 5395
     invoke-static {v11, v12}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->access$12402(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 5399
+    .line 5397
     :goto_6
     invoke-static {v4}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->access$12500(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;)Ljava/util/ArrayList;
 
@@ -1440,12 +1440,12 @@
 
     invoke-virtual {v12, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 5401
+    .line 5399
     instance-of v12, v1, Lorg/telegram/tgnet/TLRPC$TL_pageListItemText;
 
     if-eqz v12, :cond_14
 
-    .line 5402
+    .line 5400
     move-object v12, v1
 
     check-cast v12, Lorg/telegram/tgnet/TLRPC$TL_pageListItemText;
@@ -1456,18 +1456,18 @@
 
     goto :goto_7
 
-    .line 5403
+    .line 5401
     :cond_14
     instance-of v12, v1, Lorg/telegram/tgnet/TLRPC$TL_pageListItemBlocks;
 
     if-eqz v12, :cond_16
 
-    .line 5404
+    .line 5402
     move-object v12, v1
 
     check-cast v12, Lorg/telegram/tgnet/TLRPC$TL_pageListItemBlocks;
 
-    .line 5405
+    .line 5403
     iget-object v13, v12, Lorg/telegram/tgnet/TLRPC$TL_pageListItemBlocks;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v13}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1476,7 +1476,7 @@
 
     if-nez v13, :cond_15
 
-    .line 5406
+    .line 5404
     iget-object v12, v12, Lorg/telegram/tgnet/TLRPC$TL_pageListItemBlocks;->blocks:Ljava/util/ArrayList;
 
     const/4 v13, 0x0
@@ -1491,21 +1491,21 @@
 
     goto :goto_7
 
-    .line 5408
+    .line 5406
     :cond_15
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_pageListItemText;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_pageListItemText;-><init>()V
 
-    .line 5409
+    .line 5407
     new-instance v12, Lorg/telegram/tgnet/TLRPC$TL_textPlain;
 
     invoke-direct {v12}, Lorg/telegram/tgnet/TLRPC$TL_textPlain;-><init>()V
 
-    .line 5410
+    .line 5408
     iput-object v14, v12, Lorg/telegram/tgnet/TLRPC$TL_textPlain;->text:Ljava/lang/String;
 
-    .line 5411
+    .line 5409
     iput-object v12, v1, Lorg/telegram/tgnet/TLRPC$TL_pageListItemText;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     :cond_16
@@ -1514,26 +1514,26 @@
 
     if-eqz v10, :cond_17
 
-    .line 5416
+    .line 5414
     move-object v1, v8
 
     check-cast v1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
-    .line 5417
+    .line 5415
     new-instance v13, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
     const/4 v0, 0x0
 
     invoke-direct {v13, v0}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;-><init>(Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5418
+    .line 5416
     invoke-static {v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6500(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     move-result-object v0
 
     invoke-static {v13, v0}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6502(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 5419
+    .line 5417
     invoke-static {v13, v11}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6602(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     add-int/lit8 v0, v9, 0x1
@@ -1560,7 +1560,7 @@
 
     move/from16 v6, p5
 
-    .line 5420
+    .line 5418
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;III)V
 
     goto :goto_9
@@ -1578,7 +1578,7 @@
 
     if-nez v19, :cond_18
 
-    .line 5424
+    .line 5422
     iget-object v1, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v1, v8, v11}, Lorg/telegram/ui/ArticleViewer;->access$12600(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/tgnet/TLRPC$PageBlock;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
@@ -1603,19 +1603,19 @@
 
     move/from16 v6, p5
 
-    .line 5428
+    .line 5426
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;III)V
 
-    .line 5431
+    .line 5429
     :goto_9
     instance-of v1, v12, Lorg/telegram/tgnet/TLRPC$TL_pageListItemBlocks;
 
     if-eqz v1, :cond_1a
 
-    .line 5432
+    .line 5430
     check-cast v12, Lorg/telegram/tgnet/TLRPC$TL_pageListItemBlocks;
 
-    .line 5433
+    .line 5431
     iget-object v1, v12, Lorg/telegram/tgnet/TLRPC$TL_pageListItemBlocks;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1627,7 +1627,7 @@
     :goto_a
     if-ge v6, v11, :cond_1a
 
-    .line 5434
+    .line 5432
     new-instance v5, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;
 
     iget-object v1, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -1636,7 +1636,7 @@
 
     invoke-direct {v5, v1, v2}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;-><init>(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5435
+    .line 5433
     iget-object v1, v12, Lorg/telegram/tgnet/TLRPC$TL_pageListItemBlocks;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1647,29 +1647,29 @@
 
     invoke-static {v5, v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->access$6302(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 5436
+    .line 5434
     invoke-static {v5, v13}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->access$6802(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;)Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;
 
     if-eqz v10, :cond_19
 
-    .line 5439
+    .line 5437
     move-object v1, v8
 
     check-cast v1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
-    .line 5440
+    .line 5438
     new-instance v3, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
     invoke-direct {v3, v2}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;-><init>(Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5441
+    .line 5439
     invoke-static {v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6500(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     move-result-object v1
 
     invoke-static {v3, v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6502(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 5442
+    .line 5440
     invoke-static {v3, v5}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6602(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     add-int/lit8 v22, v9, 0x1
@@ -1688,7 +1688,7 @@
 
     move/from16 v6, p5
 
-    .line 5443
+    .line 5441
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;III)V
 
     goto :goto_b
@@ -1710,10 +1710,10 @@
 
     move/from16 v6, p5
 
-    .line 5445
+    .line 5443
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;III)V
 
-    .line 5447
+    .line 5445
     :goto_b
     invoke-static {v13}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->access$12500(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;)Ljava/util/ArrayList;
 
@@ -1751,17 +1751,17 @@
     :cond_1b
     move-object v0, v6
 
-    .line 5451
+    .line 5449
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockOrderedList;
 
     if-eqz v2, :cond_29
 
-    .line 5452
+    .line 5450
     move-object v11, v1
 
     check-cast v11, Lorg/telegram/tgnet/TLRPC$TL_pageBlockOrderedList;
 
-    .line 5454
+    .line 5452
     new-instance v12, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;
 
     iget-object v1, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -1770,13 +1770,13 @@
 
     invoke-direct {v12, v1, v2}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;-><init>(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5455
+    .line 5453
     invoke-static {v12, v11}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;->access$12802(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;Lorg/telegram/tgnet/TLRPC$TL_pageBlockOrderedList;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockOrderedList;
 
-    .line 5456
+    .line 5454
     invoke-static {v12, v9}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;->access$12902(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;I)I
 
-    .line 5458
+    .line 5456
     iget-object v1, v11, Lorg/telegram/tgnet/TLRPC$TL_pageBlockOrderedList;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1788,7 +1788,7 @@
     :goto_c
     if-ge v6, v13, :cond_29
 
-    .line 5459
+    .line 5457
     iget-object v1, v11, Lorg/telegram/tgnet/TLRPC$TL_pageBlockOrderedList;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1797,7 +1797,7 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$PageListOrderedItem;
 
-    .line 5461
+    .line 5459
     new-instance v2, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;
 
     iget-object v3, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -1806,37 +1806,37 @@
 
     invoke-direct {v2, v3, v4}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;-><init>(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5462
+    .line 5460
     invoke-static {v2, v6}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;->access$13002(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;I)I
 
-    .line 5463
+    .line 5461
     invoke-static {v2, v12}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;->access$7002(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;)Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;
 
-    .line 5464
+    .line 5462
     invoke-static {v12}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;->access$13100(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;)Ljava/util/ArrayList;
 
     move-result-object v3
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 5466
+    .line 5464
     instance-of v3, v1, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemText;
 
     const-string v4, "."
 
     if-eqz v3, :cond_1f
 
-    .line 5467
+    .line 5465
     move-object v3, v1
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemText;
 
-    .line 5468
+    .line 5466
     iget-object v5, v3, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemText;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-static {v2, v5}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;->access$11202(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;Lorg/telegram/tgnet/TLRPC$RichText;)Lorg/telegram/tgnet/TLRPC$RichText;
 
-    .line 5470
+    .line 5468
     iget-object v5, v3, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemText;->num:Ljava/lang/String;
 
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1845,7 +1845,7 @@
 
     if-eqz v5, :cond_1d
 
-    .line 5471
+    .line 5469
     iget-boolean v3, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->isRtl:Z
 
     if-eqz v3, :cond_1c
@@ -1856,7 +1856,7 @@
 
     add-int/lit8 v5, v6, 0x1
 
-    .line 5472
+    .line 5470
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -1882,7 +1882,7 @@
 
     add-int/lit8 v3, v6, 0x1
 
-    .line 5474
+    .line 5472
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -1897,13 +1897,13 @@
 
     goto/16 :goto_f
 
-    .line 5477
+    .line 5475
     :cond_1d
     iget-boolean v5, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->isRtl:Z
 
     if-eqz v5, :cond_1e
 
-    .line 5478
+    .line 5476
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1922,7 +1922,7 @@
 
     goto/16 :goto_f
 
-    .line 5480
+    .line 5478
     :cond_1e
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1942,18 +1942,18 @@
 
     goto/16 :goto_f
 
-    .line 5483
+    .line 5481
     :cond_1f
     instance-of v3, v1, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemBlocks;
 
     if-eqz v3, :cond_24
 
-    .line 5484
+    .line 5482
     move-object v3, v1
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemBlocks;
 
-    .line 5485
+    .line 5483
     iget-object v5, v3, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemBlocks;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1962,7 +1962,7 @@
 
     if-nez v5, :cond_20
 
-    .line 5486
+    .line 5484
     iget-object v5, v3, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemBlocks;->blocks:Ljava/util/ArrayList;
 
     move-object/from16 v19, v1
@@ -1981,24 +1981,24 @@
 
     goto :goto_d
 
-    .line 5488
+    .line 5486
     :cond_20
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemText;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemText;-><init>()V
 
-    .line 5489
+    .line 5487
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_textPlain;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_textPlain;-><init>()V
 
-    .line 5490
+    .line 5488
     iput-object v14, v5, Lorg/telegram/tgnet/TLRPC$TL_textPlain;->text:Ljava/lang/String;
 
-    .line 5491
+    .line 5489
     iput-object v5, v1, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemText;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    .line 5495
+    .line 5493
     :goto_d
     iget-object v5, v3, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemBlocks;->num:Ljava/lang/String;
 
@@ -2008,7 +2008,7 @@
 
     if-eqz v5, :cond_22
 
-    .line 5496
+    .line 5494
     iget-boolean v3, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->isRtl:Z
 
     if-eqz v3, :cond_21
@@ -2019,7 +2019,7 @@
 
     add-int/lit8 v4, v6, 0x1
 
-    .line 5497
+    .line 5495
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -2045,7 +2045,7 @@
 
     add-int/lit8 v4, v6, 0x1
 
-    .line 5499
+    .line 5497
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -2063,12 +2063,12 @@
     :cond_22
     const/16 v16, 0x0
 
-    .line 5502
+    .line 5500
     iget-boolean v5, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->isRtl:Z
 
     if-eqz v5, :cond_23
 
-    .line 5503
+    .line 5501
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -2087,7 +2087,7 @@
 
     goto :goto_e
 
-    .line 5505
+    .line 5503
     :cond_23
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -2121,26 +2121,26 @@
     :goto_10
     if-eqz v10, :cond_25
 
-    .line 5510
+    .line 5508
     move-object v1, v8
 
     check-cast v1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
-    .line 5511
+    .line 5509
     new-instance v3, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
     const/4 v4, 0x0
 
     invoke-direct {v3, v4}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;-><init>(Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5512
+    .line 5510
     invoke-static {v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6500(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     move-result-object v1
 
     invoke-static {v3, v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6502(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 5513
+    .line 5511
     invoke-static {v3, v2}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6602(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     add-int/lit8 v19, v9, 0x1
@@ -2163,7 +2163,7 @@
 
     move/from16 v6, p5
 
-    .line 5514
+    .line 5512
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;III)V
 
     goto :goto_12
@@ -2179,7 +2179,7 @@
 
     if-nez v19, :cond_26
 
-    .line 5518
+    .line 5516
     iget-object v1, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v1, v8, v2}, Lorg/telegram/ui/ArticleViewer;->access$12600(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/tgnet/TLRPC$PageBlock;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
@@ -2204,19 +2204,19 @@
 
     move/from16 v6, p5
 
-    .line 5522
+    .line 5520
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;III)V
 
-    .line 5525
+    .line 5523
     :goto_12
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemBlocks;
 
     if-eqz v1, :cond_28
 
-    .line 5526
+    .line 5524
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemBlocks;
 
-    .line 5527
+    .line 5525
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemBlocks;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -2228,7 +2228,7 @@
     :goto_13
     if-ge v5, v6, :cond_28
 
-    .line 5528
+    .line 5526
     new-instance v4, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;
 
     iget-object v1, v7, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -2237,7 +2237,7 @@
 
     invoke-direct {v4, v1, v3}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;-><init>(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5529
+    .line 5527
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_pageListOrderedItemBlocks;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2248,29 +2248,29 @@
 
     invoke-static {v4, v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;->access$6402(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 5530
+    .line 5528
     invoke-static {v4, v12}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;->access$7002(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;)Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;
 
     if-eqz v10, :cond_27
 
-    .line 5533
+    .line 5531
     move-object v1, v8
 
     check-cast v1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
-    .line 5534
+    .line 5532
     new-instance v2, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
     invoke-direct {v2, v3}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;-><init>(Lorg/telegram/ui/ArticleViewer$1;)V
 
-    .line 5535
+    .line 5533
     invoke-static {v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6500(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     move-result-object v1
 
     invoke-static {v2, v1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6502(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 5536
+    .line 5534
     invoke-static {v2, v4}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6602(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     add-int/lit8 v18, v9, 0x1
@@ -2297,7 +2297,7 @@
 
     move/from16 v6, p5
 
-    .line 5537
+    .line 5535
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;III)V
 
     goto :goto_14
@@ -2323,13 +2323,13 @@
 
     move/from16 v6, p5
 
-    .line 5539
+    .line 5537
     :try_start_0
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addBlock(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;III)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 5541
+    .line 5539
     :goto_14
     invoke-static {v12}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;->access$13100(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListParent;)Ljava/util/ArrayList;
 
@@ -2363,14 +2363,14 @@
 
     move-object v1, v0
 
-    .line 5539
+    .line 5537
     throw v1
 .end method
 
 .method private addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
     .locals 1
 
-    .line 5103
+    .line 5101
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_textEmpty;
 
     if-nez v0, :cond_1
@@ -2385,13 +2385,13 @@
 
     goto :goto_0
 
-    .line 5106
+    .line 5104
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->textToBlocks:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5107
+    .line 5105
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->textBlocks:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -2404,12 +2404,12 @@
 .method private bindBlockToHolder(ILandroidx/recyclerview/widget/RecyclerView$ViewHolder;Lorg/telegram/tgnet/TLRPC$PageBlock;II)V
     .locals 3
 
-    .line 5755
+    .line 5753
     instance-of v0, p3, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;
 
     if-eqz v0, :cond_0
 
-    .line 5756
+    .line 5754
     move-object v0, p3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;
@@ -2418,18 +2418,18 @@
 
     goto :goto_0
 
-    .line 5757
+    .line 5755
     :cond_0
     instance-of v0, p3, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
     if-eqz v0, :cond_1
 
-    .line 5758
+    .line 5756
     move-object v0, p3
 
     check-cast v0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
-    .line 5759
+    .line 5757
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6600(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     move-result-object v0
@@ -2452,7 +2452,7 @@
 
     goto/16 :goto_5
 
-    .line 5899
+    .line 5897
     :pswitch_0
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -2460,65 +2460,65 @@
 
     goto/16 :goto_5
 
-    .line 5894
+    .line 5892
     :pswitch_1
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockRelatedArticlesHeaderCell;
 
-    .line 5895
+    .line 5893
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockRelatedArticlesHeaderCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;)V
 
     goto/16 :goto_5
 
-    .line 5889
+    .line 5887
     :pswitch_2
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
-    .line 5890
+    .line 5888
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTable;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockTable;)V
 
     goto/16 :goto_5
 
-    .line 5884
+    .line 5882
     :pswitch_3
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockDetailsCell;
 
-    .line 5885
+    .line 5883
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockDetailsCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;)V
 
     goto/16 :goto_5
 
-    .line 5879
+    .line 5877
     :pswitch_4
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockRelatedArticlesCell;
 
-    .line 5880
+    .line 5878
     check-cast v0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesChild;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockRelatedArticlesCell;->setBlock(Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesChild;)V
 
     goto/16 :goto_5
 
-    .line 5874
+    .line 5872
     :pswitch_5
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockMapCell;
 
-    .line 5875
+    .line 5873
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockMap;
 
     if-nez p4, :cond_2
@@ -2542,39 +2542,39 @@
 
     goto/16 :goto_5
 
-    .line 5869
+    .line 5867
     :pswitch_6
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockOrderedListItemCell;
 
-    .line 5870
+    .line 5868
     check-cast v0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockOrderedListItemCell;->setBlock(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;)V
 
     goto/16 :goto_5
 
-    .line 5864
+    .line 5862
     :pswitch_7
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;
 
-    .line 5865
+    .line 5863
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockKicker;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockKicker;)V
 
     goto/16 :goto_5
 
-    .line 5859
+    .line 5857
     :pswitch_8
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockAudioCell;
 
-    .line 5860
+    .line 5858
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;
 
     if-nez p4, :cond_4
@@ -2598,130 +2598,130 @@
 
     goto/16 :goto_5
 
-    .line 5854
+    .line 5852
     :pswitch_9
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockChannelCell;
 
-    .line 5855
+    .line 5853
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockChannelCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;)V
 
     goto/16 :goto_5
 
-    .line 5849
+    .line 5847
     :pswitch_a
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
-    .line 5850
+    .line 5848
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;)V
 
     goto/16 :goto_5
 
-    .line 5844
+    .line 5842
     :pswitch_b
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockEmbedPostCell;
 
-    .line 5845
+    .line 5843
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockEmbedPostCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;)V
 
     goto/16 :goto_5
 
-    .line 5839
+    .line 5837
     :pswitch_c
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockSubheaderCell;
 
-    .line 5840
+    .line 5838
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubheader;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockSubheaderCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubheader;)V
 
     goto/16 :goto_5
 
-    .line 5834
+    .line 5832
     :pswitch_d
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
-    .line 5835
+    .line 5833
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPreformatted;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockPreformatted;)V
 
     goto/16 :goto_5
 
-    .line 5829
+    .line 5827
     :pswitch_e
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockFooterCell;
 
-    .line 5830
+    .line 5828
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockFooter;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockFooterCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockFooter;)V
 
     goto/16 :goto_5
 
-    .line 5824
+    .line 5822
     :pswitch_f
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockListItemCell;
 
-    .line 5825
+    .line 5823
     check-cast v0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockListItemCell;->setBlock(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;)V
 
     goto/16 :goto_5
 
-    .line 5819
+    .line 5817
     :pswitch_10
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockTitleCell;
 
-    .line 5820
+    .line 5818
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTitle;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockTitleCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockTitle;)V
 
     goto/16 :goto_5
 
-    .line 5814
+    .line 5812
     :pswitch_11
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;
 
-    .line 5815
+    .line 5813
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;)V
 
     goto/16 :goto_5
 
-    .line 5808
+    .line 5806
     :pswitch_12
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;
 
-    .line 5809
+    .line 5807
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
     if-nez p4, :cond_6
@@ -2743,57 +2743,57 @@
     :cond_7
     invoke-virtual {p1, v0, p2, v1}, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;ZZ)V
 
-    .line 5810
+    .line 5808
     invoke-virtual {p1, p3}, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;->setParentBlock(Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5803
+    .line 5801
     :pswitch_13
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    .line 5804
+    .line 5802
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;)V
 
     goto/16 :goto_5
 
-    .line 5798
+    .line 5796
     :pswitch_14
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockBlockquoteCell;
 
-    .line 5799
+    .line 5797
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockBlockquote;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockBlockquoteCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockBlockquote;)V
 
     goto/16 :goto_5
 
-    .line 5793
+    .line 5791
     :pswitch_15
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockPullquoteCell;
 
-    .line 5794
+    .line 5792
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPullquote;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockPullquoteCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockPullquote;)V
 
     goto :goto_5
 
-    .line 5787
+    .line 5785
     :pswitch_16
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;
 
-    .line 5788
+    .line 5786
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     if-nez p4, :cond_8
@@ -2815,40 +2815,40 @@
     :cond_9
     invoke-virtual {p1, v0, p2, v1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;ZZ)V
 
-    .line 5789
+    .line 5787
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->channelBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->setParentBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto :goto_5
 
-    .line 5782
+    .line 5780
     :pswitch_17
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockSubtitleCell;
 
-    .line 5783
+    .line 5781
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubtitle;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockSubtitleCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubtitle;)V
 
     goto :goto_5
 
-    .line 5777
+    .line 5775
     :pswitch_18
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
-    .line 5778
+    .line 5776
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;)V
 
     goto :goto_5
 
-    .line 5773
+    .line 5771
     :pswitch_19
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -2856,39 +2856,39 @@
 
     goto :goto_5
 
-    .line 5768
+    .line 5766
     :pswitch_1a
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockHeaderCell;
 
-    .line 5769
+    .line 5767
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockHeader;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockHeaderCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockHeader;)V
 
     goto :goto_5
 
-    .line 5763
+    .line 5761
     :pswitch_1b
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockParagraphCell;
 
-    .line 5764
+    .line 5762
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockParagraph;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockParagraphCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockParagraph;)V
 
     goto :goto_5
 
-    .line 5903
+    .line 5901
     :cond_a
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Landroid/widget/TextView;
 
-    .line 5904
+    .line 5902
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2946,58 +2946,58 @@
 
     const/4 v0, 0x0
 
-    .line 6028
+    .line 6026
     iput-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->currentPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    .line 6029
+    .line 6027
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 6030
+    .line 6028
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->photoBlocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 6031
+    .line 6029
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->audioBlocks:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
-    .line 6032
+    .line 6030
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->audioMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 6033
+    .line 6031
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchors:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
-    .line 6034
+    .line 6032
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchorsParent:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
-    .line 6035
+    .line 6033
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchorsOffset:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
-    .line 6036
+    .line 6034
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->textBlocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 6037
+    .line 6035
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->textToBlocks:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
-    .line 6038
+    .line 6036
     iput-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->channelBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;
 
-    .line 6039
+    .line 6037
     invoke-virtual {p0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->notifyDataSetChanged()V
 
     return-void
@@ -3006,7 +3006,7 @@
 .method private getDocumentWithId(J)Lorg/telegram/tgnet/TLRPC$Document;
     .locals 1
 
-    .line 5050
+    .line 5048
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->currentPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     invoke-static {v0, p1, p2}, Lorg/telegram/ui/ArticleViewer$WebPageUtils;->getDocumentWithId(Lorg/telegram/tgnet/TLRPC$WebPage;J)Lorg/telegram/tgnet/TLRPC$Document;
@@ -3019,7 +3019,7 @@
 .method private getPhotoWithId(J)Lorg/telegram/tgnet/TLRPC$Photo;
     .locals 1
 
-    .line 5046
+    .line 5044
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->currentPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     invoke-static {v0, p1, p2}, Lorg/telegram/ui/ArticleViewer$WebPageUtils;->getPhotoWithId(Lorg/telegram/tgnet/TLRPC$WebPage;J)Lorg/telegram/tgnet/TLRPC$Photo;
@@ -3032,7 +3032,7 @@
 .method private getTypeForBlock(Lorg/telegram/tgnet/TLRPC$PageBlock;)I
     .locals 1
 
-    .line 5911
+    .line 5909
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockParagraph;
 
     if-eqz v0, :cond_0
@@ -3041,7 +3041,7 @@
 
     return p1
 
-    .line 5913
+    .line 5911
     :cond_0
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockHeader;
 
@@ -3051,7 +3051,7 @@
 
     return p1
 
-    .line 5915
+    .line 5913
     :cond_1
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDivider;
 
@@ -3061,7 +3061,7 @@
 
     return p1
 
-    .line 5917
+    .line 5915
     :cond_2
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;
 
@@ -3071,7 +3071,7 @@
 
     return p1
 
-    .line 5919
+    .line 5917
     :cond_3
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubtitle;
 
@@ -3081,7 +3081,7 @@
 
     return p1
 
-    .line 5921
+    .line 5919
     :cond_4
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
@@ -3091,7 +3091,7 @@
 
     return p1
 
-    .line 5923
+    .line 5921
     :cond_5
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPullquote;
 
@@ -3101,7 +3101,7 @@
 
     return p1
 
-    .line 5925
+    .line 5923
     :cond_6
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockBlockquote;
 
@@ -3111,7 +3111,7 @@
 
     return p1
 
-    .line 5927
+    .line 5925
     :cond_7
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;
 
@@ -3121,7 +3121,7 @@
 
     return p1
 
-    .line 5929
+    .line 5927
     :cond_8
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
@@ -3131,7 +3131,7 @@
 
     return p1
 
-    .line 5931
+    .line 5929
     :cond_9
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;
 
@@ -3141,7 +3141,7 @@
 
     return p1
 
-    .line 5933
+    .line 5931
     :cond_a
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTitle;
 
@@ -3151,7 +3151,7 @@
 
     return p1
 
-    .line 5935
+    .line 5933
     :cond_b
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;
 
@@ -3161,7 +3161,7 @@
 
     return p1
 
-    .line 5937
+    .line 5935
     :cond_c
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockFooter;
 
@@ -3171,7 +3171,7 @@
 
     return p1
 
-    .line 5939
+    .line 5937
     :cond_d
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPreformatted;
 
@@ -3181,7 +3181,7 @@
 
     return p1
 
-    .line 5941
+    .line 5939
     :cond_e
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubheader;
 
@@ -3191,7 +3191,7 @@
 
     return p1
 
-    .line 5943
+    .line 5941
     :cond_f
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;
 
@@ -3201,7 +3201,7 @@
 
     return p1
 
-    .line 5945
+    .line 5943
     :cond_10
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
 
@@ -3211,7 +3211,7 @@
 
     return p1
 
-    .line 5947
+    .line 5945
     :cond_11
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;
 
@@ -3221,7 +3221,7 @@
 
     return p1
 
-    .line 5949
+    .line 5947
     :cond_12
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;
 
@@ -3231,7 +3231,7 @@
 
     return p1
 
-    .line 5951
+    .line 5949
     :cond_13
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockKicker;
 
@@ -3241,7 +3241,7 @@
 
     return p1
 
-    .line 5953
+    .line 5951
     :cond_14
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;
 
@@ -3251,7 +3251,7 @@
 
     return p1
 
-    .line 5955
+    .line 5953
     :cond_15
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockMap;
 
@@ -3261,7 +3261,7 @@
 
     return p1
 
-    .line 5957
+    .line 5955
     :cond_16
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesChild;
 
@@ -3271,7 +3271,7 @@
 
     return p1
 
-    .line 5959
+    .line 5957
     :cond_17
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;
 
@@ -3281,7 +3281,7 @@
 
     return p1
 
-    .line 5961
+    .line 5959
     :cond_18
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTable;
 
@@ -3291,7 +3291,7 @@
 
     return p1
 
-    .line 5963
+    .line 5961
     :cond_19
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;
 
@@ -3301,7 +3301,7 @@
 
     return p1
 
-    .line 5967
+    .line 5965
     :cond_1a
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockRelatedArticlesShadow;
 
@@ -3311,16 +3311,16 @@
 
     return p1
 
-    .line 5969
+    .line 5967
     :cond_1b
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
     if-eqz v0, :cond_1c
 
-    .line 5970
+    .line 5968
     check-cast p1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
-    .line 5971
+    .line 5969
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6600(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     move-result-object p1
@@ -3331,16 +3331,16 @@
 
     return p1
 
-    .line 5972
+    .line 5970
     :cond_1c
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;
 
     if-eqz v0, :cond_1d
 
-    .line 5973
+    .line 5971
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;
 
-    .line 5974
+    .line 5972
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;->cover:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->getTypeForBlock(Lorg/telegram/tgnet/TLRPC$PageBlock;)I
@@ -3358,7 +3358,7 @@
 .method private isBlockOpened(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Z
     .locals 3
 
-    .line 5998
+    .line 5996
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6500(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Lorg/telegram/tgnet/TLRPC$PageBlock;
@@ -3369,19 +3369,19 @@
 
     move-result-object p1
 
-    .line 5999
+    .line 5997
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;
 
     if-eqz v0, :cond_0
 
-    .line 6000
+    .line 5998
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;
 
     iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;->open:Z
 
     return p1
 
-    .line 6001
+    .line 5999
     :cond_0
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
@@ -3389,10 +3389,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 6002
+    .line 6000
     check-cast p1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
-    .line 6003
+    .line 6001
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->access$6600(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Lorg/telegram/tgnet/TLRPC$PageBlock;
@@ -3403,7 +3403,7 @@
 
     move-result-object v0
 
-    .line 6004
+    .line 6002
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;
 
     if-eqz v2, :cond_1
@@ -3416,7 +3416,7 @@
 
     return v1
 
-    .line 6007
+    .line 6005
     :cond_1
     invoke-direct {p0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->isBlockOpened(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Z
 
@@ -3431,173 +3431,173 @@
 .method private setRichTextParents(Lorg/telegram/tgnet/TLRPC$PageBlock;)V
     .locals 9
 
-    .line 5111
+    .line 5109
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 5112
+    .line 5110
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;
+
+    .line 5111
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+
+    .line 5112
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
     .line 5113
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     .line 5114
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
-
-    .line 5115
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
-
-    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
-
-    .line 5116
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
-
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5117
+    .line 5115
     :cond_0
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockParagraph;
 
     if-eqz v0, :cond_1
 
-    .line 5118
+    .line 5116
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockParagraph;
 
-    .line 5119
+    .line 5117
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockParagraph;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5120
+    .line 5118
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockParagraph;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5121
+    .line 5119
     :cond_1
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockKicker;
 
     if-eqz v0, :cond_2
 
-    .line 5122
+    .line 5120
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockKicker;
 
-    .line 5123
+    .line 5121
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockKicker;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5124
+    .line 5122
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockKicker;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5125
+    .line 5123
     :cond_2
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockFooter;
 
     if-eqz v0, :cond_3
 
-    .line 5126
+    .line 5124
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockFooter;
 
-    .line 5127
+    .line 5125
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockFooter;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5128
+    .line 5126
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockFooter;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5129
+    .line 5127
     :cond_3
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockHeader;
 
     if-eqz v0, :cond_4
 
-    .line 5130
+    .line 5128
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockHeader;
 
-    .line 5131
+    .line 5129
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockHeader;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5132
+    .line 5130
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockHeader;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5133
+    .line 5131
     :cond_4
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPreformatted;
 
     if-eqz v0, :cond_5
 
-    .line 5134
+    .line 5132
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPreformatted;
 
-    .line 5135
+    .line 5133
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPreformatted;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5136
+    .line 5134
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPreformatted;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5137
+    .line 5135
     :cond_5
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubheader;
 
     if-eqz v0, :cond_6
 
-    .line 5138
+    .line 5136
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubheader;
 
-    .line 5139
+    .line 5137
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubheader;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5140
+    .line 5138
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubheader;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5141
+    .line 5139
     :cond_6
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;
 
@@ -3605,38 +3605,38 @@
 
     if-eqz v0, :cond_7
 
-    .line 5142
+    .line 5140
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;
+
+    .line 5141
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+
+    .line 5142
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
     .line 5143
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     .line 5144
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     .line 5145
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
-
-    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
-
-    .line 5146
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
-
-    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
-
-    .line 5147
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -3646,7 +3646,7 @@
     :goto_0
     if-ge v2, v0, :cond_1b
 
-    .line 5148
+    .line 5146
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3661,69 +3661,69 @@
 
     goto :goto_0
 
-    .line 5150
+    .line 5148
     :cond_7
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
     if-eqz v0, :cond_8
 
-    .line 5151
+    .line 5149
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
+
+    .line 5150
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+
+    .line 5151
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
     .line 5152
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     .line 5153
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
-
-    .line 5154
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
-
-    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
-
-    .line 5155
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
-
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5156
+    .line 5154
     :cond_8
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;
 
     if-eqz v0, :cond_a
 
-    .line 5157
+    .line 5155
     check-cast p1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;
 
-    .line 5158
+    .line 5156
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->access$11100(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;)Lorg/telegram/tgnet/TLRPC$RichText;
 
     move-result-object v0
 
     if-eqz v0, :cond_9
 
-    .line 5159
+    .line 5157
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->access$11100(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;)Lorg/telegram/tgnet/TLRPC$RichText;
 
     move-result-object v0
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5160
+    .line 5158
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->access$11100(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;)Lorg/telegram/tgnet/TLRPC$RichText;
 
     move-result-object v0
@@ -3732,7 +3732,7 @@
 
     goto/16 :goto_5
 
-    .line 5161
+    .line 5159
     :cond_9
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->access$6300(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
@@ -3740,7 +3740,7 @@
 
     if-eqz v0, :cond_1b
 
-    .line 5162
+    .line 5160
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->access$6300(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     move-result-object p1
@@ -3749,30 +3749,30 @@
 
     goto/16 :goto_5
 
-    .line 5164
+    .line 5162
     :cond_a
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;
 
     if-eqz v0, :cond_c
 
-    .line 5165
+    .line 5163
     check-cast p1, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;
 
-    .line 5166
+    .line 5164
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;->access$11200(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;)Lorg/telegram/tgnet/TLRPC$RichText;
 
     move-result-object v0
 
     if-eqz v0, :cond_b
 
-    .line 5167
+    .line 5165
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;->access$11200(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;)Lorg/telegram/tgnet/TLRPC$RichText;
 
     move-result-object v0
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5168
+    .line 5166
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;->access$11200(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;)Lorg/telegram/tgnet/TLRPC$RichText;
 
     move-result-object v0
@@ -3781,7 +3781,7 @@
 
     goto/16 :goto_5
 
-    .line 5169
+    .line 5167
     :cond_b
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;->access$6400(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
@@ -3789,7 +3789,7 @@
 
     if-eqz v0, :cond_1b
 
-    .line 5170
+    .line 5168
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;->access$6400(Lorg/telegram/ui/ArticleViewer$TL_pageBlockOrderedListItem;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     move-result-object p1
@@ -3798,44 +3798,44 @@
 
     goto/16 :goto_5
 
-    .line 5172
+    .line 5170
     :cond_c
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
 
     if-eqz v0, :cond_d
 
-    .line 5173
+    .line 5171
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
+
+    .line 5172
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+
+    .line 5173
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
     .line 5174
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     .line 5175
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     .line 5176
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
-
-    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
-
-    .line 5177
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
-
-    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
-
-    .line 5178
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -3845,7 +3845,7 @@
     :goto_1
     if-ge v2, v0, :cond_1b
 
-    .line 5179
+    .line 5177
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3860,117 +3860,117 @@
 
     goto :goto_1
 
-    .line 5181
+    .line 5179
     :cond_d
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;
 
     if-eqz v0, :cond_e
 
-    .line 5182
+    .line 5180
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;
+
+    .line 5181
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+
+    .line 5182
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
     .line 5183
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     .line 5184
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
-
-    .line 5185
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
-
-    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
-
-    .line 5186
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
-
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5187
+    .line 5185
     :cond_e
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubtitle;
 
     if-eqz v0, :cond_f
 
-    .line 5188
+    .line 5186
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubtitle;
 
-    .line 5189
+    .line 5187
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubtitle;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5190
+    .line 5188
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubtitle;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5191
+    .line 5189
     :cond_f
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockBlockquote;
 
     if-eqz v0, :cond_10
 
-    .line 5192
+    .line 5190
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockBlockquote;
 
-    .line 5193
+    .line 5191
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockBlockquote;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5194
+    .line 5192
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockBlockquote;->caption:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5195
+    .line 5193
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockBlockquote;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
-    .line 5196
+    .line 5194
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockBlockquote;->caption:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5197
+    .line 5195
     :cond_10
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;
 
     if-eqz v0, :cond_11
 
-    .line 5198
+    .line 5196
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;
 
-    .line 5199
+    .line 5197
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;->title:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5200
+    .line 5198
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;->title:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
-    .line 5201
+    .line 5199
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -3980,7 +3980,7 @@
     :goto_2
     if-ge v2, v0, :cond_1b
 
-    .line 5202
+    .line 5200
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3995,107 +3995,107 @@
 
     goto :goto_2
 
-    .line 5204
+    .line 5202
     :cond_11
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     if-eqz v0, :cond_12
 
-    .line 5205
+    .line 5203
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
+
+    .line 5204
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+
+    .line 5205
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
     .line 5206
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     .line 5207
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
-
-    .line 5208
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
-
-    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
-
-    .line 5209
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
-
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5210
+    .line 5208
     :cond_12
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPullquote;
 
     if-eqz v0, :cond_13
 
-    .line 5211
+    .line 5209
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPullquote;
 
-    .line 5212
+    .line 5210
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPullquote;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5213
+    .line 5211
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPullquote;->caption:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5214
+    .line 5212
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPullquote;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
-    .line 5215
+    .line 5213
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPullquote;->caption:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto/16 :goto_5
 
-    .line 5216
+    .line 5214
     :cond_13
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;
 
     if-eqz v0, :cond_14
 
-    .line 5217
+    .line 5215
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;
+
+    .line 5216
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+
+    .line 5217
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
     .line 5218
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
-
-    .line 5219
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
-
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
-
-    .line 5220
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
-
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
-    .line 5221
+    .line 5219
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
@@ -4104,26 +4104,26 @@
 
     goto/16 :goto_5
 
-    .line 5222
+    .line 5220
     :cond_14
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTable;
 
     if-eqz v0, :cond_16
 
-    .line 5223
+    .line 5221
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTable;
 
-    .line 5224
+    .line 5222
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTable;->title:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5225
+    .line 5223
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTable;->title:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
-    .line 5226
+    .line 5224
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTable;->rows:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -4135,7 +4135,7 @@
     :goto_3
     if-ge v3, v0, :cond_1b
 
-    .line 5227
+    .line 5225
     iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTable;->rows:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4144,7 +4144,7 @@
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$TL_pageTableRow;
 
-    .line 5228
+    .line 5226
     iget-object v5, v4, Lorg/telegram/tgnet/TLRPC$TL_pageTableRow;->cells:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
@@ -4156,7 +4156,7 @@
     :goto_4
     if-ge v6, v5, :cond_15
 
-    .line 5229
+    .line 5227
     iget-object v7, v4, Lorg/telegram/tgnet/TLRPC$TL_pageTableRow;->cells:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4165,12 +4165,12 @@
 
     check-cast v7, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;
 
-    .line 5230
+    .line 5228
     iget-object v8, v7, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v8}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5231
+    .line 5229
     iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v7, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
@@ -4184,37 +4184,37 @@
 
     goto :goto_3
 
-    .line 5234
+    .line 5232
     :cond_16
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTitle;
 
     if-eqz v0, :cond_17
 
-    .line 5235
+    .line 5233
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTitle;
 
-    .line 5236
+    .line 5234
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTitle;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5237
+    .line 5235
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTitle;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto :goto_5
 
-    .line 5238
+    .line 5236
     :cond_17
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;
 
     if-eqz v0, :cond_18
 
-    .line 5239
+    .line 5237
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;
 
-    .line 5240
+    .line 5238
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;->cover:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     :try_start_0
@@ -4224,58 +4224,58 @@
 
     goto :goto_5
 
-    .line 5241
+    .line 5239
     :cond_18
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;
 
     if-eqz v0, :cond_19
 
-    .line 5242
+    .line 5240
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;
 
-    .line 5243
+    .line 5241
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;->author:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5244
+    .line 5242
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;->author:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
     goto :goto_5
 
-    .line 5245
+    .line 5243
     :cond_19
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockMap;
 
     if-eqz v0, :cond_1a
 
-    .line 5246
+    .line 5244
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockMap;
+
+    .line 5245
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockMap;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
+
+    .line 5246
+    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockMap;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
+
+    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
     .line 5247
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockMap;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
-
-    .line 5248
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockMap;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
-
-    invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
-
-    .line 5249
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockMap;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->text:Lorg/telegram/tgnet/TLRPC$RichText;
-
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
 
-    .line 5250
+    .line 5248
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockMap;->caption:Lorg/telegram/tgnet/TLRPC$TL_pageCaption;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageCaption;->credit:Lorg/telegram/tgnet/TLRPC$RichText;
@@ -4284,21 +4284,21 @@
 
     goto :goto_5
 
-    .line 5251
+    .line 5249
     :cond_1a
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;
 
     if-eqz v0, :cond_1b
 
-    .line 5252
+    .line 5250
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;
 
-    .line 5253
+    .line 5251
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;->title:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->setRichTextParents(Lorg/telegram/tgnet/TLRPC$RichText;Lorg/telegram/tgnet/TLRPC$RichText;)V
 
-    .line 5254
+    .line 5252
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;->title:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->addTextBlock(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
@@ -4310,7 +4310,7 @@
     :catchall_0
     move-exception p1
 
-    .line 5240
+    .line 5238
     throw p1
 .end method
 
@@ -4321,16 +4321,16 @@
 
     return-void
 
-    .line 5057
+    .line 5055
     :cond_0
     iput-object p1, p2, Lorg/telegram/tgnet/TLRPC$RichText;->parentRichText:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    .line 5058
+    .line 5056
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textFixed;
 
     if-eqz p1, :cond_1
 
-    .line 5059
+    .line 5057
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_textFixed;
@@ -4341,13 +4341,13 @@
 
     goto/16 :goto_2
 
-    .line 5060
+    .line 5058
     :cond_1
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textItalic;
 
     if-eqz p1, :cond_2
 
-    .line 5061
+    .line 5059
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_textItalic;
@@ -4358,13 +4358,13 @@
 
     goto/16 :goto_2
 
-    .line 5062
+    .line 5060
     :cond_2
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textBold;
 
     if-eqz p1, :cond_3
 
-    .line 5063
+    .line 5061
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_textBold;
@@ -4375,13 +4375,13 @@
 
     goto/16 :goto_2
 
-    .line 5064
+    .line 5062
     :cond_3
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textUnderline;
 
     if-eqz p1, :cond_4
 
-    .line 5065
+    .line 5063
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_textUnderline;
@@ -4392,13 +4392,13 @@
 
     goto/16 :goto_2
 
-    .line 5066
+    .line 5064
     :cond_4
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textStrike;
 
     if-eqz p1, :cond_5
 
-    .line 5067
+    .line 5065
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_textStrike;
@@ -4409,13 +4409,13 @@
 
     goto/16 :goto_2
 
-    .line 5068
+    .line 5066
     :cond_5
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textEmail;
 
     if-eqz p1, :cond_6
 
-    .line 5069
+    .line 5067
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_textEmail;
@@ -4426,13 +4426,13 @@
 
     goto/16 :goto_2
 
-    .line 5070
+    .line 5068
     :cond_6
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textPhone;
 
     if-eqz p1, :cond_7
 
-    .line 5071
+    .line 5069
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_textPhone;
@@ -4443,13 +4443,13 @@
 
     goto/16 :goto_2
 
-    .line 5072
+    .line 5070
     :cond_7
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textUrl;
 
     if-eqz p1, :cond_8
 
-    .line 5073
+    .line 5071
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_textUrl;
@@ -4460,13 +4460,13 @@
 
     goto/16 :goto_2
 
-    .line 5074
+    .line 5072
     :cond_8
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textConcat;
 
     if-eqz p1, :cond_9
 
-    .line 5075
+    .line 5073
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$RichText;->texts:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -4478,7 +4478,7 @@
     :goto_0
     if-ge v0, p1, :cond_f
 
-    .line 5077
+    .line 5075
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$RichText;->texts:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4493,13 +4493,13 @@
 
     goto :goto_0
 
-    .line 5079
+    .line 5077
     :cond_9
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textSubscript;
 
     if-eqz p1, :cond_a
 
-    .line 5080
+    .line 5078
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_textSubscript;
@@ -4510,13 +4510,13 @@
 
     goto :goto_2
 
-    .line 5081
+    .line 5079
     :cond_a
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textSuperscript;
 
     if-eqz p1, :cond_b
 
-    .line 5082
+    .line 5080
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_textSuperscript;
@@ -4527,13 +4527,13 @@
 
     goto :goto_2
 
-    .line 5083
+    .line 5081
     :cond_b
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textMarked;
 
     if-eqz p1, :cond_c
 
-    .line 5084
+    .line 5082
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_textMarked;
@@ -4544,18 +4544,18 @@
 
     goto :goto_2
 
-    .line 5085
+    .line 5083
     :cond_c
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_textAnchor;
 
     if-eqz p1, :cond_f
 
-    .line 5086
+    .line 5084
     move-object p1, p2
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_textAnchor;
 
-    .line 5087
+    .line 5085
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_textAnchor;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     :try_start_0
@@ -4563,14 +4563,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 5088
+    .line 5086
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_textAnchor;->name:Ljava/lang/String;
 
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 5089
+    .line 5087
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchors:Ljava/util/HashMap;
 
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->blocks:Ljava/util/ArrayList;
@@ -4585,17 +4585,17 @@
 
     invoke-virtual {v0, p2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5090
+    .line 5088
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_textAnchor;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_textPlain;
 
     if-eqz v1, :cond_d
 
-    .line 5091
+    .line 5089
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_textPlain;
 
-    .line 5092
+    .line 5090
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_textPlain;->text:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -4604,25 +4604,25 @@
 
     if-nez v0, :cond_e
 
-    .line 5093
+    .line 5091
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchorsParent:Ljava/util/HashMap;
 
     invoke-virtual {v0, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    .line 5095
+    .line 5093
     :cond_d
     instance-of v0, v0, Lorg/telegram/tgnet/TLRPC$TL_textEmpty;
 
     if-nez v0, :cond_e
 
-    .line 5096
+    .line 5094
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchorsParent:Ljava/util/HashMap;
 
     invoke-virtual {v0, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5098
+    .line 5096
     :cond_e
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->anchorsOffset:Ljava/util/HashMap;
@@ -4642,19 +4642,19 @@
     :catchall_0
     move-exception p1
 
-    .line 5087
+    .line 5085
     throw p1
 .end method
 
 .method private updateRows()V
     .locals 5
 
-    .line 6013
+    .line 6011
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->localBlocks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 6014
+    .line 6012
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -4666,7 +4666,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 6015
+    .line 6013
     iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4675,22 +4675,22 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 6016
+    .line 6014
     iget-object v3, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v3, v2}, Lorg/telegram/ui/ArticleViewer;->access$11300(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     move-result-object v3
 
-    .line 6017
+    .line 6015
     instance-of v4, v3, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
     if-eqz v4, :cond_0
 
-    .line 6018
+    .line 6016
     check-cast v3, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;
 
-    .line 6019
+    .line 6017
     invoke-direct {p0, v3}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->isBlockOpened(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Z
 
     move-result v3
@@ -4699,7 +4699,7 @@
 
     goto :goto_1
 
-    .line 6023
+    .line 6021
     :cond_0
     iget-object v3, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->localBlocks:Ljava/util/ArrayList;
 
@@ -4719,7 +4719,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 5994
+    .line 5992
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->currentPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     if-eqz v0, :cond_0
@@ -4748,7 +4748,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 5982
+    .line 5980
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->localBlocks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -4761,7 +4761,7 @@
 
     return p1
 
-    .line 5985
+    .line 5983
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->localBlocks:Ljava/util/ArrayList;
 
@@ -4781,7 +4781,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 5730
+    .line 5728
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -4811,10 +4811,10 @@
 .method public notifyDataSetChanged()V
     .locals 0
 
-    .line 6044
+    .line 6042
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->updateRows()V
 
-    .line 6045
+    .line 6043
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
@@ -4823,10 +4823,10 @@
 .method public notifyItemChanged(I)V
     .locals 0
 
-    .line 6050
+    .line 6048
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->updateRows()V
 
-    .line 6051
+    .line 6049
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
     return-void
@@ -4835,10 +4835,10 @@
 .method public notifyItemMoved(II)V
     .locals 0
 
-    .line 6080
+    .line 6078
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->updateRows()V
 
-    .line 6081
+    .line 6079
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 
     return-void
@@ -4847,10 +4847,10 @@
 .method public notifyItemRangeChanged(II)V
     .locals 0
 
-    .line 6062
+    .line 6060
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->updateRows()V
 
-    .line 6063
+    .line 6061
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(II)V
 
     return-void
@@ -4859,10 +4859,10 @@
 .method public notifyItemRangeChanged(IILjava/lang/Object;)V
     .locals 0
 
-    .line 6068
+    .line 6066
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->updateRows()V
 
-    .line 6069
+    .line 6067
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(IILjava/lang/Object;)V
 
     return-void
@@ -4871,10 +4871,10 @@
 .method public notifyItemRangeInserted(II)V
     .locals 0
 
-    .line 6086
+    .line 6084
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->updateRows()V
 
-    .line 6087
+    .line 6085
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
 
     return-void
@@ -4883,10 +4883,10 @@
 .method public notifyItemRangeRemoved(II)V
     .locals 0
 
-    .line 6098
+    .line 6096
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->updateRows()V
 
-    .line 6099
+    .line 6097
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
     return-void
@@ -4895,10 +4895,10 @@
 .method public notifyItemRemoved(I)V
     .locals 0
 
-    .line 6092
+    .line 6090
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->updateRows()V
 
-    .line 6093
+    .line 6091
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRemoved(I)V
 
     return-void
@@ -4907,7 +4907,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 7
 
-    .line 5739
+    .line 5737
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->localBlocks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -4916,7 +4916,7 @@
 
     if-ge p2, v0, :cond_0
 
-    .line 5740
+    .line 5738
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->localBlocks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4927,7 +4927,7 @@
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 5741
+    .line 5739
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v2
@@ -4963,7 +4963,7 @@
 
     packed-switch p2, :pswitch_data_0
 
-    .line 5715
+    .line 5713
     new-instance p1, Landroid/widget/TextView;
 
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->context:Landroid/content/Context;
@@ -4972,22 +4972,22 @@
 
     const/high16 p2, -0x10000
 
-    .line 5716
+    .line 5714
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setBackgroundColor(I)V
 
     const/high16 p2, -0x1000000
 
-    .line 5717
+    .line 5715
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/high16 p2, 0x41a00000    # 20.0f
 
-    .line 5718
+    .line 5716
     invoke-virtual {p1, v0, p2}, Landroid/widget/TextView;->setTextSize(IF)V
 
     goto/16 :goto_1
 
-    .line 5706
+    .line 5704
     :pswitch_0
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockRelatedArticlesShadowCell;
 
@@ -4997,7 +4997,7 @@
 
     goto/16 :goto_1
 
-    .line 5702
+    .line 5700
     :pswitch_1
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockDetailsBottomCell;
 
@@ -5007,7 +5007,7 @@
 
     goto/16 :goto_1
 
-    .line 5698
+    .line 5696
     :pswitch_2
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockRelatedArticlesHeaderCell;
 
@@ -5019,7 +5019,7 @@
 
     goto/16 :goto_1
 
-    .line 5694
+    .line 5692
     :pswitch_3
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
@@ -5031,7 +5031,7 @@
 
     goto/16 :goto_1
 
-    .line 5690
+    .line 5688
     :pswitch_4
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockDetailsCell;
 
@@ -5043,7 +5043,7 @@
 
     goto/16 :goto_1
 
-    .line 5686
+    .line 5684
     :pswitch_5
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockRelatedArticlesCell;
 
@@ -5055,7 +5055,7 @@
 
     goto/16 :goto_1
 
-    .line 5682
+    .line 5680
     :pswitch_6
     new-instance p2, Lorg/telegram/ui/ArticleViewer$BlockMapCell;
 
@@ -5067,7 +5067,7 @@
 
     goto/16 :goto_0
 
-    .line 5678
+    .line 5676
     :pswitch_7
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockOrderedListItemCell;
 
@@ -5079,7 +5079,7 @@
 
     goto/16 :goto_1
 
-    .line 5674
+    .line 5672
     :pswitch_8
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;
 
@@ -5091,7 +5091,7 @@
 
     goto/16 :goto_1
 
-    .line 5670
+    .line 5668
     :pswitch_9
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockAudioCell;
 
@@ -5103,7 +5103,7 @@
 
     goto/16 :goto_1
 
-    .line 5666
+    .line 5664
     :pswitch_a
     new-instance p2, Lorg/telegram/ui/ArticleViewer$BlockChannelCell;
 
@@ -5115,7 +5115,7 @@
 
     goto/16 :goto_0
 
-    .line 5662
+    .line 5660
     :pswitch_b
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
@@ -5127,7 +5127,7 @@
 
     goto/16 :goto_1
 
-    .line 5658
+    .line 5656
     :pswitch_c
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockEmbedPostCell;
 
@@ -5139,7 +5139,7 @@
 
     goto/16 :goto_1
 
-    .line 5654
+    .line 5652
     :pswitch_d
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockSubheaderCell;
 
@@ -5151,7 +5151,7 @@
 
     goto/16 :goto_1
 
-    .line 5650
+    .line 5648
     :pswitch_e
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
@@ -5163,7 +5163,7 @@
 
     goto/16 :goto_1
 
-    .line 5646
+    .line 5644
     :pswitch_f
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockFooterCell;
 
@@ -5175,7 +5175,7 @@
 
     goto/16 :goto_1
 
-    .line 5642
+    .line 5640
     :pswitch_10
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockListItemCell;
 
@@ -5187,7 +5187,7 @@
 
     goto/16 :goto_1
 
-    .line 5638
+    .line 5636
     :pswitch_11
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockTitleCell;
 
@@ -5199,7 +5199,7 @@
 
     goto/16 :goto_1
 
-    .line 5634
+    .line 5632
     :pswitch_12
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;
 
@@ -5211,7 +5211,7 @@
 
     goto/16 :goto_1
 
-    .line 5630
+    .line 5628
     :pswitch_13
     new-instance p2, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;
 
@@ -5223,7 +5223,7 @@
 
     goto :goto_0
 
-    .line 5626
+    .line 5624
     :pswitch_14
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
@@ -5235,7 +5235,7 @@
 
     goto :goto_1
 
-    .line 5622
+    .line 5620
     :pswitch_15
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockBlockquoteCell;
 
@@ -5247,7 +5247,7 @@
 
     goto :goto_1
 
-    .line 5618
+    .line 5616
     :pswitch_16
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockPullquoteCell;
 
@@ -5259,7 +5259,7 @@
 
     goto :goto_1
 
-    .line 5614
+    .line 5612
     :pswitch_17
     new-instance p2, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;
 
@@ -5274,7 +5274,7 @@
 
     goto :goto_1
 
-    .line 5610
+    .line 5608
     :pswitch_18
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockSubtitleCell;
 
@@ -5286,7 +5286,7 @@
 
     goto :goto_1
 
-    .line 5606
+    .line 5604
     :pswitch_19
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
@@ -5298,7 +5298,7 @@
 
     goto :goto_1
 
-    .line 5602
+    .line 5600
     :pswitch_1a
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockDividerCell;
 
@@ -5308,7 +5308,7 @@
 
     goto :goto_1
 
-    .line 5598
+    .line 5596
     :pswitch_1b
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockHeaderCell;
 
@@ -5320,7 +5320,7 @@
 
     goto :goto_1
 
-    .line 5594
+    .line 5592
     :pswitch_1c
     new-instance p1, Lorg/telegram/ui/ArticleViewer$BlockParagraphCell;
 
@@ -5332,7 +5332,7 @@
 
     goto :goto_1
 
-    .line 5710
+    .line 5708
     :cond_0
     new-instance p1, Lorg/telegram/ui/ArticleViewer$ReportCell;
 
@@ -5340,7 +5340,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/ArticleViewer$ReportCell;-><init>(Landroid/content/Context;)V
 
-    .line 5723
+    .line 5721
     :goto_1
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -5352,10 +5352,10 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5724
+    .line 5722
     invoke-virtual {p1, v0}, Landroid/view/View;->setFocusable(Z)V
 
-    .line 5725
+    .line 5723
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -5401,7 +5401,7 @@
 .method public onViewAttachedToWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 2
 
-    .line 5747
+    .line 5745
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -5410,12 +5410,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 5748
+    .line 5746
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$ReportCell;
 
-    .line 5749
+    .line 5747
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->currentPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$WebPage;->cached_page:Lorg/telegram/tgnet/TLRPC$Page;

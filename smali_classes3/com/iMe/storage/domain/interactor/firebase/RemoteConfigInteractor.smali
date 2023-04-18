@@ -32,3 +32,49 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public final getBoolean(Ljava/lang/String;)Lio/reactivex/Single;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Lio/reactivex/Single<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/lang/Boolean;",
+            ">;>;"
+        }
+    .end annotation
+
+    const-string v0, "key"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 16
+    iget-object v0, p0, Lcom/iMe/storage/domain/interactor/firebase/RemoteConfigInteractor;->remoteConfigRepository:Lcom/iMe/storage/domain/repository/firebase/RemoteConfigRepository;
+
+    .line 17
+    invoke-interface {v0, p1}, Lcom/iMe/storage/domain/repository/firebase/RemoteConfigRepository;->getBoolean(Ljava/lang/String;)Lio/reactivex/Single;
+
+    move-result-object p1
+
+    .line 18
+    iget-object v0, p0, Lcom/iMe/storage/domain/interactor/firebase/RemoteConfigInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Single;->subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Single;
+
+    move-result-object p1
+
+    const-string v0, "remoteConfigRepository\n \u2026(schedulersProvider.io())"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p1
+.end method

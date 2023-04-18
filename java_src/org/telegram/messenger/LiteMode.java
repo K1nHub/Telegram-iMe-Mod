@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.Utilities;
-import org.telegram.p048ui.ActionBar.Theme;
-import org.telegram.p048ui.Components.AnimatedEmojiDrawable;
+import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p044ui.Components.AnimatedEmojiDrawable;
 import org.telegram.tgnet.TLRPC$JSONValue;
 import org.telegram.tgnet.TLRPC$TL_jsonArray;
 import org.telegram.tgnet.TLRPC$TL_jsonNumber;
@@ -102,6 +102,9 @@ public class LiteMode {
     }
 
     public static boolean isEnabled(int i) {
+        if (i == 64 && AndroidUtilities.isTablet()) {
+            return true;
+        }
         return (preprocessFlag(i) & getValue()) > 0;
     }
 

@@ -13,12 +13,12 @@ import com.google.android.exoplayer2.extractor.mp3.Mp3Extractor;
 import com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor;
 import com.google.android.exoplayer2.extractor.mp4.Mp4Extractor;
 import com.google.android.exoplayer2.extractor.ogg.OggExtractor;
-import com.google.android.exoplayer2.extractor.p016ts.Ac3Extractor;
-import com.google.android.exoplayer2.extractor.p016ts.Ac4Extractor;
-import com.google.android.exoplayer2.extractor.p016ts.AdtsExtractor;
-import com.google.android.exoplayer2.extractor.p016ts.DefaultTsPayloadReaderFactory;
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
-import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.Ac3Extractor;
+import com.google.android.exoplayer2.extractor.p015ts.Ac4Extractor;
+import com.google.android.exoplayer2.extractor.p015ts.AdtsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.DefaultTsPayloadReaderFactory;
+import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.exoplayer2.extractor.wav.WavExtractor;
 import com.google.android.exoplayer2.util.FileTypes;
 import com.google.android.exoplayer2.util.TimestampAdjuster;
@@ -48,7 +48,7 @@ public final class DefaultExtractorsFactory implements ExtractorsFactory {
     private boolean constantBitrateSeekingEnabled = true;
     private int tsMode = 1;
     private int tsTimestampSearchBytes = TsExtractor.DEFAULT_TIMESTAMP_SEARCH_BYTES;
-    private ImmutableList<Format> tsSubtitleFormats = ImmutableList.m754of();
+    private ImmutableList<Format> tsSubtitleFormats = ImmutableList.m740of();
 
     public synchronized DefaultExtractorsFactory setConstantBitrateSeekingEnabled(boolean z) {
         this.constantBitrateSeekingEnabled = z;

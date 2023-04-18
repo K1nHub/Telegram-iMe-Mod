@@ -88,11 +88,6 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
         return sb2;
     }
 
-    public static String decodeToString(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "<this>");
-        return new String(bArr, Charsets.UTF_8);
-    }
-
     public static /* synthetic */ boolean startsWith$default(String str, String str2, boolean z, int i, Object obj) {
         boolean startsWith;
         if ((i & 2) != 0) {

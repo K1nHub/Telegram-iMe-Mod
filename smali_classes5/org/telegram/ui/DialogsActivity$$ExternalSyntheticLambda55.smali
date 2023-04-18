@@ -33,7 +33,7 @@
 
     iget v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda55;->f$1:I
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$hxs2GuKX8AMcxWhMj1TyiDCVOqg(Lorg/telegram/ui/DialogsActivity;ILandroid/view/View;)Z
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$PuDqVBYDXJwTW6X01Iol2baZCTU(Lorg/telegram/ui/DialogsActivity;ILandroid/view/View;)Z
 
     move-result p1
 

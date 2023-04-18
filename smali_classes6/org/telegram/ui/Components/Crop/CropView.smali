@@ -121,14 +121,14 @@
     .line 70
     iput-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->values:[F
 
-    .line 1058
+    .line 1063
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->cropRect:Landroid/graphics/RectF;
 
-    .line 1059
+    .line 1064
     new-instance v0, Landroid/graphics/RectF;
 
     const/4 v1, 0x0
@@ -327,7 +327,7 @@
 
     if-eqz p15, :cond_0
 
-    .line 977
+    .line 982
     :try_start_0
     invoke-virtual {v0, v4}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
@@ -342,7 +342,7 @@
     :goto_0
     if-nez p2, :cond_1
 
-    .line 980
+    .line 985
     invoke-static/range {p1 .. p1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v5
@@ -352,7 +352,7 @@
     :cond_1
     move-object/from16 v5, p2
 
-    .line 982
+    .line 987
     :goto_1
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -376,12 +376,12 @@
 
     div-float/2addr v6, v7
 
-    .line 983
+    .line 988
     new-instance v7, Landroid/graphics/Matrix;
 
     invoke-direct {v7}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 984
+    .line 989
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v8
@@ -412,27 +412,27 @@
 
     const/high16 v10, -0x40800000    # -1.0f
 
-    .line 986
+    .line 991
     invoke-virtual {v7, v10, v8}, Landroid/graphics/Matrix;->postScale(FF)Z
 
     :cond_2
     div-float/2addr v8, v6
 
-    .line 988
+    .line 993
     invoke-virtual {v7, v8, v8}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 989
+    .line 994
     invoke-virtual {v7, v1}, Landroid/graphics/Matrix;->postRotate(F)Z
 
     move-object/from16 v6, p6
 
-    .line 990
+    .line 995
     invoke-virtual {v7, v6}, Landroid/graphics/Matrix;->postConcat(Landroid/graphics/Matrix;)Z
 
-    .line 991
+    .line 996
     invoke-virtual {v7, v2, v2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 992
+    .line 997
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v6
@@ -451,7 +451,7 @@
 
     invoke-virtual {v7, v6, v10}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 993
+    .line 998
     new-instance v6, Landroid/graphics/Paint;
 
     invoke-direct {v6, v9}, Landroid/graphics/Paint;-><init>(I)V
@@ -460,7 +460,7 @@
 
     invoke-virtual {v10, v5, v7, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
-    .line 994
+    .line 999
     new-instance v6, Ljava/io/FileOutputStream;
 
     new-instance v10, Ljava/io/File;
@@ -475,15 +475,15 @@
 
     move-object/from16 v11, p5
 
-    .line 995
+    .line 1000
     invoke-virtual {v0, v11, v10, v6}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 996
+    .line 1001
     invoke-virtual {v6}, Ljava/io/FileOutputStream;->close()V
 
     if-eqz v3, :cond_8
 
-    .line 998
+    .line 1003
     invoke-virtual/range {p14 .. p14}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v6
@@ -498,7 +498,7 @@
 
     mul-float v8, v8, p9
 
-    .line 1001
+    .line 1006
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -517,7 +517,7 @@
 
     const/4 v2, 0x0
 
-    .line 1004
+    .line 1009
     invoke-virtual/range {p14 .. p14}, Ljava/util/ArrayList;->size()I
 
     move-result v10
@@ -527,14 +527,14 @@
     :goto_2
     if-ge v11, v10, :cond_8
 
-    .line 1005
+    .line 1010
     invoke-virtual {v3, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v12
 
     check-cast v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;
 
-    .line 1007
+    .line 1012
     iget v13, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->x:F
 
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
@@ -561,7 +561,7 @@
 
     aput v13, v6, v4
 
-    .line 1008
+    .line 1013
     iget v13, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->y:F
 
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getHeight()I
@@ -588,7 +588,7 @@
 
     aput v13, v6, v4
 
-    .line 1009
+    .line 1014
     iget v13, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textViewX:F
 
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
@@ -601,7 +601,7 @@
 
     aput v13, v6, v9
 
-    .line 1010
+    .line 1015
     iget v13, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textViewY:F
 
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getHeight()I
@@ -616,15 +616,15 @@
 
     aput v13, v6, v14
 
-    .line 1011
+    .line 1016
     invoke-virtual {v7, v6}, Landroid/graphics/Matrix;->mapPoints([F)V
 
-    .line 1013
+    .line 1018
     iget-byte v13, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->type:B
 
     if-nez v13, :cond_3
 
-    .line 1014
+    .line 1019
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v13
@@ -640,7 +640,7 @@
     :cond_3
     if-ne v13, v4, :cond_7
 
-    .line 1016
+    .line 1021
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v13
@@ -651,7 +651,7 @@
 
     if-nez v2, :cond_4
 
-    .line 1018
+    .line 1023
     new-instance v2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     new-instance v13, Lorg/telegram/ui/Components/Point;
@@ -688,7 +688,7 @@
 
     invoke-direct/range {v17 .. v23}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/Point;ILjava/lang/CharSequence;Lorg/telegram/ui/Components/Paint/Swatch;I)V
 
-    .line 1019
+    .line 1024
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
@@ -697,7 +697,7 @@
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->setMaxWidth(I)V
 
-    .line 1022
+    .line 1027
     :cond_4
     iget-byte v0, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->subType:B
 
@@ -721,16 +721,16 @@
     :cond_6
     const/4 v0, 0x1
 
-    .line 1029
+    .line 1034
     :goto_3
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->setType(I)V
 
-    .line 1030
+    .line 1035
     iget-object v0, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->text:Ljava/lang/String;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1031
+    .line 1036
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
@@ -751,21 +751,21 @@
 
     invoke-virtual {v2, v0, v4}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1032
+    .line 1037
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
 
     iput v0, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewWidth:I
 
-    .line 1033
+    .line 1038
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
 
     iput v0, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewHeight:I
 
-    .line 1035
+    .line 1040
     :cond_7
     :goto_4
     iget v0, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->scale:F
@@ -776,7 +776,7 @@
 
     const/4 v4, 0x0
 
-    .line 1037
+    .line 1042
     aget v9, v6, v4
 
     iget v13, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewWidth:I
@@ -803,7 +803,7 @@
 
     const/4 v0, 0x1
 
-    .line 1038
+    .line 1043
     aget v0, v6, v0
 
     iget v9, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewHeight:I
@@ -832,7 +832,7 @@
 
     const/4 v0, 0x2
 
-    .line 1039
+    .line 1044
     aget v9, v6, v0
 
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/Bitmap;->getWidth()I
@@ -847,7 +847,7 @@
 
     const/4 v9, 0x3
 
-    .line 1040
+    .line 1045
     aget v9, v6, v9
 
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/Bitmap;->getHeight()I
@@ -860,7 +860,7 @@
 
     iput v9, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textViewY:F
 
-    .line 1042
+    .line 1047
     iget v9, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewWidth:I
 
     int-to-float v9, v9
@@ -879,7 +879,7 @@
 
     iput v9, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->width:F
 
-    .line 1043
+    .line 1048
     iget v9, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewHeight:I
 
     int-to-float v9, v9
@@ -898,7 +898,7 @@
 
     iput v9, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->height:F
 
-    .line 1045
+    .line 1050
     iget v9, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewWidth:I
 
     int-to-float v9, v9
@@ -913,7 +913,7 @@
 
     iput v9, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textViewWidth:F
 
-    .line 1046
+    .line 1051
     iget v9, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewHeight:I
 
     int-to-float v9, v9
@@ -928,7 +928,7 @@
 
     iput v9, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textViewHeight:F
 
-    .line 1048
+    .line 1053
     iget v9, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->rotation:F
 
     float-to-double v13, v9
@@ -957,7 +957,7 @@
 
     goto/16 :goto_2
 
-    .line 1052
+    .line 1057
     :cond_8
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_0
@@ -965,7 +965,7 @@
 
     goto :goto_6
 
-    .line 1054
+    .line 1059
     :goto_5
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -976,6 +976,14 @@
 .method private fillAreaView(Landroid/graphics/RectF;Z)V
     .locals 10
 
+    .line 477
+    iget-object p2, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
+
+    if-nez p2, :cond_0
+
+    return-void
+
+    :cond_0
     const/4 p2, 0x1
 
     new-array v3, p2, [F
@@ -986,7 +994,7 @@
 
     aput v0, v3, v1
 
-    .line 477
+    .line 482
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
 
     move-result v0
@@ -1015,7 +1023,7 @@
 
     move-result v0
 
-    .line 479
+    .line 484
     iget-object v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1500(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
@@ -1028,9 +1036,9 @@
 
     cmpl-float v2, v2, v4
 
-    if-lez v2, :cond_0
+    if-lez v2, :cond_1
 
-    .line 482
+    .line 487
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1500(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
@@ -1045,29 +1053,29 @@
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     move v2, v0
 
     move v6, v1
 
-    .line 485
+    .line 490
     :goto_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x15
 
-    if-lt v0, v4, :cond_1
+    if-lt v0, v4, :cond_2
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->inBubbleMode:Z
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    :cond_1
+    :cond_2
     int-to-float v0, v1
 
-    .line 487
+    .line 492
     invoke-virtual {p1}, Landroid/graphics/RectF;->centerX()F
 
     move-result v1
@@ -1102,7 +1110,7 @@
 
     mul-float/2addr v4, v1
 
-    .line 488
+    .line 493
     invoke-virtual {p1}, Landroid/graphics/RectF;->centerY()F
 
     move-result v1
@@ -1145,14 +1153,14 @@
 
     new-array v0, v5, [F
 
-    .line 493
+    .line 498
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v8
 
-    .line 494
+    .line 499
     new-instance v9, Lorg/telegram/ui/Components/Crop/CropView$$ExternalSyntheticLambda1;
 
     move-object v0, v9
@@ -1165,26 +1173,24 @@
 
     invoke-virtual {v8, v9}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 501
+    .line 506
     new-instance v0, Lorg/telegram/ui/Components/Crop/CropView$2;
 
     invoke-direct {v0, p0, v6}, Lorg/telegram/ui/Components/Crop/CropView$2;-><init>(Lorg/telegram/ui/Components/Crop/CropView;Z)V
 
     invoke-virtual {v8, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 509
+    .line 514
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0, p1, v8, p2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->fill(Landroid/graphics/RectF;Landroid/animation/Animator;Z)V
 
-    .line 510
+    .line 515
     iget-object p2, p0, Lorg/telegram/ui/Components/Crop/CropView;->initialAreaRect:Landroid/graphics/RectF;
 
     invoke-virtual {p2, p1}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
     return-void
-
-    nop
 
     :array_0
     .array-data 4
@@ -1198,7 +1204,7 @@
 
     const/4 v0, 0x0
 
-    .line 603
+    .line 608
     invoke-direct {p0, p1, p2, p3, v0}, Lorg/telegram/ui/Components/Crop/CropView;->fitContentInBounds(ZZZZ)V
 
     return-void
@@ -1209,14 +1215,14 @@
 
     move-object v6, p0
 
-    .line 607
+    .line 612
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 610
+    .line 615
     :cond_0
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
@@ -1224,28 +1230,28 @@
 
     move-result v0
 
-    .line 611
+    .line 616
     iget-object v1, v6, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropHeight()F
 
     move-result v1
 
-    .line 612
+    .line 617
     iget-object v2, v6, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1600(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
 
     move-result v2
 
-    .line 613
+    .line 618
     iget-object v3, v6, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1700(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
 
     move-result v3
 
-    .line 614
+    .line 619
     iget-object v4, v6, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1900(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
@@ -1254,19 +1260,19 @@
 
     float-to-double v7, v4
 
-    .line 615
+    .line 620
     invoke-static {v7, v8}, Ljava/lang/Math;->toRadians(D)D
 
     move-result-wide v7
 
     double-to-float v5, v7
 
-    .line 617
+    .line 622
     invoke-virtual {p0, v0, v1, v4}, Lorg/telegram/ui/Components/Crop/CropView;->calculateBoundingBox(FFF)Landroid/graphics/RectF;
 
     move-result-object v7
 
-    .line 618
+    .line 623
     new-instance v8, Landroid/graphics/RectF;
 
     const/4 v9, 0x0
@@ -1283,19 +1289,19 @@
 
     div-float/2addr v1, v10
 
-    .line 623
+    .line 628
     iget-object v11, v6, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v11}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1500(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
 
     move-result v11
 
-    .line 625
+    .line 630
     iget-object v12, v6, Lorg/telegram/ui/Components/Crop/CropView;->tempRect:Lorg/telegram/ui/Components/Crop/CropView$CropRectangle;
 
     invoke-virtual {v12, v8}, Lorg/telegram/ui/Components/Crop/CropView$CropRectangle;->setRect(Landroid/graphics/RectF;)V
 
-    .line 627
+    .line 632
     iget-object v12, v6, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v12}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$2000(Lorg/telegram/ui/Components/Crop/CropView$CropState;)Landroid/graphics/Matrix;
@@ -1306,15 +1312,15 @@
 
     div-float/2addr v1, v11
 
-    .line 628
+    .line 633
     invoke-virtual {v12, v0, v1}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
-    .line 630
+    .line 635
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->tempMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 631
+    .line 636
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->tempMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v8}, Landroid/graphics/RectF;->centerX()F
@@ -1327,12 +1333,12 @@
 
     invoke-virtual {v0, v1, v13}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 632
+    .line 637
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->tempMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v0, v12}, Landroid/graphics/Matrix;->setConcat(Landroid/graphics/Matrix;Landroid/graphics/Matrix;)Z
 
-    .line 633
+    .line 638
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->tempMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v8}, Landroid/graphics/RectF;->centerX()F
@@ -1349,19 +1355,19 @@
 
     invoke-virtual {v0, v1, v12}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
-    .line 634
+    .line 639
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->tempRect:Lorg/telegram/ui/Components/Crop/CropView$CropRectangle;
 
     iget-object v1, v6, Lorg/telegram/ui/Components/Crop/CropView;->tempMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Crop/CropView$CropRectangle;->applyMatrix(Landroid/graphics/Matrix;)V
 
-    .line 636
+    .line 641
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->tempMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 637
+    .line 642
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->tempMatrix:Landroid/graphics/Matrix;
 
     neg-float v1, v4
@@ -1372,19 +1378,19 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/graphics/Matrix;->preRotate(FFF)Z
 
-    .line 638
+    .line 643
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->tempRect:Lorg/telegram/ui/Components/Crop/CropView$CropRectangle;
 
     iget-object v1, v6, Lorg/telegram/ui/Components/Crop/CropView;->tempMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Crop/CropView$CropRectangle;->applyMatrix(Landroid/graphics/Matrix;)V
 
-    .line 639
+    .line 644
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->tempRect:Lorg/telegram/ui/Components/Crop/CropView$CropRectangle;
 
     invoke-virtual {v0, v8}, Lorg/telegram/ui/Components/Crop/CropView$CropRectangle;->getRect(Landroid/graphics/RectF;)V
 
-    .line 641
+    .line 646
     new-instance v0, Landroid/graphics/PointF;
 
     iget-object v1, v6, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
@@ -1401,7 +1407,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/graphics/PointF;-><init>(FF)V
 
-    .line 644
+    .line 649
     invoke-virtual {v8, v7}, Landroid/graphics/RectF;->contains(Landroid/graphics/RectF;)Z
 
     move-result v1
@@ -1412,7 +1418,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 645
+    .line 650
     invoke-virtual {v7}, Landroid/graphics/RectF;->width()F
 
     move-result v1
@@ -1437,7 +1443,7 @@
 
     if-lez v1, :cond_2
 
-    .line 646
+    .line 651
     :cond_1
     invoke-virtual {v7}, Landroid/graphics/RectF;->width()F
 
@@ -1449,7 +1455,7 @@
 
     div-float/2addr v1, v3
 
-    .line 647
+    .line 652
     invoke-direct {p0, v8, v11, v1}, Lorg/telegram/ui/Components/Crop/CropView;->fitScale(Landroid/graphics/RectF;FF)F
 
     move-result v1
@@ -1459,7 +1465,7 @@
     :cond_2
     move v1, v11
 
-    .line 649
+    .line 654
     :goto_0
     invoke-direct {p0, v8, v7, v0, v5}, Lorg/telegram/ui/Components/Crop/CropView;->fitTranslation(Landroid/graphics/RectF;Landroid/graphics/RectF;Landroid/graphics/PointF;F)V
 
@@ -1468,14 +1474,14 @@
     :cond_3
     if-eqz p2, :cond_5
 
-    .line 650
+    .line 655
     iget v1, v6, Lorg/telegram/ui/Components/Crop/CropView;->rotationStartScale:F
 
     cmpl-float v1, v1, v9
 
     if-lez v1, :cond_5
 
-    .line 651
+    .line 656
     invoke-virtual {v7}, Landroid/graphics/RectF;->width()F
 
     move-result v1
@@ -1486,7 +1492,7 @@
 
     div-float/2addr v1, v3
 
-    .line 652
+    .line 657
     iget-object v3, v6, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1500(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
@@ -1495,7 +1501,7 @@
 
     mul-float/2addr v3, v1
 
-    .line 653
+    .line 658
     iget v4, v6, Lorg/telegram/ui/Components/Crop/CropView;->rotationStartScale:F
 
     cmpg-float v3, v3, v4
@@ -1504,13 +1510,13 @@
 
     move v1, v2
 
-    .line 656
+    .line 661
     :cond_4
     invoke-direct {p0, v8, v11, v1}, Lorg/telegram/ui/Components/Crop/CropView;->fitScale(Landroid/graphics/RectF;FF)F
 
     move-result v1
 
-    .line 658
+    .line 663
     invoke-direct {p0, v8, v7, v0, v5}, Lorg/telegram/ui/Components/Crop/CropView;->fitTranslation(Landroid/graphics/RectF;Landroid/graphics/RectF;Landroid/graphics/PointF;F)V
 
     goto :goto_1
@@ -1518,7 +1524,7 @@
     :cond_5
     move v1, v11
 
-    .line 661
+    .line 666
     :goto_1
     iget v3, v0, Landroid/graphics/PointF;->x:F
 
@@ -1530,7 +1536,7 @@
 
     sub-float/2addr v3, v4
 
-    .line 662
+    .line 667
     iget v0, v0, Landroid/graphics/PointF;->y:F
 
     iget-object v4, v6, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
@@ -1547,7 +1553,7 @@
 
     sub-float v0, v5, v2
 
-    .line 669
+    .line 674
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -1579,28 +1585,28 @@
     :cond_6
     const/4 v0, 0x1
 
-    .line 673
+    .line 678
     iput-boolean v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->animating:Z
 
     const/4 v0, 0x3
 
     new-array v7, v0, [F
 
-    .line 675
+    .line 680
     fill-array-data v7, :array_0
 
     const/4 v0, 0x2
 
     new-array v0, v0, [F
 
-    .line 676
+    .line 681
     fill-array-data v0, :array_1
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v8
 
-    .line 677
+    .line 682
     new-instance v9, Lorg/telegram/ui/Components/Crop/CropView$$ExternalSyntheticLambda0;
 
     move-object v0, v9
@@ -1615,7 +1621,7 @@
 
     invoke-virtual {v8, v9}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 692
+    .line 697
     new-instance v7, Lorg/telegram/ui/Components/Crop/CropView$3;
 
     move-object v0, v7
@@ -1632,7 +1638,7 @@
 
     invoke-virtual {v8, v7}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 702
+    .line 707
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getInterpolator()Landroid/view/animation/Interpolator;
@@ -1650,29 +1656,29 @@
     :cond_7
     const-wide/16 v0, 0xc8
 
-    .line 703
+    .line 708
     :goto_2
     invoke-virtual {v8, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 704
+    .line 709
     invoke-virtual {v8}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_3
 
-    .line 706
+    .line 711
     :cond_8
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v0, v3, v4}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$800(Lorg/telegram/ui/Components/Crop/CropView$CropState;FF)V
 
-    .line 707
+    .line 712
     iget-object v0, v6, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     div-float/2addr v1, v11
 
     invoke-static {v0, v1, v9, v9}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$900(Lorg/telegram/ui/Components/Crop/CropView$CropState;FFF)V
 
-    .line 708
+    .line 713
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Crop/CropView;->updateMatrix()V
 
     :goto_3
@@ -1695,21 +1701,21 @@
 .method private fitScale(Landroid/graphics/RectF;FF)F
     .locals 8
 
-    .line 514
+    .line 519
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
 
     move-result v0
 
     mul-float/2addr v0, p3
 
-    .line 515
+    .line 520
     invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
 
     move-result v1
 
     mul-float/2addr v1, p3
 
-    .line 517
+    .line 522
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
 
     move-result v2
@@ -1720,7 +1726,7 @@
 
     div-float/2addr v2, v3
 
-    .line 518
+    .line 523
     invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
 
     move-result v4
@@ -1729,7 +1735,7 @@
 
     div-float/2addr v4, v3
 
-    .line 520
+    .line 525
     iget v3, p1, Landroid/graphics/RectF;->left:F
 
     add-float v5, v3, v2
@@ -1756,19 +1762,19 @@
 .method private fitTranslation(Landroid/graphics/RectF;Landroid/graphics/RectF;Landroid/graphics/PointF;F)V
     .locals 9
 
-    .line 526
+    .line 531
     iget v0, p2, Landroid/graphics/RectF;->left:F
 
-    .line 527
+    .line 532
     iget v1, p2, Landroid/graphics/RectF;->top:F
 
-    .line 528
+    .line 533
     iget v2, p2, Landroid/graphics/RectF;->right:F
 
-    .line 529
+    .line 534
     iget v3, p2, Landroid/graphics/RectF;->bottom:F
 
-    .line 531
+    .line 536
     iget v4, p1, Landroid/graphics/RectF;->left:F
 
     cmpl-float v5, v4, v0
@@ -1781,7 +1787,7 @@
 
     move v0, v4
 
-    .line 535
+    .line 540
     :cond_0
     iget v4, p1, Landroid/graphics/RectF;->top:F
 
@@ -1795,7 +1801,7 @@
 
     move v1, v4
 
-    .line 539
+    .line 544
     :cond_1
     iget v4, p1, Landroid/graphics/RectF;->right:F
 
@@ -1807,7 +1813,7 @@
 
     add-float/2addr v0, v4
 
-    .line 542
+    .line 547
     :cond_2
     iget p1, p1, Landroid/graphics/RectF;->bottom:F
 
@@ -1819,7 +1825,7 @@
 
     add-float/2addr v1, p1
 
-    .line 546
+    .line 551
     :cond_3
     invoke-virtual {p2}, Landroid/graphics/RectF;->centerX()F
 
@@ -1837,7 +1843,7 @@
 
     sub-float/2addr p1, v0
 
-    .line 547
+    .line 552
     invoke-virtual {p2}, Landroid/graphics/RectF;->centerY()F
 
     move-result v0
@@ -1858,7 +1864,7 @@
 
     sub-double v5, v3, v1
 
-    .line 549
+    .line 554
     invoke-static {v5, v6}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v7
@@ -1869,7 +1875,7 @@
 
     double-to-float p4, v7
 
-    .line 550
+    .line 555
     invoke-static {v5, v6}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v5
@@ -1880,7 +1886,7 @@
 
     add-double/2addr v1, v3
 
-    .line 552
+    .line 557
     invoke-static {v1, v2}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v3
@@ -1891,7 +1897,7 @@
 
     double-to-float p2, v3
 
-    .line 553
+    .line 558
     invoke-static {v1, v2}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v0
@@ -1900,7 +1906,7 @@
 
     double-to-float v0, v0
 
-    .line 555
+    .line 560
     iget v1, p3, Landroid/graphics/PointF;->x:F
 
     add-float/2addr v1, p4
@@ -1921,7 +1927,7 @@
 .method public static getCopy(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
-    .line 1118
+    .line 1123
     new-instance v0, Ljava/io/File;
 
     const/4 v1, 0x4
@@ -1950,7 +1956,7 @@
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1120
+    .line 1125
     :try_start_0
     new-instance v1, Ljava/io/File;
 
@@ -1965,10 +1971,10 @@
     :catch_0
     move-exception p0
 
-    .line 1122
+    .line 1127
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1124
+    .line 1129
     :goto_0
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -1980,19 +1986,19 @@
 .method private getCurrentHeight()I
     .locals 2
 
-    .line 720
+    .line 725
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->videoEditTextureView:Lorg/telegram/ui/Components/VideoEditTextureView;
 
     if-eqz v0, :cond_0
 
-    .line 721
+    .line 726
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoEditTextureView;->getVideoHeight()I
 
     move-result v0
 
     return v0
 
-    .line 723
+    .line 728
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->bitmapRotation:I
 
@@ -2030,19 +2036,19 @@
 .method private getCurrentWidth()I
     .locals 2
 
-    .line 713
+    .line 718
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->videoEditTextureView:Lorg/telegram/ui/Components/VideoEditTextureView;
 
     if-eqz v0, :cond_0
 
-    .line 714
+    .line 719
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoEditTextureView;->getVideoWidth()I
 
     move-result v0
 
     return v0
 
-    .line 716
+    .line 721
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->bitmapRotation:I
 
@@ -2080,7 +2086,7 @@
 .method private synthetic lambda$fillAreaView$0(F[FFFLandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 495
+    .line 500
     invoke-virtual {p5}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p5
@@ -2101,24 +2107,24 @@
 
     const/4 p5, 0x0
 
-    .line 496
+    .line 501
     aget v0, p2, p5
 
     div-float/2addr p1, v0
 
-    .line 497
+    .line 502
     aget v0, p2, p5
 
     mul-float/2addr v0, p1
 
     aput v0, p2, p5
 
-    .line 498
+    .line 503
     iget-object p2, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {p2, p1, p3, p4}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$900(Lorg/telegram/ui/Components/Crop/CropView$CropState;FFF)V
 
-    .line 499
+    .line 504
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Crop/CropView;->updateMatrix()V
 
     return-void
@@ -2127,7 +2133,7 @@
 .method private synthetic lambda$fitContentInBounds$1(F[FFFLandroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 678
+    .line 683
     invoke-virtual {p5}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p5
@@ -2142,12 +2148,12 @@
 
     const/4 v0, 0x1
 
-    .line 680
+    .line 685
     aget v1, p2, v0
 
     sub-float/2addr p1, v1
 
-    .line 681
+    .line 686
     aget v1, p2, v0
 
     add-float/2addr v1, p1
@@ -2158,19 +2164,19 @@
 
     const/4 v0, 0x2
 
-    .line 682
+    .line 687
     aget v1, p2, v0
 
     sub-float/2addr p3, v1
 
-    .line 683
+    .line 688
     aget v1, p2, v0
 
     add-float/2addr v1, p3
 
     aput v1, p2, v0
 
-    .line 684
+    .line 689
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     const/4 v1, 0x0
@@ -2193,26 +2199,26 @@
 
     add-float/2addr p4, p1
 
-    .line 686
+    .line 691
     aget p1, p2, v1
 
     div-float/2addr p4, p1
 
-    .line 687
+    .line 692
     aget p1, p2, v1
 
     mul-float/2addr p1, p4
 
     aput p1, p2, v1
 
-    .line 688
+    .line 693
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     const/4 p2, 0x0
 
     invoke-static {p1, p4, p2, p2}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$900(Lorg/telegram/ui/Components/Crop/CropView$CropState;FFF)V
 
-    .line 690
+    .line 695
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Crop/CropView;->updateMatrix()V
 
     return-void
@@ -2221,7 +2227,7 @@
 .method private synthetic lambda$maximize$2(Landroid/graphics/RectF;Landroid/graphics/RectF;FFFFFLandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 774
+    .line 779
     invoke-virtual {p8}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p8
@@ -2232,17 +2238,17 @@
 
     move-result p8
 
-    .line 775
+    .line 780
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->initialAreaRect:Landroid/graphics/RectF;
 
     invoke-static {p1, v0, p8, p2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(Landroid/graphics/RectF;Landroid/graphics/RectF;FLandroid/graphics/RectF;)V
 
-    .line 776
+    .line 781
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setActualRect(Landroid/graphics/RectF;)V
 
-    .line 777
+    .line 782
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     iget p2, p1, Lorg/telegram/ui/Components/Crop/CropView$CropState;->x:F
@@ -2255,21 +2261,21 @@
 
     sub-float/2addr p2, p3
 
-    .line 778
+    .line 783
     iget p3, p1, Lorg/telegram/ui/Components/Crop/CropView$CropState;->y:F
 
     mul-float/2addr p4, v0
 
     sub-float/2addr p3, p4
 
-    .line 779
+    .line 784
     iget p1, p1, Lorg/telegram/ui/Components/Crop/CropView$CropState;->rotation:F
 
     mul-float/2addr p5, v0
 
     sub-float/2addr p1, p5
 
-    .line 780
+    .line 785
     invoke-static {p6, p7, p8}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result p4
@@ -2284,17 +2290,17 @@
 
     neg-float p3, p3
 
-    .line 781
+    .line 786
     invoke-static {p5, p2, p3}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$800(Lorg/telegram/ui/Components/Crop/CropView$CropState;FF)V
 
-    .line 782
+    .line 787
     iget-object p2, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     const/4 p3, 0x0
 
     invoke-static {p2, p4, p3, p3}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$900(Lorg/telegram/ui/Components/Crop/CropView$CropState;FFF)V
 
-    .line 783
+    .line 788
     iget-object p2, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     neg-float p1, p1
@@ -2305,7 +2311,7 @@
 
     const/4 p2, 0x0
 
-    .line 784
+    .line 789
     invoke-direct {p0, p1, p2, p2}, Lorg/telegram/ui/Components/Crop/CropView;->fitContentInBounds(ZZZ)V
 
     return-void
@@ -2316,7 +2322,7 @@
 
     const/4 p2, 0x0
 
-    .line 1267
+    .line 1272
     iput-boolean p2, p0, Lorg/telegram/ui/Components/Crop/CropView;->hasAspectRatioDialog:Z
 
     if-eqz p3, :cond_2
@@ -2329,10 +2335,10 @@
 
     add-int/lit8 p3, p3, -0x2
 
-    .line 1282
+    .line 1287
     aget-object p1, p1, p3
 
-    .line 1284
+    .line 1289
     iget-object p3, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {p3}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getAspectRatio()F
@@ -2343,7 +2349,7 @@
 
     if-lez p3, :cond_0
 
-    .line 1285
+    .line 1290
     aget-object p2, p1, p2
 
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
@@ -2366,7 +2372,7 @@
 
     goto :goto_2
 
-    .line 1287
+    .line 1292
     :cond_0
     aget-object p3, p1, v1
 
@@ -2390,13 +2396,13 @@
 
     goto :goto_2
 
-    .line 1277
+    .line 1282
     :cond_1
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Crop/CropView;->setLockedAspectRatio(F)V
 
     goto :goto_2
 
-    .line 1270
+    .line 1275
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
@@ -2429,7 +2435,7 @@
 
     move-result p1
 
-    .line 1271
+    .line 1276
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
@@ -2461,7 +2467,7 @@
     :goto_1
     div-float/2addr p1, p2
 
-    .line 1272
+    .line 1277
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Crop/CropView;->setLockedAspectRatio(F)V
 
     :goto_2
@@ -2473,7 +2479,7 @@
 
     const/4 p1, 0x0
 
-    .line 1295
+    .line 1300
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->hasAspectRatioDialog:Z
 
     return-void
@@ -2484,7 +2490,7 @@
 
     const/4 v0, 0x0
 
-    .line 965
+    .line 970
     iput v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->rotationStartScale:F
 
     return-void
@@ -2493,37 +2499,37 @@
 .method private setLockedAspectRatio(F)V
     .locals 2
 
-    .line 1210
+    .line 1215
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setLockedAspectRatio(F)V
 
-    .line 1211
+    .line 1216
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
-    .line 1212
+    .line 1217
     iget-object v1, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v1, v0, p1}, Lorg/telegram/ui/Components/Crop/CropAreaView;->calculateRect(Landroid/graphics/RectF;F)V
 
     const/4 p1, 0x1
 
-    .line 1213
+    .line 1218
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/Crop/CropView;->fillAreaView(Landroid/graphics/RectF;Z)V
 
-    .line 1215
+    .line 1220
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->listener:Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;
 
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
-    .line 1216
+    .line 1221
     invoke-interface {v0, v1}, Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;->onChange(Z)V
 
-    .line 1217
+    .line 1222
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->listener:Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;
 
     invoke-interface {v0, p1}, Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;->onAspectLock(Z)V
@@ -2537,7 +2543,7 @@
 
     move-object/from16 v0, p0
 
-    .line 1062
+    .line 1067
     iget-object v1, v0, Lorg/telegram/ui/Components/Crop/CropView;->cropTransform:Lorg/telegram/ui/Components/Crop/CropTransform;
 
     if-eqz v1, :cond_9
@@ -2548,7 +2554,7 @@
 
     goto/16 :goto_6
 
-    .line 1065
+    .line 1070
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
@@ -2556,7 +2562,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropRect(Landroid/graphics/RectF;)V
 
-    .line 1066
+    .line 1071
     iget-object v1, v0, Lorg/telegram/ui/Components/Crop/CropView;->cropRect:Landroid/graphics/RectF;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/Crop/CropView;->sizeRect:Landroid/graphics/RectF;
@@ -2567,7 +2573,7 @@
 
     float-to-double v1, v1
 
-    .line 1067
+    .line 1072
     invoke-static {v1, v2}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v1
@@ -2576,7 +2582,7 @@
 
     int-to-float v2, v1
 
-    .line 1068
+    .line 1073
     iget-object v3, v0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getAspectRatio()F
@@ -2593,7 +2599,7 @@
 
     double-to-int v3, v3
 
-    .line 1069
+    .line 1074
     iget-object v4, v0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropWidth()F
@@ -2602,7 +2608,7 @@
 
     div-float/2addr v2, v4
 
-    .line 1071
+    .line 1076
     iget-object v4, v0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     iget-object v4, v4, Lorg/telegram/ui/Components/Crop/CropView$CropState;->matrix:Landroid/graphics/Matrix;
@@ -2611,14 +2617,14 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/Matrix;->getValues([F)V
 
-    .line 1072
+    .line 1077
     iget-object v4, v0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     iget v5, v4, Lorg/telegram/ui/Components/Crop/CropView$CropState;->minimumScale:F
 
     mul-float/2addr v5, v2
 
-    .line 1074
+    .line 1079
     invoke-static {v4}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1300(Lorg/telegram/ui/Components/Crop/CropView$CropState;)I
 
     move-result v2
@@ -2641,7 +2647,7 @@
 
     goto :goto_1
 
-    .line 1084
+    .line 1089
     :cond_2
     iget-object v2, v0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
@@ -2649,12 +2655,12 @@
 
     float-to-int v4, v4
 
-    .line 1085
+    .line 1090
     iget v2, v2, Lorg/telegram/ui/Components/Crop/CropView$CropState;->height:F
 
     goto :goto_2
 
-    .line 1081
+    .line 1086
     :cond_3
     :goto_1
     iget-object v2, v0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
@@ -2663,7 +2669,7 @@
 
     float-to-int v4, v4
 
-    .line 1082
+    .line 1087
     iget v2, v2, Lorg/telegram/ui/Components/Crop/CropView$CropState;->width:F
 
     :goto_2
@@ -2677,7 +2683,7 @@
 
     float-to-double v8, v4
 
-    .line 1087
+    .line 1092
     invoke-static {v8, v9}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v8
@@ -2694,7 +2700,7 @@
 
     float-to-double v8, v5
 
-    .line 1088
+    .line 1093
     invoke-static {v8, v9}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v8
@@ -2713,7 +2719,7 @@
 
     if-lez v5, :cond_5
 
-    .line 1090
+    .line 1095
     :cond_4
     invoke-static {v4, v3}, Ljava/lang/Math;->max(FF)F
 
@@ -2728,7 +2734,7 @@
 
     move v14, v4
 
-    .line 1096
+    .line 1101
     iget-object v3, v0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     div-float v4, v1, v2
@@ -2737,12 +2743,12 @@
 
     move-result-object v3
 
-    .line 1097
+    .line 1102
     iget-boolean v4, v0, Lorg/telegram/ui/Components/Crop/CropView;->freeform:Z
 
     if-eqz v4, :cond_6
 
-    .line 1098
+    .line 1103
     invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
 
     move-result v3
@@ -2751,7 +2757,7 @@
 
     goto :goto_3
 
-    .line 1100
+    .line 1105
     :cond_6
     invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
 
@@ -2759,19 +2765,19 @@
 
     div-float/2addr v4, v1
 
-    .line 1101
+    .line 1106
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
 
     move-result v3
 
     div-float/2addr v3, v2
 
-    .line 1102
+    .line 1107
     invoke-static {v4, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v3
 
-    .line 1105
+    .line 1110
     :goto_3
     iget-object v4, v0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
@@ -2779,12 +2785,12 @@
 
     div-float v11, v5, v3
 
-    .line 1106
+    .line 1111
     iget v6, v4, Lorg/telegram/ui/Components/Crop/CropView$CropState;->minimumScale:F
 
     div-float v12, v5, v6
 
-    .line 1107
+    .line 1112
     iget-object v6, v0, Lorg/telegram/ui/Components/Crop/CropView;->values:[F
 
     const/4 v7, 0x2
@@ -2797,24 +2803,24 @@
 
     const/4 v1, 0x5
 
-    .line 1108
+    .line 1113
     aget v1, v6, v1
 
     div-float/2addr v1, v2
 
     div-float v8, v1, v5
 
-    .line 1109
+    .line 1114
     iget v9, v4, Lorg/telegram/ui/Components/Crop/CropView$CropState;->rotation:F
 
-    .line 1111
+    .line 1116
     iget-object v1, v0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getTargetRectToFill()Landroid/graphics/RectF;
 
     move-result-object v1
 
-    .line 1112
+    .line 1117
     iget-object v2, v0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropCenterX()F
@@ -2827,7 +2833,7 @@
 
     sub-float v16, v2, v4
 
-    .line 1113
+    .line 1118
     iget-object v2, v0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropCenterY()F
@@ -2840,7 +2846,7 @@
 
     sub-float v17, v2, v1
 
-    .line 1114
+    .line 1119
     iget-object v5, v0, Lorg/telegram/ui/Components/Crop/CropView;->cropTransform:Lorg/telegram/ui/Components/Crop/CropTransform;
 
     iget-object v1, v0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
@@ -2909,14 +2915,14 @@
 .method public calculateBoundingBox(FFF)Landroid/graphics/RectF;
     .locals 3
 
-    .line 559
+    .line 564
     new-instance v0, Landroid/graphics/RectF;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, v1, v1, p1, p2}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 560
+    .line 565
     new-instance v1, Landroid/graphics/Matrix;
 
     invoke-direct {v1}, Landroid/graphics/Matrix;-><init>()V
@@ -2927,10 +2933,10 @@
 
     div-float/2addr p2, v2
 
-    .line 561
+    .line 566
     invoke-virtual {v1, p3, p1, p2}, Landroid/graphics/Matrix;->postRotate(FFF)Z
 
-    .line 562
+    .line 567
     invoke-virtual {v1, v0}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
 
     return-object v0
@@ -2939,14 +2945,14 @@
 .method public getActualRect()Landroid/graphics/RectF;
     .locals 2
 
-    .line 1332
+    .line 1337
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Crop/CropView;->cropRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropRect(Landroid/graphics/RectF;)V
 
-    .line 1333
+    .line 1338
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->cropRect:Landroid/graphics/RectF;
 
     return-object v0
@@ -2955,7 +2961,7 @@
 .method public getCropHeight()F
     .locals 1
 
-    .line 1328
+    .line 1333
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropHeight()F
@@ -2968,7 +2974,7 @@
 .method public getCropLeft()F
     .locals 1
 
-    .line 1316
+    .line 1321
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropLeft()F
@@ -2981,7 +2987,7 @@
 .method public getCropTop()F
     .locals 1
 
-    .line 1320
+    .line 1325
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropTop()F
@@ -2994,7 +3000,7 @@
 .method public getCropWidth()F
     .locals 1
 
-    .line 1324
+    .line 1329
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropWidth()F
@@ -3102,7 +3108,7 @@
 .method public isMirrored()Z
     .locals 1
 
-    .line 727
+    .line 732
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     if-nez v0, :cond_0
@@ -3111,7 +3117,7 @@
 
     return v0
 
-    .line 730
+    .line 735
     :cond_0
     iget-boolean v0, v0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->mirrored:Z
 
@@ -3164,14 +3170,14 @@
 
     move-object/from16 v1, p1
 
-    .line 1128
+    .line 1133
     iget-object v2, v0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     if-nez v2, :cond_0
 
     return-void
 
-    .line 1132
+    .line 1137
     :cond_0
     iget-object v2, v0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
@@ -3179,7 +3185,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropRect(Landroid/graphics/RectF;)V
 
-    .line 1134
+    .line 1139
     iget-object v2, v0, Lorg/telegram/ui/Components/Crop/CropView;->cropRect:Landroid/graphics/RectF;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/Crop/CropView;->sizeRect:Landroid/graphics/RectF;
@@ -3190,7 +3196,7 @@
 
     float-to-double v2, v2
 
-    .line 1135
+    .line 1140
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v2
@@ -3199,7 +3205,7 @@
 
     int-to-float v3, v2
 
-    .line 1136
+    .line 1141
     iget-object v4, v0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getAspectRatio()F
@@ -3216,7 +3222,7 @@
 
     double-to-int v4, v4
 
-    .line 1137
+    .line 1142
     iget-object v5, v0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropWidth()F
@@ -3225,38 +3231,38 @@
 
     div-float/2addr v3, v5
 
-    .line 1139
+    .line 1144
     iget-object v5, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->paintPath:Ljava/lang/String;
 
     if-eqz v5, :cond_4
 
-    .line 1140
+    .line 1145
     sget-object v5, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v2, v4, v5}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v10
 
-    .line 1141
+    .line 1146
     new-instance v9, Landroid/graphics/Canvas;
 
     invoke-direct {v9, v10}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1143
+    .line 1148
     iget-object v5, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->paintPath:Ljava/lang/String;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/Crop/CropView;->getCopy(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1145
+    .line 1150
     iget-object v5, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->croppedPaintPath:Ljava/lang/String;
 
     const/4 v6, 0x0
 
     if-eqz v5, :cond_1
 
-    .line 1146
+    .line 1151
     new-instance v5, Ljava/io/File;
 
     iget-object v8, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->croppedPaintPath:Ljava/lang/String;
@@ -3265,14 +3271,14 @@
 
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
-    .line 1147
+    .line 1152
     iput-object v6, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->croppedPaintPath:Ljava/lang/String;
 
-    .line 1149
+    .line 1154
     :cond_1
     iput-object v7, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->croppedPaintPath:Ljava/lang/String;
 
-    .line 1150
+    .line 1155
     iget-object v5, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->mediaEntities:Ljava/util/ArrayList;
 
     if-eqz v5, :cond_2
@@ -3283,7 +3289,7 @@
 
     if-nez v5, :cond_2
 
-    .line 1151
+    .line 1156
     new-instance v5, Ljava/util/ArrayList;
 
     iget-object v6, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->mediaEntities:Ljava/util/ArrayList;
@@ -3298,7 +3304,7 @@
 
     const/4 v5, 0x0
 
-    .line 1152
+    .line 1157
     iget-object v6, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->mediaEntities:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
@@ -3308,7 +3314,7 @@
     :goto_0
     if-ge v5, v6, :cond_3
 
-    .line 1153
+    .line 1158
     iget-object v8, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->croppedMediaEntities:Ljava/util/ArrayList;
 
     iget-object v11, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->mediaEntities:Ljava/util/ArrayList;
@@ -3329,11 +3335,11 @@
 
     goto :goto_0
 
-    .line 1156
+    .line 1161
     :cond_2
     iput-object v6, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->croppedMediaEntities:Ljava/util/ArrayList;
 
-    .line 1159
+    .line 1164
     :cond_3
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
@@ -3385,20 +3391,20 @@
 
     invoke-static/range {v6 .. v21}, Lorg/telegram/ui/Components/Crop/CropView;->editBitmap(Landroid/content/Context;Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/graphics/Canvas;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap$CompressFormat;Landroid/graphics/Matrix;IIFFFFZLjava/util/ArrayList;Z)V
 
-    .line 1162
+    .line 1167
     :cond_4
     iget-object v5, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
     if-nez v5, :cond_5
 
-    .line 1163
+    .line 1168
     new-instance v5, Lorg/telegram/messenger/MediaController$CropState;
 
     invoke-direct {v5}, Lorg/telegram/messenger/MediaController$CropState;-><init>()V
 
     iput-object v5, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
-    .line 1165
+    .line 1170
     :cond_5
     iget-object v5, v0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
@@ -3408,14 +3414,14 @@
 
     invoke-virtual {v5, v6}, Landroid/graphics/Matrix;->getValues([F)V
 
-    .line 1166
+    .line 1171
     iget-object v5, v0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     iget v6, v5, Lorg/telegram/ui/Components/Crop/CropView$CropState;->minimumScale:F
 
     mul-float/2addr v6, v3
 
-    .line 1168
+    .line 1173
     iget-object v7, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1300(Lorg/telegram/ui/Components/Crop/CropView$CropState;)I
@@ -3424,12 +3430,12 @@
 
     iput v5, v7, Lorg/telegram/messenger/MediaController$CropState;->transformRotation:I
 
-    .line 1169
+    .line 1174
     sget-boolean v5, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v5, :cond_6
 
-    .line 1170
+    .line 1175
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -3450,7 +3456,7 @@
 
     invoke-static {v5}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1172
+    .line 1177
     :cond_6
     :goto_1
     iget-object v5, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
@@ -3461,7 +3467,7 @@
 
     add-int/lit16 v7, v7, 0x168
 
-    .line 1173
+    .line 1178
     iput v7, v5, Lorg/telegram/messenger/MediaController$CropState;->transformRotation:I
 
     goto :goto_1
@@ -3477,7 +3483,7 @@
 
     goto :goto_2
 
-    .line 1181
+    .line 1186
     :cond_8
     iget-object v7, v0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
@@ -3485,12 +3491,12 @@
 
     float-to-int v8, v8
 
-    .line 1182
+    .line 1187
     iget v7, v7, Lorg/telegram/ui/Components/Crop/CropView$CropState;->height:F
 
     goto :goto_3
 
-    .line 1178
+    .line 1183
     :cond_9
     :goto_2
     iget-object v7, v0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
@@ -3499,7 +3505,7 @@
 
     float-to-int v8, v8
 
-    .line 1179
+    .line 1184
     iget v7, v7, Lorg/telegram/ui/Components/Crop/CropView$CropState;->width:F
 
     :goto_3
@@ -3513,7 +3519,7 @@
 
     float-to-double v11, v11
 
-    .line 1184
+    .line 1189
     invoke-static {v11, v12}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v11
@@ -3524,7 +3530,7 @@
 
     iput v9, v5, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    .line 1185
+    .line 1190
     iget-object v5, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
     int-to-double v9, v4
@@ -3545,7 +3551,7 @@
 
     iput v6, v5, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    .line 1186
+    .line 1191
     iget-object v5, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
     iget v6, v5, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
@@ -3562,7 +3568,7 @@
 
     if-lez v9, :cond_b
 
-    .line 1187
+    .line 1192
     :cond_a
     iget v5, v5, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
@@ -3570,7 +3576,7 @@
 
     move-result v5
 
-    .line 1188
+    .line 1193
     iget-object v6, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
     iget v9, v6, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
@@ -3579,14 +3585,14 @@
 
     iput v9, v6, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    .line 1189
+    .line 1194
     iget v9, v6, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
     div-float/2addr v9, v5
 
     iput v9, v6, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    .line 1191
+    .line 1196
     :cond_b
     iget-object v5, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
@@ -3618,7 +3624,7 @@
 
     iput v6, v5, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
-    .line 1192
+    .line 1197
     iget-object v5, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/Crop/CropView;->values:[F
@@ -3639,7 +3645,7 @@
 
     const/4 v9, 0x5
 
-    .line 1193
+    .line 1198
     aget v6, v6, v9
 
     div-float/2addr v6, v7
@@ -3648,39 +3654,39 @@
 
     iput v6, v5, Lorg/telegram/messenger/MediaController$CropState;->cropPy:F
 
-    .line 1194
+    .line 1199
     iget v6, v8, Lorg/telegram/ui/Components/Crop/CropView$CropState;->rotation:F
 
     iput v6, v5, Lorg/telegram/messenger/MediaController$CropState;->cropRotate:F
 
-    .line 1195
+    .line 1200
     iput v10, v5, Lorg/telegram/messenger/MediaController$CropState;->stateScale:F
 
-    .line 1196
+    .line 1201
     iget-boolean v6, v8, Lorg/telegram/ui/Components/Crop/CropView$CropState;->mirrored:Z
 
     iput-boolean v6, v5, Lorg/telegram/messenger/MediaController$CropState;->mirrored:Z
 
-    .line 1198
+    .line 1203
     iput v3, v5, Lorg/telegram/messenger/MediaController$CropState;->scale:F
 
-    .line 1199
+    .line 1204
     iget-object v3, v8, Lorg/telegram/ui/Components/Crop/CropView$CropState;->matrix:Landroid/graphics/Matrix;
 
     iput-object v3, v5, Lorg/telegram/messenger/MediaController$CropState;->matrix:Landroid/graphics/Matrix;
 
-    .line 1200
+    .line 1205
     iput v2, v5, Lorg/telegram/messenger/MediaController$CropState;->width:I
 
-    .line 1201
+    .line 1206
     iput v4, v5, Lorg/telegram/messenger/MediaController$CropState;->height:I
 
-    .line 1202
+    .line 1207
     iget-boolean v2, v0, Lorg/telegram/ui/Components/Crop/CropView;->freeform:Z
 
     iput-boolean v2, v5, Lorg/telegram/messenger/MediaController$CropState;->freeform:Z
 
-    .line 1203
+    .line 1208
     iget-object v2, v0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getLockAspectRatio()F
@@ -3689,7 +3695,7 @@
 
     iput v2, v5, Lorg/telegram/messenger/MediaController$CropState;->lockedAspectRatio:F
 
-    .line 1205
+    .line 1210
     iget-object v1, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
     const/4 v2, 0x1
@@ -3702,23 +3708,23 @@
 .method public maximize(Z)V
     .locals 10
 
-    .line 747
+    .line 752
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 750
+    .line 755
     :cond_0
     iget v9, v0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->minimumScale:F
 
-    .line 751
+    .line 756
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->resetAnimator()V
 
-    .line 753
+    .line 758
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$2600(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
@@ -3735,7 +3741,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 754
+    .line 759
     invoke-direct {p0}, Lorg/telegram/ui/Components/Crop/CropView;->getCurrentHeight()I
 
     move-result v0
@@ -3748,7 +3754,7 @@
 
     goto :goto_0
 
-    .line 756
+    .line 761
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Components/Crop/CropView;->getCurrentWidth()I
 
@@ -3765,7 +3771,7 @@
 
     div-float/2addr v0, v2
 
-    .line 758
+    .line 763
     iget-boolean v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->freeform:Z
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -3774,7 +3780,7 @@
 
     move v0, v3
 
-    .line 761
+    .line 766
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
@@ -3782,7 +3788,7 @@
 
     invoke-virtual {v2, v4, v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->calculateRect(Landroid/graphics/RectF;F)V
 
-    .line 762
+    .line 767
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->freeform:Z
@@ -3794,7 +3800,7 @@
     :cond_3
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setLockedAspectRatio(F)V
 
-    .line 763
+    .line 768
     invoke-direct {p0}, Lorg/telegram/ui/Components/Crop/CropView;->resetRotationStartScale()V
 
     if-eqz p1, :cond_4
@@ -3803,14 +3809,14 @@
 
     new-array p1, p1, [F
 
-    .line 766
+    .line 771
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
-    .line 767
+    .line 772
     new-instance v3, Landroid/graphics/RectF;
 
     invoke-direct {v3}, Landroid/graphics/RectF;-><init>()V
@@ -3819,26 +3825,26 @@
 
     invoke-direct {v4}, Landroid/graphics/RectF;-><init>()V
 
-    .line 768
+    .line 773
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropRect(Landroid/graphics/RectF;)V
 
-    .line 769
+    .line 774
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     iget v5, v0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->x:F
 
-    .line 770
+    .line 775
     iget v6, v0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->y:F
 
-    .line 771
+    .line 776
     iget v8, v0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->scale:F
 
-    .line 772
+    .line 777
     iget v7, v0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->rotation:F
 
-    .line 773
+    .line 778
     new-instance v0, Lorg/telegram/ui/Components/Crop/CropView$$ExternalSyntheticLambda2;
 
     move-object v1, v0
@@ -3849,7 +3855,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 786
+    .line 791
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getInterpolator()Landroid/view/animation/Interpolator;
@@ -3860,15 +3866,15 @@
 
     const-wide/16 v0, 0xfa
 
-    .line 787
+    .line 792
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 788
+    .line 793
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_1
 
-    .line 790
+    .line 795
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
@@ -3876,7 +3882,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setActualRect(Landroid/graphics/RectF;)V
 
-    .line 791
+    .line 796
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     iget v0, p1, Lorg/telegram/ui/Components/Crop/CropView$CropState;->x:F
@@ -3889,7 +3895,7 @@
 
     invoke-static {p1, v0, v2}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$800(Lorg/telegram/ui/Components/Crop/CropView$CropState;FF)V
 
-    .line 792
+    .line 797
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     iget v0, p1, Lorg/telegram/ui/Components/Crop/CropView$CropState;->minimumScale:F
@@ -3900,7 +3906,7 @@
 
     invoke-static {p1, v0, v1, v1}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$900(Lorg/telegram/ui/Components/Crop/CropView$CropState;FFF)V
 
-    .line 793
+    .line 798
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     iget v0, p1, Lorg/telegram/ui/Components/Crop/CropView$CropState;->rotation:F
@@ -3909,10 +3915,10 @@
 
     invoke-static {p1, v0, v1, v1}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$700(Lorg/telegram/ui/Components/Crop/CropView$CropState;FFF)V
 
-    .line 794
+    .line 799
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Crop/CropView;->updateMatrix()V
 
-    .line 796
+    .line 801
     invoke-direct {p0}, Lorg/telegram/ui/Components/Crop/CropView;->resetRotationStartScale()V
 
     :goto_1
@@ -3928,7 +3934,7 @@
 .method public mirror()Z
     .locals 4
 
-    .line 734
+    .line 739
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     const/4 v1, 0x0
@@ -3937,19 +3943,19 @@
 
     return v1
 
-    .line 737
+    .line 742
     :cond_0
     invoke-static {v0}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$2500(Lorg/telegram/ui/Components/Crop/CropView$CropState;)V
 
-    .line 738
+    .line 743
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Crop/CropView;->updateMatrix()V
 
-    .line 739
+    .line 744
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->listener:Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;
 
     if-eqz v0, :cond_2
 
-    .line 740
+    .line 745
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$2600(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
@@ -3968,7 +3974,7 @@
 
     rem-float/2addr v0, v2
 
-    .line 741
+    .line 746
     iget-object v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->listener:Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
@@ -4006,7 +4012,7 @@
     :cond_1
     invoke-interface {v2, v1}, Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;->onChange(Z)V
 
-    .line 743
+    .line 748
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
@@ -4018,7 +4024,7 @@
 .method public onAreaChange()V
     .locals 4
 
-    .line 875
+    .line 880
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     sget-object v1, Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;->MAJOR:Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;
@@ -4027,7 +4033,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setGridType(Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;Z)V
 
-    .line 877
+    .line 882
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->previousAreaRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
@@ -4042,7 +4048,7 @@
 
     sub-float/2addr v0, v1
 
-    .line 878
+    .line 883
     iget-object v1, p0, Lorg/telegram/ui/Components/Crop/CropView;->previousAreaRect:Landroid/graphics/RectF;
 
     invoke-virtual {v1}, Landroid/graphics/RectF;->centerY()F
@@ -4057,19 +4063,19 @@
 
     sub-float/2addr v1, v3
 
-    .line 879
+    .line 884
     iget-object v3, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     if-eqz v3, :cond_0
 
-    .line 880
+    .line 885
     invoke-static {v3, v0, v1}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$800(Lorg/telegram/ui/Components/Crop/CropView$CropState;FF)V
 
-    .line 882
+    .line 887
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Crop/CropView;->updateMatrix()V
 
-    .line 884
+    .line 889
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Crop/CropView;->previousAreaRect:Landroid/graphics/RectF;
@@ -4078,7 +4084,7 @@
 
     const/4 v0, 0x1
 
-    .line 886
+    .line 891
     invoke-direct {p0, v0, v2, v2}, Lorg/telegram/ui/Components/Crop/CropView;->fitContentInBounds(ZZZ)V
 
     return-void
@@ -4087,24 +4093,24 @@
 .method public onAreaChangeBegan()V
     .locals 2
 
-    .line 865
+    .line 870
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Crop/CropView;->previousAreaRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropRect(Landroid/graphics/RectF;)V
 
-    .line 866
+    .line 871
     invoke-direct {p0}, Lorg/telegram/ui/Components/Crop/CropView;->resetRotationStartScale()V
 
-    .line 868
+    .line 873
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->listener:Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;
 
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
-    .line 869
+    .line 874
     invoke-interface {v0, v1}, Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;->onChange(Z)V
 
     :cond_0
@@ -4114,7 +4120,7 @@
 .method public onAreaChangeEnded()V
     .locals 3
 
-    .line 891
+    .line 896
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     sget-object v1, Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;->NONE:Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;
@@ -4123,7 +4129,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setGridType(Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;Z)V
 
-    .line 892
+    .line 897
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getTargetRectToFill()Landroid/graphics/RectF;
@@ -4140,20 +4146,20 @@
 .method public onDrag(FF)V
     .locals 1
 
-    .line 896
+    .line 901
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->animating:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 899
+    .line 904
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$800(Lorg/telegram/ui/Components/Crop/CropView$CropState;FF)V
 
-    .line 900
+    .line 905
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Crop/CropView;->updateMatrix()V
 
     return-void
@@ -4192,7 +4198,7 @@
 .method public onRotationBegan()V
     .locals 3
 
-    .line 952
+    .line 957
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     sget-object v1, Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;->MINOR:Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;
@@ -4201,7 +4207,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setGridType(Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;Z)V
 
-    .line 953
+    .line 958
     iget v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->rotationStartScale:F
 
     const v1, 0x3727c5ac    # 1.0E-5f
@@ -4210,12 +4216,12 @@
 
     if-gez v0, :cond_0
 
-    .line 955
+    .line 960
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     if-eqz v0, :cond_0
 
-    .line 956
+    .line 961
     invoke-static {v0}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1500(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
 
     move-result v0
@@ -4229,7 +4235,7 @@
 .method public onRotationEnded()V
     .locals 3
 
-    .line 961
+    .line 966
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     sget-object v1, Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;->NONE:Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;
@@ -4244,14 +4250,14 @@
 .method public onScale(FFF)V
     .locals 3
 
-    .line 933
+    .line 938
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->animating:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 937
+    .line 942
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
@@ -4267,7 +4273,7 @@
 
     if-lez v0, :cond_1
 
-    .line 939
+    .line 944
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1500(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
@@ -4276,7 +4282,7 @@
 
     div-float p1, v1, p1
 
-    .line 942
+    .line 947
     :cond_1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -4298,7 +4304,7 @@
     :goto_0
     int-to-float v0, v0
 
-    .line 944
+    .line 949
     iget-object v1, p0, Lorg/telegram/ui/Components/Crop/CropView;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->getWidth()I
@@ -4327,7 +4333,7 @@
 
     mul-float/2addr p2, v1
 
-    .line 945
+    .line 950
     iget-object v1, p0, Lorg/telegram/ui/Components/Crop/CropView;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->getHeight()I
@@ -4364,12 +4370,12 @@
 
     mul-float/2addr p3, v0
 
-    .line 947
+    .line 952
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$900(Lorg/telegram/ui/Components/Crop/CropView$CropState;FFF)V
 
-    .line 948
+    .line 953
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Crop/CropView;->updateMatrix()V
 
     return-void
@@ -4378,14 +4384,14 @@
 .method public onScrollChangeBegan()V
     .locals 3
 
-    .line 915
+    .line 920
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->animating:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 919
+    .line 924
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
@@ -4395,17 +4401,17 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setGridType(Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;Z)V
 
-    .line 920
+    .line 925
     invoke-direct {p0}, Lorg/telegram/ui/Components/Crop/CropView;->resetRotationStartScale()V
 
-    .line 922
+    .line 927
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->listener:Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;
 
     if-eqz v0, :cond_1
 
     const/4 v1, 0x0
 
-    .line 923
+    .line 928
     invoke-interface {v0, v1}, Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;->onChange(Z)V
 
     :cond_1
@@ -4415,7 +4421,7 @@
 .method public onScrollChangeEnded()V
     .locals 3
 
-    .line 928
+    .line 933
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     sget-object v1, Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;->NONE:Lorg/telegram/ui/Components/Crop/CropAreaView$GridType;
@@ -4426,7 +4432,7 @@
 
     const/4 v0, 0x0
 
-    .line 929
+    .line 934
     invoke-direct {p0, v2, v0, v2}, Lorg/telegram/ui/Components/Crop/CropView;->fitContentInBounds(ZZZ)V
 
     return-void
@@ -4446,12 +4452,12 @@
 .method public onTapUp()V
     .locals 1
 
-    .line 909
+    .line 914
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->listener:Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;
 
     if-eqz v0, :cond_0
 
-    .line 910
+    .line 915
     invoke-interface {v0}, Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;->onTapUp()V
 
     :cond_0
@@ -4461,7 +4467,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 831
+    .line 836
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->animating:Z
 
     const/4 v1, 0x1
@@ -4473,7 +4479,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 835
+    .line 840
     iget-object v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v2, p1}, Lorg/telegram/ui/Components/Crop/CropAreaView;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -4484,7 +4490,7 @@
 
     return v1
 
-    .line 839
+    .line 844
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -4500,17 +4506,17 @@
 
     goto :goto_0
 
-    .line 846
+    .line 851
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Crop/CropView;->onScrollChangeEnded()V
 
     goto :goto_0
 
-    .line 841
+    .line 846
     :cond_3
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Crop/CropView;->onScrollChangeBegan()V
 
-    .line 851
+    .line 856
     :goto_0
     :try_start_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Crop/CropView;->detector:Lorg/telegram/ui/Components/Crop/CropGestureDetector;
@@ -4651,7 +4657,7 @@
 .method public rotate(F)Z
     .locals 9
 
-    .line 801
+    .line 806
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     const/4 v1, 0x0
@@ -4660,16 +4666,16 @@
 
     return v1
 
-    .line 804
+    .line 809
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->resetAnimator()V
 
-    .line 806
+    .line 811
     invoke-direct {p0}, Lorg/telegram/ui/Components/Crop/CropView;->resetRotationStartScale()V
 
-    .line 808
+    .line 813
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$2600(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
@@ -4690,7 +4696,7 @@
 
     rem-float/2addr v0, p1
 
-    .line 810
+    .line 815
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->freeform:Z
 
     const/4 v2, 0x1
@@ -4699,7 +4705,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 811
+    .line 816
     iget-object v4, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getLockAspectRatio()F
@@ -4710,7 +4716,7 @@
 
     if-lez v4, :cond_1
 
-    .line 812
+    .line 817
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     const/high16 v4, 0x3f800000    # 1.0f
@@ -4723,7 +4729,7 @@
 
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setLockedAspectRatio(F)V
 
-    .line 813
+    .line 818
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getLockAspectRatio()F
@@ -4736,7 +4742,7 @@
 
     goto :goto_1
 
-    .line 816
+    .line 821
     :cond_1
     iget-object v4, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
@@ -4776,7 +4782,7 @@
 
     invoke-virtual {v4, v5, v6, v7, v8}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setBitmap(IIZZ)V
 
-    .line 819
+    .line 824
     :goto_1
     iget-object v4, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
@@ -4784,13 +4790,13 @@
 
     invoke-static {v4, v5, v0, p1}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$600(Lorg/telegram/ui/Components/Crop/CropView$CropState;Lorg/telegram/ui/Components/Crop/CropAreaView;FZ)V
 
-    .line 820
+    .line 825
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Crop/CropView;->updateMatrix()V
 
-    .line 821
+    .line 826
     invoke-direct {p0, v2, v1, v1}, Lorg/telegram/ui/Components/Crop/CropView;->fitContentInBounds(ZZZ)V
 
-    .line 823
+    .line 828
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->listener:Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;
 
     if-eqz p1, :cond_4
@@ -4799,7 +4805,7 @@
 
     if-nez v0, :cond_3
 
-    .line 824
+    .line 829
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getLockAspectRatio()F
@@ -4826,7 +4832,7 @@
     :goto_2
     invoke-interface {p1, v0}, Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;->onChange(Z)V
 
-    .line 826
+    .line 831
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
@@ -4845,12 +4851,12 @@
 .method public scaleWidthToMaxSize(Landroid/graphics/RectF;Landroid/graphics/RectF;)F
     .locals 3
 
-    .line 567
+    .line 572
     invoke-virtual {p2}, Landroid/graphics/RectF;->width()F
 
     move-result v0
 
-    .line 568
+    .line 573
     invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
 
     move-result v1
@@ -4871,7 +4877,7 @@
 
     double-to-float v1, v1
 
-    .line 569
+    .line 574
     invoke-virtual {p2}, Landroid/graphics/RectF;->height()F
 
     move-result v2
@@ -4880,12 +4886,12 @@
 
     if-lez v1, :cond_0
 
-    .line 570
+    .line 575
     invoke-virtual {p2}, Landroid/graphics/RectF;->height()F
 
     move-result p2
 
-    .line 571
+    .line 576
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
 
     move-result v0
@@ -5085,7 +5091,7 @@
 .method public setRotation(F)V
     .locals 2
 
-    .line 969
+    .line 974
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1900(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
@@ -5094,7 +5100,7 @@
 
     sub-float/2addr p1, v0
 
-    .line 970
+    .line 975
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     const/4 v1, 0x0
@@ -5105,7 +5111,7 @@
 
     const/4 v0, 0x0
 
-    .line 971
+    .line 976
     invoke-direct {p0, p1, p1, v0}, Lorg/telegram/ui/Components/Crop/CropView;->fitContentInBounds(ZZZ)V
 
     return-void
@@ -5151,14 +5157,14 @@
 .method public showAspectRatioDialog()V
     .locals 12
 
-    .line 1222
+    .line 1227
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1235
+    .line 1240
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->hasAspectRatioDialog:Z
 
@@ -5169,7 +5175,7 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 1239
+    .line 1244
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->hasAspectRatioDialog:Z
 
     const/16 v1, 0x8
@@ -5186,7 +5192,7 @@
 
     const/4 v6, 0x3
 
-    .line 1244
+    .line 1249
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -5207,7 +5213,7 @@
 
     const/4 v7, 0x5
 
-    .line 1245
+    .line 1250
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
@@ -5226,7 +5232,7 @@
 
     const/4 v9, 0x4
 
-    .line 1246
+    .line 1251
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
@@ -5243,7 +5249,7 @@
 
     new-array v5, v4, [Ljava/lang/Integer;
 
-    .line 1247
+    .line 1252
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
@@ -5262,7 +5268,7 @@
 
     const/4 v6, 0x7
 
-    .line 1248
+    .line 1253
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -5281,7 +5287,7 @@
 
     const/16 v6, 0x10
 
-    .line 1249
+    .line 1254
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -5298,7 +5304,7 @@
 
     aput-object v5, v3, v7
 
-    .line 1252
+    .line 1257
     sget v5, Lorg/telegram/messenger/R$string;->CropOriginal:I
 
     const-string v6, "CropOriginal"
@@ -5309,7 +5315,7 @@
 
     aput-object v5, v1, v8
 
-    .line 1253
+    .line 1258
     sget v5, Lorg/telegram/messenger/R$string;->CropSquare:I
 
     const-string v6, "CropSquare"
@@ -5327,10 +5333,10 @@
     :goto_0
     if-ge v5, v2, :cond_3
 
-    .line 1256
+    .line 1261
     aget-object v7, v3, v5
 
-    .line 1257
+    .line 1262
     iget-object v9, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v9}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getAspectRatio()F
@@ -5347,7 +5353,7 @@
 
     new-array v9, v4, [Ljava/lang/Object;
 
-    .line 1258
+    .line 1263
     aget-object v11, v7, v8
 
     aput-object v11, v9, v8
@@ -5367,7 +5373,7 @@
     :cond_2
     new-array v9, v4, [Ljava/lang/Object;
 
-    .line 1260
+    .line 1265
     aget-object v11, v7, v0
 
     aput-object v11, v9, v8
@@ -5389,7 +5395,7 @@
 
     goto :goto_0
 
-    .line 1265
+    .line 1270
     :cond_3
     new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -5403,27 +5409,27 @@
 
     invoke-direct {v4, p0, v3}, Lorg/telegram/ui/Components/Crop/CropView$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/Crop/CropView;[[Ljava/lang/Integer;)V
 
-    .line 1266
+    .line 1271
     invoke-virtual {v2, v1, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object v1
 
-    .line 1293
+    .line 1298
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v1
 
-    .line 1294
+    .line 1299
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 1295
+    .line 1300
     new-instance v0, Lorg/telegram/ui/Components/Crop/CropView$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Crop/CropView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/Crop/CropView;)V
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    .line 1296
+    .line 1301
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
     return-void
@@ -5432,7 +5438,7 @@
 .method public updateLayout()V
     .locals 6
 
-    .line 1300
+    .line 1305
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropWidth()F
@@ -5447,13 +5453,13 @@
 
     return-void
 
-    .line 1304
+    .line 1309
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     if-eqz v2, :cond_1
 
-    .line 1305
+    .line 1310
     iget-object v3, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/Crop/CropView;->initialAreaRect:Landroid/graphics/RectF;
@@ -5472,7 +5478,7 @@
 
     invoke-virtual {v3, v4, v2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->calculateRect(Landroid/graphics/RectF;F)V
 
-    .line 1306
+    .line 1311
     iget-object v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getAspectRatio()F
@@ -5481,14 +5487,14 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setActualRect(F)V
 
-    .line 1307
+    .line 1312
     iget-object v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/Crop/CropView;->previousAreaRect:Landroid/graphics/RectF;
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropRect(Landroid/graphics/RectF;)V
 
-    .line 1309
+    .line 1314
     iget-object v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/Crop/CropAreaView;->getCropWidth()F
@@ -5497,12 +5503,12 @@
 
     div-float/2addr v2, v0
 
-    .line 1310
+    .line 1315
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v0, v2, v1, v1}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$900(Lorg/telegram/ui/Components/Crop/CropView$CropState;FFF)V
 
-    .line 1311
+    .line 1316
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Crop/CropView;->updateMatrix()V
 
     :cond_1

@@ -1,6 +1,6 @@
 package com.iMe.fork.models;
 
-import com.iMe.p032ui.drawer.DrawerAccountData;
+import com.iMe.p031ui.drawer.DrawerAccountData;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DrawerHeaderSettings.kt */
 /* loaded from: classes3.dex */

@@ -48,7 +48,7 @@ import androidx.appcompat.view.CollapsibleActionView;
 import androidx.core.view.ViewCompat;
 import androidx.cursoradapter.widget.CursorAdapter;
 import androidx.customview.view.AbsSavedState;
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 import com.google.android.gms.actions.SearchIntents;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
@@ -653,7 +653,7 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX INFO: Access modifiers changed from: protected */
     public void onQueryRefine(CharSequence charSequence) {
         setQuery(charSequence);
     }
@@ -1082,7 +1082,7 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
 
     void forceSuggestionQuery() {
         if (Build.VERSION.SDK_INT >= 29) {
-            this.mSearchSrcTextView.refreshAutoCompleteResults();
+            Api29Impl.refreshAutoCompleteResults(this.mSearchSrcTextView);
             return;
         }
         PreQAutoCompleteTextViewReflector preQAutoCompleteTextViewReflector = PRE_API_29_HIDDEN_METHOD_INVOKER;
@@ -1314,7 +1314,7 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
 
         void ensureImeVisible() {
             if (Build.VERSION.SDK_INT >= 29) {
-                setInputMethodMode(1);
+                Api29Impl.setInputMethodMode(this, 1);
                 if (enoughToFilter()) {
                     showDropDown();
                     return;
@@ -1394,6 +1394,18 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
             if (Build.VERSION.SDK_INT >= 29) {
                 throw new UnsupportedClassVersionError("This function can only be used for API Level < 29.");
             }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api29Impl {
+        static void setInputMethodMode(SearchAutoComplete searchAutoComplete, int i) {
+            searchAutoComplete.setInputMethodMode(i);
+        }
+
+        static void refreshAutoCompleteResults(AutoCompleteTextView autoCompleteTextView) {
+            autoCompleteTextView.refreshAutoCompleteResults();
         }
     }
 }

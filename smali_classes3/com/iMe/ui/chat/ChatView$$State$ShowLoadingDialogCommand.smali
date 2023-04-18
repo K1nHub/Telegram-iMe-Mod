@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/chat/ChatView$$State;ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 356
+    .line 342
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showLoadingDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 358
+    .line 344
     iput-boolean p2, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowLoadingDialogCommand;->show:Z
 
-    .line 359
+    .line 345
     iput-boolean p3, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowLoadingDialogCommand;->cancellable:Z
 
-    .line 360
+    .line 346
     iput-object p4, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowLoadingDialogCommand;->actionToCancel:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/chat/ChatView;)V
     .locals 3
 
-    .line 365
+    .line 351
     iget-boolean v0, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowLoadingDialogCommand;->show:Z
 
     iget-boolean v1, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowLoadingDialogCommand;->cancellable:Z
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 348
+    .line 334
     check-cast p1, Lcom/iMe/ui/chat/ChatView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/chat/ChatView$$State$ShowLoadingDialogCommand;->apply(Lcom/iMe/ui/chat/ChatView;)V

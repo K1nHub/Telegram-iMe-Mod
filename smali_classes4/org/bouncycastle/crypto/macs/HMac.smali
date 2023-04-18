@@ -529,16 +529,6 @@
     return-void
 .end method
 
-.method public update(B)V
-    .locals 1
-
-    iget-object v0, p0, Lorg/bouncycastle/crypto/macs/HMac;->digest:Lorg/bouncycastle/crypto/Digest;
-
-    invoke-interface {v0, p1}, Lorg/bouncycastle/crypto/Digest;->update(B)V
-
-    return-void
-.end method
-
 .method public update([BII)V
     .locals 1
 

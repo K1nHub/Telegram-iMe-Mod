@@ -16,9 +16,13 @@
 
 .field public final synthetic f$4:I
 
+.field public final synthetic f$5:[Ljava/lang/String;
+
+.field public final synthetic f$6:Ljava/lang/String;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;Ljava/util/concurrent/atomic/AtomicReference;ILjava/lang/String;I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;Ljava/util/concurrent/atomic/AtomicReference;ILjava/lang/String;I[Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,13 +37,17 @@
 
     iput p5, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda17;->f$4:I
 
+    iput-object p6, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda17;->f$5:[Ljava/lang/String;
+
+    iput-object p7, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda17;->f$6:Ljava/lang/String;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 6
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -51,9 +59,13 @@
 
     iget v4, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda17;->f$4:I
 
-    move-object v5, p1
+    iget-object v5, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda17;->f$5:[Ljava/lang/String;
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$xKW_g93ztnwfwG91ya9IyHQeTuo(Lorg/telegram/ui/ProfileActivity;Ljava/util/concurrent/atomic/AtomicReference;ILjava/lang/String;ILandroid/view/View;)V
+    iget-object v6, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda17;->f$6:Ljava/lang/String;
+
+    move-object v7, p1
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$xFUITy-bXsh4WOG5DC_N3leGr_g(Lorg/telegram/ui/ProfileActivity;Ljava/util/concurrent/atomic/AtomicReference;ILjava/lang/String;I[Ljava/lang/String;Ljava/lang/String;Landroid/view/View;)V
 
     return-void
 .end method

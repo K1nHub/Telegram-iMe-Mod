@@ -16,7 +16,6 @@ public abstract class MainCoroutineDispatcher extends CoroutineDispatcher {
     /* JADX INFO: Access modifiers changed from: protected */
     public final String toStringInternalImpl() {
         MainCoroutineDispatcher mainCoroutineDispatcher;
-        Dispatchers dispatchers = Dispatchers.INSTANCE;
         MainCoroutineDispatcher main = Dispatchers.getMain();
         if (this == main) {
             return "Dispatchers.Main";

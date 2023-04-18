@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/FlagSecureReason$FlagSecureCondition;
+.implements Lorg/telegram/messenger/MessagesStorage$LongCallback;
 
 
 # instance fields
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final run()Z
+.method public final run(J)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda286;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$cN9hmnzIamVwz1et8NjRcgjPIJY(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$80drHxeySbVupS2Mo2Zg6U8dzPg(Lorg/telegram/ui/ChatActivity;J)V
 
-    move-result v0
-
-    return v0
+    return-void
 .end method

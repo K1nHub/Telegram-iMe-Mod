@@ -29,7 +29,7 @@
 .method public getProviderInfo(Landroid/content/pm/ResolveInfo;)Landroid/content/pm/ProviderInfo;
     .locals 0
 
-    .line 314
+    .line 315
     iget-object p1, p1, Landroid/content/pm/ResolveInfo;->providerInfo:Landroid/content/pm/ProviderInfo;
 
     return-object p1
@@ -49,7 +49,7 @@
         }
     .end annotation
 
-    .line 308
+    .line 309
     invoke-virtual {p1, p2, p3}, Landroid/content/pm/PackageManager;->queryIntentContentProviders(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object p1

@@ -32,17 +32,17 @@
 .method public constructor <init>(Lorg/telegram/ui/ProxyListActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 847
+    .line 848
     iput-object p1, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 848
+    .line 849
     iput-object p2, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     const/4 p1, 0x1
 
-    .line 850
+    .line 851
     invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->setHasStableIds(Z)V
 
     return-void
@@ -51,7 +51,7 @@
 .method private checkActionMode()V
     .locals 4
 
-    .line 874
+    .line 875
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$600(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -62,7 +62,7 @@
 
     move-result v0
 
-    .line 875
+    .line 876
     iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ProxyListActivity;->access$1300(Lorg/telegram/ui/ProxyListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -75,14 +75,14 @@
 
     const/4 v2, 0x2
 
-    .line 884
+    .line 885
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     if-lez v0, :cond_0
 
-    .line 877
+    .line 878
     iget-object v3, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProxyListActivity;->access$1400(Lorg/telegram/ui/ProxyListActivity;)Lorg/telegram/ui/Components/NumberTextView;
@@ -93,7 +93,7 @@
 
     if-nez v1, :cond_1
 
-    .line 879
+    .line 880
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$1500(Lorg/telegram/ui/ProxyListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -102,7 +102,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->showActionMode()V
 
-    .line 880
+    .line 881
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$400(Lorg/telegram/ui/ProxyListActivity;)I
@@ -130,7 +130,7 @@
     :cond_0
     if-eqz v1, :cond_1
 
-    .line 883
+    .line 884
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$1600(Lorg/telegram/ui/ProxyListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -139,7 +139,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->hideActionMode()V
 
-    .line 884
+    .line 885
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$400(Lorg/telegram/ui/ProxyListActivity;)I
@@ -170,10 +170,10 @@
 .method private static synthetic lambda$onBindViewHolder$0(I)V
     .locals 0
 
-    .line 966
+    .line 967
     sput p0, Lorg/telegram/messenger/SharedConfig;->proxyRotationTimeout:I
 
-    .line 967
+    .line 968
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
 
     return-void
@@ -184,7 +184,7 @@
 .method public clearSelected()V
     .locals 3
 
-    .line 868
+    .line 869
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$600(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -193,7 +193,7 @@
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 869
+    .line 870
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$400(Lorg/telegram/ui/ProxyListActivity;)I
@@ -222,7 +222,7 @@
 
     invoke-virtual {p0, v0, v1, v2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(IILjava/lang/Object;)V
 
-    .line 870
+    .line 871
     invoke-direct {p0}, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->checkActionMode()V
 
     return-void
@@ -231,7 +231,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 890
+    .line 891
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$1700(Lorg/telegram/ui/ProxyListActivity;)I
@@ -244,7 +244,7 @@
 .method public getItemId(I)J
     .locals 2
 
-    .line 1071
+    .line 1072
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$2700(Lorg/telegram/ui/ProxyListActivity;)I
@@ -257,7 +257,7 @@
 
     return-wide v0
 
-    .line 1073
+    .line 1074
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -271,7 +271,7 @@
 
     return-wide v0
 
-    .line 1075
+    .line 1076
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -285,7 +285,7 @@
 
     return-wide v0
 
-    .line 1077
+    .line 1078
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -299,7 +299,7 @@
 
     return-wide v0
 
-    .line 1079
+    .line 1080
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -313,7 +313,7 @@
 
     return-wide v0
 
-    .line 1081
+    .line 1082
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -327,7 +327,7 @@
 
     return-wide v0
 
-    .line 1083
+    .line 1084
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -341,7 +341,7 @@
 
     return-wide v0
 
-    .line 1085
+    .line 1086
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -355,7 +355,7 @@
 
     return-wide v0
 
-    .line 1087
+    .line 1088
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -369,7 +369,7 @@
 
     return-wide v0
 
-    .line 1089
+    .line 1090
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -383,7 +383,7 @@
 
     return-wide v0
 
-    .line 1091
+    .line 1092
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -401,7 +401,7 @@
 
     if-ge p1, v0, :cond_a
 
-    .line 1092
+    .line 1093
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$1200(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -439,7 +439,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 1100
+    .line 1101
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$2700(Lorg/telegram/ui/ProxyListActivity;)I
@@ -458,7 +458,7 @@
 
     goto :goto_2
 
-    .line 1102
+    .line 1103
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -478,7 +478,7 @@
 
     goto :goto_1
 
-    .line 1104
+    .line 1105
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -514,7 +514,7 @@
 
     goto :goto_0
 
-    .line 1106
+    .line 1107
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -528,7 +528,7 @@
 
     return p1
 
-    .line 1108
+    .line 1109
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -542,7 +542,7 @@
 
     return p1
 
-    .line 1110
+    .line 1111
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -591,12 +591,12 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 1027
+    .line 1028
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
-    .line 1028
+    .line 1029
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$1000(Lorg/telegram/ui/ProxyListActivity;)I
@@ -680,7 +680,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 7
 
-    .line 895
+    .line 896
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -697,7 +697,7 @@
 
     goto/16 :goto_4
 
-    .line 958
+    .line 959
     :pswitch_0
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -707,19 +707,19 @@
 
     if-ne p2, v0, :cond_a
 
-    .line 959
+    .line 960
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/SlideChooseView;
 
-    .line 960
+    .line 961
     new-instance p2, Ljava/util/ArrayList;
 
     sget-object v0, Lorg/telegram/messenger/ProxyRotationController;->ROTATION_TIMEOUTS:Ljava/util/List;
 
     invoke-direct {p2, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 961
+    .line 962
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -728,7 +728,7 @@
 
     move v1, v4
 
-    .line 962
+    .line 963
     :goto_0
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -736,7 +736,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 963
+    .line 964
     sget v2, Lorg/telegram/messenger/R$string;->ProxyRotationTimeoutSeconds:I
 
     new-array v5, v3, [Ljava/lang/Object;
@@ -757,26 +757,26 @@
 
     goto :goto_0
 
-    .line 965
+    .line 966
     :cond_0
     sget-object p2, Lorg/telegram/ui/ProxyListActivity$ListAdapter$$ExternalSyntheticLambda0;->INSTANCE:Lorg/telegram/ui/ProxyListActivity$ListAdapter$$ExternalSyntheticLambda0;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/SlideChooseView;->setCallback(Lorg/telegram/ui/Components/SlideChooseView$Callback;)V
 
-    .line 969
+    .line 970
     sget p2, Lorg/telegram/messenger/SharedConfig;->proxyRotationTimeout:I
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Components/SlideChooseView;->setOptions(I[Ljava/lang/String;)V
 
     goto/16 :goto_4
 
-    .line 949
+    .line 950
     :pswitch_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;
 
-    .line 950
+    .line 951
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$1200(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -797,10 +797,10 @@
 
     check-cast v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
-    .line 951
+    .line 952
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->setProxy(Lorg/telegram/messenger/SharedConfig$ProxyInfo;)V
 
-    .line 952
+    .line 953
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->currentProxy:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
     if-ne v1, v0, :cond_1
@@ -815,7 +815,7 @@
     :goto_1
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->setChecked(Z)V
 
-    .line 953
+    .line 954
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$600(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -846,7 +846,7 @@
 
     invoke-virtual {p1, p2, v4}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->setItemSelected(ZZ)V
 
-    .line 954
+    .line 955
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProxyListActivity;->access$600(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -863,13 +863,13 @@
 
     goto/16 :goto_4
 
-    .line 938
+    .line 939
     :pswitch_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 939
+    .line 940
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$2400(Lorg/telegram/ui/ProxyListActivity;)I
@@ -878,7 +878,7 @@
 
     if-ne p2, v0, :cond_2
 
-    .line 940
+    .line 941
     sget p2, Lorg/telegram/messenger/R$string;->UseProxyForCallsInfo:I
 
     const-string v0, "UseProxyForCallsInfo"
@@ -889,7 +889,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 941
+    .line 942
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
@@ -902,7 +902,7 @@
 
     goto/16 :goto_4
 
-    .line 942
+    .line 943
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -912,7 +912,7 @@
 
     if-ne p2, v0, :cond_a
 
-    .line 943
+    .line 944
     sget p2, Lorg/telegram/messenger/R$string;->ProxyRotationTimeoutInfo:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -921,7 +921,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 944
+    .line 945
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
@@ -934,13 +934,13 @@
 
     goto/16 :goto_4
 
-    .line 923
+    .line 924
     :pswitch_3
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 925
+    .line 926
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$2200(Lorg/telegram/ui/ProxyListActivity;)I
@@ -949,7 +949,7 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 926
+    .line 927
     sget p2, Lorg/telegram/messenger/R$string;->settings_proxy_button_in_toolbar:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -962,7 +962,7 @@
 
     goto/16 :goto_4
 
-    .line 928
+    .line 929
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -972,7 +972,7 @@
 
     if-ne p2, v0, :cond_5
 
-    .line 929
+    .line 930
     sget p2, Lorg/telegram/messenger/R$string;->UseProxySettings:I
 
     const-string v0, "UseProxySettings"
@@ -1005,7 +1005,7 @@
 
     goto/16 :goto_4
 
-    .line 930
+    .line 931
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1015,7 +1015,7 @@
 
     if-ne p2, v0, :cond_6
 
-    .line 931
+    .line 932
     sget p2, Lorg/telegram/messenger/R$string;->UseProxyForCalls:I
 
     const-string v0, "UseProxyForCalls"
@@ -1034,7 +1034,7 @@
 
     goto/16 :goto_4
 
-    .line 932
+    .line 933
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1044,7 +1044,7 @@
 
     if-ne p2, v0, :cond_a
 
-    .line 933
+    .line 934
     sget p2, Lorg/telegram/messenger/R$string;->UseProxyRotation:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -1057,13 +1057,13 @@
 
     goto/16 :goto_4
 
-    .line 916
+    .line 917
     :pswitch_4
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 917
+    .line 918
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$2100(Lorg/telegram/ui/ProxyListActivity;)I
@@ -1072,7 +1072,7 @@
 
     if-ne p2, v0, :cond_a
 
-    .line 918
+    .line 919
     sget p2, Lorg/telegram/messenger/R$string;->ProxyConnections:I
 
     const-string v0, "ProxyConnections"
@@ -1085,7 +1085,7 @@
 
     goto/16 :goto_4
 
-    .line 905
+    .line 906
     :pswitch_5
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -1093,14 +1093,14 @@
 
     const-string v0, "windowBackgroundWhiteBlackText"
 
-    .line 906
+    .line 907
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextColor(I)V
 
-    .line 907
+    .line 908
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$1900(Lorg/telegram/ui/ProxyListActivity;)I
@@ -1109,7 +1109,7 @@
 
     if-ne p2, v0, :cond_8
 
-    .line 908
+    .line 909
     sget p2, Lorg/telegram/messenger/R$string;->AddProxy:I
 
     const-string v0, "AddProxy"
@@ -1136,7 +1136,7 @@
 
     goto :goto_4
 
-    .line 909
+    .line 910
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1148,14 +1148,14 @@
 
     const-string p2, "windowBackgroundWhiteRedText4"
 
-    .line 910
+    .line 911
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextColor(I)V
 
-    .line 911
+    .line 912
     sget p2, Lorg/telegram/messenger/R$string;->DeleteAllProxies:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -1166,7 +1166,7 @@
 
     goto :goto_4
 
-    .line 897
+    .line 898
     :pswitch_6
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1184,7 +1184,7 @@
 
     if-ne p2, v1, :cond_9
 
-    .line 898
+    .line 899
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->mContext:Landroid/content/Context;
@@ -1199,7 +1199,7 @@
 
     goto :goto_4
 
-    .line 900
+    .line 901
     :cond_9
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -1234,7 +1234,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;ILjava/util/List;)V
     .locals 4
 
-    .line 979
+    .line 980
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -1249,14 +1249,14 @@
 
     if-nez v0, :cond_1
 
-    .line 980
+    .line 981
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;
 
     const/4 v0, 0x1
 
-    .line 981
+    .line 982
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -1267,7 +1267,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 982
+    .line 983
     iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ProxyListActivity;->access$600(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -1301,7 +1301,7 @@
     :cond_0
     const/4 p2, 0x2
 
-    .line 984
+    .line 985
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1312,7 +1312,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 985
+    .line 986
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProxyListActivity;->access$600(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -1329,7 +1329,7 @@
 
     goto :goto_0
 
-    .line 987
+    .line 988
     :cond_1
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -1351,12 +1351,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 988
+    .line 989
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 990
+    .line 991
     iget-object p3, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/ProxyListActivity;->access$2200(Lorg/telegram/ui/ProxyListActivity;)I
@@ -1365,14 +1365,14 @@
 
     if-ne p2, p3, :cond_2
 
-    .line 991
+    .line 992
     sget-boolean p2, Lorg/telegram/messenger/SharedConfig;->isProxyButtonForceVisible:Z
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
 
     goto :goto_0
 
-    .line 993
+    .line 994
     :cond_2
     iget-object p3, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1382,7 +1382,7 @@
 
     if-ne p2, p3, :cond_3
 
-    .line 994
+    .line 995
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProxyListActivity;->access$000(Lorg/telegram/ui/ProxyListActivity;)Z
@@ -1393,7 +1393,7 @@
 
     goto :goto_0
 
-    .line 995
+    .line 996
     :cond_3
     iget-object p3, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1403,7 +1403,7 @@
 
     if-ne p2, p3, :cond_4
 
-    .line 996
+    .line 997
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProxyListActivity;->access$800(Lorg/telegram/ui/ProxyListActivity;)Z
@@ -1414,7 +1414,7 @@
 
     goto :goto_0
 
-    .line 997
+    .line 998
     :cond_4
     iget-object p3, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1424,14 +1424,14 @@
 
     if-ne p2, p3, :cond_6
 
-    .line 998
+    .line 999
     sget-boolean p2, Lorg/telegram/messenger/SharedConfig;->proxyRotationEnabled:Z
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
 
     goto :goto_0
 
-    .line 1001
+    .line 1002
     :cond_5
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;ILjava/util/List;)V
 
@@ -1467,7 +1467,7 @@
 
     if-eq p2, p1, :cond_0
 
-    .line 1060
+    .line 1061
     new-instance p1, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;
 
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
@@ -1476,7 +1476,7 @@
 
     invoke-direct {p1, p2, v1}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;-><init>(Lorg/telegram/ui/ProxyListActivity;Landroid/content/Context;)V
 
-    .line 1061
+    .line 1062
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -1485,7 +1485,7 @@
 
     goto :goto_0
 
-    .line 1055
+    .line 1056
     :cond_0
     new-instance p1, Lorg/telegram/ui/Components/SlideChooseView;
 
@@ -1493,7 +1493,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/SlideChooseView;-><init>(Landroid/content/Context;)V
 
-    .line 1056
+    .line 1057
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -1502,7 +1502,7 @@
 
     goto :goto_0
 
-    .line 1051
+    .line 1052
     :cond_1
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -1510,7 +1510,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
 
-    .line 1052
+    .line 1053
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
@@ -1525,7 +1525,7 @@
 
     goto :goto_0
 
-    .line 1047
+    .line 1048
     :cond_2
     new-instance p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
@@ -1533,7 +1533,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;-><init>(Landroid/content/Context;)V
 
-    .line 1048
+    .line 1049
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -1542,7 +1542,7 @@
 
     goto :goto_0
 
-    .line 1043
+    .line 1044
     :cond_3
     new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -1550,7 +1550,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    .line 1044
+    .line 1045
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -1559,7 +1559,7 @@
 
     goto :goto_0
 
-    .line 1039
+    .line 1040
     :cond_4
     new-instance p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
@@ -1567,7 +1567,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
-    .line 1040
+    .line 1041
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -1576,7 +1576,7 @@
 
     goto :goto_0
 
-    .line 1036
+    .line 1037
     :cond_5
     new-instance p1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -1584,7 +1584,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;)V
 
-    .line 1064
+    .line 1065
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -1596,7 +1596,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1065
+    .line 1066
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -1607,7 +1607,7 @@
 .method public onViewAttachedToWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 2
 
-    .line 1007
+    .line 1008
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -1616,17 +1616,17 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 1009
+    .line 1010
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v0, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 1010
+    .line 1011
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
-    .line 1012
+    .line 1013
     iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ProxyListActivity;->access$2200(Lorg/telegram/ui/ProxyListActivity;)I
@@ -1635,14 +1635,14 @@
 
     if-ne p1, v1, :cond_0
 
-    .line 1013
+    .line 1014
     sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->isProxyButtonForceVisible:Z
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
 
     goto :goto_0
 
-    .line 1015
+    .line 1016
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1652,7 +1652,7 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 1016
+    .line 1017
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity;->access$000(Lorg/telegram/ui/ProxyListActivity;)Z
@@ -1663,7 +1663,7 @@
 
     goto :goto_0
 
-    .line 1017
+    .line 1018
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1673,7 +1673,7 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 1018
+    .line 1019
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity;->access$800(Lorg/telegram/ui/ProxyListActivity;)Z
@@ -1684,7 +1684,7 @@
 
     goto :goto_0
 
-    .line 1019
+    .line 1020
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1694,7 +1694,7 @@
 
     if-ne p1, v1, :cond_3
 
-    .line 1020
+    .line 1021
     sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->proxyRotationEnabled:Z
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
@@ -1707,7 +1707,7 @@
 .method public toggleSelected(I)V
     .locals 2
 
-    .line 854
+    .line 855
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$400(Lorg/telegram/ui/ProxyListActivity;)I
@@ -1726,7 +1726,7 @@
 
     goto :goto_1
 
-    .line 857
+    .line 858
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1748,7 +1748,7 @@
 
     check-cast v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
-    .line 858
+    .line 859
     iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ProxyListActivity;->access$600(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -1761,7 +1761,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 859
+    .line 860
     iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ProxyListActivity;->access$600(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -1772,7 +1772,7 @@
 
     goto :goto_0
 
-    .line 861
+    .line 862
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1785,14 +1785,14 @@
     :goto_0
     const/4 v0, 0x1
 
-    .line 863
+    .line 864
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(ILjava/lang/Object;)V
 
-    .line 864
+    .line 865
     invoke-direct {p0}, Lorg/telegram/ui/ProxyListActivity$ListAdapter;->checkActionMode()V
 
     :cond_2

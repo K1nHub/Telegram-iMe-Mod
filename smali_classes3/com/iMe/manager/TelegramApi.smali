@@ -70,6 +70,19 @@
     .end annotation
 .end method
 
+.method public abstract getUserInfoByUsername(Ljava/lang/String;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lorg/telegram/tgnet/TLRPC$User;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getUsersByIds(Ljava/util/List;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {

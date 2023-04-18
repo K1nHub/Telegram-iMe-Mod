@@ -170,7 +170,7 @@
 .end method
 
 .method public final setupViewData(ZLcom/iMe/fork/utils/Callbacks$Callback1;Lcom/iMe/fork/utils/Callbacks$Callback;)V
-    .locals 18
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -182,70 +182,50 @@
         }
     .end annotation
 
-    move-object/from16 v0, p2
+    const-string v0, "onCheckedAction"
 
-    move-object/from16 v1, p3
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v2, "onCheckedAction"
+    const-string v0, "onInfoClickAction"
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v2, "onInfoClickAction"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    move-object/from16 v2, p0
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 36
-    iget-object v3, v2, Lcom/iMe/ui/custom/StakingSafeWithdrawalView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;
+    iget-object v0, p0, Lcom/iMe/ui/custom/StakingSafeWithdrawalView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;
 
     .line 37
-    iget-object v4, v3, Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;->checkboxSafeWithdrawal:Lorg/telegram/ui/Components/CheckBoxSquare;
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;->checkboxSafeWithdrawal:Lorg/telegram/ui/Components/CheckBoxSquare;
 
-    const/4 v5, 0x0
-
-    move/from16 v6, p1
+    const/4 v2, 0x0
 
     .line 38
-    invoke-virtual {v4, v6, v5}, Lorg/telegram/ui/Components/CheckBoxSquare;->setChecked(ZZ)V
+    invoke-virtual {v1, p1, v2}, Lorg/telegram/ui/Components/CheckBoxSquare;->setChecked(ZZ)V
 
     .line 39
-    iget-object v6, v3, Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;->linearSafeWithdrawal:Landroidx/appcompat/widget/LinearLayoutCompat;
+    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;->linearSafeWithdrawal:Landroidx/appcompat/widget/LinearLayoutCompat;
 
-    const-string v5, "linearSafeWithdrawal"
+    const-string v2, "linearSafeWithdrawal"
 
-    invoke-static {v6, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v9, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$setupViewData$1$1$1;
+    new-instance v2, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$setupViewData$1$1$1;
 
-    invoke-direct {v9, v4, v0}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$setupViewData$1$1$1;-><init>(Lorg/telegram/ui/Components/CheckBoxSquare;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
+    invoke-direct {v2, v1, p2}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$setupViewData$1$1$1;-><init>(Lorg/telegram/ui/Components/CheckBoxSquare;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
-    const-wide/16 v7, 0x0
-
-    const/4 v10, 0x1
-
-    const/4 v11, 0x0
-
-    invoke-static/range {v6 .. v11}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    invoke-static {p1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
 
     .line 44
-    iget-object v12, v3, Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;->imageHelp:Landroidx/appcompat/widget/AppCompatImageView;
+    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;->imageHelp:Landroidx/appcompat/widget/AppCompatImageView;
 
-    const-string v0, "imageHelp"
+    const-string p2, "imageHelp"
 
-    invoke-static {v12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v15, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$setupViewData$1$2;
+    new-instance p2, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$setupViewData$1$2;
 
-    invoke-direct {v15, v1}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$setupViewData$1$2;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p2, p3}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$setupViewData$1$2;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    const-wide/16 v13, 0x0
-
-    const/16 v16, 0x1
-
-    const/16 v17, 0x0
-
-    invoke-static/range {v12 .. v17}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method

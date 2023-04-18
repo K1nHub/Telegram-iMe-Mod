@@ -36,7 +36,7 @@
 .method private constructor <init>(Lorg/telegram/ui/QrActivity;)V
     .locals 0
 
-    .line 781
+    .line 783
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/QrActivity;Lorg/telegram/ui/QrActivity$1;)V
     .locals 0
 
-    .line 781
+    .line 783
     invoke-direct {p0, p1}, Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;-><init>(Lorg/telegram/ui/QrActivity;)V
 
     return-void
@@ -66,7 +66,7 @@
 .method public getColor(Ljava/lang/String;)Ljava/lang/Integer;
     .locals 1
 
-    .line 791
+    .line 793
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;->colors:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
@@ -139,7 +139,7 @@
 .method initColors(Lorg/telegram/ui/ActionBar/EmojiThemes;Z)V
     .locals 1
 
-    .line 786
+    .line 788
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/QrActivity;->access$1600(Lorg/telegram/ui/QrActivity;)I

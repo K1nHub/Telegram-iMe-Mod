@@ -2,7 +2,7 @@ package com.google.protobuf;
 
 import java.io.IOException;
 import java.util.concurrent.ConcurrentMap;
-import p035j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentHashMap;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
 public final class Protobuf {

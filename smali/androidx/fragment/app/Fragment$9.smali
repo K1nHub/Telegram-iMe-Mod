@@ -1,5 +1,5 @@
 .class Landroidx/fragment/app/Fragment$9;
-.super Landroidx/activity/result/ActivityResultLauncher;
+.super Landroidx/fragment/app/Fragment$OnPreAttachedListener;
 .source "Fragment.java"
 
 
@@ -13,88 +13,78 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroidx/activity/result/ActivityResultLauncher<",
-        "TI;>;"
-    }
-.end annotation
-
 
 # instance fields
+.field final synthetic this$0:Landroidx/fragment/app/Fragment;
+
+.field final synthetic val$callback:Landroidx/activity/result/ActivityResultCallback;
+
+.field final synthetic val$contract:Landroidx/activity/result/contract/ActivityResultContract;
+
 .field final synthetic val$ref:Ljava/util/concurrent/atomic/AtomicReference;
+
+.field final synthetic val$registryProvider:Landroidx/arch/core/util/Function;
 
 
 # direct methods
-.method constructor <init>(Landroidx/fragment/app/Fragment;Ljava/util/concurrent/atomic/AtomicReference;Landroidx/activity/result/contract/ActivityResultContract;)V
+.method constructor <init>(Landroidx/fragment/app/Fragment;Landroidx/arch/core/util/Function;Ljava/util/concurrent/atomic/AtomicReference;Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)V
     .locals 0
 
-    .line 3499
-    iput-object p2, p0, Landroidx/fragment/app/Fragment$9;->val$ref:Ljava/util/concurrent/atomic/AtomicReference;
+    .line 3595
+    iput-object p1, p0, Landroidx/fragment/app/Fragment$9;->this$0:Landroidx/fragment/app/Fragment;
 
-    invoke-direct {p0}, Landroidx/activity/result/ActivityResultLauncher;-><init>()V
+    iput-object p2, p0, Landroidx/fragment/app/Fragment$9;->val$registryProvider:Landroidx/arch/core/util/Function;
+
+    iput-object p3, p0, Landroidx/fragment/app/Fragment$9;->val$ref:Ljava/util/concurrent/atomic/AtomicReference;
+
+    iput-object p4, p0, Landroidx/fragment/app/Fragment$9;->val$contract:Landroidx/activity/result/contract/ActivityResultContract;
+
+    iput-object p5, p0, Landroidx/fragment/app/Fragment$9;->val$callback:Landroidx/activity/result/ActivityResultCallback;
+
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, Landroidx/fragment/app/Fragment$OnPreAttachedListener;-><init>(Landroidx/fragment/app/Fragment$1;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public launch(Ljava/lang/Object;Landroidx/core/app/ActivityOptionsCompat;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TI;",
-            "Landroidx/core/app/ActivityOptionsCompat;",
-            ")V"
-        }
-    .end annotation
+.method onPreAttached()V
+    .locals 6
 
-    .line 3502
-    iget-object v0, p0, Landroidx/fragment/app/Fragment$9;->val$ref:Ljava/util/concurrent/atomic/AtomicReference;
+    .line 3598
+    iget-object v0, p0, Landroidx/fragment/app/Fragment$9;->this$0:Landroidx/fragment/app/Fragment;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->generateActivityResultKey()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Landroidx/activity/result/ActivityResultLauncher;
+    .line 3599
+    iget-object v1, p0, Landroidx/fragment/app/Fragment$9;->val$registryProvider:Landroidx/arch/core/util/Function;
 
-    if-eqz v0, :cond_0
+    const/4 v2, 0x0
 
-    .line 3507
-    invoke-virtual {v0, p1, p2}, Landroidx/activity/result/ActivityResultLauncher;->launch(Ljava/lang/Object;Landroidx/core/app/ActivityOptionsCompat;)V
+    invoke-interface {v1, v2}, Landroidx/arch/core/util/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
+    move-result-object v1
 
-    .line 3504
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
+    check-cast v1, Landroidx/activity/result/ActivityResultRegistry;
 
-    const-string p2, "Operation cannot be started before fragment is in created state"
+    .line 3600
+    iget-object v2, p0, Landroidx/fragment/app/Fragment$9;->val$ref:Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget-object v3, p0, Landroidx/fragment/app/Fragment$9;->this$0:Landroidx/fragment/app/Fragment;
 
-    throw p1
-.end method
+    iget-object v4, p0, Landroidx/fragment/app/Fragment$9;->val$contract:Landroidx/activity/result/contract/ActivityResultContract;
 
-.method public unregister()V
-    .locals 2
+    iget-object v5, p0, Landroidx/fragment/app/Fragment$9;->val$callback:Landroidx/activity/result/ActivityResultCallback;
 
-    .line 3512
-    iget-object v0, p0, Landroidx/fragment/app/Fragment$9;->val$ref:Ljava/util/concurrent/atomic/AtomicReference;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v0, v3, v4, v5}, Landroidx/activity/result/ActivityResultRegistry;->register(Ljava/lang/String;Landroidx/lifecycle/LifecycleOwner;Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
 
     move-result-object v0
 
-    check-cast v0, Landroidx/activity/result/ActivityResultLauncher;
+    invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    if-eqz v0, :cond_0
-
-    .line 3514
-    invoke-virtual {v0}, Landroidx/activity/result/ActivityResultLauncher;->unregister()V
-
-    :cond_0
     return-void
 .end method

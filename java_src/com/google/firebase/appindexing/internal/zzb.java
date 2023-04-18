@@ -11,22 +11,22 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzb extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzb> CREATOR = new zzy();
-    @SafeParcelable.Field(getter = "getEventStatus", m789id = 1)
+    @SafeParcelable.Field(getter = "getEventStatus", m775id = 1)
     private int zza;
-    @SafeParcelable.Field(getter = "isUploadable", m789id = 2)
+    @SafeParcelable.Field(getter = "isUploadable", m775id = 2)
     private final boolean zzb;
-    @SafeParcelable.Field(getter = "getCompletionToken", m789id = 3)
+    @SafeParcelable.Field(getter = "getCompletionToken", m775id = 3)
     private final String zzc;
-    @SafeParcelable.Field(getter = "getAccountName", m789id = 4)
+    @SafeParcelable.Field(getter = "getAccountName", m775id = 4)
     private final String zzd;
-    @SafeParcelable.Field(getter = "getSsbContext", m789id = 5)
+    @SafeParcelable.Field(getter = "getSsbContext", m775id = 5)
     private final byte[] zze;
-    @SafeParcelable.Field(getter = "isContextOnly", m789id = 6)
+    @SafeParcelable.Field(getter = "isContextOnly", m775id = 6)
     private final boolean zzf;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzb(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) boolean z, @SafeParcelable.Param(m788id = 3) String str, @SafeParcelable.Param(m788id = 4) String str2, @SafeParcelable.Param(m788id = 5) byte[] bArr, @SafeParcelable.Param(m788id = 6) boolean z2) {
+    public zzb(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) boolean z, @SafeParcelable.Param(m774id = 3) String str, @SafeParcelable.Param(m774id = 4) String str2, @SafeParcelable.Param(m774id = 5) byte[] bArr, @SafeParcelable.Param(m774id = 6) boolean z2) {
         this.zza = i;
         this.zzb = z;
         this.zzc = str;

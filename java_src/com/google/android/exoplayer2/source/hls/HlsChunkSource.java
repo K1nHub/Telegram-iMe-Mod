@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.source.hls;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.SeekParameters;
 import com.google.android.exoplayer2.analytics.PlayerId;
@@ -61,7 +61,7 @@ class HlsChunkSource {
     private ExoTrackSelection trackSelection;
     private final FullSegmentEncryptionKeyCache keyCache = new FullSegmentEncryptionKeyCache(4);
     private byte[] scratchSpace = Util.EMPTY_BYTE_ARRAY;
-    private long liveEdgeInPeriodTimeUs = C0482C.TIME_UNSET;
+    private long liveEdgeInPeriodTimeUs = C0470C.TIME_UNSET;
 
     @Target({ElementType.TYPE_USE})
     @Documented
@@ -194,7 +194,7 @@ class HlsChunkSource {
         if (hlsMediaChunk != null && !this.independentSegments) {
             long durationUs = hlsMediaChunk.getDurationUs();
             j4 = Math.max(0L, j4 - durationUs);
-            if (resolveTimeToLiveEdgeUs != C0482C.TIME_UNSET) {
+            if (resolveTimeToLiveEdgeUs != C0470C.TIME_UNSET) {
                 resolveTimeToLiveEdgeUs = Math.max(0L, resolveTimeToLiveEdgeUs - durationUs);
             }
         }
@@ -331,7 +331,7 @@ class HlsChunkSource {
             return true;
         }
         this.seenExpectedPlaylistError |= uri.equals(this.expectedPlaylistUrl);
-        return j == C0482C.TIME_UNSET || (this.trackSelection.blacklist(indexOf, j) && this.playlistTracker.excludeMediaPlaylist(uri, j));
+        return j == C0470C.TIME_UNSET || (this.trackSelection.blacklist(indexOf, j) && this.playlistTracker.excludeMediaPlaylist(uri, j));
     }
 
     public MediaChunkIterator[] createMediaChunkIterators(HlsMediaChunk hlsMediaChunk, long j) {
@@ -378,7 +378,7 @@ class HlsChunkSource {
     static List<HlsMediaPlaylist.SegmentBase> getSegmentBaseList(HlsMediaPlaylist hlsMediaPlaylist, long j, int i) {
         int i2 = (int) (j - hlsMediaPlaylist.mediaSequence);
         if (i2 < 0 || hlsMediaPlaylist.segments.size() < i2) {
-            return ImmutableList.m754of();
+            return ImmutableList.m740of();
         }
         ArrayList arrayList = new ArrayList();
         if (i2 < hlsMediaPlaylist.segments.size()) {
@@ -396,7 +396,7 @@ class HlsChunkSource {
             arrayList.addAll(list2.subList(i2, list2.size()));
             i = 0;
         }
-        if (hlsMediaPlaylist.partTargetDurationUs != C0482C.TIME_UNSET) {
+        if (hlsMediaPlaylist.partTargetDurationUs != C0470C.TIME_UNSET) {
             int i3 = i != -1 ? i : 0;
             if (i3 < hlsMediaPlaylist.trailingParts.size()) {
                 List<HlsMediaPlaylist.Part> list3 = hlsMediaPlaylist.trailingParts;
@@ -462,11 +462,11 @@ class HlsChunkSource {
 
     private long resolveTimeToLiveEdgeUs(long j) {
         long j2 = this.liveEdgeInPeriodTimeUs;
-        return (j2 > C0482C.TIME_UNSET ? 1 : (j2 == C0482C.TIME_UNSET ? 0 : -1)) != 0 ? j2 - j : C0482C.TIME_UNSET;
+        return (j2 > C0470C.TIME_UNSET ? 1 : (j2 == C0470C.TIME_UNSET ? 0 : -1)) != 0 ? j2 - j : C0470C.TIME_UNSET;
     }
 
     private void updateLiveEdgeTimeUs(HlsMediaPlaylist hlsMediaPlaylist) {
-        this.liveEdgeInPeriodTimeUs = hlsMediaPlaylist.hasEndTag ? C0482C.TIME_UNSET : hlsMediaPlaylist.getEndTimeUs() - this.playlistTracker.getInitialStartTimeUs();
+        this.liveEdgeInPeriodTimeUs = hlsMediaPlaylist.hasEndTag ? C0470C.TIME_UNSET : hlsMediaPlaylist.getEndTimeUs() - this.playlistTracker.getInitialStartTimeUs();
     }
 
     private Chunk maybeCreateEncryptionChunkFor(Uri uri, int i) {

@@ -46,7 +46,7 @@ public final class TonConfigRepositoryImpl implements TonConfigRepository {
             }
         });
         Intrinsics.checkNotNullExpressionValue(map, "fromCallable {\n         …s()\n                    }");
-        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1836xf0d6aff7(this.errorHandler)));
+        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1823xf0d6aff7(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

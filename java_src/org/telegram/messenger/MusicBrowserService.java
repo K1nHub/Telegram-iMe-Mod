@@ -33,7 +33,7 @@ import java.util.Locale;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.audioinfo.AudioInfo;
-import org.telegram.p048ui.LaunchActivity;
+import org.telegram.p044ui.LaunchActivity;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$Message;
@@ -110,7 +110,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
     @Override // android.service.media.MediaBrowserService
     public void onLoadChildren(final String str, final MediaBrowserService.Result<List<MediaBrowser.MediaItem>> result) {
         if (passcode()) {
-            Toast.makeText(getApplicationContext(), LocaleController.getString(C3316R.string.EnterYourTelegramPasscode), 1).show();
+            Toast.makeText(getApplicationContext(), LocaleController.getString(C3242R.string.EnterYourTelegramPasscode), 1).show();
             stopSelf();
             result.detach();
         } else if (!this.chatsLoaded) {
@@ -159,7 +159,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                         byteBufferValue.reuse();
                         if (MessageObject.isMusicMessage(TLdeserialize)) {
                             long longValue2 = queryFinalized2.longValue(0);
-                            TLdeserialize.f1526id = queryFinalized2.intValue(2);
+                            TLdeserialize.f1451id = queryFinalized2.intValue(2);
                             TLdeserialize.dialog_id = longValue2;
                             ArrayList<MessageObject> arrayList3 = this.musicObjects.get(longValue2);
                             ArrayList<MediaSession.QueueItem> arrayList4 = this.musicQueues.get(longValue2);
@@ -184,7 +184,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                     messagesStorage.getUsersInternal(TextUtils.join(",", arrayList), arrayList5);
                     for (int i = 0; i < arrayList5.size(); i++) {
                         TLRPC$User tLRPC$User = arrayList5.get(i);
-                        this.users.put(tLRPC$User.f1642id, tLRPC$User);
+                        this.users.put(tLRPC$User.f1567id, tLRPC$User);
                     }
                 }
                 if (!arrayList2.isEmpty()) {
@@ -192,7 +192,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                     messagesStorage.getChatsInternal(TextUtils.join(",", arrayList2), arrayList6);
                     for (int i2 = 0; i2 < arrayList6.size(); i2++) {
                         TLRPC$Chat tLRPC$Chat = arrayList6.get(i2);
-                        this.chats.put(tLRPC$Chat.f1502id, tLRPC$Chat);
+                        this.chats.put(tLRPC$Chat.f1427id, tLRPC$Chat);
                     }
                 }
             }

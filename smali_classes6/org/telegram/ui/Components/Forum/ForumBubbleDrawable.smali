@@ -13,6 +13,8 @@
     .end annotation
 .end field
 
+.field private static mainDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+
 .field public static final serverSupportedColor:[I
 
 
@@ -60,12 +62,12 @@
 
     new-array v0, v0, [I
 
-    .line 41
+    .line 42
     fill-array-data v0, :array_0
 
     sput-object v0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->serverSupportedColor:[I
 
-    .line 50
+    .line 51
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -76,7 +78,7 @@
 
     new-array v2, v1, [I
 
-    .line 53
+    .line 54
     fill-array-data v2, :array_1
 
     const v3, 0x6fb9f0
@@ -85,7 +87,7 @@
 
     new-array v2, v1, [I
 
-    .line 54
+    .line 55
     fill-array-data v2, :array_2
 
     const v3, 0xffd67e
@@ -94,7 +96,7 @@
 
     new-array v2, v1, [I
 
-    .line 55
+    .line 56
     fill-array-data v2, :array_3
 
     const v3, 0xcb86db
@@ -103,7 +105,7 @@
 
     new-array v2, v1, [I
 
-    .line 56
+    .line 57
     fill-array-data v2, :array_4
 
     const v3, 0x8eee98
@@ -112,7 +114,7 @@
 
     new-array v2, v1, [I
 
-    .line 57
+    .line 58
     fill-array-data v2, :array_5
 
     const v3, 0xff93b2
@@ -121,7 +123,7 @@
 
     new-array v1, v1, [I
 
-    .line 58
+    .line 59
     fill-array-data v1, :array_6
 
     const v2, 0xfb6f5f
@@ -182,7 +184,7 @@
 .method public constructor <init>(I)V
     .locals 4
 
-    .line 62
+    .line 63
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
     .line 32
@@ -201,10 +203,15 @@
 
     const/4 v0, -0x1
 
-    .line 163
+    .line 167
     iput v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->color:I
 
-    .line 63
+    .line 64
+    sget-object v1, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->mainDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+
+    if-nez v1, :cond_0
+
+    .line 65
     sget v1, Lorg/telegram/messenger/R$raw;->topic_bubble:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -215,14 +222,24 @@
 
     move-result-object v0
 
+    sput-object v0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->mainDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+
+    .line 67
+    :cond_0
+    sget-object v0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->mainDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->clone()Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+
+    move-result-object v0
+
     iput-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->svgDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     const/4 v1, 0x0
 
-    .line 64
+    .line 68
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->copyCommandFromPosition(I)V
 
-    .line 65
+    .line 69
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -231,14 +248,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->topPaint:Landroid/graphics/Paint;
 
-    .line 66
+    .line 70
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v2, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->strokePaint:Landroid/graphics/Paint;
 
-    .line 68
+    .line 72
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -247,24 +264,24 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 69
+    .line 73
     sget-object v3, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 70
+    .line 74
     iget-object v3, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->svgDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     invoke-virtual {v3, v0, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setPaint(Landroid/graphics/Paint;I)V
 
-    .line 71
+    .line 75
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->svgDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v2, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setPaint(Landroid/graphics/Paint;I)V
 
-    .line 73
+    .line 77
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->setColor(I)V
 
     return-void
@@ -273,7 +290,7 @@
 .method private synthetic lambda$moveNexColor$0([ILandroid/animation/ValueAnimator;)V
     .locals 12
 
-    .line 132
+    .line 136
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -284,14 +301,14 @@
 
     move-result p2
 
-    .line 134
+    .line 138
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 136
+    .line 140
     new-instance v10, Landroid/graphics/LinearGradient;
 
     const/4 v2, 0x2
@@ -342,22 +359,22 @@
 
     iput-object v10, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->gradient:Landroid/graphics/LinearGradient;
 
-    .line 137
+    .line 141
     iget-object v2, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v10, v2}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 138
+    .line 142
     iget-object v2, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->gradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 139
+    .line 143
     iget-object v2, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->svgDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     invoke-virtual {v2, v0, v11}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setPaint(Landroid/graphics/Paint;I)V
 
-    .line 141
+    .line 145
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->topPaint:Landroid/graphics/Paint;
 
     aget v2, p1, v1
@@ -380,7 +397,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 142
+    .line 146
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->strokePaint:Landroid/graphics/Paint;
 
     aget p1, p1, v11
@@ -401,7 +418,7 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 143
+    .line 147
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->invalidateSelf()V
 
     return-void
@@ -412,7 +429,7 @@
 .method public addParent(Landroid/view/View;)V
     .locals 1
 
-    .line 152
+    .line 156
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->parents:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -423,7 +440,7 @@
 .method public colorDistance(II)I
     .locals 3
 
-    .line 111
+    .line 115
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
@@ -476,12 +493,12 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 78
+    .line 82
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 79
+    .line 83
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -502,14 +519,14 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    .line 80
+    .line 84
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->gradient:Landroid/graphics/LinearGradient;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 81
+    .line 85
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->svgDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -518,7 +535,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 82
+    .line 86
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->svgDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->draw(Landroid/graphics/Canvas;)V
@@ -531,7 +548,7 @@
 
     const/16 v0, 0x18
 
-    .line 97
+    .line 101
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -544,7 +561,7 @@
 
     const/16 v0, 0x18
 
-    .line 102
+    .line 106
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -563,12 +580,12 @@
 .method public invalidateSelf()V
     .locals 2
 
-    .line 157
+    .line 161
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     const/4 v0, 0x0
 
-    .line 158
+    .line 162
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->parents:Ljava/util/ArrayList;
 
@@ -578,7 +595,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 159
+    .line 163
     iget-object v1, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->parents:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -600,7 +617,7 @@
 .method public moveNexColor()I
     .locals 9
 
-    .line 115
+    .line 119
     iget v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->colorIndex:I
 
     const/4 v1, 0x1
@@ -609,7 +626,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->colorIndex:I
 
-    .line 116
+    .line 120
     sget-object v2, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->serverSupportedColor:[I
 
     array-length v3, v2
@@ -620,21 +637,21 @@
 
     if-le v0, v3, :cond_0
 
-    .line 117
+    .line 121
     iput v4, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->colorIndex:I
 
-    .line 119
+    .line 123
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->currentColors:[I
 
-    .line 120
+    .line 124
     iget v3, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->colorIndex:I
 
     aget v5, v2, v3
 
     iput v5, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->color:I
 
-    .line 121
+    .line 125
     sget-object v5, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->colorsMap:Landroid/util/SparseArray;
 
     aget v3, v2, v3
@@ -647,7 +664,7 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->currentColors:[I
 
-    .line 122
+    .line 126
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
 
     move-result v3
@@ -658,7 +675,7 @@
 
     new-array v3, v5, [I
 
-    .line 123
+    .line 127
     iget-object v6, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->currentColors:[I
 
     aget v6, v6, v4
@@ -667,7 +684,7 @@
 
     const v8, 0x3e4ccccd    # 0.2f
 
-    .line 124
+    .line 128
     invoke-static {v6, v7, v8}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v6
@@ -686,20 +703,20 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->currentColors:[I
 
-    .line 129
+    .line 133
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->invalidateSelf()V
 
     new-array v1, v5, [F
 
-    .line 130
+    .line 134
     fill-array-data v1, :array_0
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v1
 
-    .line 131
+    .line 135
     new-instance v3, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable$$ExternalSyntheticLambda0;
 
     invoke-direct {v3, p0, v0}, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;[I)V
@@ -708,13 +725,13 @@
 
     const-wide/16 v3, 0xc8
 
-    .line 145
+    .line 149
     invoke-virtual {v1, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 146
+    .line 150
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 148
+    .line 152
     iget v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->colorIndex:I
 
     aget v0, v2, v0
@@ -739,7 +756,7 @@
 .method public setColor(I)V
     .locals 13
 
-    .line 166
+    .line 170
     iget v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->color:I
 
     const/4 v1, -0x1
@@ -750,11 +767,11 @@
 
     return-void
 
-    .line 169
+    .line 173
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->color:I
 
-    .line 170
+    .line 174
     sget-object v0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->serverSupportedColor:[I
 
     const/4 v2, 0x0
@@ -765,12 +782,12 @@
 
     move-result v0
 
-    .line 171
+    .line 175
     iput v2, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->colorIndex:I
 
     move v3, v2
 
-    .line 172
+    .line 176
     :goto_0
     sget-object v4, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->serverSupportedColor:[I
 
@@ -778,7 +795,7 @@
 
     if-ge v3, v5, :cond_2
 
-    .line 173
+    .line 177
     aget v4, v4, v3
 
     invoke-virtual {p0, v4, p1}, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->colorDistance(II)I
@@ -787,7 +804,7 @@
 
     if-ge v4, v0, :cond_1
 
-    .line 176
+    .line 180
     iput v3, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->colorIndex:I
 
     move v0, v4
@@ -797,7 +814,7 @@
 
     goto :goto_0
 
-    .line 179
+    .line 183
     :cond_2
     sget-object p1, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->colorsMap:Landroid/util/SparseArray;
 
@@ -811,7 +828,7 @@
 
     check-cast p1, [I
 
-    .line 180
+    .line 184
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
 
     move-result v0
@@ -824,12 +841,12 @@
 
     new-array v0, v0, [I
 
-    .line 181
+    .line 185
     aget v4, p1, v2
 
     const v5, 0x3e4ccccd    # 0.2f
 
-    .line 182
+    .line 186
     invoke-static {v4, v1, v5}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v4
@@ -846,16 +863,16 @@
 
     move-object p1, v0
 
-    .line 185
+    .line 189
     :cond_3
     iput-object p1, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->currentColors:[I
 
-    .line 187
+    .line 191
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v3}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 188
+    .line 192
     new-instance v12, Landroid/graphics/LinearGradient;
 
     const/4 v5, 0x0
@@ -878,22 +895,22 @@
 
     iput-object v12, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->gradient:Landroid/graphics/LinearGradient;
 
-    .line 189
+    .line 193
     iget-object v4, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v12, v4}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 190
+    .line 194
     iget-object v4, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->gradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 191
+    .line 195
     iget-object v4, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->svgDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     invoke-virtual {v4, v0, v2}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setPaint(Landroid/graphics/Paint;I)V
 
-    .line 194
+    .line 198
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->topPaint:Landroid/graphics/Paint;
 
     aget v3, p1, v3
@@ -906,7 +923,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 195
+    .line 199
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->strokePaint:Landroid/graphics/Paint;
 
     aget p1, p1, v2

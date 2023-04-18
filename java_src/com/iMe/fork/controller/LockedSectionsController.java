@@ -1,36 +1,24 @@
 package com.iMe.fork.controller;
 
 import android.content.SharedPreferences;
-import android.os.SystemClock;
 import android.util.Base64;
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.LockedSectionsController;
-import com.iMe.fork.enums.AutoLockTime;
 import com.iMe.fork.enums.LockedSection;
-import com.iMe.fork.enums.PasscodeType;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import kotlin.TuplesKt;
 import kotlin.collections.ArraysKt___ArraysKt;
-import kotlin.collections.CollectionsKt__CollectionsKt;
-import kotlin.collections.CollectionsKt___CollectionsKt;
-import kotlin.collections.MapsKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.RangesKt___RangesKt;
 import org.telegram.messenger.BaseController;
-import org.telegram.messenger.Utilities;
-import p035j$.util.concurrent.ConcurrentHashMap;
-import p035j$.util.concurrent.ConcurrentMap$EL;
-import p035j$.util.function.Function;
-import timber.log.Timber;
+import p034j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentMap$EL;
+import p034j$.util.function.Function;
 /* compiled from: LockedSectionsController.kt */
 /* loaded from: classes3.dex */
 public final class LockedSectionsController extends BaseController {
@@ -45,236 +33,114 @@ public final class LockedSectionsController extends BaseController {
     public LockedSectionsController(int i) {
         super(i);
         Map<LockedSection, SectionPasscodeData> mutableMapOf;
-        mutableMapOf = MapsKt__MapsKt.mutableMapOf(TuplesKt.m94to(LockedSection.ARCHIVE, new SectionPasscodeData(null, false, 0, null, 0L, 0L, null, null, false, 511, null)), TuplesKt.m94to(LockedSection.CLOUD, new SectionPasscodeData(null, false, 0, null, 0L, 0L, null, null, false, 511, null)));
+        mutableMapOf = MapsKt__MapsKt.mutableMapOf(TuplesKt.m80to(LockedSection.ARCHIVE, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)), TuplesKt.m80to(LockedSection.CLOUD, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)));
         this.sectionsPasscodeData = mutableMapOf;
     }
 
     public final void loadConfig(SharedPreferences preferences) {
         LockedSection[] values;
-        List<Byte> emptyList;
+        byte[] byteArray;
         Intrinsics.checkNotNullParameter(preferences, "preferences");
         for (LockedSection lockedSection : LockedSection.values()) {
-            SectionPasscodeData sectionPasscodeData = new SectionPasscodeData(null, false, 0, null, 0L, 0L, null, null, false, 511, null);
-            sectionPasscodeData.setAutoLockIn(AutoLockTime.Companion.findById(preferences.getInt(TelegramPreferenceKeys.User.buildAutoLockInKey(lockedSection), TelegramPreferenceKeys.User.Default.autoLockInId())));
-            sectionPasscodeData.setBadPasscodeTries(preferences.getInt(TelegramPreferenceKeys.User.buildBadPasscodeTriesKey(lockedSection), TelegramPreferenceKeys.User.Default.badPasscodeTries()));
-            sectionPasscodeData.setSectionLocked(preferences.getBoolean(TelegramPreferenceKeys.User.buildIsSectionLockedKey(lockedSection), TelegramPreferenceKeys.User.Default.isSectionLocked()));
-            sectionPasscodeData.setLastUptimeMillis(preferences.getLong(TelegramPreferenceKeys.User.buildLastUptimeMillisKey(lockedSection), TelegramPreferenceKeys.User.Default.lastUptimeMillis()));
+            Map<LockedSection, SectionPasscodeData> map = this.sectionsPasscodeData;
+            SectionPasscodeData sectionPasscodeData = new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null);
+            sectionPasscodeData.setPasscodeType(preferences.getInt(TelegramPreferenceKeys.User.buildPasscodeTypeKey(lockedSection), TelegramPreferenceKeys.User.Default.passcodeType()));
             String string = preferences.getString(TelegramPreferenceKeys.User.buildPasscodeHashKey(lockedSection), TelegramPreferenceKeys.User.Default.passcodeHash());
             if (string == null) {
                 string = "";
-            } else {
-                Intrinsics.checkNotNullExpressionValue(string, "getString(TelegramPrefer…ants.Symbols.EMPTY_STRING");
             }
             sectionPasscodeData.setPasscodeHash(string);
-            sectionPasscodeData.setPasscodeRetryInMs(preferences.getLong(TelegramPreferenceKeys.User.buildPasscodeRetryInMsKey(lockedSection), TelegramPreferenceKeys.User.Default.passcodeRetryInMs()));
             String string2 = preferences.getString(TelegramPreferenceKeys.User.buildPasscodeSaltStringKey(lockedSection), TelegramPreferenceKeys.User.Default.passcodeSaltString());
             String str = string2 != null ? string2 : "";
-            Intrinsics.checkNotNullExpressionValue(str, "getString(TelegramPrefer…ants.Symbols.EMPTY_STRING");
+            Intrinsics.checkNotNullExpressionValue(str, "getString(\n             …ants.Symbols.EMPTY_STRING");
             if (str.length() > 0) {
-                byte[] decode = Base64.decode(str, 0);
-                Intrinsics.checkNotNullExpressionValue(decode, "decode(passcodeSaltString, Base64.DEFAULT)");
-                emptyList = ArraysKt___ArraysKt.toList(decode);
+                byteArray = Base64.decode(str, 0);
+                Intrinsics.checkNotNullExpressionValue(byteArray, "{\n                      …LT)\n                    }");
             } else {
-                emptyList = CollectionsKt__CollectionsKt.emptyList();
+                byteArray = ArraysKt___ArraysKt.toByteArray(new Byte[0]);
             }
-            sectionPasscodeData.setPasscodeSalt(emptyList);
-            sectionPasscodeData.setPasscodeType(PasscodeType.Companion.findById(preferences.getInt(TelegramPreferenceKeys.User.buildPasscodeTypeKey(lockedSection), TelegramPreferenceKeys.User.Default.passcodeType())));
+            sectionPasscodeData.setPasscodeSalt(byteArray);
             sectionPasscodeData.setUseFingerprint(preferences.getBoolean(TelegramPreferenceKeys.User.buildUseFingerprintKey(lockedSection), TelegramPreferenceKeys.User.Default.useFingerprint()));
-            this.sectionsPasscodeData.put(lockedSection, sectionPasscodeData);
+            sectionPasscodeData.setSectionLocked(preferences.getBoolean(TelegramPreferenceKeys.User.buildIsSectionLockedKey(lockedSection), TelegramPreferenceKeys.User.Default.isSectionLocked()));
+            sectionPasscodeData.setBadPasscodeTries(preferences.getInt(TelegramPreferenceKeys.User.buildBadPasscodeTriesKey(lockedSection), TelegramPreferenceKeys.User.Default.badPasscodeTries()));
+            sectionPasscodeData.setPasscodeRetryInMs(preferences.getLong(TelegramPreferenceKeys.User.buildPasscodeRetryInMsKey(lockedSection), TelegramPreferenceKeys.User.Default.passcodeRetryInMs()));
+            sectionPasscodeData.setLastUptimeMillis(preferences.getLong(TelegramPreferenceKeys.User.buildLastUptimeMillisKey(lockedSection), TelegramPreferenceKeys.User.Default.lastUptimeMillis()));
+            sectionPasscodeData.setTimeout(preferences.getInt(TelegramPreferenceKeys.User.buildTimeoutKey(lockedSection), TelegramPreferenceKeys.User.Default.timeout()));
+            map.put(lockedSection, sectionPasscodeData);
         }
     }
 
     public final void saveConfig() {
         String passcodeSaltString;
-        byte[] byteArray;
         SharedPreferences.Editor edit = getUserConfig().getPreferencesPublic().edit();
         for (Map.Entry<LockedSection, SectionPasscodeData> entry : this.sectionsPasscodeData.entrySet()) {
             LockedSection key = entry.getKey();
             SectionPasscodeData value = entry.getValue();
-            edit.putInt(TelegramPreferenceKeys.User.buildAutoLockInKey(key), value.getAutoLockIn().getId());
-            edit.putInt(TelegramPreferenceKeys.User.buildBadPasscodeTriesKey(key), value.getBadPasscodeTries());
-            edit.putBoolean(TelegramPreferenceKeys.User.buildIsSectionLockedKey(key), value.isSectionLocked());
-            edit.putLong(TelegramPreferenceKeys.User.buildLastUptimeMillisKey(key), value.getLastUptimeMillis());
+            edit.putInt(TelegramPreferenceKeys.User.buildPasscodeTypeKey(key), value.getPasscodeType());
             edit.putString(TelegramPreferenceKeys.User.buildPasscodeHashKey(key), value.getPasscodeHash());
-            edit.putLong(TelegramPreferenceKeys.User.buildPasscodeRetryInMsKey(key), value.getPasscodeRetryInMs());
             String buildPasscodeSaltStringKey = TelegramPreferenceKeys.User.buildPasscodeSaltStringKey(key);
-            if (!value.getPasscodeSalt().isEmpty()) {
-                byteArray = CollectionsKt___CollectionsKt.toByteArray(value.getPasscodeSalt());
-                passcodeSaltString = Base64.encodeToString(byteArray, 0);
+            if (!(value.getPasscodeSalt().length == 0)) {
+                passcodeSaltString = Base64.encodeToString(value.getPasscodeSalt(), 0);
             } else {
                 passcodeSaltString = TelegramPreferenceKeys.User.Default.passcodeSaltString();
             }
             edit.putString(buildPasscodeSaltStringKey, passcodeSaltString);
-            edit.putInt(TelegramPreferenceKeys.User.buildPasscodeTypeKey(key), value.getPasscodeType().getId());
-            edit.putBoolean(TelegramPreferenceKeys.User.buildUseFingerprintKey(key), value.getUseFingerprint());
+            edit.putBoolean(TelegramPreferenceKeys.User.buildUseFingerprintKey(key), value.isUseFingerprint());
+            edit.putBoolean(TelegramPreferenceKeys.User.buildIsSectionLockedKey(key), value.isSectionLocked());
+            edit.putInt(TelegramPreferenceKeys.User.buildBadPasscodeTriesKey(key), value.getBadPasscodeTries());
+            edit.putLong(TelegramPreferenceKeys.User.buildPasscodeRetryInMsKey(key), value.getPasscodeRetryInMs());
+            edit.putLong(TelegramPreferenceKeys.User.buildLastUptimeMillisKey(key), value.getLastUptimeMillis());
+            edit.putInt(TelegramPreferenceKeys.User.buildTimeoutKey(key), value.getTimeout());
         }
         edit.apply();
     }
 
     public final void cleanup() {
         this.sectionsPasscodeData.clear();
+        Map<LockedSection, SectionPasscodeData> map = this.sectionsPasscodeData;
         LockedSection[] values = LockedSection.values();
         ArrayList arrayList = new ArrayList(values.length);
         for (LockedSection lockedSection : values) {
-            arrayList.add(TuplesKt.m94to(lockedSection, new SectionPasscodeData(null, false, 0, null, 0L, 0L, null, null, false, 511, null)));
+            arrayList.add(TuplesKt.m80to(lockedSection, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)));
         }
-        MapsKt.toMap(arrayList, this.sectionsPasscodeData);
-    }
-
-    public final void setSectionsPasscodeData(LockedSection lockedSection, SectionPasscodeData sectionPasscodeData) {
-        Intrinsics.checkNotNullParameter(sectionPasscodeData, "sectionPasscodeData");
-        if (lockedSection != null) {
-            this.sectionsPasscodeData.put(lockedSection, sectionPasscodeData);
-        }
+        MapsKt__MapsKt.putAll(map, arrayList);
     }
 
     public final SectionPasscodeData getSectionsPasscodeData(LockedSection lockedSection) {
         return this.sectionsPasscodeData.get(lockedSection);
     }
 
-    public final boolean checkSectionPasscode(LockedSection section, String passcode) {
-        byte[] byteArray;
-        Intrinsics.checkNotNullParameter(section, "section");
-        Intrinsics.checkNotNullParameter(passcode, "passcode");
-        SectionPasscodeData sectionPasscodeData = this.sectionsPasscodeData.get(section);
-        if (sectionPasscodeData == null) {
-            return false;
-        }
-        if (sectionPasscodeData.getPasscodeSalt().isEmpty()) {
-            boolean areEqual = Intrinsics.areEqual(Utilities.MD5(passcode), sectionPasscodeData.getPasscodeHash());
-            if (areEqual) {
-                createPasscodeSalt(sectionPasscodeData, section, passcode);
-                sectionPasscodeData.setSectionLocked(false);
-                setSectionsPasscodeData(section, sectionPasscodeData);
-            }
-            return areEqual;
-        }
-        try {
-            Charset UTF_8 = StandardCharsets.UTF_8;
-            Intrinsics.checkNotNullExpressionValue(UTF_8, "UTF_8");
-            byte[] bytes = passcode.getBytes(UTF_8);
-            Intrinsics.checkNotNullExpressionValue(bytes, "this as java.lang.String).getBytes(charset)");
-            int length = bytes.length + 32;
-            byte[] bArr = new byte[length];
-            byteArray = CollectionsKt___CollectionsKt.toByteArray(sectionPasscodeData.getPasscodeSalt());
-            System.arraycopy(byteArray, 0, bArr, 0, 16);
-            System.arraycopy(bytes, 0, bArr, 16, bytes.length);
-            System.arraycopy(byteArray, 0, bArr, bytes.length + 16, 16);
-            boolean areEqual2 = Intrinsics.areEqual(sectionPasscodeData.getPasscodeHash(), Utilities.bytesToHex(Utilities.computeSHA256(bArr, 0, length)));
-            if (areEqual2) {
-                sectionPasscodeData.setSectionLocked(false);
-                setSectionsPasscodeData(section, sectionPasscodeData);
-            }
-            return areEqual2;
-        } catch (Exception e) {
-            Timber.m4e(e);
-            return false;
-        }
-    }
-
-    public final void createPasscodeSalt(SectionPasscodeData passcodeData, LockedSection section, String passcode) {
-        List<Byte> list;
-        Intrinsics.checkNotNullParameter(passcodeData, "passcodeData");
-        Intrinsics.checkNotNullParameter(section, "section");
-        Intrinsics.checkNotNullParameter(passcode, "passcode");
-        try {
-            byte[] bArr = new byte[16];
-            Utilities.random.nextBytes(bArr);
-            Charset UTF_8 = StandardCharsets.UTF_8;
-            Intrinsics.checkNotNullExpressionValue(UTF_8, "UTF_8");
-            byte[] bytes = passcode.getBytes(UTF_8);
-            Intrinsics.checkNotNullExpressionValue(bytes, "this as java.lang.String).getBytes(charset)");
-            int length = bytes.length + 32;
-            byte[] bArr2 = new byte[length];
-            System.arraycopy(bArr, 0, bArr2, 0, 16);
-            System.arraycopy(bytes, 0, bArr2, 16, bytes.length);
-            System.arraycopy(bArr, 0, bArr2, bytes.length + 16, 16);
-            list = ArraysKt___ArraysKt.toList(bArr);
-            passcodeData.setPasscodeSalt(list);
-            String bytesToHex = Utilities.bytesToHex(Utilities.computeSHA256(bArr2, 0, length));
-            Intrinsics.checkNotNullExpressionValue(bytesToHex, "bytesToHex(\n            …e.toLong())\n            )");
-            passcodeData.setPasscodeHash(bytesToHex);
-            setSectionsPasscodeData(section, passcodeData);
-        } catch (Exception e) {
-            Timber.m4e(e);
-        }
-    }
-
-    public final void increaseBadPasscodeTries(LockedSection section) {
-        int coerceAtMost;
-        Intrinsics.checkNotNullParameter(section, "section");
-        SectionPasscodeData sectionPasscodeData = this.sectionsPasscodeData.get(section);
-        if (sectionPasscodeData == null) {
-            return;
-        }
-        sectionPasscodeData.setBadPasscodeTries(sectionPasscodeData.getBadPasscodeTries() + 1);
-        if (sectionPasscodeData.getBadPasscodeTries() >= 2) {
-            coerceAtMost = RangesKt___RangesKt.coerceAtMost(sectionPasscodeData.getBadPasscodeTries(), 7);
-            sectionPasscodeData.setPasscodeRetryInMs((coerceAtMost - 2) * 5000);
-            sectionPasscodeData.setLastUptimeMillis(SystemClock.elapsedRealtime());
-        }
-        setSectionsPasscodeData(section, sectionPasscodeData);
-    }
-
     /* compiled from: LockedSectionsController.kt */
     /* loaded from: classes3.dex */
     public static final class SectionPasscodeData {
-        private AutoLockTime autoLockIn;
         private int badPasscodeTries;
         private boolean isSectionLocked;
+        private boolean isUseFingerprint;
+        private int lastAcceptedTime;
         private long lastUptimeMillis;
         private String passcodeHash;
         private long passcodeRetryInMs;
-        private List<Byte> passcodeSalt;
-        private PasscodeType passcodeType;
-        private boolean useFingerprint;
+        private byte[] passcodeSalt;
+        private int passcodeType;
+        private int timeout;
 
         public SectionPasscodeData() {
-            this(null, false, 0, null, 0L, 0L, null, null, false, 511, null);
+            this(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null);
         }
 
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (obj instanceof SectionPasscodeData) {
-                SectionPasscodeData sectionPasscodeData = (SectionPasscodeData) obj;
-                return this.autoLockIn == sectionPasscodeData.autoLockIn && this.isSectionLocked == sectionPasscodeData.isSectionLocked && this.badPasscodeTries == sectionPasscodeData.badPasscodeTries && this.passcodeType == sectionPasscodeData.passcodeType && this.lastUptimeMillis == sectionPasscodeData.lastUptimeMillis && this.passcodeRetryInMs == sectionPasscodeData.passcodeRetryInMs && Intrinsics.areEqual(this.passcodeSalt, sectionPasscodeData.passcodeSalt) && Intrinsics.areEqual(this.passcodeHash, sectionPasscodeData.passcodeHash) && this.useFingerprint == sectionPasscodeData.useFingerprint;
-            }
-            return false;
-        }
-
-        /* JADX WARN: Multi-variable type inference failed */
-        public int hashCode() {
-            int hashCode = this.autoLockIn.hashCode() * 31;
-            boolean z = this.isSectionLocked;
-            int i = z;
-            if (z != 0) {
-                i = 1;
-            }
-            int hashCode2 = (((((((((((((hashCode + i) * 31) + this.badPasscodeTries) * 31) + this.passcodeType.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.lastUptimeMillis)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.passcodeRetryInMs)) * 31) + this.passcodeSalt.hashCode()) * 31) + this.passcodeHash.hashCode()) * 31;
-            boolean z2 = this.useFingerprint;
-            return hashCode2 + (z2 ? 1 : z2 ? 1 : 0);
-        }
-
-        public String toString() {
-            return "SectionPasscodeData(autoLockIn=" + this.autoLockIn + ", isSectionLocked=" + this.isSectionLocked + ", badPasscodeTries=" + this.badPasscodeTries + ", passcodeType=" + this.passcodeType + ", lastUptimeMillis=" + this.lastUptimeMillis + ", passcodeRetryInMs=" + this.passcodeRetryInMs + ", passcodeSalt=" + this.passcodeSalt + ", passcodeHash=" + this.passcodeHash + ", useFingerprint=" + this.useFingerprint + ')';
-        }
-
-        public SectionPasscodeData(AutoLockTime autoLockIn, boolean z, int i, PasscodeType passcodeType, long j, long j2, List<Byte> passcodeSalt, String passcodeHash, boolean z2) {
-            Intrinsics.checkNotNullParameter(autoLockIn, "autoLockIn");
-            Intrinsics.checkNotNullParameter(passcodeType, "passcodeType");
-            Intrinsics.checkNotNullParameter(passcodeSalt, "passcodeSalt");
+        public SectionPasscodeData(int i, String passcodeHash, byte[] passcodeSalt, boolean z, boolean z2, int i2, long j, long j2, int i3, int i4) {
             Intrinsics.checkNotNullParameter(passcodeHash, "passcodeHash");
-            this.autoLockIn = autoLockIn;
-            this.isSectionLocked = z;
-            this.badPasscodeTries = i;
-            this.passcodeType = passcodeType;
-            this.lastUptimeMillis = j;
-            this.passcodeRetryInMs = j2;
-            this.passcodeSalt = passcodeSalt;
+            Intrinsics.checkNotNullParameter(passcodeSalt, "passcodeSalt");
+            this.passcodeType = i;
             this.passcodeHash = passcodeHash;
-            this.useFingerprint = z2;
+            this.passcodeSalt = passcodeSalt;
+            this.isUseFingerprint = z;
+            this.isSectionLocked = z2;
+            this.badPasscodeTries = i2;
+            this.passcodeRetryInMs = j;
+            this.lastUptimeMillis = j2;
+            this.timeout = i3;
+            this.lastAcceptedTime = i4;
         }
 
         /* JADX WARN: Illegal instructions before constructor call */
@@ -282,105 +148,132 @@ public final class LockedSectionsController extends BaseController {
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        public /* synthetic */ SectionPasscodeData(com.iMe.fork.enums.AutoLockTime r12, boolean r13, int r14, com.iMe.fork.enums.PasscodeType r15, long r16, long r18, java.util.List r20, java.lang.String r21, boolean r22, int r23, kotlin.jvm.internal.DefaultConstructorMarker r24) {
+        public /* synthetic */ SectionPasscodeData(int r14, java.lang.String r15, byte[] r16, boolean r17, boolean r18, int r19, long r20, long r22, int r24, int r25, int r26, kotlin.jvm.internal.DefaultConstructorMarker r27) {
             /*
-                r11 = this;
-                r0 = r23
+                r13 = this;
+                r0 = r26
                 r1 = r0 & 1
-                if (r1 == 0) goto L11
-                com.iMe.fork.enums.AutoLockTime$Companion r1 = com.iMe.fork.enums.AutoLockTime.Companion
-                int r2 = com.iMe.common.TelegramPreferenceKeys.User.Default.autoLockInId()
-                com.iMe.fork.enums.AutoLockTime r1 = r1.findById(r2)
-                goto L12
-            L11:
-                r1 = r12
-            L12:
+                if (r1 == 0) goto Lb
+                int r1 = com.iMe.common.TelegramPreferenceKeys.User.Default.passcodeType()
+                goto Lc
+            Lb:
+                r1 = r14
+            Lc:
                 r2 = r0 & 2
-                if (r2 == 0) goto L1b
-                boolean r2 = com.iMe.common.TelegramPreferenceKeys.User.Default.isSectionLocked()
-                goto L1c
-            L1b:
-                r2 = r13
-            L1c:
+                if (r2 == 0) goto L15
+                java.lang.String r2 = com.iMe.common.TelegramPreferenceKeys.User.Default.passcodeHash()
+                goto L16
+            L15:
+                r2 = r15
+            L16:
                 r3 = r0 & 4
-                if (r3 == 0) goto L25
-                int r3 = com.iMe.common.TelegramPreferenceKeys.User.Default.badPasscodeTries()
-                goto L26
-            L25:
-                r3 = r14
-            L26:
-                r4 = r0 & 8
-                if (r4 == 0) goto L35
-                com.iMe.fork.enums.PasscodeType$Companion r4 = com.iMe.fork.enums.PasscodeType.Companion
-                int r5 = com.iMe.common.TelegramPreferenceKeys.User.Default.passcodeType()
-                com.iMe.fork.enums.PasscodeType r4 = r4.findById(r5)
+                r4 = 0
+                if (r3 == 0) goto L29
+                java.lang.String r3 = com.iMe.common.TelegramPreferenceKeys.User.Default.passcodeSaltString()
+                byte[] r3 = android.util.Base64.decode(r3, r4)
+                java.lang.String r5 = "decode(TelegramPreferenc…String(), Base64.DEFAULT)"
+                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, r5)
+                goto L2b
+            L29:
+                r3 = r16
+            L2b:
+                r5 = r0 & 8
+                if (r5 == 0) goto L34
+                boolean r5 = com.iMe.common.TelegramPreferenceKeys.User.Default.useFingerprint()
                 goto L36
-            L35:
-                r4 = r15
+            L34:
+                r5 = r17
             L36:
-                r5 = r0 & 16
-                if (r5 == 0) goto L3f
-                long r5 = com.iMe.common.TelegramPreferenceKeys.User.Default.lastUptimeMillis()
+                r6 = r0 & 16
+                if (r6 == 0) goto L3f
+                boolean r6 = com.iMe.common.TelegramPreferenceKeys.User.Default.isSectionLocked()
                 goto L41
             L3f:
-                r5 = r16
+                r6 = r18
             L41:
                 r7 = r0 & 32
                 if (r7 == 0) goto L4a
-                long r7 = com.iMe.common.TelegramPreferenceKeys.User.Default.passcodeRetryInMs()
+                int r7 = com.iMe.common.TelegramPreferenceKeys.User.Default.badPasscodeTries()
                 goto L4c
             L4a:
-                r7 = r18
+                r7 = r19
             L4c:
-                r9 = r0 & 64
-                if (r9 == 0) goto L63
-                java.lang.String r9 = com.iMe.common.TelegramPreferenceKeys.User.Default.passcodeSaltString()
-                r10 = 0
-                byte[] r9 = android.util.Base64.decode(r9, r10)
-                java.lang.String r10 = "decode(TelegramPreferenc…String(), Base64.DEFAULT)"
-                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r9, r10)
-                java.util.List r9 = kotlin.collections.ArraysKt.toList(r9)
-                goto L65
-            L63:
-                r9 = r20
-            L65:
+                r8 = r0 & 64
+                if (r8 == 0) goto L55
+                long r8 = com.iMe.common.TelegramPreferenceKeys.User.Default.passcodeRetryInMs()
+                goto L57
+            L55:
+                r8 = r20
+            L57:
                 r10 = r0 & 128(0x80, float:1.794E-43)
-                if (r10 == 0) goto L6e
-                java.lang.String r10 = com.iMe.common.TelegramPreferenceKeys.User.Default.passcodeHash()
-                goto L70
-            L6e:
-                r10 = r21
-            L70:
-                r0 = r0 & 256(0x100, float:3.59E-43)
-                if (r0 == 0) goto L79
-                boolean r0 = com.iMe.common.TelegramPreferenceKeys.User.Default.useFingerprint()
-                goto L7b
-            L79:
-                r0 = r22
-            L7b:
-                r12 = r11
-                r13 = r1
-                r14 = r2
-                r15 = r3
-                r16 = r4
-                r17 = r5
-                r19 = r7
-                r21 = r9
-                r22 = r10
-                r23 = r0
-                r12.<init>(r13, r14, r15, r16, r17, r19, r21, r22, r23)
+                if (r10 == 0) goto L60
+                long r10 = com.iMe.common.TelegramPreferenceKeys.User.Default.lastUptimeMillis()
+                goto L62
+            L60:
+                r10 = r22
+            L62:
+                r12 = r0 & 256(0x100, float:3.59E-43)
+                if (r12 == 0) goto L6b
+                int r12 = com.iMe.common.TelegramPreferenceKeys.User.Default.timeout()
+                goto L6d
+            L6b:
+                r12 = r24
+            L6d:
+                r0 = r0 & 512(0x200, float:7.175E-43)
+                if (r0 == 0) goto L72
+                goto L74
+            L72:
+                r4 = r25
+            L74:
+                r14 = r13
+                r15 = r1
+                r16 = r2
+                r17 = r3
+                r18 = r5
+                r19 = r6
+                r20 = r7
+                r21 = r8
+                r23 = r10
+                r25 = r12
+                r26 = r4
+                r14.<init>(r15, r16, r17, r18, r19, r20, r21, r23, r25, r26)
                 return
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.controller.LockedSectionsController.SectionPasscodeData.<init>(com.iMe.fork.enums.AutoLockTime, boolean, int, com.iMe.fork.enums.PasscodeType, long, long, java.util.List, java.lang.String, boolean, int, kotlin.jvm.internal.DefaultConstructorMarker):void");
+            throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.controller.LockedSectionsController.SectionPasscodeData.<init>(int, java.lang.String, byte[], boolean, boolean, int, long, long, int, int, int, kotlin.jvm.internal.DefaultConstructorMarker):void");
         }
 
-        public final AutoLockTime getAutoLockIn() {
-            return this.autoLockIn;
+        public final int getPasscodeType() {
+            return this.passcodeType;
         }
 
-        public final void setAutoLockIn(AutoLockTime autoLockTime) {
-            Intrinsics.checkNotNullParameter(autoLockTime, "<set-?>");
-            this.autoLockIn = autoLockTime;
+        public final void setPasscodeType(int i) {
+            this.passcodeType = i;
+        }
+
+        public final String getPasscodeHash() {
+            return this.passcodeHash;
+        }
+
+        public final void setPasscodeHash(String str) {
+            Intrinsics.checkNotNullParameter(str, "<set-?>");
+            this.passcodeHash = str;
+        }
+
+        public final byte[] getPasscodeSalt() {
+            return this.passcodeSalt;
+        }
+
+        public final void setPasscodeSalt(byte[] bArr) {
+            Intrinsics.checkNotNullParameter(bArr, "<set-?>");
+            this.passcodeSalt = bArr;
+        }
+
+        public final boolean isUseFingerprint() {
+            return this.isUseFingerprint;
+        }
+
+        public final void setUseFingerprint(boolean z) {
+            this.isUseFingerprint = z;
         }
 
         public final boolean isSectionLocked() {
@@ -399,13 +292,12 @@ public final class LockedSectionsController extends BaseController {
             this.badPasscodeTries = i;
         }
 
-        public final PasscodeType getPasscodeType() {
-            return this.passcodeType;
+        public final long getPasscodeRetryInMs() {
+            return this.passcodeRetryInMs;
         }
 
-        public final void setPasscodeType(PasscodeType passcodeType) {
-            Intrinsics.checkNotNullParameter(passcodeType, "<set-?>");
-            this.passcodeType = passcodeType;
+        public final void setPasscodeRetryInMs(long j) {
+            this.passcodeRetryInMs = j;
         }
 
         public final long getLastUptimeMillis() {
@@ -416,42 +308,20 @@ public final class LockedSectionsController extends BaseController {
             this.lastUptimeMillis = j;
         }
 
-        public final long getPasscodeRetryInMs() {
-            return this.passcodeRetryInMs;
+        public final int getTimeout() {
+            return this.timeout;
         }
 
-        public final void setPasscodeRetryInMs(long j) {
-            this.passcodeRetryInMs = j;
+        public final void setTimeout(int i) {
+            this.timeout = i;
         }
 
-        public final List<Byte> getPasscodeSalt() {
-            return this.passcodeSalt;
+        public final int getLastAcceptedTime() {
+            return this.lastAcceptedTime;
         }
 
-        public final void setPasscodeSalt(List<Byte> list) {
-            Intrinsics.checkNotNullParameter(list, "<set-?>");
-            this.passcodeSalt = list;
-        }
-
-        public final String getPasscodeHash() {
-            return this.passcodeHash;
-        }
-
-        public final void setPasscodeHash(String str) {
-            Intrinsics.checkNotNullParameter(str, "<set-?>");
-            this.passcodeHash = str;
-        }
-
-        public final boolean getUseFingerprint() {
-            return this.useFingerprint;
-        }
-
-        public final void setUseFingerprint(boolean z) {
-            this.useFingerprint = z;
-        }
-
-        public final void reducePasscodeRetryTime(long j) {
-            this.passcodeRetryInMs -= j - this.lastUptimeMillis;
+        public final void setLastAcceptedTime(int i) {
+            this.lastAcceptedTime = i;
         }
     }
 
@@ -476,19 +346,19 @@ public final class LockedSectionsController extends BaseController {
             Integer valueOf = Integer.valueOf(i);
             final LockedSectionsController$Companion$getInstance$1 lockedSectionsController$Companion$getInstance$1 = new LockedSectionsController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.LockedSectionsController$Companion$$ExternalSyntheticLambda0
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
                     LockedSectionsController instance$lambda$0;
                     instance$lambda$0 = LockedSectionsController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatPullingDownDrawable;Landroid/view/View;)V
     .locals 0
 
-    .line 495
+    .line 499
     iput-object p1, p0, Lorg/telegram/ui/ChatPullingDownDrawable$1;->this$0:Lorg/telegram/ui/ChatPullingDownDrawable;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatPullingDownDrawable$1;->val$parent:Landroid/view/View;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 498
+    .line 502
     iget-object p1, p0, Lorg/telegram/ui/ChatPullingDownDrawable$1;->this$0:Lorg/telegram/ui/ChatPullingDownDrawable;
 
     const/4 v0, 0x0
@@ -48,15 +48,15 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 499
+    .line 503
     iput v0, p1, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    .line 500
+    .line 504
     iget-object p1, p0, Lorg/telegram/ui/ChatPullingDownDrawable$1;->val$parent:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 501
+    .line 505
     iget-object p1, p0, Lorg/telegram/ui/ChatPullingDownDrawable$1;->this$0:Lorg/telegram/ui/ChatPullingDownDrawable;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatPullingDownDrawable;->access$000(Lorg/telegram/ui/ChatPullingDownDrawable;)Landroid/view/View;
@@ -65,17 +65,17 @@
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 502
+    .line 506
     iget-object p1, p0, Lorg/telegram/ui/ChatPullingDownDrawable$1;->this$0:Lorg/telegram/ui/ChatPullingDownDrawable;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatPullingDownDrawable;->onAnimationFinishRunnable:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_0
 
-    .line 503
+    .line 507
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 504
+    .line 508
     iget-object p1, p0, Lorg/telegram/ui/ChatPullingDownDrawable$1;->this$0:Lorg/telegram/ui/ChatPullingDownDrawable;
 
     const/4 v0, 0x0

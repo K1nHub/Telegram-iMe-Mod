@@ -160,21 +160,13 @@
 
     check-cast v0, Lcom/iMe/ui/recognition/PhotoView;
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result$Error;->getError()Lcom/iMe/storage/data/network/model/error/ErrorModel;
-
-    move-result-object p1
-
     iget-object v1, p0, Lcom/iMe/ui/recognition/PhotoViewerPresenter$getPhotoObjects$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/recognition/PhotoViewerPresenter;
 
     invoke-static {v1}, Lcom/iMe/ui/recognition/PhotoViewerPresenter;->access$getResourceManager$p(Lcom/iMe/ui/recognition/PhotoViewerPresenter;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
-    invoke-virtual {p1, v1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;->getMessage(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
+    invoke-interface {v0, p1, v1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
     :cond_2
     :goto_0

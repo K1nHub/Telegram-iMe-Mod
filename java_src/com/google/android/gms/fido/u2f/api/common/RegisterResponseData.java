@@ -21,11 +21,11 @@ import org.json.JSONObject;
 /* loaded from: classes.dex */
 public class RegisterResponseData extends ResponseData {
     public static final Parcelable.Creator<RegisterResponseData> CREATOR = new zzi();
-    @SafeParcelable.Field(getter = "getRegisterData", m789id = 2)
+    @SafeParcelable.Field(getter = "getRegisterData", m775id = 2)
     private final byte[] zza;
-    @SafeParcelable.Field(getter = "getProtocolVersionAsString", m789id = 3, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getProtocolVersionAsString", m775id = 3, type = "java.lang.String")
     private final ProtocolVersion zzb;
-    @SafeParcelable.Field(getter = "getClientDataString", m789id = 4)
+    @SafeParcelable.Field(getter = "getClientDataString", m775id = 4)
     private final String zzc;
 
     public RegisterResponseData(byte[] bArr) {
@@ -123,7 +123,7 @@ public class RegisterResponseData extends ResponseData {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public RegisterResponseData(@SafeParcelable.Param(m788id = 2) byte[] bArr, @SafeParcelable.Param(m788id = 3) String str, @SafeParcelable.Param(m788id = 4) String str2) {
+    public RegisterResponseData(@SafeParcelable.Param(m774id = 2) byte[] bArr, @SafeParcelable.Param(m774id = 3) String str, @SafeParcelable.Param(m774id = 4) String str2) {
         this.zza = bArr;
         try {
             this.zzb = ProtocolVersion.fromString(str);

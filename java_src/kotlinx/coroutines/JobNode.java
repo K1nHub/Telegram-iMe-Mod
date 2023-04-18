@@ -22,7 +22,7 @@ public abstract class JobNode extends CompletionHandlerBase implements Disposabl
             return jobSupport;
         }
         Intrinsics.throwUninitializedPropertyAccessException("job");
-        throw null;
+        return null;
     }
 
     public final void setJob(JobSupport jobSupport) {

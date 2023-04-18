@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:[Lorg/telegram/ui/Cells/CheckBoxCell;
+.field public final synthetic f$0:[Z
 
 
 # direct methods
-.method public synthetic constructor <init>([Lorg/telegram/ui/Cells/CheckBoxCell;)V
+.method public synthetic constructor <init>([Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda116;->f$0:[Lorg/telegram/ui/Cells/CheckBoxCell;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda116;->f$0:[Z
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final onClick(Landroid/view/View;)V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda116;->f$0:[Lorg/telegram/ui/Cells/CheckBoxCell;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda116;->f$0:[Z
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$EXFNRQCEEiPulBX28q5_pRGfuoA([Lorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$u9TJoWiUmBW8n11MjEt-Nx0xT-I([ZLandroid/view/View;)V
 
     return-void
 .end method

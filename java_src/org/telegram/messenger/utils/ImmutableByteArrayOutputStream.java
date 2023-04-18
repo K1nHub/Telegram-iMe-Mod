@@ -7,6 +7,10 @@ public class ImmutableByteArrayOutputStream extends OutputStream {
     public byte[] buf;
     protected int count;
 
+    public ImmutableByteArrayOutputStream() {
+        this(32);
+    }
+
     public ImmutableByteArrayOutputStream(int i) {
         this.buf = new byte[i];
     }
@@ -84,5 +88,9 @@ public class ImmutableByteArrayOutputStream extends OutputStream {
 
     public synchronized void reset() {
         this.count = 0;
+    }
+
+    public int count() {
+        return this.count;
     }
 }

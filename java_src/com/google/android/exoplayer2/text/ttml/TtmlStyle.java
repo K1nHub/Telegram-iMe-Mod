@@ -14,7 +14,7 @@ final class TtmlStyle {
     private static final int OFF = 0;
 
     /* renamed from: ON */
-    private static final int f138ON = 1;
+    private static final int f135ON = 1;
     public static final int RUBY_TYPE_BASE = 2;
     public static final int RUBY_TYPE_CONTAINER = 1;
     public static final int RUBY_TYPE_DELIMITER = 4;
@@ -33,7 +33,7 @@ final class TtmlStyle {
     private boolean hasFontColor;
 
     /* renamed from: id */
-    private String f139id;
+    private String f136id;
     private Layout.Alignment multiRowAlign;
     private Layout.Alignment textAlign;
     private TextEmphasis textEmphasis;
@@ -228,12 +228,12 @@ final class TtmlStyle {
     }
 
     public TtmlStyle setId(String str) {
-        this.f139id = str;
+        this.f136id = str;
         return this;
     }
 
     public String getId() {
-        return this.f139id;
+        return this.f136id;
     }
 
     public TtmlStyle setRubyType(int i) {

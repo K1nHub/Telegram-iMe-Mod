@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
+    value = Lorg/telegram/ui/Components/ForwardingPreviewView;->updatePositions()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
     .locals 0
 
-    .line 1048
+    .line 1264
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$15;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,31 +33,21 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+    .locals 2
 
-    .line 1051
+    .line 1267
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$15;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
+    const/4 v0, 0x0
 
-    move-result-object p1
+    iput-object v0, p1, Lorg/telegram/ui/Components/ForwardingPreviewView;->offsetsAnimator:Landroid/animation/ValueAnimator;
 
-    if-eqz p1, :cond_0
+    .line 1268
+    iget v0, p1, Lorg/telegram/ui/Components/ForwardingPreviewView;->yOffset:F
 
-    .line 1052
-    iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$15;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
+    iget v1, p1, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatTopOffset:I
 
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
+    invoke-static {p1, v0, v1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->access$600(Lorg/telegram/ui/Components/ForwardingPreviewView;FI)V
 
-    move-result-object p1
-
-    check-cast p1, Landroid/view/ViewGroup;
-
-    .line 1053
-    iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$15;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
-
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
-
-    :cond_0
     return-void
 .end method

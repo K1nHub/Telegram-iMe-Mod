@@ -10,14 +10,14 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$Companion;,
-        Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;,
+        Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;,
         Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;,
         Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCreateWalletFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 4 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1363:1\n13#2,4:1364\n16#3,3:1368\n39#4,8:1371\n288#5,2:1379\n1864#5,3:1381\n1855#5,2:1384\n*S KotlinDebug\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment\n*L\n68#1:1364,4\n897#1:1368,3\n898#1:1371,8\n943#1:1379,2\n981#1:1381,3\n989#1:1384,2\n*E\n"
+    value = "SMAP\nCreateWalletFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 4 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1337:1\n13#2,4:1338\n16#3,3:1342\n39#4,8:1345\n288#5,2:1353\n1864#5,3:1355\n1855#5,2:1358\n*S KotlinDebug\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment\n*L\n68#1:1338,4\n881#1:1342,3\n882#1:1345,8\n927#1:1353,2\n965#1:1355,3\n973#1:1358,2\n*E\n"
 .end annotation
 
 
@@ -89,8 +89,6 @@
 
 .field private globalIgnoreTextChange:Z
 
-.field private final hintAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
-
 .field private hintEditText:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
 .field private hintLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -101,15 +99,7 @@
 
 .field private final hintPopupWindow$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-.field private hintWords:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final hintsAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
 .field private final imageView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
@@ -128,6 +118,8 @@
 .field private final rightColumn$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
 .field private final scrollView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
+
+.field private searchingHintEditText:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
 .field private final titleTextView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
@@ -326,9 +318,9 @@
     .line 79
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
-    const-string v3, "hintAdapter"
+    const-string v3, "hintsAdapter"
 
-    const-string v4, "getHintAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;"
+    const-string v4, "getHintsAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;"
 
     invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
@@ -737,15 +729,15 @@
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->actionBarBackground$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     .line 79
-    new-instance p1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$hintAdapter$2;
+    new-instance p1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$hintsAdapter$2;
 
-    invoke-direct {p1, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$hintAdapter$2;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
+    invoke-direct {p1, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$hintsAdapter$2;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
 
     invoke-static {p0, v0, p1, v1, v0}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->hintAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->hintsAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     .line 80
     new-instance p1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$hintListView$2;
@@ -933,13 +925,6 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->wordsTextViews:Ljava/util/List;
 
-    .line 105
-    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->hintWords:Ljava/util/List;
-
     .line 109
     iput-boolean v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->needHideKeyboardOnPause:Z
 
@@ -1011,17 +996,6 @@
 
     .line 63
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->createDescriptionTextView2()Landroid/widget/TextView;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static final synthetic access$createHintAdapter(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
-    .locals 0
-
-    .line 63
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->createHintAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
 
     move-result-object p0
 
@@ -1276,17 +1250,6 @@
     return p0
 .end method
 
-.method public static final synthetic access$getHintAdapter(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
-    .locals 0
-
-    .line 63
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getHintAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 .method public static final synthetic access$getHintEditText$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
     .locals 0
 
@@ -1327,11 +1290,13 @@
     return-object p0
 .end method
 
-.method public static final synthetic access$getHintWords$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Ljava/util/List;
+.method public static final synthetic access$getHintsAdapter(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;
     .locals 0
 
     .line 63
-    iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->hintWords:Ljava/util/List;
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getHintsAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;
+
+    move-result-object p0
 
     return-object p0
 .end method
@@ -1403,6 +1368,15 @@
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getScrollView()Landroid/widget/ScrollView;
 
     move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getSearchingHintEditText$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
+    .locals 0
+
+    .line 63
+    iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->searchingHintEditText:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
     return-object p0
 .end method
@@ -1481,10 +1455,19 @@
     return-void
 .end method
 
+.method public static final synthetic access$setSearchingHintEditText$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;)V
+    .locals 0
+
+    .line 63
+    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->searchingHintEditText:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
+
+    return-void
+.end method
+
 .method private final canGoBack()Z
     .locals 2
 
-    .line 1008
+    .line 992
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->currentType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
     sget-object v1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Ready;->INSTANCE:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Ready;
@@ -1501,7 +1484,7 @@
 .method private final checkEditTexts()Z
     .locals 4
 
-    .line 989
+    .line 973
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->editTexts:Ljava/util/List;
 
     .line 1855
@@ -1524,25 +1507,25 @@
 
     check-cast v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
-    .line 990
+    .line 974
     invoke-virtual {v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;->length()I
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 991
+    .line 975
     invoke-virtual {v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v0
 
-    .line 992
+    .line 976
     invoke-virtual {v0}, Landroid/widget/EditText;->clearFocus()V
 
-    .line 993
+    .line 977
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 994
+    .line 978
     invoke-static {v0, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->shake(Landroid/view/View;Z)V
 
     const/4 v0, 0x0
@@ -1576,7 +1559,7 @@
 .method private final createButtonTextView()Landroid/widget/TextView;
     .locals 7
 
-    .line 718
+    .line 702
     new-instance v6, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1587,7 +1570,7 @@
 
     const/16 v0, 0x22
 
-    .line 719
+    .line 703
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1596,12 +1579,12 @@
 
     const/16 v0, 0x11
 
-    .line 720
+    .line 704
     invoke-virtual {v6, v0}, Landroid/widget/TextView;->setGravity(I)V
 
     const-string v0, "featuredStickers_buttonText"
 
-    .line 721
+    .line 705
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v0
@@ -1612,41 +1595,41 @@
 
     const/high16 v1, 0x41600000    # 14.0f
 
-    .line 722
+    .line 706
     invoke-virtual {v6, v0, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 723
+    .line 707
     invoke-static {v6}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
     const/4 v0, 0x4
 
-    .line 725
+    .line 709
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     const-string v1, "featuredStickers_addButton"
 
-    .line 726
+    .line 710
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v1
 
     const-string v2, "featuredStickers_addButtonPressed"
 
-    .line 727
+    .line 711
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 724
+    .line 708
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     invoke-virtual {v6, v0}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 729
+    .line 713
     new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;
 
     invoke-direct {v3, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
@@ -1676,7 +1659,7 @@
         }
     .end annotation
 
-    .line 962
+    .line 946
     new-instance v0, Landroid/text/SpannableString;
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1685,12 +1668,12 @@
 
     invoke-direct {v0, p1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 963
+    .line 947
     new-instance p1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createClickableText$1$1;
 
     invoke-direct {p1, p2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createClickableText$1$1;-><init>(Lkotlin/jvm/functions/Function0;)V
 
-    .line 967
+    .line 951
     invoke-virtual {v0}, Landroid/text/SpannableString;->length()I
 
     move-result p2
@@ -1699,7 +1682,7 @@
 
     const/16 v2, 0x21
 
-    .line 963
+    .line 947
     invoke-virtual {v0, p1, v1, p2, v2}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     return-object v0
@@ -2483,7 +2466,7 @@
 .method private final createCopyButton()Lcom/iMe/ui/custom/backup/SecretWordsActionButton;
     .locals 7
 
-    .line 651
+    .line 635
     new-instance v6, Lcom/iMe/ui/custom/backup/SecretWordsActionButton;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2506,7 +2489,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/iMe/ui/custom/backup/SecretWordsActionButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 652
+    .line 636
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_copy_filled:I
 
     sget v1, Lorg/telegram/messenger/R$string;->Copy:I
@@ -2523,7 +2506,7 @@
 
     invoke-virtual {v6, v0, v1}, Lcom/iMe/ui/custom/backup/SecretWordsActionButton;->setupView(ILjava/lang/String;)V
 
-    .line 653
+    .line 637
     new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createCopyButton$1$1;
 
     invoke-direct {v3, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createCopyButton$1$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
@@ -2542,7 +2525,7 @@
 .method private final createDescriptionTextView()Landroid/widget/TextView;
     .locals 4
 
-    .line 701
+    .line 685
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2553,7 +2536,7 @@
 
     const-string v1, "windowBackgroundWhiteGrayText6"
 
-    .line 702
+    .line 686
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v1
@@ -2562,12 +2545,12 @@
 
     const/4 v1, 0x1
 
-    .line 703
+    .line 687
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
     const/4 v2, 0x2
 
-    .line 704
+    .line 688
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -2580,12 +2563,12 @@
 
     const/high16 v2, 0x41700000    # 15.0f
 
-    .line 705
+    .line 689
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const/16 v1, 0x20
 
-    .line 706
+    .line 690
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2598,7 +2581,7 @@
 .method private final createDescriptionTextView2()Landroid/widget/TextView;
     .locals 3
 
-    .line 709
+    .line 693
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2609,7 +2592,7 @@
 
     const-string v1, "windowBackgroundWhiteGrayText6"
 
-    .line 710
+    .line 694
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v1
@@ -2618,12 +2601,12 @@
 
     const/4 v1, 0x1
 
-    .line 711
+    .line 695
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
     const/4 v1, 0x2
 
-    .line 712
+    .line 696
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2636,14 +2619,14 @@
 
     const/16 v1, 0x20
 
-    .line 713
+    .line 697
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     invoke-static {v0, v1}, Lcom/tbuonomo/viewpagerdotsindicator/ViewExtKt;->setPaddingHorizontal(Landroid/view/View;I)V
 
-    .line 714
+    .line 698
     new-instance v1, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;
 
     invoke-direct {v1}, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;-><init>()V
@@ -2652,27 +2635,8 @@
 
     const/16 v1, 0x8
 
-    .line 715
+    .line 699
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    return-object v0
-.end method
-
-.method private final createHintAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
-    .locals 3
-
-    .line 535
-    new-instance v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
-
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
-
-    move-result-object v1
-
-    const-string v2, "parentActivity"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {v0, p0, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;Landroid/content/Context;)V
 
     return-object v0
 .end method
@@ -2690,7 +2654,7 @@
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     .line 523
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getHintAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getHintsAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;
 
     move-result-object v1
 
@@ -2750,11 +2714,11 @@
     goto :goto_0
 
     :cond_0
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getHintAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getHintsAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;->getItem(I)Ljava/lang/String;
+    invoke-virtual {v0, p2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->getItem(I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2921,7 +2885,7 @@
 .method private final createImageView()Lorg/telegram/ui/Components/RLottieImageView;
     .locals 2
 
-    .line 690
+    .line 674
     new-instance v0, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2930,7 +2894,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
-    .line 691
+    .line 675
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
@@ -2941,7 +2905,7 @@
 .method private final createPasteButton()Lcom/iMe/ui/custom/backup/SecretWordsActionButton;
     .locals 7
 
-    .line 658
+    .line 642
     new-instance v6, Lcom/iMe/ui/custom/backup/SecretWordsActionButton;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2964,7 +2928,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/iMe/ui/custom/backup/SecretWordsActionButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 659
+    .line 643
     sget v0, Lorg/telegram/messenger/R$drawable;->fork_ic_paste_24:I
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_import_paste:I
@@ -2979,7 +2943,7 @@
 
     invoke-virtual {v6, v0, v1}, Lcom/iMe/ui/custom/backup/SecretWordsActionButton;->setupView(ILjava/lang/String;)V
 
-    .line 660
+    .line 644
     new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createPasteButton$1$1;
 
     invoke-direct {v3, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createPasteButton$1$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
@@ -2998,7 +2962,7 @@
 .method private final createQRButton()Lcom/iMe/ui/custom/backup/SecretWordsActionButton;
     .locals 7
 
-    .line 665
+    .line 649
     new-instance v6, Lcom/iMe/ui/custom/backup/SecretWordsActionButton;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3021,7 +2985,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/iMe/ui/custom/backup/SecretWordsActionButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 666
+    .line 650
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_qrcode:I
 
     sget v1, Lorg/telegram/messenger/R$string;->GetQRCode:I
@@ -3038,7 +3002,7 @@
 
     invoke-virtual {v6, v0, v1}, Lcom/iMe/ui/custom/backup/SecretWordsActionButton;->setupView(ILjava/lang/String;)V
 
-    .line 667
+    .line 651
     new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createQRButton$1$1;
 
     invoke-direct {v3, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createQRButton$1$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
@@ -3057,12 +3021,12 @@
 .method private final createQRCodeBottomSheet()Lorg/telegram/ui/Components/QRCodeBottomSheet;
     .locals 4
 
-    .line 640
+    .line 624
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 642
+    .line 626
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->currentType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
     const-string v2, "null cannot be cast to non-null type com.iMe.model.wallet.crypto.create.CreateWalletScreenType.SecretWords"
@@ -3079,14 +3043,14 @@
 
     move-result-object v1
 
-    .line 643
+    .line 627
     sget v2, Lorg/telegram/messenger/R$string;->wallet_backup_secret_words_qr_description:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 639
+    .line 623
     new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createQRCodeBottomSheet$1;
 
     invoke-direct {v3, v0, v1, v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createQRCodeBottomSheet$1;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
@@ -3097,7 +3061,7 @@
 .method private final createScanQRButton()Lcom/iMe/ui/custom/backup/SecretWordsActionButton;
     .locals 7
 
-    .line 679
+    .line 663
     new-instance v6, Lcom/iMe/ui/custom/backup/SecretWordsActionButton;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3120,7 +3084,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/iMe/ui/custom/backup/SecretWordsActionButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 680
+    .line 664
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_qrcode:I
 
     invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -3135,7 +3099,7 @@
 
     invoke-virtual {v6, v0, v1}, Lcom/iMe/ui/custom/backup/SecretWordsActionButton;->setupView(ILjava/lang/String;)V
 
-    .line 681
+    .line 665
     new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScanQRButton$1$1;
 
     invoke-direct {v3, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScanQRButton$1$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
@@ -3154,7 +3118,7 @@
 .method private final createScrollView()Landroid/widget/ScrollView;
     .locals 2
 
-    .line 537
+    .line 535
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -3165,7 +3129,7 @@
 
     const/4 v0, 0x0
 
-    .line 632
+    .line 616
     invoke-virtual {v1, v0}, Landroid/widget/ScrollView;->setVerticalScrollBarEnabled(Z)V
 
     return-object v1
@@ -3174,7 +3138,7 @@
 .method private final createTitleTextView()Landroid/widget/TextView;
     .locals 3
 
-    .line 694
+    .line 678
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3185,7 +3149,7 @@
 
     const-string v1, "windowBackgroundWhiteBlackText"
 
-    .line 695
+    .line 679
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v1
@@ -3194,12 +3158,12 @@
 
     const/4 v1, 0x1
 
-    .line 696
+    .line 680
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
     const/16 v2, 0x20
 
-    .line 697
+    .line 681
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -3208,7 +3172,7 @@
 
     const/high16 v2, 0x41c00000    # 24.0f
 
-    .line 698
+    .line 682
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
     return-object v0
@@ -3217,7 +3181,7 @@
 .method private final createVerticalLinearLayout()Landroid/widget/LinearLayout;
     .locals 2
 
-    .line 635
+    .line 619
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3228,7 +3192,7 @@
 
     const/4 v1, 0x1
 
-    .line 636
+    .line 620
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     return-object v0
@@ -3237,7 +3201,7 @@
 .method private final fillEditTextContainer(I)V
     .locals 12
 
-    .line 911
+    .line 895
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->editTexts:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -3256,7 +3220,7 @@
 
     xor-int/2addr v0, v1
 
-    .line 912
+    .line 896
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->editTexts:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
@@ -3267,26 +3231,26 @@
 
     if-gez v2, :cond_0
 
-    .line 914
+    .line 898
     invoke-static {v2}, Ljava/lang/Math;->abs(I)I
 
     move-result v2
 
-    .line 915
+    .line 899
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->editTexts:Ljava/util/List;
 
-    .line 916
+    .line 900
     invoke-static {v3, v2}, Lkotlin/collections/CollectionsKt;->dropLast(Ljava/util/List;I)Ljava/util/List;
 
     move-result-object v4
 
-    .line 917
+    .line 901
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
-    .line 918
+    .line 902
     invoke-interface {v3, v4}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 920
+    .line 904
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getEditTextContainer()Landroid/widget/LinearLayout;
 
     move-result-object v3
@@ -3295,7 +3259,7 @@
 
     goto :goto_3
 
-    .line 922
+    .line 906
     :cond_0
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->editTexts:Ljava/util/List;
 
@@ -3306,7 +3270,7 @@
     :goto_0
     if-ge v2, p1, :cond_3
 
-    .line 923
+    .line 907
     new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3331,12 +3295,12 @@
     :goto_1
     invoke-direct {v3, p0, v4, v2, v5}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;Landroid/content/Context;IZ)V
 
-    .line 924
+    .line 908
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->editTexts:Ljava/util/List;
 
     invoke-interface {v4, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 925
+    .line 909
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getEditTextContainer()Landroid/widget/LinearLayout;
 
     move-result-object v4
@@ -3363,12 +3327,12 @@
 
     const/4 v11, 0x0
 
-    .line 927
+    .line 911
     invoke-static/range {v5 .. v11}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
-    .line 925
+    .line 909
     invoke-virtual {v4, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     add-int/lit8 v2, v2, 0x1
@@ -3379,7 +3343,7 @@
     :goto_3
     if-eqz v0, :cond_4
 
-    .line 937
+    .line 921
     invoke-direct {p0, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->prepareCorrectEditTextInput(Z)V
 
     :cond_4
@@ -3389,17 +3353,17 @@
 .method private final generatePdf()V
     .locals 8
 
-    .line 1011
+    .line 995
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->currentType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
     instance-of v0, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
 
     if-eqz v0, :cond_0
 
-    .line 1012
+    .line 996
     sget-object v0, Lcom/iMe/utils/helper/wallet/BackupPdfHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/BackupPdfHelper;
 
-    .line 1013
+    .line 997
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -3408,10 +3372,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1014
+    .line 998
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->walletAddress:Ljava/lang/String;
 
-    .line 1015
+    .line 999
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->currentType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
     check-cast v3, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
@@ -3420,17 +3384,17 @@
 
     move-result-object v3
 
-    .line 1016
+    .line 1000
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getQrCodeBottomSheet()Lorg/telegram/ui/Components/QRCodeBottomSheet;
 
     move-result-object v4
 
-    .line 1017
+    .line 1001
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v5
 
-    .line 1018
+    .line 1002
     iget-object v6, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->currentType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
     check-cast v6, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
@@ -3445,17 +3409,17 @@
 
     const/4 v7, 0x0
 
-    .line 1016
+    .line 1000
     invoke-virtual {v4, v5, v6, v7}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->createQR(Landroid/content/Context;Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v4
 
     const-string v5, "qrCodeBottomSheet.create\u2026ull\n                    )"
 
-    .line 1018
+    .line 1002
     invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1012
+    .line 996
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/iMe/utils/helper/wallet/BackupPdfHelper;->generatePdf(Landroid/app/Activity;Ljava/lang/String;Ljava/util/List;Landroid/graphics/Bitmap;)V
 
     :cond_0
@@ -3633,7 +3597,7 @@
 .method private final getClipboardText()Ljava/lang/String;
     .locals 4
 
-    .line 971
+    .line 955
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getClipboardManager()Landroid/content/ClipboardManager;
 
     move-result-object v0
@@ -3668,7 +3632,7 @@
 
     goto :goto_3
 
-    .line 974
+    .line 958
     :cond_1
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getClipboardManager()Landroid/content/ClipboardManager;
 
@@ -3703,7 +3667,7 @@
     :cond_3
     move-object v3, v0
 
-    .line 976
+    .line 960
     :goto_2
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -3821,27 +3785,6 @@
     return-object v0
 .end method
 
-.method private final getHintAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
-    .locals 3
-
-    .line 79
-    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->hintAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
-
-    sget-object v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
-
-    const/4 v2, 0x7
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
-
-    return-object v0
-.end method
-
 .method private final getHintListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
@@ -3901,6 +3844,27 @@
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+
+    return-object v0
+.end method
+
+.method private final getHintsAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;
+    .locals 3
+
+    .line 79
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->hintsAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
+
+    sget-object v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x7
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;
 
     return-object v0
 .end method
@@ -4055,7 +4019,7 @@
 .method private final hideHint()V
     .locals 1
 
-    .line 1003
+    .line 987
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getHintPopupWindow()Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object v0
@@ -4066,7 +4030,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1004
+    .line 988
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getHintPopupWindow()Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object v0
@@ -4153,14 +4117,14 @@
 .method private final openQRScan()V
     .locals 2
 
-    .line 1030
+    .line 1014
     new-instance v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$openQRScan$1;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$openQRScan$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
 
     const/4 v1, 0x1
 
-    .line 1026
+    .line 1010
     invoke-static {p0, v1, v1, v0, v1}, Lorg/telegram/ui/CameraScanActivity;->showAsSheet(Lorg/telegram/ui/ActionBar/BaseFragment;ZILorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;Z)Lorg/telegram/ui/ActionBar/BottomSheet;
 
     return-void
@@ -4169,12 +4133,12 @@
 .method private final pasteToEditText(Ljava/lang/String;)V
     .locals 6
 
-    .line 980
+    .line 964
     invoke-static {p1}, Lcom/iMe/storage/data/utils/extentions/StringExtKt;->splitBySpace(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 981
+    .line 965
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->editTexts:Ljava/util/List;
 
     .line 1865
@@ -4206,14 +4170,14 @@
     :cond_0
     check-cast v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
-    .line 982
+    .line 966
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->getLastIndex(Ljava/util/List;)I
 
     move-result v5
 
     if-gt v2, v5, :cond_1
 
-    .line 983
+    .line 967
     invoke-virtual {v3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v3
@@ -4231,7 +4195,7 @@
 
     goto :goto_0
 
-    .line 985
+    .line 969
     :cond_2
     invoke-direct {p0, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->prepareCorrectEditTextInput(Z)V
 
@@ -4241,7 +4205,7 @@
 .method private final prepareCorrectEditTextInput(Z)V
     .locals 4
 
-    .line 942
+    .line 926
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->editTexts:Ljava/util/List;
 
     .line 288
@@ -4264,7 +4228,7 @@
 
     check-cast v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
-    .line 943
+    .line 927
     invoke-virtual {v3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -4295,7 +4259,7 @@
 
     if-nez v2, :cond_3
 
-    .line 945
+    .line 929
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->last(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object v0
@@ -4304,7 +4268,7 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
-    .line 946
+    .line 930
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getScrollView()Landroid/widget/ScrollView;
 
     move-result-object v0
@@ -4313,19 +4277,19 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->fullScroll(I)Z
 
-    .line 948
+    .line 932
     :cond_3
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v0
 
-    .line 949
+    .line 933
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 950
+    .line 934
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setSelectionEnd(Landroid/widget/EditText;)V
 
-    .line 951
+    .line 935
     new-instance v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$$ExternalSyntheticLambda4;
 
     invoke-direct {v1, v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
@@ -4352,7 +4316,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 952
+    .line 936
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
     return-void
@@ -4361,10 +4325,10 @@
 .method private final setupActionBar()V
     .locals 5
 
-    .line 857
+    .line 841
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 858
+    .line 842
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->canGoBack()Z
 
     move-result v1
@@ -4373,7 +4337,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 859
+    .line 843
     new-instance v1, Lorg/telegram/ui/ActionBar/BackDrawable;
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/ActionBar/BackDrawable;-><init>(Z)V
@@ -4383,12 +4347,12 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 861
+    .line 845
     invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->setBackground(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
     const-string v1, "windowBackgroundWhiteBlackText"
 
-    .line 862
+    .line 846
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v1
@@ -4397,7 +4361,7 @@
 
     const-string v1, "windowBackgroundWhiteGrayText2"
 
-    .line 863
+    .line 847
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v1
@@ -4406,20 +4370,20 @@
 
     const-string v1, "actionBarWhiteSelector"
 
-    .line 864
+    .line 848
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
 
-    .line 865
+    .line 849
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setCastShadows(Z)V
 
-    .line 866
+    .line 850
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
 
-    .line 867
+    .line 851
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getY()F
 
     move-result v1
@@ -4432,25 +4396,25 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setY(F)V
 
-    .line 868
+    .line 852
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setExtraHeight(I)V
 
-    .line 869
+    .line 853
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setAddToContainer(Z)V
 
-    .line 870
+    .line 854
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 871
+    .line 855
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->showActionModeTop()V
 
-    .line 873
+    .line 857
     :cond_1
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->currentType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
@@ -4458,12 +4422,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 874
+    .line 858
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     move-result-object v1
 
-    .line 875
+    .line 859
     sget v2, Lcom/iMe/common/IdFabric$Menu;->OPTIONS:I
 
     sget v3, Lorg/telegram/messenger/R$drawable;->ic_ab_other:I
@@ -4472,7 +4436,7 @@
 
     move-result-object v1
 
-    .line 876
+    .line 860
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrMoreOptions:I
 
     const-string v3, "AccDescrMoreOptions"
@@ -4483,7 +4447,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 877
+    .line 861
     sget v2, Lcom/iMe/common/IdFabric$Menu;->PDF:I
 
     sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_pdf_24:I
@@ -4496,7 +4460,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 881
+    .line 865
     :cond_2
     new-instance v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupActionBar$1$2;
 
@@ -4510,7 +4474,7 @@
 .method private final setupEventListeners()V
     .locals 4
 
-    .line 893
+    .line 877
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->currentType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
     instance-of v0, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;
@@ -4519,7 +4483,7 @@
 
     return-void
 
-    .line 896
+    .line 880
     :cond_0
     invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getRxEventBus()Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
@@ -4584,7 +4548,7 @@
     .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 907
+    .line 891
     invoke-virtual {p0, v0}, Lcom/iMe/ui/base/mvp/MvpFragment;->autoDispose(Lio/reactivex/disposables/Disposable;)V
 
     return-void
@@ -4593,10 +4557,10 @@
 .method private final setupViewsContents()V
     .locals 8
 
-    .line 785
+    .line 769
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->currentType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
-    .line 786
+    .line 770
     instance-of v1, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
 
     const/4 v2, 0x0
@@ -4605,7 +4569,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 787
+    .line 771
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getImageView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
@@ -4614,7 +4578,7 @@
 
     invoke-virtual {v0, v1, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 788
+    .line 772
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_backup_secret_words_title:I
@@ -4625,7 +4589,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 789
+    .line 773
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getTitleTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4638,7 +4602,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 790
+    .line 774
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getDescriptionText()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4651,7 +4615,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 791
+    .line 775
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getButtonTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4664,7 +4628,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 792
+    .line 776
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->getTitleTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -4675,7 +4639,7 @@
 
     goto/16 :goto_0
 
-    .line 794
+    .line 778
     :cond_0
     instance-of v1, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;
 
@@ -4689,7 +4653,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 795
+    .line 779
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getImageView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
@@ -4700,7 +4664,7 @@
 
     invoke-virtual {v0, v1, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 796
+    .line 780
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_backup_test_time_title:I
@@ -4711,7 +4675,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 797
+    .line 781
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getTitleTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4724,7 +4688,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 798
+    .line 782
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getDescriptionText()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4803,7 +4767,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 799
+    .line 783
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getButtonTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4816,7 +4780,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 800
+    .line 784
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->getTitleTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -4827,13 +4791,13 @@
 
     goto/16 :goto_0
 
-    .line 802
+    .line 786
     :cond_1
     instance-of v1, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Ready;
 
     if-eqz v1, :cond_2
 
-    .line 803
+    .line 787
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getImageView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
@@ -4844,7 +4808,7 @@
 
     invoke-virtual {v0, v1, v2, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 804
+    .line 788
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getImageView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
@@ -4857,7 +4821,7 @@
 
     invoke-virtual {v0, v1, v7, v7, v7}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 805
+    .line 789
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getTitleTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4870,7 +4834,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 806
+    .line 790
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getDescriptionText()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4883,7 +4847,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 807
+    .line 791
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getButtonTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4898,13 +4862,13 @@
 
     goto/16 :goto_0
 
-    .line 809
+    .line 793
     :cond_2
     instance-of v1, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;
 
     if-eqz v1, :cond_4
 
-    .line 810
+    .line 794
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getImageView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
@@ -4913,7 +4877,7 @@
 
     invoke-virtual {v0, v1, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 811
+    .line 795
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_import_secret_words:I
@@ -4924,7 +4888,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 812
+    .line 796
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getTitleTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4935,7 +4899,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 813
+    .line 797
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getDescriptionText()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4948,7 +4912,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 814
+    .line 798
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getButtonTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4961,7 +4925,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 815
+    .line 799
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->getTitleTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -4970,14 +4934,14 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 816
+    .line 800
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getDescriptionText2()Landroid/widget/TextView;
 
     move-result-object v0
 
     invoke-virtual {v0, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 817
+    .line 801
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getDescriptionText2()Landroid/widget/TextView;
 
     move-result-object v0
@@ -4986,7 +4950,7 @@
 
     invoke-direct {v1}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 819
+    .line 803
     sget v2, Lorg/telegram/messenger/R$string;->wallet_import_dont_have:I
 
     new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$1;
@@ -4997,10 +4961,10 @@
 
     move-result-object v2
 
-    .line 818
+    .line 802
     invoke-virtual {v1, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 827
+    .line 811
     invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getCryptoPreferenceHelper()Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     move-result-object v2
@@ -5021,7 +4985,7 @@
 
     aput-object v3, v2, v6
 
-    .line 831
+    .line 815
     sget v3, Lorg/telegram/messenger/R$string;->wallet_import_change_words_count:I
 
     new-instance v4, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$2;
@@ -5034,29 +4998,29 @@
 
     aput-object v3, v2, v5
 
-    .line 828
+    .line 812
     invoke-static {v1, v2}, Lkotlin/text/StringsKt;->append(Ljava/lang/Appendable;[Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    .line 817
+    .line 801
     :cond_3
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_0
 
-    .line 842
+    .line 826
     :cond_4
     instance-of v0, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$TooBad;
 
     if-eqz v0, :cond_5
 
-    .line 843
+    .line 827
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getImageView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
 
     invoke-virtual {v0, v6}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 844
+    .line 828
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getImageView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
@@ -5067,7 +5031,7 @@
 
     invoke-virtual {v0, v1, v2, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 845
+    .line 829
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getTitleTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -5080,7 +5044,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 846
+    .line 830
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getDescriptionText()Landroid/widget/TextView;
 
     move-result-object v0
@@ -5093,7 +5057,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 847
+    .line 831
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getButtonTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -5106,14 +5070,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 848
+    .line 832
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getDescriptionText2()Landroid/widget/TextView;
 
     move-result-object v0
 
     invoke-virtual {v0, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 849
+    .line 833
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getDescriptionText2()Landroid/widget/TextView;
 
     move-result-object v0
@@ -5173,20 +5137,10 @@
     return-void
 .end method
 
-.method public createNewWalletWithPassword(Ljava/util/List;Ljava/lang/String;)V
+.method public createNewWalletWithPassword(Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
     .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;",
-            "Ljava/lang/String;",
-            ")V"
-        }
-    .end annotation
 
-    const-string v0, "words"
+    const-string v0, "wallet"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -5211,7 +5165,7 @@
     .line 252
     new-instance v2, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createNewWalletWithPassword$1;
 
-    invoke-direct {v2, p1, p2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createNewWalletWithPassword$1;-><init>(Ljava/util/List;Ljava/lang/String;)V
+    invoke-direct {v2, p2, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createNewWalletWithPassword$1;-><init>(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Wallet;)V
 
     .line 253
     invoke-direct {v1, v2}, Lcom/iMe/model/wallet/crypto/tutorial/TutorialType$Backup;-><init>(Lkotlin/jvm/functions/Function0;)V
@@ -6279,7 +6233,20 @@
     return p1
 .end method
 
-.method public setHintWords(Ljava/util/List;)V
+.method public setWalletAddress(Ljava/lang/String;)V
+    .locals 1
+
+    const-string v0, "address"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 231
+    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->walletAddress:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public showWordsSuggestions(Ljava/util/List;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -6295,20 +6262,11 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 227
-    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->hintWords:Ljava/util/List;
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getHintsAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public setWalletAddress(Ljava/lang/String;)V
-    .locals 1
-
-    const-string v0, "address"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 231
-    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->walletAddress:Ljava/lang/String;
+    invoke-virtual {v0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->showMnemonicWordsSuggestions(Ljava/util/List;)V
 
     return-void
 .end method

@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 219
+    .line 224
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -66,22 +66,22 @@
 .method public final invoke(Z)V
     .locals 1
 
-    .line 214
+    .line 219
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter$onCreateViewHolder$1;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-virtual {v0, p1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->setCurrentArchive(Z)V
 
-    .line 215
+    .line 220
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter$onCreateViewHolder$1;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getListAdapter(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;
 
     move-result-object p1
 
-    .line 216
+    .line 221
     invoke-virtual {p1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->updateRows()V
 
-    .line 217
+    .line 222
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void

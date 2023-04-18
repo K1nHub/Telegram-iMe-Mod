@@ -14,6 +14,6 @@ public final class zzd extends com.google.android.gms.internal.vision.zza implem
     @Override // com.google.android.gms.vision.label.internal.client.zzb
     public final INativeImageLabeler newImageLabeler(IObjectWrapper iObjectWrapper, ImageLabelerOptions imageLabelerOptions) throws RemoteException {
         obtainAndWriteInterfaceToken();
-        throw ImageLabeler$$ExternalSyntheticThrowNSME0.m760m();
+        throw ImageLabeler$$ExternalSyntheticThrowNSME0.m746m();
     }
 }

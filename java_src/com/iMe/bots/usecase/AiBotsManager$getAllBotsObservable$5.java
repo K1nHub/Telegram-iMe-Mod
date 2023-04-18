@@ -22,10 +22,10 @@ final class AiBotsManager$getAllBotsObservable$5 extends Lambda implements Funct
     /* compiled from: AiBotsManager.kt */
     /* renamed from: com.iMe.bots.usecase.AiBotsManager$getAllBotsObservable$5$1 */
     /* loaded from: classes3.dex */
-    public /* synthetic */ class C12661 extends PropertyReference1Impl {
-        public static final C12661 INSTANCE = new C12661();
+    public /* synthetic */ class C12511 extends PropertyReference1Impl {
+        public static final C12511 INSTANCE = new C12511();
 
-        C12661() {
+        C12511() {
             super(ShopItem.class, "priority", "getPriority()J", 0);
         }
 
@@ -39,10 +39,10 @@ final class AiBotsManager$getAllBotsObservable$5 extends Lambda implements Funct
     /* compiled from: AiBotsManager.kt */
     /* renamed from: com.iMe.bots.usecase.AiBotsManager$getAllBotsObservable$5$2 */
     /* loaded from: classes3.dex */
-    public /* synthetic */ class C12672 extends PropertyReference1Impl {
-        public static final C12672 INSTANCE = new C12672();
+    public /* synthetic */ class C12522 extends PropertyReference1Impl {
+        public static final C12522 INSTANCE = new C12522();
 
-        C12672() {
+        C12522() {
             super(ShopItem.class, "title", "getTitle()Ljava/lang/String;", 0);
         }
 
@@ -62,7 +62,7 @@ final class AiBotsManager$getAllBotsObservable$5 extends Lambda implements Funct
         Comparator compareBy;
         List<ShopItem> sortedWith;
         Intrinsics.checkNotNullParameter(list, "list");
-        compareBy = ComparisonsKt__ComparisonsKt.compareBy(C12661.INSTANCE, C12672.INSTANCE);
+        compareBy = ComparisonsKt__ComparisonsKt.compareBy(C12511.INSTANCE, C12522.INSTANCE);
         sortedWith = CollectionsKt___CollectionsKt.sortedWith(list, compareBy);
         return sortedWith;
     }

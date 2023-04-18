@@ -23,8 +23,8 @@ public class XMSSMTKeyParams extends ASN1Object {
 
     private XMSSMTKeyParams(ASN1Sequence aSN1Sequence) {
         this.version = ASN1Integer.getInstance(aSN1Sequence.getObjectAt(0));
-        this.height = ASN1Integer.getInstance(aSN1Sequence.getObjectAt(1)).getValue().intValue();
-        this.layers = ASN1Integer.getInstance(aSN1Sequence.getObjectAt(2)).getValue().intValue();
+        this.height = ASN1Integer.getInstance(aSN1Sequence.getObjectAt(1)).intValueExact();
+        this.layers = ASN1Integer.getInstance(aSN1Sequence.getObjectAt(2)).intValueExact();
         this.treeDigest = AlgorithmIdentifier.getInstance(aSN1Sequence.getObjectAt(3));
     }
 

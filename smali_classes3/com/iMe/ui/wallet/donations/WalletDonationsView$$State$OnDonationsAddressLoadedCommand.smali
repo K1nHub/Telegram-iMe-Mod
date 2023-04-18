@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 149
+    .line 167
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onDonationsAddressLoaded"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 151
+    .line 169
     iput-object p2, p0, Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State$OnDonationsAddressLoadedCommand;->address:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/donations/WalletDonationsView;)V
     .locals 1
 
-    .line 156
+    .line 174
     iget-object v0, p0, Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State$OnDonationsAddressLoadedCommand;->address:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/donations/WalletDonationsView;->onDonationsAddressLoaded(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 145
+    .line 163
     check-cast p1, Lcom/iMe/ui/wallet/donations/WalletDonationsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State$OnDonationsAddressLoadedCommand;->apply(Lcom/iMe/ui/wallet/donations/WalletDonationsView;)V

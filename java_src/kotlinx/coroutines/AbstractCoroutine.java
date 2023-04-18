@@ -3,7 +3,6 @@ package kotlinx.coroutines;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AbstractCoroutine.kt */
 /* loaded from: classes4.dex */
 public abstract class AbstractCoroutine<T> extends JobSupport implements Job, Continuation<T> {
@@ -40,7 +39,7 @@ public abstract class AbstractCoroutine<T> extends JobSupport implements Job, Co
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // kotlinx.coroutines.JobSupport
     public String cancellationExceptionMessage() {
-        return Intrinsics.stringPlus(DebugStringsKt.getClassSimpleName(this), " was cancelled");
+        return DebugStringsKt.getClassSimpleName(this) + " was cancelled";
     }
 
     /* JADX WARN: Multi-variable type inference failed */

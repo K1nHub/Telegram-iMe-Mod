@@ -9,7 +9,7 @@
 
 
 # direct methods
-.method protected constructor <init>(Lorg/bouncycastle/crypto/Digest;I)V
+.method protected constructor <init>(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;I)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,6 +17,10 @@
     const-string v0, "digest == null"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/xmss/DigestUtil;->getDigest(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Lorg/bouncycastle/crypto/Digest;
+
+    move-result-object p1
 
     iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/KeyedHashFunctions;->digest:Lorg/bouncycastle/crypto/Digest;
 

@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State;)V
     .locals 1
 
-    .line 164
+    .line 182
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showRequiredVerifyDialog"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;)V
     .locals 0
 
-    .line 169
+    .line 187
     invoke-interface {p1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;->showRequiredVerifyDialog()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 162
+    .line 180
     check-cast p1, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowRequiredVerifyDialogCommand;->apply(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;)V

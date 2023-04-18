@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBlockchainsManagementPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,140:1\n1549#2:141\n1620#2,3:142\n39#3,8:145\n*S KotlinDebug\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n*L\n85#1:141\n85#1:142,3\n102#1:145,8\n*E\n"
+    value = "SMAP\nBlockchainsManagementPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,140:1\n1549#2:141\n1620#2,3:142\n39#3,8:145\n*S KotlinDebug\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n*L\n84#1:141\n84#1:142,3\n101#1:145,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -348,7 +348,7 @@
         }
     .end annotation
 
-    .line 100
+    .line 99
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -363,7 +363,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 101
+    .line 100
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -384,7 +384,7 @@
 
     move-result-object p1
 
-    .line 102
+    .line 101
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -430,14 +430,14 @@
 .method private final showWallets()V
     .locals 8
 
-    .line 84
+    .line 83
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView;
 
-    .line 85
+    .line 84
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getAllWallets()Ljava/util/List;
@@ -474,20 +474,20 @@
     .line 1621
     check-cast v3, Lcom/iMe/storage/domain/model/crypto/Wallet;
 
-    .line 87
+    .line 86
     new-instance v4, Lcom/iMe/model/wallet/crypto/settings/BlockchainWalletItem;
 
-    .line 88
+    .line 87
     invoke-virtual {v3}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v5
 
-    .line 89
+    .line 88
     invoke-virtual {v3}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 90
+    .line 89
     invoke-virtual {v3}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v7
@@ -496,7 +496,7 @@
 
     move-result-object v7
 
-    .line 91
+    .line 90
     invoke-virtual {v3}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getMnemonic()Ljava/lang/String;
 
     move-result-object v3
@@ -505,7 +505,7 @@
 
     move-result-object v3
 
-    .line 87
+    .line 86
     invoke-direct {v4, v5, v6, v7, v3}, Lcom/iMe/model/wallet/crypto/settings/BlockchainWalletItem;-><init>(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
 
     .line 1621
@@ -513,13 +513,13 @@
 
     goto :goto_0
 
-    .line 94
+    .line 93
     :cond_0
     invoke-static {v2}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 84
+    .line 83
     invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView;->setupWalletsItems(Ljava/util/List;)V
 
     return-void
@@ -530,7 +530,7 @@
 .method protected onFirstViewAttach()V
     .locals 0
 
-    .line 76
+    .line 75
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->showWallets()V
 
     return-void
@@ -624,7 +624,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
+    .line 67
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -703,28 +703,36 @@
 .end method
 
 .method public final showWalletBackup(Lcom/iMe/model/wallet/crypto/settings/BlockchainWalletItem;)V
-    .locals 2
+    .locals 1
 
     const-string v0, "walletItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 62
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/settings/BlockchainWalletItem;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/model/crypto/Wallet;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    return-void
+
     .line 63
+    :cond_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView;
 
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/settings/BlockchainWalletItem;->getSecretWords()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/settings/BlockchainWalletItem;->getAddress()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {v0, v1, p1}, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView;->openBackupScreen(Ljava/util/List;Ljava/lang/String;)V
+    invoke-interface {v0, p1}, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView;->openBackupScreen(Lcom/iMe/storage/domain/model/crypto/Wallet;)V
 
     return-void
 .end method

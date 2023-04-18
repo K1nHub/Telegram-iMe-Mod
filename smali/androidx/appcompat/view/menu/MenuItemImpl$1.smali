@@ -25,7 +25,7 @@
 .method constructor <init>(Landroidx/appcompat/view/menu/MenuItemImpl;)V
     .locals 0
 
-    .line 806
+    .line 815
     iput-object p1, p0, Landroidx/appcompat/view/menu/MenuItemImpl$1;->this$0:Landroidx/appcompat/view/menu/MenuItemImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onActionProviderVisibilityChanged(Z)V
     .locals 1
 
-    .line 809
+    .line 818
     iget-object p1, p0, Landroidx/appcompat/view/menu/MenuItemImpl$1;->this$0:Landroidx/appcompat/view/menu/MenuItemImpl;
 
     iget-object v0, p1, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;

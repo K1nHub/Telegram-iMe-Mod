@@ -85,6 +85,13 @@ public final class AndroidResourceManager implements ResourceManager {
 
     private final boolean isLanguageConfigurationChanged() {
         String supportedLanguage = this.telegramGateway.getCurrentLocaleInformation().getSupportedLanguage();
-        return (Intrinsics.areEqual(supportedLanguage, ConfigurationCompat.getLocales(this.config).get(0).getLanguage()) && Intrinsics.areEqual(supportedLanguage, ConfigurationCompat.getLocales(this.context.getResources().getConfiguration()).get(0).getLanguage())) ? false : true;
+        Locale locale = ConfigurationCompat.getLocales(this.config).get(0);
+        if (Intrinsics.areEqual(supportedLanguage, locale != null ? locale.getLanguage() : null)) {
+            Locale locale2 = ConfigurationCompat.getLocales(this.context.getResources().getConfiguration()).get(0);
+            if (Intrinsics.areEqual(supportedLanguage, locale2 != null ? locale2.getLanguage() : null)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

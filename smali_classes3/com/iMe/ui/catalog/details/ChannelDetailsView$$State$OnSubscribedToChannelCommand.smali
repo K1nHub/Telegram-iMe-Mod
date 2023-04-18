@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State;Landroid/net/Uri;)V
     .locals 1
 
-    .line 225
+    .line 243
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "onSubscribedToChannel"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 227
+    .line 245
     iput-object p2, p0, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$OnSubscribedToChannelCommand;->channelUri:Landroid/net/Uri;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/catalog/details/ChannelDetailsView;)V
     .locals 1
 
-    .line 232
+    .line 250
     iget-object v0, p0, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$OnSubscribedToChannelCommand;->channelUri:Landroid/net/Uri;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/catalog/details/ChannelDetailsView;->onSubscribedToChannel(Landroid/net/Uri;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 221
+    .line 239
     check-cast p1, Lcom/iMe/ui/catalog/details/ChannelDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$OnSubscribedToChannelCommand;->apply(Lcom/iMe/ui/catalog/details/ChannelDetailsView;)V

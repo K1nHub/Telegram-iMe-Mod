@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "CancelArgs.kt"
 
+# interfaces
+.implements Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -19,7 +22,7 @@
 .method private constructor <init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)V
     .locals 0
 
-    .line 6
+    .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
@@ -40,7 +43,7 @@
 .method public getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
     .locals 1
 
-    .line 6
+    .line 7
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     return-object v0

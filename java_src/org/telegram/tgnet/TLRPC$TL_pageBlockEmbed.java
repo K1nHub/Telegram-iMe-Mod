@@ -8,13 +8,13 @@ public class TLRPC$TL_pageBlockEmbed extends TLRPC$PageBlock {
     public boolean full_width;
 
     /* renamed from: h */
-    public int f1616h;
+    public int f1541h;
     public String html;
     public long poster_photo_id;
     public String url;
 
     /* renamed from: w */
-    public int f1617w;
+    public int f1542w;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
@@ -32,10 +32,10 @@ public class TLRPC$TL_pageBlockEmbed extends TLRPC$PageBlock {
             this.poster_photo_id = abstractSerializedData.readInt64(z);
         }
         if ((this.flags & 32) != 0) {
-            this.f1617w = abstractSerializedData.readInt32(z);
+            this.f1542w = abstractSerializedData.readInt32(z);
         }
         if ((this.flags & 32) != 0) {
-            this.f1616h = abstractSerializedData.readInt32(z);
+            this.f1541h = abstractSerializedData.readInt32(z);
         }
         this.caption = TLRPC$TL_pageCaption.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
     }
@@ -58,10 +58,10 @@ public class TLRPC$TL_pageBlockEmbed extends TLRPC$PageBlock {
             abstractSerializedData.writeInt64(this.poster_photo_id);
         }
         if ((this.flags & 32) != 0) {
-            abstractSerializedData.writeInt32(this.f1617w);
+            abstractSerializedData.writeInt32(this.f1542w);
         }
         if ((this.flags & 32) != 0) {
-            abstractSerializedData.writeInt32(this.f1616h);
+            abstractSerializedData.writeInt32(this.f1541h);
         }
         this.caption.serializeToStream(abstractSerializedData);
     }

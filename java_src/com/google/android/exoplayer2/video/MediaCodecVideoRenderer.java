@@ -12,7 +12,7 @@ import android.os.SystemClock;
 import android.util.Pair;
 import android.view.Display;
 import android.view.Surface;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
@@ -129,7 +129,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
         this.frameReleaseHelper = new VideoFrameReleaseHelper(applicationContext);
         this.eventDispatcher = new VideoRendererEventListener.EventDispatcher(handler, videoRendererEventListener);
         this.deviceNeedsNoPostProcessWorkaround = deviceNeedsNoPostProcessWorkaround();
-        this.joiningDeadlineMs = C0482C.TIME_UNSET;
+        this.joiningDeadlineMs = C0470C.TIME_UNSET;
         this.currentWidth = -1;
         this.currentHeight = -1;
         this.currentPixelWidthHeightRatio = -1.0f;
@@ -197,7 +197,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     private static List<MediaCodecInfo> getDecoderInfos(Context context, MediaCodecSelector mediaCodecSelector, Format format, boolean z, boolean z2) throws MediaCodecUtil.DecoderQueryException {
         String str = format.sampleMimeType;
         if (str == null) {
-            return ImmutableList.m754of();
+            return ImmutableList.m740of();
         }
         List<MediaCodecInfo> decoderInfos = mediaCodecSelector.getDecoderInfos(str, z, z2);
         String alternativeCodecMimeType = MediaCodecUtil.getAlternativeCodecMimeType(format);
@@ -253,13 +253,13 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
         super.onPositionReset(j, z);
         clearRenderedFirstFrame();
         this.frameReleaseHelper.onPositionReset();
-        this.lastBufferPresentationTimeUs = C0482C.TIME_UNSET;
-        this.initialPositionUs = C0482C.TIME_UNSET;
+        this.lastBufferPresentationTimeUs = C0470C.TIME_UNSET;
+        this.initialPositionUs = C0470C.TIME_UNSET;
         this.consecutiveDroppedFrameCount = 0;
         if (z) {
             setJoiningDeadlineMs();
         } else {
-            this.joiningDeadlineMs = C0482C.TIME_UNSET;
+            this.joiningDeadlineMs = C0470C.TIME_UNSET;
         }
     }
 
@@ -267,15 +267,15 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     public boolean isReady() {
         PlaceholderSurface placeholderSurface;
         if (super.isReady() && (this.renderedFirstFrameAfterReset || (((placeholderSurface = this.placeholderSurface) != null && this.surface == placeholderSurface) || getCodec() == null || this.tunneling))) {
-            this.joiningDeadlineMs = C0482C.TIME_UNSET;
+            this.joiningDeadlineMs = C0470C.TIME_UNSET;
             return true;
-        } else if (this.joiningDeadlineMs == C0482C.TIME_UNSET) {
+        } else if (this.joiningDeadlineMs == C0470C.TIME_UNSET) {
             return false;
         } else {
             if (SystemClock.elapsedRealtime() < this.joiningDeadlineMs) {
                 return true;
             }
-            this.joiningDeadlineMs = C0482C.TIME_UNSET;
+            this.joiningDeadlineMs = C0470C.TIME_UNSET;
             return false;
         }
     }
@@ -295,7 +295,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecRenderer, com.google.android.exoplayer2.BaseRenderer
     public void onStopped() {
-        this.joiningDeadlineMs = C0482C.TIME_UNSET;
+        this.joiningDeadlineMs = C0470C.TIME_UNSET;
         maybeNotifyDroppedFrames();
         maybeNotifyVideoFrameProcessingOffset();
         this.frameReleaseHelper.onStopped();
@@ -520,7 +520,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecRenderer
     protected void onCodecError(Exception exc) {
-        Log.m809e(TAG, "Video codec error", exc);
+        Log.m795e(TAG, "Video codec error", exc);
         this.eventDispatcher.videoCodecError(exc);
     }
 
@@ -615,7 +615,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
         boolean z3;
         long j4;
         Assertions.checkNotNull(mediaCodecAdapter);
-        if (this.initialPositionUs == C0482C.TIME_UNSET) {
+        if (this.initialPositionUs == C0470C.TIME_UNSET) {
             this.initialPositionUs = j;
         }
         if (j3 != this.lastBufferPresentationTimeUs) {
@@ -651,7 +651,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             z3 = true;
             j4 = j7;
         }
-        if (this.joiningDeadlineMs == C0482C.TIME_UNSET && j >= outputStreamOffsetUs && (z3 || (z4 && shouldForceRenderOutputBuffer(j6, j4)))) {
+        if (this.joiningDeadlineMs == C0470C.TIME_UNSET && j >= outputStreamOffsetUs && (z3 || (z4 && shouldForceRenderOutputBuffer(j6, j4)))) {
             long nanoTime = System.nanoTime();
             notifyFrameMetadataListener(j5, nanoTime, format);
             if (Util.SDK_INT >= 21) {
@@ -666,7 +666,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             long nanoTime2 = System.nanoTime();
             long adjustReleaseTime = this.frameReleaseHelper.adjustReleaseTime((j6 * 1000) + nanoTime2);
             long j8 = (adjustReleaseTime - nanoTime2) / 1000;
-            boolean z5 = this.joiningDeadlineMs != C0482C.TIME_UNSET;
+            boolean z5 = this.joiningDeadlineMs != C0470C.TIME_UNSET;
             if (shouldDropBuffersToKeyframe(j8, j2, z2) && maybeDropBuffersToKeyframe(j, z5)) {
                 return false;
             }
@@ -842,7 +842,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     }
 
     private void setJoiningDeadlineMs() {
-        this.joiningDeadlineMs = this.allowedJoiningTimeMs > 0 ? SystemClock.elapsedRealtime() + this.allowedJoiningTimeMs : C0482C.TIME_UNSET;
+        this.joiningDeadlineMs = this.allowedJoiningTimeMs > 0 ? SystemClock.elapsedRealtime() + this.allowedJoiningTimeMs : C0470C.TIME_UNSET;
     }
 
     private void clearRenderedFirstFrame() {
@@ -987,13 +987,13 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             }
         }
         if (z) {
-            Log.m806w(TAG, "Resolutions unknown. Codec max resolution: " + i + "x" + i2);
+            Log.m792w(TAG, "Resolutions unknown. Codec max resolution: " + i + "x" + i2);
             Point codecMaxSize = getCodecMaxSize(mediaCodecInfo, format);
             if (codecMaxSize != null) {
                 i = Math.max(i, codecMaxSize.x);
                 i2 = Math.max(i2, codecMaxSize.y);
                 maxInputSize = Math.max(maxInputSize, getCodecMaxInputSize(mediaCodecInfo, format.buildUpon().setWidth(i).setHeight(i2).build()));
-                Log.m806w(TAG, "Codec max resolution adjusted to: " + i + "x" + i2);
+                Log.m792w(TAG, "Codec max resolution adjusted to: " + i + "x" + i2);
             }
         }
         return new CodecMaxValues(i, i2, maxInputSize);

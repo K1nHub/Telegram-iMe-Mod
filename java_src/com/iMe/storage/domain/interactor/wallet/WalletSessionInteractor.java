@@ -8,7 +8,7 @@ import com.iMe.storage.domain.repository.wallet.WalletRepository;
 import com.iMe.storage.domain.repository.wallet.WalletSessionRepository;
 import com.iMe.storage.domain.storage.PreferenceHelper;
 import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import kotlin.jvm.internal.Intrinsics;
@@ -38,7 +38,7 @@ public final class WalletSessionInteractor {
         Intrinsics.checkNotNullParameter(token, "token");
         Observable<R> flatMap = this.walletSessionRepository.refreshToken(token).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionInteractor$refreshToken$$inlined$flatMapSuccess$1(this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<SessionTokens>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<SessionTokens>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletSessionRepository\n…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -53,7 +53,7 @@ public final class WalletSessionInteractor {
 
     public final Completable tgAccountLogout() {
         if (hasActiveUser()) {
-            Completable subscribeOn = this.notificationRepository.deletePushToken().ignoreElements().andThen(this.walletSessionRepository.logout()).subscribeOn(this.schedulersProvider.mo708io());
+            Completable subscribeOn = this.notificationRepository.deletePushToken().ignoreElements().andThen(this.walletSessionRepository.logout()).subscribeOn(this.schedulersProvider.mo694io());
             Intrinsics.checkNotNullExpressionValue(subscribeOn, "{\n                notifi…vider.io())\n            }");
             return subscribeOn;
         }
@@ -66,7 +66,7 @@ public final class WalletSessionInteractor {
         Intrinsics.checkNotNullParameter(url, "url");
         Observable<R> flatMap = this.walletSessionRepository.login(url).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionInteractor$login$$inlined$flatMapSuccess$1(this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<SessionTokens>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<SessionTokens>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletSessionRepository\n…(schedulersProvider.io())");
         return subscribeOn;
     }

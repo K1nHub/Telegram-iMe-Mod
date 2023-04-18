@@ -546,7 +546,7 @@
 
     const-string v93, "sv"
 
-    const-string/jumbo v94, "tl"
+    const-string v94, "tl"
 
     const-string v95, "tg"
 
@@ -560,7 +560,7 @@
 
     const-string/jumbo v100, "tr"
 
-    const-string/jumbo v101, "tk"
+    const-string v101, "tk"
 
     const-string/jumbo v102, "uk"
 

@@ -10,15 +10,15 @@ import org.bouncycastle.jcajce.provider.util.AlgorithmProvider;
 public class BouncyCastlePQCProvider extends Provider implements ConfigurableProvider {
     private static final String[] ALGORITHMS;
     public static String PROVIDER_NAME = "BCPQC";
-    private static String info = "BouncyCastle Post-Quantum Security Provider v1.60";
+    private static String info = "BouncyCastle Post-Quantum Security Provider v1.67";
 
     static {
         new HashMap();
-        ALGORITHMS = new String[]{"Rainbow", "McEliece", "SPHINCS", "NH", "XMSS"};
+        ALGORITHMS = new String[]{"Rainbow", "McEliece", "SPHINCS", "LMS", "NH", "XMSS", "QTESLA"};
     }
 
     public BouncyCastlePQCProvider() {
-        super(PROVIDER_NAME, 1.6d, info);
+        super(PROVIDER_NAME, 1.67d, info);
         AccessController.doPrivileged(new PrivilegedAction() { // from class: org.bouncycastle.pqc.jcajce.provider.BouncyCastlePQCProvider.1
             @Override // java.security.PrivilegedAction
             public Object run() {

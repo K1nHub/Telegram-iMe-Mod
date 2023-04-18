@@ -20,62 +20,62 @@ public class Logger {
     }
 
     /* renamed from: d */
-    public void m737d(String str, Throwable th) {
+    public void m723d(String str, Throwable th) {
         if (canLog(3)) {
             Log.d(this.tag, str, th);
         }
     }
 
     /* renamed from: v */
-    public void m731v(String str, Throwable th) {
+    public void m717v(String str, Throwable th) {
         if (canLog(2)) {
             Log.v(this.tag, str, th);
         }
     }
 
     /* renamed from: i */
-    public void m733i(String str, Throwable th) {
+    public void m719i(String str, Throwable th) {
         if (canLog(4)) {
             Log.i(this.tag, str, th);
         }
     }
 
     /* renamed from: w */
-    public void m729w(String str, Throwable th) {
+    public void m715w(String str, Throwable th) {
         if (canLog(5)) {
             Log.w(this.tag, str, th);
         }
     }
 
     /* renamed from: e */
-    public void m735e(String str, Throwable th) {
+    public void m721e(String str, Throwable th) {
         if (canLog(6)) {
             Log.e(this.tag, str, th);
         }
     }
 
     /* renamed from: d */
-    public void m738d(String str) {
-        m737d(str, null);
+    public void m724d(String str) {
+        m723d(str, null);
     }
 
     /* renamed from: v */
-    public void m732v(String str) {
-        m731v(str, null);
+    public void m718v(String str) {
+        m717v(str, null);
     }
 
     /* renamed from: i */
-    public void m734i(String str) {
-        m733i(str, null);
+    public void m720i(String str) {
+        m719i(str, null);
     }
 
     /* renamed from: w */
-    public void m730w(String str) {
-        m729w(str, null);
+    public void m716w(String str) {
+        m715w(str, null);
     }
 
     /* renamed from: e */
-    public void m736e(String str) {
-        m735e(str, null);
+    public void m722e(String str) {
+        m721e(str, null);
     }
 }

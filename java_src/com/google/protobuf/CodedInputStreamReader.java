@@ -1094,7 +1094,7 @@ public final class CodedInputStreamReader implements Reader {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.CodedInputStreamReader$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C12021 {
+    public static /* synthetic */ class C11871 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {
@@ -1172,7 +1172,7 @@ public final class CodedInputStreamReader implements Reader {
     }
 
     private Object readField(WireFormat.FieldType fieldType, Class<?> cls, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        switch (C12021.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C11871.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 return Boolean.valueOf(readBool());
             case 2:

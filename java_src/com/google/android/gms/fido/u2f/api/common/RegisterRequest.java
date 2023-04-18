@@ -18,18 +18,18 @@ import org.json.JSONObject;
 public class RegisterRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<RegisterRequest> CREATOR = new zzg();
     public static final int U2F_V1_CHALLENGE_BYTE_LENGTH = 65;
-    @SafeParcelable.VersionField(getter = "getVersionCode", m786id = 1)
+    @SafeParcelable.VersionField(getter = "getVersionCode", m772id = 1)
     private final int zza;
-    @SafeParcelable.Field(getter = "getProtocolVersionAsString", m789id = 2, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getProtocolVersionAsString", m775id = 2, type = "java.lang.String")
     private final ProtocolVersion zzb;
-    @SafeParcelable.Field(getter = "getChallengeValue", m789id = 3)
+    @SafeParcelable.Field(getter = "getChallengeValue", m775id = 3)
     private final byte[] zzc;
-    @SafeParcelable.Field(getter = "getAppId", m789id = 4)
+    @SafeParcelable.Field(getter = "getAppId", m775id = 4)
     private final String zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public RegisterRequest(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) byte[] bArr, @SafeParcelable.Param(m788id = 4) String str2) {
+    public RegisterRequest(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) byte[] bArr, @SafeParcelable.Param(m774id = 4) String str2) {
         this.zza = i;
         try {
             this.zzb = ProtocolVersion.fromString(str);

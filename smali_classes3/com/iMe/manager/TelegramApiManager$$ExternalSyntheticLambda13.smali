@@ -2,32 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lio/reactivex/ObservableEmitter;
+.field public final synthetic f$0:Lorg/telegram/tgnet/TLObject;
+
+.field public final synthetic f$1:Lio/reactivex/ObservableEmitter;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_error;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lio/reactivex/ObservableEmitter;)V
+.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLObject;Lio/reactivex/ObservableEmitter;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda13;->f$0:Lio/reactivex/ObservableEmitter;
+    iput-object p1, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/tgnet/TLObject;
+
+    iput-object p2, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda13;->f$1:Lio/reactivex/ObservableEmitter;
+
+    iput-object p3, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda13;->f$2:Lorg/telegram/tgnet/TLRPC$TL_error;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda13;->f$0:Lio/reactivex/ObservableEmitter;
+    iget-object v0, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/tgnet/TLObject;
 
-    invoke-static {v0, p1, p2}, Lcom/iMe/manager/TelegramApiManager;->$r8$lambda$AZV5rpqhTkpyIr2oI3KfTuqAbik(Lio/reactivex/ObservableEmitter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v1, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda13;->f$1:Lio/reactivex/ObservableEmitter;
+
+    iget-object v2, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda13;->f$2:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+    invoke-static {v0, v1, v2}, Lcom/iMe/manager/TelegramApiManager;->$r8$lambda$jhwwY0uxzBzb6NEPrUuYMjbdmZA(Lorg/telegram/tgnet/TLObject;Lio/reactivex/ObservableEmitter;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

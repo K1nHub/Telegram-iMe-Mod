@@ -138,7 +138,7 @@
 .end method
 
 .method public readObject()Lorg/bouncycastle/asn1/ASN1Encodable;
-    .locals 6
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -176,20 +176,45 @@
 
     if-eqz v3, :cond_1
 
-    move v1, v4
+    move v3, v4
+
+    goto :goto_0
 
     :cond_1
-    iget-object v3, p0, Lorg/bouncycastle/asn1/ASN1StreamParser;->_in:Ljava/io/InputStream;
+    move v3, v1
 
-    iget v5, p0, Lorg/bouncycastle/asn1/ASN1StreamParser;->_limit:I
+    :goto_0
+    iget-object v5, p0, Lorg/bouncycastle/asn1/ASN1StreamParser;->_in:Ljava/io/InputStream;
 
-    invoke-static {v3, v5}, Lorg/bouncycastle/asn1/ASN1InputStream;->readLength(Ljava/io/InputStream;I)I
+    iget v6, p0, Lorg/bouncycastle/asn1/ASN1StreamParser;->_limit:I
 
-    move-result v3
+    const/16 v7, 0x8
 
-    if-gez v3, :cond_5
+    const/16 v8, 0x11
 
-    if-eqz v1, :cond_4
+    const/16 v9, 0x10
+
+    const/4 v10, 0x4
+
+    if-eq v2, v10, :cond_2
+
+    if-eq v2, v9, :cond_2
+
+    if-eq v2, v8, :cond_2
+
+    if-ne v2, v7, :cond_3
+
+    :cond_2
+    move v1, v4
+
+    :cond_3
+    invoke-static {v5, v6, v1}, Lorg/bouncycastle/asn1/ASN1InputStream;->readLength(Ljava/io/InputStream;IZ)I
+
+    move-result v1
+
+    if-gez v1, :cond_7
+
+    if-eqz v3, :cond_6
 
     new-instance v1, Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;
 
@@ -207,7 +232,7 @@
 
     and-int/lit8 v1, v0, 0x40
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_4
 
     new-instance v0, Lorg/bouncycastle/asn1/BERApplicationSpecificParser;
 
@@ -215,10 +240,10 @@
 
     return-object v0
 
-    :cond_2
+    :cond_4
     and-int/lit16 v0, v0, 0x80
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
     new-instance v0, Lorg/bouncycastle/asn1/BERTaggedObjectParser;
 
@@ -226,14 +251,14 @@
 
     return-object v0
 
-    :cond_3
+    :cond_5
     invoke-virtual {v3, v2}, Lorg/bouncycastle/asn1/ASN1StreamParser;->readIndef(I)Lorg/bouncycastle/asn1/ASN1Encodable;
 
     move-result-object v0
 
     return-object v0
 
-    :cond_4
+    :cond_6
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "indefinite-length primitive encoding encountered"
@@ -242,72 +267,66 @@
 
     throw v0
 
-    :cond_5
+    :cond_7
     new-instance v4, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;
 
     iget-object v5, p0, Lorg/bouncycastle/asn1/ASN1StreamParser;->_in:Ljava/io/InputStream;
 
-    invoke-direct {v4, v5, v3}, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;-><init>(Ljava/io/InputStream;I)V
+    iget v6, p0, Lorg/bouncycastle/asn1/ASN1StreamParser;->_limit:I
 
-    and-int/lit8 v3, v0, 0x40
+    invoke-direct {v4, v5, v1, v6}, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;-><init>(Ljava/io/InputStream;II)V
 
-    if-eqz v3, :cond_6
+    and-int/lit8 v1, v0, 0x40
 
-    new-instance v0, Lorg/bouncycastle/asn1/DERApplicationSpecific;
+    if-eqz v1, :cond_8
+
+    new-instance v0, Lorg/bouncycastle/asn1/DLApplicationSpecific;
 
     invoke-virtual {v4}, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;->toByteArray()[B
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-direct {v0, v1, v2, v3}, Lorg/bouncycastle/asn1/DERApplicationSpecific;-><init>(ZI[B)V
+    invoke-direct {v0, v3, v2, v1}, Lorg/bouncycastle/asn1/DLApplicationSpecific;-><init>(ZI[B)V
 
     return-object v0
 
-    :cond_6
+    :cond_8
     and-int/lit16 v0, v0, 0x80
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_9
 
     new-instance v0, Lorg/bouncycastle/asn1/BERTaggedObjectParser;
-
-    new-instance v3, Lorg/bouncycastle/asn1/ASN1StreamParser;
-
-    invoke-direct {v3, v4}, Lorg/bouncycastle/asn1/ASN1StreamParser;-><init>(Ljava/io/InputStream;)V
-
-    invoke-direct {v0, v1, v2, v3}, Lorg/bouncycastle/asn1/BERTaggedObjectParser;-><init>(ZILorg/bouncycastle/asn1/ASN1StreamParser;)V
-
-    return-object v0
-
-    :cond_7
-    const/4 v0, 0x4
-
-    if-eqz v1, :cond_c
-
-    if-eq v2, v0, :cond_b
-
-    const/16 v0, 0x8
-
-    if-eq v2, v0, :cond_a
-
-    const/16 v0, 0x10
-
-    if-eq v2, v0, :cond_9
-
-    const/16 v0, 0x11
-
-    if-ne v2, v0, :cond_8
-
-    new-instance v0, Lorg/bouncycastle/asn1/DERSetParser;
 
     new-instance v1, Lorg/bouncycastle/asn1/ASN1StreamParser;
 
     invoke-direct {v1, v4}, Lorg/bouncycastle/asn1/ASN1StreamParser;-><init>(Ljava/io/InputStream;)V
 
-    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/DERSetParser;-><init>(Lorg/bouncycastle/asn1/ASN1StreamParser;)V
+    invoke-direct {v0, v3, v2, v1}, Lorg/bouncycastle/asn1/BERTaggedObjectParser;-><init>(ZILorg/bouncycastle/asn1/ASN1StreamParser;)V
 
     return-object v0
 
-    :cond_8
+    :cond_9
+    if-eqz v3, :cond_e
+
+    if-eq v2, v10, :cond_d
+
+    if-eq v2, v7, :cond_c
+
+    if-eq v2, v9, :cond_b
+
+    if-ne v2, v8, :cond_a
+
+    new-instance v0, Lorg/bouncycastle/asn1/DLSetParser;
+
+    new-instance v1, Lorg/bouncycastle/asn1/ASN1StreamParser;
+
+    invoke-direct {v1, v4}, Lorg/bouncycastle/asn1/ASN1StreamParser;-><init>(Ljava/io/InputStream;)V
+
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/DLSetParser;-><init>(Lorg/bouncycastle/asn1/ASN1StreamParser;)V
+
+    return-object v0
+
+    :cond_a
     new-instance v0, Ljava/io/IOException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -332,18 +351,18 @@
 
     throw v0
 
-    :cond_9
-    new-instance v0, Lorg/bouncycastle/asn1/DERSequenceParser;
+    :cond_b
+    new-instance v0, Lorg/bouncycastle/asn1/DLSequenceParser;
 
     new-instance v1, Lorg/bouncycastle/asn1/ASN1StreamParser;
 
     invoke-direct {v1, v4}, Lorg/bouncycastle/asn1/ASN1StreamParser;-><init>(Ljava/io/InputStream;)V
 
-    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/DERSequenceParser;-><init>(Lorg/bouncycastle/asn1/ASN1StreamParser;)V
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/DLSequenceParser;-><init>(Lorg/bouncycastle/asn1/ASN1StreamParser;)V
 
     return-object v0
 
-    :cond_a
+    :cond_c
     new-instance v0, Lorg/bouncycastle/asn1/DERExternalParser;
 
     new-instance v1, Lorg/bouncycastle/asn1/ASN1StreamParser;
@@ -354,7 +373,7 @@
 
     return-object v0
 
-    :cond_b
+    :cond_d
     new-instance v0, Lorg/bouncycastle/asn1/BEROctetStringParser;
 
     new-instance v1, Lorg/bouncycastle/asn1/ASN1StreamParser;
@@ -365,8 +384,8 @@
 
     return-object v0
 
-    :cond_c
-    if-eq v2, v0, :cond_d
+    :cond_e
+    if-eq v2, v10, :cond_f
 
     :try_start_0
     iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1StreamParser;->tmpBuffers:[[B
@@ -390,7 +409,7 @@
 
     throw v1
 
-    :cond_d
+    :cond_f
     new-instance v0, Lorg/bouncycastle/asn1/DEROctetStringParser;
 
     invoke-direct {v0, v4}, Lorg/bouncycastle/asn1/DEROctetStringParser;-><init>(Lorg/bouncycastle/asn1/DefiniteLengthInputStream;)V
@@ -414,7 +433,7 @@
 
     check-cast p1, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;
 
-    new-instance v1, Lorg/bouncycastle/asn1/DERTaggedObject;
+    new-instance v1, Lorg/bouncycastle/asn1/DLTaggedObject;
 
     new-instance v2, Lorg/bouncycastle/asn1/DEROctetString;
 
@@ -424,7 +443,7 @@
 
     invoke-direct {v2, p1}, Lorg/bouncycastle/asn1/DEROctetString;-><init>([B)V
 
-    invoke-direct {v1, v0, p2, v2}, Lorg/bouncycastle/asn1/DERTaggedObject;-><init>(ZILorg/bouncycastle/asn1/ASN1Encodable;)V
+    invoke-direct {v1, v0, p2, v2}, Lorg/bouncycastle/asn1/DLTaggedObject;-><init>(ZILorg/bouncycastle/asn1/ASN1Encodable;)V
 
     return-object v1
 
@@ -476,24 +495,24 @@
 
     if-ne v1, v2, :cond_3
 
-    new-instance v1, Lorg/bouncycastle/asn1/DERTaggedObject;
+    new-instance v1, Lorg/bouncycastle/asn1/DLTaggedObject;
 
     invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->get(I)Lorg/bouncycastle/asn1/ASN1Encodable;
 
     move-result-object p1
 
-    invoke-direct {v1, v2, p2, p1}, Lorg/bouncycastle/asn1/DERTaggedObject;-><init>(ZILorg/bouncycastle/asn1/ASN1Encodable;)V
+    invoke-direct {v1, v2, p2, p1}, Lorg/bouncycastle/asn1/DLTaggedObject;-><init>(ZILorg/bouncycastle/asn1/ASN1Encodable;)V
 
     goto :goto_1
 
     :cond_3
-    new-instance v1, Lorg/bouncycastle/asn1/DERTaggedObject;
+    new-instance v1, Lorg/bouncycastle/asn1/DLTaggedObject;
 
-    invoke-static {p1}, Lorg/bouncycastle/asn1/DERFactory;->createSequence(Lorg/bouncycastle/asn1/ASN1EncodableVector;)Lorg/bouncycastle/asn1/ASN1Sequence;
+    invoke-static {p1}, Lorg/bouncycastle/asn1/DLFactory;->createSequence(Lorg/bouncycastle/asn1/ASN1EncodableVector;)Lorg/bouncycastle/asn1/ASN1Sequence;
 
     move-result-object p1
 
-    invoke-direct {v1, v0, p2, p1}, Lorg/bouncycastle/asn1/DERTaggedObject;-><init>(ZILorg/bouncycastle/asn1/ASN1Encodable;)V
+    invoke-direct {v1, v0, p2, p1}, Lorg/bouncycastle/asn1/DLTaggedObject;-><init>(ZILorg/bouncycastle/asn1/ASN1Encodable;)V
 
     :goto_1
     return-object v1
@@ -507,39 +526,51 @@
         }
     .end annotation
 
-    new-instance v0, Lorg/bouncycastle/asn1/ASN1EncodableVector;
-
-    invoke-direct {v0}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
-
-    :goto_0
     invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1StreamParser;->readObject()Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_1
+    if-nez v0, :cond_0
 
-    instance-of v2, v1, Lorg/bouncycastle/asn1/InMemoryRepresentable;
+    new-instance v0, Lorg/bouncycastle/asn1/ASN1EncodableVector;
 
-    if-eqz v2, :cond_0
+    const/4 v1, 0x0
 
-    check-cast v1, Lorg/bouncycastle/asn1/InMemoryRepresentable;
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>(I)V
 
-    invoke-interface {v1}, Lorg/bouncycastle/asn1/InMemoryRepresentable;->getLoadedObject()Lorg/bouncycastle/asn1/ASN1Primitive;
-
-    move-result-object v1
-
-    goto :goto_1
+    return-object v0
 
     :cond_0
-    invoke-interface {v1}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+    new-instance v1, Lorg/bouncycastle/asn1/ASN1EncodableVector;
 
-    move-result-object v1
+    invoke-direct {v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
 
-    :goto_1
-    invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->add(Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    :cond_1
+    instance-of v2, v0, Lorg/bouncycastle/asn1/InMemoryRepresentable;
+
+    if-eqz v2, :cond_2
+
+    check-cast v0, Lorg/bouncycastle/asn1/InMemoryRepresentable;
+
+    invoke-interface {v0}, Lorg/bouncycastle/asn1/InMemoryRepresentable;->getLoadedObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object v0
 
     goto :goto_0
 
-    :cond_1
-    return-object v0
+    :cond_2
+    invoke-interface {v0}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-virtual {v1, v0}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->add(Lorg/bouncycastle/asn1/ASN1Encodable;)V
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1StreamParser;->readObject()Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    return-object v1
 .end method

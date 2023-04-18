@@ -7,13 +7,11 @@ import io.reactivex.Observable;
 /* compiled from: CryptoWalletsManager.kt */
 /* loaded from: classes3.dex */
 public interface CryptoWalletsManager {
-    Observable<Result<Wallet>> createWallet(String str, String str2, BlockchainType blockchainType);
+    Observable<Result<Wallet>> createWallet(BlockchainType blockchainType);
 
     void deleteWallet(String str, BlockchainType blockchainType);
 
     Observable<Result<String>> generateAddressByMnemonic(String str, BlockchainType blockchainType);
-
-    Observable<Result<String>> generateMnemonic(String str, String str2, BlockchainType blockchainType);
 
     Observable<Result<Wallet>> importWallet(String str, String str2, String str3, BlockchainType blockchainType);
 

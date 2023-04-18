@@ -29,7 +29,7 @@ public final class Status {
     private static final List<Status> STATUS_LIST = buildStatusList();
 
     /* renamed from: OK */
-    public static final Status f433OK = Code.OK.toStatus();
+    public static final Status f428OK = Code.OK.toStatus();
     public static final Status CANCELLED = Code.CANCELLED.toStatus();
     public static final Status UNKNOWN = Code.UNKNOWN.toStatus();
 
@@ -90,10 +90,10 @@ public final class Status {
         INTERNAL = Code.INTERNAL.toStatus();
         UNAVAILABLE = Code.UNAVAILABLE.toStatus();
         Code.DATA_LOSS.toStatus();
-        CODE_KEY = Metadata.Key.m692of("grpc-status", false, (Metadata.TrustedAsciiMarshaller) new StatusCodeMarshaller());
+        CODE_KEY = Metadata.Key.m678of("grpc-status", false, (Metadata.TrustedAsciiMarshaller) new StatusCodeMarshaller());
         StatusMessageMarshaller statusMessageMarshaller = new StatusMessageMarshaller();
         STATUS_MESSAGE_MARSHALLER = statusMessageMarshaller;
-        MESSAGE_KEY = Metadata.Key.m692of("grpc-message", false, (Metadata.TrustedAsciiMarshaller) statusMessageMarshaller);
+        MESSAGE_KEY = Metadata.Key.m678of("grpc-message", false, (Metadata.TrustedAsciiMarshaller) statusMessageMarshaller);
     }
 
     private static List<Status> buildStatusList() {
@@ -122,7 +122,7 @@ public final class Status {
     /* JADX INFO: Access modifiers changed from: private */
     public static Status fromCodeValue(byte[] bArr) {
         if (bArr.length == 1 && bArr[0] == 48) {
-            return f433OK;
+            return f428OK;
         }
         return fromCodeValueSlow(bArr);
     }

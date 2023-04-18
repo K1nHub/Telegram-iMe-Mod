@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$30\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,176:1\n127#2,5:177\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$30\n*L\n98#1:177,5\n*E\n"
+    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$30\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,176:1\n129#2,5:177\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$30\n*L\n98#1:177,5\n*E\n"
 .end annotation
 
 
@@ -77,7 +77,7 @@
 
     move-result-object p2
 
-    .line 131
+    .line 133
     const-class v0, Lretrofit2/Retrofit;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

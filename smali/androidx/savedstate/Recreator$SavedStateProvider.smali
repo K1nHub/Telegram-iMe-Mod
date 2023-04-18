@@ -1,6 +1,6 @@
-.class final Landroidx/savedstate/Recreator$SavedStateProvider;
+.class public final Landroidx/savedstate/Recreator$SavedStateProvider;
 .super Ljava/lang/Object;
-.source "Recreator.java"
+.source "Recreator.kt"
 
 # interfaces
 .implements Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
@@ -12,13 +12,13 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
+    accessFlags = 0x19
     name = "SavedStateProvider"
 .end annotation
 
 
 # instance fields
-.field final mClasses:Ljava/util/Set;
+.field private final classes:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -30,22 +30,26 @@
 
 
 # direct methods
-.method constructor <init>(Landroidx/savedstate/SavedStateRegistry;)V
+.method public constructor <init>(Landroidx/savedstate/SavedStateRegistry;)V
     .locals 1
 
-    .line 99
+    const-string v0, "registry"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 96
-    new-instance v0, Ljava/util/HashSet;
+    .line 76
+    new-instance v0, Ljava/util/LinkedHashSet;
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
-    iput-object v0, p0, Landroidx/savedstate/Recreator$SavedStateProvider;->mClasses:Ljava/util/Set;
+    iput-object v0, p0, Landroidx/savedstate/Recreator$SavedStateProvider;->classes:Ljava/util/Set;
 
     const-string v0, "androidx.savedstate.Restarter"
 
-    .line 100
+    .line 79
     invoke-virtual {p1, v0, p0}, Landroidx/savedstate/SavedStateRegistry;->registerSavedStateProvider(Ljava/lang/String;Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;)V
 
     return-void
@@ -53,11 +57,15 @@
 
 
 # virtual methods
-.method add(Ljava/lang/String;)V
+.method public final add(Ljava/lang/String;)V
     .locals 1
 
-    .line 112
-    iget-object v0, p0, Landroidx/savedstate/Recreator$SavedStateProvider;->mClasses:Ljava/util/Set;
+    const-string v0, "className"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 89
+    iget-object v0, p0, Landroidx/savedstate/Recreator$SavedStateProvider;->classes:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
@@ -67,15 +75,15 @@
 .method public saveState()Landroid/os/Bundle;
     .locals 3
 
-    .line 106
+    .line 83
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 107
+    .line 84
     new-instance v1, Ljava/util/ArrayList;
 
-    iget-object v2, p0, Landroidx/savedstate/Recreator$SavedStateProvider;->mClasses:Ljava/util/Set;
+    iget-object v2, p0, Landroidx/savedstate/Recreator$SavedStateProvider;->classes:Ljava/util/Set;
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 

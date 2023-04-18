@@ -4,8 +4,8 @@ import android.graphics.Rect;
 import com.google.android.gms.common.internal.GmsLogger;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.firebase.p021ml.vision.text.FirebaseVisionText;
-import com.google.firebase.p021ml.vision.text.RecognizedLanguage;
+import com.google.firebase.p020ml.vision.text.FirebaseVisionText;
+import com.google.firebase.p020ml.vision.text.RecognizedLanguage;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -29,12 +29,12 @@ public final class zzrc {
         Preconditions.checkNotNull(zzjwVar, "The input TextAnnotation can not be null");
         FirebaseVisionText.TextBlock textBlock2 = null;
         if (zzjwVar.getPages().size() <= 0) {
-            zzass.m799d("TextAnnotationConverter", "Text Annotation is null, return null");
+            zzass.m785d("TextAnnotationConverter", "Text Annotation is null, return null");
             return null;
         }
         boolean z3 = true;
         if (zzjwVar.getPages().size() > 1) {
-            zzass.m799d("TextAnnotationConverter", "Text Annotation has more than one page, which should not happen");
+            zzass.m785d("TextAnnotationConverter", "Text Annotation has more than one page, which should not happen");
         }
         ArrayList arrayList = new ArrayList();
         Iterator<zzjn> it6 = zzjwVar.getPages().iterator();

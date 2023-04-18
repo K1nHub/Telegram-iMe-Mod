@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDialogTranslationController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogTranslationController.kt\ncom/iMe/fork/controller/DialogTranslationController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,102:1\n56#2,6:103\n1194#3,2:109\n1222#3,4:111\n1549#3:115\n1620#3,3:116\n*S KotlinDebug\n*F\n+ 1 DialogTranslationController.kt\ncom/iMe/fork/controller/DialogTranslationController\n*L\n21#1:103,6\n30#1:109,2\n30#1:111,4\n40#1:115\n40#1:116,3\n*E\n"
+    value = "SMAP\nDialogTranslationController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogTranslationController.kt\ncom/iMe/fork/controller/DialogTranslationController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,104:1\n56#2,6:105\n1194#3,2:111\n1222#3,4:113\n1549#3:117\n1620#3,3:118\n*S KotlinDebug\n*F\n+ 1 DialogTranslationController.kt\ncom/iMe/fork/controller/DialogTranslationController\n*L\n22#1:105,6\n31#1:111,2\n31#1:113,4\n41#1:117\n41#1:118,3\n*E\n"
 .end annotation
 
 
@@ -87,7 +87,7 @@
 
     const-string v2, "Russian (Russia)"
 
-    .line 70
+    .line 71
     invoke-static {v1, v2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -100,7 +100,7 @@
 
     const-string v2, "Japanese (Japan)"
 
-    .line 71
+    .line 72
     invoke-static {v1, v2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -113,7 +113,7 @@
 
     const-string v2, "Hindi (India)"
 
-    .line 72
+    .line 73
     invoke-static {v1, v2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -126,7 +126,7 @@
 
     const-string v2, "French (France)"
 
-    .line 73
+    .line 74
     invoke-static {v1, v2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -139,7 +139,7 @@
 
     const-string v2, "Portuguese (Portugal)"
 
-    .line 74
+    .line 75
     invoke-static {v1, v2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -152,7 +152,7 @@
 
     const-string v2, "Turkish (Turkey)"
 
-    .line 75
+    .line 76
     invoke-static {v1, v2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -165,7 +165,7 @@
 
     const-string v3, "Persian (Iran)"
 
-    .line 76
+    .line 77
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -178,7 +178,7 @@
 
     const-string v3, "Spanish (Spain)"
 
-    .line 77
+    .line 78
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -191,7 +191,7 @@
 
     const-string v3, "German (Germany)"
 
-    .line 78
+    .line 79
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -204,7 +204,7 @@
 
     const-string v3, "Korean (South Korea)"
 
-    .line 79
+    .line 80
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -217,7 +217,7 @@
 
     const-string v3, "Italian (Italy)"
 
-    .line 80
+    .line 81
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -230,7 +230,7 @@
 
     const-string v3, "Arabic (United Arab Emirates)"
 
-    .line 81
+    .line 82
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -243,7 +243,7 @@
 
     const-string v3, "Javanese (Indonesia)"
 
-    .line 82
+    .line 83
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -256,7 +256,7 @@
 
     const-string v3, "Vietnamese (Vietnam)"
 
-    .line 83
+    .line 84
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -269,7 +269,7 @@
 
     const-string v3, "Chinese, Cantonese (Traditional, Hong Kong)"
 
-    .line 84
+    .line 85
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -282,7 +282,7 @@
 
     const-string v3, "Chinese, Mandarin (Traditional, Taiwan)"
 
-    .line 85
+    .line 86
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -295,7 +295,7 @@
 
     const-string v3, "Azerbaijani (Azerbaijan)"
 
-    .line 86
+    .line 87
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -308,7 +308,7 @@
 
     const-string v3, "Uzbek (Uzbekistan)"
 
-    .line 87
+    .line 88
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -321,7 +321,7 @@
 
     const-string v3, "Ukrainian (Ukraine)"
 
-    .line 88
+    .line 89
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -334,7 +334,7 @@
 
     const-string v3, "English (United States)"
 
-    .line 89
+    .line 90
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -347,7 +347,7 @@
 
     const-string v3, "English (United Kingdom)"
 
-    .line 90
+    .line 91
     invoke-static {v1, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v1
@@ -356,14 +356,14 @@
 
     aput-object v1, v0, v3
 
-    .line 69
+    .line 70
     invoke-static {v0}, Lkotlin/collections/MapsKt;->mapOf([Lkotlin/Pair;)Ljava/util/Map;
 
     move-result-object v0
 
     sput-object v0, Lcom/iMe/fork/controller/DialogTranslationController;->voiceTranslateLanguages:Ljava/util/Map;
 
-    .line 97
+    .line 99
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0, v2}, Lj$/util/concurrent/ConcurrentHashMap;-><init>(I)V
@@ -376,7 +376,7 @@
 .method public constructor <init>(I)V
     .locals 2
 
-    .line 18
+    .line 19
     invoke-direct {p0, p1}, Lorg/telegram/messenger/BaseController;-><init>(I)V
 
     .line 58
@@ -397,10 +397,10 @@
 
     move-result-object p1
 
-    .line 21
+    .line 22
     iput-object p1, p0, Lcom/iMe/fork/controller/DialogTranslationController;->dao$delegate:Lkotlin/Lazy;
 
-    .line 24
+    .line 25
     new-instance p1, Ljava/util/LinkedHashMap;
 
     invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
@@ -413,7 +413,7 @@
 .method public static final synthetic access$getAccountInstances$cp()Lj$/util/concurrent/ConcurrentHashMap;
     .locals 1
 
-    .line 18
+    .line 19
     sget-object v0, Lcom/iMe/fork/controller/DialogTranslationController;->accountInstances:Lj$/util/concurrent/ConcurrentHashMap;
 
     return-object v0
@@ -422,7 +422,7 @@
 .method public static final synthetic access$getDao(Lcom/iMe/fork/controller/DialogTranslationController;)Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
     .locals 0
 
-    .line 18
+    .line 19
     invoke-direct {p0}, Lcom/iMe/fork/controller/DialogTranslationController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
 
     move-result-object p0
@@ -433,7 +433,7 @@
 .method public static final synthetic access$getUserConfig(Lcom/iMe/fork/controller/DialogTranslationController;)Lorg/telegram/messenger/UserConfig;
     .locals 0
 
-    .line 18
+    .line 19
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object p0
@@ -444,7 +444,7 @@
 .method public static final synthetic access$getVoiceTranslateLanguages$cp()Ljava/util/Map;
     .locals 1
 
-    .line 18
+    .line 19
     sget-object v0, Lcom/iMe/fork/controller/DialogTranslationController;->voiceTranslateLanguages:Ljava/util/Map;
 
     return-object v0
@@ -453,7 +453,7 @@
 .method private final getDao()Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
     .locals 1
 
-    .line 21
+    .line 22
     iget-object v0, p0, Lcom/iMe/fork/controller/DialogTranslationController;->dao$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -484,7 +484,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 50
+    .line 51
     invoke-interface {p0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     return-void
@@ -503,7 +503,7 @@
         }
     .end annotation
 
-    .line 35
+    .line 36
     iget-object v0, p0, Lcom/iMe/fork/controller/DialogTranslationController;->translationSettings:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -520,7 +520,7 @@
 .method public getKoin()Lorg/koin/core/Koin;
     .locals 1
 
-    .line 18
+    .line 19
     invoke-static {p0}, Lorg/koin/core/component/KoinComponent$DefaultImpls;->getKoin(Lorg/koin/core/component/KoinComponent;)Lorg/koin/core/Koin;
 
     move-result-object v0
@@ -531,7 +531,7 @@
 .method public final getSettings(J)Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;
     .locals 13
 
-    .line 56
+    .line 57
     iget-object v0, p0, Lcom/iMe/fork/controller/DialogTranslationController;->translationSettings:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -572,10 +572,10 @@
 
     invoke-direct/range {v1 .. v12}, Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;-><init>(ZLjava/lang/String;ZLjava/lang/String;JZLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 57
+    .line 58
     invoke-virtual {v0, p1, p2}, Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;->setDialogId(J)V
 
-    .line 58
+    .line 59
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;->getDialogId()J
 
     move-result-wide p1
@@ -588,15 +588,15 @@
 
     const/4 p1, 0x1
 
-    .line 59
+    .line 60
     invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;->setOutTextTranslateEnabled(Z)V
 
     const-string p2, "ru"
 
-    .line 60
+    .line 61
     invoke-virtual {v0, p2}, Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;->setOutTextTranslateLangCode(Ljava/lang/String;)V
 
-    .line 61
+    .line 62
     invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;->setInTextTranslateEnabled(Z)V
 
     :cond_0
@@ -615,7 +615,7 @@
         }
     .end annotation
 
-    .line 24
+    .line 25
     iget-object v0, p0, Lcom/iMe/fork/controller/DialogTranslationController;->translationSettings:Ljava/util/Map;
 
     return-object v0
@@ -624,13 +624,13 @@
 .method public final loadDialogTranslationSettings()V
     .locals 6
 
-    .line 38
+    .line 39
     iget-object v0, p0, Lcom/iMe/fork/controller/DialogTranslationController;->translationSettings:Ljava/util/Map;
 
-    .line 39
+    .line 40
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 40
+    .line 41
     invoke-direct {p0}, Lcom/iMe/fork/controller/DialogTranslationController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
 
     move-result-object v1
@@ -675,7 +675,7 @@
     .line 1621
     check-cast v3, Lcom/iMe/storage/data/locale/db/model/translation/DialogTranslationSettingsDb;
 
-    .line 40
+    .line 41
     invoke-virtual {v3}, Lcom/iMe/storage/data/locale/db/model/translation/DialogTranslationSettingsDb;->getDialogId()J
 
     move-result-wide v4
@@ -697,7 +697,7 @@
 
     goto :goto_0
 
-    .line 40
+    .line 41
     :cond_0
     invoke-static {v0, v2}, Lkotlin/collections/MapsKt;->putAll(Ljava/util/Map;Ljava/lang/Iterable;)V
 
@@ -711,14 +711,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 29
+    .line 30
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getDialogSettings()Ljava/util/List;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 30
+    .line 31
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getDialogSettings()Ljava/util/List;
 
     move-result-object v0
@@ -766,7 +766,7 @@
 
     check-cast v3, Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;
 
-    .line 30
+    .line 31
     invoke-virtual {v3}, Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;->getDialogId()J
 
     move-result-wide v3
@@ -780,7 +780,7 @@
 
     goto :goto_0
 
-    .line 30
+    .line 31
     :cond_0
     invoke-static {v2}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -788,7 +788,7 @@
 
     iput-object v0, p0, Lcom/iMe/fork/controller/DialogTranslationController;->translationSettings:Ljava/util/Map;
 
-    .line 31
+    .line 32
     invoke-direct {p0}, Lcom/iMe/fork/controller/DialogTranslationController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
 
     move-result-object v0
@@ -816,14 +816,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 45
+    .line 46
     new-instance v0, Lcom/iMe/fork/controller/DialogTranslationController$setSettings$runnable$1;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/fork/controller/DialogTranslationController$setSettings$runnable$1;-><init>(Lcom/iMe/fork/controller/DialogTranslationController;Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;)V
 
     if-eqz p2, :cond_0
 
-    .line 50
+    .line 51
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p2, Lcom/iMe/fork/controller/DialogTranslationController$$ExternalSyntheticLambda0;
@@ -834,7 +834,7 @@
 
     goto :goto_0
 
-    .line 52
+    .line 53
     :cond_0
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 

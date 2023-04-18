@@ -37,7 +37,11 @@
 
     check-cast p1, Ljava/lang/Boolean;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;->$r8$lambda$e-oTLPFmbtOaHy757VPsbc5NB_Q(Ljava/lang/Boolean;)V
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setCombineMessagesEnabled(Z)V
 
     return-void
 .end method

@@ -4,22 +4,31 @@ import java.io.IOException;
 import java.security.Key;
 import java.security.PrivateKey;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-import org.bouncycastle.asn1.ASN1OctetString;
+import org.bouncycastle.asn1.ASN1Primitive;
+import org.bouncycastle.asn1.ASN1Set;
 import org.bouncycastle.asn1.DEROctetString;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 import org.bouncycastle.pqc.asn1.PQCObjectIdentifiers;
 import org.bouncycastle.pqc.asn1.SPHINCS256KeyParams;
 import org.bouncycastle.pqc.crypto.sphincs.SPHINCSPrivateKeyParameters;
+import org.bouncycastle.pqc.crypto.util.PrivateKeyFactory;
+import org.bouncycastle.pqc.crypto.util.PrivateKeyInfoFactory;
 import org.bouncycastle.util.Arrays;
 /* loaded from: classes4.dex */
 public class BCSphincs256PrivateKey implements PrivateKey, Key {
-    private final SPHINCSPrivateKeyParameters params;
-    private final ASN1ObjectIdentifier treeDigest;
+    private transient ASN1Set attributes;
+    private transient SPHINCSPrivateKeyParameters params;
+    private transient ASN1ObjectIdentifier treeDigest;
 
     public BCSphincs256PrivateKey(PrivateKeyInfo privateKeyInfo) throws IOException {
+        init(privateKeyInfo);
+    }
+
+    private void init(PrivateKeyInfo privateKeyInfo) throws IOException {
+        this.attributes = privateKeyInfo.getAttributes();
         this.treeDigest = SPHINCS256KeyParams.getInstance(privateKeyInfo.getPrivateKeyAlgorithm().getParameters()).getTreeDigest().getAlgorithm();
-        this.params = new SPHINCSPrivateKeyParameters(ASN1OctetString.getInstance(privateKeyInfo.parsePrivateKey()).getOctets());
+        this.params = (SPHINCSPrivateKeyParameters) PrivateKeyFactory.createKey(privateKeyInfo);
     }
 
     public boolean equals(Object obj) {
@@ -28,7 +37,7 @@ public class BCSphincs256PrivateKey implements PrivateKey, Key {
         }
         if (obj instanceof BCSphincs256PrivateKey) {
             BCSphincs256PrivateKey bCSphincs256PrivateKey = (BCSphincs256PrivateKey) obj;
-            return this.treeDigest.equals(bCSphincs256PrivateKey.treeDigest) && Arrays.areEqual(this.params.getKeyData(), bCSphincs256PrivateKey.params.getKeyData());
+            return this.treeDigest.equals((ASN1Primitive) bCSphincs256PrivateKey.treeDigest) && Arrays.areEqual(this.params.getKeyData(), bCSphincs256PrivateKey.params.getKeyData());
         }
         return false;
     }
@@ -41,7 +50,7 @@ public class BCSphincs256PrivateKey implements PrivateKey, Key {
     @Override // java.security.Key
     public byte[] getEncoded() {
         try {
-            return new PrivateKeyInfo(new AlgorithmIdentifier(PQCObjectIdentifiers.sphincs256, new SPHINCS256KeyParams(new AlgorithmIdentifier(this.treeDigest))), new DEROctetString(this.params.getKeyData())).getEncoded();
+            return (this.params.getTreeDigest() != null ? PrivateKeyInfoFactory.createPrivateKeyInfo(this.params, this.attributes) : new PrivateKeyInfo(new AlgorithmIdentifier(PQCObjectIdentifiers.sphincs256, new SPHINCS256KeyParams(new AlgorithmIdentifier(this.treeDigest))), new DEROctetString(this.params.getKeyData()), this.attributes)).getEncoded();
         } catch (IOException unused) {
             return null;
         }

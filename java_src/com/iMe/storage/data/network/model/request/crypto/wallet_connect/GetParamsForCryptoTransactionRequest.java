@@ -13,7 +13,7 @@ public final class GetParamsForCryptoTransactionRequest {
     private final BigInteger nonce;
 
     /* renamed from: to */
-    private final String f296to;
+    private final String f291to;
     private final String value;
 
     public final String component1() {
@@ -21,7 +21,7 @@ public final class GetParamsForCryptoTransactionRequest {
     }
 
     public final String component2() {
-        return this.f296to;
+        return this.f291to;
     }
 
     public final String component3() {
@@ -62,13 +62,13 @@ public final class GetParamsForCryptoTransactionRequest {
         }
         if (obj instanceof GetParamsForCryptoTransactionRequest) {
             GetParamsForCryptoTransactionRequest getParamsForCryptoTransactionRequest = (GetParamsForCryptoTransactionRequest) obj;
-            return Intrinsics.areEqual(this.from, getParamsForCryptoTransactionRequest.from) && Intrinsics.areEqual(this.f296to, getParamsForCryptoTransactionRequest.f296to) && Intrinsics.areEqual(this.value, getParamsForCryptoTransactionRequest.value) && Intrinsics.areEqual(this.data, getParamsForCryptoTransactionRequest.data) && Intrinsics.areEqual(this.gas, getParamsForCryptoTransactionRequest.gas) && Intrinsics.areEqual(this.gasPrice, getParamsForCryptoTransactionRequest.gasPrice) && Intrinsics.areEqual(this.nonce, getParamsForCryptoTransactionRequest.nonce) && Intrinsics.areEqual(this.networkType, getParamsForCryptoTransactionRequest.networkType);
+            return Intrinsics.areEqual(this.from, getParamsForCryptoTransactionRequest.from) && Intrinsics.areEqual(this.f291to, getParamsForCryptoTransactionRequest.f291to) && Intrinsics.areEqual(this.value, getParamsForCryptoTransactionRequest.value) && Intrinsics.areEqual(this.data, getParamsForCryptoTransactionRequest.data) && Intrinsics.areEqual(this.gas, getParamsForCryptoTransactionRequest.gas) && Intrinsics.areEqual(this.gasPrice, getParamsForCryptoTransactionRequest.gasPrice) && Intrinsics.areEqual(this.nonce, getParamsForCryptoTransactionRequest.nonce) && Intrinsics.areEqual(this.networkType, getParamsForCryptoTransactionRequest.networkType);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((this.from.hashCode() * 31) + this.f296to.hashCode()) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31;
+        int hashCode = ((((((this.from.hashCode() * 31) + this.f291to.hashCode()) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31;
         BigInteger bigInteger = this.gas;
         int hashCode2 = (hashCode + (bigInteger == null ? 0 : bigInteger.hashCode())) * 31;
         BigInteger bigInteger2 = this.gasPrice;
@@ -80,7 +80,7 @@ public final class GetParamsForCryptoTransactionRequest {
     }
 
     public String toString() {
-        return "GetParamsForCryptoTransactionRequest(from=" + this.from + ", to=" + this.f296to + ", value=" + this.value + ", data=" + this.data + ", gas=" + this.gas + ", gasPrice=" + this.gasPrice + ", nonce=" + this.nonce + ", networkType=" + this.networkType + ')';
+        return "GetParamsForCryptoTransactionRequest(from=" + this.from + ", to=" + this.f291to + ", value=" + this.value + ", data=" + this.data + ", gas=" + this.gas + ", gasPrice=" + this.gasPrice + ", nonce=" + this.nonce + ", networkType=" + this.networkType + ')';
     }
 
     public GetParamsForCryptoTransactionRequest(String from, String to, String value, String data, BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, String str) {
@@ -89,7 +89,7 @@ public final class GetParamsForCryptoTransactionRequest {
         Intrinsics.checkNotNullParameter(value, "value");
         Intrinsics.checkNotNullParameter(data, "data");
         this.from = from;
-        this.f296to = to;
+        this.f291to = to;
         this.value = value;
         this.data = data;
         this.gas = bigInteger;
@@ -103,7 +103,7 @@ public final class GetParamsForCryptoTransactionRequest {
     }
 
     public final String getTo() {
-        return this.f296to;
+        return this.f291to;
     }
 
     public final String getValue() {

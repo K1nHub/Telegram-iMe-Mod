@@ -37,10 +37,10 @@ public final class View$OnClickListenerC0005a extends AppCompatDialog implements
     /* loaded from: classes.dex */
     public interface InterfaceC0006a {
         /* renamed from: a */
-        void mo859a(View view);
+        void mo844a(View view);
 
         /* renamed from: b */
-        void mo858b(View view);
+        void mo843b(View view);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -60,15 +60,15 @@ public final class View$OnClickListenerC0005a extends AppCompatDialog implements
         if (id == R$id.btn_ok) {
             InterfaceC0006a interfaceC0006a2 = this.f10a;
             if (interfaceC0006a2 != null) {
-                interfaceC0006a2.mo859a(v);
+                interfaceC0006a2.mo844a(v);
             }
         } else if (id != R$id.btn_cancel || (interfaceC0006a = this.f10a) == null) {
         } else {
-            interfaceC0006a.mo858b(v);
+            interfaceC0006a.mo843b(v);
         }
     }
 
-    @Override // androidx.appcompat.app.AppCompatDialog, android.app.Dialog
+    @Override // androidx.appcompat.app.AppCompatDialog, androidx.activity.ComponentDialog, android.app.Dialog
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         requestWindowFeature(1);

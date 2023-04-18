@@ -15,6 +15,20 @@
 .method public abstract finishScreen()V
 .end method
 
+.method public abstract showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/iMe/storage/domain/model/Result$Error<",
+            "+TT;>;",
+            "Lcom/iMe/storage/domain/utils/system/ResourceManager;",
+            ")V"
+        }
+    .end annotation
+.end method
+
 .method public abstract showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
 .end method
 

@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.audio;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -61,6 +61,6 @@ public class OpusUtil {
     }
 
     private static long sampleCountToNanoseconds(long j) {
-        return (j * C0482C.NANOS_PER_SECOND) / 48000;
+        return (j * C0470C.NANOS_PER_SECOND) / 48000;
     }
 }

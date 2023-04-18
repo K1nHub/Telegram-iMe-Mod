@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public log(Lorg/koin/core/logger/Level;Ljava/lang/String;)V
+.method public display(Lorg/koin/core/logger/Level;Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "level"

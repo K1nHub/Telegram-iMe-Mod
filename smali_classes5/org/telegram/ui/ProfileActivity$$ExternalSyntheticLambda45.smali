@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda45;->f$1:Ljava/util/concurrent/CountDownLatch;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$uCjglRXLlu5hn_rRYU_Vt4kfVbQ(Lorg/telegram/ui/ProfileActivity;Ljava/util/concurrent/CountDownLatch;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$nw0fbuu72G5hMuR2KMK_6AGEpZQ(Lorg/telegram/ui/ProfileActivity;Ljava/util/concurrent/CountDownLatch;)V
 
     return-void
 .end method

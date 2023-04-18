@@ -294,7 +294,7 @@ public class ListPopupWindow implements ShowableListMenu {
                 }
             }
         } else {
-            this.mPopup.setEpicenterBounds(this.mEpicenterBounds);
+            Api29Impl.setEpicenterBounds(this.mPopup, this.mEpicenterBounds);
         }
         PopupWindowCompat.showAsDropDown(this.mPopup, getAnchorView(), this.mDropDownHorizontalOffset, this.mDropDownVerticalOffset, this.mDropDownGravity);
         this.mDropDownList.setSelection(-1);
@@ -642,7 +642,7 @@ public class ListPopupWindow implements ShowableListMenu {
             }
             return;
         }
-        this.mPopup.setIsClippedToScreen(z);
+        Api29Impl.setIsClippedToScreen(this.mPopup, z);
     }
 
     private int getMaxAvailableHeight(View view, int i, boolean z) {
@@ -657,6 +657,26 @@ public class ListPopupWindow implements ShowableListMenu {
             }
             return this.mPopup.getMaxAvailableHeight(view, i);
         }
-        return this.mPopup.getMaxAvailableHeight(view, i, z);
+        return Api24Impl.getMaxAvailableHeight(this.mPopup, view, i, z);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api29Impl {
+        static void setEpicenterBounds(PopupWindow popupWindow, Rect rect) {
+            popupWindow.setEpicenterBounds(rect);
+        }
+
+        static void setIsClippedToScreen(PopupWindow popupWindow, boolean z) {
+            popupWindow.setIsClippedToScreen(z);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api24Impl {
+        static int getMaxAvailableHeight(PopupWindow popupWindow, View view, int i, boolean z) {
+            return popupWindow.getMaxAvailableHeight(view, i, z);
+        }
     }
 }

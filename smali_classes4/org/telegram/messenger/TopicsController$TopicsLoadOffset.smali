@@ -28,7 +28,7 @@
 .method private constructor <init>(Lorg/telegram/messenger/TopicsController;)V
     .locals 0
 
-    .line 998
+    .line 1014
     iput-object p1, p0, Lorg/telegram/messenger/TopicsController$TopicsLoadOffset;->this$0:Lorg/telegram/messenger/TopicsController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/TopicsController;Lorg/telegram/messenger/TopicsController$1;)V
     .locals 0
 
-    .line 998
+    .line 1014
     invoke-direct {p0, p1}, Lorg/telegram/messenger/TopicsController$TopicsLoadOffset;-><init>(Lorg/telegram/messenger/TopicsController;)V
 
     return-void

@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1;
 
 import java.io.IOException;
+import java.io.OutputStream;
 /* loaded from: classes4.dex */
 public abstract class ASN1Primitive extends ASN1Object {
     public static ASN1Primitive fromByteArray(byte[] bArr) throws IOException {
@@ -16,10 +17,21 @@ public abstract class ASN1Primitive extends ASN1Object {
         }
     }
 
-    abstract boolean asn1Equals(ASN1Primitive aSN1Primitive);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public abstract boolean asn1Equals(ASN1Primitive aSN1Primitive);
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void encode(ASN1OutputStream aSN1OutputStream) throws IOException;
+    public abstract void encode(ASN1OutputStream aSN1OutputStream, boolean z) throws IOException;
+
+    @Override // org.bouncycastle.asn1.ASN1Object
+    public void encodeTo(OutputStream outputStream) throws IOException {
+        ASN1OutputStream.create(outputStream).writeObject(this);
+    }
+
+    @Override // org.bouncycastle.asn1.ASN1Object
+    public void encodeTo(OutputStream outputStream, String str) throws IOException {
+        ASN1OutputStream.create(outputStream, str).writeObject(this);
+    }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract int encodedLength() throws IOException;
@@ -32,11 +44,15 @@ public abstract class ASN1Primitive extends ASN1Object {
         return (obj instanceof ASN1Encodable) && asn1Equals(((ASN1Encodable) obj).toASN1Primitive());
     }
 
+    public final boolean equals(ASN1Primitive aSN1Primitive) {
+        return this == aSN1Primitive || asn1Equals(aSN1Primitive);
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract boolean isConstructed();
 
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable
-    public ASN1Primitive toASN1Primitive() {
+    public final ASN1Primitive toASN1Primitive() {
         return this;
     }
 

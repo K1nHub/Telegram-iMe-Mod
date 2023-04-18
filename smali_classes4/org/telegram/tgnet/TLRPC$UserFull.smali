@@ -73,10 +73,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 47083
+    .line 47095
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 47111
+    .line 47123
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -95,7 +95,7 @@
 
     goto :goto_0
 
-    .line 47139
+    .line 47151
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer101;
 
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 47136
+    .line 47148
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer131;
 
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 47118
+    .line 47130
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull;
 
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 47145
+    .line 47157
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer123;
 
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 47121
+    .line 47133
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer150_rev2;
 
@@ -135,7 +135,7 @@
 
     goto :goto_0
 
-    .line 47133
+    .line 47145
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer134;
 
@@ -143,7 +143,7 @@
 
     goto :goto_0
 
-    .line 47130
+    .line 47142
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer139;
 
@@ -151,7 +151,7 @@
 
     goto :goto_0
 
-    .line 47124
+    .line 47136
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer150;
 
@@ -159,7 +159,7 @@
 
     goto :goto_0
 
-    .line 47142
+    .line 47154
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer98;
 
@@ -167,7 +167,7 @@
 
     goto :goto_0
 
-    .line 47127
+    .line 47139
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer143;
 
@@ -180,7 +180,7 @@
 
     goto :goto_1
 
-    .line 47149
+    .line 47161
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -210,7 +210,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 47152
+    .line 47164
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

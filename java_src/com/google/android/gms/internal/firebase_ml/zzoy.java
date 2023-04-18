@@ -8,8 +8,8 @@ import com.google.android.gms.common.util.IOUtils;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseRemoteModel;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseRemoteModel;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ public final class zzoy {
         String headerField2 = zza.getHeaderField("ETag");
         GmsLogger gmsLogger = zzass;
         String valueOf = String.valueOf(headerField);
-        gmsLogger.m799d("ModelInfoRetriever", valueOf.length() != 0 ? "Received download URL: ".concat(valueOf) : new String("Received download URL: "));
+        gmsLogger.m785d("ModelInfoRetriever", valueOf.length() != 0 ? "Received download URL: ".concat(valueOf) : new String("Received download URL: "));
         if (headerField == null) {
             return null;
         }
@@ -74,18 +74,18 @@ public final class zzoy {
         }
         FirebaseInstanceId firebaseInstanceId = FirebaseInstanceId.getInstance(firebaseApp);
         if (firebaseInstanceId == null) {
-            zzass.m791w("ModelInfoRetriever", "Cannot get a valid instance of FirebaseInstanceId. Cannot retrieve model info.");
+            zzass.m777w("ModelInfoRetriever", "Cannot get a valid instance of FirebaseInstanceId. Cannot retrieve model info.");
             return null;
         }
         String id = firebaseInstanceId.getId();
         if (id == null) {
-            zzass.m791w("ModelInfoRetriever", "Firebase instance id is null. Cannot retrieve model info.");
+            zzass.m777w("ModelInfoRetriever", "Firebase instance id is null. Cannot retrieve model info.");
             return null;
         }
         try {
             String token = firebaseInstanceId.getToken(gcmSenderId, "*");
             if (token == null) {
-                zzass.m791w("ModelInfoRetriever", "Firebase instance token is null. Cannot retrieve model info.");
+                zzass.m777w("ModelInfoRetriever", "Firebase instance token is null. Cannot retrieve model info.");
                 return null;
             }
             return String.format("https://mlkit.googleapis.com/v1beta1/projects/%s/models/%s/versions/active?key=%s&app_instance_id=%s&app_instance_token=%s", firebaseApp.getOptions().getProjectId(), str, firebaseApp.getOptions().getApiKey(), id, token);

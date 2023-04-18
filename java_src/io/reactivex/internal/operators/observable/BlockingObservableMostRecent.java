@@ -6,8 +6,8 @@ import io.reactivex.internal.util.NotificationLite;
 import io.reactivex.observers.DefaultObserver;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* loaded from: classes4.dex */
 public final class BlockingObservableMostRecent<T> implements Iterable<T> {
     final T initialValue;
@@ -54,10 +54,10 @@ public final class BlockingObservableMostRecent<T> implements Iterable<T> {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* loaded from: classes4.dex */
-        public final class Iterator implements java.util.Iterator<T>, p035j$.util.Iterator {
+        public final class Iterator implements java.util.Iterator<T>, p034j$.util.Iterator {
             private Object buf;
 
-            @Override // p035j$.util.Iterator
+            @Override // p034j$.util.Iterator
             public /* synthetic */ void forEachRemaining(Consumer consumer) {
                 Iterator.CC.$default$forEachRemaining(this, consumer);
             }
@@ -65,14 +65,14 @@ public final class BlockingObservableMostRecent<T> implements Iterable<T> {
             Iterator() {
             }
 
-            @Override // java.util.Iterator, p035j$.util.Iterator
+            @Override // java.util.Iterator, p034j$.util.Iterator
             public boolean hasNext() {
                 Object obj = MostRecentObserver.this.value;
                 this.buf = obj;
                 return !NotificationLite.isComplete(obj);
             }
 
-            @Override // java.util.Iterator, p035j$.util.Iterator
+            @Override // java.util.Iterator, p034j$.util.Iterator
             public T next() {
                 try {
                     if (this.buf == null) {
@@ -90,7 +90,7 @@ public final class BlockingObservableMostRecent<T> implements Iterable<T> {
                 }
             }
 
-            @Override // java.util.Iterator, p035j$.util.Iterator
+            @Override // java.util.Iterator, p034j$.util.Iterator
             public void remove() {
                 throw new UnsupportedOperationException("Read only iterator");
             }

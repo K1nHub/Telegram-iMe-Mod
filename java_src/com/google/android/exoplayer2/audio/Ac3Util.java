@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.audio;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.RendererCapabilities;
 import com.google.android.exoplayer2.drm.DrmInitData;
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.ParsableBitArray;
 import com.google.android.exoplayer2.util.ParsableByteArray;

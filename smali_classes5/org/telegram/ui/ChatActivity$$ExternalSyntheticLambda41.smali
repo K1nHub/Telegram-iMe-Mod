@@ -12,15 +12,11 @@
 
 .field public final synthetic f$2:Landroid/text/style/CharacterStyle;
 
-.field public final synthetic f$3:Lorg/telegram/messenger/MessageObject;
-
-.field public final synthetic f$4:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-.field public final synthetic f$5:I
+.field public final synthetic f$3:Lorg/telegram/ui/Cells/ChatMessageCell;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;Landroid/text/style/CharacterStyle;Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Cells/ChatMessageCell;I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;Landroid/text/style/CharacterStyle;Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,11 +27,7 @@
 
     iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda41;->f$2:Landroid/text/style/CharacterStyle;
 
-    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda41;->f$3:Lorg/telegram/messenger/MessageObject;
-
-    iput-object p5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda41;->f$4:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    iput p6, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda41;->f$5:I
+    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda41;->f$3:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     return-void
 .end method
@@ -43,7 +35,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 8
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda41;->f$0:Lorg/telegram/ui/ChatActivity;
 
@@ -51,17 +43,13 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda41;->f$2:Landroid/text/style/CharacterStyle;
 
-    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda41;->f$3:Lorg/telegram/messenger/MessageObject;
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda41;->f$3:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda41;->f$4:Lorg/telegram/ui/Cells/ChatMessageCell;
+    move-object v4, p1
 
-    iget v5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda41;->f$5:I
+    move v5, p2
 
-    move-object v6, p1
-
-    move v7, p2
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$WS9VQMci-d6XyydQHKfC5_jFLXA(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;Landroid/text/style/CharacterStyle;Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Cells/ChatMessageCell;ILandroid/content/DialogInterface;I)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$sZFbRpOrJ-FYqMxc27rdgvOrvJg(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;Landroid/text/style/CharacterStyle;Lorg/telegram/ui/Cells/ChatMessageCell;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

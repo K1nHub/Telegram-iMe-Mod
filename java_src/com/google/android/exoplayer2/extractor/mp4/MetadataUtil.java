@@ -211,7 +211,7 @@ public final class MetadataUtil {
                     return parseInternalAttribute(parsableByteArray, position);
                 }
             }
-            Log.m812d(TAG, "Skipped unknown metadata entry: " + Atom.getAtomTypeString(readInt));
+            Log.m798d(TAG, "Skipped unknown metadata entry: " + Atom.getAtomTypeString(readInt));
             return null;
         } finally {
             parsableByteArray.setPosition(position);
@@ -241,9 +241,9 @@ public final class MetadataUtil {
         int readInt = parsableByteArray.readInt();
         if (parsableByteArray.readInt() == 1684108385) {
             parsableByteArray.skipBytes(8);
-            return new TextInformationFrame(str, (String) null, ImmutableList.m753of(parsableByteArray.readNullTerminatedString(readInt - 16)));
+            return new TextInformationFrame(str, (String) null, ImmutableList.m739of(parsableByteArray.readNullTerminatedString(readInt - 16)));
         }
-        Log.m806w(TAG, "Failed to parse text attribute: " + Atom.getAtomTypeString(i));
+        Log.m792w(TAG, "Failed to parse text attribute: " + Atom.getAtomTypeString(i));
         return null;
     }
 
@@ -254,7 +254,7 @@ public final class MetadataUtil {
             String readNullTerminatedString = parsableByteArray.readNullTerminatedString(readInt - 16);
             return new CommentFrame("und", readNullTerminatedString, readNullTerminatedString);
         }
-        Log.m806w(TAG, "Failed to parse comment attribute: " + Atom.getAtomTypeString(i));
+        Log.m792w(TAG, "Failed to parse comment attribute: " + Atom.getAtomTypeString(i));
         return null;
     }
 
@@ -265,11 +265,11 @@ public final class MetadataUtil {
         }
         if (parseUint8AttributeValue >= 0) {
             if (z) {
-                return new TextInformationFrame(str, (String) null, ImmutableList.m753of(Integer.toString(parseUint8AttributeValue)));
+                return new TextInformationFrame(str, (String) null, ImmutableList.m739of(Integer.toString(parseUint8AttributeValue)));
             }
             return new CommentFrame("und", str, Integer.toString(parseUint8AttributeValue));
         }
-        Log.m806w(TAG, "Failed to parse uint8 attribute: " + Atom.getAtomTypeString(i));
+        Log.m792w(TAG, "Failed to parse uint8 attribute: " + Atom.getAtomTypeString(i));
         return null;
     }
 
@@ -284,10 +284,10 @@ public final class MetadataUtil {
                 if (readUnsignedShort2 > 0) {
                     str2 = str2 + "/" + readUnsignedShort2;
                 }
-                return new TextInformationFrame(str, (String) null, ImmutableList.m753of(str2));
+                return new TextInformationFrame(str, (String) null, ImmutableList.m739of(str2));
             }
         }
-        Log.m806w(TAG, "Failed to parse index/count attribute: " + Atom.getAtomTypeString(i));
+        Log.m792w(TAG, "Failed to parse index/count attribute: " + Atom.getAtomTypeString(i));
         return null;
     }
 
@@ -313,14 +313,14 @@ public final class MetadataUtil {
         L12:
             if (r3 == 0) goto L20
             com.google.android.exoplayer2.metadata.id3.TextInformationFrame r1 = new com.google.android.exoplayer2.metadata.id3.TextInformationFrame
-            com.google.common.collect.ImmutableList r3 = com.google.common.collect.ImmutableList.m753of(r3)
+            com.google.common.collect.ImmutableList r3 = com.google.common.collect.ImmutableList.m739of(r3)
             java.lang.String r2 = "TCON"
             r1.<init>(r2, r0, r3)
             return r1
         L20:
             java.lang.String r3 = "MetadataUtil"
             java.lang.String r1 = "Failed to parse standard genre code"
-            com.google.android.exoplayer2.util.Log.m806w(r3, r1)
+            com.google.android.exoplayer2.util.Log.m792w(r3, r1)
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.extractor.mp4.MetadataUtil.parseStandardGenreAttribute(com.google.android.exoplayer2.util.ParsableByteArray):com.google.android.exoplayer2.metadata.id3.TextInformationFrame");
@@ -332,7 +332,7 @@ public final class MetadataUtil {
             int parseFullAtomFlags = Atom.parseFullAtomFlags(parsableByteArray.readInt());
             String str = parseFullAtomFlags == 13 ? MimeTypes.IMAGE_JPEG : parseFullAtomFlags == 14 ? "image/png" : null;
             if (str == null) {
-                Log.m806w(TAG, "Unrecognized cover art flags: " + parseFullAtomFlags);
+                Log.m792w(TAG, "Unrecognized cover art flags: " + parseFullAtomFlags);
                 return null;
             }
             parsableByteArray.skipBytes(4);
@@ -341,7 +341,7 @@ public final class MetadataUtil {
             parsableByteArray.readBytes(bArr, 0, i);
             return new ApicFrame(str, null, 3, bArr);
         }
-        Log.m806w(TAG, "Failed to parse cover art attribute");
+        Log.m792w(TAG, "Failed to parse cover art attribute");
         return null;
     }
 
@@ -381,7 +381,7 @@ public final class MetadataUtil {
             parsableByteArray.skipBytes(8);
             return parsableByteArray.readUnsignedByte();
         }
-        Log.m806w(TAG, "Failed to parse uint8 attribute value");
+        Log.m792w(TAG, "Failed to parse uint8 attribute value");
         return -1;
     }
 }

@@ -1,5 +1,5 @@
 .class public Lorg/bouncycastle/pqc/crypto/sphincs/SPHINCSPrivateKeyParameters;
-.super Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;
+.super Lorg/bouncycastle/pqc/crypto/sphincs/SPHINCSKeyParameters;
 
 
 # instance fields
@@ -7,12 +7,12 @@
 
 
 # direct methods
-.method public constructor <init>([B)V
+.method public constructor <init>([BLjava/lang/String;)V
     .locals 1
 
     const/4 v0, 0x1
 
-    invoke-direct {p0, v0}, Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;-><init>(Z)V
+    invoke-direct {p0, v0, p2}, Lorg/bouncycastle/pqc/crypto/sphincs/SPHINCSKeyParameters;-><init>(ZLjava/lang/String;)V
 
     invoke-static {p1}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
 

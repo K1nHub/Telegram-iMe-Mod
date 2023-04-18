@@ -4,8 +4,8 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.vision.common.FirebaseVisionImage;
-import com.google.firebase.p021ml.vision.text.FirebaseVisionText;
+import com.google.firebase.p020ml.vision.common.FirebaseVisionImage;
+import com.google.firebase.p020ml.vision.text.FirebaseVisionText;
 import java.util.HashMap;
 import java.util.Map;
 /* loaded from: classes.dex */

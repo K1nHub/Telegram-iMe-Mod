@@ -14,8 +14,9 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.view.TintableBackgroundView;
 import androidx.core.widget.TextViewCompat;
 import androidx.core.widget.TintableCheckedTextView;
+import androidx.core.widget.TintableCompoundDrawablesView;
 /* loaded from: classes.dex */
-public class AppCompatCheckedTextView extends CheckedTextView implements TintableCheckedTextView, TintableBackgroundView {
+public class AppCompatCheckedTextView extends CheckedTextView implements TintableCheckedTextView, TintableBackgroundView, TintableCompoundDrawablesView {
     private AppCompatEmojiTextHelper mAppCompatEmojiTextHelper;
     private final AppCompatBackgroundHelper mBackgroundTintHelper;
     private final AppCompatCheckedTextViewHelper mCheckedHelper;
@@ -195,5 +196,43 @@ public class AppCompatCheckedTextView extends CheckedTextView implements Tintabl
 
     public void setEmojiCompatEnabled(boolean z) {
         getEmojiTextViewHelper().setEnabled(z);
+    }
+
+    @Override // android.widget.TextView
+    public void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            appCompatTextHelper.onSetCompoundDrawables();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            appCompatTextHelper.onSetCompoundDrawables();
+        }
+    }
+
+    public ColorStateList getSupportCompoundDrawablesTintList() {
+        return this.mTextHelper.getCompoundDrawableTintList();
+    }
+
+    @Override // androidx.core.widget.TintableCompoundDrawablesView
+    public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
+        this.mTextHelper.setCompoundDrawableTintList(colorStateList);
+        this.mTextHelper.applyCompoundDrawablesTints();
+    }
+
+    public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
+        return this.mTextHelper.getCompoundDrawableTintMode();
+    }
+
+    @Override // androidx.core.widget.TintableCompoundDrawablesView
+    public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
+        this.mTextHelper.setCompoundDrawableTintMode(mode);
+        this.mTextHelper.applyCompoundDrawablesTints();
     }
 }

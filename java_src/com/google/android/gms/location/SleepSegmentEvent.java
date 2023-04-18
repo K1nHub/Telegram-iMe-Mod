@@ -22,20 +22,20 @@ public class SleepSegmentEvent extends AbstractSafeParcelable {
     public static final int STATUS_MISSING_DATA = 1;
     public static final int STATUS_NOT_DETECTED = 2;
     public static final int STATUS_SUCCESSFUL = 0;
-    @SafeParcelable.Field(getter = "getStartTimeMillis", m789id = 1)
+    @SafeParcelable.Field(getter = "getStartTimeMillis", m775id = 1)
     private final long zza;
-    @SafeParcelable.Field(getter = "getEndTimeMillis", m789id = 2)
+    @SafeParcelable.Field(getter = "getEndTimeMillis", m775id = 2)
     private final long zzb;
-    @SafeParcelable.Field(getter = "getStatus", m789id = 3)
+    @SafeParcelable.Field(getter = "getStatus", m775id = 3)
     private final int zzc;
-    @SafeParcelable.Field(getter = "getMissingDataDurationMinutes", m789id = 4)
+    @SafeParcelable.Field(getter = "getMissingDataDurationMinutes", m775id = 4)
     private final int zzd;
-    @SafeParcelable.Field(getter = "getNinetiethPctConfidence", m789id = 5)
+    @SafeParcelable.Field(getter = "getNinetiethPctConfidence", m775id = 5)
     private final int zze;
 
     @ShowFirstParty
     @SafeParcelable.Constructor
-    public SleepSegmentEvent(@SafeParcelable.Param(m788id = 1) long j, @SafeParcelable.Param(m788id = 2) long j2, @SafeParcelable.Param(m788id = 3) int i, @SafeParcelable.Param(m788id = 4) int i2, @SafeParcelable.Param(m788id = 5) int i3) {
+    public SleepSegmentEvent(@SafeParcelable.Param(m774id = 1) long j, @SafeParcelable.Param(m774id = 2) long j2, @SafeParcelable.Param(m774id = 3) int i, @SafeParcelable.Param(m774id = 4) int i2, @SafeParcelable.Param(m774id = 5) int i3) {
         Preconditions.checkArgument(j <= j2, "endTimeMillis must be greater than or equal to startTimeMillis");
         this.zza = j;
         this.zzb = j2;

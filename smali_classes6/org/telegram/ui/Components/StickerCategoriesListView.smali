@@ -958,12 +958,14 @@
 .method private static synthetic lambda$preload$0(ILorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;)V
     .locals 4
 
+    if-eqz p1, :cond_1
+
     .line 97
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;->groups:Ljava/util/ArrayList;
 
     if-nez p1, :cond_0
 
-    return-void
+    goto :goto_1
 
     .line 100
     :cond_0
@@ -998,6 +1000,7 @@
     goto :goto_0
 
     :cond_1
+    :goto_1
     return-void
 .end method
 

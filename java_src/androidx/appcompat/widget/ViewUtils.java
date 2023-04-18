@@ -9,10 +9,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 /* loaded from: classes.dex */
 public class ViewUtils {
+    static final boolean SDK_LEVEL_SUPPORTS_AUTOSIZE;
     private static Method sComputeFitSystemWindowsMethod;
 
     static {
-        if (Build.VERSION.SDK_INT >= 18) {
+        int i = Build.VERSION.SDK_INT;
+        SDK_LEVEL_SUPPORTS_AUTOSIZE = i >= 27;
+        if (i >= 18) {
             try {
                 Method declaredMethod = View.class.getDeclaredMethod("computeFitSystemWindows", Rect.class, Rect.class);
                 sComputeFitSystemWindowsMethod = declaredMethod;

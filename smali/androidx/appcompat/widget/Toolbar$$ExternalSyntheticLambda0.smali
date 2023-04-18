@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Landroidx/appcompat/widget/Toolbar$$ExternalSyntheticLambda0;->f$0:Landroidx/appcompat/widget/Toolbar;
 
-    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->invalidateMenu()V
+    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->collapseActionView()V
 
     return-void
 .end method

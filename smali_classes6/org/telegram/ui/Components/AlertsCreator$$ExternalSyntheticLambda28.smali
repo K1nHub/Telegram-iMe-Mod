@@ -105,7 +105,7 @@
 
     move/from16 v16, p2
 
-    invoke-static/range {v1 .. v16}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$8F6VnmXN0AbNBX91gPkVMYDkxFk(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject$GroupedMessages;Lorg/telegram/tgnet/TLRPC$EncryptedChat;IJ[ZZ[Landroid/util/SparseArray;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;[ZLorg/telegram/tgnet/TLRPC$Chat;Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
+    invoke-static/range {v1 .. v16}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$QoUoX-tr8SA0maacPswYqKvop_o(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject$GroupedMessages;Lorg/telegram/tgnet/TLRPC$EncryptedChat;IJ[ZZ[Landroid/util/SparseArray;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;[ZLorg/telegram/tgnet/TLRPC$Chat;Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

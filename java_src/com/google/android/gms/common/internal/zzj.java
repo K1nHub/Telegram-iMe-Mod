@@ -13,13 +13,13 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzj extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzj> CREATOR = new zzk();
-    @SafeParcelable.Field(m789id = 1)
+    @SafeParcelable.Field(m775id = 1)
     Bundle zza;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     Feature[] zzb;
-    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, m789id = 3)
+    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, m775id = 3)
     int zzc;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     ConnectionTelemetryConfiguration zzd;
 
     public zzj() {
@@ -27,7 +27,7 @@ public final class zzj extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzj(@SafeParcelable.Param(m788id = 1) Bundle bundle, @SafeParcelable.Param(m788id = 2) Feature[] featureArr, @SafeParcelable.Param(m788id = 3) int i, @SafeParcelable.Param(m788id = 4) ConnectionTelemetryConfiguration connectionTelemetryConfiguration) {
+    public zzj(@SafeParcelable.Param(m774id = 1) Bundle bundle, @SafeParcelable.Param(m774id = 2) Feature[] featureArr, @SafeParcelable.Param(m774id = 3) int i, @SafeParcelable.Param(m774id = 4) ConnectionTelemetryConfiguration connectionTelemetryConfiguration) {
         this.zza = bundle;
         this.zzb = featureArr;
         this.zzc = i;

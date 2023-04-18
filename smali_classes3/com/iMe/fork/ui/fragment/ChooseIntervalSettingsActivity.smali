@@ -1,5 +1,5 @@
 .class public final Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
-.super Lorg/telegram/ui/ActionBar/BaseFragment;
+.super Lcom/iMe/ui/base/mvp/MvpFragment;
 .source "ChooseIntervalSettingsActivity.kt"
 
 
@@ -13,12 +13,19 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChooseIntervalSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChooseIntervalSettingsActivity.kt\ncom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,286:1\n1#2:287\n*E\n"
-.end annotation
-
 
 # static fields
+.field static final synthetic $$delegatedProperties:[Lkotlin/reflect/KProperty;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Lkotlin/reflect/KProperty<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public static final Companion:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Companion;
 
 
@@ -31,11 +38,11 @@
 
 .field private intervalHeaderRow:I
 
-.field private final listAdapter$delegate:Lkotlin/Lazy;
+.field private final listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-.field private final listView$delegate:Lkotlin/Lazy;
+.field private final listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-.field private final rootView$delegate:Lkotlin/Lazy;
+.field private final rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
 .field private rowCount:I
 
@@ -43,16 +50,75 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$6aQfX8BY2n6OJrwP9GViMgZiuWQ(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$uuMHiQTWlrL8yP664dYxT43cnow(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->setupListeners$lambda$4(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->setupListeners$lambda$3(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
 
     return-void
 .end method
 
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 6
+
+    const-class v0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Lkotlin/reflect/KProperty;
+
+    .line 33
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "rootView"
+
+    const-string v4, "getRootView()Landroid/widget/FrameLayout;"
+
+    const/4 v5, 0x0
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v2
+
+    aput-object v2, v1, v5
+
+    .line 34
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "listView"
+
+    const-string v4, "getListView()Lorg/telegram/ui/Components/RecyclerListView;"
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    aput-object v2, v1, v3
+
+    .line 35
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "listAdapter"
+
+    const-string v4, "getListAdapter()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;"
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v0
+
+    const/4 v2, 0x2
+
+    aput-object v0, v1, v2
+
+    sput-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
     new-instance v0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Companion;
 
@@ -66,50 +132,54 @@
 .end method
 
 .method public constructor <init>(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;)V
-    .locals 1
+    .locals 2
 
     const-string v0, "type"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 29
-    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
+    .line 30
+    invoke-direct {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;-><init>()V
 
-    .line 28
+    .line 29
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
-    .line 32
+    .line 33
     new-instance p1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$rootView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$rootView$2;-><init>(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    invoke-static {p0, v0, p1, v1, v0}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->rootView$delegate:Lkotlin/Lazy;
+    iput-object p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 33
+    .line 34
     new-instance p1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$listView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$listView$2;-><init>(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v0, p1, v1, v0}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->listView$delegate:Lkotlin/Lazy;
+    iput-object p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 34
+    .line 35
     new-instance p1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$listAdapter$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$listAdapter$2;-><init>(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v0, p1, v1, v0}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->listAdapter$delegate:Lkotlin/Lazy;
+    iput-object p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     return-void
 .end method
@@ -117,7 +187,7 @@
 .method public static final synthetic access$getEnableInfoRow$p(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)I
     .locals 0
 
-    .line 27
+    .line 28
     iget p0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->enableInfoRow:I
 
     return p0
@@ -126,7 +196,7 @@
 .method public static final synthetic access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)I
     .locals 0
 
-    .line 27
+    .line 28
     iget p0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->enableRow:I
 
     return p0
@@ -135,7 +205,7 @@
 .method public static final synthetic access$getIntervalChooserRow$p(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)I
     .locals 0
 
-    .line 27
+    .line 28
     iget p0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->intervalChooserRow:I
 
     return p0
@@ -144,7 +214,7 @@
 .method public static final synthetic access$getIntervalHeaderRow$p(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)I
     .locals 0
 
-    .line 27
+    .line 28
     iget p0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->intervalHeaderRow:I
 
     return p0
@@ -153,7 +223,7 @@
 .method public static final synthetic access$getIntervals(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)[Lcom/iMe/fork/enums/Interval;
     .locals 0
 
-    .line 27
+    .line 28
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getIntervals()[Lcom/iMe/fork/enums/Interval;
 
     move-result-object p0
@@ -164,7 +234,7 @@
 .method public static final synthetic access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)I
     .locals 0
 
-    .line 27
+    .line 28
     iget p0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->rowCount:I
 
     return p0
@@ -173,7 +243,7 @@
 .method public static final synthetic access$getSelectedInterval(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)Lcom/iMe/fork/enums/Interval;
     .locals 0
 
-    .line 27
+    .line 28
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getSelectedInterval()Lcom/iMe/fork/enums/Interval;
 
     move-result-object p0
@@ -184,7 +254,7 @@
 .method public static final synthetic access$initListView(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 27
+    .line 28
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->initListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
@@ -195,7 +265,7 @@
 .method public static final synthetic access$initRootView(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 27
+    .line 28
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->initRootView()Landroid/widget/FrameLayout;
 
     move-result-object p0
@@ -206,7 +276,7 @@
 .method public static final synthetic access$isMainSwitchEnabled(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)Z
     .locals 0
 
-    .line 27
+    .line 28
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->isMainSwitchEnabled()Z
 
     move-result p0
@@ -217,7 +287,7 @@
 .method public static final synthetic access$setEnableInfoRow$p(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;I)V
     .locals 0
 
-    .line 27
+    .line 28
     iput p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->enableInfoRow:I
 
     return-void
@@ -226,7 +296,7 @@
 .method public static final synthetic access$setEnableRow$p(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;I)V
     .locals 0
 
-    .line 27
+    .line 28
     iput p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->enableRow:I
 
     return-void
@@ -235,7 +305,7 @@
 .method public static final synthetic access$setInterval(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;Lcom/iMe/fork/enums/Interval;)V
     .locals 0
 
-    .line 27
+    .line 28
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->setInterval(Lcom/iMe/fork/enums/Interval;)V
 
     return-void
@@ -244,7 +314,7 @@
 .method public static final synthetic access$setIntervalChooserRow$p(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;I)V
     .locals 0
 
-    .line 27
+    .line 28
     iput p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->intervalChooserRow:I
 
     return-void
@@ -253,7 +323,7 @@
 .method public static final synthetic access$setIntervalHeaderRow$p(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;I)V
     .locals 0
 
-    .line 27
+    .line 28
     iput p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->intervalHeaderRow:I
 
     return-void
@@ -262,7 +332,7 @@
 .method public static final synthetic access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;I)V
     .locals 0
 
-    .line 27
+    .line 28
     iput p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->rowCount:I
 
     return-void
@@ -271,7 +341,7 @@
 .method private final getIntervals()[Lcom/iMe/fork/enums/Interval;
     .locals 1
 
-    .line 161
+    .line 166
     invoke-static {}, Lcom/iMe/fork/enums/Interval;->values()[Lcom/iMe/fork/enums/Interval;
 
     move-result-object v0
@@ -280,12 +350,18 @@
 .end method
 
 .method private final getListAdapter()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;
-    .locals 1
+    .locals 3
 
-    .line 34
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->listAdapter$delegate:Lkotlin/Lazy;
+    .line 35
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x2
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -295,12 +371,18 @@
 .end method
 
 .method private final getListView()Lorg/telegram/ui/Components/RecyclerListView;
-    .locals 1
+    .locals 3
 
-    .line 33
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->listView$delegate:Lkotlin/Lazy;
+    .line 34
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x1
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -310,12 +392,18 @@
 .end method
 
 .method private final getRootView()Landroid/widget/FrameLayout;
-    .locals 1
+    .locals 3
 
-    .line 32
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->rootView$delegate:Lkotlin/Lazy;
+    .line 33
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x0
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -327,7 +415,7 @@
 .method private final getSelectedInterval()Lcom/iMe/fork/enums/Interval;
     .locals 2
 
-    .line 156
+    .line 161
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -346,7 +434,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 158
+    .line 163
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v0
@@ -364,7 +452,7 @@
 
     throw v0
 
-    .line 157
+    .line 162
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
@@ -381,7 +469,7 @@
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 131
+    .line 136
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -392,10 +480,10 @@
 
     const/4 v1, 0x0
 
-    .line 132
+    .line 137
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 133
+    .line 138
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -406,14 +494,14 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 134
+    .line 139
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 135
+    .line 140
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RecyclerListView;->disableItemAnimationDelay()V
 
     return-object v0
@@ -422,7 +510,7 @@
 .method private final initRootView()Landroid/widget/FrameLayout;
     .locals 2
 
-    .line 127
+    .line 132
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -433,7 +521,7 @@
 
     const-string v1, "windowBackgroundGray"
 
-    .line 128
+    .line 133
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
@@ -446,7 +534,7 @@
 .method private final isMainSwitchEnabled()Z
     .locals 2
 
-    .line 138
+    .line 143
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -465,7 +553,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 140
+    .line 145
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v0
@@ -483,7 +571,7 @@
 
     throw v0
 
-    .line 139
+    .line 144
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
@@ -524,7 +612,7 @@
 .method private final setInterval(Lcom/iMe/fork/enums/Interval;)V
     .locals 2
 
-    .line 164
+    .line 169
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -545,30 +633,30 @@
 
     goto :goto_0
 
-    .line 169
+    .line 174
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v0
 
-    .line 170
+    .line 175
     invoke-virtual {v0, p1}, Lcom/iMe/fork/controller/ForkTopicsController;->setSelectedAutoUpdateTopicsCatalogInterval(Lcom/iMe/fork/enums/Interval;)V
 
-    .line 171
+    .line 176
     invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->resetLastAutoUpdateCatalogTime()V
 
     goto :goto_0
 
-    .line 165
+    .line 170
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
     move-result-object v0
 
-    .line 166
+    .line 171
     invoke-virtual {v0, p1}, Lcom/iMe/fork/controller/BackupController;->setSelectedAutoBackupInterval(Lcom/iMe/fork/enums/Interval;)V
 
-    .line 167
+    .line 172
     invoke-virtual {v0}, Lcom/iMe/fork/controller/BackupController;->resetLastAutoBackupTime()V
 
     :goto_0
@@ -578,20 +666,20 @@
 .method private final setupActionBar()V
     .locals 4
 
-    .line 90
+    .line 95
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 91
+    .line 96
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 92
+    .line 97
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 93
+    .line 98
     iget-object v2, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     sget-object v3, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -608,7 +696,7 @@
 
     if-ne v2, v1, :cond_0
 
-    .line 95
+    .line 100
     sget v1, Lorg/telegram/messenger/R$string;->topics_catalog:I
 
     goto :goto_0
@@ -620,11 +708,11 @@
 
     throw v0
 
-    .line 94
+    .line 99
     :cond_1
     sget v1, Lorg/telegram/messenger/R$string;->backup_settings_header:I
 
-    .line 93
+    .line 98
     :goto_0
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
@@ -632,7 +720,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 97
+    .line 102
     new-instance v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$setupActionBar$1$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$setupActionBar$1$1;-><init>(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)V
@@ -645,7 +733,7 @@
 .method private final setupListeners()V
     .locals 2
 
-    .line 108
+    .line 113
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
@@ -659,14 +747,14 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda$4(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$3(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
     .locals 2
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 109
+    .line 114
     instance-of v0, p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     if-eqz v0, :cond_1
@@ -675,26 +763,26 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 110
+    .line 115
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckbox()V
 
-    .line 111
+    .line 116
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->toggleEnabled()V
 
-    .line 112
+    .line 117
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;
 
     move-result-object p2
 
-    .line 113
+    .line 118
     iget v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->rowCount:I
 
-    .line 114
+    .line 119
     invoke-virtual {p2}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;->updateRows()V
 
-    .line 115
+    .line 120
     iget v1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->rowCount:I
 
     sub-int/2addr v0, v1
@@ -703,14 +791,14 @@
 
     move-result v0
 
-    .line 116
+    .line 121
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->isChecked()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 117
+    .line 122
     iget p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->enableInfoRow:I
 
     add-int/lit8 p1, p1, 0x1
@@ -719,7 +807,7 @@
 
     goto :goto_0
 
-    .line 119
+    .line 124
     :cond_0
     iget p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->enableInfoRow:I
 
@@ -727,7 +815,7 @@
 
     invoke-virtual {p2, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    .line 121
+    .line 126
     :goto_0
     iget p0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->enableInfoRow:I
 
@@ -740,7 +828,7 @@
 .method private final toggleEnabled()V
     .locals 3
 
-    .line 144
+    .line 149
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -761,13 +849,13 @@
 
     goto :goto_0
 
-    .line 149
+    .line 154
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v0
 
-    .line 150
+    .line 155
     invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->isAutoUpdateTopicsCatalogEnabled()Z
 
     move-result v2
@@ -776,18 +864,18 @@
 
     invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/ForkTopicsController;->setAutoUpdateTopicsCatalogEnabled(Z)V
 
-    .line 151
+    .line 156
     invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->resetLastAutoUpdateCatalogTime()V
 
     goto :goto_0
 
-    .line 145
+    .line 150
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
     move-result-object v0
 
-    .line 146
+    .line 151
     invoke-virtual {v0}, Lcom/iMe/fork/controller/BackupController;->isAutoBackupEnabled()Z
 
     move-result v2
@@ -796,7 +884,7 @@
 
     invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/BackupController;->setAutoBackupEnabled(Z)V
 
-    .line 147
+    .line 152
     invoke-virtual {v0}, Lcom/iMe/fork/controller/BackupController;->resetLastAutoBackupTime()V
 
     :goto_0
@@ -805,48 +893,6 @@
 
 
 # virtual methods
-.method public bridge synthetic createView(Landroid/content/Context;)Landroid/view/View;
-    .locals 0
-
-    .line 27
-    invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->createView(Landroid/content/Context;)Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public createView(Landroid/content/Context;)Landroid/widget/FrameLayout;
-    .locals 1
-
-    const-string v0, "context"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 43
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getRootView()Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    .line 44
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->setupActionBar()V
-
-    .line 45
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->setupListeners()V
-
-    .line 46
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
-
-    .line 47
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
-
-    return-object p1
-.end method
-
 .method public getThemeDescriptions()Ljava/util/ArrayList;
     .locals 19
     .annotation system Ldalvik/annotation/Signature;
@@ -864,7 +910,7 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 58
+    .line 63
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -889,7 +935,7 @@
 
     aput-object v10, v1, v2
 
-    .line 59
+    .line 64
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -914,7 +960,7 @@
 
     aput-object v3, v1, v4
 
-    .line 60
+    .line 65
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -937,7 +983,7 @@
 
     aput-object v3, v1, v5
 
-    .line 61
+    .line 66
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -956,7 +1002,7 @@
 
     aput-object v3, v1, v6
 
-    .line 62
+    .line 67
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -975,7 +1021,7 @@
 
     aput-object v3, v1, v7
 
-    .line 63
+    .line 68
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -996,7 +1042,7 @@
 
     aput-object v3, v1, v7
 
-    .line 64
+    .line 69
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1015,7 +1061,7 @@
 
     aput-object v3, v1, v7
 
-    .line 65
+    .line 70
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1044,7 +1090,7 @@
 
     aput-object v3, v1, v7
 
-    .line 66
+    .line 71
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1077,7 +1123,7 @@
 
     aput-object v3, v1, v5
 
-    .line 67
+    .line 72
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1110,7 +1156,7 @@
 
     aput-object v3, v1, v5
 
-    .line 68
+    .line 73
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1139,7 +1185,7 @@
 
     aput-object v3, v1, v5
 
-    .line 69
+    .line 74
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1172,7 +1218,7 @@
 
     aput-object v3, v1, v6
 
-    .line 70
+    .line 75
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1203,7 +1249,7 @@
 
     aput-object v3, v1, v6
 
-    .line 71
+    .line 76
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1234,7 +1280,7 @@
 
     aput-object v3, v1, v7
 
-    .line 72
+    .line 77
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1265,7 +1311,7 @@
 
     aput-object v3, v1, v7
 
-    .line 73
+    .line 78
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1292,7 +1338,7 @@
 
     aput-object v3, v1, v7
 
-    .line 74
+    .line 79
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1319,7 +1365,7 @@
 
     aput-object v3, v1, v7
 
-    .line 75
+    .line 80
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1346,7 +1392,7 @@
 
     aput-object v3, v1, v7
 
-    .line 76
+    .line 81
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1373,7 +1419,7 @@
 
     aput-object v3, v1, v6
 
-    .line 77
+    .line 82
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1402,7 +1448,7 @@
 
     aput-object v3, v1, v6
 
-    .line 78
+    .line 83
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1425,7 +1471,7 @@
 
     aput-object v3, v1, v6
 
-    .line 79
+    .line 84
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1448,7 +1494,7 @@
 
     aput-object v3, v1, v6
 
-    .line 80
+    .line 85
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1477,7 +1523,7 @@
 
     aput-object v3, v1, v6
 
-    .line 81
+    .line 86
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1504,7 +1550,7 @@
 
     aput-object v3, v1, v5
 
-    .line 82
+    .line 87
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1533,7 +1579,7 @@
 
     aput-object v3, v1, v2
 
-    .line 57
+    .line 62
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -1544,16 +1590,55 @@
 .method public final getType()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
     .locals 1
 
-    .line 28
+    .line 29
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     return-object v0
 .end method
 
+.method public bridge synthetic onCreateView(Landroid/content/Context;)Landroid/view/View;
+    .locals 0
+
+    .line 28
+    invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
+    .locals 1
+
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 44
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getRootView()Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    .line 45
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->setupActionBar()V
+
+    .line 46
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->setupListeners()V
+
+    .line 47
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    return-object p1
+.end method
+
 .method public onFragmentDestroy()V
     .locals 2
 
-    .line 50
+    .line 55
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -1574,7 +1659,7 @@
 
     goto :goto_0
 
-    .line 52
+    .line 57
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
@@ -1584,7 +1669,7 @@
 
     goto :goto_0
 
-    .line 51
+    .line 56
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
@@ -1592,9 +1677,15 @@
 
     invoke-virtual {v0}, Lcom/iMe/fork/controller/BackupController;->saveConfig()V
 
-    .line 54
+    .line 59
     :goto_0
-    invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
+
+    return-void
+.end method
+
+.method public onViewReady()V
+    .locals 0
 
     return-void
 .end method

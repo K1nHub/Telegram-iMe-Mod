@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import com.iMe.model.common.NavigationTab;
 import com.iMe.navigation.common.configuration.NavigationConfiguration;
 import com.iMe.navigation.common.configuration.NavigationViewConfiguration;
-import com.iMe.p032ui.base.mvp.MvpFragment;
+import com.iMe.p031ui.base.mvp.MvpFragment;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import java.util.Collection;
 import java.util.HashMap;

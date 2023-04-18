@@ -11,13 +11,13 @@ import java.util.Locale;
 /* loaded from: classes3.dex */
 public class ImageLabelerOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ImageLabelerOptions> CREATOR = new zzg();
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     private int zzef;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     public int zzeg;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     public float zzeh;
-    @SafeParcelable.Field(m789id = 5)
+    @SafeParcelable.Field(m775id = 5)
     public int zzei;
 
     public static int zza(String str) {
@@ -26,7 +26,7 @@ public class ImageLabelerOptions extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public ImageLabelerOptions(@SafeParcelable.Param(m788id = 2) int i, @SafeParcelable.Param(m788id = 3) int i2, @SafeParcelable.Param(m788id = 4) float f, @SafeParcelable.Param(m788id = 5) int i3) {
+    public ImageLabelerOptions(@SafeParcelable.Param(m774id = 2) int i, @SafeParcelable.Param(m774id = 3) int i2, @SafeParcelable.Param(m774id = 4) float f, @SafeParcelable.Param(m774id = 5) int i3) {
         if (i != 1) {
             throw new IllegalArgumentException("Unknown language.");
         }

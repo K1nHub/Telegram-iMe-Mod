@@ -6,8 +6,6 @@
 # static fields
 .field private static final Default:Lkotlinx/coroutines/CoroutineDispatcher;
 
-.field public static final INSTANCE:Lkotlinx/coroutines/Dispatchers;
-
 .field private static final IO:Lkotlinx/coroutines/CoroutineDispatcher;
 
 
@@ -19,24 +17,16 @@
 
     invoke-direct {v0}, Lkotlinx/coroutines/Dispatchers;-><init>()V
 
-    sput-object v0, Lkotlinx/coroutines/Dispatchers;->INSTANCE:Lkotlinx/coroutines/Dispatchers;
-
     .line 32
-    invoke-static {}, Lkotlinx/coroutines/CoroutineContextKt;->createDefaultDispatcher()Lkotlinx/coroutines/CoroutineDispatcher;
-
-    move-result-object v0
+    sget-object v0, Lkotlinx/coroutines/scheduling/DefaultScheduler;->INSTANCE:Lkotlinx/coroutines/scheduling/DefaultScheduler;
 
     sput-object v0, Lkotlinx/coroutines/Dispatchers;->Default:Lkotlinx/coroutines/CoroutineDispatcher;
 
     .line 93
     sget-object v0, Lkotlinx/coroutines/Unconfined;->INSTANCE:Lkotlinx/coroutines/Unconfined;
 
-    .line 117
-    sget-object v0, Lkotlinx/coroutines/scheduling/DefaultScheduler;->INSTANCE:Lkotlinx/coroutines/scheduling/DefaultScheduler;
-
-    invoke-virtual {v0}, Lkotlinx/coroutines/scheduling/DefaultScheduler;->getIO()Lkotlinx/coroutines/CoroutineDispatcher;
-
-    move-result-object v0
+    .line 135
+    sget-object v0, Lkotlinx/coroutines/scheduling/DefaultIoScheduler;->INSTANCE:Lkotlinx/coroutines/scheduling/DefaultIoScheduler;
 
     sput-object v0, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
 
@@ -64,7 +54,7 @@
 .method public static final getIO()Lkotlinx/coroutines/CoroutineDispatcher;
     .locals 1
 
-    .line 117
+    .line 135
     sget-object v0, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
 
     return-object v0

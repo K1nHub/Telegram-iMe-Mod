@@ -32,7 +32,7 @@
         }
     .end annotation
 
-    .line 476
+    .line 491
     invoke-direct {p0, p1, p2}, Landroidx/lifecycle/LiveData$ObserverWrapper;-><init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
 
     return-void

@@ -1,7 +1,7 @@
 package org.koin.core.component;
 
 import org.koin.core.Koin;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: KoinComponent.kt */
 /* loaded from: classes4.dex */
 public interface KoinComponent {

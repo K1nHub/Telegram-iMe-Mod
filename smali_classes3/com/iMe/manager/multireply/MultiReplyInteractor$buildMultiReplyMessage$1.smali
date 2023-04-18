@@ -29,7 +29,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMultiReplyInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiReplyInteractor.kt\ncom/iMe/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,99:1\n1864#2,3:100\n9#3:103\n*S KotlinDebug\n*F\n+ 1 MultiReplyInteractor.kt\ncom/iMe/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1\n*L\n39#1:100,3\n47#1:103\n*E\n"
+    value = "SMAP\nMultiReplyInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiReplyInteractor.kt\ncom/iMe/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,102:1\n1864#2,3:103\n9#3:106\n*S KotlinDebug\n*F\n+ 1 MultiReplyInteractor.kt\ncom/iMe/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1\n*L\n37#1:103,3\n40#1:106\n*E\n"
 .end annotation
 
 
@@ -92,7 +92,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 39
+    .line 37
     iget-object v0, p0, Lcom/iMe/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1;->$selectedMessages:Ljava/util/List;
 
     iget-object v1, p0, Lcom/iMe/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1;->this$0:Lcom/iMe/manager/multireply/MultiReplyInteractor;
@@ -134,7 +134,7 @@
 
     aput-object v3, v4, v2
 
-    .line 42
+    .line 38
     invoke-static {v1, v5, p1}, Lcom/iMe/manager/multireply/MultiReplyInteractor;->access$buildMultiReplyMessageForMessageObject(Lcom/iMe/manager/multireply/MultiReplyInteractor;Lorg/telegram/messenger/MessageObject;Lcom/iMe/manager/multireply/message/MessageLinkPattern;)Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -147,21 +147,18 @@
 
     const/4 v5, 0x2
 
-    .line 43
     invoke-static {v3, v5}, Lkotlin/text/StringsKt;->repeat(Ljava/lang/CharSequence;I)Ljava/lang/String;
 
     move-result-object v3
 
     aput-object v3, v4, v5
 
-    .line 40
     invoke-static {v4}, Landroid/text/TextUtils;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v3
 
-    const-string v4, "concat(\n                \u2026                        )"
+    const-string v4, "concat(totalMessage, bui\u2026mbols.NEW_LINE.repeat(2))"
 
-    .line 42
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     move v4, v6
@@ -182,7 +179,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 36
+    .line 35
     check-cast p1, Lcom/iMe/manager/multireply/message/MessageLinkPattern;
 
     invoke-virtual {p0, p1}, Lcom/iMe/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1;->invoke(Lcom/iMe/manager/multireply/message/MessageLinkPattern;)Lcom/iMe/storage/domain/model/Result;

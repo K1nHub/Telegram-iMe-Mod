@@ -17,11 +17,9 @@ public abstract class BlockchainCryptoWalletManager {
     private final BlockchainType blockchainType;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
 
-    public abstract Observable<Result<Wallet>> createWallet(String str, String str2);
+    public abstract Observable<Result<Wallet>> createWallet();
 
     public abstract Observable<Result<String>> generateAddressByMnemonic(String str);
-
-    public abstract Observable<Result<String>> generateMnemonic(String str, String str2);
 
     public abstract Observable<Result<Wallet>> importWallet(String str, String str2, String str3);
 
@@ -49,7 +47,6 @@ public abstract class BlockchainCryptoWalletManager {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     public final void rewriteWalletToNewGuid(String guid, String oldGuid, String mnemonic, String password, String address) {
         Intrinsics.checkNotNullParameter(guid, "guid");
         Intrinsics.checkNotNullParameter(oldGuid, "oldGuid");

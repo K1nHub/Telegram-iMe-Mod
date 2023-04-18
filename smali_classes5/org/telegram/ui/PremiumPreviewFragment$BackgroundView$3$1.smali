@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;Landroid/content/Context;)V
     .locals 0
 
-    .line 1334
+    .line 1340
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3$1;->this$2:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/Premium/PremiumTierCell;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 1337
+    .line 1343
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->discountView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
@@ -44,7 +44,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1338
+    .line 1344
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->discountView:Landroid/widget/TextView;
@@ -81,7 +81,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1339
+    .line 1345
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3$1;->this$2:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;
 
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -120,7 +120,7 @@
 
     const/4 v1, 0x6
 
-    .line 1340
+    .line 1346
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -145,7 +145,7 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1343
+    .line 1349
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->dispatchDraw(Landroid/graphics/Canvas;)V
 

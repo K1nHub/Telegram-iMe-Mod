@@ -122,14 +122,14 @@ public class TrackSelectionParameters implements Bundleable {
             this.viewportWidth = Integer.MAX_VALUE;
             this.viewportHeight = Integer.MAX_VALUE;
             this.viewportOrientationMayChange = true;
-            this.preferredVideoMimeTypes = ImmutableList.m754of();
+            this.preferredVideoMimeTypes = ImmutableList.m740of();
             this.preferredVideoRoleFlags = 0;
-            this.preferredAudioLanguages = ImmutableList.m754of();
+            this.preferredAudioLanguages = ImmutableList.m740of();
             this.preferredAudioRoleFlags = 0;
             this.maxAudioChannelCount = Integer.MAX_VALUE;
             this.maxAudioBitrate = Integer.MAX_VALUE;
-            this.preferredAudioMimeTypes = ImmutableList.m754of();
-            this.preferredTextLanguages = ImmutableList.m754of();
+            this.preferredAudioMimeTypes = ImmutableList.m740of();
+            this.preferredTextLanguages = ImmutableList.m740of();
             this.preferredTextRoleFlags = 0;
             this.ignoredTextSelectionFlags = 0;
             this.selectUndeterminedTextLanguage = false;
@@ -181,7 +181,7 @@ public class TrackSelectionParameters implements Bundleable {
             this.forceHighestSupportedBitrate = bundle.getBoolean(TrackSelectionParameters.FIELD_FORCE_HIGHEST_SUPPORTED_BITRATE, trackSelectionParameters.forceHighestSupportedBitrate);
             ArrayList parcelableArrayList = bundle.getParcelableArrayList(TrackSelectionParameters.FIELD_SELECTION_OVERRIDES);
             if (parcelableArrayList == null) {
-                fromBundleList = ImmutableList.m754of();
+                fromBundleList = ImmutableList.m740of();
             } else {
                 fromBundleList = BundleableUtil.fromBundleList(TrackSelectionOverride.CREATOR, parcelableArrayList);
             }
@@ -340,7 +340,7 @@ public class TrackSelectionParameters implements Bundleable {
 
         public Builder setPreferredTextLanguageAndRoleFlagsToCaptioningManagerSettings(Context context) {
             if (Util.SDK_INT >= 19) {
-                m813x58dbf263(context);
+                m799x58dbf263(context);
             }
             return this;
         }
@@ -434,13 +434,13 @@ public class TrackSelectionParameters implements Bundleable {
         }
 
         /* renamed from: setPreferredTextLanguageAndRoleFlagsToCaptioningManagerSettingsV19 */
-        private void m813x58dbf263(Context context) {
+        private void m799x58dbf263(Context context) {
             CaptioningManager captioningManager;
             if ((Util.SDK_INT >= 23 || Looper.myLooper() != null) && (captioningManager = (CaptioningManager) context.getSystemService("captioning")) != null && captioningManager.isEnabled()) {
                 this.preferredTextRoleFlags = 1088;
                 Locale locale = captioningManager.getLocale();
                 if (locale != null) {
-                    this.preferredTextLanguages = ImmutableList.m753of(Util.getLocaleLanguageTag(locale));
+                    this.preferredTextLanguages = ImmutableList.m739of(Util.getLocaleLanguageTag(locale));
                 }
             }
         }

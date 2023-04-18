@@ -1,6 +1,6 @@
 package com.iMe.storage.data.mapper.catalog;
 
-import com.iMe.storage.data.locale.p028db.model.catalog.CatalogCategoryDb;
+import com.iMe.storage.data.locale.p027db.model.catalog.CatalogCategoryDb;
 import com.iMe.storage.data.network.model.response.catalog.CatalogCategoryResponse;
 import com.iMe.storage.data.network.model.response.catalog.CategoryWithCounterResponse;
 import com.iMe.storage.domain.model.catalog.CatalogCategory;

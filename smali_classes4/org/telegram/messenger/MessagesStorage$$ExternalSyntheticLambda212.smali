@@ -8,42 +8,42 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesStorage;
 
-.field public final synthetic f$1:Z
+.field public final synthetic f$1:[Lorg/telegram/tgnet/TLRPC$ChatFull;
 
-.field public final synthetic f$2:Ljava/util/HashMap;
+.field public final synthetic f$2:J
 
-.field public final synthetic f$3:I
+.field public final synthetic f$3:Z
 
-.field public final synthetic f$4:J
+.field public final synthetic f$4:Z
 
-.field public final synthetic f$5:Ljava/util/ArrayList;
+.field public final synthetic f$5:Z
 
 .field public final synthetic f$6:I
 
-.field public final synthetic f$7:Z
+.field public final synthetic f$7:Ljava/util/concurrent/CountDownLatch;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;ZLjava/util/HashMap;IJLjava/util/ArrayList;IZ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;[Lorg/telegram/tgnet/TLRPC$ChatFull;JZZZILjava/util/concurrent/CountDownLatch;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
-    iput-boolean p2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$1:Z
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$1:[Lorg/telegram/tgnet/TLRPC$ChatFull;
 
-    iput-object p3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$2:Ljava/util/HashMap;
+    iput-wide p3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$2:J
 
-    iput p4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$3:I
+    iput-boolean p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$3:Z
 
-    iput-wide p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$4:J
+    iput-boolean p6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$4:Z
 
-    iput-object p7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$5:Ljava/util/ArrayList;
+    iput-boolean p7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$5:Z
 
     iput p8, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$6:I
 
-    iput-boolean p9, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$7:Z
+    iput-object p9, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$7:Ljava/util/concurrent/CountDownLatch;
 
     return-void
 .end method
@@ -55,21 +55,21 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
-    iget-boolean v1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$1:Z
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$1:[Lorg/telegram/tgnet/TLRPC$ChatFull;
 
-    iget-object v2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$2:Ljava/util/HashMap;
+    iget-wide v2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$2:J
 
-    iget v3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$3:I
+    iget-boolean v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$3:Z
 
-    iget-wide v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$4:J
+    iget-boolean v5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$4:Z
 
-    iget-object v6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$5:Ljava/util/ArrayList;
+    iget-boolean v6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$5:Z
 
     iget v7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$6:I
 
-    iget-boolean v8, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$7:Z
+    iget-object v8, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda212;->f$7:Ljava/util/concurrent/CountDownLatch;
 
-    invoke-static/range {v0 .. v8}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$Nj_4u4Dvr6qqAlESLiZTiSjfNNc(Lorg/telegram/messenger/MessagesStorage;ZLjava/util/HashMap;IJLjava/util/ArrayList;IZ)V
+    invoke-static/range {v0 .. v8}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$cgi_Zor8OtH3QZ0p-JXKVK7YFOI(Lorg/telegram/messenger/MessagesStorage;[Lorg/telegram/tgnet/TLRPC$ChatFull;JZZZILjava/util/concurrent/CountDownLatch;)V
 
     return-void
 .end method

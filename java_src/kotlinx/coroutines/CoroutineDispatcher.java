@@ -9,13 +9,15 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Lambda;
 import kotlinx.coroutines.internal.DispatchedContinuation;
+import kotlinx.coroutines.internal.LimitedDispatcher;
+import kotlinx.coroutines.internal.LimitedDispatcherKt;
 /* compiled from: CoroutineDispatcher.kt */
 /* loaded from: classes4.dex */
 public abstract class CoroutineDispatcher extends AbstractCoroutineContextElement implements ContinuationInterceptor {
     public static final Key Key = new Key(null);
 
     /* renamed from: dispatch */
-    public abstract void mo1585dispatch(CoroutineContext coroutineContext, Runnable runnable);
+    public abstract void mo1566dispatch(CoroutineContext coroutineContext, Runnable runnable);
 
     public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
         return true;
@@ -45,10 +47,10 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
         /* compiled from: CoroutineDispatcher.kt */
         /* renamed from: kotlinx.coroutines.CoroutineDispatcher$Key$1 */
         /* loaded from: classes4.dex */
-        static final class C31111 extends Lambda implements Function1<CoroutineContext.Element, CoroutineDispatcher> {
-            public static final C31111 INSTANCE = new C31111();
+        static final class C30981 extends Lambda implements Function1<CoroutineContext.Element, CoroutineDispatcher> {
+            public static final C30981 INSTANCE = new C30981();
 
-            C31111() {
+            C30981() {
                 super(1);
             }
 
@@ -62,8 +64,13 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
         }
 
         private Key() {
-            super(ContinuationInterceptor.Key, C31111.INSTANCE);
+            super(ContinuationInterceptor.Key, C30981.INSTANCE);
         }
+    }
+
+    public CoroutineDispatcher limitedParallelism(int i) {
+        LimitedDispatcherKt.checkParallelism(i);
+        return new LimitedDispatcher(this, i);
     }
 
     @Override // kotlin.coroutines.ContinuationInterceptor
@@ -72,7 +79,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
     }
 
     @Override // kotlin.coroutines.ContinuationInterceptor
-    public void releaseInterceptedContinuation(Continuation<?> continuation) {
+    public final void releaseInterceptedContinuation(Continuation<?> continuation) {
         ((DispatchedContinuation) continuation).release();
     }
 

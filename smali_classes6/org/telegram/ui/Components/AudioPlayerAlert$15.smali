@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 1194
+    .line 1205
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -37,7 +37,7 @@
 .method protected allowSelectChildAtPosition(FF)Z
     .locals 1
 
-    .line 1220
+    .line 1231
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$600(Lorg/telegram/ui/Components/AudioPlayerAlert;)Landroid/widget/FrameLayout;
@@ -80,10 +80,10 @@
 .method protected onLayout(ZIIII)V
     .locals 10
 
-    .line 1200
+    .line 1211
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
-    .line 1202
+    .line 1213
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$3800(Lorg/telegram/ui/Components/AudioPlayerAlert;)I
@@ -110,10 +110,10 @@
 
     if-nez p1, :cond_0
 
-    .line 1203
+    .line 1214
     iput-boolean v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->ignoreLayout:Z
 
-    .line 1204
+    .line 1215
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$3900(Lorg/telegram/ui/Components/AudioPlayerAlert;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -158,41 +158,41 @@
 
     move v9, p5
 
-    .line 1205
+    .line 1216
     invoke-super/range {v4 .. v9}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
-    .line 1206
+    .line 1217
     iput-boolean v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->ignoreLayout:Z
 
-    .line 1207
+    .line 1218
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$3802(Lorg/telegram/ui/Components/AudioPlayerAlert;I)I
 
     goto :goto_0
 
-    .line 1208
+    .line 1219
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5900(Lorg/telegram/ui/Components/AudioPlayerAlert;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5800(Lorg/telegram/ui/Components/AudioPlayerAlert;)Z
 
     move-result p1
 
     if-eqz p1, :cond_2
 
-    .line 1209
+    .line 1220
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {p1, v2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5902(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
+    invoke-static {p1, v2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5802(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
 
-    .line 1210
+    .line 1221
     iput-boolean v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->ignoreLayout:Z
 
-    .line 1211
+    .line 1222
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$6000(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
+    invoke-static {p1, v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5900(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
 
     move-result p1
 
@@ -210,10 +210,10 @@
 
     move v8, p5
 
-    .line 1212
+    .line 1223
     invoke-super/range {v3 .. v8}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
-    .line 1214
+    .line 1225
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->ignoreLayout:Z
 
@@ -225,14 +225,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 1225
+    .line 1236
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 1228
+    .line 1239
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->requestLayout()V
 

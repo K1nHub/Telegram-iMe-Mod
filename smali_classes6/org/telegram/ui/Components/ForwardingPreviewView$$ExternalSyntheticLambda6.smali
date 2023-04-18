@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->$r8$lambda$kLp3El2gawqlAK02702YZvOuTcA(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->$r8$lambda$U1wS4GRl0gFkGCs9uXFwWa8Nq7I(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/view/View;)V
 
     return-void
 .end method

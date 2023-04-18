@@ -8,8 +8,8 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.Theme;
+import org.telegram.p044ui.ActionBar.AlertDialog;
+import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: DialogExt.kt */
 /* loaded from: classes4.dex */
 public final class DialogExtKt {

@@ -16,7 +16,7 @@ final class WOTSPlusPublicKeyParameters {
             throw new IllegalArgumentException("wrong publicKey size");
         }
         for (byte[] bArr2 : bArr) {
-            if (bArr2.length != wOTSPlusParameters.getDigestSize()) {
+            if (bArr2.length != wOTSPlusParameters.getTreeDigestSize()) {
                 throw new IllegalArgumentException("wrong publicKey format");
             }
         }

@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/CatalogRootView$$State;)V
     .locals 1
 
-    .line 147
+    .line 165
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onSelectedLanguageChanged"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/catalog/CatalogRootView;)V
     .locals 0
 
-    .line 152
+    .line 170
     invoke-interface {p1}, Lcom/iMe/ui/catalog/CatalogRootView;->onSelectedLanguageChanged()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 145
+    .line 163
     check-cast p1, Lcom/iMe/ui/catalog/CatalogRootView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/CatalogRootView$$State$OnSelectedLanguageChangedCommand;->apply(Lcom/iMe/ui/catalog/CatalogRootView;)V

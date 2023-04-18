@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/CheckBoxBase;)V
     .locals 0
 
-    .line 198
+    .line 195
     iput-object p1, p0, Lorg/telegram/ui/Components/CheckBoxBase$1;->this$0:Lorg/telegram/ui/Components/CheckBoxBase;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 201
+    .line 198
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBoxBase$1;->this$0:Lorg/telegram/ui/Components/CheckBoxBase;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/CheckBoxBase;->access$000(Lorg/telegram/ui/Components/CheckBoxBase;)Landroid/animation/ObjectAnimator;
@@ -50,12 +50,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 202
+    .line 199
     iget-object p1, p0, Lorg/telegram/ui/Components/CheckBoxBase$1;->this$0:Lorg/telegram/ui/Components/CheckBoxBase;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/CheckBoxBase;->access$002(Lorg/telegram/ui/Components/CheckBoxBase;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
 
-    .line 204
+    .line 201
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/CheckBoxBase$1;->this$0:Lorg/telegram/ui/Components/CheckBoxBase;
 
@@ -65,7 +65,7 @@
 
     if-nez p1, :cond_1
 
-    .line 205
+    .line 202
     iget-object p1, p0, Lorg/telegram/ui/Components/CheckBoxBase$1;->this$0:Lorg/telegram/ui/Components/CheckBoxBase;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/CheckBoxBase;->access$202(Lorg/telegram/ui/Components/CheckBoxBase;Ljava/lang/String;)Ljava/lang/String;

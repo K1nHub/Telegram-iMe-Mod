@@ -52,7 +52,7 @@
         }
     .end annotation
 
-    .line 21
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/koin/core/definition/Callbacks;->onClose:Lkotlin/jvm/functions/Function1;
@@ -69,7 +69,7 @@
 
     const/4 p1, 0x0
 
-    .line 21
+    .line 23
     :cond_0
     invoke-direct {p0, p1}, Lorg/koin/core/definition/Callbacks;-><init>(Lkotlin/jvm/functions/Function1;)V
 
@@ -113,6 +113,24 @@
 
     :cond_2
     return v0
+.end method
+
+.method public final getOnClose()Lkotlin/jvm/functions/Function1;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/jvm/functions/Function1<",
+            "TT;",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+
+    .line 23
+    iget-object v0, p0, Lorg/koin/core/definition/Callbacks;->onClose:Lkotlin/jvm/functions/Function1;
+
+    return-object v0
 .end method
 
 .method public hashCode()I

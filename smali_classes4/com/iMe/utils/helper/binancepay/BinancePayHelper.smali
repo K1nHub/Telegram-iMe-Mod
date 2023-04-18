@@ -356,28 +356,18 @@
 .end method
 
 .method private static final runWithCheckIsBinancePayActivated$lambda$1(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;)V
-    .locals 7
+    .locals 1
 
     const-string v0, "$fragment"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 61
-    new-instance v4, Lcom/iMe/utils/helper/binancepay/BinancePayHelper$$ExternalSyntheticLambda0;
+    new-instance v0, Lcom/iMe/utils/helper/binancepay/BinancePayHelper$$ExternalSyntheticLambda0;
 
-    invoke-direct {v4, p0}, Lcom/iMe/utils/helper/binancepay/BinancePayHelper$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-direct {v0, p0}, Lcom/iMe/utils/helper/binancepay/BinancePayHelper$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v5, 0x3
-
-    const/4 v6, 0x0
-
-    move-object v1, p0
-
-    invoke-static/range {v1 .. v6}, Lcom/iMe/utils/helper/wallet/WalletHelper;->safeRunWalletScreen$default(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)V
+    invoke-static {p0, v0}, Lcom/iMe/utils/helper/wallet/WalletHelper;->safeRunWithActivationCheck(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     if-eqz p1, :cond_0
 

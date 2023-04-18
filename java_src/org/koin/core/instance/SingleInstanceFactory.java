@@ -2,7 +2,7 @@ package org.koin.core.instance;
 
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.definition.BeanDefinition;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: SingleInstanceFactory.kt */
 /* loaded from: classes4.dex */
 public final class SingleInstanceFactory<T> extends InstanceFactory<T> {
@@ -38,7 +38,7 @@ public final class SingleInstanceFactory<T> extends InstanceFactory<T> {
     @Override // org.koin.core.instance.InstanceFactory
     public T get(InstanceContext context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        KoinPlatformTools.INSTANCE.m1592synchronized(this, new SingleInstanceFactory$get$1(this, context));
+        KoinPlatformTools.INSTANCE.m1573synchronized(this, new SingleInstanceFactory$get$1(this, context));
         return getValue();
     }
 }

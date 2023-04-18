@@ -24,17 +24,17 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 338
+    .line 340
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 340
+    .line 342
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 485
+    .line 487
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
@@ -49,10 +49,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 489
+    .line 491
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 490
+    .line 492
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->isInPreviewMode()Z
@@ -61,7 +61,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 491
+    .line 493
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$1;->actionBarPaint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -74,7 +74,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 492
+    .line 494
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$1;->actionBarPaint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x437f0000    # 255.0f
@@ -95,7 +95,7 @@
 
     const/4 v4, 0x0
 
-    .line 493
+    .line 495
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v0
@@ -119,7 +119,7 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 10
 
-    .line 355
+    .line 357
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$400(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -136,7 +136,7 @@
 
     if-nez v0, :cond_1
 
-    .line 356
+    .line 358
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$500(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -157,7 +157,7 @@
 
     float-to-int v0, v0
 
-    .line 357
+    .line 359
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -182,7 +182,7 @@
 
     invoke-interface {v1, p1, v2, v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->drawHeaderShadow(Landroid/graphics/Canvas;II)V
 
-    .line 358
+    .line 360
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$300(Lorg/telegram/ui/TopicsFragment;)F
@@ -195,7 +195,7 @@
 
     if-lez v1, :cond_1
 
-    .line 359
+    .line 361
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$300(Lorg/telegram/ui/TopicsFragment;)F
@@ -206,14 +206,14 @@
 
     if-gez v1, :cond_0
 
-    .line 360
+    .line 362
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result v1
 
-    .line 361
+    .line 363
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
     int-to-float v3, v1
@@ -234,7 +234,7 @@
 
     int-to-float v8, v0
 
-    .line 362
+    .line 364
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -249,7 +249,7 @@
 
     invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 363
+    .line 365
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
@@ -261,7 +261,7 @@
 
     int-to-float v6, v0
 
-    .line 365
+    .line 367
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -276,7 +276,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 369
+    .line 371
     :cond_1
     :goto_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
@@ -291,7 +291,7 @@
 
     const/4 p2, 0x0
 
-    .line 474
+    .line 476
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -305,7 +305,7 @@
 
     if-ge p2, v0, :cond_1
 
-    .line 475
+    .line 477
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -316,7 +316,7 @@
 
     move-result-object v0
 
-    .line 476
+    .line 478
     invoke-virtual {v0}, Landroid/view/View;->getY()F
 
     move-result v1
@@ -339,12 +339,12 @@
 
     if-nez v1, :cond_0
 
-    .line 477
+    .line 479
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v1
 
-    .line 478
+    .line 480
     iget-object v2, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v2}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -385,10 +385,10 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 479
+    .line 481
     invoke-virtual {v0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 480
+    .line 482
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     :cond_0
@@ -403,7 +403,7 @@
 .method public getActionBarFullHeight()I
     .locals 3
 
-    .line 344
+    .line 346
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -416,7 +416,7 @@
 
     int-to-float v0, v0
 
-    .line 346
+    .line 348
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
@@ -439,7 +439,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 347
+    .line 349
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
@@ -457,7 +457,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 349
+    .line 351
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -477,33 +477,33 @@
 .method protected onLayout(ZIIII)V
     .locals 10
 
-    .line 400
+    .line 402
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result p1
 
-    .line 402
+    .line 404
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result v0
 
     sub-int/2addr p4, p2
 
-    .line 403
+    .line 405
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingRight()I
 
     move-result p2
 
     sub-int/2addr p4, p2
 
-    .line 405
+    .line 407
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result p2
 
     sub-int/2addr p5, p3
 
-    .line 406
+    .line 408
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingBottom()I
 
     move-result p3
@@ -517,12 +517,12 @@
     :goto_0
     if-ge v1, p1, :cond_a
 
-    .line 409
+    .line 411
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 410
+    .line 412
     invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     move-result v3
@@ -531,24 +531,24 @@
 
     if-eq v3, v4, :cond_9
 
-    .line 411
+    .line 413
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
 
     check-cast v3, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 413
+    .line 415
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
 
-    .line 414
+    .line 416
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v5
 
-    .line 419
+    .line 421
     iget v6, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     const/4 v7, -0x1
@@ -557,7 +557,7 @@
 
     move v6, p3
 
-    .line 426
+    .line 428
     :cond_0
     sget v7, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -565,7 +565,7 @@
 
     if-lt v7, v8, :cond_1
 
-    .line 427
+    .line 429
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLayoutDirection()I
 
     move-result v7
@@ -575,7 +575,7 @@
     :cond_1
     move v7, p3
 
-    .line 431
+    .line 433
     :goto_1
     invoke-static {v6, v7}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
 
@@ -593,7 +593,7 @@
 
     if-eq v7, v8, :cond_2
 
-    .line 446
+    .line 448
     iget v7, v3, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v7, v0
@@ -603,7 +603,7 @@
     :cond_2
     sub-int v7, p4, v4
 
-    .line 441
+    .line 443
     iget v8, v3, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     goto :goto_2
@@ -613,7 +613,7 @@
 
     sub-int/2addr v7, v4
 
-    .line 436
+    .line 438
     div-int/lit8 v7, v7, 0x2
 
     add-int/2addr v7, v0
@@ -636,12 +636,12 @@
 
     if-eq v6, v8, :cond_6
 
-    .line 459
+    .line 461
     iget v3, v3, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     add-int/2addr v3, p2
 
-    .line 460
+    .line 462
     iget-object v6, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v6}, Lorg/telegram/ui/TopicsFragment;->access$600(Lorg/telegram/ui/TopicsFragment;)Landroid/widget/FrameLayout;
@@ -650,7 +650,7 @@
 
     if-ne v2, v6, :cond_5
 
-    .line 461
+    .line 463
     iget-object v6, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v6}, Lorg/telegram/ui/TopicsFragment;->access$600(Lorg/telegram/ui/TopicsFragment;)Landroid/widget/FrameLayout;
@@ -697,7 +697,7 @@
 
     goto :goto_6
 
-    .line 462
+    .line 464
     :cond_5
     instance-of v6, v2, Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -711,7 +711,7 @@
 
     if-nez v6, :cond_8
 
-    .line 463
+    .line 465
     iget-object v6, p0, Lorg/telegram/ui/TopicsFragment$1;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v6}, Lorg/telegram/ui/TopicsFragment;->access$900(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -741,7 +741,7 @@
     :cond_6
     sub-int v6, p5, v5
 
-    .line 455
+    .line 457
     iget v3, v3, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     goto :goto_5
@@ -751,7 +751,7 @@
 
     sub-int/2addr v6, v5
 
-    .line 451
+    .line 453
     div-int/lit8 v6, v6, 0x2
 
     add-int/2addr v6, p2
@@ -771,7 +771,7 @@
 
     add-int/2addr v5, v3
 
-    .line 467
+    .line 469
     invoke-virtual {v2, v7, v3, v4, v5}, Landroid/view/View;->layout(IIII)V
 
     :cond_9
@@ -786,12 +786,12 @@
 .method protected onMeasure(II)V
     .locals 11
 
-    .line 374
+    .line 376
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 375
+    .line 377
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
@@ -802,7 +802,7 @@
 
     move v10, v3
 
-    .line 378
+    .line 380
     :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
@@ -810,24 +810,24 @@
 
     if-ge v3, v4, :cond_1
 
-    .line 379
+    .line 381
     invoke-virtual {p0, v3}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 380
+    .line 382
     instance-of v5, v4, Lorg/telegram/ui/ActionBar/ActionBar;
 
     if-eqz v5, :cond_0
 
-    .line 381
+    .line 383
     invoke-static {v2, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v5
 
     invoke-virtual {v4, p1, v5}, Landroid/view/View;->measure(II)V
 
-    .line 382
+    .line 384
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v10
@@ -837,7 +837,7 @@
 
     goto :goto_0
 
-    .line 385
+    .line 387
     :cond_1
     :goto_1
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
@@ -846,17 +846,17 @@
 
     if-ge v2, v3, :cond_4
 
-    .line 386
+    .line 388
     invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 387
+    .line 389
     instance-of v3, v5, Lorg/telegram/ui/ActionBar/ActionBar;
 
     if-nez v3, :cond_3
 
-    .line 388
+    .line 390
     invoke-virtual {v5}, Landroid/view/View;->getFitsSystemWindows()Z
 
     move-result v3
@@ -873,7 +873,7 @@
 
     move v8, p2
 
-    .line 389
+    .line 391
     invoke-virtual/range {v4 .. v9}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
     goto :goto_2
@@ -889,7 +889,7 @@
 
     move v9, v10
 
-    .line 391
+    .line 393
     invoke-virtual/range {v4 .. v9}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
     :cond_3
@@ -898,7 +898,7 @@
 
     goto :goto_1
 
-    .line 395
+    .line 397
     :cond_4
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 

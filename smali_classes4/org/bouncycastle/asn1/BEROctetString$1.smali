@@ -17,7 +17,7 @@
 
 
 # instance fields
-.field counter:I
+.field pos:I
 
 .field final synthetic this$0:Lorg/bouncycastle/asn1/BEROctetString;
 
@@ -32,7 +32,7 @@
 
     const/4 p1, 0x0
 
-    iput p1, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->counter:I
+    iput p1, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->pos:I
 
     return-void
 .end method
@@ -42,13 +42,11 @@
 .method public hasMoreElements()Z
     .locals 2
 
-    iget v0, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->counter:I
+    iget v0, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->pos:I
 
     iget-object v1, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->this$0:Lorg/bouncycastle/asn1/BEROctetString;
 
-    invoke-static {v1}, Lorg/bouncycastle/asn1/BEROctetString;->access$000(Lorg/bouncycastle/asn1/BEROctetString;)[Lorg/bouncycastle/asn1/ASN1OctetString;
-
-    move-result-object v1
+    iget-object v1, v1, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
 
     array-length v1, v1
 
@@ -66,21 +64,58 @@
 .end method
 
 .method public nextElement()Ljava/lang/Object;
-    .locals 3
+    .locals 5
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->this$0:Lorg/bouncycastle/asn1/BEROctetString;
+    iget v0, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->pos:I
 
-    invoke-static {v0}, Lorg/bouncycastle/asn1/BEROctetString;->access$000(Lorg/bouncycastle/asn1/BEROctetString;)[Lorg/bouncycastle/asn1/ASN1OctetString;
+    iget-object v1, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->this$0:Lorg/bouncycastle/asn1/BEROctetString;
 
-    move-result-object v0
+    iget-object v2, v1, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
 
-    iget v1, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->counter:I
+    array-length v3, v2
 
-    add-int/lit8 v2, v1, 0x1
+    if-ge v0, v3, :cond_0
 
-    iput v2, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->counter:I
+    array-length v2, v2
 
-    aget-object v0, v0, v1
+    sub-int/2addr v2, v0
+
+    invoke-static {v1}, Lorg/bouncycastle/asn1/BEROctetString;->access$000(Lorg/bouncycastle/asn1/BEROctetString;)I
+
+    move-result v0
+
+    invoke-static {v2, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    new-array v1, v0, [B
+
+    iget-object v2, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->this$0:Lorg/bouncycastle/asn1/BEROctetString;
+
+    iget-object v2, v2, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
+
+    iget v3, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->pos:I
+
+    const/4 v4, 0x0
+
+    invoke-static {v2, v3, v1, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iget v2, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->pos:I
+
+    add-int/2addr v2, v0
+
+    iput v2, p0, Lorg/bouncycastle/asn1/BEROctetString$1;->pos:I
+
+    new-instance v0, Lorg/bouncycastle/asn1/DEROctetString;
+
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/DEROctetString;-><init>([B)V
 
     return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
 .end method

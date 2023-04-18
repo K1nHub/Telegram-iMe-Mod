@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback2;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
@@ -22,16 +22,14 @@
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final run(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda121;->f$0:Lorg/telegram/ui/DialogsActivity;
 
     check-cast p1, Ljava/lang/Long;
 
-    check-cast p2, Ljava/lang/Long;
-
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$Wq93SH1f4GNoQdRXZukNiYHP6Pg(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;Ljava/lang/Long;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$JCC8SLPnJVrBGjfFZsCahvBkjwA(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;)V
 
     return-void
 .end method

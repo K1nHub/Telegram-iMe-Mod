@@ -1065,7 +1065,7 @@
     <string name="stickers_size_title">Памер стыкераў</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Ўлічваць архіў</string>
     <string name="swipe_to_next_unread_dialog_hint">Уключыце гэта, калі вы хочаце чытаць вашыя чаты, не вяртаючыся ў спіс чатаў. Дайшоўшы да апошняга паведамлення ў чаце, пацягніце экран уверх, каб перайсці да наступнага непрачытанага чату.</string>
-    <string name="swipe_to_next_unread_dialog_types">Дыялог топес</string>
+    <string name="swipe_to_next_unread_dialog_types">Тыпы чатаў</string>
     <string name="text_recognition_bottom_sheet_title">Фота → Тэкст</string>
     <string name="topic">Топік</string>
     <string name="topic_add_archived_chats_hint">"Выберыце чаты з архіваванага спісу, якія з'явяцца ў гэтай тэме."</string>

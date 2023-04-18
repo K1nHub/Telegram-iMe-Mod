@@ -15,46 +15,46 @@ import java.util.ArrayList;
 /* loaded from: classes3.dex */
 public class CommonWalletObject extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CommonWalletObject> CREATOR = new zzc();
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     String zza;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     String zzb;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     String zzc;
-    @SafeParcelable.Field(m789id = 5)
+    @SafeParcelable.Field(m775id = 5)
     String zzd;
-    @SafeParcelable.Field(m789id = 6)
+    @SafeParcelable.Field(m775id = 6)
     String zze;
-    @SafeParcelable.Field(m789id = 7)
+    @SafeParcelable.Field(m775id = 7)
     String zzf;
-    @SafeParcelable.Field(m789id = 8)
+    @SafeParcelable.Field(m775id = 8)
     String zzg;
-    @SafeParcelable.Field(m789id = 9)
+    @SafeParcelable.Field(m775id = 9)
     @Deprecated
     String zzh;
-    @SafeParcelable.Field(m789id = 10)
+    @SafeParcelable.Field(m775id = 10)
     int zzi;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 11)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 11)
     ArrayList zzj;
-    @SafeParcelable.Field(m789id = 12)
+    @SafeParcelable.Field(m775id = 12)
     TimeInterval zzk;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 13)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 13)
     ArrayList zzl;
-    @SafeParcelable.Field(m789id = 14)
+    @SafeParcelable.Field(m775id = 14)
     @Deprecated
     String zzm;
-    @SafeParcelable.Field(m789id = 15)
+    @SafeParcelable.Field(m775id = 15)
     @Deprecated
     String zzn;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 16)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 16)
     ArrayList zzo;
-    @SafeParcelable.Field(m789id = 17)
+    @SafeParcelable.Field(m775id = 17)
     boolean zzp;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 18)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 18)
     ArrayList zzq;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 19)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 19)
     ArrayList zzr;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 20)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 20)
     ArrayList zzs;
 
     CommonWalletObject() {
@@ -176,7 +176,7 @@ public class CommonWalletObject extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public CommonWalletObject(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) String str2, @SafeParcelable.Param(m788id = 4) String str3, @SafeParcelable.Param(m788id = 5) String str4, @SafeParcelable.Param(m788id = 6) String str5, @SafeParcelable.Param(m788id = 7) String str6, @SafeParcelable.Param(m788id = 8) String str7, @SafeParcelable.Param(m788id = 9) String str8, @SafeParcelable.Param(m788id = 10) int i, @SafeParcelable.Param(m788id = 11) ArrayList arrayList, @SafeParcelable.Param(m788id = 12) TimeInterval timeInterval, @SafeParcelable.Param(m788id = 13) ArrayList arrayList2, @SafeParcelable.Param(m788id = 14) String str9, @SafeParcelable.Param(m788id = 15) String str10, @SafeParcelable.Param(m788id = 16) ArrayList arrayList3, @SafeParcelable.Param(m788id = 17) boolean z, @SafeParcelable.Param(m788id = 18) ArrayList arrayList4, @SafeParcelable.Param(m788id = 19) ArrayList arrayList5, @SafeParcelable.Param(m788id = 20) ArrayList arrayList6) {
+    public CommonWalletObject(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) String str3, @SafeParcelable.Param(m774id = 5) String str4, @SafeParcelable.Param(m774id = 6) String str5, @SafeParcelable.Param(m774id = 7) String str6, @SafeParcelable.Param(m774id = 8) String str7, @SafeParcelable.Param(m774id = 9) String str8, @SafeParcelable.Param(m774id = 10) int i, @SafeParcelable.Param(m774id = 11) ArrayList arrayList, @SafeParcelable.Param(m774id = 12) TimeInterval timeInterval, @SafeParcelable.Param(m774id = 13) ArrayList arrayList2, @SafeParcelable.Param(m774id = 14) String str9, @SafeParcelable.Param(m774id = 15) String str10, @SafeParcelable.Param(m774id = 16) ArrayList arrayList3, @SafeParcelable.Param(m774id = 17) boolean z, @SafeParcelable.Param(m774id = 18) ArrayList arrayList4, @SafeParcelable.Param(m774id = 19) ArrayList arrayList5, @SafeParcelable.Param(m774id = 20) ArrayList arrayList6) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = str3;

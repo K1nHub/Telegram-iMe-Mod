@@ -40,16 +40,16 @@
 
     const/4 v0, 0x0
 
-    .line 12
+    .line 13
     invoke-direct {p0, p1, v0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 9
+    .line 10
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 10
+    .line 11
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->oldTxHash:Ljava/lang/String;
 
-    .line 11
+    .line 12
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->transferArgs:Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;
 
     return-void
@@ -204,7 +204,7 @@
 .method public final getOldTxHash()Ljava/lang/String;
     .locals 1
 
-    .line 10
+    .line 11
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->oldTxHash:Ljava/lang/String;
 
     return-object v0
@@ -213,7 +213,7 @@
 .method public getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
     .locals 1
 
-    .line 9
+    .line 10
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     return-object v0
@@ -222,7 +222,7 @@
 .method public final getTransferArgs()Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;
     .locals 1
 
-    .line 11
+    .line 12
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->transferArgs:Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;
 
     return-object v0

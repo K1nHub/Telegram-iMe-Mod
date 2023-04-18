@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.json.JSONObject;
-import org.telegram.p048ui.PremiumPreviewFragment;
+import org.telegram.p044ui.PremiumPreviewFragment;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$InputStorePaymentPurpose;
@@ -330,6 +330,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
 
     @Override // com.android.billingclient.api.BillingClientStateListener
     public void onBillingSetupFinished(BillingResult billingResult) {
+        FileLog.m48d("Billing setup finished with result " + billingResult);
         if (billingResult.getResponseCode() == 0) {
             queryProductDetails(Collections.singletonList(PREMIUM_PRODUCT), BillingController$$ExternalSyntheticLambda2.INSTANCE);
             queryPurchases("subs", new PurchasesResponseListener() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda3

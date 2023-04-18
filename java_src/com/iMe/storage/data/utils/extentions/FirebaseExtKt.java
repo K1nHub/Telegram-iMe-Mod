@@ -8,6 +8,9 @@ import com.google.android.gms.tasks.Task;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Single;
+import io.reactivex.SingleEmitter;
+import io.reactivex.SingleOnSubscribe;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
@@ -17,7 +20,7 @@ public final class FirebaseExtKt {
     public static final <TResult> Observable<TResult> asObservableTask(final Task<TResult> task, final Activity activity) {
         Intrinsics.checkNotNullParameter(task, "<this>");
         Intrinsics.checkNotNullParameter(activity, "activity");
-        Observable<TResult> create = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.storage.data.utils.extentions.FirebaseExtKt$$ExternalSyntheticLambda4
+        Observable<TResult> create = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.storage.data.utils.extentions.FirebaseExtKt$$ExternalSyntheticLambda6
             @Override // io.reactivex.ObservableOnSubscribe
             public final void subscribe(ObservableEmitter observableEmitter) {
                 FirebaseExtKt.asObservableTask$lambda$9(Task.this, activity, observableEmitter);
@@ -39,7 +42,7 @@ public final class FirebaseExtKt {
             }
         });
         final FirebaseExtKt$asObservableTask$2$2 firebaseExtKt$asObservableTask$2$2 = new FirebaseExtKt$asObservableTask$2$2(emitter);
-        this_asObservableTask.addOnSuccessListener(activity, new OnSuccessListener() { // from class: com.iMe.storage.data.utils.extentions.FirebaseExtKt$$ExternalSyntheticLambda3
+        this_asObservableTask.addOnSuccessListener(activity, new OnSuccessListener() { // from class: com.iMe.storage.data.utils.extentions.FirebaseExtKt$$ExternalSyntheticLambda4
             @Override // com.google.android.gms.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
                 FirebaseExtKt.asObservableTask$lambda$9$lambda$6(Function1.this, obj);
@@ -78,5 +81,51 @@ public final class FirebaseExtKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void asObservableTask$lambda$9$lambda$8() {
         Timber.m7d("cancelled", new Object[0]);
+    }
+
+    public static final <TResult> Single<TResult> asSingleTask(final Task<TResult> task) {
+        Intrinsics.checkNotNullParameter(task, "<this>");
+        Single<TResult> create = Single.create(new SingleOnSubscribe() { // from class: com.iMe.storage.data.utils.extentions.FirebaseExtKt$$ExternalSyntheticLambda7
+            @Override // io.reactivex.SingleOnSubscribe
+            public final void subscribe(SingleEmitter singleEmitter) {
+                FirebaseExtKt.asSingleTask$lambda$12(Task.this, singleEmitter);
+            }
+        });
+        Intrinsics.checkNotNullExpressionValue(create, "create { emitter ->\n    …values\"))\n        }\n    }");
+        return create;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void asSingleTask$lambda$12(Task this_asSingleTask, final SingleEmitter emitter) {
+        Intrinsics.checkNotNullParameter(this_asSingleTask, "$this_asSingleTask");
+        Intrinsics.checkNotNullParameter(emitter, "emitter");
+        this_asSingleTask.addOnFailureListener(new OnFailureListener() { // from class: com.iMe.storage.data.utils.extentions.FirebaseExtKt$$ExternalSyntheticLambda3
+            @Override // com.google.android.gms.tasks.OnFailureListener
+            public final void onFailure(Exception exc) {
+                FirebaseExtKt.asSingleTask$lambda$12$lambda$10(SingleEmitter.this, exc);
+            }
+        });
+        final FirebaseExtKt$asSingleTask$1$2 firebaseExtKt$asSingleTask$1$2 = new FirebaseExtKt$asSingleTask$1$2(emitter);
+        this_asSingleTask.addOnSuccessListener(new OnSuccessListener() { // from class: com.iMe.storage.data.utils.extentions.FirebaseExtKt$$ExternalSyntheticLambda5
+            @Override // com.google.android.gms.tasks.OnSuccessListener
+            public final void onSuccess(Object obj) {
+                FirebaseExtKt.asSingleTask$lambda$12$lambda$11(Function1.this, obj);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void asSingleTask$lambda$12$lambda$10(SingleEmitter emitter, Exception exc) {
+        Intrinsics.checkNotNullParameter(emitter, "$emitter");
+        if (emitter.isDisposed()) {
+            return;
+        }
+        emitter.onError(exc);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void asSingleTask$lambda$12$lambda$11(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 }

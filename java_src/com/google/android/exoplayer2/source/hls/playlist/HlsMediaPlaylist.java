@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.hls.playlist;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.drm.DrmInitData;
 import com.google.android.exoplayer2.offline.StreamKey;
 import com.google.common.collect.ImmutableList;
@@ -82,7 +82,7 @@ public final class HlsMediaPlaylist extends HlsPlaylist {
         public final String title;
 
         public Segment(String str, long j, long j2, String str2, String str3) {
-            this(str, null, "", 0L, -1, C0482C.TIME_UNSET, null, str2, str3, j, j2, false, ImmutableList.m754of());
+            this(str, null, "", 0L, -1, C0470C.TIME_UNSET, null, str2, str3, j, j2, false, ImmutableList.m740of());
         }
 
         public Segment(String str, Segment segment, String str2, long j, int i, long j2, DrmInitData drmInitData, String str3, String str4, long j3, long j4, boolean z, List<Part> list) {
@@ -195,8 +195,8 @@ public final class HlsMediaPlaylist extends HlsPlaylist {
         } else {
             this.durationUs = 0L;
         }
-        long j6 = C0482C.TIME_UNSET;
-        if (j != C0482C.TIME_UNSET) {
+        long j6 = C0470C.TIME_UNSET;
+        if (j != C0470C.TIME_UNSET) {
             if (j >= 0) {
                 j6 = Math.min(this.durationUs, j);
             } else {

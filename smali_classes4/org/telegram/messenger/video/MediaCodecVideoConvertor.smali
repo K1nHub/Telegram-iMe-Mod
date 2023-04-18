@@ -52,7 +52,7 @@
 .method private checkConversionCanceled()V
     .locals 1
 
-    .line 987
+    .line 1006
     iget-object v0, p0, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->callback:Lorg/telegram/messenger/MediaController$VideoConvertorListener;
 
     if-eqz v0, :cond_1
@@ -65,7 +65,7 @@
 
     goto :goto_0
 
-    .line 988
+    .line 1007
     :cond_0
     new-instance v0, Lorg/telegram/messenger/video/MediaCodecVideoConvertor$ConversionCanceledException;
 
@@ -127,145 +127,164 @@
 
     move-result-wide v16
 
-    const-wide/16 v18, -0x1
+    const-wide/16 v13, 0x0
 
-    const/4 v6, 0x0
+    cmp-long v18, p16, v13
 
-    .line 89
+    const/4 v13, 0x0
+
+    if-ltz v18, :cond_0
+
+    const/16 v18, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    move/from16 v18, v13
+
+    :goto_0
+    const-wide/16 v21, -0x1
+
+    .line 91
     :try_start_0
-    new-instance v13, Landroid/media/MediaCodec$BufferInfo;
+    new-instance v6, Landroid/media/MediaCodec$BufferInfo;
 
-    invoke-direct {v13}, Landroid/media/MediaCodec$BufferInfo;-><init>()V
+    invoke-direct {v6}, Landroid/media/MediaCodec$BufferInfo;-><init>()V
 
-    .line 90
+    .line 92
     new-instance v14, Lorg/telegram/messenger/video/Mp4Movie;
 
     invoke-direct {v14}, Lorg/telegram/messenger/video/Mp4Movie;-><init>()V
 
-    move-object/from16 v24, v13
+    move-object/from16 v26, v6
 
-    move-object/from16 v13, p2
-
-    .line 91
-    invoke-virtual {v14, v13}, Lorg/telegram/messenger/video/Mp4Movie;->setCacheFile(Ljava/io/File;)V
-
-    .line 92
-    invoke-virtual {v14, v6}, Lorg/telegram/messenger/video/Mp4Movie;->setRotation(I)V
+    move-object/from16 v6, p2
 
     .line 93
-    invoke-virtual {v14, v9, v10}, Lorg/telegram/messenger/video/Mp4Movie;->setSize(II)V
+    invoke-virtual {v14, v6}, Lorg/telegram/messenger/video/Mp4Movie;->setCacheFile(Ljava/io/File;)V
 
     .line 94
-    new-instance v6, Lorg/telegram/messenger/video/MP4Builder;
+    invoke-virtual {v14, v13}, Lorg/telegram/messenger/video/Mp4Movie;->setRotation(I)V
 
-    invoke-direct {v6}, Lorg/telegram/messenger/video/MP4Builder;-><init>()V
+    .line 95
+    invoke-virtual {v14, v9, v10}, Lorg/telegram/messenger/video/Mp4Movie;->setSize(II)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_4c
 
-    move/from16 v13, p4
+    .line 96
+    :try_start_1
+    new-instance v13, Lorg/telegram/messenger/video/MP4Builder;
 
-    invoke-virtual {v6, v14, v13}, Lorg/telegram/messenger/video/MP4Builder;->createMovie(Lorg/telegram/messenger/video/Mp4Movie;Z)Lorg/telegram/messenger/video/MP4Builder;
+    invoke-direct {v13}, Lorg/telegram/messenger/video/MP4Builder;-><init>()V
 
-    move-result-object v6
+    move/from16 v6, p4
 
-    iput-object v6, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+    invoke-virtual {v13, v14, v6}, Lorg/telegram/messenger/video/MP4Builder;->createMovie(Lorg/telegram/messenger/video/Mp4Movie;Z)Lorg/telegram/messenger/video/MP4Builder;
 
-    long-to-float v6, v2
+    move-result-object v13
+
+    iput-object v13, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_4b
+
+    long-to-float v13, v2
 
     const/high16 v14, 0x447a0000    # 1000.0f
 
-    div-float v26, v6, v14
+    div-float v28, v13, v14
 
-    const-wide/16 v27, 0x3e8
+    const-wide/16 v29, 0x3e8
 
-    mul-long v4, v2, v27
+    mul-long v4, v2, v29
 
-    .line 102
+    .line 104
+    :try_start_2
     iput-wide v4, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->endPresentationTime:J
 
-    .line 103
+    .line 105
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_46
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_4a
 
     const-string v5, "csd-0"
 
     const-string v4, "prepend-sps-pps-to-idr-frames"
 
-    const v6, 0xe1000
-
     const-string/jumbo v15, "video/avc"
 
-    if-eqz p25, :cond_2d
+    if-eqz p25, :cond_2e
 
-    const-wide/16 v22, 0x0
+    if-eqz v18, :cond_3
 
-    cmp-long v18, p16, v22
+    const/high16 v7, 0x44fa0000    # 2000.0f
 
-    if-ltz v18, :cond_2
+    cmpg-float v7, v28, v7
 
-    const/high16 v6, 0x44fa0000    # 2000.0f
+    if-gtz v7, :cond_1
 
-    cmpg-float v6, v26, v6
+    const v7, 0x27ac40
 
-    if-gtz v6, :cond_0
-
-    const v6, 0x27ac40
-
-    goto :goto_0
-
-    :cond_0
-    const v6, 0x459c4000    # 5000.0f
-
-    cmpg-float v6, v26, v6
-
-    if-gtz v6, :cond_1
-
-    const v6, 0x2191c0
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
-    const v6, 0x17cdc0
+    const v7, 0x459c4000    # 5000.0f
 
-    goto :goto_0
+    cmpg-float v7, v28, v7
+
+    if-gtz v7, :cond_2
+
+    const v7, 0x2191c0
+
+    goto :goto_1
 
     :cond_2
-    if-gtz v7, :cond_3
+    const v7, 0x17cdc0
 
-    :goto_0
-    move v7, v6
+    goto :goto_1
 
-    .line 123
     :cond_3
-    :try_start_1
-    rem-int/lit8 v6, v9, 0x10
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_14
-    .catchall {:try_start_1 .. :try_end_1} :catchall_d
+    if-gtz v7, :cond_4
+
+    const v13, 0xe1000
+
+    goto :goto_2
+
+    :cond_4
+    :goto_1
+    move v13, v7
+
+    .line 125
+    :goto_2
+    :try_start_3
+    rem-int/lit8 v7, v9, 0x10
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_17
+    .catchall {:try_start_3 .. :try_end_3} :catchall_10
 
     const/high16 v18, 0x41800000    # 16.0f
 
-    if-eqz v6, :cond_5
+    if-eqz v7, :cond_6
 
-    .line 124
-    :try_start_2
-    sget-boolean v6, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    .line 126
+    :try_start_4
+    sget-boolean v7, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v6, :cond_4
+    if-eqz v7, :cond_5
 
-    .line 125
-    new-instance v6, Ljava/lang/StringBuilder;
+    .line 127
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v14, "changing width from "
 
-    invoke-virtual {v6, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v14, " to "
 
-    invoke-virtual {v6, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     int-to-float v14, v9
 
@@ -277,92 +296,111 @@
 
     mul-int/lit8 v14, v14, 0x10
 
-    invoke-virtual {v6, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-static {v6}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+    invoke-static {v7}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    :cond_4
-    int-to-float v6, v9
+    :cond_5
+    int-to-float v7, v9
 
-    div-float v6, v6, v18
+    div-float v7, v7, v18
 
-    .line 127
-    invoke-static {v6}, Ljava/lang/Math;->round(F)I
+    .line 129
+    invoke-static {v7}, Ljava/lang/Math;->round(F)I
 
-    move-result v6
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    move-result v7
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    mul-int/lit8 v6, v6, 0x10
+    mul-int/lit8 v7, v7, 0x10
 
-    move v14, v6
+    move v14, v7
 
-    goto :goto_1
+    goto :goto_6
 
     :catchall_0
     move-exception v0
 
-    move-object/from16 v13, p0
+    move-object/from16 v15, p0
 
     move-wide/from16 v47, p14
 
-    move-wide/from16 v34, p16
+    move-wide/from16 v23, p16
 
-    move-object v1, v0
+    move-object v2, v0
 
-    move v11, v8
+    move v14, v8
 
-    goto/16 :goto_23
+    move v7, v9
+
+    move v1, v13
+
+    :goto_3
+    const/4 v6, -0x5
+
+    :goto_4
+    const/16 v26, 0x0
+
+    const/16 v27, 0x0
+
+    move-wide/from16 v12, p12
+
+    goto/16 :goto_d8
 
     :catch_0
     move-exception v0
 
-    move-object/from16 v12, p0
+    move-object/from16 v7, p0
+
+    move/from16 v15, p3
 
     move-object v1, v0
 
-    move/from16 v38, v7
-
-    goto/16 :goto_26
-
-    :cond_5
     move v14, v9
 
-    .line 129
-    :goto_1
-    :try_start_3
-    rem-int/lit8 v6, v10, 0x10
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_13
-    .catchall {:try_start_3 .. :try_end_3} :catchall_c
+    :goto_5
+    move/from16 v42, v13
 
-    if-eqz v6, :cond_7
+    goto/16 :goto_33
 
-    .line 130
-    :try_start_4
-    sget-boolean v6, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
-
-    if-eqz v6, :cond_6
+    :cond_6
+    move v14, v9
 
     .line 131
-    new-instance v6, Ljava/lang/StringBuilder;
+    :goto_6
+    :try_start_5
+    rem-int/lit8 v7, v10, 0x10
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_16
+    .catchall {:try_start_5 .. :try_end_5} :catchall_f
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    if-eqz v7, :cond_8
+
+    .line 132
+    :try_start_6
+    sget-boolean v7, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz v7, :cond_7
+
+    .line 133
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v9, "changing height from "
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v9, " to "
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     int-to-float v9, v10
 
@@ -374,575 +412,645 @@
 
     mul-int/lit8 v9, v9, 0x10
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-static {v6}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+    invoke-static {v7}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    :cond_6
-    int-to-float v6, v10
-
-    div-float v6, v6, v18
-
-    .line 133
-    invoke-static {v6}, Ljava/lang/Math;->round(F)I
-
-    move-result v6
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    mul-int/lit8 v6, v6, 0x10
-
-    move v10, v6
-
-    goto :goto_2
-
-    :catchall_1
-    move-exception v0
-
-    move-object/from16 v13, p0
-
-    move-wide/from16 v47, p14
-
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    move v11, v8
-
-    goto/16 :goto_24
-
-    :catch_1
-    move-exception v0
-
-    move-object/from16 v12, p0
-
-    move-object v1, v0
-
-    move/from16 v38, v7
-
-    goto/16 :goto_27
-
-    .line 136
     :cond_7
-    :goto_2
-    :try_start_5
-    sget-boolean v6, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_13
-    .catchall {:try_start_5 .. :try_end_5} :catchall_c
+    int-to-float v7, v10
 
-    if-eqz v6, :cond_8
+    div-float v7, v7, v18
 
-    .line 137
-    :try_start_6
-    new-instance v6, Ljava/lang/StringBuilder;
+    .line 135
+    invoke-static {v7}, Ljava/lang/Math;->round(F)I
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "create photo encoder "
-
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v9, " "
-
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v9, " duration = "
-
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+    move-result v7
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    .line 140
+    mul-int/lit8 v7, v7, 0x10
+
+    move v10, v7
+
+    goto :goto_7
+
+    :catchall_1
+    move-exception v0
+
+    move-object/from16 v15, p0
+
+    move-wide/from16 v47, p14
+
+    move-wide/from16 v23, p16
+
+    move-object v2, v0
+
+    move v1, v13
+
+    move v7, v14
+
+    const/4 v6, -0x5
+
+    const/16 v26, 0x0
+
+    const/16 v27, 0x0
+
+    move-wide/from16 v12, p12
+
+    move v14, v8
+
+    goto/16 :goto_d8
+
+    :catch_1
+    move-exception v0
+
+    move-object/from16 v7, p0
+
+    move/from16 v15, p3
+
+    move-object v1, v0
+
+    goto :goto_5
+
+    .line 138
     :cond_8
+    :goto_7
     :try_start_7
+    sget-boolean v7, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    :try_end_7
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_16
+    .catchall {:try_start_7 .. :try_end_7} :catchall_f
+
+    if-eqz v7, :cond_9
+
+    .line 139
+    :try_start_8
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "create photo encoder "
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v9, " "
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v9, " duration = "
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v7}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_1
+    .catchall {:try_start_8 .. :try_end_8} :catchall_1
+
+    .line 142
+    :cond_9
+    :try_start_9
     invoke-static {v15, v14, v10}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
 
-    move-result-object v6
+    move-result-object v7
 
     const-string v9, "color-format"
 
     const v1, 0x7f000789
 
-    .line 141
-    invoke-virtual {v6, v9, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    .line 143
+    invoke-virtual {v7, v9, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     const-string v1, "bitrate"
 
-    .line 142
-    invoke-virtual {v6, v1, v7}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    .line 144
+    invoke-virtual {v7, v1, v13}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     const-string v1, "frame-rate"
 
     const/16 v9, 0x1e
 
-    .line 143
-    invoke-virtual {v6, v1, v9}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    .line 145
+    invoke-virtual {v7, v1, v9}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     const-string v1, "i-frame-interval"
 
     const/4 v9, 0x1
 
-    .line 144
-    invoke-virtual {v6, v1, v9}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
     .line 146
-    invoke-static {v15}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
-
-    move-result-object v1
-    :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_13
-    .catchall {:try_start_7 .. :try_end_7} :catchall_c
-
-    const/4 v2, 0x0
-
-    .line 147
-    :try_start_8
-    invoke-virtual {v1, v6, v2, v2, v9}, Landroid/media/MediaCodec;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
+    invoke-virtual {v7, v1, v9}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     .line 148
-    new-instance v6, Lorg/telegram/messenger/video/InputSurface;
+    invoke-static {v15}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
 
-    invoke-virtual {v1}, Landroid/media/MediaCodec;->createInputSurface()Landroid/view/Surface;
+    move-result-object v9
+    :try_end_9
+    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_16
+    .catchall {:try_start_9 .. :try_end_9} :catchall_f
+
+    .line 150
+    :try_start_a
+    invoke-virtual {v9}, Landroid/media/MediaCodec;->getName()Ljava/lang/String;
+
+    move-result-object v1
+    :try_end_a
+    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_15
+    .catchall {:try_start_a .. :try_end_a} :catchall_f
+
+    .line 151
+    :try_start_b
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "selected encoder "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-direct {v6, v2}, Lorg/telegram/messenger/video/InputSurface;-><init>(Landroid/view/Surface;)V
-    :try_end_8
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_12
-    .catchall {:try_start_8 .. :try_end_8} :catchall_c
+    invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 149
-    :try_start_9
-    invoke-virtual {v6}, Lorg/telegram/messenger/video/InputSurface;->makeCurrent()V
+    const/4 v2, 0x1
 
-    .line 150
-    invoke-virtual {v1}, Landroid/media/MediaCodec;->start()V
+    const/4 v3, 0x0
 
-    .line 152
+    .line 153
+    invoke-virtual {v9, v7, v3, v3, v2}, Landroid/media/MediaCodec;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
+
+    .line 154
+    new-instance v7, Lorg/telegram/messenger/video/InputSurface;
+
+    invoke-virtual {v9}, Landroid/media/MediaCodec;->createInputSurface()Landroid/view/Surface;
+
+    move-result-object v2
+
+    invoke-direct {v7, v2}, Lorg/telegram/messenger/video/InputSurface;-><init>(Landroid/view/Surface;)V
+    :try_end_b
+    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_14
+    .catchall {:try_start_b .. :try_end_b} :catchall_e
+
+    .line 155
+    :try_start_c
+    invoke-virtual {v7}, Lorg/telegram/messenger/video/InputSurface;->makeCurrent()V
+
+    .line 156
+    invoke-virtual {v9}, Landroid/media/MediaCodec;->start()V
+
+    .line 158
     new-instance v18, Lorg/telegram/messenger/video/OutputSurface;
-    :try_end_9
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_11
-    .catchall {:try_start_9 .. :try_end_9} :catchall_c
+    :try_end_c
+    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_13
+    .catchall {:try_start_c .. :try_end_c} :catchall_e
 
-    const/16 v19, 0x0
+    const/16 v21, 0x0
 
-    int-to-float v3, v8
+    int-to-float v2, v8
 
-    const/16 v21, 0x1
+    const/16 v22, 0x1
 
-    move-object v2, v1
+    move-object/from16 v24, v1
 
     move-object/from16 v1, v18
 
-    move-object/from16 p7, v2
+    move/from16 v33, v2
 
     move-object/from16 v2, p22
 
-    move/from16 v32, v3
+    move-object/from16 v34, v3
 
     move-object/from16 v3, p1
 
-    move-object/from16 v33, v4
+    move-object/from16 v35, v4
 
     move-object/from16 v4, p23
 
-    move-object/from16 v34, v5
+    move-object/from16 v36, v5
 
     move-object/from16 v5, p24
 
-    move-object v9, v6
+    move-object/from16 v39, v26
 
-    move-object/from16 v6, v19
+    move-object/from16 v6, v21
 
-    move/from16 v38, v7
+    move-object/from16 v40, v7
 
     move v7, v14
 
     move v8, v10
 
-    move-object/from16 v39, v9
+    move-object/from16 p7, v9
 
     move/from16 v9, p5
 
-    move/from16 v40, v10
+    move/from16 v41, v10
 
     move/from16 v10, p6
 
     move/from16 v11, p3
 
-    move/from16 v12, v32
+    move/from16 v12, v33
 
-    move/from16 v19, v14
+    move/from16 v42, v13
 
-    move-object/from16 v14, v24
+    move/from16 v21, v14
 
-    move/from16 v13, v21
+    move-object/from16 v23, v15
 
-    :try_start_a
+    const/4 v14, 0x0
+
+    move/from16 v15, p3
+
+    move/from16 v13, v22
+
+    :try_start_d
     invoke-direct/range {v1 .. v13}, Lorg/telegram/messenger/video/OutputSurface;-><init>(Lorg/telegram/messenger/MediaController$SavedFilterState;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$CropState;IIIIIFZ)V
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_10
-    .catchall {:try_start_a .. :try_end_a} :catchall_b
+    :try_end_d
+    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_12
+    .catchall {:try_start_d .. :try_end_d} :catchall_d
 
-    .line 156
-    :try_start_b
+    .line 162
+    :try_start_e
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-    :try_end_b
-    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_f
-    .catchall {:try_start_b .. :try_end_b} :catchall_b
+    :try_end_e
+    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_e} :catch_11
+    .catchall {:try_start_e .. :try_end_e} :catchall_d
 
     const/16 v2, 0x15
 
-    if-ge v1, v2, :cond_9
+    if-ge v1, v2, :cond_a
 
-    .line 157
-    :try_start_c
+    .line 163
+    :try_start_f
     invoke-virtual/range {p7 .. p7}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
 
-    move-result-object v1
-    :try_end_c
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_2
-    .catchall {:try_start_c .. :try_end_c} :catchall_2
+    move-result-object v6
+    :try_end_f
+    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_f} :catch_2
+    .catchall {:try_start_f .. :try_end_f} :catchall_2
 
-    goto :goto_3
+    goto :goto_8
 
     :catchall_2
     move-exception v0
 
-    move-object/from16 v13, p0
+    move-object/from16 v15, p0
 
-    move/from16 v11, p9
+    move-wide/from16 v12, p12
 
     move-wide/from16 v47, p14
 
-    move-wide/from16 v34, p16
+    move-object v2, v0
 
-    move-object v1, v0
+    move/from16 v27, v14
 
-    move/from16 v14, v19
+    move/from16 v7, v21
 
-    move/from16 v7, v38
+    move-object/from16 v26, v24
 
-    move/from16 v10, v40
+    move/from16 v10, v41
 
-    goto/16 :goto_24
+    move/from16 v1, v42
+
+    const/4 v6, -0x5
+
+    goto/16 :goto_3b
 
     :catch_2
     move-exception v0
 
-    move-object/from16 v12, p0
+    move-object/from16 v7, p0
 
     move-object/from16 v11, p7
 
     move-object v1, v0
 
-    move/from16 v14, v19
+    move/from16 v14, v21
 
-    move/from16 v10, v40
+    move/from16 v10, v41
 
-    const/4 v13, -0x5
+    const/4 v6, -0x5
 
-    goto/16 :goto_29
+    goto/16 :goto_36
 
-    :cond_9
-    const/4 v1, 0x0
+    :cond_a
+    const/4 v6, 0x0
 
-    .line 162
-    :goto_3
-    :try_start_d
+    .line 168
+    :goto_8
+    :try_start_10
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
-    :try_end_d
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_f
-    .catchall {:try_start_d .. :try_end_d} :catchall_b
+    :try_end_10
+    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_10} :catch_11
+    .catchall {:try_start_10 .. :try_end_10} :catchall_d
 
-    const/4 v2, 0x0
+    move-object v1, v6
 
-    const/4 v3, 0x0
+    move v2, v14
 
-    const/4 v4, 0x0
+    move v3, v2
+
+    move v4, v3
+
+    move v13, v4
 
     const/4 v5, 0x1
 
-    const/4 v6, 0x0
+    const/4 v6, -0x5
 
-    const/4 v13, -0x5
+    :goto_9
+    if-nez v13, :cond_29
 
-    :goto_4
-    if-nez v6, :cond_28
-
-    .line 165
-    :try_start_e
+    .line 171
+    :try_start_11
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
 
     xor-int/lit8 v7, v2, 0x1
 
-    move v8, v6
+    move v8, v13
 
-    move v6, v7
+    move v13, v7
 
     const/4 v7, 0x1
 
-    :goto_5
-    if-nez v6, :cond_b
+    :goto_a
+    if-nez v13, :cond_c
 
-    if-eqz v7, :cond_a
+    if-eqz v7, :cond_b
 
-    goto :goto_6
+    goto :goto_b
 
-    :cond_a
-    move v6, v8
-
-    goto :goto_4
-
-    .line 170
     :cond_b
-    :goto_6
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
-    :try_end_e
-    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_e} :catch_e
-    .catchall {:try_start_e .. :try_end_e} :catchall_a
+    move v13, v8
 
-    if-eqz p21, :cond_c
+    goto :goto_9
+
+    .line 176
+    :cond_c
+    :goto_b
+    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
+    :try_end_11
+    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_11} :catch_10
+    .catchall {:try_start_11 .. :try_end_11} :catchall_c
+
+    if-eqz p21, :cond_d
 
     const-wide/16 v9, 0x55f0
 
     move-object/from16 v11, p7
 
-    goto :goto_7
+    move-object/from16 v12, v39
 
-    :cond_c
+    goto :goto_c
+
+    :cond_d
     move-object/from16 v11, p7
+
+    move-object/from16 v12, v39
 
     const-wide/16 v9, 0x9c4
 
-    .line 171
-    :goto_7
-    :try_start_f
-    invoke-virtual {v11, v14, v9, v10}, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo;J)I
+    .line 177
+    :goto_c
+    :try_start_12
+    invoke-virtual {v11, v12, v9, v10}, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo;J)I
 
     move-result v9
-    :try_end_f
-    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_f} :catch_d
-    .catchall {:try_start_f .. :try_end_f} :catchall_a
+    :try_end_12
+    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_12} :catch_f
+    .catchall {:try_start_12 .. :try_end_12} :catchall_c
 
     const/4 v10, -0x1
 
-    if-ne v9, v10, :cond_d
+    if-ne v9, v10, :cond_e
 
-    move-object/from16 v12, p0
+    move-object/from16 v7, p0
 
-    move/from16 v21, v4
+    move/from16 v26, v3
 
-    move/from16 p7, v6
+    move/from16 v22, v4
 
-    move v6, v8
+    move/from16 p8, v13
 
-    move-object/from16 v8, v34
+    move v4, v14
 
-    const/4 v7, 0x0
+    move-object/from16 v14, v23
 
-    move v4, v2
+    move-object v3, v1
 
-    move-object v2, v1
+    move v13, v8
 
     move v1, v10
 
-    move/from16 v10, v40
+    move-object/from16 v8, v36
 
-    goto/16 :goto_19
+    move/from16 v10, v41
 
-    :cond_d
+    goto/16 :goto_21
+
+    :cond_e
     const/4 v10, -0x3
 
-    if-ne v9, v10, :cond_f
+    if-ne v9, v10, :cond_10
 
-    .line 175
-    :try_start_10
+    .line 181
+    :try_start_13
     sget v10, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v12, 0x15
+    const/16 v14, 0x15
 
-    if-ge v10, v12, :cond_e
+    if-ge v10, v14, :cond_f
 
-    .line 176
+    .line 182
     invoke-virtual {v11}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    :cond_e
-    move-object/from16 v12, p0
+    :cond_f
+    move/from16 v26, v3
 
-    move/from16 v21, v4
+    move/from16 v22, v4
 
-    move/from16 p7, v6
+    move v4, v7
 
-    move v6, v8
+    move/from16 p8, v13
 
-    move-object/from16 v8, v34
+    move-object/from16 v14, v23
 
-    :goto_8
-    move/from16 v10, v40
+    move/from16 v10, v41
 
-    move v4, v2
+    move-object/from16 v7, p0
 
-    move-object v2, v1
+    move-object v3, v1
 
-    :goto_9
+    move v13, v8
+
+    move-object/from16 v8, v36
+
+    :goto_d
     const/4 v1, -0x1
 
-    goto/16 :goto_19
+    goto/16 :goto_21
 
     :catchall_3
     move-exception v0
 
-    move/from16 v11, p9
+    move-object/from16 v15, p0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
 
     move-wide/from16 v47, p14
 
-    move-wide/from16 v34, p16
+    move-object v2, v0
 
-    move-object v1, v0
+    :goto_e
+    move/from16 v7, v21
 
-    move v5, v13
+    move-object/from16 v26, v24
 
-    move/from16 v14, v19
+    move/from16 v10, v41
 
-    move/from16 v7, v38
-
-    move/from16 v10, v40
-
-    goto/16 :goto_4b
+    goto/16 :goto_29
 
     :catch_3
     move-exception v0
 
-    move-object/from16 v12, p0
+    move-object/from16 v7, p0
 
-    :goto_a
+    :goto_f
     move-object v1, v0
 
-    move/from16 v14, v19
+    move/from16 v14, v21
 
-    move/from16 v10, v40
+    move/from16 v10, v41
 
-    goto/16 :goto_29
+    goto/16 :goto_36
 
-    :cond_f
+    :cond_10
     const/4 v10, -0x2
 
-    if-ne v9, v10, :cond_14
+    if-ne v9, v10, :cond_15
 
-    .line 179
+    .line 185
     invoke-virtual {v11}, Landroid/media/MediaCodec;->getOutputFormat()Landroid/media/MediaFormat;
 
     move-result-object v10
 
-    .line 180
-    sget-boolean v12, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    .line 186
+    sget-boolean v14, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v12, :cond_10
+    if-eqz v14, :cond_11
 
-    .line 181
-    new-instance v12, Ljava/lang/StringBuilder;
+    .line 187
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    move/from16 p7, v6
+    move/from16 p7, v7
 
-    const-string v6, "photo encoder new format "
+    const-string v7, "photo encoder new format "
 
-    invoke-virtual {v12, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-static {v6}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
-    :try_end_10
-    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_10} :catch_3
-    .catchall {:try_start_10 .. :try_end_10} :catchall_3
+    invoke-static {v7}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+    :try_end_13
+    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_13} :catch_3
+    .catchall {:try_start_13 .. :try_end_13} :catchall_3
 
-    goto :goto_b
+    goto :goto_10
 
-    :cond_10
-    move/from16 p7, v6
+    :cond_11
+    move/from16 p7, v7
 
-    :goto_b
-    const/4 v6, -0x5
+    :goto_10
+    const/4 v14, -0x5
 
-    if-ne v13, v6, :cond_13
+    if-ne v6, v14, :cond_14
 
-    if-eqz v10, :cond_13
+    if-eqz v10, :cond_14
 
-    move-object/from16 v12, p0
+    move-object/from16 v7, p0
 
-    .line 184
-    :try_start_11
-    iget-object v6, v12, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+    .line 190
+    :try_start_14
+    iget-object v14, v7, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
     move/from16 p8, v8
 
     const/4 v8, 0x0
 
-    invoke-virtual {v6, v10, v8}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
+    invoke-virtual {v14, v10, v8}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
 
-    move-result v13
+    move-result v6
+    :try_end_14
+    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_14} :catch_6
+    .catchall {:try_start_14 .. :try_end_14} :catchall_6
 
-    move-object/from16 v6, v33
+    move-object/from16 v14, v35
 
-    .line 185
-    invoke-virtual {v10, v6}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
-
-    move-result v21
-
-    if-eqz v21, :cond_11
-
-    invoke-virtual {v10, v6}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+    .line 191
+    :try_start_15
+    invoke-virtual {v10, v14}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v8
 
-    move-object/from16 v33, v6
+    if-eqz v8, :cond_12
+
+    invoke-virtual {v10, v14}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+
+    move-result v8
+    :try_end_15
+    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_15} :catch_5
+    .catchall {:try_start_15 .. :try_end_15} :catchall_5
+
+    move/from16 p10, v6
 
     const/4 v6, 0x1
 
-    if-ne v8, v6, :cond_12
+    if-ne v8, v6, :cond_13
 
-    move-object/from16 v8, v34
+    move-object/from16 v8, v36
 
-    .line 186
+    .line 192
+    :try_start_16
     invoke-virtual {v10, v8}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
 
     move-result-object v3
 
     const-string v6, "csd-1"
 
-    .line 187
+    .line 193
     invoke-virtual {v10, v6}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
 
     move-result-object v6
 
-    .line 188
+    .line 194
     invoke-virtual {v3}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v3
@@ -950,641 +1058,708 @@
     invoke-virtual {v6}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v6
-    :try_end_11
-    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_11} :catch_4
-    .catchall {:try_start_11 .. :try_end_11} :catchall_4
+    :try_end_16
+    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_16} :catch_4
+    .catchall {:try_start_16 .. :try_end_16} :catchall_4
 
     add-int/2addr v3, v6
 
-    goto :goto_d
-
-    :cond_11
-    move-object/from16 v33, v6
-
-    :cond_12
-    :goto_c
-    move-object/from16 v8, v34
-
-    goto :goto_d
-
-    :cond_13
-    move-object/from16 v12, p0
-
-    move/from16 p8, v8
-
-    goto :goto_c
-
-    :goto_d
-    move/from16 v6, p8
-
-    move/from16 v21, v4
-
-    goto/16 :goto_8
-
-    :cond_14
-    move-object/from16 v12, p0
-
-    move/from16 p7, v6
-
-    move-object/from16 v8, v34
-
-    if-ltz v9, :cond_27
-
-    .line 195
-    :try_start_12
-    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
-    :try_end_12
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_12} :catch_b
-    .catchall {:try_start_12 .. :try_end_12} :catchall_8
-
-    const/16 v10, 0x15
-
-    if-ge v6, v10, :cond_15
-
-    .line 196
-    :try_start_13
-    aget-object v6, v1, v9
-    :try_end_13
-    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_13} :catch_4
-    .catchall {:try_start_13 .. :try_end_13} :catchall_4
-
-    goto :goto_e
+    goto :goto_11
 
     :catchall_4
     move-exception v0
 
-    move/from16 v11, p9
+    move/from16 v14, p9
 
-    move-wide/from16 v47, p14
+    move/from16 v6, p10
 
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    move v5, v13
-
-    move/from16 v14, v19
-
-    move/from16 v7, v38
-
-    move/from16 v10, v40
-
-    goto/16 :goto_30
+    goto :goto_14
 
     :catch_4
     move-exception v0
 
-    goto/16 :goto_a
-
-    .line 198
-    :cond_15
-    :try_start_14
-    invoke-virtual {v11, v9}, Landroid/media/MediaCodec;->getOutputBuffer(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v6
-    :try_end_14
-    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_14} :catch_b
-    .catchall {:try_start_14 .. :try_end_14} :catchall_8
-
-    :goto_e
-    if-eqz v6, :cond_26
-
-    .line 203
-    :try_start_15
-    iget v10, v14, Landroid/media/MediaCodec$BufferInfo;->size:I
-    :try_end_15
-    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_15} :catch_a
-    .catchall {:try_start_15 .. :try_end_15} :catchall_8
-
-    move-object/from16 p8, v1
-
-    const/4 v1, 0x1
-
-    if-le v10, v1, :cond_21
-
-    .line 204
-    :try_start_16
-    iget v1, v14, Landroid/media/MediaCodec$BufferInfo;->flags:I
-    :try_end_16
-    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_16} :catch_6
-    .catchall {:try_start_16 .. :try_end_16} :catchall_6
-
-    and-int/lit8 v21, v1, 0x2
-
-    if-nez v21, :cond_1d
-
-    if-eqz v3, :cond_16
-
-    and-int/lit8 v21, v1, 0x1
-
-    if-eqz v21, :cond_16
-
-    move/from16 p10, v7
-
-    .line 206
-    :try_start_17
-    iget v7, v14, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    add-int/2addr v7, v3
-
-    iput v7, v14, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    sub-int/2addr v10, v3
-
-    .line 207
-    iput v10, v14, Landroid/media/MediaCodec$BufferInfo;->size:I
+    move/from16 v6, p10
 
     goto :goto_f
 
+    :cond_12
+    move/from16 p10, v6
+
+    :cond_13
+    move-object/from16 v8, v36
+
+    :goto_11
+    move/from16 v6, p10
+
+    goto :goto_12
+
+    :catchall_5
+    move-exception v0
+
+    move/from16 p10, v6
+
+    goto :goto_13
+
+    :catch_5
+    move-exception v0
+
+    move/from16 p10, v6
+
+    goto :goto_f
+
+    :cond_14
+    move-object/from16 v7, p0
+
+    move/from16 p8, v8
+
+    move-object/from16 v14, v35
+
+    move-object/from16 v8, v36
+
+    :goto_12
+    move/from16 v26, v3
+
+    move/from16 v22, v4
+
+    move-object/from16 v35, v14
+
+    move-object/from16 v14, v23
+
+    move/from16 v10, v41
+
+    move/from16 v4, p7
+
+    move-object v3, v1
+
+    const/4 v1, -0x1
+
+    move/from16 v71, v13
+
+    move/from16 v13, p8
+
+    move/from16 p8, v71
+
+    goto/16 :goto_21
+
+    :cond_15
+    move/from16 p7, v7
+
+    move-object/from16 v14, v35
+
+    move-object/from16 v8, v36
+
+    move-object/from16 v7, p0
+
+    if-ltz v9, :cond_28
+
+    .line 201
+    :try_start_17
+    sget v10, Landroid/os/Build$VERSION;->SDK_INT:I
+    :try_end_17
+    .catch Ljava/lang/Exception; {:try_start_17 .. :try_end_17} :catch_d
+    .catchall {:try_start_17 .. :try_end_17} :catchall_a
+
+    move/from16 p8, v13
+
+    const/16 v13, 0x15
+
+    if-ge v10, v13, :cond_16
+
+    .line 202
+    :try_start_18
+    aget-object v10, v1, v9
+    :try_end_18
+    .catch Ljava/lang/Exception; {:try_start_18 .. :try_end_18} :catch_6
+    .catchall {:try_start_18 .. :try_end_18} :catchall_6
+
+    goto :goto_15
+
+    :catchall_6
+    move-exception v0
+
+    :goto_13
+    move/from16 v14, p9
+
+    :goto_14
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v47, p14
+
+    move-object v2, v0
+
+    move-object v15, v7
+
+    goto/16 :goto_e
+
+    :catch_6
+    move-exception v0
+
+    goto/16 :goto_f
+
+    .line 204
     :cond_16
-    move/from16 p10, v7
+    :try_start_19
+    invoke-virtual {v11, v9}, Landroid/media/MediaCodec;->getOutputBuffer(I)Ljava/nio/ByteBuffer;
 
-    :goto_f
-    if-eqz v5, :cond_1a
+    move-result-object v10
+    :try_end_19
+    .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_19} :catch_d
+    .catchall {:try_start_19 .. :try_end_19} :catchall_a
 
-    and-int/lit8 v1, v1, 0x1
+    :goto_15
+    if-eqz v10, :cond_27
 
-    if-eqz v1, :cond_1a
+    .line 209
+    :try_start_1a
+    iget v13, v12, Landroid/media/MediaCodec$BufferInfo;->size:I
+    :try_end_1a
+    .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_1a} :catch_c
+    .catchall {:try_start_1a .. :try_end_1a} :catchall_a
 
-    .line 210
-    iget v1, v14, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    const/16 v7, 0x64
-
-    if-le v1, v7, :cond_19
-
-    .line 211
-    iget v1, v14, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    invoke-virtual {v6, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    new-array v1, v7, [B
-
-    .line 213
-    invoke-virtual {v6, v1}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-
-    const/4 v5, 0x0
-
-    const/4 v10, 0x0
-
-    :goto_10
-    const/16 v7, 0x60
-
-    if-ge v5, v7, :cond_19
-
-    .line 216
-    aget-byte v7, v1, v5
-
-    if-nez v7, :cond_17
-
-    add-int/lit8 v7, v5, 0x1
-
-    aget-byte v7, v1, v7
-
-    if-nez v7, :cond_17
-
-    add-int/lit8 v7, v5, 0x2
-
-    aget-byte v7, v1, v7
-
-    if-nez v7, :cond_17
-
-    add-int/lit8 v7, v5, 0x3
-
-    aget-byte v7, v1, v7
-
-    move-object/from16 v21, v1
+    move-object/from16 p10, v1
 
     const/4 v1, 0x1
 
-    if-ne v7, v1, :cond_18
+    if-le v13, v1, :cond_22
 
-    add-int/lit8 v10, v10, 0x1
+    .line 210
+    :try_start_1b
+    iget v1, v12, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    :try_end_1b
+    .catch Ljava/lang/Exception; {:try_start_1b .. :try_end_1b} :catch_8
+    .catchall {:try_start_1b .. :try_end_1b} :catchall_8
 
-    if-le v10, v1, :cond_18
+    and-int/lit8 v22, v1, 0x2
 
-    .line 219
-    iget v1, v14, Landroid/media/MediaCodec$BufferInfo;->offset:I
+    if-nez v22, :cond_1d
 
-    add-int/2addr v1, v5
+    if-eqz v3, :cond_17
 
-    iput v1, v14, Landroid/media/MediaCodec$BufferInfo;->offset:I
+    and-int/lit8 v22, v1, 0x1
 
-    .line 220
-    iget v1, v14, Landroid/media/MediaCodec$BufferInfo;->size:I
+    if-eqz v22, :cond_17
 
-    sub-int/2addr v1, v5
+    move-object/from16 v35, v14
 
-    iput v1, v14, Landroid/media/MediaCodec$BufferInfo;->size:I
+    .line 212
+    :try_start_1c
+    iget v14, v12, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
-    goto :goto_11
+    add-int/2addr v14, v3
+
+    iput v14, v12, Landroid/media/MediaCodec$BufferInfo;->offset:I
+
+    sub-int/2addr v13, v3
+
+    .line 213
+    iput v13, v12, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    goto :goto_16
 
     :cond_17
-    move-object/from16 v21, v1
+    move-object/from16 v35, v14
 
-    :cond_18
-    add-int/lit8 v5, v5, 0x1
+    :goto_16
+    if-eqz v5, :cond_1b
 
-    move-object/from16 v1, v21
+    and-int/lit8 v1, v1, 0x1
 
-    const/16 v7, 0x64
+    if-eqz v1, :cond_1b
 
-    goto :goto_10
+    .line 216
+    iget v1, v12, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    :cond_19
-    :goto_11
+    const/16 v14, 0x64
+
+    if-le v1, v14, :cond_1a
+
+    .line 217
+    iget v1, v12, Landroid/media/MediaCodec$BufferInfo;->offset:I
+
+    invoke-virtual {v10, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    new-array v1, v14, [B
+
+    .line 219
+    invoke-virtual {v10, v1}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
+
     const/4 v5, 0x0
 
-    .line 228
+    const/4 v13, 0x0
+
+    :goto_17
+    const/16 v14, 0x60
+
+    if-ge v13, v14, :cond_1a
+
+    .line 222
+    aget-byte v14, v1, v13
+
+    if-nez v14, :cond_18
+
+    add-int/lit8 v14, v13, 0x1
+
+    aget-byte v14, v1, v14
+
+    if-nez v14, :cond_18
+
+    add-int/lit8 v14, v13, 0x2
+
+    aget-byte v14, v1, v14
+
+    if-nez v14, :cond_18
+
+    add-int/lit8 v14, v13, 0x3
+
+    aget-byte v14, v1, v14
+
+    move-object/from16 v22, v1
+
+    const/4 v1, 0x1
+
+    if-ne v14, v1, :cond_19
+
+    add-int/lit8 v5, v5, 0x1
+
+    if-le v5, v1, :cond_19
+
+    .line 225
+    iget v1, v12, Landroid/media/MediaCodec$BufferInfo;->offset:I
+
+    add-int/2addr v1, v13
+
+    iput v1, v12, Landroid/media/MediaCodec$BufferInfo;->offset:I
+
+    .line 226
+    iget v1, v12, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    sub-int/2addr v1, v13
+
+    iput v1, v12, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    goto :goto_18
+
+    :cond_18
+    move-object/from16 v22, v1
+
+    :cond_19
+    add-int/lit8 v13, v13, 0x1
+
+    move-object/from16 v1, v22
+
+    const/16 v14, 0x64
+
+    goto :goto_17
+
     :cond_1a
-    iget-object v1, v12, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+    :goto_18
+    const/4 v13, 0x0
 
-    move v10, v5
+    goto :goto_19
 
-    const/4 v7, 0x1
+    :cond_1b
+    move v13, v5
 
-    invoke-virtual {v1, v13, v6, v14, v7}, Lorg/telegram/messenger/video/MP4Builder;->writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;Z)J
+    .line 234
+    :goto_19
+    iget-object v1, v7, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
-    move-result-wide v5
+    move/from16 v22, v13
 
-    move v7, v3
+    const/4 v5, 0x1
+
+    invoke-virtual {v1, v6, v10, v12, v5}, Lorg/telegram/messenger/video/MP4Builder;->writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;Z)J
+
+    move-result-wide v13
+
+    move/from16 v26, v3
 
     move v1, v4
 
     const-wide/16 v3, 0x0
 
-    cmp-long v21, v5, v3
+    cmp-long v5, v13, v3
 
-    if-eqz v21, :cond_1b
-
-    .line 230
-    iget-object v3, v12, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->callback:Lorg/telegram/messenger/MediaController$VideoConvertorListener;
-
-    if-eqz v3, :cond_1b
-
-    move/from16 v21, v1
-
-    move v4, v2
-
-    move/from16 v22, v7
-
-    const-wide/16 v1, 0x0
-
-    long-to-float v7, v1
-
-    const/high16 v1, 0x447a0000    # 1000.0f
-
-    div-float/2addr v7, v1
-
-    div-float v7, v7, v26
-
-    .line 231
-    invoke-interface {v3, v5, v6, v7}, Lorg/telegram/messenger/MediaController$VideoConvertorListener;->didWriteData(JF)V
-    :try_end_17
-    .catch Ljava/lang/Exception; {:try_start_17 .. :try_end_17} :catch_4
-    .catchall {:try_start_17 .. :try_end_17} :catchall_4
-
-    goto :goto_12
-
-    :cond_1b
-    move/from16 v21, v1
-
-    move v4, v2
-
-    move/from16 v22, v7
-
-    :goto_12
-    move v5, v10
-
-    :cond_1c
-    move/from16 v1, v19
-
-    move/from16 v10, v40
-
-    goto/16 :goto_17
-
-    :cond_1d
-    move/from16 v22, v3
-
-    move/from16 v21, v4
-
-    move/from16 p10, v7
-
-    const/4 v1, -0x5
-
-    move v4, v2
-
-    if-ne v13, v1, :cond_1c
-
-    .line 235
-    :try_start_18
-    new-array v1, v10, [B
+    if-eqz v5, :cond_1c
 
     .line 236
-    iget v2, v14, Landroid/media/MediaCodec$BufferInfo;->offset:I
+    iget-object v5, v7, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->callback:Lorg/telegram/messenger/MediaController$VideoConvertorListener;
 
-    add-int/2addr v2, v10
+    if-eqz v5, :cond_1c
 
-    invoke-virtual {v6, v2}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+    long-to-float v10, v3
+
+    const/high16 v3, 0x447a0000    # 1000.0f
+
+    div-float/2addr v10, v3
+
+    div-float v10, v10, v28
 
     .line 237
-    iget v2, v14, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    invoke-virtual {v6, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    .line 238
-    invoke-virtual {v6, v1}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-
-    .line 241
-    iget v2, v14, Landroid/media/MediaCodec$BufferInfo;->size:I
-    :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_18 .. :try_end_18} :catch_6
-    .catchall {:try_start_18 .. :try_end_18} :catchall_6
-
-    const/4 v3, 0x1
-
-    sub-int/2addr v2, v3
-
-    :goto_13
-    if-ltz v2, :cond_1f
-
-    const/4 v6, 0x3
-
-    if-le v2, v6, :cond_1f
-
-    .line 243
-    :try_start_19
-    aget-byte v6, v1, v2
-
-    if-ne v6, v3, :cond_1e
-
-    add-int/lit8 v3, v2, -0x1
-
-    aget-byte v3, v1, v3
-
-    if-nez v3, :cond_1e
-
-    add-int/lit8 v3, v2, -0x2
-
-    aget-byte v3, v1, v3
-
-    if-nez v3, :cond_1e
-
-    add-int/lit8 v3, v2, -0x3
-
-    aget-byte v6, v1, v3
-
-    if-nez v6, :cond_1e
-
-    .line 244
-    invoke-static {v3}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v2
-
-    .line 245
-    iget v6, v14, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    sub-int/2addr v6, v3
-
-    invoke-static {v6}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v6
-
-    const/4 v7, 0x0
-
-    .line 246
-    invoke-virtual {v2, v1, v7, v3}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    .line 247
-    iget v10, v14, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    sub-int/2addr v10, v3
-
-    invoke-virtual {v6, v1, v3, v10}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-    :try_end_19
-    .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_19} :catch_4
-    .catchall {:try_start_19 .. :try_end_19} :catchall_4
-
-    goto :goto_14
-
-    :cond_1e
-    add-int/lit8 v2, v2, -0x1
-
-    const/4 v3, 0x1
-
-    goto :goto_13
-
-    :cond_1f
-    const/4 v2, 0x0
-
-    const/4 v6, 0x0
-
-    :goto_14
-    move/from16 v1, v19
-
-    move/from16 v10, v40
-
-    .line 255
-    :try_start_1a
-    invoke-static {v15, v1, v10}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
-
-    move-result-object v3
-
-    if-eqz v2, :cond_20
-
-    if-eqz v6, :cond_20
-
-    .line 257
-    invoke-virtual {v3, v8, v2}, Landroid/media/MediaFormat;->setByteBuffer(Ljava/lang/String;Ljava/nio/ByteBuffer;)V
-
-    const-string v2, "csd-1"
-
-    .line 258
-    invoke-virtual {v3, v2, v6}, Landroid/media/MediaFormat;->setByteBuffer(Ljava/lang/String;Ljava/nio/ByteBuffer;)V
-
-    .line 260
-    :cond_20
-    iget-object v2, v12, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v2, v3, v6}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
-
-    move-result v2
-    :try_end_1a
-    .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_1a} :catch_5
-    .catchall {:try_start_1a .. :try_end_1a} :catchall_5
-
-    move v13, v2
-
-    goto :goto_17
-
-    :catchall_5
-    move-exception v0
-
-    goto :goto_15
-
-    :catch_5
-    move-exception v0
-
-    goto :goto_16
-
-    :catchall_6
-    move-exception v0
-
-    move/from16 v1, v19
-
-    move/from16 v10, v40
-
-    :goto_15
-    move/from16 v11, p9
-
-    move-wide/from16 v47, p14
-
-    move-wide/from16 v34, p16
-
-    move v14, v1
-
-    move v5, v13
-
-    move/from16 v7, v38
-
-    const/4 v6, 0x0
-
-    move-object v1, v0
-
-    goto/16 :goto_31
-
-    :catch_6
-    move-exception v0
-
-    move/from16 v1, v19
-
-    move/from16 v10, v40
-
-    :goto_16
-    move v14, v1
-
-    goto/16 :goto_22
-
-    :cond_21
-    move/from16 v22, v3
-
-    move/from16 v21, v4
-
-    move/from16 p10, v7
-
-    move/from16 v1, v19
-
-    move/from16 v10, v40
-
-    move v4, v2
-
-    .line 263
-    :goto_17
-    :try_start_1b
-    iget v2, v14, Landroid/media/MediaCodec$BufferInfo;->flags:I
-
-    and-int/lit8 v2, v2, 0x4
-
-    if-eqz v2, :cond_22
-
-    const/4 v2, 0x0
-
-    const/4 v6, 0x1
-
-    goto :goto_18
-
-    :cond_22
-    const/4 v2, 0x0
-
-    const/4 v6, 0x0
-
-    .line 264
-    :goto_18
-    invoke-virtual {v11, v9, v2}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
-    :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_1b .. :try_end_1b} :catch_9
-    .catchall {:try_start_1b .. :try_end_1b} :catchall_7
-
-    move-object/from16 v2, p8
-
-    move/from16 v7, p10
-
-    move/from16 v19, v1
-
-    move/from16 v3, v22
-
-    goto/16 :goto_9
-
-    :goto_19
-    if-eq v9, v1, :cond_23
-
-    move-object v1, v2
-
-    move v2, v4
-
-    move-object/from16 v34, v8
-
-    move/from16 v40, v10
-
-    move/from16 v4, v21
-
-    move v8, v6
-
-    move/from16 v6, p7
-
-    move-object/from16 p7, v11
-
-    goto/16 :goto_5
-
-    :cond_23
-    if-nez v4, :cond_24
-
-    .line 271
-    :try_start_1c
-    invoke-virtual/range {v18 .. v18}, Lorg/telegram/messenger/video/OutputSurface;->drawImage()V
+    invoke-interface {v5, v13, v14, v10}, Lorg/telegram/messenger/MediaController$VideoConvertorListener;->didWriteData(JF)V
     :try_end_1c
-    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_1c} :catch_8
-    .catchall {:try_start_1c .. :try_end_1c} :catchall_9
+    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_1c} :catch_6
+    .catchall {:try_start_1c .. :try_end_1c} :catchall_6
+
+    :cond_1c
+    move/from16 v5, v22
+
+    move-object/from16 v14, v23
+
+    move/from16 v10, v41
+
+    move/from16 v22, v1
 
     move/from16 v1, v21
 
+    goto/16 :goto_1f
+
+    :cond_1d
+    move/from16 v26, v3
+
+    move v1, v4
+
+    move-object/from16 v35, v14
+
+    const/4 v3, -0x5
+
+    if-ne v6, v3, :cond_21
+
+    .line 241
+    :try_start_1d
+    new-array v3, v13, [B
+
+    .line 242
+    iget v4, v12, Landroid/media/MediaCodec$BufferInfo;->offset:I
+
+    add-int/2addr v4, v13
+
+    invoke-virtual {v10, v4}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+
+    .line 243
+    iget v4, v12, Landroid/media/MediaCodec$BufferInfo;->offset:I
+
+    invoke-virtual {v10, v4}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    .line 244
+    invoke-virtual {v10, v3}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
+
+    .line 247
+    iget v4, v12, Landroid/media/MediaCodec$BufferInfo;->size:I
+    :try_end_1d
+    .catch Ljava/lang/Exception; {:try_start_1d .. :try_end_1d} :catch_8
+    .catchall {:try_start_1d .. :try_end_1d} :catchall_8
+
+    const/4 v10, 0x1
+
+    sub-int/2addr v4, v10
+
+    :goto_1a
+    if-ltz v4, :cond_1f
+
+    const/4 v13, 0x3
+
+    if-le v4, v13, :cond_1f
+
+    .line 249
+    :try_start_1e
+    aget-byte v13, v3, v4
+
+    if-ne v13, v10, :cond_1e
+
+    add-int/lit8 v10, v4, -0x1
+
+    aget-byte v10, v3, v10
+
+    if-nez v10, :cond_1e
+
+    add-int/lit8 v10, v4, -0x2
+
+    aget-byte v10, v3, v10
+
+    if-nez v10, :cond_1e
+
+    add-int/lit8 v10, v4, -0x3
+
+    aget-byte v13, v3, v10
+
+    if-nez v13, :cond_1e
+
+    .line 250
+    invoke-static {v10}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v4
+
+    .line 251
+    iget v13, v12, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    sub-int/2addr v13, v10
+
+    invoke-static {v13}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v13
+
+    move/from16 v22, v1
+
+    const/4 v14, 0x0
+
+    .line 252
+    invoke-virtual {v4, v3, v14, v10}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v14}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    .line 253
+    iget v1, v12, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    sub-int/2addr v1, v10
+
+    invoke-virtual {v13, v3, v10, v1}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v14}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    :try_end_1e
+    .catch Ljava/lang/Exception; {:try_start_1e .. :try_end_1e} :catch_6
+    .catchall {:try_start_1e .. :try_end_1e} :catchall_6
+
+    goto :goto_1b
+
+    :cond_1e
+    move/from16 v22, v1
+
+    add-int/lit8 v4, v4, -0x1
+
+    move/from16 v1, v22
+
+    const/4 v10, 0x1
+
+    goto :goto_1a
+
+    :cond_1f
+    move/from16 v22, v1
+
+    const/4 v4, 0x0
+
+    const/4 v13, 0x0
+
+    :goto_1b
+    move/from16 v1, v21
+
+    move-object/from16 v14, v23
+
+    move/from16 v10, v41
+
+    .line 261
+    :try_start_1f
+    invoke-static {v14, v1, v10}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
+
+    move-result-object v3
+
+    if-eqz v4, :cond_20
+
+    if-eqz v13, :cond_20
+
+    .line 263
+    invoke-virtual {v3, v8, v4}, Landroid/media/MediaFormat;->setByteBuffer(Ljava/lang/String;Ljava/nio/ByteBuffer;)V
+
+    const-string v4, "csd-1"
+
+    .line 264
+    invoke-virtual {v3, v4, v13}, Landroid/media/MediaFormat;->setByteBuffer(Ljava/lang/String;Ljava/nio/ByteBuffer;)V
+
+    .line 266
+    :cond_20
+    iget-object v4, v7, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+
+    const/4 v13, 0x0
+
+    invoke-virtual {v4, v3, v13}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
+
+    move-result v3
+    :try_end_1f
+    .catch Ljava/lang/Exception; {:try_start_1f .. :try_end_1f} :catch_7
+    .catchall {:try_start_1f .. :try_end_1f} :catchall_7
+
+    move v6, v3
+
+    goto :goto_1f
+
+    :catchall_7
+    move-exception v0
+
+    goto :goto_1c
+
+    :catch_7
+    move-exception v0
+
+    goto :goto_1d
+
+    :cond_21
+    move/from16 v22, v1
+
+    goto :goto_1e
+
+    :catchall_8
+    move-exception v0
+
+    move/from16 v1, v21
+
+    move/from16 v10, v41
+
+    :goto_1c
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v47, p14
+
+    move-object v2, v0
+
+    move-object v15, v7
+
+    move-object/from16 v26, v24
+
+    const/16 v27, 0x0
+
+    move-wide/from16 v23, p16
+
+    move v7, v1
+
+    move/from16 v1, v42
+
+    goto/16 :goto_d8
+
+    :catch_8
+    move-exception v0
+
+    move/from16 v1, v21
+
+    move/from16 v10, v41
+
+    :goto_1d
+    move v14, v1
+
+    goto/16 :goto_2d
+
+    :cond_22
+    move/from16 v26, v3
+
+    move/from16 v22, v4
+
+    move-object/from16 v35, v14
+
+    :goto_1e
+    move/from16 v1, v21
+
+    move-object/from16 v14, v23
+
+    move/from16 v10, v41
+
+    .line 269
+    :goto_1f
+    :try_start_20
+    iget v3, v12, Landroid/media/MediaCodec$BufferInfo;->flags:I
+
+    and-int/lit8 v3, v3, 0x4
+
+    if-eqz v3, :cond_23
+
+    const/4 v3, 0x0
+
+    const/4 v13, 0x1
+
+    goto :goto_20
+
+    :cond_23
+    const/4 v3, 0x0
+
+    const/4 v13, 0x0
+
+    .line 270
+    :goto_20
+    invoke-virtual {v11, v9, v3}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
+    :try_end_20
+    .catch Ljava/lang/Exception; {:try_start_20 .. :try_end_20} :catch_b
+    .catchall {:try_start_20 .. :try_end_20} :catchall_9
+
+    move/from16 v4, p7
+
+    move-object/from16 v3, p10
+
+    move/from16 v21, v1
+
+    goto/16 :goto_d
+
+    :goto_21
+    if-eq v9, v1, :cond_24
+
+    move-object v1, v3
+
+    move v7, v4
+
+    move-object/from16 v36, v8
+
+    move/from16 v41, v10
+
+    move-object/from16 p7, v11
+
+    move-object/from16 v39, v12
+
+    move v8, v13
+
+    move-object/from16 v23, v14
+
+    move/from16 v4, v22
+
+    move/from16 v3, v26
+
+    const/4 v14, 0x0
+
+    move/from16 v13, p8
+
+    goto/16 :goto_a
+
+    :cond_24
+    if-nez v2, :cond_26
+
+    .line 277
+    :try_start_21
+    invoke-virtual/range {v18 .. v18}, Lorg/telegram/messenger/video/OutputSurface;->drawImage()V
+    :try_end_21
+    .catch Ljava/lang/Exception; {:try_start_21 .. :try_end_21} :catch_a
+    .catchall {:try_start_21 .. :try_end_21} :catchall_b
+
+    move/from16 v1, v22
+
     int-to-float v9, v1
 
-    const/high16 v21, 0x41f00000    # 30.0f
+    const/high16 v22, 0x41f00000    # 30.0f
 
-    div-float v9, v9, v21
+    div-float v9, v9, v22
 
-    const/high16 v21, 0x447a0000    # 1000.0f
+    const/high16 v22, 0x447a0000    # 1000.0f
 
-    mul-float v9, v9, v21
+    mul-float v9, v9, v22
 
-    mul-float v9, v9, v21
+    mul-float v9, v9, v22
 
-    mul-float v9, v9, v21
+    mul-float v9, v9, v22
 
-    move-object/from16 p8, v2
+    move/from16 p7, v2
 
-    move/from16 p10, v3
+    move-object/from16 p10, v3
 
     float-to-long v2, v9
 
-    move-object/from16 v9, v39
+    move-object/from16 v9, v40
 
-    .line 273
-    :try_start_1d
+    .line 279
+    :try_start_22
     invoke-virtual {v9, v2, v3}, Lorg/telegram/messenger/video/InputSurface;->setPresentationTime(J)V
 
-    .line 274
+    .line 280
     invoke-virtual {v9}, Lorg/telegram/messenger/video/InputSurface;->swapBuffers()Z
 
     add-int/lit8 v1, v1, 0x1
@@ -1593,114 +1768,123 @@
 
     const/high16 v3, 0x41f00000    # 30.0f
 
-    mul-float v3, v3, v26
+    mul-float v3, v3, v28
 
     cmpl-float v2, v2, v3
 
     if-ltz v2, :cond_25
 
-    .line 280
+    .line 286
     invoke-virtual {v11}, Landroid/media/MediaCodec;->signalEndOfInputStream()V
-    :try_end_1d
-    .catch Ljava/lang/Exception; {:try_start_1d .. :try_end_1d} :catch_7
-    .catchall {:try_start_1d .. :try_end_1d} :catchall_9
-
-    move v4, v1
-
-    const/4 v1, 0x0
+    :try_end_22
+    .catch Ljava/lang/Exception; {:try_start_22 .. :try_end_22} :catch_9
+    .catchall {:try_start_22 .. :try_end_22} :catchall_b
 
     const/4 v2, 0x1
 
-    goto :goto_1d
+    const/4 v3, 0x0
 
-    :catch_7
-    move-exception v0
-
-    move-object v1, v0
-
-    move-object/from16 v39, v9
-
-    goto :goto_1c
-
-    :catch_8
-    move-exception v0
-
-    :goto_1a
-    move-object/from16 v9, v39
-
-    :goto_1b
-    move-object v1, v0
-
-    :goto_1c
-    move/from16 v14, v19
-
-    goto/16 :goto_29
-
-    :cond_24
-    move-object/from16 p8, v2
-
-    move/from16 p10, v3
-
-    move/from16 v1, v21
-
-    move-object/from16 v9, v39
+    goto :goto_26
 
     :cond_25
-    move v2, v4
+    move/from16 v2, p7
 
-    move v4, v1
-
-    move/from16 v1, p7
-
-    :goto_1d
-    move/from16 v3, p10
-
-    move-object/from16 v34, v8
-
-    move-object/from16 v39, v9
-
-    move/from16 v40, v10
-
-    move-object/from16 p7, v11
-
-    move v8, v6
-
-    move v6, v1
-
-    move-object/from16 v1, p8
-
-    goto/16 :goto_5
-
-    :catchall_7
-    move-exception v0
-
-    move/from16 v19, v1
-
-    goto :goto_1e
+    goto :goto_25
 
     :catch_9
     move-exception v0
 
-    move/from16 v19, v1
+    move-object v1, v0
 
-    goto :goto_1a
+    move-object/from16 v40, v9
+
+    goto :goto_24
 
     :catch_a
     move-exception v0
 
-    move-object/from16 v9, v39
+    :goto_22
+    move-object/from16 v9, v40
 
-    move/from16 v10, v40
+    :goto_23
+    move-object v1, v0
 
-    goto :goto_1b
+    :goto_24
+    move/from16 v14, v21
+
+    goto/16 :goto_36
 
     :cond_26
-    move-object/from16 v1, v39
+    move/from16 p7, v2
 
-    move/from16 v10, v40
+    move-object/from16 p10, v3
 
-    .line 201
-    :try_start_1e
+    move/from16 v1, v22
+
+    move-object/from16 v9, v40
+
+    :goto_25
+    move/from16 v3, p8
+
+    :goto_26
+    move v7, v4
+
+    move-object/from16 v36, v8
+
+    move-object/from16 v40, v9
+
+    move/from16 v41, v10
+
+    move-object/from16 p7, v11
+
+    move-object/from16 v39, v12
+
+    move v8, v13
+
+    move-object/from16 v23, v14
+
+    const/4 v14, 0x0
+
+    move v4, v1
+
+    move v13, v3
+
+    move/from16 v3, v26
+
+    move-object/from16 v1, p10
+
+    goto/16 :goto_a
+
+    :catchall_9
+    move-exception v0
+
+    move/from16 v21, v1
+
+    goto :goto_27
+
+    :catch_b
+    move-exception v0
+
+    move/from16 v21, v1
+
+    goto :goto_22
+
+    :catch_c
+    move-exception v0
+
+    move-object/from16 v9, v40
+
+    move/from16 v10, v41
+
+    goto :goto_23
+
+    :cond_27
+    move-object/from16 v1, v40
+
+    move/from16 v10, v41
+
+    .line 207
+    :try_start_23
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1725,39 +1909,35 @@
 
     throw v2
 
-    :catchall_8
+    :catchall_a
     move-exception v0
 
-    move/from16 v10, v40
+    move/from16 v10, v41
 
-    :goto_1e
-    move/from16 v11, p9
+    :goto_27
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
 
     move-wide/from16 v47, p14
 
-    move-wide/from16 v34, p16
+    move-object v2, v0
 
-    move-object v1, v0
+    move-object v15, v7
 
-    move v5, v13
+    goto :goto_28
 
-    move/from16 v14, v19
-
-    move/from16 v7, v38
-
-    goto/16 :goto_30
-
-    :catch_b
+    :catch_d
     move-exception v0
 
-    goto :goto_1f
+    goto :goto_2a
 
-    :cond_27
-    move-object/from16 v1, v39
+    :cond_28
+    move-object/from16 v1, v40
 
-    move/from16 v10, v40
+    move/from16 v10, v41
 
-    .line 192
+    .line 198
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1777,286 +1957,358 @@
     invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v2
-    :try_end_1e
-    .catch Ljava/lang/Exception; {:try_start_1e .. :try_end_1e} :catch_c
-    .catchall {:try_start_1e .. :try_end_1e} :catchall_9
-
-    :catchall_9
-    move-exception v0
-
-    goto :goto_1e
-
-    :catch_c
-    move-exception v0
-
-    move-object/from16 v39, v1
-
-    goto :goto_20
-
-    :catch_d
-    move-exception v0
-
-    move-object/from16 v12, p0
-
-    goto :goto_1f
-
-    :catchall_a
-    move-exception v0
-
-    move/from16 v10, v40
-
-    move/from16 v11, p9
-
-    move-wide/from16 v47, p14
-
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    move v5, v13
-
-    move/from16 v14, v19
-
-    move/from16 v7, v38
-
-    goto/16 :goto_4b
-
-    :catch_e
-    move-exception v0
-
-    move-object/from16 v12, p0
-
-    move-object/from16 v11, p7
-
-    :goto_1f
-    move-object/from16 v1, v39
-
-    move/from16 v10, v40
-
-    :goto_20
-    move/from16 v14, v19
-
-    goto :goto_22
-
-    :cond_28
-    move-object/from16 v12, p0
-
-    move-object/from16 v11, p7
-
-    move-object/from16 v1, v39
-
-    move/from16 v10, v40
-
-    move/from16 v5, p9
-
-    move-object v6, v1
-
-    move-object v1, v11
-
-    move/from16 v14, v19
-
-    move/from16 v7, v38
-
-    const/4 v2, 0x0
-
-    const/16 v36, 0x0
-
-    goto/16 :goto_2b
-
-    :catch_f
-    move-exception v0
-
-    move-object/from16 v12, p0
-
-    move-object/from16 v11, p7
-
-    move-object/from16 v1, v39
-
-    move/from16 v10, v40
-
-    move/from16 v14, v19
-
-    const/4 v13, -0x5
-
-    goto :goto_22
+    :try_end_23
+    .catch Ljava/lang/Exception; {:try_start_23 .. :try_end_23} :catch_e
+    .catchall {:try_start_23 .. :try_end_23} :catchall_b
 
     :catchall_b
     move-exception v0
 
-    move/from16 v10, v40
+    goto :goto_27
 
-    move-object/from16 v13, p0
-
-    move/from16 v11, p9
-
-    move-wide/from16 v47, p14
-
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    move/from16 v14, v19
-
-    move/from16 v7, v38
-
-    goto/16 :goto_24
-
-    :catch_10
+    :catch_e
     move-exception v0
 
-    move-object/from16 v12, p0
+    move-object/from16 v40, v1
 
-    move-object/from16 v11, p7
+    goto :goto_2b
 
-    move-object/from16 v1, v39
-
-    move/from16 v10, v40
-
-    move/from16 v14, v19
-
-    goto :goto_21
-
-    :catch_11
+    :catch_f
     move-exception v0
 
-    move-object/from16 v12, p0
+    move-object/from16 v7, p0
 
-    move-object v11, v1
-
-    move-object v1, v6
-
-    move/from16 v38, v7
-
-    move/from16 v19, v14
-
-    move-object/from16 v39, v1
-
-    :goto_21
-    const/4 v13, -0x5
-
-    const/16 v18, 0x0
-
-    :goto_22
-    move-object v1, v0
-
-    goto :goto_29
-
-    :catch_12
-    move-exception v0
-
-    move-object/from16 v12, p0
-
-    move-object v11, v1
-
-    move/from16 v38, v7
-
-    move/from16 v19, v14
-
-    move-object v1, v0
-
-    goto :goto_28
+    goto :goto_2a
 
     :catchall_c
     move-exception v0
 
-    move/from16 v38, v7
+    move/from16 v10, v41
 
-    move/from16 v19, v14
+    move-object/from16 v15, p0
 
-    move-object/from16 v13, p0
+    move/from16 v14, p9
 
-    move/from16 v11, p9
+    move-wide/from16 v12, p12
 
     move-wide/from16 v47, p14
 
-    move-wide/from16 v34, p16
+    move-object v2, v0
 
-    move-object v1, v0
+    :goto_28
+    move/from16 v7, v21
 
-    goto :goto_24
+    move-object/from16 v26, v24
 
-    :catch_13
+    :goto_29
+    move/from16 v1, v42
+
+    goto/16 :goto_2f
+
+    :catch_10
     move-exception v0
 
-    move-object/from16 v12, p0
+    move-object/from16 v7, p0
 
-    move/from16 v38, v7
+    move-object/from16 v11, p7
 
-    move/from16 v19, v14
+    :goto_2a
+    move-object/from16 v1, v40
 
-    move-object v1, v0
+    move/from16 v10, v41
 
-    goto :goto_27
+    :goto_2b
+    move/from16 v14, v21
+
+    goto :goto_2d
+
+    :cond_29
+    move-object/from16 v7, p0
+
+    move-object/from16 v11, p7
+
+    move-object/from16 v1, v40
+
+    move/from16 v10, v41
+
+    move/from16 v5, p9
+
+    move-object v9, v11
+
+    move/from16 v3, v42
+
+    const/4 v13, 0x0
+
+    const/16 v27, 0x0
+
+    goto/16 :goto_38
+
+    :catch_11
+    move-exception v0
+
+    move-object/from16 v7, p0
+
+    move-object/from16 v11, p7
+
+    move-object/from16 v1, v40
+
+    move/from16 v10, v41
+
+    move/from16 v14, v21
+
+    const/4 v6, -0x5
+
+    goto :goto_2d
 
     :catchall_d
     move-exception v0
 
-    move/from16 v38, v7
+    move/from16 v10, v41
 
-    move-object/from16 v13, p0
+    goto :goto_2e
 
-    move/from16 v11, p9
+    :catch_12
+    move-exception v0
+
+    move-object/from16 v7, p0
+
+    move-object/from16 v11, p7
+
+    move-object/from16 v1, v40
+
+    move/from16 v10, v41
+
+    move/from16 v14, v21
+
+    goto :goto_2c
+
+    :catch_13
+    move-exception v0
+
+    move/from16 v15, p3
+
+    move-object/from16 v24, v1
+
+    move-object v1, v7
+
+    move-object v11, v9
+
+    move/from16 v42, v13
+
+    move/from16 v21, v14
+
+    move-object/from16 v7, p0
+
+    move-object/from16 v40, v1
+
+    :goto_2c
+    const/4 v6, -0x5
+
+    const/16 v18, 0x0
+
+    :goto_2d
+    move-object v1, v0
+
+    goto/16 :goto_36
+
+    :catchall_e
+    move-exception v0
+
+    move/from16 v15, p3
+
+    move-object/from16 v24, v1
+
+    move/from16 v42, v13
+
+    move/from16 v21, v14
+
+    :goto_2e
+    move-object/from16 v15, p0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
 
     move-wide/from16 v47, p14
 
-    move-wide/from16 v34, p16
+    move-object v2, v0
 
-    move-object v1, v0
+    move/from16 v7, v21
 
-    :goto_23
-    move v14, v9
+    move-object/from16 v26, v24
 
-    :goto_24
-    const/4 v5, -0x5
+    move/from16 v1, v42
 
-    :goto_25
-    const/4 v6, 0x0
+    const/4 v6, -0x5
 
-    goto/16 :goto_c0
+    :goto_2f
+    const/16 v27, 0x0
+
+    goto/16 :goto_3c
 
     :catch_14
     move-exception v0
 
-    move-object/from16 v12, p0
+    move-object/from16 v7, p0
 
-    move/from16 v38, v7
+    move/from16 v15, p3
+
+    move-object/from16 v24, v1
+
+    move-object v11, v9
+
+    move/from16 v42, v13
+
+    move/from16 v21, v14
 
     move-object v1, v0
 
-    :goto_26
-    move v14, v9
-
-    :goto_27
-    const/4 v11, 0x0
-
-    :goto_28
-    const/4 v13, -0x5
+    const/4 v6, -0x5
 
     const/16 v18, 0x0
 
-    const/16 v39, 0x0
+    goto/16 :goto_35
 
-    .line 289
-    :goto_29
-    :try_start_1f
+    :catch_15
+    move-exception v0
+
+    move-object/from16 v7, p0
+
+    move/from16 v15, p3
+
+    move-object v11, v9
+
+    move/from16 v42, v13
+
+    move/from16 v21, v14
+
+    move-object v1, v0
+
+    const/4 v6, -0x5
+
+    goto :goto_34
+
+    :catchall_f
+    move-exception v0
+
+    move/from16 v15, p3
+
+    move/from16 v42, v13
+
+    move/from16 v21, v14
+
+    move-object/from16 v15, p0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v47, p14
+
+    move-wide/from16 v23, p16
+
+    move-object v2, v0
+
+    move/from16 v7, v21
+
+    goto :goto_30
+
+    :catch_16
+    move-exception v0
+
+    move-object/from16 v7, p0
+
+    move/from16 v15, p3
+
+    move/from16 v42, v13
+
+    move/from16 v21, v14
+
+    move-object v1, v0
+
+    goto :goto_33
+
+    :catchall_10
+    move-exception v0
+
+    move/from16 v15, p3
+
+    move/from16 v42, v13
+
+    move-object/from16 v15, p0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v47, p14
+
+    move-wide/from16 v23, p16
+
+    move-object v2, v0
+
+    move v7, v9
+
+    :goto_30
+    move/from16 v1, v42
+
+    :goto_31
+    const/4 v6, -0x5
+
+    const/16 v26, 0x0
+
+    :goto_32
+    const/16 v27, 0x0
+
+    goto/16 :goto_d8
+
+    :catch_17
+    move-exception v0
+
+    move-object/from16 v7, p0
+
+    move/from16 v15, p3
+
+    move/from16 v42, v13
+
+    move-object v1, v0
+
+    move v14, v9
+
+    :goto_33
+    const/4 v6, -0x5
+
+    const/4 v11, 0x0
+
+    :goto_34
+    const/16 v18, 0x0
+
+    const/16 v24, 0x0
+
+    :goto_35
+    const/16 v40, 0x0
+
+    .line 295
+    :goto_36
+    :try_start_24
     instance-of v2, v1, Ljava/lang/IllegalStateException;
-    :try_end_1f
-    .catchall {:try_start_1f .. :try_end_1f} :catchall_12
+    :try_end_24
+    .catchall {:try_start_24 .. :try_end_24} :catchall_15
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2a
 
-    if-nez p21, :cond_29
+    if-nez p21, :cond_2a
 
-    const/4 v6, 0x1
+    const/4 v13, 0x1
 
-    goto :goto_2a
+    goto :goto_37
 
-    :cond_29
-    const/4 v6, 0x0
+    :cond_2a
+    const/4 v13, 0x0
 
-    .line 292
-    :goto_2a
-    :try_start_20
+    .line 298
+    :goto_37
+    :try_start_25
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2064,34 +2316,34 @@
     const-string v3, "bitrate: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    :try_end_20
-    .catchall {:try_start_20 .. :try_end_20} :catchall_11
+    :try_end_25
+    .catchall {:try_start_25 .. :try_end_25} :catchall_14
 
-    move/from16 v7, v38
+    move/from16 v3, v42
 
-    :try_start_21
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    :try_start_26
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v3, " framerate: "
+    const-string v4, " framerate: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    :try_end_21
-    .catchall {:try_start_21 .. :try_end_21} :catchall_10
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_end_26
+    .catchall {:try_start_26 .. :try_end_26} :catchall_13
 
     move/from16 v5, p9
 
-    :try_start_22
+    :try_start_27
     invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v3, " size: "
+    const-string v4, " size: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v3, "x"
+    const-string/jumbo v4, "x"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -2101,154 +2353,186 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 293
+    .line 299
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-    :try_end_22
-    .catchall {:try_start_22 .. :try_end_22} :catchall_f
+    :try_end_27
+    .catchall {:try_start_27 .. :try_end_27} :catchall_12
 
-    move v2, v6
+    move-object v9, v11
 
-    move-object v1, v11
+    move/from16 v27, v13
 
-    move-object/from16 v6, v39
+    move/from16 v21, v14
 
-    const/16 v36, 0x1
+    const/4 v13, 0x1
 
-    :goto_2b
-    if-eqz v18, :cond_2a
-
-    .line 298
-    :try_start_23
-    invoke-virtual/range {v18 .. v18}, Lorg/telegram/messenger/video/OutputSurface;->release()V
-
-    goto :goto_2c
-
-    :catchall_e
-    move-exception v0
-
-    move-wide/from16 v47, p14
-
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    move v6, v2
-
-    goto :goto_2d
-
-    :cond_2a
-    :goto_2c
-    if-eqz v6, :cond_2b
-
-    .line 301
-    invoke-virtual {v6}, Lorg/telegram/messenger/video/InputSurface;->release()V
-
-    :cond_2b
-    if-eqz v1, :cond_2c
+    :goto_38
+    if-eqz v18, :cond_2b
 
     .line 304
-    invoke-virtual {v1}, Landroid/media/MediaCodec;->stop()V
+    :try_start_28
+    invoke-virtual/range {v18 .. v18}, Lorg/telegram/messenger/video/OutputSurface;->release()V
 
-    .line 305
-    invoke-virtual {v1}, Landroid/media/MediaCodec;->release()V
-
-    .line 307
-    :cond_2c
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
-    :try_end_23
-    .catchall {:try_start_23 .. :try_end_23} :catchall_e
-
-    move-wide/from16 v34, p16
-
-    move v11, v5
-
-    move v4, v7
-
-    move v1, v13
-
-    move v5, v14
-
-    move/from16 v6, v36
-
-    move-wide/from16 v14, p14
-
-    move/from16 v36, v2
-
-    move-object v13, v12
-
-    goto/16 :goto_bc
-
-    :catchall_f
-    move-exception v0
-
-    move-wide/from16 v47, p14
-
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    :goto_2d
-    move v11, v5
-
-    goto :goto_2f
-
-    :catchall_10
-    move-exception v0
-
-    goto :goto_2e
+    goto :goto_39
 
     :catchall_11
     move-exception v0
 
-    move/from16 v7, v38
-
-    :goto_2e
-    move/from16 v11, p9
+    move-wide/from16 v12, p12
 
     move-wide/from16 v47, p14
 
-    move-wide/from16 v34, p16
+    move-object v2, v0
 
-    move-object v1, v0
+    move v1, v3
 
-    :goto_2f
-    move v5, v13
+    move v14, v5
 
-    goto :goto_31
+    move-object v15, v7
+
+    move/from16 v7, v21
+
+    move-object/from16 v26, v24
+
+    goto/16 :goto_3c
+
+    :cond_2b
+    :goto_39
+    if-eqz v40, :cond_2c
+
+    .line 307
+    invoke-virtual/range {v40 .. v40}, Lorg/telegram/messenger/video/InputSurface;->release()V
+
+    :cond_2c
+    if-eqz v9, :cond_2d
+
+    .line 310
+    invoke-virtual {v9}, Landroid/media/MediaCodec;->stop()V
+
+    .line 311
+    invoke-virtual {v9}, Landroid/media/MediaCodec;->release()V
+
+    .line 313
+    :cond_2d
+    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
+    :try_end_28
+    .catchall {:try_start_28 .. :try_end_28} :catchall_11
+
+    move-wide/from16 v47, p14
+
+    move v1, v3
+
+    move v14, v5
+
+    move-object v15, v7
+
+    move v5, v10
+
+    move v2, v13
+
+    move-object/from16 v38, v24
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v23, p16
+
+    goto/16 :goto_d2
 
     :catchall_12
     move-exception v0
 
-    move/from16 v7, v38
+    move-wide/from16 v47, p14
 
-    move/from16 v11, p9
+    move-object v2, v0
+
+    move v1, v3
+
+    move-object v15, v7
+
+    move/from16 v27, v13
+
+    move v7, v14
+
+    move-object/from16 v26, v24
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v23, p16
+
+    move v14, v5
+
+    goto/16 :goto_d8
+
+    :catchall_13
+    move-exception v0
+
+    goto :goto_3a
+
+    :catchall_14
+    move-exception v0
+
+    move/from16 v3, v42
+
+    :goto_3a
+    move-wide/from16 v47, p14
+
+    move-object v2, v0
+
+    move v1, v3
+
+    move-object v15, v7
+
+    move/from16 v27, v13
+
+    move v7, v14
+
+    move-object/from16 v26, v24
+
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
+
+    goto :goto_3c
+
+    :catchall_15
+    move-exception v0
+
+    move/from16 v3, v42
+
+    move-wide/from16 v12, p12
 
     move-wide/from16 v47, p14
 
-    move-wide/from16 v34, p16
+    move-object v2, v0
 
-    move-object v1, v0
+    move v1, v3
 
-    move v5, v13
+    move-object v15, v7
 
-    :goto_30
-    const/4 v6, 0x0
+    move v7, v14
 
-    :goto_31
-    move-object v13, v12
+    move-object/from16 v26, v24
 
-    goto/16 :goto_c0
+    const/16 v27, 0x0
 
-    :cond_2d
-    move-object/from16 v12, p0
+    :goto_3b
+    move/from16 v14, p9
 
-    move-object v11, v4
+    :goto_3c
+    move-wide/from16 v23, p16
 
-    move v1, v6
+    goto/16 :goto_d8
 
-    move-object/from16 v14, v24
+    :cond_2e
+    move-object/from16 v11, p0
 
-    const/16 v13, 0x64
+    move-object/from16 v35, v4
+
+    move-object v14, v15
+
+    move-object/from16 v12, v26
+
+    move/from16 v15, p3
 
     move/from16 v71, v8
 
@@ -2256,165 +2540,149 @@
 
     move/from16 v5, v71
 
-    .line 309
-    :try_start_24
-    new-instance v2, Landroid/media/MediaExtractor;
+    .line 315
+    :try_start_29
+    new-instance v1, Landroid/media/MediaExtractor;
 
-    invoke-direct {v2}, Landroid/media/MediaExtractor;-><init>()V
+    invoke-direct {v1}, Landroid/media/MediaExtractor;-><init>()V
 
-    iput-object v2, v12, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    iput-object v1, v11, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
 
     move-object/from16 v6, p1
 
-    .line 310
-    invoke-virtual {v2, v6}, Landroid/media/MediaExtractor;->setDataSource(Ljava/lang/String;)V
+    .line 316
+    invoke-virtual {v1, v6}, Landroid/media/MediaExtractor;->setDataSource(Ljava/lang/String;)V
 
-    .line 312
-    iget-object v2, v12, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    .line 318
+    iget-object v1, v11, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    :try_end_29
+    .catchall {:try_start_29 .. :try_end_29} :catchall_49
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {v2, v4}, Lorg/telegram/messenger/MediaController;->findTrack(Landroid/media/MediaExtractor;Z)I
-
-    move-result v3
-    :try_end_24
-    .catchall {:try_start_24 .. :try_end_24} :catchall_45
-
-    const/4 v2, -0x1
-
-    if-eq v7, v2, :cond_2e
-
-    .line 313
-    :try_start_25
-    iget-object v2, v12, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    const/4 v13, 0x1
-
-    invoke-static {v2, v13}, Lorg/telegram/messenger/MediaController;->findTrack(Landroid/media/MediaExtractor;Z)I
-
-    move-result v2
-    :try_end_25
-    .catchall {:try_start_25 .. :try_end_25} :catchall_13
-
-    goto :goto_32
-
-    :catchall_13
-    move-exception v0
-
-    move-wide/from16 v47, p14
-
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    move v6, v4
-
-    move v11, v5
-
-    move v14, v9
-
-    move-object v13, v12
-
-    goto/16 :goto_bf
-
-    :cond_2e
-    const/4 v2, -0x1
-
-    :goto_32
-    const-string v13, "mime"
-
-    if-ltz v3, :cond_2f
-
-    .line 315
-    :try_start_26
-    iget-object v4, v12, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    invoke-virtual {v4, v3}, Landroid/media/MediaExtractor;->getTrackFormat(I)Landroid/media/MediaFormat;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v13}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_start_2a
+    invoke-static {v1, v2}, Lorg/telegram/messenger/MediaController;->findTrack(Landroid/media/MediaExtractor;Z)I
 
     move-result v4
-    :try_end_26
-    .catchall {:try_start_26 .. :try_end_26} :catchall_14
-
-    if-nez v4, :cond_2f
-
-    move-object/from16 v21, v13
-
-    const/4 v4, 0x1
-
-    goto :goto_34
-
-    :catchall_14
-    move-exception v0
-
-    move-wide/from16 v47, p14
-
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    move v11, v5
-
-    move v14, v9
-
-    :goto_33
-    move-object v13, v12
-
-    goto/16 :goto_24
-
-    :cond_2f
-    move-object/from16 v21, v13
-
-    const/4 v4, 0x0
-
-    :goto_34
-    move/from16 v13, p20
-
-    if-nez v13, :cond_32
-
-    if-eqz v4, :cond_30
-
-    goto :goto_36
-
-    .line 797
-    :cond_30
-    :try_start_27
-    iget-object v2, v12, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    iget-object v3, v12, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
-    :try_end_27
-    .catchall {:try_start_27 .. :try_end_27} :catchall_15
+    :try_end_2a
+    .catchall {:try_start_2a .. :try_end_2a} :catchall_48
 
     const/4 v1, -0x1
 
-    if-eq v7, v1, :cond_31
+    if-eq v7, v1, :cond_2f
 
-    const/4 v15, 0x1
+    .line 319
+    :try_start_2b
+    iget-object v1, v11, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
 
-    goto :goto_35
+    const/4 v2, 0x1
 
+    invoke-static {v1, v2}, Lorg/telegram/messenger/MediaController;->findTrack(Landroid/media/MediaExtractor;Z)I
+
+    move-result v1
+    :try_end_2b
+    .catchall {:try_start_2b .. :try_end_2b} :catchall_16
+
+    move v3, v1
+
+    goto :goto_3e
+
+    :catchall_16
+    move-exception v0
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v47, p14
+
+    move-wide/from16 v23, p16
+
+    move-object v2, v0
+
+    move v14, v5
+
+    move v1, v7
+
+    move v7, v9
+
+    :goto_3d
+    move-object v15, v11
+
+    goto/16 :goto_31
+
+    :cond_2f
+    const/4 v3, -0x1
+
+    :goto_3e
+    const-string v2, "mime"
+
+    if-ltz v4, :cond_30
+
+    .line 321
+    :try_start_2c
+    iget-object v1, v11, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+
+    invoke-virtual {v1, v4}, Landroid/media/MediaExtractor;->getTrackFormat(I)Landroid/media/MediaFormat;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+    :try_end_2c
+    .catchall {:try_start_2c .. :try_end_2c} :catchall_16
+
+    if-nez v1, :cond_30
+
+    move/from16 v13, p20
+
+    const/4 v1, 0x1
+
+    goto :goto_3f
+
+    :cond_30
+    move/from16 v13, p20
+
+    const/4 v1, 0x0
+
+    :goto_3f
+    if-nez v13, :cond_33
+
+    if-eqz v1, :cond_31
+
+    goto :goto_41
+
+    .line 812
     :cond_31
-    const/4 v15, 0x0
+    :try_start_2d
+    iget-object v2, v11, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
 
-    :goto_35
+    iget-object v3, v11, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+    :try_end_2d
+    .catchall {:try_start_2d .. :try_end_2d} :catchall_17
+
+    const/4 v1, -0x1
+
+    if-eq v7, v1, :cond_32
+
+    const/4 v14, 0x1
+
+    goto :goto_40
+
+    :cond_32
+    const/4 v14, 0x0
+
+    :goto_40
     move-object/from16 v1, p0
 
-    const/4 v8, 0x0
+    move-object v4, v12
 
-    move-object v4, v14
+    move v8, v5
 
-    move v11, v5
-
-    move-object v14, v6
-
-    const/4 v13, 0x1
+    move-object v12, v6
 
     move-wide/from16 v5, p12
 
@@ -2424,1887 +2692,2028 @@
 
     move-wide/from16 v9, p18
 
-    move v13, v11
+    move-object v15, v11
 
     move-object/from16 v11, p2
 
-    move-object v14, v12
+    move v12, v14
 
-    move v12, v15
-
-    :try_start_28
+    :try_start_2e
     invoke-direct/range {v1 .. v12}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->readAndWriteTracks(Landroid/media/MediaExtractor;Lorg/telegram/messenger/video/MP4Builder;Landroid/media/MediaCodec$BufferInfo;JJJLjava/io/File;Z)J
-    :try_end_28
-    .catchall {:try_start_28 .. :try_end_28} :catchall_16
+    :try_end_2e
+    .catchall {:try_start_2e .. :try_end_2e} :catchall_18
 
-    move/from16 v5, p7
+    move/from16 v21, p7
 
-    move/from16 v10, p8
+    move/from16 v5, p8
 
-    move/from16 v4, p10
-
-    move-wide/from16 v34, p16
-
-    move v11, v13
-
-    move-object v13, v14
-
-    const/4 v1, -0x5
-
-    const/4 v6, 0x0
-
-    const/16 v36, 0x0
-
-    move-wide/from16 v14, p14
-
-    goto/16 :goto_bc
-
-    :catchall_15
-    move-exception v0
-
-    move/from16 v14, p7
-
-    move/from16 v10, p8
-
-    move/from16 v7, p10
+    move/from16 v1, p10
 
     move-wide/from16 v47, p14
 
-    move-wide/from16 v34, p16
+    move-wide/from16 v23, p16
 
-    move-object v1, v0
+    move v14, v13
 
-    move v11, v5
+    const/4 v2, 0x0
 
-    goto :goto_33
+    const/4 v6, -0x5
 
-    :cond_32
-    :goto_36
-    move v13, v5
+    const/16 v27, 0x0
 
-    move-object v10, v14
+    const/16 v38, 0x0
 
-    move-object v14, v12
+    move-wide/from16 v12, p12
 
-    move-object v12, v6
-
-    if-ltz v3, :cond_9a
-
-    const-wide/32 v22, -0x80000000
-
-    const/16 v4, 0x3e8
-
-    .line 337
-    :try_start_29
-    div-int v5, v4, v13
-    :try_end_29
-    .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_29} :catch_48
-    .catchall {:try_start_29 .. :try_end_29} :catchall_3e
-
-    mul-int/2addr v5, v4
-
-    int-to-long v6, v5
-
-    const/16 v5, 0x1e
-
-    if-ge v13, v5, :cond_33
-
-    add-int/lit8 v5, v13, 0x5
-
-    .line 340
-    :try_start_2a
-    div-int v5, v4, v5
-    :try_end_2a
-    .catch Ljava/lang/Exception; {:try_start_2a .. :try_end_2a} :catch_15
-    .catchall {:try_start_2a .. :try_end_2a} :catchall_16
-
-    :goto_37
-    mul-int/2addr v5, v4
-
-    int-to-long v4, v5
-
-    goto :goto_3b
-
-    :catchall_16
-    move-exception v0
-
-    move/from16 v10, p8
-
-    move/from16 v7, p10
-
-    move-wide/from16 v47, p14
-
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    :goto_38
-    move v11, v13
-
-    move-object v13, v14
-
-    goto/16 :goto_b0
-
-    :catch_15
-    move-exception v0
-
-    move/from16 v4, p10
-
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    move/from16 v58, v3
-
-    move v11, v13
-
-    move-object v13, v14
-
-    :goto_39
-    const/4 v8, 0x0
-
-    const/4 v10, 0x0
-
-    const/16 v20, -0x5
-
-    const/16 v31, 0x0
-
-    :goto_3a
-    const/16 v53, 0x0
-
-    const/16 v56, 0x0
-
-    move-wide/from16 v14, p14
-
-    goto/16 :goto_b5
-
-    :cond_33
-    add-int/lit8 v5, v13, 0x1
-
-    .line 342
-    :try_start_2b
-    div-int v5, v4, v5
-
-    goto :goto_37
-
-    :goto_3b
-    move-wide/from16 v24, v4
-
-    .line 345
-    iget-object v4, v14, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    invoke-virtual {v4, v3}, Landroid/media/MediaExtractor;->selectTrack(I)V
-
-    .line 346
-    iget-object v4, v14, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    invoke-virtual {v4, v3}, Landroid/media/MediaExtractor;->getTrackFormat(I)Landroid/media/MediaFormat;
-
-    move-result-object v9
-    :try_end_2b
-    .catch Ljava/lang/Exception; {:try_start_2b .. :try_end_2b} :catch_48
-    .catchall {:try_start_2b .. :try_end_2b} :catchall_3e
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v27, p16, v4
-
-    if-ltz v27, :cond_37
-
-    const/high16 v4, 0x44fa0000    # 2000.0f
-
-    cmpg-float v4, v26, v4
-
-    if-gtz v4, :cond_34
-
-    const v4, 0x27ac40
-
-    goto :goto_3c
-
-    :cond_34
-    const v4, 0x459c4000    # 5000.0f
-
-    cmpg-float v4, v26, v4
-
-    if-gtz v4, :cond_35
-
-    const v4, 0x2191c0
-
-    goto :goto_3c
-
-    :cond_35
-    const v4, 0x17cdc0
-
-    :goto_3c
-    const v5, 0xe4e1c0
-
-    move/from16 v27, v3
-
-    move/from16 v3, p11
-
-    if-lt v3, v5, :cond_36
-
-    :try_start_2c
-    const-string v5, "OMX.google.h264.encoder"
-    :try_end_2c
-    .catch Ljava/lang/Exception; {:try_start_2c .. :try_end_2c} :catch_16
-    .catchall {:try_start_2c .. :try_end_2c} :catchall_17
-
-    goto :goto_3d
+    goto/16 :goto_d2
 
     :catchall_17
     move-exception v0
 
+    move/from16 v7, p7
+
     move/from16 v10, p8
+
+    move/from16 v1, p10
+
+    move-wide/from16 v12, p12
 
     move-wide/from16 v47, p14
 
-    move-object v1, v0
+    move-wide/from16 v23, p16
 
-    move v7, v4
+    move-object v2, v0
 
-    move v11, v13
+    move v14, v5
 
-    move-object v13, v14
+    goto :goto_3d
 
-    const/4 v5, -0x5
+    :cond_33
+    :goto_41
+    move v13, v5
 
-    const/4 v6, 0x0
+    move-object v15, v11
 
-    const-wide/16 v34, 0x0
+    if-ltz v4, :cond_a0
 
-    goto/16 :goto_b2
+    const-wide/32 v31, -0x80000000
 
-    :catch_16
-    move-exception v0
+    const/16 v1, 0x3e8
 
-    move-object v1, v0
+    .line 343
+    :try_start_2f
+    div-int v5, v1, v13
+    :try_end_2f
+    .catch Ljava/lang/Exception; {:try_start_2f .. :try_end_2f} :catch_60
+    .catchall {:try_start_2f .. :try_end_2f} :catchall_42
 
-    move v11, v13
+    mul-int/2addr v5, v1
 
-    move-object v13, v14
+    int-to-long v10, v5
 
-    move/from16 v58, v27
+    const/16 v5, 0x1e
 
-    const/4 v8, 0x0
+    if-ge v13, v5, :cond_34
 
-    const/4 v10, 0x0
+    add-int/lit8 v5, v13, 0x5
 
-    const/16 v20, -0x5
+    .line 346
+    :try_start_30
+    div-int v5, v1, v5
+    :try_end_30
+    .catch Ljava/lang/Exception; {:try_start_30 .. :try_end_30} :catch_18
+    .catchall {:try_start_30 .. :try_end_30} :catchall_18
 
-    const/16 v31, 0x0
+    :goto_42
+    mul-int/2addr v5, v1
 
-    const-wide/16 v34, 0x0
+    int-to-long v5, v5
 
-    goto :goto_3a
-
-    :cond_36
-    const/4 v5, 0x0
-
-    :goto_3d
-    const-wide/16 v29, 0x0
-
-    goto :goto_3f
-
-    :cond_37
-    move/from16 v27, v3
-
-    move/from16 v3, p11
-
-    if-gtz p10, :cond_38
-
-    move-wide/from16 v29, p16
-
-    move v4, v1
-
-    goto :goto_3e
-
-    :cond_38
-    move/from16 v4, p10
-
-    move-wide/from16 v29, p16
-
-    :goto_3e
-    const/4 v5, 0x0
-
-    :goto_3f
-    if-lez v3, :cond_39
-
-    .line 365
-    :try_start_2d
-    invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
-
-    move-result v4
-    :try_end_2d
-    .catch Ljava/lang/Exception; {:try_start_2d .. :try_end_2d} :catch_17
-    .catchall {:try_start_2d .. :try_end_2d} :catchall_18
-
-    goto :goto_40
+    goto :goto_49
 
     :catchall_18
     move-exception v0
 
-    move/from16 v10, p8
-
-    move-wide/from16 v47, p14
-
-    move-object v1, v0
-
-    move v7, v4
-
-    move v11, v13
-
-    move-object v13, v14
-
-    move-wide/from16 v34, v29
-
-    goto/16 :goto_b0
-
-    :catch_17
-    move-exception v0
-
-    move-object v1, v0
-
-    move v11, v13
-
-    move-object v13, v14
-
-    move/from16 v58, v27
-
-    move-wide/from16 v34, v29
-
-    goto/16 :goto_39
-
-    :cond_39
-    :goto_40
-    const-wide/16 v32, 0x0
-
-    cmp-long v34, v29, v32
-
-    move/from16 v38, v2
-
-    if-ltz v34, :cond_3a
-
-    move-wide/from16 v1, v18
-
-    goto :goto_41
-
-    :cond_3a
-    move-wide/from16 v1, v29
-
-    :goto_41
-    cmp-long v29, v1, v32
-
-    if-ltz v29, :cond_3b
-
-    .line 374
-    :try_start_2e
-    iget-object v3, v14, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    move-wide/from16 v29, v6
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v3, v1, v2, v6}, Landroid/media/MediaExtractor;->seekTo(JI)V
-    :try_end_2e
-    .catch Ljava/lang/Exception; {:try_start_2e .. :try_end_2e} :catch_18
-    .catchall {:try_start_2e .. :try_end_2e} :catchall_19
-
-    move-wide/from16 v6, p12
-
-    move-wide/from16 p16, v1
-
-    const-wide/16 v2, 0x0
-
-    const/4 v14, 0x0
-
-    goto/16 :goto_46
-
-    :catchall_19
-    move-exception v0
+    move/from16 v7, p7
 
     move/from16 v10, p8
 
-    move-wide/from16 v47, p14
-
-    move-wide/from16 v34, v1
-
-    move v7, v4
-
-    move v11, v13
-
-    move-object v13, v14
-
-    const/4 v5, -0x5
-
-    :goto_42
-    const/4 v6, 0x0
-
-    move/from16 v14, p7
+    move/from16 v1, p10
 
     :goto_43
-    move-object v1, v0
+    move-wide/from16 v47, p14
 
-    goto/16 :goto_c0
+    move-wide/from16 v23, p16
+
+    move-object v2, v0
+
+    :goto_44
+    move v14, v13
+
+    goto/16 :goto_3
 
     :catch_18
     move-exception v0
 
-    move-wide/from16 v34, v1
+    move/from16 v1, p10
 
-    move v11, v13
+    move-wide/from16 v47, p14
 
-    move-object v13, v14
+    move-wide/from16 v23, p16
 
-    move/from16 v58, v27
+    move-object v2, v0
+
+    move/from16 v44, v4
+
+    :goto_45
+    move v14, v13
+
+    :goto_46
+    const/4 v3, 0x0
+
+    :goto_47
+    const/4 v6, -0x5
 
     const/4 v8, 0x0
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
-    const/16 v20, -0x5
+    :goto_48
+    const/16 v26, 0x0
 
-    const/16 v31, 0x0
-
-    const/16 v53, 0x0
+    const/16 v38, 0x0
 
     const/16 v56, 0x0
 
-    move-wide/from16 v14, p14
+    const/16 v58, 0x0
 
-    move-object v1, v0
+    move-wide/from16 v12, p12
 
-    goto/16 :goto_b5
+    goto/16 :goto_cd
 
-    :cond_3b
-    move-wide/from16 v29, v6
+    :cond_34
+    add-int/lit8 v5, v13, 0x1
 
-    const-wide/16 v32, 0x0
+    .line 348
+    :try_start_31
+    div-int v5, v1, v5
 
-    move-wide/from16 v6, p12
+    goto :goto_42
 
-    cmp-long v3, v6, v32
+    :goto_49
+    move-wide/from16 v33, v5
 
-    if-lez v3, :cond_3c
+    .line 351
+    iget-object v1, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
 
-    .line 376
-    :try_start_2f
-    iget-object v3, v14, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-    :try_end_2f
-    .catch Ljava/lang/Exception; {:try_start_2f .. :try_end_2f} :catch_1a
-    .catchall {:try_start_2f .. :try_end_2f} :catchall_1b
+    invoke-virtual {v1, v4}, Landroid/media/MediaExtractor;->selectTrack(I)V
 
-    move-wide/from16 p16, v1
+    .line 352
+    iget-object v1, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
 
-    const/4 v1, 0x0
+    invoke-virtual {v1, v4}, Landroid/media/MediaExtractor;->getTrackFormat(I)Landroid/media/MediaFormat;
 
-    :try_start_30
-    invoke-virtual {v3, v6, v7, v1}, Landroid/media/MediaExtractor;->seekTo(JI)V
-    :try_end_30
-    .catch Ljava/lang/Exception; {:try_start_30 .. :try_end_30} :catch_19
-    .catchall {:try_start_30 .. :try_end_30} :catchall_1a
+    move-result-object v9
+    :try_end_31
+    .catch Ljava/lang/Exception; {:try_start_31 .. :try_end_31} :catch_60
+    .catchall {:try_start_31 .. :try_end_31} :catchall_42
 
-    move-object/from16 v1, p26
+    if-eqz v18, :cond_38
 
-    const-wide/16 v2, 0x0
+    const/high16 v1, 0x44fa0000    # 2000.0f
 
-    const/4 v14, 0x0
+    cmpg-float v1, v28, v1
 
-    goto :goto_47
+    if-gtz v1, :cond_35
 
-    :catchall_1a
+    const v1, 0x27ac40
+
+    goto :goto_4a
+
+    :cond_35
+    const v1, 0x459c4000    # 5000.0f
+
+    cmpg-float v1, v28, v1
+
+    if-gtz v1, :cond_36
+
+    const v1, 0x2191c0
+
+    goto :goto_4a
+
+    :cond_36
+    const v1, 0x17cdc0
+
+    :goto_4a
+    const v5, 0xe4e1c0
+
+    move/from16 v7, p11
+
+    if-lt v7, v5, :cond_37
+
+    :try_start_32
+    const-string v6, "OMX.google.h264.encoder"
+    :try_end_32
+    .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_32} :catch_19
+    .catchall {:try_start_32 .. :try_end_32} :catchall_19
+
+    move-object/from16 v24, v6
+
+    const-wide/16 v5, 0x0
+
+    goto :goto_4c
+
+    :catchall_19
     move-exception v0
 
-    goto :goto_44
+    move/from16 v7, p7
+
+    move/from16 v10, p8
+
+    move-wide/from16 v47, p14
+
+    move-object v2, v0
+
+    move v14, v13
+
+    const/4 v6, -0x5
+
+    const-wide/16 v23, 0x0
+
+    goto/16 :goto_4
 
     :catch_19
     move-exception v0
 
-    goto :goto_45
+    move-wide/from16 v47, p14
 
-    :catchall_1b
+    move-object v2, v0
+
+    move/from16 v44, v4
+
+    move v14, v13
+
+    const/4 v3, 0x0
+
+    const/4 v6, -0x5
+
+    const/4 v8, 0x0
+
+    const/4 v11, 0x0
+
+    const-wide/16 v23, 0x0
+
+    goto :goto_48
+
+    :cond_37
+    const-wide/16 v5, 0x0
+
+    goto :goto_4b
+
+    :cond_38
+    move/from16 v7, p11
+
+    if-gtz p10, :cond_39
+
+    move-wide/from16 v5, p16
+
+    const v1, 0xe1000
+
+    goto :goto_4b
+
+    :cond_39
+    move/from16 v1, p10
+
+    move-wide/from16 v5, p16
+
+    :goto_4b
+    const/16 v24, 0x0
+
+    :goto_4c
+    if-lez v7, :cond_3a
+
+    .line 371
+    :try_start_33
+    invoke-static {v7, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    goto :goto_4d
+
+    :catchall_1a
     move-exception v0
 
-    move-wide/from16 p16, v1
+    move/from16 v7, p7
 
-    :goto_44
     move/from16 v10, p8
 
     move-wide/from16 v47, p14
 
-    move-wide/from16 v34, p16
+    move-object v2, v0
 
-    move-object v1, v0
+    move-wide/from16 v23, v5
 
-    move v7, v4
-
-    goto/16 :goto_38
+    goto/16 :goto_44
 
     :catch_1a
     move-exception v0
 
-    move-wide/from16 p16, v1
+    move-wide/from16 v47, p14
 
-    :goto_45
-    move-wide/from16 v34, p16
+    move-object v2, v0
 
-    move-object v1, v0
+    move/from16 v44, v4
 
-    move v11, v13
+    move-wide/from16 v23, v5
 
-    move-object v13, v14
+    goto/16 :goto_45
 
-    move/from16 v58, v27
+    :cond_3a
+    :goto_4d
+    const-wide/16 v19, 0x0
 
-    goto/16 :goto_39
+    cmp-long v26, v5, v19
 
-    :cond_3c
-    move-wide/from16 p16, v1
+    if-ltz v26, :cond_3b
 
-    .line 378
-    :try_start_31
-    iget-object v1, v14, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-    :try_end_31
-    .catch Ljava/lang/Exception; {:try_start_31 .. :try_end_31} :catch_47
-    .catchall {:try_start_31 .. :try_end_31} :catchall_3d
+    move-wide/from16 v5, v21
 
-    const-wide/16 v2, 0x0
+    :cond_3b
+    cmp-long v26, v5, v19
 
-    const/4 v14, 0x0
+    if-ltz v26, :cond_3c
 
-    :try_start_32
-    invoke-virtual {v1, v2, v3, v14}, Landroid/media/MediaExtractor;->seekTo(JI)V
-    :try_end_32
-    .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_32} :catch_46
-    .catchall {:try_start_32 .. :try_end_32} :catchall_3c
+    move/from16 v26, v3
 
-    :goto_46
-    move-object/from16 v1, p26
-
-    :goto_47
-    if-eqz v1, :cond_3f
-
-    const/16 v2, 0x5a
-
-    move/from16 v3, p3
-
-    if-eq v3, v2, :cond_3e
-
-    const/16 v2, 0x10e
-
-    if-ne v3, v2, :cond_3d
-
-    goto :goto_48
-
-    .line 388
-    :cond_3d
-    :try_start_33
-    iget v2, v1, Lorg/telegram/messenger/MediaController$CropState;->transformWidth:I
-
-    .line 389
-    iget v14, v1, Lorg/telegram/messenger/MediaController$CropState;->transformHeight:I
-
-    goto :goto_49
-
-    .line 385
-    :cond_3e
-    :goto_48
-    iget v2, v1, Lorg/telegram/messenger/MediaController$CropState;->transformHeight:I
-
-    .line 386
-    iget v14, v1, Lorg/telegram/messenger/MediaController$CropState;->transformWidth:I
+    .line 380
+    iget-object v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
     :try_end_33
-    .catch Ljava/lang/Exception; {:try_start_33 .. :try_end_33} :catch_1b
-    .catchall {:try_start_33 .. :try_end_33} :catchall_1c
+    .catch Ljava/lang/Exception; {:try_start_33 .. :try_end_33} :catch_1a
+    .catchall {:try_start_33 .. :try_end_33} :catchall_1a
 
-    :goto_49
-    move/from16 v71, v14
+    move/from16 v29, v4
 
-    move v14, v2
+    const/4 v4, 0x0
 
-    move/from16 v2, v71
+    :try_start_34
+    invoke-virtual {v3, v5, v6, v4}, Landroid/media/MediaExtractor;->seekTo(JI)V
+    :try_end_34
+    .catch Ljava/lang/Exception; {:try_start_34 .. :try_end_34} :catch_1b
+    .catchall {:try_start_34 .. :try_end_34} :catchall_1a
 
-    goto :goto_4d
+    move-wide/from16 p16, v5
 
-    :catchall_1c
+    goto/16 :goto_4f
+
+    :catch_1b
     move-exception v0
 
-    move/from16 v14, p7
+    move-wide/from16 v47, p14
+
+    move-object v2, v0
+
+    move v3, v4
+
+    move-wide/from16 v23, v5
+
+    move v14, v13
+
+    move/from16 v44, v29
+
+    goto/16 :goto_47
+
+    :cond_3c
+    move/from16 v26, v3
+
+    move/from16 v29, v4
+
+    const-wide/16 v19, 0x0
+
+    move-wide/from16 v3, p12
+
+    cmp-long v36, v3, v19
+
+    if-lez v36, :cond_3d
+
+    move-wide/from16 p16, v5
+
+    .line 382
+    :try_start_35
+    iget-object v5, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    :try_end_35
+    .catch Ljava/lang/Exception; {:try_start_35 .. :try_end_35} :catch_1d
+    .catchall {:try_start_35 .. :try_end_35} :catchall_1b
+
+    const/4 v6, 0x0
+
+    :try_start_36
+    invoke-virtual {v5, v3, v4, v6}, Landroid/media/MediaExtractor;->seekTo(JI)V
+    :try_end_36
+    .catch Ljava/lang/Exception; {:try_start_36 .. :try_end_36} :catch_1c
+    .catchall {:try_start_36 .. :try_end_36} :catchall_1b
+
+    goto :goto_4f
+
+    :catch_1c
+    move-exception v0
+
+    move-wide/from16 v47, p14
+
+    move-wide/from16 v23, p16
+
+    move-object v2, v0
+
+    move v14, v13
+
+    move/from16 v44, v29
+
+    const/4 v8, 0x0
+
+    const/4 v11, 0x0
+
+    const/16 v26, 0x0
+
+    const/16 v38, 0x0
+
+    const/16 v56, 0x0
+
+    const/16 v58, 0x0
+
+    move-wide v12, v3
+
+    move v3, v6
+
+    const/4 v6, -0x5
+
+    goto/16 :goto_cd
+
+    :catchall_1b
+    move-exception v0
+
+    move/from16 v7, p7
 
     move/from16 v10, p8
 
     move-wide/from16 v47, p14
 
-    move-wide/from16 v34, p16
+    move-wide/from16 v23, p16
 
-    move-object v1, v0
+    move-object v2, v0
 
-    move v7, v4
+    move v14, v13
 
-    move v11, v13
+    const/4 v6, -0x5
 
-    :goto_4a
-    const/4 v5, -0x5
+    const/16 v26, 0x0
 
-    :goto_4b
-    const/4 v6, 0x0
+    const/16 v27, 0x0
 
-    move-object/from16 v13, p0
+    move-wide v12, v3
 
-    goto/16 :goto_c0
+    goto/16 :goto_d8
 
-    :catch_1b
+    :catch_1d
     move-exception v0
 
-    move-wide/from16 v14, p14
+    move-wide/from16 v47, p14
 
-    move-wide/from16 v34, p16
+    move-wide/from16 v23, p16
 
-    move-object v1, v0
+    move-object v2, v0
 
-    move v11, v13
+    move v14, v13
 
-    move/from16 v58, v27
+    move/from16 v44, v29
+
+    const/4 v6, -0x5
 
     const/4 v8, 0x0
 
-    :goto_4c
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
-    const/16 v20, -0x5
+    const/16 v26, 0x0
 
-    const/16 v31, 0x0
-
-    const/16 v53, 0x0
+    const/16 v38, 0x0
 
     const/16 v56, 0x0
 
-    move-object/from16 v13, p0
+    const/16 v58, 0x0
 
-    goto/16 :goto_b5
+    move-wide v12, v3
 
-    :cond_3f
-    move/from16 v3, p3
+    :goto_4e
+    const/4 v3, 0x0
 
-    move/from16 v14, p7
+    goto/16 :goto_cd
 
-    move/from16 v2, p8
+    :cond_3d
+    move-wide/from16 p16, v5
+
+    .line 384
+    :try_start_37
+    iget-object v5, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    :try_end_37
+    .catch Ljava/lang/Exception; {:try_start_37 .. :try_end_37} :catch_5f
+    .catchall {:try_start_37 .. :try_end_37} :catchall_41
+
+    const-wide/16 v3, 0x0
+
+    const/4 v6, 0x0
+
+    :try_start_38
+    invoke-virtual {v5, v3, v4, v6}, Landroid/media/MediaExtractor;->seekTo(JI)V
+    :try_end_38
+    .catch Ljava/lang/Exception; {:try_start_38 .. :try_end_38} :catch_5e
+    .catchall {:try_start_38 .. :try_end_38} :catchall_40
+
+    :goto_4f
+    move-object/from16 v6, p26
+
+    if-eqz v6, :cond_40
+
+    const/16 v3, 0x5a
+
+    move/from16 v5, p3
+
+    if-eq v5, v3, :cond_3f
+
+    const/16 v3, 0x10e
+
+    if-ne v5, v3, :cond_3e
+
+    goto :goto_50
+
+    .line 394
+    :cond_3e
+    :try_start_39
+    iget v3, v6, Lorg/telegram/messenger/MediaController$CropState;->transformWidth:I
 
     .line 395
-    :goto_4d
-    :try_start_34
-    sget-boolean v32, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
-    :try_end_34
-    .catch Ljava/lang/Exception; {:try_start_34 .. :try_end_34} :catch_46
-    .catchall {:try_start_34 .. :try_end_34} :catchall_3c
+    iget v4, v6, Lorg/telegram/messenger/MediaController$CropState;->transformHeight:I
 
-    if-eqz v32, :cond_40
+    goto :goto_51
 
-    .line 396
-    :try_start_35
+    .line 391
+    :cond_3f
+    :goto_50
+    iget v3, v6, Lorg/telegram/messenger/MediaController$CropState;->transformHeight:I
+
+    .line 392
+    iget v4, v6, Lorg/telegram/messenger/MediaController$CropState;->transformWidth:I
+    :try_end_39
+    .catch Ljava/lang/Exception; {:try_start_39 .. :try_end_39} :catch_1e
+    .catchall {:try_start_39 .. :try_end_39} :catchall_1c
+
+    :goto_51
+    move/from16 v71, v4
+
+    move v4, v3
+
+    move/from16 v3, v71
+
+    goto :goto_52
+
+    :catchall_1c
+    move-exception v0
+
+    move/from16 v7, p7
+
+    move/from16 v10, p8
+
+    goto/16 :goto_43
+
+    :catch_1e
+    move-exception v0
+
+    move-wide/from16 v47, p14
+
+    move-wide/from16 v23, p16
+
+    move-object v2, v0
+
+    move v14, v13
+
+    move/from16 v44, v29
+
+    goto/16 :goto_46
+
+    :cond_40
+    move/from16 v5, p3
+
+    move/from16 v4, p7
+
+    move/from16 v3, p8
+
+    :goto_52
+    if-eqz v24, :cond_41
+
+    .line 404
+    :try_start_3a
+    invoke-static/range {v24 .. v24}, Landroid/media/MediaCodec;->createByCodecName(Ljava/lang/String;)Landroid/media/MediaCodec;
+
+    move-result-object v24
+    :try_end_3a
+    .catch Ljava/lang/Exception; {:try_start_3a .. :try_end_3a} :catch_1f
+    .catchall {:try_start_3a .. :try_end_3a} :catchall_1c
+
+    goto :goto_53
+
+    :catch_1f
+    :cond_41
+    const/16 v24, 0x0
+
+    :goto_53
+    if-nez v24, :cond_42
+
+    .line 410
+    :try_start_3b
+    invoke-static {v14}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
+
+    move-result-object v24
+    :try_end_3b
+    .catch Ljava/lang/Exception; {:try_start_3b .. :try_end_3b} :catch_20
+    .catchall {:try_start_3b .. :try_end_3b} :catchall_1c
+
+    goto :goto_54
+
+    :catch_20
+    move-exception v0
+
+    move-wide/from16 v47, p14
+
+    move-object v2, v0
+
+    move v14, v13
+
+    move-object/from16 v11, v24
+
+    move/from16 v44, v29
+
+    const/4 v3, 0x0
+
+    const/4 v6, -0x5
+
+    const/4 v8, 0x0
+
+    const/16 v26, 0x0
+
+    const/16 v38, 0x0
+
+    const/16 v56, 0x0
+
+    const/16 v58, 0x0
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v23, p16
+
+    goto/16 :goto_cd
+
+    :cond_42
+    :goto_54
+    move-object/from16 p10, v24
+
+    .line 413
+    :try_start_3c
+    sget-boolean v24, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    :try_end_3c
+    .catch Ljava/lang/Exception; {:try_start_3c .. :try_end_3c} :catch_5d
+    .catchall {:try_start_3c .. :try_end_3c} :catchall_3f
+
+    if-eqz v24, :cond_43
+
+    .line 414
+    :try_start_3d
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "create encoder with w = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v6, " h = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v6, " bitrate = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+    :try_end_3d
+    .catch Ljava/lang/Exception; {:try_start_3d .. :try_end_3d} :catch_21
+    .catchall {:try_start_3d .. :try_end_3d} :catchall_1c
+
+    goto :goto_55
+
+    :catch_21
+    move-exception v0
+
+    move-object/from16 v11, p10
+
+    move-wide/from16 v47, p14
+
+    move-wide/from16 v23, p16
+
+    move-object v2, v0
+
+    move v14, v13
+
+    move/from16 v44, v29
+
+    const/4 v3, 0x0
+
+    const/4 v6, -0x5
+
+    const/4 v8, 0x0
+
+    goto/16 :goto_48
+
+    .line 416
+    :cond_43
+    :goto_55
+    :try_start_3e
+    invoke-static {v14, v4, v3}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
+
+    move-result-object v5
+
+    const-string v6, "color-format"
+
+    const v7, 0x7f000789
+
+    .line 417
+    invoke-virtual {v5, v6, v7}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+
+    const-string v6, "bitrate"
+
+    .line 418
+    invoke-virtual {v5, v6, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    :try_end_3e
+    .catch Ljava/lang/Exception; {:try_start_3e .. :try_end_3e} :catch_5d
+    .catchall {:try_start_3e .. :try_end_3e} :catchall_3f
+
+    if-eqz v18, :cond_44
+
+    .line 419
+    :try_start_3f
+    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v7, 0x15
+
+    if-lt v6, v7, :cond_44
+
+    const-string v6, "bitrate-mode"
+
+    const/4 v7, 0x2
+
+    .line 421
+    invoke-virtual {v5, v6, v7}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    :try_end_3f
+    .catch Ljava/lang/Exception; {:try_start_3f .. :try_end_3f} :catch_21
+    .catchall {:try_start_3f .. :try_end_3f} :catchall_1c
+
+    :cond_44
+    :try_start_40
+    const-string v6, "max-bitrate"
+
+    .line 423
+    invoke-virtual {v5, v6, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+
+    const-string v6, "frame-rate"
+
+    .line 424
+    invoke-virtual {v5, v6, v13}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+
+    const-string v6, "i-frame-interval"
+
+    const/4 v7, 0x1
+
+    .line 425
+    invoke-virtual {v5, v6, v7}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+
+    .line 427
+    sget v7, Landroid/os/Build$VERSION;->SDK_INT:I
+    :try_end_40
+    .catch Ljava/lang/Exception; {:try_start_40 .. :try_end_40} :catch_5d
+    .catchall {:try_start_40 .. :try_end_40} :catchall_3f
+
+    const/16 v6, 0x17
+
+    if-ge v7, v6, :cond_46
+
+    :try_start_41
+    invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
+
+    move-result v6
+
+    move/from16 v24, v3
+
+    const/16 v3, 0x1e0
+
+    if-gt v6, v3, :cond_47
+
+    if-nez v18, :cond_47
+
+    const v3, 0xe1000
+
+    if-le v1, v3, :cond_45
+
+    move v1, v3
+
+    :cond_45
+    const-string v3, "bitrate"
+
+    .line 431
+    invoke-virtual {v5, v3, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    :try_end_41
+    .catch Ljava/lang/Exception; {:try_start_41 .. :try_end_41} :catch_21
+    .catchall {:try_start_41 .. :try_end_41} :catchall_1c
+
+    goto :goto_56
+
+    :cond_46
+    move/from16 v24, v3
+
+    :cond_47
+    :goto_56
+    move/from16 v18, v1
+
+    .line 434
+    :try_start_42
+    invoke-virtual/range {p10 .. p10}, Landroid/media/MediaCodec;->getName()Ljava/lang/String;
+
+    move-result-object v6
+    :try_end_42
+    .catch Ljava/lang/Exception; {:try_start_42 .. :try_end_42} :catch_5c
+    .catchall {:try_start_42 .. :try_end_42} :catchall_3e
+
+    .line 435
+    :try_start_43
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "create encoder with w = "
+    const-string v3, "selected encoder "
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v3, " h = "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v3, " bitrate = "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
-    :try_end_35
-    .catch Ljava/lang/Exception; {:try_start_35 .. :try_end_35} :catch_1b
-    .catchall {:try_start_35 .. :try_end_35} :catchall_1c
-
-    .line 398
-    :cond_40
-    :try_start_36
-    invoke-static {v15, v14, v2}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
-
-    move-result-object v1
-
-    const-string v3, "color-format"
-
-    const v6, 0x7f000789
-
-    .line 399
-    invoke-virtual {v1, v3, v6}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    const-string v3, "bitrate"
-
-    .line 400
-    invoke-virtual {v1, v3, v4}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    const-string v3, "frame-rate"
-
-    .line 401
-    invoke-virtual {v1, v3, v13}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    const-string v3, "i-frame-interval"
-
-    const/4 v6, 0x2
-
-    .line 402
-    invoke-virtual {v1, v3, v6}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    .line 404
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
-    :try_end_36
-    .catch Ljava/lang/Exception; {:try_start_36 .. :try_end_36} :catch_46
-    .catchall {:try_start_36 .. :try_end_36} :catchall_3c
-
-    const/16 v6, 0x17
-
-    if-ge v3, v6, :cond_42
-
-    :try_start_37
-    invoke-static {v2, v14}, Ljava/lang/Math;->min(II)I
-
-    move-result v3
-
-    const/16 v6, 0x1e0
-
-    if-gt v3, v6, :cond_42
-
-    const v3, 0xe1000
-
-    if-le v4, v3, :cond_41
-
-    move v4, v3
-
-    :cond_41
-    const-string v3, "bitrate"
-
-    .line 408
-    invoke-virtual {v1, v3, v4}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-    :try_end_37
-    .catch Ljava/lang/Exception; {:try_start_37 .. :try_end_37} :catch_1b
-    .catchall {:try_start_37 .. :try_end_37} :catchall_1c
-
-    :cond_42
-    move/from16 v32, v4
-
-    if-eqz v5, :cond_43
-
-    .line 413
-    :try_start_38
-    invoke-static {v5}, Landroid/media/MediaCodec;->createByCodecName(Ljava/lang/String;)Landroid/media/MediaCodec;
-
-    move-result-object v3
-    :try_end_38
-    .catch Ljava/lang/Exception; {:try_start_38 .. :try_end_38} :catch_1c
-    .catchall {:try_start_38 .. :try_end_38} :catchall_1d
-
-    goto :goto_4e
-
-    :catchall_1d
-    move-exception v0
-
-    move/from16 v14, p7
-
-    move/from16 v10, p8
-
-    move-wide/from16 v47, p14
-
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    move v11, v13
-
-    move/from16 v7, v32
-
-    goto/16 :goto_4a
-
-    :catch_1c
-    :cond_43
-    const/4 v3, 0x0
-
-    :goto_4e
-    if-nez v3, :cond_44
-
-    .line 419
-    :try_start_39
-    invoke-static {v15}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
-
-    move-result-object v3
-    :try_end_39
-    .catch Ljava/lang/Exception; {:try_start_39 .. :try_end_39} :catch_1d
-    .catchall {:try_start_39 .. :try_end_39} :catchall_1d
-
-    goto :goto_4f
-
-    :catch_1d
-    move-exception v0
-
-    move-wide/from16 v14, p14
-
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    move-object v8, v3
-
-    move v11, v13
-
-    move/from16 v58, v27
-
-    move/from16 v4, v32
-
-    goto/16 :goto_4c
-
-    :cond_44
-    :goto_4f
-    move-object v7, v3
-
-    const/4 v3, 0x0
-
-    const/4 v6, 0x1
-
-    .line 421
-    :try_start_3a
-    invoke-virtual {v7, v1, v3, v3, v6}, Landroid/media/MediaCodec;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
-
-    .line 422
-    new-instance v5, Lorg/telegram/messenger/video/InputSurface;
-
-    invoke-virtual {v7}, Landroid/media/MediaCodec;->createInputSurface()Landroid/view/Surface;
-
-    move-result-object v1
-
-    invoke-direct {v5, v1}, Lorg/telegram/messenger/video/InputSurface;-><init>(Landroid/view/Surface;)V
-    :try_end_3a
-    .catch Ljava/lang/Exception; {:try_start_3a .. :try_end_3a} :catch_45
-    .catchall {:try_start_3a .. :try_end_3a} :catchall_3b
-
-    .line 423
-    :try_start_3b
-    invoke-virtual {v5}, Lorg/telegram/messenger/video/InputSurface;->makeCurrent()V
-
-    .line 424
-    invoke-virtual {v7}, Landroid/media/MediaCodec;->start()V
-
-    move-object/from16 v4, v21
-
-    .line 426
-    invoke-virtual {v9, v4}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/media/MediaCodec;->createDecoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
-
-    move-result-object v3
-    :try_end_3b
-    .catch Ljava/lang/Exception; {:try_start_3b .. :try_end_3b} :catch_44
-    .catchall {:try_start_3b .. :try_end_3b} :catchall_3b
-
-    .line 427
-    :try_start_3c
-    new-instance v1, Lorg/telegram/messenger/video/OutputSurface;
-    :try_end_3c
-    .catch Ljava/lang/Exception; {:try_start_3c .. :try_end_3c} :catch_43
-    .catchall {:try_start_3c .. :try_end_3c} :catchall_3b
-
-    const/16 v21, 0x0
-
-    move-object/from16 p10, v3
-
-    int-to-float v3, v13
-
-    const/16 v33, 0x0
-
-    move-wide/from16 v34, p16
-
-    move-object/from16 p16, v1
-
-    move/from16 v51, v2
-
-    move/from16 v50, v38
-
-    const-wide/16 v38, 0x0
-
-    move-object/from16 v2, p22
-
-    move-object/from16 v52, p10
-
-    move/from16 v53, v27
-
-    move/from16 v27, v3
-
-    move-object/from16 v3, v21
-
-    move-object/from16 v21, v4
-
-    move-object/from16 v4, p23
-
-    move-object/from16 v56, v5
-
-    move-object/from16 v5, p24
-
-    move/from16 v38, v6
-
-    move-object/from16 v6, p26
-
-    move-object/from16 p10, v7
-
-    move/from16 v7, p7
-
-    move-object/from16 v57, v8
-
-    move/from16 v8, p8
-
-    move-object/from16 v58, v9
-
-    move/from16 v9, p5
-
-    move-object/from16 v59, v10
-
-    move/from16 v10, p6
-
-    move-object/from16 v60, v11
-
-    move/from16 v11, p3
-
-    move/from16 v12, v27
-
-    move-object/from16 v27, v15
-
-    move/from16 v15, v38
-
-    move-object/from16 v71, v21
-
-    move/from16 v21, v14
-
-    move-object/from16 v14, v71
-
-    move/from16 v13, v33
-
-    :try_start_3d
-    invoke-direct/range {v1 .. v13}, Lorg/telegram/messenger/video/OutputSurface;-><init>(Lorg/telegram/messenger/MediaController$SavedFilterState;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$CropState;IIIIIFZ)V
-    :try_end_3d
-    .catch Ljava/lang/Exception; {:try_start_3d .. :try_end_3d} :catch_42
-    .catchall {:try_start_3d .. :try_end_3d} :catchall_3a
-
-    if-nez p27, :cond_46
-
-    move/from16 v1, p8
-
-    .line 428
-    :try_start_3e
-    invoke-static {v1, v1}, Ljava/lang/Math;->max(II)I
-
-    move-result v2
-    :try_end_3e
-    .catch Ljava/lang/Exception; {:try_start_3e .. :try_end_3e} :catch_21
-    .catchall {:try_start_3e .. :try_end_3e} :catchall_21
-
-    int-to-float v2, v2
-
-    move/from16 v6, p5
-
-    move/from16 v7, p6
-
-    :try_start_3f
-    invoke-static {v7, v6}, Ljava/lang/Math;->max(II)I
-
-    move-result v3
-    :try_end_3f
-    .catch Ljava/lang/Exception; {:try_start_3f .. :try_end_3f} :catch_20
-    .catchall {:try_start_3f .. :try_end_3f} :catchall_20
-
-    int-to-float v3, v3
-
-    div-float/2addr v2, v3
-
-    const v3, 0x3f666666    # 0.9f
-
-    cmpg-float v2, v2, v3
-
-    if-gez v2, :cond_45
-
-    move/from16 v2, p7
-
-    .line 429
-    :try_start_40
-    invoke-static {v6, v7, v2, v1, v15}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->createFragmentShader(IIIIZ)Ljava/lang/String;
-
-    move-result-object v3
-    :try_end_40
-    .catch Ljava/lang/Exception; {:try_start_40 .. :try_end_40} :catch_1f
-    .catchall {:try_start_40 .. :try_end_40} :catchall_1f
-
-    const/4 v5, 0x0
-
-    :try_start_41
-    invoke-static {v6, v7, v2, v1, v5}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->createFragmentShader(IIIIZ)Ljava/lang/String;
-
-    move-result-object v4
-    :try_end_41
-    .catch Ljava/lang/Exception; {:try_start_41 .. :try_end_41} :catch_1f
-    .catchall {:try_start_41 .. :try_end_41} :catchall_1e
-
-    move-object/from16 v8, p16
-
-    :try_start_42
-    invoke-virtual {v8, v3, v4}, Lorg/telegram/messenger/video/OutputSurface;->changeFragmentShader(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_42
-    .catch Ljava/lang/Exception; {:try_start_42 .. :try_end_42} :catch_1e
-    .catchall {:try_start_42 .. :try_end_42} :catchall_1e
-
-    goto/16 :goto_5a
-
-    :catch_1e
-    move-exception v0
-
-    goto :goto_56
-
-    :catchall_1e
-    move-exception v0
-
-    goto :goto_52
-
-    :catchall_1f
-    move-exception v0
-
-    goto :goto_51
-
-    :catch_1f
-    move-exception v0
-
-    goto :goto_55
-
-    :cond_45
-    move/from16 v2, p7
-
-    goto :goto_59
-
-    :catchall_20
-    move-exception v0
-
-    goto :goto_50
-
-    :catch_20
-    move-exception v0
-
-    goto :goto_54
-
-    :catchall_21
-    move-exception v0
-
-    move/from16 v6, p5
-
-    move/from16 v7, p6
-
-    :goto_50
-    move/from16 v2, p7
-
-    :goto_51
-    const/4 v5, 0x0
-
-    :goto_52
-    move-object/from16 v13, p0
-
-    move/from16 v11, p9
-
-    move-wide/from16 v47, p14
-
-    move v10, v1
-
-    move v14, v2
-
-    move v6, v5
-
-    :goto_53
-    move/from16 v7, v32
-
-    const/4 v5, -0x5
-
-    goto/16 :goto_43
-
-    :catch_21
-    move-exception v0
-
-    move/from16 v6, p5
-
-    move/from16 v7, p6
-
-    :goto_54
-    move/from16 v2, p7
-
-    :goto_55
-    move-object/from16 v8, p16
-
-    :goto_56
-    move-object/from16 v13, p0
-
-    move/from16 v11, p9
-
-    move-wide/from16 v14, p14
-
-    move-object v1, v0
-
-    move/from16 v4, v32
-
-    move-object/from16 v10, v52
-
-    :goto_57
-    move/from16 v58, v53
-
-    const/16 v20, -0x5
-
-    const/16 v31, 0x0
-
-    :goto_58
-    move-object/from16 v53, v8
-
-    move-object/from16 v8, p10
-
-    goto/16 :goto_b5
-
-    :cond_46
-    move/from16 v6, p5
-
-    move/from16 v7, p6
-
-    move/from16 v2, p7
-
-    move/from16 v1, p8
-
-    :goto_59
-    move-object/from16 v8, p16
-
-    const/4 v5, 0x0
-
-    .line 431
-    :goto_5a
-    :try_start_43
-    invoke-virtual {v8}, Lorg/telegram/messenger/video/OutputSurface;->getSurface()Landroid/view/Surface;
-
-    move-result-object v3
     :try_end_43
-    .catch Ljava/lang/Exception; {:try_start_43 .. :try_end_43} :catch_41
-    .catchall {:try_start_43 .. :try_end_43} :catchall_3a
+    .catch Ljava/lang/Exception; {:try_start_43 .. :try_end_43} :catch_5b
+    .catchall {:try_start_43 .. :try_end_43} :catchall_3d
 
-    move-object/from16 v10, v52
+    move-object/from16 v3, p10
 
-    move-object/from16 v4, v58
+    move/from16 v23, v4
 
-    const/4 v9, 0x0
+    const/4 v1, 0x0
 
+    const/4 v4, 0x1
+
+    .line 436
     :try_start_44
-    invoke-virtual {v10, v4, v3, v9, v5}, Landroid/media/MediaCodec;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
-
-    .line 432
-    invoke-virtual {v10}, Landroid/media/MediaCodec;->start()V
+    invoke-virtual {v3, v5, v1, v1, v4}, Landroid/media/MediaCodec;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
 
     .line 437
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
+    new-instance v5, Lorg/telegram/messenger/video/InputSurface;
+
+    invoke-virtual {v3}, Landroid/media/MediaCodec;->createInputSurface()Landroid/view/Surface;
+
+    move-result-object v4
+
+    invoke-direct {v5, v4}, Lorg/telegram/messenger/video/InputSurface;-><init>(Landroid/view/Surface;)V
     :try_end_44
-    .catch Ljava/lang/Exception; {:try_start_44 .. :try_end_44} :catch_40
-    .catchall {:try_start_44 .. :try_end_44} :catchall_3a
-
-    const/16 v4, 0x15
-
-    if-ge v3, v4, :cond_47
+    .catch Ljava/lang/Exception; {:try_start_44 .. :try_end_44} :catch_5a
+    .catchall {:try_start_44 .. :try_end_44} :catchall_3d
 
     .line 438
     :try_start_45
-    invoke-virtual {v10}, Landroid/media/MediaCodec;->getInputBuffers()[Ljava/nio/ByteBuffer;
-
-    move-result-object v3
+    invoke-virtual {v5}, Lorg/telegram/messenger/video/InputSurface;->makeCurrent()V
 
     .line 439
-    invoke-virtual/range {p10 .. p10}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
+    invoke-virtual {v3}, Landroid/media/MediaCodec;->start()V
+
+    .line 441
+    invoke-virtual {v9, v2}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Landroid/media/MediaCodec;->createDecoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
 
     move-result-object v4
     :try_end_45
-    .catch Ljava/lang/Exception; {:try_start_45 .. :try_end_45} :catch_22
-    .catchall {:try_start_45 .. :try_end_45} :catchall_1e
+    .catch Ljava/lang/Exception; {:try_start_45 .. :try_end_45} :catch_59
+    .catchall {:try_start_45 .. :try_end_45} :catchall_3d
 
-    goto :goto_5c
+    move-object/from16 v36, v3
+
+    .line 442
+    :try_start_46
+    new-instance v3, Lorg/telegram/messenger/video/OutputSurface;
+    :try_end_46
+    .catch Ljava/lang/Exception; {:try_start_46 .. :try_end_46} :catch_58
+    .catchall {:try_start_46 .. :try_end_46} :catchall_3d
+
+    const/16 v38, 0x0
+
+    move-object/from16 v39, v12
+
+    int-to-float v12, v13
+
+    const/16 v40, 0x0
+
+    move-object v1, v3
+
+    move-object/from16 v51, v2
+
+    move-object/from16 v2, p22
+
+    move-object/from16 v54, v3
+
+    move/from16 v53, v24
+
+    move/from16 v52, v26
+
+    move-object/from16 v3, v38
+
+    move-object/from16 v55, v4
+
+    move/from16 v57, v23
+
+    move/from16 v56, v29
+
+    move-object/from16 v4, p23
+
+    move-wide/from16 v23, p16
+
+    move-object/from16 v58, v5
+
+    move-object/from16 v5, p24
+
+    move-object/from16 v26, v6
+
+    move-object/from16 v6, p26
+
+    move/from16 v59, v7
+
+    move/from16 v7, p7
+
+    move-object/from16 v60, v8
+
+    move/from16 v8, p8
+
+    move-object/from16 v61, v9
+
+    move/from16 v9, p5
+
+    move-wide/from16 v41, v10
+
+    move/from16 v10, p6
+
+    move/from16 v11, p3
+
+    move-object/from16 v62, v39
+
+    move/from16 v13, v40
+
+    :try_start_47
+    invoke-direct/range {v1 .. v13}, Lorg/telegram/messenger/video/OutputSurface;-><init>(Lorg/telegram/messenger/MediaController$SavedFilterState;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$CropState;IIIIIFZ)V
+    :try_end_47
+    .catch Ljava/lang/Exception; {:try_start_47 .. :try_end_47} :catch_57
+    .catchall {:try_start_47 .. :try_end_47} :catchall_3c
+
+    if-nez p27, :cond_49
+
+    move/from16 v2, p8
+
+    .line 443
+    :try_start_48
+    invoke-static {v2, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+    :try_end_48
+    .catch Ljava/lang/Exception; {:try_start_48 .. :try_end_48} :catch_25
+    .catchall {:try_start_48 .. :try_end_48} :catchall_1f
+
+    int-to-float v1, v1
+
+    move/from16 v6, p5
+
+    move/from16 v7, p6
+
+    :try_start_49
+    invoke-static {v7, v6}, Ljava/lang/Math;->max(II)I
+
+    move-result v3
+    :try_end_49
+    .catch Ljava/lang/Exception; {:try_start_49 .. :try_end_49} :catch_24
+    .catchall {:try_start_49 .. :try_end_49} :catchall_1e
+
+    int-to-float v3, v3
+
+    div-float/2addr v1, v3
+
+    const v3, 0x3f666666    # 0.9f
+
+    cmpg-float v1, v1, v3
+
+    if-gez v1, :cond_48
+
+    move/from16 v3, p7
+
+    const/4 v1, 0x1
+
+    .line 444
+    :try_start_4a
+    invoke-static {v6, v7, v3, v2, v1}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->createFragmentShader(IIIIZ)Ljava/lang/String;
+
+    move-result-object v4
+
+    const/4 v1, 0x0
+
+    invoke-static {v6, v7, v3, v2, v1}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->createFragmentShader(IIIIZ)Ljava/lang/String;
+
+    move-result-object v5
+    :try_end_4a
+    .catch Ljava/lang/Exception; {:try_start_4a .. :try_end_4a} :catch_23
+    .catchall {:try_start_4a .. :try_end_4a} :catchall_1d
+
+    move-object/from16 v1, v54
+
+    :try_start_4b
+    invoke-virtual {v1, v4, v5}, Lorg/telegram/messenger/video/OutputSurface;->changeFragmentShader(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_4b
+    .catch Ljava/lang/Exception; {:try_start_4b .. :try_end_4b} :catch_22
+    .catchall {:try_start_4b .. :try_end_4b} :catchall_1d
+
+    goto/16 :goto_63
 
     :catch_22
     move-exception v0
 
-    move-object/from16 v13, p0
+    goto :goto_5d
 
-    move/from16 v11, p9
-
-    move-wide/from16 v14, p14
-
-    :goto_5b
-    move-object v1, v0
-
-    move-object/from16 v31, v9
-
-    move/from16 v4, v32
-
-    move/from16 v58, v53
-
-    const/16 v20, -0x5
-
-    goto :goto_58
-
-    :cond_47
-    move-object v3, v9
-
-    move-object v4, v3
-
-    :goto_5c
-    move/from16 v11, v50
-
-    if-ltz v11, :cond_50
-
-    move-object/from16 v13, p0
-
-    .line 444
-    :try_start_46
-    iget-object v12, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    invoke-virtual {v12, v11}, Landroid/media/MediaExtractor;->getTrackFormat(I)Landroid/media/MediaFormat;
-
-    move-result-object v12
-
-    .line 445
-    invoke-virtual {v12, v14}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    const-string v5, "audio/mp4a-latm"
-
-    invoke-virtual {v9, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-    :try_end_46
-    .catch Ljava/lang/Exception; {:try_start_46 .. :try_end_46} :catch_29
-    .catchall {:try_start_46 .. :try_end_46} :catchall_27
-
-    if-nez v5, :cond_49
-
-    :try_start_47
-    invoke-virtual {v12, v14}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    const-string v9, "audio/mpeg"
-
-    invoke-virtual {v5, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-    :try_end_47
-    .catch Ljava/lang/Exception; {:try_start_47 .. :try_end_47} :catch_23
-    .catchall {:try_start_47 .. :try_end_47} :catchall_22
-
-    if-eqz v5, :cond_48
-
-    goto :goto_5f
-
-    :cond_48
-    const/4 v5, 0x0
-
-    goto :goto_60
-
-    :catchall_22
+    :catchall_1d
     move-exception v0
 
-    :goto_5d
-    move/from16 v11, p9
-
-    move-wide/from16 v47, p14
-
-    move v10, v1
-
-    move v14, v2
-
-    move/from16 v7, v32
-
-    const/4 v5, -0x5
-
-    const/4 v6, 0x0
-
-    goto/16 :goto_43
+    goto :goto_58
 
     :catch_23
     move-exception v0
 
-    :goto_5e
-    move/from16 v11, p9
+    goto :goto_5c
 
-    move-wide/from16 v14, p14
+    :cond_48
+    move/from16 v3, p7
 
-    goto/16 :goto_68
+    goto :goto_62
 
-    :cond_49
-    :goto_5f
-    move v5, v15
+    :catchall_1e
+    move-exception v0
 
-    .line 447
-    :goto_60
-    :try_start_48
-    invoke-virtual {v12, v14}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    const-string v14, "audio/unknown"
-
-    invoke-virtual {v9, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-    :try_end_48
-    .catch Ljava/lang/Exception; {:try_start_48 .. :try_end_48} :catch_29
-    .catchall {:try_start_48 .. :try_end_48} :catchall_27
-
-    if-eqz v9, :cond_4a
-
-    const/4 v11, -0x1
-
-    :cond_4a
-    if-ltz v11, :cond_4f
-
-    if-eqz v5, :cond_4d
-
-    .line 453
-    :try_start_49
-    iget-object v9, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
-
-    invoke-virtual {v9, v12, v15}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
-
-    move-result v9
-
-    .line 454
-    iget-object v14, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    invoke-virtual {v14, v11}, Landroid/media/MediaExtractor;->selectTrack(I)V
-    :try_end_49
-    .catch Ljava/lang/Exception; {:try_start_49 .. :try_end_49} :catch_25
-    .catchall {:try_start_49 .. :try_end_49} :catchall_23
-
-    :try_start_4a
-    const-string v14, "max-input-size"
-
-    .line 456
-    invoke-virtual {v12, v14}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
-
-    move-result v12
-    :try_end_4a
-    .catch Ljava/lang/Exception; {:try_start_4a .. :try_end_4a} :catch_24
-    .catchall {:try_start_4a .. :try_end_4a} :catchall_22
-
-    goto :goto_61
+    goto :goto_57
 
     :catch_24
     move-exception v0
 
-    move-object v12, v0
+    goto :goto_5b
 
-    .line 458
-    :try_start_4b
-    invoke-static {v12}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    const/4 v12, 0x0
-
-    :goto_61
-    if-gtz v12, :cond_4b
-
-    const/high16 v12, 0x10000
-
-    .line 463
-    :cond_4b
-    invoke-static {v12}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v14
-    :try_end_4b
-    .catch Ljava/lang/Exception; {:try_start_4b .. :try_end_4b} :catch_25
-    .catchall {:try_start_4b .. :try_end_4b} :catchall_23
-
-    move-wide/from16 v6, p12
-
-    move-object/from16 p16, v4
-
-    move/from16 p17, v5
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v33, v6, v4
-
-    if-lez v33, :cond_4c
-
-    .line 466
-    :try_start_4c
-    iget-object v15, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v15, v6, v7, v4}, Landroid/media/MediaExtractor;->seekTo(JI)V
-
-    move-object/from16 v33, v14
-
-    goto :goto_62
-
-    .line 468
-    :cond_4c
-    iget-object v4, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    move-object/from16 v33, v14
-
-    const/4 v5, 0x0
-
-    const-wide/16 v14, 0x0
-
-    invoke-virtual {v4, v14, v15, v5}, Landroid/media/MediaExtractor;->seekTo(JI)V
-    :try_end_4c
-    .catch Ljava/lang/Exception; {:try_start_4c .. :try_end_4c} :catch_23
-    .catchall {:try_start_4c .. :try_end_4c} :catchall_22
-
-    :goto_62
-    move-wide/from16 v14, p14
-
-    move/from16 v4, p17
-
-    move v5, v9
-
-    const/4 v9, 0x0
-
-    goto/16 :goto_6a
-
-    :catchall_23
+    :catchall_1f
     move-exception v0
 
-    move-wide/from16 v6, p12
+    move/from16 v6, p5
 
-    goto :goto_5d
+    move/from16 v7, p6
+
+    :goto_57
+    move/from16 v3, p7
+
+    :goto_58
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
+
+    :goto_59
+    move-wide/from16 v47, p14
+
+    move v10, v2
+
+    move v7, v3
+
+    move/from16 v1, v18
+
+    const/4 v6, -0x5
+
+    const/16 v27, 0x0
+
+    :goto_5a
+    move-object v2, v0
+
+    goto/16 :goto_d8
 
     :catch_25
     move-exception v0
 
-    move-wide/from16 v6, p12
+    move/from16 v6, p5
 
-    goto :goto_5e
+    move/from16 v7, p6
 
-    :cond_4d
-    move-wide/from16 v6, p12
+    :goto_5b
+    move/from16 v3, p7
 
-    move-object/from16 p16, v4
+    :goto_5c
+    move-object/from16 v1, v54
 
-    move/from16 p17, v5
+    :goto_5d
+    move/from16 v14, p9
 
-    .line 471
-    :try_start_4d
-    new-instance v4, Landroid/media/MediaExtractor;
-
-    invoke-direct {v4}, Landroid/media/MediaExtractor;-><init>()V
-
-    move-object/from16 v5, p1
-
-    .line 472
-    invoke-virtual {v4, v5}, Landroid/media/MediaExtractor;->setDataSource(Ljava/lang/String;)V
-
-    .line 473
-    invoke-virtual {v4, v11}, Landroid/media/MediaExtractor;->selectTrack(I)V
-    :try_end_4d
-    .catch Ljava/lang/Exception; {:try_start_4d .. :try_end_4d} :catch_28
-    .catchall {:try_start_4d .. :try_end_4d} :catchall_26
-
-    const-wide/16 v14, 0x0
-
-    cmp-long v9, v6, v14
-
-    if-lez v9, :cond_4e
-
-    const/4 v9, 0x0
-
-    .line 476
-    :try_start_4e
-    invoke-virtual {v4, v6, v7, v9}, Landroid/media/MediaExtractor;->seekTo(JI)V
-    :try_end_4e
-    .catch Ljava/lang/Exception; {:try_start_4e .. :try_end_4e} :catch_23
-    .catchall {:try_start_4e .. :try_end_4e} :catchall_24
-
-    goto :goto_63
-
-    :catchall_24
-    move-exception v0
-
-    move/from16 v11, p9
+    move-wide/from16 v12, p12
 
     move-wide/from16 v47, p14
 
-    move v10, v1
+    move-object v2, v0
 
-    move v14, v2
+    move-object/from16 v11, v36
 
-    move v6, v9
+    move-object/from16 v8, v55
 
-    goto/16 :goto_53
+    :goto_5e
+    move/from16 v44, v56
 
-    :cond_4e
+    const/4 v3, 0x0
+
+    :goto_5f
+    const/4 v6, -0x5
+
+    const/16 v38, 0x0
+
+    :goto_60
+    move-object/from16 v56, v1
+
+    :goto_61
+    move/from16 v1, v18
+
+    goto/16 :goto_cd
+
+    :cond_49
+    move/from16 v6, p5
+
+    move/from16 v7, p6
+
+    move/from16 v3, p7
+
+    move/from16 v2, p8
+
+    :goto_62
+    move-object/from16 v1, v54
+
+    .line 446
+    :goto_63
+    :try_start_4c
+    invoke-virtual {v1}, Lorg/telegram/messenger/video/OutputSurface;->getSurface()Landroid/view/Surface;
+
+    move-result-object v4
+    :try_end_4c
+    .catch Ljava/lang/Exception; {:try_start_4c .. :try_end_4c} :catch_56
+    .catchall {:try_start_4c .. :try_end_4c} :catchall_3c
+
+    move-object/from16 v8, v55
+
+    move-object/from16 v5, v61
+
     const/4 v9, 0x0
 
-    .line 478
+    const/4 v10, 0x0
+
+    :try_start_4d
+    invoke-virtual {v8, v5, v4, v9, v10}, Landroid/media/MediaCodec;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
+    :try_end_4d
+    .catch Ljava/lang/Exception; {:try_start_4d .. :try_end_4d} :catch_55
+    .catchall {:try_start_4d .. :try_end_4d} :catchall_3b
+
+    .line 447
+    :try_start_4e
+    invoke-virtual {v8}, Landroid/media/MediaCodec;->start()V
+    :try_end_4e
+    .catch Ljava/lang/Exception; {:try_start_4e .. :try_end_4e} :catch_54
+    .catchall {:try_start_4e .. :try_end_4e} :catchall_3c
+
+    move/from16 v4, v59
+
+    const/16 v5, 0x15
+
+    if-ge v4, v5, :cond_4a
+
+    .line 453
     :try_start_4f
-    invoke-virtual {v4, v14, v15, v9}, Landroid/media/MediaExtractor;->seekTo(JI)V
+    invoke-virtual {v8}, Landroid/media/MediaCodec;->getInputBuffers()[Ljava/nio/ByteBuffer;
 
-    .line 481
-    :goto_63
-    new-instance v9, Lorg/telegram/messenger/video/AudioRecoder;
+    move-result-object v4
 
-    invoke-direct {v9, v12, v4, v11}, Lorg/telegram/messenger/video/AudioRecoder;-><init>(Landroid/media/MediaFormat;Landroid/media/MediaExtractor;I)V
+    .line 454
+    invoke-virtual/range {v36 .. v36}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
+
+    move-result-object v5
     :try_end_4f
-    .catch Ljava/lang/Exception; {:try_start_4f .. :try_end_4f} :catch_28
-    .catchall {:try_start_4f .. :try_end_4f} :catchall_26
+    .catch Ljava/lang/Exception; {:try_start_4f .. :try_end_4f} :catch_26
+    .catchall {:try_start_4f .. :try_end_4f} :catchall_1d
 
-    .line 482
-    :try_start_50
-    iput-wide v6, v9, Lorg/telegram/messenger/video/AudioRecoder;->startTime:J
-    :try_end_50
-    .catch Ljava/lang/Exception; {:try_start_50 .. :try_end_50} :catch_27
-    .catchall {:try_start_50 .. :try_end_50} :catchall_26
-
-    move-wide/from16 v14, p14
-
-    .line 483
-    :try_start_51
-    iput-wide v14, v9, Lorg/telegram/messenger/video/AudioRecoder;->endTime:J
-
-    .line 484
-    iget-object v4, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
-
-    iget-object v12, v9, Lorg/telegram/messenger/video/AudioRecoder;->format:Landroid/media/MediaFormat;
-
-    const/4 v5, 0x1
-
-    invoke-virtual {v4, v12, v5}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
-
-    move-result v4
-    :try_end_51
-    .catch Ljava/lang/Exception; {:try_start_51 .. :try_end_51} :catch_26
-    .catchall {:try_start_51 .. :try_end_51} :catchall_25
-
-    move v5, v4
-
-    const/4 v12, 0x0
-
-    const/16 v33, 0x0
-
-    move/from16 v4, p17
-
-    goto :goto_6a
-
-    :catchall_25
-    move-exception v0
-
-    goto :goto_66
+    goto :goto_65
 
     :catch_26
     move-exception v0
 
-    goto :goto_64
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v47, p14
+
+    move-object v2, v0
+
+    move-object/from16 v38, v9
+
+    :goto_64
+    move-object/from16 v11, v36
+
+    move/from16 v44, v56
+
+    const/4 v3, 0x0
+
+    const/4 v6, -0x5
+
+    goto :goto_60
+
+    :cond_4a
+    move-object v4, v9
+
+    move-object v5, v4
+
+    :goto_65
+    move/from16 v10, v52
+
+    if-ltz v10, :cond_53
+
+    .line 459
+    :try_start_50
+    iget-object v11, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+
+    invoke-virtual {v11, v10}, Landroid/media/MediaExtractor;->getTrackFormat(I)Landroid/media/MediaFormat;
+
+    move-result-object v11
+
+    move-object/from16 v12, v51
+
+    .line 460
+    invoke-virtual {v11, v12}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v13
+
+    const-string v9, "audio/mp4a-latm"
+
+    invoke-virtual {v13, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+    :try_end_50
+    .catch Ljava/lang/Exception; {:try_start_50 .. :try_end_50} :catch_30
+    .catchall {:try_start_50 .. :try_end_50} :catchall_25
+
+    if-nez v9, :cond_4c
+
+    :try_start_51
+    invoke-virtual {v11, v12}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v9
+
+    const-string v13, "audio/mpeg"
+
+    invoke-virtual {v9, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+    :try_end_51
+    .catch Ljava/lang/Exception; {:try_start_51 .. :try_end_51} :catch_27
+    .catchall {:try_start_51 .. :try_end_51} :catchall_1d
+
+    if-eqz v9, :cond_4b
+
+    goto :goto_67
+
+    :cond_4b
+    const/4 v13, 0x0
+
+    goto :goto_68
 
     :catch_27
     move-exception v0
 
-    move-wide/from16 v14, p14
+    move/from16 v14, p9
 
-    :goto_64
-    move/from16 v11, p9
+    move-wide/from16 v12, p12
 
-    goto/16 :goto_5b
+    :goto_66
+    move-wide/from16 v47, p14
 
-    :catchall_26
-    move-exception v0
+    move-object v2, v0
 
-    goto :goto_65
+    goto/16 :goto_74
+
+    :cond_4c
+    :goto_67
+    const/4 v13, 0x1
+
+    .line 462
+    :goto_68
+    :try_start_52
+    invoke-virtual {v11, v12}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v9
+
+    const-string v12, "audio/unknown"
+
+    invoke-virtual {v9, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+    :try_end_52
+    .catch Ljava/lang/Exception; {:try_start_52 .. :try_end_52} :catch_30
+    .catchall {:try_start_52 .. :try_end_52} :catchall_25
+
+    if-eqz v9, :cond_4d
+
+    const/4 v10, -0x1
+
+    :cond_4d
+    if-ltz v10, :cond_52
+
+    if-eqz v13, :cond_50
+
+    .line 468
+    :try_start_53
+    iget-object v9, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+
+    const/4 v12, 0x1
+
+    invoke-virtual {v9, v11, v12}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
+
+    move-result v9
+
+    .line 469
+    iget-object v12, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+
+    invoke-virtual {v12, v10}, Landroid/media/MediaExtractor;->selectTrack(I)V
+    :try_end_53
+    .catch Ljava/lang/Exception; {:try_start_53 .. :try_end_53} :catch_2b
+    .catchall {:try_start_53 .. :try_end_53} :catchall_21
+
+    :try_start_54
+    const-string v12, "max-input-size"
+
+    .line 471
+    invoke-virtual {v11, v12}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+
+    move-result v11
+    :try_end_54
+    .catch Ljava/lang/Exception; {:try_start_54 .. :try_end_54} :catch_28
+    .catchall {:try_start_54 .. :try_end_54} :catchall_1d
+
+    goto :goto_69
 
     :catch_28
     move-exception v0
 
-    goto :goto_67
+    move-object v11, v0
 
-    :cond_4f
-    move-wide/from16 v6, p12
+    .line 473
+    :try_start_55
+    invoke-static {v11}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    move-wide/from16 v14, p14
+    const/4 v11, 0x0
 
-    move-object/from16 p16, v4
+    :goto_69
+    if-gtz v11, :cond_4e
 
-    move/from16 p17, v5
+    const/high16 v11, 0x10000
 
-    move/from16 v4, p17
+    .line 478
+    :cond_4e
+    invoke-static {v11}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
-    goto :goto_69
+    move-result-object v12
+    :try_end_55
+    .catch Ljava/lang/Exception; {:try_start_55 .. :try_end_55} :catch_2b
+    .catchall {:try_start_55 .. :try_end_55} :catchall_21
 
-    :catchall_27
-    move-exception v0
+    move-object/from16 p16, v12
 
-    move-wide/from16 v6, p12
+    move/from16 p10, v13
 
-    :goto_65
-    move-wide/from16 v14, p14
+    const-wide/16 v19, 0x0
 
-    :goto_66
-    move/from16 v11, p9
+    move-wide/from16 v12, p12
 
-    move v10, v1
+    cmp-long v29, v12, v19
 
-    move-wide/from16 v47, v14
+    if-lez v29, :cond_4f
 
-    move/from16 v7, v32
+    move-object/from16 p17, v5
 
-    const/4 v5, -0x5
+    .line 481
+    :try_start_56
+    iget-object v5, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    :try_end_56
+    .catch Ljava/lang/Exception; {:try_start_56 .. :try_end_56} :catch_2a
+    .catchall {:try_start_56 .. :try_end_56} :catchall_20
 
     const/4 v6, 0x0
 
-    move-object v1, v0
+    :try_start_57
+    invoke-virtual {v5, v12, v13, v6}, Landroid/media/MediaExtractor;->seekTo(JI)V
+    :try_end_57
+    .catch Ljava/lang/Exception; {:try_start_57 .. :try_end_57} :catch_29
+    .catchall {:try_start_57 .. :try_end_57} :catchall_20
 
-    move v14, v2
+    move/from16 v29, v9
 
-    goto/16 :goto_c0
+    goto :goto_6a
 
     :catch_29
     move-exception v0
 
-    move-wide/from16 v6, p12
+    move/from16 v14, p9
 
-    :goto_67
-    move-wide/from16 v14, p14
+    move-wide/from16 v47, p14
 
-    move/from16 v11, p9
+    move-object v2, v0
 
-    :goto_68
-    move-object v1, v0
+    move v3, v6
 
-    move/from16 v4, v32
+    goto/16 :goto_6d
 
-    goto/16 :goto_57
+    :cond_4f
+    move-object/from16 p17, v5
 
-    :cond_50
-    move-object/from16 v13, p0
+    .line 483
+    :try_start_58
+    iget-object v5, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    :try_end_58
+    .catch Ljava/lang/Exception; {:try_start_58 .. :try_end_58} :catch_2a
+    .catchall {:try_start_58 .. :try_end_58} :catchall_20
 
-    move-wide/from16 v6, p12
+    move/from16 v29, v9
 
-    move-wide/from16 v14, p14
-
-    move-object/from16 p16, v4
-
-    const/4 v4, 0x1
-
-    :goto_69
-    const/4 v5, -0x5
+    const-wide/16 v6, 0x0
 
     const/4 v9, 0x0
 
-    const/4 v12, 0x0
-
-    const/16 v33, 0x0
+    :try_start_59
+    invoke-virtual {v5, v6, v7, v9}, Landroid/media/MediaExtractor;->seekTo(JI)V
+    :try_end_59
+    .catch Ljava/lang/Exception; {:try_start_59 .. :try_end_59} :catch_2c
+    .catchall {:try_start_59 .. :try_end_59} :catchall_20
 
     :goto_6a
-    if-gez v11, :cond_51
+    move v5, v10
 
-    const/16 v39, 0x1
+    move/from16 v39, v11
 
-    goto :goto_6b
-
-    :cond_51
-    const/16 v39, 0x0
-
-    .line 493
-    :goto_6b
-    :try_start_52
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
-    :try_end_52
-    .catch Ljava/lang/Exception; {:try_start_52 .. :try_end_52} :catch_3f
-    .catchall {:try_start_52 .. :try_end_52} :catchall_39
-
-    move-object/from16 p14, p16
-
-    move-wide/from16 v65, v18
-
-    move-wide/from16 v67, v65
-
-    move-wide/from16 v63, v22
-
-    move-object/from16 v52, v33
-
-    move/from16 v43, v39
-
-    const/16 v22, 0x0
-
-    const/16 v23, 0x0
-
-    const/16 v33, 0x0
-
-    const/16 v39, 0x0
-
-    const/16 v40, 0x1
-
-    const/16 v50, -0x5
-
-    const-wide/16 v54, 0x0
-
-    const-wide/16 v61, 0x0
-
-    :goto_6c
-    if-eqz v22, :cond_53
-
-    if-nez v4, :cond_52
-
-    if-nez v43, :cond_52
-
-    goto :goto_6d
-
-    :cond_52
-    move/from16 v11, p9
-
-    move v3, v1
-
-    move v5, v2
-
-    move/from16 v4, v32
-
-    move/from16 v20, v50
-
-    move/from16 v58, v53
+    move/from16 v7, v29
 
     const/4 v6, 0x0
 
-    const/16 v36, 0x0
+    move/from16 v29, p10
 
-    move-object/from16 v53, v8
+    move-wide/from16 v9, p14
 
-    move-object/from16 v8, p10
+    move-object/from16 v11, p16
 
-    goto/16 :goto_b7
+    goto/16 :goto_76
 
-    .line 496
-    :cond_53
-    :goto_6d
-    :try_start_53
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
-    :try_end_53
-    .catch Ljava/lang/Exception; {:try_start_53 .. :try_end_53} :catch_3e
-    .catchall {:try_start_53 .. :try_end_53} :catchall_38
+    :catchall_20
+    move-exception v0
 
-    if-nez v4, :cond_54
-
-    if-eqz v9, :cond_54
-
-    .line 499
-    :try_start_54
-    iget-object v2, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
-
-    invoke-virtual {v9, v2, v5}, Lorg/telegram/messenger/video/AudioRecoder;->step(Lorg/telegram/messenger/video/MP4Builder;I)Z
-
-    move-result v2
-    :try_end_54
-    .catch Ljava/lang/Exception; {:try_start_54 .. :try_end_54} :catch_2a
-    .catchall {:try_start_54 .. :try_end_54} :catchall_28
-
-    goto :goto_6e
+    goto :goto_6b
 
     :catch_2a
     move-exception v0
 
-    move/from16 v11, p9
+    goto :goto_6c
 
-    move-object v1, v0
+    :catchall_21
+    move-exception v0
 
-    move-object/from16 v31, v9
+    move-wide/from16 v12, p12
 
-    move/from16 v4, v32
+    :goto_6b
+    move/from16 v14, p9
 
-    move/from16 v20, v50
+    goto/16 :goto_59
 
-    move/from16 v58, v53
+    :catch_2b
+    move-exception v0
 
-    goto/16 :goto_58
+    move-wide/from16 v12, p12
 
-    :cond_54
-    move/from16 v2, v43
+    :goto_6c
+    move/from16 v14, p9
 
+    goto/16 :goto_66
+
+    :cond_50
+    move-object/from16 p17, v5
+
+    move/from16 p10, v13
+
+    move-wide/from16 v12, p12
+
+    .line 486
+    :try_start_5a
+    new-instance v5, Landroid/media/MediaExtractor;
+
+    invoke-direct {v5}, Landroid/media/MediaExtractor;-><init>()V
+
+    move-object/from16 v6, p1
+
+    .line 487
+    invoke-virtual {v5, v6}, Landroid/media/MediaExtractor;->setDataSource(Ljava/lang/String;)V
+
+    .line 488
+    invoke-virtual {v5, v10}, Landroid/media/MediaExtractor;->selectTrack(I)V
+    :try_end_5a
+    .catch Ljava/lang/Exception; {:try_start_5a .. :try_end_5a} :catch_2f
+    .catchall {:try_start_5a .. :try_end_5a} :catchall_24
+
+    const-wide/16 v6, 0x0
+
+    cmp-long v9, v12, v6
+
+    if-lez v9, :cond_51
+
+    const/4 v9, 0x0
+
+    .line 491
+    :try_start_5b
+    invoke-virtual {v5, v12, v13, v9}, Landroid/media/MediaExtractor;->seekTo(JI)V
+    :try_end_5b
+    .catch Ljava/lang/Exception; {:try_start_5b .. :try_end_5b} :catch_2c
+    .catchall {:try_start_5b .. :try_end_5b} :catchall_22
+
+    goto :goto_6e
+
+    :catchall_22
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v47, p14
+
+    move v10, v2
+
+    move v7, v3
+
+    move/from16 v27, v9
+
+    move/from16 v1, v18
+
+    const/4 v6, -0x5
+
+    goto/16 :goto_5a
+
+    :catch_2c
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v47, p14
+
+    move-object v2, v0
+
+    move v3, v9
+
+    :goto_6d
+    move-object/from16 v11, v36
+
+    move/from16 v44, v56
+
+    goto/16 :goto_5f
+
+    :cond_51
+    const/4 v9, 0x0
+
+    .line 493
+    :try_start_5c
+    invoke-virtual {v5, v6, v7, v9}, Landroid/media/MediaExtractor;->seekTo(JI)V
+
+    .line 496
     :goto_6e
-    if-nez v23, :cond_63
+    new-instance v6, Lorg/telegram/messenger/video/AudioRecoder;
 
-    move/from16 p15, v2
+    invoke-direct {v6, v11, v5, v10}, Lorg/telegram/messenger/video/AudioRecoder;-><init>(Landroid/media/MediaFormat;Landroid/media/MediaExtractor;I)V
+    :try_end_5c
+    .catch Ljava/lang/Exception; {:try_start_5c .. :try_end_5c} :catch_2f
+    .catchall {:try_start_5c .. :try_end_5c} :catchall_24
 
-    .line 504
-    :try_start_55
-    iget-object v2, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    .line 497
+    :try_start_5d
+    iput-wide v12, v6, Lorg/telegram/messenger/video/AudioRecoder;->startTime:J
+    :try_end_5d
+    .catch Ljava/lang/Exception; {:try_start_5d .. :try_end_5d} :catch_2e
+    .catchall {:try_start_5d .. :try_end_5d} :catchall_24
 
-    invoke-virtual {v2}, Landroid/media/MediaExtractor;->getSampleTrackIndex()I
+    move/from16 p16, v10
 
-    move-result v2
-    :try_end_55
-    .catch Ljava/lang/Exception; {:try_start_55 .. :try_end_55} :catch_2c
-    .catchall {:try_start_55 .. :try_end_55} :catchall_28
+    move-wide/from16 v9, p14
 
-    move-object/from16 p16, v9
+    .line 498
+    :try_start_5e
+    iput-wide v9, v6, Lorg/telegram/messenger/video/AudioRecoder;->endTime:J
 
-    move/from16 v9, v53
+    .line 499
+    iget-object v5, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
-    if-ne v2, v9, :cond_58
+    iget-object v7, v6, Lorg/telegram/messenger/video/AudioRecoder;->format:Landroid/media/MediaFormat;
 
-    move-object/from16 v53, v8
+    const/4 v11, 0x1
 
-    move/from16 v58, v9
+    invoke-virtual {v5, v7, v11}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
 
-    const-wide/16 v8, 0x9c4
+    move-result v5
+    :try_end_5e
+    .catch Ljava/lang/Exception; {:try_start_5e .. :try_end_5e} :catch_2d
+    .catchall {:try_start_5e .. :try_end_5e} :catchall_23
 
-    .line 506
-    :try_start_56
-    invoke-virtual {v10, v8, v9}, Landroid/media/MediaCodec;->dequeueInputBuffer(J)I
+    move/from16 v29, p10
 
-    move-result v2
+    move v7, v5
 
-    if-ltz v2, :cond_57
+    const/4 v11, 0x0
 
-    .line 509
-    sget v8, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/16 v39, 0x0
 
-    const/16 v9, 0x15
+    move/from16 v5, p16
 
-    if-ge v8, v9, :cond_55
+    goto/16 :goto_76
 
-    .line 510
-    aget-object v8, v3, v2
+    :catchall_23
+    move-exception v0
+
+    goto :goto_71
+
+    :catch_2d
+    move-exception v0
 
     goto :goto_6f
 
-    .line 512
-    :cond_55
-    invoke-virtual {v10, v2}, Landroid/media/MediaCodec;->getInputBuffer(I)Ljava/nio/ByteBuffer;
+    :catch_2e
+    move-exception v0
 
-    move-result-object v8
+    move-wide/from16 v9, p14
 
-    .line 514
     :goto_6f
-    iget-object v9, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    move/from16 v14, p9
 
-    move-object/from16 p17, v3
+    move-object v2, v0
+
+    move-object/from16 v38, v6
+
+    move-wide/from16 v47, v9
+
+    goto/16 :goto_64
+
+    :catchall_24
+    move-exception v0
+
+    goto :goto_70
+
+    :catch_2f
+    move-exception v0
+
+    goto :goto_73
+
+    :cond_52
+    move-object/from16 p17, v5
+
+    move/from16 p16, v10
+
+    move/from16 p10, v13
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v9, p14
+
+    move/from16 v29, p10
+
+    move/from16 v5, p16
+
+    const/4 v6, 0x0
+
+    const/4 v7, -0x5
+
+    const/4 v11, 0x0
+
+    goto :goto_75
+
+    :catchall_25
+    move-exception v0
+
+    move-wide/from16 v12, p12
+
+    :goto_70
+    move-wide/from16 v9, p14
+
+    :goto_71
+    move/from16 v14, p9
+
+    move v7, v3
+
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    const/4 v6, -0x5
+
+    :goto_72
+    const/16 v27, 0x0
+
+    move v10, v2
+
+    goto/16 :goto_5a
+
+    :catch_30
+    move-exception v0
+
+    move-wide/from16 v12, p12
+
+    :goto_73
+    move-wide/from16 v9, p14
+
+    move/from16 v14, p9
+
+    move-object v2, v0
+
+    move-wide/from16 v47, v9
+
+    :goto_74
+    move-object/from16 v11, v36
+
+    goto/16 :goto_5e
+
+    :cond_53
+    move-wide/from16 v12, p12
+
+    move-object/from16 p17, v5
+
+    move v5, v10
+
+    move-wide/from16 v9, p14
+
+    const/4 v6, 0x0
+
+    const/4 v7, -0x5
+
+    const/4 v11, 0x0
+
+    const/16 v29, 0x1
+
+    :goto_75
+    const/16 v39, 0x0
+
+    :goto_76
+    if-gez v5, :cond_54
+
+    const/16 v40, 0x1
+
+    goto :goto_77
+
+    :cond_54
+    const/16 v40, 0x0
+
+    .line 508
+    :goto_77
+    :try_start_5f
+    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
+    :try_end_5f
+    .catch Ljava/lang/Exception; {:try_start_5f .. :try_end_5f} :catch_53
+    .catchall {:try_start_5f .. :try_end_5f} :catchall_3a
+
+    move-object/from16 p10, p17
+
+    move-wide/from16 v67, v21
+
+    move-wide/from16 v69, v67
+
+    move-wide/from16 v65, v31
+
+    move/from16 v43, v40
+
+    const/16 v31, -0x5
+
+    const/16 v40, 0x0
+
+    const/16 v50, 0x0
+
+    const/16 v51, 0x0
+
+    const/16 v52, 0x1
+
+    const-wide/16 v54, 0x0
+
+    const-wide/16 v63, 0x0
+
+    move-object/from16 v32, v11
+
+    move/from16 v11, v39
+
+    const/16 v39, 0x0
+
+    :goto_78
+    if-eqz v39, :cond_56
+
+    if-nez v29, :cond_55
+
+    if-nez v43, :cond_55
+
+    goto :goto_79
+
+    :cond_55
+    move/from16 v14, p9
+
+    move v5, v2
+
+    move v7, v3
+
+    move-object/from16 v38, v6
+
+    move-object v4, v8
+
+    move-wide/from16 v47, v9
+
+    move/from16 v6, v31
+
+    move/from16 v44, v56
 
     const/4 v3, 0x0
 
-    invoke-virtual {v9, v8, v3}, Landroid/media/MediaExtractor;->readSampleData(Ljava/nio/ByteBuffer;I)I
+    const/16 v27, 0x0
+
+    move-object/from16 v56, v1
+
+    move/from16 v1, v18
+
+    goto/16 :goto_ce
+
+    .line 511
+    :cond_56
+    :goto_79
+    :try_start_60
+    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
+    :try_end_60
+    .catch Ljava/lang/Exception; {:try_start_60 .. :try_end_60} :catch_52
+    .catchall {:try_start_60 .. :try_end_60} :catchall_39
+
+    if-nez v29, :cond_57
+
+    if-eqz v6, :cond_57
+
+    .line 514
+    :try_start_61
+    iget-object v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+
+    invoke-virtual {v6, v3, v7}, Lorg/telegram/messenger/video/AudioRecoder;->step(Lorg/telegram/messenger/video/MP4Builder;I)Z
+
+    move-result v3
+    :try_end_61
+    .catch Ljava/lang/Exception; {:try_start_61 .. :try_end_61} :catch_31
+    .catchall {:try_start_61 .. :try_end_61} :catchall_26
+
+    goto :goto_7a
+
+    :catchall_26
+    move-exception v0
+
+    move/from16 v7, p7
+
+    move/from16 v14, p9
+
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    move/from16 v6, v31
+
+    goto :goto_72
+
+    :catch_31
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-object v2, v0
+
+    move-object/from16 v38, v6
+
+    move-wide/from16 v47, v9
+
+    move/from16 v6, v31
+
+    move-object/from16 v11, v36
+
+    move/from16 v44, v56
+
+    const/4 v3, 0x0
+
+    goto/16 :goto_60
+
+    :cond_57
+    move/from16 v3, v43
+
+    :goto_7a
+    if-nez v40, :cond_66
+
+    move/from16 p14, v3
+
+    .line 519
+    :try_start_62
+    iget-object v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+
+    invoke-virtual {v3}, Landroid/media/MediaExtractor;->getSampleTrackIndex()I
+
+    move-result v3
+    :try_end_62
+    .catch Ljava/lang/Exception; {:try_start_62 .. :try_end_62} :catch_38
+    .catchall {:try_start_62 .. :try_end_62} :catchall_29
+
+    move-object/from16 p16, v6
+
+    move/from16 v6, v56
+
+    if-ne v3, v6, :cond_5b
+
+    move-object/from16 v56, v1
+
+    const-wide/16 v1, 0x9c4
+
+    .line 521
+    :try_start_63
+    invoke-virtual {v8, v1, v2}, Landroid/media/MediaCodec;->dequeueInputBuffer(J)I
+
+    move-result v3
+
+    if-ltz v3, :cond_5a
+
+    .line 524
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x15
+
+    if-ge v1, v2, :cond_58
+
+    .line 525
+    aget-object v1, v4, v3
+
+    goto :goto_7b
+
+    .line 527
+    :cond_58
+    invoke-virtual {v8, v3}, Landroid/media/MediaCodec;->getInputBuffer(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v1
+
+    .line 529
+    :goto_7b
+    iget-object v2, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    :try_end_63
+    .catch Ljava/lang/Exception; {:try_start_63 .. :try_end_63} :catch_33
+    .catchall {:try_start_63 .. :try_end_63} :catchall_27
+
+    move-object/from16 p17, v4
+
+    const/4 v4, 0x0
+
+    :try_start_64
+    invoke-virtual {v2, v1, v4}, Landroid/media/MediaExtractor;->readSampleData(Ljava/nio/ByteBuffer;I)I
 
     move-result v46
+    :try_end_64
+    .catch Ljava/lang/Exception; {:try_start_64 .. :try_end_64} :catch_32
+    .catchall {:try_start_64 .. :try_end_64} :catchall_27
 
-    if-gez v46, :cond_56
+    if-gez v46, :cond_59
 
     const/16 v45, 0x0
 
@@ -4314,327 +4723,464 @@
 
     const/16 v49, 0x4
 
-    move-object/from16 v43, v10
+    move-object/from16 v43, v8
 
-    move/from16 v44, v2
+    move/from16 v44, v3
 
-    .line 516
+    .line 531
+    :try_start_65
     invoke-virtual/range {v43 .. v49}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
 
-    const/16 v23, 0x1
+    const/16 v40, 0x1
 
-    goto :goto_70
+    goto :goto_7c
 
-    :cond_56
+    :cond_59
     const/16 v45, 0x0
 
-    .line 519
-    iget-object v3, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    .line 534
+    iget-object v1, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
 
-    invoke-virtual {v3}, Landroid/media/MediaExtractor;->getSampleTime()J
+    invoke-virtual {v1}, Landroid/media/MediaExtractor;->getSampleTime()J
 
     move-result-wide v47
 
     const/16 v49, 0x0
 
-    move-object/from16 v43, v10
+    move-object/from16 v43, v8
 
-    move/from16 v44, v2
+    move/from16 v44, v3
 
     invoke-virtual/range {v43 .. v49}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
 
-    .line 520
-    iget-object v2, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    .line 535
+    iget-object v1, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
 
-    invoke-virtual {v2}, Landroid/media/MediaExtractor;->advance()Z
+    invoke-virtual {v1}, Landroid/media/MediaExtractor;->advance()Z
+    :try_end_65
+    .catch Ljava/lang/Exception; {:try_start_65 .. :try_end_65} :catch_33
+    .catchall {:try_start_65 .. :try_end_65} :catchall_27
 
-    goto :goto_70
+    goto :goto_7c
 
-    :cond_57
-    move-object/from16 p17, v3
-
-    :goto_70
-    move/from16 v69, v4
-
-    move/from16 v70, v5
-
-    move-object/from16 v9, v59
-
-    const/4 v2, 0x0
-
-    move/from16 v59, v11
-
-    goto/16 :goto_76
-
-    :catch_2b
+    :catch_32
     move-exception v0
 
-    goto/16 :goto_77
+    move/from16 v14, p9
 
-    :cond_58
-    move-object/from16 p17, v3
+    move-object/from16 v38, p16
 
-    move-object/from16 v53, v8
+    move-object v2, v0
 
-    move/from16 v58, v9
+    move v3, v4
 
-    if-eqz v4, :cond_61
+    move/from16 v44, v6
 
-    const/4 v3, -0x1
+    move-wide/from16 v47, v9
 
-    if-eq v11, v3, :cond_60
+    move/from16 v1, v18
 
-    if-ne v2, v11, :cond_61
+    move/from16 v6, v31
 
-    .line 524
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+    move-object/from16 v11, v36
 
-    const/16 v3, 0x1c
-
-    if-lt v2, v3, :cond_59
-
-    .line 525
-    iget-object v3, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    invoke-virtual {v3}, Landroid/media/MediaExtractor;->getSampleSize()J
-
-    move-result-wide v8
-
-    move/from16 v69, v4
-
-    int-to-long v3, v12
-
-    cmp-long v3, v8, v3
-
-    if-lez v3, :cond_5a
-
-    const-wide/16 v3, 0x400
-
-    add-long/2addr v8, v3
-
-    long-to-int v12, v8
-
-    .line 528
-    invoke-static {v12}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v52
-
-    goto :goto_71
-
-    :cond_59
-    move/from16 v69, v4
+    goto/16 :goto_cd
 
     :cond_5a
-    :goto_71
-    move-object/from16 v3, v52
+    move-object/from16 p17, v4
 
-    .line 531
-    iget-object v4, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    :goto_7c
+    move/from16 v59, v5
 
-    const/4 v8, 0x0
+    move-object/from16 v5, v62
 
-    invoke-virtual {v4, v3, v8}, Landroid/media/MediaExtractor;->readSampleData(Ljava/nio/ByteBuffer;I)I
+    const/4 v1, 0x0
 
-    move-result v4
+    move-wide/from16 v61, v9
 
-    move-object/from16 v9, v59
+    goto/16 :goto_83
 
-    iput v4, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
+    :catchall_27
+    move-exception v0
 
-    const/16 v4, 0x15
+    move/from16 v7, p7
 
-    if-ge v2, v4, :cond_5b
+    move/from16 v14, p9
 
-    .line 533
-    invoke-virtual {v3, v8}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    move-object v2, v0
 
-    .line 534
-    iget v2, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
+    move-wide/from16 v47, v9
 
-    invoke-virtual {v3, v2}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+    move/from16 v1, v18
 
-    .line 536
+    move/from16 v6, v31
+
+    :goto_7d
+    const/16 v27, 0x0
+
+    goto/16 :goto_c9
+
+    :catch_33
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-object/from16 v38, p16
+
+    move-object v2, v0
+
+    move/from16 v44, v6
+
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    move/from16 v6, v31
+
+    move-object/from16 v11, v36
+
+    goto/16 :goto_4e
+
     :cond_5b
-    iget v2, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
+    move-object/from16 v56, v1
 
-    if-ltz v2, :cond_5c
+    move-object/from16 p17, v4
 
-    .line 537
-    iget-object v2, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    if-eqz v29, :cond_64
 
-    move v4, v11
+    const/4 v1, -0x1
 
-    move v8, v12
+    if-eq v5, v1, :cond_63
 
-    invoke-virtual {v2}, Landroid/media/MediaExtractor;->getSampleTime()J
+    if-ne v3, v5, :cond_64
 
-    move-result-wide v11
+    .line 539
+    :try_start_66
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    :try_end_66
+    .catch Ljava/lang/Exception; {:try_start_66 .. :try_end_66} :catch_36
+    .catchall {:try_start_66 .. :try_end_66} :catchall_29
 
-    iput-wide v11, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    const/16 v2, 0x1c
 
-    .line 538
-    iget-object v2, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    invoke-virtual {v2}, Landroid/media/MediaExtractor;->advance()Z
-
-    goto :goto_72
-
-    :cond_5c
-    move v4, v11
-
-    move v8, v12
-
-    const/4 v2, 0x0
+    if-lt v1, v2, :cond_5c
 
     .line 540
-    iput v2, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
+    :try_start_67
+    iget-object v2, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
 
-    const/16 v23, 0x1
+    invoke-virtual {v2}, Landroid/media/MediaExtractor;->getSampleSize()J
+
+    move-result-wide v2
+
+    move/from16 v59, v5
+
+    int-to-long v4, v11
+
+    cmp-long v4, v2, v4
+
+    if-lez v4, :cond_5d
+
+    const-wide/16 v4, 0x400
+
+    add-long/2addr v2, v4
+
+    long-to-int v11, v2
 
     .line 543
-    :goto_72
-    iget v2, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
+    invoke-static {v11}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
-    if-lez v2, :cond_5f
+    move-result-object v32
+    :try_end_67
+    .catch Ljava/lang/Exception; {:try_start_67 .. :try_end_67} :catch_33
+    .catchall {:try_start_67 .. :try_end_67} :catchall_27
 
-    const-wide/16 v11, 0x0
+    goto :goto_7e
 
-    cmp-long v2, v14, v11
-
-    if-ltz v2, :cond_5d
-
-    iget-wide v11, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-
-    cmp-long v2, v11, v14
-
-    if-gez v2, :cond_5f
+    :cond_5c
+    move/from16 v59, v5
 
     :cond_5d
-    const/4 v2, 0x0
-
-    .line 544
-    iput v2, v9, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    .line 545
-    iget-object v11, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    invoke-virtual {v11}, Landroid/media/MediaExtractor;->getSampleFlags()I
-
-    move-result v11
-
-    iput v11, v9, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    :goto_7e
+    move-object/from16 v2, v32
 
     .line 546
-    iget-object v11, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+    :try_start_68
+    iget-object v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    :try_end_68
+    .catch Ljava/lang/Exception; {:try_start_68 .. :try_end_68} :catch_36
+    .catchall {:try_start_68 .. :try_end_68} :catchall_29
 
-    invoke-virtual {v11, v5, v3, v9, v2}, Lorg/telegram/messenger/video/MP4Builder;->writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;Z)J
+    const/4 v4, 0x0
 
-    move-result-wide v11
+    :try_start_69
+    invoke-virtual {v3, v2, v4}, Landroid/media/MediaExtractor;->readSampleData(Ljava/nio/ByteBuffer;I)I
 
-    const-wide/16 v41, 0x0
+    move-result v3
 
-    cmp-long v2, v11, v41
+    move-object/from16 v5, v62
 
-    if-eqz v2, :cond_5f
+    iput v3, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+    :try_end_69
+    .catch Ljava/lang/Exception; {:try_start_69 .. :try_end_69} :catch_35
+    .catchall {:try_start_69 .. :try_end_69} :catchall_29
+
+    const/16 v3, 0x15
+
+    if-ge v1, v3, :cond_5e
 
     .line 548
-    iget-object v2, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->callback:Lorg/telegram/messenger/MediaController$VideoConvertorListener;
-
-    if-eqz v2, :cond_5f
-
-    move-object/from16 v43, v3
-
-    move/from16 v59, v4
+    :try_start_6a
+    invoke-virtual {v2, v4}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    :try_end_6a
+    .catch Ljava/lang/Exception; {:try_start_6a .. :try_end_6a} :catch_32
+    .catchall {:try_start_6a .. :try_end_6a} :catchall_27
 
     .line 549
-    iget-wide v3, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    :try_start_6b
+    iget v1, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    sub-long v44, v3, v6
+    invoke-virtual {v2, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+    :try_end_6b
+    .catch Ljava/lang/Exception; {:try_start_6b .. :try_end_6b} :catch_33
+    .catchall {:try_start_6b .. :try_end_6b} :catchall_27
 
-    cmp-long v44, v44, v54
-
-    if-lez v44, :cond_5e
-
-    sub-long v54, v3, v6
-
+    .line 551
     :cond_5e
-    move-wide/from16 v3, v54
+    :try_start_6c
+    iget v1, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+    :try_end_6c
+    .catch Ljava/lang/Exception; {:try_start_6c .. :try_end_6c} :catch_36
+    .catchall {:try_start_6c .. :try_end_6c} :catchall_29
 
-    move/from16 v70, v5
-
-    long-to-float v5, v3
-
-    const/high16 v28, 0x447a0000    # 1000.0f
-
-    div-float v5, v5, v28
-
-    div-float v5, v5, v26
+    if-ltz v1, :cond_5f
 
     .line 552
-    invoke-interface {v2, v11, v12, v5}, Lorg/telegram/messenger/MediaController$VideoConvertorListener;->didWriteData(JF)V
+    :try_start_6d
+    iget-object v1, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
 
-    move-wide/from16 v54, v3
+    invoke-virtual {v1}, Landroid/media/MediaExtractor;->getSampleTime()J
 
-    goto :goto_73
+    move-result-wide v3
+
+    iput-wide v3, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    .line 553
+    iget-object v1, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+
+    invoke-virtual {v1}, Landroid/media/MediaExtractor;->advance()Z
+    :try_end_6d
+    .catch Ljava/lang/Exception; {:try_start_6d .. :try_end_6d} :catch_33
+    .catchall {:try_start_6d .. :try_end_6d} :catchall_27
+
+    goto :goto_7f
 
     :cond_5f
-    move-object/from16 v43, v3
+    const/4 v1, 0x0
 
-    move/from16 v59, v4
+    .line 555
+    :try_start_6e
+    iput v1, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+    :try_end_6e
+    .catch Ljava/lang/Exception; {:try_start_6e .. :try_end_6e} :catch_34
+    .catchall {:try_start_6e .. :try_end_6e} :catchall_29
 
-    move/from16 v70, v5
+    const/16 v40, 0x1
 
-    :goto_73
-    move v12, v8
+    .line 558
+    :goto_7f
+    :try_start_6f
+    iget v1, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+    :try_end_6f
+    .catch Ljava/lang/Exception; {:try_start_6f .. :try_end_6f} :catch_36
+    .catchall {:try_start_6f .. :try_end_6f} :catchall_29
 
-    move-object/from16 v52, v43
+    if-lez v1, :cond_62
 
-    goto :goto_75
+    const-wide/16 v3, 0x0
+
+    cmp-long v1, v9, v3
+
+    if-ltz v1, :cond_60
+
+    :try_start_70
+    iget-wide v3, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    :try_end_70
+    .catch Ljava/lang/Exception; {:try_start_70 .. :try_end_70} :catch_33
+    .catchall {:try_start_70 .. :try_end_70} :catchall_27
+
+    cmp-long v1, v3, v9
+
+    if-gez v1, :cond_62
 
     :cond_60
-    move/from16 v69, v4
+    const/4 v1, 0x0
 
-    move/from16 v70, v5
-
-    move-object/from16 v9, v59
-
-    move/from16 v59, v11
-
-    goto :goto_74
-
-    :cond_61
-    move/from16 v69, v4
-
-    move/from16 v70, v5
-
-    move-object/from16 v9, v59
-
-    move/from16 v59, v11
-
-    const/4 v3, -0x1
-
-    :goto_74
-    if-ne v2, v3, :cond_62
-
-    const/4 v2, 0x1
-
-    goto :goto_76
-
-    :cond_62
-    :goto_75
-    const/4 v2, 0x0
-
-    :goto_76
-    if-eqz v2, :cond_64
-
-    const-wide/16 v2, 0x9c4
+    .line 559
+    :try_start_71
+    iput v1, v5, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
     .line 560
-    invoke-virtual {v10, v2, v3}, Landroid/media/MediaCodec;->dequeueInputBuffer(J)I
+    iget-object v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+
+    invoke-virtual {v3}, Landroid/media/MediaExtractor;->getSampleFlags()I
+
+    move-result v3
+
+    iput v3, v5, Landroid/media/MediaCodec$BufferInfo;->flags:I
+
+    .line 561
+    iget-object v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+
+    invoke-virtual {v3, v7, v2, v5, v1}, Lorg/telegram/messenger/video/MP4Builder;->writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;Z)J
+
+    move-result-wide v3
+    :try_end_71
+    .catch Ljava/lang/Exception; {:try_start_71 .. :try_end_71} :catch_34
+    .catchall {:try_start_71 .. :try_end_71} :catchall_29
+
+    const-wide/16 v19, 0x0
+
+    cmp-long v1, v3, v19
+
+    if-eqz v1, :cond_62
+
+    .line 563
+    :try_start_72
+    iget-object v1, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->callback:Lorg/telegram/messenger/MediaController$VideoConvertorListener;
+    :try_end_72
+    .catch Ljava/lang/Exception; {:try_start_72 .. :try_end_72} :catch_36
+    .catchall {:try_start_72 .. :try_end_72} :catchall_29
+
+    if-eqz v1, :cond_62
+
+    move-wide/from16 v61, v9
+
+    .line 564
+    :try_start_73
+    iget-wide v9, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    sub-long v43, v9, v12
+
+    cmp-long v32, v43, v54
+
+    if-lez v32, :cond_61
+
+    sub-long v54, v9, v12
+
+    :cond_61
+    move-wide/from16 v9, v54
+
+    move-object/from16 v32, v2
+
+    long-to-float v2, v9
+
+    const/high16 v30, 0x447a0000    # 1000.0f
+
+    div-float v2, v2, v30
+
+    div-float v2, v2, v28
+
+    .line 567
+    invoke-interface {v1, v3, v4, v2}, Lorg/telegram/messenger/MediaController$VideoConvertorListener;->didWriteData(JF)V
+
+    move-wide/from16 v54, v9
+
+    goto :goto_82
+
+    :cond_62
+    move-object/from16 v32, v2
+
+    move-wide/from16 v61, v9
+
+    goto :goto_82
+
+    :catch_34
+    move-exception v0
+
+    move-wide/from16 v61, v9
+
+    move/from16 v14, p9
+
+    move-object/from16 v38, p16
+
+    move-object v2, v0
+
+    move v3, v1
+
+    goto :goto_80
+
+    :catch_35
+    move-exception v0
+
+    move-wide/from16 v61, v9
+
+    move/from16 v14, p9
+
+    move-object/from16 v38, p16
+
+    move-object v2, v0
+
+    move v3, v4
+
+    :goto_80
+    move/from16 v44, v6
+
+    move/from16 v1, v18
+
+    move/from16 v6, v31
+
+    move-object/from16 v11, v36
+
+    goto/16 :goto_bc
+
+    :catch_36
+    move-exception v0
+
+    move-wide/from16 v61, v9
+
+    goto :goto_85
+
+    :cond_63
+    move/from16 v59, v5
+
+    move-object/from16 v5, v62
+
+    move-wide/from16 v61, v9
+
+    goto :goto_81
+
+    :cond_64
+    move/from16 v59, v5
+
+    move-object/from16 v5, v62
+
+    move-wide/from16 v61, v9
+
+    const/4 v1, -0x1
+
+    :goto_81
+    if-ne v3, v1, :cond_65
+
+    const/4 v1, 0x1
+
+    goto :goto_83
+
+    :cond_65
+    :goto_82
+    const/4 v1, 0x0
+
+    :goto_83
+    if-eqz v1, :cond_67
+
+    const-wide/16 v1, 0x9c4
+
+    .line 575
+    invoke-virtual {v8, v1, v2}, Landroid/media/MediaCodec;->dequeueInputBuffer(J)I
 
     move-result v44
 
-    if-ltz v44, :cond_64
+    if-ltz v44, :cond_67
 
     const/16 v45, 0x0
 
@@ -4644,1416 +5190,1626 @@
 
     const/16 v49, 0x4
 
-    move-object/from16 v43, v10
+    move-object/from16 v43, v8
 
-    .line 562
+    .line 577
     invoke-virtual/range {v43 .. v49}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
-    :try_end_56
-    .catch Ljava/lang/Exception; {:try_start_56 .. :try_end_56} :catch_2b
-    .catchall {:try_start_56 .. :try_end_56} :catchall_28
+    :try_end_73
+    .catch Ljava/lang/Exception; {:try_start_73 .. :try_end_73} :catch_37
+    .catchall {:try_start_73 .. :try_end_73} :catchall_28
 
-    const/16 v23, 0x1
+    const/16 v40, 0x1
 
-    goto :goto_78
+    goto :goto_86
 
     :catchall_28
     move-exception v0
 
-    move/from16 v11, p9
+    goto :goto_84
 
-    move v10, v1
-
-    move-wide/from16 v47, v14
-
-    move/from16 v7, v32
-
-    move/from16 v5, v50
-
-    goto/16 :goto_42
-
-    :catch_2c
+    :catch_37
     move-exception v0
 
-    move-object/from16 p16, v9
-
-    move/from16 v58, v53
-
-    move-object/from16 v53, v8
-
-    :goto_77
-    move/from16 v11, p9
-
-    goto/16 :goto_a9
-
-    :cond_63
-    move/from16 p15, v2
-
-    move-object/from16 p17, v3
-
-    move/from16 v69, v4
-
-    move/from16 v70, v5
-
-    move-object/from16 p16, v9
-
-    move/from16 v58, v53
-
-    move-object/from16 v9, v59
-
-    move-object/from16 v53, v8
-
-    move/from16 v59, v11
-
-    :cond_64
-    :goto_78
-    xor-int/lit8 v2, v33, 0x1
-
-    move v3, v2
-
-    move/from16 v5, v50
-
-    const/4 v4, 0x1
-
-    move-object/from16 v2, p14
-
-    move/from16 p14, v12
-
-    move-wide/from16 v11, v63
-
-    :goto_79
-    if-nez v3, :cond_66
-
-    if-eqz v4, :cond_65
-
-    goto :goto_7a
-
-    :cond_65
-    move/from16 v43, p15
-
-    move-object/from16 v3, p17
-
-    move/from16 v50, v5
-
-    move-wide/from16 v63, v11
-
-    move-object/from16 v8, v53
-
-    move/from16 v53, v58
-
-    move/from16 v11, v59
-
-    move/from16 v4, v69
-
-    move/from16 v5, v70
-
-    move/from16 v12, p14
-
-    move-object/from16 p14, v2
-
-    move-object/from16 v59, v9
-
-    move/from16 v2, p7
-
-    move-object/from16 v9, p16
-
-    goto/16 :goto_6c
-
-    .line 571
-    :cond_66
-    :goto_7a
-    :try_start_57
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
-    :try_end_57
-    .catch Ljava/lang/Exception; {:try_start_57 .. :try_end_57} :catch_3d
-    .catchall {:try_start_57 .. :try_end_57} :catchall_37
-
-    if-eqz p21, :cond_67
-
-    const-wide/16 v43, 0x55f0
-
-    move-object/from16 v8, p10
-
-    move/from16 p10, v3
-
-    move-wide/from16 v71, v43
-
-    move/from16 v43, v4
-
-    move-wide/from16 v3, v71
-
-    goto :goto_7b
-
-    :cond_67
-    move-object/from16 v8, p10
-
-    move/from16 p10, v3
-
-    move/from16 v43, v4
-
-    const-wide/16 v3, 0x9c4
-
-    .line 572
-    :goto_7b
-    :try_start_58
-    invoke-virtual {v8, v9, v3, v4}, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo;J)I
-
-    move-result v3
-    :try_end_58
-    .catch Ljava/lang/Exception; {:try_start_58 .. :try_end_58} :catch_3c
-    .catchall {:try_start_58 .. :try_end_58} :catchall_37
-
-    const/4 v4, -0x1
-
-    if-ne v3, v4, :cond_68
-
-    move-wide/from16 v44, v11
-
-    move-wide/from16 v47, v14
-
-    move/from16 v1, v21
-
-    move/from16 v14, v51
-
-    move-object/from16 v12, v57
-
-    const/high16 v28, 0x447a0000    # 1000.0f
-
-    const/16 v43, 0x0
-
-    move v11, v4
-
-    move-object/from16 v4, v27
-
-    goto/16 :goto_8c
-
-    :cond_68
-    const/4 v4, -0x3
-
-    if-ne v3, v4, :cond_6a
-
-    .line 576
-    :try_start_59
-    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-ge v4, v1, :cond_69
-
-    .line 577
-    invoke-virtual {v8}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
-
-    move-result-object v2
-
-    :cond_69
-    move-wide/from16 v44, v11
-
-    move-wide/from16 v47, v14
-
-    move/from16 v1, v21
-
-    move-object/from16 v4, v27
-
-    move/from16 v14, v51
-
-    move-object/from16 v12, v57
-
-    :goto_7c
-    const/4 v11, -0x1
-
-    const/high16 v28, 0x447a0000    # 1000.0f
-
-    goto/16 :goto_8c
+    goto :goto_85
 
     :catchall_29
     move-exception v0
 
+    move-wide/from16 v61, v9
+
+    :goto_84
+    move/from16 v7, p7
+
     move/from16 v10, p8
 
-    move/from16 v11, p9
+    move/from16 v14, p9
 
-    move-object v1, v0
+    move-object v2, v0
 
-    move-wide/from16 v47, v14
+    move/from16 v1, v18
 
-    move/from16 v7, v32
+    move/from16 v6, v31
 
-    goto/16 :goto_b1
+    move-wide/from16 v47, v61
 
-    :catch_2d
+    goto/16 :goto_32
+
+    :catch_38
     move-exception v0
 
-    :goto_7d
-    move/from16 v11, p9
+    move-object/from16 p16, v6
 
-    goto/16 :goto_a8
+    move-wide/from16 v61, v9
 
-    :cond_6a
-    const/4 v1, -0x2
+    move/from16 v6, v56
 
-    if-ne v3, v1, :cond_6d
+    move-object/from16 v56, v1
 
-    .line 580
-    invoke-virtual {v8}, Landroid/media/MediaCodec;->getOutputFormat()Landroid/media/MediaFormat;
+    :goto_85
+    move/from16 v14, p9
 
-    move-result-object v1
+    move-object/from16 v38, p16
 
-    const/4 v4, -0x5
+    move-object v2, v0
 
-    if-ne v5, v4, :cond_6c
+    move/from16 v44, v6
 
-    if-eqz v1, :cond_6c
+    move/from16 v1, v18
 
-    .line 582
-    iget-object v4, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+    move/from16 v6, v31
 
-    move-wide/from16 v44, v11
+    move-object/from16 v11, v36
 
-    const/4 v11, 0x0
+    move-wide/from16 v47, v61
 
-    invoke-virtual {v4, v1, v11}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
+    goto/16 :goto_4e
 
-    move-result v4
-    :try_end_59
-    .catch Ljava/lang/Exception; {:try_start_59 .. :try_end_59} :catch_2d
-    .catchall {:try_start_59 .. :try_end_59} :catchall_29
+    :cond_66
+    move/from16 p14, v3
 
-    move-object/from16 v11, v60
+    move-object/from16 p17, v4
 
-    .line 583
-    :try_start_5a
-    invoke-virtual {v1, v11}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
+    move/from16 v59, v5
 
-    move-result v5
+    move-object/from16 p16, v6
 
-    if-eqz v5, :cond_6b
+    move/from16 v6, v56
 
-    invoke-virtual {v1, v11}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+    move-object/from16 v5, v62
 
-    move-result v5
+    move-object/from16 v56, v1
 
-    const/4 v12, 0x1
+    move-wide/from16 v61, v9
 
-    if-ne v5, v12, :cond_6b
+    :cond_67
+    :goto_86
+    xor-int/lit8 v1, v50, 0x1
 
-    move-object/from16 v12, v57
+    move v2, v1
 
-    .line 584
-    invoke-virtual {v1, v12}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
+    move/from16 v44, v6
 
-    move-result-object v5
-    :try_end_5a
-    .catch Ljava/lang/Exception; {:try_start_5a .. :try_end_5a} :catch_2f
-    .catchall {:try_start_5a .. :try_end_5a} :catchall_2b
+    move/from16 v43, v7
 
-    move/from16 v46, v4
+    move/from16 v4, v31
 
-    :try_start_5b
-    const-string v4, "csd-1"
+    move-wide/from16 v9, v61
 
-    .line 585
-    invoke-virtual {v1, v4}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
+    move-wide/from16 v6, v65
 
-    move-result-object v1
+    const/4 v3, 0x1
+
+    move-object/from16 v1, p10
+
+    :goto_87
+    if-nez v2, :cond_69
+
+    if-eqz v3, :cond_68
+
+    goto :goto_88
+
+    :cond_68
+    move/from16 v3, p7
+
+    move/from16 v2, p8
+
+    move-object/from16 p10, v1
+
+    move/from16 v31, v4
+
+    move-object/from16 v62, v5
+
+    move-wide/from16 v65, v6
+
+    move/from16 v7, v43
+
+    move-object/from16 v1, v56
+
+    move/from16 v5, v59
+
+    move/from16 v43, p14
+
+    move-object/from16 v6, p16
+
+    move-object/from16 v4, p17
+
+    move/from16 v56, v44
+
+    goto/16 :goto_78
 
     .line 586
-    invoke-virtual {v5}, Ljava/nio/ByteBuffer;->limit()I
+    :cond_69
+    :goto_88
+    :try_start_74
+    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
+    :try_end_74
+    .catch Ljava/lang/Exception; {:try_start_74 .. :try_end_74} :catch_51
+    .catchall {:try_start_74 .. :try_end_74} :catchall_38
 
-    move-result v4
+    if-eqz p21, :cond_6a
 
-    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->limit()I
+    const-wide/16 v45, 0x55f0
 
-    move-result v1
-    :try_end_5b
-    .catch Ljava/lang/Exception; {:try_start_5b .. :try_end_5b} :catch_2e
-    .catchall {:try_start_5b .. :try_end_5b} :catchall_2a
+    move/from16 p10, v2
 
-    add-int/2addr v4, v1
+    move/from16 p15, v3
 
-    move/from16 v39, v4
+    move-wide/from16 v2, v45
 
-    goto :goto_7e
+    goto :goto_89
+
+    :cond_6a
+    move/from16 p10, v2
+
+    move/from16 p15, v3
+
+    const-wide/16 v2, 0x9c4
+
+    :goto_89
+    move-object/from16 v71, v36
+
+    move/from16 v36, v11
+
+    move-object/from16 v11, v71
+
+    .line 587
+    :try_start_75
+    invoke-virtual {v11, v5, v2, v3}, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo;J)I
+
+    move-result v2
+    :try_end_75
+    .catch Ljava/lang/Exception; {:try_start_75 .. :try_end_75} :catch_50
+    .catchall {:try_start_75 .. :try_end_75} :catchall_38
+
+    const/4 v3, -0x1
+
+    if-ne v2, v3, :cond_6b
+
+    move-object/from16 v31, v1
+
+    move-wide/from16 v45, v6
+
+    move-wide/from16 v47, v9
+
+    move/from16 v7, v53
+
+    move/from16 v1, v57
+
+    move-object/from16 v6, v60
+
+    const/high16 v30, 0x447a0000    # 1000.0f
+
+    move v9, v3
+
+    const/4 v3, 0x0
+
+    :goto_8a
+    move/from16 v71, v39
+
+    move-object/from16 v39, v8
+
+    move/from16 v8, v71
+
+    goto/16 :goto_9c
+
+    :cond_6b
+    const/4 v3, -0x3
+
+    if-ne v2, v3, :cond_6d
+
+    .line 591
+    :try_start_76
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    move-wide/from16 v45, v6
+
+    const/16 v6, 0x15
+
+    if-ge v3, v6, :cond_6c
+
+    .line 592
+    invoke-virtual {v11}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
+
+    move-result-object v1
+
+    :cond_6c
+    move/from16 v3, p15
+
+    move-object/from16 v31, v1
+
+    move-wide/from16 v47, v9
+
+    move/from16 v7, v53
+
+    move/from16 v1, v57
+
+    move-object/from16 v6, v60
+
+    :goto_8b
+    const/4 v9, -0x1
+
+    const/high16 v30, 0x447a0000    # 1000.0f
+
+    goto :goto_8a
 
     :catchall_2a
     move-exception v0
 
-    goto :goto_7f
+    move/from16 v7, p7
 
-    :catch_2e
+    move/from16 v14, p9
+
+    move-object v2, v0
+
+    move v6, v4
+
+    :goto_8c
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    goto/16 :goto_7d
+
+    :catch_39
     move-exception v0
 
-    goto :goto_80
+    move/from16 v14, p9
 
-    :cond_6b
-    move/from16 v46, v4
+    move-object/from16 v38, p16
 
-    move-object/from16 v12, v57
+    move-object v2, v0
 
-    :goto_7e
-    move/from16 v5, v46
+    move v6, v4
 
-    goto :goto_81
+    :goto_8d
+    move-wide/from16 v47, v9
+
+    :goto_8e
+    move/from16 v1, v18
+
+    goto/16 :goto_4e
+
+    :cond_6d
+    move-wide/from16 v45, v6
+
+    const/4 v3, -0x2
+
+    if-ne v2, v3, :cond_71
+
+    .line 595
+    invoke-virtual {v11}, Landroid/media/MediaCodec;->getOutputFormat()Landroid/media/MediaFormat;
+
+    move-result-object v3
+
+    const/4 v6, -0x5
+
+    if-ne v4, v6, :cond_70
+
+    if-eqz v3, :cond_70
+
+    .line 597
+    iget-object v6, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+    :try_end_76
+    .catch Ljava/lang/Exception; {:try_start_76 .. :try_end_76} :catch_39
+    .catchall {:try_start_76 .. :try_end_76} :catchall_2a
+
+    const/4 v7, 0x0
+
+    :try_start_77
+    invoke-virtual {v6, v3, v7}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
+
+    move-result v6
+    :try_end_77
+    .catch Ljava/lang/Exception; {:try_start_77 .. :try_end_77} :catch_3c
+    .catchall {:try_start_77 .. :try_end_77} :catchall_2a
+
+    move-object/from16 v7, v35
+
+    .line 598
+    :try_start_78
+    invoke-virtual {v3, v7}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_6e
+
+    invoke-virtual {v3, v7}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+
+    move-result v4
+    :try_end_78
+    .catch Ljava/lang/Exception; {:try_start_78 .. :try_end_78} :catch_3b
+    .catchall {:try_start_78 .. :try_end_78} :catchall_2b
+
+    move/from16 v31, v6
+
+    const/4 v6, 0x1
+
+    if-ne v4, v6, :cond_6f
+
+    move-object/from16 v6, v60
+
+    .line 599
+    :try_start_79
+    invoke-virtual {v3, v6}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
+
+    move-result-object v4
+
+    move-object/from16 v35, v7
+
+    const-string v7, "csd-1"
+
+    .line 600
+    invoke-virtual {v3, v7}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
+
+    move-result-object v3
+
+    .line 601
+    invoke-virtual {v4}, Ljava/nio/ByteBuffer;->limit()I
+
+    move-result v4
+
+    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->limit()I
+
+    move-result v3
+    :try_end_79
+    .catch Ljava/lang/Exception; {:try_start_79 .. :try_end_79} :catch_3a
+    .catchall {:try_start_79 .. :try_end_79} :catchall_27
+
+    add-int/2addr v4, v3
+
+    move/from16 v51, v4
+
+    goto :goto_8f
+
+    :catch_3a
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-object/from16 v38, p16
+
+    move-object v2, v0
+
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    move/from16 v6, v31
+
+    goto/16 :goto_4e
+
+    :cond_6e
+    move/from16 v31, v6
+
+    :cond_6f
+    move-object/from16 v35, v7
+
+    move-object/from16 v6, v60
+
+    :goto_8f
+    move/from16 v4, v31
+
+    goto :goto_90
 
     :catchall_2b
     move-exception v0
 
-    move/from16 v46, v4
+    move/from16 v31, v6
 
-    :goto_7f
-    move/from16 v10, p8
+    move/from16 v7, p7
 
-    move/from16 v11, p9
+    move/from16 v14, p9
 
-    move-object v1, v0
+    move-object v2, v0
 
-    move-wide/from16 v47, v14
+    goto :goto_8c
 
-    move/from16 v7, v32
-
-    move/from16 v5, v46
-
-    goto/16 :goto_b1
-
-    :catch_2f
+    :catch_3b
     move-exception v0
 
-    move/from16 v46, v4
+    move/from16 v31, v6
 
-    :goto_80
-    move/from16 v11, p9
+    move/from16 v14, p9
 
-    move-object/from16 v31, p16
+    move-object/from16 v38, p16
 
-    move-object v1, v0
+    move-object v2, v0
 
-    move/from16 v4, v32
+    goto :goto_8d
 
-    move/from16 v20, v46
+    :catch_3c
+    move-exception v0
 
-    goto/16 :goto_b5
+    move/from16 v14, p9
 
-    :cond_6c
-    move-wide/from16 v44, v11
+    move-object/from16 v38, p16
 
-    move-object/from16 v12, v57
+    move-object v2, v0
 
-    move-object/from16 v11, v60
+    move v6, v4
 
-    :goto_81
-    move-object/from16 v60, v11
+    move v3, v7
 
-    move-wide/from16 v47, v14
+    move-wide/from16 v47, v9
 
-    move/from16 v1, v21
-
-    move-object/from16 v4, v27
-
-    move/from16 v14, v51
-
-    goto/16 :goto_7c
-
-    :cond_6d
-    move-wide/from16 v44, v11
-
-    move-object/from16 v12, v57
-
-    move-object/from16 v11, v60
-
-    if-ltz v3, :cond_98
-
-    .line 593
-    :try_start_5c
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-    :try_end_5c
-    .catch Ljava/lang/Exception; {:try_start_5c .. :try_end_5c} :catch_3c
-    .catchall {:try_start_5c .. :try_end_5c} :catchall_37
-
-    const/16 v4, 0x15
-
-    if-ge v1, v4, :cond_6e
-
-    .line 594
-    :try_start_5d
-    aget-object v1, v2, v3
-    :try_end_5d
-    .catch Ljava/lang/Exception; {:try_start_5d .. :try_end_5d} :catch_2d
-    .catchall {:try_start_5d .. :try_end_5d} :catchall_29
-
-    goto :goto_82
-
-    .line 596
-    :cond_6e
-    :try_start_5e
-    invoke-virtual {v8, v3}, Landroid/media/MediaCodec;->getOutputBuffer(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v1
-
-    :goto_82
-    if-eqz v1, :cond_97
-
-    .line 601
-    iget v4, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
-    :try_end_5e
-    .catch Ljava/lang/Exception; {:try_start_5e .. :try_end_5e} :catch_3c
-    .catchall {:try_start_5e .. :try_end_5e} :catchall_37
-
-    move-object/from16 v22, v2
-
-    const/4 v2, 0x1
-
-    if-le v4, v2, :cond_7c
-
-    .line 602
-    :try_start_5f
-    iget v2, v9, Landroid/media/MediaCodec$BufferInfo;->flags:I
-    :try_end_5f
-    .catch Ljava/lang/Exception; {:try_start_5f .. :try_end_5f} :catch_30
-    .catchall {:try_start_5f .. :try_end_5f} :catchall_2c
-
-    and-int/lit8 v46, v2, 0x2
-
-    if-nez v46, :cond_78
-
-    if-eqz v39, :cond_6f
-
-    and-int/lit8 v46, v2, 0x1
-
-    if-eqz v46, :cond_6f
-
-    move-object/from16 v60, v11
-
-    .line 604
-    :try_start_60
-    iget v11, v9, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    add-int v11, v11, v39
-
-    iput v11, v9, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    sub-int v4, v4, v39
-
-    .line 605
-    iput v4, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    goto :goto_83
-
-    :cond_6f
-    move-object/from16 v60, v11
-
-    :goto_83
-    if-eqz v40, :cond_74
-
-    and-int/lit8 v2, v2, 0x1
-
-    if-eqz v2, :cond_74
-
-    .line 608
-    iget v2, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    const/16 v11, 0x64
-
-    if-le v2, v11, :cond_73
-
-    .line 609
-    iget v2, v9, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    new-array v2, v11, [B
-
-    .line 611
-    invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-
-    const/4 v4, 0x0
-
-    const/16 v37, 0x0
-
-    :goto_84
-    const/16 v11, 0x60
-
-    if-ge v4, v11, :cond_73
-
-    .line 614
-    aget-byte v11, v2, v4
-
-    if-nez v11, :cond_71
-
-    add-int/lit8 v11, v4, 0x1
-
-    aget-byte v11, v2, v11
-
-    if-nez v11, :cond_71
-
-    add-int/lit8 v11, v4, 0x2
-
-    aget-byte v11, v2, v11
-
-    if-nez v11, :cond_71
-
-    add-int/lit8 v11, v4, 0x3
-
-    aget-byte v11, v2, v11
-
-    move-object/from16 v40, v2
-
-    const/4 v2, 0x1
-
-    if-ne v11, v2, :cond_72
-
-    add-int/lit8 v11, v37, 0x1
-
-    if-le v11, v2, :cond_70
-
-    .line 617
-    iget v2, v9, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    add-int/2addr v2, v4
-
-    iput v2, v9, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    .line 618
-    iget v2, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    sub-int/2addr v2, v4
-
-    iput v2, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
-    :try_end_60
-    .catch Ljava/lang/Exception; {:try_start_60 .. :try_end_60} :catch_2d
-    .catchall {:try_start_60 .. :try_end_60} :catchall_29
-
-    goto :goto_86
+    goto/16 :goto_61
 
     :cond_70
-    move/from16 v37, v11
+    move-object/from16 v6, v60
 
-    goto :goto_85
+    :goto_90
+    move/from16 v3, p15
+
+    move-object/from16 v31, v1
+
+    move-wide/from16 v47, v9
+
+    move/from16 v7, v53
+
+    move/from16 v1, v57
+
+    goto/16 :goto_8b
 
     :cond_71
-    move-object/from16 v40, v2
+    move-object/from16 v6, v60
 
+    if-ltz v2, :cond_9d
+
+    .line 608
+    :try_start_7a
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
+    :try_end_7a
+    .catch Ljava/lang/Exception; {:try_start_7a .. :try_end_7a} :catch_50
+    .catchall {:try_start_7a .. :try_end_7a} :catchall_38
+
+    const/16 v7, 0x15
+
+    if-ge v3, v7, :cond_72
+
+    .line 609
+    :try_start_7b
+    aget-object v3, v1, v2
+    :try_end_7b
+    .catch Ljava/lang/Exception; {:try_start_7b .. :try_end_7b} :catch_39
+    .catchall {:try_start_7b .. :try_end_7b} :catchall_2a
+
+    goto :goto_91
+
+    .line 611
     :cond_72
-    :goto_85
-    add-int/lit8 v4, v4, 0x1
+    :try_start_7c
+    invoke-virtual {v11, v2}, Landroid/media/MediaCodec;->getOutputBuffer(I)Ljava/nio/ByteBuffer;
 
-    move-object/from16 v2, v40
+    move-result-object v3
 
-    const/16 v11, 0x64
+    :goto_91
+    if-eqz v3, :cond_9c
 
-    goto :goto_84
+    .line 616
+    iget v7, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+    :try_end_7c
+    .catch Ljava/lang/Exception; {:try_start_7c .. :try_end_7c} :catch_50
+    .catchall {:try_start_7c .. :try_end_7c} :catchall_38
+
+    move-object/from16 v31, v1
+
+    const/4 v1, 0x1
+
+    if-le v7, v1, :cond_7f
+
+    .line 617
+    :try_start_7d
+    iget v1, v5, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    :try_end_7d
+    .catch Ljava/lang/Exception; {:try_start_7d .. :try_end_7d} :catch_42
+    .catchall {:try_start_7d .. :try_end_7d} :catchall_2c
+
+    and-int/lit8 v39, v1, 0x2
+
+    if-nez v39, :cond_7b
+
+    if-eqz v51, :cond_73
+
+    and-int/lit8 v39, v1, 0x1
+
+    if-eqz v39, :cond_73
+
+    move-wide/from16 v47, v9
+
+    .line 619
+    :try_start_7e
+    iget v9, v5, Landroid/media/MediaCodec$BufferInfo;->offset:I
+
+    add-int v9, v9, v51
+
+    iput v9, v5, Landroid/media/MediaCodec$BufferInfo;->offset:I
+
+    sub-int v7, v7, v51
+
+    .line 620
+    iput v7, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    goto :goto_92
+
+    :catch_3d
+    move-exception v0
+
+    goto/16 :goto_99
 
     :cond_73
-    :goto_86
-    const/16 v40, 0x0
+    move-wide/from16 v47, v9
+
+    :goto_92
+    if-eqz v52, :cond_77
+
+    and-int/lit8 v1, v1, 0x1
+
+    if-eqz v1, :cond_77
+
+    .line 623
+    iget v1, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    const/16 v9, 0x64
+
+    if-le v1, v9, :cond_76
+
+    .line 624
+    iget v1, v5, Landroid/media/MediaCodec$BufferInfo;->offset:I
+
+    invoke-virtual {v3, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    new-array v1, v9, [B
 
     .line 626
-    :cond_74
-    :try_start_61
-    iget-object v2, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+    invoke-virtual {v3, v1}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
-    const/4 v4, 0x1
+    const/4 v7, 0x0
 
-    invoke-virtual {v2, v5, v1, v9, v4}, Lorg/telegram/messenger/video/MP4Builder;->writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;Z)J
+    const/4 v10, 0x0
 
-    move-result-wide v1
+    :goto_93
+    const/16 v9, 0x60
 
-    const-wide/16 v41, 0x0
-
-    cmp-long v4, v1, v41
-
-    if-eqz v4, :cond_76
-
-    .line 628
-    iget-object v4, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->callback:Lorg/telegram/messenger/MediaController$VideoConvertorListener;
-    :try_end_61
-    .catch Ljava/lang/Exception; {:try_start_61 .. :try_end_61} :catch_30
-    .catchall {:try_start_61 .. :try_end_61} :catchall_2c
-
-    if-eqz v4, :cond_76
-
-    move-wide/from16 v47, v14
+    if-ge v7, v9, :cond_76
 
     .line 629
-    :try_start_62
-    iget-wide v14, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    aget-byte v9, v1, v7
 
-    sub-long v49, v14, v6
+    if-nez v9, :cond_74
 
-    cmp-long v11, v49, v54
+    add-int/lit8 v9, v7, 0x1
 
-    if-lez v11, :cond_75
+    aget-byte v9, v1, v9
 
-    sub-long v54, v14, v6
+    if-nez v9, :cond_74
 
-    :cond_75
-    move-wide/from16 v14, v54
+    add-int/lit8 v9, v7, 0x2
 
-    long-to-float v11, v14
+    aget-byte v9, v1, v9
 
-    const/high16 v28, 0x447a0000    # 1000.0f
+    if-nez v9, :cond_74
 
-    div-float v11, v11, v28
+    add-int/lit8 v9, v7, 0x3
 
-    div-float v11, v11, v26
+    aget-byte v9, v1, v9
+
+    move-object/from16 v39, v1
+
+    const/4 v1, 0x1
+
+    if-ne v9, v1, :cond_75
+
+    add-int/lit8 v10, v10, 0x1
+
+    if-le v10, v1, :cond_75
 
     .line 632
-    invoke-interface {v4, v1, v2, v11}, Lorg/telegram/messenger/MediaController$VideoConvertorListener;->didWriteData(JF)V
+    iget v1, v5, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
-    move-wide/from16 v54, v14
+    add-int/2addr v1, v7
 
-    goto :goto_87
+    iput v1, v5, Landroid/media/MediaCodec$BufferInfo;->offset:I
+
+    .line 633
+    iget v1, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    sub-int/2addr v1, v7
+
+    iput v1, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+    :try_end_7e
+    .catch Ljava/lang/Exception; {:try_start_7e .. :try_end_7e} :catch_3d
+    .catchall {:try_start_7e .. :try_end_7e} :catchall_2d
+
+    goto :goto_94
+
+    :cond_74
+    move-object/from16 v39, v1
+
+    :cond_75
+    add-int/lit8 v7, v7, 0x1
+
+    move-object/from16 v1, v39
+
+    const/16 v9, 0x64
+
+    goto :goto_93
 
     :cond_76
-    move-wide/from16 v47, v14
+    :goto_94
+    const/16 v52, 0x0
 
-    const/high16 v28, 0x447a0000    # 1000.0f
-
+    .line 641
     :cond_77
-    :goto_87
-    move/from16 v1, v21
+    :try_start_7f
+    iget-object v1, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
-    move-object/from16 v4, v27
+    const/4 v7, 0x1
 
-    move/from16 v14, v51
+    invoke-virtual {v1, v4, v3, v5, v7}, Lorg/telegram/messenger/video/MP4Builder;->writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;Z)J
 
-    goto/16 :goto_8a
+    move-result-wide v9
 
-    :cond_78
-    move-object/from16 v60, v11
+    const-wide/16 v19, 0x0
 
-    move-wide/from16 v47, v14
+    cmp-long v1, v9, v19
 
-    const/4 v2, -0x5
+    if-eqz v1, :cond_79
 
-    const/high16 v28, 0x447a0000    # 1000.0f
+    .line 643
+    iget-object v1, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->callback:Lorg/telegram/messenger/MediaController$VideoConvertorListener;
+    :try_end_7f
+    .catch Ljava/lang/Exception; {:try_start_7f .. :try_end_7f} :catch_3e
+    .catchall {:try_start_7f .. :try_end_7f} :catchall_2d
 
-    if-ne v5, v2, :cond_77
+    if-eqz v1, :cond_79
 
-    .line 636
-    new-array v2, v4, [B
-
-    .line 637
-    iget v11, v9, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    add-int/2addr v11, v4
-
-    invoke-virtual {v1, v11}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
-
-    .line 638
-    iget v4, v9, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    invoke-virtual {v1, v4}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    .line 639
-    invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-
-    .line 642
-    iget v1, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    const/4 v11, 0x1
-
-    sub-int/2addr v1, v11
-
-    :goto_88
-    if-ltz v1, :cond_7a
-
-    const/4 v4, 0x3
-
-    if-le v1, v4, :cond_7a
+    move-object/from16 v39, v8
 
     .line 644
-    aget-byte v14, v2, v1
+    :try_start_80
+    iget-wide v7, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    if-ne v14, v11, :cond_79
+    sub-long v60, v7, v12
 
-    add-int/lit8 v14, v1, -0x1
+    cmp-long v3, v60, v54
 
-    aget-byte v14, v2, v14
+    if-lez v3, :cond_78
 
-    if-nez v14, :cond_79
+    sub-long v54, v7, v12
 
-    add-int/lit8 v14, v1, -0x2
+    :cond_78
+    move-wide/from16 v7, v54
 
-    aget-byte v14, v2, v14
+    long-to-float v3, v7
 
-    if-nez v14, :cond_79
+    const/high16 v30, 0x447a0000    # 1000.0f
 
-    add-int/lit8 v14, v1, -0x3
+    div-float v3, v3, v30
 
-    aget-byte v15, v2, v14
+    div-float v3, v3, v28
 
-    if-nez v15, :cond_79
+    .line 647
+    invoke-interface {v1, v9, v10, v3}, Lorg/telegram/messenger/MediaController$VideoConvertorListener;->didWriteData(JF)V
 
-    .line 645
-    invoke-static {v14}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+    move-wide/from16 v54, v7
+
+    goto :goto_95
+
+    :cond_79
+    move-object/from16 v39, v8
+
+    const/high16 v30, 0x447a0000    # 1000.0f
+
+    :cond_7a
+    :goto_95
+    move/from16 v7, v53
+
+    move/from16 v1, v57
+
+    goto/16 :goto_9a
+
+    :catch_3e
+    move-exception v0
+
+    move-object/from16 v39, v8
+
+    goto/16 :goto_99
+
+    :cond_7b
+    move-object/from16 v39, v8
+
+    move-wide/from16 v47, v9
+
+    const/4 v1, -0x5
+
+    const/high16 v30, 0x447a0000    # 1000.0f
+
+    if-ne v4, v1, :cond_7a
+
+    .line 651
+    new-array v1, v7, [B
+
+    .line 652
+    iget v8, v5, Landroid/media/MediaCodec$BufferInfo;->offset:I
+
+    add-int/2addr v8, v7
+
+    invoke-virtual {v3, v8}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+
+    .line 653
+    iget v7, v5, Landroid/media/MediaCodec$BufferInfo;->offset:I
+
+    invoke-virtual {v3, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    .line 654
+    invoke-virtual {v3, v1}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
+
+    .line 657
+    iget v3, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    const/4 v7, 0x1
+
+    sub-int/2addr v3, v7
+
+    :goto_96
+    if-ltz v3, :cond_7d
+
+    const/4 v8, 0x3
+
+    if-le v3, v8, :cond_7d
+
+    .line 659
+    aget-byte v9, v1, v3
+
+    if-ne v9, v7, :cond_7c
+
+    add-int/lit8 v9, v3, -0x1
+
+    aget-byte v9, v1, v9
+
+    if-nez v9, :cond_7c
+
+    add-int/lit8 v9, v3, -0x2
+
+    aget-byte v9, v1, v9
+
+    if-nez v9, :cond_7c
+
+    add-int/lit8 v9, v3, -0x3
+
+    aget-byte v10, v1, v9
+
+    if-nez v10, :cond_7c
+
+    .line 660
+    invoke-static {v9}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v3
+
+    .line 661
+    iget v10, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    sub-int/2addr v10, v9
+
+    invoke-static {v10}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v10
+    :try_end_80
+    .catch Ljava/lang/Exception; {:try_start_80 .. :try_end_80} :catch_41
+    .catchall {:try_start_80 .. :try_end_80} :catchall_2d
+
+    const/4 v7, 0x0
+
+    .line 662
+    :try_start_81
+    invoke-virtual {v3, v1, v7, v9}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    .line 663
+    iget v8, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    sub-int/2addr v8, v9
+
+    invoke-virtual {v10, v1, v9, v8}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    .line 646
-    iget v15, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
+    invoke-virtual {v1, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    :try_end_81
+    .catch Ljava/lang/Exception; {:try_start_81 .. :try_end_81} :catch_3f
+    .catchall {:try_start_81 .. :try_end_81} :catchall_2d
 
-    sub-int/2addr v15, v14
+    goto :goto_97
 
-    invoke-static {v15}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+    :catch_3f
+    move-exception v0
 
-    move-result-object v15
+    move/from16 v14, p9
 
-    const/4 v4, 0x0
+    move-object/from16 v38, p16
 
-    .line 647
-    invoke-virtual {v1, v2, v4, v14}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
+    move-object v2, v0
 
-    move-result-object v11
+    move v6, v4
 
-    invoke-virtual {v11, v4}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    move v3, v7
 
-    .line 648
-    iget v11, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
+    goto :goto_98
 
-    sub-int/2addr v11, v14
+    :cond_7c
+    add-int/lit8 v3, v3, -0x1
 
-    invoke-virtual {v15, v2, v14, v11}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
+    const/4 v7, 0x1
 
-    move-result-object v2
+    goto :goto_96
 
-    invoke-virtual {v2, v4}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    :cond_7d
+    const/4 v3, 0x0
 
-    move-object v2, v1
+    const/4 v10, 0x0
 
-    goto :goto_89
+    :goto_97
+    move/from16 v7, v53
 
-    :cond_79
-    add-int/lit8 v1, v1, -0x1
+    move/from16 v1, v57
 
-    const/4 v11, 0x1
+    .line 671
+    :try_start_82
+    invoke-static {v14, v1, v7}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
 
-    goto :goto_88
+    move-result-object v8
 
-    :cond_7a
-    const/4 v2, 0x0
+    if-eqz v3, :cond_7e
 
-    const/4 v15, 0x0
+    if-eqz v10, :cond_7e
 
-    :goto_89
-    move/from16 v1, v21
+    .line 673
+    invoke-virtual {v8, v6, v3}, Landroid/media/MediaFormat;->setByteBuffer(Ljava/lang/String;Ljava/nio/ByteBuffer;)V
 
-    move-object/from16 v4, v27
+    const-string v3, "csd-1"
 
-    move/from16 v14, v51
+    .line 674
+    invoke-virtual {v8, v3, v10}, Landroid/media/MediaFormat;->setByteBuffer(Ljava/lang/String;Ljava/nio/ByteBuffer;)V
 
-    .line 656
-    invoke-static {v4, v1, v14}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
+    .line 676
+    :cond_7e
+    iget-object v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+    :try_end_82
+    .catch Ljava/lang/Exception; {:try_start_82 .. :try_end_82} :catch_41
+    .catchall {:try_start_82 .. :try_end_82} :catchall_2d
 
-    move-result-object v11
+    const/4 v9, 0x0
 
-    if-eqz v2, :cond_7b
+    :try_start_83
+    invoke-virtual {v3, v8, v9}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
 
-    if-eqz v15, :cond_7b
+    move-result v3
+    :try_end_83
+    .catch Ljava/lang/Exception; {:try_start_83 .. :try_end_83} :catch_40
+    .catchall {:try_start_83 .. :try_end_83} :catchall_2d
 
-    .line 658
-    invoke-virtual {v11, v12, v2}, Landroid/media/MediaFormat;->setByteBuffer(Ljava/lang/String;Ljava/nio/ByteBuffer;)V
+    move v4, v3
 
-    const-string v2, "csd-1"
+    goto :goto_9a
 
-    .line 659
-    invoke-virtual {v11, v2, v15}, Landroid/media/MediaFormat;->setByteBuffer(Ljava/lang/String;Ljava/nio/ByteBuffer;)V
+    :catch_40
+    move-exception v0
 
-    .line 661
-    :cond_7b
-    iget-object v2, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+    move/from16 v14, p9
 
-    const/4 v15, 0x0
+    move-object/from16 v38, p16
 
-    invoke-virtual {v2, v11, v15}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
+    move-object v2, v0
 
-    move-result v2
-    :try_end_62
-    .catch Ljava/lang/Exception; {:try_start_62 .. :try_end_62} :catch_31
-    .catchall {:try_start_62 .. :try_end_62} :catchall_2d
+    move v6, v4
 
-    move v5, v2
+    move v3, v9
 
-    goto :goto_8a
+    :goto_98
+    move/from16 v1, v18
+
+    move-object/from16 v8, v39
+
+    goto/16 :goto_cd
+
+    :catch_41
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-object/from16 v38, p16
+
+    move-object v2, v0
+
+    move v6, v4
+
+    move/from16 v1, v18
+
+    move-object/from16 v8, v39
+
+    goto/16 :goto_4e
 
     :catchall_2c
     move-exception v0
 
-    move-wide/from16 v47, v14
+    move-wide/from16 v47, v9
 
-    goto/16 :goto_8f
+    goto/16 :goto_9e
 
-    :catch_30
+    :catch_42
     move-exception v0
 
-    move-wide/from16 v47, v14
+    move-object/from16 v39, v8
 
-    goto/16 :goto_7d
+    move-wide/from16 v47, v9
 
-    :cond_7c
-    move-object/from16 v60, v11
+    :goto_99
+    move/from16 v14, p9
 
-    move-wide/from16 v47, v14
+    move-object/from16 v38, p16
 
-    move/from16 v1, v21
+    move-object v2, v0
 
-    move-object/from16 v4, v27
+    move v6, v4
 
-    move/from16 v14, v51
-
-    const/high16 v28, 0x447a0000    # 1000.0f
-
-    .line 664
-    :goto_8a
-    :try_start_63
-    iget v2, v9, Landroid/media/MediaCodec$BufferInfo;->flags:I
-
-    and-int/lit8 v2, v2, 0x4
-
-    if-eqz v2, :cond_7d
-
-    const/4 v2, 0x1
-
-    goto :goto_8b
-
-    :cond_7d
-    const/4 v2, 0x0
-
-    :goto_8b
-    const/4 v11, 0x0
-
-    .line 665
-    invoke-virtual {v8, v3, v11}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
-    :try_end_63
-    .catch Ljava/lang/Exception; {:try_start_63 .. :try_end_63} :catch_3a
-    .catchall {:try_start_63 .. :try_end_63} :catchall_35
-
-    const/4 v11, -0x1
-
-    move-object/from16 v71, v22
-
-    move/from16 v22, v2
-
-    move-object/from16 v2, v71
-
-    :goto_8c
-    if-eq v3, v11, :cond_7e
-
-    move/from16 v3, p10
-
-    move/from16 v21, v1
-
-    move-object/from16 v27, v4
-
-    move-object/from16 p10, v8
-
-    move-object/from16 v57, v12
-
-    move/from16 v51, v14
-
-    move/from16 v4, v43
-
-    move-wide/from16 v11, v44
-
-    move-wide/from16 v14, v47
-
-    move/from16 v1, p8
-
-    goto/16 :goto_79
-
-    :cond_7e
-    if-nez v33, :cond_95
-
-    move-object/from16 v57, v12
-
-    const-wide/16 v11, 0x9c4
-
-    .line 672
-    :try_start_64
-    invoke-virtual {v10, v9, v11, v12}, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo;J)I
-
-    move-result v3
-    :try_end_64
-    .catch Ljava/lang/Exception; {:try_start_64 .. :try_end_64} :catch_39
-    .catchall {:try_start_64 .. :try_end_64} :catchall_34
-
-    const/4 v15, -0x1
-
-    if-ne v3, v15, :cond_7f
-
-    move/from16 v11, p9
-
-    move/from16 v21, v1
-
-    move-object v12, v2
-
-    move-object/from16 v37, v4
-
-    move/from16 v51, v5
-
-    move-object/from16 v7, v56
-
-    :goto_8d
-    const/4 v3, 0x0
-
-    goto/16 :goto_a3
+    goto/16 :goto_8e
 
     :cond_7f
-    const/4 v11, -0x3
+    move-object/from16 v39, v8
 
-    if-ne v3, v11, :cond_81
+    move-wide/from16 v47, v9
 
-    :cond_80
-    :goto_8e
-    move/from16 v11, p9
+    move/from16 v7, v53
 
-    move/from16 v21, v1
+    move/from16 v1, v57
 
-    move-object v12, v2
-
-    move-object/from16 v37, v4
-
-    move/from16 v51, v5
-
-    move-wide/from16 v3, v44
-
-    move-object/from16 v7, v56
-
-    goto/16 :goto_a2
-
-    :cond_81
-    const/4 v11, -0x2
-
-    if-ne v3, v11, :cond_82
-
-    .line 678
-    :try_start_65
-    invoke-virtual {v10}, Landroid/media/MediaCodec;->getOutputFormat()Landroid/media/MediaFormat;
-
-    move-result-object v3
+    const/high16 v30, 0x447a0000    # 1000.0f
 
     .line 679
-    sget-boolean v11, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    :goto_9a
+    :try_start_84
+    iget v3, v5, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    :try_end_84
+    .catch Ljava/lang/Exception; {:try_start_84 .. :try_end_84} :catch_4e
+    .catchall {:try_start_84 .. :try_end_84} :catchall_36
 
-    if-eqz v11, :cond_80
+    and-int/lit8 v3, v3, 0x4
+
+    if-eqz v3, :cond_80
+
+    const/4 v3, 0x1
+
+    goto :goto_9b
+
+    :cond_80
+    const/4 v3, 0x0
+
+    :goto_9b
+    const/4 v8, 0x0
 
     .line 680
-    new-instance v11, Ljava/lang/StringBuilder;
+    :try_start_85
+    invoke-virtual {v11, v2, v8}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
+    :try_end_85
+    .catch Ljava/lang/Exception; {:try_start_85 .. :try_end_85} :catch_4d
+    .catchall {:try_start_85 .. :try_end_85} :catchall_35
 
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+    move v8, v3
 
-    const-string v12, "newFormat = "
+    const/4 v9, -0x1
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move/from16 v3, p15
 
-    invoke-virtual {v11, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :goto_9c
+    if-eq v2, v9, :cond_81
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move/from16 v2, p10
 
-    move-result-object v3
+    move/from16 v57, v1
 
-    invoke-static {v3}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
-    :try_end_65
-    .catch Ljava/lang/Exception; {:try_start_65 .. :try_end_65} :catch_31
-    .catchall {:try_start_65 .. :try_end_65} :catchall_2d
+    move-object/from16 v60, v6
 
-    goto :goto_8e
+    move/from16 v53, v7
+
+    move-object/from16 v1, v31
+
+    move-wide/from16 v6, v45
+
+    move-wide/from16 v9, v47
+
+    move-object/from16 v71, v39
+
+    move/from16 v39, v8
+
+    move-object/from16 v8, v71
+
+    move/from16 v72, v36
+
+    move-object/from16 v36, v11
+
+    move/from16 v11, v72
+
+    goto/16 :goto_87
+
+    :cond_81
+    if-nez v50, :cond_9b
+
+    move/from16 v57, v1
+
+    move-object/from16 v10, v39
+
+    const-wide/16 v1, 0x9c4
+
+    .line 687
+    :try_start_86
+    invoke-virtual {v10, v5, v1, v2}, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo;J)I
+
+    move-result v9
+    :try_end_86
+    .catch Ljava/lang/Exception; {:try_start_86 .. :try_end_86} :catch_4c
+    .catchall {:try_start_86 .. :try_end_86} :catchall_34
+
+    const/4 v1, -0x1
+
+    if-ne v9, v1, :cond_82
+
+    move/from16 v39, v3
+
+    move/from16 v53, v4
+
+    move-object v2, v5
+
+    move-object/from16 v60, v6
+
+    move/from16 v61, v7
+
+    move-object/from16 v49, v14
+
+    move-wide/from16 v6, v45
+
+    move-object/from16 v1, v58
+
+    const/16 v27, 0x0
+
+    move/from16 v14, p9
+
+    goto/16 :goto_b6
+
+    :cond_82
+    const/4 v2, -0x3
+
+    if-ne v9, v2, :cond_84
+
+    :cond_83
+    :goto_9d
+    move/from16 v39, v3
+
+    move/from16 v53, v4
+
+    move-object v2, v5
+
+    move-object/from16 v60, v6
+
+    move/from16 v61, v7
+
+    move-object/from16 v49, v14
+
+    move-wide/from16 v5, v45
+
+    move-object/from16 v1, v58
+
+    move/from16 v14, p9
+
+    goto/16 :goto_b5
+
+    :cond_84
+    const/4 v2, -0x2
+
+    if-ne v9, v2, :cond_85
+
+    .line 693
+    :try_start_87
+    invoke-virtual {v10}, Landroid/media/MediaCodec;->getOutputFormat()Landroid/media/MediaFormat;
+
+    move-result-object v2
+
+    .line 694
+    sget-boolean v9, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz v9, :cond_83
+
+    .line 695
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "newFormat = "
+
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+    :try_end_87
+    .catch Ljava/lang/Exception; {:try_start_87 .. :try_end_87} :catch_43
+    .catchall {:try_start_87 .. :try_end_87} :catchall_2d
+
+    goto :goto_9d
 
     :catchall_2d
     move-exception v0
 
-    :goto_8f
-    move/from16 v14, p7
+    :goto_9e
+    move/from16 v7, p7
 
     move/from16 v10, p8
 
-    move/from16 v11, p9
+    move/from16 v14, p9
 
-    goto/16 :goto_a6
+    move-object v2, v0
 
-    :catch_31
+    move v6, v4
+
+    move/from16 v1, v18
+
+    goto/16 :goto_32
+
+    :catch_43
     move-exception v0
 
-    move/from16 v11, p9
+    move/from16 v14, p9
 
-    :goto_90
-    move-object/from16 v31, p16
+    move-object/from16 v38, p16
 
-    move-object v1, v0
+    move-object v2, v0
 
-    move/from16 v20, v5
+    move v6, v4
 
-    goto/16 :goto_a4
+    move-object v8, v10
 
-    :cond_82
-    if-ltz v3, :cond_94
+    goto/16 :goto_8e
 
-    .line 685
-    :try_start_66
-    iget v11, v9, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    move/from16 v21, v1
-
-    move-object v12, v2
-
-    if-eqz v11, :cond_83
-
-    const/4 v11, 0x1
-
-    goto :goto_91
-
-    :cond_83
-    const/4 v11, 0x0
-
-    .line 686
-    :goto_91
-    iget-wide v1, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-    :try_end_66
-    .catch Ljava/lang/Exception; {:try_start_66 .. :try_end_66} :catch_39
-    .catchall {:try_start_66 .. :try_end_66} :catchall_34
-
-    const-wide/16 v41, 0x0
-
-    cmp-long v27, v47, v41
-
-    if-lez v27, :cond_84
-
-    cmp-long v27, v1, v47
-
-    if-ltz v27, :cond_84
-
-    .line 691
-    :try_start_67
-    iget v11, v9, Landroid/media/MediaCodec$BufferInfo;->flags:I
-
-    or-int/lit8 v11, v11, 0x4
-
-    iput v11, v9, Landroid/media/MediaCodec$BufferInfo;->flags:I
-    :try_end_67
-    .catch Ljava/lang/Exception; {:try_start_67 .. :try_end_67} :catch_31
-    .catchall {:try_start_67 .. :try_end_67} :catchall_2d
-
-    const/4 v11, 0x0
-
-    const/16 v23, 0x1
-
-    const/16 v33, 0x1
-
-    :cond_84
-    const-wide/16 v41, 0x0
-
-    cmp-long v27, v34, v41
-
-    if-ltz v27, :cond_87
-
-    .line 694
-    :try_start_68
-    iget v15, v9, Landroid/media/MediaCodec$BufferInfo;->flags:I
-
-    and-int/lit8 v15, v15, 0x4
-
-    if-eqz v15, :cond_87
-
-    sub-long v49, v34, v6
-
-    invoke-static/range {v49 .. v50}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide v49
-    :try_end_68
-    .catch Ljava/lang/Exception; {:try_start_68 .. :try_end_68} :catch_34
-    .catchall {:try_start_68 .. :try_end_68} :catchall_32
-
-    const v15, 0xf4240
-
-    move/from16 v27, v11
-
-    move/from16 v11, p9
-
-    :try_start_69
-    div-int/2addr v15, v11
-    :try_end_69
-    .catch Ljava/lang/Exception; {:try_start_69 .. :try_end_69} :catch_33
-    .catchall {:try_start_69 .. :try_end_69} :catchall_31
-
-    move-object/from16 v37, v4
-
-    move/from16 v51, v5
-
-    int-to-long v4, v15
-
-    cmp-long v4, v49, v4
-
-    if-lez v4, :cond_86
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v15, v6, v4
-
-    if-lez v15, :cond_85
-
-    .line 696
-    :try_start_6a
-    iget-object v4, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v4, v6, v7, v5}, Landroid/media/MediaExtractor;->seekTo(JI)V
-    :try_end_6a
-    .catch Ljava/lang/Exception; {:try_start_6a .. :try_end_6a} :catch_35
-    .catchall {:try_start_6a .. :try_end_6a} :catchall_33
-
-    const/4 v7, 0x0
-
-    goto :goto_92
-
-    .line 698
     :cond_85
-    :try_start_6b
-    iget-object v4, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-    :try_end_6b
-    .catch Ljava/lang/Exception; {:try_start_6b .. :try_end_6b} :catch_35
-    .catchall {:try_start_6b .. :try_end_6b} :catchall_30
+    if-ltz v9, :cond_9a
 
-    const-wide/16 v5, 0x0
+    .line 700
+    :try_start_88
+    iget v1, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    const/4 v7, 0x0
+    if-eqz v1, :cond_86
 
-    :try_start_6c
-    invoke-virtual {v4, v5, v6, v7}, Landroid/media/MediaExtractor;->seekTo(JI)V
-    :try_end_6c
-    .catch Ljava/lang/Exception; {:try_start_6c .. :try_end_6c} :catch_35
-    .catchall {:try_start_6c .. :try_end_6c} :catchall_2f
+    const/16 p15, 0x1
 
-    :goto_92
-    add-long v61, v44, v29
+    goto :goto_9f
+
+    :cond_86
+    const/16 p15, 0x0
+
+    .line 701
+    :goto_9f
+    iget-wide v1, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    :try_end_88
+    .catch Ljava/lang/Exception; {:try_start_88 .. :try_end_88} :catch_4c
+    .catchall {:try_start_88 .. :try_end_88} :catchall_34
+
+    const-wide/16 v19, 0x0
+
+    cmp-long v39, v47, v19
+
+    if-lez v39, :cond_87
+
+    cmp-long v39, v1, v47
+
+    if-ltz v39, :cond_87
+
+    move/from16 v39, v3
 
     .line 706
-    :try_start_6d
-    iget v4, v9, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    :try_start_89
+    iget v3, v5, Landroid/media/MediaCodec$BufferInfo;->flags:I
+
+    or-int/lit8 v3, v3, 0x4
+
+    iput v3, v5, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    :try_end_89
+    .catch Ljava/lang/Exception; {:try_start_89 .. :try_end_89} :catch_43
+    .catchall {:try_start_89 .. :try_end_89} :catchall_2d
+
+    const/4 v3, 0x0
+
+    const-wide/16 v19, 0x0
+
+    const/16 v40, 0x1
+
+    const/16 v50, 0x1
+
+    goto :goto_a0
+
+    :cond_87
+    move/from16 v39, v3
+
+    move/from16 v3, p15
+
+    const-wide/16 v19, 0x0
+
+    :goto_a0
+    cmp-long v49, v23, v19
+
+    if-ltz v49, :cond_8a
+
+    move/from16 p15, v3
+
+    .line 709
+    :try_start_8a
+    iget v3, v5, Landroid/media/MediaCodec$BufferInfo;->flags:I
+
+    and-int/lit8 v3, v3, 0x4
+
+    if-eqz v3, :cond_8b
+
+    sub-long v60, v23, v12
+
+    invoke-static/range {v60 .. v61}, Ljava/lang/Math;->abs(J)J
+
+    move-result-wide v60
+    :try_end_8a
+    .catch Ljava/lang/Exception; {:try_start_8a .. :try_end_8a} :catch_46
+    .catchall {:try_start_8a .. :try_end_8a} :catchall_31
+
+    const v3, 0xf4240
+
+    move-object/from16 v49, v14
+
+    move/from16 v14, p9
+
+    :try_start_8b
+    div-int/2addr v3, v14
+    :try_end_8b
+    .catch Ljava/lang/Exception; {:try_start_8b .. :try_end_8b} :catch_45
+    .catchall {:try_start_8b .. :try_end_8b} :catchall_30
+
+    move/from16 v53, v4
+
+    int-to-long v3, v3
+
+    cmp-long v3, v60, v3
+
+    if-lez v3, :cond_89
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v40, v12, v3
+
+    if-lez v40, :cond_88
+
+    .line 711
+    :try_start_8c
+    iget-object v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    :try_end_8c
+    .catch Ljava/lang/Exception; {:try_start_8c .. :try_end_8c} :catch_48
+    .catchall {:try_start_8c .. :try_end_8c} :catchall_33
+
+    const/4 v4, 0x0
+
+    :try_start_8d
+    invoke-virtual {v3, v12, v13, v4}, Landroid/media/MediaExtractor;->seekTo(JI)V
+    :try_end_8d
+    .catch Ljava/lang/Exception; {:try_start_8d .. :try_end_8d} :catch_47
+    .catchall {:try_start_8d .. :try_end_8d} :catchall_33
+
+    move-object/from16 v60, v6
+
+    move/from16 v61, v7
+
+    const/4 v4, 0x0
+
+    goto :goto_a1
+
+    .line 713
+    :cond_88
+    :try_start_8e
+    iget-object v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    :try_end_8e
+    .catch Ljava/lang/Exception; {:try_start_8e .. :try_end_8e} :catch_48
+    .catchall {:try_start_8e .. :try_end_8e} :catchall_2f
+
+    move-object/from16 v60, v6
+
+    move/from16 v61, v7
+
+    const/4 v4, 0x0
+
+    const-wide/16 v6, 0x0
+
+    :try_start_8f
+    invoke-virtual {v3, v6, v7, v4}, Landroid/media/MediaExtractor;->seekTo(JI)V
+    :try_end_8f
+    .catch Ljava/lang/Exception; {:try_start_8f .. :try_end_8f} :catch_47
+    .catchall {:try_start_8f .. :try_end_8f} :catchall_32
+
+    :goto_a1
+    add-long v63, v45, v41
+
+    .line 721
+    :try_start_90
+    iget v3, v5, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
     const/4 v6, -0x5
 
-    and-int/2addr v4, v6
+    and-int/2addr v3, v6
 
-    iput v4, v9, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    iput v3, v5, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
-    .line 707
+    .line 722
     invoke-virtual {v10}, Landroid/media/MediaCodec;->flush()V
-    :try_end_6d
-    .catch Ljava/lang/Exception; {:try_start_6d .. :try_end_6d} :catch_32
-    .catchall {:try_start_6d .. :try_end_6d} :catchall_2e
+    :try_end_90
+    .catch Ljava/lang/Exception; {:try_start_90 .. :try_end_90} :catch_44
+    .catchall {:try_start_90 .. :try_end_90} :catchall_2e
 
-    move/from16 v23, v7
+    move v3, v4
 
-    move/from16 v27, v23
+    move/from16 v40, v3
 
-    move/from16 v33, v27
+    move/from16 v50, v40
 
-    move-wide/from16 v47, v34
+    move-wide/from16 v47, v23
 
-    const/4 v4, 0x1
+    const/4 v7, 0x1
 
-    const-wide/16 v41, 0x0
+    const-wide/16 v19, 0x0
 
-    move-wide/from16 v34, v18
+    move-wide/from16 v23, v21
 
-    goto/16 :goto_97
+    goto/16 :goto_a7
 
     :catchall_2e
     move-exception v0
 
-    move/from16 v14, p7
+    move/from16 v7, p7
 
     move/from16 v10, p8
 
-    move-object v1, v0
+    move-object v2, v0
 
-    move v6, v7
+    move/from16 v27, v4
 
-    move/from16 v7, v32
+    move/from16 v1, v18
 
-    move-wide/from16 v47, v34
+    move-wide/from16 v47, v23
 
-    move/from16 v5, v51
+    move/from16 v6, v53
 
-    move-wide/from16 v34, v18
+    move-wide/from16 v23, v21
 
-    goto/16 :goto_c0
+    goto/16 :goto_d8
 
-    :catch_32
+    :catch_44
     move-exception v0
 
-    move-object/from16 v31, p16
+    move-object/from16 v38, p16
 
-    move-object v1, v0
+    move-object v2, v0
 
-    move/from16 v4, v32
+    move v3, v4
 
-    move-wide/from16 v14, v34
+    move-object v8, v10
 
-    move/from16 v20, v51
+    move/from16 v1, v18
 
-    move-wide/from16 v34, v18
+    move-wide/from16 v47, v23
 
-    goto/16 :goto_b5
+    move/from16 v6, v53
+
+    move-wide/from16 v23, v21
+
+    goto/16 :goto_cd
 
     :catchall_2f
     move-exception v0
 
-    goto :goto_93
+    goto :goto_a3
+
+    :cond_89
+    move-object/from16 v60, v6
+
+    move/from16 v61, v7
+
+    const/4 v4, 0x0
+
+    const/4 v6, -0x5
+
+    goto :goto_a6
 
     :catchall_30
     move-exception v0
 
-    const/4 v7, 0x0
+    goto :goto_a2
 
-    :goto_93
-    move/from16 v14, p7
+    :catch_45
+    move-exception v0
 
-    move/from16 v10, p8
-
-    move-object v1, v0
-
-    move v6, v7
-
-    move/from16 v7, v32
-
-    move/from16 v5, v51
-
-    goto/16 :goto_c0
-
-    :cond_86
-    const/4 v6, -0x5
-
-    const/4 v7, 0x0
-
-    goto :goto_96
+    goto :goto_a5
 
     :catchall_31
     move-exception v0
 
-    goto :goto_94
+    move/from16 v14, p9
 
-    :catch_33
+    :goto_a2
+    move/from16 v53, v4
+
+    :goto_a3
+    const/4 v4, 0x0
+
+    :goto_a4
+    move/from16 v7, p7
+
+    move/from16 v10, p8
+
+    move-object v2, v0
+
+    move/from16 v27, v4
+
+    move/from16 v1, v18
+
+    move/from16 v6, v53
+
+    goto/16 :goto_d8
+
+    :catch_46
     move-exception v0
 
-    goto :goto_95
+    move/from16 v14, p9
+
+    :goto_a5
+    move/from16 v53, v4
+
+    goto/16 :goto_b3
+
+    :cond_8a
+    move/from16 p15, v3
+
+    :cond_8b
+    move/from16 v53, v4
+
+    move-object/from16 v60, v6
+
+    move/from16 v61, v7
+
+    move-object/from16 v49, v14
+
+    const/4 v4, 0x0
+
+    const/4 v6, -0x5
+
+    move/from16 v14, p9
+
+    :goto_a6
+    move/from16 v3, p15
+
+    move v7, v4
+
+    const-wide/16 v19, 0x0
+
+    :goto_a7
+    cmp-long v27, v67, v19
+
+    if-lez v27, :cond_8c
+
+    move/from16 p15, v7
+
+    .line 725
+    :try_start_91
+    iget-wide v6, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    sub-long v6, v6, v67
+
+    cmp-long v6, v6, v33
+
+    if-gez v6, :cond_8d
+
+    iget v6, v5, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    :try_end_91
+    .catch Ljava/lang/Exception; {:try_start_91 .. :try_end_91} :catch_47
+    .catchall {:try_start_91 .. :try_end_91} :catchall_32
+
+    and-int/lit8 v6, v6, 0x4
+
+    if-nez v6, :cond_8d
+
+    move v3, v4
+
+    goto :goto_a8
 
     :catchall_32
     move-exception v0
 
-    move/from16 v11, p9
+    goto :goto_a4
 
-    :goto_94
-    move/from16 v51, v5
-
-    const/4 v7, 0x0
-
-    move/from16 v14, p7
-
-    move/from16 v10, p8
-
-    move-object v1, v0
-
-    move v6, v7
-
-    move/from16 v7, v32
-
-    goto/16 :goto_c0
-
-    :catch_34
+    :catch_47
     move-exception v0
 
-    move/from16 v11, p9
+    move-object/from16 v38, p16
 
-    :goto_95
-    move/from16 v51, v5
+    move-object v2, v0
 
-    goto/16 :goto_a0
+    move v3, v4
 
-    :cond_87
-    move-object/from16 v37, v4
+    move-object v8, v10
 
-    move/from16 v51, v5
+    move/from16 v1, v18
 
-    move/from16 v27, v11
+    move/from16 v6, v53
 
-    const/4 v6, -0x5
+    goto/16 :goto_cd
 
-    const/4 v7, 0x0
+    :cond_8c
+    move/from16 p15, v7
 
-    move/from16 v11, p9
+    :cond_8d
+    :goto_a8
+    const-wide/16 v6, 0x0
 
-    :goto_96
-    move v4, v7
+    cmp-long v27, v23, v6
 
-    const-wide/16 v41, 0x0
+    move-object/from16 v65, v5
 
-    :goto_97
-    cmp-long v5, v65, v41
+    if-ltz v27, :cond_8e
 
-    if-lez v5, :cond_88
+    move-wide/from16 v4, v23
 
-    .line 710
-    :try_start_6e
-    iget-wide v6, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    goto :goto_a9
 
-    sub-long v6, v6, v65
+    :cond_8e
+    move-wide v4, v12
 
-    cmp-long v5, v6, v24
+    :goto_a9
+    cmp-long v66, v4, v6
 
-    if-gez v5, :cond_88
+    if-lez v66, :cond_92
 
-    iget v5, v9, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    cmp-long v6, v69, v21
 
-    and-int/lit8 v5, v5, 0x4
+    if-nez v6, :cond_92
 
-    if-nez v5, :cond_88
+    cmp-long v1, v1, v4
 
-    const/4 v6, 0x0
+    if-gez v1, :cond_90
 
-    goto :goto_98
-
-    :catch_35
-    move-exception v0
-
-    goto/16 :goto_a0
-
-    :cond_88
-    move/from16 v6, v27
-
-    :goto_98
-    const-wide/16 v41, 0x0
-
-    cmp-long v5, v34, v41
-
-    move v15, v6
-
-    if-ltz v5, :cond_89
-
-    move-wide/from16 v6, v34
-
-    goto :goto_99
-
-    :cond_89
-    move-wide/from16 v6, p12
-
-    :goto_99
-    cmp-long v27, v6, v41
-
-    if-lez v27, :cond_8d
-
-    cmp-long v27, v67, v18
-
-    if-nez v27, :cond_8d
-
-    cmp-long v1, v1, v6
-
-    if-gez v1, :cond_8b
-
-    .line 717
+    .line 732
+    :try_start_92
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v1, :cond_8a
+    if-eqz v1, :cond_8f
 
-    .line 718
+    .line 733
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -6062,15 +6818,17 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v2, " present time = "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v6, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    move-object/from16 v2, v65
 
-    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    iget-wide v3, v2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -6078,1270 +6836,1613 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    :cond_8a
-    const/4 v6, 0x0
-
-    goto :goto_9a
-
-    .line 721
-    :cond_8b
-    iget-wide v1, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-
-    const-wide/32 v6, -0x80000000
-
-    cmp-long v6, v44, v6
-
-    if-eqz v6, :cond_8c
-
-    sub-long v61, v61, v1
-
-    :cond_8c
-    move-wide/from16 v67, v1
-
-    :cond_8d
-    move v6, v15
-
-    :goto_9a
-    if-eqz v4, :cond_8e
-
-    move-wide/from16 v67, v18
-
-    goto :goto_9b
-
-    :cond_8e
-    cmp-long v1, v34, v18
-
-    if-nez v1, :cond_8f
-
-    const-wide/16 v1, 0x0
-
-    cmp-long v4, v61, v1
-
-    if-eqz v4, :cond_8f
-
-    .line 731
-    iget-wide v1, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-
-    add-long v1, v1, v61
-
-    iput-wide v1, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-    :try_end_6e
-    .catch Ljava/lang/Exception; {:try_start_6e .. :try_end_6e} :catch_35
-    .catchall {:try_start_6e .. :try_end_6e} :catchall_33
-
-    .line 733
-    :cond_8f
-    :try_start_6f
-    invoke-virtual {v10, v3, v6}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
-
-    :goto_9b
-    if-eqz v6, :cond_92
-
-    .line 736
-    iget-wide v1, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-    :try_end_6f
-    .catch Ljava/lang/Exception; {:try_start_6f .. :try_end_6f} :catch_37
-    .catchall {:try_start_6f .. :try_end_6f} :catchall_33
-
-    move-wide/from16 v3, v44
-
-    if-ltz v5, :cond_90
-
-    .line 738
-    :try_start_70
-    invoke-static {v3, v4, v1, v2}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v3
-    :try_end_70
-    .catch Ljava/lang/Exception; {:try_start_70 .. :try_end_70} :catch_35
-    .catchall {:try_start_70 .. :try_end_70} :catchall_33
-
-    .line 742
-    :cond_90
-    :try_start_71
-    invoke-virtual/range {v53 .. v53}, Lorg/telegram/messenger/video/OutputSurface;->awaitNewImage()V
-    :try_end_71
-    .catch Ljava/lang/Exception; {:try_start_71 .. :try_end_71} :catch_36
-    .catchall {:try_start_71 .. :try_end_71} :catchall_33
-
-    const/4 v6, 0x0
-
-    goto :goto_9c
-
-    :catch_36
-    move-exception v0
-
-    move-object v5, v0
-
-    .line 745
-    :try_start_72
-    invoke-static {v5}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    const/4 v6, 0x1
-
-    :goto_9c
-    if-nez v6, :cond_91
-
-    .line 748
-    invoke-virtual/range {v53 .. v53}, Lorg/telegram/messenger/video/OutputSurface;->drawImage()V
-
-    .line 749
-    iget-wide v5, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-    :try_end_72
-    .catch Ljava/lang/Exception; {:try_start_72 .. :try_end_72} :catch_37
-    .catchall {:try_start_72 .. :try_end_72} :catchall_33
-
-    const-wide/16 v44, 0x3e8
-
-    mul-long v5, v5, v44
-
-    move-object/from16 v7, v56
-
-    :try_start_73
-    invoke-virtual {v7, v5, v6}, Lorg/telegram/messenger/video/InputSurface;->setPresentationTime(J)V
-
-    .line 750
-    invoke-virtual {v7}, Lorg/telegram/messenger/video/InputSurface;->swapBuffers()Z
-
-    goto :goto_9d
-
-    :cond_91
-    move-object/from16 v7, v56
-
-    :goto_9d
-    move-wide/from16 v65, v1
-
-    goto :goto_9e
-
-    :cond_92
-    move-wide/from16 v3, v44
-
-    move-object/from16 v7, v56
-
-    .line 753
-    :goto_9e
-    iget v1, v9, Landroid/media/MediaCodec$BufferInfo;->flags:I
-
-    and-int/lit8 v1, v1, 0x4
-
-    if-eqz v1, :cond_96
-
-    .line 755
-    sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
-
-    if-eqz v1, :cond_93
-
-    const-string v1, "decoder stream end"
-
-    .line 756
-    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
-
-    .line 758
-    :cond_93
-    invoke-virtual {v8}, Landroid/media/MediaCodec;->signalEndOfInputStream()V
-
-    move-wide/from16 v44, v3
-
-    goto/16 :goto_8d
-
-    :catch_37
-    move-exception v0
-
-    goto :goto_9f
-
-    :cond_94
-    move/from16 v11, p9
-
-    move/from16 v51, v5
-
-    move-object/from16 v7, v56
-
-    .line 683
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "unexpected result from decoder.dequeueOutputBuffer: "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-    :try_end_73
-    .catch Ljava/lang/Exception; {:try_start_73 .. :try_end_73} :catch_38
-    .catchall {:try_start_73 .. :try_end_73} :catchall_33
-
-    :catchall_33
-    move-exception v0
-
-    move/from16 v14, p7
-
-    move/from16 v10, p8
-
-    move-object v1, v0
-
-    move/from16 v7, v32
-
-    move/from16 v5, v51
-
-    goto/16 :goto_25
-
-    :catch_38
-    move-exception v0
-
-    move-object/from16 v31, p16
-
-    move-object v1, v0
-
-    move-object/from16 v56, v7
-
-    goto :goto_a1
-
-    :catchall_34
-    move-exception v0
-
-    move/from16 v11, p9
-
-    move/from16 v51, v5
-
-    goto/16 :goto_a5
-
-    :catch_39
-    move-exception v0
-
-    move/from16 v11, p9
-
-    move/from16 v51, v5
-
-    :goto_9f
-    move-object/from16 v7, v56
-
-    :goto_a0
-    move-object/from16 v31, p16
-
-    move-object v1, v0
-
-    :goto_a1
-    move/from16 v4, v32
-
-    move-wide/from16 v14, v47
-
-    move/from16 v20, v51
-
-    goto/16 :goto_b5
-
-    :cond_95
-    move/from16 v11, p9
-
-    move/from16 v21, v1
-
-    move-object/from16 v37, v4
-
-    move/from16 v51, v5
-
-    move-object/from16 v57, v12
-
-    move-wide/from16 v3, v44
-
-    move-object/from16 v7, v56
-
-    move-object v12, v2
-
-    :cond_96
-    :goto_a2
-    move-wide/from16 v44, v3
-
-    move/from16 v3, p10
-
-    :goto_a3
-    move/from16 v1, p8
-
-    move-object/from16 v56, v7
-
-    move-object/from16 p10, v8
-
-    move-object v2, v12
-
-    move-object/from16 v27, v37
-
-    move/from16 v4, v43
-
-    move-wide/from16 v11, v44
-
-    move/from16 v5, v51
-
-    move-wide/from16 v6, p12
-
-    move/from16 v51, v14
-
-    move-wide/from16 v14, v47
-
-    goto/16 :goto_79
-
-    :catchall_35
-    move-exception v0
-
-    move/from16 v11, p9
-
-    goto :goto_a5
-
-    :catch_3a
-    move-exception v0
-
-    move/from16 v11, p9
-
-    move-object/from16 v7, v56
-
-    goto/16 :goto_90
-
-    :cond_97
-    move/from16 v11, p9
-
-    move-wide/from16 v47, v14
-
-    move-object/from16 v7, v56
-
-    .line 599
-    :try_start_74
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "encoderOutputBuffer "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v3, " was null"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_98
-    move/from16 v11, p9
-
-    move-wide/from16 v47, v14
-
-    move-object/from16 v7, v56
-
-    .line 590
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "unexpected result from encoder.dequeueOutputBuffer: "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-    :try_end_74
-    .catch Ljava/lang/Exception; {:try_start_74 .. :try_end_74} :catch_3b
-    .catchall {:try_start_74 .. :try_end_74} :catchall_36
-
-    :catchall_36
-    move-exception v0
-
-    goto :goto_a5
-
-    :catch_3b
-    move-exception v0
-
-    move-object/from16 v31, p16
-
-    move-object v1, v0
-
-    move/from16 v20, v5
-
-    move-object/from16 v56, v7
-
-    :goto_a4
-    move/from16 v4, v32
-
-    move-wide/from16 v14, v47
-
-    goto/16 :goto_b5
-
-    :catch_3c
-    move-exception v0
-
-    move/from16 v11, p9
-
-    goto :goto_a7
-
-    :catchall_37
-    move-exception v0
-
-    move/from16 v11, p9
-
-    move-wide/from16 v47, v14
-
-    :goto_a5
-    move/from16 v14, p7
-
-    move/from16 v10, p8
-
-    :goto_a6
-    move-object v1, v0
-
-    move/from16 v7, v32
-
-    goto/16 :goto_25
-
-    :catch_3d
-    move-exception v0
-
-    move/from16 v11, p9
-
-    move-object/from16 v8, p10
-
-    :goto_a7
-    move-wide/from16 v47, v14
-
-    move-object/from16 v7, v56
-
-    :goto_a8
-    move-object/from16 v31, p16
-
-    move-object v1, v0
-
-    move/from16 v20, v5
-
-    move/from16 v4, v32
-
-    goto/16 :goto_b5
-
-    :catchall_38
-    move-exception v0
-
-    move/from16 v11, p9
-
-    move/from16 v10, p8
-
-    move-object v1, v0
-
-    move-wide/from16 v47, v14
-
-    move/from16 v7, v32
-
-    move/from16 v5, v50
-
-    goto/16 :goto_b1
-
-    :catch_3e
-    move-exception v0
-
-    move/from16 v11, p9
-
-    move-object/from16 p16, v9
-
-    move/from16 v58, v53
-
-    move-object/from16 v7, v56
-
-    move-object/from16 v53, v8
-
-    :goto_a9
-    move-object/from16 v8, p10
-
-    move-object/from16 v31, p16
-
-    move-object v1, v0
-
-    move/from16 v4, v32
-
-    move/from16 v20, v50
-
-    goto/16 :goto_b5
-
-    :catchall_39
-    move-exception v0
-
-    move/from16 v11, p9
-
-    goto/16 :goto_ad
-
-    :catch_3f
-    move-exception v0
-
-    move/from16 v11, p9
-
-    move-object/from16 p16, v9
-
-    move/from16 v58, v53
-
-    move-object/from16 v7, v56
-
-    move-object/from16 v53, v8
-
-    move-object/from16 v8, p10
-
-    move-object/from16 v31, p16
-
-    move-object v1, v0
-
-    move/from16 v4, v32
-
-    const/16 v20, -0x5
-
-    goto/16 :goto_b5
-
-    :catch_40
-    move-exception v0
-
-    move-object/from16 v13, p0
-
-    move/from16 v11, p9
-
-    move-wide/from16 v14, p14
-
     goto :goto_aa
 
-    :catch_41
-    move-exception v0
-
-    move-object/from16 v13, p0
-
-    move/from16 v11, p9
-
-    move-wide/from16 v14, p14
-
-    move-object/from16 v10, v52
+    :cond_8f
+    move-object/from16 v2, v65
 
     :goto_aa
-    move/from16 v58, v53
-
-    move-object/from16 v7, v56
-
-    move-object/from16 v53, v8
-
-    move-object/from16 v8, p10
-
-    move-object v1, v0
-
-    move/from16 v4, v32
-
-    const/16 v20, -0x5
-
-    const/16 v31, 0x0
-
-    goto/16 :goto_b5
-
-    :catchall_3a
-    move-exception v0
-
-    move-object/from16 v13, p0
-
-    move/from16 v11, p9
-
-    move-wide/from16 v14, p14
-
-    goto :goto_ad
-
-    :catch_42
-    move-exception v0
-
-    move-object/from16 v13, p0
-
-    move/from16 v11, p9
-
-    move-object/from16 v8, p10
-
-    move-wide/from16 v14, p14
-
-    move-object/from16 v10, v52
-
-    move/from16 v58, v53
-
-    move-object/from16 v7, v56
-
-    move-object v1, v0
+    const/4 v3, 0x0
 
     goto :goto_ab
 
-    :catch_43
-    move-exception v0
+    :cond_90
+    move-object/from16 v2, v65
 
-    move-wide/from16 v14, p14
+    .line 736
+    iget-wide v4, v2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    move-wide/from16 v34, p16
+    const-wide/32 v6, -0x80000000
 
-    move-object v10, v3
+    cmp-long v1, v45, v6
 
-    move-object v8, v7
+    if-eqz v1, :cond_91
 
-    move v11, v13
+    sub-long v63, v63, v4
 
-    move/from16 v58, v27
+    :cond_91
+    move-wide/from16 v69, v4
 
-    move-object/from16 v13, p0
-
-    move-object v7, v5
-
-    move-object v1, v0
-
-    move-object/from16 v56, v7
-
-    :goto_ab
-    move/from16 v4, v32
-
-    goto :goto_ac
-
-    :catch_44
-    move-exception v0
-
-    move-wide/from16 v14, p14
-
-    move-wide/from16 v34, p16
-
-    move-object v8, v7
-
-    move v11, v13
-
-    move/from16 v58, v27
-
-    move-object/from16 v13, p0
-
-    move-object v7, v5
-
-    move-object v1, v0
-
-    move-object/from16 v56, v7
-
-    move/from16 v4, v32
-
-    const/4 v10, 0x0
-
-    :goto_ac
-    const/16 v20, -0x5
-
-    const/16 v31, 0x0
-
-    const/16 v53, 0x0
-
-    goto/16 :goto_b5
-
-    :catchall_3b
-    move-exception v0
-
-    move-wide/from16 v14, p14
-
-    move-wide/from16 v34, p16
-
-    move v11, v13
-
-    move-object/from16 v13, p0
-
-    :goto_ad
-    move/from16 v10, p8
-
-    move-object v1, v0
-
-    move-wide/from16 v47, v14
-
-    move/from16 v7, v32
-
-    goto/16 :goto_b0
-
-    :catch_45
-    move-exception v0
-
-    move-wide/from16 v14, p14
-
-    move-wide/from16 v34, p16
-
-    move-object v8, v7
-
-    move v11, v13
-
-    move/from16 v58, v27
-
-    move-object/from16 v13, p0
-
-    move-object v1, v0
-
-    move/from16 v4, v32
-
-    goto/16 :goto_b4
-
-    :catchall_3c
-    move-exception v0
-
-    move-wide/from16 v14, p14
-
-    move-wide/from16 v34, p16
-
-    move v11, v13
-
-    move-object/from16 v13, p0
-
-    goto :goto_ae
-
-    :catch_46
-    move-exception v0
-
-    move-wide/from16 v14, p14
-
-    move-wide/from16 v34, p16
-
-    move v11, v13
-
-    move/from16 v58, v27
-
-    move-object/from16 v13, p0
-
-    goto :goto_b3
-
-    :catchall_3d
-    move-exception v0
-
-    move-wide/from16 v34, p16
-
-    move v11, v13
-
-    move-object v13, v14
-
-    move-wide/from16 v14, p14
-
-    :goto_ae
-    move/from16 v10, p8
-
-    move-object v1, v0
-
-    move v7, v4
-
-    goto :goto_af
-
-    :catch_47
-    move-exception v0
-
-    move-wide/from16 v34, p16
-
-    move v11, v13
-
-    move-object v13, v14
-
-    move/from16 v58, v27
-
-    move-wide/from16 v14, p14
-
-    goto :goto_b3
-
-    :catchall_3e
-    move-exception v0
-
-    move v11, v13
-
-    move-object v13, v14
-
-    move-wide/from16 v14, p14
-
-    move/from16 v10, p8
-
-    move/from16 v7, p10
-
-    move-wide/from16 v34, p16
-
-    move-object v1, v0
-
-    :goto_af
-    move-wide/from16 v47, v14
-
-    :goto_b0
-    const/4 v5, -0x5
-
-    :goto_b1
-    const/4 v6, 0x0
-
-    :goto_b2
-    move/from16 v14, p7
-
-    goto/16 :goto_c0
+    goto :goto_ab
 
     :catch_48
     move-exception v0
 
-    move/from16 v58, v3
+    goto/16 :goto_b3
 
-    move v11, v13
+    :cond_92
+    move-object/from16 v2, v65
 
-    move-object v13, v14
+    :goto_ab
+    if-eqz p15, :cond_93
 
-    move-wide/from16 v14, p14
+    move-wide/from16 v69, v21
 
-    move/from16 v4, p10
+    goto :goto_ac
 
-    move-wide/from16 v34, p16
+    :cond_93
+    cmp-long v1, v23, v21
 
-    :goto_b3
+    if-nez v1, :cond_94
+
+    const-wide/16 v5, 0x0
+
+    cmp-long v1, v63, v5
+
+    if-eqz v1, :cond_94
+
+    .line 746
+    iget-wide v5, v2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    add-long v5, v5, v63
+
+    iput-wide v5, v2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    :try_end_92
+    .catch Ljava/lang/Exception; {:try_start_92 .. :try_end_92} :catch_48
+    .catchall {:try_start_92 .. :try_end_92} :catchall_33
+
+    .line 748
+    :cond_94
+    :try_start_93
+    invoke-virtual {v10, v9, v3}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
+
+    :goto_ac
+    if-eqz v3, :cond_97
+
+    .line 751
+    iget-wide v3, v2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    :try_end_93
+    .catch Ljava/lang/Exception; {:try_start_93 .. :try_end_93} :catch_4a
+    .catchall {:try_start_93 .. :try_end_93} :catchall_33
+
+    move-wide/from16 v5, v45
+
+    if-ltz v27, :cond_95
+
+    .line 753
+    :try_start_94
+    invoke-static {v5, v6, v3, v4}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v6
+    :try_end_94
+    .catch Ljava/lang/Exception; {:try_start_94 .. :try_end_94} :catch_48
+    .catchall {:try_start_94 .. :try_end_94} :catchall_33
+
+    goto :goto_ad
+
+    :cond_95
+    move-wide v6, v5
+
+    .line 757
+    :goto_ad
+    :try_start_95
+    invoke-virtual/range {v56 .. v56}, Lorg/telegram/messenger/video/OutputSurface;->awaitNewImage()V
+    :try_end_95
+    .catch Ljava/lang/Exception; {:try_start_95 .. :try_end_95} :catch_49
+    .catchall {:try_start_95 .. :try_end_95} :catchall_33
+
+    const/4 v1, 0x0
+
+    goto :goto_ae
+
+    :catch_49
+    move-exception v0
+
     move-object v1, v0
 
-    const/4 v8, 0x0
+    .line 760
+    :try_start_96
+    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    :goto_b4
-    const/4 v10, 0x0
+    const/4 v1, 0x1
 
-    const/16 v20, -0x5
+    :goto_ae
+    if-nez v1, :cond_96
 
-    const/16 v31, 0x0
+    .line 763
+    invoke-virtual/range {v56 .. v56}, Lorg/telegram/messenger/video/OutputSurface;->drawImage()V
 
-    const/16 v53, 0x0
+    move-wide/from16 v45, v3
 
-    const/16 v56, 0x0
+    .line 764
+    iget-wide v3, v2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    :try_end_96
+    .catch Ljava/lang/Exception; {:try_start_96 .. :try_end_96} :catch_4a
+    .catchall {:try_start_96 .. :try_end_96} :catchall_33
+
+    const-wide/16 v65, 0x3e8
+
+    mul-long v3, v3, v65
+
+    move-object/from16 v1, v58
+
+    :try_start_97
+    invoke-virtual {v1, v3, v4}, Lorg/telegram/messenger/video/InputSurface;->setPresentationTime(J)V
+
+    .line 765
+    invoke-virtual {v1}, Lorg/telegram/messenger/video/InputSurface;->swapBuffers()Z
+
+    goto :goto_af
+
+    :cond_96
+    move-wide/from16 v45, v3
+
+    move-object/from16 v1, v58
+
+    :goto_af
+    move-wide/from16 v67, v45
+
+    goto :goto_b0
+
+    :cond_97
+    move-wide/from16 v5, v45
+
+    move-object/from16 v1, v58
+
+    move-wide v6, v5
 
     .line 768
-    :goto_b5
-    :try_start_75
-    instance-of v2, v1, Ljava/lang/IllegalStateException;
-    :try_end_75
-    .catchall {:try_start_75 .. :try_end_75} :catchall_42
+    :goto_b0
+    iget v3, v2, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
-    if-eqz v2, :cond_99
+    and-int/lit8 v3, v3, 0x4
 
-    if-nez p21, :cond_99
+    if-eqz v3, :cond_99
 
-    const/4 v6, 0x1
+    .line 770
+    sget-boolean v3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    goto :goto_b6
+    if-eqz v3, :cond_98
 
-    :cond_99
-    const/4 v6, 0x0
+    const-string v3, "decoder stream end"
 
     .line 771
+    invoke-static {v3}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    .line 773
+    :cond_98
+    invoke-virtual {v11}, Landroid/media/MediaCodec;->signalEndOfInputStream()V
+
+    const/16 v27, 0x0
+
+    goto/16 :goto_b6
+
+    :cond_99
+    move/from16 v27, p10
+
+    goto/16 :goto_b6
+
+    :catch_4a
+    move-exception v0
+
+    goto :goto_b2
+
+    :cond_9a
+    move/from16 v14, p9
+
+    move/from16 v53, v4
+
+    move-object/from16 v1, v58
+
+    .line 698
+    new-instance v2, Ljava/lang/RuntimeException;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "unexpected result from decoder.dequeueOutputBuffer: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+    :try_end_97
+    .catch Ljava/lang/Exception; {:try_start_97 .. :try_end_97} :catch_4b
+    .catchall {:try_start_97 .. :try_end_97} :catchall_33
+
+    :catchall_33
+    move-exception v0
+
+    goto :goto_b1
+
+    :catch_4b
+    move-exception v0
+
+    move-object/from16 v38, p16
+
+    move-object v2, v0
+
+    move-object/from16 v58, v1
+
+    goto :goto_b4
+
+    :catchall_34
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move/from16 v53, v4
+
+    :goto_b1
+    move/from16 v7, p7
+
+    move/from16 v10, p8
+
+    move-object v2, v0
+
+    move/from16 v1, v18
+
+    move/from16 v6, v53
+
+    goto/16 :goto_32
+
+    :catch_4c
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move/from16 v53, v4
+
+    :goto_b2
+    move-object/from16 v1, v58
+
+    :goto_b3
+    move-object/from16 v38, p16
+
+    move-object v2, v0
+
+    :goto_b4
+    move-object v8, v10
+
+    move/from16 v1, v18
+
+    move/from16 v6, v53
+
+    goto/16 :goto_4e
+
+    :cond_9b
+    move/from16 v57, v1
+
+    move/from16 v53, v4
+
+    move-object v2, v5
+
+    move-object/from16 v60, v6
+
+    move/from16 v61, v7
+
+    move-object/from16 v49, v14
+
+    move-object/from16 v10, v39
+
+    move-wide/from16 v5, v45
+
+    move-object/from16 v1, v58
+
+    move/from16 v14, p9
+
+    move/from16 v39, v3
+
+    :goto_b5
+    move/from16 v27, p10
+
+    move-wide v6, v5
+
     :goto_b6
-    :try_start_76
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-object/from16 v58, v1
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-object v5, v2
 
-    const-string v3, "bitrate: "
+    move/from16 v2, v27
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object/from16 v1, v31
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move/from16 v3, v39
 
-    const-string v3, " framerate: "
+    move-object/from16 v14, v49
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move/from16 v4, v53
 
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move/from16 v53, v61
 
-    const-string v3, " size: "
+    move/from16 v39, v8
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    :try_end_76
-    .catchall {:try_start_76 .. :try_end_76} :catchall_41
+    move-object v8, v10
 
-    move/from16 v3, p8
+    move-wide/from16 v9, v47
 
-    :try_start_77
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move/from16 v71, v36
 
-    const-string/jumbo v5, "x"
+    move-object/from16 v36, v11
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    :try_end_77
-    .catchall {:try_start_77 .. :try_end_77} :catchall_40
+    move/from16 v11, v71
 
-    move/from16 v5, p7
+    goto/16 :goto_87
 
-    :try_start_78
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    :catchall_35
+    move-exception v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move/from16 v14, p9
+
+    move v3, v8
+
+    goto/16 :goto_ba
+
+    :catch_4d
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move v3, v8
+
+    move-object/from16 v10, v39
+
+    move-object/from16 v1, v58
+
+    goto :goto_b7
+
+    :catchall_36
+    move-exception v0
+
+    move/from16 v14, p9
+
+    goto/16 :goto_b9
+
+    :catch_4e
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-object/from16 v10, v39
+
+    move-object/from16 v1, v58
+
+    const/4 v3, 0x0
+
+    :goto_b7
+    move-object/from16 v38, p16
+
+    move-object v2, v0
+
+    goto :goto_b8
+
+    :cond_9c
+    move/from16 v14, p9
+
+    move-wide/from16 v47, v9
+
+    move-object/from16 v1, v58
+
+    const/4 v3, 0x0
+
+    move-object v10, v8
+
+    .line 614
+    :try_start_98
+    new-instance v5, Ljava/lang/RuntimeException;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "encoderOutputBuffer "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, " was null"
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
+    invoke-direct {v5, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 772
-    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-    :try_end_78
-    .catchall {:try_start_78 .. :try_end_78} :catchall_3f
+    throw v5
 
-    move/from16 v36, v6
+    :cond_9d
+    move/from16 v14, p9
 
-    move-object/from16 v9, v31
+    move-wide/from16 v47, v9
 
-    const/4 v6, 0x1
+    move-object/from16 v1, v58
 
-    .line 776
-    :goto_b7
-    :try_start_79
-    iget-object v1, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    const/4 v3, 0x0
 
-    move/from16 v2, v58
+    move-object v10, v8
 
-    invoke-virtual {v1, v2}, Landroid/media/MediaExtractor;->unselectTrack(I)V
+    .line 605
+    new-instance v5, Ljava/lang/RuntimeException;
 
-    if-eqz v10, :cond_9b
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    .line 778
-    invoke-virtual {v10}, Landroid/media/MediaCodec;->stop()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 779
-    invoke-virtual {v10}, Landroid/media/MediaCodec;->release()V
+    const-string/jumbo v7, "unexpected result from encoder.dequeueOutputBuffer: "
 
-    goto :goto_b9
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v5, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v5
+    :try_end_98
+    .catch Ljava/lang/Exception; {:try_start_98 .. :try_end_98} :catch_4f
+    .catchall {:try_start_98 .. :try_end_98} :catchall_37
+
+    :catchall_37
+    move-exception v0
+
+    goto :goto_ba
+
+    :catch_4f
+    move-exception v0
+
+    move-object/from16 v38, p16
+
+    move-object v2, v0
+
+    move-object/from16 v58, v1
+
+    :goto_b8
+    move v6, v4
+
+    move-object v8, v10
+
+    goto/16 :goto_61
+
+    :catch_50
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v47, v9
+
+    goto :goto_bb
+
+    :catchall_38
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v47, v9
+
+    :goto_b9
+    const/4 v3, 0x0
+
+    :goto_ba
+    move/from16 v7, p7
+
+    move/from16 v10, p8
+
+    move-object v2, v0
+
+    move/from16 v27, v3
+
+    move v6, v4
+
+    move/from16 v1, v18
+
+    goto/16 :goto_d8
+
+    :catch_51
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v47, v9
+
+    move-object/from16 v11, v36
+
+    :goto_bb
+    move-object/from16 v1, v58
+
+    const/4 v3, 0x0
+
+    move-object v10, v8
+
+    move-object/from16 v38, p16
+
+    move-object v2, v0
+
+    move v6, v4
+
+    goto/16 :goto_61
+
+    :catchall_39
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v61, v9
+
+    const/4 v3, 0x0
+
+    move/from16 v7, p7
+
+    move/from16 v10, p8
+
+    move-object v2, v0
+
+    move/from16 v27, v3
+
+    move/from16 v1, v18
+
+    move/from16 v6, v31
+
+    move-wide/from16 v47, v61
+
+    goto/16 :goto_d8
+
+    :catch_52
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-object/from16 p16, v6
+
+    move-wide/from16 v61, v9
+
+    move-object/from16 v11, v36
+
+    move/from16 v44, v56
+
+    const/4 v3, 0x0
+
+    move-object/from16 v56, v1
+
+    move-object v10, v8
+
+    move-object/from16 v1, v58
+
+    move-object/from16 v38, p16
+
+    move-object v2, v0
+
+    move/from16 v1, v18
+
+    move/from16 v6, v31
+
+    :goto_bc
+    move-wide/from16 v47, v61
+
+    goto/16 :goto_cd
+
+    :catchall_3a
+    move-exception v0
+
+    move/from16 v14, p9
+
+    goto/16 :goto_bf
+
+    :catch_53
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-object/from16 p16, v6
+
+    move-object v2, v8
+
+    move-object/from16 v11, v36
+
+    move/from16 v44, v56
+
+    const/4 v3, 0x0
+
+    move-object/from16 v56, v1
+
+    move-object/from16 v1, v58
+
+    move-object/from16 v38, p16
+
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    const/4 v6, -0x5
+
+    goto/16 :goto_c1
+
+    :catch_54
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v9, p14
+
+    move-object v2, v8
+
+    move-object/from16 v11, v36
+
+    move/from16 v44, v56
+
+    const/4 v3, 0x0
+
+    goto :goto_bd
+
+    :catchall_3b
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
+
+    move v3, v10
+
+    move-wide/from16 v9, p14
+
+    goto/16 :goto_c2
+
+    :catch_55
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
+
+    move-object v2, v8
+
+    move v3, v10
+
+    move-object/from16 v11, v36
+
+    move/from16 v44, v56
+
+    move-wide/from16 v9, p14
+
+    :goto_bd
+    move-object/from16 v56, v1
+
+    move-object/from16 v1, v58
+
+    goto :goto_be
+
+    :catch_56
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v9, p14
+
+    move-object/from16 v11, v36
+
+    move-object/from16 v2, v55
+
+    move/from16 v44, v56
+
+    const/4 v3, 0x0
+
+    move-object/from16 v56, v1
+
+    move-object/from16 v1, v58
+
+    move-object v8, v2
+
+    :goto_be
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    const/4 v6, -0x5
+
+    const/16 v38, 0x0
+
+    goto :goto_c1
+
+    :catchall_3c
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v9, p14
+
+    :goto_bf
+    const/4 v3, 0x0
+
+    goto/16 :goto_c2
+
+    :catch_57
+    move-exception v0
+
+    move/from16 v14, p9
+
+    move-wide/from16 v12, p12
+
+    move-wide/from16 v9, p14
+
+    move-object/from16 v11, v36
+
+    move-object/from16 v2, v55
+
+    move/from16 v44, v56
+
+    move-object/from16 v1, v58
+
+    const/4 v3, 0x0
+
+    goto :goto_c0
+
+    :catch_58
+    move-exception v0
+
+    move-wide/from16 v9, p14
+
+    move-wide/from16 v23, p16
+
+    move-object v2, v4
+
+    move-object v1, v5
+
+    move-object/from16 v26, v6
+
+    move v14, v13
+
+    move/from16 v44, v29
+
+    move-object/from16 v11, v36
+
+    const/4 v3, 0x0
+
+    move-wide/from16 v12, p12
+
+    move-object/from16 v58, v1
+
+    :goto_c0
+    move-object v8, v2
+
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    const/4 v6, -0x5
+
+    const/16 v38, 0x0
+
+    const/16 v56, 0x0
+
+    :goto_c1
+    move-object v2, v0
+
+    goto/16 :goto_cd
+
+    :catch_59
+    move-exception v0
+
+    move-wide/from16 v9, p14
+
+    move-wide/from16 v23, p16
+
+    move-object v11, v3
+
+    move-object v1, v5
+
+    move-object/from16 v26, v6
+
+    move v14, v13
+
+    move/from16 v44, v29
+
+    const/4 v3, 0x0
+
+    move-wide/from16 v12, p12
+
+    move-object v2, v0
+
+    move-object/from16 v58, v1
+
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    const/4 v6, -0x5
+
+    const/4 v8, 0x0
+
+    const/16 v38, 0x0
+
+    const/16 v56, 0x0
+
+    goto/16 :goto_cd
+
+    :catch_5a
+    move-exception v0
+
+    move-wide/from16 v9, p14
+
+    move-wide/from16 v23, p16
+
+    move-object v11, v3
+
+    goto :goto_c3
+
+    :catchall_3d
+    move-exception v0
+
+    move-wide/from16 v9, p14
+
+    move-wide/from16 v23, p16
+
+    move-object/from16 v26, v6
+
+    move v14, v13
+
+    const/4 v3, 0x0
+
+    move-wide/from16 v12, p12
+
+    :goto_c2
+    move/from16 v7, p7
+
+    move-object v2, v0
+
+    move/from16 v27, v3
+
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    const/4 v6, -0x5
+
+    goto/16 :goto_c9
+
+    :catch_5b
+    move-exception v0
+
+    move-object/from16 v11, p10
+
+    move-wide/from16 v9, p14
+
+    move-wide/from16 v23, p16
+
+    :goto_c3
+    move-object/from16 v26, v6
+
+    move v14, v13
+
+    move/from16 v44, v29
+
+    const/4 v3, 0x0
+
+    move-wide/from16 v12, p12
+
+    move-object v2, v0
+
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    const/4 v6, -0x5
+
+    const/4 v8, 0x0
+
+    goto/16 :goto_cc
+
+    :catchall_3e
+    move-exception v0
+
+    move-wide/from16 v9, p14
+
+    move-wide/from16 v23, p16
+
+    move v14, v13
+
+    const/4 v3, 0x0
+
+    move-wide/from16 v12, p12
+
+    move/from16 v7, p7
+
+    move-object v2, v0
+
+    move/from16 v27, v3
+
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    goto/16 :goto_c8
+
+    :catch_5c
+    move-exception v0
+
+    move-object/from16 v11, p10
+
+    move-wide/from16 v9, p14
+
+    move-wide/from16 v23, p16
+
+    move v14, v13
+
+    move/from16 v44, v29
+
+    const/4 v3, 0x0
+
+    move-wide/from16 v12, p12
+
+    move-object v2, v0
+
+    move-wide/from16 v47, v9
+
+    move/from16 v1, v18
+
+    goto :goto_c4
 
     :catchall_3f
     move-exception v0
 
-    goto :goto_b8
+    move-wide/from16 v9, p14
+
+    move-wide/from16 v23, p16
+
+    move v14, v13
+
+    const/4 v3, 0x0
+
+    goto :goto_c5
+
+    :catch_5d
+    move-exception v0
+
+    move-object/from16 v11, p10
+
+    move-wide/from16 v9, p14
+
+    move-wide/from16 v23, p16
+
+    move v14, v13
+
+    move/from16 v44, v29
+
+    const/4 v3, 0x0
+
+    move-wide/from16 v12, p12
+
+    move-object v2, v0
+
+    move-wide/from16 v47, v9
+
+    :goto_c4
+    const/4 v6, -0x5
+
+    const/4 v8, 0x0
+
+    goto/16 :goto_cb
 
     :catchall_40
     move-exception v0
 
-    move/from16 v5, p7
+    move-wide/from16 v9, p14
 
-    goto :goto_b8
+    move-wide/from16 v23, p16
+
+    move v3, v6
+
+    move v14, v13
+
+    :goto_c5
+    move-wide/from16 v12, p12
+
+    goto :goto_c6
+
+    :catch_5e
+    move-exception v0
+
+    move-wide/from16 v9, p14
+
+    move-wide/from16 v23, p16
+
+    move v3, v6
+
+    move v14, v13
+
+    move/from16 v44, v29
+
+    move-wide/from16 v12, p12
+
+    goto :goto_ca
 
     :catchall_41
     move-exception v0
 
-    move/from16 v5, p7
+    move-wide/from16 v9, p14
 
-    move/from16 v3, p8
+    move-wide/from16 v23, p16
 
-    :goto_b8
-    move-object v1, v0
+    move v14, v13
 
-    move v10, v3
+    move-wide v12, v3
 
-    move v7, v4
+    const/4 v3, 0x0
 
-    move-wide/from16 v47, v14
+    :goto_c6
+    move/from16 v7, p7
 
-    goto :goto_ba
+    goto :goto_c7
+
+    :catch_5f
+    move-exception v0
+
+    move-wide/from16 v9, p14
+
+    move-wide/from16 v23, p16
+
+    move v14, v13
+
+    move/from16 v44, v29
+
+    move-wide v12, v3
+
+    const/4 v3, 0x0
+
+    goto :goto_ca
 
     :catchall_42
     move-exception v0
 
-    move/from16 v5, p7
+    move-wide/from16 v9, p14
 
-    move/from16 v3, p8
+    move v14, v13
 
-    move-object v1, v0
+    const/4 v3, 0x0
 
-    move v10, v3
+    move-wide/from16 v12, p12
 
-    move v7, v4
+    move/from16 v7, p7
 
-    move-wide/from16 v47, v14
+    move/from16 v1, p10
 
-    const/4 v6, 0x0
+    move-wide/from16 v23, p16
 
-    goto :goto_ba
+    :goto_c7
+    move-object v2, v0
 
-    :cond_9a
-    move/from16 v5, p7
+    move/from16 v27, v3
 
-    move/from16 v3, p8
+    move-wide/from16 v47, v9
 
-    move v11, v13
+    :goto_c8
+    const/4 v6, -0x5
 
-    move-object v13, v14
+    const/16 v26, 0x0
 
-    move-wide/from16 v14, p14
+    :goto_c9
+    move/from16 v10, p8
 
-    move/from16 v4, p10
+    goto/16 :goto_d8
 
-    move-wide/from16 v34, p16
+    :catch_60
+    move-exception v0
 
-    const/4 v6, 0x0
+    move-wide/from16 v9, p14
+
+    move/from16 v44, v4
+
+    move v14, v13
+
+    const/4 v3, 0x0
+
+    move-wide/from16 v12, p12
+
+    move/from16 v1, p10
+
+    move-wide/from16 v23, p16
+
+    :goto_ca
+    move-object v2, v0
+
+    move-wide/from16 v47, v9
+
+    const/4 v6, -0x5
 
     const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    const/4 v11, 0x0
 
-    const/16 v20, -0x5
+    :goto_cb
+    const/16 v26, 0x0
 
-    const/16 v36, 0x0
-
-    const/16 v53, 0x0
+    :goto_cc
+    const/16 v38, 0x0
 
     const/16 v56, 0x0
 
-    :cond_9b
-    :goto_b9
-    if-eqz v53, :cond_9c
+    const/16 v58, 0x0
 
     .line 783
-    invoke-virtual/range {v53 .. v53}, Lorg/telegram/messenger/video/OutputSurface;->release()V
+    :goto_cd
+    :try_start_99
+    instance-of v4, v2, Ljava/lang/IllegalStateException;
 
-    goto :goto_bb
+    if-eqz v4, :cond_9e
+
+    if-nez p21, :cond_9e
+
+    const/4 v3, 0x1
+
+    .line 786
+    :cond_9e
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "bitrate: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, " framerate: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, " size: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_end_99
+    .catchall {:try_start_99 .. :try_end_99} :catchall_45
+
+    move/from16 v5, p8
+
+    :try_start_9a
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string/jumbo v7, "x"
+
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_end_9a
+    .catchall {:try_start_9a .. :try_end_9a} :catchall_44
+
+    move/from16 v7, p7
+
+    :try_start_9b
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
+
+    .line 787
+    invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    move-object v4, v8
+
+    move-object/from16 v36, v11
+
+    const/16 v27, 0x1
+
+    .line 791
+    :goto_ce
+    iget-object v2, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+
+    move/from16 v8, v44
+
+    invoke-virtual {v2, v8}, Landroid/media/MediaExtractor;->unselectTrack(I)V
+
+    if-eqz v4, :cond_9f
+
+    .line 793
+    invoke-virtual {v4}, Landroid/media/MediaCodec;->stop()V
+
+    .line 794
+    invoke-virtual {v4}, Landroid/media/MediaCodec;->release()V
+    :try_end_9b
+    .catchall {:try_start_9b .. :try_end_9b} :catchall_43
+
+    :cond_9f
+    move/from16 v37, v6
+
+    move-object/from16 v2, v38
+
+    move-object/from16 v6, v56
+
+    move-object/from16 v38, v58
+
+    goto :goto_d0
 
     :catchall_43
     move-exception v0
 
-    move-object v1, v0
-
-    move v10, v3
-
-    move v7, v4
-
-    move-wide/from16 v47, v14
-
-    move/from16 v6, v36
-
-    :goto_ba
-    move v14, v5
-
-    move/from16 v5, v20
-
-    goto/16 :goto_c0
-
-    :cond_9c
-    :goto_bb
-    if-eqz v56, :cond_9d
-
-    .line 786
-    invoke-virtual/range {v56 .. v56}, Lorg/telegram/messenger/video/InputSurface;->release()V
-
-    :cond_9d
-    if-eqz v8, :cond_9e
-
-    .line 789
-    invoke-virtual {v8}, Landroid/media/MediaCodec;->stop()V
-
-    .line 790
-    invoke-virtual {v8}, Landroid/media/MediaCodec;->release()V
-
-    :cond_9e
-    if-eqz v9, :cond_9f
-
-    .line 793
-    invoke-virtual {v9}, Lorg/telegram/messenger/video/AudioRecoder;->release()V
-
-    .line 795
-    :cond_9f
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
-    :try_end_79
-    .catchall {:try_start_79 .. :try_end_79} :catchall_43
-
-    move v10, v3
-
-    move/from16 v1, v20
-
-    .line 805
-    :goto_bc
-    iget-object v2, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
-
-    if-eqz v2, :cond_a0
-
-    .line 806
-    invoke-virtual {v2}, Landroid/media/MediaExtractor;->release()V
-
-    .line 808
-    :cond_a0
-    iget-object v2, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
-
-    if-eqz v2, :cond_a1
-
-    .line 810
-    :try_start_7a
-    invoke-virtual {v2}, Lorg/telegram/messenger/video/MP4Builder;->finishMovie()V
-
-    .line 811
-    iget-object v2, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
-
-    invoke-virtual {v2, v1}, Lorg/telegram/messenger/video/MP4Builder;->getLastFrameTimestamp(I)J
-
-    move-result-wide v1
-
-    iput-wide v1, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->endPresentationTime:J
-    :try_end_7a
-    .catchall {:try_start_7a .. :try_end_7a} :catchall_44
-
-    goto :goto_bd
+    goto :goto_cf
 
     :catchall_44
     move-exception v0
 
-    move-object v1, v0
+    move/from16 v7, p7
 
-    .line 813
-    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    :cond_a1
-    :goto_bd
-    move v12, v4
-
-    move v8, v5
-
-    move v9, v10
-
-    move-wide/from16 v47, v14
-
-    goto/16 :goto_c2
+    goto :goto_cf
 
     :catchall_45
     move-exception v0
 
-    move-wide/from16 v14, p14
+    move/from16 v7, p7
 
-    move v11, v5
+    move/from16 v5, p8
 
-    move v5, v9
+    :goto_cf
+    move-object v2, v0
 
-    move v3, v10
+    move/from16 v27, v3
 
-    move-object v13, v12
+    goto/16 :goto_d7
 
-    goto :goto_be
+    :cond_a0
+    move/from16 v7, p7
+
+    move/from16 v5, p8
+
+    move-wide/from16 v9, p14
+
+    move v14, v13
+
+    const/4 v3, 0x0
+
+    move-wide/from16 v12, p12
+
+    move/from16 v1, p10
+
+    move-wide/from16 v23, p16
+
+    move/from16 v27, v3
+
+    move-wide/from16 v47, v9
+
+    const/4 v2, 0x0
+
+    const/4 v6, 0x0
+
+    const/16 v26, 0x0
+
+    const/16 v36, 0x0
+
+    const/16 v37, -0x5
+
+    const/16 v38, 0x0
+
+    :goto_d0
+    if-eqz v6, :cond_a1
+
+    .line 798
+    :try_start_9c
+    invoke-virtual {v6}, Lorg/telegram/messenger/video/OutputSurface;->release()V
+
+    goto :goto_d1
 
     :catchall_46
     move-exception v0
 
-    move v11, v8
+    move-object v2, v0
 
-    move v5, v9
+    move/from16 v27, v3
 
-    move v3, v10
+    move v10, v5
 
-    move-object v13, v15
+    move/from16 v6, v37
 
-    move-wide/from16 v14, p14
+    goto/16 :goto_d8
 
-    :goto_be
-    move/from16 v7, p10
+    :cond_a1
+    :goto_d1
+    if-eqz v38, :cond_a2
 
-    move-wide/from16 v34, p16
+    .line 801
+    invoke-virtual/range {v38 .. v38}, Lorg/telegram/messenger/video/InputSurface;->release()V
 
-    move-object v1, v0
+    :cond_a2
+    if-eqz v36, :cond_a3
 
-    move-wide/from16 v47, v14
-
-    const/4 v6, 0x0
-
-    move v14, v5
-
-    :goto_bf
-    const/4 v5, -0x5
-
-    .line 802
-    :goto_c0
-    :try_start_7b
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "bitrate: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v3, " framerate: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v3, " size: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string/jumbo v3, "x"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
-
-    .line 803
-    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-    :try_end_7b
-    .catchall {:try_start_7b .. :try_end_7b} :catchall_48
+    .line 804
+    invoke-virtual/range {v36 .. v36}, Landroid/media/MediaCodec;->stop()V
 
     .line 805
-    iget-object v1, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+    invoke-virtual/range {v36 .. v36}, Landroid/media/MediaCodec;->release()V
 
-    if-eqz v1, :cond_a2
-
-    .line 806
-    invoke-virtual {v1}, Landroid/media/MediaExtractor;->release()V
+    :cond_a3
+    if-eqz v2, :cond_a4
 
     .line 808
-    :cond_a2
-    iget-object v1, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
-
-    if-eqz v1, :cond_a3
+    invoke-virtual {v2}, Lorg/telegram/messenger/video/AudioRecoder;->release()V
 
     .line 810
-    :try_start_7c
-    invoke-virtual {v1}, Lorg/telegram/messenger/video/MP4Builder;->finishMovie()V
+    :cond_a4
+    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
+    :try_end_9c
+    .catchall {:try_start_9c .. :try_end_9c} :catchall_46
 
-    .line 811
-    iget-object v1, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+    move/from16 v21, v7
 
-    invoke-virtual {v1, v5}, Lorg/telegram/messenger/video/MP4Builder;->getLastFrameTimestamp(I)J
+    move-object/from16 v38, v26
 
-    move-result-wide v1
+    move/from16 v2, v27
 
-    iput-wide v1, v13, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->endPresentationTime:J
-    :try_end_7c
-    .catchall {:try_start_7c .. :try_end_7c} :catchall_47
+    move/from16 v6, v37
 
-    goto :goto_c1
+    move/from16 v27, v3
+
+    .line 820
+    :goto_d2
+    iget-object v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+
+    if-eqz v3, :cond_a5
+
+    .line 821
+    invoke-virtual {v3}, Landroid/media/MediaExtractor;->release()V
+
+    .line 823
+    :cond_a5
+    iget-object v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+
+    if-eqz v3, :cond_a6
+
+    .line 825
+    :try_start_9d
+    invoke-virtual {v3}, Lorg/telegram/messenger/video/MP4Builder;->finishMovie()V
+
+    .line 826
+    iget-object v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+
+    invoke-virtual {v3, v6}, Lorg/telegram/messenger/video/MP4Builder;->getLastFrameTimestamp(I)J
+
+    move-result-wide v3
+
+    iput-wide v3, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->endPresentationTime:J
+    :try_end_9d
+    .catchall {:try_start_9d .. :try_end_9d} :catchall_47
+
+    goto :goto_d3
 
     :catchall_47
     move-exception v0
 
-    move-object v1, v0
+    move-object v3, v0
 
-    .line 813
-    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+    .line 828
+    invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    :cond_a3
-    :goto_c1
-    move/from16 v36, v6
+    :cond_a6
+    :goto_d3
+    move v11, v1
 
-    move v12, v7
+    move/from16 v25, v2
+
+    move v9, v5
+
+    move/from16 v8, v21
+
+    move-object/from16 v1, v38
+
+    goto/16 :goto_da
+
+    :catchall_48
+    move-exception v0
+
+    move-wide/from16 v12, p12
+
+    move v3, v2
+
+    move v14, v5
+
+    move v7, v9
+
+    move v5, v10
+
+    move-object v15, v11
+
+    goto :goto_d6
+
+    :catchall_49
+    move-exception v0
+
+    move-wide/from16 v12, p12
+
+    move v14, v5
+
+    move v7, v9
+
+    move v5, v10
+
+    move-object v15, v11
+
+    goto :goto_d5
+
+    :catchall_4a
+    move-exception v0
+
+    move-wide/from16 v12, p12
+
+    goto :goto_d4
+
+    :catchall_4b
+    move-exception v0
+
+    move-wide v12, v4
+
+    :goto_d4
+    move v14, v8
+
+    move v7, v9
+
+    move v5, v10
+
+    :goto_d5
+    const/4 v3, 0x0
+
+    goto :goto_d6
+
+    :catchall_4c
+    move-exception v0
+
+    move v14, v8
+
+    move v7, v9
+
+    move v3, v13
+
+    move-wide v12, v4
+
+    move v5, v10
+
+    :goto_d6
+    move-wide/from16 v9, p14
+
+    move/from16 v1, p10
+
+    move-wide/from16 v23, p16
+
+    move-object v2, v0
+
+    move/from16 v27, v3
+
+    move-wide/from16 v47, v9
+
+    const/4 v6, -0x5
+
+    const/16 v26, 0x0
+
+    :goto_d7
+    move v10, v5
+
+    .line 817
+    :goto_d8
+    :try_start_9e
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "bitrate: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v4, " framerate: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v4, " size: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string/jumbo v4, "x"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
+
+    .line 818
+    invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+    :try_end_9e
+    .catchall {:try_start_9e .. :try_end_9e} :catchall_4e
+
+    .line 820
+    iget-object v2, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
+
+    if-eqz v2, :cond_a7
+
+    .line 821
+    invoke-virtual {v2}, Landroid/media/MediaExtractor;->release()V
+
+    .line 823
+    :cond_a7
+    iget-object v2, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+
+    if-eqz v2, :cond_a8
+
+    .line 825
+    :try_start_9f
+    invoke-virtual {v2}, Lorg/telegram/messenger/video/MP4Builder;->finishMovie()V
+
+    .line 826
+    iget-object v2, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
+
+    invoke-virtual {v2, v6}, Lorg/telegram/messenger/video/MP4Builder;->getLastFrameTimestamp(I)J
+
+    move-result-wide v2
+
+    iput-wide v2, v15, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->endPresentationTime:J
+    :try_end_9f
+    .catchall {:try_start_9f .. :try_end_9f} :catchall_4d
+
+    goto :goto_d9
+
+    :catchall_4d
+    move-exception v0
+
+    move-object v2, v0
+
+    .line 828
+    invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    :cond_a8
+    :goto_d9
+    move v11, v1
+
+    move v8, v7
 
     move v9, v10
 
-    move v8, v14
+    move-object/from16 v1, v26
 
-    const/4 v6, 0x1
+    const/16 v25, 0x1
 
-    :goto_c2
-    if-eqz v36, :cond_a4
+    :goto_da
+    if-eqz v27, :cond_a9
 
     const/16 v22, 0x1
 
@@ -7361,15 +8462,13 @@
 
     move/from16 v10, p9
 
-    move v11, v12
-
     move/from16 v12, p11
 
     move-wide/from16 v13, p12
 
     move-wide/from16 v15, v47
 
-    move-wide/from16 v17, v34
+    move-wide/from16 v17, v23
 
     move-wide/from16 v19, p18
 
@@ -7387,138 +8486,148 @@
 
     move/from16 v28, p27
 
-    .line 819
+    .line 834
     invoke-direct/range {v1 .. v28}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->convertVideoInternal(Ljava/lang/String;Ljava/io/File;IZIIIIIIIJJJJZZLorg/telegram/messenger/MediaController$SavedFilterState;Ljava/lang/String;Ljava/util/ArrayList;ZLorg/telegram/messenger/MediaController$CropState;Z)Z
 
     move-result v1
 
     return v1
 
-    .line 826
-    :cond_a4
+    .line 841
+    :cond_a9
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    sub-long v1, v1, v16
+    sub-long v2, v2, v16
 
-    .line 827
-    sget-boolean v3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    .line 842
+    sget-boolean v4, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v3, :cond_a5
+    if-eqz v4, :cond_aa
 
-    .line 828
-    new-instance v3, Ljava/lang/StringBuilder;
+    .line 843
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "compression completed time="
+    const-string v5, "compression completed time="
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v1, " needCompress="
+    const-string v2, " needCompress="
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move/from16 v1, p20
+    move/from16 v2, p20
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v1, " w="
+    const-string v2, " w="
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v1, " h="
+    const-string v2, " h="
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v1, " bitrate="
+    const-string v2, " bitrate="
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v1, " file size="
+    const-string v2, " file size="
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual/range {p2 .. p2}, Ljava/io/File;->length()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, " encoder_name="
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    :cond_a5
-    return v6
+    :cond_aa
+    return v25
 
-    :catchall_48
+    :catchall_4e
     move-exception v0
 
     move-object/from16 v1, p0
 
     move-object v2, v0
 
-    .line 805
+    .line 820
     iget-object v3, v1, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->extractor:Landroid/media/MediaExtractor;
 
-    if-eqz v3, :cond_a6
+    if-eqz v3, :cond_ab
 
-    .line 806
+    .line 821
     invoke-virtual {v3}, Landroid/media/MediaExtractor;->release()V
 
-    .line 808
-    :cond_a6
+    .line 823
+    :cond_ab
     iget-object v3, v1, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
-    if-eqz v3, :cond_a7
+    if-eqz v3, :cond_ac
 
-    .line 810
-    :try_start_7d
+    .line 825
+    :try_start_a0
     invoke-virtual {v3}, Lorg/telegram/messenger/video/MP4Builder;->finishMovie()V
 
-    .line 811
+    .line 826
     iget-object v3, v1, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
-    invoke-virtual {v3, v5}, Lorg/telegram/messenger/video/MP4Builder;->getLastFrameTimestamp(I)J
+    invoke-virtual {v3, v6}, Lorg/telegram/messenger/video/MP4Builder;->getLastFrameTimestamp(I)J
 
     move-result-wide v3
 
     iput-wide v3, v1, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->endPresentationTime:J
-    :try_end_7d
-    .catchall {:try_start_7d .. :try_end_7d} :catchall_49
+    :try_end_a0
+    .catchall {:try_start_a0 .. :try_end_a0} :catchall_4f
 
-    goto :goto_c3
+    goto :goto_db
 
-    :catchall_49
+    :catchall_4f
     move-exception v0
 
     move-object v3, v0
 
-    .line 813
+    .line 828
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 816
-    :cond_a7
-    :goto_c3
+    .line 831
+    :cond_ac
+    :goto_db
     throw v2
 .end method
 
 .method private static createFragmentShader(IIIIZ)Ljava/lang/String;
     .locals 3
 
-    .line 997
+    .line 1016
     invoke-static {p0, p1}, Ljava/lang/Math;->max(II)I
 
     move-result v0
@@ -7551,7 +8660,7 @@
 
     if-le v0, v1, :cond_0
 
-    .line 999
+    .line 1018
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->deviceIsAverage()Z
 
     move-result v2
@@ -7560,7 +8669,7 @@
 
     move v0, v1
 
-    .line 1002
+    .line 1021
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -7604,7 +8713,7 @@
 
     if-eqz p4, :cond_1
 
-    .line 1005
+    .line 1024
     new-instance p4, Ljava/lang/StringBuilder;
 
     invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V
@@ -7633,7 +8742,7 @@
 
     return-object p0
 
-    .line 1024
+    .line 1043
     :cond_1
     new-instance p4, Ljava/lang/StringBuilder;
 
@@ -7664,6 +8773,23 @@
     return-object p0
 .end method
 
+.method private isMediatekAvcEncoder(Landroid/media/MediaCodec;)Z
+    .locals 1
+
+    .line 850
+    invoke-virtual {p1}, Landroid/media/MediaCodec;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "c2.mtk.avc.encoder"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
 .method private readAndWriteTracks(Landroid/media/MediaExtractor;Lorg/telegram/messenger/video/MP4Builder;Landroid/media/MediaCodec$BufferInfo;JJJLjava/io/File;Z)J
     .locals 28
     .annotation system Ldalvik/annotation/Throws;
@@ -7682,7 +8808,7 @@
 
     const/4 v6, 0x0
 
-    .line 836
+    .line 855
     invoke-static {v1, v6}, Lorg/telegram/messenger/MediaController;->findTrack(Landroid/media/MediaExtractor;Z)I
 
     move-result v7
@@ -7691,7 +8817,7 @@
 
     if-eqz p11, :cond_0
 
-    .line 837
+    .line 856
     invoke-static {v1, v9}, Lorg/telegram/messenger/MediaController;->findTrack(Landroid/media/MediaExtractor;Z)I
 
     move-result v0
@@ -7720,20 +8846,20 @@
 
     if-ltz v7, :cond_2
 
-    .line 847
+    .line 866
     invoke-virtual {v1, v7}, Landroid/media/MediaExtractor;->selectTrack(I)V
 
-    .line 848
+    .line 867
     invoke-virtual {v1, v7}, Landroid/media/MediaExtractor;->getTrackFormat(I)Landroid/media/MediaFormat;
 
     move-result-object v0
 
-    .line 849
+    .line 868
     invoke-virtual {v2, v0, v6}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
 
     move-result v16
 
-    .line 851
+    .line 870
     :try_start_0
     invoke-virtual {v0, v13}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
@@ -7748,7 +8874,7 @@
 
     move-object/from16 v17, v0
 
-    .line 853
+    .line 872
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     move v0, v6
@@ -7758,12 +8884,12 @@
 
     if-lez v17, :cond_1
 
-    .line 857
+    .line 876
     invoke-virtual {v1, v4, v5, v6}, Landroid/media/MediaExtractor;->seekTo(JI)V
 
     goto :goto_2
 
-    .line 859
+    .line 878
     :cond_1
     invoke-virtual {v1, v14, v15, v6}, Landroid/media/MediaExtractor;->seekTo(JI)V
 
@@ -7780,17 +8906,17 @@
     :goto_3
     if-ltz v10, :cond_5
 
-    .line 863
+    .line 882
     invoke-virtual {v1, v10}, Landroid/media/MediaExtractor;->selectTrack(I)V
 
-    .line 864
+    .line 883
     invoke-virtual {v1, v10}, Landroid/media/MediaExtractor;->getTrackFormat(I)Landroid/media/MediaFormat;
 
     move-result-object v0
 
     const-string v8, "mime"
 
-    .line 866
+    .line 885
     invoke-virtual {v0, v8}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
@@ -7809,13 +8935,13 @@
 
     goto :goto_5
 
-    .line 869
+    .line 888
     :cond_3
     invoke-virtual {v2, v0, v9}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
 
     move-result v6
 
-    .line 871
+    .line 890
     :try_start_1
     invoke-virtual {v0, v13}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
@@ -7832,7 +8958,7 @@
     :catch_1
     move-exception v0
 
-    .line 873
+    .line 892
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_4
@@ -7842,7 +8968,7 @@
 
     const/4 v8, 0x0
 
-    .line 876
+    .line 895
     invoke-virtual {v1, v4, v5, v8}, Landroid/media/MediaExtractor;->seekTo(JI)V
 
     goto :goto_5
@@ -7850,7 +8976,7 @@
     :cond_4
     const/4 v8, 0x0
 
-    .line 878
+    .line 897
     invoke-virtual {v1, v14, v15, v8}, Landroid/media/MediaExtractor;->seekTo(JI)V
 
     goto :goto_5
@@ -7863,7 +8989,7 @@
 
     const/high16 v11, 0x10000
 
-    .line 885
+    .line 904
     :cond_6
     invoke-static {v11}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
@@ -7880,7 +9006,7 @@
     :cond_7
     return-wide v18
 
-    .line 888
+    .line 907
     :cond_8
     :goto_6
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
@@ -7894,17 +9020,17 @@
     :goto_7
     if-nez v8, :cond_21
 
-    .line 890
+    .line 909
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->checkConversionCanceled()V
 
-    .line 893
+    .line 912
     sget v13, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v14, 0x1c
 
     if-lt v13, v14, :cond_9
 
-    .line 894
+    .line 913
     invoke-virtual/range {p1 .. p1}, Landroid/media/MediaExtractor;->getSampleSize()J
 
     move-result-wide v14
@@ -7923,7 +9049,7 @@
 
     long-to-int v0, v14
 
-    .line 897
+    .line 916
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v9
@@ -7941,14 +9067,14 @@
     :goto_8
     const/4 v9, 0x0
 
-    .line 900
+    .line 919
     invoke-virtual {v1, v0, v9}, Landroid/media/MediaExtractor;->readSampleData(Ljava/nio/ByteBuffer;I)I
 
     move-result v10
 
     iput v10, v3, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    .line 901
+    .line 920
     invoke-virtual/range {p1 .. p1}, Landroid/media/MediaExtractor;->getSampleTrackIndex()I
 
     move-result v10
@@ -7987,10 +9113,10 @@
 
     const/4 v9, 0x0
 
-    .line 911
+    .line 930
     invoke-virtual {v0, v9}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 912
+    .line 931
     iget v9, v3, Landroid/media/MediaCodec$BufferInfo;->size:I
 
     invoke-virtual {v0, v9}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
@@ -7998,19 +9124,19 @@
     :cond_d
     if-eq v10, v14, :cond_13
 
-    .line 915
+    .line 934
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v9
 
     if-eqz v9, :cond_13
 
-    .line 917
+    .line 936
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->arrayOffset()I
 
     move-result v13
 
-    .line 918
+    .line 937
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v24
@@ -8032,7 +9158,7 @@
 
     if-gt v6, v8, :cond_14
 
-    .line 921
+    .line 940
     aget-byte v26, v9, v6
 
     if-nez v26, :cond_e
@@ -8094,7 +9220,7 @@
 
     int-to-byte v8, v8
 
-    .line 924
+    .line 943
     aput-byte v8, v9, v13
 
     add-int/lit8 v8, v13, 0x1
@@ -8103,7 +9229,7 @@
 
     int-to-byte v14, v14
 
-    .line 925
+    .line 944
     aput-byte v14, v9, v8
 
     add-int/lit8 v8, v13, 0x2
@@ -8112,14 +9238,14 @@
 
     int-to-byte v14, v14
 
-    .line 926
+    .line 945
     aput-byte v14, v9, v8
 
     add-int/lit8 v13, v13, 0x3
 
     int-to-byte v8, v11
 
-    .line 927
+    .line 946
     aput-byte v8, v9, v13
 
     :cond_11
@@ -8146,12 +9272,12 @@
 
     move/from16 v26, v14
 
-    .line 936
+    .line 955
     iget v6, v3, Landroid/media/MediaCodec$BufferInfo;->size:I
 
     if-ltz v6, :cond_15
 
-    .line 937
+    .line 956
     invoke-virtual/range {p1 .. p1}, Landroid/media/MediaExtractor;->getSampleTime()J
 
     move-result-wide v8
@@ -8165,12 +9291,12 @@
     :cond_15
     const/4 v6, 0x0
 
-    .line 939
+    .line 958
     iput v6, v3, Landroid/media/MediaCodec$BufferInfo;->size:I
 
     const/4 v8, 0x1
 
-    .line 943
+    .line 962
     :goto_e
     iget v6, v3, Landroid/media/MediaCodec$BufferInfo;->size:I
 
@@ -8190,7 +9316,7 @@
 
     if-nez v6, :cond_17
 
-    .line 945
+    .line 964
     iget-wide v13, v3, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
     move-wide/from16 v20, v13
@@ -8206,7 +9332,7 @@
 
     if-ltz v6, :cond_1b
 
-    .line 947
+    .line 966
     iget-wide v9, v3, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
     cmp-long v6, v9, p6
@@ -8230,17 +9356,17 @@
     :goto_10
     const/4 v6, 0x0
 
-    .line 948
+    .line 967
     iput v6, v3, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
-    .line 949
+    .line 968
     invoke-virtual/range {p1 .. p1}, Landroid/media/MediaExtractor;->getSampleFlags()I
 
     move-result v9
 
     iput v9, v3, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
-    .line 950
+    .line 969
     invoke-virtual {v2, v15, v0, v3, v6}, Lorg/telegram/messenger/video/MP4Builder;->writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;Z)J
 
     move-result-wide v9
@@ -8253,12 +9379,12 @@
 
     move-object/from16 v11, p0
 
-    .line 952
+    .line 971
     iget-object v15, v11, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->callback:Lorg/telegram/messenger/MediaController$VideoConvertorListener;
 
     if-eqz v15, :cond_1a
 
-    .line 953
+    .line 972
     iget-wide v13, v3, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
     sub-long v24, v13, v20
@@ -8283,7 +9409,7 @@
 
     div-float/2addr v6, v12
 
-    .line 956
+    .line 975
     invoke-interface {v15, v9, v10, v6}, Lorg/telegram/messenger/MediaController$VideoConvertorListener;->didWriteData(JF)V
 
     move-wide/from16 v22, v13
@@ -8291,7 +9417,7 @@
     :goto_12
     if-nez v8, :cond_1d
 
-    .line 964
+    .line 983
     invoke-virtual/range {p1 .. p1}, Landroid/media/MediaExtractor;->advance()Z
 
     :cond_1d
@@ -8320,7 +9446,7 @@
 
     goto :goto_13
 
-    .line 969
+    .line 988
     :cond_1f
     invoke-virtual/range {p1 .. p1}, Landroid/media/MediaExtractor;->advance()Z
 
@@ -8356,7 +9482,7 @@
 
     if-ltz v7, :cond_22
 
-    .line 976
+    .line 995
     invoke-virtual {v1, v7}, Landroid/media/MediaExtractor;->unselectTrack(I)V
 
     :cond_22
@@ -8364,7 +9490,7 @@
 
     move/from16 v10, v26
 
-    .line 979
+    .line 998
     invoke-virtual {v1, v10}, Landroid/media/MediaExtractor;->unselectTrack(I)V
 
     :cond_23

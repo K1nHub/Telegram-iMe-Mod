@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChatAttachAlertButtonsSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatAttachAlertButtonsSettingsActivity.kt\ncom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,252:1\n1#2:253\n*E\n"
+    value = "SMAP\nChatAttachAlertButtonsSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatAttachAlertButtonsSettingsActivity.kt\ncom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,249:1\n1#2:250\n*E\n"
 .end annotation
 
 
@@ -55,6 +55,14 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$8Rb2MFLiNYL5323wXWjl1aKwKs4(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->initListView$lambda$11$lambda$10(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$9_qW7RrypBAnQhh1MCvECXhghjo(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
@@ -63,18 +71,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$UYo6SdL9ZahbQWI0Q_hI8r1W3nU(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$OYiNoHIHCEUxBCLkgos1zVjnSxE(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->initListView$lambda$12$lambda$11(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$fhWlareplfdWfhhchhHK73tnyhs(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->initListView$lambda$12$lambda$11$lambda$10(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->initListView$lambda$11$lambda$10$lambda$9(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
 
     return-void
 .end method
@@ -485,27 +485,21 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 91
+    .line 88
     iget-object p0, p0, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->topicsBar:Lcom/iMe/fork/ui/view/DialogTypeTopicsBar;
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    const-string p0, "topicsBar"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    :cond_0
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/DialogTypeTopicsBar;->notifyDataSetChanged()V
 
+    :cond_0
     return-void
 .end method
 
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 143
+    .line 140
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -516,10 +510,10 @@
 
     const/4 v1, 0x1
 
-    .line 144
+    .line 141
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setFocusable(Z)V
 
-    .line 145
+    .line 142
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -530,14 +524,14 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 146
+    .line 143
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$ListAdapter;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 147
+    .line 144
     new-instance v1, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;)V
@@ -547,14 +541,14 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda$12$lambda$11(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
+.method private static final initListView$lambda$11$lambda$10(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
     .locals 2
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 149
+    .line 146
     instance-of v0, p1, Lcom/iMe/fork/ui/view/ChatAttachAlertButtonCell;
 
     const/4 v1, 0x1
@@ -563,7 +557,7 @@
 
     const-string v0, "view"
 
-    .line 150
+    .line 147
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/iMe/fork/ui/view/ChatAttachAlertButtonCell;
@@ -576,7 +570,7 @@
 
     invoke-virtual {p1, v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertButtonCell;->setChecked(Z)V
 
-    .line 151
+    .line 148
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->currentDialogType:Lcom/iMe/fork/enums/DialogType;
 
     invoke-virtual {p1}, Lcom/iMe/fork/enums/DialogType;->getChatAttachAlertButtons()Ljava/util/List;
@@ -593,7 +587,7 @@
 
     check-cast p1, Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 152
+    .line 149
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object p2
@@ -614,7 +608,7 @@
 
     return-void
 
-    .line 154
+    .line 151
     :cond_0
     invoke-interface {p0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -622,29 +616,29 @@
 
     if-eqz p2, :cond_1
 
-    .line 155
+    .line 152
     invoke-interface {p0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 157
+    .line 154
     :cond_1
     invoke-interface {p0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 161
+    .line 158
     :cond_2
     instance-of p2, p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     if-eqz p2, :cond_4
 
-    .line 162
+    .line 159
     iget-boolean p2, p0, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->newSuggest:Z
 
     if-eqz p2, :cond_3
 
-    .line 163
+    .line 160
     new-instance p2, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0, p1}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
@@ -653,11 +647,11 @@
 
     goto :goto_0
 
-    .line 168
+    .line 165
     :cond_3
     iput-boolean v1, p0, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->newSuggest:Z
 
-    .line 169
+    .line 166
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
@@ -667,7 +661,7 @@
     return-void
 .end method
 
-.method private static final initListView$lambda$12$lambda$11$lambda$10(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
+.method private static final initListView$lambda$11$lambda$10$lambda$9(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -676,10 +670,10 @@
 
     const/4 v0, 0x0
 
-    .line 164
+    .line 161
     iput-boolean v0, p0, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->newSuggest:Z
 
-    .line 165
+    .line 162
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
@@ -690,7 +684,7 @@
 .method private final initRootView()Landroid/widget/FrameLayout;
     .locals 2
 
-    .line 139
+    .line 136
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -701,15 +695,12 @@
 
     const-string v1, "windowBackgroundGray"
 
-    .line 140
+    .line 137
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 141
-    iput-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object v0
 .end method
@@ -717,7 +708,7 @@
 .method private final isClickableViewType(I)Z
     .locals 1
 
-    .line 176
+    .line 173
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->CHAT_ATTACH_ALERT_BUTTON:I
 
     if-eq p1, v0, :cond_1
@@ -744,7 +735,7 @@
 .method private final needDivider(I)Z
     .locals 1
 
-    .line 178
+    .line 175
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOPICS_BAR:I
 
     if-eq p1, v0, :cond_0
@@ -773,20 +764,20 @@
 .method private final setupActionBar()V
     .locals 2
 
-    .line 125
+    .line 122
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 126
+    .line 123
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 127
+    .line 124
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 128
+    .line 125
     sget v1, Lorg/telegram/messenger/R$string;->settings_interface_chat_attach_alert_buttons:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -795,7 +786,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 129
+    .line 126
     new-instance v1, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$setupActionBar$1$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$setupActionBar$1$1;-><init>(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;)V
@@ -833,14 +824,14 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 91
+    .line 88
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 90
+    .line 87
     new-instance v8, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda2;
 
     invoke-direct {v8, v0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;)V
@@ -855,14 +846,14 @@
 
     move-object v2, v10
 
-    .line 91
+    .line 88
     invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
 
     const/4 v2, 0x0
 
     aput-object v10, v1, v2
 
-    .line 92
+    .line 89
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -887,7 +878,7 @@
 
     aput-object v3, v1, v4
 
-    .line 93
+    .line 90
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -912,7 +903,7 @@
 
     aput-object v3, v1, v5
 
-    .line 94
+    .line 91
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -931,7 +922,7 @@
 
     aput-object v3, v1, v6
 
-    .line 95
+    .line 92
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -950,7 +941,7 @@
 
     aput-object v3, v1, v7
 
-    .line 96
+    .line 93
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -971,7 +962,7 @@
 
     aput-object v3, v1, v7
 
-    .line 97
+    .line 94
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -990,7 +981,7 @@
 
     aput-object v3, v1, v7
 
-    .line 98
+    .line 95
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1015,7 +1006,7 @@
 
     aput-object v3, v1, v7
 
-    .line 99
+    .line 96
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1048,7 +1039,7 @@
 
     aput-object v3, v1, v5
 
-    .line 100
+    .line 97
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1081,7 +1072,7 @@
 
     aput-object v3, v1, v5
 
-    .line 101
+    .line 98
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1110,7 +1101,7 @@
 
     aput-object v3, v1, v5
 
-    .line 102
+    .line 99
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1143,7 +1134,7 @@
 
     aput-object v3, v1, v6
 
-    .line 103
+    .line 100
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1174,7 +1165,7 @@
 
     aput-object v3, v1, v6
 
-    .line 104
+    .line 101
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1205,7 +1196,7 @@
 
     aput-object v3, v1, v7
 
-    .line 105
+    .line 102
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1236,7 +1227,7 @@
 
     aput-object v3, v1, v7
 
-    .line 106
+    .line 103
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1263,7 +1254,7 @@
 
     aput-object v3, v1, v7
 
-    .line 107
+    .line 104
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1290,7 +1281,7 @@
 
     aput-object v3, v1, v7
 
-    .line 108
+    .line 105
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1317,7 +1308,7 @@
 
     aput-object v3, v1, v7
 
-    .line 109
+    .line 106
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1344,7 +1335,7 @@
 
     aput-object v3, v1, v7
 
-    .line 110
+    .line 107
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1371,7 +1362,7 @@
 
     aput-object v3, v1, v7
 
-    .line 111
+    .line 108
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1398,7 +1389,7 @@
 
     aput-object v3, v1, v7
 
-    .line 112
+    .line 109
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1425,7 +1416,7 @@
 
     aput-object v3, v1, v5
 
-    .line 113
+    .line 110
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1456,7 +1447,7 @@
 
     aput-object v3, v1, v5
 
-    .line 114
+    .line 111
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1483,7 +1474,7 @@
 
     aput-object v3, v1, v5
 
-    .line 115
+    .line 112
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1516,7 +1507,7 @@
 
     aput-object v3, v1, v5
 
-    .line 116
+    .line 113
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1545,7 +1536,7 @@
 
     aput-object v3, v1, v5
 
-    .line 117
+    .line 114
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1570,7 +1561,7 @@
 
     aput-object v3, v1, v2
 
-    .line 90
+    .line 87
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -1578,22 +1569,33 @@
     return-object v1
 .end method
 
-.method public onCreateView(Landroid/content/Context;)Landroid/view/View;
+.method public bridge synthetic onCreateView(Landroid/content/Context;)Landroid/view/View;
+    .locals 0
+
+    .line 31
+    invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
     .locals 1
 
     const-string v0, "context"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 71
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->setupActionBar()V
-
-    .line 73
+    .line 70
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getRootView()Landroid/widget/FrameLayout;
 
     move-result-object p1
 
-    .line 74
+    .line 71
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->setupActionBar()V
+
+    .line 72
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
@@ -1606,14 +1608,14 @@
 .method public onFragmentDestroy()V
     .locals 2
 
-    .line 83
+    .line 80
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/iMe/fork/controller/ToolsController;->saveConfig()V
 
-    .line 84
+    .line 81
     iget-boolean v0, p0, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->newSuggest:Z
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
@@ -1624,10 +1626,10 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 85
+    .line 82
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->saveSuggestContacts()V
 
-    .line 87
+    .line 84
     :cond_0
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 

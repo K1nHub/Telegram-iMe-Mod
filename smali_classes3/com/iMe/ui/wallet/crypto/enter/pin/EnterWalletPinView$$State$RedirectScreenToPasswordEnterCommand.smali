@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinView$$State;)V
     .locals 1
 
-    .line 157
+    .line 175
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "redirectScreenToPasswordEnter"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinView;)V
     .locals 0
 
-    .line 162
+    .line 180
     invoke-interface {p1}, Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinView;->redirectScreenToPasswordEnter()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 155
+    .line 173
     check-cast p1, Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinView$$State$RedirectScreenToPasswordEnterCommand;->apply(Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinView;)V

@@ -4,9 +4,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.viewbinding.ViewBinding;
-import com.iMe.fork.p025ui.view.TabbedViewPager;
+import com.iMe.fork.p024ui.view.TabbedViewPager;
 import java.util.Objects;
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletHomeBinding implements ViewBinding {
     private final TabbedViewPager rootView;
@@ -27,7 +27,7 @@ public final class ForkFragmentWalletHomeBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletHomeBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3316R.layout.fork_fragment_wallet_home, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3242R.layout.fork_fragment_wallet_home, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

@@ -3,8 +3,6 @@
 
 
 # instance fields
-.field private final digest:Lorg/bouncycastle/crypto/Digest;
-
 .field private final digestSize:I
 
 .field private final len:I
@@ -15,20 +13,26 @@
 
 .field private final oid:Lorg/bouncycastle/pqc/crypto/xmss/XMSSOid;
 
+.field private final treeDigest:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
 .field private final winternitzParameter:I
 
 
 # direct methods
-.method protected constructor <init>(Lorg/bouncycastle/crypto/Digest;)V
+.method protected constructor <init>(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
     .locals 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "digest == null"
+    const-string/jumbo v0, "treeDigest == null"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->digest:Lorg/bouncycastle/crypto/Digest;
+    iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->treeDigest:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/xmss/DigestUtil;->getDigest(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Lorg/bouncycastle/crypto/Digest;
+
+    move-result-object p1
 
     invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->getDigestSize(Lorg/bouncycastle/crypto/Digest;)I
 
@@ -134,26 +138,26 @@
 
 
 # virtual methods
-.method protected getDigest()Lorg/bouncycastle/crypto/Digest;
-    .locals 1
-
-    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->digest:Lorg/bouncycastle/crypto/Digest;
-
-    return-object v0
-.end method
-
-.method protected getDigestSize()I
-    .locals 1
-
-    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->digestSize:I
-
-    return v0
-.end method
-
 .method protected getLen()I
     .locals 1
 
     iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->len:I
+
+    return v0
+.end method
+
+.method public getTreeDigest()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->treeDigest:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    return-object v0
+.end method
+
+.method protected getTreeDigestSize()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->digestSize:I
 
     return v0
 .end method

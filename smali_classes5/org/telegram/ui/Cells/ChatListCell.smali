@@ -27,7 +27,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 13
 
-    .line 156
+    .line 157
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x3
@@ -39,12 +39,12 @@
 
     const/4 v0, 0x0
 
-    .line 157
+    .line 158
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v1, 0x15
 
-    .line 158
+    .line 159
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -63,7 +63,7 @@
 
     move v1, v0
 
-    .line 160
+    .line 161
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatListCell;->listView:[Lorg/telegram/ui/Cells/ChatListCell$ListView;
 
@@ -92,7 +92,7 @@
     :cond_1
     move v3, v0
 
-    .line 169
+    .line 170
     :goto_2
     new-instance v6, Lorg/telegram/ui/Cells/ChatListCell$ListView;
 
@@ -100,7 +100,7 @@
 
     aput-object v6, v2, v1
 
-    .line 170
+    .line 171
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatListCell;->listView:[Lorg/telegram/ui/Cells/ChatListCell$ListView;
 
     aget-object v2, v2, v1
@@ -149,7 +149,7 @@
 
     invoke-virtual {p0, v2, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 172
+    .line 173
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatListCell;->listView:[Lorg/telegram/ui/Cells/ChatListCell$ListView;
 
     aget-object v2, v2, v1
@@ -175,7 +175,7 @@
 
     move v1, v0
 
-    .line 173
+    .line 174
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatListCell;->listView:[Lorg/telegram/ui/Cells/ChatListCell$ListView;
 
@@ -183,7 +183,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 174
+    .line 175
     aget-object v2, v2, v1
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatListCell$ListView;->access$000(Lorg/telegram/ui/Cells/ChatListCell$ListView;)Lorg/telegram/ui/Components/RadioButton;
@@ -212,7 +212,7 @@
 
     goto :goto_0
 
-    .line 176
+    .line 177
     :cond_1
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Cells/ChatListCell;->didSelectChatType(ZZ)V
 
@@ -230,12 +230,12 @@
 .method public invalidate()V
     .locals 3
 
-    .line 187
+    .line 188
     invoke-super {p0}, Landroid/widget/LinearLayout;->invalidate()V
 
     const/4 v0, 0x0
 
-    .line 188
+    .line 189
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatListCell;->listView:[Lorg/telegram/ui/Cells/ChatListCell$ListView;
 
@@ -243,7 +243,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 189
+    .line 190
     aget-object v1, v1, v0
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -259,7 +259,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 195
+    .line 196
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1

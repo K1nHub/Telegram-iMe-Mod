@@ -12,11 +12,10 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import androidx.appcompat.R$attr;
 import androidx.core.view.TintableBackgroundView;
-import androidx.core.widget.AutoSizeableTextView;
 import androidx.core.widget.TextViewCompat;
 import androidx.core.widget.TintableCompoundDrawablesView;
 /* loaded from: classes.dex */
-public class AppCompatButton extends Button implements TintableBackgroundView, AutoSizeableTextView, TintableCompoundDrawablesView {
+public class AppCompatButton extends Button implements TintableBackgroundView, TintableCompoundDrawablesView {
     private AppCompatEmojiTextHelper mAppCompatEmojiTextHelper;
     private final AppCompatBackgroundHelper mBackgroundTintHelper;
     private final AppCompatTextHelper mTextHelper;
@@ -136,7 +135,7 @@ public class AppCompatButton extends Button implements TintableBackgroundView, A
 
     @Override // android.widget.TextView
     public void setTextSize(int i, float f) {
-        if (AutoSizeableTextView.PLATFORM_SUPPORTS_AUTOSIZE) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
             super.setTextSize(i, f);
             return;
         }
@@ -151,15 +150,14 @@ public class AppCompatButton extends Button implements TintableBackgroundView, A
     public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         super.onTextChanged(charSequence, i, i2, i3);
         AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
-        if (appCompatTextHelper == null || AutoSizeableTextView.PLATFORM_SUPPORTS_AUTOSIZE || !appCompatTextHelper.isAutoSizeEnabled()) {
-            return;
+        if ((appCompatTextHelper == null || ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE || !appCompatTextHelper.isAutoSizeEnabled()) ? false : true) {
+            this.mTextHelper.autoSizeText();
         }
-        this.mTextHelper.autoSizeText();
     }
 
     @Override // android.widget.TextView
     public void setAutoSizeTextTypeWithDefaults(int i) {
-        if (AutoSizeableTextView.PLATFORM_SUPPORTS_AUTOSIZE) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
             super.setAutoSizeTextTypeWithDefaults(i);
             return;
         }
@@ -171,7 +169,7 @@ public class AppCompatButton extends Button implements TintableBackgroundView, A
 
     @Override // android.widget.TextView
     public void setAutoSizeTextTypeUniformWithConfiguration(int i, int i2, int i3, int i4) throws IllegalArgumentException {
-        if (AutoSizeableTextView.PLATFORM_SUPPORTS_AUTOSIZE) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
             super.setAutoSizeTextTypeUniformWithConfiguration(i, i2, i3, i4);
             return;
         }
@@ -183,7 +181,7 @@ public class AppCompatButton extends Button implements TintableBackgroundView, A
 
     @Override // android.widget.TextView
     public void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i) throws IllegalArgumentException {
-        if (AutoSizeableTextView.PLATFORM_SUPPORTS_AUTOSIZE) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
             super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i);
             return;
         }
@@ -195,7 +193,7 @@ public class AppCompatButton extends Button implements TintableBackgroundView, A
 
     @Override // android.widget.TextView
     public int getAutoSizeTextType() {
-        if (AutoSizeableTextView.PLATFORM_SUPPORTS_AUTOSIZE) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeTextType() == 1 ? 1 : 0;
         }
         AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
@@ -207,7 +205,7 @@ public class AppCompatButton extends Button implements TintableBackgroundView, A
 
     @Override // android.widget.TextView
     public int getAutoSizeStepGranularity() {
-        if (AutoSizeableTextView.PLATFORM_SUPPORTS_AUTOSIZE) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeStepGranularity();
         }
         AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
@@ -219,7 +217,7 @@ public class AppCompatButton extends Button implements TintableBackgroundView, A
 
     @Override // android.widget.TextView
     public int getAutoSizeMinTextSize() {
-        if (AutoSizeableTextView.PLATFORM_SUPPORTS_AUTOSIZE) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeMinTextSize();
         }
         AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
@@ -231,7 +229,7 @@ public class AppCompatButton extends Button implements TintableBackgroundView, A
 
     @Override // android.widget.TextView
     public int getAutoSizeMaxTextSize() {
-        if (AutoSizeableTextView.PLATFORM_SUPPORTS_AUTOSIZE) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeMaxTextSize();
         }
         AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
@@ -243,7 +241,7 @@ public class AppCompatButton extends Button implements TintableBackgroundView, A
 
     @Override // android.widget.TextView
     public int[] getAutoSizeTextAvailableSizes() {
-        if (AutoSizeableTextView.PLATFORM_SUPPORTS_AUTOSIZE) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeTextAvailableSizes();
         }
         AppCompatTextHelper appCompatTextHelper = this.mTextHelper;

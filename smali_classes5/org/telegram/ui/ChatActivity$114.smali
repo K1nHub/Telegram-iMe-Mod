@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 25590
+    .line 25578
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$114;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
     return p1
 
-    .line 25597
+    .line 25585
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$114;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -68,7 +68,7 @@
 
     if-nez p1, :cond_4
 
-    .line 25598
+    .line 25586
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$114;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
@@ -106,7 +106,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 25599
+    .line 25587
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$114;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -128,7 +128,7 @@
 
     goto :goto_0
 
-    .line 25601
+    .line 25589
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$114;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -143,12 +143,12 @@
     :cond_4
     const/16 p1, 0x33
 
-    .line 25604
+    .line 25592
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 25606
+    .line 25594
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$114;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -160,7 +160,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 25607
+    .line 25595
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$114;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$10400(Lorg/telegram/ui/ChatActivity;)F
@@ -188,10 +188,10 @@
     :cond_5
     int-to-float p1, p1
 
-    .line 25610
+    .line 25598
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$114;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$18900(Lorg/telegram/ui/ChatActivity;)F
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$19000(Lorg/telegram/ui/ChatActivity;)F
 
     move-result v0
 
@@ -201,7 +201,7 @@
 
     const/high16 v0, 0x3fc00000    # 1.5f
 
-    .line 25611
+    .line 25599
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v0

@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 45
+    .line 46
     invoke-virtual {p0}, Lcom/iMe/fork/controller/DialogTranslationController$setSettings$runnable$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,7 +63,7 @@
 .method public final invoke()V
     .locals 4
 
-    .line 46
+    .line 47
     iget-object v0, p0, Lcom/iMe/fork/controller/DialogTranslationController$setSettings$runnable$1;->this$0:Lcom/iMe/fork/controller/DialogTranslationController;
 
     invoke-static {v0}, Lcom/iMe/fork/controller/DialogTranslationController;->access$getDao(Lcom/iMe/fork/controller/DialogTranslationController;)Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
@@ -86,7 +86,7 @@
 
     invoke-interface {v0, v1}, Lcom/iMe/storage/data/locale/db/dao/base/BaseDao;->insert(Ljava/lang/Object;)J
 
-    .line 47
+    .line 48
     iget-object v0, p0, Lcom/iMe/fork/controller/DialogTranslationController$setSettings$runnable$1;->this$0:Lcom/iMe/fork/controller/DialogTranslationController;
 
     invoke-virtual {v0}, Lcom/iMe/fork/controller/DialogTranslationController;->getTranslationSettings()Ljava/util/Map;

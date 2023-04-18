@@ -13,7 +13,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 141
+    .line 146
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "REMOVED_TASK"
@@ -22,7 +22,7 @@
 
     sput-object v0, Lkotlinx/coroutines/EventLoop_commonKt;->DISPOSED_TASK:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 167
+    .line 172
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "CLOSED_EMPTY"

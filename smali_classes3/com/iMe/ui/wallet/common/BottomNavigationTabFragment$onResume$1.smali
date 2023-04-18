@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 19
+    .line 21
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
@@ -66,7 +66,7 @@
 .method public final invoke(I)V
     .locals 1
 
-    .line 19
+    .line 21
     iget-object v0, p0, Lcom/iMe/ui/wallet/common/BottomNavigationTabFragment$onResume$1;->this$0:Lcom/iMe/ui/wallet/common/BottomNavigationTabFragment;
 
     invoke-virtual {v0, p1}, Lcom/iMe/ui/wallet/common/BottomNavigationTabFragment;->handleBottomPadding(I)V

@@ -16,10 +16,10 @@ public final class zzp extends zzb implements zzn {
     @Override // com.google.android.gms.internal.vision.zzn
     public final zzl zza(IObjectWrapper iObjectWrapper, zzk zzkVar) throws RemoteException {
         zzl zzoVar;
-        Parcel m770a_ = m770a_();
-        zzd.zza(m770a_, iObjectWrapper);
-        zzd.zza(m770a_, zzkVar);
-        Parcel zza = zza(1, m770a_);
+        Parcel m756a_ = m756a_();
+        zzd.zza(m756a_, iObjectWrapper);
+        zzd.zza(m756a_, zzkVar);
+        Parcel zza = zza(1, m756a_);
         IBinder readStrongBinder = zza.readStrongBinder();
         if (readStrongBinder == null) {
             zzoVar = null;

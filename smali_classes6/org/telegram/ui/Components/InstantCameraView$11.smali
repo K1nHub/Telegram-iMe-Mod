@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InstantCameraView;)V
     .locals 0
 
-    .line 1176
+    .line 1177
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$11;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$run$0()V
     .locals 6
 
-    .line 1181
+    .line 1182
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$11;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
@@ -95,7 +95,7 @@
 
     if-ltz v0, :cond_1
 
-    .line 1182
+    .line 1183
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$11;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$900(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -132,7 +132,7 @@
     :catch_0
     move-exception v0
 
-    .line 1185
+    .line 1186
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -145,7 +145,7 @@
 .method public run()V
     .locals 1
 
-    .line 1179
+    .line 1180
     new-instance v0, Lorg/telegram/ui/Components/InstantCameraView$11$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/InstantCameraView$11$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/InstantCameraView$11;)V

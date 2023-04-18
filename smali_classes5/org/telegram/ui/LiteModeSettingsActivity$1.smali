@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LiteModeSettingsActivity;)V
     .locals 0
 
-    .line 86
+    .line 88
     iput-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$1;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 90
+    .line 92
     iget-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$1;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

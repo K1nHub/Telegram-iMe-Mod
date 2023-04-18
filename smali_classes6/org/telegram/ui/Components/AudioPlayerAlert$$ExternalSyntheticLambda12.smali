@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda12;->f$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$HhbZNH3cmRNoKYJii-HoHzKagi0(Lorg/telegram/ui/Components/AudioPlayerAlert;I)V
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->onSubItemClick(I)V
 
     return-void
 .end method

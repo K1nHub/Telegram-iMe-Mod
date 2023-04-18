@@ -24,7 +24,7 @@
 .method constructor <init>(Lcom/iMe/fork/ui/dialog/TranslateAlert;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 579
+    .line 606
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$1;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     iput-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$1;->val$onAnimationEnd:Ljava/lang/Runnable;
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 589
+    .line 616
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$1;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     const/4 v0, 0x0
@@ -52,19 +52,19 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 582
+    .line 609
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$1;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$002(Lcom/iMe/fork/ui/dialog/TranslateAlert;Z)Z
 
-    .line 583
+    .line 610
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$1;->val$onAnimationEnd:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_0
 
-    .line 584
+    .line 611
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_0

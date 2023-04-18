@@ -8,22 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/PasscodeView;
 
-.field public final synthetic f$1:Z
-
-.field public final synthetic f$2:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/PasscodeView;ZLorg/telegram/ui/Components/MotionBackgroundDrawable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/PasscodeView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda12;->f$0:Lorg/telegram/ui/Components/PasscodeView;
-
-    iput-boolean p2, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda12;->f$1:Z
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda12;->f$2:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     return-void
 .end method
@@ -31,15 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda12;->f$0:Lorg/telegram/ui/Components/PasscodeView;
 
-    iget-boolean v1, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda12;->f$1:Z
-
-    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda12;->f$2:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/PasscodeView;->$r8$lambda$NpDeo84mqvTH9w1mMqVKlG5wH-g(Lorg/telegram/ui/Components/PasscodeView;ZLorg/telegram/ui/Components/MotionBackgroundDrawable;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/PasscodeView;->$r8$lambda$j_aC1QE-GCFhrfA6Fef0awunpRc(Lorg/telegram/ui/Components/PasscodeView;)V
 
     return-void
 .end method

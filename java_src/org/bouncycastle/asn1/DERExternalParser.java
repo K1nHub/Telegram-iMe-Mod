@@ -12,7 +12,7 @@ public class DERExternalParser implements ASN1Encodable, InMemoryRepresentable {
     @Override // org.bouncycastle.asn1.InMemoryRepresentable
     public ASN1Primitive getLoadedObject() throws IOException {
         try {
-            return new DERExternal(this._parser.readVector());
+            return new DLExternal(this._parser.readVector());
         } catch (IllegalArgumentException e) {
             throw new ASN1Exception(e.getMessage(), e);
         }

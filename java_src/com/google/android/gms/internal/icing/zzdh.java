@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.icing;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Objects;
@@ -8,7 +8,7 @@ import java.util.Objects;
 /* loaded from: classes.dex */
 public final class zzdh {
     static final Charset zza = Charset.forName("UTF-8");
-    static final Charset zzb = Charset.forName(C0482C.ISO88591_NAME);
+    static final Charset zzb = Charset.forName(C0470C.ISO88591_NAME);
     public static final byte[] zzc;
     public static final ByteBuffer zzd;
     public static final zzci zze;

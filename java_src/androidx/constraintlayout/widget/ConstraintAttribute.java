@@ -45,7 +45,7 @@ public class ConstraintAttribute {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: androidx.constraintlayout.widget.ConstraintAttribute$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C01121 {
+    public static /* synthetic */ class C01081 {
 
         /* renamed from: $SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType */
         static final /* synthetic */ int[] f34x66adad53;
@@ -104,7 +104,7 @@ public class ConstraintAttribute {
     }
 
     public void setValue(Object value) {
-        switch (C01121.f34x66adad53[this.mType.ordinal()]) {
+        switch (C01081.f34x66adad53[this.mType.ordinal()]) {
             case 1:
             case 6:
                 this.mIntegerValue = ((Integer) value).intValue();
@@ -158,7 +158,7 @@ public class ConstraintAttribute {
             ConstraintAttribute constraintAttribute = map.get(str);
             String str2 = constraintAttribute.mMethod ? str : "set" + str;
             try {
-                switch (C01121.f34x66adad53[constraintAttribute.mType.ordinal()]) {
+                switch (C01081.f34x66adad53[constraintAttribute.mType.ordinal()]) {
                     case 1:
                         cls.getMethod(str2, Integer.TYPE).invoke(view, Integer.valueOf(constraintAttribute.mIntegerValue));
                         break;
@@ -209,7 +209,7 @@ public class ConstraintAttribute {
         Class<?> cls = view.getClass();
         String str = "set" + this.mName;
         try {
-            switch (C01121.f34x66adad53[this.mType.ordinal()]) {
+            switch (C01081.f34x66adad53[this.mType.ordinal()]) {
                 case 2:
                     Method method = cls.getMethod(str, Boolean.TYPE);
                     Object[] objArr = new Object[1];

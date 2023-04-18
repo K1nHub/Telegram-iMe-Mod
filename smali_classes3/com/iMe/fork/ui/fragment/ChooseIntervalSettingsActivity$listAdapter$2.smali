@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;
     .locals 2
 
-    .line 34
+    .line 35
     new-instance v0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$listAdapter$2;->this$0:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 34
+    .line 35
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$listAdapter$2;->invoke()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;
 
     move-result-object v0

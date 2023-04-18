@@ -1,55 +1,40 @@
 package org.bouncycastle.crypto.digests;
 
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 import org.bouncycastle.crypto.ExtendedDigest;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.Pack;
+import org.bouncycastle.util.encoders.Hex;
 /* loaded from: classes4.dex */
 public class KeccakDigest implements ExtendedDigest {
     private static long[] KeccakRoundConstants = {1, 32898, -9223372036854742902L, -9223372034707259392L, 32907, 2147483649L, -9223372034707259263L, -9223372036854743031L, 138, 136, 2147516425L, 2147483658L, 2147516555L, -9223372036854775669L, -9223372036854742903L, -9223372036854743037L, -9223372036854743038L, -9223372036854775680L, 32778, -9223372034707292150L, -9223372034707259263L, -9223372036854742912L, 2147483649L, -9223372034707259384L};
     protected int bitsInQueue;
-    protected byte[] dataQueue;
     protected int fixedOutputLength;
     protected int rate;
     protected boolean squeezing;
-    protected long[] state;
-
-    public KeccakDigest() {
-        this(288);
-    }
+    protected long[] state = new long[25];
+    protected byte[] dataQueue = new byte[PsExtractor.AUDIO_STREAM];
 
     public KeccakDigest(int i) {
-        this.state = new long[25];
-        this.dataQueue = new byte[PsExtractor.AUDIO_STREAM];
         init(i);
     }
 
-    public KeccakDigest(KeccakDigest keccakDigest) {
-        long[] jArr = new long[25];
-        this.state = jArr;
-        this.dataQueue = new byte[PsExtractor.AUDIO_STREAM];
-        long[] jArr2 = keccakDigest.state;
-        System.arraycopy(jArr2, 0, jArr, 0, jArr2.length);
-        byte[] bArr = keccakDigest.dataQueue;
-        System.arraycopy(bArr, 0, this.dataQueue, 0, bArr.length);
-        this.rate = keccakDigest.rate;
-        this.bitsInQueue = keccakDigest.bitsInQueue;
-        this.fixedOutputLength = keccakDigest.fixedOutputLength;
-        this.squeezing = keccakDigest.squeezing;
-    }
-
     private void KeccakAbsorb(byte[] bArr, int i) {
-        int i2 = this.rate >> 6;
+        int i2 = this.rate >>> 6;
         for (int i3 = 0; i3 < i2; i3++) {
             long[] jArr = this.state;
             jArr[i3] = jArr[i3] ^ Pack.littleEndianToLong(bArr, i);
             i += 8;
         }
+        Hex.toHexString(dumpState()).toLowerCase();
         KeccakPermutation();
     }
 
     private void KeccakExtract() {
-        Pack.longToLittleEndian(this.state, 0, this.rate >> 6, this.dataQueue, 0);
+        KeccakPermutation();
+        dumpState();
+        Pack.longToLittleEndian(this.state, 0, this.rate >>> 6, this.dataQueue, 0);
+        this.bitsInQueue = this.rate;
     }
 
     private void KeccakPermutation() {
@@ -251,66 +236,89 @@ public class KeccakDigest implements ExtendedDigest {
     private void padAndSwitchToSqueezingPhase() {
         byte[] bArr = this.dataQueue;
         int i = this.bitsInQueue;
-        int i2 = i >> 3;
+        int i2 = i >>> 3;
         bArr[i2] = (byte) (bArr[i2] | ((byte) (1 << (i & 7))));
         int i3 = i + 1;
         this.bitsInQueue = i3;
         if (i3 == this.rate) {
             KeccakAbsorb(bArr, 0);
-            this.bitsInQueue = 0;
-        }
-        int i4 = this.bitsInQueue;
-        int i5 = i4 >> 6;
-        int i6 = i4 & 63;
-        int i7 = 0;
-        for (int i8 = 0; i8 < i5; i8++) {
-            long[] jArr = this.state;
-            jArr[i8] = jArr[i8] ^ Pack.littleEndianToLong(this.dataQueue, i7);
-            i7 += 8;
-        }
-        if (i6 > 0) {
-            long[] jArr2 = this.state;
-            jArr2[i5] = jArr2[i5] ^ (Pack.littleEndianToLong(this.dataQueue, i7) & ((1 << i6) - 1));
+        } else {
+            int i4 = i3 >>> 6;
+            int i5 = i3 & 63;
+            int i6 = 0;
+            for (int i7 = 0; i7 < i4; i7++) {
+                long[] jArr = this.state;
+                jArr[i7] = jArr[i7] ^ Pack.littleEndianToLong(this.dataQueue, i6);
+                i6 += 8;
+            }
+            dumpState();
+            if (i5 > 0) {
+                long[] jArr2 = this.state;
+                jArr2[i4] = (((1 << i5) - 1) & Pack.littleEndianToLong(this.dataQueue, i6)) ^ jArr2[i4];
+            }
         }
         long[] jArr3 = this.state;
-        int i9 = (this.rate - 1) >> 6;
-        jArr3[i9] = jArr3[i9] ^ Long.MIN_VALUE;
-        KeccakPermutation();
-        KeccakExtract();
-        this.bitsInQueue = this.rate;
+        int i8 = (this.rate - 1) >>> 6;
+        jArr3[i8] = jArr3[i8] ^ Long.MIN_VALUE;
+        this.bitsInQueue = 0;
         this.squeezing = true;
     }
 
-    protected void absorb(byte[] bArr, int i, int i2) {
-        int i3;
-        int i4 = this.bitsInQueue;
-        if (i4 % 8 != 0) {
+    protected void absorb(byte b) {
+        int i = this.bitsInQueue;
+        if (i % 8 != 0) {
             throw new IllegalStateException("attempt to absorb with odd length queue");
         }
         if (this.squeezing) {
             throw new IllegalStateException("attempt to absorb while squeezing");
         }
-        int i5 = i4 >> 3;
-        int i6 = this.rate >> 3;
-        int i7 = 0;
-        while (i7 < i2) {
-            if (i5 != 0 || i7 > (i3 = i2 - i6)) {
-                int min = Math.min(i6 - i5, i2 - i7);
-                System.arraycopy(bArr, i + i7, this.dataQueue, i5, min);
-                i5 += min;
-                i7 += min;
-                if (i5 == i6) {
-                    KeccakAbsorb(this.dataQueue, 0);
-                    i5 = 0;
-                }
-            } else {
-                do {
-                    KeccakAbsorb(bArr, i + i7);
-                    i7 += i6;
-                } while (i7 <= i3);
-            }
+        byte[] bArr = this.dataQueue;
+        bArr[i >>> 3] = b;
+        int i2 = i + 8;
+        this.bitsInQueue = i2;
+        if (i2 == this.rate) {
+            KeccakAbsorb(bArr, 0);
+            this.bitsInQueue = 0;
         }
-        this.bitsInQueue = i5 << 3;
+    }
+
+    protected void absorb(byte[] bArr, int i, int i2) {
+        int i3;
+        int i4;
+        int i5;
+        int i6 = this.bitsInQueue;
+        if (i6 % 8 != 0) {
+            throw new IllegalStateException("attempt to absorb with odd length queue");
+        }
+        if (this.squeezing) {
+            throw new IllegalStateException("attempt to absorb while squeezing");
+        }
+        int i7 = i6 >>> 3;
+        int i8 = this.rate >>> 3;
+        int i9 = i8 - i7;
+        if (i2 < i9) {
+            System.arraycopy(bArr, i, this.dataQueue, i7, i2);
+            i5 = this.bitsInQueue + (i2 << 3);
+        } else {
+            if (i7 > 0) {
+                System.arraycopy(bArr, i, this.dataQueue, i7, i9);
+                i3 = i9 + 0;
+                KeccakAbsorb(this.dataQueue, 0);
+            } else {
+                i3 = 0;
+            }
+            while (true) {
+                i4 = i2 - i3;
+                if (i4 < i8) {
+                    break;
+                }
+                KeccakAbsorb(bArr, i + i3);
+                i3 += i8;
+            }
+            System.arraycopy(bArr, i + i3, this.dataQueue, 0, i4);
+            i5 = i4 << 3;
+        }
+        this.bitsInQueue = i5;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -325,20 +333,23 @@ public class KeccakDigest implements ExtendedDigest {
         if (this.squeezing) {
             throw new IllegalStateException("attempt to absorb while squeezing");
         }
-        this.dataQueue[i3 >> 3] = (byte) (i & ((1 << i2) - 1));
+        this.dataQueue[i3 >>> 3] = (byte) (i & ((1 << i2) - 1));
         this.bitsInQueue = i3 + i2;
     }
 
-    @Override // org.bouncycastle.crypto.Digest
-    public int doFinal(byte[] bArr, int i) {
-        squeeze(bArr, i, this.fixedOutputLength);
-        reset();
-        return getDigestSize();
-    }
-
-    @Override // org.bouncycastle.crypto.Digest
-    public String getAlgorithmName() {
-        return "Keccak-" + this.fixedOutputLength;
+    protected byte[] dumpState() {
+        byte[] bArr = new byte[this.state.length * 8];
+        int i = 0;
+        int i2 = 0;
+        while (true) {
+            long[] jArr = this.state;
+            if (i == jArr.length) {
+                return bArr;
+            }
+            Pack.longToLittleEndian(jArr[i], bArr, i2);
+            i2 += 8;
+            i++;
+        }
     }
 
     @Override // org.bouncycastle.crypto.ExtendedDigest
@@ -361,26 +372,26 @@ public class KeccakDigest implements ExtendedDigest {
         if (!this.squeezing) {
             padAndSwitchToSqueezingPhase();
         }
+        dumpState();
         long j2 = 0;
         if (j % 8 != 0) {
             throw new IllegalStateException("outputLength not a multiple of 8");
         }
         while (j2 < j) {
             if (this.bitsInQueue == 0) {
-                KeccakPermutation();
                 KeccakExtract();
-                this.bitsInQueue = this.rate;
             }
             int min = (int) Math.min(this.bitsInQueue, j - j2);
             System.arraycopy(this.dataQueue, (this.rate - this.bitsInQueue) / 8, bArr, ((int) (j2 / 8)) + i, min / 8);
             this.bitsInQueue -= min;
             j2 += min;
         }
+        dumpState();
     }
 
     @Override // org.bouncycastle.crypto.Digest
     public void update(byte b) {
-        absorb(new byte[]{b}, 0, 1);
+        absorb(b);
     }
 
     @Override // org.bouncycastle.crypto.Digest

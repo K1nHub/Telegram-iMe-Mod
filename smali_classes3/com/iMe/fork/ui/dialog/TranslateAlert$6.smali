@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/iMe/fork/ui/dialog/TranslateAlert;I)V
     .locals 0
 
-    .line 1287
+    .line 1314
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$6;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-direct {p0, p2}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
@@ -35,10 +35,10 @@
 .method public setAlpha(I)V
     .locals 0
 
-    .line 1290
+    .line 1317
     invoke-super {p0, p1}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
 
-    .line 1291
+    .line 1318
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$6;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$1800(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Landroid/widget/FrameLayout;

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingTransactionActionButtonsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingTransactionActionButtonsView.kt\ncom/iMe/ui/custom/StakingTransactionActionButtonsView\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,88:1\n262#2,2:89\n262#2,2:91\n*S KotlinDebug\n*F\n+ 1 StakingTransactionActionButtonsView.kt\ncom/iMe/ui/custom/StakingTransactionActionButtonsView\n*L\n47#1:89,2\n51#1:91,2\n*E\n"
+    value = "SMAP\nStakingTransactionActionButtonsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingTransactionActionButtonsView.kt\ncom/iMe/ui/custom/StakingTransactionActionButtonsView\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,89:1\n262#2,2:90\n262#2,2:92\n*S KotlinDebug\n*F\n+ 1 StakingTransactionActionButtonsView.kt\ncom/iMe/ui/custom/StakingTransactionActionButtonsView\n*L\n48#1:90,2\n52#1:92,2\n*E\n"
 .end annotation
 
 
@@ -16,30 +16,6 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$lLi2AXkjwuka8mtqSyPJFWijUdE(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->setupViewData$lambda$6$lambda$3$lambda$2(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$letIqSzm25zE_AAoIw5UHrVA8wc(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->setupViewData$lambda$6$lambda$5$lambda$4(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$mvbjpG5SIYmUTY7zmTmnQxur1qQ(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->setupViewData$lambda$6$lambda$1$lambda$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 7
 
@@ -71,10 +47,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 21
+    .line 22
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 24
+    .line 25
     sget-object p2, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$cornerRadius$2;->INSTANCE:Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$cornerRadius$2;
 
     invoke-static {p2}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
@@ -83,7 +59,7 @@
 
     iput-object p2, p0, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->cornerRadius$delegate:Lkotlin/Lazy;
 
-    .line 25
+    .line 26
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object p1
@@ -98,7 +74,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;
 
-    .line 28
+    .line 29
     invoke-direct {p0}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->setupView()V
 
     return-void
@@ -120,7 +96,7 @@
 
     const/4 p3, 0x0
 
-    .line 17
+    .line 18
     :cond_1
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -130,7 +106,7 @@
 .method private final getCornerRadius()I
     .locals 1
 
-    .line 24
+    .line 25
     iget-object v0, p0, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->cornerRadius$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -149,20 +125,20 @@
 .method private final setupView()V
     .locals 3
 
-    .line 77
+    .line 78
     invoke-virtual {p0}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->setupColors()V
 
-    .line 78
+    .line 79
     iget-object v0, p0, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;
 
-    .line 79
+    .line 80
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonAction:Lcom/iMe/ui/custom/BigActionButton;
 
     const/16 v2, 0x24
 
     invoke-virtual {v1, v2}, Lcom/iMe/ui/custom/ActionButton;->setForcedCustomHeight(I)V
 
-    .line 80
+    .line 81
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonConditions:Landroidx/appcompat/widget/AppCompatTextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->staking_deposit_conditions:I
@@ -173,7 +149,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 81
+    .line 82
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonApproveInfo:Landroidx/appcompat/widget/AppCompatTextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_swap_process_what_is_approve:I
@@ -184,7 +160,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 83
+    .line 84
     iget-object v0, p0, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->getRoot()Landroidx/appcompat/widget/LinearLayoutCompat;
@@ -196,71 +172,32 @@
     return-void
 .end method
 
-.method private static final setupViewData$lambda$6$lambda$1$lambda$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
-    .locals 0
-
-    const-string p1, "$onActionClickAction"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 44
-    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
-
-    return-void
-.end method
-
-.method private static final setupViewData$lambda$6$lambda$3$lambda$2(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
-    .locals 0
-
-    const-string p1, "$onApproveInfoClickAction"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 48
-    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
-
-    return-void
-.end method
-
-.method private static final setupViewData$lambda$6$lambda$5$lambda$4(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
-    .locals 0
-
-    const-string p1, "$onConditionsClickAction"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 52
-    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
-
-    return-void
-.end method
-
 
 # virtual methods
 .method public final setupColors()V
     .locals 6
 
-    .line 58
+    .line 59
     iget-object v0, p0, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;
 
-    .line 59
+    .line 60
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonAction:Lcom/iMe/ui/custom/BigActionButton;
 
     invoke-virtual {v1}, Lcom/iMe/ui/custom/ActionButton;->applyColors()V
 
-    .line 60
+    .line 61
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonConditions:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string v2, "windowBackgroundWhiteBlueText"
 
-    .line 61
+    .line 62
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 62
+    .line 63
     invoke-direct {p0}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->getCornerRadius()I
 
     move-result v2
@@ -279,26 +216,26 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    const-string v2, "setupColors$lambda$9$lambda$7"
+    const-string v2, "setupColors$lambda$6$lambda$4"
 
-    .line 63
+    .line 64
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 65
+    .line 66
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonApproveInfo:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string v1, "windowBackgroundWhiteGrayText4"
 
-    .line 66
+    .line 67
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 67
+    .line 68
     invoke-direct {p0}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->getCornerRadius()I
 
     move-result v1
@@ -335,28 +272,32 @@
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 41
+    .line 42
     iget-object v0, p0, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;
 
-    .line 42
+    .line 43
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonAction:Lcom/iMe/ui/custom/BigActionButton;
 
-    .line 43
+    .line 44
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 44
-    new-instance p1, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda2;
+    const-string p1, "setupViewData$lambda$3$lambda$0"
 
-    invoke-direct {p1, p4}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    .line 45
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v1, p1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    new-instance p1, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$setupViewData$1$1$1;
 
-    .line 46
-    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonApproveInfo:Landroidx/appcompat/widget/AppCompatTextView;
+    invoke-direct {p1, p4}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$setupViewData$1$1$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    const-string p4, "setupViewData$lambda$6$lambda$3"
+    invoke-static {v1, p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
 
     .line 47
+    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonApproveInfo:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string p4, "setupViewData$lambda$3$lambda$1"
+
+    .line 48
     invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/16 p4, 0x8
@@ -376,19 +317,19 @@
     :goto_0
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 48
-    new-instance v2, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda0;
+    .line 49
+    new-instance v2, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$setupViewData$1$2$1;
 
-    invoke-direct {v2, p6}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v2, p6}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$setupViewData$1$2$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 50
-    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonConditions:Landroidx/appcompat/widget/AppCompatTextView;
-
-    const-string p6, "setupViewData$lambda$6$lambda$5"
+    invoke-static {p1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
 
     .line 51
+    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonConditions:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string p6, "setupViewData$lambda$3$lambda$2"
+
+    .line 52
     invoke-static {p1, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz p2, :cond_1
@@ -411,12 +352,12 @@
     :cond_2
     invoke-virtual {p1, p4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 52
-    new-instance p2, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda1;
+    .line 53
+    new-instance p2, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$setupViewData$1$3$1;
 
-    invoke-direct {p2, p5}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p2, p5}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$setupViewData$1$3$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method

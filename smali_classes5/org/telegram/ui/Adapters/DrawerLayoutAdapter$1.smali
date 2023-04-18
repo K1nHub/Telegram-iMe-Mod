@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;Landroid/content/Context;Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;Z)V
     .locals 0
 
-    .line 212
+    .line 214
     iput-object p1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$1;->this$0:Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Cells/DrawerProfileCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;Z)V
@@ -35,7 +35,7 @@
 .method protected onPremiumClick()V
     .locals 1
 
-    .line 215
+    .line 217
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$1;->this$0:Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->access$000(Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;)Landroid/view/View$OnClickListener;
@@ -44,7 +44,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 216
+    .line 218
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$1;->this$0:Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->access$000(Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;)Landroid/view/View$OnClickListener;

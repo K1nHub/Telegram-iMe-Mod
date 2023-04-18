@@ -2,38 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionIntroActivity$ActionIntroQRLoginDelegate;
+.implements Lorg/telegram/ui/Components/PasscodeView$PasscodeViewDelegate;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
-.field public final synthetic f$1:Lorg/telegram/ui/ActionIntroActivity;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionIntroActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda121;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda121;->f$1:Lorg/telegram/ui/ActionIntroActivity;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final didFindQRCode(Ljava/lang/String;)V
-    .locals 2
+.method public final didAcceptedPassword(Lorg/telegram/ui/Components/PasscodeView;)V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda121;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda121;->f$1:Lorg/telegram/ui/ActionIntroActivity;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$uJ9Qxu4VGsfNU0HGJJGDWj8tn74(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionIntroActivity;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$HLjmcUGDVCSsKekYSSQJK0C21Fc(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/Components/PasscodeView;)V
 
     return-void
 .end method

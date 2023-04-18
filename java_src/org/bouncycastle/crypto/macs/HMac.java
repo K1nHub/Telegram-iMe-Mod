@@ -145,10 +145,6 @@ public class HMac implements Mac {
         }
     }
 
-    public void update(byte b) {
-        this.digest.update(b);
-    }
-
     @Override // org.bouncycastle.crypto.Mac
     public void update(byte[] bArr, int i, int i2) {
         this.digest.update(bArr, i, i2);

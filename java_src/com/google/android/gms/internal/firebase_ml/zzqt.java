@@ -3,9 +3,9 @@ package com.google.android.gms.internal.firebase_ml;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.vision.cloud.FirebaseVisionCloudDetectorOptions;
-import com.google.firebase.p021ml.vision.common.FirebaseVisionImage;
-import com.google.firebase.p021ml.vision.label.FirebaseVisionImageLabel;
+import com.google.firebase.p020ml.vision.cloud.FirebaseVisionCloudDetectorOptions;
+import com.google.firebase.p020ml.vision.common.FirebaseVisionImage;
+import com.google.firebase.p020ml.vision.label.FirebaseVisionImageLabel;
 import java.util.ArrayList;
 import java.util.List;
 /* loaded from: classes.dex */

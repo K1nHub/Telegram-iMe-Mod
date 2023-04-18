@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSortingFilterSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SortingFilterSettingsActivity.kt\ncom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,320:1\n1#2:321\n*E\n"
+    value = "SMAP\nSortingFilterSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SortingFilterSettingsActivity.kt\ncom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,325:1\n1#2:326\n*E\n"
 .end annotation
 
 
@@ -55,14 +55,14 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 166
+    .line 171
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
     iput-object p2, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    .line 169
+    .line 174
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->updateRows()V
 
     return-void
@@ -79,7 +79,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 268
+    .line 273
     new-instance v0, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -122,19 +122,19 @@
 
     const-string v0, "fabs"
 
-    .line 269
+    .line 274
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0, p3}, Lcom/iMe/fork/models/SortingTabState;->setFabs(Ljava/util/Set;)V
 
-    .line 270
+    .line 275
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getListAdapter(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;
 
     move-result-object p0
 
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 271
+    .line 276
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -155,7 +155,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 201
+    .line 206
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
@@ -168,7 +168,7 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 204
+    .line 209
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getArchiveSwitchTopicsBarRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
@@ -181,7 +181,7 @@
 
     goto :goto_1
 
-    .line 205
+    .line 210
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
@@ -195,7 +195,7 @@
 
     goto :goto_1
 
-    .line 206
+    .line 211
     :cond_1
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
@@ -230,7 +230,7 @@
 
     goto :goto_1
 
-    .line 207
+    .line 212
     :cond_4
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->SORTING_FILTER:I
 
@@ -245,7 +245,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 210
+    .line 215
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
@@ -266,7 +266,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 232
+    .line 237
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     add-int/lit8 v1, p2, 0x1
@@ -279,19 +279,19 @@
 
     move-result v0
 
-    .line 233
+    .line 238
     invoke-virtual {p0, p2}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->getItemViewType(I)I
 
     move-result v1
 
-    .line 234
+    .line 239
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v2, "holder.itemView"
 
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 236
+    .line 241
     instance-of v2, p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     if-eqz v2, :cond_1
@@ -300,19 +300,19 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 237
+    .line 242
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 238
+    .line 243
     invoke-static {v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
 
     move-result v2
 
     if-ne p2, v2, :cond_5
 
-    .line 240
+    .line 245
     invoke-virtual {v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getCurrentArchive()Z
 
     move-result p2
@@ -323,17 +323,17 @@
 
     goto :goto_0
 
-    .line 241
+    .line 246
     :cond_0
     sget p2, Lorg/telegram/messenger/R$string;->sorting_settings_enable_item_title:I
 
-    .line 239
+    .line 244
     :goto_0
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 242
+    .line 247
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v2
@@ -346,12 +346,12 @@
 
     move-result v1
 
-    .line 239
+    .line 244
     invoke-virtual {p1, p2, v1, v0}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
     goto/16 :goto_2
 
-    .line 246
+    .line 251
     :cond_1
     instance-of v2, p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -361,12 +361,12 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 247
+    .line 252
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 248
+    .line 253
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
 
     move-result v1
@@ -389,7 +389,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 249
+    .line 254
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
@@ -402,17 +402,17 @@
 
     const/4 p2, 0x0
 
-    .line 250
+    .line 255
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     const/16 p2, 0xc
 
-    .line 251
+    .line 256
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     goto :goto_2
 
-    .line 253
+    .line 258
     :cond_2
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->mContext:Landroid/content/Context;
 
@@ -424,7 +424,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 255
+    .line 260
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
 
     move-result v0
@@ -435,11 +435,11 @@
 
     goto :goto_1
 
-    .line 256
+    .line 261
     :cond_3
     sget p2, Lorg/telegram/messenger/R$string;->sorting_settings_drag_and_drop_hint:I
 
-    .line 254
+    .line 259
     :goto_1
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
@@ -449,12 +449,12 @@
 
     const/4 p2, 0x0
 
-    .line 258
+    .line 263
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     goto :goto_2
 
-    .line 262
+    .line 267
     :cond_4
     instance-of v2, p1, Lcom/iMe/fork/ui/view/SortingFilterCell;
 
@@ -464,12 +464,12 @@
 
     if-ne v1, v2, :cond_5
 
-    .line 263
+    .line 268
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     check-cast p1, Lcom/iMe/fork/ui/view/SortingFilterCell;
 
-    .line 264
+    .line 269
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v2
@@ -492,10 +492,10 @@
 
     check-cast v2, Lcom/iMe/fork/models/SortingTabState;
 
-    .line 265
+    .line 270
     invoke-virtual {p1, v2, v0}, Lcom/iMe/fork/ui/view/SortingFilterCell;->setState(Lcom/iMe/fork/models/SortingTabState;Z)V
 
-    .line 266
+    .line 271
     invoke-virtual {v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getCurrentArchive()Z
 
     move-result v0
@@ -504,7 +504,7 @@
 
     invoke-virtual {p1, v0}, Lcom/iMe/fork/ui/view/SortingFilterCell;->setFabsVisible(Z)V
 
-    .line 267
+    .line 272
     new-instance v0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, v1, v2, p2}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;Lcom/iMe/fork/models/SortingTabState;I)V
@@ -519,7 +519,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 166
+    .line 171
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -534,7 +534,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 213
+    .line 218
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TOPICS_BAR:I
 
     if-ne p2, p1, :cond_0
@@ -557,24 +557,24 @@
 
     move-result v0
 
-    .line 219
+    .line 224
     new-instance v1, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter$onCreateViewHolder$1;
 
     iget-object v2, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-direct {v1, v2}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter$onCreateViewHolder$1;-><init>(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)V
 
-    .line 213
+    .line 218
     invoke-direct {p1, p2, v0, v1}, Lcom/iMe/fork/ui/view/ArchiveSwitchTopicsBar;-><init>(Landroid/content/Context;ZLkotlin/jvm/functions/Function1;)V
 
-    .line 219
+    .line 224
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {p2, p1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$setTopicsBar$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;Lcom/iMe/fork/ui/view/ArchiveSwitchTopicsBar;)V
 
     goto :goto_0
 
-    .line 220
+    .line 225
     :cond_0
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
@@ -588,12 +588,12 @@
 
     const/4 p2, 0x1
 
-    .line 221
+    .line 226
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
     goto :goto_0
 
-    .line 223
+    .line 228
     :cond_1
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
@@ -607,7 +607,7 @@
 
     goto :goto_0
 
-    .line 224
+    .line 229
     :cond_2
     new-instance p1, Lcom/iMe/fork/ui/view/SortingFilterCell;
 
@@ -617,14 +617,14 @@
 
     const-string p2, "windowBackgroundWhite"
 
-    .line 225
+    .line 230
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 228
+    .line 233
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -636,7 +636,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 212
+    .line 217
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -647,7 +647,7 @@
 .method public final swapElements(II)V
     .locals 4
 
-    .line 192
+    .line 197
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
@@ -674,10 +674,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/iMe/fork/controller/FiltersController;->swapSortingFilters(ZII)V
 
-    .line 193
+    .line 198
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 
-    .line 194
+    .line 199
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -698,31 +698,31 @@
 .method public final updateRows()V
     .locals 4
 
-    .line 175
+    .line 180
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     const/4 v1, -0x1
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$setTabsRowStart$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
 
-    .line 176
+    .line 181
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$setTabsRowEnd$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
 
-    .line 177
+    .line 182
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$setDragAndDropInfoRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
 
-    .line 179
+    .line 184
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
 
-    .line 180
+    .line 185
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
@@ -735,7 +735,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$setArchiveSwitchTopicsBarRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
 
-    .line 181
+    .line 186
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
@@ -748,7 +748,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$setEnableRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
 
-    .line 182
+    .line 187
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
@@ -761,7 +761,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$setEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
 
-    .line 183
+    .line 188
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
@@ -780,7 +780,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 184
+    .line 189
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
@@ -789,7 +789,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$setTabsRowStart$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
 
-    .line 185
+    .line 190
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
@@ -816,7 +816,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
 
-    .line 186
+    .line 191
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I
@@ -825,7 +825,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$setTabsRowEnd$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;I)V
 
-    .line 187
+    .line 192
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)I

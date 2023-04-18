@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 0
 
-    .line 1904
+    .line 1905
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$1;->val$linkActionView:Lorg/telegram/ui/Components/LinkActionView;
@@ -58,12 +58,12 @@
 .method public revokeLink()V
     .locals 1
 
-    .line 1907
+    .line 1908
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$2900(Lorg/telegram/ui/ManageLinksActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$3000(Lorg/telegram/ui/ManageLinksActivity;)V
 
     return-void
 .end method
@@ -71,7 +71,7 @@
 .method public showUsersForPermanentLink()V
     .locals 12
 
-    .line 1912
+    .line 1913
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
@@ -88,7 +88,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$3100(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
+    invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$3200(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     move-result-object v3
 
@@ -96,7 +96,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$3200(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+    invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$3300(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     move-result-object v4
 
@@ -104,7 +104,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$3300(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/HashMap;
+    invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$3400(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/HashMap;
 
     move-result-object v5
 
@@ -112,7 +112,7 @@
 
     iget-object v6, v1, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v6}, Lorg/telegram/ui/ManageLinksActivity;->access$2800(Lorg/telegram/ui/ManageLinksActivity;)J
+    invoke-static {v6}, Lorg/telegram/ui/ManageLinksActivity;->access$2900(Lorg/telegram/ui/ManageLinksActivity;)J
 
     move-result-wide v7
 
@@ -120,7 +120,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$1500(Lorg/telegram/ui/ManageLinksActivity;)Z
+    invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$1600(Lorg/telegram/ui/ManageLinksActivity;)Z
 
     move-result v10
 
@@ -130,14 +130,14 @@
 
     invoke-direct/range {v1 .. v10}, Lorg/telegram/ui/Components/InviteLinkBottomSheet;-><init>(Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;Lorg/telegram/tgnet/TLRPC$ChatFull;Ljava/util/HashMap;Lorg/telegram/ui/ActionBar/BaseFragment;JZZ)V
 
-    invoke-static {v0, v11}, Lorg/telegram/ui/ManageLinksActivity;->access$3002(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/InviteLinkBottomSheet;)Lorg/telegram/ui/Components/InviteLinkBottomSheet;
+    invoke-static {v0, v11}, Lorg/telegram/ui/ManageLinksActivity;->access$3102(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/InviteLinkBottomSheet;)Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
-    .line 1913
+    .line 1914
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$3000(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/ui/Components/InviteLinkBottomSheet;
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$3100(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
     move-result-object v0
 

@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.SeekParameters;
@@ -92,7 +92,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
             Integer num = sampleStreamArr[i2] != null ? this.streamPeriodIndices.get(sampleStreamArr[i2]) : null;
             iArr[i2] = num == null ? -1 : num.intValue();
             if (exoTrackSelectionArr[i2] != null) {
-                String str = exoTrackSelectionArr[i2].getTrackGroup().f126id;
+                String str = exoTrackSelectionArr[i2].getTrackGroup().f123id;
                 iArr2[i2] = Integer.parseInt(str.substring(0, str.indexOf(":")));
             } else {
                 iArr2[i2] = -1;
@@ -194,8 +194,8 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         long j = -9223372036854775807L;
         for (MediaPeriod mediaPeriod : this.enabledPeriods) {
             long readDiscontinuity = mediaPeriod.readDiscontinuity();
-            if (readDiscontinuity != C0482C.TIME_UNSET) {
-                if (j == C0482C.TIME_UNSET) {
+            if (readDiscontinuity != C0470C.TIME_UNSET) {
+                if (j == C0470C.TIME_UNSET) {
                     for (MediaPeriod mediaPeriod2 : this.enabledPeriods) {
                         if (mediaPeriod2 == mediaPeriod) {
                             break;
@@ -207,7 +207,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
                 } else if (readDiscontinuity != j) {
                     throw new IllegalStateException("Conflicting discontinuities.");
                 }
-            } else if (j != C0482C.TIME_UNSET && mediaPeriod.seekToUs(j) != j) {
+            } else if (j != C0470C.TIME_UNSET && mediaPeriod.seekToUs(j) != j) {
                 throw new IllegalStateException("Unexpected child seekToUs result.");
             }
         }
@@ -262,7 +262,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
                 int i5 = 0;
                 while (i5 < i4) {
                     TrackGroup trackGroup = trackGroups.get(i5);
-                    TrackGroup copyWithId = trackGroup.copyWithId(i2 + ":" + trackGroup.f126id);
+                    TrackGroup copyWithId = trackGroup.copyWithId(i2 + ":" + trackGroup.f123id);
                     this.childTrackGroupByMergedTrackGroup.put(copyWithId, trackGroup);
                     trackGroupArr[i3] = copyWithId;
                     i5++;
@@ -350,7 +350,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         @Override // com.google.android.exoplayer2.source.MediaPeriod
         public long readDiscontinuity() {
             long readDiscontinuity = this.mediaPeriod.readDiscontinuity();
-            return readDiscontinuity == C0482C.TIME_UNSET ? C0482C.TIME_UNSET : this.timeOffsetUs + readDiscontinuity;
+            return readDiscontinuity == C0470C.TIME_UNSET ? C0470C.TIME_UNSET : this.timeOffsetUs + readDiscontinuity;
         }
 
         @Override // com.google.android.exoplayer2.source.MediaPeriod

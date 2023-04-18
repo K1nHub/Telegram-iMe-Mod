@@ -22,7 +22,7 @@
 .method public constructor <init>()V
     .locals 6
 
-    .line 507
+    .line 512
     sget-object v0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsSpan;->drawable:Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;
 
     if-nez v0, :cond_0
@@ -40,7 +40,7 @@
 
     invoke-direct {p0, v0, v1}, Landroid/text/style/ImageSpan;-><init>(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 508
+    .line 513
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->getTextSize()F
@@ -57,7 +57,7 @@
 
     float-to-int v2, v2
 
-    .line 510
+    .line 515
     invoke-virtual {p0}, Landroid/text/style/ImageSpan;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -82,7 +82,7 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 5
 
-    .line 515
+    .line 520
     invoke-virtual {p1}, Landroid/text/TextPaint;->getTextSize()F
 
     move-result v0
@@ -97,7 +97,7 @@
 
     float-to-int v1, v1
 
-    .line 517
+    .line 522
     invoke-virtual {p0}, Landroid/text/style/ImageSpan;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
@@ -116,7 +116,7 @@
 
     invoke-virtual {v2, v4, v1, v3, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 518
+    .line 523
     invoke-super {p0, p1}, Landroid/text/style/ImageSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
     return-void

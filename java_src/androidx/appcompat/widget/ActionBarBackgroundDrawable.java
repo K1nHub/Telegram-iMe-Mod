@@ -52,16 +52,22 @@ class ActionBarBackgroundDrawable extends Drawable {
     public void getOutline(Outline outline) {
         ActionBarContainer actionBarContainer = this.mContainer;
         if (actionBarContainer.mIsSplit) {
-            Drawable drawable = actionBarContainer.mSplitBackground;
-            if (drawable != null) {
-                drawable.getOutline(outline);
+            if (actionBarContainer.mSplitBackground != null) {
+                Api21Impl.getOutline(actionBarContainer.mBackground, outline);
                 return;
             }
             return;
         }
-        Drawable drawable2 = actionBarContainer.mBackground;
-        if (drawable2 != null) {
-            drawable2.getOutline(outline);
+        Drawable drawable = actionBarContainer.mBackground;
+        if (drawable != null) {
+            Api21Impl.getOutline(drawable, outline);
+        }
+    }
+
+    /* loaded from: classes.dex */
+    private static class Api21Impl {
+        public static void getOutline(Drawable drawable, Outline outline) {
+            drawable.getOutline(outline);
         }
     }
 }

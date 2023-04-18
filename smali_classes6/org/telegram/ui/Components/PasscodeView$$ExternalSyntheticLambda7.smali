@@ -2,32 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/widget/TextView$OnEditorActionListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/PasscodeView;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda7;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/PasscodeView;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda7;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda7;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda7;->INSTANCE:Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda7;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/Components/PasscodeView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .locals 1
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/Components/PasscodeView;
-
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/PasscodeView;->$r8$lambda$lxpSAnTmw9vi2eCFx_wNTmDsVMM(Lorg/telegram/ui/Components/PasscodeView;Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/PasscodeView;->$r8$lambda$UvN_Yr_EpJmCMH-O7jKkNqSD05I(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

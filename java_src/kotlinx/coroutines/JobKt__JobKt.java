@@ -26,10 +26,9 @@ public final /* synthetic */ class JobKt__JobKt {
 
     public static final void cancel(CoroutineContext coroutineContext, CancellationException cancellationException) {
         Job job = (Job) coroutineContext.get(Job.Key);
-        if (job == null) {
-            return;
+        if (job != null) {
+            job.cancel(cancellationException);
         }
-        job.cancel(cancellationException);
     }
 
     public static final void ensureActive(Job job) {
@@ -40,9 +39,8 @@ public final /* synthetic */ class JobKt__JobKt {
 
     public static final void ensureActive(CoroutineContext coroutineContext) {
         Job job = (Job) coroutineContext.get(Job.Key);
-        if (job == null) {
-            return;
+        if (job != null) {
+            JobKt.ensureActive(job);
         }
-        JobKt.ensureActive(job);
     }
 }

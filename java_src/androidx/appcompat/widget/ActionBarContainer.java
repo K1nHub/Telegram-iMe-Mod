@@ -78,7 +78,7 @@ public class ActionBarContainer extends FrameLayout {
         setWillNotDraw(z);
         invalidate();
         if (Build.VERSION.SDK_INT >= 21) {
-            invalidateOutline();
+            Api21Impl.invalidateOutline(this);
         }
     }
 
@@ -103,7 +103,7 @@ public class ActionBarContainer extends FrameLayout {
         setWillNotDraw(z);
         invalidate();
         if (Build.VERSION.SDK_INT >= 21) {
-            invalidateOutline();
+            Api21Impl.invalidateOutline(this);
         }
     }
 
@@ -128,7 +128,7 @@ public class ActionBarContainer extends FrameLayout {
         setWillNotDraw(z);
         invalidate();
         if (Build.VERSION.SDK_INT >= 21) {
-            invalidateOutline();
+            Api21Impl.invalidateOutline(this);
         }
     }
 
@@ -313,6 +313,13 @@ public class ActionBarContainer extends FrameLayout {
         }
         if (z2) {
             invalidate();
+        }
+    }
+
+    /* loaded from: classes.dex */
+    private static class Api21Impl {
+        public static void invalidateOutline(ActionBarContainer actionBarContainer) {
+            actionBarContainer.invalidateOutline();
         }
     }
 }

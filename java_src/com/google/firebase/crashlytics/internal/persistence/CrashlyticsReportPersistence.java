@@ -57,7 +57,7 @@ public class CrashlyticsReportPersistence {
     public void persistReport(CrashlyticsReport crashlyticsReport) {
         CrashlyticsReport.Session session = crashlyticsReport.getSession();
         if (session == null) {
-            Logger.getLogger().m738d("Could not get session for report");
+            Logger.getLogger().m724d("Could not get session for report");
             return;
         }
         String identifier = session.getIdentifier();
@@ -67,7 +67,7 @@ public class CrashlyticsReportPersistence {
             writeTextFile(new File(prepareDirectory, "start-time"), "", session.getStartedAt());
         } catch (IOException e) {
             Logger logger = Logger.getLogger();
-            logger.m737d("Could not persist report for session " + identifier, e);
+            logger.m723d("Could not persist report for session " + identifier, e);
         }
     }
 
@@ -78,7 +78,7 @@ public class CrashlyticsReportPersistence {
             writeTextFile(new File(sessionDirectoryById, generateEventFilename(this.eventCounter.getAndIncrement(), z)), TRANSFORM.eventToJson(event));
         } catch (IOException e) {
             Logger logger = Logger.getLogger();
-            logger.m729w("Could not persist event for session " + str, e);
+            logger.m715w("Could not persist event for session " + str, e);
         }
         trimEvents(sessionDirectoryById, i);
     }
@@ -124,7 +124,7 @@ public class CrashlyticsReportPersistence {
     public void finalizeReports(String str, long j) {
         for (File file : capAndGetOpenSessions(str)) {
             Logger logger = Logger.getLogger();
-            logger.m732v("Finalizing report for session " + file.getName());
+            logger.m718v("Finalizing report for session " + file.getName());
             synthesizeReport(file, j);
             recursiveDelete(file);
         }
@@ -144,7 +144,7 @@ public class CrashlyticsReportPersistence {
                 arrayList.add(CrashlyticsReportWithSessionId.create(TRANSFORM.reportFromJson(readTextFile(file)), file.getName()));
             } catch (IOException e) {
                 Logger logger = Logger.getLogger();
-                logger.m729w("Could not load report file " + file + "; deleting", e);
+                logger.m715w("Could not load report file " + file + "; deleting", e);
                 file.delete();
             }
         }
@@ -199,7 +199,7 @@ public class CrashlyticsReportPersistence {
         boolean z;
         List<File> filesInDirectory = getFilesInDirectory(file, EVENT_FILE_FILTER);
         if (filesInDirectory.isEmpty()) {
-            Logger.getLogger().m732v("Session " + file.getName() + " has no events.");
+            Logger.getLogger().m718v("Session " + file.getName() + " has no events.");
             return;
         }
         Collections.sort(filesInDirectory);
@@ -210,7 +210,7 @@ public class CrashlyticsReportPersistence {
                 try {
                     arrayList.add(TRANSFORM.eventFromJson(readTextFile(file2)));
                 } catch (IOException e) {
-                    Logger.getLogger().m729w("Could not add event to report for " + file2, e);
+                    Logger.getLogger().m715w("Could not add event to report for " + file2, e);
                 }
                 if (z || isHighPriorityEventFile(file2.getName())) {
                     z = true;
@@ -218,7 +218,7 @@ public class CrashlyticsReportPersistence {
             }
         }
         if (arrayList.isEmpty()) {
-            Logger.getLogger().m730w("Could not parse event files for session " + file.getName());
+            Logger.getLogger().m716w("Could not parse event files for session " + file.getName());
             return;
         }
         String str = null;
@@ -227,7 +227,7 @@ public class CrashlyticsReportPersistence {
             try {
                 str = readTextFile(file3);
             } catch (IOException e2) {
-                Logger.getLogger().m729w("Could not read user ID file in " + file.getName(), e2);
+                Logger.getLogger().m715w("Could not read user ID file in " + file.getName(), e2);
             }
         }
         synthesizeReportFile(new File(file, "report"), z ? this.priorityReportsDirectory : this.reportsDirectory, arrayList, j, z, str);
@@ -239,7 +239,7 @@ public class CrashlyticsReportPersistence {
             writeTextFile(new File(prepareDirectory(file2), str), crashlyticsReportJsonTransform.reportToJson(crashlyticsReportJsonTransform.reportFromJson(readTextFile(file)).withNdkPayload(filesPayload)));
         } catch (IOException e) {
             Logger logger = Logger.getLogger();
-            logger.m729w("Could not synthesize final native report file for " + file, e);
+            logger.m715w("Could not synthesize final native report file for " + file, e);
         }
     }
 
@@ -254,7 +254,7 @@ public class CrashlyticsReportPersistence {
             writeTextFile(new File(prepareDirectory(file2), session.getIdentifier()), crashlyticsReportJsonTransform.reportToJson(withEvents));
         } catch (IOException e) {
             Logger logger = Logger.getLogger();
-            logger.m729w("Could not synthesize final report file for " + file, e);
+            logger.m715w("Could not synthesize final report file for " + file, e);
         }
     }
 

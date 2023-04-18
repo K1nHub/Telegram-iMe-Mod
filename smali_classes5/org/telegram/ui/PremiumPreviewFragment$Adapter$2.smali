@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PremiumPreviewFragment$Adapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 1089
+    .line 1095
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$2;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/PremiumFeatureCell;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 1092
+    .line 1098
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v1, p0, Lorg/telegram/ui/PremiumFeatureCell;->imageView:Landroid/widget/ImageView;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1093
+    .line 1099
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$2;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -81,7 +81,7 @@
 
     invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
 
-    .line 1094
+    .line 1100
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$2;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -102,7 +102,7 @@
 
     invoke-virtual {v2, v3, v1, v4, v4}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 
-    .line 1095
+    .line 1101
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$2;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -119,7 +119,7 @@
 
     invoke-virtual {v1, v4, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 1096
+    .line 1102
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$2;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -132,7 +132,7 @@
 
     const/16 v1, 0x8
 
-    .line 1097
+    .line 1103
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -153,7 +153,7 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1098
+    .line 1104
     invoke-super {p0, p1}, Lorg/telegram/ui/PremiumFeatureCell;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void

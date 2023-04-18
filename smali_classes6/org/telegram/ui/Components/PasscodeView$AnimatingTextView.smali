@@ -46,10 +46,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 12
 
-    .line 224
+    .line 198
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 225
+    .line 199
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x4
@@ -58,14 +58,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->characterTextViews:Ljava/util/ArrayList;
 
-    .line 226
+    .line 200
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotTextViews:Ljava/util/ArrayList;
 
-    .line 227
+    .line 201
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
@@ -77,36 +77,36 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 230
+    .line 204
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const/4 v3, -0x1
 
-    .line 231
+    .line 205
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/4 v4, 0x1
 
     const/high16 v5, 0x42100000    # 36.0f
 
-    .line 232
+    .line 206
     invoke-virtual {v2, v4, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const/16 v6, 0x11
 
-    .line 233
+    .line 207
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setGravity(I)V
 
     const/4 v7, 0x0
 
-    .line 234
+    .line 208
     invoke-virtual {v2, v7}, Landroid/widget/TextView;->setAlpha(F)V
 
     const/16 v8, 0x19
 
-    .line 235
+    .line 209
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -115,7 +115,7 @@
 
     invoke-virtual {v2, v9}, Landroid/widget/TextView;->setPivotX(F)V
 
-    .line 236
+    .line 210
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -128,41 +128,41 @@
 
     const/16 v10, 0x33
 
-    .line 237
+    .line 211
     invoke-static {v9, v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v11
 
     invoke-virtual {p0, v2, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 238
+    .line 212
     iget-object v11, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->characterTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v11, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 240
+    .line 214
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 241
+    .line 215
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 242
+    .line 216
     invoke-virtual {v2, v4, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 243
+    .line 217
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 244
+    .line 218
     invoke-virtual {v2, v7}, Landroid/widget/TextView;->setAlpha(F)V
 
     const-string v3, "\u2022"
 
-    .line 245
+    .line 219
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 246
+    .line 220
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -171,7 +171,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setPivotX(F)V
 
-    .line 247
+    .line 221
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -180,14 +180,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setPivotY(F)V
 
-    .line 248
+    .line 222
     invoke-static {v9, v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {p0, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 249
+    .line 223
     iget-object v3, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -203,7 +203,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;Z)V
     .locals 0
 
-    .line 214
+    .line 188
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->eraseAllCharacters(Z)V
 
     return-void
@@ -212,7 +212,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 214
+    .line 188
     iget-object p0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotRunnable:Ljava/lang/Runnable;
 
     return-object p0
@@ -221,7 +221,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 214
+    .line 188
     iget-object p0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->characterTextViews:Ljava/util/ArrayList;
 
     return-object p0
@@ -230,7 +230,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 214
+    .line 188
     iget-object p0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotTextViews:Ljava/util/ArrayList;
 
     return-object p0
@@ -239,7 +239,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 214
+    .line 188
     iget-object p0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     return-object p0
@@ -248,7 +248,7 @@
 .method static synthetic access$402(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 214
+    .line 188
     iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     return-object p1
@@ -257,7 +257,7 @@
 .method private eraseAllCharacters(Z)V
     .locals 8
 
-    .line 449
+    .line 423
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
@@ -268,7 +268,7 @@
 
     return-void
 
-    .line 452
+    .line 426
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotRunnable:Ljava/lang/Runnable;
 
@@ -276,25 +276,25 @@
 
     if-eqz v0, :cond_1
 
-    .line 453
+    .line 427
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 454
+    .line 428
     iput-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotRunnable:Ljava/lang/Runnable;
 
-    .line 456
+    .line 430
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_2
 
-    .line 457
+    .line 431
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 458
+    .line 432
     iput-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
-    .line 460
+    .line 434
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->stringBuilder:Ljava/lang/StringBuilder;
 
@@ -312,7 +312,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 462
+    .line 436
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -322,7 +322,7 @@
     :goto_0
     if-ge v3, v0, :cond_5
 
-    .line 465
+    .line 439
     iget-object v4, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->characterTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -331,7 +331,7 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 466
+    .line 440
     invoke-virtual {v4}, Landroid/widget/TextView;->getAlpha()F
 
     move-result v5
@@ -342,7 +342,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 467
+    .line 441
     sget-object v5, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v7, v6, [F
@@ -355,7 +355,7 @@
 
     invoke-virtual {p1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 468
+    .line 442
     sget-object v5, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v7, v6, [F
@@ -368,7 +368,7 @@
 
     invoke-virtual {p1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 469
+    .line 443
     sget-object v5, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v7, v6, [F
@@ -381,7 +381,7 @@
 
     invoke-virtual {p1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 472
+    .line 446
     :cond_3
     iget-object v4, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotTextViews:Ljava/util/ArrayList;
 
@@ -391,7 +391,7 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 473
+    .line 447
     invoke-virtual {v4}, Landroid/widget/TextView;->getAlpha()F
 
     move-result v5
@@ -400,7 +400,7 @@
 
     if-eqz v5, :cond_4
 
-    .line 474
+    .line 448
     sget-object v5, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v7, v6, [F
@@ -413,7 +413,7 @@
 
     invoke-virtual {p1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 475
+    .line 449
     sget-object v5, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v7, v6, [F
@@ -426,7 +426,7 @@
 
     invoke-virtual {p1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 476
+    .line 450
     sget-object v5, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v6, v6, [F
@@ -444,7 +444,7 @@
 
     goto :goto_0
 
-    .line 480
+    .line 454
     :cond_5
     new-instance v0, Landroid/animation/AnimatorSet;
 
@@ -454,15 +454,15 @@
 
     const-wide/16 v1, 0x96
 
-    .line 481
+    .line 455
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 482
+    .line 456
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0, p1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 483
+    .line 457
     iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$4;
@@ -471,7 +471,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 491
+    .line 465
     iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
@@ -482,7 +482,7 @@
     :goto_1
     if-ge v2, v0, :cond_7
 
-    .line 494
+    .line 468
     iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->characterTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -493,7 +493,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 495
+    .line 469
     iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -516,7 +516,7 @@
 .method private getXForTextView(I)I
     .locals 4
 
-    .line 254
+    .line 228
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -563,7 +563,7 @@
 .method public appendCharacter(Ljava/lang/String;)V
     .locals 10
 
-    .line 258
+    .line 232
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
@@ -579,7 +579,7 @@
     :cond_0
     const/4 v0, 0x3
 
-    .line 262
+    .line 236
     :try_start_0
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
     :try_end_0
@@ -590,28 +590,28 @@
     :catch_0
     move-exception v0
 
-    .line 264
+    .line 238
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 268
+    .line 242
     :goto_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 269
+    .line 243
     iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
 
-    .line 270
+    .line 244
     iget-object v3, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 272
+    .line 246
     iget-object v3, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->characterTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -620,10 +620,10 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 273
+    .line 247
     invoke-virtual {v3, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 274
+    .line 248
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->getXForTextView(I)I
 
     move-result p1
@@ -632,7 +632,7 @@
 
     invoke-virtual {v3, p1}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 275
+    .line 249
     sget-object p1, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     const/4 v4, 0x2
@@ -647,7 +647,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 276
+    .line 250
     sget-object p1, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v5, v4, [F
@@ -660,7 +660,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 277
+    .line 251
     sget-object p1, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v5, v4, [F
@@ -673,7 +673,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 278
+    .line 252
     sget-object p1, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v5, v4, [F
@@ -702,7 +702,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 279
+    .line 253
     iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -711,7 +711,7 @@
 
     check-cast p1, Landroid/widget/TextView;
 
-    .line 280
+    .line 254
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->getXForTextView(I)I
 
     move-result v3
@@ -720,10 +720,10 @@
 
     invoke-virtual {p1, v3}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 281
+    .line 255
     invoke-virtual {p1, v9}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 282
+    .line 256
     sget-object v3, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v5, v4, [F
@@ -736,7 +736,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 283
+    .line 257
     sget-object v3, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v5, v4, [F
@@ -749,7 +749,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 284
+    .line 258
     sget-object v3, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v4, v4, [F
@@ -775,7 +775,7 @@
     :goto_1
     if-ge p1, v1, :cond_3
 
-    .line 287
+    .line 261
     iget-object v3, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->characterTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -784,7 +784,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 288
+    .line 262
     invoke-virtual {v3}, Landroid/widget/TextView;->getAlpha()F
 
     move-result v4
@@ -793,7 +793,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 289
+    .line 263
     sget-object v4, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v5, v7, [F
@@ -806,7 +806,7 @@
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 290
+    .line 264
     sget-object v4, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v5, v7, [F
@@ -819,7 +819,7 @@
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 291
+    .line 265
     sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v5, v7, [F
@@ -832,7 +832,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 294
+    .line 268
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotTextViews:Ljava/util/ArrayList;
 
@@ -842,7 +842,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 295
+    .line 269
     invoke-virtual {v3}, Landroid/widget/TextView;->getAlpha()F
 
     move-result v4
@@ -851,7 +851,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 296
+    .line 270
     sget-object v4, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v5, v7, [F
@@ -864,7 +864,7 @@
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 297
+    .line 271
     sget-object v4, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v5, v7, [F
@@ -877,7 +877,7 @@
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 298
+    .line 272
     sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v5, v7, [F
@@ -895,16 +895,16 @@
 
     goto :goto_1
 
-    .line 302
+    .line 276
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotRunnable:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_4
 
-    .line 303
+    .line 277
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 305
+    .line 279
     :cond_4
     new-instance p1, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$1;
 
@@ -914,7 +914,7 @@
 
     const-wide/16 v3, 0x5dc
 
-    .line 336
+    .line 310
     invoke-static {p1, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     move p1, v8
@@ -922,7 +922,7 @@
     :goto_2
     if-ge p1, v2, :cond_5
 
-    .line 339
+    .line 313
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->characterTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -931,7 +931,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 340
+    .line 314
     sget-object v3, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
 
     new-array v4, v7, [F
@@ -950,7 +950,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 341
+    .line 315
     sget-object v3, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v4, v7, [F
@@ -963,7 +963,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 342
+    .line 316
     sget-object v3, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v4, v7, [F
@@ -976,7 +976,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 343
+    .line 317
     sget-object v3, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v4, v7, [F
@@ -989,7 +989,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 344
+    .line 318
     sget-object v3, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v4, v7, [F
@@ -1002,7 +1002,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 345
+    .line 319
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1011,7 +1011,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 346
+    .line 320
     sget-object v3, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
 
     new-array v4, v7, [F
@@ -1030,7 +1030,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 347
+    .line 321
     sget-object v3, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v4, v7, [F
@@ -1045,7 +1045,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 348
+    .line 322
     sget-object v3, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v4, v7, [F
@@ -1058,7 +1058,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 349
+    .line 323
     sget-object v3, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v4, v7, [F
@@ -1071,7 +1071,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 350
+    .line 324
     sget-object v3, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v4, v7, [F
@@ -1088,16 +1088,16 @@
 
     goto/16 :goto_2
 
-    .line 353
+    .line 327
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz p1, :cond_6
 
-    .line 354
+    .line 328
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 356
+    .line 330
     :cond_6
     new-instance p1, Landroid/animation/AnimatorSet;
 
@@ -1107,15 +1107,15 @@
 
     const-wide/16 v1, 0x96
 
-    .line 357
+    .line 331
     invoke-virtual {p1, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 358
+    .line 332
     iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 359
+    .line 333
     iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$2;
@@ -1124,7 +1124,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 367
+    .line 341
     iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
@@ -1165,7 +1165,7 @@
 .method public eraseLastCharacter()Z
     .locals 10
 
-    .line 379
+    .line 353
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
@@ -1181,7 +1181,7 @@
     :cond_0
     const/4 v0, 0x3
 
-    .line 383
+    .line 357
     :try_start_0
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
     :try_end_0
@@ -1192,16 +1192,16 @@
     :catch_0
     move-exception v0
 
-    .line 385
+    .line 359
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 388
+    .line 362
     :goto_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 389
+    .line 363
     iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
@@ -1214,7 +1214,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 391
+    .line 365
     iget-object v4, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->deleteCharAt(I)Ljava/lang/StringBuilder;
@@ -1227,7 +1227,7 @@
 
     if-ge v4, v5, :cond_4
 
-    .line 395
+    .line 369
     iget-object v5, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->characterTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1236,7 +1236,7 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 396
+    .line 370
     invoke-virtual {v5}, Landroid/widget/TextView;->getAlpha()F
 
     move-result v6
@@ -1247,7 +1247,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 397
+    .line 371
     sget-object v6, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v8, v3, [F
@@ -1260,7 +1260,7 @@
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 398
+    .line 372
     sget-object v6, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v8, v3, [F
@@ -1273,7 +1273,7 @@
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 399
+    .line 373
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v8, v3, [F
@@ -1286,7 +1286,7 @@
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 400
+    .line 374
     sget-object v6, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v8, v3, [F
@@ -1299,7 +1299,7 @@
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 401
+    .line 375
     sget-object v6, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
 
     new-array v8, v3, [F
@@ -1318,7 +1318,7 @@
 
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 404
+    .line 378
     :cond_2
     iget-object v5, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotTextViews:Ljava/util/ArrayList;
 
@@ -1328,7 +1328,7 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 405
+    .line 379
     invoke-virtual {v5}, Landroid/widget/TextView;->getAlpha()F
 
     move-result v6
@@ -1337,7 +1337,7 @@
 
     if-eqz v6, :cond_3
 
-    .line 406
+    .line 380
     sget-object v6, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v8, v3, [F
@@ -1350,7 +1350,7 @@
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 407
+    .line 381
     sget-object v6, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v8, v3, [F
@@ -1363,7 +1363,7 @@
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 408
+    .line 382
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v8, v3, [F
@@ -1376,7 +1376,7 @@
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 409
+    .line 383
     sget-object v6, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v8, v3, [F
@@ -1389,7 +1389,7 @@
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 410
+    .line 384
     sget-object v6, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
 
     new-array v7, v3, [F
@@ -1416,7 +1416,7 @@
     :cond_4
     if-nez v2, :cond_5
 
-    .line 415
+    .line 389
     iget-object v4, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->deleteCharAt(I)Ljava/lang/StringBuilder;
@@ -1427,7 +1427,7 @@
     :goto_2
     if-ge v4, v2, :cond_6
 
-    .line 419
+    .line 393
     iget-object v5, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->characterTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1436,7 +1436,7 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 420
+    .line 394
     sget-object v6, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
 
     new-array v7, v3, [F
@@ -1455,7 +1455,7 @@
 
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 421
+    .line 395
     iget-object v5, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1464,7 +1464,7 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 422
+    .line 396
     sget-object v6, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
 
     new-array v7, v3, [F
@@ -1487,30 +1487,30 @@
 
     goto :goto_2
 
-    .line 425
+    .line 399
     :cond_6
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotRunnable:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_7
 
-    .line 426
+    .line 400
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 v1, 0x0
 
-    .line 427
+    .line 401
     iput-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotRunnable:Ljava/lang/Runnable;
 
-    .line 430
+    .line 404
     :cond_7
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v1, :cond_8
 
-    .line 431
+    .line 405
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 433
+    .line 407
     :cond_8
     new-instance v1, Landroid/animation/AnimatorSet;
 
@@ -1520,15 +1520,15 @@
 
     const-wide/16 v4, 0x96
 
-    .line 434
+    .line 408
     invoke-virtual {v1, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 435
+    .line 409
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 436
+    .line 410
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v1, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$3;
@@ -1537,7 +1537,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 444
+    .line 418
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
@@ -1548,7 +1548,7 @@
 .method public getString()Ljava/lang/String;
     .locals 1
 
-    .line 371
+    .line 345
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1561,7 +1561,7 @@
 .method public length()I
     .locals 1
 
-    .line 375
+    .line 349
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
@@ -1574,29 +1574,29 @@
 .method protected onLayout(ZIIII)V
     .locals 5
 
-    .line 502
+    .line 476
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotRunnable:Ljava/lang/Runnable;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 503
+    .line 477
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 504
+    .line 478
     iput-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotRunnable:Ljava/lang/Runnable;
 
-    .line 506
+    .line 480
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_1
 
-    .line 507
+    .line 481
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 508
+    .line 482
     iput-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->currentAnimation:Landroid/animation/AnimatorSet;
 
     :cond_1
@@ -1607,7 +1607,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 512
+    .line 486
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
@@ -1618,7 +1618,7 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 513
+    .line 487
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->characterTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1627,21 +1627,21 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 514
+    .line 488
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setAlpha(F)V
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 515
+    .line 489
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setScaleX(F)V
 
-    .line 516
+    .line 490
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setScaleY(F)V
 
-    .line 517
+    .line 491
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 518
+    .line 492
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->getXForTextView(I)I
 
     move-result v4
@@ -1650,7 +1650,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 520
+    .line 494
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1659,19 +1659,19 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 521
+    .line 495
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 522
+    .line 496
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setScaleX(F)V
 
-    .line 523
+    .line 497
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setScaleY(F)V
 
-    .line 524
+    .line 498
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 525
+    .line 499
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->getXForTextView(I)I
 
     move-result v2
@@ -1682,7 +1682,7 @@
 
     goto :goto_1
 
-    .line 527
+    .line 501
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->characterTextViews:Ljava/util/ArrayList;
 
@@ -1694,7 +1694,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 528
+    .line 502
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->dotTextViews:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1710,7 +1710,7 @@
 
     goto :goto_0
 
-    .line 531
+    .line 505
     :cond_3
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 

@@ -2,34 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function0;
+.implements Lorg/telegram/ui/Components/NumberPicker$Formatter;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/PasscodeActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PasscodeActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;
+
+    invoke-direct {v0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;->INSTANCE:Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;->f$0:Lorg/telegram/ui/PasscodeActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 1
+.method public final format(I)Ljava/lang/String;
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;->f$0:Lorg/telegram/ui/PasscodeActivity;
+    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$AiwrRXTxmMJawrMAell0tmo4Uo8(I)Ljava/lang/String;
 
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$ftlPOsJNfn9HOyGTq-b_jhZ27gE(Lorg/telegram/ui/PasscodeActivity;)Lorg/koin/core/parameter/ParametersHolder;
+    move-result-object p1
 
-    move-result-object v0
-
-    return-object v0
+    return-object p1
 .end method

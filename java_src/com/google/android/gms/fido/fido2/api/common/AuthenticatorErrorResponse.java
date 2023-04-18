@@ -13,14 +13,14 @@ import com.google.android.gms.fido.fido2.api.common.ErrorCode;
 /* loaded from: classes.dex */
 public class AuthenticatorErrorResponse extends AuthenticatorResponse {
     public static final Parcelable.Creator<AuthenticatorErrorResponse> CREATOR = new zzi();
-    @SafeParcelable.Field(getter = "getErrorCodeAsInt", m789id = 2, type = "int")
+    @SafeParcelable.Field(getter = "getErrorCodeAsInt", m775id = 2, type = "int")
     private final ErrorCode zza;
-    @SafeParcelable.Field(getter = "getErrorMessage", m789id = 3)
+    @SafeParcelable.Field(getter = "getErrorMessage", m775id = 3)
     private final String zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public AuthenticatorErrorResponse(@SafeParcelable.Param(m788id = 2) int i, @SafeParcelable.Param(m788id = 3) String str) {
+    public AuthenticatorErrorResponse(@SafeParcelable.Param(m774id = 2) int i, @SafeParcelable.Param(m774id = 3) String str) {
         try {
             this.zza = ErrorCode.toErrorCode(i);
             this.zzb = str;

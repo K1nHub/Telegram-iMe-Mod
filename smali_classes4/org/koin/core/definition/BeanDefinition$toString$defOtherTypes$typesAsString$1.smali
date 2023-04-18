@@ -72,7 +72,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 51
+    .line 54
     invoke-static {p1}, Lorg/koin/ext/KClassExtKt;->getFullName(Lkotlin/reflect/KClass;)Ljava/lang/String;
 
     move-result-object p1
@@ -83,7 +83,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 51
+    .line 54
     check-cast p1, Lkotlin/reflect/KClass;
 
     invoke-virtual {p0, p1}, Lorg/koin/core/definition/BeanDefinition$toString$defOtherTypes$typesAsString$1;->invoke(Lkotlin/reflect/KClass;)Ljava/lang/CharSequence;

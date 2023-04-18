@@ -14,15 +14,15 @@ import java.util.List;
 /* loaded from: classes3.dex */
 public final class zzhg extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzhg> CREATOR = new zzhh();
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     public final int zza;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     public final long zzb;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     public final List zzc;
 
     @SafeParcelable.Constructor
-    public zzhg(@SafeParcelable.Param(m788id = 2) int i, @SafeParcelable.Param(m788id = 3) long j, @SafeParcelable.Param(m788id = 4) List list) {
+    public zzhg(@SafeParcelable.Param(m774id = 2) int i, @SafeParcelable.Param(m774id = 3) long j, @SafeParcelable.Param(m774id = 4) List list) {
         this.zza = i;
         this.zzb = j;
         this.zzc = list;

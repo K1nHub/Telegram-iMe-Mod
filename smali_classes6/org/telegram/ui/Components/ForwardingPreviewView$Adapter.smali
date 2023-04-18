@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
     .locals 0
 
-    .line 1318
+    .line 1304
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Lorg/telegram/ui/Components/ForwardingPreviewView$1;)V
     .locals 0
 
-    .line 1318
+    .line 1304
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
 
     return-void
@@ -44,7 +44,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1350
+    .line 1336
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -61,12 +61,12 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 7
 
-    .line 1328
+    .line 1314
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 1329
+    .line 1315
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -75,7 +75,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->setInvalidateSpoilersParent(Z)V
 
-    .line 1330
+    .line 1316
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -94,7 +94,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setParentViewSize(II)V
 
-    .line 1331
+    .line 1317
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v0
@@ -116,7 +116,7 @@
     :cond_0
     move v0, v1
 
-    .line 1332
+    .line 1318
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
@@ -158,14 +158,14 @@
 
     invoke-virtual {p1, v2, v3, v4, v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject$GroupedMessages;ZZ)V
 
-    .line 1333
+    .line 1319
     new-instance v2, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter$1;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter$1;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;)V
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->setDelegate(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;)V
 
-    .line 1338
+    .line 1324
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -176,7 +176,7 @@
 
     if-nez v2, :cond_2
 
-    .line 1339
+    .line 1325
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -189,10 +189,10 @@
 
     if-le v2, v4, :cond_2
 
-    .line 1340
+    .line 1326
     invoke-virtual {p1, v4, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setCheckBoxVisible(ZZ)V
 
-    .line 1341
+    .line 1327
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -216,7 +216,7 @@
     :cond_1
     move v4, v1
 
-    .line 1342
+    .line 1328
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
@@ -240,7 +240,7 @@
 
     move-result p2
 
-    .line 1343
+    .line 1329
     invoke-virtual {p1, p2, p2, v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->setChecked(ZZZ)V
 
     :cond_2
@@ -250,7 +250,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    .line 1322
+    .line 1308
     new-instance p2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -267,7 +267,7 @@
 
     invoke-direct {p2, p1, v1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1323
+    .line 1309
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

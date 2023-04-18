@@ -27,14 +27,14 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
-    .line 1505
+    .line 1504
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 1507
+    .line 1506
     iput p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->rotation:I
 
     return-void
@@ -45,7 +45,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 5
 
-    .line 1511
+    .line 1510
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$5400(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/ImageView;
@@ -58,14 +58,14 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setRotation(F)V
 
-    .line 1512
+    .line 1511
     iget p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->rotation:I
 
     add-int/lit8 p1, p1, -0x2d
 
     iput p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->rotation:I
 
-    .line 1513
+    .line 1512
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$5400(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/ImageView;
@@ -96,7 +96,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1514
+    .line 1513
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
@@ -107,7 +107,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1515
+    .line 1514
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemePreviewActivity;->msgOutDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
@@ -118,7 +118,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 1516
+    .line 1515
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemePreviewActivity;->msgOutDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
@@ -131,7 +131,7 @@
 
     goto/16 :goto_4
 
-    .line 1520
+    .line 1519
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -143,7 +143,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 1521
+    .line 1520
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
@@ -173,7 +173,7 @@
 
     iget p1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
-    .line 1522
+    .line 1521
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -191,7 +191,7 @@
 
     iput v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
-    .line 1523
+    .line 1522
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
@@ -208,7 +208,7 @@
 
     iput v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor1:I
 
-    .line 1524
+    .line 1523
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
@@ -225,7 +225,7 @@
 
     iput v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
 
-    .line 1525
+    .line 1524
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
@@ -236,7 +236,7 @@
 
     goto :goto_2
 
-    .line 1527
+    .line 1526
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -267,7 +267,7 @@
 
     iget p1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
-    .line 1528
+    .line 1527
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -285,7 +285,7 @@
 
     iput v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
-    .line 1529
+    .line 1528
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
@@ -302,7 +302,7 @@
 
     iput v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor1:I
 
-    .line 1530
+    .line 1529
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
@@ -311,7 +311,7 @@
 
     iput p1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
 
-    .line 1532
+    .line 1531
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -331,7 +331,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
 
-    .line 1533
+    .line 1532
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$5500(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/ColorPicker;
@@ -350,7 +350,7 @@
 
     invoke-virtual {p1, v0, v2}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
 
-    .line 1534
+    .line 1533
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$5500(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/ColorPicker;
@@ -369,7 +369,7 @@
 
     invoke-virtual {p1, v0, v3}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
 
-    .line 1535
+    .line 1534
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$5500(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/ColorPicker;
@@ -410,7 +410,7 @@
 
     invoke-virtual {p1, v0, v4}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
 
-    .line 1536
+    .line 1535
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$4700(Lorg/telegram/ui/ThemePreviewActivity;)[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
@@ -429,7 +429,7 @@
 
     invoke-virtual {p1, v4, v0}, Lorg/telegram/ui/Components/WallpaperCheckBoxView;->setColor(II)V
 
-    .line 1537
+    .line 1536
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$4700(Lorg/telegram/ui/ThemePreviewActivity;)[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
@@ -448,7 +448,7 @@
 
     invoke-virtual {p1, v3, v0}, Lorg/telegram/ui/Components/WallpaperCheckBoxView;->setColor(II)V
 
-    .line 1538
+    .line 1537
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$4700(Lorg/telegram/ui/ThemePreviewActivity;)[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
@@ -467,7 +467,7 @@
 
     invoke-virtual {p1, v2, v0}, Lorg/telegram/ui/Components/WallpaperCheckBoxView;->setColor(II)V
 
-    .line 1539
+    .line 1538
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$4700(Lorg/telegram/ui/ThemePreviewActivity;)[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
@@ -486,10 +486,10 @@
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/ui/Components/WallpaperCheckBoxView;->setColor(II)V
 
-    .line 1540
+    .line 1539
     invoke-static {v3, v3}, Lorg/telegram/ui/ActionBar/Theme;->refreshThemeColors(ZZ)V
 
-    .line 1541
+    .line 1540
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$15;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$1300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/RecyclerListView;

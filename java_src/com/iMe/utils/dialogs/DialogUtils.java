@@ -18,12 +18,12 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.Theme;
-import org.telegram.p048ui.Cells.RadioColorCell;
-import org.telegram.p048ui.Components.EditTextBoldCursor;
-import org.telegram.p048ui.Components.LayoutHelper;
+import org.telegram.p044ui.ActionBar.AlertDialog;
+import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p044ui.Cells.RadioColorCell;
+import org.telegram.p044ui.Components.EditTextBoldCursor;
+import org.telegram.p044ui.Components.LayoutHelper;
 /* compiled from: DialogUtils.kt */
 /* loaded from: classes4.dex */
 public final class DialogUtils {
@@ -158,7 +158,7 @@ public final class DialogUtils {
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogUtils.m705x4de0a121(Callbacks$Callback1.this, i, builder, view);
+                    DialogUtils.m691x4de0a121(Callbacks$Callback1.this, i, builder, view);
                 }
             });
             linearLayout.addView(radioColorCell);
@@ -177,7 +177,7 @@ public final class DialogUtils {
     }
 
     /* renamed from: createDialogWithRadioCellsList$lambda$15$lambda$13$lambda$12$lambda$11$lambda$10 */
-    public static final void m705x4de0a121(Callbacks$Callback1 itemSelectedListener, int i, AlertDialog.Builder this_apply, View view) {
+    public static final void m691x4de0a121(Callbacks$Callback1 itemSelectedListener, int i, AlertDialog.Builder this_apply, View view) {
         Intrinsics.checkNotNullParameter(itemSelectedListener, "$itemSelectedListener");
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         itemSelectedListener.invoke(Integer.valueOf(i));

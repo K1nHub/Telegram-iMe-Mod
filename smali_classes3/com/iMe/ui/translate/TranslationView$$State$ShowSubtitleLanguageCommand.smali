@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/ui/translate/TranslationView$$State;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 291
+    .line 309
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "showSubtitleLanguage"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 293
+    .line 311
     iput-object p2, p0, Lcom/iMe/ui/translate/TranslationView$$State$ShowSubtitleLanguageCommand;->sourceLanguage:Ljava/lang/String;
 
-    .line 294
+    .line 312
     iput-object p3, p0, Lcom/iMe/ui/translate/TranslationView$$State$ShowSubtitleLanguageCommand;->targetLanguage:Ljava/lang/String;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/ui/translate/TranslationView;)V
     .locals 2
 
-    .line 299
+    .line 317
     iget-object v0, p0, Lcom/iMe/ui/translate/TranslationView$$State$ShowSubtitleLanguageCommand;->sourceLanguage:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/iMe/ui/translate/TranslationView$$State$ShowSubtitleLanguageCommand;->targetLanguage:Ljava/lang/String;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 285
+    .line 303
     check-cast p1, Lcom/iMe/ui/translate/TranslationView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/translate/TranslationView$$State$ShowSubtitleLanguageCommand;->apply(Lcom/iMe/ui/translate/TranslationView;)V

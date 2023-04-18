@@ -57,7 +57,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 254
+    .line 260
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$2;->invoke(Ljava/lang/Throwable;)V
@@ -74,7 +74,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 255
+    .line 261
     instance-of v0, p1, Ljava/net/SocketException;
 
     if-nez v0, :cond_0
@@ -83,13 +83,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 256
+    .line 262
     :cond_0
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$2;->$sessionStoreItem:Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$2;->$this_with:Lcom/trustwallet/walletconnect/WCClient;
 
-    .line 257
+    .line 263
     invoke-virtual {v0}, Lcom/trustwallet/walletconnect/WCSessionStoreItem;->getSession()Lcom/trustwallet/walletconnect/models/session/WCSession;
 
     move-result-object v2
@@ -108,7 +108,7 @@
 
     invoke-virtual {v1, v2, v3, v4, v0}, Lcom/trustwallet/walletconnect/WCClient;->connect(Lcom/trustwallet/walletconnect/models/session/WCSession;Lcom/trustwallet/walletconnect/models/WCPeerMeta;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 260
+    .line 266
     :cond_1
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$2;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 

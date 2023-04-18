@@ -3,7 +3,7 @@ package com.google.android.gms.common.api.internal;
 import android.content.Context;
 import android.content.res.Resources;
 import android.text.TextUtils;
-import com.google.android.gms.common.C0710R;
+import com.google.android.gms.common.C0695R;
 import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.internal.Preconditions;
@@ -26,7 +26,7 @@ public final class GoogleServices {
     @KeepForSdk
     GoogleServices(Context context) {
         Resources resources = context.getResources();
-        int identifier = resources.getIdentifier("google_app_measurement_enable", "integer", resources.getResourcePackageName(C0710R.string.common_google_play_services_unknown_issue));
+        int identifier = resources.getIdentifier("google_app_measurement_enable", "integer", resources.getResourcePackageName(C0695R.string.common_google_play_services_unknown_issue));
         if (identifier != 0) {
             int integer = resources.getInteger(identifier);
             boolean z = integer == 0;

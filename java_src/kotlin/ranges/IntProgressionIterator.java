@@ -21,7 +21,7 @@ public final class IntProgressionIterator extends IntIterator {
         this.next = z ? i : i2;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public boolean hasNext() {
         return this.hasNext;
     }

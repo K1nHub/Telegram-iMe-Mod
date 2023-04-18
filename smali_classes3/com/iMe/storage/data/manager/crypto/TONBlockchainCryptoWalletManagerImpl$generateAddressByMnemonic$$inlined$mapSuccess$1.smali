@@ -22,7 +22,7 @@
         "Lkotlin/jvm/functions/Function1<",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
-        "Lcom/iMe/storage/domain/model/crypto/Wallet;",
+        "Lcom/iMe/storage/domain/model/crypto/Wallet$TON;",
         ">;",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
@@ -32,7 +32,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$mapSuccess$1\n+ 2 TONBlockchainCryptoWalletManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,80:1\n62#2:81\n9#3:82\n*S KotlinDebug\n*F\n+ 1 TONBlockchainCryptoWalletManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl\n*L\n62#1:82\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$mapSuccess$1\n+ 2 TONBlockchainCryptoWalletManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,80:1\n61#2:81\n9#3:82\n*S KotlinDebug\n*F\n+ 1 TONBlockchainCryptoWalletManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl\n*L\n61#1:82\n*E\n"
 .end annotation
 
 
@@ -56,7 +56,7 @@
             "(",
             "Lcom/iMe/storage/domain/model/Result<",
             "+",
-            "Lcom/iMe/storage/domain/model/crypto/Wallet;",
+            "Lcom/iMe/storage/domain/model/crypto/Wallet$TON;",
             ">;)",
             "Lcom/iMe/storage/domain/model/Result<",
             "+",
@@ -81,11 +81,11 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/storage/domain/model/crypto/Wallet;
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->getAddress()Ljava/lang/String;
 
     move-result-object v1
 

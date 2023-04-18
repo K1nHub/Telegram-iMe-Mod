@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda70;->f$2:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$HGORqMOMHqCEyU2jcW4rc-u3J28(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$adoEhPSLv3dVk1_hsf3yhZZUVfE(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
 
     return-void
 .end method

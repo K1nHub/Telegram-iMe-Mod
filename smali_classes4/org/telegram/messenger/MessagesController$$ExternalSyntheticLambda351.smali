@@ -43,7 +43,7 @@
 
     move-object v5, p2
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$7nszLu5g9iYY9ziw5DfnbdSxoWs(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$InputPeer;JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$pTvv7JyaMB9-K05hMUbxcO0y2jo(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$InputPeer;JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

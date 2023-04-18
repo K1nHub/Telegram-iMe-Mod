@@ -78,38 +78,38 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 1163
+    .line 1173
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1170
+    .line 1180
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->alwaysShow:Ljava/util/ArrayList;
 
-    .line 1171
+    .line 1181
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->neverShow:Ljava/util/ArrayList;
 
-    .line 1172
+    .line 1182
     new-instance v0, Lorg/telegram/messenger/support/LongSparseIntArray;
 
     invoke-direct {v0}, Lorg/telegram/messenger/support/LongSparseIntArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-    .line 1173
+    .line 1183
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->dialogs:Ljava/util/ArrayList;
 
-    .line 1176
+    .line 1186
     sget v0, Lorg/telegram/messenger/MessagesController$DialogFilter;->dialogFilterPointer:I
 
     add-int/lit8 v1, v0, 0x1
@@ -132,18 +132,18 @@
 
     return p1
 
-    .line 1291
+    .line 1301
     :cond_0
     iget-wide v0, p2, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
-    .line 1293
+    .line 1303
     invoke-static {v0, v1}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result p2
 
     if-eqz p2, :cond_1
 
-    .line 1294
+    .line 1304
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -162,10 +162,10 @@
 
     if-eqz p1, :cond_1
 
-    .line 1296
+    .line 1306
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->user_id:J
 
-    .line 1300
+    .line 1310
     :cond_1
     iget-object p1, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->alwaysShow:Ljava/util/ArrayList;
 
@@ -183,12 +183,12 @@
 .method public includesDialog(Lorg/telegram/messenger/AccountInstance;J)Z
     .locals 1
 
-    .line 1180
+    .line 1190
     invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
-    .line 1181
+    .line 1191
     iget-object v0, v0, Lorg/telegram/messenger/MessagesController;->dialogs_dict:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p2, p3}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -203,7 +203,7 @@
 
     return p1
 
-    .line 1185
+    .line 1195
     :cond_0
     invoke-virtual {p0, p1, p2, p3, v0}, Lorg/telegram/messenger/MessagesController$DialogFilter;->includesDialog(Lorg/telegram/messenger/AccountInstance;JLorg/telegram/tgnet/TLRPC$Dialog;)Z
 
@@ -215,7 +215,7 @@
 .method public includesDialog(Lorg/telegram/messenger/AccountInstance;JLorg/telegram/tgnet/TLRPC$Dialog;)Z
     .locals 5
 
-    .line 1189
+    .line 1199
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->neverShow:Ljava/util/ArrayList;
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -232,7 +232,7 @@
 
     return v1
 
-    .line 1192
+    .line 1202
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->alwaysShow:Ljava/util/ArrayList;
 
@@ -250,7 +250,7 @@
 
     return v2
 
-    .line 1195
+    .line 1205
     :cond_1
     iget v0, p4, Lorg/telegram/tgnet/TLRPC$Dialog;->folder_id:I
 
@@ -266,18 +266,18 @@
 
     return v1
 
-    .line 1198
+    .line 1208
     :cond_2
     invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
-    .line 1199
+    .line 1209
     invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getContactsController()Lorg/telegram/messenger/ContactsController;
 
     move-result-object p1
 
-    .line 1202
+    .line 1212
     iget v3, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v4, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_MUTED:I
@@ -307,7 +307,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 1203
+    .line 1213
     invoke-virtual {v0, p4}, Lorg/telegram/messenger/MessagesController;->getDialogUnreadCount(Lorg/telegram/tgnet/TLRPC$Dialog;)I
 
     move-result v3
@@ -325,7 +325,7 @@
     :cond_4
     return v1
 
-    .line 1207
+    .line 1217
     :cond_5
     iget-object p4, v0, Lorg/telegram/messenger/MessagesController;->dialogs_dict:Landroidx/collection/LongSparseArray;
 
@@ -337,12 +337,12 @@
 
     if-eqz p4, :cond_6
 
-    .line 1208
+    .line 1218
     iget p4, p4, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_mentions_count:I
 
     if-eqz p4, :cond_6
 
-    .line 1209
+    .line 1219
     iget p4, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v3, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_MENTIONED:I
@@ -360,7 +360,7 @@
 
     if-lez p4, :cond_b
 
-    .line 1215
+    .line 1225
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p4
@@ -371,12 +371,12 @@
 
     if-eqz p4, :cond_12
 
-    .line 1218
+    .line 1228
     iget-boolean v0, p4, Lorg/telegram/tgnet/TLRPC$User;->deleted:Z
 
     if-eqz v0, :cond_7
 
-    .line 1219
+    .line 1229
     iget v0, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v3, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_DELETED:I
@@ -387,13 +387,13 @@
 
     return v2
 
-    .line 1224
+    .line 1234
     :cond_7
     iget-boolean v0, p4, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-nez v0, :cond_a
 
-    .line 1225
+    .line 1235
     iget-boolean v0, p4, Lorg/telegram/tgnet/TLRPC$User;->self:Z
 
     if-nez v0, :cond_9
@@ -410,7 +410,7 @@
 
     goto :goto_0
 
-    .line 1230
+    .line 1240
     :cond_8
     iget p1, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
@@ -422,7 +422,7 @@
 
     return v2
 
-    .line 1226
+    .line 1236
     :cond_9
     :goto_0
     iget p1, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
@@ -435,7 +435,7 @@
 
     return v2
 
-    .line 1235
+    .line 1245
     :cond_a
     iget p1, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
@@ -452,7 +452,7 @@
 
     neg-long p1, p2
 
-    .line 1241
+    .line 1251
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
@@ -463,7 +463,7 @@
 
     if-eqz p1, :cond_12
 
-    .line 1243
+    .line 1253
     invoke-static {p1}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result p2
@@ -474,7 +474,7 @@
 
     if-nez p2, :cond_c
 
-    .line 1244
+    .line 1254
     iget p2, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget p3, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_CHANNELS:I
@@ -485,7 +485,7 @@
 
     return v2
 
-    .line 1248
+    .line 1258
     :cond_c
     iget p2, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
@@ -497,7 +497,7 @@
 
     return v2
 
-    .line 1252
+    .line 1262
     :cond_d
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$Chat;->username:Ljava/lang/String;
 
@@ -507,7 +507,7 @@
 
     if-eqz p2, :cond_e
 
-    .line 1253
+    .line 1263
     iget p2, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget p3, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_PRIVATE_GROUPS:I
@@ -518,7 +518,7 @@
 
     return v2
 
-    .line 1257
+    .line 1267
     :cond_e
     iget p2, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
@@ -530,7 +530,7 @@
 
     return v2
 
-    .line 1264
+    .line 1274
     :cond_f
     iget-boolean p2, p1, Lorg/telegram/tgnet/TLRPC$Chat;->call_active:Z
 
@@ -540,7 +540,7 @@
 
     if-eqz p2, :cond_10
 
-    .line 1265
+    .line 1275
     iget p2, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget p3, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_LIVE_CHAT:I
@@ -551,7 +551,7 @@
 
     return v2
 
-    .line 1269
+    .line 1279
     :cond_10
     invoke-static {p1}, Lorg/telegram/messenger/ChatObject;->hasAdminRights(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -559,12 +559,12 @@
 
     if-eqz p2, :cond_12
 
-    .line 1270
+    .line 1280
     iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->creator:Z
 
     if-eqz p1, :cond_11
 
-    .line 1271
+    .line 1281
     iget p1, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget p2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_OWNER:I
@@ -575,7 +575,7 @@
 
     return v2
 
-    .line 1275
+    .line 1285
     :cond_11
     iget p1, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
@@ -594,7 +594,7 @@
 .method public isDefault()Z
     .locals 1
 
-    .line 1304
+    .line 1314
     iget v0, p0, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
 
     if-nez v0, :cond_0

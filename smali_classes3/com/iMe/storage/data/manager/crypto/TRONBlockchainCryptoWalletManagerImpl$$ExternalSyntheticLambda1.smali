@@ -2,34 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lio/reactivex/functions/Function;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
+.field public final synthetic f$0:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
+.method public synthetic constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/storage/data/manager/crypto/TRONBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
+    iput-object p1, p0, Lcom/iMe/storage/data/manager/crypto/TRONBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda1;->f$0:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final call()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/TRONBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
+    iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/TRONBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda1;->f$0:Ljava/lang/String;
 
-    invoke-static {v0, p1}, Lcom/iMe/storage/data/manager/crypto/TRONBlockchainCryptoWalletManagerImpl;->$r8$lambda$rLQDpM-71KvxOitiQQ-S4J5DbTg(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    invoke-static {v0}, Lcom/iMe/storage/data/manager/crypto/TRONBlockchainCryptoWalletManagerImpl;->$r8$lambda$lcnzInhWEwALW3DZoNEgsZekVIA(Ljava/lang/String;)Lcom/iMe/storage/domain/model/Result;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    return-object v0
 .end method

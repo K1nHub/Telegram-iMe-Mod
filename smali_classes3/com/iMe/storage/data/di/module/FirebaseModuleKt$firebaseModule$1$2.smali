@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFirebaseModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseModule.kt\ncom/iMe/storage/data/di/module/FirebaseModuleKt$firebaseModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,28:1\n127#2,5:29\n*S KotlinDebug\n*F\n+ 1 FirebaseModule.kt\ncom/iMe/storage/data/di/module/FirebaseModuleKt$firebaseModule$1$2\n*L\n15#1:29,5\n*E\n"
+    value = "SMAP\nFirebaseModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseModule.kt\ncom/iMe/storage/data/di/module/FirebaseModuleKt$firebaseModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,28:1\n129#2,5:29\n*S KotlinDebug\n*F\n+ 1 FirebaseModule.kt\ncom/iMe/storage/data/di/module/FirebaseModuleKt$firebaseModule$1$2\n*L\n15#1:29,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 131
+    .line 133
     const-class p2, Lcom/google/firebase/FirebaseApp;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

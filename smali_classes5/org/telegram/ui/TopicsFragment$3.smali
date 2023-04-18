@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
-    .line 677
+    .line 679
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$3;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onSearchCollapse()V
     .locals 2
 
-    .line 688
+    .line 690
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$3;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     const/4 v1, 0x0
@@ -48,14 +48,14 @@
 .method public onSearchExpand()V
     .locals 3
 
-    .line 680
+    .line 682
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$3;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/TopicsFragment;->access$2700(Lorg/telegram/ui/TopicsFragment;Z)V
 
-    .line 681
+    .line 683
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$3;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$2800(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->setSearchString(Ljava/lang/String;)V
 
-    .line 682
+    .line 684
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$3;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$2800(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;
@@ -77,7 +77,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 683
+    .line 685
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$3;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$2800(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;
@@ -102,7 +102,7 @@
 .method public onTextChanged(Landroid/widget/EditText;)V
     .locals 1
 
-    .line 693
+    .line 695
     invoke-virtual {p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p1
@@ -111,7 +111,7 @@
 
     move-result-object p1
 
-    .line 694
+    .line 696
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$3;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$2800(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;

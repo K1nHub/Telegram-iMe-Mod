@@ -17,8 +17,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p048ui.Components.URLSpanReplacement;
-import org.telegram.p048ui.Components.URLSpanUserMention;
+import org.telegram.p044ui.Components.URLSpanReplacement;
+import org.telegram.p044ui.Components.URLSpanUserMention;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
@@ -75,19 +75,42 @@ public final class MultiReplyInteractor {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final CharSequence buildMultiReplyMessageForMessageObject(MessageObject messageObject, MessageLinkPattern messageLinkPattern) {
-        CharSequence[] charSequenceArr = new CharSequence[2];
-        TLRPC$User user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(messageObject.messageOwner.from_id.user_id));
-        charSequenceArr[0] = (user == null || (r1 = buildSpannableStringUser(user)) == null) ? "" : "";
-        charSequenceArr[1] = buildMessageLink(messageObject, messageLinkPattern);
-        CharSequence concat = TextUtils.concat(charSequenceArr);
-        Intrinsics.checkNotNullExpressionValue(concat, "concat(\n                …ssage, pattern)\n        )");
-        return concat;
+        SpannableString buildSpannableStringChat;
+        SpannableString buildSpannableStringUser;
+        CharSequence buildMessageLink = buildMessageLink(messageObject, messageLinkPattern);
+        CharSequence charSequence = "";
+        if (messageObject.isFromUser()) {
+            TLRPC$User user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(messageObject.messageOwner.from_id.user_id));
+            CharSequence[] charSequenceArr = new CharSequence[2];
+            if (user != null && (buildSpannableStringUser = buildSpannableStringUser(user)) != null) {
+                charSequence = buildSpannableStringUser;
+            }
+            charSequenceArr[0] = charSequence;
+            charSequenceArr[1] = buildMessageLink;
+            CharSequence concat = TextUtils.concat(charSequenceArr);
+            Intrinsics.checkNotNullExpressionValue(concat, "concat(\n                …messageLink\n            )");
+            return concat;
+        }
+        TLRPC$Chat chat = MessagesController.getInstance(messageObject.currentAccount).getChat(Long.valueOf(messageObject.messageOwner.from_id.channel_id));
+        CharSequence[] charSequenceArr2 = new CharSequence[2];
+        if (chat != null && (buildSpannableStringChat = buildSpannableStringChat(chat)) != null) {
+            charSequence = buildSpannableStringChat;
+        }
+        charSequenceArr2[0] = charSequence;
+        charSequenceArr2[1] = buildMessageLink;
+        CharSequence concat2 = TextUtils.concat(charSequenceArr2);
+        Intrinsics.checkNotNullExpressionValue(concat2, "concat(\n                …    messageLink\n        )");
+        return concat2;
     }
 
     private final SpannableString buildSpannableStringUser(TLRPC$User tLRPC$User) {
         SpannableString spannableString = new SpannableString(UserExtKt.getPrivacySafeName(tLRPC$User) + ':');
-        addUserNameSpan$default(this, spannableString, String.valueOf(tLRPC$User.f1642id), 0, 0, 4, null);
+        addUserNameSpan(spannableString, String.valueOf(tLRPC$User.f1567id));
         return spannableString;
+    }
+
+    private final SpannableString buildSpannableStringChat(TLRPC$Chat tLRPC$Chat) {
+        return new SpannableString(tLRPC$Chat.title + ':');
     }
 
     private final CharSequence buildMessageLink(MessageObject messageObject, MessageLinkPattern messageLinkPattern) {
@@ -119,19 +142,9 @@ public final class MultiReplyInteractor {
         }
     }
 
-    static /* synthetic */ void addUserNameSpan$default(MultiReplyInteractor multiReplyInteractor, SpannableString spannableString, String str, int i, int i2, int i3, Object obj) {
-        if ((i3 & 2) != 0) {
-            i = 0;
-        }
-        if ((i3 & 4) != 0) {
-            i2 = spannableString.length();
-        }
-        multiReplyInteractor.addUserNameSpan(spannableString, str, i, i2);
-    }
-
-    private final void addUserNameSpan(SpannableString spannableString, String str, int i, int i2) {
+    private final void addUserNameSpan(SpannableString spannableString, String str) {
         try {
-            spannableString.setSpan(new URLSpanUserMention(str, 1), i, i2, 33);
+            spannableString.setSpan(new URLSpanUserMention(str, 1), 0, spannableString.length(), 33);
         } catch (Exception e) {
             Timber.m4e(e);
         }

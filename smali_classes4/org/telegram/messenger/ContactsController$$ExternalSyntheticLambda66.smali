@@ -5,25 +5,27 @@
 .implements Lorg/telegram/tgnet/RequestDelegate;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/ContactsController;
-
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-.field public final synthetic f$2:Lcom/iMe/fork/utils/Callbacks$Callback1;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda66;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Lorg/telegram/ui/ActionBar/AlertDialog;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda66;
+
+    invoke-direct {v0}, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda66;-><init>()V
+
+    sput-object v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda66;->INSTANCE:Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda66;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda66;->f$0:Lorg/telegram/messenger/ContactsController;
-
-    iput-object p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda66;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iput-object p3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda66;->f$2:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     return-void
 .end method
@@ -31,15 +33,9 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 3
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda66;->f$0:Lorg/telegram/messenger/ContactsController;
-
-    iget-object v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda66;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iget-object v2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda66;->f$2:Lcom/iMe/fork/utils/Callbacks$Callback1;
-
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$LEMcuTXTWOnax2Eb8D3vsIIFcps(Lorg/telegram/messenger/ContactsController;Lorg/telegram/ui/ActionBar/AlertDialog;Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$w7icrJJ9ow5jmuj6T2yPXj42AD4(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

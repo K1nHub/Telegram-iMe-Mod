@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMiniFabsContainer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MiniFabsContainer.kt\ncom/iMe/ui/multifab/MiniFabsContainer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,99:1\n1855#2,2:100\n191#3,4:102\n191#3,4:106\n*S KotlinDebug\n*F\n+ 1 MiniFabsContainer.kt\ncom/iMe/ui/multifab/MiniFabsContainer\n*L\n38#1:100,2\n47#1:102,4\n51#1:106,4\n*E\n"
+    value = "SMAP\nMiniFabsContainer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MiniFabsContainer.kt\ncom/iMe/ui/multifab/MiniFabsContainer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,99:1\n1855#2,2:100\n205#3,4:102\n205#3,4:106\n*S KotlinDebug\n*F\n+ 1 MiniFabsContainer.kt\ncom/iMe/ui/multifab/MiniFabsContainer\n*L\n38#1:100,2\n47#1:102,4\n51#1:106,4\n*E\n"
 .end annotation
 
 
@@ -389,7 +389,7 @@
 .method public final setScale(F)V
     .locals 4
 
-    .line 191
+    .line 205
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -399,7 +399,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 192
+    .line 206
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -422,7 +422,7 @@
 .method public final show(Z)V
     .locals 5
 
-    .line 191
+    .line 205
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -432,7 +432,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 192
+    .line 206
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2

@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.mlkit_language_id;
 
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
 /* loaded from: classes.dex */
 final class zzht extends zzho {

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;Lorg/telegram/ui/Components/EmojiView;Z)V
     .locals 0
 
-    .line 9423
+    .line 9186
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager$1;->this$1:Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;
 
     iput-boolean p3, p0, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager$1;->val$kikliko:Z
@@ -39,7 +39,7 @@
 .method public getSpanSize(I)I
     .locals 4
 
-    .line 9427
+    .line 9190
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager$1;->val$kikliko:Z
 
     if-eqz v0, :cond_0
@@ -63,7 +63,7 @@
 
     move-result-object v0
 
-    .line 9428
+    .line 9191
     :goto_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager$1;->val$kikliko:Z
 
@@ -73,7 +73,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$21400(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$GifAdapter;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$21300(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$GifAdapter;
 
     move-result-object v1
 
@@ -88,7 +88,7 @@
 
     move-result-object v1
 
-    .line 9429
+    .line 9192
     :goto_1
     iget-boolean v2, p0, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager$1;->val$kikliko:Z
 
@@ -113,76 +113,28 @@
 
     move-result-object v2
 
-    .line 9430
     :goto_2
-    iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager$1;->this$1:Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;
+    if-nez p1, :cond_3
 
-    iget-object v3, v3, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;->this$0:Lorg/telegram/ui/Components/EmojiView;
-
-    invoke-static {v3}, Lorg/telegram/ui/Components/EmojiView;->access$2400(Lorg/telegram/ui/Components/EmojiView;)Z
+    .line 9194
+    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->access$9900(Lorg/telegram/ui/Components/EmojiView$GifAdapter;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-nez v3, :cond_5
 
-    .line 9431
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
-
-    move-result-object v0
-
-    if-ne v0, v1, :cond_3
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->access$15500(Lorg/telegram/ui/Components/EmojiView$GifAdapter;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 9432
-    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager$1;->this$1:Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;
-
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/GridLayoutManager;->getSpanCount()I
-
-    move-result p1
-
-    return p1
-
-    .line 9434
     :cond_3
-    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager$1;->this$1:Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;
-
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ExtendedGridLayoutManager;->getSpanSizeForItem(I)I
-
-    move-result p1
-
-    return p1
-
-    :cond_4
-    if-nez p1, :cond_5
-
-    .line 9437
-    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->access$12200(Lorg/telegram/ui/Components/EmojiView$GifAdapter;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_7
-
-    :cond_5
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_6
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager$1;->val$kikliko:Z
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_4
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->access$16400(Lorg/telegram/ui/Components/EmojiView$GifAdapter;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->access$16300(Lorg/telegram/ui/Components/EmojiView$GifAdapter;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -190,12 +142,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_6
 
     goto :goto_3
 
-    :cond_6
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->access$15500(Lorg/telegram/ui/Components/EmojiView$GifAdapter;)Ljava/util/ArrayList;
+    :cond_4
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->access$15400(Lorg/telegram/ui/Components/EmojiView$GifAdapter;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -203,10 +155,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_6
 
-    .line 9438
-    :cond_7
+    .line 9195
+    :cond_5
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager$1;->this$1:Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;
 
@@ -216,11 +168,11 @@
 
     return p1
 
-    .line 9440
-    :cond_8
+    .line 9197
+    :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager$1;->this$1:Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->access$12200(Lorg/telegram/ui/Components/EmojiView$GifAdapter;)Z
+    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->access$9900(Lorg/telegram/ui/Components/EmojiView$GifAdapter;)Z
 
     move-result v1
 

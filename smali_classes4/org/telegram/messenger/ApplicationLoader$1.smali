@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 97
+    .line 109
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -33,12 +33,12 @@
 
     const-wide/16 v0, -0x1
 
-    .line 100
+    .line 112
     invoke-virtual {p2, p1, v0, v1}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
     move-result-wide p1
 
-    .line 101
+    .line 113
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->smartBotsManager:Lcom/iMe/bots/usecase/AiBotsManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/iMe/bots/usecase/AiBotsManager;->handleDownloadCompletion(J)V

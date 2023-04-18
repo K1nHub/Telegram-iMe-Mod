@@ -20,22 +20,22 @@ import java.util.Map;
 public class ProxyResponse extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ProxyResponse> CREATOR = new zzb();
     public static final int STATUS_CODE_NO_CONNECTION = -1;
-    @SafeParcelable.Field(m789id = 5)
+    @SafeParcelable.Field(m775id = 5)
     public final byte[] body;
-    @SafeParcelable.Field(m789id = 1)
+    @SafeParcelable.Field(m775id = 1)
     public final int googlePlayServicesStatusCode;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     public final PendingIntent recoveryAction;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     public final int statusCode;
-    @SafeParcelable.VersionField(m786id = 1000)
+    @SafeParcelable.VersionField(m772id = 1000)
     final int zza;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     final Bundle zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public ProxyResponse(@SafeParcelable.Param(m788id = 1000) int i, @SafeParcelable.Param(m788id = 1) int i2, @SafeParcelable.Param(m788id = 2) PendingIntent pendingIntent, @SafeParcelable.Param(m788id = 3) int i3, @SafeParcelable.Param(m788id = 4) Bundle bundle, @SafeParcelable.Param(m788id = 5) byte[] bArr) {
+    public ProxyResponse(@SafeParcelable.Param(m774id = 1000) int i, @SafeParcelable.Param(m774id = 1) int i2, @SafeParcelable.Param(m774id = 2) PendingIntent pendingIntent, @SafeParcelable.Param(m774id = 3) int i3, @SafeParcelable.Param(m774id = 4) Bundle bundle, @SafeParcelable.Param(m774id = 5) byte[] bArr) {
         this.zza = i;
         this.googlePlayServicesStatusCode = i2;
         this.statusCode = i3;

@@ -3450,6 +3450,25 @@
     return v0
 .end method
 
+.method public hasPendingScrollPosition()Z
+    .locals 1
+
+    .line 2233
+    iget v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mPendingScrollPosition:I
+
+    if-ltz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
 .method public isAutoMeasureEnabled()Z
     .locals 1
 
@@ -5301,7 +5320,7 @@
 .method public setNeedFixEndGap(Z)V
     .locals 0
 
-    .line 2611
+    .line 2615
     iput-boolean p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->needFixEndGap:Z
 
     return-void
@@ -5310,7 +5329,7 @@
 .method public setNeedFixGap(Z)V
     .locals 0
 
-    .line 2607
+    .line 2611
     iput-boolean p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->needFixGap:Z
 
     return-void

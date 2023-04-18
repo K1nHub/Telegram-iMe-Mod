@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 660
+    .line 659
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -37,7 +37,7 @@
 .method public getBackground()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 717
+    .line 716
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->background:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -46,7 +46,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 684
+    .line 683
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->background:Landroid/graphics/drawable/Drawable;
 
     instance-of v1, v0, Landroid/graphics/drawable/ColorDrawable;
@@ -65,16 +65,16 @@
 
     goto/16 :goto_0
 
-    .line 687
+    .line 686
     :cond_0
     instance-of v1, v0, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v1, :cond_3
 
-    .line 688
+    .line 687
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 689
+    .line 688
     invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getTileModeX()Landroid/graphics/Shader$TileMode;
 
     move-result-object v0
@@ -83,20 +83,20 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 690
+    .line 689
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 691
+    .line 690
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     div-float/2addr v0, v1
 
-    .line 692
+    .line 691
     invoke-virtual {p1, v0, v0}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 693
+    .line 692
     iget-object v1, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->background:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -133,23 +133,23 @@
 
     invoke-virtual {v1, v2, v2, v3, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 694
+    .line 693
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->background:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 695
+    .line 694
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_1
 
-    .line 697
+    .line 696
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
-    .line 698
+    .line 697
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -168,7 +168,7 @@
 
     int-to-float v2, v0
 
-    .line 699
+    .line 698
     iget-object v3, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->background:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -179,12 +179,12 @@
 
     div-float/2addr v2, v3
 
-    .line 700
+    .line 699
     invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
 
-    .line 701
+    .line 700
     iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->background:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -211,7 +211,7 @@
 
     double-to-int v2, v2
 
-    .line 702
+    .line 701
     iget-object v3, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->background:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -238,7 +238,7 @@
 
     double-to-int v1, v3
 
-    .line 703
+    .line 702
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
@@ -249,10 +249,10 @@
 
     sub-int/2addr v0, v1
 
-    .line 704
+    .line 703
     div-int/lit8 v0, v0, 0x2
 
-    .line 705
+    .line 704
     iget-object v4, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->background:Landroid/graphics/drawable/Drawable;
 
     add-int/2addr v2, v3
@@ -261,14 +261,14 @@
 
     invoke-virtual {v4, v3, v0, v2, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 706
+    .line 705
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->background:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     goto :goto_1
 
-    .line 685
+    .line 684
     :cond_2
     :goto_0
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -281,17 +281,17 @@
 
     invoke-virtual {v0, v2, v2, v1, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 686
+    .line 685
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->background:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 709
+    .line 708
     :cond_3
     :goto_1
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 710
+    .line 709
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$4300(Lorg/telegram/ui/ThemePreviewActivity;)Z
@@ -308,7 +308,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 711
+    .line 710
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$4200(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/RadialProgress2;
@@ -324,10 +324,10 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 666
+    .line 665
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
-    .line 667
+    .line 666
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$4100(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/WallpaperParallaxEffect;
@@ -348,7 +348,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$4002(Lorg/telegram/ui/ThemePreviewActivity;F)F
 
-    .line 668
+    .line 667
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$2600(Lorg/telegram/ui/ThemePreviewActivity;)Z
@@ -357,7 +357,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 669
+    .line 668
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$4000(Lorg/telegram/ui/ThemePreviewActivity;)F
@@ -366,7 +366,7 @@
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 670
+    .line 669
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$4000(Lorg/telegram/ui/ThemePreviewActivity;)F
@@ -375,7 +375,7 @@
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setScaleY(F)V
 
-    .line 672
+    .line 671
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -389,12 +389,12 @@
 
     const/16 p1, 0x2c
 
-    .line 673
+    .line 672
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 674
+    .line 673
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -403,7 +403,7 @@
 
     div-int/2addr v0, p2
 
-    .line 675
+    .line 674
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -412,7 +412,7 @@
 
     div-int/2addr v1, p2
 
-    .line 676
+    .line 675
     iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ThemePreviewActivity;->access$4200(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/RadialProgress2;
@@ -425,7 +425,7 @@
 
     invoke-virtual {v2, v0, v1, v3, p1}, Lorg/telegram/ui/Components/RadialProgress2;->setProgressRect(IIII)V
 
-    .line 679
+    .line 678
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -461,7 +461,7 @@
 .method public setAlpha(F)V
     .locals 1
 
-    .line 727
+    .line 726
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$4200(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/RadialProgress2;
@@ -470,7 +470,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 728
+    .line 727
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$4200(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/RadialProgress2;
@@ -486,7 +486,7 @@
 .method public setBackground(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 722
+    .line 721
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->background:Landroid/graphics/drawable/Drawable;
 
     return-void

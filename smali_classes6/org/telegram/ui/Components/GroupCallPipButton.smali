@@ -361,7 +361,7 @@
 
     const-wide v0, 0x40c09a0000000000L    # 8500.0
 
-    .line 390
+    .line 392
     invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->min(DD)D
 
     move-result-wide p1
@@ -372,7 +372,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->animateToAmplitude:F
 
-    .line 391
+    .line 393
     iget p2, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->amplitude:F
 
     sub-float/2addr p1, p2
@@ -397,19 +397,19 @@
 .method private updateButtonState()V
     .locals 9
 
-    .line 456
+    .line 458
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     if-eqz v0, :cond_4
 
-    .line 457
+    .line 459
     iget-object v1, v0, Lorg/telegram/messenger/voip/VoIPService;->groupCall:Lorg/telegram/messenger/ChatObject$Call;
 
     if-eqz v1, :cond_4
 
-    .line 458
+    .line 460
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->getCallState()I
 
     move-result v1
@@ -432,7 +432,7 @@
 
     goto :goto_0
 
-    .line 462
+    .line 464
     :cond_0
     iget-object v1, v0, Lorg/telegram/messenger/voip/VoIPService;->groupCall:Lorg/telegram/messenger/ChatObject$Call;
 
@@ -450,7 +450,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 463
+    .line 465
     iget-boolean v2, v1, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->can_self_unmute:Z
 
     if-nez v2, :cond_2
@@ -469,7 +469,7 @@
 
     if-nez v1, :cond_2
 
-    .line 464
+    .line 466
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isMicMute()Z
 
     move-result v1
@@ -478,16 +478,16 @@
 
     const/4 v1, 0x0
 
-    .line 465
+    .line 467
     invoke-virtual {v0, v3, v1, v1}, Lorg/telegram/messenger/voip/VoIPService;->setMicMute(ZZZ)V
 
     :cond_1
     const/4 v0, 0x3
 
-    .line 467
+    .line 469
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/GroupCallPipButton;->setState(I)V
 
-    .line 468
+    .line 470
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v3
@@ -502,42 +502,42 @@
 
     move-wide v1, v3
 
-    .line 469
+    .line 471
     invoke-static/range {v1 .. v8}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    .line 470
+    .line 472
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
     if-eqz v1, :cond_4
 
-    .line 471
+    .line 473
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/View;
 
-    .line 472
+    .line 474
     invoke-virtual {v1, v0}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     goto :goto_1
 
-    .line 475
+    .line 477
     :cond_2
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isMicMute()Z
 
     move-result v0
 
-    .line 476
+    .line 478
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/GroupCallPipButton;->setState(I)V
 
     goto :goto_1
 
-    .line 460
+    .line 462
     :cond_3
     :goto_0
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/GroupCallPipButton;->setState(I)V
@@ -552,14 +552,14 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 496
+    .line 498
     sget p2, Lorg/telegram/messenger/NotificationCenter;->webRtcMicAmplitudeEvent:I
 
     if-ne p1, p2, :cond_0
 
     const/4 p1, 0x0
 
-    .line 497
+    .line 499
     aget-object p1, p3, p1
 
     check-cast p1, Ljava/lang/Float;
@@ -574,18 +574,18 @@
 
     float-to-double p1, p1
 
-    .line 498
+    .line 500
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/GroupCallPipButton;->setAmplitude(D)V
 
     goto :goto_0
 
-    .line 499
+    .line 501
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->groupCallUpdated:I
 
     if-ne p1, p2, :cond_1
 
-    .line 500
+    .line 502
     invoke-direct {p0}, Lorg/telegram/ui/Components/GroupCallPipButton;->updateButtonState()V
 
     :cond_1
@@ -596,20 +596,20 @@
 .method protected onAttachedToWindow()V
     .locals 4
 
-    .line 439
+    .line 441
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 440
+    .line 442
     iget-boolean v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->stub:Z
 
     if-nez v0, :cond_3
 
     const-wide/16 v0, 0x0
 
-    .line 441
+    .line 443
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Components/GroupCallPipButton;->setAmplitude(D)V
 
-    .line 442
+    .line 444
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -618,7 +618,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 443
+    .line 445
     iget v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -629,7 +629,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 445
+    .line 447
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
@@ -657,7 +657,7 @@
     :cond_0
     move v0, v1
 
-    .line 446
+    .line 448
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
@@ -665,14 +665,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 447
+    .line 449
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v3
 
     invoke-virtual {v3, p0}, Lorg/telegram/messenger/voip/VoIPService;->registerStateListener(Lorg/telegram/messenger/voip/VoIPService$StateListener;)V
 
-    .line 449
+    .line 451
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->bigMicDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -688,7 +688,7 @@
     :goto_1
     invoke-virtual {v3, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 450
+    .line 452
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->bigMicDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->getCustomEndFrame()I
@@ -699,7 +699,7 @@
 
     invoke-virtual {v0, v3, v1, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZZ)V
 
-    .line 451
+    .line 453
     invoke-direct {p0}, Lorg/telegram/ui/Components/GroupCallPipButton;->updateButtonState()V
 
     :cond_3
@@ -709,7 +709,7 @@
 .method public onAudioSettingsChanged()V
     .locals 4
 
-    .line 506
+    .line 508
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
@@ -735,7 +735,7 @@
     :cond_0
     move v0, v1
 
-    .line 507
+    .line 509
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->bigMicDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -757,14 +757,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 510
+    .line 512
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->bigMicDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
     goto :goto_2
 
-    .line 512
+    .line 514
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->bigMicDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -772,14 +772,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    .line 515
+    .line 517
     :cond_3
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 516
+    .line 518
     invoke-direct {p0}, Lorg/telegram/ui/Components/GroupCallPipButton;->updateButtonState()V
 
     return-void
@@ -804,15 +804,15 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 484
+    .line 486
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 485
+    .line 487
     iget-boolean v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->stub:Z
 
     if-nez v0, :cond_0
 
-    .line 486
+    .line 488
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -821,7 +821,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 487
+    .line 489
     iget v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -832,14 +832,14 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 488
+    .line 490
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 489
+    .line 491
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
@@ -1169,14 +1169,10 @@
     .line 276
     iput v3, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->progressToPrepareRemove:F
 
-    .line 281
+    .line 282
     :cond_9
     :goto_2
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->currentState:Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;
-
-    invoke-static {v7}, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->access$000(Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;)I
-
-    move-result v7
 
     const/4 v12, 0x0
 
@@ -1184,7 +1180,14 @@
 
     const/4 v14, 0x2
 
-    if-eq v7, v13, :cond_b
+    if-eqz v7, :cond_b
+
+    .line 283
+    invoke-static {v7}, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->access$000(Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;)I
+
+    move-result v7
+
+    if-eq v7, v13, :cond_a
 
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->currentState:Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;
 
@@ -1192,23 +1195,20 @@
 
     move-result v7
 
-    if-ne v7, v14, :cond_a
+    if-ne v7, v14, :cond_b
+
+    :cond_a
+    move v7, v12
 
     goto :goto_3
 
-    :cond_a
+    :cond_b
     move v7, v4
 
-    goto :goto_4
-
-    :cond_b
     :goto_3
-    move v7, v12
-
-    :goto_4
     if-eqz v7, :cond_c
 
-    .line 285
+    .line 287
     iget v15, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->wavesEnter:F
 
     cmpl-float v16, v15, v8
@@ -1217,22 +1217,22 @@
 
     add-float/2addr v15, v11
 
-    .line 286
+    .line 288
     iput v15, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->wavesEnter:F
 
     cmpl-float v7, v15, v8
 
     if-lez v7, :cond_d
 
-    .line 288
+    .line 290
     iput v8, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->wavesEnter:F
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_c
     if-nez v7, :cond_d
 
-    .line 290
+    .line 292
     iget v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->wavesEnter:F
 
     cmpl-float v15, v7, v3
@@ -1241,23 +1241,23 @@
 
     sub-float/2addr v7, v11
 
-    .line 291
+    .line 293
     iput v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->wavesEnter:F
 
     cmpg-float v7, v7, v3
 
     if-gez v7, :cond_d
 
-    .line 293
+    .line 295
     iput v3, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->wavesEnter:F
 
     :cond_d
-    :goto_5
+    :goto_4
     const v7, 0x3f266666    # 0.65f
 
     const v11, 0x3eb33333    # 0.35f
 
-    .line 297
+    .line 299
     iget-object v15, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->overshootInterpolator:Landroid/view/animation/OvershootInterpolator;
 
     iget v9, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->wavesEnter:F
@@ -1270,7 +1270,7 @@
 
     add-float/2addr v9, v7
 
-    .line 299
+    .line 301
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->blobDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->amplitude:F
@@ -1283,15 +1283,15 @@
 
     const v15, 0x3dcccccd    # 0.1f
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_e
     move/from16 v15, v17
 
-    :goto_6
+    :goto_5
     invoke-virtual {v7, v11, v15}, Lorg/telegram/ui/Components/BlobDrawable;->update(FF)V
 
-    .line 300
+    .line 302
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->blobDrawable2:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->amplitude:F
@@ -1302,78 +1302,78 @@
 
     const v15, 0x3dcccccd    # 0.1f
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_f
     move/from16 v15, v17
 
-    :goto_7
+    :goto_6
     invoke-virtual {v7, v11, v15}, Lorg/telegram/ui/Components/BlobDrawable;->update(FF)V
 
-    :goto_8
+    :goto_7
     if-ge v12, v13, :cond_1c
 
     if-nez v12, :cond_10
 
-    .line 305
+    .line 307
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->previousState:Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;
 
     if-nez v7, :cond_10
 
     move v11, v14
 
-    goto/16 :goto_e
+    goto/16 :goto_d
 
     :cond_10
     const-wide/16 v13, 0x10
 
     if-nez v12, :cond_12
 
-    .line 310
+    .line 312
     iget v15, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->progressToPrepareRemove:F
 
     cmpl-float v15, v15, v8
 
     if-nez v15, :cond_11
 
-    :goto_9
+    :goto_8
     const/4 v11, 0x2
 
-    goto/16 :goto_e
+    goto/16 :goto_d
 
-    .line 313
+    .line 315
     :cond_11
     iget v15, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->progressToState:F
 
     sub-float v15, v8, v15
 
-    .line 314
+    .line 316
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->previousState:Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;
 
     iget v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->amplitude:F
 
     invoke-virtual {v7, v13, v14, v11}, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->update(JF)V
 
-    .line 315
+    .line 317
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->previousState:Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;
 
     iget-object v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v11}, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->setToPaint(Landroid/graphics/Paint;)V
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_12
     if-ne v12, v4, :cond_16
 
-    .line 317
+    .line 319
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->currentState:Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;
 
     if-nez v7, :cond_13
 
     return-void
 
-    .line 320
+    .line 322
     :cond_13
     iget v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->progressToPrepareRemove:F
 
@@ -1381,9 +1381,9 @@
 
     if-nez v11, :cond_14
 
-    goto :goto_9
+    goto :goto_8
 
-    .line 323
+    .line 325
     :cond_14
     iget-object v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->previousState:Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;
 
@@ -1393,27 +1393,27 @@
 
     move v15, v11
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_15
     move v15, v8
 
-    .line 324
-    :goto_a
+    .line 326
+    :goto_9
     iget v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->amplitude:F
 
     invoke-virtual {v7, v13, v14, v11}, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->update(JF)V
 
-    .line 325
+    .line 327
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->currentState:Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;
 
     iget-object v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v11}, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->setToPaint(Landroid/graphics/Paint;)V
 
-    goto :goto_b
+    goto :goto_a
 
-    .line 327
+    .line 329
     :cond_16
     iget v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->progressToPrepareRemove:F
 
@@ -1421,9 +1421,9 @@
 
     if-nez v7, :cond_17
 
-    goto :goto_9
+    goto :goto_8
 
-    .line 331
+    .line 333
     :cond_17
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->paint:Landroid/graphics/Paint;
 
@@ -1431,12 +1431,12 @@
 
     invoke-virtual {v7, v11}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 332
+    .line 334
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v7}, Landroid/graphics/Matrix;->reset()V
 
-    .line 333
+    .line 335
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->matrix:Landroid/graphics/Matrix;
 
     const/16 v11, 0xfa
@@ -1457,21 +1457,21 @@
 
     invoke-virtual {v7, v11, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 334
+    .line 336
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->matrix:Landroid/graphics/Matrix;
 
     iget v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->removeAngle:F
 
     invoke-virtual {v7, v11, v2, v5}, Landroid/graphics/Matrix;->postRotate(FFF)Z
 
-    .line 335
+    .line 337
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->prepareToRemoveShader:Landroid/graphics/LinearGradient;
 
     iget-object v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v7, v11}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 336
+    .line 338
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->paint:Landroid/graphics/Paint;
 
     iget-object v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->prepareToRemoveShader:Landroid/graphics/LinearGradient;
@@ -1480,8 +1480,8 @@
 
     move v15, v8
 
-    .line 339
-    :goto_b
+    .line 341
+    :goto_a
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->blobDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v11, 0x28
@@ -1494,7 +1494,7 @@
 
     iput v11, v7, Lorg/telegram/ui/Components/BlobDrawable;->maxRadius:F
 
-    .line 340
+    .line 342
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->blobDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v13, 0x20
@@ -1507,7 +1507,7 @@
 
     iput v11, v7, Lorg/telegram/ui/Components/BlobDrawable;->minRadius:F
 
-    .line 342
+    .line 344
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->blobDrawable2:Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v11, 0x26
@@ -1520,7 +1520,7 @@
 
     iput v11, v7, Lorg/telegram/ui/Components/BlobDrawable;->maxRadius:F
 
-    .line 343
+    .line 345
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->blobDrawable2:Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v11, 0x21
@@ -1539,7 +1539,7 @@
 
     if-eq v12, v11, :cond_18
 
-    .line 347
+    .line 349
     iget-object v14, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->paint:Landroid/graphics/Paint;
 
     mul-float/2addr v7, v15
@@ -1554,9 +1554,9 @@
 
     invoke-virtual {v14, v7}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_c
+    goto :goto_b
 
-    .line 349
+    .line 351
     :cond_18
     iget-object v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->paint:Landroid/graphics/Paint;
 
@@ -1570,8 +1570,8 @@
 
     invoke-virtual {v11, v7}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 352
-    :goto_c
+    .line 354
+    :goto_b
     iget v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->wavesEnter:F
 
     cmpl-float v7, v7, v3
@@ -1580,7 +1580,7 @@
 
     const v7, 0x3e99999a    # 0.3f
 
-    .line 353
+    .line 355
     iget v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->amplitude:F
 
     mul-float/2addr v11, v7
@@ -1597,32 +1597,32 @@
 
     const v7, 0x3fa66666    # 1.3f
 
-    .line 354
+    .line 356
     invoke-static {v11, v7}, Ljava/lang/Math;->min(FF)F
 
     move-result v11
 
     mul-float/2addr v11, v9
 
-    .line 355
+    .line 357
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 356
+    .line 358
     invoke-virtual {v1, v11, v11, v2, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 357
+    .line 359
     iget-object v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->blobDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget-object v14, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v11, v2, v5, v1, v14}, Lorg/telegram/ui/Components/BlobDrawable;->draw(FFLandroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 358
+    .line 360
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     const v11, 0x3e851eb8    # 0.26f
 
-    .line 360
+    .line 362
     iget v14, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->amplitude:F
 
     mul-float/2addr v14, v11
@@ -1637,27 +1637,27 @@
 
     mul-float/2addr v14, v11
 
-    .line 361
+    .line 363
     invoke-static {v14, v7}, Ljava/lang/Math;->min(FF)F
 
     move-result v7
 
     mul-float/2addr v7, v9
 
-    .line 362
+    .line 364
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 363
+    .line 365
     invoke-virtual {v1, v7, v7, v2, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 364
+    .line 366
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->blobDrawable2:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget-object v11, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v2, v5, v1, v11}, Lorg/telegram/ui/Components/BlobDrawable;->draw(FFLandroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 365
+    .line 367
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_19
@@ -1667,7 +1667,7 @@
 
     if-ne v12, v11, :cond_1a
 
-    .line 369
+    .line 371
     iget-object v14, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->paint:Landroid/graphics/Paint;
 
     iget v15, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->progressToPrepareRemove:F
@@ -1678,12 +1678,12 @@
 
     invoke-virtual {v14, v7}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_1a
     if-ne v12, v4, :cond_1b
 
-    .line 371
+    .line 373
     iget-object v14, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->paint:Landroid/graphics/Paint;
 
     mul-float/2addr v15, v7
@@ -1692,9 +1692,9 @@
 
     invoke-virtual {v14, v7}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_d
+    goto :goto_c
 
-    .line 373
+    .line 375
     :cond_1b
     iget-object v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->paint:Landroid/graphics/Paint;
 
@@ -1702,14 +1702,14 @@
 
     invoke-virtual {v7, v14}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 375
-    :goto_d
+    .line 377
+    :goto_c
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 376
+    .line 378
     invoke-virtual {v1, v10, v10, v2, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 377
+    .line 379
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -1720,19 +1720,19 @@
 
     invoke-virtual {v1, v2, v5, v7, v13}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 378
+    .line 380
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    :goto_e
+    :goto_d
     add-int/lit8 v12, v12, 0x1
 
     move v14, v11
 
     const/4 v13, 0x3
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
-    .line 381
+    .line 383
     :cond_1c
     iget-boolean v1, v0, Lorg/telegram/ui/Components/GroupCallPipButton;->removed:Z
 
@@ -1744,7 +1744,7 @@
 
     if-lez v1, :cond_1d
 
-    .line 382
+    .line 384
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_1d
@@ -1754,10 +1754,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 3
 
-    .line 430
+    .line 432
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 431
+    .line 433
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -1770,7 +1770,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 432
+    .line 434
     invoke-static {}, Lorg/telegram/ui/Components/GroupCallPip;->getInstance()Lorg/telegram/ui/Components/GroupCallPip;
 
     move-result-object v0
@@ -1795,7 +1795,7 @@
 
     move-result-object v0
 
-    .line 433
+    .line 435
     new-instance v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     const/16 v2, 0x10
@@ -1835,7 +1835,7 @@
 .method public onStateChanged(I)V
     .locals 0
 
-    .line 521
+    .line 523
     invoke-direct {p0}, Lorg/telegram/ui/Components/GroupCallPipButton;->updateButtonState()V
 
     return-void
@@ -1852,15 +1852,15 @@
 .method public prepareToRemove(Z)V
     .locals 1
 
-    .line 530
+    .line 532
     iget-boolean v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->prepareToRemove:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 531
+    .line 533
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 533
+    .line 535
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->prepareToRemove:Z
 
@@ -1890,7 +1890,7 @@
 
     double-to-float p1, p1
 
-    .line 527
+    .line 529
     iput p1, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->removeAngle:F
 
     return-void
@@ -1899,7 +1899,7 @@
 .method public setState(I)V
     .locals 6
 
-    .line 395
+    .line 397
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->currentState:Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;
 
     if-eqz v0, :cond_0
@@ -1912,13 +1912,13 @@
 
     return-void
 
-    .line 398
+    .line 400
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->currentState:Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;
 
     iput-object v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->previousState:Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;
 
-    .line 399
+    .line 401
     iget-object v1, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->states:[Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;
 
     aget-object v1, v1, p1
@@ -1933,7 +1933,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 401
+    .line 403
     iput v3, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->progressToState:F
 
     goto :goto_0
@@ -1941,12 +1941,12 @@
     :cond_1
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 403
+    .line 405
     iput v0, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->progressToState:F
 
     const/4 v5, 0x1
 
-    .line 405
+    .line 407
     invoke-static {v1}, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->access$000(Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;)I
 
     move-result v1
@@ -1969,11 +1969,11 @@
 
     move v3, v0
 
-    .line 408
+    .line 410
     :cond_4
     iput v3, p0, Lorg/telegram/ui/Components/GroupCallPipButton;->wavesEnter:F
 
-    .line 411
+    .line 413
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
@@ -1981,7 +1981,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 412
+    .line 414
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->getChat()Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object v0
@@ -1992,7 +1992,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 413
+    .line 415
     sget v0, Lorg/telegram/messenger/R$string;->VoipChannelVoiceChat:I
 
     const-string v1, "VoipChannelVoiceChat"
@@ -2003,7 +2003,7 @@
 
     goto :goto_1
 
-    .line 415
+    .line 417
     :cond_5
     sget v0, Lorg/telegram/messenger/R$string;->VoipGroupVoiceChat:I
 
@@ -2018,7 +2018,7 @@
 
     if-nez p1, :cond_6
 
-    .line 418
+    .line 420
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2046,7 +2046,7 @@
     :cond_6
     if-ne p1, v2, :cond_7
 
-    .line 420
+    .line 422
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2074,7 +2074,7 @@
     :cond_7
     if-ne p1, v4, :cond_8
 
-    .line 422
+    .line 424
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2097,12 +2097,12 @@
 
     move-result-object v0
 
-    .line 424
+    .line 426
     :cond_8
     :goto_2
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 425
+    .line 427
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

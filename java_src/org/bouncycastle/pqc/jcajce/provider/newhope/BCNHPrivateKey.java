@@ -3,36 +3,31 @@ package org.bouncycastle.pqc.jcajce.provider.newhope;
 import java.io.IOException;
 import java.security.Key;
 import java.security.PrivateKey;
-import org.bouncycastle.asn1.ASN1OctetString;
-import org.bouncycastle.asn1.DEROctetString;
+import org.bouncycastle.asn1.ASN1Set;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
-import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
-import org.bouncycastle.pqc.asn1.PQCObjectIdentifiers;
 import org.bouncycastle.pqc.crypto.newhope.NHPrivateKeyParameters;
+import org.bouncycastle.pqc.crypto.util.PrivateKeyFactory;
+import org.bouncycastle.pqc.crypto.util.PrivateKeyInfoFactory;
 import org.bouncycastle.util.Arrays;
-import org.bouncycastle.util.Pack;
 /* loaded from: classes4.dex */
 public class BCNHPrivateKey implements Key, PrivateKey {
-    private final NHPrivateKeyParameters params;
+    private transient ASN1Set attributes;
+    private transient NHPrivateKeyParameters params;
 
     public BCNHPrivateKey(PrivateKeyInfo privateKeyInfo) throws IOException {
-        this.params = new NHPrivateKeyParameters(convert(ASN1OctetString.getInstance(privateKeyInfo.parsePrivateKey()).getOctets()));
+        init(privateKeyInfo);
     }
 
-    private static short[] convert(byte[] bArr) {
-        int length = bArr.length / 2;
-        short[] sArr = new short[length];
-        for (int i = 0; i != length; i++) {
-            sArr[i] = Pack.littleEndianToShort(bArr, i * 2);
-        }
-        return sArr;
+    private void init(PrivateKeyInfo privateKeyInfo) throws IOException {
+        this.attributes = privateKeyInfo.getAttributes();
+        this.params = (NHPrivateKeyParameters) PrivateKeyFactory.createKey(privateKeyInfo);
     }
 
     public boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof BCNHPrivateKey)) {
-            return false;
+        if (obj instanceof BCNHPrivateKey) {
+            return Arrays.areEqual(this.params.getSecData(), ((BCNHPrivateKey) obj).params.getSecData());
         }
-        return Arrays.areEqual(this.params.getSecData(), ((BCNHPrivateKey) obj).params.getSecData());
+        return false;
     }
 
     @Override // java.security.Key
@@ -43,13 +38,7 @@ public class BCNHPrivateKey implements Key, PrivateKey {
     @Override // java.security.Key
     public byte[] getEncoded() {
         try {
-            AlgorithmIdentifier algorithmIdentifier = new AlgorithmIdentifier(PQCObjectIdentifiers.newHope);
-            short[] secData = this.params.getSecData();
-            byte[] bArr = new byte[secData.length * 2];
-            for (int i = 0; i != secData.length; i++) {
-                Pack.shortToLittleEndian(secData[i], bArr, i * 2);
-            }
-            return new PrivateKeyInfo(algorithmIdentifier, new DEROctetString(bArr)).getEncoded();
+            return PrivateKeyInfoFactory.createPrivateKeyInfo(this.params, this.attributes).getEncoded();
         } catch (IOException unused) {
             return null;
         }

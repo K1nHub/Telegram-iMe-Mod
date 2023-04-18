@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InstantCameraView;Landroid/content/Context;Landroid/graphics/Path;Landroid/graphics/Paint;)V
     .locals 0
 
-    .line 298
+    .line 299
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$4;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/InstantCameraView$4;->val$path:Landroid/graphics/Path;
@@ -43,11 +43,11 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 317
+    .line 318
     :try_start_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 318
+    .line 319
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$4;->val$path:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$4;->val$paint:Landroid/graphics/Paint;
@@ -63,15 +63,15 @@
 .method protected onSizeChanged(IIII)V
     .locals 0
 
-    .line 308
+    .line 309
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
 
-    .line 309
+    .line 310
     iget-object p3, p0, Lorg/telegram/ui/Components/InstantCameraView$4;->val$path:Landroid/graphics/Path;
 
     invoke-virtual {p3}, Landroid/graphics/Path;->reset()V
 
-    .line 310
+    .line 311
     iget-object p3, p0, Lorg/telegram/ui/Components/InstantCameraView$4;->val$path:Landroid/graphics/Path;
 
     div-int/lit8 p1, p1, 0x2
@@ -86,7 +86,7 @@
 
     invoke-virtual {p3, p1, p2, p1, p4}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 311
+    .line 312
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$4;->val$path:Landroid/graphics/Path;
 
     invoke-virtual {p1}, Landroid/graphics/Path;->toggleInverseFillType()V
@@ -97,10 +97,10 @@
 .method public setScaleX(F)V
     .locals 0
 
-    .line 302
+    .line 303
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 303
+    .line 304
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$4;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

@@ -13,11 +13,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class SavePasswordResult extends AbstractSafeParcelable {
     public static final Parcelable.Creator<SavePasswordResult> CREATOR = new zbm();
-    @SafeParcelable.Field(getter = "getPendingIntent", m789id = 1)
+    @SafeParcelable.Field(getter = "getPendingIntent", m775id = 1)
     private final PendingIntent zba;
 
     @SafeParcelable.Constructor
-    public SavePasswordResult(@SafeParcelable.Param(m788id = 1) PendingIntent pendingIntent) {
+    public SavePasswordResult(@SafeParcelable.Param(m774id = 1) PendingIntent pendingIntent) {
         this.zba = (PendingIntent) Preconditions.checkNotNull(pendingIntent);
     }
 

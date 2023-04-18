@@ -1,6 +1,7 @@
 package com.iMe.storage.domain.model.crypto.send;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.model.crypto.TronBlockHeader;
 import com.iMe.storage.domain.utils.crypto.Convert;
 import java.math.BigInteger;
@@ -10,17 +11,27 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes3.dex */
 public abstract class TransferArgs implements TransactionArgs {
     private final double amount;
+    private final Convert.Unit weiConvertUnit;
 
-    public /* synthetic */ TransferArgs(double d, DefaultConstructorMarker defaultConstructorMarker) {
-        this(d);
+    public /* synthetic */ TransferArgs(double d, Convert.Unit unit, DefaultConstructorMarker defaultConstructorMarker) {
+        this(d, unit);
     }
 
-    private TransferArgs(double d) {
+    private TransferArgs(double d, Convert.Unit unit) {
         this.amount = d;
+        this.weiConvertUnit = unit;
     }
 
     public double getAmount() {
         return this.amount;
+    }
+
+    protected Convert.Unit getWeiConvertUnit() {
+        return this.weiConvertUnit;
+    }
+
+    public final BigInteger getConvertedAmount() {
+        return NumberExtKt.convertToWei(Double.valueOf(getAmount()), getWeiConvertUnit());
     }
 
     /* compiled from: TransferArgs.kt */
@@ -39,8 +50,8 @@ public abstract class TransferArgs implements TransactionArgs {
             return getAmount();
         }
 
-        public final Convert.Unit component2() {
-            return this.weiConvertUnit;
+        protected final Convert.Unit component2() {
+            return getWeiConvertUnit();
         }
 
         public final String component3() {
@@ -82,19 +93,19 @@ public abstract class TransferArgs implements TransactionArgs {
             }
             if (obj instanceof EVM) {
                 EVM evm = (EVM) obj;
-                return Double.compare(getAmount(), evm.getAmount()) == 0 && this.weiConvertUnit == evm.weiConvertUnit && Intrinsics.areEqual(this.recipientAddress, evm.recipientAddress) && this.chainId == evm.chainId && Intrinsics.areEqual(this.nonce, evm.nonce) && Intrinsics.areEqual(this.gasPrice, evm.gasPrice) && Intrinsics.areEqual(this.gasLimit, evm.gasLimit) && Intrinsics.areEqual(this.contractAddress, evm.contractAddress);
+                return Double.compare(getAmount(), evm.getAmount()) == 0 && getWeiConvertUnit() == evm.getWeiConvertUnit() && Intrinsics.areEqual(this.recipientAddress, evm.recipientAddress) && this.chainId == evm.chainId && Intrinsics.areEqual(this.nonce, evm.nonce) && Intrinsics.areEqual(this.gasPrice, evm.gasPrice) && Intrinsics.areEqual(this.gasLimit, evm.gasLimit) && Intrinsics.areEqual(this.contractAddress, evm.contractAddress);
             }
             return false;
         }
 
         public int hashCode() {
-            int doubleToLongBits = ((((((((((((Double.doubleToLongBits(getAmount()) * 31) + this.weiConvertUnit.hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31;
+            int doubleToLongBits = ((((((((((((Double.doubleToLongBits(getAmount()) * 31) + getWeiConvertUnit().hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31;
             String str = this.contractAddress;
             return doubleToLongBits + (str == null ? 0 : str.hashCode());
         }
 
         public String toString() {
-            return "EVM(amount=" + getAmount() + ", weiConvertUnit=" + this.weiConvertUnit + ", recipientAddress=" + this.recipientAddress + ", chainId=" + this.chainId + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ", contractAddress=" + this.contractAddress + ')';
+            return "EVM(amount=" + getAmount() + ", weiConvertUnit=" + getWeiConvertUnit() + ", recipientAddress=" + this.recipientAddress + ", chainId=" + this.chainId + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ", contractAddress=" + this.contractAddress + ')';
         }
 
         public /* synthetic */ EVM(double d, Convert.Unit unit, String str, long j, BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, String str2, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -106,7 +117,8 @@ public abstract class TransferArgs implements TransactionArgs {
             return this.amount;
         }
 
-        public final Convert.Unit getWeiConvertUnit() {
+        @Override // com.iMe.storage.domain.model.crypto.send.TransferArgs
+        protected Convert.Unit getWeiConvertUnit() {
             return this.weiConvertUnit;
         }
 
@@ -136,7 +148,7 @@ public abstract class TransferArgs implements TransactionArgs {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public EVM(double d, Convert.Unit weiConvertUnit, String recipientAddress, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String str) {
-            super(d, null);
+            super(d, weiConvertUnit, null);
             Intrinsics.checkNotNullParameter(weiConvertUnit, "weiConvertUnit");
             Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
             Intrinsics.checkNotNullParameter(nonce, "nonce");
@@ -167,8 +179,8 @@ public abstract class TransferArgs implements TransactionArgs {
             return getAmount();
         }
 
-        public final Convert.Unit component2() {
-            return this.weiConvertUnit;
+        protected final Convert.Unit component2() {
+            return getWeiConvertUnit();
         }
 
         public final String component3() {
@@ -199,14 +211,14 @@ public abstract class TransferArgs implements TransactionArgs {
             }
             if (obj instanceof TON) {
                 TON ton = (TON) obj;
-                return Double.compare(getAmount(), ton.getAmount()) == 0 && this.weiConvertUnit == ton.weiConvertUnit && Intrinsics.areEqual(this.recipientAddress, ton.recipientAddress) && Intrinsics.areEqual(this.message, ton.message) && this.sendMode == ton.sendMode && this.isUnencrypted == ton.isUnencrypted;
+                return Double.compare(getAmount(), ton.getAmount()) == 0 && getWeiConvertUnit() == ton.getWeiConvertUnit() && Intrinsics.areEqual(this.recipientAddress, ton.recipientAddress) && Intrinsics.areEqual(this.message, ton.message) && this.sendMode == ton.sendMode && this.isUnencrypted == ton.isUnencrypted;
             }
             return false;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         public int hashCode() {
-            int doubleToLongBits = ((((Double.doubleToLongBits(getAmount()) * 31) + this.weiConvertUnit.hashCode()) * 31) + this.recipientAddress.hashCode()) * 31;
+            int doubleToLongBits = ((((Double.doubleToLongBits(getAmount()) * 31) + getWeiConvertUnit().hashCode()) * 31) + this.recipientAddress.hashCode()) * 31;
             String str = this.message;
             int hashCode = (((doubleToLongBits + (str == null ? 0 : str.hashCode())) * 31) + this.sendMode) * 31;
             boolean z = this.isUnencrypted;
@@ -218,7 +230,7 @@ public abstract class TransferArgs implements TransactionArgs {
         }
 
         public String toString() {
-            return "TON(amount=" + getAmount() + ", weiConvertUnit=" + this.weiConvertUnit + ", recipientAddress=" + this.recipientAddress + ", message=" + this.message + ", sendMode=" + this.sendMode + ", isUnencrypted=" + this.isUnencrypted + ')';
+            return "TON(amount=" + getAmount() + ", weiConvertUnit=" + getWeiConvertUnit() + ", recipientAddress=" + this.recipientAddress + ", message=" + this.message + ", sendMode=" + this.sendMode + ", isUnencrypted=" + this.isUnencrypted + ')';
         }
 
         public /* synthetic */ TON(double d, Convert.Unit unit, String str, String str2, int i, boolean z, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -230,7 +242,8 @@ public abstract class TransferArgs implements TransactionArgs {
             return this.amount;
         }
 
-        public final Convert.Unit getWeiConvertUnit() {
+        @Override // com.iMe.storage.domain.model.crypto.send.TransferArgs
+        protected Convert.Unit getWeiConvertUnit() {
             return this.weiConvertUnit;
         }
 
@@ -252,7 +265,7 @@ public abstract class TransferArgs implements TransactionArgs {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public TON(double d, Convert.Unit weiConvertUnit, String recipientAddress, String str, int i, boolean z) {
-            super(d, null);
+            super(d, weiConvertUnit, null);
             Intrinsics.checkNotNullParameter(weiConvertUnit, "weiConvertUnit");
             Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
             this.amount = d;
@@ -278,8 +291,8 @@ public abstract class TransferArgs implements TransactionArgs {
             return getAmount();
         }
 
-        public final Convert.Unit component2() {
-            return this.weiConvertUnit;
+        protected final Convert.Unit component2() {
+            return getWeiConvertUnit();
         }
 
         public final String component3() {
@@ -312,19 +325,19 @@ public abstract class TransferArgs implements TransactionArgs {
             }
             if (obj instanceof TRON) {
                 TRON tron = (TRON) obj;
-                return Double.compare(getAmount(), tron.getAmount()) == 0 && this.weiConvertUnit == tron.weiConvertUnit && Intrinsics.areEqual(this.recipientAddress, tron.recipientAddress) && Intrinsics.areEqual(this.feeLimit, tron.feeLimit) && Intrinsics.areEqual(this.contractAddress, tron.contractAddress) && Intrinsics.areEqual(this.blockHeader, tron.blockHeader);
+                return Double.compare(getAmount(), tron.getAmount()) == 0 && getWeiConvertUnit() == tron.getWeiConvertUnit() && Intrinsics.areEqual(this.recipientAddress, tron.recipientAddress) && Intrinsics.areEqual(this.feeLimit, tron.feeLimit) && Intrinsics.areEqual(this.contractAddress, tron.contractAddress) && Intrinsics.areEqual(this.blockHeader, tron.blockHeader);
             }
             return false;
         }
 
         public int hashCode() {
-            int doubleToLongBits = ((((((Double.doubleToLongBits(getAmount()) * 31) + this.weiConvertUnit.hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + this.feeLimit.hashCode()) * 31;
+            int doubleToLongBits = ((((((Double.doubleToLongBits(getAmount()) * 31) + getWeiConvertUnit().hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + this.feeLimit.hashCode()) * 31;
             String str = this.contractAddress;
             return ((doubleToLongBits + (str == null ? 0 : str.hashCode())) * 31) + this.blockHeader.hashCode();
         }
 
         public String toString() {
-            return "TRON(amount=" + getAmount() + ", weiConvertUnit=" + this.weiConvertUnit + ", recipientAddress=" + this.recipientAddress + ", feeLimit=" + this.feeLimit + ", contractAddress=" + this.contractAddress + ", blockHeader=" + this.blockHeader + ')';
+            return "TRON(amount=" + getAmount() + ", weiConvertUnit=" + getWeiConvertUnit() + ", recipientAddress=" + this.recipientAddress + ", feeLimit=" + this.feeLimit + ", contractAddress=" + this.contractAddress + ", blockHeader=" + this.blockHeader + ')';
         }
 
         public /* synthetic */ TRON(double d, Convert.Unit unit, String str, BigInteger bigInteger, String str2, TronBlockHeader tronBlockHeader, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -336,7 +349,8 @@ public abstract class TransferArgs implements TransactionArgs {
             return this.amount;
         }
 
-        public final Convert.Unit getWeiConvertUnit() {
+        @Override // com.iMe.storage.domain.model.crypto.send.TransferArgs
+        protected Convert.Unit getWeiConvertUnit() {
             return this.weiConvertUnit;
         }
 
@@ -358,7 +372,7 @@ public abstract class TransferArgs implements TransactionArgs {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public TRON(double d, Convert.Unit weiConvertUnit, String recipientAddress, BigInteger feeLimit, String str, TronBlockHeader blockHeader) {
-            super(d, null);
+            super(d, weiConvertUnit, null);
             Intrinsics.checkNotNullParameter(weiConvertUnit, "weiConvertUnit");
             Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
             Intrinsics.checkNotNullParameter(feeLimit, "feeLimit");

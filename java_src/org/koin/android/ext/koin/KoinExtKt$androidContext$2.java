@@ -2,7 +2,6 @@ package org.koin.android.ext.koin;
 
 import android.content.Context;
 import java.util.List;
-import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function1;
@@ -12,6 +11,7 @@ import kotlin.jvm.internal.Lambda;
 import kotlin.jvm.internal.Reflection;
 import org.koin.core.definition.BeanDefinition;
 import org.koin.core.definition.Kind;
+import org.koin.core.definition.KoinDefinition;
 import org.koin.core.instance.SingleInstanceFactory;
 import org.koin.core.module.Module;
 import org.koin.core.parameter.ParametersHolder;
@@ -35,11 +35,11 @@ public final class KoinExtKt$androidContext$2 extends Lambda implements Function
     /* compiled from: KoinExt.kt */
     /* renamed from: org.koin.android.ext.koin.KoinExtKt$androidContext$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C32081 extends Lambda implements Function2<Scope, ParametersHolder, Context> {
+    public static final class C31361 extends Lambda implements Function2<Scope, ParametersHolder, Context> {
         final /* synthetic */ Context $androidContext;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C32081(Context context) {
+        C31361(Context context) {
             super(2);
             this.$androidContext = context;
         }
@@ -62,15 +62,15 @@ public final class KoinExtKt$androidContext$2 extends Lambda implements Function
     public final void invoke2(Module module) {
         List emptyList;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C32081 c32081 = new C32081(this.$androidContext);
+        C31361 c31361 = new C31361(this.$androidContext);
         StringQualifier rootScopeQualifier = ScopeRegistry.Companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(Context.class), null, c32081, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(Context.class), null, c31361, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
-        new Pair(module, singleInstanceFactory);
+        new KoinDefinition(module, singleInstanceFactory);
     }
 }

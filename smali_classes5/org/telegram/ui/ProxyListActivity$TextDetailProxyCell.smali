@@ -56,13 +56,13 @@
 .method public constructor <init>(Lorg/telegram/ui/ProxyListActivity;Landroid/content/Context;)V
     .locals 13
 
-    .line 132
+    .line 133
     iput-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
-    .line 133
+    .line 134
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 135
+    .line 136
     new-instance p1, Landroid/widget/TextView;
 
     invoke-direct {p1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -71,14 +71,14 @@
 
     const-string v0, "windowBackgroundWhiteBlackText"
 
-    .line 136
+    .line 137
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 137
+    .line 138
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->textView:Landroid/widget/TextView;
 
     const/4 v0, 0x1
@@ -87,29 +87,29 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 138
+    .line 139
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 139
+    .line 140
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 140
+    .line 141
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 141
+    .line 142
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->textView:Landroid/widget/TextView;
 
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 142
+    .line 143
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->textView:Landroid/widget/TextView;
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -132,7 +132,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 143
+    .line 144
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->textView:Landroid/widget/TextView;
 
     const/4 v4, -0x2
@@ -187,7 +187,7 @@
 
     invoke-virtual {p0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 145
+    .line 146
     new-instance p1, Landroid/widget/TextView;
 
     invoke-direct {p1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -196,10 +196,10 @@
 
     const/high16 v1, 0x41500000    # 13.0f
 
-    .line 146
+    .line 147
     invoke-virtual {p1, v0, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 147
+    .line 148
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -216,22 +216,22 @@
     :goto_4
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 148
+    .line 149
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 149
+    .line 150
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 150
+    .line 151
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 151
+    .line 152
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     const/4 v0, 0x6
@@ -242,21 +242,21 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
 
-    .line 152
+    .line 153
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     sget-object v0, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 153
+    .line 154
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0, v0, v0, v0}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 154
+    .line 155
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     const/4 v4, -0x2
@@ -307,19 +307,19 @@
 
     invoke-virtual {p0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 156
+    .line 157
     new-instance p1, Landroid/widget/ImageView;
 
     invoke-direct {p1, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
-    .line 157
+    .line 158
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_info:I
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 158
+    .line 159
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
@@ -336,14 +336,14 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 159
+    .line 160
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 160
+    .line 161
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/messenger/R$string;->Edit:I
@@ -356,7 +356,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 161
+    .line 162
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     const/16 v4, 0x30
@@ -391,7 +391,7 @@
 
     invoke-virtual {p0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 162
+    .line 163
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     new-instance v1, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$$ExternalSyntheticLambda1;
@@ -400,7 +400,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 164
+    .line 165
     new-instance p1, Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-direct {p1, p2, v12}, Lorg/telegram/ui/Components/CheckBox2;-><init>(Landroid/content/Context;I)V
@@ -413,24 +413,24 @@
 
     const-string v4, "checkboxCheck"
 
-    .line 165
+    .line 166
     invoke-virtual {p1, p2, v1, v4}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 166
+    .line 167
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 p2, 0xe
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
-    .line 167
+    .line 168
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 p2, 0x8
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 168
+    .line 169
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 v4, 0x18
@@ -463,7 +463,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 170
+    .line 171
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -472,7 +472,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;)Lorg/telegram/ui/Components/CheckBox2;
     .locals 0
 
-    .line 118
+    .line 119
     iget-object p0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     return-object p0
@@ -481,7 +481,7 @@
 .method static synthetic access$2800(Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;)Lorg/telegram/messenger/SharedConfig$ProxyInfo;
     .locals 0
 
-    .line 118
+    .line 119
     iget-object p0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
     return-object p0
@@ -490,7 +490,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;)Landroid/widget/ImageView;
     .locals 0
 
-    .line 118
+    .line 119
     iget-object p0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     return-object p0
@@ -499,7 +499,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 2
 
-    .line 162
+    .line 163
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     new-instance v0, Lorg/telegram/ui/ProxySettingsActivity;
@@ -516,7 +516,7 @@
 .method private synthetic lambda$setSelectionEnabled$1(FFLandroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 249
+    .line 250
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p3
@@ -527,27 +527,27 @@
 
     move-result p3
 
-    .line 250
+    .line 251
     invoke-static {p1, p2, p3}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result p1
 
-    .line 251
+    .line 252
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 252
+    .line 253
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 253
+    .line 254
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    .line 254
+    .line 255
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -582,17 +582,17 @@
 
     add-float/2addr p2, p1
 
-    .line 257
+    .line 258
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0, p2}, Landroid/view/View;->setScaleX(F)V
 
-    .line 258
+    .line 259
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0, p2}, Landroid/view/View;->setScaleY(F)V
 
-    .line 259
+    .line 260
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {p2, p3}, Landroid/view/View;->setAlpha(F)V
@@ -605,17 +605,17 @@
 
     add-float/2addr p3, p1
 
-    .line 262
+    .line 263
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 263
+    .line 264
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 264
+    .line 265
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -628,10 +628,10 @@
 .method protected onAttachedToWindow()V
     .locals 0
 
-    .line 323
+    .line 324
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 324
+    .line 325
     invoke-virtual {p0}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->updateStatus()V
 
     return-void
@@ -640,7 +640,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 329
+    .line 330
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v1, 0x14
@@ -711,7 +711,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 175
+    .line 176
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -746,12 +746,12 @@
 
     if-eqz p1, :cond_3
 
-    .line 301
+    .line 302
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_0
 
-    .line 302
+    .line 303
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -768,13 +768,13 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 304
+    .line 305
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_1
 
-    .line 305
+    .line 306
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     iget v2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->color:I
@@ -785,13 +785,13 @@
 
     invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 307
+    .line 308
     :cond_1
     sget-boolean p1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p1, :cond_2
 
-    .line 308
+    .line 309
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkDrawable:Landroid/graphics/drawable/Drawable;
@@ -800,7 +800,7 @@
 
     goto :goto_0
 
-    .line 310
+    .line 311
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
@@ -810,7 +810,7 @@
 
     goto :goto_0
 
-    .line 313
+    .line 314
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
@@ -823,7 +823,7 @@
 .method public setItemSelected(ZZ)V
     .locals 1
 
-    .line 292
+    .line 293
     iget-boolean v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->isSelected:Z
 
     if-ne p1, v0, :cond_0
@@ -832,11 +832,11 @@
 
     return-void
 
-    .line 295
+    .line 296
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->isSelected:Z
 
-    .line 296
+    .line 297
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/CheckBox2;->setChecked(ZZ)V
@@ -847,7 +847,7 @@
 .method public setProxy(Lorg/telegram/messenger/SharedConfig$ProxyInfo;)V
     .locals 3
 
-    .line 179
+    .line 180
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->textView:Landroid/widget/TextView;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -872,7 +872,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 180
+    .line 181
     iput-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
     return-void
@@ -881,7 +881,7 @@
 .method public setSelectionEnabled(ZZ)V
     .locals 5
 
-    .line 225
+    .line 226
     iget-boolean v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->isSelectionEnabled:Z
 
     if-ne v0, p1, :cond_0
@@ -890,11 +890,11 @@
 
     return-void
 
-    .line 228
+    .line 229
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->isSelectionEnabled:Z
 
-    .line 230
+    .line 231
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v1, 0x20
@@ -932,23 +932,23 @@
     :cond_2
     move v0, v3
 
-    .line 233
+    .line 234
     :goto_1
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 234
+    .line 235
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 235
+    .line 236
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    .line 236
+    .line 237
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -971,7 +971,7 @@
 
     invoke-virtual {p2, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 237
+    .line 238
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     const/16 v0, 0x8
@@ -988,22 +988,22 @@
     :goto_3
     invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 238
+    .line 239
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p2, v4}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 239
+    .line 240
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p2, v4}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 240
+    .line 241
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p2, v4}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 241
+    .line 242
     iget-object p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     if-eqz p1, :cond_5
@@ -1016,17 +1016,17 @@
     :goto_4
     invoke-virtual {p2, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 242
+    .line 243
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setAlpha(F)V
 
-    .line 243
+    .line 244
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setScaleX(F)V
 
-    .line 244
+    .line 245
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setScaleY(F)V
@@ -1062,7 +1062,7 @@
     :goto_6
     aput v4, p2, v1
 
-    .line 246
+    .line 247
     invoke-static {p2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p2
@@ -1073,26 +1073,26 @@
 
     move-result-object p2
 
-    .line 247
+    .line 248
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p2, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 248
+    .line 249
     new-instance v1, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0, v3, v0}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;FF)V
 
     invoke-virtual {p2, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 266
+    .line 267
     new-instance v0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$1;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$1;-><init>(Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;Z)V
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 287
+    .line 288
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->start()V
 
     :goto_7
@@ -1102,7 +1102,7 @@
 .method public setValue(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 318
+    .line 319
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -1113,7 +1113,7 @@
 .method public updateStatus()V
     .locals 11
 
-    .line 185
+    .line 186
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->currentProxy:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
     iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
@@ -1140,7 +1140,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 186
+    .line 187
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$100(Lorg/telegram/ui/ProxyListActivity;)I
@@ -1163,7 +1163,7 @@
 
     goto :goto_0
 
-    .line 198
+    .line 199
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
@@ -1179,7 +1179,7 @@
 
     goto/16 :goto_3
 
-    .line 188
+    .line 189
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
@@ -1192,7 +1192,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 189
+    .line 190
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1237,7 +1237,7 @@
 
     goto :goto_1
 
-    .line 191
+    .line 192
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
@@ -1249,7 +1249,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 193
+    .line 194
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
@@ -1261,7 +1261,7 @@
 
     if-nez v1, :cond_3
 
-    .line 194
+    .line 195
     iput-wide v7, v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->availableCheckTime:J
 
     :cond_3
@@ -1269,7 +1269,7 @@
 
     goto :goto_3
 
-    .line 201
+    .line 202
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
@@ -1277,7 +1277,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 202
+    .line 203
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->Checking:I
@@ -1292,13 +1292,13 @@
 
     goto :goto_3
 
-    .line 204
+    .line 205
     :cond_5
     iget-boolean v1, v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->available:Z
 
     if-eqz v1, :cond_7
 
-    .line 205
+    .line 206
     iget-wide v0, v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
 
     cmp-long v0, v0, v7
@@ -1307,7 +1307,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 206
+    .line 207
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1352,7 +1352,7 @@
 
     goto :goto_2
 
-    .line 208
+    .line 209
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
@@ -1369,7 +1369,7 @@
 
     goto :goto_3
 
-    .line 212
+    .line 213
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
@@ -1385,7 +1385,7 @@
 
     const-string v6, "windowBackgroundWhiteRedText4"
 
-    .line 216
+    .line 217
     :goto_3
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
@@ -1393,24 +1393,24 @@
 
     iput v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->color:I
 
-    .line 217
+    .line 218
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 218
+    .line 219
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     iget v1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->color:I
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 219
+    .line 220
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_8
 
-    .line 220
+    .line 221
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     iget v2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->color:I

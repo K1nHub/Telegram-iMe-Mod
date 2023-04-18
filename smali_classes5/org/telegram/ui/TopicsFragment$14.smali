@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Landroid/content/Context;Landroid/view/View;ILorg/telegram/ui/TopicsFragment$EmptyViewContainer;)V
     .locals 0
 
-    .line 1157
+    .line 1159
     iput-object p5, p0, Lorg/telegram/ui/TopicsFragment$14;->val$emptyViewContainer:Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/StickerEmptyView;-><init>(Landroid/content/Context;Landroid/view/View;I)V
@@ -35,7 +35,7 @@
 .method public showProgress(ZZ)V
     .locals 2
 
-    .line 1162
+    .line 1164
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
 
     const/4 v0, 0x0
@@ -44,7 +44,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 1165
+    .line 1167
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$14;->val$emptyViewContainer:Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;
 
     iget-object p2, p2, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->textView:Landroid/widget/TextView;
@@ -69,7 +69,7 @@
 
     goto :goto_2
 
-    .line 1167
+    .line 1169
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$14;->val$emptyViewContainer:Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;
 
@@ -81,7 +81,7 @@
 
     invoke-virtual {p2}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1168
+    .line 1170
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$14;->val$emptyViewContainer:Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;
 
     iget-object p2, p2, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->textView:Landroid/widget/TextView;

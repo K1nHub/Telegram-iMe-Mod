@@ -8,8 +8,8 @@ import com.iMe.fork.models.SortingTabState;
 import com.iMe.fork.models.backup.Backup;
 import com.iMe.fork.models.backup.BackupMappingKt;
 import com.iMe.fork.models.backup.SortingTabStateBackup;
-import com.iMe.storage.data.locale.p028db.dao.main.FiltersDao;
-import com.iMe.storage.data.locale.p028db.model.filter.FilterSettingsDb;
+import com.iMe.storage.data.locale.p027db.dao.main.FiltersDao;
+import com.iMe.storage.data.locale.p027db.model.filter.FilterSettingsDb;
 import com.iMe.storage.data.mapper.filter.FilterSettingsMappingKt;
 import com.iMe.storage.domain.model.filters.FilterFab;
 import com.iMe.storage.domain.model.filters.FilterSettingsModel;
@@ -42,15 +42,15 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.FilterCreateActivity;
-import p035j$.util.concurrent.ConcurrentHashMap;
-import p035j$.util.concurrent.ConcurrentMap$EL;
-import p035j$.util.function.Function;
+import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p044ui.FilterCreateActivity;
+import p034j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentMap$EL;
+import p034j$.util.function.Function;
 /* compiled from: FiltersController.kt */
 /* loaded from: classes3.dex */
 public final class FiltersController extends BaseController implements KoinComponent {
@@ -284,7 +284,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             for (MessagesController.DialogFilter dialogFilter : filters) {
                 dialogFilter.alwaysShow.clear();
                 dialogFilter.pinnedDialogs.clear();
-                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1442id).name());
+                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1367id).name());
                 if (pair != null) {
                     int i = 0;
                     for (Object obj : pair.getFirst()) {
@@ -408,7 +408,7 @@ public final class FiltersController extends BaseController implements KoinCompo
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(filterSettings, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (FilterSettingsDb filterSettingsDb : filterSettings) {
-            arrayList.add(TuplesKt.m94to(Integer.valueOf(filterSettingsDb.getFilterId()), FilterSettingsMappingKt.mapToDomain(filterSettingsDb)));
+            arrayList.add(TuplesKt.m80to(Integer.valueOf(filterSettingsDb.getFilterId()), FilterSettingsMappingKt.mapToDomain(filterSettingsDb)));
         }
         MapsKt__MapsKt.putAll(map, arrayList);
     }
@@ -466,8 +466,8 @@ public final class FiltersController extends BaseController implements KoinCompo
                 arrayList.add(Long.valueOf(dialogFilter.pinnedDialogs.keyAt(i)));
                 arrayList2.add(Integer.valueOf(dialogFilter.pinnedDialogs.valueAt(i)));
             }
-            Pair m94to = TuplesKt.m94to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1442id).name(), TuplesKt.m94to(arrayList, arrayList2));
-            linkedHashMap.put(m94to.getFirst(), m94to.getSecond());
+            Pair m80to = TuplesKt.m80to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1367id).name(), TuplesKt.m80to(arrayList, arrayList2));
+            linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;
@@ -555,19 +555,19 @@ public final class FiltersController extends BaseController implements KoinCompo
             Integer valueOf = Integer.valueOf(i);
             final FiltersController$Companion$getInstance$1 filtersController$Companion$getInstance$1 = new FiltersController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.FiltersController$Companion$$ExternalSyntheticLambda0
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
                     FiltersController instance$lambda$0;
                     instance$lambda$0 = FiltersController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

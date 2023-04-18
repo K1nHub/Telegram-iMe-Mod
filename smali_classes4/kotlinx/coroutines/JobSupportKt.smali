@@ -181,20 +181,18 @@
     const/4 v0, 0x0
 
     :goto_0
+    if-eqz v0, :cond_2
+
+    iget-object v0, v0, Lkotlinx/coroutines/IncompleteStateBox;->state:Lkotlinx/coroutines/Incomplete;
+
     if-nez v0, :cond_1
 
     goto :goto_1
 
     :cond_1
-    iget-object v0, v0, Lkotlinx/coroutines/IncompleteStateBox;->state:Lkotlinx/coroutines/Incomplete;
-
-    if-nez v0, :cond_2
-
-    goto :goto_1
-
-    :cond_2
     move-object p0, v0
 
+    :cond_2
     :goto_1
     return-object p0
 .end method

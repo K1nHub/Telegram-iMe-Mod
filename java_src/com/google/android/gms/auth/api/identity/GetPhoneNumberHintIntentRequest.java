@@ -11,7 +11,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class GetPhoneNumberHintIntentRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GetPhoneNumberHintIntentRequest> CREATOR = new zbe();
-    @SafeParcelable.Field(getter = "getTheme", m789id = 1)
+    @SafeParcelable.Field(getter = "getTheme", m775id = 1)
     private final int zba;
 
     /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
@@ -30,7 +30,7 @@ public class GetPhoneNumberHintIntentRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public GetPhoneNumberHintIntentRequest(@SafeParcelable.Param(m788id = 1) int i) {
+    public GetPhoneNumberHintIntentRequest(@SafeParcelable.Param(m774id = 1) int i) {
         this.zba = i;
     }
 

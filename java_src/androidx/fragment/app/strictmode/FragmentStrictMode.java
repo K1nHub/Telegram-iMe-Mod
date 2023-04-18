@@ -51,7 +51,6 @@ public final class FragmentStrictMode {
                 if (parentFragmentManager.getStrictModePolicy() != null) {
                     Policy strictModePolicy = parentFragmentManager.getStrictModePolicy();
                     Intrinsics.checkNotNull(strictModePolicy);
-                    Intrinsics.checkNotNullExpressionValue(strictModePolicy, "fragmentManager.strictModePolicy!!");
                     return strictModePolicy;
                 }
             }
@@ -173,13 +172,13 @@ public final class FragmentStrictMode {
 
     private final void logIfDebuggingEnabled(Violation violation) {
         if (FragmentManager.isLoggingEnabled(3)) {
-            Log.d("FragmentManager", Intrinsics.stringPlus("StrictMode violation in ", violation.getFragment().getClass().getName()), violation);
+            Log.d("FragmentManager", "StrictMode violation in " + violation.getFragment().getClass().getName(), violation);
         }
     }
 
     private final boolean shouldHandlePolicyViolation(Policy policy, Class<? extends Fragment> cls, Class<? extends Violation> cls2) {
         boolean contains;
-        Set<Class<? extends Violation>> set = policy.getMAllowedViolations$fragment_release().get(cls);
+        Set<Class<? extends Violation>> set = policy.getMAllowedViolations$fragment_release().get(cls.getName());
         if (set == null) {
             return true;
         }
@@ -196,13 +195,13 @@ public final class FragmentStrictMode {
         Fragment fragment = violation.getFragment();
         final String name = fragment.getClass().getName();
         if (policy.getFlags$fragment_release().contains(Flag.PENALTY_LOG)) {
-            Log.d("FragmentStrictMode", Intrinsics.stringPlus("Policy violation in ", name), violation);
+            Log.d("FragmentStrictMode", "Policy violation in " + name, violation);
         }
         if (policy.getListener$fragment_release() != null) {
             runOnHostThread(fragment, new Runnable() { // from class: androidx.fragment.app.strictmode.FragmentStrictMode$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FragmentStrictMode.m869handlePolicyViolation$lambda0(FragmentStrictMode.Policy.this, violation);
+                    FragmentStrictMode.m859handlePolicyViolation$lambda0(FragmentStrictMode.Policy.this, violation);
                 }
             });
         }
@@ -210,7 +209,7 @@ public final class FragmentStrictMode {
             runOnHostThread(fragment, new Runnable() { // from class: androidx.fragment.app.strictmode.FragmentStrictMode$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FragmentStrictMode.m870handlePolicyViolation$lambda1(name, violation);
+                    FragmentStrictMode.m860handlePolicyViolation$lambda1(name, violation);
                 }
             });
         }
@@ -218,7 +217,7 @@ public final class FragmentStrictMode {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: handlePolicyViolation$lambda-0  reason: not valid java name */
-    public static final void m869handlePolicyViolation$lambda0(Policy policy, Violation violation) {
+    public static final void m859handlePolicyViolation$lambda0(Policy policy, Violation violation) {
         Intrinsics.checkNotNullParameter(policy, "$policy");
         Intrinsics.checkNotNullParameter(violation, "$violation");
         policy.getListener$fragment_release().onViolation(violation);
@@ -226,9 +225,9 @@ public final class FragmentStrictMode {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: handlePolicyViolation$lambda-1  reason: not valid java name */
-    public static final void m870handlePolicyViolation$lambda1(String str, Violation violation) {
+    public static final void m860handlePolicyViolation$lambda1(String str, Violation violation) {
         Intrinsics.checkNotNullParameter(violation, "$violation");
-        Log.e("FragmentStrictMode", Intrinsics.stringPlus("Policy violation with PENALTY_DEATH in ", str), violation);
+        Log.e("FragmentStrictMode", "Policy violation with PENALTY_DEATH in " + str, violation);
         throw violation;
     }
 
@@ -253,16 +252,16 @@ public final class FragmentStrictMode {
         public static final Policy LAX;
         private final Set<Flag> flags;
         private final OnViolationListener listener;
-        private final Map<Class<? extends Fragment>, Set<Class<? extends Violation>>> mAllowedViolations;
+        private final Map<String, Set<Class<? extends Violation>>> mAllowedViolations;
 
         /* JADX WARN: Multi-variable type inference failed */
-        public Policy(Set<? extends Flag> flags, OnViolationListener onViolationListener, Map<Class<? extends Fragment>, ? extends Set<Class<? extends Violation>>> allowedViolations) {
+        public Policy(Set<? extends Flag> flags, OnViolationListener onViolationListener, Map<String, ? extends Set<Class<? extends Violation>>> allowedViolations) {
             Intrinsics.checkNotNullParameter(flags, "flags");
             Intrinsics.checkNotNullParameter(allowedViolations, "allowedViolations");
             this.flags = flags;
             this.listener = onViolationListener;
             LinkedHashMap linkedHashMap = new LinkedHashMap();
-            for (Map.Entry<Class<? extends Fragment>, ? extends Set<Class<? extends Violation>>> entry : allowedViolations.entrySet()) {
+            for (Map.Entry<String, ? extends Set<Class<? extends Violation>>> entry : allowedViolations.entrySet()) {
                 linkedHashMap.put(entry.getKey(), entry.getValue());
             }
             this.mAllowedViolations = linkedHashMap;
@@ -276,7 +275,7 @@ public final class FragmentStrictMode {
             return this.listener;
         }
 
-        public final Map<Class<? extends Fragment>, Set<Class<? extends Violation>>> getMAllowedViolations$fragment_release() {
+        public final Map<String, Set<Class<? extends Violation>>> getMAllowedViolations$fragment_release() {
             return this.mAllowedViolations;
         }
 

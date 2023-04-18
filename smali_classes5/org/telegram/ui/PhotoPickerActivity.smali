@@ -2160,7 +2160,7 @@
 
     move-result v13
 
-    if-le v13, v5, :cond_3
+    if-eq v13, v5, :cond_3
 
     :cond_1
     :goto_1

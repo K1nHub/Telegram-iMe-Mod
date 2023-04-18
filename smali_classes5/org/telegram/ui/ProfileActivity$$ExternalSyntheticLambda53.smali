@@ -2,44 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field public final synthetic f$0:Z
+.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-.field public final synthetic f$2:Landroid/app/Activity;
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(ZLorg/telegram/ui/ActionBar/AlertDialog;Landroid/app/Activity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda53;->f$0:Z
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda53;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda53;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda53;->f$2:Landroid/app/Activity;
+    iput p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda53;->f$1:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 2
 
-    iget-boolean v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda53;->f$0:Z
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda53;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda53;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+    iget v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda53;->f$1:I
 
-    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda53;->f$2:Landroid/app/Activity;
+    check-cast p1, Ljava/lang/Integer;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$tJZWSb_ka5QDWy2W4QUHTGVKZ0M(ZLorg/telegram/ui/ActionBar/AlertDialog;Landroid/app/Activity;)V
+    check-cast p2, Ljava/lang/Integer;
 
-    return-void
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$WFeQ1dbbIWZLGe-_aqEtgQxOgvg(Lorg/telegram/ui/ProfileActivity;ILjava/lang/Integer;Ljava/lang/Integer;)I
+
+    move-result p1
+
+    return p1
 .end method

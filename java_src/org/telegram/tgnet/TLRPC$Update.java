@@ -410,12 +410,12 @@ public abstract class TLRPC$Update extends TLObject {
                     public int flags;
 
                     /* renamed from: id */
-                    public int f1636id;
+                    public int f1561id;
 
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.flags = abstractSerializedData2.readInt32(z2);
-                        this.f1636id = abstractSerializedData2.readInt32(z2);
+                        this.f1561id = abstractSerializedData2.readInt32(z2);
                         if ((this.flags & 1) != 0) {
                             this.filter = TLRPC$DialogFilter.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         }
@@ -425,7 +425,7 @@ public abstract class TLRPC$Update extends TLObject {
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeInt32(this.flags);
-                        abstractSerializedData2.writeInt32(this.f1636id);
+                        abstractSerializedData2.writeInt32(this.f1561id);
                         if ((this.flags & 1) != 0) {
                             this.filter.serializeToStream(abstractSerializedData2);
                         }

@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
     .locals 0
 
-    .line 91
+    .line 92
     iput-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
@@ -47,7 +47,7 @@
 .method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 2
 
-    .line 113
+    .line 114
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$200(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Z
@@ -64,7 +64,7 @@
 
     if-nez p1, :cond_1
 
-    .line 114
+    .line 115
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$300(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -145,7 +145,7 @@
 
     invoke-virtual {p1, p2}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 115
+    .line 116
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$500(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -192,7 +192,7 @@
 
     invoke-virtual {p1, p2}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 116
+    .line 117
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$300(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -201,7 +201,7 @@
 
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
-    .line 117
+    .line 118
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$500(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -210,7 +210,7 @@
 
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
-    .line 118
+    .line 119
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     const/4 p2, 0x1
@@ -230,7 +230,7 @@
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 1
 
-    .line 125
+    .line 126
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$000(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Z
@@ -239,7 +239,7 @@
 
     if-nez v0, :cond_0
 
-    .line 126
+    .line 127
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$800(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Ljava/lang/Runnable;
@@ -248,7 +248,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 128
+    .line 129
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
@@ -266,7 +266,7 @@
 
     if-nez v0, :cond_3
 
-    .line 129
+    .line 130
     invoke-static {p3}, Ljava/lang/Math;->abs(F)F
 
     move-result p3
@@ -301,7 +301,7 @@
 
     goto :goto_0
 
-    .line 134
+    .line 135
     :cond_1
     iget-object p3, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
@@ -311,7 +311,7 @@
 
     goto :goto_1
 
-    .line 130
+    .line 131
     :cond_2
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
@@ -330,7 +330,7 @@
 
     iput p3, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->startX:F
 
-    .line 131
+    .line 132
     iget-object p3, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$500(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -347,14 +347,14 @@
 
     iput p3, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->startY:F
 
-    .line 132
+    .line 133
     iget-object p3, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     const/4 p4, 0x1
 
     invoke-static {p3, p4}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$202(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;Z)Z
 
-    .line 137
+    .line 138
     :cond_3
     :goto_1
     iget-object p3, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
@@ -365,7 +365,7 @@
 
     if-eqz p3, :cond_5
 
-    .line 138
+    .line 139
     iget-object p3, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$000(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Z
@@ -376,7 +376,7 @@
 
     goto :goto_2
 
-    .line 141
+    .line 142
     :cond_4
     iget-object p3, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
@@ -404,7 +404,7 @@
 
     invoke-virtual {p3, p4}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 142
+    .line 143
     iget-object p3, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$500(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -431,7 +431,7 @@
 
     invoke-virtual {p3, p4}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 143
+    .line 144
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$300(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -440,7 +440,7 @@
 
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
-    .line 144
+    .line 145
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$500(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -449,7 +449,7 @@
 
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
-    .line 148
+    .line 149
     :cond_5
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
@@ -464,7 +464,7 @@
 .method public onSingleTapUp(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 101
+    .line 102
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$000(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Z
@@ -477,7 +477,7 @@
 
     return v0
 
-    .line 104
+    .line 105
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
@@ -487,7 +487,7 @@
 
     if-nez p1, :cond_1
 
-    .line 105
+    .line 106
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$1;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     const/4 v0, 0x1

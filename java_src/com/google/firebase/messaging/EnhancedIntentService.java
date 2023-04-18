@@ -43,7 +43,7 @@ public abstract class EnhancedIntentService extends Service {
         this.executor.execute(new Runnable() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                EnhancedIntentService.this.m725x624ce8b2(intent, taskCompletionSource);
+                EnhancedIntentService.this.m711x624ce8b2(intent, taskCompletionSource);
             }
         });
         return taskCompletionSource.getTask();
@@ -59,13 +59,13 @@ public abstract class EnhancedIntentService extends Service {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onStartCommand$1$com-google-firebase-messaging-EnhancedIntentService */
-    public /* synthetic */ void m726x83fa35aa(Intent intent, Task task) {
+    public /* synthetic */ void m712x83fa35aa(Intent intent, Task task) {
         finishTask(intent);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$processIntent$0$com-google-firebase-messaging-EnhancedIntentService */
-    public /* synthetic */ void m725x624ce8b2(Intent intent, TaskCompletionSource taskCompletionSource) {
+    public /* synthetic */ void m711x624ce8b2(Intent intent, TaskCompletionSource taskCompletionSource) {
         try {
             handleIntent(intent);
         } finally {
@@ -115,7 +115,7 @@ public abstract class EnhancedIntentService extends Service {
         processIntent.addOnCompleteListener(EnhancedIntentService$$ExternalSyntheticLambda2.INSTANCE, new OnCompleteListener() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task) {
-                EnhancedIntentService.this.m726x83fa35aa(intent, task);
+                EnhancedIntentService.this.m712x83fa35aa(intent, task);
             }
         });
         return 3;

@@ -4,20 +4,27 @@ import java.io.IOException;
 import java.security.Key;
 import java.security.PublicKey;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
+import org.bouncycastle.asn1.ASN1Primitive;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
 import org.bouncycastle.pqc.asn1.PQCObjectIdentifiers;
 import org.bouncycastle.pqc.asn1.SPHINCS256KeyParams;
 import org.bouncycastle.pqc.crypto.sphincs.SPHINCSPublicKeyParameters;
+import org.bouncycastle.pqc.crypto.util.PublicKeyFactory;
+import org.bouncycastle.pqc.crypto.util.SubjectPublicKeyInfoFactory;
 import org.bouncycastle.util.Arrays;
 /* loaded from: classes4.dex */
 public class BCSphincs256PublicKey implements PublicKey, Key {
-    private final SPHINCSPublicKeyParameters params;
-    private final ASN1ObjectIdentifier treeDigest;
+    private transient SPHINCSPublicKeyParameters params;
+    private transient ASN1ObjectIdentifier treeDigest;
 
-    public BCSphincs256PublicKey(SubjectPublicKeyInfo subjectPublicKeyInfo) {
+    public BCSphincs256PublicKey(SubjectPublicKeyInfo subjectPublicKeyInfo) throws IOException {
+        init(subjectPublicKeyInfo);
+    }
+
+    private void init(SubjectPublicKeyInfo subjectPublicKeyInfo) throws IOException {
         this.treeDigest = SPHINCS256KeyParams.getInstance(subjectPublicKeyInfo.getAlgorithm().getParameters()).getTreeDigest().getAlgorithm();
-        this.params = new SPHINCSPublicKeyParameters(subjectPublicKeyInfo.getPublicKeyData().getBytes());
+        this.params = (SPHINCSPublicKeyParameters) PublicKeyFactory.createKey(subjectPublicKeyInfo);
     }
 
     public boolean equals(Object obj) {
@@ -26,7 +33,7 @@ public class BCSphincs256PublicKey implements PublicKey, Key {
         }
         if (obj instanceof BCSphincs256PublicKey) {
             BCSphincs256PublicKey bCSphincs256PublicKey = (BCSphincs256PublicKey) obj;
-            return this.treeDigest.equals(bCSphincs256PublicKey.treeDigest) && Arrays.areEqual(this.params.getKeyData(), bCSphincs256PublicKey.params.getKeyData());
+            return this.treeDigest.equals((ASN1Primitive) bCSphincs256PublicKey.treeDigest) && Arrays.areEqual(this.params.getKeyData(), bCSphincs256PublicKey.params.getKeyData());
         }
         return false;
     }
@@ -39,7 +46,7 @@ public class BCSphincs256PublicKey implements PublicKey, Key {
     @Override // java.security.Key
     public byte[] getEncoded() {
         try {
-            return new SubjectPublicKeyInfo(new AlgorithmIdentifier(PQCObjectIdentifiers.sphincs256, new SPHINCS256KeyParams(new AlgorithmIdentifier(this.treeDigest))), this.params.getKeyData()).getEncoded();
+            return (this.params.getTreeDigest() != null ? SubjectPublicKeyInfoFactory.createSubjectPublicKeyInfo(this.params) : new SubjectPublicKeyInfo(new AlgorithmIdentifier(PQCObjectIdentifiers.sphincs256, new SPHINCS256KeyParams(new AlgorithmIdentifier(this.treeDigest))), this.params.getKeyData())).getEncoded();
         } catch (IOException unused) {
             return null;
         }

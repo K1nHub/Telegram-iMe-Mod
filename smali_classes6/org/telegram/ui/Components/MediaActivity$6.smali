@@ -30,7 +30,7 @@
 
     move-object v0, p1
 
-    .line 263
+    .line 264
     iput-object v0, v13, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     move-object/from16 v0, p14
@@ -75,7 +75,7 @@
 .method protected drawBackgroundWithBlur(Landroid/graphics/Canvas;FLandroid/graphics/Rect;Landroid/graphics/Paint;)V
     .locals 6
 
-    .line 277
+    .line 278
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->val$fragmentView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getY()F
@@ -100,7 +100,7 @@
 .method protected invalidateBlur()V
     .locals 1
 
-    .line 282
+    .line 283
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->val$fragmentView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->invalidateBlur()V
@@ -111,7 +111,7 @@
 .method protected onSearchStateChanged(Z)V
     .locals 3
 
-    .line 271
+    .line 272
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -126,7 +126,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->removeAdjustResize(Landroid/app/Activity;I)V
 
-    .line 272
+    .line 273
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->val$avatarContainer:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x1
@@ -143,7 +143,7 @@
 .method protected onSelectedTabChanged()V
     .locals 1
 
-    .line 266
+    .line 267
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/MediaActivity;->access$300(Lorg/telegram/ui/Components/MediaActivity;)V

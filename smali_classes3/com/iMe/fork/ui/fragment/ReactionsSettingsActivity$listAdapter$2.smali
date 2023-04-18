@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;
     .locals 2
 
-    .line 36
+    .line 41
     new-instance v0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$listAdapter$2;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 36
+    .line 41
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$listAdapter$2;->invoke()Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;
 
     move-result-object v0

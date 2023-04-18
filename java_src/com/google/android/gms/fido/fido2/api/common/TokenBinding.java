@@ -15,9 +15,9 @@ import org.json.JSONObject;
 @SafeParcelable.Reserved({1})
 /* loaded from: classes.dex */
 public class TokenBinding extends AbstractSafeParcelable {
-    @SafeParcelable.Field(getter = "getTokenBindingStatusAsString", m789id = 2, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getTokenBindingStatusAsString", m775id = 2, type = "java.lang.String")
     private final TokenBindingStatus zza;
-    @SafeParcelable.Field(getter = "getTokenBindingId", m789id = 3)
+    @SafeParcelable.Field(getter = "getTokenBindingId", m775id = 3)
     private final String zzb;
     public static final Parcelable.Creator<TokenBinding> CREATOR = new zzap();
     public static final TokenBinding SUPPORTED = new TokenBinding(TokenBindingStatus.SUPPORTED.toString(), null);
@@ -113,7 +113,7 @@ public class TokenBinding extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public TokenBinding(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) String str2) {
+    public TokenBinding(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2) {
         Preconditions.checkNotNull(str);
         try {
             this.zza = TokenBindingStatus.fromString(str);

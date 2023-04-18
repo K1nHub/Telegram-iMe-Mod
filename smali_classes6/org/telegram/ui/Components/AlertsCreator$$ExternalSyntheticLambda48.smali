@@ -105,7 +105,7 @@
 
     move/from16 v15, p2
 
-    invoke-static/range {v1 .. v15}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$itJd7xl0urHK82auJ4mPqnoztIo(ZZZLorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/ActionBar/BaseFragment;ZZLorg/telegram/tgnet/TLRPC$Chat;ZZLorg/telegram/messenger/MessagesStorage$BooleanCallback;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;[ZLandroid/content/DialogInterface;I)V
+    invoke-static/range {v1 .. v15}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$G0U967dIjy7VY2XBMDxbEbeeNKc(ZZZLorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/ActionBar/BaseFragment;ZZLorg/telegram/tgnet/TLRPC$Chat;ZZLorg/telegram/messenger/MessagesStorage$BooleanCallback;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;[ZLandroid/content/DialogInterface;I)V
 
     return-void
 .end method

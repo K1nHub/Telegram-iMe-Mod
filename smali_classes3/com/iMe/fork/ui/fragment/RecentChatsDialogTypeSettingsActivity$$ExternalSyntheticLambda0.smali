@@ -45,7 +45,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$$ExternalSyntheticLambda0;->f$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->$r8$lambda$87c40Ju_fml2WYt3Id8HHQeoSIA(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {v0, p1, p2, p3, p4}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->$r8$lambda$k5ZwZGw5mqFPa8RVrs61OPtCI1o(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method

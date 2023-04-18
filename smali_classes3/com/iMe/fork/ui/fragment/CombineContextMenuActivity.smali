@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCombineContextMenuActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CombineContextMenuActivity.kt\ncom/iMe/fork/ui/fragment/CombineContextMenuActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,228:1\n1#2:229\n191#3,4:230\n*S KotlinDebug\n*F\n+ 1 CombineContextMenuActivity.kt\ncom/iMe/fork/ui/fragment/CombineContextMenuActivity\n*L\n65#1:230,4\n*E\n"
+    value = "SMAP\nCombineContextMenuActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CombineContextMenuActivity.kt\ncom/iMe/fork/ui/fragment/CombineContextMenuActivity\n+ 2 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,228:1\n205#2,4:229\n*S KotlinDebug\n*F\n+ 1 CombineContextMenuActivity.kt\ncom/iMe/fork/ui/fragment/CombineContextMenuActivity\n*L\n65#1:229,4\n*E\n"
 .end annotation
 
 
@@ -55,18 +55,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$6RRXfSTFH4TAmP_U-6bv8IS856U(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)V
+.method public static synthetic $r8$lambda$0JkgVpVtBw5fP_qiAOFCXpx7acc(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getThemeDescriptions$lambda$3(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)V
+    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->initListView$lambda$7$lambda$6(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$gEaKMKefgTBQxA-LMwgVoom-msw(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$8knhoDRfHcsE47a3xNBe8Gd2Z94(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->initListView$lambda$8$lambda$7(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getThemeDescriptions$lambda$2(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)V
 
     return-void
 .end method
@@ -445,7 +445,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda$3(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)V
+.method private static final getThemeDescriptions$lambda$2(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)V
     .locals 5
 
     const-string v0, "this$0"
@@ -475,7 +475,7 @@
 
     const/4 v0, 0x0
 
-    .line 191
+    .line 205
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
@@ -483,7 +483,7 @@
     :goto_0
     if-ge v0, v2, :cond_3
 
-    .line 192
+    .line 206
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
@@ -563,7 +563,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda$8$lambda$7(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;Landroid/view/View;I)V
+.method private static final initListView$lambda$7$lambda$6(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1321,9 +1321,6 @@
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
-
-    .line 56
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p1
 .end method

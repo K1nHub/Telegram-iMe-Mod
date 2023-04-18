@@ -1,34 +1,37 @@
 package androidx.lifecycle;
 
-import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
+import kotlin.jvm.internal.Intrinsics;
+/* compiled from: ViewModelStore.kt */
 /* loaded from: classes.dex */
 public class ViewModelStore {
-    private final HashMap<String, ViewModel> mMap = new HashMap<>();
+    private final Map<String, ViewModel> map = new LinkedHashMap();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final void put(String str, ViewModel viewModel) {
-        ViewModel put = this.mMap.put(str, viewModel);
+    public final void put(String key, ViewModel viewModel) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        Intrinsics.checkNotNullParameter(viewModel, "viewModel");
+        ViewModel put = this.map.put(key, viewModel);
         if (put != null) {
             put.onCleared();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final ViewModel get(String str) {
-        return this.mMap.get(str);
+    public final ViewModel get(String key) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        return this.map.get(key);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public Set<String> keys() {
-        return new HashSet(this.mMap.keySet());
+    public final Set<String> keys() {
+        return new HashSet(this.map.keySet());
     }
 
     public final void clear() {
-        for (ViewModel viewModel : this.mMap.values()) {
+        for (ViewModel viewModel : this.map.values()) {
             viewModel.clear();
         }
-        this.mMap.clear();
+        this.map.clear();
     }
 }

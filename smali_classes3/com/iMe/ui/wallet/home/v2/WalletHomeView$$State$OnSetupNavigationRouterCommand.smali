@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State;)V
     .locals 1
 
-    .line 182
+    .line 200
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onSetupNavigationRouter"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/v2/WalletHomeView;)V
     .locals 0
 
-    .line 187
+    .line 205
     invoke-interface {p1}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;->onSetupNavigationRouter()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 180
+    .line 198
     check-cast p1, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$OnSetupNavigationRouterCommand;->apply(Lcom/iMe/ui/wallet/home/v2/WalletHomeView;)V

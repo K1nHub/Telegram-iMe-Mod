@@ -7,7 +7,7 @@
 .method public static final createEventLoop()Lkotlinx/coroutines/EventLoop;
     .locals 2
 
-    .line 26
+    .line 25
     new-instance v0, Lkotlinx/coroutines/BlockingEventLoop;
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;

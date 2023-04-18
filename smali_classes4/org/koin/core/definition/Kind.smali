@@ -55,7 +55,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 96
+    .line 99
     new-instance v0, Lorg/koin/core/definition/Kind;
 
     const-string v1, "Singleton"
@@ -103,7 +103,7 @@
         }
     .end annotation
 
-    .line 95
+    .line 98
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

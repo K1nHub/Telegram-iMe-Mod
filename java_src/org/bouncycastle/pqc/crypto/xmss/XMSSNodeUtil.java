@@ -3,9 +3,8 @@ package org.bouncycastle.pqc.crypto.xmss;
 import java.util.Objects;
 import org.bouncycastle.pqc.crypto.xmss.HashTreeAddress;
 import org.bouncycastle.pqc.crypto.xmss.LTreeAddress;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
-public class XMSSNodeUtil {
+class XMSSNodeUtil {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static XMSSNode lTree(WOTSPlus wOTSPlus, WOTSPlusPublicKeyParameters wOTSPlusPublicKeyParameters, LTreeAddress lTreeAddress) {
         double d;
@@ -73,13 +72,13 @@ public class XMSSNodeUtil {
                 xMSSAddress = (HashTreeAddress) new HashTreeAddress.Builder().withLayerAddress(hashTreeAddress3.getLayerAddress()).withTreeAddress(hashTreeAddress3.getTreeAddress()).withTreeHeight(hashTreeAddress3.getTreeHeight()).withTreeIndex(hashTreeAddress3.getTreeIndex()).withKeyAndMask(2).build();
             }
             byte[] PRF3 = wOTSPlus.getKhf().PRF(publicSeed, xMSSAddress.toByteArray());
-            int digestSize = wOTSPlus.getParams().getDigestSize();
-            byte[] bArr = new byte[digestSize * 2];
-            for (int i = 0; i < digestSize; i++) {
+            int treeDigestSize = wOTSPlus.getParams().getTreeDigestSize();
+            byte[] bArr = new byte[treeDigestSize * 2];
+            for (int i = 0; i < treeDigestSize; i++) {
                 bArr[i] = (byte) (xMSSNode.getValue()[i] ^ PRF2[i]);
             }
-            for (int i2 = 0; i2 < digestSize; i2++) {
-                bArr[i2 + digestSize] = (byte) (xMSSNode2.getValue()[i2] ^ PRF3[i2]);
+            for (int i2 = 0; i2 < treeDigestSize; i2++) {
+                bArr[i2 + treeDigestSize] = (byte) (xMSSNode2.getValue()[i2] ^ PRF3[i2]);
             }
             return new XMSSNode(xMSSNode.getHeight(), wOTSPlus.getKhf().m57H(PRF, bArr));
         }

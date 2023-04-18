@@ -4,12 +4,12 @@ import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
 @KeepForSdk
 /* loaded from: classes.dex */
-public class DataBufferIterator<T> implements Iterator<T>, p035j$.util.Iterator {
+public class DataBufferIterator<T> implements Iterator<T>, p034j$.util.Iterator {
     protected final DataBuffer zaa;
     protected int zab = -1;
 
@@ -17,17 +17,17 @@ public class DataBufferIterator<T> implements Iterator<T>, p035j$.util.Iterator 
         this.zaa = (DataBuffer) Preconditions.checkNotNull(dataBuffer);
     }
 
-    @Override // p035j$.util.Iterator
+    @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final boolean hasNext() {
         return this.zab < this.zaa.getCount() + (-1);
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public Object next() {
         if (hasNext()) {
             DataBuffer dataBuffer = this.zaa;
@@ -39,7 +39,7 @@ public class DataBufferIterator<T> implements Iterator<T>, p035j$.util.Iterator 
         throw new NoSuchElementException("Cannot advance the iterator beyond " + i2);
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final void remove() {
         throw new UnsupportedOperationException("Cannot remove elements from a DataBufferIterator");
     }

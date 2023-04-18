@@ -6,9 +6,17 @@ import android.view.View;
 public class TooltipCompat {
     public static void setTooltipText(View view, CharSequence charSequence) {
         if (Build.VERSION.SDK_INT >= 26) {
-            view.setTooltipText(charSequence);
+            Api26Impl.setTooltipText(view, charSequence);
         } else {
             TooltipCompatHandler.setTooltipText(view, charSequence);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api26Impl {
+        static void setTooltipText(View view, CharSequence charSequence) {
+            view.setTooltipText(charSequence);
         }
     }
 }

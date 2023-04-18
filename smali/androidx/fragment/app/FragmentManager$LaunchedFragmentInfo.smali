@@ -39,7 +39,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 3357
+    .line 3539
     new-instance v0, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo$1;
 
     invoke-direct {v0}, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo$1;-><init>()V
@@ -52,17 +52,17 @@
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 1
 
-    .line 3341
+    .line 3523
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3342
+    .line 3524
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;->mWho:Ljava/lang/String;
 
-    .line 3343
+    .line 3525
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result p1
@@ -75,13 +75,13 @@
 .method constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    .line 3336
+    .line 3518
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3337
+    .line 3519
     iput-object p1, p0, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;->mWho:Ljava/lang/String;
 
-    .line 3338
+    .line 3520
     iput p2, p0, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;->mRequestCode:I
 
     return-void
@@ -100,12 +100,12 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    .line 3353
+    .line 3535
     iget-object p2, p0, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;->mWho:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 3354
+    .line 3536
     iget p2, p0, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;->mRequestCode:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V

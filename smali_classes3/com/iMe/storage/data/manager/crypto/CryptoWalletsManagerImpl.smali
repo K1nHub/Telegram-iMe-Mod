@@ -56,7 +56,7 @@
 .method private final getWalletManager(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
     .locals 1
 
-    .line 45
+    .line 42
     sget-object v0, Lcom/iMe/storage/data/manager/crypto/CryptoWalletsManagerImpl$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -77,7 +77,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 48
+    .line 45
     iget-object p1, p0, Lcom/iMe/storage/data/manager/crypto/CryptoWalletsManagerImpl;->tronBlockchainCryptoWalletManager:Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
     goto :goto_0
@@ -89,13 +89,13 @@
 
     throw p1
 
-    .line 47
+    .line 44
     :cond_1
     iget-object p1, p0, Lcom/iMe/storage/data/manager/crypto/CryptoWalletsManagerImpl;->tonBlockchainCryptoWalletManager:Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
     goto :goto_0
 
-    .line 46
+    .line 43
     :cond_2
     iget-object p1, p0, Lcom/iMe/storage/data/manager/crypto/CryptoWalletsManagerImpl;->evmBlockchainCryptoWalletManager:Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
@@ -105,13 +105,11 @@
 
 
 # virtual methods
-.method public createWallet(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
+.method public createWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
             "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
             ")",
             "Lio/reactivex/Observable<",
@@ -121,24 +119,16 @@
         }
     .end annotation
 
-    const-string v0, "guid"
+    const-string v0, "blockchainType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "password"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "blockchainType"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 19
-    invoke-direct {p0, p3}, Lcom/iMe/storage/data/manager/crypto/CryptoWalletsManagerImpl;->getWalletManager(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
+    invoke-direct {p0, p1}, Lcom/iMe/storage/data/manager/crypto/CryptoWalletsManagerImpl;->getWalletManager(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
-    move-result-object p3
+    move-result-object p1
 
-    invoke-virtual {p3, p1, p2}, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;->createWallet(Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;->createWallet()Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -195,46 +185,6 @@
     move-result-object p2
 
     invoke-virtual {p2, p1}, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;->generateAddressByMnemonic(Ljava/lang/String;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public generateMnemonic(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
-            ")",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/lang/String;",
-            ">;>;"
-        }
-    .end annotation
-
-    const-string v0, "guid"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "password"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "blockchainType"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 35
-    invoke-direct {p0, p3}, Lcom/iMe/storage/data/manager/crypto/CryptoWalletsManagerImpl;->getWalletManager(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
-
-    move-result-object p3
-
-    invoke-virtual {p3, p1, p2}, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;->generateMnemonic(Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -309,7 +259,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 35
     invoke-direct {p0, p2}, Lcom/iMe/storage/data/manager/crypto/CryptoWalletsManagerImpl;->getWalletManager(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
     move-result-object p2

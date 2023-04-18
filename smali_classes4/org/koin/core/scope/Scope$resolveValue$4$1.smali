@@ -20,35 +20,25 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
-        "Ljava/lang/String;",
+        "Lkotlin/Unit;",
         ">;"
     }
 .end annotation
 
 
-# static fields
-.field public static final INSTANCE:Lorg/koin/core/scope/Scope$resolveValue$4$1;
+# instance fields
+.field final synthetic $this_run:Lorg/koin/core/scope/Scope;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Lorg/koin/core/scope/Scope;)V
+    .locals 0
 
-    new-instance v0, Lorg/koin/core/scope/Scope$resolveValue$4$1;
+    iput-object p1, p0, Lorg/koin/core/scope/Scope$resolveValue$4$1;->$this_run:Lorg/koin/core/scope/Scope;
 
-    invoke-direct {v0}, Lorg/koin/core/scope/Scope$resolveValue$4$1;-><init>()V
+    const/4 p1, 0x0
 
-    sput-object v0, Lorg/koin/core/scope/Scope$resolveValue$4$1;->INSTANCE:Lorg/koin/core/scope/Scope$resolveValue$4$1;
-
-    return-void
-.end method
-
-.method constructor <init>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
@@ -58,18 +48,25 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 274
-    invoke-virtual {p0}, Lorg/koin/core/scope/Scope$resolveValue$4$1;->invoke()Ljava/lang/String;
+    .line 264
+    invoke-virtual {p0}, Lorg/koin/core/scope/Scope$resolveValue$4$1;->invoke()V
 
-    move-result-object v0
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 .end method
 
-.method public final invoke()Ljava/lang/String;
+.method public final invoke()V
     .locals 1
 
-    const-string/jumbo v0, "| clear parameter stack"
+    .line 265
+    iget-object v0, p0, Lorg/koin/core/scope/Scope$resolveValue$4$1;->$this_run:Lorg/koin/core/scope/Scope;
 
-    return-object v0
+    invoke-virtual {v0}, Lorg/koin/core/scope/Scope;->get_parameterStack()Lkotlin/collections/ArrayDeque;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lkotlin/collections/ArrayDeque;->clear()V
+
+    return-void
 .end method

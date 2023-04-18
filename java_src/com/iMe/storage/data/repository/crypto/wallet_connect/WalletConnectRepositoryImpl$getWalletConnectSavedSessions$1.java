@@ -1,6 +1,6 @@
 package com.iMe.storage.data.repository.crypto.wallet_connect;
 
-import com.iMe.storage.data.locale.p028db.model.wallet.WalletConnectSessionDb;
+import com.iMe.storage.data.locale.p027db.model.wallet.WalletConnectSessionDb;
 import com.iMe.storage.data.mapper.wallet.WalletConnectSessionMappingKt;
 import com.iMe.storage.domain.model.Result;
 import com.trustwallet.walletconnect.WCSessionStoreItem;

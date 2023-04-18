@@ -5,7 +5,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import p035j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes.dex */
 public class zznl {
     private static final GmsLogger zzass = new GmsLogger("LibraryVersion", "");
@@ -36,19 +36,19 @@ public class zznl {
                 sb.append(str);
                 sb.append(" version is ");
                 sb.append(str2);
-                gmsLogger.m793v("LibraryVersion", sb.toString());
+                gmsLogger.m779v("LibraryVersion", sb.toString());
             } else {
                 GmsLogger gmsLogger2 = zzass;
                 String valueOf = String.valueOf(str);
-                gmsLogger2.m797e("LibraryVersion", valueOf.length() != 0 ? "Failed to get app version for libraryName: ".concat(valueOf) : new String("Failed to get app version for libraryName: "));
+                gmsLogger2.m783e("LibraryVersion", valueOf.length() != 0 ? "Failed to get app version for libraryName: ".concat(valueOf) : new String("Failed to get app version for libraryName: "));
             }
         } catch (IOException e) {
             GmsLogger gmsLogger3 = zzass;
             String valueOf2 = String.valueOf(str);
-            gmsLogger3.m796e("LibraryVersion", valueOf2.length() != 0 ? "Failed to get app version for libraryName: ".concat(valueOf2) : new String("Failed to get app version for libraryName: "), e);
+            gmsLogger3.m782e("LibraryVersion", valueOf2.length() != 0 ? "Failed to get app version for libraryName: ".concat(valueOf2) : new String("Failed to get app version for libraryName: "), e);
         }
         if (str2 == null) {
-            zzass.m799d("LibraryVersion", ".properties file is dropped during release process. Failure to read app version isexpected druing Google internal testing where locally-built libraries are used");
+            zzass.m785d("LibraryVersion", ".properties file is dropped during release process. Failure to read app version isexpected druing Google internal testing where locally-built libraries are used");
             str2 = "UNKNOWN";
         }
         this.zzasu.put(str, str2);

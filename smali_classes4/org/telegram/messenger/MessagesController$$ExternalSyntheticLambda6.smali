@@ -6,20 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Landroidx/core/util/Consumer;
+.field public final synthetic f$0:Landroid/content/Context;
 
-.field public final synthetic f$1:I
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/core/util/Consumer;I)V
+.method public synthetic constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda6;->f$0:Landroidx/core/util/Consumer;
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda6;->f$0:Landroid/content/Context;
 
-    iput p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda6;->f$1:I
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda6;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 .end method
@@ -29,11 +29,11 @@
 .method public final run()V
     .locals 2
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda6;->f$0:Landroidx/core/util/Consumer;
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda6;->f$0:Landroid/content/Context;
 
-    iget v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda6;->f$1:I
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda6;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$bAxSSLfCjnASTpvqyHKnt_JFtqw(Landroidx/core/util/Consumer;I)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$o_y3EYykwxuThEvEEDoD4k2PndY(Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     return-void
 .end method

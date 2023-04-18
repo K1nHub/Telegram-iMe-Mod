@@ -13,8 +13,8 @@ public final class LockFreeLinkedListKt {
     }
 
     public static final LockFreeLinkedListNode unwrap(Object obj) {
+        LockFreeLinkedListNode lockFreeLinkedListNode;
         Removed removed = obj instanceof Removed ? (Removed) obj : null;
-        LockFreeLinkedListNode lockFreeLinkedListNode = removed != null ? removed.ref : null;
-        return lockFreeLinkedListNode == null ? (LockFreeLinkedListNode) obj : lockFreeLinkedListNode;
+        return (removed == null || (lockFreeLinkedListNode = removed.ref) == null) ? (LockFreeLinkedListNode) obj : lockFreeLinkedListNode;
     }
 }

@@ -25,42 +25,24 @@
 # instance fields
 .field public final password:Ljava/lang/String;
 
-.field public final words:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public final wallet:Lcom/iMe/storage/domain/model/crypto/Wallet;
 
 
 # direct methods
-.method constructor <init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State;Ljava/util/List;Ljava/lang/String;)V
+.method constructor <init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State;Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;",
-            "Ljava/lang/String;",
-            ")V"
-        }
-    .end annotation
 
-    .line 238
+    .line 257
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "createNewWalletWithPassword"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 240
-    iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$CreateNewWalletWithPasswordCommand;->words:Ljava/util/List;
+    .line 259
+    iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$CreateNewWalletWithPasswordCommand;->wallet:Lcom/iMe/storage/domain/model/crypto/Wallet;
 
-    .line 241
+    .line 260
     iput-object p3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$CreateNewWalletWithPasswordCommand;->password:Ljava/lang/String;
 
     return-void
@@ -71,12 +53,12 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;)V
     .locals 2
 
-    .line 246
-    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$CreateNewWalletWithPasswordCommand;->words:Ljava/util/List;
+    .line 265
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$CreateNewWalletWithPasswordCommand;->wallet:Lcom/iMe/storage/domain/model/crypto/Wallet;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$CreateNewWalletWithPasswordCommand;->password:Ljava/lang/String;
 
-    invoke-interface {p1, v0, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->createNewWalletWithPassword(Ljava/util/List;Ljava/lang/String;)V
+    invoke-interface {p1, v0, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->createNewWalletWithPassword(Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -84,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 232
+    .line 251
     check-cast p1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$CreateNewWalletWithPasswordCommand;->apply(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;)V

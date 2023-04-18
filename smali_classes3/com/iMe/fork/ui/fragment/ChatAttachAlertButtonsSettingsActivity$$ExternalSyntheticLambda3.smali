@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda3;->f$0:Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;
 
-    invoke-static {v0, p1, p2}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->$r8$lambda$UYo6SdL9ZahbQWI0Q_hI8r1W3nU(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->$r8$lambda$8Rb2MFLiNYL5323wXWjl1aKwKs4(Lcom/iMe/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
 
     return-void
 .end method

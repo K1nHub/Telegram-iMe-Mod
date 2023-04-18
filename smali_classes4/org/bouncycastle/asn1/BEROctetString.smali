@@ -63,7 +63,15 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lorg/bouncycastle/asn1/BEROctetString;)[Lorg/bouncycastle/asn1/ASN1OctetString;
+.method static synthetic access$000(Lorg/bouncycastle/asn1/BEROctetString;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/asn1/BEROctetString;->chunkSize:I
+
+    return p0
+.end method
+
+.method static synthetic access$100(Lorg/bouncycastle/asn1/BEROctetString;)[Lorg/bouncycastle/asn1/ASN1OctetString;
     .locals 0
 
     iget-object p0, p0, Lorg/bouncycastle/asn1/BEROctetString;->octs:[Lorg/bouncycastle/asn1/ASN1OctetString;
@@ -78,97 +86,33 @@
 
     move-result v0
 
-    new-array v0, v0, [Lorg/bouncycastle/asn1/ASN1OctetString;
+    new-array v1, v0, [Lorg/bouncycastle/asn1/ASN1OctetString;
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjects()Ljava/util/Enumeration;
-
-    move-result-object p0
-
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    invoke-interface {p0}, Ljava/util/Enumeration;->hasMoreElements()Z
+    if-ge v2, v0, :cond_0
 
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    add-int/lit8 v2, v1, 0x1
-
-    invoke-interface {p0}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+    invoke-virtual {p0, v2}, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
 
     move-result-object v3
 
-    check-cast v3, Lorg/bouncycastle/asn1/ASN1OctetString;
+    invoke-static {v3}, Lorg/bouncycastle/asn1/ASN1OctetString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1OctetString;
 
-    aput-object v3, v0, v1
+    move-result-object v3
 
-    move v1, v2
+    aput-object v3, v1, v2
+
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     :cond_0
     new-instance p0, Lorg/bouncycastle/asn1/BEROctetString;
 
-    invoke-direct {p0, v0}, Lorg/bouncycastle/asn1/BEROctetString;-><init>([Lorg/bouncycastle/asn1/ASN1OctetString;)V
+    invoke-direct {p0, v1}, Lorg/bouncycastle/asn1/BEROctetString;-><init>([Lorg/bouncycastle/asn1/ASN1OctetString;)V
 
     return-object p0
-.end method
-
-.method private generateOcts()Ljava/util/Vector;
-    .locals 7
-
-    new-instance v0, Ljava/util/Vector;
-
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
-
-    const/4 v1, 0x0
-
-    move v2, v1
-
-    :goto_0
-    iget-object v3, p0, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
-
-    array-length v4, v3
-
-    if-ge v2, v4, :cond_1
-
-    iget v4, p0, Lorg/bouncycastle/asn1/BEROctetString;->chunkSize:I
-
-    add-int v5, v2, v4
-
-    array-length v6, v3
-
-    if-le v5, v6, :cond_0
-
-    array-length v4, v3
-
-    goto :goto_1
-
-    :cond_0
-    add-int/2addr v4, v2
-
-    :goto_1
-    sub-int/2addr v4, v2
-
-    new-array v5, v4, [B
-
-    invoke-static {v3, v2, v5, v1, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    new-instance v3, Lorg/bouncycastle/asn1/DEROctetString;
-
-    invoke-direct {v3, v5}, Lorg/bouncycastle/asn1/DEROctetString;-><init>([B)V
-
-    invoke-virtual {v0, v3}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
-
-    iget v3, p0, Lorg/bouncycastle/asn1/BEROctetString;->chunkSize:I
-
-    add-int/2addr v2, v3
-
-    goto :goto_0
-
-    :cond_1
-    return-object v0
 .end method
 
 .method private static toBytes([Lorg/bouncycastle/asn1/ASN1OctetString;)[B
@@ -188,15 +132,12 @@
     :try_start_0
     aget-object v2, p0, v1
 
-    check-cast v2, Lorg/bouncycastle/asn1/DEROctetString;
-
     invoke-virtual {v2}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Ljava/io/ByteArrayOutputStream;->write([B)V
     :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     add-int/lit8 v1, v1, 0x1
@@ -230,37 +171,6 @@
 
     throw v0
 
-    :catch_1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    aget-object p0, p0, v1
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, " found in input should only contain DEROctetString"
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
     :cond_0
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
@@ -271,7 +181,7 @@
 
 
 # virtual methods
-.method public encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -279,41 +189,13 @@
         }
     .end annotation
 
-    const/16 v0, 0x24
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
-
-    const/16 v0, 0x80
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
-
     invoke-virtual {p0}, Lorg/bouncycastle/asn1/BEROctetString;->getObjects()Ljava/util/Enumeration;
 
     move-result-object v0
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
+    const/16 v1, 0x24
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    invoke-virtual {p1, v1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
+    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncodedIndef(ZILjava/util/Enumeration;)V
 
     return-void
 .end method
@@ -372,28 +254,16 @@
 
     if-nez v0, :cond_0
 
-    invoke-direct {p0}, Lorg/bouncycastle/asn1/BEROctetString;->generateOcts()Ljava/util/Vector;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/Vector;->elements()Ljava/util/Enumeration;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
     new-instance v0, Lorg/bouncycastle/asn1/BEROctetString$1;
 
     invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/BEROctetString$1;-><init>(Lorg/bouncycastle/asn1/BEROctetString;)V
 
     return-object v0
-.end method
 
-.method public getOctets()[B
-    .locals 1
+    :cond_0
+    new-instance v0, Lorg/bouncycastle/asn1/BEROctetString$2;
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
+    invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/BEROctetString$2;-><init>(Lorg/bouncycastle/asn1/BEROctetString;)V
 
     return-object v0
 .end method

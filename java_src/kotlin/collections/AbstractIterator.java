@@ -3,11 +3,11 @@ package kotlin.collections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import kotlin.jvm.internal.markers.KMappedMarker;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* compiled from: AbstractIterator.kt */
 /* loaded from: classes4.dex */
-public abstract class AbstractIterator<T> implements Iterator<T>, KMappedMarker, p035j$.util.Iterator {
+public abstract class AbstractIterator<T> implements Iterator<T>, KMappedMarker, p034j$.util.Iterator {
     private T nextValue;
     private State state = State.NotReady;
 
@@ -32,17 +32,17 @@ public abstract class AbstractIterator<T> implements Iterator<T>, KMappedMarker,
 
     protected abstract void computeNext();
 
-    @Override // p035j$.util.Iterator
+    @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public void remove() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public boolean hasNext() {
         State state = this.state;
         if (!(state != State.Failed)) {
@@ -58,7 +58,7 @@ public abstract class AbstractIterator<T> implements Iterator<T>, KMappedMarker,
         return false;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public T next() {
         if (!hasNext()) {
             throw new NoSuchElementException();

@@ -34,7 +34,7 @@
 .method constructor <init>(Landroidx/fragment/app/FragmentManager;)V
     .locals 0
 
-    .line 2625
+    .line 2678
     iput-object p1, p0, Landroidx/fragment/app/FragmentManager$8;->this$0:Landroidx/fragment/app/FragmentManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onActivityResult(Landroidx/activity/result/ActivityResult;)V
     .locals 4
 
-    .line 2628
+    .line 2681
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$8;->this$0:Landroidx/fragment/app/FragmentManager;
 
     iget-object v0, v0, Landroidx/fragment/app/FragmentManager;->mLaunchedFragments:Ljava/util/ArrayDeque;
@@ -62,12 +62,12 @@
 
     if-nez v0, :cond_0
 
-    .line 2630
+    .line 2683
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "No IntentSenders were started for "
+    const-string v0, "No Activities were started for result for "
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -81,14 +81,14 @@
 
     return-void
 
-    .line 2633
+    .line 2686
     :cond_0
     iget-object v2, v0, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;->mWho:Ljava/lang/String;
 
-    .line 2634
+    .line 2687
     iget v0, v0, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;->mRequestCode:I
 
-    .line 2635
+    .line 2688
     iget-object v3, p0, Landroidx/fragment/app/FragmentManager$8;->this$0:Landroidx/fragment/app/FragmentManager;
 
     invoke-static {v3}, Landroidx/fragment/app/FragmentManager;->access$200(Landroidx/fragment/app/FragmentManager;)Landroidx/fragment/app/FragmentStore;
@@ -101,12 +101,12 @@
 
     if-nez v3, :cond_1
 
-    .line 2640
+    .line 2693
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "Intent Sender result delivered for unknown Fragment "
+    const-string v0, "Activity result delivered for unknown Fragment "
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -120,18 +120,18 @@
 
     return-void
 
-    .line 2644
+    .line 2698
     :cond_1
     invoke-virtual {p1}, Landroidx/activity/result/ActivityResult;->getResultCode()I
 
     move-result v1
 
-    .line 2645
+    .line 2699
     invoke-virtual {p1}, Landroidx/activity/result/ActivityResult;->getData()Landroid/content/Intent;
 
     move-result-object p1
 
-    .line 2644
+    .line 2698
     invoke-virtual {v3, v0, v1, p1}, Landroidx/fragment/app/Fragment;->onActivityResult(IILandroid/content/Intent;)V
 
     return-void
@@ -140,7 +140,7 @@
 .method public bridge synthetic onActivityResult(Ljava/lang/Object;)V
     .locals 0
 
-    .line 2625
+    .line 2678
     check-cast p1, Landroidx/activity/result/ActivityResult;
 
     invoke-virtual {p0, p1}, Landroidx/fragment/app/FragmentManager$8;->onActivityResult(Landroidx/activity/result/ActivityResult;)V

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingDataSourceImpl.kt\ncom/iMe/i_staking/datasource/StakingDataSourceImpl\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,114:1\n14#2:115\n14#2:116\n14#2:117\n14#2:118\n11#3:119\n18#4:120\n*S KotlinDebug\n*F\n+ 1 StakingDataSourceImpl.kt\ncom/iMe/i_staking/datasource/StakingDataSourceImpl\n*L\n32#1:115\n45#1:116\n58#1:117\n71#1:118\n92#1:119\n92#1:120\n*E\n"
+    value = "SMAP\nStakingDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingDataSourceImpl.kt\ncom/iMe/i_staking/datasource/StakingDataSourceImpl\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,107:1\n14#2:108\n14#2:109\n14#2:110\n14#2:111\n11#3:112\n18#4:113\n*S KotlinDebug\n*F\n+ 1 StakingDataSourceImpl.kt\ncom/iMe/i_staking/datasource/StakingDataSourceImpl\n*L\n31#1:108\n44#1:109\n57#1:110\n70#1:111\n101#1:112\n101#1:113\n*E\n"
 .end annotation
 
 
@@ -36,16 +36,16 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
+    .line 23
     iput-object p1, p0, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 25
+    .line 24
     iput-object p2, p0, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 26
+    .line 25
     iput-object p3, p0, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
     return-void
@@ -54,7 +54,7 @@
 .method public static final synthetic access$getFirebaseErrorHandler$p(Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
     .locals 0
 
-    .line 23
+    .line 22
     iget-object p0, p0, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     return-object p0
@@ -63,95 +63,10 @@
 .method public static final synthetic access$getStakingApi$p(Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;)Lcom/iMe/i_staking/StakingApi;
     .locals 0
 
-    .line 23
+    .line 22
     iget-object p0, p0, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
     return-object p0
-.end method
-
-.method private final createTransactionByType(Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lorg/web3j/crypto/RawTransaction;
-    .locals 8
-
-    .line 100
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getData()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "0x"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    const-string v1, "{\n                RawTra\u2026          )\n            }"
-
-    if-eqz v0, :cond_0
-
-    .line 102
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getNonce()Ljava/math/BigInteger;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getGasPrice()Ljava/math/BigInteger;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getGasLimit()Ljava/math/BigInteger;
-
-    move-result-object v3
-
-    .line 103
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getTo()Ljava/lang/String;
-
-    move-result-object p1
-
-    sget-object v4, Ljava/math/BigInteger;->ZERO:Ljava/math/BigInteger;
-
-    .line 101
-    invoke-static {v0, v2, v3, p1, v4}, Lorg/web3j/crypto/RawTransaction;->createEtherTransaction(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/math/BigInteger;)Lorg/web3j/crypto/RawTransaction;
-
-    move-result-object p1
-
-    .line 100
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 107
-    :cond_0
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getNonce()Ljava/math/BigInteger;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getGasPrice()Ljava/math/BigInteger;
-
-    move-result-object v3
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getGasLimit()Ljava/math/BigInteger;
-
-    move-result-object v4
-
-    .line 108
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getTo()Ljava/lang/String;
-
-    move-result-object v5
-
-    sget-object v6, Ljava/math/BigInteger;->ZERO:Ljava/math/BigInteger;
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getData()Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 106
-    invoke-static/range {v2 .. v7}, Lorg/web3j/crypto/RawTransaction;->createTransaction(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/math/BigInteger;Ljava/lang/String;)Lorg/web3j/crypto/RawTransaction;
-
-    move-result-object p1
-
-    .line 105
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :goto_0
-    return-object p1
 .end method
 
 
@@ -179,7 +94,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
+    .line 31
     invoke-virtual {p0, p2}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p2
@@ -227,7 +142,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 58
+    .line 57
     invoke-virtual {p0, p2}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p2
@@ -275,7 +190,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 45
+    .line 44
     invoke-virtual {p0, p2}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p2
@@ -323,7 +238,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 71
+    .line 70
     invoke-virtual {p0, p2}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p2
@@ -349,7 +264,7 @@
 .end method
 
 .method public sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
-    .locals 3
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -366,55 +281,137 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 84
+    .line 83
     instance-of v0, p1, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
+
+    .line 85
+    iget-object v0, p0, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+
+    invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getEVMWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getPrivateKeyBytes()[B
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    new-array v0, v0, [B
+
+    :cond_1
+    move-object v9, v0
 
     .line 87
     check-cast p1, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;
 
-    invoke-direct {p0, p1}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->createTransactionByType(Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lorg/web3j/crypto/RawTransaction;
+    .line 88
+    invoke-static {}, Lwallet/core/jni/proto/Ethereum$Transaction;->newBuilder()Lwallet/core/jni/proto/Ethereum$Transaction$Builder;
 
     move-result-object v0
 
-    .line 88
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getChainId()J
+    .line 90
+    invoke-static {}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;->newBuilder()Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
 
-    move-result-wide v1
+    move-result-object v1
 
-    .line 89
-    iget-object p1, p0, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    .line 91
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getData()Ljava/lang/String;
 
-    invoke-interface {p1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getEVMWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
+    move-result-object v2
 
-    move-result-object p1
+    invoke-static {v2}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->hexToByteString(Ljava/lang/String;)Lcom/google/protobuf/ByteString;
 
-    if-eqz p1, :cond_0
+    move-result-object v2
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getCredentials()Lorg/web3j/crypto/Credentials;
+    invoke-virtual {v1, v2}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;->setData(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
 
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    .line 86
-    :goto_0
-    invoke-static {v0, v1, v2, p1}, Lorg/web3j/crypto/TransactionEncoder;->signMessage(Lorg/web3j/crypto/RawTransaction;JLorg/web3j/crypto/Credentials;)[B
-
-    move-result-object p1
+    move-result-object v1
 
     .line 92
-    invoke-static {p1}, Lorg/web3j/utils/Numeric;->toHexString([B)Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getValue()I
+
+    move-result v2
+
+    int-to-long v2, v2
+
+    invoke-static {v2, v3}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v2
+
+    const-string v3, "valueOf(this.toLong())"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v2}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->toByteString(Ljava/math/BigInteger;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;->setAmount(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
+
+    move-result-object v1
+
+    .line 93
+    invoke-virtual {v1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object v1
+
+    check-cast v1, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;
+
+    .line 89
+    invoke-virtual {v0, v1}, Lwallet/core/jni/proto/Ethereum$Transaction$Builder;->setContractGeneric(Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;)Lwallet/core/jni/proto/Ethereum$Transaction$Builder;
+
+    move-result-object v0
+
+    .line 95
+    invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object v0
+
+    move-object v8, v0
+
+    check-cast v8, Lwallet/core/jni/proto/Ethereum$Transaction;
+
+    .line 97
+    sget-object v1, Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;
+
+    .line 98
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getChainId()J
+
+    move-result-wide v2
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getGasPrice()Ljava/math/BigInteger;
+
+    move-result-object v4
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getGasLimit()Ljava/math/BigInteger;
+
+    move-result-object v5
+
+    .line 99
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getNonce()Ljava/math/BigInteger;
+
+    move-result-object v6
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;->getTo()Ljava/lang/String;
+
+    move-result-object v7
+
+    const-string p1, "transaction"
+
+    invoke-static {v8, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 97
+    invoke-virtual/range {v1 .. v9}, Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;->sign(JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Lwallet/core/jni/proto/Ethereum$Transaction;[B)Ljava/lang/String;
 
     move-result-object p1
-
-    const-string v0, "toHexString(signedTransaction)"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 11
     sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
@@ -434,8 +431,8 @@
 
     return-object p1
 
-    .line 84
-    :cond_1
+    .line 83
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Incorrect staking args passed"
@@ -448,7 +445,7 @@
 .method public bridge synthetic sign(Ljava/lang/Object;)Lio/reactivex/Observable;
     .locals 0
 
-    .line 23
+    .line 22
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
 
     invoke-virtual {p0, p1}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;

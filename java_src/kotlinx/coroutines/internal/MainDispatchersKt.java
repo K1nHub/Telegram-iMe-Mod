@@ -16,6 +16,10 @@ public final class MainDispatchersKt {
         }
     }
 
+    public static final boolean isMissing(MainCoroutineDispatcher mainCoroutineDispatcher) {
+        return mainCoroutineDispatcher.getImmediate() instanceof MissingMainCoroutineDispatcher;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ MissingMainCoroutineDispatcher createMissingDispatcher$default(Throwable th, String str, int i, Object obj) {
         if ((i & 1) != 0) {
@@ -31,11 +35,11 @@ public final class MainDispatchersKt {
         if (SUPPORT_MISSING) {
             return new MissingMainCoroutineDispatcher(th, str);
         }
-        if (th == null) {
-            throwMissingMainDispatcherException();
-            throw new KotlinNothingValueException();
+        if (th != null) {
+            throw th;
         }
-        throw th;
+        throwMissingMainDispatcherException();
+        throw new KotlinNothingValueException();
     }
 
     public static final Void throwMissingMainDispatcherException() {

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNavigationModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NavigationModule.kt\ncom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,36:1\n127#2,5:37\n*S KotlinDebug\n*F\n+ 1 NavigationModule.kt\ncom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1$4\n*L\n28#1:37,5\n*E\n"
+    value = "SMAP\nNavigationModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NavigationModule.kt\ncom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,36:1\n129#2,5:37\n*S KotlinDebug\n*F\n+ 1 NavigationModule.kt\ncom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1$4\n*L\n28#1:37,5\n*E\n"
 .end annotation
 
 
@@ -75,7 +75,7 @@
     .line 28
     new-instance p2, Lcom/iMe/navigation/wallet/coordinator/WalletFlowCoordinator;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

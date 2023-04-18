@@ -18,7 +18,7 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
         this.video_calls_available = (readInt32 & 8192) != 0;
         this.voice_messages_forbidden = (1048576 & readInt32) != 0;
         this.translations_disabled = (readInt32 & 8388608) != 0;
-        this.f1643id = abstractSerializedData.readInt64(z);
+        this.f1568id = abstractSerializedData.readInt64(z);
         if ((this.flags & 2) != 0) {
             this.about = abstractSerializedData.readString(z);
         }
@@ -97,7 +97,7 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
         int i8 = this.translations_disabled ? i7 | 8388608 : i7 & (-8388609);
         this.flags = i8;
         abstractSerializedData.writeInt32(i8);
-        abstractSerializedData.writeInt64(this.f1643id);
+        abstractSerializedData.writeInt64(this.f1568id);
         if ((this.flags & 2) != 0) {
             abstractSerializedData.writeString(this.about);
         }

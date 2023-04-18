@@ -8,15 +8,21 @@ import org.telegram.tgnet.TLRPC$User;
 public final class UserExtKt {
     public static final String getFullName(TLRPC$User tLRPC$User) {
         Intrinsics.checkNotNullParameter(tLRPC$User, "<this>");
-        return ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name);
+        String formatName = ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name);
+        Intrinsics.checkNotNullExpressionValue(formatName, "formatName(first_name, last_name)");
+        return formatName;
     }
 
     public static final String getPrivacySafeName(TLRPC$User tLRPC$User) {
         Intrinsics.checkNotNullParameter(tLRPC$User, "<this>");
-        if (tLRPC$User.contact) {
-            String str = tLRPC$User.username;
-            return str == null || str.length() == 0 ? String.valueOf(tLRPC$User.f1642id) : tLRPC$User.username;
+        if (!tLRPC$User.contact) {
+            String first_name = tLRPC$User.first_name;
+            Intrinsics.checkNotNullExpressionValue(first_name, "first_name");
+            return first_name;
         }
-        return tLRPC$User.first_name;
+        String str = tLRPC$User.username;
+        String valueOf = str == null || str.length() == 0 ? String.valueOf(tLRPC$User.f1567id) : tLRPC$User.username;
+        Intrinsics.checkNotNullExpressionValue(valueOf, "if (username.isNullOrEmpty()) \"$id\" else username");
+        return valueOf;
     }
 }

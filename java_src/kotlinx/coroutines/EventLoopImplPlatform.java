@@ -17,12 +17,7 @@ public abstract class EventLoopImplPlatform extends EventLoop {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public final void reschedule(long j, EventLoopImplBase.DelayedTask delayedTask) {
-        if (DebugKt.getASSERTIONS_ENABLED()) {
-            if (!(this != DefaultExecutor.INSTANCE)) {
-                throw new AssertionError();
-            }
-        }
+    public void reschedule(long j, EventLoopImplBase.DelayedTask delayedTask) {
         DefaultExecutor.INSTANCE.schedule(j, delayedTask);
     }
 }

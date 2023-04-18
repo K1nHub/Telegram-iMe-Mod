@@ -49,7 +49,7 @@
 
     move v5, p2
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$BoiUba0hZLbTTfDo0FLJUXCsmk8(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;I[ZLandroid/content/DialogInterface;I)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$ASPqFUhZ5E7XzmEmNNnGhMaWhr8(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;I[ZLandroid/content/DialogInterface;I)V
 
     return-void
 .end method

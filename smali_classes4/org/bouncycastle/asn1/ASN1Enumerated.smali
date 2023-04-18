@@ -28,23 +28,40 @@
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    const-string v0, "org.bouncycastle.asn1.allow_unsafe_integer"
-
-    invoke-static {v0}, Lorg/bouncycastle/util/Properties;->isOverrideSet(Ljava/lang/String;)Z
+    invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1Integer;->isMalformed([B)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1Integer;->isMalformed([B)Z
+    const/4 v0, 0x0
 
-    move-result v0
+    aget-byte v0, p1, v0
+
+    and-int/lit16 v0, v0, 0x80
 
     if-nez v0, :cond_0
 
-    goto :goto_0
+    invoke-static {p1}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1Enumerated;->bytes:[B
+
+    invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1Integer;->signBytesToSkip([B)I
+
+    return-void
 
     :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "enumerated must be non-negative"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "malformed enumerated"
@@ -52,16 +69,6 @@
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_1
-    :goto_0
-    invoke-static {p1}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object p1
-
-    iput-object p1, p0, Lorg/bouncycastle/asn1/ASN1Enumerated;->bytes:[B
-
-    return-void
 .end method
 
 .method static fromOctetString([B)Lorg/bouncycastle/asn1/ASN1Enumerated;
@@ -98,10 +105,6 @@
 
     new-instance v0, Lorg/bouncycastle/asn1/ASN1Enumerated;
 
-    invoke-static {p0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object p0
-
     invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/ASN1Enumerated;-><init>([B)V
 
     return-object v0
@@ -112,10 +115,6 @@
     if-nez v2, :cond_2
 
     new-instance v2, Lorg/bouncycastle/asn1/ASN1Enumerated;
-
-    invoke-static {p0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object p0
 
     invoke-direct {v2, p0}, Lorg/bouncycastle/asn1/ASN1Enumerated;-><init>([B)V
 
@@ -161,7 +160,7 @@
     return p1
 .end method
 
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -173,7 +172,7 @@
 
     const/16 v1, 0xa
 
-    invoke-virtual {p1, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(I[B)V
+    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZI[B)V
 
     return-void
 .end method

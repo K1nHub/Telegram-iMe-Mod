@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import com.google.android.gms.common.internal.GmsLogger;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseRemoteModel;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseRemoteModel;
 /* loaded from: classes.dex */
 public final class zzpa {
     private static final GmsLogger zzass = new GmsLogger("ModelDownloadLogger", "");
@@ -30,7 +30,7 @@ public final class zzpa {
         }
         long zzf = this.zzato.zzf(this.zzavo);
         if (zzf == 0) {
-            zzass.m791w("ModelDownloadLogger", "Model downloaded without its beginning time recorded.");
+            zzass.m777w("ModelDownloadLogger", "Model downloaded without its beginning time recorded.");
             this.zzavr.zza(zzlu.zzs.zzjl().zza(zzlu.zzam.zzle().zzbi(str)).zza(zzlu.zzw.zzjs().zze(zzmc.UNKNOWN_ERROR).zzav(i).zzk(zza)), zzmd.MODEL_DOWNLOAD);
             return;
         }

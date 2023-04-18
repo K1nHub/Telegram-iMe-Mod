@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/TopicsController;)V
     .locals 0
 
-    .line 550
+    .line 566
     iput-object p1, p0, Lorg/telegram/messenger/TopicsController$2;->this$0:Lorg/telegram/messenger/TopicsController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

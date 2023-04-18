@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/StickersActivity$ListAdapter;Landroid/content/Context;I)V
     .locals 0
 
-    .line 1382
+    .line 1383
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/StickersActivity$ListAdapter;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Cells/StickerSetCell;-><init>(Landroid/content/Context;I)V
@@ -35,21 +35,21 @@
 .method protected onAddButtonClick()V
     .locals 10
 
-    .line 1390
+    .line 1391
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/StickerSetCell;->getStickersSet()Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     move-result-object v0
 
     if-eqz v0, :cond_6
 
-    .line 1391
+    .line 1392
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     if-nez v1, :cond_0
 
     goto/16 :goto_3
 
-    .line 1394
+    .line 1395
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/StickersActivity$ListAdapter;
 
@@ -67,7 +67,7 @@
 
     const/4 v3, 0x0
 
-    .line 1396
+    .line 1397
     :goto_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -75,7 +75,7 @@
 
     if-ge v3, v4, :cond_2
 
-    .line 1397
+    .line 1398
     iget-object v4, v0, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
@@ -94,7 +94,7 @@
 
     if-nez v4, :cond_1
 
-    .line 1398
+    .line 1399
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -114,7 +114,7 @@
     :goto_1
     if-eqz v2, :cond_4
 
-    .line 1403
+    .line 1404
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/StickersActivity$ListAdapter;
 
     invoke-static {v1}, Lorg/telegram/ui/StickersActivity$ListAdapter;->access$900(Lorg/telegram/ui/StickersActivity$ListAdapter;)Ljava/util/List;
@@ -137,7 +137,7 @@
 
     return-void
 
-    .line 1406
+    .line 1407
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/StickersActivity$ListAdapter;
 
@@ -155,7 +155,7 @@
 
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1409
+    .line 1410
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/StickersActivity$ListAdapter;
 
@@ -207,7 +207,7 @@
 .method protected onPremiumButtonClick()V
     .locals 5
 
-    .line 1385
+    .line 1386
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/StickersActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
@@ -232,7 +232,7 @@
 .method protected onRemoveButtonClick()V
     .locals 8
 
-    .line 1415
+    .line 1416
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/StickersActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;

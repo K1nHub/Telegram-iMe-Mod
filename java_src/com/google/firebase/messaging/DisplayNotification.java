@@ -61,7 +61,7 @@ class DisplayNotification {
         if (Log.isLoggable("FirebaseMessaging", 3)) {
             Log.d("FirebaseMessaging", "Showing notification");
         }
-        ((NotificationManager) this.context.getSystemService("notification")).notify(displayNotificationInfo.tag, displayNotificationInfo.f199id, displayNotificationInfo.notificationBuilder.build());
+        ((NotificationManager) this.context.getSystemService("notification")).notify(displayNotificationInfo.tag, displayNotificationInfo.f196id, displayNotificationInfo.notificationBuilder.build());
     }
 
     private ImageDownload startImageDownloadInBackground() {

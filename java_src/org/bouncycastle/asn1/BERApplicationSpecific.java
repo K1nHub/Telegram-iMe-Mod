@@ -22,11 +22,7 @@ public class BERApplicationSpecific extends ASN1ApplicationSpecific {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1ApplicationSpecific, org.bouncycastle.asn1.ASN1Primitive
-    public void encode(ASN1OutputStream aSN1OutputStream) throws IOException {
-        aSN1OutputStream.writeTag(this.isConstructed ? 96 : 64, this.tag);
-        aSN1OutputStream.write(128);
-        aSN1OutputStream.write(this.octets);
-        aSN1OutputStream.write(0);
-        aSN1OutputStream.write(0);
+    public void encode(ASN1OutputStream aSN1OutputStream, boolean z) throws IOException {
+        aSN1OutputStream.writeEncodedIndef(z, this.isConstructed ? 96 : 64, this.tag, this.octets);
     }
 }

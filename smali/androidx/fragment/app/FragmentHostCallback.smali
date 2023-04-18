@@ -110,6 +110,12 @@
     return-object v0
 .end method
 
+.method public onDump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public onFindViewById(I)Landroid/view/View;
     .locals 0
 

@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 289
+    .line 286
     check-cast p1, Lcom/iMe/fork/enums/DialogType;
 
     invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter$onCreateViewHolder$1;->invoke(Lcom/iMe/fork/enums/DialogType;)V
@@ -70,17 +70,17 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 286
+    .line 283
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter$onCreateViewHolder$1;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-virtual {v0, p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->setCurrentDialogType(Lcom/iMe/fork/enums/DialogType;)V
 
-    .line 287
+    .line 284
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter$onCreateViewHolder$1;->this$1:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
 
     invoke-virtual {p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->updateRows()V
 
-    .line 288
+    .line 285
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter$onCreateViewHolder$1;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getListAdapter(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;

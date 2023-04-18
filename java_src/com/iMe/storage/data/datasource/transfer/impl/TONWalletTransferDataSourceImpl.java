@@ -5,7 +5,6 @@ import com.iMe.storage.data.network.api.own.TonApi;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.request.crypto.ton.GetParamsForTonCryptoTransferRequest;
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
-import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.data.utils.extentions.StringExtKt;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.manager.ton.TonController;
@@ -55,7 +54,7 @@ public final class TONWalletTransferDataSourceImpl implements WalletTransferData
         if (str == null) {
             str = "";
         }
-        Observable map = tonApi.getParamsForCryptoTransfer(new GetParamsForTonCryptoTransferRequest(name, str, StringExtKt.orZero(str2))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1560xf1226d95(this.firebaseErrorHandler)));
+        Observable map = tonApi.getParamsForCryptoTransfer(new GetParamsForTonCryptoTransferRequest(name, str, StringExtKt.orZero(str2))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1546xf1226d95(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }
@@ -73,6 +72,6 @@ public final class TONWalletTransferDataSourceImpl implements WalletTransferData
         if (address == null) {
             address = "";
         }
-        return tonController.sendTransaction(address, ton.getRecipientAddress(), NumberExtKt.convertToWei(Double.valueOf(ton.getAmount()), ton.getWeiConvertUnit()).longValue(), ton.getMessage(), ton.isUnencrypted(), ton.getSendMode());
+        return tonController.sendTransaction(address, ton.getRecipientAddress(), ton.getConvertedAmount().longValue(), ton.getMessage(), ton.isUnencrypted(), ton.getSendMode());
     }
 }

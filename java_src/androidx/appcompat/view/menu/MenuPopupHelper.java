@@ -107,7 +107,7 @@ public class MenuPopupHelper {
         Display defaultDisplay = ((WindowManager) this.mContext.getSystemService("window")).getDefaultDisplay();
         Point point = new Point();
         if (Build.VERSION.SDK_INT >= 17) {
-            defaultDisplay.getRealSize(point);
+            Api17Impl.getRealSize(defaultDisplay, point);
         } else {
             defaultDisplay.getSize(point);
         }
@@ -165,6 +165,14 @@ public class MenuPopupHelper {
         MenuPopup menuPopup = this.mPopup;
         if (menuPopup != null) {
             menuPopup.setCallback(callback);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api17Impl {
+        static void getRealSize(Display display, Point point) {
+            display.getRealSize(point);
         }
     }
 }

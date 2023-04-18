@@ -1,7 +1,7 @@
 package com.iMe.storage.data.mapper.wallet;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.iMe.storage.data.locale.p028db.model.wallet.WalletTokenBalanceDb;
+import com.iMe.storage.data.locale.p027db.model.wallet.WalletTokenBalanceDb;
 import com.iMe.storage.data.network.model.response.wallet.TokenBalanceResponse;
 import com.iMe.storage.data.network.model.response.wallet.WalletBalancesResponse;
 import com.iMe.storage.domain.model.crypto.NetworkType;

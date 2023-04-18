@@ -4,7 +4,7 @@ import com.iMe.fork.enums.MultiPanelButton;
 import com.iMe.fork.enums.SortingFilter;
 import com.iMe.fork.models.MultiPanelButtonState;
 import com.iMe.fork.models.SortingTabState;
-import com.iMe.storage.data.locale.p028db.model.topics.TopicDb;
+import com.iMe.storage.data.locale.p027db.model.topics.TopicDb;
 import com.iMe.storage.data.repository.topics.Topic;
 import com.iMe.storage.domain.model.topics.TopicModel;
 import java.util.Collection;

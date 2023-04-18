@@ -77,7 +77,7 @@ public final class zznv {
 
     public final synchronized void zza(zzlu.zzs.zza zzaVar, zzmd zzmdVar) {
         if (!zzeu()) {
-            zzass.m799d("MlStatsLogger", "Logging is disabled.");
+            zzass.m785d("MlStatsLogger", "Logging is disabled.");
             return;
         }
         String zzld = zzaVar.zzjk().zzld();
@@ -88,7 +88,7 @@ public final class zznv {
         StringBuilder sb = new StringBuilder(valueOf.length() + 30);
         sb.append("Logging FirebaseMlSdkLogEvent ");
         sb.append(valueOf);
-        gmsLogger.m799d("MlStatsLogger", sb.toString());
+        gmsLogger.m785d("MlStatsLogger", sb.toString());
         this.zzatn.newEvent(zzsVar.toByteArray()).log();
     }
 

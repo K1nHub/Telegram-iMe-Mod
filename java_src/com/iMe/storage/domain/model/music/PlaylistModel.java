@@ -45,7 +45,7 @@ public final class PlaylistModel {
     }
 
     public int hashCode() {
-        return (this.messageIds.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.dialogId);
+        return (this.messageIds.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.dialogId);
     }
 
     public String toString() {

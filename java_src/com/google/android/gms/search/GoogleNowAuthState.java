@@ -11,16 +11,16 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public class GoogleNowAuthState extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GoogleNowAuthState> CREATOR = new zza();
-    @SafeParcelable.Field(getter = "getAuthCode", m789id = 1)
+    @SafeParcelable.Field(getter = "getAuthCode", m775id = 1)
     String zza;
-    @SafeParcelable.Field(getter = "getAccessToken", m789id = 2)
+    @SafeParcelable.Field(getter = "getAccessToken", m775id = 2)
     String zzb;
-    @SafeParcelable.Field(getter = "getNextAllowedTimeMillis", m789id = 3)
+    @SafeParcelable.Field(getter = "getNextAllowedTimeMillis", m775id = 3)
     long zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public GoogleNowAuthState(@SafeParcelable.Param(m788id = 1) String str, @SafeParcelable.Param(m788id = 2) String str2, @SafeParcelable.Param(m788id = 3) long j) {
+    public GoogleNowAuthState(@SafeParcelable.Param(m774id = 1) String str, @SafeParcelable.Param(m774id = 2) String str2, @SafeParcelable.Param(m774id = 3) long j) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = j;

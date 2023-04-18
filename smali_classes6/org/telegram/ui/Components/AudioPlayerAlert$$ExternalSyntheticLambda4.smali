@@ -35,7 +35,7 @@
 .method public final onClick(Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$yOM7rvoDeEW2YIMxq9azSKs6nW8(Landroid/view/View;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$Tt3bJbTW7sLJ3jvdhSTwpln89o8(Landroid/view/View;)V
 
     return-void
 .end method

@@ -48,14 +48,14 @@
         }
     .end annotation
 
-    .line 151
+    .line 169
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "showExchangesProviders"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 153
+    .line 171
     iput-object p2, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowExchangesProvidersCommand;->providers:Ljava/util/List;
 
     return-void
@@ -66,7 +66,7 @@
 .method public apply(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;)V
     .locals 1
 
-    .line 158
+    .line 176
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowExchangesProvidersCommand;->providers:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;->showExchangesProviders(Ljava/util/List;)V
@@ -77,7 +77,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 147
+    .line 165
     check-cast p1, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowExchangesProvidersCommand;->apply(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;)V

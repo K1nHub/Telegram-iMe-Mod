@@ -13,19 +13,19 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 public class RootTelemetryConfiguration extends AbstractSafeParcelable {
     @KeepForSdk
     public static final Parcelable.Creator<RootTelemetryConfiguration> CREATOR = new zzai();
-    @SafeParcelable.Field(getter = "getVersion", m789id = 1)
+    @SafeParcelable.Field(getter = "getVersion", m775id = 1)
     private final int zza;
-    @SafeParcelable.Field(getter = "getMethodInvocationTelemetryEnabled", m789id = 2)
+    @SafeParcelable.Field(getter = "getMethodInvocationTelemetryEnabled", m775id = 2)
     private final boolean zzb;
-    @SafeParcelable.Field(getter = "getMethodTimingTelemetryEnabled", m789id = 3)
+    @SafeParcelable.Field(getter = "getMethodTimingTelemetryEnabled", m775id = 3)
     private final boolean zzc;
-    @SafeParcelable.Field(getter = "getBatchPeriodMillis", m789id = 4)
+    @SafeParcelable.Field(getter = "getBatchPeriodMillis", m775id = 4)
     private final int zzd;
-    @SafeParcelable.Field(getter = "getMaxMethodInvocationsInBatch", m789id = 5)
+    @SafeParcelable.Field(getter = "getMaxMethodInvocationsInBatch", m775id = 5)
     private final int zze;
 
     @SafeParcelable.Constructor
-    public RootTelemetryConfiguration(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) boolean z, @SafeParcelable.Param(m788id = 3) boolean z2, @SafeParcelable.Param(m788id = 4) int i2, @SafeParcelable.Param(m788id = 5) int i3) {
+    public RootTelemetryConfiguration(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) boolean z, @SafeParcelable.Param(m774id = 3) boolean z2, @SafeParcelable.Param(m774id = 4) int i2, @SafeParcelable.Param(m774id = 5) int i3) {
         this.zza = i;
         this.zzb = z;
         this.zzc = z2;

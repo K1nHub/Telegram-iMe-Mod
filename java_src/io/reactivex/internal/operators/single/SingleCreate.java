@@ -95,7 +95,7 @@ public final class SingleCreate<T> extends Single<T> {
             DisposableHelper.dispose(this);
         }
 
-        @Override // io.reactivex.disposables.Disposable
+        @Override // io.reactivex.SingleEmitter, io.reactivex.disposables.Disposable
         public boolean isDisposed() {
             return DisposableHelper.isDisposed(get());
         }

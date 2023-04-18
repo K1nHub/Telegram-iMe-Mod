@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/lifecycle/ClassesInfoCache$MethodReference;,
-        Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;
+        Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;,
+        Landroidx/lifecycle/ClassesInfoCache$MethodReference;
     }
 .end annotation
 
@@ -240,9 +240,9 @@
     if-lez v8, :cond_6
 
     .line 138
-    aget-object v8, v4, v3
+    const-class v8, Landroidx/lifecycle/LifecycleOwner;
 
-    const-class v9, Landroidx/lifecycle/LifecycleOwner;
+    aget-object v9, v4, v3
 
     invoke-virtual {v8, v9}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
@@ -281,9 +281,9 @@
     if-le v9, v7, :cond_9
 
     .line 147
-    aget-object v8, v4, v7
+    const-class v8, Landroidx/lifecycle/Lifecycle$Event;
 
-    const-class v9, Landroidx/lifecycle/Lifecycle$Event;
+    aget-object v9, v4, v7
 
     invoke-virtual {v8, v9}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 

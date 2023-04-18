@@ -7,10 +7,10 @@ import com.iMe.common.AppRxEvents;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.navigation.wallet.coordinator.WalletFlowCoordinator;
-import com.iMe.p032ui.wallet.common.WalletRootFragment;
+import com.iMe.p031ui.wallet.common.WalletRootFragment;
 import com.iMe.storage.common.AppConfiguration$Binance;
 import com.iMe.storage.domain.manager.binancepay.BinancePayManager;
-import com.iMe.storage.domain.utils.p031rx.RxEventBus;
+import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.helper.wallet.WalletHelper;
 import java.util.HashMap;
@@ -20,11 +20,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3316R;
+import org.koin.p043mp.KoinPlatformTools;
+import org.telegram.messenger.C3242R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.INavigationLayout;
+import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p044ui.ActionBar.INavigationLayout;
 /* compiled from: BinancePayHelper.kt */
 /* loaded from: classes4.dex */
 public final class BinancePayHelper implements KoinComponent {
@@ -107,7 +107,7 @@ public final class BinancePayHelper implements KoinComponent {
             action.invoke();
             return;
         }
-        DialogModel dialogModel = new DialogModel(LocaleController.getInternalString(C3316R.string.wallet_binance_pay_not_activated_dialog_title), LocaleController.getInternalString(C3316R.string.wallet_binance_pay_not_activated_dialog_description), LocaleController.getInternalString(C3316R.string.common_cancel), LocaleController.getInternalString(C3316R.string.wallet_button_auth_dialog_action_btn));
+        DialogModel dialogModel = new DialogModel(LocaleController.getInternalString(C3242R.string.wallet_binance_pay_not_activated_dialog_title), LocaleController.getInternalString(C3242R.string.wallet_binance_pay_not_activated_dialog_description), LocaleController.getInternalString(C3242R.string.common_cancel), LocaleController.getInternalString(C3242R.string.wallet_button_auth_dialog_action_btn));
         Activity parentActivity = fragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "fragment.parentActivity");
         DialogUtils.createDialog$default(parentActivity, dialogModel, new Callbacks$Callback() { // from class: com.iMe.utils.helper.binancepay.BinancePayHelper$$ExternalSyntheticLambda1
@@ -121,12 +121,12 @@ public final class BinancePayHelper implements KoinComponent {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void runWithCheckIsBinancePayActivated$lambda$1(final BaseFragment fragment, Callbacks$Callback callbacks$Callback) {
         Intrinsics.checkNotNullParameter(fragment, "$fragment");
-        WalletHelper.safeRunWalletScreen$default(fragment, null, null, new Callbacks$Callback() { // from class: com.iMe.utils.helper.binancepay.BinancePayHelper$$ExternalSyntheticLambda0
+        WalletHelper.safeRunWithActivationCheck(fragment, new Callbacks$Callback() { // from class: com.iMe.utils.helper.binancepay.BinancePayHelper$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 BinancePayHelper.runWithCheckIsBinancePayActivated$lambda$1$lambda$0(BaseFragment.this);
             }
-        }, 3, null);
+        });
         if (callbacks$Callback != null) {
             callbacks$Callback.invoke();
         }

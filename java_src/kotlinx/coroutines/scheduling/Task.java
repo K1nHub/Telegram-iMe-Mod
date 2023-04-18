@@ -11,6 +11,6 @@ public abstract class Task implements Runnable {
     }
 
     public Task() {
-        this(0L, NonBlockingContext.INSTANCE);
+        this(0L, TasksKt.NonBlockingContext);
     }
 }

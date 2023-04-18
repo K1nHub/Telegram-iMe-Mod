@@ -43,13 +43,13 @@ public final class ConnectionResult extends AbstractSafeParcelable {
     public static final int TIMEOUT = 14;
     @KeepForSdk
     public static final int UNKNOWN = -1;
-    @SafeParcelable.VersionField(m786id = 1)
+    @SafeParcelable.VersionField(m772id = 1)
     final int zza;
-    @SafeParcelable.Field(getter = "getErrorCode", m789id = 2)
+    @SafeParcelable.Field(getter = "getErrorCode", m775id = 2)
     private final int zzb;
-    @SafeParcelable.Field(getter = "getResolution", m789id = 3)
+    @SafeParcelable.Field(getter = "getResolution", m775id = 3)
     private final PendingIntent zzc;
-    @SafeParcelable.Field(getter = "getErrorMessage", m789id = 4)
+    @SafeParcelable.Field(getter = "getErrorMessage", m775id = 4)
     private final String zzd;
     @ShowFirstParty
     @KeepForSdk
@@ -62,7 +62,7 @@ public final class ConnectionResult extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public ConnectionResult(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) int i2, @SafeParcelable.Param(m788id = 3) PendingIntent pendingIntent, @SafeParcelable.Param(m788id = 4) String str) {
+    public ConnectionResult(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) int i2, @SafeParcelable.Param(m774id = 3) PendingIntent pendingIntent, @SafeParcelable.Param(m774id = 4) String str) {
         this.zza = i;
         this.zzb = i2;
         this.zzc = pendingIntent;

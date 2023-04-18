@@ -74,7 +74,8 @@ public class ComponentActivity extends Activity implements LifecycleOwner, KeyEv
         return true;
     }
 
-    protected final boolean shouldDumpInternalState(String[] strArr) {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final boolean shouldDumpInternalState(String[] strArr) {
         return !shouldSkipDump(strArr);
     }
 

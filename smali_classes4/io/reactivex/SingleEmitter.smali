@@ -15,6 +15,9 @@
 
 
 # virtual methods
+.method public abstract isDisposed()Z
+.end method
+
 .method public abstract onError(Ljava/lang/Throwable;)V
 .end method
 

@@ -14,13 +14,13 @@ import java.util.Collection;
 /* loaded from: classes3.dex */
 public final class LabelValueRow extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LabelValueRow> CREATOR = new zzf();
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     @Deprecated
     String zza;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     @Deprecated
     String zzb;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 4)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 4)
     ArrayList zzc;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
@@ -89,7 +89,7 @@ public final class LabelValueRow extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public LabelValueRow(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) String str2, @SafeParcelable.Param(m788id = 4) ArrayList arrayList) {
+    public LabelValueRow(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) ArrayList arrayList) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = arrayList;

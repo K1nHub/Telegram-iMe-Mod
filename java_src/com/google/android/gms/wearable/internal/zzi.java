@@ -11,15 +11,15 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzi extends AbstractSafeParcelable implements com.google.android.gms.wearable.zza {
     public static final Parcelable.Creator<zzi> CREATOR = new zzj();
-    @SafeParcelable.Field(getter = "getEntityId", m789id = 2)
+    @SafeParcelable.Field(getter = "getEntityId", m775id = 2)
     private final byte zza;
-    @SafeParcelable.Field(getter = "getAttributeId", m789id = 3)
+    @SafeParcelable.Field(getter = "getAttributeId", m775id = 3)
     private final byte zzb;
-    @SafeParcelable.Field(getter = "getValue", m789id = 4)
+    @SafeParcelable.Field(getter = "getValue", m775id = 4)
     private final String zzc;
 
     @SafeParcelable.Constructor
-    public zzi(@SafeParcelable.Param(m788id = 2) byte b, @SafeParcelable.Param(m788id = 3) byte b2, @SafeParcelable.Param(m788id = 4) String str) {
+    public zzi(@SafeParcelable.Param(m774id = 2) byte b, @SafeParcelable.Param(m774id = 3) byte b2, @SafeParcelable.Param(m774id = 4) String str) {
         this.zza = b;
         this.zzb = b2;
         this.zzc = str;

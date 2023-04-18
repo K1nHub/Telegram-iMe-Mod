@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
-    .line 132
+    .line 129
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
 
     goto :goto_0
 
-    .line 137
+    .line 134
     :cond_0
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
@@ -55,12 +55,12 @@
 
     invoke-virtual {p1}, Lcom/iMe/fork/controller/MultiPanelController;->resetConfig()V
 
-    .line 138
+    .line 135
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$readSettings(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)V
 
-    .line 139
+    .line 136
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getListAdapter(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
@@ -71,7 +71,7 @@
 
     goto :goto_0
 
-    .line 135
+    .line 132
     :cond_1
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 

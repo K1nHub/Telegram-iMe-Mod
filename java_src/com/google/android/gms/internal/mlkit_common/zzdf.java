@@ -7,7 +7,7 @@ public final class zzdf {
 
     /* compiled from: com.google.mlkit:common@@17.0.0 */
     /* loaded from: classes.dex */
-    public static final class zza extends zzfq<zza, C6869zza> implements zzhd {
+    public static final class zza extends zzfq<zza, C6779zza> implements zzhd {
         private static final zzfz<Integer, zzef> zzd = new zzdg();
         private static final zza zze;
         private static volatile zzhl<zza> zzf;
@@ -19,12 +19,12 @@ public final class zzdf {
         /* compiled from: com.google.mlkit:common@@17.0.0 */
         /* renamed from: com.google.android.gms.internal.mlkit_common.zzdf$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6869zza extends zzfq.zzb<zza, C6869zza> implements zzhd {
-            private C6869zza() {
+        public static final class C6779zza extends zzfq.zzb<zza, C6779zza> implements zzhd {
+            private C6779zza() {
                 super(zza.zze);
             }
 
-            /* synthetic */ C6869zza(zzde zzdeVar) {
+            /* synthetic */ C6779zza(zzde zzdeVar) {
                 this();
             }
         }
@@ -38,7 +38,7 @@ public final class zzdf {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C6869zza(null);
+                    return new C6779zza(null);
                 case 3:
                     return zzfq.zza(zze, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001e", new Object[]{"zzc", zzef.zzb()});
                 case 4:
@@ -78,7 +78,7 @@ public final class zzdf {
 
     /* compiled from: com.google.mlkit:common@@17.0.0 */
     /* loaded from: classes.dex */
-    public static final class zzb extends zzfq<zzb, C6870zzb> implements zzhd {
+    public static final class zzb extends zzfq<zzb, C6780zzb> implements zzhd {
         private static final zzb zzj;
         private static volatile zzhl<zzb> zzk;
         private int zzc;
@@ -184,12 +184,12 @@ public final class zzdf {
         /* compiled from: com.google.mlkit:common@@17.0.0 */
         /* renamed from: com.google.android.gms.internal.mlkit_common.zzdf$zzb$zzb  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6870zzb extends zzfq.zzb<zzb, C6870zzb> implements zzhd {
-            private C6870zzb() {
+        public static final class C6780zzb extends zzfq.zzb<zzb, C6780zzb> implements zzhd {
+            private C6780zzb() {
                 super(zzb.zzj);
             }
 
-            /* synthetic */ C6870zzb(zzde zzdeVar) {
+            /* synthetic */ C6780zzb(zzde zzdeVar) {
                 this();
             }
         }
@@ -203,7 +203,7 @@ public final class zzdf {
                 case 1:
                     return new zzb();
                 case 2:
-                    return new C6870zzb(null);
+                    return new C6780zzb(null);
                 case 3:
                     return zzfq.zza(zzj, "\u0001\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001ဌ\u0000\u0002ဌ\u0001\u0003ဌ\u0002\u0004ဇ\u0003\u0005ဇ\u0004\u0006ခ\u0005", new Object[]{"zzc", "zzd", zzd.zzb(), "zze", zzc.zzb(), "zzf", zza.zzb(), "zzg", "zzh", "zzi"});
                 case 4:

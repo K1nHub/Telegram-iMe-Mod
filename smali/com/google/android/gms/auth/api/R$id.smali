@@ -210,13 +210,15 @@
 
 .field public static final view_tree_lifecycle_owner:I = 0x7f090447
 
-.field public static final view_tree_saved_state_registry_owner:I = 0x7f090448
+.field public static final view_tree_on_back_pressed_dispatcher_owner:I = 0x7f090448
 
-.field public static final view_tree_view_model_store_owner:I = 0x7f090449
+.field public static final view_tree_saved_state_registry_owner:I = 0x7f090449
 
-.field public static final visible_removing_fragment_view_tag:I = 0x7f09044e
+.field public static final view_tree_view_model_store_owner:I = 0x7f09044a
 
-.field public static final wide:I = 0x7f09045c
+.field public static final visible_removing_fragment_view_tag:I = 0x7f09044f
+
+.field public static final wide:I = 0x7f09045d
 
 
 # direct methods

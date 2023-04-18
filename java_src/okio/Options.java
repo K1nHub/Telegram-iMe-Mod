@@ -92,12 +92,12 @@ public final class Options extends AbstractList<ByteString> implements RandomAcc
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        public final okio.Options m81of(okio.ByteString... r17) {
+        public final okio.Options m67of(okio.ByteString... r17) {
             /*
                 Method dump skipped, instructions count: 328
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: okio.Options.Companion.m81of(okio.ByteString[]):okio.Options");
+            throw new UnsupportedOperationException("Method not decompiled: okio.Options.Companion.m67of(okio.ByteString[]):okio.Options");
         }
 
         static /* synthetic */ void buildTrieRecursive$default(Companion companion, long j, Buffer buffer, int i, List list, int i2, int i3, List list2, int i4, Object obj) {

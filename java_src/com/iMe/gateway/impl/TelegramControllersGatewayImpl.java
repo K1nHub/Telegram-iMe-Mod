@@ -7,6 +7,7 @@ import java.util.HashMap;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.SendMessagesHelper;
 /* compiled from: TelegramControllersGatewayImpl.kt */
 /* loaded from: classes3.dex */
@@ -44,6 +45,13 @@ public final class TelegramControllersGatewayImpl implements TelegramControllers
         Object telegramControllersGatewayImpl = getInstance(NotificationCenter.getInstance(getSelectedAccount(i)));
         Intrinsics.checkNotNullExpressionValue(telegramControllersGatewayImpl, "getInstance(Notification…ccount(selectedAccount)))");
         return (NotificationCenter) telegramControllersGatewayImpl;
+    }
+
+    @Override // com.iMe.gateway.TelegramControllersGateway
+    public NotificationsController getNotificationsController(int i) {
+        Object telegramControllersGatewayImpl = getInstance(NotificationsController.getInstance(getSelectedAccount(i)));
+        Intrinsics.checkNotNullExpressionValue(telegramControllersGatewayImpl, "getInstance(Notification…ccount(selectedAccount)))");
+        return (NotificationsController) telegramControllersGatewayImpl;
     }
 
     private final <T> T getInstance(T t) {

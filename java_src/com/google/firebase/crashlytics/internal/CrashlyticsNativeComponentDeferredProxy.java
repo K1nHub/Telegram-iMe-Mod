@@ -23,7 +23,7 @@ public final class CrashlyticsNativeComponentDeferredProxy implements Crashlytic
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(Provider provider) {
-        Logger.getLogger().m738d("Crashlytics native component now available.");
+        Logger.getLogger().m724d("Crashlytics native component now available.");
         this.availableNativeComponent.set((CrashlyticsNativeComponent) provider.get());
     }
 
@@ -42,7 +42,7 @@ public final class CrashlyticsNativeComponentDeferredProxy implements Crashlytic
     @Override // com.google.firebase.crashlytics.internal.CrashlyticsNativeComponent
     public void prepareNativeSession(final String str, final String str2, final long j, final StaticSessionData staticSessionData) {
         Logger logger = Logger.getLogger();
-        logger.m732v("Deferring native open session: " + str);
+        logger.m718v("Deferring native open session: " + str);
         this.deferredNativeComponent.whenAvailable(new Deferred.DeferredHandler() { // from class: com.google.firebase.crashlytics.internal.CrashlyticsNativeComponentDeferredProxy$$ExternalSyntheticLambda2
             @Override // com.google.firebase.inject.Deferred.DeferredHandler
             public final void handle(Provider provider) {

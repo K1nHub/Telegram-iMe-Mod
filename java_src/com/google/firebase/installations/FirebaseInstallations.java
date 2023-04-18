@@ -308,7 +308,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
 
     private PersistedInstallationEntry registerFidWithServer(PersistedInstallationEntry persistedInstallationEntry) throws FirebaseInstallationsException {
         InstallationResponse createFirebaseInstallation = this.serviceClient.createFirebaseInstallation(getApiKey(), persistedInstallationEntry.getFirebaseInstallationId(), getProjectIdentifier(), getApplicationId(), (persistedInstallationEntry.getFirebaseInstallationId() == null || persistedInstallationEntry.getFirebaseInstallationId().length() != 11) ? null : this.iidStore.readToken());
-        int i = C10513.f195xc38d2559[createFirebaseInstallation.getResponseCode().ordinal()];
+        int i = C10363.f192xc38d2559[createFirebaseInstallation.getResponseCode().ordinal()];
         if (i != 1) {
             if (i == 2) {
                 return persistedInstallationEntry.withFisError("BAD CONFIG");
@@ -320,7 +320,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
 
     private PersistedInstallationEntry fetchAuthTokenFromServer(PersistedInstallationEntry persistedInstallationEntry) throws FirebaseInstallationsException {
         TokenResult generateAuthToken = this.serviceClient.generateAuthToken(getApiKey(), persistedInstallationEntry.getFirebaseInstallationId(), getProjectIdentifier(), persistedInstallationEntry.getRefreshToken());
-        int i = C10513.f196xe5baa01a[generateAuthToken.getResponseCode().ordinal()];
+        int i = C10363.f193xe5baa01a[generateAuthToken.getResponseCode().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
@@ -337,37 +337,37 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.installations.FirebaseInstallations$3 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10513 {
+    public static /* synthetic */ class C10363 {
 
         /* renamed from: $SwitchMap$com$google$firebase$installations$remote$InstallationResponse$ResponseCode */
-        static final /* synthetic */ int[] f195xc38d2559;
+        static final /* synthetic */ int[] f192xc38d2559;
 
         /* renamed from: $SwitchMap$com$google$firebase$installations$remote$TokenResult$ResponseCode */
-        static final /* synthetic */ int[] f196xe5baa01a;
+        static final /* synthetic */ int[] f193xe5baa01a;
 
         static {
             int[] iArr = new int[TokenResult.ResponseCode.values().length];
-            f196xe5baa01a = iArr;
+            f193xe5baa01a = iArr;
             try {
                 iArr[TokenResult.ResponseCode.OK.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f196xe5baa01a[TokenResult.ResponseCode.BAD_CONFIG.ordinal()] = 2;
+                f193xe5baa01a[TokenResult.ResponseCode.BAD_CONFIG.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f196xe5baa01a[TokenResult.ResponseCode.AUTH_ERROR.ordinal()] = 3;
+                f193xe5baa01a[TokenResult.ResponseCode.AUTH_ERROR.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             int[] iArr2 = new int[InstallationResponse.ResponseCode.values().length];
-            f195xc38d2559 = iArr2;
+            f192xc38d2559 = iArr2;
             try {
                 iArr2[InstallationResponse.ResponseCode.OK.ordinal()] = 1;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f195xc38d2559[InstallationResponse.ResponseCode.BAD_CONFIG.ordinal()] = 2;
+                f192xc38d2559[InstallationResponse.ResponseCode.BAD_CONFIG.ordinal()] = 2;
             } catch (NoSuchFieldError unused5) {
             }
         }

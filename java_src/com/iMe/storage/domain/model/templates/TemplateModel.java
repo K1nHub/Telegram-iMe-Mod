@@ -54,13 +54,13 @@ public final class TemplateModel {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m716m = ((((((((BotsDbModel$$ExternalSyntheticBackport0.m716m(this.messageId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.groupId)) * 31) + this.name.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.creationDate)) * 31) + this.usageRating) * 31;
+        int m702m = ((((((((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.messageId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.groupId)) * 31) + this.name.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.creationDate)) * 31) + this.usageRating) * 31;
         boolean z = this.sent;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return m716m + i;
+        return m702m + i;
     }
 
     public String toString() {

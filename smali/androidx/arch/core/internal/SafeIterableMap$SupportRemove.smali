@@ -1,4 +1,4 @@
-.class interface abstract Landroidx/arch/core/internal/SafeIterableMap$SupportRemove;
+.class public abstract Landroidx/arch/core/internal/SafeIterableMap$SupportRemove;
 .super Ljava/lang/Object;
 .source "SafeIterableMap.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x608
+    accessFlags = 0x409
     name = "SupportRemove"
 .end annotation
 
@@ -25,8 +25,19 @@
 .end annotation
 
 
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 368
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract supportRemove(Landroidx/arch/core/internal/SafeIterableMap$Entry;)V
+.method abstract supportRemove(Landroidx/arch/core/internal/SafeIterableMap$Entry;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -12,8 +12,9 @@ public class DERNumericString extends ASN1Primitive {
         this.string = bArr;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    boolean asn1Equals(ASN1Primitive aSN1Primitive) {
+    public boolean asn1Equals(ASN1Primitive aSN1Primitive) {
         if (aSN1Primitive instanceof DERNumericString) {
             return Arrays.areEqual(this.string, ((DERNumericString) aSN1Primitive).string);
         }
@@ -22,8 +23,8 @@ public class DERNumericString extends ASN1Primitive {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    public void encode(ASN1OutputStream aSN1OutputStream) throws IOException {
-        aSN1OutputStream.writeEncoded(18, this.string);
+    public void encode(ASN1OutputStream aSN1OutputStream, boolean z) throws IOException {
+        aSN1OutputStream.writeEncoded(z, 18, this.string);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

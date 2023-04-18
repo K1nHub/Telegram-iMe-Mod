@@ -2,7 +2,7 @@ package com.iMe.manager.crypto.recipient;
 
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.model.dialog.DialogModel;
-import com.iMe.p032ui.base.mvp.base.BaseView;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: CryptoRecipientView.kt */
 @OneExecution

@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.repository.crypto.boost.BoostRepository;
 import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import kotlin.jvm.functions.Function1;
@@ -39,10 +39,10 @@ public final class BoostInteractor$boostEthTransaction$$inlined$flatMapSuccess$1
         TransactionArgs data = result.getData();
         Intrinsics.checkNotNull(data);
         boostRepository = this.this$0.boostRepository;
-        Observable<R> flatMap = boostRepository.signBoostTransaction(data).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1910x5d896fde(this.this$0, this.$txHash$inlined)));
+        Observable<R> flatMap = boostRepository.signBoostTransaction(data).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1897x5d896fde(this.this$0, this.$txHash$inlined)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         schedulersProvider = this.this$0.schedulersProvider;
-        Observable subscribeOn = flatMap.subscribeOn(schedulersProvider.mo708io());
+        Observable subscribeOn = flatMap.subscribeOn(schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "boostRepository\n        …(schedulersProvider.io())");
         return subscribeOn;
     }

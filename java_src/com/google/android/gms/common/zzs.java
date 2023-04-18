@@ -15,18 +15,18 @@ import com.google.android.gms.dynamic.ObjectWrapper;
 /* loaded from: classes.dex */
 public final class zzs extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzs> CREATOR = new zzt();
-    @SafeParcelable.Field(getter = "getCallingPackage", m789id = 1)
+    @SafeParcelable.Field(getter = "getCallingPackage", m775id = 1)
     private final String zza;
-    @SafeParcelable.Field(getter = "getCallingCertificateBinder", m789id = 2, type = "android.os.IBinder")
+    @SafeParcelable.Field(getter = "getCallingCertificateBinder", m775id = 2, type = "android.os.IBinder")
     private final zzj zzb;
-    @SafeParcelable.Field(getter = "getAllowTestKeys", m789id = 3)
+    @SafeParcelable.Field(getter = "getAllowTestKeys", m775id = 3)
     private final boolean zzc;
-    @SafeParcelable.Field(defaultValue = "false", getter = "getIgnoreTestKeysOverride", m789id = 4)
+    @SafeParcelable.Field(defaultValue = "false", getter = "getIgnoreTestKeysOverride", m775id = 4)
     private final boolean zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzs(@SafeParcelable.Param(m788id = 1) String str, @SafeParcelable.Param(m788id = 2) IBinder iBinder, @SafeParcelable.Param(m788id = 3) boolean z, @SafeParcelable.Param(m788id = 4) boolean z2) {
+    public zzs(@SafeParcelable.Param(m774id = 1) String str, @SafeParcelable.Param(m774id = 2) IBinder iBinder, @SafeParcelable.Param(m774id = 3) boolean z, @SafeParcelable.Param(m774id = 4) boolean z2) {
         this.zza = str;
         zzk zzkVar = null;
         if (iBinder != null) {

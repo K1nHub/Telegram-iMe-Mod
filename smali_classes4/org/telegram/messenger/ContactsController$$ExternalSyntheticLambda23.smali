@@ -10,11 +10,11 @@
 
 .field public final synthetic f$1:Ljava/util/ArrayList;
 
-.field public final synthetic f$2:Ljava/util/ArrayList;
+.field public final synthetic f$2:Ljava/util/HashMap;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/util/ArrayList;Ljava/util/HashMap;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda23;->f$1:Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda23;->f$2:Ljava/util/ArrayList;
+    iput-object p3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda23;->f$2:Ljava/util/HashMap;
 
     return-void
 .end method
@@ -37,9 +37,9 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda23;->f$1:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda23;->f$2:Ljava/util/ArrayList;
+    iget-object v2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda23;->f$2:Ljava/util/HashMap;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$b_-vCkvbKIs8YH5qEhVN3MYbbkU(Lorg/telegram/messenger/ContactsController;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$SnU4XDp2QHpDQMkM1o3J9VXK2oo(Lorg/telegram/messenger/ContactsController;Ljava/util/ArrayList;Ljava/util/HashMap;)V
 
     return-void
 .end method

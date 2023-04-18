@@ -3,11 +3,16 @@ package kotlin.jvm.internal;
 import kotlin.reflect.KClass;
 import kotlin.reflect.KDeclarationContainer;
 import kotlin.reflect.KFunction;
+import kotlin.reflect.KProperty0;
 import kotlin.reflect.KProperty1;
 /* loaded from: classes4.dex */
 public class ReflectionFactory {
     public KFunction function(FunctionReference functionReference) {
         return functionReference;
+    }
+
+    public KProperty0 property0(PropertyReference0 propertyReference0) {
+        return propertyReference0;
     }
 
     public KProperty1 property1(PropertyReference1 propertyReference1) {

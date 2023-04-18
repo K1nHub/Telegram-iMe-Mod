@@ -298,7 +298,7 @@ public final class NalUnitUtil {
                     if (readBits5 < fArr.length) {
                         f = fArr[readBits5];
                     } else {
-                        Log.m806w(TAG, "Unexpected aspect_ratio_idc value: " + readBits5);
+                        Log.m792w(TAG, "Unexpected aspect_ratio_idc value: " + readBits5);
                     }
                 }
             }

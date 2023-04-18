@@ -19,7 +19,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 /* compiled from: WalletLinkClickableManager.kt */
 /* loaded from: classes3.dex */
 public final class WalletLinkClickableManager {
@@ -109,9 +109,9 @@ public final class WalletLinkClickableManager {
         List<Pair<String, Function0<Unit>>> mutableList;
         int collectionSizeOrDefault;
         Pair[] pairArr = new Pair[3];
-        pairArr[0] = this.telegramGateway.hasUser(j) ? TuplesKt.m94to(this.resourceManager.getString(C3316R.string.wallet_user_id_dialog_go_to_profile_action), new WalletLinkClickableManager$getUserIdAlertOptions$1(this, j)) : null;
-        pairArr[1] = TuplesKt.m94to(this.resourceManager.getString(C3316R.string.wallet_user_id_dialog_copy_id_action), new WalletLinkClickableManager$getUserIdAlertOptions$2(this, j));
-        pairArr[2] = TuplesKt.m94to(this.resourceManager.getString(C3316R.string.wallet_user_id_dialog_transfer_action), new WalletLinkClickableManager$getUserIdAlertOptions$3(this, j));
+        pairArr[0] = this.telegramGateway.hasUser(j) ? TuplesKt.m80to(this.resourceManager.getString(C3242R.string.wallet_user_id_dialog_go_to_profile_action), new WalletLinkClickableManager$getUserIdAlertOptions$1(this, j)) : null;
+        pairArr[1] = TuplesKt.m80to(this.resourceManager.getString(C3242R.string.wallet_user_id_dialog_copy_id_action), new WalletLinkClickableManager$getUserIdAlertOptions$2(this, j));
+        pairArr[2] = TuplesKt.m80to(this.resourceManager.getString(C3242R.string.wallet_user_id_dialog_transfer_action), new WalletLinkClickableManager$getUserIdAlertOptions$3(this, j));
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(pairArr);
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(mutableListOf);
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) filterNotNull);
@@ -131,8 +131,8 @@ public final class WalletLinkClickableManager {
         List<Pair<String, Function0<Unit>>> mutableList;
         int collectionSizeOrDefault;
         Pair[] pairArr = new Pair[2];
-        pairArr[0] = TuplesKt.m94to(this.resourceManager.getString(C3316R.string.wallet_token_details_action_copy_address), new WalletLinkClickableManager$getAddressAlertOptions$1(this, str));
-        pairArr[1] = isTransferAvailable(this.clickableItem.getTokenCode()) ? TuplesKt.m94to(this.resourceManager.getString(C3316R.string.wallet_user_id_dialog_transfer_action), new WalletLinkClickableManager$getAddressAlertOptions$2(this)) : null;
+        pairArr[0] = TuplesKt.m80to(this.resourceManager.getString(C3242R.string.wallet_token_details_action_copy_address), new WalletLinkClickableManager$getAddressAlertOptions$1(this, str));
+        pairArr[1] = isTransferAvailable(this.clickableItem.getTokenCode()) ? TuplesKt.m80to(this.resourceManager.getString(C3242R.string.wallet_user_id_dialog_transfer_action), new WalletLinkClickableManager$getAddressAlertOptions$2(this)) : null;
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(pairArr);
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(mutableListOf);
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) filterNotNull);

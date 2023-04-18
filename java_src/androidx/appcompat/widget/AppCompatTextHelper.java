@@ -7,6 +7,7 @@ import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.LocaleList;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.TextView;
@@ -14,9 +15,9 @@ import androidx.appcompat.R$styleable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.inputmethod.EditorInfoCompat;
-import androidx.core.widget.AutoSizeableTextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.lang.ref.WeakReference;
+import java.util.Locale;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
 public class AppCompatTextHelper {
@@ -44,26 +45,26 @@ public class AppCompatTextHelper {
     /* JADX WARN: Removed duplicated region for block: B:101:0x01ce  */
     /* JADX WARN: Removed duplicated region for block: B:106:0x01e2  */
     /* JADX WARN: Removed duplicated region for block: B:108:0x01e9  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x021a  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x022b  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x0268  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x026e  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0277  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x027d  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0286  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x028c  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0295  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x029b  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x02a4  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x02aa  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x02b3  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x02b9  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x02cd  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x02de  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x02ee  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x0306  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x030d  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x0314  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0218  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0229  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x0266  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x026c  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0275  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x027b  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0284  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x028a  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0293  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x0299  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x02a2  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x02a8  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x02b1  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x02b7  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x02cb  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x02dc  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x02ec  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x0304  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x030b  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x0312  */
     /* JADX WARN: Removed duplicated region for block: B:163:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:32:0x00d0  */
     /* JADX WARN: Removed duplicated region for block: B:43:0x00f9  */
@@ -84,7 +85,7 @@ public class AppCompatTextHelper {
     */
     public void loadFromAttributes(android.util.AttributeSet r24, int r25) {
         /*
-            Method dump skipped, instructions count: 794
+            Method dump skipped, instructions count: 792
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.widget.AppCompatTextHelper.loadFromAttributes(android.util.AttributeSet, int):void");
@@ -122,14 +123,14 @@ public class AppCompatTextHelper {
                         public void onFontRetrieved(Typeface typeface) {
                             int i7;
                             if (Build.VERSION.SDK_INT >= 28 && (i7 = i5) != -1) {
-                                typeface = Typeface.create(typeface, i7, (i6 & 2) != 0);
+                                typeface = Api28Impl.create(typeface, i7, (i6 & 2) != 0);
                             }
                             AppCompatTextHelper.this.onAsyncTypefaceReceived(weakReference, typeface);
                         }
                     });
                     if (font != null) {
                         if (i >= 28 && this.mFontWeight != -1) {
-                            this.mFontTypeface = Typeface.create(Typeface.create(font, 0), this.mFontWeight, (this.mStyle & 2) != 0);
+                            this.mFontTypeface = Api28Impl.create(Typeface.create(font, 0), this.mFontWeight, (this.mStyle & 2) != 0);
                         } else {
                             this.mFontTypeface = font;
                         }
@@ -142,7 +143,7 @@ public class AppCompatTextHelper {
                 return;
             }
             if (Build.VERSION.SDK_INT >= 28 && this.mFontWeight != -1) {
-                this.mFontTypeface = Typeface.create(Typeface.create(string, 0), this.mFontWeight, (this.mStyle & 2) != 0);
+                this.mFontTypeface = Api28Impl.create(Typeface.create(string, 0), this.mFontWeight, (this.mStyle & 2) != 0);
                 return;
             } else {
                 this.mFontTypeface = Typeface.create(string, this.mStyle);
@@ -218,7 +219,7 @@ public class AppCompatTextHelper {
         if (i3 >= 26) {
             int i8 = R$styleable.TextAppearance_fontVariationSettings;
             if (obtainStyledAttributes.hasValue(i8) && (string = obtainStyledAttributes.getString(i8)) != null) {
-                this.mView.setFontVariationSettings(string);
+                Api26Impl.setFontVariationSettings(this.mView, string);
             }
         }
         obtainStyledAttributes.recycle();
@@ -251,7 +252,7 @@ public class AppCompatTextHelper {
             if (this.mDrawableStartTint == null && this.mDrawableEndTint == null) {
                 return;
             }
-            Drawable[] compoundDrawablesRelative = this.mView.getCompoundDrawablesRelative();
+            Drawable[] compoundDrawablesRelative = Api17Impl.getCompoundDrawablesRelative(this.mView);
             applyCompoundDrawableTint(compoundDrawablesRelative[0], this.mDrawableStartTint);
             applyCompoundDrawableTint(compoundDrawablesRelative[2], this.mDrawableEndTint);
         }
@@ -277,7 +278,7 @@ public class AppCompatTextHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        if (AutoSizeableTextView.PLATFORM_SUPPORTS_AUTOSIZE) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
             return;
         }
         autoSizeText();
@@ -285,7 +286,7 @@ public class AppCompatTextHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void setTextSize(int i, float f) {
-        if (AutoSizeableTextView.PLATFORM_SUPPORTS_AUTOSIZE || isAutoSizeEnabled()) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE || isAutoSizeEnabled()) {
             return;
         }
         setTextSizeInternal(i, f);
@@ -398,7 +399,7 @@ public class AppCompatTextHelper {
     private void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4, Drawable drawable5, Drawable drawable6) {
         int i = Build.VERSION.SDK_INT;
         if (i >= 17 && (drawable5 != null || drawable6 != null)) {
-            Drawable[] compoundDrawablesRelative = this.mView.getCompoundDrawablesRelative();
+            Drawable[] compoundDrawablesRelative = Api17Impl.getCompoundDrawablesRelative(this.mView);
             TextView textView = this.mView;
             if (drawable5 == null) {
                 drawable5 = compoundDrawablesRelative[0];
@@ -412,11 +413,11 @@ public class AppCompatTextHelper {
             if (drawable4 == null) {
                 drawable4 = compoundDrawablesRelative[3];
             }
-            textView.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable5, drawable2, drawable6, drawable4);
+            Api17Impl.setCompoundDrawablesRelativeWithIntrinsicBounds(textView, drawable5, drawable2, drawable6, drawable4);
         } else if (drawable == null && drawable2 == null && drawable3 == null && drawable4 == null) {
         } else {
             if (i >= 17) {
-                Drawable[] compoundDrawablesRelative2 = this.mView.getCompoundDrawablesRelative();
+                Drawable[] compoundDrawablesRelative2 = Api17Impl.getCompoundDrawablesRelative(this.mView);
                 if (compoundDrawablesRelative2[0] != null || compoundDrawablesRelative2[2] != null) {
                     TextView textView2 = this.mView;
                     Drawable drawable7 = compoundDrawablesRelative2[0];
@@ -427,7 +428,7 @@ public class AppCompatTextHelper {
                     if (drawable4 == null) {
                         drawable4 = compoundDrawablesRelative2[3];
                     }
-                    textView2.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable7, drawable2, drawable8, drawable4);
+                    Api17Impl.setCompoundDrawablesRelativeWithIntrinsicBounds(textView2, drawable7, drawable2, drawable8, drawable4);
                     return;
                 }
             }
@@ -455,5 +456,69 @@ public class AppCompatTextHelper {
             return;
         }
         EditorInfoCompat.setInitialSurroundingText(editorInfo, textView.getText());
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api26Impl {
+        static boolean setFontVariationSettings(TextView textView, String str) {
+            return textView.setFontVariationSettings(str);
+        }
+
+        static int getAutoSizeStepGranularity(TextView textView) {
+            return textView.getAutoSizeStepGranularity();
+        }
+
+        static void setAutoSizeTextTypeUniformWithConfiguration(TextView textView, int i, int i2, int i3, int i4) {
+            textView.setAutoSizeTextTypeUniformWithConfiguration(i, i2, i3, i4);
+        }
+
+        static void setAutoSizeTextTypeUniformWithPresetSizes(TextView textView, int[] iArr, int i) {
+            textView.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api24Impl {
+        static void setTextLocales(TextView textView, LocaleList localeList) {
+            textView.setTextLocales(localeList);
+        }
+
+        static LocaleList forLanguageTags(String str) {
+            return LocaleList.forLanguageTags(str);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api17Impl {
+        static void setTextLocale(TextView textView, Locale locale) {
+            textView.setTextLocale(locale);
+        }
+
+        static void setCompoundDrawablesRelativeWithIntrinsicBounds(TextView textView, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+            textView.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable, drawable2, drawable3, drawable4);
+        }
+
+        static Drawable[] getCompoundDrawablesRelative(TextView textView) {
+            return textView.getCompoundDrawablesRelative();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api21Impl {
+        static Locale forLanguageTag(String str) {
+            return Locale.forLanguageTag(str);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api28Impl {
+        static Typeface create(Typeface typeface, int i, boolean z) {
+            return Typeface.create(typeface, i, z);
+        }
     }
 }

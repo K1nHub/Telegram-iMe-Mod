@@ -28,15 +28,15 @@ import android.util.Base64;
 import android.util.SparseLongArray;
 import android.view.Display;
 import android.view.WindowManager;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.ExoPlayerLibraryInfo;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.PlaybackException;
 import com.google.android.exoplayer2.Player;
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
-import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.exoplayer2.text.ttml.TtmlNode;
 import com.google.common.base.Ascii;
 import com.google.common.base.Charsets;
@@ -77,7 +77,7 @@ import java.util.zip.DataFormatException;
 import java.util.zip.GZIPOutputStream;
 import java.util.zip.Inflater;
 import org.telegram.messenger.ImageReceiver;
-import p035j$.util.DesugarTimeZone;
+import p034j$.util.DesugarTimeZone;
 /* loaded from: classes.dex */
 public final class Util {
     private static final int[] CRC32_BYTES_MSBF;
@@ -232,7 +232,7 @@ public final class Util {
                     if (i != 32) {
                         return 0;
                     }
-                    return C0482C.ENCODING_PCM_32BIT;
+                    return C0470C.ENCODING_PCM_32BIT;
                 }
                 return 536870912;
             }
@@ -278,7 +278,7 @@ public final class Util {
     }
 
     public static long msToUs(long j) {
-        return (j == C0482C.TIME_UNSET || j == Long.MIN_VALUE) ? j : j * 1000;
+        return (j == C0470C.TIME_UNSET || j == Long.MIN_VALUE) ? j : j * 1000;
     }
 
     private static boolean shouldEscapeCharacter(char c) {
@@ -858,7 +858,7 @@ public final class Util {
     }
 
     public static long usToMs(long j) {
-        return (j == C0482C.TIME_UNSET || j == Long.MIN_VALUE) ? j : j / 1000;
+        return (j == C0470C.TIME_UNSET || j == Long.MIN_VALUE) ? j : j / 1000;
     }
 
     public static long parseXsDuration(String str) {
@@ -1124,11 +1124,11 @@ public final class Util {
         }
         switch (c) {
             case 0:
-                return C0482C.PLAYREADY_UUID;
+                return C0470C.PLAYREADY_UUID;
             case 1:
-                return C0482C.WIDEVINE_UUID;
+                return C0470C.WIDEVINE_UUID;
             case 2:
-                return C0482C.CLEARKEY_UUID;
+                return C0470C.CLEARKEY_UUID;
             default:
                 try {
                     return UUID.fromString(str);
@@ -1279,7 +1279,7 @@ public final class Util {
     }
 
     public static String getStringForTime(StringBuilder sb, Formatter formatter, long j) {
-        if (j == C0482C.TIME_UNSET) {
+        if (j == C0470C.TIME_UNSET) {
             j = 0;
         }
         String str = j < 0 ? "-" : "";
@@ -1511,7 +1511,7 @@ public final class Util {
                     }
                 } catch (NumberFormatException unused) {
                 }
-                Log.m810e(TAG, "Invalid display size: " + systemProperty);
+                Log.m796e(TAG, "Invalid display size: " + systemProperty);
             }
             if ("Sony".equals(MANUFACTURER) && MODEL.startsWith("BRAVIA") && context.getPackageManager().hasSystemFeature("com.sony.dtv.hardware.panel.qfhd")) {
                 return new Point(3840, 2160);
@@ -1558,7 +1558,7 @@ public final class Util {
     }
 
     public static long getNowUnixTimeMs(long j) {
-        if (j == C0482C.TIME_UNSET) {
+        if (j == C0470C.TIME_UNSET) {
             return System.currentTimeMillis();
         }
         return j + android.os.SystemClock.elapsedRealtime();
@@ -1651,7 +1651,7 @@ public final class Util {
             Class<?> cls = Class.forName("android.os.SystemProperties");
             return (String) cls.getMethod("get", String.class).invoke(cls, str);
         } catch (Exception e) {
-            Log.m809e(TAG, "Failed to read system property " + str, e);
+            Log.m795e(TAG, "Failed to read system property " + str, e);
             return null;
         }
     }

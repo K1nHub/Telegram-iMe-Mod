@@ -59,16 +59,16 @@
 
     const/4 v0, 0x0
 
-    .line 22
+    .line 28
     invoke-direct {p0, v0}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 19
+    .line 25
     iput-object p1, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->secretWords:Ljava/util/List;
 
-    .line 20
+    .line 26
     iput-object p2, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->password:Ljava/lang/String;
 
-    .line 21
+    .line 27
     iput-object p3, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->pin:Ljava/lang/String;
 
     return-void
@@ -79,7 +79,7 @@
 .method public final getPassword()Ljava/lang/String;
     .locals 1
 
-    .line 20
+    .line 26
     iget-object v0, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->password:Ljava/lang/String;
 
     return-object v0
@@ -88,7 +88,7 @@
 .method public final getPin()Ljava/lang/String;
     .locals 1
 
-    .line 21
+    .line 27
     iget-object v0, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->pin:Ljava/lang/String;
 
     return-object v0
@@ -105,7 +105,7 @@
         }
     .end annotation
 
-    .line 19
+    .line 25
     iget-object v0, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->secretWords:Ljava/util/List;
 
     return-object v0

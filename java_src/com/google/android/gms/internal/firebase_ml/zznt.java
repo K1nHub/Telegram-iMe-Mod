@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.firebase_ml;
 
-import com.google.firebase.p021ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.FirebaseMLException;
 import java.util.concurrent.Callable;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */

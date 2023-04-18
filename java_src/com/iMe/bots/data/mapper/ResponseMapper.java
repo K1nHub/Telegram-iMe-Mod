@@ -23,7 +23,7 @@ public final class ResponseMapper {
         Intrinsics.checkNotNullParameter(repository, "repository");
         Intrinsics.checkNotNullParameter(context, "context");
         this.repository = repository;
-        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m94to("23.02", Integer.valueOf(R$drawable.bot_avatar_23_02)), TuplesKt.m94to("08.03", Integer.valueOf(R$drawable.bot_avatar_08_03)), TuplesKt.m94to("01.04", Integer.valueOf(R$drawable.bot_avatar_01_04)), TuplesKt.m94to("12.04", Integer.valueOf(R$drawable.bot_avatar_12_04)), TuplesKt.m94to("28.04", Integer.valueOf(R$drawable.bot_avatar_28_04)), TuplesKt.m94to("01.05", Integer.valueOf(R$drawable.bot_avatar_01_05)), TuplesKt.m94to("09.05", Integer.valueOf(R$drawable.bot_avatar_09_05)));
+        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m80to("23.02", Integer.valueOf(R$drawable.bot_avatar_23_02)), TuplesKt.m80to("08.03", Integer.valueOf(R$drawable.bot_avatar_08_03)), TuplesKt.m80to("01.04", Integer.valueOf(R$drawable.bot_avatar_01_04)), TuplesKt.m80to("12.04", Integer.valueOf(R$drawable.bot_avatar_12_04)), TuplesKt.m80to("28.04", Integer.valueOf(R$drawable.bot_avatar_28_04)), TuplesKt.m80to("01.05", Integer.valueOf(R$drawable.bot_avatar_01_05)), TuplesKt.m80to("09.05", Integer.valueOf(R$drawable.bot_avatar_09_05)));
         this.holidays = mapOf;
         String string = context.getString(R$string.bot_title_recent);
         Intrinsics.checkNotNullExpressionValue(string, "context.getString(R.string.bot_title_recent)");

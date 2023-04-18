@@ -49,14 +49,14 @@
 .method public constructor <init>(Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 434
+    .line 428
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, -0x1
 
-    .line 441
+    .line 435
     iput p1, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->searchIndex:I
 
     return-void
@@ -67,10 +67,10 @@
 .method public draw(Landroid/graphics/Canvas;Landroid/view/View;)V
     .locals 9
 
-    .line 450
+    .line 444
     iput-object p2, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->latestParentView:Landroid/view/View;
 
-    .line 452
+    .line 446
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$100(Lorg/telegram/ui/ArticleViewer;)Ljava/util/ArrayList;
@@ -93,7 +93,7 @@
 
     if-nez v0, :cond_2
 
-    .line 453
+    .line 447
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$100(Lorg/telegram/ui/ArticleViewer;)Ljava/util/ArrayList;
@@ -112,7 +112,7 @@
 
     check-cast v0, Lorg/telegram/ui/ArticleViewer$SearchResult;
 
-    .line 454
+    .line 448
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$SearchResult;->access$300(Lorg/telegram/ui/ArticleViewer$SearchResult;)Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     move-result-object v6
@@ -141,7 +141,7 @@
 
     if-nez v6, :cond_1
 
-    .line 455
+    .line 449
     :cond_0
     iget v2, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->searchIndex:I
 
@@ -151,17 +151,17 @@
 
     if-eq v2, v3, :cond_3
 
-    .line 456
+    .line 450
     new-instance v2, Lorg/telegram/ui/Components/LinkPath;
 
     invoke-direct {v2, v4}, Lorg/telegram/ui/Components/LinkPath;-><init>(Z)V
 
     iput-object v2, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->searchPath:Lorg/telegram/ui/Components/LinkPath;
 
-    .line 457
+    .line 451
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/LinkPath;->setAllowReset(Z)V
 
-    .line 458
+    .line 452
     iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->searchPath:Lorg/telegram/ui/Components/LinkPath;
 
     iget-object v3, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->textLayout:Landroid/text/StaticLayout;
@@ -172,12 +172,12 @@
 
     invoke-virtual {v2, v3, v6, v1}, Lorg/telegram/ui/Components/LinkPath;->setCurrentLayout(Landroid/text/Layout;IF)V
 
-    .line 459
+    .line 453
     iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->searchPath:Lorg/telegram/ui/Components/LinkPath;
 
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/LinkPath;->setBaselineShift(I)V
 
-    .line 460
+    .line 454
     iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->textLayout:Landroid/text/StaticLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$SearchResult;->access$500(Lorg/telegram/ui/ArticleViewer$SearchResult;)I
@@ -204,70 +204,70 @@
 
     invoke-virtual {v2, v3, v0, v6}, Landroid/text/StaticLayout;->getSelectionPath(IILandroid/graphics/Path;)V
 
-    .line 461
+    .line 455
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->searchPath:Lorg/telegram/ui/Components/LinkPath;
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/LinkPath;->setAllowReset(Z)V
 
     goto :goto_0
 
-    .line 464
+    .line 458
     :cond_1
     iput v3, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->searchIndex:I
 
-    .line 465
+    .line 459
     iput-object v2, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->searchPath:Lorg/telegram/ui/Components/LinkPath;
 
     goto :goto_0
 
-    .line 468
+    .line 462
     :cond_2
     iput v3, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->searchIndex:I
 
-    .line 469
+    .line 463
     iput-object v2, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->searchPath:Lorg/telegram/ui/Components/LinkPath;
 
-    .line 471
+    .line 465
     :cond_3
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->searchPath:Lorg/telegram/ui/Components/LinkPath;
 
     if-eqz v0, :cond_4
 
-    .line 472
+    .line 466
     invoke-static {}, Lorg/telegram/ui/ArticleViewer;->access$700()Landroid/graphics/Paint;
 
     move-result-object v2
 
     invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 474
+    .line 468
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->textPath:Lorg/telegram/ui/Components/LinkPath;
 
     if-eqz v0, :cond_5
 
-    .line 475
+    .line 469
     invoke-static {}, Lorg/telegram/ui/ArticleViewer;->access$800()Landroid/graphics/Paint;
 
     move-result-object v2
 
     invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 477
+    .line 471
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->markPath:Lorg/telegram/ui/Components/LinkPath;
 
     if-eqz v0, :cond_6
 
-    .line 478
+    .line 472
     invoke-static {}, Lorg/telegram/ui/ArticleViewer;->access$900()Landroid/graphics/Paint;
 
     move-result-object v2
 
     invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 480
+    .line 474
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->this$0:Lorg/telegram/ui/ArticleViewer;
 
@@ -281,10 +281,10 @@
 
     if-eqz v0, :cond_7
 
-    .line 481
+    .line 475
     invoke-virtual {p2}, Landroid/view/View;->invalidate()V
 
-    .line 483
+    .line 477
     :cond_7
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->this$0:Lorg/telegram/ui/ArticleViewer;
 
@@ -310,26 +310,26 @@
 
     if-eqz p2, :cond_9
 
-    .line 486
+    .line 480
     invoke-virtual {p0}, Lorg/telegram/ui/ArticleViewer$DrawingText;->getLineCount()I
 
     move-result p2
 
     if-ne p2, v4, :cond_8
 
-    .line 487
+    .line 481
     invoke-virtual {p0, v5}, Lorg/telegram/ui/ArticleViewer$DrawingText;->getLineWidth(I)F
 
     move-result p2
 
-    .line 488
+    .line 482
     invoke-virtual {p0, v5}, Lorg/telegram/ui/ArticleViewer$DrawingText;->getLineLeft(I)F
 
     move-result v1
 
     goto :goto_1
 
-    .line 490
+    .line 484
     :cond_8
     invoke-virtual {p0}, Lorg/telegram/ui/ArticleViewer$DrawingText;->getWidth()I
 
@@ -340,7 +340,7 @@
     :goto_1
     const/4 v0, 0x2
 
-    .line 493
+    .line 487
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -377,7 +377,7 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 495
+    .line 489
     :cond_9
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->textLayout:Landroid/text/StaticLayout;
 
@@ -389,7 +389,7 @@
 .method public getHeight()I
     .locals 1
 
-    .line 519
+    .line 513
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getHeight()I
@@ -402,7 +402,7 @@
 .method public getLayout()Landroid/text/StaticLayout;
     .locals 1
 
-    .line 528
+    .line 522
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->textLayout:Landroid/text/StaticLayout;
 
     return-object v0
@@ -411,7 +411,7 @@
 .method public getLineAscent(I)I
     .locals 1
 
-    .line 507
+    .line 501
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->getLineAscent(I)I
@@ -424,7 +424,7 @@
 .method public getLineCount()I
     .locals 1
 
-    .line 503
+    .line 497
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
@@ -437,7 +437,7 @@
 .method public getLineLeft(I)F
     .locals 1
 
-    .line 511
+    .line 505
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->getLineLeft(I)F
@@ -450,7 +450,7 @@
 .method public getLineWidth(I)F
     .locals 1
 
-    .line 515
+    .line 509
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->getLineWidth(I)F
@@ -463,7 +463,7 @@
 .method public getPrefix()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 548
+    .line 542
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->prefix:Ljava/lang/CharSequence;
 
     return-object v0
@@ -472,7 +472,7 @@
 .method public getRow()I
     .locals 1
 
-    .line 543
+    .line 537
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->row:I
 
     return v0
@@ -481,7 +481,7 @@
 .method public getText()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 499
+    .line 493
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
@@ -494,7 +494,7 @@
 .method public getWidth()I
     .locals 1
 
-    .line 523
+    .line 517
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getWidth()I
@@ -507,7 +507,7 @@
 .method public getX()I
     .locals 1
 
-    .line 533
+    .line 527
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->x:I
 
     return v0
@@ -516,7 +516,7 @@
 .method public getY()I
     .locals 1
 
-    .line 538
+    .line 532
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$DrawingText;->y:I
 
     return v0

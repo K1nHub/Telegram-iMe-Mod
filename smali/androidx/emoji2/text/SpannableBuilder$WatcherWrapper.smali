@@ -28,10 +28,10 @@
 .method constructor <init>(Ljava/lang/Object;)V
     .locals 2
 
-    .line 378
+    .line 379
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 376
+    .line 377
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x0
@@ -40,7 +40,7 @@
 
     iput-object v0, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mBlockCalls:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 379
+    .line 380
     iput-object p1, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mObject:Ljava/lang/Object;
 
     return-void
@@ -49,7 +49,7 @@
 .method private isEmojiSpan(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 443
+    .line 457
     instance-of p1, p1, Landroidx/emoji2/text/EmojiSpan;
 
     return p1
@@ -60,7 +60,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 1
 
-    .line 394
+    .line 395
     iget-object v0, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mObject:Ljava/lang/Object;
 
     check-cast v0, Landroid/text/TextWatcher;
@@ -73,7 +73,7 @@
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 1
 
-    .line 384
+    .line 385
     iget-object v0, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mObject:Ljava/lang/Object;
 
     check-cast v0, Landroid/text/TextWatcher;
@@ -86,7 +86,7 @@
 .method final blockCalls()V
     .locals 1
 
-    .line 435
+    .line 449
     iget-object v0, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mBlockCalls:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
@@ -97,7 +97,7 @@
 .method public onSpanAdded(Landroid/text/Spannable;Ljava/lang/Object;II)V
     .locals 1
 
-    .line 403
+    .line 404
     iget-object v0, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mBlockCalls:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -114,7 +114,7 @@
 
     return-void
 
-    .line 406
+    .line 407
     :cond_0
     iget-object v0, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mObject:Ljava/lang/Object;
 
@@ -128,7 +128,7 @@
 .method public onSpanChanged(Landroid/text/Spannable;Ljava/lang/Object;IIII)V
     .locals 8
 
-    .line 428
+    .line 429
     iget-object v0, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mBlockCalls:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -139,17 +139,55 @@
 
     invoke-direct {p0, p2}, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->isEmojiSpan(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     return-void
 
-    .line 431
+    .line 433
     :cond_0
-    iget-object v0, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mObject:Ljava/lang/Object;
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    move-object v1, v0
+    const/16 v2, 0x1c
+
+    const/4 v3, 0x0
+
+    if-ge v1, v2, :cond_3
+
+    if-le p3, p4, :cond_1
+
+    move v1, v3
+
+    goto :goto_0
+
+    :cond_1
+    move v1, p3
+
+    :goto_0
+    if-le p5, p6, :cond_2
+
+    move v4, v1
+
+    move v6, v3
+
+    goto :goto_1
+
+    :cond_2
+    move v6, p5
+
+    move v4, v1
+
+    goto :goto_1
+
+    :cond_3
+    move v4, p3
+
+    move v6, p5
+
+    .line 445
+    :goto_1
+    iget-object v1, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mObject:Ljava/lang/Object;
 
     check-cast v1, Landroid/text/SpanWatcher;
 
@@ -157,11 +195,7 @@
 
     move-object v3, p2
 
-    move v4, p3
-
     move v5, p4
-
-    move v6, p5
 
     move v7, p6
 
@@ -173,7 +207,7 @@
 .method public onSpanRemoved(Landroid/text/Spannable;Ljava/lang/Object;II)V
     .locals 1
 
-    .line 415
+    .line 416
     iget-object v0, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mBlockCalls:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -190,7 +224,7 @@
 
     return-void
 
-    .line 418
+    .line 419
     :cond_0
     iget-object v0, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mObject:Ljava/lang/Object;
 
@@ -204,7 +238,7 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 1
 
-    .line 389
+    .line 390
     iget-object v0, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mObject:Ljava/lang/Object;
 
     check-cast v0, Landroid/text/TextWatcher;
@@ -217,7 +251,7 @@
 .method final unblockCalls()V
     .locals 1
 
-    .line 439
+    .line 453
     iget-object v0, p0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mBlockCalls:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I

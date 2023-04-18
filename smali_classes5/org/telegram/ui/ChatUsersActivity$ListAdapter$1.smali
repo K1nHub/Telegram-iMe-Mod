@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatUsersActivity$ListAdapter;Lorg/telegram/ui/Cells/TextCheckCell2;)V
     .locals 0
 
-    .line 3419
+    .line 3420
     iput-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatUsersActivity$ListAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatUsersActivity$ListAdapter$1;->val$checkCell:Lorg/telegram/ui/Cells/TextCheckCell2;
@@ -42,7 +42,7 @@
 .method public run()V
     .locals 2
 
-    .line 3422
+    .line 3423
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$ListAdapter$1;->val$checkCell:Lorg/telegram/ui/Cells/TextCheckCell2;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->isChecked()Z
@@ -51,12 +51,12 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 3423
+    .line 3424
     iget-object v1, p0, Lorg/telegram/ui/ChatUsersActivity$ListAdapter$1;->val$checkCell:Lorg/telegram/ui/Cells/TextCheckCell2;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setChecked(Z)V
 
-    .line 3424
+    .line 3425
     iget-object v1, p0, Lorg/telegram/ui/ChatUsersActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatUsersActivity$ListAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/ChatUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatUsersActivity;

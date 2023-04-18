@@ -439,30 +439,30 @@ public abstract class FastJsonResponse {
     /* loaded from: classes.dex */
     public static class Field<I, O> extends AbstractSafeParcelable {
         public static final zaj CREATOR = new zaj();
-        @SafeParcelable.Field(getter = "getTypeIn", m789id = 2)
+        @SafeParcelable.Field(getter = "getTypeIn", m775id = 2)
         protected final int zaa;
-        @SafeParcelable.Field(getter = "isTypeInArray", m789id = 3)
+        @SafeParcelable.Field(getter = "isTypeInArray", m775id = 3)
         protected final boolean zab;
-        @SafeParcelable.Field(getter = "getTypeOut", m789id = 4)
+        @SafeParcelable.Field(getter = "getTypeOut", m775id = 4)
         protected final int zac;
-        @SafeParcelable.Field(getter = "isTypeOutArray", m789id = 5)
+        @SafeParcelable.Field(getter = "isTypeOutArray", m775id = 5)
         protected final boolean zad;
-        @SafeParcelable.Field(getter = "getOutputFieldName", m789id = 6)
+        @SafeParcelable.Field(getter = "getOutputFieldName", m775id = 6)
         protected final String zae;
-        @SafeParcelable.Field(getter = "getSafeParcelableFieldId", m789id = 7)
+        @SafeParcelable.Field(getter = "getSafeParcelableFieldId", m775id = 7)
         protected final int zaf;
         protected final Class zag;
-        @SafeParcelable.Field(getter = "getConcreteTypeName", m789id = 8)
+        @SafeParcelable.Field(getter = "getConcreteTypeName", m775id = 8)
         protected final String zah;
-        @SafeParcelable.VersionField(getter = "getVersionCode", m786id = 1)
+        @SafeParcelable.VersionField(getter = "getVersionCode", m772id = 1)
         private final int zai;
         private zan zaj;
-        @SafeParcelable.Field(getter = "getWrappedConverter", m789id = 9, type = "com.google.android.gms.common.server.converter.ConverterWrapper")
+        @SafeParcelable.Field(getter = "getWrappedConverter", m775id = 9, type = "com.google.android.gms.common.server.converter.ConverterWrapper")
         private FieldConverter zak;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         @SafeParcelable.Constructor
-        public Field(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) int i2, @SafeParcelable.Param(m788id = 3) boolean z, @SafeParcelable.Param(m788id = 4) int i3, @SafeParcelable.Param(m788id = 5) boolean z2, @SafeParcelable.Param(m788id = 6) String str, @SafeParcelable.Param(m788id = 7) int i4, @SafeParcelable.Param(m788id = 8) String str2, @SafeParcelable.Param(m788id = 9) com.google.android.gms.common.server.converter.zaa zaaVar) {
+        public Field(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) int i2, @SafeParcelable.Param(m774id = 3) boolean z, @SafeParcelable.Param(m774id = 4) int i3, @SafeParcelable.Param(m774id = 5) boolean z2, @SafeParcelable.Param(m774id = 6) String str, @SafeParcelable.Param(m774id = 7) int i4, @SafeParcelable.Param(m774id = 8) String str2, @SafeParcelable.Param(m774id = 9) com.google.android.gms.common.server.converter.zaa zaaVar) {
             this.zai = i;
             this.zaa = i2;
             this.zab = z;

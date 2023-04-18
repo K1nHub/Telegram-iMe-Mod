@@ -1,14 +1,18 @@
 package com.iMe.storage.domain.model.crypto.swap;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.storage.data.utils.extentions.DateExtKt;
+import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.wallet.swap.SwapMethod;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
 import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.utils.extentions.model.TokenInfoExtKt;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapArgs.kt */
@@ -78,7 +82,7 @@ public abstract class SwapArgs implements TransactionArgs {
         private final long chainId;
         private final String contractAddress;
         private final String data;
-        private final int deadline;
+        private final int deadlineMinutes;
         private final BigInteger gasLimit;
         private final BigInteger gasPrice;
         private final TokenInfo.Crypto.Ethereum inputToken;
@@ -109,7 +113,7 @@ public abstract class SwapArgs implements TransactionArgs {
         }
 
         public final int component13() {
-            return this.deadline;
+            return this.deadlineMinutes;
         }
 
         public final BigInteger component14() {
@@ -189,19 +193,19 @@ public abstract class SwapArgs implements TransactionArgs {
             }
             if (obj instanceof Dex) {
                 Dex dex = (Dex) obj;
-                return getSwapProtocol() == dex.getSwapProtocol() && Intrinsics.areEqual(getAmount(), dex.getAmount()) && Intrinsics.areEqual(getInputToken(), dex.getInputToken()) && Intrinsics.areEqual(getOutputToken(), dex.getOutputToken()) && getChainId() == dex.getChainId() && Intrinsics.areEqual(getNonce(), dex.getNonce()) && Intrinsics.areEqual(getGasPrice(), dex.getGasPrice()) && Intrinsics.areEqual(getGasLimit(), dex.getGasLimit()) && Intrinsics.areEqual(this.amountOutBound, dex.amountOutBound) && Intrinsics.areEqual(this.contractAddress, dex.contractAddress) && this.swapMethod == dex.swapMethod && Intrinsics.areEqual(this.path, dex.path) && this.deadline == dex.deadline && Intrinsics.areEqual(this.value, dex.value) && Intrinsics.areEqual(this.data, dex.data) && Intrinsics.areEqual(this.quoteId, dex.quoteId) && this.networkType == dex.networkType && this.outputNetworkType == dex.outputNetworkType;
+                return getSwapProtocol() == dex.getSwapProtocol() && Intrinsics.areEqual(getAmount(), dex.getAmount()) && Intrinsics.areEqual(getInputToken(), dex.getInputToken()) && Intrinsics.areEqual(getOutputToken(), dex.getOutputToken()) && getChainId() == dex.getChainId() && Intrinsics.areEqual(getNonce(), dex.getNonce()) && Intrinsics.areEqual(getGasPrice(), dex.getGasPrice()) && Intrinsics.areEqual(getGasLimit(), dex.getGasLimit()) && Intrinsics.areEqual(this.amountOutBound, dex.amountOutBound) && Intrinsics.areEqual(this.contractAddress, dex.contractAddress) && this.swapMethod == dex.swapMethod && Intrinsics.areEqual(this.path, dex.path) && this.deadlineMinutes == dex.deadlineMinutes && Intrinsics.areEqual(this.value, dex.value) && Intrinsics.areEqual(this.data, dex.data) && Intrinsics.areEqual(this.quoteId, dex.quoteId) && this.networkType == dex.networkType && this.outputNetworkType == dex.outputNetworkType;
             }
             return false;
         }
 
         public int hashCode() {
-            int hashCode = ((((((((((((((((((((((((((((((((getSwapProtocol().hashCode() * 31) + getAmount().hashCode()) * 31) + getInputToken().hashCode()) * 31) + getOutputToken().hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(getChainId())) * 31) + getNonce().hashCode()) * 31) + getGasPrice().hashCode()) * 31) + getGasLimit().hashCode()) * 31) + this.amountOutBound.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.swapMethod.hashCode()) * 31) + this.path.hashCode()) * 31) + this.deadline) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31) + this.quoteId.hashCode()) * 31) + this.networkType.hashCode()) * 31;
+            int hashCode = ((((((((((((((((((((((((((((((((getSwapProtocol().hashCode() * 31) + getAmount().hashCode()) * 31) + getInputToken().hashCode()) * 31) + getOutputToken().hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(getChainId())) * 31) + getNonce().hashCode()) * 31) + getGasPrice().hashCode()) * 31) + getGasLimit().hashCode()) * 31) + this.amountOutBound.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.swapMethod.hashCode()) * 31) + this.path.hashCode()) * 31) + this.deadlineMinutes) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31) + this.quoteId.hashCode()) * 31) + this.networkType.hashCode()) * 31;
             NetworkType networkType = this.outputNetworkType;
             return hashCode + (networkType == null ? 0 : networkType.hashCode());
         }
 
         public String toString() {
-            return "Dex(swapProtocol=" + getSwapProtocol() + ", amount=" + getAmount() + ", inputToken=" + getInputToken() + ", outputToken=" + getOutputToken() + ", chainId=" + getChainId() + ", nonce=" + getNonce() + ", gasPrice=" + getGasPrice() + ", gasLimit=" + getGasLimit() + ", amountOutBound=" + this.amountOutBound + ", contractAddress=" + this.contractAddress + ", swapMethod=" + this.swapMethod + ", path=" + this.path + ", deadline=" + this.deadline + ", value=" + this.value + ", data=" + this.data + ", quoteId=" + this.quoteId + ", networkType=" + this.networkType + ", outputNetworkType=" + this.outputNetworkType + ')';
+            return "Dex(swapProtocol=" + getSwapProtocol() + ", amount=" + getAmount() + ", inputToken=" + getInputToken() + ", outputToken=" + getOutputToken() + ", chainId=" + getChainId() + ", nonce=" + getNonce() + ", gasPrice=" + getGasPrice() + ", gasLimit=" + getGasLimit() + ", amountOutBound=" + this.amountOutBound + ", contractAddress=" + this.contractAddress + ", swapMethod=" + this.swapMethod + ", path=" + this.path + ", deadlineMinutes=" + this.deadlineMinutes + ", value=" + this.value + ", data=" + this.data + ", quoteId=" + this.quoteId + ", networkType=" + this.networkType + ", outputNetworkType=" + this.outputNetworkType + ')';
         }
 
         @Override // com.iMe.storage.domain.model.crypto.swap.SwapArgs
@@ -260,8 +264,8 @@ public abstract class SwapArgs implements TransactionArgs {
             return this.path;
         }
 
-        public final int getDeadline() {
-            return this.deadline;
+        public final int getDeadlineMinutes() {
+            return this.deadlineMinutes;
         }
 
         public final BigInteger getValue() {
@@ -314,12 +318,22 @@ public abstract class SwapArgs implements TransactionArgs {
             this.contractAddress = contractAddress;
             this.swapMethod = swapMethod;
             this.path = path;
-            this.deadline = i;
+            this.deadlineMinutes = i;
             this.value = value;
             this.data = data;
             this.quoteId = quoteId;
             this.networkType = networkType;
             this.outputNetworkType = networkType2;
+        }
+
+        public final BigInteger getConvertedAmount() {
+            return NumberExtKt.convertToWei(getAmount(), TokenInfoExtKt.getWeiConvertUnit(getInputToken(), this.networkType));
+        }
+
+        public final BigInteger getDeadline() {
+            BigInteger valueOf = BigInteger.valueOf(TimeUnit.MILLISECONDS.toSeconds(DateExtKt.now()) + TimeUnit.MINUTES.toSeconds(this.deadlineMinutes));
+            Intrinsics.checkNotNullExpressionValue(valueOf, "valueOf(this)");
+            return valueOf;
         }
     }
 }

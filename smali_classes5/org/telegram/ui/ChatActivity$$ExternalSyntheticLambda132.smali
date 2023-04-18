@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/widget/PopupWindow$OnDismissListener;
+.implements Landroidx/core/util/Consumer;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final onDismiss()V
+.method public final accept(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda132;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$S7E7DrlA4n3lcmXs5beMV8kaJXc(Lorg/telegram/ui/ChatActivity;)V
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$q9RAbkdb0ea6uc6Ava6q1KhNzSI(Lorg/telegram/ui/ChatActivity;Ljava/lang/Integer;)V
 
     return-void
 .end method

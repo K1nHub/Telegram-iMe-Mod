@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/tabs/CatalogView$$State;)V
     .locals 1
 
-    .line 128
+    .line 146
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onSetupNavigationRouter"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/catalog/tabs/CatalogView;)V
     .locals 0
 
-    .line 133
+    .line 151
     invoke-interface {p1}, Lcom/iMe/ui/catalog/tabs/CatalogView;->onSetupNavigationRouter()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 126
+    .line 144
     check-cast p1, Lcom/iMe/ui/catalog/tabs/CatalogView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/tabs/CatalogView$$State$OnSetupNavigationRouterCommand;->apply(Lcom/iMe/ui/catalog/tabs/CatalogView;)V

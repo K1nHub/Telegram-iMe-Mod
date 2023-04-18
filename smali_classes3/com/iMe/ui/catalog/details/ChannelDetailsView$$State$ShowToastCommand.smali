@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 240
+    .line 258
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showToast"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 242
+    .line 260
     iput-object p2, p0, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/catalog/details/ChannelDetailsView;)V
     .locals 1
 
-    .line 247
+    .line 265
     iget-object v0, p0, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 236
+    .line 254
     check-cast p1, Lcom/iMe/ui/catalog/details/ChannelDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$ShowToastCommand;->apply(Lcom/iMe/ui/catalog/details/ChannelDetailsView;)V

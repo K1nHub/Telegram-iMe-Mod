@@ -11,17 +11,17 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class LoyaltyPointsBalance extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LoyaltyPointsBalance> CREATOR = new zzi();
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     int zza;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     String zzb;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     double zzc;
-    @SafeParcelable.Field(m789id = 5)
+    @SafeParcelable.Field(m775id = 5)
     String zzd;
-    @SafeParcelable.Field(m789id = 6)
+    @SafeParcelable.Field(m775id = 6)
     long zze;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.wallet.wobs.LoyaltyPointsBalance.Type.UNDEFINED", m789id = 7)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.wallet.wobs.LoyaltyPointsBalance.Type.UNDEFINED", m775id = 7)
     int zzf;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
@@ -122,7 +122,7 @@ public final class LoyaltyPointsBalance extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public LoyaltyPointsBalance(@SafeParcelable.Param(m788id = 2) int i, @SafeParcelable.Param(m788id = 3) String str, @SafeParcelable.Param(m788id = 4) double d, @SafeParcelable.Param(m788id = 5) String str2, @SafeParcelable.Param(m788id = 6) long j, @SafeParcelable.Param(m788id = 7) int i2) {
+    public LoyaltyPointsBalance(@SafeParcelable.Param(m774id = 2) int i, @SafeParcelable.Param(m774id = 3) String str, @SafeParcelable.Param(m774id = 4) double d, @SafeParcelable.Param(m774id = 5) String str2, @SafeParcelable.Param(m774id = 6) long j, @SafeParcelable.Param(m774id = 7) int i2) {
         this.zza = i;
         this.zzb = str;
         this.zzc = d;

@@ -57,7 +57,7 @@ public class VerticalWidgetRun extends WidgetRun {
 
     /* renamed from: androidx.constraintlayout.core.widgets.analyzer.VerticalWidgetRun$1 */
     /* loaded from: classes.dex */
-    static /* synthetic */ class C01081 {
+    static /* synthetic */ class C01041 {
 
         /* renamed from: $SwitchMap$androidx$constraintlayout$core$widgets$analyzer$WidgetRun$RunType */
         static final /* synthetic */ int[] f28x56910102;
@@ -88,7 +88,7 @@ public class VerticalWidgetRun extends WidgetRun {
         float f2;
         int i;
         ConstraintWidget constraintWidget;
-        int i2 = C01081.f28x56910102[this.mRunType.ordinal()];
+        int i2 = C01041.f28x56910102[this.mRunType.ordinal()];
         if (i2 == 1) {
             updateRunStart(dependency);
         } else if (i2 == 2) {

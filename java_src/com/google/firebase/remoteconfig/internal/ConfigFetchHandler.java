@@ -52,6 +52,10 @@ public class ConfigFetchHandler {
         this.customHttpHeaders = map;
     }
 
+    public Task<FetchResponse> fetch() {
+        return fetch(this.frcMetadata.getMinimumFetchIntervalInSeconds());
+    }
+
     public Task<FetchResponse> fetch(final long j) {
         return this.fetchedConfigsCache.get().continueWithTask(this.executor, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigFetchHandler$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation

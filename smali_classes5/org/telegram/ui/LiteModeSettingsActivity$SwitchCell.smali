@@ -54,34 +54,34 @@
 
     move-object/from16 v2, p2
 
-    .line 405
+    .line 410
     iput-object v1, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
-    .line 406
+    .line 411
     invoke-direct {v0, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v3, 0x1
 
-    .line 408
+    .line 413
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
     const-string v4, "windowBackgroundWhite"
 
-    .line 409
+    .line 414
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v5
 
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 411
+    .line 416
     new-instance v5, Landroid/widget/ImageView;
 
     invoke-direct {v5, v2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->imageView:Landroid/widget/ImageView;
 
-    .line 412
+    .line 417
     new-instance v6, Landroid/graphics/PorterDuffColorFilter;
 
     const-string v7, "windowBackgroundWhiteGrayIcon"
@@ -96,14 +96,14 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 413
+    .line 418
     iget-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->imageView:Landroid/widget/ImageView;
 
     const/16 v6, 0x8
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 414
+    .line 419
     iget-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->imageView:Landroid/widget/ImageView;
 
     sget-boolean v7, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -144,36 +144,36 @@
 
     invoke-virtual {v0, v5, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 416
+    .line 421
     new-instance v5, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell$1;
 
     invoke-direct {v5, v0, v2, v1}, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell$1;-><init>(Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;Landroid/content/Context;Lorg/telegram/ui/LiteModeSettingsActivity;)V
 
     iput-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
 
-    .line 425
+    .line 430
     invoke-virtual {v5, v3}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 426
+    .line 431
     iget-object v1, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 427
+    .line 432
     iget-object v1, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
 
     sget-object v5, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 428
+    .line 433
     iget-object v1, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
 
     const/high16 v5, 0x41800000    # 16.0f
 
     invoke-virtual {v1, v3, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 429
+    .line 434
     iget-object v1, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
 
     const-string v5, "windowBackgroundWhiteBlackText"
@@ -184,7 +184,7 @@
 
     invoke-virtual {v1, v7}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 430
+    .line 435
     iget-object v1, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
 
     sget-boolean v7, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -201,14 +201,14 @@
     :goto_1
     invoke-virtual {v1, v7}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 431
+    .line 436
     iget-object v1, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
 
     const/4 v7, 0x2
 
     invoke-virtual {v1, v7}, Landroid/widget/TextView;->setImportantForAccessibility(I)V
 
-    .line 433
+    .line 438
     new-instance v11, Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/4 v1, 0x0
@@ -223,12 +223,12 @@
 
     const-wide/16 v15, 0xc8
 
-    .line 434
+    .line 439
     sget-object v17, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual/range {v11 .. v17}, Lorg/telegram/ui/Components/AnimatedTextView;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 435
+    .line 440
     iget-object v11, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->countTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const-string v12, "fonts/rmedium.ttf"
@@ -239,7 +239,7 @@
 
     invoke-virtual {v11, v12}, Lorg/telegram/ui/Components/AnimatedTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 436
+    .line 441
     iget-object v11, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->countTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v12, 0xe
@@ -252,7 +252,7 @@
 
     invoke-virtual {v11, v12}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 437
+    .line 442
     iget-object v11, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->countTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -261,22 +261,22 @@
 
     invoke-virtual {v11, v12}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 438
+    .line 443
     iget-object v11, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->countTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v11, v7}, Landroid/view/View;->setImportantForAccessibility(I)V
 
-    .line 440
+    .line 445
     new-instance v11, Landroid/widget/ImageView;
 
     invoke-direct {v11, v2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v11, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->arrowView:Landroid/widget/ImageView;
 
-    .line 441
+    .line 446
     invoke-virtual {v11, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 442
+    .line 447
     iget-object v11, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->arrowView:Landroid/widget/ImageView;
 
     new-instance v12, Landroid/graphics/PorterDuffColorFilter;
@@ -291,24 +291,24 @@
 
     invoke-virtual {v11, v12}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 443
+    .line 448
     iget-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->arrowView:Landroid/widget/ImageView;
 
     sget v11, Lorg/telegram/messenger/R$drawable;->arrow_more:I
 
     invoke-virtual {v5, v11}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 445
+    .line 450
     new-instance v5, Landroid/widget/LinearLayout;
 
     invoke-direct {v5, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textViewLayout:Landroid/widget/LinearLayout;
 
-    .line 446
+    .line 451
     invoke-virtual {v5, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 447
+    .line 452
     iget-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textViewLayout:Landroid/widget/LinearLayout;
 
     sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -325,14 +325,14 @@
     :goto_2
     invoke-virtual {v5, v11}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 448
+    .line 453
     sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/4 v11, -0x2
 
     if-eqz v5, :cond_3
 
-    .line 449
+    .line 454
     iget-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textViewLayout:Landroid/widget/LinearLayout;
 
     iget-object v12, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->arrowView:Landroid/widget/ImageView;
@@ -359,7 +359,7 @@
 
     invoke-virtual {v5, v12, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 450
+    .line 455
     iget-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textViewLayout:Landroid/widget/LinearLayout;
 
     iget-object v12, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->countTextView:Lorg/telegram/ui/Components/AnimatedTextView;
@@ -374,7 +374,7 @@
 
     invoke-virtual {v5, v12, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 451
+    .line 456
     iget-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textViewLayout:Landroid/widget/LinearLayout;
 
     iget-object v12, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
@@ -387,7 +387,7 @@
 
     goto :goto_3
 
-    .line 453
+    .line 458
     :cond_3
     iget-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textViewLayout:Landroid/widget/LinearLayout;
 
@@ -399,7 +399,7 @@
 
     invoke-virtual {v5, v12, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 454
+    .line 459
     iget-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textViewLayout:Landroid/widget/LinearLayout;
 
     iget-object v11, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->countTextView:Lorg/telegram/ui/Components/AnimatedTextView;
@@ -426,7 +426,7 @@
 
     invoke-virtual {v5, v11, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 455
+    .line 460
     iget-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textViewLayout:Landroid/widget/LinearLayout;
 
     iget-object v11, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->arrowView:Landroid/widget/ImageView;
@@ -443,7 +443,7 @@
 
     invoke-virtual {v5, v11, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 457
+    .line 462
     :goto_3
     iget-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textViewLayout:Landroid/widget/LinearLayout;
 
@@ -479,17 +479,17 @@
 
     invoke-virtual {v0, v5, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 459
+    .line 464
     new-instance v5, Lorg/telegram/ui/Components/Switch;
 
     invoke-direct {v5, v2}, Lorg/telegram/ui/Components/Switch;-><init>(Landroid/content/Context;)V
 
     iput-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->switchView:Lorg/telegram/ui/Components/Switch;
 
-    .line 460
+    .line 465
     invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 461
+    .line 466
     iget-object v5, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->switchView:Lorg/telegram/ui/Components/Switch;
 
     const-string v11, "switchTrack"
@@ -498,12 +498,12 @@
 
     invoke-virtual {v5, v11, v12, v4, v4}, Lorg/telegram/ui/Components/Switch;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 462
+    .line 467
     iget-object v4, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->switchView:Lorg/telegram/ui/Components/Switch;
 
     invoke-virtual {v4, v7}, Landroid/view/View;->setImportantForAccessibility(I)V
 
-    .line 463
+    .line 468
     iget-object v4, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->switchView:Lorg/telegram/ui/Components/Switch;
 
     const/16 v11, 0x25
@@ -538,7 +538,7 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 465
+    .line 470
     new-instance v4, Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 v5, 0x15
@@ -553,37 +553,37 @@
 
     const-string v11, "checkboxCheck"
 
-    .line 466
+    .line 471
     invoke-virtual {v4, v2, v5, v11}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 467
+    .line 472
     iget-object v2, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/CheckBox2;->setDrawUnchecked(Z)V
 
-    .line 468
+    .line 473
     iget-object v2, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v2, v3, v1}, Lorg/telegram/ui/Components/CheckBox2;->setChecked(ZZ)V
 
-    .line 469
+    .line 474
     iget-object v2, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 v4, 0xa
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
-    .line 470
+    .line 475
     iget-object v2, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v2, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 471
+    .line 476
     iget-object v2, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v2, v7}, Landroid/view/View;->setImportantForAccessibility(I)V
 
-    .line 472
+    .line 477
     iget-object v2, v0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 v11, 0x15
@@ -634,7 +634,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 474
+    .line 479
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
     return-void
@@ -643,7 +643,7 @@
 .method private preprocessFlagsCount(I)I
     .locals 3
 
-    .line 567
+    .line 572
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
@@ -654,7 +654,7 @@
 
     move-result v0
 
-    .line 568
+    .line 573
     invoke-static {p1}, Ljava/lang/Integer;->bitCount(I)I
 
     move-result v1
@@ -703,7 +703,7 @@
     :goto_0
     add-int/lit8 v1, v1, -0x1
 
-    .line 584
+    .line 589
     :cond_5
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
@@ -728,7 +728,7 @@
 
     const/4 v0, 0x1
 
-    .line 561
+    .line 566
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->getValue(Z)I
 
     move-result v1
@@ -743,7 +743,7 @@
 
     iput v1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->enabled:I
 
-    .line 562
+    .line 567
     iget p1, p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->flags:I
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->preprocessFlagsCount(I)I
@@ -752,7 +752,7 @@
 
     iput p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->all:I
 
-    .line 563
+    .line 568
     iget-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->countTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/4 v1, 0x2
@@ -805,10 +805,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 592
+    .line 597
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 593
+    .line 598
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v1, 0x40
@@ -823,19 +823,19 @@
 
     if-eqz v0, :cond_2
 
-    .line 594
+    .line 599
     iget-boolean v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->needLine:Z
 
     if-eqz v0, :cond_0
 
-    .line 595
+    .line 600
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     int-to-float v9, v0
 
-    .line 596
+    .line 601
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v0
@@ -878,13 +878,13 @@
 
     invoke-virtual/range {v6 .. v11}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 598
+    .line 603
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->needDivider:Z
 
     if-eqz v0, :cond_4
 
-    .line 599
+    .line 604
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -949,13 +949,13 @@
 
     goto :goto_1
 
-    .line 602
+    .line 607
     :cond_2
     iget-boolean v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->needLine:Z
 
     if-eqz v0, :cond_3
 
-    .line 603
+    .line 608
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -968,7 +968,7 @@
 
     int-to-float v9, v0
 
-    .line 604
+    .line 609
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v0
@@ -1011,13 +1011,13 @@
 
     invoke-virtual/range {v6 .. v11}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 606
+    .line 611
     :cond_3
     iget-boolean v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->needDivider:Z
 
     if-eqz v0, :cond_4
 
-    .line 607
+    .line 612
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1068,10 +1068,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 6
 
-    .line 614
+    .line 619
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 615
+    .line 620
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -1092,13 +1092,13 @@
 
     const/4 v0, 0x1
 
-    .line 616
+    .line 621
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 617
+    .line 622
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 618
+    .line 623
     iget-object v1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
@@ -1107,7 +1107,7 @@
 
     if-nez v1, :cond_1
 
-    .line 619
+    .line 624
     iget-object v1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/CheckBox2;->isChecked()Z
@@ -1118,7 +1118,7 @@
 
     goto :goto_1
 
-    .line 621
+    .line 626
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->switchView:Lorg/telegram/ui/Components/Switch;
 
@@ -1128,13 +1128,13 @@
 
     invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setChecked(Z)V
 
-    .line 623
+    .line 628
     :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 624
+    .line 629
     iget-object v2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -1143,17 +1143,17 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 625
+    .line 630
     iget-boolean v2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->containing:Z
 
     if-eqz v2, :cond_2
 
     const/16 v2, 0xa
 
-    .line 626
+    .line 631
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 627
+    .line 632
     sget v2, Lorg/telegram/messenger/R$string;->Of:I
 
     const/4 v3, 0x2
@@ -1186,7 +1186,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 629
+    .line 634
     :cond_2
     invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
 
@@ -1196,7 +1196,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 499
+    .line 504
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -1209,7 +1209,7 @@
 
     const/16 v0, 0x32
 
-    .line 500
+    .line 505
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1218,7 +1218,7 @@
 
     move-result p2
 
-    .line 498
+    .line 503
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -1227,7 +1227,7 @@
 .method public set(Lorg/telegram/ui/LiteModeSettingsActivity$Item;Z)V
     .locals 7
 
-    .line 505
+    .line 510
     iget v0, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     const/4 v1, 0x3
@@ -1240,31 +1240,31 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 506
+    .line 511
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 507
+    .line 512
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 508
+    .line 513
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->imageView:Landroid/widget/ImageView;
 
     iget v5, p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->iconResId:I
 
     invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 509
+    .line 514
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
 
     iget-object v5, p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->text:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 510
+    .line 515
     invoke-virtual {p1}, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->getFlagsCount()I
 
     move-result v0
@@ -1283,33 +1283,33 @@
 
     if-eqz v0, :cond_1
 
-    .line 511
+    .line 516
     invoke-direct {p0, p1, v4}, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->updateCount(Lorg/telegram/ui/LiteModeSettingsActivity$Item;Z)V
 
-    .line 512
+    .line 517
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->countTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 513
+    .line 518
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->arrowView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_1
 
-    .line 515
+    .line 520
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->countTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 516
+    .line 521
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->arrowView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 518
+    .line 523
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
 
@@ -1317,12 +1317,12 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 519
+    .line 524
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->switchView:Lorg/telegram/ui/Components/Switch;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 520
+    .line 525
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->switchView:Lorg/telegram/ui/Components/Switch;
 
     iget v5, p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->flags:I
@@ -1333,7 +1333,7 @@
 
     invoke-virtual {v0, v5, v4}, Lorg/telegram/ui/Components/Switch;->setChecked(ZZ)V
 
-    .line 521
+    .line 526
     invoke-virtual {p1}, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->getFlagsCount()I
 
     move-result v0
@@ -1352,13 +1352,13 @@
 
     goto :goto_4
 
-    .line 523
+    .line 528
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 524
+    .line 529
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     iget v5, p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->flags:I
@@ -1369,34 +1369,34 @@
 
     invoke-virtual {v0, v5, v4}, Lorg/telegram/ui/Components/CheckBox2;->setChecked(ZZ)V
 
-    .line 525
+    .line 530
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 526
+    .line 531
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->switchView:Lorg/telegram/ui/Components/Switch;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 527
+    .line 532
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->countTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 528
+    .line 533
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->arrowView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 529
+    .line 534
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
 
     iget-object v5, p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->text:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 530
+    .line 535
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textView:Landroid/widget/TextView;
 
     const/16 v5, 0x29
@@ -1423,13 +1423,13 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 531
+    .line 536
     iput-boolean v4, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->containing:Z
 
-    .line 532
+    .line 537
     iput-boolean v4, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->needLine:Z
 
-    .line 535
+    .line 540
     :goto_4
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textViewLayout:Landroid/widget/LinearLayout;
 
@@ -1464,7 +1464,7 @@
 
     iput p1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 537
+    .line 542
     iput-boolean p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->needDivider:Z
 
     if-nez p2, :cond_7
@@ -1481,7 +1481,7 @@
     :goto_6
     invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 538
+    .line 543
     invoke-static {}, Lorg/telegram/messenger/LiteMode;->isPowerSaverApplied()Z
 
     move-result p1
@@ -1494,12 +1494,12 @@
 .method public setDisabled(ZZ)V
     .locals 5
 
-    .line 479
+    .line 484
     iget-boolean v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->disabled:Z
 
     if-eq v0, p1, :cond_9
 
-    .line 480
+    .line 485
     iput-boolean p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->disabled:Z
 
     const/high16 v0, 0x3f000000    # 0.5f
@@ -1508,7 +1508,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 482
+    .line 487
     iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {p2}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1537,7 +1537,7 @@
 
     invoke-virtual {p2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 483
+    .line 488
     iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textViewLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p2}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1564,7 +1564,7 @@
 
     invoke-virtual {p2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 484
+    .line 489
     iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->switchView:Lorg/telegram/ui/Components/Switch;
 
     invoke-virtual {p2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1591,7 +1591,7 @@
 
     invoke-virtual {p2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 485
+    .line 490
     iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {p2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1618,7 +1618,7 @@
 
     goto :goto_8
 
-    .line 487
+    .line 492
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->imageView:Landroid/widget/ImageView;
 
@@ -1634,7 +1634,7 @@
     :goto_4
     invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 488
+    .line 493
     iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->textViewLayout:Landroid/widget/LinearLayout;
 
     if-eqz p1, :cond_6
@@ -1649,7 +1649,7 @@
     :goto_5
     invoke-virtual {p2, v2}, Landroid/widget/LinearLayout;->setAlpha(F)V
 
-    .line 489
+    .line 494
     iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->switchView:Lorg/telegram/ui/Components/Switch;
 
     if-eqz p1, :cond_7
@@ -1664,7 +1664,7 @@
     :goto_6
     invoke-virtual {p2, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 490
+    .line 495
     iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
     if-eqz p1, :cond_8
@@ -1680,7 +1680,7 @@
     :goto_8
     xor-int/lit8 p1, p1, 0x1
 
-    .line 492
+    .line 497
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
     :cond_9
@@ -1690,7 +1690,7 @@
 .method public update(Lorg/telegram/ui/LiteModeSettingsActivity$Item;)V
     .locals 4
 
-    .line 542
+    .line 547
     iget v0, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     const/4 v1, 0x1
@@ -1699,7 +1699,7 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 543
+    .line 548
     invoke-virtual {p1}, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->getFlagsCount()I
 
     move-result v0
@@ -1718,10 +1718,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 544
+    .line 549
     invoke-direct {p0, p1, v1}, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->updateCount(Lorg/telegram/ui/LiteModeSettingsActivity$Item;Z)V
 
-    .line 545
+    .line 550
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
     iget v2, p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->flags:I
@@ -1730,12 +1730,12 @@
 
     move-result v0
 
-    .line 546
+    .line 551
     iget-object v2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->arrowView:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/widget/ImageView;->clearAnimation()V
 
-    .line 547
+    .line 552
     iget-object v2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->arrowView:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1780,7 +1780,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 549
+    .line 554
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->switchView:Lorg/telegram/ui/Components/Switch;
 
@@ -1794,7 +1794,7 @@
 
     goto :goto_2
 
-    .line 551
+    .line 556
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->checkBoxView:Lorg/telegram/ui/Components/CheckBox2;
 
@@ -1806,7 +1806,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/CheckBox2;->setChecked(ZZ)V
 
-    .line 554
+    .line 559
     :goto_2
     invoke-static {}, Lorg/telegram/messenger/LiteMode;->isPowerSaverApplied()Z
 

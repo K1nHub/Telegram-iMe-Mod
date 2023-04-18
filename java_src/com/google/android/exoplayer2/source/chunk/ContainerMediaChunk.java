@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.chunk;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.DefaultExtractorInput;
 import com.google.android.exoplayer2.source.chunk.ChunkExtractor;
@@ -52,9 +52,9 @@ public class ContainerMediaChunk extends BaseMediaChunk {
             ChunkExtractor chunkExtractor = this.chunkExtractor;
             ChunkExtractor.TrackOutputProvider trackOutputProvider = getTrackOutputProvider(output);
             long j = this.clippedStartTimeUs;
-            long j2 = j == C0482C.TIME_UNSET ? -9223372036854775807L : j - this.sampleOffsetUs;
+            long j2 = j == C0470C.TIME_UNSET ? -9223372036854775807L : j - this.sampleOffsetUs;
             long j3 = this.clippedEndTimeUs;
-            chunkExtractor.init(trackOutputProvider, j2, j3 == C0482C.TIME_UNSET ? -9223372036854775807L : j3 - this.sampleOffsetUs);
+            chunkExtractor.init(trackOutputProvider, j2, j3 == C0470C.TIME_UNSET ? -9223372036854775807L : j3 - this.sampleOffsetUs);
         }
         try {
             DataSpec subrange = this.dataSpec.subrange(this.nextLoadPosition);

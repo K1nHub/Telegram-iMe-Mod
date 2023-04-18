@@ -58,7 +58,7 @@ public class WatchChangeAggregator {
         for (Integer num : getTargetIds(watchTargetChange)) {
             int intValue = num.intValue();
             TargetState ensureTargetState = ensureTargetState(intValue);
-            int i = C10421.f194x3bf9e295[watchTargetChange.getChangeType().ordinal()];
+            int i = C10271.f191x3bf9e295[watchTargetChange.getChangeType().ordinal()];
             if (i != 1) {
                 if (i == 2) {
                     ensureTargetState.recordTargetResponse();
@@ -95,32 +95,32 @@ public class WatchChangeAggregator {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.remote.WatchChangeAggregator$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10421 {
+    public static /* synthetic */ class C10271 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$remote$WatchChange$WatchTargetChangeType */
-        static final /* synthetic */ int[] f194x3bf9e295;
+        static final /* synthetic */ int[] f191x3bf9e295;
 
         static {
             int[] iArr = new int[WatchChange.WatchTargetChangeType.values().length];
-            f194x3bf9e295 = iArr;
+            f191x3bf9e295 = iArr;
             try {
                 iArr[WatchChange.WatchTargetChangeType.NoChange.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f194x3bf9e295[WatchChange.WatchTargetChangeType.Added.ordinal()] = 2;
+                f191x3bf9e295[WatchChange.WatchTargetChangeType.Added.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f194x3bf9e295[WatchChange.WatchTargetChangeType.Removed.ordinal()] = 3;
+                f191x3bf9e295[WatchChange.WatchTargetChangeType.Removed.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f194x3bf9e295[WatchChange.WatchTargetChangeType.Current.ordinal()] = 4;
+                f191x3bf9e295[WatchChange.WatchTargetChangeType.Current.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f194x3bf9e295[WatchChange.WatchTargetChangeType.Reset.ordinal()] = 5;
+                f191x3bf9e295[WatchChange.WatchTargetChangeType.Reset.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
         }

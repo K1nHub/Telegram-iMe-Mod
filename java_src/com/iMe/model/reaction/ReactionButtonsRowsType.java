@@ -1,12 +1,12 @@
 package com.iMe.model.reaction;
 
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 /* compiled from: ReactionButtonsRowsType.kt */
 /* loaded from: classes3.dex */
 public enum ReactionButtonsRowsType {
-    SINGLE(C3316R.string.chat_reaction_one_line),
-    TWO(C3316R.string.chat_reaction_two_lines),
-    THREE(C3316R.string.chat_reaction_three_lines);
+    SINGLE(C3242R.string.chat_reaction_one_line),
+    TWO(C3242R.string.chat_reaction_two_lines),
+    THREE(C3242R.string.chat_reaction_three_lines);
     
     private final int resource;
 

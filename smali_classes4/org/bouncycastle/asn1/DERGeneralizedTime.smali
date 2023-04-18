@@ -174,7 +174,7 @@
 
 
 # virtual methods
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -188,7 +188,7 @@
 
     const/16 v1, 0x18
 
-    invoke-virtual {p1, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(I[B)V
+    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZI[B)V
 
     return-void
 .end method
@@ -211,4 +211,16 @@
     add-int/2addr v1, v0
 
     return v1
+.end method
+
+.method toDERObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+    .locals 0
+
+    return-object p0
 .end method

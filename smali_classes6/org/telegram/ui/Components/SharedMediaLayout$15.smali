@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/content/Context;Lorg/telegram/ui/Components/RecyclerListView;)V
     .locals 0
 
-    .line 2488
+    .line 2490
     iput-object p3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$15;->val$listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ClippingImageView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 2491
+    .line 2493
     invoke-super {p0}, Landroid/view/View;->invalidate()V
 
-    .line 2492
+    .line 2494
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$15;->val$listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V

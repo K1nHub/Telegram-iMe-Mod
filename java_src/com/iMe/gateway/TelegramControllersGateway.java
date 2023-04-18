@@ -3,6 +3,7 @@ package com.iMe.gateway;
 import com.iMe.fork.controller.WalletFingerprintController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.SendMessagesHelper;
 /* compiled from: TelegramControllersGateway.kt */
 /* loaded from: classes3.dex */
@@ -16,6 +17,8 @@ public interface TelegramControllersGateway {
     MessagesController getMessagesController(int i);
 
     NotificationCenter getNotificationCenterInstance(int i);
+
+    NotificationsController getNotificationsController(int i);
 
     SendMessagesHelper getSendMessagesHelper(int i);
 
@@ -67,6 +70,16 @@ public interface TelegramControllersGateway {
                 return telegramControllersGateway.getNotificationCenterInstance(i);
             }
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: getNotificationCenterInstance");
+        }
+
+        public static /* synthetic */ NotificationsController getNotificationsController$default(TelegramControllersGateway telegramControllersGateway, int i, int i2, Object obj) {
+            if (obj == null) {
+                if ((i2 & 1) != 0) {
+                    i = -1;
+                }
+                return telegramControllersGateway.getNotificationsController(i);
+            }
+            throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: getNotificationsController");
         }
     }
 

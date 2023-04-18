@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State;Lcom/iMe/model/catalog/CampaignItem;Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/storage/domain/model/catalog/ChatType;)V
     .locals 1
 
-    .line 410
+    .line 428
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openCampaignDetailsScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 412
+    .line 430
     iput-object p2, p0, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$OpenCampaignDetailsScreenCommand;->campaign:Lcom/iMe/model/catalog/CampaignItem;
 
-    .line 413
+    .line 431
     iput-object p3, p0, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$OpenCampaignDetailsScreenCommand;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 414
+    .line 432
     iput-object p4, p0, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$OpenCampaignDetailsScreenCommand;->chatType:Lcom/iMe/storage/domain/model/catalog/ChatType;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/catalog/tabs/all/CatalogAllView;)V
     .locals 3
 
-    .line 419
+    .line 437
     iget-object v0, p0, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$OpenCampaignDetailsScreenCommand;->campaign:Lcom/iMe/model/catalog/CampaignItem;
 
     iget-object v1, p0, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$OpenCampaignDetailsScreenCommand;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 402
+    .line 420
     check-cast p1, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$OpenCampaignDetailsScreenCommand;->apply(Lcom/iMe/ui/catalog/tabs/all/CatalogAllView;)V

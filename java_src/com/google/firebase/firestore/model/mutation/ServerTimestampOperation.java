@@ -2,7 +2,7 @@ package com.google.firebase.firestore.model.mutation;
 
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.model.ServerTimestamps;
-import com.google.firestore.p022v1.Value;
+import com.google.firestore.p021v1.Value;
 /* loaded from: classes3.dex */
 public class ServerTimestampOperation implements TransformOperation {
     private static final ServerTimestampOperation SHARED_INSTANCE = new ServerTimestampOperation();

@@ -4,36 +4,21 @@
 
 
 # static fields
-.field private static final LOADER:Lcom/google/android/exoplayer2/util/LibraryLoader;
-
 .field private static cryptoType:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     const-string v0, "goog.exo.opus"
 
-    .line 27
+    .line 29
     invoke-static {v0}, Lcom/google/android/exoplayer2/ExoPlayerLibraryInfo;->registerModule(Ljava/lang/String;)V
-
-    .line 30
-    new-instance v0, Lcom/google/android/exoplayer2/ext/opus/OpusLibrary$1;
-
-    const-string v1, "opusV2JNI"
-
-    filled-new-array {v1}, [Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ext/opus/OpusLibrary$1;-><init>([Ljava/lang/String;)V
-
-    sput-object v0, Lcom/google/android/exoplayer2/ext/opus/OpusLibrary;->LOADER:Lcom/google/android/exoplayer2/util/LibraryLoader;
 
     const/4 v0, 0x1
 
-    .line 38
+    .line 32
     sput v0, Lcom/google/android/exoplayer2/ext/opus/OpusLibrary;->cryptoType:I
 
     return-void
@@ -42,7 +27,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 40
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -51,7 +36,7 @@
 .method public static getVersion()Ljava/lang/String;
     .locals 1
 
-    .line 65
+    .line 58
     invoke-static {}, Lcom/google/android/exoplayer2/ext/opus/OpusLibrary;->isAvailable()Z
 
     move-result v0
@@ -74,10 +59,8 @@
 .method public static isAvailable()Z
     .locals 1
 
-    .line 59
-    sget-object v0, Lcom/google/android/exoplayer2/ext/opus/OpusLibrary;->LOADER:Lcom/google/android/exoplayer2/util/LibraryLoader;
-
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/LibraryLoader;->isAvailable()Z
+    .line 52
+    invoke-static {}, Lorg/telegram/messenger/NativeLoader;->loaded()Z
 
     move-result v0
 
@@ -93,13 +76,8 @@
 .method public static varargs setLibraries(I[Ljava/lang/String;)V
     .locals 0
 
-    .line 53
+    .line 47
     sput p0, Lcom/google/android/exoplayer2/ext/opus/OpusLibrary;->cryptoType:I
-
-    .line 54
-    sget-object p0, Lcom/google/android/exoplayer2/ext/opus/OpusLibrary;->LOADER:Lcom/google/android/exoplayer2/util/LibraryLoader;
-
-    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/util/LibraryLoader;->setLibraries([Ljava/lang/String;)V
 
     return-void
 .end method
@@ -113,7 +91,7 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 70
+    .line 63
     sget v1, Lcom/google/android/exoplayer2/ext/opus/OpusLibrary;->cryptoType:I
 
     if-ne p0, v1, :cond_0

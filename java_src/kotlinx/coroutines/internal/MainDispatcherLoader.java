@@ -28,6 +28,7 @@ public final class MainDispatcherLoader {
         Sequence asSequence;
         List<MainDispatcherFactory> list;
         Object next;
+        MainCoroutineDispatcher tryCreateDispatcher;
         try {
             if (FAST_SERVICE_LOADER_ENABLED) {
                 list = FastServiceLoader.INSTANCE.loadMainDispatcherFactory$kotlinx_coroutines_core();
@@ -53,7 +54,7 @@ public final class MainDispatcherLoader {
                 next = null;
             }
             MainDispatcherFactory mainDispatcherFactory = (MainDispatcherFactory) next;
-            return mainDispatcherFactory == null ? MainDispatchersKt.createMissingDispatcher$default(null, null, 3, null) : MainDispatchersKt.tryCreateDispatcher(mainDispatcherFactory, list);
+            return (mainDispatcherFactory == null || (tryCreateDispatcher = MainDispatchersKt.tryCreateDispatcher(mainDispatcherFactory, list)) == null) ? MainDispatchersKt.createMissingDispatcher$default(null, null, 3, null) : tryCreateDispatcher;
         } catch (Throwable th) {
             return MainDispatchersKt.createMissingDispatcher$default(th, null, 2, null);
         }

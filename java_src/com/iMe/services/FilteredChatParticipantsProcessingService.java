@@ -25,7 +25,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -220,7 +220,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
 
     private final void buildNotification() {
         if (this.builder == null) {
-            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_FilteredChatParticipantsProcessingChannel", C3316R.C3318drawable.msg_groups, StopFilteredChatParticipantsProcessingReceiver.class);
+            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_FilteredChatParticipantsProcessingChannel", C3242R.C3244drawable.msg_groups, StopFilteredChatParticipantsProcessingReceiver.class);
         }
     }
 
@@ -236,7 +236,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             tLRPC$TL_channels_getParticipants.channel = messagesController.getInputChannel(this.chatId);
             TLRPC$ChannelParticipantsFilter serverFilter = this.participantsFilter.getServerFilter();
             tLRPC$TL_channels_getParticipants.filter = serverFilter;
-            serverFilter.f1501q = "";
+            serverFilter.f1426q = "";
             tLRPC$TL_channels_getParticipants.limit = 200;
             this.req = tLRPC$TL_channels_getParticipants;
         }
@@ -274,7 +274,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             this$0.onParticipantsPartLoaded(arrayList);
             return;
         }
-        this$0.stopServiceWithToast(C3316R.string.loading_participants_error);
+        this$0.stopServiceWithToast(C3242R.string.loading_participants_error);
     }
 
     private final void onParticipantsPartLoaded(List<? extends TLRPC$ChannelParticipant> list) {
@@ -313,7 +313,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
 
     private final void onAllParticipantsLoaded() {
         if (this.participantsFilter == GroupMembersFilter.DELETED) {
-            CollectionsKt__MutableCollectionsKt.removeAll(this.participants, C1552x82e66c83.INSTANCE);
+            CollectionsKt__MutableCollectionsKt.removeAll(this.participants, C1537x82e66c83.INSTANCE);
         }
         processNextChatParticipantsPart();
     }
@@ -327,13 +327,13 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
                 }
             });
         } else {
-            stopServiceWithToast(C3316R.string.processing_participants_success);
+            stopServiceWithToast(C3242R.string.processing_participants_success);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void processNextChatParticipantsPart$lambda$4(FilteredChatParticipantsProcessingService this$0) {
-        Function0<Unit> c1553x25afaff6;
+        Function0<Unit> c1538x25afaff6;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.updateNotification(true, State.DELETING);
         int size = this$0.participants.size();
@@ -342,15 +342,15 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
         this$0.processedParticipantsCount += subList.size();
         int i = WhenMappings.$EnumSwitchMapping$0[this$0.participantsActionType.ordinal()];
         if (i == 1) {
-            c1553x25afaff6 = new C1553x25afaff6(this$0);
+            c1538x25afaff6 = new C1538x25afaff6(this$0);
         } else if (i == 2) {
-            c1553x25afaff6 = new C1554x25afaff7(this$0);
+            c1538x25afaff6 = new C1539x25afaff7(this$0);
         } else if (i != 3) {
             throw new NoWhenBranchMatchedException();
         } else {
-            c1553x25afaff6 = new C1555x25afaff8(this$0);
+            c1538x25afaff6 = new C1540x25afaff8(this$0);
         }
-        this$0.processParticipantsPartBySingleRequests(c1553x25afaff6);
+        this$0.processParticipantsPartBySingleRequests(c1538x25afaff6);
         this$0.participants.removeAll(this$0.processingParticipants);
     }
 
@@ -414,11 +414,11 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
         }
         int i = WhenMappings.$EnumSwitchMapping$1[state.ordinal()];
         if (i == 1) {
-            formatStringInternal = LocaleController.formatStringInternal(C3316R.string.loading_participants, Integer.valueOf(this.participants.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3242R.string.loading_participants, Integer.valueOf(this.participants.size()));
         } else if (i == 2) {
-            formatStringInternal = LocaleController.formatStringInternal(C3316R.string.processing_participants, Integer.valueOf(this.processedParticipantsCount), Integer.valueOf(this.participants.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3242R.string.processing_participants, Integer.valueOf(this.processedParticipantsCount), Integer.valueOf(this.participants.size()));
         } else {
-            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3316R.string.WaitingForNetwork);
+            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3242R.string.WaitingForNetwork);
         }
         NotificationCompat.Builder builder = this.builder;
         if (builder != null) {

@@ -48,17 +48,17 @@
         }
     .end annotation
 
-    .line 345
+    .line 363
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onNestedLoadMoreItems"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 347
+    .line 365
     iput-wide p2, p0, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$OnNestedLoadMoreItemsCommand;->categoryId:J
 
-    .line 348
+    .line 366
     iput-object p4, p0, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$OnNestedLoadMoreItemsCommand;->items:Ljava/util/List;
 
     return-void
@@ -69,7 +69,7 @@
 .method public apply(Lcom/iMe/ui/catalog/tabs/all/CatalogAllView;)V
     .locals 3
 
-    .line 353
+    .line 371
     iget-wide v0, p0, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$OnNestedLoadMoreItemsCommand;->categoryId:J
 
     iget-object v2, p0, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$OnNestedLoadMoreItemsCommand;->items:Ljava/util/List;
@@ -82,7 +82,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 339
+    .line 357
     check-cast p1, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$OnNestedLoadMoreItemsCommand;->apply(Lcom/iMe/ui/catalog/tabs/all/CatalogAllView;)V

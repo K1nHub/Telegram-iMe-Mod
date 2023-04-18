@@ -1,7 +1,6 @@
 package org.koin.core.definition;
 
 import java.util.List;
-import java.util.Objects;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KClass;
@@ -58,6 +57,10 @@ public final class BeanDefinition<T> {
     public final void setSecondaryTypes(List<? extends KClass<?>> list) {
         Intrinsics.checkNotNullParameter(list, "<set-?>");
         this.secondaryTypes = list;
+    }
+
+    public final Callbacks<T> getCallbacks() {
+        return this.callbacks;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0039, code lost:
@@ -155,7 +158,7 @@ public final class BeanDefinition<T> {
         if (this == obj) {
             return true;
         }
-        Objects.requireNonNull(obj, "null cannot be cast to non-null type org.koin.core.definition.BeanDefinition<*>");
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type org.koin.core.definition.BeanDefinition<*>");
         BeanDefinition beanDefinition = (BeanDefinition) obj;
         return Intrinsics.areEqual(this.primaryType, beanDefinition.primaryType) && Intrinsics.areEqual(this.qualifier, beanDefinition.qualifier) && Intrinsics.areEqual(this.scopeQualifier, beanDefinition.scopeQualifier);
     }

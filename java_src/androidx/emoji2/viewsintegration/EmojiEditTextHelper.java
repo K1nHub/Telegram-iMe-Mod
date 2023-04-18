@@ -2,6 +2,7 @@ package androidx.emoji2.viewsintegration;
 
 import android.os.Build;
 import android.text.method.KeyListener;
+import android.text.method.NumberKeyListener;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.EditText;
@@ -72,7 +73,7 @@ public final class EmojiEditTextHelper {
             if (keyListener == null) {
                 return null;
             }
-            return new EmojiKeyListener(keyListener);
+            return keyListener instanceof NumberKeyListener ? keyListener : new EmojiKeyListener(keyListener);
         }
 
         @Override // androidx.emoji2.viewsintegration.EmojiEditTextHelper.HelperInternal

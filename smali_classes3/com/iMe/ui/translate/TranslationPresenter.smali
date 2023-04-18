@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTranslationPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TranslationPresenter.kt\ncom/iMe/ui/translate/TranslationPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,213:1\n39#2,8:214\n39#2,8:222\n39#2,8:230\n*S KotlinDebug\n*F\n+ 1 TranslationPresenter.kt\ncom/iMe/ui/translate/TranslationPresenter\n*L\n45#1:214,8\n72#1:222,8\n114#1:230,8\n*E\n"
+    value = "SMAP\nTranslationPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TranslationPresenter.kt\ncom/iMe/ui/translate/TranslationPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,203:1\n39#2,8:204\n39#2,8:212\n39#2,8:220\n*S KotlinDebug\n*F\n+ 1 TranslationPresenter.kt\ncom/iMe/ui/translate/TranslationPresenter\n*L\n45#1:204,8\n72#1:212,8\n114#1:220,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -109,7 +109,9 @@
     iput-object p1, p0, Lcom/iMe/ui/translate/TranslationPresenter;->supportedLanguages:Ljava/util/List;
 
     .line 34
-    invoke-direct {p0}, Lcom/iMe/ui/translate/TranslationPresenter;->getSourceLanguageByType()Lcom/iMe/model/translation/TranslationLanguageUiModel;
+    sget-object p1, Lcom/iMe/model/translation/TranslationLanguageUiModel;->Companion:Lcom/iMe/model/translation/TranslationLanguageUiModel$Companion;
+
+    invoke-virtual {p1, p4}, Lcom/iMe/model/translation/TranslationLanguageUiModel$Companion;->getAutoDetectionLanguage(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Lcom/iMe/model/translation/TranslationLanguageUiModel;
 
     move-result-object p1
 
@@ -239,86 +241,13 @@
     return-object v0
 .end method
 
-.method private final getSourceLanguageByType()Lcom/iMe/model/translation/TranslationLanguageUiModel;
-    .locals 3
-
-    .line 192
-    iget-object v0, p0, Lcom/iMe/ui/translate/TranslationPresenter;->args:Lcom/iMe/model/translation/TranslationArgs;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lcom/iMe/model/translation/TranslationArgs;->getType()Lcom/iMe/fork/enums/TranslationDialogType;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    sget-object v1, Lcom/iMe/fork/enums/TranslationDialogType;->REPLY:Lcom/iMe/fork/enums/TranslationDialogType;
-
-    if-ne v0, v1, :cond_3
-
-    .line 193
-    sget-object v0, Lcom/iMe/model/translation/TranslationLanguageUiModel;->Companion:Lcom/iMe/model/translation/TranslationLanguageUiModel$Companion;
-
-    .line 194
-    iget-object v1, p0, Lcom/iMe/ui/translate/TranslationPresenter;->args:Lcom/iMe/model/translation/TranslationArgs;
-
-    invoke-virtual {v1}, Lcom/iMe/model/translation/TranslationArgs;->getTranslationSettings()Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;->getOutTextTranslateLangCode()Ljava/lang/String;
-
-    move-result-object v1
-
-    if-nez v1, :cond_2
-
-    .line 195
-    :cond_1
-    invoke-direct {p0}, Lcom/iMe/ui/translate/TranslationPresenter;->getCurrentLanguage()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 196
-    :cond_2
-    invoke-direct {p0}, Lcom/iMe/ui/translate/TranslationPresenter;->getCurrentLanguage()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 193
-    invoke-virtual {v0, v1, v2}, Lcom/iMe/model/translation/TranslationLanguageUiModel$Companion;->createByLangCode(Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/model/translation/TranslationLanguageUiModel;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    .line 199
-    :cond_3
-    sget-object v0, Lcom/iMe/model/translation/TranslationLanguageUiModel;->Companion:Lcom/iMe/model/translation/TranslationLanguageUiModel$Companion;
-
-    iget-object v1, p0, Lcom/iMe/ui/translate/TranslationPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    invoke-virtual {v0, v1}, Lcom/iMe/model/translation/TranslationLanguageUiModel$Companion;->getAutoDetectionLanguage(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Lcom/iMe/model/translation/TranslationLanguageUiModel;
-
-    move-result-object v0
-
-    :goto_1
-    return-object v0
-.end method
-
 .method private final getTargetLanguageByType()Lcom/iMe/model/translation/TranslationLanguageUiModel;
     .locals 4
 
-    .line 202
+    .line 192
     sget-object v0, Lcom/iMe/model/translation/TranslationLanguageUiModel;->Companion:Lcom/iMe/model/translation/TranslationLanguageUiModel$Companion;
 
-    .line 203
+    .line 193
     iget-object v1, p0, Lcom/iMe/ui/translate/TranslationPresenter;->args:Lcom/iMe/model/translation/TranslationArgs;
 
     const/4 v2, 0x0
@@ -339,7 +268,7 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 204
+    .line 194
     iget-object v1, p0, Lcom/iMe/ui/translate/TranslationPresenter;->args:Lcom/iMe/model/translation/TranslationArgs;
 
     invoke-virtual {v1}, Lcom/iMe/model/translation/TranslationArgs;->getTranslationSettings()Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;
@@ -354,7 +283,7 @@
 
     goto :goto_1
 
-    .line 206
+    .line 196
     :cond_1
     iget-object v1, p0, Lcom/iMe/ui/translate/TranslationPresenter;->args:Lcom/iMe/model/translation/TranslationArgs;
 
@@ -368,18 +297,18 @@
     :goto_1
     if-nez v2, :cond_3
 
-    .line 207
+    .line 197
     invoke-direct {p0}, Lcom/iMe/ui/translate/TranslationPresenter;->getCurrentLanguage()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 208
+    .line 198
     :cond_3
     invoke-direct {p0}, Lcom/iMe/ui/translate/TranslationPresenter;->getCurrentLanguage()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 202
+    .line 192
     invoke-virtual {v0, v2, v1}, Lcom/iMe/model/translation/TranslationLanguageUiModel$Companion;->createByLangCode(Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/model/translation/TranslationLanguageUiModel;
 
     move-result-object v0

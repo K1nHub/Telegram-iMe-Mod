@@ -339,7 +339,7 @@ public abstract class SpecialEffectsController {
 
             /* JADX INFO: Access modifiers changed from: package-private */
             public void applyState(View view) {
-                int i = C02233.f45xe493b431[ordinal()];
+                int i = C02213.f45xe493b431[ordinal()];
                 if (i == 1) {
                     ViewGroup viewGroup = (ViewGroup) view.getParent();
                     if (viewGroup != null) {
@@ -416,7 +416,7 @@ public abstract class SpecialEffectsController {
         }
 
         final void mergeWith(State state, LifecycleImpact lifecycleImpact) {
-            int i = C02233.f44xb9e640f0[lifecycleImpact.ordinal()];
+            int i = C02213.f44xb9e640f0[lifecycleImpact.ordinal()];
             if (i == 1) {
                 if (this.mFinalState == State.REMOVED) {
                     if (FragmentManager.isLoggingEnabled(2)) {
@@ -476,7 +476,7 @@ public abstract class SpecialEffectsController {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: androidx.fragment.app.SpecialEffectsController$3 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C02233 {
+    public static /* synthetic */ class C02213 {
 
         /* renamed from: $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$LifecycleImpact */
         static final /* synthetic */ int[] f44xb9e640f0;

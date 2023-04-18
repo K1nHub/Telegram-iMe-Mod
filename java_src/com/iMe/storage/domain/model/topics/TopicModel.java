@@ -1,6 +1,6 @@
 package com.iMe.storage.domain.model.topics;
 
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import com.iMe.storage.data.repository.topics.Topic;
 import java.util.LinkedHashSet;
@@ -72,9 +72,9 @@ public final class TopicModel {
     }
 
     public int hashCode() {
-        int m716m = BotsDbModel$$ExternalSyntheticBackport0.m716m(this.topicId) * 31;
+        int m702m = BotsDbModel$$ExternalSyntheticBackport0.m702m(this.topicId) * 31;
         String str = this.name;
-        int hashCode = (m716m + (str == null ? 0 : str.hashCode())) * 31;
+        int hashCode = (m702m + (str == null ? 0 : str.hashCode())) * 31;
         Topic topic = this.icon;
         return ((((((((((hashCode + (topic != null ? topic.hashCode() : 0)) * 31) + this.order) * 31) + this.presets.hashCode()) * 31) + this.dialogs.hashCode()) * 31) + this.filterDialogs.hashCode()) * 31) + this.filterArchivedDialogs.hashCode();
     }

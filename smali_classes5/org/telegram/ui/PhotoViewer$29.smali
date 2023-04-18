@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/PhotoViewer;->lambda$setParentActivity$36(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;)V
+    value = Lorg/telegram/ui/PhotoViewer;->lambda$setParentActivity$35(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 6336
+    .line 6339
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected onLayout(ZIIII)V
     .locals 4
 
-    .line 6339
+    .line 6342
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result p1
@@ -41,12 +41,12 @@
     :goto_0
     if-ge p2, p1, :cond_2
 
-    .line 6342
+    .line 6345
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object p3
 
-    .line 6343
+    .line 6346
     invoke-virtual {p3}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p5
@@ -61,7 +61,7 @@
 
     if-ne p5, v0, :cond_0
 
-    .line 6344
+    .line 6347
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingRight()I
 
     move-result p5
@@ -98,7 +98,7 @@
 
     goto :goto_1
 
-    .line 6345
+    .line 6348
     :cond_0
     invoke-virtual {p3}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -114,12 +114,12 @@
 
     if-ne p5, v0, :cond_1
 
-    .line 6346
+    .line 6349
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result p5
 
-    .line 6347
+    .line 6350
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v0
@@ -144,7 +144,7 @@
 
     goto :goto_1
 
-    .line 6349
+    .line 6352
     :cond_1
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 

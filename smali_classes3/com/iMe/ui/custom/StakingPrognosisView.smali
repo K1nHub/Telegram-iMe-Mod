@@ -514,7 +514,7 @@
 .end method
 
 .method public final setupViewData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/ui/StatisticActivity$ChartViewData;Lcom/iMe/fork/utils/Callbacks$Callback;)V
-    .locals 7
+    .locals 2
 
     const-string v0, "datesText"
 
@@ -567,23 +567,17 @@
     invoke-virtual {p1, p5, p2}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->updateData(Lorg/telegram/ui/StatisticActivity$ChartViewData;Z)V
 
     .line 52
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->buttonDeposit:Lcom/iMe/ui/custom/BigActionButton;
+    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->buttonDeposit:Lcom/iMe/ui/custom/BigActionButton;
 
-    const-string p1, "buttonDeposit"
+    const-string p2, "buttonDeposit"
 
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v4, Lcom/iMe/ui/custom/StakingPrognosisView$setupViewData$1$1;
+    new-instance p2, Lcom/iMe/ui/custom/StakingPrognosisView$setupViewData$1$1;
 
-    invoke-direct {v4, p6}, Lcom/iMe/ui/custom/StakingPrognosisView$setupViewData$1$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p2, p6}, Lcom/iMe/ui/custom/StakingPrognosisView$setupViewData$1$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    const-wide/16 v2, 0x0
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x0
-
-    invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
 
     .line 54
     invoke-virtual {p0}, Lcom/iMe/ui/custom/StakingPrognosisView;->setupColors()V

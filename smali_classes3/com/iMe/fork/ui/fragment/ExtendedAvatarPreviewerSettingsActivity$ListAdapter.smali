@@ -27,12 +27,12 @@
         }
     .end annotation
 
-    .line 157
+    .line 162
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 160
+    .line 165
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->updateRows()V
 
     return-void
@@ -43,7 +43,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 188
+    .line 193
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
@@ -56,7 +56,7 @@
 .method public getItemViewType(I)I
     .locals 3
 
-    .line 191
+    .line 196
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
@@ -95,7 +95,7 @@
 
     goto :goto_4
 
-    .line 192
+    .line 197
     :cond_2
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
@@ -129,7 +129,7 @@
 
     goto :goto_4
 
-    .line 193
+    .line 198
     :cond_5
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
@@ -143,7 +143,7 @@
 
     goto :goto_4
 
-    .line 194
+    .line 199
     :cond_6
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_BOX:I
 
@@ -158,7 +158,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 197
+    .line 202
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
@@ -179,7 +179,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 213
+    .line 218
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     add-int/lit8 v1, p2, 0x1
@@ -192,19 +192,19 @@
 
     move-result v0
 
-    .line 214
+    .line 219
     invoke-virtual {p0, p2}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->getItemViewType(I)I
 
     move-result v1
 
-    .line 215
+    .line 220
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v2, "holder.itemView"
 
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 217
+    .line 222
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     const/4 v3, 0x0
@@ -215,12 +215,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 218
+    .line 223
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 219
+    .line 224
     invoke-static {v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
 
     move-result v1
@@ -229,10 +229,10 @@
 
     const/4 p2, 0x1
 
-    .line 220
+    .line 225
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
-    .line 221
+    .line 226
     sget p2, Lorg/telegram/messenger/R$string;->settings_interface_chat_user_options_by_avatar_click_subtitle:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -245,11 +245,11 @@
 
     goto/16 :goto_0
 
-    .line 223
+    .line 228
     :cond_0
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
-    .line 224
+    .line 229
     sget p2, Lorg/telegram/messenger/R$string;->settings_interface_chat_user_options_by_avatar_click_title:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -262,7 +262,7 @@
 
     goto/16 :goto_0
 
-    .line 228
+    .line 233
     :cond_1
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
@@ -272,12 +272,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 229
+    .line 234
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 230
+    .line 235
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
 
     move-result v1
@@ -290,7 +290,7 @@
 
     if-nez p2, :cond_2
 
-    .line 231
+    .line 236
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p2
@@ -303,7 +303,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 232
+    .line 237
     sget p2, Lorg/telegram/messenger/R$string;->settings_interface_chat_user_options_by_avatar_click_hint:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -312,12 +312,12 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 233
+    .line 238
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     goto :goto_0
 
-    .line 235
+    .line 240
     :cond_2
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -333,17 +333,17 @@
 
     const/4 p2, 0x0
 
-    .line 236
+    .line 241
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     const/16 p2, 0xc
 
-    .line 237
+    .line 242
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     goto :goto_0
 
-    .line 241
+    .line 246
     :cond_3
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
 
@@ -353,7 +353,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 242
+    .line 247
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getItemsHeaderRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
@@ -362,7 +362,7 @@
 
     if-ne p2, v0, :cond_5
 
-    .line 243
+    .line 248
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
     sget p2, Lorg/telegram/messenger/R$string;->wallet_transaction_details_section_actions:I
@@ -375,7 +375,7 @@
 
     goto :goto_0
 
-    .line 246
+    .line 251
     :cond_4
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_BOX:I
 
@@ -385,7 +385,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 247
+    .line 252
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-static {v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getItems(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)[Lcom/iMe/fork/enums/ExtendedAvatarPreviewerItem;
@@ -402,7 +402,7 @@
 
     aget-object p2, v1, p2
 
-    .line 248
+    .line 253
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckBoxCell;
 
     invoke-virtual {p2}, Lcom/iMe/fork/enums/ExtendedAvatarPreviewerItem;->getTitle()Ljava/lang/String;
@@ -429,7 +429,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 157
+    .line 162
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -444,7 +444,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 200
+    .line 205
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     if-ne p2, p1, :cond_0
@@ -461,7 +461,7 @@
 
     goto :goto_0
 
-    .line 201
+    .line 206
     :cond_0
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
@@ -479,7 +479,7 @@
 
     goto :goto_0
 
-    .line 202
+    .line 207
     :cond_1
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
 
@@ -497,7 +497,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    .line 203
+    .line 208
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -506,7 +506,7 @@
 
     goto :goto_0
 
-    .line 205
+    .line 210
     :cond_2
     new-instance p1, Lorg/telegram/ui/Cells/TextCheckBoxCell;
 
@@ -518,14 +518,14 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckBoxCell;-><init>(Landroid/content/Context;)V
 
-    .line 206
+    .line 211
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 209
+    .line 214
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -537,7 +537,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 199
+    .line 204
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -548,96 +548,39 @@
 .method public final updateRows()V
     .locals 3
 
-    .line 166
+    .line 171
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     const/4 v1, -0x1
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setOpenByClickRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
 
-    .line 167
+    .line 172
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setOpenByClickSectionRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
 
-    .line 168
+    .line 173
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setItemsHeaderRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
 
-    .line 169
+    .line 174
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setItemsStartRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
 
-    .line 170
+    .line 175
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setItemsEndRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
 
-    .line 171
+    .line 176
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
-
-    .line 172
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
-
-    invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
-
-    move-result v1
-
-    add-int/lit8 v2, v1, 0x1
-
-    invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
-
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setEnableRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
-
-    .line 173
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
-
-    invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
-
-    move-result v1
-
-    add-int/lit8 v2, v1, 0x1
-
-    invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
-
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
-
-    .line 174
-    sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isExtendedAvatarPreviewerEnabled:Z
-
-    if-eqz v0, :cond_0
-
-    .line 175
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
-
-    invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
-
-    move-result v1
-
-    add-int/lit8 v2, v1, 0x1
-
-    invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
-
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setOpenByClickRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
-
-    .line 176
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
-
-    invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
-
-    move-result v1
-
-    add-int/lit8 v2, v1, 0x1
-
-    invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
-
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setOpenByClickSectionRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
 
     .line 177
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
@@ -650,7 +593,7 @@
 
     invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setItemsHeaderRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setEnableRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
 
     .line 178
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
@@ -659,9 +602,66 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setItemsStartRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
+    add-int/lit8 v2, v1, 0x1
+
+    invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
+
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
 
     .line 179
+    sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isExtendedAvatarPreviewerEnabled:Z
+
+    if-eqz v0, :cond_0
+
+    .line 180
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
+
+    invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
+
+    move-result v1
+
+    add-int/lit8 v2, v1, 0x1
+
+    invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
+
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setOpenByClickRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
+
+    .line 181
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
+
+    invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
+
+    move-result v1
+
+    add-int/lit8 v2, v1, 0x1
+
+    invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
+
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setOpenByClickSectionRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
+
+    .line 182
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
+
+    invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
+
+    move-result v1
+
+    add-int/lit8 v2, v1, 0x1
+
+    invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
+
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setItemsHeaderRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
+
+    .line 183
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
+
+    invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setItemsStartRow$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
+
+    .line 184
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I
@@ -680,7 +680,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;I)V
 
-    .line 180
+    .line 185
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)I

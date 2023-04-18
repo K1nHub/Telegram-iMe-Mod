@@ -4,7 +4,7 @@ import android.media.AudioDeviceInfo;
 import android.os.Handler;
 import android.os.SystemClock;
 import com.google.android.exoplayer2.BaseRenderer;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
@@ -105,7 +105,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         this.flagsOnlyBuffer = DecoderInputBuffer.newNoDataInstance();
         this.decoderReinitializationState = 0;
         this.audioTrackNeedsConfigure = true;
-        setOutputStreamOffsetUs(C0482C.TIME_UNSET);
+        setOutputStreamOffsetUs(C0470C.TIME_UNSET);
         this.pendingOutputStreamOffsetsUs = new long[10];
     }
 
@@ -181,7 +181,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
             } catch (AudioSink.WriteException e5) {
                 throw createRendererException(e5, e5.format, e5.isRecoverable, PlaybackException.ERROR_CODE_AUDIO_TRACK_WRITE_FAILED);
             } catch (DecoderException e6) {
-                Log.m809e(TAG, "Audio codec error", e6);
+                Log.m795e(TAG, "Audio codec error", e6);
                 this.eventDispatcher.audioCodecError(e6);
                 throw createRendererException(e6, this.inputFormat, 4003);
             }
@@ -256,7 +256,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
 
     private void setOutputStreamOffsetUs(long j) {
         this.outputStreamOffsetUs = j;
-        if (j != C0482C.TIME_UNSET) {
+        if (j != C0470C.TIME_UNSET) {
             this.audioSink.setOutputStreamOffsetUs(j);
         }
     }
@@ -298,7 +298,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         } else {
             if (!this.firstStreamSampleRead) {
                 this.firstStreamSampleRead = true;
-                this.inputBuffer.addFlag(C0482C.BUFFER_FLAG_FIRST_SAMPLE);
+                this.inputBuffer.addFlag(C0470C.BUFFER_FLAG_FIRST_SAMPLE);
             }
             this.inputBuffer.flip();
             DecoderInputBuffer decoderInputBuffer2 = this.inputBuffer;
@@ -406,7 +406,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
     protected void onDisabled() {
         this.inputFormat = null;
         this.audioTrackNeedsConfigure = true;
-        setOutputStreamOffsetUs(C0482C.TIME_UNSET);
+        setOutputStreamOffsetUs(C0470C.TIME_UNSET);
         try {
             setSourceDrmSession(null);
             releaseDecoder();
@@ -421,13 +421,13 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
     public void onStreamChanged(Format[] formatArr, long j, long j2) throws ExoPlaybackException {
         super.onStreamChanged(formatArr, j, j2);
         this.firstStreamSampleRead = false;
-        if (this.outputStreamOffsetUs == C0482C.TIME_UNSET) {
+        if (this.outputStreamOffsetUs == C0470C.TIME_UNSET) {
             setOutputStreamOffsetUs(j2);
             return;
         }
         int i = this.pendingOutputStreamOffsetCount;
         if (i == this.pendingOutputStreamOffsetsUs.length) {
-            Log.m806w(TAG, "Too many stream changes, so dropping offset: " + this.pendingOutputStreamOffsetsUs[this.pendingOutputStreamOffsetCount - 1]);
+            Log.m792w(TAG, "Too many stream changes, so dropping offset: " + this.pendingOutputStreamOffsetsUs[this.pendingOutputStreamOffsetCount - 1]);
         } else {
             this.pendingOutputStreamOffsetCount = i + 1;
         }
@@ -474,7 +474,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
             this.eventDispatcher.decoderInitialized(this.decoder.getName(), elapsedRealtime2, elapsedRealtime2 - elapsedRealtime);
             this.decoderCounters.decoderInitCount++;
         } catch (DecoderException e) {
-            Log.m809e(TAG, "Audio codec error", e);
+            Log.m795e(TAG, "Audio codec error", e);
             this.eventDispatcher.audioCodecError(e);
             throw createRendererException(e, this.inputFormat, 4001);
         } catch (OutOfMemoryError e2) {
@@ -596,7 +596,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
 
         @Override // com.google.android.exoplayer2.audio.AudioSink.Listener
         public void onAudioSinkError(Exception exc) {
-            Log.m809e(DecoderAudioRenderer.TAG, "Audio sink error", exc);
+            Log.m795e(DecoderAudioRenderer.TAG, "Audio sink error", exc);
             DecoderAudioRenderer.this.eventDispatcher.audioSinkError(exc);
         }
     }

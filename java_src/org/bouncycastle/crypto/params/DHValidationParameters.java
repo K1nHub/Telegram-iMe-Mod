@@ -7,7 +7,7 @@ public class DHValidationParameters {
     private byte[] seed;
 
     public DHValidationParameters(byte[] bArr, int i) {
-        this.seed = bArr;
+        this.seed = Arrays.clone(bArr);
         this.counter = i;
     }
 

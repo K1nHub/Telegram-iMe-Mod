@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProxyListActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 387
+    .line 388
     iput-object p1, p0, Lorg/telegram/ui/ProxyListActivity$2;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 390
+    .line 391
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$2;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$400(Lorg/telegram/ui/ProxyListActivity;)I
@@ -56,7 +56,7 @@
 
     invoke-virtual {p0, p1, v0, v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->drawSectionBackground(Landroid/graphics/Canvas;III)V
 
-    .line 391
+    .line 392
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void

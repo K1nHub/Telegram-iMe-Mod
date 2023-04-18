@@ -2,46 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda282;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda282;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda282;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda282;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda282;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda282;->f$0:Lorg/telegram/ui/ChatActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public final run(Z)V
+    .locals 1
 
-    check-cast p1, Ljava/lang/Integer;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda282;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    check-cast p2, Ljava/lang/Integer;
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$lfjU4vtYM_HVrdtlOKfcPb_zMFs(Lorg/telegram/ui/ChatActivity;Z)V
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$uAgh02AgKvPih1rQJam2CB0UMjI(Ljava/lang/Integer;Ljava/lang/Integer;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 45416
+    .line 45428
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$MessagesFilter;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 45421
+    .line 45433
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -46,7 +46,7 @@
     :cond_0
     const/4 p2, 0x0
 
-    .line 45422
+    .line 45434
     :goto_0
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$MessagesFilter;->missed:Z
 
@@ -56,12 +56,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 45426
+    .line 45438
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterPhoneCalls;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 45427
+    .line 45439
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$MessagesFilter;->missed:Z
 
     if-eqz v0, :cond_0
@@ -80,7 +80,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$MessagesFilter;->flags:I
 
-    .line 45428
+    .line 45440
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     return-void

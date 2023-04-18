@@ -51,31 +51,31 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 50328
+    .line 50340
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 50331
+    .line 50343
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$messages_Dialogs;->dialogs:Ljava/util/ArrayList;
 
-    .line 50332
+    .line 50344
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$messages_Dialogs;->messages:Ljava/util/ArrayList;
 
-    .line 50333
+    .line 50345
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$messages_Dialogs;->chats:Ljava/util/ArrayList;
 
-    .line 50334
+    .line 50346
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -104,7 +104,7 @@
 
     goto :goto_0
 
-    .line 50343
+    .line 50355
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_dialogsSlice;
 
@@ -112,7 +112,7 @@
 
     goto :goto_0
 
-    .line 50340
+    .line 50352
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_dialogs;
 
@@ -120,7 +120,7 @@
 
     goto :goto_0
 
-    .line 50346
+    .line 50358
     :cond_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_dialogsNotModified;
 
@@ -133,7 +133,7 @@
 
     goto :goto_1
 
-    .line 50350
+    .line 50362
     :cond_3
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -163,7 +163,7 @@
     :goto_1
     if-eqz v0, :cond_5
 
-    .line 50353
+    .line 50365
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_5

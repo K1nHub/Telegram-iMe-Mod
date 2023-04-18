@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.GmsLogger;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.FirebaseMLException;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
@@ -46,7 +46,7 @@ public final class zzpb extends BroadcastReceiver {
                 firebaseApp.getApplicationContext().unregisterReceiver(this);
             } catch (IllegalArgumentException e) {
                 gmsLogger = zzoz.zzass;
-                gmsLogger.m790w("ModelDownloadManager", "Exception thrown while trying to unregister the broadcast receiver for the download", e);
+                gmsLogger.m776w("ModelDownloadManager", "Exception thrown while trying to unregister the broadcast receiver for the download", e);
             }
             map = this.zzavu.zzavl;
             map.remove(Long.valueOf(this.zzavs));

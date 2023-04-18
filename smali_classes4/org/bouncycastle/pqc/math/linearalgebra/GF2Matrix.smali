@@ -508,7 +508,7 @@
 
     aget-object v2, v2, v1
 
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    invoke-static {v2}, Lorg/bouncycastle/util/Arrays;->hashCode([I)I
 
     move-result v2
 

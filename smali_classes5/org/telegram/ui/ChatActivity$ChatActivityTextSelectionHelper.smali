@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 4693
+    .line 4611
     invoke-direct {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ChatActivity$1;)V
     .locals 0
 
-    .line 4693
+    .line 4611
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityTextSelectionHelper;-><init>()V
 
     return-void
@@ -42,7 +42,7 @@
 .method public getDialogId()Ljava/lang/Long;
     .locals 2
 
-    .line 4699
+    .line 4617
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityTextSelectionHelper;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     if-nez v0, :cond_0
@@ -67,7 +67,7 @@
 .method public getParentBottomPadding()I
     .locals 1
 
-    .line 4724
+    .line 4642
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityTextSelectionHelper;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     if-nez v0, :cond_0
@@ -86,7 +86,7 @@
 .method public getParentTopPadding()I
     .locals 1
 
-    .line 4719
+    .line 4637
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityTextSelectionHelper;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     if-nez v0, :cond_0
@@ -109,12 +109,12 @@
 .method protected getResourcesProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 1
 
-    .line 4735
+    .line 4653
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityTextSelectionHelper;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_0
 
-    .line 4736
+    .line 4654
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
     return-object v0
@@ -128,7 +128,7 @@
 .method protected getThemedColor(Ljava/lang/String;)I
     .locals 1
 
-    .line 4729
+    .line 4647
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityTextSelectionHelper;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     if-nez v0, :cond_0
@@ -147,7 +147,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 4730
+    .line 4648
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -166,7 +166,7 @@
 .method public isShowQuote()Z
     .locals 2
 
-    .line 4704
+    .line 4622
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityTextSelectionHelper;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_0
@@ -211,18 +211,18 @@
 .method public setChatActivity(Lorg/telegram/ui/ChatActivity;)V
     .locals 1
 
-    .line 4711
+    .line 4629
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;->cancelAllAnimators()V
 
-    .line 4712
+    .line 4630
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->clear()V
 
     const/4 v0, 0x0
 
-    .line 4713
+    .line 4631
     iput-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
-    .line 4714
+    .line 4632
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityTextSelectionHelper;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     return-void

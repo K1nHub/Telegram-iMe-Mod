@@ -2,7 +2,7 @@ package com.iMe.mapper.staking;
 
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.crypto.send.fee.GasPriceItem;
-import com.iMe.p032ui.custom.FeeView;
+import com.iMe.p031ui.custom.FeeView;
 import com.iMe.storage.domain.model.crypto.Chain;
 import com.iMe.storage.domain.model.crypto.TransactionParams;
 import com.iMe.storage.domain.model.crypto.send.GasPriceInfo;

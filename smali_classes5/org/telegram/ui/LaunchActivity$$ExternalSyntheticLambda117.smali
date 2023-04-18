@@ -2,78 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$OnDispatchKeyEventListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
-
-.field public final synthetic f$1:[I
-
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:Ljava/lang/Runnable;
-
-.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$TL_account_getAuthorizationForm;
-
-.field public final synthetic f$5:Ljava/lang/String;
-
-.field public final synthetic f$6:Ljava/lang/String;
-
-.field public final synthetic f$7:Ljava/lang/String;
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;[IILjava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_account_getAuthorizationForm;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$0:Lorg/telegram/ui/LaunchActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$1:[I
-
-    iput p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$2:I
-
-    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$3:Ljava/lang/Runnable;
-
-    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$4:Lorg/telegram/tgnet/TLRPC$TL_account_getAuthorizationForm;
-
-    iput-object p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$5:Ljava/lang/String;
-
-    iput-object p7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$6:Ljava/lang/String;
-
-    iput-object p8, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$7:Ljava/lang/String;
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 10
+.method public final onDispatchKeyEvent(Landroid/view/KeyEvent;)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$0:Lorg/telegram/ui/LaunchActivity;
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$1:[I
-
-    iget v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$2:I
-
-    iget-object v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$3:Ljava/lang/Runnable;
-
-    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$4:Lorg/telegram/tgnet/TLRPC$TL_account_getAuthorizationForm;
-
-    iget-object v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$5:Ljava/lang/String;
-
-    iget-object v6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$6:Ljava/lang/String;
-
-    iget-object v7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda117;->f$7:Ljava/lang/String;
-
-    move-object v8, p1
-
-    move-object v9, p2
-
-    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$ifweUk4car8PTkcyFUrVt5GUWKw(Lorg/telegram/ui/LaunchActivity;[IILjava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_account_getAuthorizationForm;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$A_ZXBSAhB6sdncmgz_OD0DSiHiA(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/view/KeyEvent;)V
 
     return-void
 .end method

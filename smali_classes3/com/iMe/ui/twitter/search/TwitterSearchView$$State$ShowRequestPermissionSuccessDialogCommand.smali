@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/twitter/search/TwitterSearchView$$State;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 1
 
-    .line 582
+    .line 618
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showRequestPermissionSuccessDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 584
+    .line 620
     iput-object p2, p0, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$ShowRequestPermissionSuccessDialogCommand;->title:Ljava/lang/String;
 
-    .line 585
+    .line 621
     iput-object p3, p0, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$ShowRequestPermissionSuccessDialogCommand;->message:Ljava/lang/String;
 
-    .line 586
+    .line 622
     iput-object p4, p0, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$ShowRequestPermissionSuccessDialogCommand;->action:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/twitter/search/TwitterSearchView;)V
     .locals 3
 
-    .line 591
+    .line 627
     iget-object v0, p0, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$ShowRequestPermissionSuccessDialogCommand;->title:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$ShowRequestPermissionSuccessDialogCommand;->message:Ljava/lang/String;
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 573
+    .line 609
     check-cast p1, Lcom/iMe/ui/twitter/search/TwitterSearchView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$ShowRequestPermissionSuccessDialogCommand;->apply(Lcom/iMe/ui/twitter/search/TwitterSearchView;)V

@@ -17,4 +17,4 @@
 
 .field public static final bot_avatar_28_04:I = 0x7f0800c9
 
-.field public static final ic_bots_recent:I = 0x7f080386
+.field public static final ic_bots_recent:I = 0x7f080387

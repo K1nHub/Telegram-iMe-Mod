@@ -7,14 +7,14 @@ import java.util.EmptyStackException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* loaded from: classes3.dex */
-public class ImmutableSortedMapIterator<K, V> implements Iterator<Map.Entry<K, V>>, p035j$.util.Iterator {
+public class ImmutableSortedMapIterator<K, V> implements Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
     private final boolean isReverse;
     private final ArrayDeque<LLRBValueNode<K, V>> nodeStack = new ArrayDeque<>();
 
-    @Override // p035j$.util.Iterator
+    @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
@@ -51,12 +51,12 @@ public class ImmutableSortedMapIterator<K, V> implements Iterator<Map.Entry<K, V
         }
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public boolean hasNext() {
         return this.nodeStack.size() > 0;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public Map.Entry<K, V> next() {
         try {
             LLRBValueNode<K, V> pop = this.nodeStack.pop();
@@ -76,7 +76,7 @@ public class ImmutableSortedMapIterator<K, V> implements Iterator<Map.Entry<K, V
         }
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public void remove() {
         throw new UnsupportedOperationException("remove called on immutable collection");
     }

@@ -552,7 +552,7 @@
 .end method
 
 .method public final setupViewData(Lcom/iMe/model/staking/StakingAnnualPercentageData;Lcom/iMe/fork/utils/Callbacks$Callback;)V
-    .locals 7
+    .locals 3
 
     const-string v0, "onInfoClickAction"
 
@@ -568,17 +568,11 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v4, Lcom/iMe/ui/custom/StakingPercentageView$setupViewData$1$1;
+    new-instance v2, Lcom/iMe/ui/custom/StakingPercentageView$setupViewData$1$1;
 
-    invoke-direct {v4, p2}, Lcom/iMe/ui/custom/StakingPercentageView$setupViewData$1$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v2, p2}, Lcom/iMe/ui/custom/StakingPercentageView$setupViewData$1$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    const-wide/16 v2, 0x0
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x0
-
-    invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    invoke-static {v1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
 
     if-nez p1, :cond_0
 

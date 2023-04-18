@@ -48,9 +48,9 @@
 
     const-string v3, "https://api.stage.imem.app/api/"
 
-    const-string v4, "iMeWalletStageBot"
+    const-string v4, "ime_official_stage_bot"
 
-    const-wide/32 v5, 0x3b591fa2
+    const-wide v5, 0x15b3279d6L
 
     const-string v7, "https://ropsten.etherscan.io/"
 

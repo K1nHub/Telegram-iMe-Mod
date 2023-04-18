@@ -2,8 +2,8 @@ package com.google.android.gms.internal.firebase_ml;
 
 import com.google.android.gms.common.internal.GmsLogger;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseRemoteModel;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseRemoteModel;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -59,15 +59,15 @@ public final class zzpd {
         r10 = new java.lang.String("Hash does not match with expected: ");
      */
     /* JADX WARN: Code restructure failed: missing block: B:41:0x00d1, code lost:
-        r9.m799d("RemoteModelFileManager", r10);
+        r9.m785d("RemoteModelFileManager", r10);
         r11.zza(com.google.android.gms.internal.firebase_ml.zzmc.MODEL_HASH_MISMATCH, true, r8.zzavv, com.google.android.gms.internal.firebase_ml.zzlu.zzw.zza.SUCCEEDED);
-        r9 = new com.google.firebase.p021ml.common.FirebaseMLException("Hash does not match with expected", 102);
+        r9 = new com.google.firebase.p020ml.common.FirebaseMLException("Hash does not match with expected", 102);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public final synchronized java.io.File zza(android.os.ParcelFileDescriptor r9, java.lang.String r10, com.google.android.gms.internal.firebase_ml.zzpa r11) throws com.google.firebase.p021ml.common.FirebaseMLException {
+    public final synchronized java.io.File zza(android.os.ParcelFileDescriptor r9, java.lang.String r10, com.google.android.gms.internal.firebase_ml.zzpa r11) throws com.google.firebase.p020ml.common.FirebaseMLException {
         /*
             Method dump skipped, instructions count: 409
             To view this dump add '--comments-level debug' option

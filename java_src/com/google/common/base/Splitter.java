@@ -29,12 +29,12 @@ public final class Splitter {
     }
 
     /* renamed from: on */
-    public static Splitter m756on(char c) {
-        return m755on(CharMatcher.m759is(c));
+    public static Splitter m742on(char c) {
+        return m741on(CharMatcher.m745is(c));
     }
 
     /* renamed from: on */
-    public static Splitter m755on(final CharMatcher charMatcher) {
+    public static Splitter m741on(final CharMatcher charMatcher) {
         Preconditions.checkNotNull(charMatcher);
         return new Splitter(new Strategy() { // from class: com.google.common.base.Splitter.1
             @Override // com.google.common.base.Splitter.Strategy

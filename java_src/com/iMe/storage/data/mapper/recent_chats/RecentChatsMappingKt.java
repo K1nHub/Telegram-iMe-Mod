@@ -1,6 +1,6 @@
 package com.iMe.storage.data.mapper.recent_chats;
 
-import com.iMe.storage.data.locale.p028db.model.recent_chats.HistoryDialogDb;
+import com.iMe.storage.data.locale.p027db.model.recent_chats.HistoryDialogDb;
 import com.iMe.storage.domain.model.HistoryDialogModel;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RecentChatsMapping.kt */

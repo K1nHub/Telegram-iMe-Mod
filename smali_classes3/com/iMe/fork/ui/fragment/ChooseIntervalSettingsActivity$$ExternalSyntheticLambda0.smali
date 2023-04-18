@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$$ExternalSyntheticLambda0;->f$0:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
 
-    invoke-static {v0, p1, p2}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->$r8$lambda$6aQfX8BY2n6OJrwP9GViMgZiuWQ(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->$r8$lambda$uuMHiQTWlrL8yP664dYxT43cnow(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
 
     return-void
 .end method

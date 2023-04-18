@@ -3,26 +3,26 @@ package org.telegram.messenger.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p032ui.custom.BigActionButton;
-import org.telegram.messenger.C3316R;
-import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p048ui.Cells.TextDetailCell;
+import com.iMe.p031ui.custom.BigActionButton;
+import org.telegram.messenger.C3242R;
+import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p044ui.Cells.TextDetailCell;
 /* loaded from: classes4.dex */
 public final class ForkContentWalletConnectMessageSignBinding implements ViewBinding {
     public final ActionBarMenuItem buttonClose;
     public final BigActionButton buttonProcess;
-    private final LinearLayout rootView;
+    private final NestedScrollView rootView;
     public final TextDetailCell textFrom;
     public final AppCompatTextView textMessage;
     public final TextDetailCell textPeerUrl;
     public final AppCompatTextView textTitle;
 
-    private ForkContentWalletConnectMessageSignBinding(LinearLayout linearLayout, ActionBarMenuItem actionBarMenuItem, BigActionButton bigActionButton, LinearLayout linearLayout2, TextDetailCell textDetailCell, AppCompatTextView appCompatTextView, TextDetailCell textDetailCell2, AppCompatTextView appCompatTextView2) {
-        this.rootView = linearLayout;
+    private ForkContentWalletConnectMessageSignBinding(NestedScrollView nestedScrollView, ActionBarMenuItem actionBarMenuItem, BigActionButton bigActionButton, TextDetailCell textDetailCell, AppCompatTextView appCompatTextView, TextDetailCell textDetailCell2, AppCompatTextView appCompatTextView2) {
+        this.rootView = nestedScrollView;
         this.buttonClose = actionBarMenuItem;
         this.buttonProcess = bigActionButton;
         this.textFrom = textDetailCell;
@@ -32,7 +32,7 @@ public final class ForkContentWalletConnectMessageSignBinding implements ViewBin
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
+    public NestedScrollView getRoot() {
         return this.rootView;
     }
 
@@ -41,7 +41,7 @@ public final class ForkContentWalletConnectMessageSignBinding implements ViewBin
     }
 
     public static ForkContentWalletConnectMessageSignBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3316R.layout.fork_content_wallet_connect_message_sign, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3242R.layout.fork_content_wallet_connect_message_sign, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -49,26 +49,25 @@ public final class ForkContentWalletConnectMessageSignBinding implements ViewBin
     }
 
     public static ForkContentWalletConnectMessageSignBinding bind(View view) {
-        int i = C3316R.C3319id.button_close;
+        int i = C3242R.C3245id.button_close;
         ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
         if (actionBarMenuItem != null) {
-            i = C3316R.C3319id.button_process;
+            i = C3242R.C3245id.button_process;
             BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
             if (bigActionButton != null) {
-                LinearLayout linearLayout = (LinearLayout) view;
-                i = C3316R.C3319id.text_from;
+                i = C3242R.C3245id.text_from;
                 TextDetailCell textDetailCell = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                 if (textDetailCell != null) {
-                    i = C3316R.C3319id.text_message;
+                    i = C3242R.C3245id.text_message;
                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView != null) {
-                        i = C3316R.C3319id.text_peer_url;
+                        i = C3242R.C3245id.text_peer_url;
                         TextDetailCell textDetailCell2 = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                         if (textDetailCell2 != null) {
-                            i = C3316R.C3319id.text_title;
+                            i = C3242R.C3245id.text_title;
                             AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView2 != null) {
-                                return new ForkContentWalletConnectMessageSignBinding(linearLayout, actionBarMenuItem, bigActionButton, linearLayout, textDetailCell, appCompatTextView, textDetailCell2, appCompatTextView2);
+                                return new ForkContentWalletConnectMessageSignBinding((NestedScrollView) view, actionBarMenuItem, bigActionButton, textDetailCell, appCompatTextView, textDetailCell2, appCompatTextView2);
                             }
                         }
                     }

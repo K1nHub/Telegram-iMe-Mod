@@ -4,13 +4,13 @@
 
 
 # static fields
-.field private static final LIB_NAME:Ljava/lang/String; = "tmessages.43"
+.field private static final LIB_NAME:Ljava/lang/String; = "tmessages.44"
 
-.field private static final LIB_SO_NAME:Ljava/lang/String; = "libtmessages.43.so"
+.field private static final LIB_SO_NAME:Ljava/lang/String; = "libtmessages.44.so"
 
-.field private static final LIB_VERSION:I = 0x2b
+.field private static final LIB_VERSION:I = 0x2c
 
-.field private static final LOCALE_LIB_SO_NAME:Ljava/lang/String; = "libtmessages.43loc.so"
+.field private static final LOCALE_LIB_SO_NAME:Ljava/lang/String; = "libtmessages.44loc.so"
 
 .field private static volatile nativeLoaded:Z = false
 
@@ -38,6 +38,165 @@
     iput-object v0, p0, Lorg/telegram/messenger/NativeLoader;->crashPath:Ljava/lang/String;
 
     return-void
+.end method
+
+.method public static getAbiFolder()Ljava/lang/String;
+    .locals 8
+
+    const-string/jumbo v0, "x86_64"
+
+    const-string/jumbo v1, "x86"
+
+    const-string v2, "armeabi"
+
+    .line 186
+    :try_start_0
+    sget-object v3, Landroid/os/Build;->CPU_ABI:Ljava/lang/String;
+
+    .line 187
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v4
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    const-string v5, "mips"
+
+    const-string v6, "armeabi-v7a"
+
+    const-string v7, "arm64-v8a"
+
+    if-eqz v4, :cond_0
+
+    goto :goto_1
+
+    .line 189
+    :cond_0
+    :try_start_1
+    invoke-virtual {v3, v7}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    move-object v0, v7
+
+    goto :goto_1
+
+    .line 191
+    :cond_1
+    invoke-virtual {v3, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    move-object v0, v6
+
+    goto :goto_1
+
+    .line 193
+    :cond_2
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    :cond_3
+    :goto_0
+    move-object v0, v2
+
+    goto :goto_1
+
+    .line 195
+    :cond_4
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    move-object v0, v1
+
+    goto :goto_1
+
+    .line 197
+    :cond_5
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    move-object v0, v5
+
+    goto :goto_1
+
+    .line 201
+    :cond_6
+    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz v0, :cond_3
+
+    .line 202
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Unsupported arch: "
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_0
+
+    :goto_1
+    move-object v2, v0
+
+    goto :goto_2
+
+    :catch_0
+    move-exception v0
+
+    .line 206
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    :goto_2
+    const-string v0, "os.arch"
+
+    .line 210
+    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_7
+
+    const-string v3, "686"
+
+    .line 211
+    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    goto :goto_3
+
+    :cond_7
+    move-object v1, v2
+
+    :goto_3
+    return-object v1
 .end method
 
 .method private static getNativeLibraryDir(Landroid/content/Context;)Ljava/io/File;
@@ -141,7 +300,7 @@
     const/4 v1, 0x1
 
     :try_start_1
-    const-string/jumbo v2, "tmessages.43"
+    const-string/jumbo v2, "tmessages.44"
 
     .line 120
     invoke-static {v2}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
@@ -171,7 +330,7 @@
     :catchall_0
     move-exception p0
 
-    goto/16 :goto_1
+    goto :goto_0
 
     :catch_0
     move-exception v2
@@ -179,161 +338,13 @@
     .line 127
     :try_start_2
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 132
-    :try_start_3
-    sget-object v2, Landroid/os/Build;->CPU_ABI:Ljava/lang/String;
-
-    const-string/jumbo v3, "x86_64"
-
-    .line 133
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    const-string/jumbo v2, "x86_64"
-
-    goto :goto_0
-
-    :cond_2
-    const-string v3, "arm64-v8a"
-
-    .line 135
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    const-string v2, "arm64-v8a"
-
-    goto :goto_0
-
-    :cond_3
-    const-string v3, "armeabi-v7a"
-
-    .line 137
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_4
-
-    const-string v2, "armeabi-v7a"
-
-    goto :goto_0
-
-    :cond_4
-    const-string v3, "armeabi"
-
-    .line 139
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    const-string v2, "armeabi"
-
-    goto :goto_0
-
-    :cond_5
-    const-string/jumbo v3, "x86"
-
-    .line 141
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    const-string/jumbo v2, "x86"
-
-    goto :goto_0
-
-    :cond_6
-    const-string v3, "mips"
-
-    .line 143
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_7
-
-    const-string v2, "mips"
-
-    goto :goto_0
-
-    :cond_7
-    const-string v3, "armeabi"
-
-    .line 147
-    sget-boolean v4, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
-
-    if-eqz v4, :cond_8
-
-    .line 148
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Unsupported arch: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 130
+    invoke-static {}, Lorg/telegram/messenger/NativeLoader;->getAbiFolder()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :cond_8
-    move-object v2, v3
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v2
-
-    .line 152
-    :try_start_4
-    invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    const-string v2, "armeabi"
-
-    :goto_0
-    const-string v3, "os.arch"
-
-    .line 156
-    invoke-static {v3}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_9
-
-    const-string v4, "686"
-
-    .line 157
-    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_9
-
-    const-string/jumbo v2, "x86"
-
-    .line 175
-    :cond_9
+    .line 146
     new-instance v3, Ljava/io/File;
 
     invoke-virtual {p0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
@@ -344,72 +355,72 @@
 
     invoke-direct {v3, v4, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 176
+    .line 147
     invoke-virtual {v3}, Ljava/io/File;->mkdirs()Z
 
-    .line 178
+    .line 149
     new-instance v4, Ljava/io/File;
 
-    const-string v5, "libtmessages.43loc.so"
+    const-string v5, "libtmessages.44loc.so"
 
     invoke-direct {v4, v3, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 179
+    .line 150
     invoke-virtual {v4}, Ljava/io/File;->exists()Z
 
     move-result v5
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    if-eqz v5, :cond_b
+    if-eqz v5, :cond_3
 
-    .line 181
-    :try_start_5
+    .line 152
+    :try_start_3
     sget-boolean v5, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v5, :cond_a
+    if-eqz v5, :cond_2
 
     const-string v5, "Load local lib"
 
-    .line 182
+    .line 153
     invoke-static {v5}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 184
-    :cond_a
+    .line 155
+    :cond_2
     invoke-virtual {v4}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-static {v5}, Ljava/lang/System;->load(Ljava/lang/String;)V
 
-    .line 185
+    .line 156
     sput-boolean v1, Lorg/telegram/messenger/NativeLoader;->nativeLoaded:Z
-    :try_end_5
-    .catch Ljava/lang/Error; {:try_start_5 .. :try_end_5} :catch_2
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :try_end_3
+    .catch Ljava/lang/Error; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 186
+    .line 157
     monitor-exit v0
 
     return-void
 
-    :catch_2
+    :catch_1
     move-exception v5
 
-    .line 188
-    :try_start_6
+    .line 159
+    :try_start_4
     invoke-static {v5}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 190
+    .line 161
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
 
-    .line 193
-    :cond_b
+    .line 164
+    :cond_3
     sget-boolean v5, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v5, :cond_c
+    if-eqz v5, :cond_4
 
-    .line 194
+    .line 165
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -426,54 +437,54 @@
 
     invoke-static {v5}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 197
-    :cond_c
+    .line 168
+    :cond_4
     invoke-static {p0, v3, v4, v2}, Lorg/telegram/messenger/NativeLoader;->loadFromZip(Landroid/content/Context;Ljava/io/File;Ljava/io/File;Ljava/lang/String;)Z
 
     move-result p0
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    if-eqz p0, :cond_d
+    if-eqz p0, :cond_5
 
-    .line 198
+    .line 169
     monitor-exit v0
 
     return-void
 
-    .line 201
-    :goto_1
-    :try_start_7
+    .line 172
+    :goto_0
+    :try_start_5
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+
+    :cond_5
+    :try_start_6
+    const-string/jumbo p0, "tmessages.44"
+
+    .line 176
+    invoke-static {p0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+
+    .line 177
+    sput-boolean v1, Lorg/telegram/messenger/NativeLoader;->nativeLoaded:Z
+    :try_end_6
+    .catch Ljava/lang/Error; {:try_start_6 .. :try_end_6} :catch_2
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+
+    goto :goto_1
+
+    :catch_2
+    move-exception p0
+
+    .line 179
+    :try_start_7
+    invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    :cond_d
-    :try_start_8
-    const-string/jumbo p0, "tmessages.43"
-
-    .line 205
-    invoke-static {p0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-
-    .line 206
-    sput-boolean v1, Lorg/telegram/messenger/NativeLoader;->nativeLoaded:Z
-    :try_end_8
-    .catch Ljava/lang/Error; {:try_start_8 .. :try_end_8} :catch_3
-    .catchall {:try_start_8 .. :try_end_8} :catchall_1
-
-    goto :goto_2
-
-    :catch_3
-    move-exception p0
-
-    .line 208
-    :try_start_9
-    invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_1
-
-    .line 210
-    :goto_2
+    .line 181
+    :goto_1
     monitor-exit v0
 
     return-void
@@ -555,7 +566,7 @@
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "libtmessages.43.so"
+    const-string v3, "libtmessages.44.so"
 
     invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -694,7 +705,7 @@
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo p3, "tmessages.43"
+    const-string/jumbo p3, "tmessages.44"
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -818,7 +829,7 @@
 .method public static loaded()Z
     .locals 1
 
-    .line 215
+    .line 220
     sget-boolean v0, Lorg/telegram/messenger/NativeLoader;->nativeLoaded:Z
 
     return v0

@@ -1,13 +1,13 @@
 package com.google.common.base;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import java.nio.charset.Charset;
 /* loaded from: classes3.dex */
 public final class Charsets {
-    public static final Charset US_ASCII = Charset.forName(C0482C.ASCII_NAME);
-    public static final Charset ISO_8859_1 = Charset.forName(C0482C.ISO88591_NAME);
+    public static final Charset US_ASCII = Charset.forName(C0470C.ASCII_NAME);
+    public static final Charset ISO_8859_1 = Charset.forName(C0470C.ISO88591_NAME);
     public static final Charset UTF_8 = Charset.forName("UTF-8");
     public static final Charset UTF_16BE = Charset.forName("UTF-16BE");
-    public static final Charset UTF_16LE = Charset.forName(C0482C.UTF16LE_NAME);
-    public static final Charset UTF_16 = Charset.forName(C0482C.UTF16_NAME);
+    public static final Charset UTF_16LE = Charset.forName(C0470C.UTF16LE_NAME);
+    public static final Charset UTF_16 = Charset.forName(C0470C.UTF16_NAME);
 }

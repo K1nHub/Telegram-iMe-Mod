@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/staking/StakingView$$State;)V
     .locals 1
 
-    .line 177
+    .line 195
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onSetupNavigationRouter"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/StakingView;)V
     .locals 0
 
-    .line 182
+    .line 200
     invoke-interface {p1}, Lcom/iMe/ui/wallet/staking/StakingView;->onSetupNavigationRouter()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 175
+    .line 193
     check-cast p1, Lcom/iMe/ui/wallet/staking/StakingView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/StakingView$$State$OnSetupNavigationRouterCommand;->apply(Lcom/iMe/ui/wallet/staking/StakingView;)V

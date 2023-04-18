@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Crop/CropView;Z)V
     .locals 0
 
-    .line 501
+    .line 506
     iput-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView$2;->this$0:Lorg/telegram/ui/Components/Crop/CropView;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/Crop/CropView$2;->val$animEnsureFit:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 504
+    .line 509
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Crop/CropView$2;->val$animEnsureFit:Z
 
     if-eqz p1, :cond_0
 
-    .line 505
+    .line 510
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView$2;->this$0:Lorg/telegram/ui/Components/Crop/CropView;
 
     const/4 v0, 0x1

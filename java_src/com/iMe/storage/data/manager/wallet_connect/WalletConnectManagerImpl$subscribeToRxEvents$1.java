@@ -1,6 +1,6 @@
 package com.iMe.storage.data.manager.wallet_connect;
 
-import com.iMe.storage.domain.utils.p031rx.event.RxEvent;
+import com.iMe.storage.domain.utils.p030rx.event.RxEvent;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Lambda;

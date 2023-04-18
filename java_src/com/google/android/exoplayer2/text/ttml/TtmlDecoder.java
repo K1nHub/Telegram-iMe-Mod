@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.text.ttml;
 
 import android.text.Layout;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.text.SimpleSubtitleDecoder;
 import com.google.android.exoplayer2.text.Subtitle;
 import com.google.android.exoplayer2.text.SubtitleDecoderException;
@@ -95,13 +95,13 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                                         ttmlNode.addChild(parseNode);
                                     }
                                 } catch (SubtitleDecoderException e) {
-                                    Log.m805w(TAG, "Suppressing parser error", e);
+                                    Log.m791w(TAG, "Suppressing parser error", e);
                                     i2++;
                                 }
                             }
                             frameAndTickRate2 = frameAndTickRate;
                         } else {
-                            Log.m808i(TAG, "Ignoring unsupported tag: " + newPullParser.getName());
+                            Log.m794i(TAG, "Ignoring unsupported tag: " + newPullParser.getName());
                             i2++;
                             frameAndTickRate2 = frameAndTickRate3;
                         }
@@ -166,7 +166,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
         }
         Matcher matcher = CELL_RESOLUTION.matcher(attributeValue);
         if (!matcher.matches()) {
-            Log.m806w(TAG, "Ignoring malformed cell resolution: " + attributeValue);
+            Log.m792w(TAG, "Ignoring malformed cell resolution: " + attributeValue);
             return cellResolution;
         }
         try {
@@ -177,7 +177,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
             }
             return new CellResolution(parseInt, parseInt2);
         } catch (NumberFormatException unused) {
-            Log.m806w(TAG, "Ignoring malformed cell resolution: " + attributeValue);
+            Log.m792w(TAG, "Ignoring malformed cell resolution: " + attributeValue);
             return cellResolution;
         }
     }
@@ -189,13 +189,13 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
         }
         Matcher matcher = PIXEL_COORDINATES.matcher(attributeValue);
         if (!matcher.matches()) {
-            Log.m806w(TAG, "Ignoring non-pixel tts extent: " + attributeValue);
+            Log.m792w(TAG, "Ignoring non-pixel tts extent: " + attributeValue);
             return null;
         }
         try {
             return new TtsExtent(Integer.parseInt((String) Assertions.checkNotNull(matcher.group(1))), Integer.parseInt((String) Assertions.checkNotNull(matcher.group(2))));
         } catch (NumberFormatException unused) {
-            Log.m806w(TAG, "Ignoring malformed tts extent: " + attributeValue);
+            Log.m792w(TAG, "Ignoring malformed tts extent: " + attributeValue);
             return null;
         }
     }
@@ -218,7 +218,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
             } else if (XmlPullParserUtil.isStartTag(xmlPullParser, "region")) {
                 TtmlRegion parseRegionAttributes = parseRegionAttributes(xmlPullParser, cellResolution, ttsExtent);
                 if (parseRegionAttributes != null) {
-                    map2.put(parseRegionAttributes.f137id, parseRegionAttributes);
+                    map2.put(parseRegionAttributes.f134id, parseRegionAttributes);
                 }
             } else if (XmlPullParserUtil.isStartTag(xmlPullParser, TtmlNode.TAG_METADATA)) {
                 parseMetadata(xmlPullParser, map3);
@@ -338,9 +338,9 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
         TtmlStyle parseStyleAttributes = parseStyleAttributes(xmlPullParser, null);
         String str = null;
         String str2 = "";
-        long j3 = C0482C.TIME_UNSET;
-        long j4 = C0482C.TIME_UNSET;
-        long j5 = C0482C.TIME_UNSET;
+        long j3 = C0470C.TIME_UNSET;
+        long j4 = C0470C.TIME_UNSET;
+        long j5 = C0470C.TIME_UNSET;
         String[] strArr = null;
         for (int i = 0; i < attributeCount; i++) {
             String attributeName = xmlPullParser.getAttributeName(i);
@@ -425,17 +425,17 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
         }
         if (ttmlNode != null) {
             long j6 = ttmlNode.startTimeUs;
-            j = C0482C.TIME_UNSET;
-            if (j6 != C0482C.TIME_UNSET) {
-                if (j3 != C0482C.TIME_UNSET) {
+            j = C0470C.TIME_UNSET;
+            if (j6 != C0470C.TIME_UNSET) {
+                if (j3 != C0470C.TIME_UNSET) {
                     j3 += j6;
                 }
-                if (j4 != C0482C.TIME_UNSET) {
+                if (j4 != C0470C.TIME_UNSET) {
                     j4 += j6;
                 }
             }
         } else {
-            j = C0482C.TIME_UNSET;
+            j = C0470C.TIME_UNSET;
         }
         long j7 = j3;
         if (j4 == j) {
@@ -464,7 +464,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
             matcher = FONT_SIZE.matcher(str);
         } else if (split.length == 2) {
             matcher = FONT_SIZE.matcher(split[1]);
-            Log.m806w(TAG, "Multiple values in fontSize attribute. Picking the second value for vertical font size and ignoring the first.");
+            Log.m792w(TAG, "Multiple values in fontSize attribute. Picking the second value for vertical font size and ignoring the first.");
         } else {
             throw new SubtitleDecoderException("Invalid number of entries for fontSize: " + split.length + ".");
         }
@@ -514,13 +514,13 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
     private static float parseShear(String str) {
         Matcher matcher = SIGNED_PERCENTAGE.matcher(str);
         if (!matcher.matches()) {
-            Log.m806w(TAG, "Invalid value for shear: " + str);
+            Log.m792w(TAG, "Invalid value for shear: " + str);
             return Float.MAX_VALUE;
         }
         try {
             return Math.min(100.0f, Math.max(-100.0f, Float.parseFloat((String) Assertions.checkNotNull(matcher.group(1)))));
         } catch (NumberFormatException e) {
-            Log.m805w(TAG, "Failed to parse shear: " + str, e);
+            Log.m791w(TAG, "Failed to parse shear: " + str, e);
             return Float.MAX_VALUE;
         }
     }

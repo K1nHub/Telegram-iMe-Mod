@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 477
+    .line 464
     iput-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter$1;->this$0:Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter$1;->val$oldHashes:Ljava/util/ArrayList;
@@ -39,7 +39,7 @@
 .method public areContentsTheSame(II)Z
     .locals 0
 
-    .line 495
+    .line 482
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter$1;->areItemsTheSame(II)Z
 
     move-result p1
@@ -50,7 +50,7 @@
 .method public areItemsTheSame(II)Z
     .locals 1
 
-    .line 490
+    .line 477
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter$1;->val$oldHashes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -77,7 +77,7 @@
 .method public getNewListSize()I
     .locals 1
 
-    .line 485
+    .line 472
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter$1;->this$0:Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->access$000(Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;)Ljava/util/ArrayList;
@@ -94,7 +94,7 @@
 .method public getOldListSize()I
     .locals 1
 
-    .line 480
+    .line 467
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter$1;->val$oldHashes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I

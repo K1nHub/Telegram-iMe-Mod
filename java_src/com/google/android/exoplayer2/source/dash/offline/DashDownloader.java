@@ -1,8 +1,8 @@
 package com.google.android.exoplayer2.source.dash.offline;
 
+import androidx.profileinstaller.ProfileInstallReceiver$$ExternalSyntheticLambda0;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.extractor.ChunkIndex;
-import com.google.android.exoplayer2.offline.DefaultDownloaderFactory$$ExternalSyntheticLambda0;
 import com.google.android.exoplayer2.offline.SegmentDownloader;
 import com.google.android.exoplayer2.source.dash.BaseUrlExclusionList;
 import com.google.android.exoplayer2.source.dash.DashSegmentIndex;
@@ -28,7 +28,7 @@ public final class DashDownloader extends SegmentDownloader<DashManifest> {
     private final BaseUrlExclusionList baseUrlExclusionList;
 
     public DashDownloader(MediaItem mediaItem, CacheDataSource.Factory factory) {
-        this(mediaItem, factory, DefaultDownloaderFactory$$ExternalSyntheticLambda0.INSTANCE);
+        this(mediaItem, factory, ProfileInstallReceiver$$ExternalSyntheticLambda0.INSTANCE);
     }
 
     public DashDownloader(MediaItem mediaItem, CacheDataSource.Factory factory, Executor executor) {

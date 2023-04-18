@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;Landroid/content/Context;ZLandroid/view/View$OnClickListener;)V
     .locals 0
 
-    .line 953
+    .line 955
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$3;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Cells/PollEditTextCell;-><init>(Landroid/content/Context;ZLandroid/view/View$OnClickListener;)V
@@ -35,7 +35,7 @@
 .method protected onActionModeStart(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/view/ActionMode;)V
     .locals 1
 
-    .line 961
+    .line 963
     invoke-virtual {p1}, Landroid/widget/EditText;->isFocused()Z
 
     move-result v0
@@ -48,14 +48,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 962
+    .line 964
     invoke-virtual {p2}, Landroid/view/ActionMode;->getMenu()Landroid/view/Menu;
 
     move-result-object p1
 
     const p2, 0x1020021
 
-    .line 963
+    .line 965
     invoke-interface {p1, p2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object p2
@@ -64,7 +64,7 @@
 
     return-void
 
-    .line 966
+    .line 968
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$3;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
@@ -85,7 +85,7 @@
 .method protected onFieldTouchUp(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
     .locals 2
 
-    .line 956
+    .line 958
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$3;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;

@@ -652,12 +652,9 @@
 
     cmp-long v1, v1, v6
 
-    if-nez v1, :cond_6
-
-    goto :goto_0
+    if-eqz v1, :cond_6
 
     .line 134
-    :cond_6
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->next()Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;
 
     move-result-object v0
@@ -668,7 +665,7 @@
 
     if-nez v0, :cond_5
 
-    :goto_0
+    :cond_6
     return v8
 .end method
 
@@ -676,7 +673,7 @@
     .locals 9
 
     .line 316
-    :cond_0
+    :goto_0
     iget-wide v2, p0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->_state:J
 
     const-wide/high16 v0, 0x2000000000000000L
@@ -689,24 +686,24 @@
 
     const/4 v8, 0x1
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_0
 
     return v8
 
-    :cond_1
+    :cond_0
     const-wide/high16 v4, 0x1000000000000000L
 
     and-long/2addr v4, v2
 
     cmp-long v4, v4, v6
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_1
 
     const/4 v0, 0x0
 
     return v0
 
-    :cond_2
+    :cond_1
     or-long v4, v2, v0
 
     .line 318
@@ -718,8 +715,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_2
 
+    goto :goto_0
+
+    :cond_2
     return v8
 .end method
 
@@ -819,7 +819,6 @@
 
     .line 325
     :cond_0
-    :goto_0
     iget-wide v2, p0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->_state:J
 
     const-wide/high16 v0, 0x1000000000000000L
@@ -940,20 +939,17 @@
     :cond_5
     iget-boolean v0, p0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->singleConsumer:Z
 
-    if-nez v0, :cond_6
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_6
     move-object v0, p0
 
     .line 192
-    :cond_7
+    :cond_6
     invoke-direct {v0, v6, v9}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->removeSlowPath(II)Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;
 
     move-result-object v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_6
 
     return-object v8
 .end method

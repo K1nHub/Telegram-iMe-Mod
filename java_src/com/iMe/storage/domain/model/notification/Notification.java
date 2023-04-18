@@ -14,7 +14,7 @@ public abstract class Notification {
     private final String date;
 
     /* renamed from: id */
-    private final String f334id;
+    private final String f329id;
     private boolean isRead;
     private final NetworkType networkType;
     private final NotificationType type;
@@ -25,7 +25,7 @@ public abstract class Notification {
     }
 
     private Notification(String str, boolean z, NotificationType notificationType, String str2, String str3, NetworkType networkType) {
-        this.f334id = str;
+        this.f329id = str;
         this.isRead = z;
         this.type = notificationType;
         this.date = str2;
@@ -34,7 +34,7 @@ public abstract class Notification {
     }
 
     public String getId() {
-        return this.f334id;
+        return this.f329id;
     }
 
     public boolean isRead() {
@@ -68,7 +68,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f345id;
+        private final String f340id;
         private boolean isRead;
         private final NetworkType networkType;
         private final BigDecimal spentAmount;
@@ -169,7 +169,7 @@ public abstract class Notification {
 
         @Override // com.iMe.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f345id;
+            return this.f340id;
         }
 
         @Override // com.iMe.storage.domain.model.notification.Notification
@@ -240,7 +240,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(spentAmount, "spentAmount");
             Intrinsics.checkNotNullParameter(spentFiatCode, "spentFiatCode");
-            this.f345id = id;
+            this.f340id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -261,7 +261,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f338id;
+        private final String f333id;
         private boolean isRead;
         private final NetworkType networkType;
         private final Status status;
@@ -339,7 +339,7 @@ public abstract class Notification {
 
         @Override // com.iMe.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f338id;
+            return this.f333id;
         }
 
         @Override // com.iMe.storage.domain.model.notification.Notification
@@ -390,7 +390,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(networkType, "networkType");
             Intrinsics.checkNotNullParameter(txHash, "txHash");
             Intrinsics.checkNotNullParameter(status, "status");
-            this.f338id = id;
+            this.f333id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -407,7 +407,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f335id;
+        private final String f330id;
         private boolean isRead;
         private final NetworkType networkType;
         private final Status status;
@@ -491,7 +491,7 @@ public abstract class Notification {
 
         @Override // com.iMe.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f335id;
+            return this.f330id;
         }
 
         @Override // com.iMe.storage.domain.model.notification.Notification
@@ -547,7 +547,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
             Intrinsics.checkNotNullParameter(txHash, "txHash");
             Intrinsics.checkNotNullParameter(status, "status");
-            this.f335id = id;
+            this.f330id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -568,7 +568,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f336id;
+        private final String f331id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String payerUserId;
@@ -655,7 +655,7 @@ public abstract class Notification {
 
         @Override // com.iMe.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f336id;
+            return this.f331id;
         }
 
         @Override // com.iMe.storage.domain.model.notification.Notification
@@ -716,7 +716,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(assetCode, "assetCode");
             Intrinsics.checkNotNullParameter(assetName, "assetName");
             Intrinsics.checkNotNullParameter(payerUserId, "payerUserId");
-            this.f336id = id;
+            this.f331id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -738,7 +738,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f337id;
+        private final String f332id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String payerUserId;
@@ -831,7 +831,7 @@ public abstract class Notification {
 
         @Override // com.iMe.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f337id;
+            return this.f332id;
         }
 
         @Override // com.iMe.storage.domain.model.notification.Notification
@@ -897,7 +897,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(assetName, "assetName");
             Intrinsics.checkNotNullParameter(payerUserId, "payerUserId");
             Intrinsics.checkNotNullParameter(status, "status");
-            this.f337id = id;
+            this.f332id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -918,7 +918,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f348id;
+        private final String f343id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String shouldFinishAt;
@@ -1013,7 +1013,7 @@ public abstract class Notification {
 
         @Override // com.iMe.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f348id;
+            return this.f343id;
         }
 
         @Override // com.iMe.storage.domain.model.notification.Notification
@@ -1079,7 +1079,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(shouldFinishAt, "shouldFinishAt");
-            this.f348id = id;
+            this.f343id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -1100,7 +1100,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f347id;
+        private final String f342id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String stakingId;
@@ -1189,7 +1189,7 @@ public abstract class Notification {
 
         @Override // com.iMe.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f347id;
+            return this.f342id;
         }
 
         @Override // com.iMe.storage.domain.model.notification.Notification
@@ -1250,7 +1250,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(stakingName, "stakingName");
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
             Intrinsics.checkNotNullParameter(amount, "amount");
-            this.f347id = id;
+            this.f342id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -1269,7 +1269,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f349id;
+        private final String f344id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String stakingAPR;
@@ -1383,7 +1383,7 @@ public abstract class Notification {
 
         @Override // com.iMe.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f349id;
+            return this.f344id;
         }
 
         @Override // com.iMe.storage.domain.model.notification.Notification
@@ -1464,7 +1464,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(stakingAPR, "stakingAPR");
             Intrinsics.checkNotNullParameter(stakingEndsAt, "stakingEndsAt");
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
-            this.f349id = id;
+            this.f344id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -1489,7 +1489,7 @@ public abstract class Notification {
         private final String debtAsUsd;
 
         /* renamed from: id */
-        private final String f346id;
+        private final String f341id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String profitAsToken;
@@ -1595,7 +1595,7 @@ public abstract class Notification {
 
         @Override // com.iMe.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f346id;
+            return this.f341id;
         }
 
         @Override // com.iMe.storage.domain.model.notification.Notification
@@ -1671,7 +1671,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(debtAsUsd, "debtAsUsd");
             Intrinsics.checkNotNullParameter(profitAsToken, "profitAsToken");
             Intrinsics.checkNotNullParameter(profitAsUsd, "profitAsUsd");
-            this.f346id = id;
+            this.f341id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -1693,7 +1693,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f350id;
+        private final String f345id;
         private boolean isRead;
         private final NetworkType networkType;
         private final NotificationType type;
@@ -1785,7 +1785,7 @@ public abstract class Notification {
 
         @Override // com.iMe.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f350id;
+            return this.f345id;
         }
 
         @Override // com.iMe.storage.domain.model.notification.Notification
@@ -1826,7 +1826,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(date, "date");
             Intrinsics.checkNotNullParameter(userId, "userId");
             Intrinsics.checkNotNullParameter(networkType, "networkType");
-            this.f350id = id;
+            this.f345id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -1843,7 +1843,7 @@ public abstract class Notification {
         private final String fromAddress;
 
         /* renamed from: id */
-        private final String f339id;
+        private final String f334id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String toAddress;
@@ -1857,7 +1857,7 @@ public abstract class Notification {
 
         @Override // com.iMe.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f339id;
+            return this.f334id;
         }
 
         @Override // com.iMe.storage.domain.model.notification.Notification
@@ -1908,7 +1908,7 @@ public abstract class Notification {
 
         private CryptoTransfer(String str, boolean z, NotificationType notificationType, String str2, String str3, NetworkType networkType, TokenCode tokenCode, String str4, String str5, String str6) {
             super(str, z, notificationType, str2, str3, networkType, null);
-            this.f339id = str;
+            this.f334id = str;
             this.isRead = z;
             this.type = notificationType;
             this.date = str2;
@@ -1923,13 +1923,13 @@ public abstract class Notification {
         /* compiled from: Notification.kt */
         /* renamed from: com.iMe.storage.domain.model.notification.Notification$CryptoTransfer$In */
         /* loaded from: classes3.dex */
-        public static final class C1918In extends CryptoTransfer {
+        public static final class C1905In extends CryptoTransfer {
             private final String amount;
             private final String date;
             private final String fromAddress;
 
             /* renamed from: id */
-            private final String f340id;
+            private final String f335id;
             private boolean isRead;
             private final NetworkType networkType;
             private final String toAddress;
@@ -1977,7 +1977,7 @@ public abstract class Notification {
                 return getToAddress();
             }
 
-            public final C1918In copy(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+            public final C1905In copy(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(date, "date");
@@ -1987,16 +1987,16 @@ public abstract class Notification {
                 Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
                 Intrinsics.checkNotNullParameter(toAddress, "toAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
-                return new C1918In(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
+                return new C1905In(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
             }
 
             public boolean equals(Object obj) {
                 if (this == obj) {
                     return true;
                 }
-                if (obj instanceof C1918In) {
-                    C1918In c1918In = (C1918In) obj;
-                    return Intrinsics.areEqual(getId(), c1918In.getId()) && isRead() == c1918In.isRead() && getType() == c1918In.getType() && Intrinsics.areEqual(getDate(), c1918In.getDate()) && Intrinsics.areEqual(getUserId(), c1918In.getUserId()) && getNetworkType() == c1918In.getNetworkType() && getTokenCode() == c1918In.getTokenCode() && Intrinsics.areEqual(getFromAddress(), c1918In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c1918In.getToAddress()) && Intrinsics.areEqual(getAmount(), c1918In.getAmount());
+                if (obj instanceof C1905In) {
+                    C1905In c1905In = (C1905In) obj;
+                    return Intrinsics.areEqual(getId(), c1905In.getId()) && isRead() == c1905In.isRead() && getType() == c1905In.getType() && Intrinsics.areEqual(getDate(), c1905In.getDate()) && Intrinsics.areEqual(getUserId(), c1905In.getUserId()) && getNetworkType() == c1905In.getNetworkType() && getTokenCode() == c1905In.getTokenCode() && Intrinsics.areEqual(getFromAddress(), c1905In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c1905In.getToAddress()) && Intrinsics.areEqual(getAmount(), c1905In.getAmount());
                 }
                 return false;
             }
@@ -2017,7 +2017,7 @@ public abstract class Notification {
 
             @Override // com.iMe.storage.domain.model.notification.Notification.CryptoTransfer, com.iMe.storage.domain.model.notification.Notification
             public String getId() {
-                return this.f340id;
+                return this.f335id;
             }
 
             @Override // com.iMe.storage.domain.model.notification.Notification.CryptoTransfer, com.iMe.storage.domain.model.notification.Notification
@@ -2071,7 +2071,7 @@ public abstract class Notification {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C1918In(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+            public C1905In(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
                 super(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount, null);
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
@@ -2082,7 +2082,7 @@ public abstract class Notification {
                 Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
                 Intrinsics.checkNotNullParameter(toAddress, "toAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
-                this.f340id = id;
+                this.f335id = id;
                 this.isRead = z;
                 this.type = type;
                 this.date = date;
@@ -2103,7 +2103,7 @@ public abstract class Notification {
             private final String fromAddress;
 
             /* renamed from: id */
-            private final String f341id;
+            private final String f336id;
             private boolean isRead;
             private final NetworkType networkType;
             private final Status status;
@@ -2201,7 +2201,7 @@ public abstract class Notification {
 
             @Override // com.iMe.storage.domain.model.notification.Notification.CryptoTransfer, com.iMe.storage.domain.model.notification.Notification
             public String getId() {
-                return this.f341id;
+                return this.f336id;
             }
 
             @Override // com.iMe.storage.domain.model.notification.Notification.CryptoTransfer, com.iMe.storage.domain.model.notification.Notification
@@ -2268,7 +2268,7 @@ public abstract class Notification {
                 Intrinsics.checkNotNullParameter(toAddress, "toAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
                 this.status = status;
-                this.f341id = id;
+                this.f336id = id;
                 this.isRead = z;
                 this.type = type;
                 this.date = date;
@@ -2290,7 +2290,7 @@ public abstract class Notification {
         private final String fromAddress;
 
         /* renamed from: id */
-        private final String f342id;
+        private final String f337id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String toAddress;
@@ -2304,7 +2304,7 @@ public abstract class Notification {
 
         @Override // com.iMe.storage.domain.model.notification.Notification.CryptoTransfer, com.iMe.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f342id;
+            return this.f337id;
         }
 
         @Override // com.iMe.storage.domain.model.notification.Notification.CryptoTransfer, com.iMe.storage.domain.model.notification.Notification
@@ -2359,7 +2359,7 @@ public abstract class Notification {
 
         private Donation(String str, boolean z, NotificationType notificationType, String str2, String str3, NetworkType networkType, TokenCode tokenCode, String str4, String str5, String str6) {
             super(str, z, notificationType, str2, str3, networkType, tokenCode, str4, str5, str6, null);
-            this.f342id = str;
+            this.f337id = str;
             this.isRead = z;
             this.type = notificationType;
             this.date = str2;
@@ -2374,13 +2374,13 @@ public abstract class Notification {
         /* compiled from: Notification.kt */
         /* renamed from: com.iMe.storage.domain.model.notification.Notification$Donation$In */
         /* loaded from: classes3.dex */
-        public static final class C1919In extends Donation {
+        public static final class C1906In extends Donation {
             private final String amount;
             private final String date;
             private final String fromAddress;
 
             /* renamed from: id */
-            private final String f343id;
+            private final String f338id;
             private boolean isRead;
             private final NetworkType networkType;
             private final String toAddress;
@@ -2428,7 +2428,7 @@ public abstract class Notification {
                 return getToAddress();
             }
 
-            public final C1919In copy(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+            public final C1906In copy(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(date, "date");
@@ -2438,16 +2438,16 @@ public abstract class Notification {
                 Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
                 Intrinsics.checkNotNullParameter(toAddress, "toAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
-                return new C1919In(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
+                return new C1906In(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
             }
 
             public boolean equals(Object obj) {
                 if (this == obj) {
                     return true;
                 }
-                if (obj instanceof C1919In) {
-                    C1919In c1919In = (C1919In) obj;
-                    return Intrinsics.areEqual(getId(), c1919In.getId()) && isRead() == c1919In.isRead() && getType() == c1919In.getType() && Intrinsics.areEqual(getDate(), c1919In.getDate()) && Intrinsics.areEqual(getUserId(), c1919In.getUserId()) && getNetworkType() == c1919In.getNetworkType() && getTokenCode() == c1919In.getTokenCode() && Intrinsics.areEqual(getFromAddress(), c1919In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c1919In.getToAddress()) && Intrinsics.areEqual(getAmount(), c1919In.getAmount());
+                if (obj instanceof C1906In) {
+                    C1906In c1906In = (C1906In) obj;
+                    return Intrinsics.areEqual(getId(), c1906In.getId()) && isRead() == c1906In.isRead() && getType() == c1906In.getType() && Intrinsics.areEqual(getDate(), c1906In.getDate()) && Intrinsics.areEqual(getUserId(), c1906In.getUserId()) && getNetworkType() == c1906In.getNetworkType() && getTokenCode() == c1906In.getTokenCode() && Intrinsics.areEqual(getFromAddress(), c1906In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c1906In.getToAddress()) && Intrinsics.areEqual(getAmount(), c1906In.getAmount());
                 }
                 return false;
             }
@@ -2468,7 +2468,7 @@ public abstract class Notification {
 
             @Override // com.iMe.storage.domain.model.notification.Notification.Donation, com.iMe.storage.domain.model.notification.Notification.CryptoTransfer, com.iMe.storage.domain.model.notification.Notification
             public String getId() {
-                return this.f343id;
+                return this.f338id;
             }
 
             @Override // com.iMe.storage.domain.model.notification.Notification.Donation, com.iMe.storage.domain.model.notification.Notification.CryptoTransfer, com.iMe.storage.domain.model.notification.Notification
@@ -2522,7 +2522,7 @@ public abstract class Notification {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C1919In(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+            public C1906In(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
                 super(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount, null);
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
@@ -2533,7 +2533,7 @@ public abstract class Notification {
                 Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
                 Intrinsics.checkNotNullParameter(toAddress, "toAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
-                this.f343id = id;
+                this.f338id = id;
                 this.isRead = z;
                 this.type = type;
                 this.date = date;
@@ -2554,7 +2554,7 @@ public abstract class Notification {
             private final String fromAddress;
 
             /* renamed from: id */
-            private final String f344id;
+            private final String f339id;
             private boolean isRead;
             private final NetworkType networkType;
             private final Status status;
@@ -2652,7 +2652,7 @@ public abstract class Notification {
 
             @Override // com.iMe.storage.domain.model.notification.Notification.Donation, com.iMe.storage.domain.model.notification.Notification.CryptoTransfer, com.iMe.storage.domain.model.notification.Notification
             public String getId() {
-                return this.f344id;
+                return this.f339id;
             }
 
             @Override // com.iMe.storage.domain.model.notification.Notification.Donation, com.iMe.storage.domain.model.notification.Notification.CryptoTransfer, com.iMe.storage.domain.model.notification.Notification
@@ -2719,7 +2719,7 @@ public abstract class Notification {
                 Intrinsics.checkNotNullParameter(toAddress, "toAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
                 this.status = status;
-                this.f344id = id;
+                this.f339id = id;
                 this.isRead = z;
                 this.type = type;
                 this.date = date;

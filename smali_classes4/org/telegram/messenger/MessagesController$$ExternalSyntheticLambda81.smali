@@ -12,15 +12,13 @@
 
 .field public final synthetic f$2:I
 
-.field public final synthetic f$3:Z
+.field public final synthetic f$3:I
 
-.field public final synthetic f$4:I
-
-.field public final synthetic f$5:I
+.field public final synthetic f$4:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JIZII)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JIIZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,11 +29,9 @@
 
     iput p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$2:I
 
-    iput-boolean p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$3:Z
+    iput p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$3:I
 
-    iput p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$4:I
-
-    iput p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$5:I
+    iput-boolean p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$4:Z
 
     return-void
 .end method
@@ -43,7 +39,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$0:Lorg/telegram/messenger/MessagesController;
 
@@ -51,13 +47,11 @@
 
     iget v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$2:I
 
-    iget-boolean v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$3:Z
+    iget v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$3:I
 
-    iget v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$4:I
+    iget-boolean v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$4:Z
 
-    iget v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda81;->f$5:I
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$2BXvhXTKxQ1Q31hiHtxrsZHc0HU(Lorg/telegram/messenger/MessagesController;JIZII)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$d4qYnoBmVw1mRvfZbT3_t-1JaBE(Lorg/telegram/messenger/MessagesController;JIIZ)V
 
     return-void
 .end method

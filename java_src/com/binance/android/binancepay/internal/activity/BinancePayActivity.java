@@ -20,18 +20,18 @@ import p000a.p001a.p002a.p003a.p005b.p007d.View$OnClickListenerC0005a;
 public final class BinancePayActivity extends AppCompatActivity {
 
     /* renamed from: b */
-    public static final C0378a f53b = new C0378a();
+    public static final C0370a f53b = new C0370a();
 
     /* renamed from: a */
     public final BinancePay f54a = BinancePayFactory.Companion.getBinancePay(this);
 
     /* renamed from: com.binance.android.binancepay.internal.activity.BinancePayActivity$a */
     /* loaded from: classes.dex */
-    public static final class C0378a {
+    public static final class C0370a {
     }
 
     /* renamed from: a */
-    public final void m850a() {
+    public final void m835a() {
         Locale local = Locale.getDefault();
         Intrinsics.checkExpressionValueIsNotNull(local, "local");
         String language = local.getLanguage();
@@ -68,7 +68,7 @@ public final class BinancePayActivity extends AppCompatActivity {
         super.onCreate(bundle);
         int i = Intrinsics.areEqual(getIntent().getStringExtra("extra_key_api_type"), "c2c") ? 2 : 1;
         Intrinsics.checkParameterIsNotNull(this, "context");
-        if (C0000a.m860a(this, "com.binance.dev")) {
+        if (C0000a.m845a(this, "com.binance.dev")) {
             Intrinsics.checkParameterIsNotNull(this, "context");
             float f = BitmapDescriptorFactory.HUE_RED;
             try {

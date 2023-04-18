@@ -16,7 +16,7 @@ public class XMSSPublicKey extends ASN1Object {
     private final byte[] root;
 
     private XMSSPublicKey(ASN1Sequence aSN1Sequence) {
-        if (!ASN1Integer.getInstance(aSN1Sequence.getObjectAt(0)).getValue().equals(BigInteger.valueOf(0L))) {
+        if (!ASN1Integer.getInstance(aSN1Sequence.getObjectAt(0)).hasValue(BigInteger.valueOf(0L))) {
             throw new IllegalArgumentException("unknown version of sequence");
         }
         this.publicSeed = Arrays.clone(ASN1OctetString.getInstance(aSN1Sequence.getObjectAt(1)).getOctets());

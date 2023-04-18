@@ -159,6 +159,11 @@
     move-result-object p1
 
     .line 30
+    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setCircleRippleBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 31
     sget p2, Lorg/telegram/messenger/R$id;->view_divider:I
 
     const-string v0, "divider"

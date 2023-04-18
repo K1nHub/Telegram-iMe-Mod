@@ -12,7 +12,7 @@ public abstract class ASN1OctetString extends ASN1Primitive implements ASN1Octet
     byte[] string;
 
     public ASN1OctetString(byte[] bArr) {
-        Objects.requireNonNull(bArr, "string cannot be null");
+        Objects.requireNonNull(bArr, "'string' cannot be null");
         this.string = bArr;
     }
 
@@ -37,12 +37,30 @@ public abstract class ASN1OctetString extends ASN1Primitive implements ASN1Octet
     }
 
     public static ASN1OctetString getInstance(ASN1TaggedObject aSN1TaggedObject, boolean z) {
+        if (z) {
+            if (aSN1TaggedObject.isExplicit()) {
+                return getInstance(aSN1TaggedObject.getObject());
+            }
+            throw new IllegalArgumentException("object implicit - explicit expected.");
+        }
         ASN1Primitive object = aSN1TaggedObject.getObject();
-        return (z || (object instanceof ASN1OctetString)) ? getInstance(object) : BEROctetString.fromSequence(ASN1Sequence.getInstance(object));
+        if (aSN1TaggedObject.isExplicit()) {
+            ASN1OctetString aSN1OctetString = getInstance(object);
+            return aSN1TaggedObject instanceof BERTaggedObject ? new BEROctetString(new ASN1OctetString[]{aSN1OctetString}) : (ASN1OctetString) new BEROctetString(new ASN1OctetString[]{aSN1OctetString}).toDLObject();
+        } else if (object instanceof ASN1OctetString) {
+            ASN1OctetString aSN1OctetString2 = (ASN1OctetString) object;
+            return aSN1TaggedObject instanceof BERTaggedObject ? aSN1OctetString2 : (ASN1OctetString) aSN1OctetString2.toDLObject();
+        } else if (object instanceof ASN1Sequence) {
+            ASN1Sequence aSN1Sequence = (ASN1Sequence) object;
+            return aSN1TaggedObject instanceof BERTaggedObject ? BEROctetString.fromSequence(aSN1Sequence) : (ASN1OctetString) BEROctetString.fromSequence(aSN1Sequence).toDLObject();
+        } else {
+            throw new IllegalArgumentException("unknown object in getInstance: " + aSN1TaggedObject.getClass().getName());
+        }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    boolean asn1Equals(ASN1Primitive aSN1Primitive) {
+    public boolean asn1Equals(ASN1Primitive aSN1Primitive) {
         if (aSN1Primitive instanceof ASN1OctetString) {
             return Arrays.areEqual(this.string, ((ASN1OctetString) aSN1Primitive).string);
         }

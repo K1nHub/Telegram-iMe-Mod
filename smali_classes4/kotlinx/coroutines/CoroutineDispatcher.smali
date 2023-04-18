@@ -83,7 +83,7 @@
         }
     .end annotation
 
-    .line 100
+    .line 159
     new-instance v0, Lkotlinx/coroutines/internal/DispatchedContinuation;
 
     invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/internal/DispatchedContinuation;-><init>(Lkotlinx/coroutines/CoroutineDispatcher;Lkotlin/coroutines/Continuation;)V
@@ -97,6 +97,20 @@
     const/4 p1, 0x1
 
     return p1
+.end method
+
+.method public limitedParallelism(I)Lkotlinx/coroutines/CoroutineDispatcher;
+    .locals 1
+
+    .line 106
+    invoke-static {p1}, Lkotlinx/coroutines/internal/LimitedDispatcherKt;->checkParallelism(I)V
+
+    .line 107
+    new-instance v0, Lkotlinx/coroutines/internal/LimitedDispatcher;
+
+    invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/internal/LimitedDispatcher;-><init>(Lkotlinx/coroutines/CoroutineDispatcher;I)V
+
+    return-object v0
 .end method
 
 .method public minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
@@ -118,7 +132,7 @@
     return-object p1
 .end method
 
-.method public releaseInterceptedContinuation(Lkotlin/coroutines/Continuation;)V
+.method public final releaseInterceptedContinuation(Lkotlin/coroutines/Continuation;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -128,10 +142,10 @@
         }
     .end annotation
 
-    .line 108
+    .line 166
     check-cast p1, Lkotlinx/coroutines/internal/DispatchedContinuation;
 
-    .line 109
+    .line 167
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/DispatchedContinuation;->release()V
 
     return-void
@@ -140,7 +154,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 127
+    .line 185
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

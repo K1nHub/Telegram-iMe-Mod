@@ -11,9 +11,9 @@ import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseModelDownloadConditions;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseRemoteModel;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseModelDownloadConditions;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseRemoteModel;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
@@ -49,7 +49,7 @@ public final class zzoz {
         DownloadManager downloadManager = (DownloadManager) firebaseApp.getApplicationContext().getSystemService("download");
         this.zzavn = downloadManager;
         if (downloadManager == null) {
-            zzass.m799d("ModelDownloadManager", "Download manager service is not available in the service.");
+            zzass.m785d("ModelDownloadManager", "Download manager service is not available in the service.");
         }
         this.zzavq = zzokVar;
         this.zzavp = zzpaVar;
@@ -62,7 +62,7 @@ public final class zzoz {
         if (zzmh == null) {
             GmsLogger gmsLogger = zzass;
             String valueOf = String.valueOf(this.zzavo.getUniqueModelNameForPersist());
-            gmsLogger.m799d("ModelDownloadManager", valueOf.length() != 0 ? "No model updates for model: ".concat(valueOf) : new String("No model updates for model: "));
+            gmsLogger.m785d("ModelDownloadManager", valueOf.length() != 0 ? "No model updates for model: ".concat(valueOf) : new String("No model updates for model: "));
             return null;
         }
         return zzb(zzmh);
@@ -87,7 +87,7 @@ public final class zzoz {
             StringBuilder sb = new StringBuilder(valueOf.length() + 44);
             sb.append("Cancel or remove existing downloading task: ");
             sb.append(valueOf);
-            gmsLogger.m799d("ModelDownloadManager", sb.toString());
+            gmsLogger.m785d("ModelDownloadManager", sb.toString());
             if (this.zzavn.remove(zzmc.longValue()) > 0 || zzmf() == null) {
                 this.zzavq.zza(this.zzavo.getUniqueModelNameForPersist(), zzmk());
                 this.zzato.zzh(this.zzavo);
@@ -105,7 +105,7 @@ public final class zzoz {
         StringBuilder sb = new StringBuilder(53);
         sb.append("Schedule a new downloading task: ");
         sb.append(enqueue);
-        gmsLogger.m799d("ModelDownloadManager", sb.toString());
+        gmsLogger.m785d("ModelDownloadManager", sb.toString());
         this.zzato.zza(enqueue, zzpeVar);
         this.zzavp.zza(zzmc.NO_ERROR, false, zzpeVar.zzmo(), zzlu.zzw.zza.SCHEDULED);
         return Long.valueOf(enqueue);
@@ -196,7 +196,7 @@ public final class zzoz {
         try {
             parcelFileDescriptor = downloadManager.openDownloadedFile(zzmc.longValue());
         } catch (FileNotFoundException unused) {
-            zzass.m797e("ModelDownloadManager", "Downloaded file is not found");
+            zzass.m783e("ModelDownloadManager", "Downloaded file is not found");
         }
         return parcelFileDescriptor;
     }
@@ -224,7 +224,7 @@ public final class zzoz {
         str = zzb.zzawa;
         zzob zzc = zzob.zzc(firebaseApp);
         if (str.equals(zzc.zze(firebaseRemoteModel)) && zznm.zza(firebaseApp.getApplicationContext()).equals(zzc.zzlt())) {
-            zzass.m797e("ModelDownloadManager", "The model is incompatible with TFLite and the app is not upgraded, do not download");
+            zzass.m783e("ModelDownloadManager", "The model is incompatible with TFLite and the app is not upgraded, do not download");
         } else {
             z = true;
         }
@@ -260,12 +260,12 @@ public final class zzoz {
                 if (!zzb(zzmf())) {
                     this.zzavp.zza(zzmc.NO_ERROR, false, zzmk(), zzlu.zzw.zza.DOWNLOADING);
                 }
-                zzass.m799d("ModelDownloadManager", "New model is already in downloading, do nothing.");
+                zzass.m785d("ModelDownloadManager", "New model is already in downloading, do nothing.");
                 return null;
             }
         }
         GmsLogger gmsLogger = zzass;
-        gmsLogger.m799d("ModelDownloadManager", "Need to download a new model.");
+        gmsLogger.m785d("ModelDownloadManager", "Need to download a new model.");
         zzme();
         uri = zzpeVar.zzavz;
         DownloadManager.Request request = new DownloadManager.Request(uri);
@@ -273,14 +273,14 @@ public final class zzoz {
         FirebaseModelDownloadConditions initialDownloadConditions = this.zzavo.getInitialDownloadConditions();
         if (this.zzavq.zza(zzpeVar)) {
             if (!this.zzavo.isModelUpdatesEnabled()) {
-                gmsLogger.m799d("ModelDownloadManager", "Model update is disabled and have a previous downloaded model, skip downloading");
+                gmsLogger.m785d("ModelDownloadManager", "Model update is disabled and have a previous downloaded model, skip downloading");
                 return null;
             }
-            gmsLogger.m799d("ModelDownloadManager", "Model update is enabled and have a previous downloaded model, use download condition");
+            gmsLogger.m785d("ModelDownloadManager", "Model update is enabled and have a previous downloaded model, use download condition");
             this.zzavp.zza(zzmc.NO_ERROR, false, zzpeVar.zzmo(), zzlu.zzw.zza.UPDATE_AVAILABLE);
             initialDownloadConditions = this.zzavo.getUpdatesDownloadConditions();
         }
-        gmsLogger.m799d("ModelDownloadManager", "Use initial download conditions.");
+        gmsLogger.m785d("ModelDownloadManager", "Use initial download conditions.");
         if (Build.VERSION.SDK_INT >= 24) {
             request.setRequiresCharging(initialDownloadConditions.isChargingRequired());
             request.setRequiresDeviceIdle(initialDownloadConditions.isDeviceIdleRequired());
@@ -313,7 +313,7 @@ public final class zzoz {
         return zzp(r1.longValue());
      */
     /* JADX WARN: Code restructure failed: missing block: B:42:0x0095, code lost:
-        com.google.android.gms.internal.firebase_ml.zzoz.zzass.m795i("ModelDownloadManager", "Didn't schedule download for the updated model");
+        com.google.android.gms.internal.firebase_ml.zzoz.zzass.m781i("ModelDownloadManager", "Didn't schedule download for the updated model");
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -329,7 +329,7 @@ public final class zzoz {
             r4 = 0
             r0.zza(r1, r4, r2, r3)
             r0 = 0
-            com.google.android.gms.internal.firebase_ml.zzpe r1 = r10.zzmh()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> L13
+            com.google.android.gms.internal.firebase_ml.zzpe r1 = r10.zzmh()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> L13
             r2 = r0
             goto L16
         L13:
@@ -338,23 +338,23 @@ public final class zzoz {
             r1 = r0
         L16:
             r3 = 13
-            java.lang.Integer r5 = r10.zzmf()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            java.lang.Long r6 = r10.zzmc()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            boolean r7 = r10.zzmj()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            java.lang.Integer r5 = r10.zzmf()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            java.lang.Long r6 = r10.zzmc()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            boolean r7 = r10.zzmj()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             if (r7 != 0) goto L84
-            boolean r7 = zzb(r5)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            boolean r7 = zzb(r5)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             if (r7 == 0) goto L2d
             goto L84
         L2d:
             r7 = 1
             if (r5 == 0) goto L45
-            int r8 = r5.intValue()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            int r8 = r5.intValue()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             r9 = 4
             if (r8 == r9) goto L46
-            int r8 = r5.intValue()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            int r8 = r5.intValue()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             r9 = 2
             if (r8 == r9) goto L46
-            int r5 = r5.intValue()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            int r5 = r5.intValue()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             if (r5 != r7) goto L45
             goto L46
         L45:
@@ -362,55 +362,55 @@ public final class zzoz {
         L46:
             if (r7 == 0) goto L66
             if (r6 == 0) goto L66
-            java.lang.String r5 = r10.zzmd()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            java.lang.String r5 = r10.zzmd()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             if (r5 == 0) goto L66
-            com.google.android.gms.internal.firebase_ml.zzpa r0 = r10.zzavp     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            com.google.android.gms.internal.firebase_ml.zzmc r1 = com.google.android.gms.internal.firebase_ml.zzmc.NO_ERROR     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            com.google.android.gms.internal.firebase_ml.zzor r2 = r10.zzmk()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            com.google.android.gms.internal.firebase_ml.zzlu$zzw$zza r5 = com.google.android.gms.internal.firebase_ml.zzlu.zzw.zza.DOWNLOADING     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            r0.zza(r1, r4, r2, r5)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            long r0 = r6.longValue()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            com.google.android.gms.tasks.Task r0 = r10.zzp(r0)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            com.google.android.gms.internal.firebase_ml.zzpa r0 = r10.zzavp     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            com.google.android.gms.internal.firebase_ml.zzmc r1 = com.google.android.gms.internal.firebase_ml.zzmc.NO_ERROR     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            com.google.android.gms.internal.firebase_ml.zzor r2 = r10.zzmk()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            com.google.android.gms.internal.firebase_ml.zzlu$zzw$zza r5 = com.google.android.gms.internal.firebase_ml.zzlu.zzw.zza.DOWNLOADING     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            r0.zza(r1, r4, r2, r5)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            long r0 = r6.longValue()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            com.google.android.gms.tasks.Task r0 = r10.zzp(r0)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             return r0
         L66:
             if (r1 != 0) goto L69
             goto L6d
         L69:
-            java.lang.Long r0 = r10.zzb(r1)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            java.lang.Long r0 = r10.zzb(r1)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
         L6d:
             if (r0 != 0) goto L7b
-            com.google.firebase.ml.common.FirebaseMLException r0 = new com.google.firebase.ml.common.FirebaseMLException     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            com.google.firebase.ml.common.FirebaseMLException r0 = new com.google.firebase.ml.common.FirebaseMLException     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             java.lang.String r1 = "Failed to schedule the download task"
-            r0.<init>(r1, r3, r2)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            com.google.android.gms.tasks.Task r0 = com.google.android.gms.tasks.Tasks.forException(r0)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            r0.<init>(r1, r3, r2)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            com.google.android.gms.tasks.Task r0 = com.google.android.gms.tasks.Tasks.forException(r0)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             return r0
         L7b:
-            long r0 = r0.longValue()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            com.google.android.gms.tasks.Task r0 = r10.zzp(r0)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            long r0 = r0.longValue()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            com.google.android.gms.tasks.Task r0 = r10.zzp(r0)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             return r0
         L84:
             if (r1 == 0) goto L9e
-            java.lang.Long r1 = r10.zzb(r1)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            java.lang.Long r1 = r10.zzb(r1)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             if (r1 == 0) goto L95
-            long r0 = r1.longValue()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            com.google.android.gms.tasks.Task r0 = r10.zzp(r0)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            long r0 = r1.longValue()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            com.google.android.gms.tasks.Task r0 = r10.zzp(r0)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             return r0
         L95:
-            com.google.android.gms.common.internal.GmsLogger r1 = com.google.android.gms.internal.firebase_ml.zzoz.zzass     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            com.google.android.gms.common.internal.GmsLogger r1 = com.google.android.gms.internal.firebase_ml.zzoz.zzass     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             java.lang.String r2 = "ModelDownloadManager"
             java.lang.String r4 = "Didn't schedule download for the updated model"
-            r1.m795i(r2, r4)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            r1.m781i(r2, r4)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
         L9e:
             if (r5 == 0) goto Lb4
-            int r1 = r5.intValue()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            int r1 = r5.intValue()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             r2 = 16
             if (r1 != r2) goto Lb4
-            com.google.firebase.ml.common.FirebaseMLException r0 = r10.zzb(r6)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            r10.zzme()     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
-            com.google.android.gms.tasks.Task r0 = com.google.android.gms.tasks.Tasks.forException(r0)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            com.google.firebase.ml.common.FirebaseMLException r0 = r10.zzb(r6)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            r10.zzme()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            com.google.android.gms.tasks.Task r0 = com.google.android.gms.tasks.Tasks.forException(r0)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             return r0
         Lb4:
-            com.google.android.gms.tasks.Task r0 = com.google.android.gms.tasks.Tasks.forResult(r0)     // Catch: com.google.firebase.p021ml.common.FirebaseMLException -> Lb9
+            com.google.android.gms.tasks.Task r0 = com.google.android.gms.tasks.Tasks.forResult(r0)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             return r0
         Lb9:
             r0 = move-exception

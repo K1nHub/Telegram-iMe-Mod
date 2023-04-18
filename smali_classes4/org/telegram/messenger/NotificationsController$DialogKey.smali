@@ -24,13 +24,13 @@
 .method private constructor <init>(JI)V
     .locals 0
 
-    .line 5134
+    .line 5131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5135
+    .line 5132
     iput-wide p1, p0, Lorg/telegram/messenger/NotificationsController$DialogKey;->dialogId:J
 
-    .line 5136
+    .line 5133
     iput p3, p0, Lorg/telegram/messenger/NotificationsController$DialogKey;->topicId:I
 
     return-void
@@ -39,7 +39,7 @@
 .method synthetic constructor <init>(JILorg/telegram/messenger/NotificationsController$1;)V
     .locals 0
 
-    .line 5130
+    .line 5127
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/messenger/NotificationsController$DialogKey;-><init>(JI)V
 
     return-void

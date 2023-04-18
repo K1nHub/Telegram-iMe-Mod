@@ -1,6 +1,6 @@
 package com.iMe.storage.data.mapper.template;
 
-import com.iMe.storage.data.locale.p028db.model.templates.TemplatesDb;
+import com.iMe.storage.data.locale.p027db.model.templates.TemplatesDb;
 import com.iMe.storage.domain.model.templates.TemplateModel;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TemplateMapping.kt */

@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-import org.telegram.p048ui.Components.Bulletin;
+import org.telegram.p044ui.Components.Bulletin;
 /* loaded from: classes4.dex */
 public final /* synthetic */ class MediaDataController$$ExternalSyntheticLambda153 implements Runnable {
     public final /* synthetic */ Bulletin.UndoButton f$0;

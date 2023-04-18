@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/tabs/user_channels/CatalogUserChannelsView$$State;)V
     .locals 1
 
-    .line 275
+    .line 293
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openAddChannelScreen"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/catalog/tabs/user_channels/CatalogUserChannelsView;)V
     .locals 0
 
-    .line 280
+    .line 298
     invoke-interface {p1}, Lcom/iMe/ui/catalog/tabs/user_channels/CatalogUserChannelsView;->openAddChannelScreen()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 273
+    .line 291
     check-cast p1, Lcom/iMe/ui/catalog/tabs/user_channels/CatalogUserChannelsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/tabs/user_channels/CatalogUserChannelsView$$State$OpenAddChannelScreenCommand;->apply(Lcom/iMe/ui/catalog/tabs/user_channels/CatalogUserChannelsView;)V

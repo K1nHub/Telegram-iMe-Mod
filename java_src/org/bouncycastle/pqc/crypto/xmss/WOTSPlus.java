@@ -2,28 +2,30 @@ package org.bouncycastle.pqc.crypto.xmss;
 
 import java.util.Objects;
 import org.bouncycastle.pqc.crypto.xmss.OTSHashAddress;
+import org.bouncycastle.util.Arrays;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
-final class WOTSPlus {
+public final class WOTSPlus {
     private final KeyedHashFunctions khf;
     private final WOTSPlusParameters params;
     private byte[] publicSeed;
     private byte[] secretKeySeed;
 
-    /* JADX INFO: Access modifiers changed from: protected */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public WOTSPlus(WOTSPlusParameters wOTSPlusParameters) {
         Objects.requireNonNull(wOTSPlusParameters, "params == null");
         this.params = wOTSPlusParameters;
-        int digestSize = wOTSPlusParameters.getDigestSize();
-        this.khf = new KeyedHashFunctions(wOTSPlusParameters.getDigest(), digestSize);
-        this.secretKeySeed = new byte[digestSize];
-        this.publicSeed = new byte[digestSize];
+        int treeDigestSize = wOTSPlusParameters.getTreeDigestSize();
+        this.khf = new KeyedHashFunctions(wOTSPlusParameters.getTreeDigest(), treeDigestSize);
+        this.secretKeySeed = new byte[treeDigestSize];
+        this.publicSeed = new byte[treeDigestSize];
     }
 
     private byte[] chain(byte[] bArr, int i, int i2, OTSHashAddress oTSHashAddress) {
-        int digestSize = this.params.getDigestSize();
+        int treeDigestSize = this.params.getTreeDigestSize();
         Objects.requireNonNull(bArr, "startHash == null");
-        if (bArr.length != digestSize) {
-            throw new IllegalArgumentException("startHash needs to be " + digestSize + "bytes");
+        if (bArr.length != treeDigestSize) {
+            throw new IllegalArgumentException("startHash needs to be " + treeDigestSize + "bytes");
         }
         Objects.requireNonNull(oTSHashAddress, "otsHashAddress == null");
         Objects.requireNonNull(oTSHashAddress.toByteArray(), "otsHashAddress byte array == null");
@@ -36,8 +38,8 @@ final class WOTSPlus {
             OTSHashAddress oTSHashAddress2 = (OTSHashAddress) new OTSHashAddress.Builder().withLayerAddress(oTSHashAddress.getLayerAddress()).withTreeAddress(oTSHashAddress.getTreeAddress()).withOTSAddress(oTSHashAddress.getOTSAddress()).withChainAddress(oTSHashAddress.getChainAddress()).withHashAddress(i3 - 1).withKeyAndMask(0).build();
             byte[] PRF = this.khf.PRF(this.publicSeed, oTSHashAddress2.toByteArray());
             byte[] PRF2 = this.khf.PRF(this.publicSeed, ((OTSHashAddress) new OTSHashAddress.Builder().withLayerAddress(oTSHashAddress2.getLayerAddress()).withTreeAddress(oTSHashAddress2.getTreeAddress()).withOTSAddress(oTSHashAddress2.getOTSAddress()).withChainAddress(oTSHashAddress2.getChainAddress()).withHashAddress(oTSHashAddress2.getHashAddress()).withKeyAndMask(1).build()).toByteArray());
-            byte[] bArr2 = new byte[digestSize];
-            for (int i4 = 0; i4 < digestSize; i4++) {
+            byte[] bArr2 = new byte[treeDigestSize];
+            for (int i4 = 0; i4 < treeDigestSize; i4++) {
                 bArr2[i4] = (byte) (chain[i4] ^ PRF2[i4]);
             }
             return this.khf.m58F(PRF, bArr2);
@@ -62,7 +64,7 @@ final class WOTSPlus {
         return this.params;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public WOTSPlusPublicKeyParameters getPublicKey(OTSHashAddress oTSHashAddress) {
         Objects.requireNonNull(oTSHashAddress, "otsHashAddress == null");
         byte[][] bArr = new byte[this.params.getLen()];
@@ -75,7 +77,7 @@ final class WOTSPlus {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public byte[] getPublicSeed() {
-        return XMSSUtil.cloneArray(this.publicSeed);
+        return Arrays.clone(this.publicSeed);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -86,11 +88,11 @@ final class WOTSPlus {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void importKeys(byte[] bArr, byte[] bArr2) {
         Objects.requireNonNull(bArr, "secretKeySeed == null");
-        if (bArr.length != this.params.getDigestSize()) {
+        if (bArr.length != this.params.getTreeDigestSize()) {
             throw new IllegalArgumentException("size of secretKeySeed needs to be equal to size of digest");
         }
         Objects.requireNonNull(bArr2, "publicSeed == null");
-        if (bArr2.length != this.params.getDigestSize()) {
+        if (bArr2.length != this.params.getTreeDigestSize()) {
             throw new IllegalArgumentException("size of publicSeed needs to be equal to size of digest");
         }
         this.secretKeySeed = bArr;

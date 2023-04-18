@@ -19,7 +19,7 @@ public final class WebvttCssStyle {
     private static final int OFF = 0;
 
     /* renamed from: ON */
-    private static final int f140ON = 1;
+    private static final int f137ON = 1;
     public static final int STYLE_BOLD = 1;
     public static final int STYLE_BOLD_ITALIC = 3;
     public static final int STYLE_ITALIC = 2;

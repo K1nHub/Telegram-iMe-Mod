@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 64886
+    .line 64898
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$account_SavedRingtones;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 64891
+    .line 64903
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_savedRingtonesNotModified;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

@@ -16,8 +16,8 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 84
-    sget-object v0, Lkotlinx/coroutines/scheduling/NonBlockingContext;->INSTANCE:Lkotlinx/coroutines/scheduling/NonBlockingContext;
+    .line 81
+    sget-object v0, Lkotlinx/coroutines/scheduling/TasksKt;->NonBlockingContext:Lkotlinx/coroutines/scheduling/TaskContext;
 
     const-wide/16 v1, 0x0
 
@@ -29,13 +29,13 @@
 .method public constructor <init>(JLkotlinx/coroutines/scheduling/TaskContext;)V
     .locals 0
 
-    .line 80
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
+    .line 78
     iput-wide p1, p0, Lkotlinx/coroutines/scheduling/Task;->submissionTime:J
 
-    .line 82
+    .line 79
     iput-object p3, p0, Lkotlinx/coroutines/scheduling/Task;->taskContext:Lkotlinx/coroutines/scheduling/TaskContext;
 
     return-void

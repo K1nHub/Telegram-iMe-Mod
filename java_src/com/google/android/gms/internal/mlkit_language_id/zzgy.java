@@ -3,11 +3,11 @@ package com.google.android.gms.internal.mlkit_language_id;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
 /* loaded from: classes.dex */
-final class zzgy implements Iterator<Map.Entry<K, V>>, p035j$.util.Iterator {
+final class zzgy implements Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
     private int zza;
     private boolean zzb;
     private Iterator<Map.Entry<K, V>> zzc;
@@ -18,12 +18,12 @@ final class zzgy implements Iterator<Map.Entry<K, V>>, p035j$.util.Iterator {
         this.zza = -1;
     }
 
-    @Override // p035j$.util.Iterator
+    @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final boolean hasNext() {
         List list;
         Map map;
@@ -38,7 +38,7 @@ final class zzgy implements Iterator<Map.Entry<K, V>>, p035j$.util.Iterator {
         return true;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final void remove() {
         List list;
         if (!this.zzb) {
@@ -67,7 +67,7 @@ final class zzgy implements Iterator<Map.Entry<K, V>>, p035j$.util.Iterator {
         return this.zzc;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final /* synthetic */ Object next() {
         List list;
         List list2;

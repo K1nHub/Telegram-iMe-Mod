@@ -26,13 +26,13 @@
 .method public constructor <init>(Landroid/text/TextPaint;)V
     .locals 7
 
-    .line 526
+    .line 531
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 527
+    .line 532
     iput-object p1, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->paint:Landroid/graphics/Paint;
 
-    .line 528
+    .line 533
     invoke-virtual {p1}, Landroid/text/TextPaint;->getTextSize()F
 
     move-result p1
@@ -41,7 +41,7 @@
 
     mul-float/2addr p1, v0
 
-    .line 529
+    .line 534
     new-instance v6, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable$1;
 
     sget v2, Lorg/telegram/messenger/R$raw;->dots_loading:I
@@ -66,10 +66,10 @@
 
     const/4 p1, 0x1
 
-    .line 535
+    .line 540
     invoke-virtual {v6, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->setAutoRepeat(I)V
 
-    .line 536
+    .line 541
     iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->lottie:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -90,12 +90,12 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    .line 537
+    .line 542
     iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->lottie:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
 
-    .line 538
+    .line 543
     iget-object p1, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->lottie:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
@@ -108,25 +108,25 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 551
+    .line 556
     iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getColor()I
 
     move-result v0
 
-    .line 552
+    .line 557
     iget v1, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->lastColor:I
 
     if-eq v0, v1, :cond_0
 
-    .line 553
+    .line 558
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->setColor(I)V
 
-    .line 554
+    .line 559
     iput v0, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->lastColor:I
 
-    .line 556
+    .line 561
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->lottie:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -152,31 +152,31 @@
 .method public setColor(I)V
     .locals 3
 
-    .line 542
+    .line 547
     iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->lottie:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->beginApplyLayerColors()V
 
-    .line 543
+    .line 548
     iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->lottie:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const-string v1, "Comp 1.**"
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 544
+    .line 549
     iget-object p1, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->lottie:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->commitApplyLayerColors()V
 
-    .line 545
+    .line 550
     iget-object p1, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->lottie:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
 
-    .line 546
+    .line 551
     iget-object p1, p0, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;->lottie:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const-wide/16 v0, 0x0

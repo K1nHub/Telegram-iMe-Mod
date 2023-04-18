@@ -17,11 +17,11 @@ import org.json.JSONObject;
 /* loaded from: classes.dex */
 public class RegisteredKey extends AbstractSafeParcelable {
     public static final Parcelable.Creator<RegisteredKey> CREATOR = new zzj();
-    @SafeParcelable.Field(getter = "getChallengeValue", m789id = 3)
+    @SafeParcelable.Field(getter = "getChallengeValue", m775id = 3)
     String zza;
-    @SafeParcelable.Field(getter = "getKeyHandle", m789id = 2)
+    @SafeParcelable.Field(getter = "getKeyHandle", m775id = 2)
     private final KeyHandle zzb;
-    @SafeParcelable.Field(getter = "getAppId", m789id = 4)
+    @SafeParcelable.Field(getter = "getAppId", m775id = 4)
     private final String zzc;
 
     public RegisteredKey(KeyHandle keyHandle) {
@@ -131,7 +131,7 @@ public class RegisteredKey extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public RegisteredKey(@SafeParcelable.Param(m788id = 2) KeyHandle keyHandle, @SafeParcelable.Param(m788id = 3) String str, @SafeParcelable.Param(m788id = 4) String str2) {
+    public RegisteredKey(@SafeParcelable.Param(m774id = 2) KeyHandle keyHandle, @SafeParcelable.Param(m774id = 3) String str, @SafeParcelable.Param(m774id = 4) String str2) {
         this.zzb = (KeyHandle) Preconditions.checkNotNull(keyHandle);
         this.zza = str;
         this.zzc = str2;

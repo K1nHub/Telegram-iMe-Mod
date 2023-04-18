@@ -89,6 +89,24 @@
     return-object p0
 .end method
 
+.method public static bridge synthetic drop([BI)Ljava/util/List;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BI)",
+            "Ljava/util/List<",
+            "Ljava/lang/Byte;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-static {p0, p1}, Lkotlin/collections/ArraysKt___ArraysKt;->drop([BI)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static bridge synthetic fill([Ljava/lang/Object;Ljava/lang/Object;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
@@ -295,18 +313,10 @@
     return-object p0
 .end method
 
-.method public static bridge synthetic toList([B)Ljava/util/List;
+.method public static bridge synthetic toByteArray([Ljava/lang/Byte;)[B
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "([B)",
-            "Ljava/util/List<",
-            "Ljava/lang/Byte;",
-            ">;"
-        }
-    .end annotation
 
-    invoke-static {p0}, Lkotlin/collections/ArraysKt___ArraysKt;->toList([B)Ljava/util/List;
+    invoke-static {p0}, Lkotlin/collections/ArraysKt___ArraysKt;->toByteArray([Ljava/lang/Byte;)[B
 
     move-result-object p0
 

@@ -1,5 +1,5 @@
 .class public final Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;
-.super Lorg/telegram/ui/ActionBar/BaseFragment;
+.super Lcom/iMe/ui/base/mvp/MvpFragment;
 .source "SwipeToGoToNextUnreadDialogSettingsActivity.kt"
 
 
@@ -11,8 +11,21 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSwipeToGoToNextUnreadDialogSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SwipeToGoToNextUnreadDialogSettingsActivity.kt\ncom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,235:1\n1#2:236\n*E\n"
+    value = "SMAP\nSwipeToGoToNextUnreadDialogSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SwipeToGoToNextUnreadDialogSettingsActivity.kt\ncom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,240:1\n1#2:241\n*E\n"
 .end annotation
+
+
+# static fields
+.field static final synthetic $$delegatedProperties:[Lkotlin/reflect/KProperty;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Lkotlin/reflect/KProperty<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
@@ -32,64 +45,133 @@
 
 .field private enableSectionRow:I
 
-.field private final listAdapter$delegate:Lkotlin/Lazy;
+.field private final listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-.field private final listView$delegate:Lkotlin/Lazy;
+.field private final listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-.field private final rootView$delegate:Lkotlin/Lazy;
+.field private final rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
 .field private rowCount:I
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Azbq2vnCuyvX4IIS5WALmLpfUrk(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$czTlsS4JCxlLM7ZoF4usuH01V0I(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->initListView$lambda$8$lambda$7(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->initListView$lambda$7$lambda$6(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
+
+    return-void
+.end method
+
+.method static constructor <clinit>()V
+    .locals 6
+
+    const-class v0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Lkotlin/reflect/KProperty;
+
+    .line 30
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "rootView"
+
+    const-string v4, "getRootView()Landroid/widget/FrameLayout;"
+
+    const/4 v5, 0x0
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v2
+
+    aput-object v2, v1, v5
+
+    .line 31
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "listView"
+
+    const-string v4, "getListView()Lorg/telegram/ui/Components/RecyclerListView;"
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    aput-object v2, v1, v3
+
+    .line 32
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "listAdapter"
+
+    const-string v4, "getListAdapter()Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$ListAdapter;"
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v0
+
+    const/4 v2, 0x2
+
+    aput-object v0, v1, v2
+
+    sput-object v1, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 3
 
-    .line 26
-    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
+    .line 27
+    invoke-direct {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;-><init>()V
 
-    .line 29
+    .line 30
     new-instance v0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$rootView$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$rootView$2;-><init>(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->rootView$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 30
+    .line 31
     new-instance v0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$listView$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$listView$2;-><init>(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->listView$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 31
+    .line 32
     new-instance v0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$listAdapter$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$listAdapter$2;-><init>(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->listAdapter$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 32
+    .line 33
     sget-object v0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$dialogTypes$2;->INSTANCE:Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$dialogTypes$2;
 
     invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
@@ -104,7 +186,7 @@
 .method public static final synthetic access$getConsiderArchiveRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)I
     .locals 0
 
-    .line 26
+    .line 27
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->considerArchiveRow:I
 
     return p0
@@ -113,7 +195,7 @@
 .method public static final synthetic access$getConsiderArchiveSectionRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)I
     .locals 0
 
-    .line 26
+    .line 27
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->considerArchiveSectionRow:I
 
     return p0
@@ -122,7 +204,7 @@
 .method public static final synthetic access$getDialogTypes(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)[Lcom/iMe/fork/enums/DialogType;
     .locals 0
 
-    .line 26
+    .line 27
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getDialogTypes()[Lcom/iMe/fork/enums/DialogType;
 
     move-result-object p0
@@ -133,7 +215,7 @@
 .method public static final synthetic access$getDialogTypesHeaderRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)I
     .locals 0
 
-    .line 26
+    .line 27
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->dialogTypesHeaderRow:I
 
     return p0
@@ -142,7 +224,7 @@
 .method public static final synthetic access$getDialogTypesStartRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)I
     .locals 0
 
-    .line 26
+    .line 27
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->dialogTypesStartRow:I
 
     return p0
@@ -151,7 +233,7 @@
 .method public static final synthetic access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)I
     .locals 0
 
-    .line 26
+    .line 27
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->enableRow:I
 
     return p0
@@ -160,7 +242,7 @@
 .method public static final synthetic access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)I
     .locals 0
 
-    .line 26
+    .line 27
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->enableSectionRow:I
 
     return p0
@@ -169,7 +251,7 @@
 .method public static final synthetic access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)I
     .locals 0
 
-    .line 26
+    .line 27
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->rowCount:I
 
     return p0
@@ -178,7 +260,7 @@
 .method public static final synthetic access$initListView(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 26
+    .line 27
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->initListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
@@ -189,7 +271,7 @@
 .method public static final synthetic access$initRootView(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 26
+    .line 27
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->initRootView()Landroid/widget/FrameLayout;
 
     move-result-object p0
@@ -200,7 +282,7 @@
 .method public static final synthetic access$isClickableViewType(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;I)Z
     .locals 0
 
-    .line 26
+    .line 27
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->isClickableViewType(I)Z
 
     move-result p0
@@ -211,7 +293,7 @@
 .method public static final synthetic access$needDivider(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;I)Z
     .locals 0
 
-    .line 26
+    .line 27
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->needDivider(I)Z
 
     move-result p0
@@ -222,7 +304,7 @@
 .method public static final synthetic access$setConsiderArchiveRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;I)V
     .locals 0
 
-    .line 26
+    .line 27
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->considerArchiveRow:I
 
     return-void
@@ -231,7 +313,7 @@
 .method public static final synthetic access$setConsiderArchiveSectionRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;I)V
     .locals 0
 
-    .line 26
+    .line 27
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->considerArchiveSectionRow:I
 
     return-void
@@ -240,7 +322,7 @@
 .method public static final synthetic access$setDialogTypesEndRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;I)V
     .locals 0
 
-    .line 26
+    .line 27
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->dialogTypesEndRow:I
 
     return-void
@@ -249,7 +331,7 @@
 .method public static final synthetic access$setDialogTypesHeaderRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;I)V
     .locals 0
 
-    .line 26
+    .line 27
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->dialogTypesHeaderRow:I
 
     return-void
@@ -258,7 +340,7 @@
 .method public static final synthetic access$setDialogTypesStartRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;I)V
     .locals 0
 
-    .line 26
+    .line 27
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->dialogTypesStartRow:I
 
     return-void
@@ -267,7 +349,7 @@
 .method public static final synthetic access$setEnableRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;I)V
     .locals 0
 
-    .line 26
+    .line 27
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->enableRow:I
 
     return-void
@@ -276,7 +358,7 @@
 .method public static final synthetic access$setEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;I)V
     .locals 0
 
-    .line 26
+    .line 27
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->enableSectionRow:I
 
     return-void
@@ -285,7 +367,7 @@
 .method public static final synthetic access$setRowCount$p(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;I)V
     .locals 0
 
-    .line 26
+    .line 27
     iput p1, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->rowCount:I
 
     return-void
@@ -294,7 +376,7 @@
 .method private final getDialogTypes()[Lcom/iMe/fork/enums/DialogType;
     .locals 1
 
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->dialogTypes$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -307,12 +389,18 @@
 .end method
 
 .method private final getListAdapter()Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$ListAdapter;
-    .locals 1
+    .locals 3
 
-    .line 31
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->listAdapter$delegate:Lkotlin/Lazy;
+    .line 32
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x2
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -322,12 +410,18 @@
 .end method
 
 .method private final getListView()Lorg/telegram/ui/Components/RecyclerListView;
-    .locals 1
+    .locals 3
 
-    .line 30
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->listView$delegate:Lkotlin/Lazy;
+    .line 31
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x1
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -337,12 +431,18 @@
 .end method
 
 .method private final getRootView()Landroid/widget/FrameLayout;
-    .locals 1
+    .locals 3
 
-    .line 29
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->rootView$delegate:Lkotlin/Lazy;
+    .line 30
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x0
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -354,7 +454,7 @@
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 100
+    .line 105
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -365,10 +465,10 @@
 
     const/4 v1, 0x1
 
-    .line 101
+    .line 106
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setFocusable(Z)V
 
-    .line 102
+    .line 107
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -379,14 +479,14 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 103
+    .line 108
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$ListAdapter;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 104
+    .line 109
     new-instance v1, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)V
@@ -396,29 +496,29 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda$8$lambda$7(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$7$lambda$6(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
     .locals 0
 
     const-string p3, "this$0"
 
     invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 106
+    .line 111
     instance-of p3, p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     if-eqz p3, :cond_3
 
-    .line 107
+    .line 112
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckbox()V
 
-    .line 109
+    .line 114
     iget p1, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->enableRow:I
 
     if-ne p2, p1, :cond_1
 
-    .line 110
+    .line 115
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object p1
@@ -431,18 +531,18 @@
 
     invoke-virtual {p1, p2}, Lcom/iMe/fork/controller/ToolsController;->setSwipeToGoToNextUnreadDialogEnabled(Z)V
 
-    .line 111
+    .line 116
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$ListAdapter;
 
     move-result-object p1
 
-    .line 112
+    .line 117
     iget p2, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->rowCount:I
 
-    .line 113
+    .line 118
     invoke-virtual {p1}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$ListAdapter;->updateRows()V
 
-    .line 114
+    .line 119
     iget p3, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->rowCount:I
 
     sub-int/2addr p2, p3
@@ -451,7 +551,7 @@
 
     move-result p2
 
-    .line 115
+    .line 120
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object p3
@@ -462,7 +562,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 116
+    .line 121
     iget p3, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->enableSectionRow:I
 
     add-int/lit8 p3, p3, 0x1
@@ -471,7 +571,7 @@
 
     goto :goto_0
 
-    .line 118
+    .line 123
     :cond_0
     iget p3, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->enableSectionRow:I
 
@@ -479,7 +579,7 @@
 
     invoke-virtual {p1, p3, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    .line 120
+    .line 125
     :goto_0
     iget p0, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->enableSectionRow:I
 
@@ -487,13 +587,13 @@
 
     goto :goto_1
 
-    .line 123
+    .line 128
     :cond_1
     iget p1, p0, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->considerArchiveRow:I
 
     if-ne p2, p1, :cond_2
 
-    .line 124
+    .line 129
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object p0
@@ -508,7 +608,7 @@
 
     goto :goto_1
 
-    .line 126
+    .line 131
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
@@ -538,7 +638,7 @@
 .method private final initRootView()Landroid/widget/FrameLayout;
     .locals 2
 
-    .line 96
+    .line 101
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -549,7 +649,7 @@
 
     const-string v1, "windowBackgroundGray"
 
-    .line 97
+    .line 102
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
@@ -562,7 +662,7 @@
 .method private final isClickableViewType(I)Z
     .locals 1
 
-    .line 133
+    .line 138
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     if-ne p1, v0, :cond_0
@@ -581,7 +681,7 @@
 .method private final needDivider(I)Z
     .locals 1
 
-    .line 135
+    .line 140
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
     if-eq p1, v0, :cond_0
@@ -604,20 +704,20 @@
 .method private final setupActionBar()V
     .locals 2
 
-    .line 82
+    .line 87
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 83
+    .line 88
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 84
+    .line 89
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 85
+    .line 90
     sget v1, Lorg/telegram/messenger/R$string;->settings_interface_swipe_to_next_unread_dialog:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -626,7 +726,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 86
+    .line 91
     new-instance v1, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$setupActionBar$1$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$setupActionBar$1$1;-><init>(Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)V
@@ -638,45 +738,6 @@
 
 
 # virtual methods
-.method public bridge synthetic createView(Landroid/content/Context;)Landroid/view/View;
-    .locals 0
-
-    .line 26
-    invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->createView(Landroid/content/Context;)Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public createView(Landroid/content/Context;)Landroid/widget/FrameLayout;
-    .locals 1
-
-    const-string v0, "context"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 44
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getRootView()Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    .line 45
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->setupActionBar()V
-
-    .line 46
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
-
-    .line 47
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
-
-    return-object p1
-.end method
-
 .method public getThemeDescriptions()Ljava/util/ArrayList;
     .locals 19
     .annotation system Ldalvik/annotation/Signature;
@@ -694,7 +755,7 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 55
+    .line 60
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -719,7 +780,7 @@
 
     aput-object v10, v1, v2
 
-    .line 56
+    .line 61
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -744,7 +805,7 @@
 
     aput-object v3, v1, v4
 
-    .line 57
+    .line 62
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -767,7 +828,7 @@
 
     aput-object v3, v1, v5
 
-    .line 58
+    .line 63
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -786,7 +847,7 @@
 
     aput-object v3, v1, v6
 
-    .line 59
+    .line 64
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -805,7 +866,7 @@
 
     aput-object v3, v1, v6
 
-    .line 60
+    .line 65
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -824,7 +885,7 @@
 
     aput-object v3, v1, v6
 
-    .line 61
+    .line 66
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -843,7 +904,7 @@
 
     aput-object v3, v1, v6
 
-    .line 62
+    .line 67
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -870,7 +931,7 @@
 
     aput-object v3, v1, v6
 
-    .line 63
+    .line 68
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -901,7 +962,7 @@
 
     aput-object v3, v1, v5
 
-    .line 64
+    .line 69
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -932,7 +993,7 @@
 
     aput-object v3, v1, v5
 
-    .line 65
+    .line 70
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -961,7 +1022,7 @@
 
     aput-object v3, v1, v5
 
-    .line 66
+    .line 71
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -994,7 +1055,7 @@
 
     aput-object v3, v1, v6
 
-    .line 67
+    .line 72
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1025,7 +1086,7 @@
 
     aput-object v3, v1, v6
 
-    .line 68
+    .line 73
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1056,7 +1117,7 @@
 
     aput-object v3, v1, v7
 
-    .line 69
+    .line 74
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1087,7 +1148,7 @@
 
     aput-object v3, v1, v7
 
-    .line 70
+    .line 75
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1114,7 +1175,7 @@
 
     aput-object v3, v1, v7
 
-    .line 71
+    .line 76
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1141,7 +1202,7 @@
 
     aput-object v3, v1, v7
 
-    .line 72
+    .line 77
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1168,7 +1229,7 @@
 
     aput-object v3, v1, v7
 
-    .line 73
+    .line 78
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1195,7 +1256,7 @@
 
     aput-object v3, v1, v6
 
-    .line 74
+    .line 79
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1226,7 +1287,7 @@
 
     aput-object v3, v1, v2
 
-    .line 54
+    .line 59
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -1234,18 +1295,60 @@
     return-object v1
 .end method
 
+.method public bridge synthetic onCreateView(Landroid/content/Context;)Landroid/view/View;
+    .locals 0
+
+    .line 27
+    invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
+    .locals 1
+
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 45
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getRootView()Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    .line 46
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->setupActionBar()V
+
+    .line 47
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    return-object p1
+.end method
+
 .method public onFragmentDestroy()V
     .locals 1
 
-    .line 50
+    .line 55
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/iMe/fork/controller/ToolsController;->saveConfig()V
 
-    .line 51
-    invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
+    .line 56
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
+
+    return-void
+.end method
+
+.method public onViewReady()V
+    .locals 0
 
     return-void
 .end method

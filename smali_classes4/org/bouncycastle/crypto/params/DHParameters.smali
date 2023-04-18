@@ -55,15 +55,17 @@
 
     move-result p5
 
-    if-gt p4, p5, :cond_3
+    if-le p4, p5, :cond_4
 
-    iput-object p2, p0, Lorg/bouncycastle/crypto/params/DHParameters;->g:Ljava/math/BigInteger;
+    const-string p4, "org.bouncycastle.dh.allow_unsafe_p_value"
 
-    iput-object p1, p0, Lorg/bouncycastle/crypto/params/DHParameters;->p:Ljava/math/BigInteger;
+    invoke-static {p4}, Lorg/bouncycastle/util/Properties;->isOverrideSet(Ljava/lang/String;)Z
 
-    iput-object p3, p0, Lorg/bouncycastle/crypto/params/DHParameters;->q:Ljava/math/BigInteger;
+    move-result p4
 
-    return-void
+    if-eqz p4, :cond_3
+
+    goto :goto_1
 
     :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
@@ -73,6 +75,16 @@
     invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
+
+    :cond_4
+    :goto_1
+    iput-object p2, p0, Lorg/bouncycastle/crypto/params/DHParameters;->g:Ljava/math/BigInteger;
+
+    iput-object p1, p0, Lorg/bouncycastle/crypto/params/DHParameters;->p:Ljava/math/BigInteger;
+
+    iput-object p3, p0, Lorg/bouncycastle/crypto/params/DHParameters;->q:Ljava/math/BigInteger;
+
+    return-void
 .end method
 
 

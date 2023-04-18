@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramApiManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramApiManager.kt\ncom/iMe/manager/TelegramApiManager\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,358:1\n1603#2,9:359\n1855#2:368\n1856#2:370\n1612#2:371\n1549#2:372\n1620#2,3:373\n1#3:369\n*S KotlinDebug\n*F\n+ 1 TelegramApiManager.kt\ncom/iMe/manager/TelegramApiManager\n*L\n112#1:359,9\n112#1:368\n112#1:370\n112#1:371\n100#1:372\n100#1:373,3\n112#1:369\n*E\n"
+    value = "SMAP\nTelegramApiManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramApiManager.kt\ncom/iMe/manager/TelegramApiManager\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,355:1\n1603#2,9:356\n1855#2:365\n1856#2:367\n1612#2:368\n1549#2:369\n1620#2,3:370\n1#3:366\n*S KotlinDebug\n*F\n+ 1 TelegramApiManager.kt\ncom/iMe/manager/TelegramApiManager\n*L\n111#1:356,9\n111#1:365\n111#1:367\n111#1:368\n99#1:369\n99#1:370,3\n111#1:366\n*E\n"
 .end annotation
 
 
@@ -161,6 +161,22 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$mi6gzksLtA5Xi8yog8uim8EK89o(Lio/reactivex/ObservableEmitter;Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lcom/iMe/manager/TelegramApiManager;->getUserInfoByUsername$lambda$3$lambda$2(Lio/reactivex/ObservableEmitter;Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$ntTW10NTvUgQs6aYNACh3TFh_RU(Lcom/iMe/manager/TelegramApiManager;Ljava/lang/String;Lio/reactivex/ObservableEmitter;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/iMe/manager/TelegramApiManager;->getUserInfoByUsername$lambda$3(Lcom/iMe/manager/TelegramApiManager;Ljava/lang/String;Lio/reactivex/ObservableEmitter;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$o0Iqi_bMVeInVRefMhNK5EmushY(Lio/reactivex/ObservableEmitter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
@@ -200,13 +216,13 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 16
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 17
+    .line 16
     iput-object p1, p0, Lcom/iMe/manager/TelegramApiManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 18
+    .line 17
     iput-object p2, p0, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     return-void
@@ -235,7 +251,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 236
+    .line 233
     iget-object p0, p0, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {p0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -246,10 +262,10 @@
 
     move-result-object p0
 
-    .line 237
-    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda18;
+    .line 234
+    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda20;
 
-    invoke-direct {v0, p4, p2, p3}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda18;-><init>(Lio/reactivex/ObservableEmitter;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;)V
+    invoke-direct {v0, p4, p2, p3}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda20;-><init>(Lio/reactivex/ObservableEmitter;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;)V
 
     invoke-virtual {p0, p1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
@@ -273,7 +289,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 239
+    .line 236
     invoke-interface {p0}, Lio/reactivex/ObservableEmitter;->isDisposed()Z
 
     move-result p1
@@ -290,7 +306,7 @@
 
     goto :goto_1
 
-    .line 242
+    .line 239
     :cond_0
     instance-of p4, p3, Lorg/telegram/tgnet/TLRPC$TL_urlAuthResultAccepted;
 
@@ -302,7 +318,7 @@
 
     goto :goto_0
 
-    .line 243
+    .line 240
     :cond_1
     instance-of p3, p3, Lorg/telegram/tgnet/TLRPC$TL_urlAuthResultDefault;
 
@@ -310,15 +326,15 @@
 
     goto :goto_0
 
-    .line 244
+    .line 241
     :cond_2
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;->url:Ljava/lang/String;
 
-    .line 246
+    .line 243
     :goto_0
     invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
 
-    .line 247
+    .line 244
     invoke-interface {p0}, Lio/reactivex/Emitter;->onComplete()V
 
     :cond_3
@@ -341,7 +357,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 335
+    .line 332
     iget-object p0, p0, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {p0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -372,12 +388,12 @@
 
     if-nez p1, :cond_0
 
-    .line 337
+    .line 334
     invoke-interface {p0}, Lio/reactivex/CompletableEmitter;->onComplete()V
 
     goto :goto_0
 
-    .line 339
+    .line 336
     :cond_0
     invoke-interface {p0, p1}, Lio/reactivex/CompletableEmitter;->onError(Ljava/lang/Throwable;)V
 
@@ -400,7 +416,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 26
     invoke-direct {p0}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -411,29 +427,29 @@
 
     if-eqz v0, :cond_0
 
-    .line 28
+    .line 27
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v1, :cond_0
 
-    .line 29
+    .line 28
     invoke-interface {p2, v0}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
 
-    .line 30
+    .line 29
     invoke-interface {p2}, Lio/reactivex/Emitter;->onComplete()V
 
     goto :goto_0
 
-    .line 32
+    .line 31
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolveUsername;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolveUsername;-><init>()V
 
-    .line 33
+    .line 32
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolveUsername;->username:Ljava/lang/String;
 
-    .line 36
+    .line 35
     iget-object p1, p0, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {p1}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -444,10 +460,10 @@
 
     move-result-object p1
 
-    .line 37
-    new-instance v1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda17;
+    .line 36
+    new-instance v1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda18;
 
-    invoke-direct {v1, p2, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda17;-><init>(Lio/reactivex/ObservableEmitter;Lcom/iMe/manager/TelegramApiManager;)V
+    invoke-direct {v1, p2, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda18;-><init>(Lio/reactivex/ObservableEmitter;Lcom/iMe/manager/TelegramApiManager;)V
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
@@ -470,7 +486,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 39
+    .line 38
     invoke-interface {p0}, Lio/reactivex/ObservableEmitter;->isDisposed()Z
 
     move-result p1
@@ -491,12 +507,12 @@
     :try_start_0
     const-string p3, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.TL_contacts_resolvedPeer"
 
-    .line 42
+    .line 41
     invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;
 
-    .line 43
+    .line 42
     invoke-direct {p1}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p3
@@ -507,7 +523,7 @@
 
     invoke-virtual {p3, v1, v2}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 44
+    .line 43
     invoke-direct {p1}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p3
@@ -516,7 +532,7 @@
 
     invoke-virtual {p3, v1, v2}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
 
-    .line 45
+    .line 44
     iget-object p1, p1, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {p1}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -535,7 +551,7 @@
 
     invoke-virtual {p1, p3, v1, v2, v3}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
 
-    .line 47
+    .line 46
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;->chats:Ljava/util/ArrayList;
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -548,7 +564,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 48
+    .line 47
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;->chats:Ljava/util/ArrayList;
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -559,12 +575,12 @@
 
     invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
 
-    .line 49
+    .line 48
     invoke-interface {p0}, Lio/reactivex/Emitter;->onComplete()V
 
     goto :goto_0
 
-    .line 50
+    .line 49
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -581,7 +597,7 @@
     :catch_0
     move-exception p1
 
-    .line 52
+    .line 51
     invoke-interface {p0}, Lio/reactivex/ObservableEmitter;->isDisposed()Z
 
     move-result p2
@@ -610,7 +626,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 268
+    .line 265
     iget-object p0, p0, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {p0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -621,10 +637,10 @@
 
     move-result-object p0
 
-    .line 269
-    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda13;
+    .line 266
+    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda14;
 
-    invoke-direct {v0, p2}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda13;-><init>(Lio/reactivex/ObservableEmitter;)V
+    invoke-direct {v0, p2}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda14;-><init>(Lio/reactivex/ObservableEmitter;)V
 
     const/4 p2, 0x2
 
@@ -642,7 +658,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 272
+    .line 269
     invoke-interface {p0}, Lio/reactivex/ObservableEmitter;->isDisposed()Z
 
     move-result p1
@@ -662,15 +678,15 @@
     :cond_0
     const-string p2, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.messages_BotResults"
 
-    .line 274
+    .line 271
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$messages_BotResults;
 
-    .line 275
+    .line 272
     invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
 
-    .line 276
+    .line 273
     invoke-interface {p0}, Lio/reactivex/Emitter;->onComplete()V
 
     :cond_1
@@ -697,26 +713,26 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 320
+    .line 317
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channels_exportMessageLink;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_channels_exportMessageLink;-><init>()V
 
-    .line 321
+    .line 318
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result p1
 
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$TL_channels_exportMessageLink;->id:I
 
-    .line 322
+    .line 319
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInputChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Lorg/telegram/tgnet/TLRPC$InputChannel;
 
     move-result-object p1
 
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_channels_exportMessageLink;->channel:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
-    .line 324
+    .line 321
     iget-object p0, p0, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {p0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -727,9 +743,9 @@
 
     move-result-object p0
 
-    new-instance p1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda15;
+    new-instance p1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda16;
 
-    invoke-direct {p1, p3}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda15;-><init>(Lio/reactivex/ObservableEmitter;)V
+    invoke-direct {p1, p3}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda16;-><init>(Lio/reactivex/ObservableEmitter;)V
 
     invoke-virtual {p0, v0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
@@ -743,10 +759,10 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 325
-    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda12;
+    .line 322
+    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda13;
 
-    invoke-direct {v0, p1, p0, p2}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/tgnet/TLObject;Lio/reactivex/ObservableEmitter;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct {v0, p1, p0, p2}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/tgnet/TLObject;Lio/reactivex/ObservableEmitter;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -760,7 +776,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 326
+    .line 323
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_exportedMessageLink;
 
     const/4 v1, 0x0
@@ -777,10 +793,10 @@
     :goto_0
     if-eqz p0, :cond_1
 
-    .line 327
+    .line 324
     invoke-interface {p1, p0}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
 
-    .line 326
+    .line 323
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto :goto_1
@@ -791,7 +807,7 @@
     :goto_1
     if-nez p0, :cond_4
 
-    .line 328
+    .line 325
     new-instance p0, Ljava/lang/Exception;
 
     if-eqz p2, :cond_2
@@ -815,7 +831,7 @@
 .method private final getMessagesController()Lorg/telegram/messenger/MessagesController;
     .locals 2
 
-    .line 349
+    .line 346
     iget-object v0, p0, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -833,6 +849,241 @@
     return-object v0
 .end method
 
+.method private static final getUserInfoByUsername$lambda$3(Lcom/iMe/manager/TelegramApiManager;Ljava/lang/String;Lio/reactivex/ObservableEmitter;)V
+    .locals 4
+
+    const-string v0, "this$0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "$username"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "emitter"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 61
+    invoke-virtual {p0, p1}, Lcom/iMe/manager/TelegramApiManager;->getCorrectApiUsername(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 62
+    invoke-direct {p0}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lorg/telegram/messenger/MessagesController;->getUserOrChat(Ljava/lang/String;)Lorg/telegram/tgnet/TLObject;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 63
+    instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$User;
+
+    if-eqz v1, :cond_0
+
+    invoke-direct {p0}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v1
+
+    move-object v2, v0
+
+    check-cast v2, Lorg/telegram/tgnet/TLRPC$User;
+
+    iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    .line 64
+    invoke-interface {p2, v0}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
+
+    .line 65
+    invoke-interface {p2}, Lio/reactivex/Emitter;->onComplete()V
+
+    goto :goto_0
+
+    .line 67
+    :cond_0
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolveUsername;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolveUsername;-><init>()V
+
+    .line 68
+    iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolveUsername;->username:Ljava/lang/String;
+
+    .line 71
+    iget-object p1, p0, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
+
+    invoke-interface {p1}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
+
+    move-result p1
+
+    invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+
+    move-result-object p1
+
+    .line 72
+    new-instance v1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda19;
+
+    invoke-direct {v1, p2, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda19;-><init>(Lio/reactivex/ObservableEmitter;Lcom/iMe/manager/TelegramApiManager;)V
+
+    invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+
+    :goto_0
+    return-void
+.end method
+
+.method private static final getUserInfoByUsername$lambda$3$lambda$2(Lio/reactivex/ObservableEmitter;Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 5
+
+    const-string v0, "res.users"
+
+    const-string v1, "$emitter"
+
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "this$0"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-eqz p3, :cond_0
+
+    .line 74
+    invoke-interface {p0}, Lio/reactivex/ObservableEmitter;->isDisposed()Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    new-instance p1, Ljava/lang/Exception;
+
+    iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
+
+    invoke-direct {p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onError(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    :try_start_0
+    const-string p3, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.TL_contacts_resolvedPeer"
+
+    .line 77
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;
+
+    .line 78
+    iget-object p3, p1, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
+
+    invoke-interface {p3}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
+
+    move-result p3
+
+    invoke-static {p3}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
+
+    move-result-object p3
+
+    iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;->users:Ljava/util/ArrayList;
+
+    iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;->chats:Ljava/util/ArrayList;
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    invoke-virtual {p3, v1, v2, v4, v3}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
+
+    .line 79
+    invoke-direct {p1}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object p3
+
+    iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;->users:Ljava/util/ArrayList;
+
+    invoke-virtual {p3, v1, v4}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
+
+    .line 80
+    invoke-direct {p1}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object p1
+
+    iget-object p3, p2, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;->chats:Ljava/util/ArrayList;
+
+    invoke-virtual {p1, p3, v4}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
+
+    .line 82
+    iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;->users:Ljava/util/ArrayList;
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result p1
+
+    xor-int/2addr p1, v3
+
+    if-eqz p1, :cond_1
+
+    .line 83
+    iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;->users:Ljava/util/ArrayList;
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1}, Lkotlin/collections/CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
+
+    .line 84
+    invoke-interface {p0}, Lio/reactivex/Emitter;->onComplete()V
+
+    goto :goto_0
+
+    .line 86
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "Telegram API: Empty result"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onError(Ljava/lang/Throwable;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    .line 89
+    invoke-interface {p0}, Lio/reactivex/ObservableEmitter;->isDisposed()Z
+
+    move-result p2
+
+    if-nez p2, :cond_2
+
+    invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onError(Ljava/lang/Throwable;)V
+
+    :cond_2
+    :goto_0
+    return-void
+.end method
+
 .method private static final getUsersByIds$lambda$7(Ljava/util/List;Lcom/iMe/manager/TelegramApiManager;Lio/reactivex/ObservableEmitter;)V
     .locals 5
 
@@ -848,7 +1099,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 99
+    .line 98
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_users_getUsers;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_users_getUsers;-><init>()V
@@ -887,7 +1138,7 @@
 
     move-result-wide v2
 
-    .line 101
+    .line 100
     invoke-direct {p1}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v4
@@ -901,16 +1152,16 @@
 
     goto :goto_0
 
-    .line 102
+    .line 101
     :cond_0
     invoke-static {v1}, Lcom/iMe/fork/utils/CollectionsUtilsKt;->toArrayList(Ljava/util/List;)Ljava/util/ArrayList;
 
     move-result-object p0
 
-    .line 100
+    .line 99
     iput-object p0, v0, Lorg/telegram/tgnet/TLRPC$TL_users_getUsers;->id:Ljava/util/ArrayList;
 
-    .line 105
+    .line 104
     iget-object p0, p1, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {p0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -921,10 +1172,10 @@
 
     move-result-object p0
 
-    .line 106
-    new-instance v1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda16;
+    .line 105
+    new-instance v1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda17;
 
-    invoke-direct {v1, p2, p1}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda16;-><init>(Lio/reactivex/ObservableEmitter;Lcom/iMe/manager/TelegramApiManager;)V
+    invoke-direct {v1, p2, p1}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda17;-><init>(Lio/reactivex/ObservableEmitter;Lcom/iMe/manager/TelegramApiManager;)V
 
     invoke-virtual {p0, v0, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
@@ -944,12 +1195,12 @@
 
     if-eqz p3, :cond_0
 
-    .line 108
+    .line 107
     invoke-interface {p0}, Lio/reactivex/ObservableEmitter;->isDisposed()Z
 
     move-result p1
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_4
 
     new-instance p1, Ljava/lang/Exception;
 
@@ -961,14 +1212,14 @@
 
     goto :goto_2
 
-    .line 111
+    .line 110
     :cond_0
     :try_start_0
     instance-of p3, p2, Lorg/telegram/tgnet/TLRPC$Vector;
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_4
 
-    .line 112
+    .line 111
     check-cast p2, Lorg/telegram/tgnet/TLRPC$Vector;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
@@ -999,7 +1250,7 @@
 
     move-result-object v0
 
-    .line 112
+    .line 111
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v1, :cond_2
@@ -1019,7 +1270,7 @@
 
     goto :goto_0
 
-    .line 113
+    .line 112
     :cond_3
     invoke-direct {p1}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -1033,32 +1284,11 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 114
-    invoke-interface {p3}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result p1
-
-    xor-int/lit8 p1, p1, 0x1
-
-    if-eqz p1, :cond_4
-
-    .line 115
+    .line 113
     invoke-interface {p0, p3}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
 
-    .line 116
+    .line 114
     invoke-interface {p0}, Lio/reactivex/Emitter;->onComplete()V
-
-    goto :goto_2
-
-    .line 117
-    :cond_4
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "Telegram API: Empty result"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onError(Ljava/lang/Throwable;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1067,16 +1297,16 @@
     :catch_0
     move-exception p1
 
-    .line 120
+    .line 117
     invoke-interface {p0}, Lio/reactivex/ObservableEmitter;->isDisposed()Z
 
     move-result p2
 
-    if-nez p2, :cond_5
+    if-nez p2, :cond_4
 
     invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onError(Ljava/lang/Throwable;)V
 
-    :cond_5
+    :cond_4
     :goto_2
     return-void
 .end method
@@ -1096,14 +1326,14 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 174
+    .line 171
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isNotInChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 176
+    .line 173
     iget-object v0, p1, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -1114,10 +1344,10 @@
 
     move-result-object v1
 
-    .line 178
+    .line 175
     iget-wide v2, p0, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    .line 179
+    .line 176
     iget-object p1, p1, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {p1}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -1138,20 +1368,20 @@
 
     const/4 v7, 0x0
 
-    .line 177
-    new-instance v8, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda11;
+    .line 174
+    new-instance v8, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda12;
 
-    invoke-direct {v8, p2, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda11;-><init>(Lio/reactivex/ObservableEmitter;Lorg/telegram/tgnet/TLRPC$Chat;)V
+    invoke-direct {v8, p2, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda12;-><init>(Lio/reactivex/ObservableEmitter;Lorg/telegram/tgnet/TLRPC$Chat;)V
 
     invoke-virtual/range {v1 .. v8}, Lorg/telegram/messenger/MessagesController;->addUserToChat(JLorg/telegram/tgnet/TLRPC$User;ILjava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Runnable;)V
 
     goto :goto_0
 
-    .line 188
+    .line 185
     :cond_0
     invoke-interface {p2, p0}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
 
-    .line 189
+    .line 186
     invoke-interface {p2}, Lio/reactivex/Emitter;->onComplete()V
 
     :goto_0
@@ -1169,10 +1399,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 184
+    .line 181
     invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
 
-    .line 185
+    .line 182
     invoke-interface {p0}, Lio/reactivex/Emitter;->onComplete()V
 
     return-void
@@ -1193,7 +1423,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 303
+    .line 300
     iget-object p0, p0, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {p0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -1204,10 +1434,10 @@
 
     move-result-object p0
 
-    .line 304
-    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda14;
+    .line 301
+    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda15;
 
-    invoke-direct {v0, p2}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda14;-><init>(Lio/reactivex/ObservableEmitter;)V
+    invoke-direct {v0, p2}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda15;-><init>(Lio/reactivex/ObservableEmitter;)V
 
     invoke-virtual {p0, p1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
@@ -1223,7 +1453,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 306
+    .line 303
     invoke-interface {p0}, Lio/reactivex/ObservableEmitter;->isDisposed()Z
 
     move-result p1
@@ -1240,13 +1470,13 @@
 
     goto :goto_0
 
-    .line 308
+    .line 305
     :cond_0
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
 
-    .line 309
+    .line 306
     invoke-interface {p0}, Lio/reactivex/Emitter;->onComplete()V
 
     :cond_1
@@ -1269,22 +1499,22 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 197
+    .line 194
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isNotInChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 198
+    .line 195
     invoke-interface {p2, p0}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
 
-    .line 199
+    .line 196
     invoke-interface {p2}, Lio/reactivex/Emitter;->onComplete()V
 
     goto :goto_0
 
-    .line 202
+    .line 199
     :cond_0
     iget-object v0, p1, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
@@ -1296,10 +1526,10 @@
 
     move-result-object v1
 
-    .line 204
+    .line 201
     iget-wide v2, p0, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    .line 205
+    .line 202
     iget-object p1, p1, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {p1}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -1318,10 +1548,10 @@
 
     const/4 v7, 0x0
 
-    .line 203
-    new-instance v8, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda10;
+    .line 200
+    new-instance v8, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda11;
 
-    invoke-direct {v8, p2, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda10;-><init>(Lio/reactivex/ObservableEmitter;Lorg/telegram/tgnet/TLRPC$Chat;)V
+    invoke-direct {v8, p2, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda11;-><init>(Lio/reactivex/ObservableEmitter;Lorg/telegram/tgnet/TLRPC$Chat;)V
 
     const/4 v9, 0x0
 
@@ -1344,10 +1574,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 210
+    .line 207
     invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
 
-    .line 211
+    .line 208
     invoke-interface {p0}, Lio/reactivex/Emitter;->onComplete()V
 
     return-void
@@ -1377,20 +1607,20 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 221
+    .line 218
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;-><init>()V
 
-    .line 222
+    .line 219
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;->url:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 223
+    .line 220
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;->url:Ljava/lang/String;
 
-    .line 224
+    .line 221
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;->flags:I
 
     or-int/lit8 v1, v1, 0x4
@@ -1399,23 +1629,23 @@
 
     goto :goto_0
 
-    .line 226
+    .line 223
     :cond_0
     iget v1, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;->button_id:I
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;->button_id:I
 
-    .line 227
+    .line 224
     iget v1, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;->msg_id:I
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;->msg_id:I
 
-    .line 228
+    .line 225
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 229
+    .line 226
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;->flags:I
 
     or-int/lit8 v1, v1, 0x2
@@ -1425,19 +1655,19 @@
     :goto_0
     const/4 v1, 0x1
 
-    .line 231
+    .line 228
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;->write_allowed:Z
 
-    .line 234
-    new-instance v1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda5;
+    .line 231
+    new-instance v1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda6;
 
-    invoke-direct {v1, p0, v0, p1, p2}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda5;-><init>(Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;)V
+    invoke-direct {v1, p0, v0, p1, p2}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda6;-><init>(Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;)V
 
     invoke-static {v1}, Lio/reactivex/Observable;->create(Lio/reactivex/ObservableOnSubscribe;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 250
+    .line 247
     iget-object p2, p0, Lcom/iMe/manager/TelegramApiManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1471,7 +1701,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 334
+    .line 331
     new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/manager/TelegramApiManager;Ljava/util/ArrayList;)V
@@ -1480,7 +1710,7 @@
 
     move-result-object p1
 
-    .line 342
+    .line 339
     iget-object v0, p0, Lcom/iMe/manager/TelegramApiManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1515,12 +1745,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 24
+    .line 23
     invoke-virtual {p0, p1}, Lcom/iMe/manager/TelegramApiManager;->getCorrectApiUsername(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 26
+    .line 25
     new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/manager/TelegramApiManager;Ljava/lang/String;)V
@@ -1529,7 +1759,7 @@
 
     move-result-object p1
 
-    .line 57
+    .line 56
     iget-object v0, p0, Lcom/iMe/manager/TelegramApiManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1566,7 +1796,7 @@
 
     move-object v1, p1
 
-    .line 316
+    .line 313
     invoke-static/range {v1 .. v6}, Lkotlin/text/StringsKt;->replace$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
@@ -1591,12 +1821,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 254
+    .line 251
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getInlineBotResults;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_getInlineBotResults;-><init>()V
 
-    .line 255
+    .line 252
     invoke-direct {p0}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -1607,29 +1837,29 @@
 
     iput-object p4, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getInlineBotResults;->bot:Lorg/telegram/tgnet/TLRPC$InputUser;
 
-    .line 256
+    .line 253
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getInlineBotResults;->query:Ljava/lang/String;
 
     const-string p1, ""
 
-    .line 257
+    .line 254
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getInlineBotResults;->offset:Ljava/lang/String;
 
-    .line 259
+    .line 256
     invoke-static {p2, p3}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 260
+    .line 257
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPeerEmpty;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPeerEmpty;-><init>()V
 
     goto :goto_0
 
-    .line 262
+    .line 259
     :cond_0
     invoke-direct {p0}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -1639,20 +1869,20 @@
 
     move-result-object p1
 
-    .line 259
+    .line 256
     :goto_0
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getInlineBotResults;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 266
-    new-instance p1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda6;
+    .line 263
+    new-instance p1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda7;
 
-    invoke-direct {p1, p0, v0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda6;-><init>(Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/tgnet/TLRPC$TL_messages_getInlineBotResults;)V
+    invoke-direct {p1, p0, v0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda7;-><init>(Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/tgnet/TLRPC$TL_messages_getInlineBotResults;)V
 
     invoke-static {p1}, Lio/reactivex/Observable;->create(Lio/reactivex/ObservableOnSubscribe;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 279
+    .line 276
     iget-object p2, p0, Lcom/iMe/manager/TelegramApiManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1692,16 +1922,16 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 319
-    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda3;
+    .line 316
+    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda4;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$Chat;)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda4;-><init>(Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$Chat;)V
 
     invoke-static {v0}, Lio/reactivex/Observable;->create(Lio/reactivex/ObservableOnSubscribe;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 331
+    .line 328
     iget-object p2, p0, Lcom/iMe/manager/TelegramApiManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1715,6 +1945,50 @@
     const-string p2, "create<TLRPC.TL_exported\u2026(schedulersProvider.io())"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p1
+.end method
+
+.method public getUserInfoByUsername(Ljava/lang/String;)Lio/reactivex/Observable;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lorg/telegram/tgnet/TLRPC$User;",
+            ">;"
+        }
+    .end annotation
+
+    const-string v0, "username"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 60
+    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda3;
+
+    invoke-direct {v0, p0, p1}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/manager/TelegramApiManager;Ljava/lang/String;)V
+
+    invoke-static {v0}, Lio/reactivex/Observable;->create(Lio/reactivex/ObservableOnSubscribe;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 94
+    iget-object v0, p0, Lcom/iMe/manager/TelegramApiManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string v0, "create { emitter ->\n    \u2026(schedulersProvider.io())"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method
@@ -1738,16 +2012,16 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 98
-    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda7;
+    .line 97
+    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda8;
 
-    invoke-direct {v0, p1, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda7;-><init>(Ljava/util/List;Lcom/iMe/manager/TelegramApiManager;)V
+    invoke-direct {v0, p1, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda8;-><init>(Ljava/util/List;Lcom/iMe/manager/TelegramApiManager;)V
 
     invoke-static {v0}, Lio/reactivex/Observable;->create(Lio/reactivex/ObservableOnSubscribe;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 124
+    .line 121
     iget-object v0, p0, Lcom/iMe/manager/TelegramApiManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1782,16 +2056,16 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 173
-    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda8;
+    .line 170
+    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda9;
 
-    invoke-direct {v0, p1, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/manager/TelegramApiManager;)V
+    invoke-direct {v0, p1, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/manager/TelegramApiManager;)V
 
     invoke-static {v0}, Lio/reactivex/Observable;->create(Lio/reactivex/ObservableOnSubscribe;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 192
+    .line 189
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x1e
@@ -1800,7 +2074,7 @@
 
     move-result-object p1
 
-    .line 193
+    .line 190
     iget-object v0, p0, Lcom/iMe/manager/TelegramApiManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1829,17 +2103,17 @@
         }
     .end annotation
 
-    .line 283
+    .line 280
     invoke-direct {p0}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
-    .line 284
+    .line 281
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;-><init>()V
 
-    .line 285
+    .line 282
     invoke-static {p1, p2}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
     move-result v2
@@ -1848,7 +2122,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 286
+    .line 283
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -1874,7 +2148,7 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 287
+    .line 284
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInputPeer(Lorg/telegram/tgnet/TLRPC$User;)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     move-result-object v2
@@ -1884,7 +2158,7 @@
     :cond_1
     neg-long v4, p1
 
-    .line 289
+    .line 286
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -1910,28 +2184,28 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 290
+    .line 287
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInputPeer(Lorg/telegram/tgnet/TLRPC$Chat;)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     move-result-object v2
 
-    .line 285
+    .line 282
     :goto_0
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;->id:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 295
+    .line 292
     iget v2, v0, Lorg/telegram/messenger/MessagesController;->totalBlockedCount:I
 
     add-int/lit8 v2, v2, -0x1
 
     iput v2, v0, Lorg/telegram/messenger/MessagesController;->totalBlockedCount:I
 
-    .line 296
+    .line 293
     iget-object v0, v0, Lorg/telegram/messenger/MessagesController;->blockePeers:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/messenger/support/LongSparseIntArray;->delete(J)V
 
-    .line 299
+    .line 296
     iget-object p1, p0, Lcom/iMe/manager/TelegramApiManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {p1}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -1950,16 +2224,16 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 301
-    new-instance p1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda4;
+    .line 298
+    new-instance p1, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda5;
 
-    invoke-direct {p1, p0, v1}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda4;-><init>(Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;)V
+    invoke-direct {p1, p0, v1}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda5;-><init>(Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;)V
 
     invoke-static {p1}, Lio/reactivex/Observable;->create(Lio/reactivex/ObservableOnSubscribe;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 312
+    .line 309
     iget-object p2, p0, Lcom/iMe/manager/TelegramApiManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1994,16 +2268,16 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 196
-    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda9;
+    .line 193
+    new-instance v0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda10;
 
-    invoke-direct {v0, p1, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/manager/TelegramApiManager;)V
+    invoke-direct {v0, p1, p0}, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/manager/TelegramApiManager;)V
 
     invoke-static {v0}, Lio/reactivex/Observable;->create(Lio/reactivex/ObservableOnSubscribe;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 217
+    .line 214
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x1e
@@ -2012,7 +2286,7 @@
 
     move-result-object p1
 
-    .line 218
+    .line 215
     iget-object v0, p0, Lcom/iMe/manager/TelegramApiManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;

@@ -201,12 +201,14 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
 
     public static <T> List<T> dropLast(List<? extends T> list, int i) {
         int coerceAtLeast;
+        List<T> take;
         Intrinsics.checkNotNullParameter(list, "<this>");
         if (!(i >= 0)) {
             throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
         }
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(list.size() - i, 0);
-        return take(list, coerceAtLeast);
+        take = take(list, coerceAtLeast);
+        return take;
     }
 
     public static <T> List<T> filterNotNull(Iterable<? extends T> iterable) {
@@ -225,7 +227,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         return destination;
     }
 
-    public static final <T> List<T> take(Iterable<? extends T> iterable, int i) {
+    public static <T> List<T> take(Iterable<? extends T> iterable, int i) {
         List<T> optimizeReadOnlyList;
         List<T> listOf;
         List<T> list;
@@ -593,7 +595,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(other, 10);
         ArrayList arrayList = new ArrayList(Math.min(collectionSizeOrDefault, collectionSizeOrDefault2));
         while (it.hasNext() && it2.hasNext()) {
-            arrayList.add(TuplesKt.m94to(it.next(), it2.next()));
+            arrayList.add(TuplesKt.m80to(it.next(), it2.next()));
         }
         return arrayList;
     }
@@ -610,7 +612,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         T next = it.next();
         while (it.hasNext()) {
             T next2 = it.next();
-            arrayList.add(TuplesKt.m94to(next, next2));
+            arrayList.add(TuplesKt.m80to(next, next2));
             next = next2;
         }
         return arrayList;

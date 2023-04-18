@@ -44,7 +44,7 @@
 
 .field rounded:Z
 
-.field selectorDrawable:Landroid/graphics/drawable/RippleDrawable;
+.field selectorDrawable:Landroid/graphics/drawable/Drawable;
 
 .field usingRectCount:I
 
@@ -219,7 +219,7 @@
 
     invoke-direct {v1, p1, v2, v0}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    iput-object v1, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/RippleDrawable;
+    iput-object v1, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     :cond_0
     return-void
@@ -561,12 +561,12 @@
     invoke-virtual {v6, v2, v8}, Landroid/graphics/Path;->addRect(Landroid/graphics/RectF;Landroid/graphics/Path$Direction;)V
 
     .line 140
-    iget-object v2, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/RippleDrawable;
+    iget-object v2, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v2, :cond_a
 
     .line 141
-    invoke-virtual {v2, v4, v5, v3, v0}, Landroid/graphics/drawable/RippleDrawable;->setBounds(IIII)V
+    invoke-virtual {v2, v4, v5, v3, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     :cond_a
     move v2, v7
@@ -597,7 +597,7 @@
     if-ne v0, v1, :cond_10
 
     .line 151
-    iget-object v0, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/RippleDrawable;
+    iget-object v0, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_e
 
@@ -650,7 +650,7 @@
 
     float-to-int v5, v5
 
-    invoke-virtual {v0, v1, v3, v4, v5}, Landroid/graphics/drawable/RippleDrawable;->setBounds(IIII)V
+    invoke-virtual {v0, v1, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 154
     :cond_e
@@ -786,26 +786,26 @@
 .method public cancelRipple()V
     .locals 2
 
-    .line 263
+    .line 265
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/RippleDrawable;
+    iget-object v0, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 264
+    .line 266
     sget-object v1, Landroid/util/StateSet;->NOTHING:[I
 
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/RippleDrawable;->setState([I)Z
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 265
-    iget-object v0, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/RippleDrawable;
+    .line 267
+    iget-object v0, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/RippleDrawable;->jumpToCurrentState()V
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
 
     :cond_0
     return-void
@@ -854,7 +854,7 @@
 
     if-lt p1, v3, :cond_0
 
-    iget-object p1, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/RippleDrawable;
+    iget-object p1, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_0
 
@@ -863,14 +863,14 @@
     int-to-float v1, v1
 
     .line 173
-    invoke-virtual {p1, v0, v1}, Landroid/graphics/drawable/RippleDrawable;->setHotspot(FF)V
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
     .line 174
-    iget-object p1, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/RippleDrawable;
+    iget-object p1, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     sget-object v0, Lorg/telegram/ui/Components/CanvasButton;->pressedState:[I
 
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/RippleDrawable;->setState([I)Z
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
     .line 176
     :cond_0
@@ -939,7 +939,7 @@
 
     if-lt p1, v3, :cond_8
 
-    iget-object p1, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/RippleDrawable;
+    iget-object p1, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_8
 
@@ -948,7 +948,7 @@
     int-to-float v1, v1
 
     .line 198
-    invoke-virtual {p1, v0, v1}, Landroid/graphics/drawable/RippleDrawable;->setHotspot(FF)V
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
     goto :goto_1
 
@@ -986,14 +986,14 @@
 
     if-lt p1, v3, :cond_6
 
-    iget-object p1, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/RippleDrawable;
+    iget-object p1, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_6
 
     .line 190
     sget-object v1, Landroid/util/StateSet;->NOTHING:[I
 
-    invoke-virtual {p1, v1}, Landroid/graphics/drawable/RippleDrawable;->setState([I)Z
+    invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
     .line 192
     :cond_6
@@ -1027,12 +1027,12 @@
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/CanvasButton;->drawInternal(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
     .line 105
-    iget-object v0, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/RippleDrawable;
+    iget-object v0, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
     .line 106
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/RippleDrawable;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     :cond_0
     return-void
@@ -1070,7 +1070,7 @@
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 219
-    iget-object p1, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/RippleDrawable;
+    iget-object p1, p0, Lorg/telegram/ui/Components/CanvasButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_0
 
@@ -1115,7 +1115,7 @@
 .method public setRect(IIII)V
     .locals 1
 
-    .line 271
+    .line 273
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     int-to-float p1, p1
@@ -1128,7 +1128,7 @@
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 272
+    .line 274
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/CanvasButton;->setRect(Landroid/graphics/RectF;)V
 
     return-void

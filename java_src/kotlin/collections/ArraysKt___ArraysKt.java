@@ -10,6 +10,7 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntRange;
+import kotlin.ranges.RangesKt___RangesKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _Arrays.kt */
 /* loaded from: classes4.dex */
@@ -100,6 +101,16 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         return null;
     }
 
+    public static List<Byte> drop(byte[] bArr, int i) {
+        int coerceAtLeast;
+        Intrinsics.checkNotNullParameter(bArr, "<this>");
+        if (!(i >= 0)) {
+            throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
+        }
+        coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(bArr.length - i, 0);
+        return takeLast(bArr, coerceAtLeast);
+    }
+
     public static <T> List<T> filterNotNull(T[] tArr) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         return (List) filterNotNullTo(tArr, new ArrayList());
@@ -114,6 +125,32 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
             }
         }
         return destination;
+    }
+
+    public static final List<Byte> takeLast(byte[] bArr, int i) {
+        List<Byte> listOf;
+        List<Byte> emptyList;
+        Intrinsics.checkNotNullParameter(bArr, "<this>");
+        if (!(i >= 0)) {
+            throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
+        } else if (i == 0) {
+            emptyList = CollectionsKt__CollectionsKt.emptyList();
+            return emptyList;
+        } else {
+            int length = bArr.length;
+            if (i >= length) {
+                return toList(bArr);
+            }
+            if (i == 1) {
+                listOf = CollectionsKt__CollectionsJVMKt.listOf(Byte.valueOf(bArr[length - 1]));
+                return listOf;
+            }
+            ArrayList arrayList = new ArrayList(i);
+            for (int i2 = length - i; i2 < length; i2++) {
+                arrayList.add(Byte.valueOf(bArr[i2]));
+            }
+            return arrayList;
+        }
     }
 
     /* JADX WARN: Type inference failed for: r1v1, types: [kotlin.collections.IntIterator, java.util.Iterator] */
@@ -169,6 +206,16 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         return fArr.length - 1;
     }
 
+    public static byte[] toByteArray(Byte[] bArr) {
+        Intrinsics.checkNotNullParameter(bArr, "<this>");
+        int length = bArr.length;
+        byte[] bArr2 = new byte[length];
+        for (int i = 0; i < length; i++) {
+            bArr2[i] = bArr[i].byteValue();
+        }
+        return bArr2;
+    }
+
     public static final <T, C extends Collection<? super T>> C toCollection(T[] tArr, C destination) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         Intrinsics.checkNotNullParameter(destination, "destination");
@@ -196,7 +243,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         }
     }
 
-    public static List<Byte> toList(byte[] bArr) {
+    public static final List<Byte> toList(byte[] bArr) {
         List<Byte> emptyList;
         List<Byte> listOf;
         Intrinsics.checkNotNullParameter(bArr, "<this>");

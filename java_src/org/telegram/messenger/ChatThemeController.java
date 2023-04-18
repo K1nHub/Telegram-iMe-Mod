@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.NotificationBadge;
-import org.telegram.p048ui.ActionBar.EmojiThemes;
+import org.telegram.p044ui.ActionBar.EmojiThemes;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.ResultCallback;
@@ -183,10 +183,10 @@ public class ChatThemeController extends BaseController {
             if (r7 != 0) goto Ld5
             if (r10 == 0) goto Lb9
             java.lang.Object r7 = r0.get(r1)
-            org.telegram.ui.ActionBar.EmojiThemes r7 = (org.telegram.p048ui.ActionBar.EmojiThemes) r7
+            org.telegram.ui.ActionBar.EmojiThemes r7 = (org.telegram.p044ui.ActionBar.EmojiThemes) r7
             boolean r7 = r7.showAsDefaultStub
             if (r7 != 0) goto Lb9
-            org.telegram.ui.ActionBar.EmojiThemes r7 = org.telegram.p048ui.ActionBar.EmojiThemes.createChatThemesDefault()
+            org.telegram.ui.ActionBar.EmojiThemes r7 = org.telegram.p044ui.ActionBar.EmojiThemes.createChatThemesDefault()
             r0.add(r1, r7)
         Lb9:
             java.util.Iterator r7 = r0.iterator()
@@ -194,7 +194,7 @@ public class ChatThemeController extends BaseController {
             boolean r9 = r7.hasNext()
             if (r9 == 0) goto Lcd
             java.lang.Object r9 = r7.next()
-            org.telegram.ui.ActionBar.EmojiThemes r9 = (org.telegram.p048ui.ActionBar.EmojiThemes) r9
+            org.telegram.ui.ActionBar.EmojiThemes r9 = (org.telegram.p044ui.ActionBar.EmojiThemes) r9
             r9.initColors()
             goto Lbd
         Lcd:
@@ -330,7 +330,7 @@ public class ChatThemeController extends BaseController {
     public static void preloadAllWallpaperImages(boolean z) {
         for (EmojiThemes emojiThemes : allChatThemes) {
             TLRPC$TL_theme tlTheme = emojiThemes.getTlTheme(z ? 1 : 0);
-            if (tlTheme != null && !getPatternFile(tlTheme.f1633id).exists()) {
+            if (tlTheme != null && !getPatternFile(tlTheme.f1558id).exists()) {
                 emojiThemes.loadWallpaper(z ? 1 : 0, null);
             }
         }
@@ -340,7 +340,7 @@ public class ChatThemeController extends BaseController {
         for (EmojiThemes emojiThemes : allChatThemes) {
             TLRPC$TL_theme tlTheme = emojiThemes.getTlTheme(z ? 1 : 0);
             if (tlTheme != null) {
-                if (!themeIdWallpaperThumbMap.containsKey(Long.valueOf(tlTheme.f1633id))) {
+                if (!themeIdWallpaperThumbMap.containsKey(Long.valueOf(tlTheme.f1558id))) {
                     emojiThemes.loadWallpaperThumb(z ? 1 : 0, ChatThemeController$$ExternalSyntheticLambda7.INSTANCE);
                 }
             }

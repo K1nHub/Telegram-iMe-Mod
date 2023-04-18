@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;ILcom/iMe/model/wallet/notification/NotificationItem;)V
     .locals 1
 
-    .line 278
+    .line 296
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string/jumbo v0, "updateNotificationAsRead"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 280
+    .line 298
     iput p2, p0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$UpdateNotificationAsReadCommand;->position:I
 
-    .line 281
+    .line 299
     iput-object p3, p0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$UpdateNotificationAsReadCommand;->notification:Lcom/iMe/model/wallet/notification/NotificationItem;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;)V
     .locals 2
 
-    .line 286
+    .line 304
     iget v0, p0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$UpdateNotificationAsReadCommand;->position:I
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$UpdateNotificationAsReadCommand;->notification:Lcom/iMe/model/wallet/notification/NotificationItem;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 272
+    .line 290
     check-cast p1, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$UpdateNotificationAsReadCommand;->apply(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;)V

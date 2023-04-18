@@ -1,6 +1,6 @@
 package com.iMe.fork.controller;
 
-import com.iMe.storage.data.locale.p028db.dao.main.DialogTranslationSettingsDao;
+import com.iMe.storage.data.locale.p027db.dao.main.DialogTranslationSettingsDao;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import kotlin.jvm.internal.Reflection;

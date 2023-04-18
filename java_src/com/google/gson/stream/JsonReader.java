@@ -12,7 +12,7 @@ import java.util.Objects;
 public class JsonReader implements Closeable {
 
     /* renamed from: in */
-    private final Reader f223in;
+    private final Reader f220in;
     private int[] pathIndices;
     private String[] pathNames;
     private long peekedLong;
@@ -37,7 +37,7 @@ public class JsonReader implements Closeable {
         this.pathNames = new String[32];
         this.pathIndices = new int[32];
         Objects.requireNonNull(reader, "in == null");
-        this.f223in = reader;
+        this.f220in = reader;
     }
 
     public final void setLenient(boolean z) {
@@ -960,7 +960,7 @@ public class JsonReader implements Closeable {
         this.peeked = 0;
         this.stack[0] = 8;
         this.stackSize = 1;
-        this.f223in.close();
+        this.f220in.close();
     }
 
     public void skipValue() throws IOException {
@@ -1065,7 +1065,7 @@ public class JsonReader implements Closeable {
         }
         this.pos = 0;
         do {
-            Reader reader = this.f223in;
+            Reader reader = this.f220in;
             int i8 = this.limit;
             int read = reader.read(cArr, i8, cArr.length - i8);
             if (read == -1) {

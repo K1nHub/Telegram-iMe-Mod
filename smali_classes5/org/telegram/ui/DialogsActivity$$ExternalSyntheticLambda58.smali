@@ -35,7 +35,7 @@
 .method public final getInterpolation(F)F
     .locals 0
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$OfEbzch4-IkltALjQOyi6nwsoiI(F)F
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$EX1-nxO15SJfvDyhqn9z1gdURfQ(F)F
 
     move-result p1
 

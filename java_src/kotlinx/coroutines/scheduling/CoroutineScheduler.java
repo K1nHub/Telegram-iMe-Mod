@@ -2,12 +2,10 @@ package kotlinx.coroutines.scheduling;
 
 import java.io.Closeable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
-import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.locks.LockSupport;
 import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -17,6 +15,7 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlinx.coroutines.AbstractTimeSourceKt;
 import kotlinx.coroutines.DebugKt;
 import kotlinx.coroutines.DebugStringsKt;
+import kotlinx.coroutines.internal.ResizableAtomicArray;
 import kotlinx.coroutines.internal.Symbol;
 /* compiled from: CoroutineScheduler.kt */
 /* loaded from: classes4.dex */
@@ -34,7 +33,7 @@ public final class CoroutineScheduler implements Executor, Closeable {
     public final int maxPoolSize;
     private volatile /* synthetic */ long parkedWorkersStack;
     public final String schedulerName;
-    public final AtomicReferenceArray<Worker> workers;
+    public final ResizableAtomicArray<Worker> workers;
 
     /* compiled from: CoroutineScheduler.kt */
     /* loaded from: classes4.dex */
@@ -42,7 +41,7 @@ public final class CoroutineScheduler implements Executor, Closeable {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
-            int[] iArr = new int[WorkerState.valuesCustom().length];
+            int[] iArr = new int[WorkerState.values().length];
             iArr[WorkerState.PARKING.ordinal()] = 1;
             iArr[WorkerState.BLOCKING.ordinal()] = 2;
             iArr[WorkerState.CPU_ACQUIRED.ordinal()] = 3;
@@ -50,6 +49,16 @@ public final class CoroutineScheduler implements Executor, Closeable {
             iArr[WorkerState.TERMINATED.ordinal()] = 5;
             $EnumSwitchMapping$0 = iArr;
         }
+    }
+
+    /* compiled from: CoroutineScheduler.kt */
+    /* loaded from: classes4.dex */
+    public enum WorkerState {
+        CPU_ACQUIRED,
+        BLOCKING,
+        PARKING,
+        DORMANT,
+        TERMINATED
     }
 
     /* compiled from: CoroutineScheduler.kt */
@@ -96,7 +105,7 @@ public final class CoroutineScheduler implements Executor, Closeable {
             this.indexInArray = i;
         }
 
-        public Worker(int i) {
+        public Worker(CoroutineScheduler coroutineScheduler, int i) {
             this();
             setIndexInArray(i);
         }
@@ -251,18 +260,19 @@ public final class CoroutineScheduler implements Executor, Closeable {
                     return;
                 }
                 if (workerCtl$FU.compareAndSet(this, -1, 1)) {
-                    int indexInArray = getIndexInArray();
+                    int i = this.indexInArray;
                     setIndexInArray(0);
-                    coroutineScheduler.parkedWorkersStackTopUpdate(this, indexInArray, 0);
+                    coroutineScheduler.parkedWorkersStackTopUpdate(this, i, 0);
                     int andDecrement = (int) (CoroutineScheduler.controlState$FU.getAndDecrement(coroutineScheduler) & 2097151);
-                    if (andDecrement != indexInArray) {
+                    if (andDecrement != i) {
                         Worker worker = coroutineScheduler.workers.get(andDecrement);
                         Intrinsics.checkNotNull(worker);
-                        coroutineScheduler.workers.set(indexInArray, worker);
-                        worker.setIndexInArray(indexInArray);
-                        coroutineScheduler.parkedWorkersStackTopUpdate(worker, andDecrement, indexInArray);
+                        Worker worker2 = worker;
+                        coroutineScheduler.workers.setSynchronized(i, worker2);
+                        worker2.setIndexInArray(i);
+                        coroutineScheduler.parkedWorkersStackTopUpdate(worker2, andDecrement, i);
                     }
-                    coroutineScheduler.workers.set(andDecrement, null);
+                    coroutineScheduler.workers.setSynchronized(andDecrement, null);
                     Unit unit = Unit.INSTANCE;
                     this.state = WorkerState.TERMINATED;
                 }
@@ -324,10 +334,10 @@ public final class CoroutineScheduler implements Executor, Closeable {
         private final Task pollGlobalQueues() {
             if (nextInt(2) == 0) {
                 Task removeFirstOrNull = CoroutineScheduler.this.globalCpuQueue.removeFirstOrNull();
-                return removeFirstOrNull == null ? CoroutineScheduler.this.globalBlockingQueue.removeFirstOrNull() : removeFirstOrNull;
+                return removeFirstOrNull != null ? removeFirstOrNull : CoroutineScheduler.this.globalBlockingQueue.removeFirstOrNull();
             }
             Task removeFirstOrNull2 = CoroutineScheduler.this.globalBlockingQueue.removeFirstOrNull();
-            return removeFirstOrNull2 == null ? CoroutineScheduler.this.globalCpuQueue.removeFirstOrNull() : removeFirstOrNull2;
+            return removeFirstOrNull2 != null ? removeFirstOrNull2 : CoroutineScheduler.this.globalCpuQueue.removeFirstOrNull();
         }
 
         private final Task trySteal(boolean z) {
@@ -404,7 +414,7 @@ public final class CoroutineScheduler implements Executor, Closeable {
         this.globalCpuQueue = new GlobalQueue();
         this.globalBlockingQueue = new GlobalQueue();
         this.parkedWorkersStack = 0L;
-        this.workers = new AtomicReferenceArray<>(i2 + 1);
+        this.workers = new ResizableAtomicArray<>(i + 1);
         this.controlState = i << 42;
         this._isTerminated = 0;
     }
@@ -491,6 +501,7 @@ public final class CoroutineScheduler implements Executor, Closeable {
 
     public final void shutdown(long j) {
         int i;
+        Task removeFirstOrNull;
         if (_isTerminated$FU.compareAndSet(this, 0, 1)) {
             Worker currentWorker = currentWorker();
             synchronized (this.workers) {
@@ -499,39 +510,43 @@ public final class CoroutineScheduler implements Executor, Closeable {
             if (1 <= i) {
                 int i2 = 1;
                 while (true) {
-                    int i3 = i2 + 1;
                     Worker worker = this.workers.get(i2);
                     Intrinsics.checkNotNull(worker);
-                    if (worker != currentWorker) {
-                        while (worker.isAlive()) {
-                            LockSupport.unpark(worker);
-                            worker.join(j);
+                    Worker worker2 = worker;
+                    if (worker2 != currentWorker) {
+                        while (worker2.isAlive()) {
+                            LockSupport.unpark(worker2);
+                            worker2.join(j);
                         }
-                        WorkerState workerState = worker.state;
+                        WorkerState workerState = worker2.state;
                         if (DebugKt.getASSERTIONS_ENABLED()) {
                             if (!(workerState == WorkerState.TERMINATED)) {
                                 throw new AssertionError();
                             }
                         }
-                        worker.localQueue.offloadAllWorkTo(this.globalBlockingQueue);
+                        worker2.localQueue.offloadAllWorkTo(this.globalBlockingQueue);
                     }
                     if (i2 == i) {
                         break;
                     }
-                    i2 = i3;
+                    i2++;
                 }
             }
             this.globalBlockingQueue.close();
             this.globalCpuQueue.close();
             while (true) {
-                Task findTask = currentWorker == null ? null : currentWorker.findTask(true);
-                if (findTask == null) {
-                    findTask = this.globalCpuQueue.removeFirstOrNull();
+                if (currentWorker != null) {
+                    removeFirstOrNull = currentWorker.findTask(true);
+                    if (removeFirstOrNull != null) {
+                        continue;
+                        runSafely(removeFirstOrNull);
+                    }
                 }
-                if (findTask == null && (findTask = this.globalBlockingQueue.removeFirstOrNull()) == null) {
+                removeFirstOrNull = this.globalCpuQueue.removeFirstOrNull();
+                if (removeFirstOrNull == null && (removeFirstOrNull = this.globalBlockingQueue.removeFirstOrNull()) == null) {
                     break;
                 }
-                runSafely(findTask);
+                runSafely(removeFirstOrNull);
             }
             if (currentWorker != null) {
                 currentWorker.tryReleaseCpu(WorkerState.TERMINATED);
@@ -548,7 +563,7 @@ public final class CoroutineScheduler implements Executor, Closeable {
 
     public static /* synthetic */ void dispatch$default(CoroutineScheduler coroutineScheduler, Runnable runnable, TaskContext taskContext, boolean z, int i, Object obj) {
         if ((i & 2) != 0) {
-            taskContext = NonBlockingContext.INSTANCE;
+            taskContext = TasksKt.NonBlockingContext;
         }
         if ((i & 4) != 0) {
             z = false;
@@ -573,7 +588,7 @@ public final class CoroutineScheduler implements Executor, Closeable {
                 return;
             }
         }
-        throw new RejectedExecutionException(Intrinsics.stringPlus(this.schedulerName, " was terminated"));
+        throw new RejectedExecutionException(this.schedulerName + " was terminated");
     }
 
     public final Task createTask(Runnable runnable, TaskContext taskContext) {
@@ -647,8 +662,8 @@ public final class CoroutineScheduler implements Executor, Closeable {
             if (!(i2 > 0 && this.workers.get(i2) == null)) {
                 throw new IllegalArgumentException("Failed requirement.".toString());
             }
-            Worker worker = new Worker(i2);
-            this.workers.set(i2, worker);
+            Worker worker = new Worker(this, i2);
+            this.workers.setSynchronized(i2, worker);
             if (!(i2 == ((int) (2097151 & controlState$FU.incrementAndGet(this))))) {
                 throw new IllegalArgumentException("Failed requirement.".toString());
             }
@@ -671,73 +686,54 @@ public final class CoroutineScheduler implements Executor, Closeable {
     private final Worker currentWorker() {
         Thread currentThread = Thread.currentThread();
         Worker worker = currentThread instanceof Worker ? (Worker) currentThread : null;
-        if (worker != null && Intrinsics.areEqual(CoroutineScheduler.this, this)) {
-            return worker;
+        if (worker == null || !Intrinsics.areEqual(CoroutineScheduler.this, this)) {
+            return null;
         }
-        return null;
+        return worker;
     }
 
     public String toString() {
-        int i;
-        int i2;
-        int i3;
-        int i4;
         ArrayList arrayList = new ArrayList();
-        int length = this.workers.length();
+        int currentLength = this.workers.currentLength();
+        int i = 0;
+        int i2 = 0;
+        int i3 = 0;
+        int i4 = 0;
         int i5 = 0;
-        if (1 < length) {
-            i2 = 0;
-            int i6 = 0;
-            i3 = 0;
-            i4 = 0;
-            int i7 = 1;
-            while (true) {
-                int i8 = i7 + 1;
-                Worker worker = this.workers.get(i7);
-                if (worker != null) {
-                    int size$kotlinx_coroutines_core = worker.localQueue.getSize$kotlinx_coroutines_core();
-                    int i9 = WhenMappings.$EnumSwitchMapping$0[worker.state.ordinal()];
-                    if (i9 == 1) {
-                        i5++;
-                    } else if (i9 == 2) {
-                        i2++;
-                        StringBuilder sb = new StringBuilder();
-                        sb.append(size$kotlinx_coroutines_core);
-                        sb.append('b');
-                        arrayList.add(sb.toString());
-                    } else if (i9 == 3) {
-                        i6++;
-                        StringBuilder sb2 = new StringBuilder();
-                        sb2.append(size$kotlinx_coroutines_core);
-                        sb2.append('c');
-                        arrayList.add(sb2.toString());
-                    } else if (i9 == 4) {
-                        i3++;
-                        if (size$kotlinx_coroutines_core > 0) {
-                            StringBuilder sb3 = new StringBuilder();
-                            sb3.append(size$kotlinx_coroutines_core);
-                            sb3.append('d');
-                            arrayList.add(sb3.toString());
-                        }
-                    } else if (i9 == 5) {
-                        i4++;
+        for (int i6 = 1; i6 < currentLength; i6++) {
+            Worker worker = this.workers.get(i6);
+            if (worker != null) {
+                int size$kotlinx_coroutines_core = worker.localQueue.getSize$kotlinx_coroutines_core();
+                int i7 = WhenMappings.$EnumSwitchMapping$0[worker.state.ordinal()];
+                if (i7 == 1) {
+                    i3++;
+                } else if (i7 == 2) {
+                    i2++;
+                    StringBuilder sb = new StringBuilder();
+                    sb.append(size$kotlinx_coroutines_core);
+                    sb.append('b');
+                    arrayList.add(sb.toString());
+                } else if (i7 == 3) {
+                    i++;
+                    StringBuilder sb2 = new StringBuilder();
+                    sb2.append(size$kotlinx_coroutines_core);
+                    sb2.append('c');
+                    arrayList.add(sb2.toString());
+                } else if (i7 == 4) {
+                    i4++;
+                    if (size$kotlinx_coroutines_core > 0) {
+                        StringBuilder sb3 = new StringBuilder();
+                        sb3.append(size$kotlinx_coroutines_core);
+                        sb3.append('d');
+                        arrayList.add(sb3.toString());
                     }
+                } else if (i7 == 5) {
+                    i5++;
                 }
-                if (i8 >= length) {
-                    break;
-                }
-                i7 = i8;
             }
-            i = i5;
-            i5 = i6;
-        } else {
-            i = 0;
-            i2 = 0;
-            i3 = 0;
-            i4 = 0;
         }
         long j = this.controlState;
-        return this.schedulerName + '@' + DebugStringsKt.getHexAddress(this) + "[Pool Size {core = " + this.corePoolSize + ", max = " + this.maxPoolSize + "}, Worker States {CPU = " + i5 + ", blocking = " + i2 + ", parked = " + i + ", dormant = " + i3 + ", terminated = " + i4 + "}, running workers queues = " + arrayList + ", global CPU queue size = " + this.globalCpuQueue.getSize() + ", global blocking queue size = " + this.globalBlockingQueue.getSize() + ", Control State {created workers= " + ((int) (2097151 & j)) + ", blocking tasks = " + ((int) ((4398044413952L & j) >> 21)) + ", CPUs acquired = " + (this.corePoolSize - ((int) ((9223367638808264704L & j) >> 42))) + "}]";
+        return this.schedulerName + '@' + DebugStringsKt.getHexAddress(this) + "[Pool Size {core = " + this.corePoolSize + ", max = " + this.maxPoolSize + "}, Worker States {CPU = " + i + ", blocking = " + i2 + ", parked = " + i3 + ", dormant = " + i4 + ", terminated = " + i5 + "}, running workers queues = " + arrayList + ", global CPU queue size = " + this.globalCpuQueue.getSize() + ", global blocking queue size = " + this.globalBlockingQueue.getSize() + ", Control State {created workers= " + ((int) (2097151 & j)) + ", blocking tasks = " + ((int) ((4398044413952L & j) >> 21)) + ", CPUs acquired = " + (this.corePoolSize - ((int) ((9223367638808264704L & j) >> 42))) + "}]";
     }
 
     public final void runSafely(Task task) {
@@ -747,22 +743,6 @@ public final class CoroutineScheduler implements Executor, Closeable {
             try {
             } finally {
             }
-        }
-    }
-
-    /* compiled from: CoroutineScheduler.kt */
-    /* loaded from: classes4.dex */
-    public enum WorkerState {
-        CPU_ACQUIRED,
-        BLOCKING,
-        PARKING,
-        DORMANT,
-        TERMINATED;
-
-        /* renamed from: values  reason: to resolve conflict with enum method */
-        public static WorkerState[] valuesCustom() {
-            WorkerState[] valuesCustom = values();
-            return (WorkerState[]) Arrays.copyOf(valuesCustom, valuesCustom.length);
         }
     }
 

@@ -104,7 +104,12 @@ public abstract class ActivityResultRegistry {
                     throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + activityResultContract + " and input " + i + ". You must ensure the ActivityResultLauncher is registered before calling launch().");
                 }
                 ActivityResultRegistry.this.mLaunchedKeys.add(str);
-                ActivityResultRegistry.this.onLaunch(num.intValue(), activityResultContract, i, activityOptionsCompat);
+                try {
+                    ActivityResultRegistry.this.onLaunch(num.intValue(), activityResultContract, i, activityOptionsCompat);
+                } catch (Exception e) {
+                    ActivityResultRegistry.this.mLaunchedKeys.remove(str);
+                    throw e;
+                }
             }
 
             @Override // androidx.activity.result.ActivityResultLauncher

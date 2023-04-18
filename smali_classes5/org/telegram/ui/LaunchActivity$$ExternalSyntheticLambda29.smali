@@ -5,27 +5,21 @@
 .implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
+
+.field public final synthetic f$1:Landroid/content/Intent;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;
-
-    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/content/Intent;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;->f$0:Lorg/telegram/ui/LaunchActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;->f$1:Landroid/content/Intent;
 
     return-void
 .end method
@@ -33,9 +27,13 @@
 
 # virtual methods
 .method public final invoke()V
-    .locals 0
+    .locals 2
 
-    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$D953YV8Jw36FoeiZPfNpmqrh11E()V
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;->f$0:Lorg/telegram/ui/LaunchActivity;
+
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;->f$1:Landroid/content/Intent;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$ilJPETB3W3laAs4Ey9shNRTWdgo(Lorg/telegram/ui/LaunchActivity;Landroid/content/Intent;)V
 
     return-void
 .end method

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
     .locals 0
 
-    .line 682
+    .line 685
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
@@ -35,7 +35,7 @@
 .method public getSpanSize(I)I
     .locals 1
 
-    .line 685
+    .line 688
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$2200(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroid/util/SparseIntArray;
@@ -102,7 +102,7 @@
 
     goto :goto_1
 
-    .line 688
+    .line 691
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
@@ -122,7 +122,7 @@
     :goto_0
     return p1
 
-    .line 686
+    .line 689
     :cond_2
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 3190
+    .line 3119
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$15;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onItemClick(Landroid/view/View;IFF)Z
     .locals 10
 
-    .line 3193
+    .line 3122
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$15;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$3100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ChatActivity$ChatActivityTextSelectionHelper;
@@ -75,7 +75,7 @@
 
     goto/16 :goto_2
 
-    .line 3196
+    .line 3125
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$15;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -83,7 +83,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/ChatActivity;->access$3302(Lorg/telegram/ui/ChatActivity;Z)Z
 
-    .line 3198
+    .line 3127
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$15;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$3400(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -141,7 +141,7 @@
 
     if-ne v0, v3, :cond_3
 
-    .line 3199
+    .line 3128
     :cond_2
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$15;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -161,13 +161,13 @@
 
     goto :goto_0
 
-    .line 3202
+    .line 3131
     :cond_3
     instance-of v0, p1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v0, :cond_4
 
-    .line 3203
+    .line 3132
     move-object v0, p1
 
     check-cast v0, Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -178,7 +178,7 @@
 
     xor-int/lit8 v1, v0, 0x1
 
-    .line 3205
+    .line 3134
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$15;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -186,13 +186,13 @@
 
     move p3, v2
 
-    .line 3207
+    .line 3136
     :goto_0
     instance-of p1, p1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz p1, :cond_5
 
-    .line 3208
+    .line 3137
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$15;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ChatActivity;->access$3800(Lorg/telegram/ui/ChatActivity;I)V

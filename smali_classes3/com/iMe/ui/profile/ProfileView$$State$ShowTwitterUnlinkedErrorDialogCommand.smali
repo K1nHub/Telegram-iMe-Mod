@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/profile/ProfileView$$State;Lcom/iMe/model/dialog/DialogModel;)V
     .locals 1
 
-    .line 415
+    .line 433
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showTwitterUnlinkedErrorDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 417
+    .line 435
     iput-object p2, p0, Lcom/iMe/ui/profile/ProfileView$$State$ShowTwitterUnlinkedErrorDialogCommand;->dialogModel:Lcom/iMe/model/dialog/DialogModel;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/profile/ProfileView;)V
     .locals 1
 
-    .line 422
+    .line 440
     iget-object v0, p0, Lcom/iMe/ui/profile/ProfileView$$State$ShowTwitterUnlinkedErrorDialogCommand;->dialogModel:Lcom/iMe/model/dialog/DialogModel;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/profile/ProfileView;->showTwitterUnlinkedErrorDialog(Lcom/iMe/model/dialog/DialogModel;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 411
+    .line 429
     check-cast p1, Lcom/iMe/ui/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/profile/ProfileView$$State$ShowTwitterUnlinkedErrorDialogCommand;->apply(Lcom/iMe/ui/profile/ProfileView;)V

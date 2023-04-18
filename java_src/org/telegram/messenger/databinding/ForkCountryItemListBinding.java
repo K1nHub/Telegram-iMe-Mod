@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 /* loaded from: classes4.dex */
 public final class ForkCountryItemListBinding implements ViewBinding {
     public final AppCompatCheckBox checkbox;
@@ -27,7 +27,7 @@ public final class ForkCountryItemListBinding implements ViewBinding {
     }
 
     public static ForkCountryItemListBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3316R.layout.fork_country_item_list, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3242R.layout.fork_country_item_list, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,10 +35,10 @@ public final class ForkCountryItemListBinding implements ViewBinding {
     }
 
     public static ForkCountryItemListBinding bind(View view) {
-        int i = C3316R.C3319id.checkbox;
+        int i = C3242R.C3245id.checkbox;
         AppCompatCheckBox appCompatCheckBox = (AppCompatCheckBox) ViewBindings.findChildViewById(view, i);
         if (appCompatCheckBox != null) {
-            i = C3316R.C3319id.textCountryName;
+            i = C3242R.C3245id.textCountryName;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
                 return new ForkCountryItemListBinding((ConstraintLayout) view, appCompatCheckBox, textView);

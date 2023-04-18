@@ -47,7 +47,9 @@
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    if-eqz p1, :cond_1
+    const-string v0, "\'identifier\' cannot be null"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->isValidIdentifier(Ljava/lang/String;)Z
 
@@ -83,15 +85,6 @@
     invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "\'identifier\' cannot be null"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method constructor <init>(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/lang/String;)V
@@ -519,19 +512,15 @@
 
     invoke-interface {v0}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
 
-    move-result-object v1
+    move-result-object v0
 
-    instance-of v1, v1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    instance-of v1, v0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     if-eqz v1, :cond_1
 
-    invoke-interface {v0}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+    check-cast v0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    move-result-object p0
-
-    check-cast p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    return-object p0
+    return-object v0
 
     :cond_1
     instance-of v0, p0, [B
@@ -615,7 +604,7 @@
 .end method
 
 .method private static isValidBranchID(Ljava/lang/String;I)Z
-    .locals 5
+    .locals 7
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -629,36 +618,70 @@
     :goto_0
     add-int/lit8 v0, v0, -0x1
 
-    if-lt v0, p1, :cond_3
+    const/16 v3, 0x30
+
+    const/4 v4, 0x1
+
+    if-lt v0, p1, :cond_4
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
 
-    move-result v3
+    move-result v5
 
-    const/16 v4, 0x30
+    const/16 v6, 0x2e
 
-    if-gt v4, v3, :cond_1
+    if-ne v5, v6, :cond_2
 
-    const/16 v4, 0x39
+    if-eqz v2, :cond_1
 
-    if-gt v3, v4, :cond_1
+    if-le v2, v4, :cond_0
 
-    const/4 v2, 0x1
+    add-int/lit8 v2, v0, 0x1
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    if-ne v2, v3, :cond_0
+
+    :cond_1
+    return v1
+
+    :cond_2
+    if-gt v3, v5, :cond_3
+
+    const/16 v3, 0x39
+
+    if-gt v5, v3, :cond_3
+
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_1
-    const/16 v4, 0x2e
-
-    if-ne v3, v4, :cond_2
-
-    if-nez v2, :cond_0
-
-    :cond_2
+    :cond_3
     return v1
 
-    :cond_3
-    return v2
+    :cond_4
+    if-eqz v2, :cond_6
+
+    if-le v2, v4, :cond_5
+
+    add-int/2addr v0, v4
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result p0
+
+    if-ne p0, v3, :cond_5
+
+    goto :goto_1
+
+    :cond_5
+    return v4
+
+    :cond_6
+    :goto_1
+    return v1
 .end method
 
 .method private static isValidIdentifier(Ljava/lang/String;)Z
@@ -875,7 +898,7 @@
     return-object v0
 .end method
 
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -889,13 +912,7 @@
 
     const/4 v1, 0x6
 
-    invoke-virtual {p1, v1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
-
-    array-length v1, v0
-
-    invoke-virtual {p1, v1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeLength(I)V
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([B)V
+    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZI[B)V
 
     return-void
 .end method
@@ -945,12 +962,99 @@
     return v0
 .end method
 
+.method public intern()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    .locals 3
+
+    new-instance v0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier$OidHandle;
+
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getBody()[B
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier$OidHandle;-><init>([B)V
+
+    sget-object v1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->pool:Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-interface {v1, v0}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    if-nez v2, :cond_0
+
+    invoke-interface {v1, v0, p0}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    if-nez v2, :cond_0
+
+    move-object v2, p0
+
+    :cond_0
+    return-object v2
+.end method
+
 .method isConstructed()Z
     .locals 1
 
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public on(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Z
+    .locals 3
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getId()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-le v1, v2, :cond_0
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v1
+
+    const/16 v2, 0x2e
+
+    if-ne v1, v2, :cond_0
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
 .end method
 
 .method public toString()Ljava/lang/String;

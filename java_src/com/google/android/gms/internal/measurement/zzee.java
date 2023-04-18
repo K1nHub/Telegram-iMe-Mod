@@ -9,7 +9,7 @@ import android.os.NetworkOnMainThreadException;
 import android.os.RemoteException;
 import android.util.Log;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.Clock;
 import com.google.android.gms.common.util.DefaultClock;
@@ -287,7 +287,7 @@ public final class zzee {
     public final Object zzh(int i) {
         zzbz zzbzVar = new zzbz();
         zzU(new zzdl(this, zzbzVar, i));
-        return zzbz.zze(zzbzVar.zzb(C0482C.DEFAULT_SEEK_FORWARD_INCREMENT_MS), Object.class);
+        return zzbz.zze(zzbzVar.zzb(C0470C.DEFAULT_SEEK_FORWARD_INCREMENT_MS), Object.class);
     }
 
     public final String zzj() {

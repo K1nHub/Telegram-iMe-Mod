@@ -755,15 +755,15 @@ public abstract class TokenInfo {
             /* compiled from: TokenInfo.kt */
             /* renamed from: com.iMe.storage.domain.model.wallet.token.TokenInfo$Crypto$Ethereum$GT */
             /* loaded from: classes3.dex */
-            public static final class C1921GT extends Ethereum {
-                public static final C1921GT INSTANCE = new C1921GT();
+            public static final class C1908GT extends Ethereum {
+                public static final C1908GT INSTANCE = new C1908GT();
 
                 /* JADX WARN: Illegal instructions before constructor call */
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                     To view partially-correct add '--show-bad-code' argument
                 */
-                private C1921GT() {
+                private C1908GT() {
                     /*
                         r14 = this;
                         com.iMe.storage.domain.model.wallet.token.TokenCode r1 = com.iMe.storage.domain.model.wallet.token.TokenCode.GT
@@ -783,7 +783,7 @@ public abstract class TokenInfo {
                         r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13)
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1921GT.<init>():void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1908GT.<init>():void");
                 }
             }
 
@@ -2048,15 +2048,15 @@ public abstract class TokenInfo {
             /* compiled from: TokenInfo.kt */
             /* renamed from: com.iMe.storage.domain.model.wallet.token.TokenInfo$Crypto$Ethereum$OM */
             /* loaded from: classes3.dex */
-            public static final class C1923OM extends Ethereum {
-                public static final C1923OM INSTANCE = new C1923OM();
+            public static final class C1910OM extends Ethereum {
+                public static final C1910OM INSTANCE = new C1910OM();
 
                 /* JADX WARN: Illegal instructions before constructor call */
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                     To view partially-correct add '--show-bad-code' argument
                 */
-                private C1923OM() {
+                private C1910OM() {
                     /*
                         r14 = this;
                         com.iMe.storage.domain.model.wallet.token.TokenCode r1 = com.iMe.storage.domain.model.wallet.token.TokenCode.OM
@@ -2076,7 +2076,7 @@ public abstract class TokenInfo {
                         r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13)
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1923OM.<init>():void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1910OM.<init>():void");
                 }
             }
 
@@ -2933,15 +2933,15 @@ public abstract class TokenInfo {
             /* compiled from: TokenInfo.kt */
             /* renamed from: com.iMe.storage.domain.model.wallet.token.TokenInfo$Crypto$Ethereum$HT */
             /* loaded from: classes3.dex */
-            public static final class C1922HT extends Ethereum {
-                public static final C1922HT INSTANCE = new C1922HT();
+            public static final class C1909HT extends Ethereum {
+                public static final C1909HT INSTANCE = new C1909HT();
 
                 /* JADX WARN: Illegal instructions before constructor call */
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                     To view partially-correct add '--show-bad-code' argument
                 */
-                private C1922HT() {
+                private C1909HT() {
                     /*
                         r14 = this;
                         com.iMe.storage.domain.model.wallet.token.TokenCode r1 = com.iMe.storage.domain.model.wallet.token.TokenCode.HT
@@ -2961,7 +2961,7 @@ public abstract class TokenInfo {
                         r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13)
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1922HT.<init>():void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1909HT.<init>():void");
                 }
             }
         }

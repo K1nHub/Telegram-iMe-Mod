@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingTransactionPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingTransactionPresenter.kt\ncom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 CommonExt.kt\ncom/iMe/storage/data/utils/extentions/CommonExtKt\n+ 4 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,551:1\n1#2:552\n6#3,6:553\n39#4,8:559\n39#4,8:567\n39#4,8:575\n39#4,8:583\n39#4,8:591\n39#4,8:599\n*S KotlinDebug\n*F\n+ 1 StakingTransactionPresenter.kt\ncom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter\n*L\n161#1:553,6\n206#1:559,8\n245#1:567,8\n276#1:575,8\n309#1:583,8\n367#1:591,8\n450#1:599,8\n*E\n"
+    value = "SMAP\nStakingTransactionPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingTransactionPresenter.kt\ncom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 CommonExt.kt\ncom/iMe/storage/data/utils/extentions/CommonExtKt\n+ 4 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,539:1\n1#2:540\n6#3,6:541\n39#4,8:547\n39#4,8:555\n39#4,8:563\n39#4,8:571\n39#4,8:579\n39#4,8:587\n*S KotlinDebug\n*F\n+ 1 StakingTransactionPresenter.kt\ncom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter\n*L\n160#1:541,6\n205#1:547,8\n244#1:555,8\n275#1:563,8\n308#1:571,8\n366#1:579,8\n438#1:587,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -134,31 +134,31 @@
 
     invoke-static {p8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 53
+    .line 52
     invoke-direct {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;-><init>()V
 
-    .line 46
+    .line 45
     iput p2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->screenType:I
 
-    .line 47
+    .line 46
     iput-object p3, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
-    .line 48
+    .line 47
     iput-object p4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 49
+    .line 48
     iput-object p5, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 50
+    .line 49
     iput-object p6, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 51
+    .line 50
     iput-object p7, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 52
+    .line 51
     iput-object p8, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->walletInteractor:Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
-    .line 56
+    .line 55
     sget-object p2, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
 
     const/4 p4, 0x0
@@ -188,7 +188,7 @@
 
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 57
+    .line 56
     sget-object p5, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
 
     invoke-virtual {p5, p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
@@ -199,7 +199,7 @@
 
     if-eqz p3, :cond_2
 
-    .line 59
+    .line 58
     new-instance p7, Lcom/iMe/model/staking/StakingAnnualPercentageData;
 
     invoke-virtual {p3}, Lcom/iMe/model/staking/StakingDetailsItem;->getFormattedAPR()Ljava/lang/String;
@@ -229,7 +229,7 @@
     :cond_2
     move-object p7, p4
 
-    .line 58
+    .line 57
     :goto_1
     iput-object p7, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingAnnualPercentageData:Lcom/iMe/model/staking/StakingAnnualPercentageData;
 
@@ -237,7 +237,7 @@
 
     if-eqz p3, :cond_3
 
-    .line 62
+    .line 61
     invoke-virtual {p3}, Lcom/iMe/model/staking/StakingDetailsItem;->getCanWithdrawSafely()Z
 
     move-result p8
@@ -257,13 +257,13 @@
     :cond_3
     move p8, p7
 
-    .line 61
+    .line 60
     :goto_2
     iput-boolean p8, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->isSafeWithdrawalVisible:Z
 
     if-eqz p3, :cond_4
 
-    .line 64
+    .line 63
     invoke-virtual {p3}, Lcom/iMe/model/staking/StakingDetailsItem;->getCanWithdrawSafely()Z
 
     move-result p7
@@ -271,7 +271,7 @@
     :cond_4
     iput-boolean p7, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->isSafeWithdrawalSelected:Z
 
-    .line 66
+    .line 65
     sget-object p7, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance$Companion;
 
     invoke-virtual {p7, p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance$Companion;->createEmptyBalanceFor(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
@@ -280,14 +280,14 @@
 
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
-    .line 68
+    .line 67
     sget-object p2, Lcom/iMe/model/staking/StakingTransactionStep$Loading;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$Loading;
 
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
 
     if-eqz p3, :cond_5
 
-    .line 72
+    .line 71
     invoke-virtual {p3}, Lcom/iMe/model/staking/StakingDetailsItem;->getFeeTokenTicker()Ljava/lang/String;
 
     move-result-object p2
@@ -313,7 +313,7 @@
 
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->feeTokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
-    .line 75
+    .line 74
     new-instance p2, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$safeWithdrawalReceiveTimeText$2;
 
     invoke-direct {p2, p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$safeWithdrawalReceiveTimeText$2;-><init>(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)V
@@ -326,7 +326,7 @@
 
     if-eqz p1, :cond_7
 
-    .line 76
+    .line 75
     new-instance p2, Ljava/math/BigDecimal;
 
     invoke-virtual {p1}, Ljava/lang/Double;->doubleValue()D
@@ -351,10 +351,10 @@
     :goto_4
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentAmount:Ljava/math/BigDecimal;
 
-    .line 77
+    .line 76
     iput-object p6, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->wrappedAction:Ljava/lang/String;
 
-    .line 79
+    .line 78
     invoke-static {p2}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->isZero(Ljava/lang/Number;)Z
 
     move-result p1
@@ -382,7 +382,7 @@
     :cond_9
     iput-object p4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->forcedAmountText:Ljava/lang/String;
 
-    .line 80
+    .line 79
     invoke-static {}, Lio/reactivex/disposables/Disposables;->disposed()Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
@@ -399,7 +399,7 @@
 .method public static final synthetic access$getFeeDialogModel(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)Lcom/iMe/model/dialog/DialogModel;
     .locals 0
 
-    .line 43
+    .line 42
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getFeeDialogModel()Lcom/iMe/model/dialog/DialogModel;
 
     move-result-object p0
@@ -410,7 +410,7 @@
 .method public static final synthetic access$getResourceManager$p(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 0
 
-    .line 43
+    .line 42
     iget-object p0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-object p0
@@ -419,7 +419,7 @@
 .method public static final synthetic access$getRxEventBus$p(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)Lcom/iMe/storage/domain/utils/rx/RxEventBus;
     .locals 0
 
-    .line 43
+    .line 42
     iget-object p0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     return-object p0
@@ -428,7 +428,7 @@
 .method public static final synthetic access$getSafeWithdrawalDurationText(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)Ljava/lang/String;
     .locals 0
 
-    .line 43
+    .line 42
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getSafeWithdrawalDurationText()Ljava/lang/String;
 
     move-result-object p0
@@ -439,7 +439,7 @@
 .method public static final synthetic access$getScreenType$p(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)I
     .locals 0
 
-    .line 43
+    .line 42
     iget p0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->screenType:I
 
     return p0
@@ -448,7 +448,7 @@
 .method public static final synthetic access$getStakingInteractor$p(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)Lcom/iMe/i_staking/StakingInteractor;
     .locals 0
 
-    .line 43
+    .line 42
     iget-object p0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
     return-object p0
@@ -457,7 +457,7 @@
 .method public static final synthetic access$getSuccessMessage(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;D)Ljava/lang/String;
     .locals 0
 
-    .line 43
+    .line 42
     invoke-direct {p0, p1, p2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getSuccessMessage(D)Ljava/lang/String;
 
     move-result-object p0
@@ -468,7 +468,7 @@
 .method public static final synthetic access$getSuccessTitle(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)Ljava/lang/String;
     .locals 0
 
-    .line 43
+    .line 42
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getSuccessTitle()Ljava/lang/String;
 
     move-result-object p0
@@ -479,7 +479,7 @@
 .method public static final synthetic access$getTokensApprovalStatusUpdateDisposable$p(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)Lio/reactivex/disposables/Disposable;
     .locals 0
 
-    .line 43
+    .line 42
     iget-object p0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokensApprovalStatusUpdateDisposable:Lio/reactivex/disposables/Disposable;
 
     return-object p0
@@ -488,7 +488,7 @@
 .method public static final synthetic access$onActionSuccess(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/model/staking/StakingTransactionStep;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Ljava/lang/String;)V
     .locals 0
 
-    .line 43
+    .line 42
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->onActionSuccess(Lcom/iMe/model/staking/StakingTransactionStep;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Ljava/lang/String;)V
 
     return-void
@@ -497,7 +497,7 @@
 .method public static final synthetic access$prepareTokenApproval(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/storage/domain/model/staking/StakingApprovalTokenType;)V
     .locals 0
 
-    .line 43
+    .line 42
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->prepareTokenApproval(Lcom/iMe/storage/domain/model/staking/StakingApprovalTokenType;)V
 
     return-void
@@ -506,7 +506,7 @@
 .method public static final synthetic access$runNoEnoughMoneyFlow(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)V
     .locals 0
 
-    .line 43
+    .line 42
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->runNoEnoughMoneyFlow()V
 
     return-void
@@ -515,7 +515,7 @@
 .method public static final synthetic access$setCurrentStep$p(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/model/staking/StakingTransactionStep;)V
     .locals 0
 
-    .line 43
+    .line 42
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
 
     return-void
@@ -524,7 +524,7 @@
 .method public static final synthetic access$setStakingTransactionAction$p(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;)V
     .locals 0
 
-    .line 43
+    .line 42
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingTransactionAction:Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;
 
     return-void
@@ -533,17 +533,8 @@
 .method public static final synthetic access$setTokenBalance$p(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)V
     .locals 0
 
-    .line 43
+    .line 42
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
-
-    return-void
-.end method
-
-.method public static final synthetic access$showCommonErrorToast(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/storage/data/network/model/error/ErrorModel;)V
-    .locals 0
-
-    .line 43
-    invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->showCommonErrorToast(Lcom/iMe/storage/data/network/model/error/ErrorModel;)V
 
     return-void
 .end method
@@ -551,7 +542,7 @@
 .method private final checkTokensApproval(Z)V
     .locals 4
 
-    .line 200
+    .line 199
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-nez v0, :cond_0
@@ -561,7 +552,7 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 201
+    .line 200
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-static {v1}, Lio/reactivex/Observable;->just(Ljava/lang/Object;)Lio/reactivex/Observable;
@@ -573,14 +564,14 @@
     :cond_1
     const-wide/16 v1, 0xf
 
-    .line 202
+    .line 201
     sget-object v3, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-static {v1, v2, v3}, Lio/reactivex/Observable;->interval(JLjava/util/concurrent/TimeUnit;)Lio/reactivex/Observable;
 
     move-result-object v1
 
-    .line 204
+    .line 203
     :goto_0
     new-instance v2, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$checkTokensApproval$1;
 
@@ -594,7 +585,7 @@
 
     move-result-object v0
 
-    .line 205
+    .line 204
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -607,10 +598,10 @@
 
     const-string v1, "private fun checkTokensA\u2026y { autoDispose() }\n    }"
 
-    .line 204
+    .line 203
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 206
+    .line 205
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -649,10 +640,10 @@
 
     const/4 v1, 0x0
 
-    .line 233
+    .line 232
     invoke-static {p0, p1, v1, v0, v1}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
-    .line 203
+    .line 202
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokensApprovalStatusUpdateDisposable:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -667,7 +658,7 @@
 
     const/4 p1, 0x0
 
-    .line 199
+    .line 198
     :cond_0
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->checkTokensApproval(Z)V
 
@@ -681,7 +672,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 204
+    .line 203
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -694,7 +685,7 @@
 .method private final confirmExecution()V
     .locals 3
 
-    .line 360
+    .line 359
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -717,7 +708,7 @@
 .method private final confirmTokenApprovalExecution(Ljava/lang/String;)V
     .locals 2
 
-    .line 265
+    .line 264
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -740,7 +731,7 @@
 .method private final executeAction()V
     .locals 5
 
-    .line 364
+    .line 363
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingTransactionAction:Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;
 
     if-eqz v0, :cond_1
@@ -758,7 +749,7 @@
 
     move-result-object v0
 
-    .line 365
+    .line 364
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -773,7 +764,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 366
+    .line 365
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -794,7 +785,7 @@
 
     move-result-object v0
 
-    .line 367
+    .line 366
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -831,7 +822,7 @@
 
     const/4 v1, 0x1
 
-    .line 381
+    .line 380
     invoke-static {p0, v0, v4, v1, v4}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     :cond_1
@@ -842,13 +833,13 @@
 .method private final executeTokenApproval()V
     .locals 5
 
-    .line 269
+    .line 268
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 271
+    .line 270
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->wrappedAction:Ljava/lang/String;
 
-    .line 272
+    .line 271
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingTransactionAction:Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;
 
     if-eqz v2, :cond_1
@@ -861,13 +852,13 @@
 
     goto :goto_0
 
-    .line 270
+    .line 269
     :cond_0
     invoke-virtual {v0, v1, v2}, Lcom/iMe/i_staking/StakingInteractor;->sendApprovalExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 274
+    .line 273
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -882,7 +873,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 275
+    .line 274
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -903,7 +894,7 @@
 
     move-result-object v0
 
-    .line 276
+    .line 275
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -940,7 +931,7 @@
 
     const/4 v1, 0x1
 
-    .line 286
+    .line 285
     invoke-static {p0, v0, v4, v1, v4}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     :cond_1
@@ -951,10 +942,10 @@
 .method private final getApproveConfirmationDialogModel(Ljava/lang/String;)Lcom/iMe/model/dialog/DialogModel;
     .locals 6
 
-    .line 473
+    .line 461
     new-instance v0, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 474
+    .line 462
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_swap_process_confirm_approve_alert_title:I
@@ -963,10 +954,10 @@
 
     move-result-object v1
 
-    .line 475
+    .line 463
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 476
+    .line 464
     sget v3, Lorg/telegram/messenger/R$string;->wallet_swap_process_confirm_approve_alert_description:I
 
     const/4 v4, 0x1
@@ -977,12 +968,12 @@
 
     aput-object p1, v4, v5
 
-    .line 475
+    .line 463
     invoke-interface {v2, v3, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 479
+    .line 467
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -991,7 +982,7 @@
 
     move-result-object v2
 
-    .line 480
+    .line 468
     iget-object v3, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->wallet_swap_process_confirm_approve_alert_action:I
@@ -1000,7 +991,7 @@
 
     move-result-object v3
 
-    .line 473
+    .line 461
     invoke-direct {v0, v1, p1, v2, v3}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -1009,13 +1000,13 @@
 .method private final getConfirmMessage()Ljava/lang/String;
     .locals 6
 
-    .line 509
+    .line 497
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 510
+    .line 498
     iget v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->screenType:I
 
-    .line 511
+    .line 499
     sget v2, Lorg/telegram/ui/ManageLinksActivity;->STAKING_REPLENISH_SCREEN_TYPE:I
 
     if-ne v1, v2, :cond_0
@@ -1024,7 +1015,7 @@
 
     goto :goto_0
 
-    .line 512
+    .line 500
     :cond_0
     sget v2, Lorg/telegram/ui/ManageLinksActivity;->STAKING_PROFIT_SCREEN_TYPE:I
 
@@ -1034,7 +1025,7 @@
 
     goto :goto_0
 
-    .line 513
+    .line 501
     :cond_1
     sget v1, Lorg/telegram/messenger/R$string;->staking_withdraw_confirm_description:I
 
@@ -1045,7 +1036,7 @@
 
     const/4 v3, 0x0
 
-    .line 515
+    .line 503
     iget-object v4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentAmount:Ljava/math/BigDecimal;
 
     invoke-virtual {v4}, Ljava/math/BigDecimal;->doubleValue()D
@@ -1070,7 +1061,7 @@
 
     const/4 v3, 0x1
 
-    .line 516
+    .line 504
     iget-object v4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     iget-object v5, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
@@ -1085,7 +1076,7 @@
 
     aput-object v4, v2, v3
 
-    .line 509
+    .line 497
     invoke-interface {v0, v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -1096,13 +1087,13 @@
 .method private final getConfirmTitle()Ljava/lang/String;
     .locals 3
 
-    .line 501
+    .line 489
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 502
+    .line 490
     iget v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->screenType:I
 
-    .line 503
+    .line 491
     sget v2, Lorg/telegram/ui/ManageLinksActivity;->STAKING_REPLENISH_SCREEN_TYPE:I
 
     if-ne v1, v2, :cond_0
@@ -1111,7 +1102,7 @@
 
     goto :goto_0
 
-    .line 504
+    .line 492
     :cond_0
     sget v2, Lorg/telegram/ui/ManageLinksActivity;->STAKING_PROFIT_SCREEN_TYPE:I
 
@@ -1121,11 +1112,11 @@
 
     goto :goto_0
 
-    .line 505
+    .line 493
     :cond_1
     sget v1, Lorg/telegram/messenger/R$string;->staking_withdraw_confirm_title:I
 
-    .line 501
+    .line 489
     :goto_0
     invoke-interface {v0, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
@@ -1148,27 +1139,27 @@
         }
     .end annotation
 
-    .line 385
+    .line 384
     iget v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->screenType:I
 
-    .line 386
+    .line 385
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->STAKING_REPLENISH_SCREEN_TYPE:I
 
     if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 387
+    .line 386
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->wrappedAction:Ljava/lang/String;
 
-    .line 386
+    .line 385
     invoke-virtual {v0, v1, p1}, Lcom/iMe/i_staking/StakingInteractor;->sendDepositExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 390
+    .line 389
     :cond_0
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->STAKING_PROFIT_SCREEN_TYPE:I
 
@@ -1176,24 +1167,24 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 391
+    .line 390
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->wrappedAction:Ljava/lang/String;
 
-    .line 390
+    .line 389
     invoke-virtual {v0, v1, p1}, Lcom/iMe/i_staking/StakingInteractor;->sendClaimExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 394
+    .line 393
     :cond_1
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 395
+    .line 394
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->wrappedAction:Ljava/lang/String;
 
-    .line 394
+    .line 393
     invoke-virtual {v0, v1, p1}, Lcom/iMe/i_staking/StakingInteractor;->sendWithdrawExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -1205,10 +1196,10 @@
 .method private final getFeeDialogModel()Lcom/iMe/model/dialog/DialogModel;
     .locals 8
 
-    .line 483
+    .line 471
     new-instance v7, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 484
+    .line 472
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_amount_send_fee_dialog_title:I
@@ -1217,7 +1208,7 @@
 
     move-result-object v1
 
-    .line 485
+    .line 473
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -1236,7 +1227,7 @@
 
     move-object v0, v7
 
-    .line 483
+    .line 471
     invoke-direct/range {v0 .. v6}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-object v7
@@ -1256,27 +1247,27 @@
         }
     .end annotation
 
-    .line 344
+    .line 343
     iget v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->screenType:I
 
-    .line 345
+    .line 344
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->STAKING_REPLENISH_SCREEN_TYPE:I
 
     if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 347
+    .line 346
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentAmount:Ljava/math/BigDecimal;
 
-    .line 345
+    .line 344
     invoke-virtual {v0, p1, p2, v1}, Lcom/iMe/i_staking/StakingInteractor;->sendDepositPrepare(JLjava/math/BigDecimal;)Lio/reactivex/Observable;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 349
+    .line 348
     :cond_0
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->STAKING_PROFIT_SCREEN_TYPE:I
 
@@ -1290,17 +1281,17 @@
 
     goto :goto_0
 
-    .line 352
+    .line 351
     :cond_1
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 354
+    .line 353
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentAmount:Ljava/math/BigDecimal;
 
-    .line 355
+    .line 354
     iget-boolean v2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->isSafeWithdrawalSelected:Z
 
-    .line 352
+    .line 351
     invoke-virtual {v0, p1, p2, v1, v2}, Lcom/iMe/i_staking/StakingInteractor;->sendWithdrawPrepare(JLjava/math/BigDecimal;Z)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -1312,7 +1303,7 @@
 .method private final getSafeWithdrawalDurationText()Ljava/lang/String;
     .locals 6
 
-    .line 464
+    .line 452
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-eqz v0, :cond_0
@@ -1335,7 +1326,7 @@
 
     move-result-wide v0
 
-    .line 465
+    .line 453
     sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/TimeUnit;->toDays(J)J
@@ -1356,14 +1347,14 @@
 
     const-string v2, "DaysSchedule"
 
-    .line 467
+    .line 455
     invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     const-string/jumbo v1, "{\n            LocaleCont\u2026onDays.toInt())\n        }"
 
-    .line 466
+    .line 454
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_1
@@ -1371,14 +1362,14 @@
     :cond_1
     long-to-int v0, v0
 
-    .line 469
+    .line 457
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->formatDuration(I)Ljava/lang/String;
 
     move-result-object v0
 
     const-string/jumbo v1, "{\n            LocaleCont\u2026econds.toInt())\n        }"
 
-    .line 468
+    .line 456
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_1
@@ -1388,7 +1379,7 @@
 .method private final getSafeWithdrawalReceiveTimeText()Ljava/lang/String;
     .locals 1
 
-    .line 75
+    .line 74
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->safeWithdrawalReceiveTimeText$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -1403,20 +1394,20 @@
 .method private final getSendConfirmationDialogModel()Lcom/iMe/model/dialog/DialogModel;
     .locals 7
 
-    .line 488
+    .line 476
     new-instance v0, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 489
+    .line 477
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getConfirmTitle()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 490
+    .line 478
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getConfirmMessage()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 491
+    .line 479
     iget-object v3, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -1425,13 +1416,13 @@
 
     move-result-object v3
 
-    .line 492
+    .line 480
     iget-object v4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 493
+    .line 481
     iget v5, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->screenType:I
 
-    .line 494
+    .line 482
     sget v6, Lorg/telegram/ui/ManageLinksActivity;->STAKING_REPLENISH_SCREEN_TYPE:I
 
     if-ne v5, v6, :cond_0
@@ -1440,7 +1431,7 @@
 
     goto :goto_0
 
-    .line 495
+    .line 483
     :cond_0
     sget v6, Lorg/telegram/ui/ManageLinksActivity;->STAKING_PROFIT_SCREEN_TYPE:I
 
@@ -1450,17 +1441,17 @@
 
     goto :goto_0
 
-    .line 496
+    .line 484
     :cond_1
     sget v5, Lorg/telegram/messenger/R$string;->staking_details_withdraw:I
 
-    .line 492
+    .line 480
     :goto_0
     invoke-interface {v4, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 488
+    .line 476
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -1469,13 +1460,13 @@
 .method private final getSuccessMessage(D)Ljava/lang/String;
     .locals 4
 
-    .line 531
+    .line 519
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 532
+    .line 520
     iget v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->screenType:I
 
-    .line 533
+    .line 521
     sget v2, Lorg/telegram/ui/ManageLinksActivity;->STAKING_REPLENISH_SCREEN_TYPE:I
 
     if-ne v1, v2, :cond_0
@@ -1484,7 +1475,7 @@
 
     goto :goto_0
 
-    .line 534
+    .line 522
     :cond_0
     sget v2, Lorg/telegram/ui/ManageLinksActivity;->STAKING_PROFIT_SCREEN_TYPE:I
 
@@ -1494,18 +1485,18 @@
 
     goto :goto_0
 
-    .line 535
+    .line 523
     :cond_1
     iget-boolean v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->isSafeWithdrawalSelected:Z
 
     if-eqz v1, :cond_2
 
-    .line 536
+    .line 524
     sget v1, Lorg/telegram/messenger/R$string;->staking_withdraw_safe_success_description:I
 
     goto :goto_0
 
-    .line 538
+    .line 526
     :cond_2
     sget v1, Lorg/telegram/messenger/R$string;->staking_withdraw_immediate_success_description:I
 
@@ -1516,7 +1507,7 @@
 
     const/4 v3, 0x0
 
-    .line 541
+    .line 529
     invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object p1
@@ -1535,7 +1526,7 @@
 
     const/4 p1, 0x1
 
-    .line 542
+    .line 530
     iget-object p2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     iget-object v3, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
@@ -1550,7 +1541,7 @@
 
     aput-object p2, v2, p1
 
-    .line 531
+    .line 519
     invoke-interface {v0, v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
@@ -1561,13 +1552,13 @@
 .method private final getSuccessTitle()Ljava/lang/String;
     .locals 3
 
-    .line 519
+    .line 507
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 520
+    .line 508
     iget v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->screenType:I
 
-    .line 521
+    .line 509
     sget v2, Lorg/telegram/ui/ManageLinksActivity;->STAKING_REPLENISH_SCREEN_TYPE:I
 
     if-ne v1, v2, :cond_0
@@ -1576,7 +1567,7 @@
 
     goto :goto_0
 
-    .line 522
+    .line 510
     :cond_0
     sget v2, Lorg/telegram/ui/ManageLinksActivity;->STAKING_PROFIT_SCREEN_TYPE:I
 
@@ -1586,22 +1577,22 @@
 
     goto :goto_0
 
-    .line 523
+    .line 511
     :cond_1
     iget-boolean v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->isSafeWithdrawalSelected:Z
 
     if-eqz v1, :cond_2
 
-    .line 524
+    .line 512
     sget v1, Lorg/telegram/messenger/R$string;->staking_withdraw_safe_success_title:I
 
     goto :goto_0
 
-    .line 526
+    .line 514
     :cond_2
     sget v1, Lorg/telegram/messenger/R$string;->staking_withdraw_immediate_success_title:I
 
-    .line 519
+    .line 507
     :goto_0
     invoke-interface {v0, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
@@ -1613,13 +1604,13 @@
 .method private final loadBalance()V
     .locals 6
 
-    .line 444
+    .line 432
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->walletInteractor:Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
-    .line 446
+    .line 434
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 447
+    .line 435
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-eqz v2, :cond_1
@@ -1639,12 +1630,12 @@
 
     const/4 v2, 0x0
 
-    .line 445
+    .line 433
     invoke-static/range {v0 .. v5}, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->getTokenBalance$default(Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;ZLcom/iMe/storage/domain/model/crypto/NetworkType;ILjava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 449
+    .line 437
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1659,7 +1650,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 450
+    .line 438
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -1698,7 +1689,7 @@
 
     const/4 v2, 0x0
 
-    .line 460
+    .line 448
     invoke-static {p0, v0, v2, v1, v2}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     :cond_1
@@ -1709,12 +1700,12 @@
 .method private final loadInitialData()V
     .locals 1
 
-    .line 191
+    .line 190
     sget-object v0, Lcom/iMe/model/staking/StakingTransactionStep$Loading;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$Loading;
 
     iput-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
 
-    .line 192
+    .line 191
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -1723,17 +1714,17 @@
 
     invoke-interface {v0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView;->updateStakingStep()V
 
-    .line 193
+    .line 192
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-eqz v0, :cond_0
 
-    .line 194
+    .line 193
     invoke-direct {p0, v0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->updateAvailableBalance(Lcom/iMe/model/staking/StakingDetailsItem;)V
 
     const/4 v0, 0x1
 
-    .line 195
+    .line 194
     invoke-direct {p0, v0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->checkTokensApproval(Z)V
 
     :cond_0
@@ -1743,16 +1734,16 @@
 .method private final onActionSuccess(Lcom/iMe/model/staking/StakingTransactionStep;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Ljava/lang/String;)V
     .locals 0
 
-    .line 405
+    .line 404
     iput-object p3, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->wrappedAction:Ljava/lang/String;
 
-    .line 406
+    .line 405
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->feeType:Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
 
-    .line 407
+    .line 406
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
 
-    .line 408
+    .line 407
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -1780,7 +1771,7 @@
 
     const-string p3, ""
 
-    .line 400
+    .line 399
     :cond_1
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->onActionSuccess(Lcom/iMe/model/staking/StakingTransactionStep;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Ljava/lang/String;)V
 
@@ -1790,14 +1781,14 @@
 .method private final prepareAction()V
     .locals 5
 
-    .line 305
+    .line 304
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 306
+    .line 305
     :cond_0
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingDetailsItem;->getId()J
 
@@ -1807,7 +1798,7 @@
 
     move-result-object v0
 
-    .line 307
+    .line 306
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1822,7 +1813,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 308
+    .line 307
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -1843,7 +1834,7 @@
 
     move-result-object v0
 
-    .line 309
+    .line 308
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -1880,7 +1871,7 @@
 
     const/4 v1, 0x1
 
-    .line 340
+    .line 339
     invoke-static {p0, v0, v4, v1, v4}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -1889,33 +1880,33 @@
 .method private final prepareTokenApproval(Lcom/iMe/storage/domain/model/staking/StakingApprovalTokenType;)V
     .locals 4
 
-    .line 237
+    .line 236
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokensApprovalStatusUpdateDisposable:Lio/reactivex/disposables/Disposable;
 
     invoke-interface {v0}, Lio/reactivex/disposables/Disposable;->dispose()V
 
-    .line 238
+    .line 237
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 239
+    .line 238
     :cond_0
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 241
+    .line 240
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingDetailsItem;->getId()J
 
     move-result-wide v2
 
-    .line 240
+    .line 239
     invoke-virtual {v1, v2, v3, p1}, Lcom/iMe/i_staking/StakingInteractor;->sendApprovalPrepare(JLcom/iMe/storage/domain/model/staking/StakingApprovalTokenType;)Lio/reactivex/Observable;
 
     move-result-object v1
 
-    .line 244
+    .line 243
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1930,7 +1921,7 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 245
+    .line 244
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v2
@@ -1969,7 +1960,7 @@
 
     const/4 v1, 0x0
 
-    .line 261
+    .line 260
     invoke-static {p0, p1, v1, v0, v1}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -1978,7 +1969,7 @@
 .method private final runNoEnoughMoneyFlow()V
     .locals 5
 
-    .line 423
+    .line 411
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-eqz v0, :cond_1
@@ -1991,7 +1982,7 @@
 
     goto :goto_0
 
-    .line 424
+    .line 412
     :cond_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -2001,17 +1992,17 @@
 
     new-instance v2, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;
 
-    .line 425
+    .line 413
     iget-object v3, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 426
+    .line 414
     sget-object v4, Lcom/iMe/utils/helper/wallet/SwapHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/SwapHelper;
 
     invoke-virtual {v4, v0}, Lcom/iMe/utils/helper/wallet/SwapHelper;->resolveSwapProtocolByNetwork(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     move-result-object v4
 
-    .line 424
+    .line 412
     invoke-direct {v2, v3, v4, v0}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
 
     invoke-interface {v1, v2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView;->showNoEnoughMoneyErrorDialog(Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
@@ -2021,81 +2012,13 @@
     return-void
 .end method
 
-.method private final showCommonErrorToast(Lcom/iMe/storage/data/network/model/error/ErrorModel;)V
-    .locals 2
-
-    .line 413
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView;
-
-    .line 414
-    invoke-virtual {p1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;->isNoConnectionStatus()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    sget v1, Lorg/telegram/messenger/R$string;->common_error_no_internet:I
-
-    invoke-interface {p1, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_1
-
-    .line 415
-    :cond_0
-    iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    invoke-virtual {p1, v1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;->getMessage(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v1, 0x0
-
-    :goto_0
-    if-eqz v1, :cond_2
-
-    .line 416
-    iget-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    sget v1, Lorg/telegram/messenger/R$string;->common_error_unexpected:I
-
-    invoke-interface {p1, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 413
-    :cond_2
-    :goto_1
-    invoke-interface {v0, p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
-
-    return-void
-.end method
-
 .method private final updateAvailableBalance(Lcom/iMe/model/staking/StakingDetailsItem;)V
     .locals 12
 
-    .line 432
+    .line 420
     iget v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->screenType:I
 
-    .line 433
+    .line 421
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->STAKING_REPLENISH_SCREEN_TYPE:I
 
     if-ne v0, v1, :cond_0
@@ -2104,13 +2027,13 @@
 
     goto :goto_0
 
-    .line 434
+    .line 422
     :cond_0
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->STAKING_PROFIT_SCREEN_TYPE:I
 
     if-ne v0, v1, :cond_1
 
-    .line 435
+    .line 423
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     const/4 v3, 0x0
@@ -2137,18 +2060,18 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
-    .line 436
+    .line 424
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->setMaxAmount()V
 
     goto :goto_0
 
-    .line 438
+    .line 426
     :cond_1
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->STAKING_WITHDRAW_SCREEN_TYPE:I
 
     if-ne v0, v1, :cond_2
 
-    .line 439
+    .line 427
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     const/4 v3, 0x0
@@ -2187,7 +2110,7 @@
 .method private final validatePrepareAmount()V
     .locals 4
 
-    .line 291
+    .line 290
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentAmount:Ljava/math/BigDecimal;
 
     invoke-static {v0}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->isZero(Ljava/lang/Number;)Z
@@ -2204,7 +2127,7 @@
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 292
+    .line 291
     iget v2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->screenType:I
 
     sget v3, Lorg/telegram/ui/ManageLinksActivity;->STAKING_PROFIT_SCREEN_TYPE:I
@@ -2215,11 +2138,11 @@
 
     goto :goto_0
 
-    .line 293
+    .line 292
     :cond_0
     sget v2, Lorg/telegram/messenger/R$string;->wallet_amount_validation_zero_amount_error:I
 
-    .line 291
+    .line 290
     :goto_0
     invoke-interface {v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
@@ -2232,7 +2155,7 @@
     :cond_1
     new-instance v0, Ljava/math/BigDecimal;
 
-    .line 295
+    .line 294
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getTotal()D
@@ -2259,12 +2182,12 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 296
+    .line 295
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->runNoEnoughMoneyFlow()V
 
     goto :goto_1
 
-    .line 298
+    .line 297
     :cond_2
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -2284,7 +2207,7 @@
 
     goto :goto_1
 
-    .line 300
+    .line 299
     :cond_3
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->prepareAction()V
 
@@ -2297,10 +2220,10 @@
 .method public final getApproveTokenDescriptionModel()Lcom/iMe/model/dialog/DialogModel;
     .locals 8
 
-    .line 172
+    .line 171
     new-instance v7, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 173
+    .line 172
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_swap_process_what_is_approve:I
@@ -2309,7 +2232,7 @@
 
     move-result-object v1
 
-    .line 174
+    .line 173
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_swap_process_what_is_approve_dialog_description:I
@@ -2318,7 +2241,7 @@
 
     move-result-object v2
 
-    .line 175
+    .line 174
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->common_ok:I
@@ -2335,7 +2258,7 @@
 
     move-object v0, v7
 
-    .line 172
+    .line 171
     invoke-direct/range {v0 .. v6}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-object v7
@@ -2344,12 +2267,12 @@
 .method public final getCompoundThresholdProgress()F
     .locals 3
 
-    .line 90
+    .line 89
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-eqz v0, :cond_0
 
-    .line 91
+    .line 90
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingDetailsItem;->getImpact()Ljava/math/BigDecimal;
 
     move-result-object v1
@@ -2397,7 +2320,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 92
+    .line 91
     :goto_0
     invoke-static {v0}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/lang/Float;)F
 
@@ -2409,7 +2332,7 @@
 .method public final getCurrentStep()Lcom/iMe/model/staking/StakingTransactionStep;
     .locals 1
 
-    .line 68
+    .line 67
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
 
     return-object v0
@@ -2418,7 +2341,7 @@
 .method public final getFeeType()Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
     .locals 1
 
-    .line 70
+    .line 69
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->feeType:Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
 
     return-object v0
@@ -2427,14 +2350,14 @@
 .method public final getForcedAmountText()Ljava/lang/String;
     .locals 2
 
-    .line 141
+    .line 140
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->forcedAmountText:Ljava/lang/String;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 142
+    .line 141
     iput-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->forcedAmountText:Ljava/lang/String;
 
     goto :goto_0
@@ -2449,17 +2372,17 @@
 .method public final getSafeWithdrawalHelpAlertText()Ljava/lang/String;
     .locals 10
 
-    .line 120
+    .line 119
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 121
+    .line 120
     sget v1, Lorg/telegram/messenger/R$string;->staking_withdraw_safe_withdrawal_help_alert_description:I
 
     const/4 v2, 0x2
 
     new-array v3, v2, [Ljava/lang/Object;
 
-    .line 122
+    .line 121
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getWithdrawalTimeText()Ljava/lang/String;
 
     move-result-object v4
@@ -2468,7 +2391,7 @@
 
     aput-object v4, v3, v5
 
-    .line 123
+    .line 122
     sget-object v4, Lcom/iMe/utils/formatter/BalanceFormatter;->INSTANCE:Lcom/iMe/utils/formatter/BalanceFormatter;
 
     iget-object v6, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
@@ -2507,7 +2430,7 @@
 
     aput-object v2, v3, v4
 
-    .line 120
+    .line 119
     invoke-interface {v0, v1, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -2518,7 +2441,7 @@
 .method public final getStakingAnnualPercentageData()Lcom/iMe/model/staking/StakingAnnualPercentageData;
     .locals 1
 
-    .line 58
+    .line 57
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingAnnualPercentageData:Lcom/iMe/model/staking/StakingAnnualPercentageData;
 
     return-object v0
@@ -2527,12 +2450,12 @@
 .method public final getStakingContractUrl()Ljava/lang/String;
     .locals 3
 
-    .line 86
+    .line 85
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-eqz v0, :cond_0
 
-    .line 87
+    .line 86
     sget-object v1, Lcom/iMe/storage/common/AppConfiguration$Crypto;->INSTANCE:Lcom/iMe/storage/common/AppConfiguration$Crypto;
 
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingDetailsItem;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
@@ -2559,7 +2482,7 @@
 .method public final getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
     .locals 1
 
-    .line 66
+    .line 65
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     return-object v0
@@ -2568,7 +2491,7 @@
 .method public final getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
     .locals 1
 
-    .line 56
+    .line 55
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     return-object v0
@@ -2577,7 +2500,7 @@
 .method public final getTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
     .locals 1
 
-    .line 57
+    .line 56
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
 
     return-object v0
@@ -2588,43 +2511,43 @@
 
     move-object/from16 v0, p0
 
-    .line 94
+    .line 93
     iget-object v1, v0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_1
 
-    .line 95
+    .line 94
     iget-boolean v3, v0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->isSafeWithdrawalSelected:Z
 
     if-eqz v3, :cond_0
 
-    .line 96
+    .line 95
     invoke-virtual {v1}, Lcom/iMe/model/staking/StakingDetailsItem;->getSafeWithdrawalFeePercentage()D
 
     move-result-wide v3
 
     goto :goto_0
 
-    .line 98
+    .line 97
     :cond_0
     invoke-virtual {v1}, Lcom/iMe/model/staking/StakingDetailsItem;->getImmediateWithdrawalFeePercentage()D
 
     move-result-wide v3
 
-    .line 100
+    .line 99
     :goto_0
     iget-object v1, v0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 101
+    .line 100
     sget v5, Lorg/telegram/messenger/R$string;->staking_withdraw_fee_value:I
 
     const/4 v6, 0x2
 
     new-array v7, v6, [Ljava/lang/Object;
 
-    .line 102
+    .line 101
     sget-object v8, Lcom/iMe/utils/formatter/BalanceFormatter;->INSTANCE:Lcom/iMe/utils/formatter/BalanceFormatter;
 
     invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
@@ -2641,12 +2564,12 @@
 
     const/4 v2, 0x1
 
-    .line 103
+    .line 102
     iget-object v8, v0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->feeTokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     const/4 v9, 0x0
 
-    .line 104
+    .line 103
     iget-object v6, v0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentAmount:Ljava/math/BigDecimal;
 
     new-instance v10, Ljava/math/BigDecimal;
@@ -2687,12 +2610,12 @@
 
     const/16 v17, 0x0
 
-    .line 103
+    .line 102
     invoke-static/range {v8 .. v17}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->copy$default(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;DFLcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/wallet/PriceRate;Lcom/iMe/storage/domain/model/crypto/NetworkType;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     move-result-object v3
 
-    .line 105
+    .line 104
     iget-object v4, v0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {v3, v4}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalanceShortText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
@@ -2701,7 +2624,7 @@
 
     aput-object v3, v7, v2
 
-    .line 100
+    .line 99
     invoke-interface {v1, v5, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
@@ -2718,17 +2641,17 @@
 .method public final getWithdrawalHelpAlertText()Ljava/lang/String;
     .locals 10
 
-    .line 113
+    .line 112
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 114
+    .line 113
     sget v1, Lorg/telegram/messenger/R$string;->staking_withdraw_help_alert:I
 
     const/4 v2, 0x3
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    .line 115
+    .line 114
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getWithdrawalTimeText()Ljava/lang/String;
 
     move-result-object v3
@@ -2737,7 +2660,7 @@
 
     aput-object v3, v2, v4
 
-    .line 116
+    .line 115
     sget-object v3, Lcom/iMe/utils/formatter/BalanceFormatter;->INSTANCE:Lcom/iMe/utils/formatter/BalanceFormatter;
 
     iget-object v5, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
@@ -2778,7 +2701,7 @@
 
     aput-object v5, v2, v8
 
-    .line 117
+    .line 116
     iget-object v5, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-eqz v5, :cond_1
@@ -2811,7 +2734,7 @@
 
     aput-object v3, v2, v7
 
-    .line 113
+    .line 112
     invoke-interface {v0, v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -2822,7 +2745,7 @@
 .method public final getWithdrawalTimeText()Ljava/lang/String;
     .locals 2
 
-    .line 110
+    .line 109
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->isSafeWithdrawalSelected:Z
 
     if-eqz v0, :cond_0
@@ -2833,7 +2756,7 @@
 
     goto :goto_0
 
-    .line 111
+    .line 110
     :cond_0
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
@@ -2850,7 +2773,7 @@
 .method public final isSafeWithdrawalSelected()Z
     .locals 1
 
-    .line 64
+    .line 63
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->isSafeWithdrawalSelected:Z
 
     return v0
@@ -2859,7 +2782,7 @@
 .method public final isSafeWithdrawalVisible()Z
     .locals 1
 
-    .line 61
+    .line 60
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->isSafeWithdrawalVisible:Z
 
     return v0
@@ -2868,10 +2791,10 @@
 .method public final onActionClick()V
     .locals 3
 
-    .line 131
+    .line 130
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
 
-    .line 132
+    .line 131
     instance-of v1, v0, Lcom/iMe/model/staking/StakingTransactionStep$ApprovalNeeded;
 
     if-eqz v1, :cond_0
@@ -2886,7 +2809,7 @@
 
     goto :goto_0
 
-    .line 133
+    .line 132
     :cond_0
     sget-object v1, Lcom/iMe/model/staking/StakingTransactionStep$Prepare;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$Prepare;
 
@@ -2900,7 +2823,7 @@
 
     goto :goto_0
 
-    .line 134
+    .line 133
     :cond_1
     new-instance v1, Lcom/iMe/model/staking/StakingTransactionStep$Execute;
 
@@ -2918,7 +2841,7 @@
 
     goto :goto_0
 
-    .line 135
+    .line 134
     :cond_2
     sget-object v1, Lcom/iMe/model/staking/StakingTransactionStep$Loading;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$Loading;
 
@@ -2946,7 +2869,7 @@
 
     goto :goto_0
 
-    .line 136
+    .line 135
     :cond_3
     sget-object v1, Lcom/iMe/model/staking/StakingTransactionStep$RetryLoading;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$RetryLoading;
 
@@ -2970,7 +2893,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 162
+    .line 161
     :try_start_0
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
@@ -2999,12 +2922,12 @@
     :cond_1
     new-instance v0, Ljava/math/BigDecimal;
 
-    .line 163
+    .line 162
     invoke-direct {v0, p1}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
     move-object p1, v0
 
-    .line 162
+    .line 161
     :goto_1
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentAmount:Ljava/math/BigDecimal;
     :try_end_0
@@ -3018,7 +2941,7 @@
     .line 9
     invoke-static {p1}, Ltimber/log/Timber;->e(Ljava/lang/Throwable;)V
 
-    .line 165
+    .line 164
     :goto_2
     iget-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
 
@@ -3026,17 +2949,17 @@
 
     if-eqz p1, :cond_2
 
-    .line 166
+    .line 165
     sget-object p1, Lcom/iMe/model/staking/StakingTransactionStep$Prepare;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$Prepare;
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
 
     const/4 p1, 0x0
 
-    .line 167
+    .line 166
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->feeType:Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
 
-    .line 169
+    .line 168
     :cond_2
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -3052,7 +2975,7 @@
 .method protected onFirstViewAttach()V
     .locals 0
 
-    .line 183
+    .line 182
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->loadInitialData()V
 
     return-void
@@ -3061,7 +2984,7 @@
 .method public final setMaxAmount()V
     .locals 3
 
-    .line 146
+    .line 145
     new-instance v0, Ljava/math/BigDecimal;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
@@ -3082,12 +3005,12 @@
 
     const-string v1, "it"
 
-    .line 147
+    .line 146
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0, v0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->onAmountChanged(Ljava/lang/String;)V
 
-    .line 146
+    .line 145
     iput-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->forcedAmountText:Ljava/lang/String;
 
     return-void
@@ -3096,7 +3019,7 @@
 .method public final shouldShowApprovalInfoButton()Z
     .locals 1
 
-    .line 84
+    .line 83
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
 
     instance-of v0, v0, Lcom/iMe/model/staking/StakingTransactionStep$ApprovalNeeded;
@@ -3107,7 +3030,7 @@
 .method public final startStakingConditionsDialog()V
     .locals 2
 
-    .line 127
+    .line 126
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -3129,10 +3052,10 @@
 .method public final switchSafeWithdrawal(Z)V
     .locals 0
 
-    .line 152
+    .line 151
     iput-boolean p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->isSafeWithdrawalSelected:Z
 
-    .line 153
+    .line 152
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -3141,19 +3064,19 @@
 
     invoke-interface {p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView;->updateWithdrawalFee()V
 
-    .line 154
+    .line 153
     iget-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
 
     instance-of p1, p1, Lcom/iMe/model/staking/StakingTransactionStep$Execute;
 
     if-eqz p1, :cond_0
 
-    .line 155
+    .line 154
     sget-object p1, Lcom/iMe/model/staking/StakingTransactionStep$Prepare;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$Prepare;
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
 
-    .line 156
+    .line 155
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->prepareAction()V
 
     :cond_0

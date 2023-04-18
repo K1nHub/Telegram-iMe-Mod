@@ -11,25 +11,25 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzcl extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzcl> CREATOR = new zzcm();
-    @SafeParcelable.Field(m789id = 1)
+    @SafeParcelable.Field(m775id = 1)
     public final long zza;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     public final long zzb;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     public final boolean zzc;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     public final String zzd;
-    @SafeParcelable.Field(m789id = 5)
+    @SafeParcelable.Field(m775id = 5)
     public final String zze;
-    @SafeParcelable.Field(m789id = 6)
+    @SafeParcelable.Field(m775id = 6)
     public final String zzf;
-    @SafeParcelable.Field(m789id = 7)
+    @SafeParcelable.Field(m775id = 7)
     public final Bundle zzg;
-    @SafeParcelable.Field(m789id = 8)
+    @SafeParcelable.Field(m775id = 8)
     public final String zzh;
 
     @SafeParcelable.Constructor
-    public zzcl(@SafeParcelable.Param(m788id = 1) long j, @SafeParcelable.Param(m788id = 2) long j2, @SafeParcelable.Param(m788id = 3) boolean z, @SafeParcelable.Param(m788id = 4) String str, @SafeParcelable.Param(m788id = 5) String str2, @SafeParcelable.Param(m788id = 6) String str3, @SafeParcelable.Param(m788id = 7) Bundle bundle, @SafeParcelable.Param(m788id = 8) String str4) {
+    public zzcl(@SafeParcelable.Param(m774id = 1) long j, @SafeParcelable.Param(m774id = 2) long j2, @SafeParcelable.Param(m774id = 3) boolean z, @SafeParcelable.Param(m774id = 4) String str, @SafeParcelable.Param(m774id = 5) String str2, @SafeParcelable.Param(m774id = 6) String str3, @SafeParcelable.Param(m774id = 7) Bundle bundle, @SafeParcelable.Param(m774id = 8) String str4) {
         this.zza = j;
         this.zzb = j2;
         this.zzc = z;

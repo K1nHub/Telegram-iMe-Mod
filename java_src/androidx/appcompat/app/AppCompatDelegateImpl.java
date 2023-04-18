@@ -45,6 +45,8 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.window.OnBackInvokedCallback;
+import android.window.OnBackInvokedDispatcher;
 import androidx.appcompat.R$attr;
 import androidx.appcompat.R$color;
 import androidx.appcompat.R$id;
@@ -71,6 +73,7 @@ import androidx.collection.SimpleArrayMap;
 import androidx.core.app.NavUtils;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.core.p010os.LocaleListCompat;
 import androidx.core.util.ObjectsCompat;
 import androidx.core.view.KeyEventDispatcher;
 import androidx.core.view.LayoutInflaterCompat;
@@ -81,10 +84,12 @@ import androidx.core.view.ViewPropertyAnimatorListenerAdapter;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.lang.Thread;
 import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
 public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuilder.Callback, LayoutInflater.Factory2 {
@@ -99,19 +104,21 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     ActionMode mActionMode;
     PopupWindow mActionModePopup;
     ActionBarContextView mActionModeView;
-    private boolean mActivityHandlesUiMode;
-    private boolean mActivityHandlesUiModeChecked;
+    private int mActivityHandlesConfigFlags;
+    private boolean mActivityHandlesConfigFlagsChecked;
     final AppCompatCallback mAppCompatCallback;
     private AppCompatViewInflater mAppCompatViewInflater;
     private AppCompatWindowCallback mAppCompatWindowCallback;
     private AutoNightModeManager mAutoBatteryNightModeManager;
     private AutoNightModeManager mAutoTimeNightModeManager;
+    private OnBackInvokedCallback mBackCallback;
     private boolean mBaseContextAttached;
     private boolean mClosingActionMenu;
     final Context mContext;
     private boolean mCreated;
     private DecorContentParent mDecorContentParent;
     boolean mDestroyed;
+    private OnBackInvokedDispatcher mDispatcher;
     private Configuration mEffectiveConfiguration;
     private boolean mEnableDefaultActionBarUp;
     ViewPropertyAnimatorCompat mFadeAnim;
@@ -244,20 +251,56 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     }
 
     @Override // androidx.appcompat.app.AppCompatDelegate
+    public void setOnBackInvokedDispatcher(OnBackInvokedDispatcher onBackInvokedDispatcher) {
+        OnBackInvokedCallback onBackInvokedCallback;
+        super.setOnBackInvokedDispatcher(onBackInvokedDispatcher);
+        OnBackInvokedDispatcher onBackInvokedDispatcher2 = this.mDispatcher;
+        if (onBackInvokedDispatcher2 != null && (onBackInvokedCallback = this.mBackCallback) != null) {
+            Api33Impl.unregisterOnBackInvokedCallback(onBackInvokedDispatcher2, onBackInvokedCallback);
+            this.mBackCallback = null;
+        }
+        if (onBackInvokedDispatcher == null) {
+            Object obj = this.mHost;
+            if ((obj instanceof Activity) && ((Activity) obj).getWindow() != null) {
+                this.mDispatcher = Api33Impl.getOnBackInvokedDispatcher((Activity) this.mHost);
+                updateBackInvokedCallbackState();
+            }
+        }
+        this.mDispatcher = onBackInvokedDispatcher;
+        updateBackInvokedCallbackState();
+    }
+
+    void updateBackInvokedCallbackState() {
+        OnBackInvokedCallback onBackInvokedCallback;
+        if (Build.VERSION.SDK_INT >= 33) {
+            boolean shouldRegisterBackInvokedCallback = shouldRegisterBackInvokedCallback();
+            if (shouldRegisterBackInvokedCallback && this.mBackCallback == null) {
+                this.mBackCallback = Api33Impl.registerOnBackPressedCallback(this.mDispatcher, this);
+            } else if (shouldRegisterBackInvokedCallback || (onBackInvokedCallback = this.mBackCallback) == null) {
+            } else {
+                Api33Impl.unregisterOnBackInvokedCallback(this.mDispatcher, onBackInvokedCallback);
+            }
+        }
+    }
+
+    @Override // androidx.appcompat.app.AppCompatDelegate
     public Context attachBaseContext2(Context context) {
         this.mBaseContextAttached = true;
         int mapNightMode = mapNightMode(context, calculateNightMode());
-        Configuration configuration = null;
+        if (AppCompatDelegate.isAutoStorageOptedIn(context)) {
+            AppCompatDelegate.syncRequestedAndStoredLocales(context);
+        }
+        LocaleListCompat calculateApplicationLocales = calculateApplicationLocales(context);
         if (sCanApplyOverrideConfiguration && (context instanceof ContextThemeWrapper)) {
             try {
-                ContextThemeWrapperCompatApi17Impl.applyOverrideConfiguration((ContextThemeWrapper) context, createOverrideConfigurationForDayNight(context, mapNightMode, null));
+                ContextThemeWrapperCompatApi17Impl.applyOverrideConfiguration((ContextThemeWrapper) context, createOverrideAppConfiguration(context, mapNightMode, calculateApplicationLocales, null, false));
                 return context;
             } catch (IllegalStateException unused) {
             }
         }
         if (context instanceof androidx.appcompat.view.ContextThemeWrapper) {
             try {
-                ((androidx.appcompat.view.ContextThemeWrapper) context).applyOverrideConfiguration(createOverrideConfigurationForDayNight(context, mapNightMode, null));
+                ((androidx.appcompat.view.ContextThemeWrapper) context).applyOverrideConfiguration(createOverrideAppConfiguration(context, mapNightMode, calculateApplicationLocales, null, false));
                 return context;
             } catch (IllegalStateException unused2) {
             }
@@ -265,6 +308,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         if (!sCanReturnDifferentContext) {
             return super.attachBaseContext2(context);
         }
+        Configuration configuration = null;
         if (Build.VERSION.SDK_INT >= 17) {
             Configuration configuration2 = new Configuration();
             configuration2.uiMode = -1;
@@ -276,9 +320,9 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                 configuration = generateConfigDelta(configuration3, configuration4);
             }
         }
-        Configuration createOverrideConfigurationForDayNight = createOverrideConfigurationForDayNight(context, mapNightMode, configuration);
+        Configuration createOverrideAppConfiguration = createOverrideAppConfiguration(context, mapNightMode, calculateApplicationLocales, configuration, true);
         androidx.appcompat.view.ContextThemeWrapper contextThemeWrapper = new androidx.appcompat.view.ContextThemeWrapper(context, R$style.Theme_AppCompat_Empty);
-        contextThemeWrapper.applyOverrideConfiguration(createOverrideConfigurationForDayNight);
+        contextThemeWrapper.applyOverrideConfiguration(createOverrideAppConfiguration);
         boolean z = false;
         try {
             z = context.getTheme() != null;
@@ -300,7 +344,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     @Override // androidx.appcompat.app.AppCompatDelegate
     public void onCreate(Bundle bundle) {
         this.mBaseContextAttached = true;
-        applyDayNight(false);
+        applyApplicationSpecificConfig(false);
         ensureWindow();
         Object obj = this.mHost;
         if (obj instanceof Activity) {
@@ -388,12 +432,12 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         }
         AppCompatDrawableManager.get().onConfigurationChanged(this.mContext);
         this.mEffectiveConfiguration = new Configuration(this.mContext.getResources().getConfiguration());
-        applyDayNight(false);
+        applyApplicationSpecificConfig(false, false);
     }
 
     @Override // androidx.appcompat.app.AppCompatDelegate
     public void onStart() {
-        applyDayNight();
+        applyApplicationSpecificConfig(true, false);
     }
 
     @Override // androidx.appcompat.app.AppCompatDelegate
@@ -418,7 +462,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         ViewGroup viewGroup = (ViewGroup) this.mSubDecor.findViewById(16908290);
         viewGroup.removeAllViews();
         viewGroup.addView(view);
-        this.mAppCompatWindowCallback.getWrapped().onContentChanged();
+        this.mAppCompatWindowCallback.bypassOnContentChanged(this.mWindow.getCallback());
     }
 
     @Override // androidx.appcompat.app.AppCompatDelegate
@@ -427,7 +471,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         ViewGroup viewGroup = (ViewGroup) this.mSubDecor.findViewById(16908290);
         viewGroup.removeAllViews();
         LayoutInflater.from(this.mContext).inflate(i, viewGroup);
-        this.mAppCompatWindowCallback.getWrapped().onContentChanged();
+        this.mAppCompatWindowCallback.bypassOnContentChanged(this.mWindow.getCallback());
     }
 
     @Override // androidx.appcompat.app.AppCompatDelegate
@@ -436,14 +480,14 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         ViewGroup viewGroup = (ViewGroup) this.mSubDecor.findViewById(16908290);
         viewGroup.removeAllViews();
         viewGroup.addView(view, layoutParams);
-        this.mAppCompatWindowCallback.getWrapped().onContentChanged();
+        this.mAppCompatWindowCallback.bypassOnContentChanged(this.mWindow.getCallback());
     }
 
     @Override // androidx.appcompat.app.AppCompatDelegate
     public void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
         ensureSubDecor();
         ((ViewGroup) this.mSubDecor.findViewById(16908290)).addView(view, layoutParams);
-        this.mAppCompatWindowCallback.getWrapped().onContentChanged();
+        this.mAppCompatWindowCallback.bypassOnContentChanged(this.mWindow.getCallback());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x0058  */
@@ -549,6 +593,10 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         }
         obtainStyledAttributes.recycle();
         this.mWindow = window;
+        if (Build.VERSION.SDK_INT < 33 || this.mDispatcher != null) {
+            return;
+        }
+        setOnBackInvokedDispatcher(null);
     }
 
     private void ensureSubDecor() {
@@ -841,15 +889,16 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         if (this.mActionMode == null) {
             this.mActionMode = startSupportActionModeFromWindow(actionModeCallbackWrapperV9);
         }
+        updateBackInvokedCallbackState();
         return this.mActionMode;
     }
 
     @Override // androidx.appcompat.app.AppCompatDelegate
     public void invalidateOptionsMenu() {
-        AbstractC0019ActionBar supportActionBar = getSupportActionBar();
-        if (supportActionBar == null || !supportActionBar.invalidateOptionsMenu()) {
-            invalidatePanelMenu(0);
+        if (peekSupportActionBar() == null || getSupportActionBar().invalidateOptionsMenu()) {
+            return;
         }
+        invalidatePanelMenu(0);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x0025  */
@@ -860,7 +909,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     */
     androidx.appcompat.view.ActionMode startSupportActionModeFromWindow(androidx.appcompat.view.ActionMode.Callback r8) {
         /*
-            Method dump skipped, instructions count: 361
+            Method dump skipped, instructions count: 364
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.app.AppCompatDelegateImpl.startSupportActionModeFromWindow(androidx.appcompat.view.ActionMode$Callback):androidx.appcompat.view.ActionMode");
@@ -882,7 +931,25 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         }
     }
 
-    boolean onBackPressed() {
+    boolean shouldRegisterBackInvokedCallback() {
+        if (this.mDispatcher == null) {
+            return false;
+        }
+        PanelFeatureState panelState = getPanelState(0, false);
+        return (panelState != null && panelState.isOpen) || this.mActionMode != null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public boolean onBackPressed() {
+        boolean z = this.mLongPressBackDown;
+        this.mLongPressBackDown = false;
+        PanelFeatureState panelState = getPanelState(0, false);
+        if (panelState != null && panelState.isOpen) {
+            if (!z) {
+                closePanel(panelState, true);
+            }
+            return true;
+        }
         ActionMode actionMode = this.mActionMode;
         if (actionMode != null) {
             actionMode.finish();
@@ -923,7 +990,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         if (((obj instanceof KeyEventDispatcher.Component) || (obj instanceof AppCompatDialog)) && (decorView = this.mWindow.getDecorView()) != null && KeyEventDispatcher.dispatchBeforeHierarchy(decorView, keyEvent)) {
             return true;
         }
-        if (keyEvent.getKeyCode() == 82 && this.mAppCompatWindowCallback.getWrapped().dispatchKeyEvent(keyEvent)) {
+        if (keyEvent.getKeyCode() == 82 && this.mAppCompatWindowCallback.bypassDispatchKeyEvent(this.mWindow.getCallback(), keyEvent)) {
             return true;
         }
         int keyCode = keyEvent.getKeyCode();
@@ -931,20 +998,12 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     }
 
     boolean onKeyUp(int i, KeyEvent keyEvent) {
-        if (i == 4) {
-            boolean z = this.mLongPressBackDown;
-            this.mLongPressBackDown = false;
-            PanelFeatureState panelState = getPanelState(0, false);
-            if (panelState != null && panelState.isOpen) {
-                if (!z) {
-                    closePanel(panelState, true);
-                }
-                return true;
-            } else if (onBackPressed()) {
+        if (i != 4) {
+            if (i == 82) {
+                onKeyUpPanel(0, keyEvent);
                 return true;
             }
-        } else if (i == 82) {
-            onKeyUpPanel(0, keyEvent);
+        } else if (onBackPressed()) {
             return true;
         }
         return false;
@@ -1101,70 +1160,18 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         return null;
     }
 
-    private void openPanel(PanelFeatureState panelFeatureState, KeyEvent keyEvent) {
-        int i;
-        ViewGroup.LayoutParams layoutParams;
-        if (panelFeatureState.isOpen || this.mDestroyed) {
-            return;
-        }
-        if (panelFeatureState.featureId == 0) {
-            if ((this.mContext.getResources().getConfiguration().screenLayout & 15) == 4) {
-                return;
-            }
-        }
-        Window.Callback windowCallback = getWindowCallback();
-        if (windowCallback != null && !windowCallback.onMenuOpened(panelFeatureState.featureId, panelFeatureState.menu)) {
-            closePanel(panelFeatureState, true);
-            return;
-        }
-        WindowManager windowManager = (WindowManager) this.mContext.getSystemService("window");
-        if (windowManager != null && preparePanel(panelFeatureState, keyEvent)) {
-            ViewGroup viewGroup = panelFeatureState.decorView;
-            if (viewGroup == null || panelFeatureState.refreshDecorView) {
-                if (viewGroup == null) {
-                    if (!initializePanelDecor(panelFeatureState) || panelFeatureState.decorView == null) {
-                        return;
-                    }
-                } else if (panelFeatureState.refreshDecorView && viewGroup.getChildCount() > 0) {
-                    panelFeatureState.decorView.removeAllViews();
-                }
-                if (!initializePanelContent(panelFeatureState) || !panelFeatureState.hasPanelItems()) {
-                    panelFeatureState.refreshDecorView = true;
-                    return;
-                }
-                ViewGroup.LayoutParams layoutParams2 = panelFeatureState.shownPanelView.getLayoutParams();
-                if (layoutParams2 == null) {
-                    layoutParams2 = new ViewGroup.LayoutParams(-2, -2);
-                }
-                panelFeatureState.decorView.setBackgroundResource(panelFeatureState.background);
-                ViewParent parent = panelFeatureState.shownPanelView.getParent();
-                if (parent instanceof ViewGroup) {
-                    ((ViewGroup) parent).removeView(panelFeatureState.shownPanelView);
-                }
-                panelFeatureState.decorView.addView(panelFeatureState.shownPanelView, layoutParams2);
-                if (!panelFeatureState.shownPanelView.hasFocus()) {
-                    panelFeatureState.shownPanelView.requestFocus();
-                }
-            } else {
-                View view = panelFeatureState.createdPanelView;
-                if (view != null && (layoutParams = view.getLayoutParams()) != null && layoutParams.width == -1) {
-                    i = -1;
-                    panelFeatureState.isHandled = false;
-                    WindowManager.LayoutParams layoutParams3 = new WindowManager.LayoutParams(i, -2, panelFeatureState.f17x, panelFeatureState.f18y, 1002, 8519680, -3);
-                    layoutParams3.gravity = panelFeatureState.gravity;
-                    layoutParams3.windowAnimations = panelFeatureState.windowAnimations;
-                    windowManager.addView(panelFeatureState.decorView, layoutParams3);
-                    panelFeatureState.isOpen = true;
-                }
-            }
-            i = -2;
-            panelFeatureState.isHandled = false;
-            WindowManager.LayoutParams layoutParams32 = new WindowManager.LayoutParams(i, -2, panelFeatureState.f17x, panelFeatureState.f18y, 1002, 8519680, -3);
-            layoutParams32.gravity = panelFeatureState.gravity;
-            layoutParams32.windowAnimations = panelFeatureState.windowAnimations;
-            windowManager.addView(panelFeatureState.decorView, layoutParams32);
-            panelFeatureState.isOpen = true;
-        }
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00f2  */
+    /* JADX WARN: Removed duplicated region for block: B:72:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private void openPanel(androidx.appcompat.app.AppCompatDelegateImpl.PanelFeatureState r14, android.view.KeyEvent r15) {
+        /*
+            Method dump skipped, instructions count: 249
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.app.AppCompatDelegateImpl.openPanel(androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState, android.view.KeyEvent):void");
     }
 
     private boolean initializePanelDecor(PanelFeatureState panelFeatureState) {
@@ -1371,6 +1378,9 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         if (this.mPreparedPanel == panelFeatureState) {
             this.mPreparedPanel = null;
         }
+        if (panelFeatureState.featureId == 0) {
+            updateBackInvokedCallbackState();
+        }
     }
 
     private boolean onKeyDownPanel(int i, KeyEvent keyEvent) {
@@ -1445,7 +1455,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             }
         }
         if ((panelFeatureState == null || panelFeatureState.isOpen) && !this.mDestroyed) {
-            this.mAppCompatWindowCallback.getWrapped().onPanelClosed(i, menu);
+            this.mAppCompatWindowCallback.bypassOnPanelClosed(this.mWindow.getCallback(), i, menu);
         }
     }
 
@@ -1668,16 +1678,30 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         menuBuilder.close();
     }
 
-    public boolean applyDayNight() {
-        return applyDayNight(true);
+    @Override // androidx.appcompat.app.AppCompatDelegate
+    public Context getContextForDelegate() {
+        return this.mContext;
     }
 
-    private boolean applyDayNight(boolean z) {
+    public boolean applyDayNight() {
+        return applyApplicationSpecificConfig(true);
+    }
+
+    private boolean applyApplicationSpecificConfig(boolean z) {
+        return applyApplicationSpecificConfig(z, true);
+    }
+
+    private boolean applyApplicationSpecificConfig(boolean z, boolean z2) {
         if (this.mDestroyed) {
             return false;
         }
         int calculateNightMode = calculateNightMode();
-        boolean updateForNightMode = updateForNightMode(mapNightMode(this.mContext, calculateNightMode), z);
+        int mapNightMode = mapNightMode(this.mContext, calculateNightMode);
+        LocaleListCompat calculateApplicationLocales = Build.VERSION.SDK_INT < 33 ? calculateApplicationLocales(this.mContext) : null;
+        if (!z2 && calculateApplicationLocales != null) {
+            calculateApplicationLocales = getConfigurationLocales(this.mContext.getResources().getConfiguration());
+        }
+        boolean updateAppConfiguration = updateAppConfiguration(mapNightMode, calculateApplicationLocales, z);
         if (calculateNightMode == 0) {
             getAutoTimeNightModeManager(this.mContext).setup();
         } else {
@@ -1694,7 +1718,25 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                 autoNightModeManager2.cleanup();
             }
         }
-        return updateForNightMode;
+        return updateAppConfiguration;
+    }
+
+    LocaleListCompat calculateApplicationLocales(Context context) {
+        LocaleListCompat requestedAppLocales;
+        LocaleListCompat forLanguageTags;
+        int i = Build.VERSION.SDK_INT;
+        if (i < 33 && (requestedAppLocales = AppCompatDelegate.getRequestedAppLocales()) != null) {
+            LocaleListCompat configurationLocales = getConfigurationLocales(context.getApplicationContext().getResources().getConfiguration());
+            if (i >= 24) {
+                forLanguageTags = LocaleOverlayHelper.combineLocalesIfOverlayExists(requestedAppLocales, configurationLocales);
+            } else if (requestedAppLocales.isEmpty()) {
+                forLanguageTags = LocaleListCompat.getEmptyLocaleList();
+            } else {
+                forLanguageTags = LocaleListCompat.forLanguageTags(requestedAppLocales.get(0).toString());
+            }
+            return forLanguageTags.isEmpty() ? configurationLocales : forLanguageTags;
+        }
+        return null;
     }
 
     @Override // androidx.appcompat.app.AppCompatDelegate
@@ -1727,12 +1769,42 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         return i != -100 ? i : AppCompatDelegate.getDefaultNightMode();
     }
 
-    private Configuration createOverrideConfigurationForDayNight(Context context, int i, Configuration configuration) {
-        int i2;
-        if (i != 1) {
-            i2 = i != 2 ? context.getApplicationContext().getResources().getConfiguration().uiMode & 48 : 32;
+    void setConfigurationLocales(Configuration configuration, LocaleListCompat localeListCompat) {
+        int i = Build.VERSION.SDK_INT;
+        if (i >= 24) {
+            Api24Impl.setLocales(configuration, localeListCompat);
+        } else if (i >= 17) {
+            Api17Impl.setLocale(configuration, localeListCompat.get(0));
+            Api17Impl.setLayoutDirection(configuration, localeListCompat.get(0));
         } else {
+            configuration.locale = localeListCompat.get(0);
+        }
+    }
+
+    LocaleListCompat getConfigurationLocales(Configuration configuration) {
+        int i = Build.VERSION.SDK_INT;
+        if (i >= 24) {
+            return Api24Impl.getLocales(configuration);
+        }
+        return i >= 21 ? LocaleListCompat.forLanguageTags(Api21Impl.toLanguageTag(configuration.locale)) : LocaleListCompat.create(configuration.locale);
+    }
+
+    void setDefaultLocalesForLocaleList(LocaleListCompat localeListCompat) {
+        if (Build.VERSION.SDK_INT >= 24) {
+            Api24Impl.setDefaultLocales(localeListCompat);
+        } else {
+            Locale.setDefault(localeListCompat.get(0));
+        }
+    }
+
+    private Configuration createOverrideAppConfiguration(Context context, int i, LocaleListCompat localeListCompat, Configuration configuration, boolean z) {
+        int i2;
+        if (i == 1) {
             i2 = 16;
+        } else if (i != 2) {
+            i2 = z ? 0 : context.getApplicationContext().getResources().getConfiguration().uiMode & 48;
+        } else {
+            i2 = 32;
         }
         Configuration configuration2 = new Configuration();
         configuration2.fontScale = BitmapDescriptorFactory.HUE_RED;
@@ -1740,82 +1812,138 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             configuration2.setTo(configuration);
         }
         configuration2.uiMode = i2 | (configuration2.uiMode & (-49));
+        if (localeListCompat != null) {
+            setConfigurationLocales(configuration2, localeListCompat);
+        }
         return configuration2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0088  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private boolean updateForNightMode(int r7, boolean r8) {
+    private boolean updateAppConfiguration(int r9, androidx.core.p010os.LocaleListCompat r10, boolean r11) {
         /*
-            r6 = this;
-            android.content.Context r0 = r6.mContext
-            r1 = 0
-            android.content.res.Configuration r0 = r6.createOverrideConfigurationForDayNight(r0, r7, r1)
-            boolean r2 = r6.isActivityManifestHandlingUiMode()
-            android.content.res.Configuration r3 = r6.mEffectiveConfiguration
-            if (r3 != 0) goto L19
-            android.content.Context r3 = r6.mContext
-            android.content.res.Resources r3 = r3.getResources()
-            android.content.res.Configuration r3 = r3.getConfiguration()
-        L19:
-            int r3 = r3.uiMode
+            r8 = this;
+            android.content.Context r1 = r8.mContext
+            r4 = 0
+            r5 = 0
+            r0 = r8
+            r2 = r9
+            r3 = r10
+            android.content.res.Configuration r0 = r0.createOverrideAppConfiguration(r1, r2, r3, r4, r5)
+            android.content.Context r1 = r8.mContext
+            int r1 = r8.getActivityHandlesConfigChangesFlags(r1)
+            android.content.res.Configuration r2 = r8.mEffectiveConfiguration
+            if (r2 != 0) goto L1f
+            android.content.Context r2 = r8.mContext
+            android.content.res.Resources r2 = r2.getResources()
+            android.content.res.Configuration r2 = r2.getConfiguration()
+        L1f:
+            int r3 = r2.uiMode
             r3 = r3 & 48
-            int r0 = r0.uiMode
-            r0 = r0 & 48
-            r4 = 1
-            if (r3 == r0) goto L4b
-            if (r8 == 0) goto L4b
-            if (r2 != 0) goto L4b
-            boolean r8 = r6.mBaseContextAttached
-            if (r8 == 0) goto L4b
-            boolean r8 = androidx.appcompat.app.AppCompatDelegateImpl.sCanReturnDifferentContext
-            if (r8 != 0) goto L34
-            boolean r8 = r6.mCreated
-            if (r8 == 0) goto L4b
+            int r4 = r0.uiMode
+            r4 = r4 & 48
+            androidx.core.os.LocaleListCompat r2 = r8.getConfigurationLocales(r2)
+            r5 = 0
+            if (r10 != 0) goto L30
+            r0 = r5
+            goto L34
+        L30:
+            androidx.core.os.LocaleListCompat r0 = r8.getConfigurationLocales(r0)
         L34:
-            java.lang.Object r8 = r6.mHost
-            boolean r5 = r8 instanceof android.app.Activity
-            if (r5 == 0) goto L4b
-            android.app.Activity r8 = (android.app.Activity) r8
-            boolean r8 = r8.isChild()
-            if (r8 != 0) goto L4b
-            java.lang.Object r8 = r6.mHost
-            android.app.Activity r8 = (android.app.Activity) r8
-            androidx.core.app.ActivityCompat.recreate(r8)
-            r8 = r4
-            goto L4c
-        L4b:
-            r8 = 0
-        L4c:
-            if (r8 != 0) goto L54
-            if (r3 == r0) goto L54
-            r6.updateResourcesConfigurationForNightMode(r0, r2, r1)
-            goto L55
-        L54:
-            r4 = r8
-        L55:
-            if (r4 == 0) goto L62
-            java.lang.Object r8 = r6.mHost
-            boolean r0 = r8 instanceof androidx.appcompat.app.AppCompatActivity
-            if (r0 == 0) goto L62
-            androidx.appcompat.app.AppCompatActivity r8 = (androidx.appcompat.app.AppCompatActivity) r8
-            r8.onNightModeChanged(r7)
-        L62:
-            return r4
+            r6 = 0
+            if (r3 == r4) goto L3a
+            r3 = 512(0x200, float:7.175E-43)
+            goto L3b
+        L3a:
+            r3 = r6
+        L3b:
+            if (r0 == 0) goto L4d
+            boolean r2 = r2.equals(r0)
+            if (r2 != 0) goto L4d
+            r3 = r3 | 4
+            int r2 = android.os.Build.VERSION.SDK_INT
+            r7 = 17
+            if (r2 < r7) goto L4d
+            r3 = r3 | 8192(0x2000, float:1.14794E-41)
+        L4d:
+            int r2 = ~r1
+            r2 = r2 & r3
+            r7 = 1
+            if (r2 == 0) goto L77
+            if (r11 == 0) goto L77
+            boolean r11 = r8.mBaseContextAttached
+            if (r11 == 0) goto L77
+            boolean r11 = androidx.appcompat.app.AppCompatDelegateImpl.sCanReturnDifferentContext
+            if (r11 != 0) goto L60
+            boolean r11 = r8.mCreated
+            if (r11 == 0) goto L77
+        L60:
+            java.lang.Object r11 = r8.mHost
+            boolean r2 = r11 instanceof android.app.Activity
+            if (r2 == 0) goto L77
+            android.app.Activity r11 = (android.app.Activity) r11
+            boolean r11 = r11.isChild()
+            if (r11 != 0) goto L77
+            java.lang.Object r11 = r8.mHost
+            android.app.Activity r11 = (android.app.Activity) r11
+            androidx.core.app.ActivityCompat.recreate(r11)
+            r11 = r7
+            goto L78
+        L77:
+            r11 = r6
+        L78:
+            if (r11 != 0) goto L85
+            if (r3 == 0) goto L85
+            r11 = r3 & r1
+            if (r11 != r3) goto L81
+            r6 = r7
+        L81:
+            r8.updateResourcesConfiguration(r4, r0, r6, r5)
+            goto L86
+        L85:
+            r7 = r11
+        L86:
+            if (r7 == 0) goto La2
+            java.lang.Object r11 = r8.mHost
+            boolean r1 = r11 instanceof androidx.appcompat.app.AppCompatActivity
+            if (r1 == 0) goto La2
+            r1 = r3 & 512(0x200, float:7.175E-43)
+            if (r1 == 0) goto L97
+            androidx.appcompat.app.AppCompatActivity r11 = (androidx.appcompat.app.AppCompatActivity) r11
+            r11.onNightModeChanged(r9)
+        L97:
+            r9 = r3 & 4
+            if (r9 == 0) goto La2
+            java.lang.Object r9 = r8.mHost
+            androidx.appcompat.app.AppCompatActivity r9 = (androidx.appcompat.app.AppCompatActivity) r9
+            r9.onLocalesChanged(r10)
+        La2:
+            if (r7 == 0) goto Lb7
+            if (r0 == 0) goto Lb7
+            android.content.Context r9 = r8.mContext
+            android.content.res.Resources r9 = r9.getResources()
+            android.content.res.Configuration r9 = r9.getConfiguration()
+            androidx.core.os.LocaleListCompat r9 = r8.getConfigurationLocales(r9)
+            r8.setDefaultLocalesForLocaleList(r9)
+        Lb7:
+            return r7
         */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.app.AppCompatDelegateImpl.updateForNightMode(int, boolean):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.app.AppCompatDelegateImpl.updateAppConfiguration(int, androidx.core.os.LocaleListCompat, boolean):boolean");
     }
 
-    private void updateResourcesConfigurationForNightMode(int i, boolean z, Configuration configuration) {
+    private void updateResourcesConfiguration(int i, LocaleListCompat localeListCompat, boolean z, Configuration configuration) {
         Resources resources = this.mContext.getResources();
         Configuration configuration2 = new Configuration(resources.getConfiguration());
         if (configuration != null) {
             configuration2.updateFrom(configuration);
         }
         configuration2.uiMode = i | (resources.getConfiguration().uiMode & (-49));
+        if (localeListCompat != null) {
+            setConfigurationLocales(configuration2, localeListCompat);
+        }
         resources.updateConfiguration(configuration2, null);
         int i2 = Build.VERSION.SDK_INT;
         if (i2 < 26) {
@@ -1828,19 +1956,20 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                 this.mContext.getTheme().applyStyle(this.mThemeResId, true);
             }
         }
-        if (z) {
-            Object obj = this.mHost;
-            if (obj instanceof Activity) {
-                Activity activity = (Activity) obj;
-                if (activity instanceof LifecycleOwner) {
-                    if (((LifecycleOwner) activity).getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.CREATED)) {
-                        activity.onConfigurationChanged(configuration2);
-                    }
-                } else if (!this.mCreated || this.mDestroyed) {
-                } else {
-                    activity.onConfigurationChanged(configuration2);
-                }
+        if (z && (this.mHost instanceof Activity)) {
+            updateActivityConfiguration(configuration2);
+        }
+    }
+
+    private void updateActivityConfiguration(Configuration configuration) {
+        Activity activity = (Activity) this.mHost;
+        if (activity instanceof LifecycleOwner) {
+            if (((LifecycleOwner) activity).getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.CREATED)) {
+                activity.onConfigurationChanged(configuration);
             }
+        } else if (!this.mCreated || this.mDestroyed) {
+        } else {
+            activity.onConfigurationChanged(configuration);
         }
     }
 
@@ -1858,23 +1987,25 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         return this.mAutoBatteryNightModeManager;
     }
 
-    private boolean isActivityManifestHandlingUiMode() {
-        if (!this.mActivityHandlesUiModeChecked && (this.mHost instanceof Activity)) {
-            PackageManager packageManager = this.mContext.getPackageManager();
+    private int getActivityHandlesConfigChangesFlags(Context context) {
+        if (!this.mActivityHandlesConfigFlagsChecked && (this.mHost instanceof Activity)) {
+            PackageManager packageManager = context.getPackageManager();
             if (packageManager == null) {
-                return false;
+                return 0;
             }
             try {
                 int i = Build.VERSION.SDK_INT;
-                ActivityInfo activityInfo = packageManager.getActivityInfo(new ComponentName(this.mContext, this.mHost.getClass()), i >= 29 ? 269221888 : i >= 24 ? 786432 : 0);
-                this.mActivityHandlesUiMode = (activityInfo == null || (activityInfo.configChanges & 512) == 0) ? false : true;
+                ActivityInfo activityInfo = packageManager.getActivityInfo(new ComponentName(context, this.mHost.getClass()), i >= 29 ? 269221888 : i >= 24 ? 786432 : 0);
+                if (activityInfo != null) {
+                    this.mActivityHandlesConfigFlags = activityInfo.configChanges;
+                }
             } catch (PackageManager.NameNotFoundException e) {
                 Log.d("AppCompatDelegate", "Exception while getting ActivityInfo", e);
-                this.mActivityHandlesUiMode = false;
+                this.mActivityHandlesConfigFlags = 0;
             }
         }
-        this.mActivityHandlesUiModeChecked = true;
-        return this.mActivityHandlesUiMode;
+        this.mActivityHandlesConfigFlagsChecked = true;
+        return this.mActivityHandlesConfigFlags;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1941,6 +2072,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             AppCompatDelegateImpl appCompatDelegateImpl5 = AppCompatDelegateImpl.this;
             appCompatDelegateImpl5.mActionMode = null;
             ViewCompat.requestApplyInsets(appCompatDelegateImpl5.mSubDecor);
+            AppCompatDelegateImpl.this.updateBackInvokedCallbackState();
         }
     }
 
@@ -2134,10 +2266,9 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     /* loaded from: classes.dex */
     public class AppCompatWindowCallback extends WindowCallbackWrapper {
         private ActionBarMenuCallback mActionBarCallback;
-
-        @Override // android.view.Window.Callback
-        public void onContentChanged() {
-        }
+        private boolean mDispatchKeyEventBypassEnabled;
+        private boolean mOnContentChangedBypassEnabled;
+        private boolean mOnPanelClosedBypassEnabled;
 
         AppCompatWindowCallback(Window.Callback callback) {
             super(callback);
@@ -2145,6 +2276,9 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
 
         @Override // androidx.appcompat.view.WindowCallbackWrapper, android.view.Window.Callback
         public boolean dispatchKeyEvent(KeyEvent keyEvent) {
+            if (this.mDispatchKeyEventBypassEnabled) {
+                return getWrapped().dispatchKeyEvent(keyEvent);
+            }
             return AppCompatDelegateImpl.this.dispatchKeyEvent(keyEvent) || super.dispatchKeyEvent(keyEvent);
         }
 
@@ -2166,6 +2300,13 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             View onCreatePanelView;
             ActionBarMenuCallback actionBarMenuCallback = this.mActionBarCallback;
             return (actionBarMenuCallback == null || (onCreatePanelView = actionBarMenuCallback.onCreatePanelView(i)) == null) ? super.onCreatePanelView(i) : onCreatePanelView;
+        }
+
+        @Override // android.view.Window.Callback
+        public void onContentChanged() {
+            if (this.mOnContentChangedBypassEnabled) {
+                getWrapped().onContentChanged();
+            }
         }
 
         @Override // androidx.appcompat.view.WindowCallbackWrapper, android.view.Window.Callback
@@ -2200,6 +2341,10 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
 
         @Override // androidx.appcompat.view.WindowCallbackWrapper, android.view.Window.Callback
         public void onPanelClosed(int i, Menu menu) {
+            if (this.mOnPanelClosedBypassEnabled) {
+                getWrapped().onPanelClosed(i, menu);
+                return;
+            }
             super.onPanelClosed(i, menu);
             AppCompatDelegateImpl.this.onPanelClosed(i);
         }
@@ -2240,6 +2385,33 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                 super.onProvideKeyboardShortcuts(list, menuBuilder, i);
             } else {
                 super.onProvideKeyboardShortcuts(list, menu, i);
+            }
+        }
+
+        public void bypassOnContentChanged(Window.Callback callback) {
+            try {
+                this.mOnContentChangedBypassEnabled = true;
+                callback.onContentChanged();
+            } finally {
+                this.mOnContentChangedBypassEnabled = false;
+            }
+        }
+
+        public boolean bypassDispatchKeyEvent(Window.Callback callback, KeyEvent keyEvent) {
+            try {
+                this.mDispatchKeyEventBypassEnabled = true;
+                return callback.dispatchKeyEvent(keyEvent);
+            } finally {
+                this.mDispatchKeyEventBypassEnabled = false;
+            }
+        }
+
+        public void bypassOnPanelClosed(Window.Callback callback, int i, Menu menu) {
+            try {
+                this.mOnPanelClosedBypassEnabled = true;
+                callback.onPanelClosed(i, menu);
+            } finally {
+                this.mOnPanelClosedBypassEnabled = false;
             }
         }
     }
@@ -2472,12 +2644,25 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         static Context createConfigurationContext(Context context, Configuration configuration) {
             return context.createConfigurationContext(configuration);
         }
+
+        static void setLayoutDirection(Configuration configuration, Locale locale) {
+            configuration.setLayoutDirection(locale);
+        }
+
+        static void setLocale(Configuration configuration, Locale locale) {
+            configuration.setLocale(locale);
+        }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    static class Api21Impl {
+    public static class Api21Impl {
         static boolean isPowerSaveMode(PowerManager powerManager) {
             return powerManager.isPowerSaveMode();
+        }
+
+        static String toLanguageTag(Locale locale) {
+            return locale.toLanguageTag();
         }
     }
 
@@ -2492,6 +2677,18 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             }
             configuration3.setLocales(locales2);
             configuration3.locale = configuration2.locale;
+        }
+
+        static LocaleListCompat getLocales(Configuration configuration) {
+            return LocaleListCompat.forLanguageTags(configuration.getLocales().toLanguageTags());
+        }
+
+        static void setLocales(Configuration configuration, LocaleListCompat localeListCompat) {
+            configuration.setLocales(LocaleList.forLanguageTags(localeListCompat.toLanguageTags()));
+        }
+
+        public static void setDefaultLocales(LocaleListCompat localeListCompat) {
+            LocaleList.setDefault(LocaleList.forLanguageTags(localeListCompat.toLanguageTags()));
         }
     }
 
@@ -2509,6 +2706,29 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             if (i3 != (i4 & 12)) {
                 configuration3.colorMode |= i4 & 12;
             }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api33Impl {
+        static OnBackInvokedCallback registerOnBackPressedCallback(Object obj, final AppCompatDelegateImpl appCompatDelegateImpl) {
+            Objects.requireNonNull(appCompatDelegateImpl);
+            OnBackInvokedCallback onBackInvokedCallback = new OnBackInvokedCallback() { // from class: androidx.appcompat.app.AppCompatDelegateImpl$Api33Impl$$ExternalSyntheticLambda0
+                public final void onBackInvoked() {
+                    AppCompatDelegateImpl.this.onBackPressed();
+                }
+            };
+            ((OnBackInvokedDispatcher) obj).registerOnBackInvokedCallback(1000000, onBackInvokedCallback);
+            return onBackInvokedCallback;
+        }
+
+        static void unregisterOnBackInvokedCallback(Object obj, Object obj2) {
+            ((OnBackInvokedDispatcher) obj).unregisterOnBackInvokedCallback((OnBackInvokedCallback) obj2);
+        }
+
+        static OnBackInvokedDispatcher getOnBackInvokedDispatcher(Activity activity) {
+            return activity.getOnBackInvokedDispatcher();
         }
     }
 }

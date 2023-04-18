@@ -81,256 +81,34 @@
 .end method
 
 .method public static fromUTF8ByteArray([B)Ljava/lang/String;
-    .locals 9
+    .locals 3
 
-    const/4 v0, 0x0
+    array-length v0, p0
 
-    move v1, v0
+    new-array v0, v0, [C
 
-    move v2, v1
+    invoke-static {p0, v0}, Lorg/bouncycastle/util/encoders/UTF8;->transcodeToUTF16([B[C)I
 
-    :goto_0
-    array-length v3, p0
+    move-result p0
 
-    const/16 v4, 0xc0
+    if-ltz p0, :cond_0
 
-    const/16 v5, 0xe0
+    new-instance v1, Ljava/lang/String;
 
-    const/16 v6, 0xf0
+    const/4 v2, 0x0
 
-    if-ge v1, v3, :cond_3
+    invoke-direct {v1, v0, v2, p0}, Ljava/lang/String;-><init>([CII)V
 
-    add-int/lit8 v2, v2, 0x1
-
-    aget-byte v3, p0, v1
-
-    and-int/2addr v3, v6
-
-    if-ne v3, v6, :cond_0
-
-    add-int/lit8 v2, v2, 0x1
-
-    add-int/lit8 v1, v1, 0x4
-
-    goto :goto_0
+    return-object v1
 
     :cond_0
-    aget-byte v3, p0, v1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    and-int/2addr v3, v5
+    const-string v0, "Invalid UTF-8 input"
 
-    if-ne v3, v5, :cond_1
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    add-int/lit8 v1, v1, 0x3
-
-    goto :goto_0
-
-    :cond_1
-    aget-byte v3, p0, v1
-
-    and-int/2addr v3, v4
-
-    if-ne v3, v4, :cond_2
-
-    add-int/lit8 v1, v1, 0x2
-
-    goto :goto_0
-
-    :cond_2
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    new-array v1, v2, [C
-
-    move v2, v0
-
-    :goto_1
-    array-length v3, p0
-
-    if-ge v0, v3, :cond_8
-
-    aget-byte v3, p0, v0
-
-    and-int/2addr v3, v6
-
-    if-ne v3, v6, :cond_4
-
-    aget-byte v3, p0, v0
-
-    and-int/lit8 v3, v3, 0x3
-
-    shl-int/lit8 v3, v3, 0x12
-
-    add-int/lit8 v7, v0, 0x1
-
-    aget-byte v7, p0, v7
-
-    and-int/lit8 v7, v7, 0x3f
-
-    shl-int/lit8 v7, v7, 0xc
-
-    or-int/2addr v3, v7
-
-    add-int/lit8 v7, v0, 0x2
-
-    aget-byte v7, p0, v7
-
-    and-int/lit8 v7, v7, 0x3f
-
-    shl-int/lit8 v7, v7, 0x6
-
-    or-int/2addr v3, v7
-
-    add-int/lit8 v7, v0, 0x3
-
-    aget-byte v7, p0, v7
-
-    and-int/lit8 v7, v7, 0x3f
-
-    or-int/2addr v3, v7
-
-    const/high16 v7, 0x10000
-
-    sub-int/2addr v3, v7
-
-    const v7, 0xd800
-
-    shr-int/lit8 v8, v3, 0xa
-
-    or-int/2addr v7, v8
-
-    int-to-char v7, v7
-
-    const v8, 0xdc00
-
-    and-int/lit16 v3, v3, 0x3ff
-
-    or-int/2addr v3, v8
-
-    int-to-char v3, v3
-
-    add-int/lit8 v8, v2, 0x1
-
-    aput-char v7, v1, v2
-
-    add-int/lit8 v0, v0, 0x4
-
-    move v2, v8
-
-    goto :goto_3
-
-    :cond_4
-    aget-byte v3, p0, v0
-
-    and-int/2addr v3, v5
-
-    if-ne v3, v5, :cond_5
-
-    aget-byte v3, p0, v0
-
-    and-int/lit8 v3, v3, 0xf
-
-    shl-int/lit8 v3, v3, 0xc
-
-    add-int/lit8 v7, v0, 0x1
-
-    aget-byte v7, p0, v7
-
-    and-int/lit8 v7, v7, 0x3f
-
-    shl-int/lit8 v7, v7, 0x6
-
-    or-int/2addr v3, v7
-
-    add-int/lit8 v7, v0, 0x2
-
-    aget-byte v7, p0, v7
-
-    and-int/lit8 v7, v7, 0x3f
-
-    or-int/2addr v3, v7
-
-    int-to-char v3, v3
-
-    add-int/lit8 v0, v0, 0x3
-
-    goto :goto_3
-
-    :cond_5
-    aget-byte v3, p0, v0
-
-    const/16 v7, 0xd0
-
-    and-int/2addr v3, v7
-
-    if-ne v3, v7, :cond_6
-
-    aget-byte v3, p0, v0
-
-    and-int/lit8 v3, v3, 0x1f
-
-    shl-int/lit8 v3, v3, 0x6
-
-    add-int/lit8 v7, v0, 0x1
-
-    aget-byte v7, p0, v7
-
-    :goto_2
-    and-int/lit8 v7, v7, 0x3f
-
-    or-int/2addr v3, v7
-
-    int-to-char v3, v3
-
-    add-int/lit8 v0, v0, 0x2
-
-    goto :goto_3
-
-    :cond_6
-    aget-byte v3, p0, v0
-
-    and-int/2addr v3, v4
-
-    if-ne v3, v4, :cond_7
-
-    aget-byte v3, p0, v0
-
-    and-int/lit8 v3, v3, 0x1f
-
-    shl-int/lit8 v3, v3, 0x6
-
-    add-int/lit8 v7, v0, 0x1
-
-    aget-byte v7, p0, v7
-
-    goto :goto_2
-
-    :cond_7
-    aget-byte v3, p0, v0
-
-    and-int/lit16 v3, v3, 0xff
-
-    int-to-char v3, v3
-
-    add-int/lit8 v0, v0, 0x1
-
-    :goto_3
-    add-int/lit8 v7, v2, 0x1
-
-    aput-char v3, v1, v2
-
-    move v2, v7
-
-    goto/16 :goto_1
-
-    :cond_8
-    new-instance p0, Ljava/lang/String;
-
-    invoke-direct {p0, v1}, Ljava/lang/String;-><init>([C)V
-
-    return-object p0
+    throw p0
 .end method
 
 .method public static toByteArray(Ljava/lang/String;)[B

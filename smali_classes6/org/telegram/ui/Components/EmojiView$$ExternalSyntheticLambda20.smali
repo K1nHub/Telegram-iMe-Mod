@@ -2,38 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/EmojiView;
 
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/EmojiView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/Components/EmojiView;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda20;->f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
-    .locals 2
+.method public final onPageSelected(I)V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/Components/EmojiView;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda20;->f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$oB5-0_RgvMr9llJVKWqqlEZHxz0(Lorg/telegram/ui/Components/EmojiView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;I)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$QwuS48C_sNW0AnfDTVcJBSgpfbc(Lorg/telegram/ui/Components/EmojiView;I)V
 
     return-void
 .end method

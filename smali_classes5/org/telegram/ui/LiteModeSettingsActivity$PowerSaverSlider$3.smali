@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;Landroid/content/Context;ZZZLorg/telegram/ui/LiteModeSettingsActivity;)V
     .locals 0
 
-    .line 722
+    .line 727
     iput-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$3;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/AnimatedTextView;-><init>(Landroid/content/Context;ZZZ)V
@@ -35,14 +35,14 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 725
+    .line 730
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
     if-gtz p1, :cond_0
 
-    .line 727
+    .line 732
     sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget p1, p1, Landroid/graphics/Point;->x:I
@@ -55,7 +55,7 @@
 
     sub-int/2addr p1, p2
 
-    .line 729
+    .line 734
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$3;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
@@ -81,7 +81,7 @@
 
     move-result p2
 
-    .line 730
+    .line 735
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$3;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     iget-object v0, v0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->rightTextView:Landroid/widget/TextView;
@@ -116,7 +116,7 @@
 
     const/high16 p2, 0x40000000    # 2.0f
 
-    .line 731
+    .line 736
     invoke-static {p1, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1

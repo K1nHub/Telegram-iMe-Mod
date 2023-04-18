@@ -2,6 +2,7 @@ package com.iMe.gateway.impl;
 
 import android.content.Context;
 import com.iMe.fork.controller.ForkCommonController;
+import com.iMe.fork.p024ui.dialog.TranslateAlert;
 import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.storage.domain.model.telegram.TelegramLocaleInformation;
 import com.iMe.utils.extentions.common.ContextExtKt;
@@ -13,7 +14,6 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p048ui.Components.TranslateAlert2;
 /* compiled from: TelegramGatewayImpl.kt */
 /* loaded from: classes3.dex */
 public final class TelegramGatewayImpl implements TelegramGateway {
@@ -90,7 +90,7 @@ public final class TelegramGatewayImpl implements TelegramGateway {
     @Override // com.iMe.storage.domain.gateway.TelegramGateway
     public ArrayList<CharSequence> cutInBlocks(CharSequence text, int i) {
         Intrinsics.checkNotNullParameter(text, "text");
-        ArrayList<CharSequence> cutInBlocks = TranslateAlert2.cutInBlocks(text, i);
+        ArrayList<CharSequence> cutInBlocks = TranslateAlert.cutInBlocks(text, i);
         Intrinsics.checkNotNullExpressionValue(cutInBlocks, "cutInBlocks(text, maxBlockSize)");
         return cutInBlocks;
     }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FilterTabsView;)V
     .locals 0
 
-    .line 1417
+    .line 1418
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$6;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 1420
+    .line 1421
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$6;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

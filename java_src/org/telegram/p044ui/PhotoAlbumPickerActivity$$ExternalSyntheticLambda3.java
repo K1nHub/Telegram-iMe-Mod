@@ -1,0 +1,19 @@
+package org.telegram.p044ui;
+
+import android.view.MotionEvent;
+import android.view.View;
+/* renamed from: org.telegram.ui.PhotoAlbumPickerActivity$$ExternalSyntheticLambda3 */
+/* loaded from: classes5.dex */
+public final /* synthetic */ class PhotoAlbumPickerActivity$$ExternalSyntheticLambda3 implements View.OnTouchListener {
+    public static final /* synthetic */ PhotoAlbumPickerActivity$$ExternalSyntheticLambda3 INSTANCE = new PhotoAlbumPickerActivity$$ExternalSyntheticLambda3();
+
+    private /* synthetic */ PhotoAlbumPickerActivity$$ExternalSyntheticLambda3() {
+    }
+
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        boolean lambda$createView$0;
+        lambda$createView$0 = PhotoAlbumPickerActivity.lambda$createView$0(view, motionEvent);
+        return lambda$createView$0;
+    }
+}

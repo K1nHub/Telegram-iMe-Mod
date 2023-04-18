@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 819
+    .line 803
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -59,10 +59,10 @@
 .method public final invoke()V
     .locals 3
 
-    .line 820
+    .line 804
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 821
+    .line 805
     sget-object v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->Companion:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$Companion;
 
     sget-object v2, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$TooBad;->INSTANCE:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$TooBad;
@@ -73,10 +73,10 @@
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 822
+    .line 806
     invoke-static {v1, v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$setFragmentToRemove$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
 
-    .line 820
+    .line 804
     invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void

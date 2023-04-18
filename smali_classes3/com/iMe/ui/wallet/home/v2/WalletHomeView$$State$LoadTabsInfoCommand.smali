@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State;)V
     .locals 1
 
-    .line 145
+    .line 163
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "loadTabsInfo"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/v2/WalletHomeView;)V
     .locals 0
 
-    .line 150
+    .line 168
     invoke-interface {p1}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;->loadTabsInfo()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 143
+    .line 161
     check-cast p1, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$LoadTabsInfoCommand;->apply(Lcom/iMe/ui/wallet/home/v2/WalletHomeView;)V

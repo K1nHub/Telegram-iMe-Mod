@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/profile/ProfileView$$State;JJLjava/lang/String;)V
     .locals 1
 
-    .line 357
+    .line 375
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openTwitterScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 359
+    .line 377
     iput-wide p2, p0, Lcom/iMe/ui/profile/ProfileView$$State$OpenTwitterScreenCommand;->telegramProfileId:J
 
-    .line 360
+    .line 378
     iput-wide p4, p0, Lcom/iMe/ui/profile/ProfileView$$State$OpenTwitterScreenCommand;->twitterUserId:J
 
-    .line 361
+    .line 379
     iput-object p6, p0, Lcom/iMe/ui/profile/ProfileView$$State$OpenTwitterScreenCommand;->twitterUserNickname:Ljava/lang/String;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/profile/ProfileView;)V
     .locals 6
 
-    .line 366
+    .line 384
     iget-wide v1, p0, Lcom/iMe/ui/profile/ProfileView$$State$OpenTwitterScreenCommand;->telegramProfileId:J
 
     iget-wide v3, p0, Lcom/iMe/ui/profile/ProfileView$$State$OpenTwitterScreenCommand;->twitterUserId:J
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 349
+    .line 367
     check-cast p1, Lcom/iMe/ui/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/profile/ProfileView$$State$OpenTwitterScreenCommand;->apply(Lcom/iMe/ui/profile/ProfileView;)V

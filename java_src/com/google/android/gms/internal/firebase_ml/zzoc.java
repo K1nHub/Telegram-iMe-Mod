@@ -2,7 +2,7 @@ package com.google.android.gms.internal.firebase_ml;
 
 import com.google.android.gms.common.internal.GmsLogger;
 import com.google.android.gms.common.internal.Objects;
-import com.google.firebase.p021ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.FirebaseMLException;
 import java.util.Set;
 import java.util.concurrent.Callable;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -31,7 +31,7 @@ public final class zzoc implements Callable<Void> {
         if (str.equals("OPERATION_RELEASE")) {
             zznx zznxVar = this.zzaua;
             gmsLogger = zzoa.zzasz;
-            gmsLogger.m793v("ModelResourceManager", "Releasing modelResource");
+            gmsLogger.m779v("ModelResourceManager", "Releasing modelResource");
             zznxVar.release();
             set = this.zzatt.zzatx;
             set.remove(zznxVar);
@@ -42,7 +42,7 @@ public final class zzoc implements Callable<Void> {
                 return null;
             } catch (FirebaseMLException e) {
                 gmsLogger2 = zzoa.zzasz;
-                gmsLogger2.m796e("ModelResourceManager", "Error preloading model resource", e);
+                gmsLogger2.m782e("ModelResourceManager", "Error preloading model resource", e);
                 return null;
             }
         } else {

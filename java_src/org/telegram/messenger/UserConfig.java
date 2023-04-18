@@ -98,11 +98,11 @@ public class UserConfig extends BaseController {
     }
 
     private void updateUserId() {
-        if (this.clientUserId == this.currentUser.f1642id) {
+        if (this.clientUserId == this.currentUser.f1567id) {
             return;
         }
         synchronized (this.sync) {
-            this.clientUserId = this.currentUser.f1642id;
+            this.clientUserId = this.currentUser.f1567id;
             this.cryptoAccessManager.getValue().onUserChanged();
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.UserConfig$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
@@ -119,6 +119,7 @@ public class UserConfig extends BaseController {
         getForkTopicsController().loadTopics();
         getForkTopicsController().updateCatalog(true, null);
         getRecentChatsController().loadRecentChats();
+        getHiddenChatsController().loadHiddenChats();
         getFiltersController().loadFilterSettings();
         getDialogTranslationSettingsController().loadDialogTranslationSettings();
         getTemplatesController().loadTemplates();
@@ -311,7 +312,7 @@ public class UserConfig extends BaseController {
         long j;
         synchronized (this.sync) {
             TLRPC$User tLRPC$User = this.currentUser;
-            j = tLRPC$User != null ? tLRPC$User.f1642id : 0L;
+            j = tLRPC$User != null ? tLRPC$User.f1567id : 0L;
         }
         return j;
     }
@@ -365,21 +366,21 @@ public class UserConfig extends BaseController {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(22:9|(1:11)|12|(18:17|18|(1:24)|25|26|27|(1:31)|33|(1:35)|36|(1:40)|41|(1:45)|46|(1:48)|49|50|51)|54|18|(3:20|22|24)|25|26|27|(2:29|31)|33|(0)|36|(2:38|40)|41|(2:43|45)|46|(0)|49|50|51) */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x01cc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x01d3, code lost:
         r2 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x01cd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x01d4, code lost:
         org.telegram.messenger.FileLog.m45e(r2);
      */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x01da A[Catch: all -> 0x0252, TryCatch #0 {, blocks: (B:4:0x0003, B:6:0x0007, B:8:0x0009, B:10:0x0012, B:11:0x001a, B:13:0x012b, B:18:0x0137, B:20:0x016b, B:22:0x0173, B:24:0x0179, B:25:0x018b, B:26:0x01ab, B:28:0x01b3, B:30:0x01b9, B:34:0x01d0, B:36:0x01da, B:37:0x0202, B:39:0x020b, B:41:0x0211, B:42:0x0223, B:44:0x022c, B:46:0x0232, B:47:0x0244, B:49:0x0248, B:50:0x024e, B:51:0x0250, B:33:0x01cd), top: B:56:0x0003, inners: #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0248 A[Catch: all -> 0x0252, TryCatch #0 {, blocks: (B:4:0x0003, B:6:0x0007, B:8:0x0009, B:10:0x0012, B:11:0x001a, B:13:0x012b, B:18:0x0137, B:20:0x016b, B:22:0x0173, B:24:0x0179, B:25:0x018b, B:26:0x01ab, B:28:0x01b3, B:30:0x01b9, B:34:0x01d0, B:36:0x01da, B:37:0x0202, B:39:0x020b, B:41:0x0211, B:42:0x0223, B:44:0x022c, B:46:0x0232, B:47:0x0244, B:49:0x0248, B:50:0x024e, B:51:0x0250, B:33:0x01cd), top: B:56:0x0003, inners: #1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x01e1 A[Catch: all -> 0x0259, TryCatch #0 {, blocks: (B:4:0x0003, B:6:0x0007, B:8:0x0009, B:10:0x0012, B:11:0x001a, B:13:0x0132, B:18:0x013e, B:20:0x0172, B:22:0x017a, B:24:0x0180, B:25:0x0192, B:26:0x01b2, B:28:0x01ba, B:30:0x01c0, B:34:0x01d7, B:36:0x01e1, B:37:0x0209, B:39:0x0212, B:41:0x0218, B:42:0x022a, B:44:0x0233, B:46:0x0239, B:47:0x024b, B:49:0x024f, B:50:0x0255, B:51:0x0257, B:33:0x01d4), top: B:56:0x0003, inners: #1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x024f A[Catch: all -> 0x0259, TryCatch #0 {, blocks: (B:4:0x0003, B:6:0x0007, B:8:0x0009, B:10:0x0012, B:11:0x001a, B:13:0x0132, B:18:0x013e, B:20:0x0172, B:22:0x017a, B:24:0x0180, B:25:0x0192, B:26:0x01b2, B:28:0x01ba, B:30:0x01c0, B:34:0x01d7, B:36:0x01e1, B:37:0x0209, B:39:0x0212, B:41:0x0218, B:42:0x022a, B:44:0x0233, B:46:0x0239, B:47:0x024b, B:49:0x024f, B:50:0x0255, B:51:0x0257, B:33:0x01d4), top: B:56:0x0003, inners: #1 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public void loadConfig() {
         /*
-            Method dump skipped, instructions count: 597
+            Method dump skipped, instructions count: 604
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.UserConfig.loadConfig():void");

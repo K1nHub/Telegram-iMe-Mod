@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.Map;
-import p035j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes3.dex */
 public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageLite<MessageType, BuilderType>, BuilderType extends Builder<MessageType, BuilderType>> extends AbstractMessageLite<MessageType, BuilderType> {
     private static Map<Object, GeneratedMessageLite<?, ?>> defaultInstanceMap = new ConcurrentHashMap();
@@ -234,14 +234,14 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         }
 
         /* renamed from: clear */
-        public final BuilderType m1134clear() {
+        public final BuilderType m1130clear() {
             this.instance = (MessageType) this.instance.dynamicMethod(MethodToInvoke.NEW_MUTABLE_INSTANCE);
             return this;
         }
 
         @Override // com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public BuilderType mo1122clone() {
+        public BuilderType mo1118clone() {
             BuilderType buildertype = (BuilderType) getDefaultInstanceForType().newBuilderForType();
             buildertype.mergeFrom(buildPartial());
             return buildertype;
@@ -287,7 +287,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
 
         @Override // com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: mergeFrom */
-        public BuilderType mo1131mergeFrom(byte[] bArr, int i, int i2, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        public BuilderType mo1127mergeFrom(byte[] bArr, int i, int i2, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             copyOnWrite();
             try {
                 Protobuf.getInstance().schemaFor((Protobuf) this.instance).mergeFrom(this.instance, bArr, i, i + i2, new ArrayDecoders.Registers(extensionRegistryLite));
@@ -303,13 +303,13 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
 
         @Override // com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: mergeFrom */
-        public BuilderType mo1130mergeFrom(byte[] bArr, int i, int i2) throws InvalidProtocolBufferException {
-            return mo1131mergeFrom(bArr, i, i2, ExtensionRegistryLite.getEmptyRegistry());
+        public BuilderType mo1126mergeFrom(byte[] bArr, int i, int i2) throws InvalidProtocolBufferException {
+            return mo1127mergeFrom(bArr, i, i2, ExtensionRegistryLite.getEmptyRegistry());
         }
 
         @Override // com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: mergeFrom */
-        public BuilderType mo1126mergeFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
+        public BuilderType mo1122mergeFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
             copyOnWrite();
             try {
                 Protobuf.getInstance().schemaFor((Protobuf) this.instance).mergeFrom(this.instance, CodedInputStreamReader.forCodedInput(codedInputStream), extensionRegistryLite);
@@ -345,7 +345,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         /* JADX INFO: Access modifiers changed from: package-private */
         public FieldSet<ExtensionDescriptor> ensureExtensionsAreMutable() {
             if (this.extensions.isImmutable()) {
-                this.extensions = this.extensions.m1133clone();
+                this.extensions = this.extensions.m1129clone();
             }
             return this.extensions;
         }

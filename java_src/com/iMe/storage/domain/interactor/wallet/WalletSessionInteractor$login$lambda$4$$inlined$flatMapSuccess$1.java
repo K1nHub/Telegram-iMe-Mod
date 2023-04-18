@@ -2,7 +2,7 @@ package com.iMe.storage.domain.interactor.wallet;
 
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.repository.notification.PushNotificationRepository;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import kotlin.jvm.functions.Function1;
@@ -28,7 +28,7 @@ public final class WalletSessionInteractor$login$lambda$4$$inlined$flatMapSucces
             pushNotificationRepository = this.this$0.notificationRepository;
             Observable<Result<String>> issuePushAllowanceToken = pushNotificationRepository.issuePushAllowanceToken();
             schedulersProvider = this.this$0.schedulersProvider;
-            Observable<Result<String>> subscribeOn = issuePushAllowanceToken.subscribeOn(schedulersProvider.mo708io());
+            Observable<Result<String>> subscribeOn = issuePushAllowanceToken.subscribeOn(schedulersProvider.mo694io());
             Intrinsics.checkNotNullExpressionValue(subscribeOn, "notificationRepository.i…(schedulersProvider.io())");
             return subscribeOn;
         } else if (result instanceof Result.Error) {

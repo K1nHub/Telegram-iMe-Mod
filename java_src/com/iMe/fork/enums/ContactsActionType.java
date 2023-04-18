@@ -3,13 +3,13 @@ package com.iMe.fork.enums;
 import java.util.ArrayList;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: ContactsActionType.kt */
 /* loaded from: classes3.dex */
 public enum ContactsActionType {
-    DELETE(C3316R.C3318drawable.msg_delete, "Delete", C3316R.string.Delete),
-    UNBLOCK(C3316R.C3318drawable.msg_block, "Unblock", C3316R.string.Unblock);
+    DELETE(C3242R.C3244drawable.msg_delete, "Delete", C3242R.string.Delete),
+    UNBLOCK(C3242R.C3244drawable.msg_block, "Unblock", C3242R.string.Unblock);
     
     public static final Companion Companion = new Companion(null);
     public static ContactsActionType defaultValue;

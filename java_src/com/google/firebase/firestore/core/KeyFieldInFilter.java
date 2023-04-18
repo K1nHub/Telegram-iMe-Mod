@@ -5,7 +5,7 @@ import com.google.firebase.firestore.model.Document;
 import com.google.firebase.firestore.model.DocumentKey;
 import com.google.firebase.firestore.model.Values;
 import com.google.firebase.firestore.util.Assert;
-import com.google.firestore.p022v1.Value;
+import com.google.firestore.p021v1.Value;
 import java.util.ArrayList;
 import java.util.List;
 /* loaded from: classes3.dex */
@@ -18,7 +18,7 @@ public class KeyFieldInFilter extends FieldFilter {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public KeyFieldInFilter(com.google.firebase.firestore.model.FieldPath r2, com.google.firestore.p022v1.Value r3) {
+    public KeyFieldInFilter(com.google.firebase.firestore.model.FieldPath r2, com.google.firestore.p021v1.Value r3) {
         /*
             r1 = this;
             com.google.firebase.firestore.core.Filter$Operator r0 = com.google.firebase.firestore.core.Filter.Operator.IN

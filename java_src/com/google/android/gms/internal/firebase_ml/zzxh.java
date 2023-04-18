@@ -3,10 +3,10 @@ package com.google.android.gms.internal.firebase_ml;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* loaded from: classes.dex */
-final class zzxh implements Iterator<Map.Entry<K, V>>, p035j$.util.Iterator {
+final class zzxh implements Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
     private int pos;
     private final /* synthetic */ zzwz zzbwm;
     private Iterator<Map.Entry<K, V>> zzbwn;
@@ -17,12 +17,12 @@ final class zzxh implements Iterator<Map.Entry<K, V>>, p035j$.util.Iterator {
         this.pos = -1;
     }
 
-    @Override // p035j$.util.Iterator
+    @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final boolean hasNext() {
         List list;
         Map map;
@@ -37,7 +37,7 @@ final class zzxh implements Iterator<Map.Entry<K, V>>, p035j$.util.Iterator {
         return true;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final void remove() {
         List list;
         if (!this.zzbwr) {
@@ -66,7 +66,7 @@ final class zzxh implements Iterator<Map.Entry<K, V>>, p035j$.util.Iterator {
         return this.zzbwn;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final /* synthetic */ Object next() {
         List list;
         List list2;

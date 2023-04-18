@@ -13,41 +13,23 @@
 
 
 # virtual methods
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
-    .locals 6
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1BitString;->data:[B
+    iget v0, p0, Lorg/bouncycastle/asn1/ASN1BitString;->padBits:I
 
-    array-length v1, v0
+    int-to-byte v0, v0
 
-    const/4 v2, 0x1
+    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1BitString;->data:[B
 
-    add-int/2addr v1, v2
+    const/4 v2, 0x3
 
-    new-array v3, v1, [B
-
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1BitString;->getPadBits()I
-
-    move-result v4
-
-    int-to-byte v4, v4
-
-    const/4 v5, 0x0
-
-    aput-byte v4, v3, v5
-
-    sub-int/2addr v1, v2
-
-    invoke-static {v0, v5, v3, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    const/4 v0, 0x3
-
-    invoke-virtual {p1, v0, v3}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(I[B)V
+    invoke-virtual {p1, p2, v2, v0, v1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZIB[B)V
 
     return-void
 .end method
@@ -84,4 +66,10 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+    .locals 0
+
+    return-object p0
 .end method

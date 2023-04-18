@@ -10,8 +10,8 @@ public class TLRPC$TL_documentAttributeVideo extends TLRPC$DocumentAttribute {
         this.round_message = (readInt32 & 1) != 0;
         this.supports_streaming = (readInt32 & 2) != 0;
         this.duration = abstractSerializedData.readInt32(z);
-        this.f1513w = abstractSerializedData.readInt32(z);
-        this.f1512h = abstractSerializedData.readInt32(z);
+        this.f1438w = abstractSerializedData.readInt32(z);
+        this.f1437h = abstractSerializedData.readInt32(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
@@ -23,7 +23,7 @@ public class TLRPC$TL_documentAttributeVideo extends TLRPC$DocumentAttribute {
         this.flags = i2;
         abstractSerializedData.writeInt32(i2);
         abstractSerializedData.writeInt32(this.duration);
-        abstractSerializedData.writeInt32(this.f1513w);
-        abstractSerializedData.writeInt32(this.f1512h);
+        abstractSerializedData.writeInt32(this.f1438w);
+        abstractSerializedData.writeInt32(this.f1437h);
     }
 }

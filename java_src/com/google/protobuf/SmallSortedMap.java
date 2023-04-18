@@ -13,8 +13,8 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
 public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V> {
@@ -37,7 +37,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
         return (SmallSortedMap<FieldDescriptorType, Object>) new SmallSortedMap<FieldDescriptorType, Object>(i) { // from class: com.google.protobuf.SmallSortedMap.1
             @Override // com.google.protobuf.SmallSortedMap, java.util.AbstractMap, java.util.Map
             public /* bridge */ /* synthetic */ Object put(Object obj, Object obj2) {
-                return super.put((C12151) ((FieldSet.FieldDescriptorLite) obj), (FieldSet.FieldDescriptorLite) obj2);
+                return super.put((C12001) ((FieldSet.FieldDescriptorLite) obj), (FieldSet.FieldDescriptorLite) obj2);
             }
 
             @Override // com.google.protobuf.SmallSortedMap
@@ -404,12 +404,12 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
     }
 
     /* loaded from: classes3.dex */
-    private class EntryIterator implements Iterator<Map.Entry<K, V>>, p035j$.util.Iterator {
+    private class EntryIterator implements Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
         private Iterator<Map.Entry<K, V>> lazyOverflowIterator;
         private boolean nextCalledBeforeRemove;
         private int pos;
 
-        @Override // p035j$.util.Iterator
+        @Override // p034j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
@@ -418,7 +418,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
             this.pos = -1;
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public boolean hasNext() {
             if (this.pos + 1 >= SmallSortedMap.this.entryList.size()) {
                 return !SmallSortedMap.this.overflowEntries.isEmpty() && getOverflowIterator().hasNext();
@@ -426,7 +426,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
             return true;
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public Map.Entry<K, V> next() {
             this.nextCalledBeforeRemove = true;
             int i = this.pos + 1;
@@ -437,7 +437,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
             return getOverflowIterator().next();
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public void remove() {
             if (!this.nextCalledBeforeRemove) {
                 throw new IllegalStateException("remove() was called before next()");
@@ -463,11 +463,11 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
     }
 
     /* loaded from: classes3.dex */
-    private class DescendingEntryIterator implements java.util.Iterator<Map.Entry<K, V>>, p035j$.util.Iterator {
+    private class DescendingEntryIterator implements java.util.Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
         private java.util.Iterator<Map.Entry<K, V>> lazyOverflowIterator;
         private int pos;
 
-        @Override // p035j$.util.Iterator
+        @Override // p034j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
@@ -476,13 +476,13 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
             this.pos = SmallSortedMap.this.entryList.size();
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public boolean hasNext() {
             int i = this.pos;
             return (i > 0 && i <= SmallSortedMap.this.entryList.size()) || getOverflowIterator().hasNext();
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public Map.Entry<K, V> next() {
             if (!getOverflowIterator().hasNext()) {
                 List list = SmallSortedMap.this.entryList;
@@ -493,7 +493,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
             return getOverflowIterator().next();
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException();
         }
@@ -509,7 +509,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
     public static class EmptySet {
-        private static final java.util.Iterator<Object> ITERATOR = new C12161();
+        private static final java.util.Iterator<Object> ITERATOR = new C12011();
         private static final Iterable<Object> ITERABLE = new Iterable<Object>() { // from class: com.google.protobuf.SmallSortedMap.EmptySet.2
             @Override // java.lang.Iterable
             public java.util.Iterator<Object> iterator() {
@@ -519,26 +519,26 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
 
         /* renamed from: com.google.protobuf.SmallSortedMap$EmptySet$1 */
         /* loaded from: classes3.dex */
-        static class C12161 implements java.util.Iterator<Object>, p035j$.util.Iterator {
-            @Override // p035j$.util.Iterator
+        static class C12011 implements java.util.Iterator<Object>, p034j$.util.Iterator {
+            @Override // p034j$.util.Iterator
             public /* synthetic */ void forEachRemaining(Consumer consumer) {
                 Iterator.CC.$default$forEachRemaining(this, consumer);
             }
 
-            @Override // java.util.Iterator, p035j$.util.Iterator
+            @Override // java.util.Iterator, p034j$.util.Iterator
             public boolean hasNext() {
                 return false;
             }
 
-            C12161() {
+            C12011() {
             }
 
-            @Override // java.util.Iterator, p035j$.util.Iterator
+            @Override // java.util.Iterator, p034j$.util.Iterator
             public Object next() {
                 throw new NoSuchElementException();
             }
 
-            @Override // java.util.Iterator, p035j$.util.Iterator
+            @Override // java.util.Iterator, p034j$.util.Iterator
             public void remove() {
                 throw new UnsupportedOperationException();
             }

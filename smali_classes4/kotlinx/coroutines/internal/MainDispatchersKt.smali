@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMainDispatchers.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MainDispatchers.kt\nkotlinx/coroutines/internal/MainDispatchersKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,129:1\n1#2:130\n*E\n"
+    value = "SMAP\nMainDispatchers.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MainDispatchers.kt\nkotlinx/coroutines/internal/MainDispatchersKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,137:1\n1#2:138\n*E\n"
 .end annotation
 
 
@@ -23,7 +23,7 @@
 .method private static final createMissingDispatcher(Ljava/lang/Throwable;Ljava/lang/String;)Lkotlinx/coroutines/internal/MissingMainCoroutineDispatcher;
     .locals 1
 
-    .line 72
+    .line 77
     sget-boolean v0, Lkotlinx/coroutines/internal/MainDispatchersKt;->SUPPORT_MISSING:Z
 
     if-eqz v0, :cond_0
@@ -35,18 +35,18 @@
     return-object v0
 
     :cond_0
-    if-nez p0, :cond_1
+    if-eqz p0, :cond_1
 
-    .line 73
+    .line 78
+    throw p0
+
+    :cond_1
     invoke-static {}, Lkotlinx/coroutines/internal/MainDispatchersKt;->throwMissingMainDispatcherException()Ljava/lang/Void;
 
     new-instance p0, Lkotlin/KotlinNothingValueException;
 
     invoke-direct {p0}, Lkotlin/KotlinNothingValueException;-><init>()V
 
-    throw p0
-
-    :cond_1
     throw p0
 .end method
 
@@ -68,7 +68,7 @@
 
     move-object p1, v0
 
-    .line 71
+    .line 76
     :cond_1
     invoke-static {p0, p1}, Lkotlinx/coroutines/internal/MainDispatchersKt;->createMissingDispatcher(Ljava/lang/Throwable;Ljava/lang/String;)Lkotlinx/coroutines/internal/MissingMainCoroutineDispatcher;
 
@@ -77,10 +77,23 @@
     return-object p0
 .end method
 
+.method public static final isMissing(Lkotlinx/coroutines/MainCoroutineDispatcher;)Z
+    .locals 0
+
+    .line 66
+    invoke-virtual {p0}, Lkotlinx/coroutines/MainCoroutineDispatcher;->getImmediate()Lkotlinx/coroutines/MainCoroutineDispatcher;
+
+    move-result-object p0
+
+    instance-of p0, p0, Lkotlinx/coroutines/internal/MissingMainCoroutineDispatcher;
+
+    return p0
+.end method
+
 .method public static final throwMissingMainDispatcherException()Ljava/lang/Void;
     .locals 2
 
-    .line 76
+    .line 81
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Module with the Main dispatcher is missing. Add dependency providing the Main dispatcher, e.g. \'kotlinx-coroutines-android\' and ensure it has the same version as \'kotlinx-coroutines-core\'"

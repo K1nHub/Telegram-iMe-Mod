@@ -24,12 +24,14 @@
 
 .field public static final enum NONE:Lorg/koin/core/logger/Level;
 
+.field public static final enum WARNING:Lorg/koin/core/logger/Level;
+
 
 # direct methods
 .method private static final synthetic $values()[Lorg/koin/core/logger/Level;
     .locals 3
 
-    const/4 v0, 0x4
+    const/4 v0, 0x5
 
     new-array v0, v0, [Lorg/koin/core/logger/Level;
 
@@ -45,15 +47,21 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lorg/koin/core/logger/Level;->ERROR:Lorg/koin/core/logger/Level;
+    sget-object v1, Lorg/koin/core/logger/Level;->WARNING:Lorg/koin/core/logger/Level;
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lorg/koin/core/logger/Level;->NONE:Lorg/koin/core/logger/Level;
+    sget-object v1, Lorg/koin/core/logger/Level;->ERROR:Lorg/koin/core/logger/Level;
 
     const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lorg/koin/core/logger/Level;->NONE:Lorg/koin/core/logger/Level;
+
+    const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
@@ -63,7 +71,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 60
+    .line 57
     new-instance v0, Lorg/koin/core/logger/Level;
 
     const-string v1, "DEBUG"
@@ -86,9 +94,19 @@
 
     new-instance v0, Lorg/koin/core/logger/Level;
 
-    const-string v1, "ERROR"
+    const-string v1, "WARNING"
 
     const/4 v2, 0x2
+
+    invoke-direct {v0, v1, v2}, Lorg/koin/core/logger/Level;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lorg/koin/core/logger/Level;->WARNING:Lorg/koin/core/logger/Level;
+
+    new-instance v0, Lorg/koin/core/logger/Level;
+
+    const-string v1, "ERROR"
+
+    const/4 v2, 0x3
 
     invoke-direct {v0, v1, v2}, Lorg/koin/core/logger/Level;-><init>(Ljava/lang/String;I)V
 
@@ -98,7 +116,7 @@
 
     const-string v1, "NONE"
 
-    const/4 v2, 0x3
+    const/4 v2, 0x4
 
     invoke-direct {v0, v1, v2}, Lorg/koin/core/logger/Level;-><init>(Ljava/lang/String;I)V
 
@@ -121,7 +139,7 @@
         }
     .end annotation
 
-    .line 59
+    .line 56
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

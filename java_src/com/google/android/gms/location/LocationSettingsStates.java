@@ -13,21 +13,21 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerialize
 /* loaded from: classes3.dex */
 public final class LocationSettingsStates extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LocationSettingsStates> CREATOR = new zzab();
-    @SafeParcelable.Field(getter = "isGpsUsable", m789id = 1)
+    @SafeParcelable.Field(getter = "isGpsUsable", m775id = 1)
     private final boolean zza;
-    @SafeParcelable.Field(getter = "isNetworkLocationUsable", m789id = 2)
+    @SafeParcelable.Field(getter = "isNetworkLocationUsable", m775id = 2)
     private final boolean zzb;
-    @SafeParcelable.Field(getter = "isBleUsable", m789id = 3)
+    @SafeParcelable.Field(getter = "isBleUsable", m775id = 3)
     private final boolean zzc;
-    @SafeParcelable.Field(getter = "isGpsPresent", m789id = 4)
+    @SafeParcelable.Field(getter = "isGpsPresent", m775id = 4)
     private final boolean zzd;
-    @SafeParcelable.Field(getter = "isNetworkLocationPresent", m789id = 5)
+    @SafeParcelable.Field(getter = "isNetworkLocationPresent", m775id = 5)
     private final boolean zze;
-    @SafeParcelable.Field(getter = "isBlePresent", m789id = 6)
+    @SafeParcelable.Field(getter = "isBlePresent", m775id = 6)
     private final boolean zzf;
 
     @SafeParcelable.Constructor
-    public LocationSettingsStates(@SafeParcelable.Param(m788id = 1) boolean z, @SafeParcelable.Param(m788id = 2) boolean z2, @SafeParcelable.Param(m788id = 3) boolean z3, @SafeParcelable.Param(m788id = 4) boolean z4, @SafeParcelable.Param(m788id = 5) boolean z5, @SafeParcelable.Param(m788id = 6) boolean z6) {
+    public LocationSettingsStates(@SafeParcelable.Param(m774id = 1) boolean z, @SafeParcelable.Param(m774id = 2) boolean z2, @SafeParcelable.Param(m774id = 3) boolean z3, @SafeParcelable.Param(m774id = 4) boolean z4, @SafeParcelable.Param(m774id = 5) boolean z5, @SafeParcelable.Param(m774id = 6) boolean z6) {
         this.zza = z;
         this.zzb = z2;
         this.zzc = z3;

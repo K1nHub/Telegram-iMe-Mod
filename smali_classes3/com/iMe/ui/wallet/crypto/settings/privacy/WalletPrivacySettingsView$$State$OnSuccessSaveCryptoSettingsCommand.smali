@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView$$State;)V
     .locals 1
 
-    .line 154
+    .line 172
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "onSuccessSaveCryptoSettings"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView;)V
     .locals 0
 
-    .line 159
+    .line 177
     invoke-interface {p1}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView;->onSuccessSaveCryptoSettings()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 152
+    .line 170
     check-cast p1, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView$$State$OnSuccessSaveCryptoSettingsCommand;->apply(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView;)V

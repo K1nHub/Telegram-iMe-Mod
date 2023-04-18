@@ -9,22 +9,22 @@ public final class Result<T> implements Serializable {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Object m1571constructorimpl(Object obj) {
+    public static <T> Object m1555constructorimpl(Object obj) {
         return obj;
     }
 
     /* renamed from: isSuccess-impl  reason: not valid java name */
-    public static final boolean m1574isSuccessimpl(Object obj) {
+    public static final boolean m1558isSuccessimpl(Object obj) {
         return !(obj instanceof Failure);
     }
 
     /* renamed from: isFailure-impl  reason: not valid java name */
-    public static final boolean m1573isFailureimpl(Object obj) {
+    public static final boolean m1557isFailureimpl(Object obj) {
         return obj instanceof Failure;
     }
 
     /* renamed from: exceptionOrNull-impl  reason: not valid java name */
-    public static final Throwable m1572exceptionOrNullimpl(Object obj) {
+    public static final Throwable m1556exceptionOrNullimpl(Object obj) {
         if (obj instanceof Failure) {
             return ((Failure) obj).exception;
         }

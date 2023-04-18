@@ -11,10 +11,10 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Group;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p032ui.custom.ActionButton;
-import com.iMe.p032ui.custom.FeeView;
-import com.iMe.p032ui.custom.NetworkTypeView;
-import org.telegram.messenger.C3316R;
+import com.iMe.p031ui.custom.ActionButton;
+import com.iMe.p031ui.custom.FeeView;
+import com.iMe.p031ui.custom.NetworkTypeView;
+import org.telegram.messenger.C3242R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletSwapProcessBinding implements ViewBinding {
     public final ActionButton buttonAction;
@@ -87,7 +87,7 @@ public final class ForkFragmentWalletSwapProcessBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletSwapProcessBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3316R.layout.fork_fragment_wallet_swap_process, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3242R.layout.fork_fragment_wallet_swap_process, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -95,85 +95,85 @@ public final class ForkFragmentWalletSwapProcessBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletSwapProcessBinding bind(View view) {
-        int i = C3316R.C3319id.button_action;
+        int i = C3242R.C3245id.button_action;
         ActionButton actionButton = (ActionButton) ViewBindings.findChildViewById(view, i);
         if (actionButton != null) {
-            i = C3316R.C3319id.constraint_from_token;
+            i = C3242R.C3245id.constraint_from_token;
             ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
             if (constraintLayout != null) {
-                i = C3316R.C3319id.constraint_to_token;
+                i = C3242R.C3245id.constraint_to_token;
                 ConstraintLayout constraintLayout2 = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
                 if (constraintLayout2 != null) {
-                    i = C3316R.C3319id.edit_from_amount;
+                    i = C3242R.C3245id.edit_from_amount;
                     AppCompatEditText appCompatEditText = (AppCompatEditText) ViewBindings.findChildViewById(view, i);
                     if (appCompatEditText != null) {
-                        i = C3316R.C3319id.edit_to_amount;
+                        i = C3242R.C3245id.edit_to_amount;
                         AppCompatEditText appCompatEditText2 = (AppCompatEditText) ViewBindings.findChildViewById(view, i);
                         if (appCompatEditText2 != null) {
-                            i = C3316R.C3319id.fee_view;
+                            i = C3242R.C3245id.fee_view;
                             FeeView feeView = (FeeView) ViewBindings.findChildViewById(view, i);
                             if (feeView != null) {
-                                i = C3316R.C3319id.group_from_selected_token;
+                                i = C3242R.C3245id.group_from_selected_token;
                                 Group group = (Group) ViewBindings.findChildViewById(view, i);
                                 if (group != null) {
-                                    i = C3316R.C3319id.group_to_selected_token;
+                                    i = C3242R.C3245id.group_to_selected_token;
                                     Group group2 = (Group) ViewBindings.findChildViewById(view, i);
                                     if (group2 != null) {
-                                        i = C3316R.C3319id.image_exchange_arrow;
+                                        i = C3242R.C3245id.image_exchange_arrow;
                                         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                         if (appCompatImageView != null) {
-                                            i = C3316R.C3319id.image_from_icon;
+                                            i = C3242R.C3245id.image_from_icon;
                                             AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                             if (appCompatImageView2 != null) {
-                                                i = C3316R.C3319id.image_swap_protocol_icon;
+                                                i = C3242R.C3245id.image_swap_protocol_icon;
                                                 AppCompatImageView appCompatImageView3 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                                 if (appCompatImageView3 != null) {
-                                                    i = C3316R.C3319id.image_to_icon;
+                                                    i = C3242R.C3245id.image_to_icon;
                                                     AppCompatImageView appCompatImageView4 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                                     if (appCompatImageView4 != null) {
-                                                        i = C3316R.C3319id.image_token_from;
+                                                        i = C3242R.C3245id.image_token_from;
                                                         AppCompatImageView appCompatImageView5 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                                         if (appCompatImageView5 != null) {
-                                                            i = C3316R.C3319id.image_token_to;
+                                                            i = C3242R.C3245id.image_token_to;
                                                             AppCompatImageView appCompatImageView6 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                                             if (appCompatImageView6 != null) {
-                                                                i = C3316R.C3319id.linear_choose_from;
+                                                                i = C3242R.C3245id.linear_choose_from;
                                                                 LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                                                 if (linearLayout != null) {
-                                                                    i = C3316R.C3319id.linear_choose_to;
+                                                                    i = C3242R.C3245id.linear_choose_to;
                                                                     LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                                                     if (linearLayout2 != null) {
-                                                                        i = C3316R.C3319id.network_type_input_view;
+                                                                        i = C3242R.C3245id.network_type_input_view;
                                                                         NetworkTypeView networkTypeView = (NetworkTypeView) ViewBindings.findChildViewById(view, i);
                                                                         if (networkTypeView != null) {
-                                                                            i = C3316R.C3319id.network_type_output_view;
+                                                                            i = C3242R.C3245id.network_type_output_view;
                                                                             NetworkTypeView networkTypeView2 = (NetworkTypeView) ViewBindings.findChildViewById(view, i);
                                                                             if (networkTypeView2 != null) {
-                                                                                i = C3316R.C3319id.text_from_additional_description;
+                                                                                i = C3242R.C3245id.text_from_additional_description;
                                                                                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                 if (appCompatTextView != null) {
-                                                                                    i = C3316R.C3319id.text_from_description;
+                                                                                    i = C3242R.C3245id.text_from_description;
                                                                                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                     if (appCompatTextView2 != null) {
-                                                                                        i = C3316R.C3319id.text_from_token;
+                                                                                        i = C3242R.C3245id.text_from_token;
                                                                                         AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                         if (appCompatTextView3 != null) {
-                                                                                            i = C3316R.C3319id.text_select_from_token;
+                                                                                            i = C3242R.C3245id.text_select_from_token;
                                                                                             AppCompatTextView appCompatTextView4 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                             if (appCompatTextView4 != null) {
-                                                                                                i = C3316R.C3319id.text_select_to_token;
+                                                                                                i = C3242R.C3245id.text_select_to_token;
                                                                                                 AppCompatTextView appCompatTextView5 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                                 if (appCompatTextView5 != null) {
-                                                                                                    i = C3316R.C3319id.text_swap_protocol_description;
+                                                                                                    i = C3242R.C3245id.text_swap_protocol_description;
                                                                                                     AppCompatTextView appCompatTextView6 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                                     if (appCompatTextView6 != null) {
-                                                                                                        i = C3316R.C3319id.text_to_description;
+                                                                                                        i = C3242R.C3245id.text_to_description;
                                                                                                         AppCompatTextView appCompatTextView7 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                                         if (appCompatTextView7 != null) {
-                                                                                                            i = C3316R.C3319id.text_to_token;
+                                                                                                            i = C3242R.C3245id.text_to_token;
                                                                                                             AppCompatTextView appCompatTextView8 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                                             if (appCompatTextView8 != null) {
-                                                                                                                i = C3316R.C3319id.text_what_is_approve;
+                                                                                                                i = C3242R.C3245id.text_what_is_approve;
                                                                                                                 AppCompatTextView appCompatTextView9 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                                                 if (appCompatTextView9 != null) {
                                                                                                                     return new ForkFragmentWalletSwapProcessBinding((ConstraintLayout) view, actionButton, constraintLayout, constraintLayout2, appCompatEditText, appCompatEditText2, feeView, group, group2, appCompatImageView, appCompatImageView2, appCompatImageView3, appCompatImageView4, appCompatImageView5, appCompatImageView6, linearLayout, linearLayout2, networkTypeView, networkTypeView2, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4, appCompatTextView5, appCompatTextView6, appCompatTextView7, appCompatTextView8, appCompatTextView9);

@@ -9,7 +9,7 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.StringExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 /* compiled from: CustomPriceValidator.kt */
 /* loaded from: classes4.dex */
 public final class CustomPriceValidator {
@@ -29,11 +29,11 @@ public final class CustomPriceValidator {
         if (fromCurrency instanceof DigitalCurrency) {
             if (f.floatValue() > args.getLimits().getMaxCryptoAmount()) {
                 ResourceManager resourceManager = this.resourceManager;
-                int i = C3316R.string.wallet_crypto_buy_custom_price_dialog_validation_max_input;
+                int i = C3242R.string.wallet_crypto_buy_custom_price_dialog_validation_max_input;
                 return new State.Invalid.AmountLimit(resourceManager.getString(i, StringExtKt.stripZeros$default(String.valueOf(args.getLimits().getMaxCryptoAmount()), (char) 0, 1, null) + ' ' + this.resourceManager.getString(args.getFromCurrency().getSymbol())), args.getLimits().getMaxFiatAmount());
             } else if (f.floatValue() < args.getLimits().getMinCryptoAmount()) {
                 ResourceManager resourceManager2 = this.resourceManager;
-                int i2 = C3316R.string.wallet_crypto_buy_custom_price_dialog_validation_min_input;
+                int i2 = C3242R.string.wallet_crypto_buy_custom_price_dialog_validation_min_input;
                 return new State.Invalid.AmountLimit(resourceManager2.getString(i2, StringExtKt.stripZeros$default(String.valueOf(args.getLimits().getMinCryptoAmount()), (char) 0, 1, null) + ' ' + this.resourceManager.getString(args.getFromCurrency().getSymbol())), args.getLimits().getMinFiatAmount());
             } else {
                 return State.Valid.INSTANCE;
@@ -41,11 +41,11 @@ public final class CustomPriceValidator {
         } else if (fromCurrency instanceof FiatCurrency) {
             if (f.floatValue() > args.getLimits().getMaxFiatAmount()) {
                 ResourceManager resourceManager3 = this.resourceManager;
-                int i3 = C3316R.string.wallet_crypto_buy_custom_price_dialog_validation_max_input;
+                int i3 = C3242R.string.wallet_crypto_buy_custom_price_dialog_validation_max_input;
                 return new State.Invalid.AmountLimit(resourceManager3.getString(i3, StringExtKt.stripZeros$default(String.valueOf(args.getLimits().getMaxFiatAmount()), (char) 0, 1, null) + ' ' + this.resourceManager.getString(args.getFromCurrency().getSymbol())), args.getLimits().getMaxCryptoAmount());
             } else if (f.floatValue() < args.getLimits().getMinFiatAmount()) {
                 ResourceManager resourceManager4 = this.resourceManager;
-                int i4 = C3316R.string.wallet_crypto_buy_custom_price_dialog_validation_min_input;
+                int i4 = C3242R.string.wallet_crypto_buy_custom_price_dialog_validation_min_input;
                 return new State.Invalid.AmountLimit(resourceManager4.getString(i4, StringExtKt.stripZeros$default(String.valueOf(args.getLimits().getMinFiatAmount()), (char) 0, 1, null) + ' ' + this.resourceManager.getString(args.getFromCurrency().getSymbol())), args.getLimits().getMinCryptoAmount());
             } else {
                 return State.Valid.INSTANCE;

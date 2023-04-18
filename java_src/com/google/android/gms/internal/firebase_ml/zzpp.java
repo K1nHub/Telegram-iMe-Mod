@@ -2,7 +2,7 @@ package com.google.android.gms.internal.firebase_ml;
 
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.internal.firebase_ml.zzlu;
-import com.google.firebase.p021ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.FirebaseMLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 /* loaded from: classes.dex */
@@ -56,7 +56,7 @@ public final class zzpp {
     }
 
     public final zzlu.zzp.zzb zzna() {
-        zzlu.zzp.zzb.EnumC6861zzb enumC6861zzb;
+        zzlu.zzp.zzb.EnumC6771zzb enumC6771zzb;
         ArrayList arrayList = new ArrayList();
         for (int i : this.zzaxo) {
             arrayList.add(Integer.valueOf(i));
@@ -64,16 +64,16 @@ public final class zzpp {
         zzlu.zzp.zzb.zza zzje = zzlu.zzp.zzb.zzje();
         int i2 = this.type;
         if (i2 == 1) {
-            enumC6861zzb = zzlu.zzp.zzb.EnumC6861zzb.TYPE_FLOAT32;
+            enumC6771zzb = zzlu.zzp.zzb.EnumC6771zzb.TYPE_FLOAT32;
         } else if (i2 == 2) {
-            enumC6861zzb = zzlu.zzp.zzb.EnumC6861zzb.TYPE_INT32;
+            enumC6771zzb = zzlu.zzp.zzb.EnumC6771zzb.TYPE_INT32;
         } else if (i2 == 3) {
-            enumC6861zzb = zzlu.zzp.zzb.EnumC6861zzb.TYPE_BYTE;
+            enumC6771zzb = zzlu.zzp.zzb.EnumC6771zzb.TYPE_BYTE;
         } else if (i2 == 4) {
-            enumC6861zzb = zzlu.zzp.zzb.EnumC6861zzb.TYPE_LONG;
+            enumC6771zzb = zzlu.zzp.zzb.EnumC6771zzb.TYPE_LONG;
         } else {
-            enumC6861zzb = zzlu.zzp.zzb.EnumC6861zzb.UNKNOWN_DATA_TYPE;
+            enumC6771zzb = zzlu.zzp.zzb.EnumC6771zzb.UNKNOWN_DATA_TYPE;
         }
-        return (zzlu.zzp.zzb) ((zzuu) zzje.zza(enumC6861zzb).zzi(arrayList).zzrq());
+        return (zzlu.zzp.zzb) ((zzuu) zzje.zza(enumC6771zzb).zzi(arrayList).zzrq());
     }
 }

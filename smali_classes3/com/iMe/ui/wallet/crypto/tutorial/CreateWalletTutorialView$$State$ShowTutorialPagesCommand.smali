@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 134
+    .line 152
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "showTutorialPages"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 136
+    .line 154
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView$$State$ShowTutorialPagesCommand;->pages:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView;)V
     .locals 1
 
-    .line 141
+    .line 159
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView$$State$ShowTutorialPagesCommand;->pages:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView;->showTutorialPages(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 130
+    .line 148
     check-cast p1, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView$$State$ShowTutorialPagesCommand;->apply(Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView;)V

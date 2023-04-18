@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 667
+    .line 651
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createQRButton$1$1;->invoke(Landroid/view/View;)V
@@ -66,22 +66,22 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 668
+    .line 652
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createQRButton$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 669
+    .line 653
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getQrCodeBottomSheet(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/Components/QRCodeBottomSheet;
 
     move-result-object v0
 
-    .line 671
+    .line 655
     sget v1, Lorg/telegram/messenger/R$string;->wallet_backup_secret_words_qr_title:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 672
+    .line 656
     sget v2, Lorg/telegram/messenger/R$string;->Close:I
 
     const-string v3, "Close"
@@ -90,10 +90,10 @@
 
     move-result-object v2
 
-    .line 670
+    .line 654
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->setupWalletTypeBackup(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 668
+    .line 652
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void

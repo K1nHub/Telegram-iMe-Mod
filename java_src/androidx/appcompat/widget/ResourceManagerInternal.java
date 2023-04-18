@@ -7,6 +7,7 @@ import android.content.res.XmlResourceParser;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -342,9 +343,16 @@ public final class ResourceManagerInternal {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void tintDrawable(Drawable drawable, TintInfo tintInfo, int[] iArr) {
-        if (DrawableUtils.canSafelyMutateDrawable(drawable) && drawable.mutate() != drawable) {
-            Log.d("ResourceManagerInternal", "Mutated drawable is not the same instance as the input.");
-            return;
+        int[] state = drawable.getState();
+        if (DrawableUtils.canSafelyMutateDrawable(drawable)) {
+            if (!(drawable.mutate() == drawable)) {
+                Log.d("ResourceManagerInternal", "Mutated drawable is not the same instance as the input.");
+                return;
+            }
+        }
+        if ((drawable instanceof LayerDrawable) && drawable.isStateful()) {
+            drawable.setState(new int[0]);
+            drawable.setState(state);
         }
         boolean z = tintInfo.mHasTintList;
         if (z || tintInfo.mHasTintMode) {

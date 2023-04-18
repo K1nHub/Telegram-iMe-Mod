@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 808
+    .line 819
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$12;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -39,7 +39,7 @@
 
     const/16 p1, 0xf8
 
-    .line 811
+    .line 822
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -59,7 +59,7 @@
 
     add-int/lit8 p2, p2, 0x4
 
-    .line 813
+    .line 824
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -70,15 +70,15 @@
 
     const/16 p3, 0x9
 
-    .line 814
+    .line 825
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p3
 
-    .line 815
+    .line 826
     iget-object p5, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$12;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {p5}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5300(Lorg/telegram/ui/Components/AudioPlayerAlert;)[Landroid/view/View;
+    invoke-static {p5}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5200(Lorg/telegram/ui/Components/AudioPlayerAlert;)[Landroid/view/View;
 
     move-result-object p5
 
@@ -86,7 +86,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$12;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5300(Lorg/telegram/ui/Components/AudioPlayerAlert;)[Landroid/view/View;
+    invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5200(Lorg/telegram/ui/Components/AudioPlayerAlert;)[Landroid/view/View;
 
     move-result-object v0
 
@@ -100,7 +100,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$12;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5300(Lorg/telegram/ui/Components/AudioPlayerAlert;)[Landroid/view/View;
+    invoke-static {v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5200(Lorg/telegram/ui/Components/AudioPlayerAlert;)[Landroid/view/View;
 
     move-result-object v1
 

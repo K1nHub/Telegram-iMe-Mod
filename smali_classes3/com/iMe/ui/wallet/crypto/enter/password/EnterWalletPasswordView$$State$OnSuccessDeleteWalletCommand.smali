@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView$$State;)V
     .locals 1
 
-    .line 160
+    .line 178
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "onSuccessDeleteWallet"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView;)V
     .locals 0
 
-    .line 165
+    .line 183
     invoke-interface {p1}, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView;->onSuccessDeleteWallet()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 158
+    .line 176
     check-cast p1, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView$$State$OnSuccessDeleteWalletCommand;->apply(Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView;)V

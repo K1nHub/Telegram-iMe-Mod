@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/messenger/MessageObject;)V
     .locals 0
 
-    .line 497
+    .line 504
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$1;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$1;->val$messageObject:Lorg/telegram/messenger/MessageObject;
@@ -42,7 +42,7 @@
 .method public didSelectCloudDialog(J)V
     .locals 12
 
-    .line 500
+    .line 507
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$1;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$000(Lorg/telegram/ui/PhotoViewer;)I
@@ -95,7 +95,7 @@
 .method public onAlbumCreatorOpened()V
     .locals 2
 
-    .line 505
+    .line 512
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$1;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v1, 0x0

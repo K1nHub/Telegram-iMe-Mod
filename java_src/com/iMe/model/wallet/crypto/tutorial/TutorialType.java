@@ -3,7 +3,7 @@ package com.iMe.model.wallet.crypto.tutorial;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p048ui.ActionBar.BaseFragment;
+import org.telegram.p044ui.ActionBar.BaseFragment;
 /* compiled from: TutorialType.kt */
 /* loaded from: classes3.dex */
 public abstract class TutorialType {

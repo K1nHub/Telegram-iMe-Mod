@@ -12,17 +12,17 @@ import com.google.android.gms.wearable.MessageEvent;
 /* loaded from: classes3.dex */
 public final class zzfx extends AbstractSafeParcelable implements MessageEvent {
     public static final Parcelable.Creator<zzfx> CREATOR = new zzfy();
-    @SafeParcelable.Field(getter = "getRequestId", m789id = 2)
+    @SafeParcelable.Field(getter = "getRequestId", m775id = 2)
     private final int zza;
-    @SafeParcelable.Field(getter = "getPath", m789id = 3)
+    @SafeParcelable.Field(getter = "getPath", m775id = 3)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getData", m789id = 4)
+    @SafeParcelable.Field(getter = "getData", m775id = 4)
     private final byte[] zzc;
-    @SafeParcelable.Field(getter = "getSourceNodeId", m789id = 5)
+    @SafeParcelable.Field(getter = "getSourceNodeId", m775id = 5)
     private final String zzd;
 
     @SafeParcelable.Constructor
-    public zzfx(@SafeParcelable.Param(m788id = 2) int i, @SafeParcelable.Param(m788id = 3) String str, @SafeParcelable.Param(m788id = 4) byte[] bArr, @SafeParcelable.Param(m788id = 5) String str2) {
+    public zzfx(@SafeParcelable.Param(m774id = 2) int i, @SafeParcelable.Param(m774id = 3) String str, @SafeParcelable.Param(m774id = 4) byte[] bArr, @SafeParcelable.Param(m774id = 5) String str2) {
         this.zza = i;
         this.zzb = str;
         this.zzc = bArr;

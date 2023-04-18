@@ -36,31 +36,31 @@
 .method private constructor <init>(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
     .locals 0
 
-    .line 11
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 12
+    .line 16
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->swapProtocol:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
-    .line 13
+    .line 17
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->amount:Ljava/math/BigDecimal;
 
-    .line 14
+    .line 18
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->inputToken:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto;
 
-    .line 15
+    .line 19
     iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->outputToken:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto;
 
-    .line 16
+    .line 20
     iput-wide p5, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->chainId:J
 
-    .line 17
+    .line 21
     iput-object p7, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->nonce:Ljava/math/BigInteger;
 
-    .line 18
+    .line 22
     iput-object p8, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->gasPrice:Ljava/math/BigInteger;
 
-    .line 19
+    .line 23
     iput-object p9, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->gasLimit:Ljava/math/BigInteger;
 
     return-void
@@ -79,7 +79,7 @@
 .method public getAmount()Ljava/math/BigDecimal;
     .locals 1
 
-    .line 13
+    .line 17
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->amount:Ljava/math/BigDecimal;
 
     return-object v0
@@ -88,7 +88,7 @@
 .method public getChainId()J
     .locals 2
 
-    .line 16
+    .line 20
     iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->chainId:J
 
     return-wide v0
@@ -97,7 +97,7 @@
 .method public getGasLimit()Ljava/math/BigInteger;
     .locals 1
 
-    .line 19
+    .line 23
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->gasLimit:Ljava/math/BigInteger;
 
     return-object v0
@@ -106,7 +106,7 @@
 .method public getGasPrice()Ljava/math/BigInteger;
     .locals 1
 
-    .line 18
+    .line 22
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->gasPrice:Ljava/math/BigInteger;
 
     return-object v0
@@ -115,7 +115,7 @@
 .method public getInputToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto;
     .locals 1
 
-    .line 14
+    .line 18
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->inputToken:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto;
 
     return-object v0
@@ -124,7 +124,7 @@
 .method public getNonce()Ljava/math/BigInteger;
     .locals 1
 
-    .line 17
+    .line 21
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->nonce:Ljava/math/BigInteger;
 
     return-object v0
@@ -133,7 +133,7 @@
 .method public getOutputToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto;
     .locals 1
 
-    .line 15
+    .line 19
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->outputToken:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto;
 
     return-object v0
@@ -142,7 +142,7 @@
 .method public getSwapProtocol()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
     .locals 1
 
-    .line 12
+    .line 16
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->swapProtocol:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     return-object v0

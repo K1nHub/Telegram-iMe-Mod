@@ -48,13 +48,23 @@ public class DERGeneralizedTime extends ASN1GeneralizedTime {
     }
 
     @Override // org.bouncycastle.asn1.ASN1GeneralizedTime, org.bouncycastle.asn1.ASN1Primitive
-    void encode(ASN1OutputStream aSN1OutputStream) throws IOException {
-        aSN1OutputStream.writeEncoded(24, getDERTime());
+    void encode(ASN1OutputStream aSN1OutputStream, boolean z) throws IOException {
+        aSN1OutputStream.writeEncoded(z, 24, getDERTime());
     }
 
     @Override // org.bouncycastle.asn1.ASN1GeneralizedTime, org.bouncycastle.asn1.ASN1Primitive
     int encodedLength() {
         int length = getDERTime().length;
         return StreamUtil.calculateBodyLength(length) + 1 + length;
+    }
+
+    @Override // org.bouncycastle.asn1.ASN1GeneralizedTime, org.bouncycastle.asn1.ASN1Primitive
+    ASN1Primitive toDERObject() {
+        return this;
+    }
+
+    @Override // org.bouncycastle.asn1.ASN1GeneralizedTime, org.bouncycastle.asn1.ASN1Primitive
+    ASN1Primitive toDLObject() {
+        return this;
     }
 }

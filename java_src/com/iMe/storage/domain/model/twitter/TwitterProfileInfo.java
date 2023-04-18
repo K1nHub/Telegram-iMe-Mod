@@ -49,13 +49,13 @@ public final class TwitterProfileInfo {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m716m = ((((((BotsDbModel$$ExternalSyntheticBackport0.m716m(this.twitterUserId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.twitterUserIdInDatabase)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.telegramUserId)) * 31) + this.twitterUserName.hashCode()) * 31;
+        int m702m = ((((((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.twitterUserId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.twitterUserIdInDatabase)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.telegramUserId)) * 31) + this.twitterUserName.hashCode()) * 31;
         boolean z = this.isUnlinked;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return m716m + i;
+        return m702m + i;
     }
 
     public String toString() {

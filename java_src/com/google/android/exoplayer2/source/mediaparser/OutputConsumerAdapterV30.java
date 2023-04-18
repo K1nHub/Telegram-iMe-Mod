@@ -5,7 +5,7 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.media.MediaParser;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.drm.DrmInitData;
 import com.google.android.exoplayer2.extractor.ChunkIndex;
@@ -83,8 +83,8 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
         this.lastOutputCryptoDatas = new ArrayList<>();
         this.scratchDataReaderAdapter = new DataReaderAdapter();
         this.extractorOutput = new DummyExtractorOutput();
-        this.sampleTimestampUpperLimitFilterUs = C0482C.TIME_UNSET;
-        this.muxedCaptionFormats = ImmutableList.m754of();
+        this.sampleTimestampUpperLimitFilterUs = C0470C.TIME_UNSET;
+        this.muxedCaptionFormats = ImmutableList.m740of();
     }
 
     public void setSampleTimestampUpperLimitFilterUs(long j) {
@@ -153,7 +153,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
         ExtractorOutput extractorOutput = this.extractorOutput;
         if (this.seekingDisabled) {
             if (durationMicros == -2147483648L) {
-                durationMicros = C0482C.TIME_UNSET;
+                durationMicros = C0470C.TIME_UNSET;
             }
             seekMapAdapter = new SeekMap.Unseekable(durationMicros);
         } else {
@@ -204,7 +204,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
     @Override // android.media.MediaParser.OutputConsumer
     public void onSampleCompleted(int i, long j, int i2, int i3, int i4, MediaCodec.CryptoInfo cryptoInfo) {
         long j2 = this.sampleTimestampUpperLimitFilterUs;
-        if (j2 == C0482C.TIME_UNSET || j < j2) {
+        if (j2 == C0470C.TIME_UNSET || j < j2) {
             TimestampAdjuster timestampAdjuster = this.timestampAdjuster;
             if (timestampAdjuster != null) {
                 j = timestampAdjuster.adjustSampleTimestamp(j);
@@ -261,7 +261,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
             i2 = Integer.parseInt((String) Util.castNonNull(matcher.group(2)));
             i3 = parseInt;
         } catch (RuntimeException e) {
-            Log.m809e(TAG, "Unexpected error while parsing CryptoInfo: " + cryptoInfo, e);
+            Log.m795e(TAG, "Unexpected error while parsing CryptoInfo: " + cryptoInfo, e);
             i2 = 0;
         }
         TrackOutput.CryptoData cryptoData = new TrackOutput.CryptoData(cryptoInfo.mode, cryptoInfo.key, i3, i2);
@@ -545,7 +545,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
         @Override // com.google.android.exoplayer2.extractor.SeekMap
         public long getDurationUs() {
             long durationMicros = this.adaptedSeekMap.getDurationMicros();
-            return durationMicros != -2147483648L ? durationMicros : C0482C.TIME_UNSET;
+            return durationMicros != -2147483648L ? durationMicros : C0470C.TIME_UNSET;
         }
 
         @Override // com.google.android.exoplayer2.extractor.SeekMap

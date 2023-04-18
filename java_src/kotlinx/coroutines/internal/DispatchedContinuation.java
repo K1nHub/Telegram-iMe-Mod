@@ -61,7 +61,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
         return null;
     }
 
-    public final CancellableContinuationImpl<?> getReusableCancellableContinuation() {
+    private final CancellableContinuationImpl<?> getReusableCancellableContinuation() {
         Object obj = this._reusableCancellableContinuation;
         if (obj instanceof CancellableContinuationImpl) {
             return (CancellableContinuationImpl) obj;
@@ -69,21 +69,16 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
         return null;
     }
 
-    public final boolean isReusable(CancellableContinuationImpl<?> cancellableContinuationImpl) {
-        Object obj = this._reusableCancellableContinuation;
-        if (obj == null) {
-            return false;
-        }
-        return !(obj instanceof CancellableContinuationImpl) || obj == cancellableContinuationImpl;
+    public final boolean isReusable() {
+        return this._reusableCancellableContinuation != null;
     }
 
     public final void release() {
         awaitReusability();
         CancellableContinuationImpl<?> reusableCancellableContinuation = getReusableCancellableContinuation();
-        if (reusableCancellableContinuation == null) {
-            return;
+        if (reusableCancellableContinuation != null) {
+            reusableCancellableContinuation.detachChild$kotlinx_coroutines_core();
         }
-        reusableCancellableContinuation.detachChild$kotlinx_coroutines_core();
     }
 
     @Override // kotlinx.coroutines.DispatchedTask
@@ -105,7 +100,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
         if (this.dispatcher.isDispatchNeeded(context)) {
             this._state = state$default;
             this.resumeMode = 0;
-            this.dispatcher.mo1585dispatch(context, this);
+            this.dispatcher.mo1566dispatch(context, this);
             return;
         }
         DebugKt.getASSERTIONS_ENABLED();

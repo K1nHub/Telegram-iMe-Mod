@@ -6,39 +6,42 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 /* loaded from: classes.dex */
-public final class InitializationProvider extends ContentProvider {
+public class InitializationProvider extends ContentProvider {
     @Override // android.content.ContentProvider
-    public boolean onCreate() {
+    public final boolean onCreate() {
         Context context = getContext();
         if (context != null) {
-            AppInitializer.getInstance(context).discoverAndInitialize();
+            if (context.getApplicationContext() != null) {
+                AppInitializer.getInstance(context).discoverAndInitialize();
+                return true;
+            }
             return true;
         }
         throw new StartupException("Context cannot be null");
     }
 
     @Override // android.content.ContentProvider
-    public Cursor query(Uri uri, String[] strArr, String str, String[] strArr2, String str2) {
+    public final Cursor query(Uri uri, String[] strArr, String str, String[] strArr2, String str2) {
         throw new IllegalStateException("Not allowed.");
     }
 
     @Override // android.content.ContentProvider
-    public String getType(Uri uri) {
+    public final String getType(Uri uri) {
         throw new IllegalStateException("Not allowed.");
     }
 
     @Override // android.content.ContentProvider
-    public Uri insert(Uri uri, ContentValues contentValues) {
+    public final Uri insert(Uri uri, ContentValues contentValues) {
         throw new IllegalStateException("Not allowed.");
     }
 
     @Override // android.content.ContentProvider
-    public int delete(Uri uri, String str, String[] strArr) {
+    public final int delete(Uri uri, String str, String[] strArr) {
         throw new IllegalStateException("Not allowed.");
     }
 
     @Override // android.content.ContentProvider
-    public int update(Uri uri, ContentValues contentValues, String str, String[] strArr) {
+    public final int update(Uri uri, ContentValues contentValues, String str, String[] strArr) {
         throw new IllegalStateException("Not allowed.");
     }
 }

@@ -14,26 +14,34 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$f1cC1B-c_BHxEQf9VJVIbrx70NU(Lorg/telegram/ui/Components/CrossfadeDrawable;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/Components/CrossfadeDrawable;->lambda$setProgress$0()V
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
     .locals 1
 
-    .line 22
+    .line 23
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
     const/high16 v0, 0x437f0000    # 255.0f
 
-    .line 20
+    .line 21
     iput v0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->globalAlpha:F
 
-    .line 23
+    .line 24
     iput-object p1, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->topDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 24
+    .line 25
     iput-object p2, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->bottomDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_0
 
-    .line 27
+    .line 28
     new-instance v0, Lorg/telegram/ui/Components/CrossfadeDrawable$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/CrossfadeDrawable$1;-><init>(Lorg/telegram/ui/Components/CrossfadeDrawable;)V
@@ -43,7 +51,7 @@
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 49
+    .line 50
     new-instance p1, Lorg/telegram/ui/Components/CrossfadeDrawable$2;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/CrossfadeDrawable$2;-><init>(Lorg/telegram/ui/Components/CrossfadeDrawable;)V
@@ -57,10 +65,19 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/CrossfadeDrawable;)F
     .locals 0
 
-    .line 14
+    .line 15
     iget p0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->progress:F
 
     return p0
+.end method
+
+.method private synthetic lambda$setProgress$0()V
+    .locals 0
+
+    .line 116
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+
+    return-void
 .end method
 
 
@@ -68,7 +85,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 73
+    .line 74
     iget-object v0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->topDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->globalAlpha:F
@@ -85,7 +102,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 74
+    .line 75
     iget-object v0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->bottomDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v2, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->globalAlpha:F
@@ -100,7 +117,7 @@
 
     if-lez v1, :cond_0
 
-    .line 76
+    .line 77
     iget-object v0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->topDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -108,7 +125,7 @@
     :cond_0
     if-lez v2, :cond_1
 
-    .line 79
+    .line 80
     iget-object v0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->bottomDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -120,7 +137,7 @@
 .method public getIntrinsicHeight()I
     .locals 1
 
-    .line 105
+    .line 106
     iget-object v0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->topDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -133,7 +150,7 @@
 .method public getIntrinsicWidth()I
     .locals 1
 
-    .line 100
+    .line 101
     iget-object v0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->topDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -154,7 +171,7 @@
 .method public getProgress()F
     .locals 1
 
-    .line 109
+    .line 110
     iget v0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->progress:F
 
     return v0
@@ -163,12 +180,12 @@
 .method protected onBoundsChange(Landroid/graphics/Rect;)V
     .locals 1
 
-    .line 66
+    .line 67
     iget-object v0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->topDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 67
+    .line 68
     iget-object v0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->bottomDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
@@ -181,7 +198,7 @@
 
     int-to-float p1, p1
 
-    .line 85
+    .line 86
     iput p1, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->globalAlpha:F
 
     return-void
@@ -190,7 +207,7 @@
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 1
 
-    .line 90
+    .line 91
     iget-object v0, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->topDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
@@ -201,7 +218,7 @@
 .method public setProgress(F)V
     .locals 0
 
-    .line 113
+    .line 114
     iput p1, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->progress:F
 
     .line 115

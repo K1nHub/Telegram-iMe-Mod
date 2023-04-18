@@ -14,7 +14,7 @@ abstract class zzau extends zzbg {
         this.zzb = i2;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final boolean hasNext() {
         return this.zzb < this.zza;
     }
@@ -24,7 +24,7 @@ abstract class zzau extends zzbg {
         return this.zzb > 0;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final Object next() {
         if (!hasNext()) {
             throw new NoSuchElementException();

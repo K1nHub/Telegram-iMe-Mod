@@ -2913,7 +2913,7 @@
 .end method
 
 .method private generateWorkingKey([BZ)[[I
-    .locals 20
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -3047,127 +3047,95 @@
 
     aput v1, v8, v11
 
-    move v8, v4
+    move/from16 v17, v4
 
-    move/from16 v17, v6
+    move v8, v6
 
     :goto_0
-    const/16 v11, 0xe
-
-    if-ge v8, v11, :cond_0
-
     invoke-static {v1, v10}, Lorg/bouncycastle/crypto/engines/AESEngine;->shift(II)I
 
-    move-result v11
+    move-result v18
 
-    invoke-static {v11}, Lorg/bouncycastle/crypto/engines/AESEngine;->subWord(I)I
+    invoke-static/range {v18 .. v18}, Lorg/bouncycastle/crypto/engines/AESEngine;->subWord(I)I
 
-    move-result v11
+    move-result v18
 
-    xor-int v11, v11, v17
+    xor-int v18, v18, v8
 
-    shl-int/lit8 v17, v17, 0x1
+    shl-int/2addr v8, v6
 
-    xor-int/2addr v2, v11
+    xor-int v2, v2, v18
 
-    aget-object v11, v5, v8
+    aget-object v18, v5, v17
 
-    aput v2, v11, v9
+    aput v2, v18, v9
 
     xor-int/2addr v13, v2
 
-    aget-object v11, v5, v8
+    aget-object v18, v5, v17
 
-    aput v13, v11, v6
+    aput v13, v18, v6
 
     xor-int/2addr v14, v13
 
-    aget-object v11, v5, v8
+    aget-object v18, v5, v17
 
-    aput v14, v11, v4
+    aput v14, v18, v4
 
     xor-int/2addr v7, v14
 
-    aget-object v11, v5, v8
+    aget-object v18, v5, v17
 
-    const/16 v18, 0x3
+    aput v7, v18, v11
 
-    aput v7, v11, v18
+    add-int/lit8 v10, v17, 0x1
 
+    const/16 v11, 0xf
+
+    if-lt v10, v11, :cond_0
+
+    goto/16 :goto_3
+
+    :cond_0
     invoke-static {v7}, Lorg/bouncycastle/crypto/engines/AESEngine;->subWord(I)I
 
     move-result v11
 
     xor-int/2addr v3, v11
 
-    add-int/lit8 v11, v8, 0x1
+    aget-object v11, v5, v10
 
-    aget-object v19, v5, v11
-
-    aput v3, v19, v9
+    aput v3, v11, v9
 
     xor-int/2addr v12, v3
 
-    aget-object v19, v5, v11
+    aget-object v11, v5, v10
 
-    aput v12, v19, v6
+    aput v12, v11, v6
 
     xor-int/2addr v15, v12
 
-    aget-object v19, v5, v11
+    aget-object v11, v5, v10
 
-    aput v15, v19, v4
+    aput v15, v11, v4
 
     xor-int/2addr v1, v15
 
-    aget-object v11, v5, v11
+    aget-object v11, v5, v10
 
-    const/16 v18, 0x3
+    const/16 v17, 0x3
 
-    aput v1, v11, v18
+    aput v1, v11, v17
 
-    add-int/lit8 v8, v8, 0x2
+    add-int/lit8 v10, v10, 0x1
+
+    move/from16 v17, v10
+
+    const/16 v10, 0x8
+
+    const/4 v11, 0x3
 
     goto :goto_0
-
-    :cond_0
-    invoke-static {v1, v10}, Lorg/bouncycastle/crypto/engines/AESEngine;->shift(II)I
-
-    move-result v1
-
-    invoke-static {v1}, Lorg/bouncycastle/crypto/engines/AESEngine;->subWord(I)I
-
-    move-result v1
-
-    xor-int v1, v1, v17
-
-    xor-int/2addr v1, v2
-
-    aget-object v2, v5, v11
-
-    aput v1, v2, v9
-
-    xor-int/2addr v1, v13
-
-    aget-object v2, v5, v11
-
-    aput v1, v2, v6
-
-    xor-int/2addr v1, v14
-
-    aget-object v2, v5, v11
-
-    aput v1, v2, v4
-
-    xor-int/2addr v1, v7
-
-    aget-object v2, v5, v11
-
-    const/4 v3, 0x3
-
-    aput v1, v2, v3
-
-    goto/16 :goto_3
 
     :cond_1
     new-instance v1, Ljava/lang/IllegalStateException;
@@ -3191,251 +3159,165 @@
 
     invoke-static {v1, v8}, Lorg/bouncycastle/util/Pack;->littleEndianToInt([BI)I
 
+    move-result v10
+
+    aget-object v8, v5, v9
+
+    aput v10, v8, v6
+
+    const/16 v8, 0x8
+
+    invoke-static {v1, v8}, Lorg/bouncycastle/util/Pack;->littleEndianToInt([BI)I
+
     move-result v11
 
     aget-object v8, v5, v9
 
-    aput v11, v8, v6
-
-    invoke-static {v1, v10}, Lorg/bouncycastle/util/Pack;->littleEndianToInt([BI)I
-
-    move-result v8
-
-    aget-object v13, v5, v9
-
-    aput v8, v13, v4
+    aput v11, v8, v4
 
     invoke-static {v1, v7}, Lorg/bouncycastle/util/Pack;->littleEndianToInt([BI)I
 
-    move-result v13
+    move-result v7
 
-    aget-object v14, v5, v9
+    aget-object v8, v5, v9
 
-    const/4 v15, 0x3
+    const/4 v13, 0x3
 
-    aput v13, v14, v15
+    aput v7, v8, v13
 
     invoke-static {v1, v3}, Lorg/bouncycastle/util/Pack;->littleEndianToInt([BI)I
 
     move-result v3
 
-    aget-object v14, v5, v6
-
-    aput v3, v14, v9
-
     invoke-static {v1, v12}, Lorg/bouncycastle/util/Pack;->littleEndianToInt([BI)I
 
     move-result v1
 
-    aget-object v12, v5, v6
+    move v8, v6
 
-    aput v1, v12, v6
+    move v12, v8
 
-    invoke-static {v1, v10}, Lorg/bouncycastle/crypto/engines/AESEngine;->shift(II)I
+    :goto_1
+    aget-object v13, v5, v8
 
-    move-result v12
+    aput v3, v13, v9
 
-    invoke-static {v12}, Lorg/bouncycastle/crypto/engines/AESEngine;->subWord(I)I
+    aget-object v13, v5, v8
 
-    move-result v12
+    aput v1, v13, v6
 
-    xor-int/2addr v12, v6
+    const/16 v13, 0x8
 
-    xor-int/2addr v2, v12
+    invoke-static {v1, v13}, Lorg/bouncycastle/crypto/engines/AESEngine;->shift(II)I
 
-    aget-object v12, v5, v6
+    move-result v14
 
-    aput v2, v12, v4
+    invoke-static {v14}, Lorg/bouncycastle/crypto/engines/AESEngine;->subWord(I)I
 
-    xor-int/2addr v11, v2
+    move-result v13
 
-    aget-object v12, v5, v6
+    xor-int/2addr v13, v12
+
+    shl-int/2addr v12, v6
+
+    xor-int/2addr v2, v13
+
+    aget-object v13, v5, v8
+
+    aput v2, v13, v4
+
+    xor-int/2addr v10, v2
+
+    aget-object v13, v5, v8
 
     const/4 v14, 0x3
 
-    aput v11, v12, v14
+    aput v10, v13, v14
 
-    xor-int/2addr v8, v11
+    xor-int/2addr v11, v10
 
-    aget-object v12, v5, v4
+    add-int/lit8 v13, v8, 0x1
 
-    aput v8, v12, v9
+    aget-object v14, v5, v13
 
-    xor-int v12, v13, v8
+    aput v11, v14, v9
 
-    aget-object v13, v5, v4
+    xor-int/2addr v7, v11
 
-    aput v12, v13, v6
+    aget-object v14, v5, v13
 
-    xor-int/2addr v3, v12
+    aput v7, v14, v6
 
-    aget-object v13, v5, v4
+    xor-int/2addr v3, v7
 
-    aput v3, v13, v4
+    aget-object v14, v5, v13
+
+    aput v3, v14, v4
 
     xor-int/2addr v1, v3
 
-    aget-object v13, v5, v4
+    aget-object v13, v5, v13
 
     const/4 v14, 0x3
 
     aput v1, v13, v14
 
-    move v14, v4
+    const/16 v13, 0x8
 
-    const/4 v13, 0x3
+    invoke-static {v1, v13}, Lorg/bouncycastle/crypto/engines/AESEngine;->shift(II)I
 
-    :goto_1
-    if-ge v13, v7, :cond_3
+    move-result v14
 
-    invoke-static {v1, v10}, Lorg/bouncycastle/crypto/engines/AESEngine;->shift(II)I
+    invoke-static {v14}, Lorg/bouncycastle/crypto/engines/AESEngine;->subWord(I)I
 
-    move-result v15
+    move-result v13
 
-    invoke-static {v15}, Lorg/bouncycastle/crypto/engines/AESEngine;->subWord(I)I
+    xor-int/2addr v13, v12
 
-    move-result v15
+    shl-int/2addr v12, v6
 
-    xor-int/2addr v15, v14
+    xor-int/2addr v2, v13
 
-    shl-int/lit8 v14, v14, 0x1
+    add-int/lit8 v13, v8, 0x2
 
-    xor-int/2addr v2, v15
+    aget-object v14, v5, v13
 
-    aget-object v15, v5, v13
+    aput v2, v14, v9
 
-    aput v2, v15, v9
+    xor-int/2addr v10, v2
 
-    xor-int/2addr v11, v2
+    aget-object v14, v5, v13
 
-    aget-object v15, v5, v13
+    aput v10, v14, v6
 
-    aput v11, v15, v6
+    xor-int/2addr v11, v10
 
-    xor-int/2addr v8, v11
+    aget-object v14, v5, v13
 
-    aget-object v15, v5, v13
+    aput v11, v14, v4
 
-    aput v8, v15, v4
+    xor-int/2addr v7, v11
 
-    xor-int/2addr v12, v8
+    aget-object v13, v5, v13
 
-    aget-object v15, v5, v13
+    const/4 v14, 0x3
 
-    const/16 v17, 0x3
+    aput v7, v13, v14
 
-    aput v12, v15, v17
+    add-int/2addr v8, v14
 
-    xor-int/2addr v3, v12
+    const/16 v13, 0xd
 
-    add-int/lit8 v15, v13, 0x1
-
-    aget-object v17, v5, v15
-
-    aput v3, v17, v9
-
-    xor-int/2addr v1, v3
-
-    aget-object v17, v5, v15
-
-    aput v1, v17, v6
-
-    invoke-static {v1, v10}, Lorg/bouncycastle/crypto/engines/AESEngine;->shift(II)I
-
-    move-result v17
-
-    invoke-static/range {v17 .. v17}, Lorg/bouncycastle/crypto/engines/AESEngine;->subWord(I)I
-
-    move-result v17
-
-    xor-int v17, v17, v14
-
-    shl-int/2addr v14, v6
-
-    xor-int v2, v2, v17
-
-    aget-object v17, v5, v15
-
-    aput v2, v17, v4
-
-    xor-int/2addr v11, v2
-
-    aget-object v15, v5, v15
-
-    const/16 v17, 0x3
-
-    aput v11, v15, v17
-
-    xor-int/2addr v8, v11
-
-    add-int/lit8 v15, v13, 0x2
-
-    aget-object v17, v5, v15
-
-    aput v8, v17, v9
-
-    xor-int/2addr v12, v8
-
-    aget-object v17, v5, v15
-
-    aput v12, v17, v6
-
-    xor-int/2addr v3, v12
-
-    aget-object v17, v5, v15
-
-    aput v3, v17, v4
-
-    xor-int/2addr v1, v3
-
-    aget-object v15, v5, v15
-
-    const/16 v17, 0x3
-
-    aput v1, v15, v17
-
-    add-int/lit8 v13, v13, 0x3
-
-    goto :goto_1
-
-    :cond_3
-    invoke-static {v1, v10}, Lorg/bouncycastle/crypto/engines/AESEngine;->shift(II)I
-
-    move-result v1
-
-    invoke-static {v1}, Lorg/bouncycastle/crypto/engines/AESEngine;->subWord(I)I
-
-    move-result v1
-
-    xor-int/2addr v1, v14
-
-    xor-int/2addr v1, v2
-
-    aget-object v2, v5, v7
-
-    aput v1, v2, v9
-
-    xor-int/2addr v1, v11
-
-    aget-object v2, v5, v7
-
-    aput v1, v2, v6
-
-    xor-int/2addr v1, v8
-
-    aget-object v2, v5, v7
-
-    aput v1, v2, v4
-
-    xor-int/2addr v1, v12
-
-    aget-object v2, v5, v7
-
-    const/4 v3, 0x3
-
-    aput v1, v2, v3
+    if-lt v8, v13, :cond_3
 
     goto :goto_3
+
+    :cond_3
+    xor-int/2addr v3, v7
+
+    xor-int/2addr v1, v3
+
+    goto :goto_1
 
     :cond_4
     invoke-static {v1, v9}, Lorg/bouncycastle/util/Pack;->littleEndianToInt([BI)I
@@ -3456,13 +3338,15 @@
 
     aput v8, v3, v6
 
-    invoke-static {v1, v10}, Lorg/bouncycastle/util/Pack;->littleEndianToInt([BI)I
+    const/16 v3, 0x8
 
-    move-result v3
+    invoke-static {v1, v3}, Lorg/bouncycastle/util/Pack;->littleEndianToInt([BI)I
+
+    move-result v10
 
     aget-object v11, v5, v9
 
-    aput v3, v11, v4
+    aput v10, v11, v4
 
     invoke-static {v1, v7}, Lorg/bouncycastle/util/Pack;->littleEndianToInt([BI)I
 
@@ -3481,7 +3365,7 @@
 
     if-gt v7, v11, :cond_5
 
-    invoke-static {v1, v10}, Lorg/bouncycastle/crypto/engines/AESEngine;->shift(II)I
+    invoke-static {v1, v3}, Lorg/bouncycastle/crypto/engines/AESEngine;->shift(II)I
 
     move-result v11
 
@@ -3509,13 +3393,13 @@
 
     aput v8, v11, v6
 
-    xor-int/2addr v3, v8
+    xor-int/2addr v10, v8
 
     aget-object v11, v5, v7
 
-    aput v3, v11, v4
+    aput v10, v11, v4
 
-    xor-int/2addr v1, v3
+    xor-int/2addr v1, v10
 
     aget-object v11, v5, v7
 

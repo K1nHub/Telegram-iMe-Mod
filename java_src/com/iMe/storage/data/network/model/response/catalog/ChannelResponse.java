@@ -10,7 +10,7 @@ public final class ChannelResponse {
     private final String description;
 
     /* renamed from: id */
-    private final long f304id;
+    private final long f299id;
     private final long membersCount;
     private final String photo;
     private final String shortname;
@@ -40,7 +40,7 @@ public final class ChannelResponse {
     }
 
     public final long component4() {
-        return this.f304id;
+        return this.f299id;
     }
 
     public final long component5() {
@@ -79,16 +79,16 @@ public final class ChannelResponse {
         }
         if (obj instanceof ChannelResponse) {
             ChannelResponse channelResponse = (ChannelResponse) obj;
-            return Intrinsics.areEqual(this.chatType, channelResponse.chatType) && Intrinsics.areEqual(this.createdAt, channelResponse.createdAt) && Intrinsics.areEqual(this.description, channelResponse.description) && this.f304id == channelResponse.f304id && this.membersCount == channelResponse.membersCount && Intrinsics.areEqual(this.photo, channelResponse.photo) && Intrinsics.areEqual(this.shortname, channelResponse.shortname) && this.telegramId == channelResponse.telegramId && Intrinsics.areEqual(this.title, channelResponse.title) && Intrinsics.areEqual(this.updatedAt, channelResponse.updatedAt) && this.verified == channelResponse.verified;
+            return Intrinsics.areEqual(this.chatType, channelResponse.chatType) && Intrinsics.areEqual(this.createdAt, channelResponse.createdAt) && Intrinsics.areEqual(this.description, channelResponse.description) && this.f299id == channelResponse.f299id && this.membersCount == channelResponse.membersCount && Intrinsics.areEqual(this.photo, channelResponse.photo) && Intrinsics.areEqual(this.shortname, channelResponse.shortname) && this.telegramId == channelResponse.telegramId && Intrinsics.areEqual(this.title, channelResponse.title) && Intrinsics.areEqual(this.updatedAt, channelResponse.updatedAt) && this.verified == channelResponse.verified;
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((((((((this.chatType.hashCode() * 31) + this.createdAt.hashCode()) * 31) + this.description.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f304id)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.membersCount)) * 31;
+        int hashCode = ((((((((this.chatType.hashCode() * 31) + this.createdAt.hashCode()) * 31) + this.description.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f299id)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.membersCount)) * 31;
         String str = this.photo;
-        int hashCode2 = (((((((((hashCode + (str == null ? 0 : str.hashCode())) * 31) + this.shortname.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.telegramId)) * 31) + this.title.hashCode()) * 31) + this.updatedAt.hashCode()) * 31;
+        int hashCode2 = (((((((((hashCode + (str == null ? 0 : str.hashCode())) * 31) + this.shortname.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.telegramId)) * 31) + this.title.hashCode()) * 31) + this.updatedAt.hashCode()) * 31;
         boolean z = this.verified;
         int i = z;
         if (z != 0) {
@@ -98,7 +98,7 @@ public final class ChannelResponse {
     }
 
     public String toString() {
-        return "ChannelResponse(chatType=" + this.chatType + ", createdAt=" + this.createdAt + ", description=" + this.description + ", id=" + this.f304id + ", membersCount=" + this.membersCount + ", photo=" + this.photo + ", shortname=" + this.shortname + ", telegramId=" + this.telegramId + ", title=" + this.title + ", updatedAt=" + this.updatedAt + ", verified=" + this.verified + ')';
+        return "ChannelResponse(chatType=" + this.chatType + ", createdAt=" + this.createdAt + ", description=" + this.description + ", id=" + this.f299id + ", membersCount=" + this.membersCount + ", photo=" + this.photo + ", shortname=" + this.shortname + ", telegramId=" + this.telegramId + ", title=" + this.title + ", updatedAt=" + this.updatedAt + ", verified=" + this.verified + ')';
     }
 
     public ChannelResponse(String chatType, String createdAt, String description, long j, long j2, String str, String shortname, long j3, String title, String updatedAt, boolean z) {
@@ -111,7 +111,7 @@ public final class ChannelResponse {
         this.chatType = chatType;
         this.createdAt = createdAt;
         this.description = description;
-        this.f304id = j;
+        this.f299id = j;
         this.membersCount = j2;
         this.photo = str;
         this.shortname = shortname;
@@ -134,7 +134,7 @@ public final class ChannelResponse {
     }
 
     public final long getId() {
-        return this.f304id;
+        return this.f299id;
     }
 
     public final long getMembersCount() {

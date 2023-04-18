@@ -2,6 +2,9 @@
 .super Lkotlinx/coroutines/MainCoroutineDispatcher;
 .source "HandlerDispatcher.kt"
 
+# interfaces
+.implements Lkotlinx/coroutines/Delay;
+
 
 # direct methods
 .method private constructor <init>()V

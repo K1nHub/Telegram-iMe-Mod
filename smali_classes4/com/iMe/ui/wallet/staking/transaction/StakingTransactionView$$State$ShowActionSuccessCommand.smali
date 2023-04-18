@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView$$State;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 278
+    .line 296
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showActionSuccess"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 280
+    .line 298
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView$$State$ShowActionSuccessCommand;->title:Ljava/lang/String;
 
-    .line 281
+    .line 299
     iput-object p3, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView$$State$ShowActionSuccessCommand;->message:Ljava/lang/String;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView;)V
     .locals 2
 
-    .line 286
+    .line 304
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView$$State$ShowActionSuccessCommand;->title:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView$$State$ShowActionSuccessCommand;->message:Ljava/lang/String;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 272
+    .line 290
     check-cast p1, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView$$State$ShowActionSuccessCommand;->apply(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView;)V

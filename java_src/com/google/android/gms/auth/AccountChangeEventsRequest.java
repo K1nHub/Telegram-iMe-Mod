@@ -12,14 +12,14 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class AccountChangeEventsRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<AccountChangeEventsRequest> CREATOR = new zzb();
-    @SafeParcelable.VersionField(m786id = 1)
+    @SafeParcelable.VersionField(m772id = 1)
     final int zza;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     int zzb;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     @Deprecated
     String zzc;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     Account zzd;
 
     public AccountChangeEventsRequest() {
@@ -67,7 +67,7 @@ public class AccountChangeEventsRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public AccountChangeEventsRequest(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) int i2, @SafeParcelable.Param(m788id = 3) String str, @SafeParcelable.Param(m788id = 4) Account account) {
+    public AccountChangeEventsRequest(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) int i2, @SafeParcelable.Param(m774id = 3) String str, @SafeParcelable.Param(m774id = 4) Account account) {
         this.zza = i;
         this.zzb = i2;
         this.zzc = str;

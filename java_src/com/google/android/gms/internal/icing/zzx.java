@@ -26,28 +26,28 @@ import java.util.zip.CRC32;
 /* loaded from: classes.dex */
 public final class zzx extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzx> CREATOR = new zzy();
-    @SafeParcelable.Field(m789id = 1)
+    @SafeParcelable.Field(m775id = 1)
     final zzi zza;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     final long zzb;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     int zzc;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     public final String zzd;
-    @SafeParcelable.Field(m789id = 5)
+    @SafeParcelable.Field(m775id = 5)
     final zzg zze;
-    @SafeParcelable.Field(defaultValue = "false", m789id = 6)
+    @SafeParcelable.Field(defaultValue = "false", m775id = 6)
     final boolean zzf;
-    @SafeParcelable.Field(defaultValue = "-1", m789id = 7)
+    @SafeParcelable.Field(defaultValue = "-1", m775id = 7)
     int zzg;
-    @SafeParcelable.Field(m789id = 8)
+    @SafeParcelable.Field(m775id = 8)
     int zzh;
-    @SafeParcelable.Field(m789id = 9)
+    @SafeParcelable.Field(m775id = 9)
     public final String zzi;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzx(@SafeParcelable.Param(m788id = 1) zzi zziVar, @SafeParcelable.Param(m788id = 2) long j, @SafeParcelable.Param(m788id = 3) int i, @SafeParcelable.Param(m788id = 4) String str, @SafeParcelable.Param(m788id = 5) zzg zzgVar, @SafeParcelable.Param(m788id = 6) boolean z, @SafeParcelable.Param(m788id = 7) int i2, @SafeParcelable.Param(m788id = 8) int i3, @SafeParcelable.Param(m788id = 9) String str2) {
+    public zzx(@SafeParcelable.Param(m774id = 1) zzi zziVar, @SafeParcelable.Param(m774id = 2) long j, @SafeParcelable.Param(m774id = 3) int i, @SafeParcelable.Param(m774id = 4) String str, @SafeParcelable.Param(m774id = 5) zzg zzgVar, @SafeParcelable.Param(m774id = 6) boolean z, @SafeParcelable.Param(m774id = 7) int i2, @SafeParcelable.Param(m774id = 8) int i3, @SafeParcelable.Param(m774id = 9) String str2) {
         this.zza = zziVar;
         this.zzb = j;
         this.zzc = i;

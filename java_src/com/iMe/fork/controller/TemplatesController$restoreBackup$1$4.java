@@ -15,6 +15,6 @@ public final class TemplatesController$restoreBackup$1$4 extends Lambda implemen
 
     @Override // kotlin.jvm.functions.Function1
     public final Integer invoke(TLRPC$Message tLRPC$Message) {
-        return Integer.valueOf(tLRPC$Message.f1526id);
+        return Integer.valueOf(tLRPC$Message.f1451id);
     }
 }

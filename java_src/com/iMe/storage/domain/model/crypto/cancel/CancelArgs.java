@@ -1,12 +1,13 @@
 package com.iMe.storage.domain.model.crypto.cancel;
 
+import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.crypto.send.TransferArgs;
 import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CancelArgs.kt */
 /* loaded from: classes3.dex */
-public abstract class CancelArgs {
+public abstract class CancelArgs implements TransactionArgs {
     private final TokenCode token;
 
     public /* synthetic */ CancelArgs(TokenCode tokenCode, DefaultConstructorMarker defaultConstructorMarker) {

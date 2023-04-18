@@ -2,23 +2,7 @@
 .super Lorg/bouncycastle/asn1/ASN1TaggedObject;
 
 
-# static fields
-.field private static final ZERO_BYTES:[B
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [B
-
-    sput-object v0, Lorg/bouncycastle/asn1/DERTaggedObject;->ZERO_BYTES:[B
-
-    return-void
-.end method
-
 .method public constructor <init>(ZILorg/bouncycastle/asn1/ASN1Encodable;)V
     .locals 0
 
@@ -29,19 +13,13 @@
 
 
 # virtual methods
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
-
-    iget-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->empty:Z
-
-    const/16 v1, 0xa0
-
-    if-nez v0, :cond_2
 
     iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->obj:Lorg/bouncycastle/asn1/ASN1Encodable;
 
@@ -53,53 +31,51 @@
 
     move-result-object v0
 
-    iget-boolean v2, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
+    iget-boolean v1, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
 
-    if-eqz v2, :cond_0
+    if-nez v1, :cond_1
 
-    iget v2, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->tagNo:I
-
-    invoke-virtual {p1, v1, v2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeTag(II)V
-
-    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Primitive;->encodedLength()I
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Primitive;->isConstructed()Z
 
     move-result v1
 
-    invoke-virtual {p1, v1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeLength(I)V
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    goto :goto_1
-
-    :cond_0
-    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Primitive;->isConstructed()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_0
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     const/16 v1, 0x80
-
-    :goto_0
-    iget v2, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->tagNo:I
-
-    invoke-virtual {p1, v1, v2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeTag(II)V
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeImplicitObject(Lorg/bouncycastle/asn1/ASN1Primitive;)V
 
     goto :goto_1
 
-    :cond_2
-    iget v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->tagNo:I
-
-    sget-object v2, Lorg/bouncycastle/asn1/DERTaggedObject;->ZERO_BYTES:[B
-
-    invoke-virtual {p1, v1, v0, v2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(II[B)V
+    :cond_1
+    :goto_0
+    const/16 v1, 0xa0
 
     :goto_1
+    iget v2, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->tagNo:I
+
+    invoke-virtual {p1, p2, v1, v2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeTag(ZII)V
+
+    iget-boolean p2, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
+
+    if-eqz p2, :cond_2
+
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Primitive;->encodedLength()I
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeLength(I)V
+
+    :cond_2
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->getDERSubStream()Lorg/bouncycastle/asn1/DEROutputStream;
+
+    move-result-object p1
+
+    iget-boolean p2, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
+
+    invoke-virtual {v0, p1, p2}, Lorg/bouncycastle/asn1/ASN1Primitive;->encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
+
     return-void
 .end method
 
@@ -110,10 +86,6 @@
             Ljava/io/IOException;
         }
     .end annotation
-
-    iget-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->empty:Z
-
-    if-nez v0, :cond_1
 
     iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->obj:Lorg/bouncycastle/asn1/ASN1Encodable;
 
@@ -160,35 +132,15 @@
     move-result v1
 
     goto :goto_0
-
-    :cond_1
-    iget v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->tagNo:I
-
-    invoke-static {v0}, Lorg/bouncycastle/asn1/StreamUtil;->calculateTagLength(I)I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    return v0
 .end method
 
 .method isConstructed()Z
-    .locals 2
-
-    iget-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->empty:Z
-
-    const/4 v1, 0x1
-
-    if-nez v0, :cond_1
+    .locals 1
 
     iget-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_1
 
-    return v1
-
-    :cond_0
     iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->obj:Lorg/bouncycastle/asn1/ASN1Encodable;
 
     invoke-interface {v0}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
@@ -203,8 +155,31 @@
 
     move-result v0
 
-    return v0
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_1
 
     :cond_1
-    return v1
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
+    return v0
+.end method
+
+.method toDERObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+    .locals 0
+
+    return-object p0
 .end method

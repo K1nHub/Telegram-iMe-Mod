@@ -26,7 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 46
+    .line 48
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 .method protected initialValue()Ljava/lang/Long;
     .locals 4
 
-    .line 49
+    .line 51
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -56,7 +56,7 @@
 .method protected bridge synthetic initialValue()Ljava/lang/Object;
     .locals 1
 
-    .line 46
+    .line 48
     invoke-virtual {p0}, Lorg/telegram/messenger/StatsController$1;->initialValue()Ljava/lang/Long;
 
     move-result-object v0

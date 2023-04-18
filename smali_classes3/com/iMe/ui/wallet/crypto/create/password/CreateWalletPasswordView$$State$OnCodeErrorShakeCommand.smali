@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State;)V
     .locals 1
 
-    .line 128
+    .line 146
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "onCodeErrorShake"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView;)V
     .locals 0
 
-    .line 133
+    .line 151
     invoke-interface {p1}, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView;->onCodeErrorShake()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 126
+    .line 144
     check-cast p1, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State$OnCodeErrorShakeCommand;->apply(Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView;)V

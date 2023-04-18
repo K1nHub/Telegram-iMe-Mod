@@ -14,15 +14,15 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 public class FavaDiagnosticsEntity extends AbstractSafeParcelable implements ReflectedParcelable {
     @KeepForSdk
     public static final Parcelable.Creator<FavaDiagnosticsEntity> CREATOR = new zaa();
-    @SafeParcelable.VersionField(m786id = 1)
+    @SafeParcelable.VersionField(m772id = 1)
     final int zaa;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     public final String zab;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     public final int zac;
 
     @SafeParcelable.Constructor
-    public FavaDiagnosticsEntity(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) int i2) {
+    public FavaDiagnosticsEntity(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) int i2) {
         this.zaa = i;
         this.zab = str;
         this.zac = i2;

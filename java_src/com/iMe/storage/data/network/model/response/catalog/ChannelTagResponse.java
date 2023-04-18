@@ -7,12 +7,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ChannelTagResponse {
 
     /* renamed from: id */
-    private final long f305id;
+    private final long f300id;
     private final String title;
 
     public static /* synthetic */ ChannelTagResponse copy$default(ChannelTagResponse channelTagResponse, long j, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = channelTagResponse.f305id;
+            j = channelTagResponse.f300id;
         }
         if ((i & 2) != 0) {
             str = channelTagResponse.title;
@@ -21,7 +21,7 @@ public final class ChannelTagResponse {
     }
 
     public final long component1() {
-        return this.f305id;
+        return this.f300id;
     }
 
     public final String component2() {
@@ -39,27 +39,27 @@ public final class ChannelTagResponse {
         }
         if (obj instanceof ChannelTagResponse) {
             ChannelTagResponse channelTagResponse = (ChannelTagResponse) obj;
-            return this.f305id == channelTagResponse.f305id && Intrinsics.areEqual(this.title, channelTagResponse.title);
+            return this.f300id == channelTagResponse.f300id && Intrinsics.areEqual(this.title, channelTagResponse.title);
         }
         return false;
     }
 
     public int hashCode() {
-        return (BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f305id) * 31) + this.title.hashCode();
+        return (BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f300id) * 31) + this.title.hashCode();
     }
 
     public String toString() {
-        return "ChannelTagResponse(id=" + this.f305id + ", title=" + this.title + ')';
+        return "ChannelTagResponse(id=" + this.f300id + ", title=" + this.title + ')';
     }
 
     public ChannelTagResponse(long j, String title) {
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f305id = j;
+        this.f300id = j;
         this.title = title;
     }
 
     public final long getId() {
-        return this.f305id;
+        return this.f300id;
     }
 
     public final String getTitle() {

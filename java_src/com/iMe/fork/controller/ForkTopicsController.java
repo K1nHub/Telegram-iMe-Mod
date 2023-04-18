@@ -7,8 +7,8 @@ import com.iMe.fork.enums.Interval;
 import com.iMe.fork.models.backup.Backup;
 import com.iMe.fork.models.backup.BackupMappingKt;
 import com.iMe.fork.models.backup.TopicBackup;
-import com.iMe.storage.data.locale.p028db.dao.main.TopicsDao;
-import com.iMe.storage.data.locale.p028db.model.topics.TopicDb;
+import com.iMe.storage.data.locale.p027db.dao.main.TopicsDao;
+import com.iMe.storage.data.locale.p027db.model.topics.TopicDb;
 import com.iMe.storage.data.mapper.topics.TopicMappingKt;
 import com.iMe.storage.data.repository.topics.Topic;
 import com.iMe.storage.data.utils.extentions.DateExtKt;
@@ -42,15 +42,15 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC$Dialog;
-import p035j$.util.concurrent.ConcurrentHashMap;
-import p035j$.util.concurrent.ConcurrentMap$EL;
-import p035j$.util.function.Function;
+import p034j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentMap$EL;
+import p034j$.util.function.Function;
 /* compiled from: ForkTopicsController.kt */
 /* loaded from: classes3.dex */
 public final class ForkTopicsController extends BaseController implements KoinComponent {
@@ -290,7 +290,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
             for (Number number : plus) {
                 long longValue = number.longValue();
                 TLRPC$Dialog tLRPC$Dialog = getMessagesController().dialogs_dict.get(longValue);
-                if (tLRPC$Dialog != null) {
+                if (tLRPC$Dialog != null && !getHiddenChatsController().isChatHidden(tLRPC$Dialog.f1433id)) {
                     if (tLRPC$Dialog.folder_id == 0) {
                         arrayList.add(Long.valueOf(longValue));
                     } else {
@@ -697,19 +697,19 @@ public final class ForkTopicsController extends BaseController implements KoinCo
             Integer valueOf = Integer.valueOf(i);
             final ForkTopicsController$Companion$getInstance$1 forkTopicsController$Companion$getInstance$1 = new ForkTopicsController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.ForkTopicsController$Companion$$ExternalSyntheticLambda0
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
                     ForkTopicsController instance$lambda$0;
                     instance$lambda$0 = ForkTopicsController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }
@@ -730,8 +730,8 @@ public final class ForkTopicsController extends BaseController implements KoinCo
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (TopicDb topicDb : newTopics) {
-            Pair m94to = TuplesKt.m94to(Long.valueOf(topicDb.getTopicId()), TopicMappingKt.mapToDomain(topicDb));
-            linkedHashMap.put(m94to.getFirst(), m94to.getSecond());
+            Pair m80to = TuplesKt.m80to(Long.valueOf(topicDb.getTopicId()), TopicMappingKt.mapToDomain(topicDb));
+            linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.topics = mutableMap;

@@ -15,6 +15,7 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.R$styleable;
 import androidx.core.view.ViewCompat;
@@ -25,7 +26,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import p035j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentHashMap;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
 public class AppCompatTextViewAutoSizeHelper {
@@ -360,7 +361,7 @@ public class AppCompatTextViewAutoSizeHelper {
     private void setRawTextSize(float f) {
         if (f != this.mTextView.getPaint().getTextSize()) {
             this.mTextView.getPaint().setTextSize(f);
-            boolean isInLayout = Build.VERSION.SDK_INT >= 18 ? this.mTextView.isInLayout() : false;
+            boolean isInLayout = Build.VERSION.SDK_INT >= 18 ? Api18Impl.isInLayout(this.mTextView) : false;
             if (this.mTextView.getLayout() != null) {
                 this.mNeedsAutoSizeText = false;
                 try {
@@ -421,10 +422,10 @@ public class AppCompatTextViewAutoSizeHelper {
     StaticLayout createLayout(CharSequence charSequence, Layout.Alignment alignment, int i, int i2) {
         int i3 = Build.VERSION.SDK_INT;
         if (i3 >= 23) {
-            return createStaticLayoutForMeasuring(charSequence, alignment, i, i2);
+            return Api23Impl.createStaticLayoutForMeasuring(charSequence, alignment, i, i2, this.mTextView, this.mTempTextPaint, this.mImpl);
         }
         if (i3 >= 16) {
-            return createStaticLayoutForMeasuringPre23(charSequence, alignment, i);
+            return Api16Impl.createStaticLayoutForMeasuring(charSequence, alignment, i, this.mTextView, this.mTempTextPaint);
         }
         return createStaticLayoutForMeasuringPre16(charSequence, alignment, i);
     }
@@ -436,29 +437,10 @@ public class AppCompatTextViewAutoSizeHelper {
         if (transformationMethod != null && (transformation = transformationMethod.getTransformation(text, this.mTextView)) != null) {
             text = transformation;
         }
-        int maxLines = Build.VERSION.SDK_INT >= 16 ? this.mTextView.getMaxLines() : -1;
+        int maxLines = Build.VERSION.SDK_INT >= 16 ? Api16Impl.getMaxLines(this.mTextView) : -1;
         initTempTextPaint(i);
         StaticLayout createLayout = createLayout(text, (Layout.Alignment) invokeAndReturnWithDefault(this.mTextView, "getLayoutAlignment", Layout.Alignment.ALIGN_NORMAL), Math.round(rectF.right), maxLines);
         return (maxLines == -1 || (createLayout.getLineCount() <= maxLines && createLayout.getLineEnd(createLayout.getLineCount() - 1) == text.length())) && ((float) createLayout.getHeight()) <= rectF.bottom;
-    }
-
-    private StaticLayout createStaticLayoutForMeasuring(CharSequence charSequence, Layout.Alignment alignment, int i, int i2) {
-        StaticLayout.Builder obtain = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), this.mTempTextPaint, i);
-        StaticLayout.Builder hyphenationFrequency = obtain.setAlignment(alignment).setLineSpacing(this.mTextView.getLineSpacingExtra(), this.mTextView.getLineSpacingMultiplier()).setIncludePad(this.mTextView.getIncludeFontPadding()).setBreakStrategy(this.mTextView.getBreakStrategy()).setHyphenationFrequency(this.mTextView.getHyphenationFrequency());
-        if (i2 == -1) {
-            i2 = Integer.MAX_VALUE;
-        }
-        hyphenationFrequency.setMaxLines(i2);
-        try {
-            this.mImpl.computeAndSetTextDirection(obtain, this.mTextView);
-        } catch (ClassCastException unused) {
-            Log.w("ACTVAutoSizeHelper", "Failed to obtain TextDirectionHeuristic, auto size may be incorrect");
-        }
-        return obtain.build();
-    }
-
-    private StaticLayout createStaticLayoutForMeasuringPre23(CharSequence charSequence, Layout.Alignment alignment, int i) {
-        return new StaticLayout(charSequence, this.mTempTextPaint, i, alignment, this.mTextView.getLineSpacingMultiplier(), this.mTextView.getLineSpacingExtra(), this.mTextView.getIncludeFontPadding());
     }
 
     private StaticLayout createStaticLayoutForMeasuringPre16(CharSequence charSequence, Layout.Alignment alignment, int i) {
@@ -519,5 +501,44 @@ public class AppCompatTextViewAutoSizeHelper {
 
     private boolean supportsAutoSizeText() {
         return !(this.mTextView instanceof AppCompatEditText);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes.dex */
+    public static final class Api23Impl {
+        static StaticLayout createStaticLayoutForMeasuring(CharSequence charSequence, Layout.Alignment alignment, int i, int i2, TextView textView, TextPaint textPaint, Impl impl) {
+            StaticLayout.Builder obtain = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i);
+            StaticLayout.Builder hyphenationFrequency = obtain.setAlignment(alignment).setLineSpacing(textView.getLineSpacingExtra(), textView.getLineSpacingMultiplier()).setIncludePad(textView.getIncludeFontPadding()).setBreakStrategy(textView.getBreakStrategy()).setHyphenationFrequency(textView.getHyphenationFrequency());
+            if (i2 == -1) {
+                i2 = Integer.MAX_VALUE;
+            }
+            hyphenationFrequency.setMaxLines(i2);
+            try {
+                impl.computeAndSetTextDirection(obtain, textView);
+            } catch (ClassCastException unused) {
+                Log.w("ACTVAutoSizeHelper", "Failed to obtain TextDirectionHeuristic, auto size may be incorrect");
+            }
+            return obtain.build();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes.dex */
+    public static final class Api18Impl {
+        static boolean isInLayout(View view) {
+            return view.isInLayout();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes.dex */
+    public static final class Api16Impl {
+        static int getMaxLines(TextView textView) {
+            return textView.getMaxLines();
+        }
+
+        static StaticLayout createStaticLayoutForMeasuring(CharSequence charSequence, Layout.Alignment alignment, int i, TextView textView, TextPaint textPaint) {
+            return new StaticLayout(charSequence, textPaint, i, alignment, textView.getLineSpacingMultiplier(), textView.getLineSpacingExtra(), textView.getIncludeFontPadding());
+        }
     }
 }

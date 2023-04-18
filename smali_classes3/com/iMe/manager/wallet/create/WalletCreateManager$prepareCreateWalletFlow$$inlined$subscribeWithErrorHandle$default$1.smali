@@ -22,7 +22,7 @@
         "Lkotlin/jvm/functions/Function1<",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
-        "Ljava/lang/String;",
+        "Lcom/iMe/storage/domain/model/crypto/Wallet;",
         ">;",
         "Lkotlin/Unit;",
         ">;"
@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletCreateManager.kt\ncom/iMe/manager/wallet/create/WalletCreateManager\n*L\n1#1,111:1\n161#2,12:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletCreateManager.kt\ncom/iMe/manager/wallet/create/WalletCreateManager\n*L\n1#1,111:1\n158#2,12:112\n*E\n"
 .end annotation
 
 
@@ -79,7 +79,7 @@
             "(",
             "Lcom/iMe/storage/domain/model/Result<",
             "+",
-            "Ljava/lang/String;",
+            "Lcom/iMe/storage/domain/model/crypto/Wallet;",
             ">;)V"
         }
     .end annotation
@@ -109,17 +109,13 @@
 
     move-result-object p1
 
-    check-cast p1, Ljava/lang/String;
-
-    invoke-static {p1}, Lcom/iMe/storage/data/utils/extentions/StringExtKt;->splitBySpace(Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object p1
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/Wallet;
 
     .line 117
     iget-object v2, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$1;->$password$inlined:Ljava/lang/String;
 
     .line 114
-    invoke-static {v0, v1, p1, v2}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->access$openScreenByWalletCreationType(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Ljava/util/List;Ljava/lang/String;)V
+    invoke-static {v0, v1, p1, v2}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->access$openScreenByWalletCreationType(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -137,21 +133,13 @@
 
     check-cast p1, Lcom/iMe/storage/domain/model/Result$Error;
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result$Error;->getError()Lcom/iMe/storage/data/network/model/error/ErrorModel;
-
-    move-result-object p1
-
     iget-object v1, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/manager/wallet/create/WalletCreateManager;
 
     invoke-static {v1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->access$getResourceManager$p(Lcom/iMe/manager/wallet/create/WalletCreateManager;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
-    invoke-virtual {p1, v1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;->getMessage(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
+    invoke-interface {v0, p1, v1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
     :cond_1
     :goto_0

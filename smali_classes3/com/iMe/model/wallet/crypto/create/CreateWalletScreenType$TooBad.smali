@@ -36,7 +36,7 @@
 
     const/4 v0, 0x0
 
-    .line 9
+    .line 11
     invoke-direct {p0, v0}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

@@ -6,20 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Landroidx/collection/LongSparseArray;
-
-.field public final synthetic f$1:Ljava/text/Collator;
+.field public final synthetic f$0:Ljava/text/Collator;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/collection/LongSparseArray;Ljava/text/Collator;)V
+.method public synthetic constructor <init>(Ljava/text/Collator;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda47;->f$0:Landroidx/collection/LongSparseArray;
-
-    iput-object p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda47;->f$1:Ljava/text/Collator;
+    iput-object p1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda47;->f$0:Ljava/text/Collator;
 
     return-void
 .end method
@@ -27,17 +23,15 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda47;->f$0:Landroidx/collection/LongSparseArray;
+    iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda47;->f$0:Ljava/text/Collator;
 
-    iget-object v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda47;->f$1:Ljava/text/Collator;
+    check-cast p1, Ljava/lang/String;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_contact;
+    check-cast p2, Ljava/lang/String;
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_contact;
-
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$IxufsYmV-1DFxJi_XV8F_BKszdY(Landroidx/collection/LongSparseArray;Ljava/text/Collator;Lorg/telegram/tgnet/TLRPC$TL_contact;Lorg/telegram/tgnet/TLRPC$TL_contact;)I
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$-7D5Sh1V1t3cYLPZyQaJaTgw4qc(Ljava/text/Collator;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result p1
 

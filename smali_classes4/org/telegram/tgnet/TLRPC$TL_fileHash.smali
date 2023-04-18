@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 50083
+    .line 50095
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_fileHash;
     .locals 1
 
-    .line 50091
+    .line 50103
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_fileHash;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -45,7 +45,7 @@
 
     return-object p0
 
-    .line 50093
+    .line 50105
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -71,13 +71,13 @@
 
     throw p0
 
-    .line 50098
+    .line 50110
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_fileHash;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_fileHash;-><init>()V
 
-    .line 50099
+    .line 50111
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_fileHash;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -88,21 +88,21 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 50104
+    .line 50116
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_fileHash;->offset:J
 
-    .line 50105
+    .line 50117
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_fileHash;->limit:I
 
-    .line 50106
+    .line 50118
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
 
     move-result-object p1
@@ -115,22 +115,22 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 50110
+    .line 50122
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_fileHash;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 50111
+    .line 50123
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_fileHash;->offset:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 50112
+    .line 50124
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_fileHash;->limit:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 50113
+    .line 50125
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_fileHash;->hash:[B
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteArray([B)V

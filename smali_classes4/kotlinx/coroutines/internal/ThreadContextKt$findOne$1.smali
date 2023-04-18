@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lkotlinx/coroutines/internal/ThreadContextKt;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lkotlinx/coroutines/internal/ThreadContextKt;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

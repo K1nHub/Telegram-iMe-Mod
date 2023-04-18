@@ -26,14 +26,14 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/Components/spoilers/SpoilerEffect;)V
     .locals 0
 
-    .line 8847
+    .line 8795
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$40;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/ChatActivity$40;->val$replySpoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
-    .line 8848
+    .line 8796
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
@@ -48,24 +48,24 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 8852
+    .line 8800
     invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 8854
+    .line 8802
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$40;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$28100(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$28200(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 8855
+    .line 8803
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$40;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 8856
+    .line 8804
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
@@ -94,7 +94,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 8857
+    .line 8805
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$40;->path:Landroid/graphics/Path;
 
     const/4 v2, 0x2
@@ -115,17 +115,17 @@
 
     invoke-virtual {v1, v0, v3, v2, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 8859
+    .line 8807
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 8860
+    .line 8808
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$40;->path:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
     const/4 v0, -0x1
 
-    .line 8863
+    .line 8811
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$40;->val$replySpoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
@@ -146,7 +146,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setColor(I)V
 
-    .line 8864
+    .line 8812
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$40;->val$replySpoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
@@ -183,15 +183,15 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setBounds(IIII)V
 
-    .line 8865
+    .line 8813
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$40;->val$replySpoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->draw(Landroid/graphics/Canvas;)V
 
-    .line 8866
+    .line 8814
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 8868
+    .line 8816
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_0

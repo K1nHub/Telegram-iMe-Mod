@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMultiPanelSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiPanelSettingsActivity.kt\ncom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,404:1\n1#2:405\n*E\n"
+    value = "SMAP\nMultiPanelSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiPanelSettingsActivity.kt\ncom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,401:1\n1#2:402\n*E\n"
 .end annotation
 
 
@@ -31,12 +31,12 @@
         }
     .end annotation
 
-    .line 226
+    .line 223
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 229
+    .line 226
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->updateRows()V
 
     return-void
@@ -47,7 +47,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 273
+    .line 270
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -60,7 +60,7 @@
 .method public getItemViewType(I)I
     .locals 3
 
-    .line 276
+    .line 273
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getDialogTypeTopicsBarRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -73,7 +73,7 @@
 
     goto/16 :goto_8
 
-    .line 277
+    .line 274
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
@@ -135,7 +135,7 @@
 
     goto :goto_8
 
-    .line 278
+    .line 275
     :cond_5
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
@@ -191,7 +191,7 @@
 
     goto :goto_8
 
-    .line 279
+    .line 276
     :cond_a
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_CHECK:I
 
@@ -206,7 +206,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 282
+    .line 279
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
@@ -227,7 +227,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 302
+    .line 299
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     add-int/lit8 v1, p2, 0x1
@@ -240,19 +240,19 @@
 
     move-result v0
 
-    .line 303
+    .line 300
     invoke-virtual {p0, p2}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->getItemViewType(I)I
 
     move-result v1
 
-    .line 304
+    .line 301
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v2, "holder.itemView"
 
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 306
+    .line 303
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     const/4 v3, 0x0
@@ -265,22 +265,22 @@
 
     if-eqz v2, :cond_2
 
-    .line 307
+    .line 304
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 308
+    .line 305
     invoke-static {v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
 
     move-result v2
 
     if-ne p2, v2, :cond_0
 
-    .line 309
+    .line 306
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
-    .line 310
+    .line 307
     sget p2, Lorg/telegram/messenger/R$string;->multi_panel_settings_enable_item_title:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -295,18 +295,18 @@
 
     goto/16 :goto_1
 
-    .line 312
+    .line 309
     :cond_0
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
-    .line 313
+    .line 310
     invoke-static {v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getHideOnScrollRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
 
     move-result v2
 
     if-ne p2, v2, :cond_1
 
-    .line 314
+    .line 311
     sget p2, Lorg/telegram/messenger/R$string;->multi_panel_hide_on_scroll:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -321,7 +321,7 @@
 
     goto/16 :goto_1
 
-    .line 315
+    .line 312
     :cond_1
     invoke-static {v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getAllButtonsRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
 
@@ -329,7 +329,7 @@
 
     if-ne p2, v2, :cond_a
 
-    .line 316
+    .line 313
     sget p2, Lorg/telegram/messenger/R$string;->multi_panel_settings_section_enable_all_item_title:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -344,7 +344,7 @@
 
     goto/16 :goto_1
 
-    .line 321
+    .line 318
     :cond_2
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
@@ -354,12 +354,12 @@
 
     if-eqz v2, :cond_6
 
-    .line 322
+    .line 319
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 323
+    .line 320
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
 
     move-result v1
@@ -376,7 +376,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 324
+    .line 321
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p2
@@ -391,15 +391,15 @@
 
     const/16 p2, 0xc
 
-    .line 325
+    .line 322
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 326
+    .line 323
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_1
 
-    .line 328
+    .line 325
     :cond_3
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -413,33 +413,33 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 329
+    .line 326
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getHideOnScrollSectionRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
 
     move-result v1
 
     if-ne p2, v1, :cond_4
 
-    .line 330
+    .line 327
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 331
+    .line 328
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_1
 
-    .line 333
+    .line 330
     :cond_4
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 334
+    .line 331
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
 
     move-result v1
 
     if-ne p2, v1, :cond_5
 
-    .line 335
+    .line 332
     sget p2, Lorg/telegram/messenger/R$string;->multi_panel_settings_enable_item_subtitle:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -450,7 +450,7 @@
 
     goto/16 :goto_1
 
-    .line 336
+    .line 333
     :cond_5
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getSectionInfoRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
 
@@ -458,7 +458,7 @@
 
     if-ne p2, v0, :cond_a
 
-    .line 337
+    .line 334
     sget p2, Lorg/telegram/messenger/R$string;->multi_panel_settings_section_hint:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -469,7 +469,7 @@
 
     goto :goto_1
 
-    .line 343
+    .line 340
     :cond_6
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_CHECK:I
 
@@ -479,12 +479,12 @@
 
     if-eqz v1, :cond_a
 
-    .line 344
+    .line 341
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     check-cast p1, Lcom/iMe/fork/ui/view/MovingCheckCell;
 
-    .line 345
+    .line 342
     invoke-static {v1, p2}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getButton(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)Lcom/iMe/fork/models/MultiPanelButtonState;
 
     move-result-object p2
@@ -493,7 +493,7 @@
 
     return-void
 
-    .line 346
+    .line 343
     :cond_7
     invoke-virtual {p2}, Lcom/iMe/fork/models/MultiPanelButtonState;->getType()Lcom/iMe/fork/enums/MultiPanelButton;
 
@@ -507,7 +507,7 @@
 
     move-result-object v1
 
-    .line 347
+    .line 344
     invoke-virtual {p2}, Lcom/iMe/fork/models/MultiPanelButtonState;->getType()Lcom/iMe/fork/enums/MultiPanelButton;
 
     move-result-object v2
@@ -528,7 +528,7 @@
 
     invoke-virtual {p1, v2, v4, v3}, Lcom/iMe/fork/ui/view/MovingCheckCell;->setIcon(ILjava/lang/String;Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 348
+    .line 345
     invoke-virtual {p2}, Lcom/iMe/fork/models/MultiPanelButtonState;->getType()Lcom/iMe/fork/enums/MultiPanelButton;
 
     move-result-object v2
@@ -549,7 +549,7 @@
 
     goto :goto_0
 
-    .line 351
+    .line 348
     :cond_8
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -561,7 +561,7 @@
 
     goto :goto_1
 
-    .line 349
+    .line 346
     :cond_9
     :goto_0
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -590,7 +590,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 226
+    .line 223
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -605,7 +605,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 285
+    .line 282
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TOPICS_BAR:I
 
     const-string v0, "parentActivity"
@@ -636,24 +636,24 @@
 
     move-result-object v1
 
-    .line 289
+    .line 286
     new-instance v2, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter$onCreateViewHolder$1;
 
     iget-object v3, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-direct {v2, v3, p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter$onCreateViewHolder$1;-><init>(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;)V
 
-    .line 285
+    .line 282
     invoke-direct {p1, p2, v0, v1, v2}, Lcom/iMe/fork/ui/view/DialogTypeTopicsBar;-><init>(Landroid/content/Context;Ljava/util/List;Lcom/iMe/fork/enums/DialogType;Lkotlin/jvm/functions/Function1;)V
 
-    .line 289
+    .line 286
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {p2, p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setTopicsBar$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;Lcom/iMe/fork/ui/view/DialogTypeTopicsBar;)V
 
     goto :goto_0
 
-    .line 290
+    .line 287
     :cond_0
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
@@ -671,7 +671,7 @@
 
     goto :goto_0
 
-    .line 291
+    .line 288
     :cond_1
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
@@ -689,7 +689,7 @@
 
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
-    .line 292
+    .line 289
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p2
@@ -706,7 +706,7 @@
 
     goto :goto_0
 
-    .line 294
+    .line 291
     :cond_2
     new-instance p1, Lcom/iMe/fork/ui/view/MovingCheckCell;
 
@@ -722,14 +722,14 @@
 
     const-string p2, "windowBackgroundWhite"
 
-    .line 295
+    .line 292
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 298
+    .line 295
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -741,7 +741,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 284
+    .line 281
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -752,14 +752,14 @@
 .method public final swapElements(II)V
     .locals 5
 
-    .line 257
+    .line 254
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getButtons(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 258
+    .line 255
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getButtonsStartRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -768,7 +768,7 @@
 
     sub-int v1, p1, v1
 
-    .line 259
+    .line 256
     iget-object v2, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v2}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getButtonsStartRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -777,33 +777,33 @@
 
     sub-int v2, p2, v2
 
-    .line 260
+    .line 257
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/iMe/fork/models/MultiPanelButtonState;
 
-    .line 261
+    .line 258
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/iMe/fork/models/MultiPanelButtonState;
 
-    .line 262
+    .line 259
     invoke-virtual {v3, v2}, Lcom/iMe/fork/models/MultiPanelButtonState;->setPosition(I)V
 
-    .line 263
+    .line 260
     invoke-virtual {v4, v1}, Lcom/iMe/fork/models/MultiPanelButtonState;->setPosition(I)V
 
-    .line 264
+    .line 261
     invoke-interface {v0, v1, v4}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 265
+    .line 262
     invoke-interface {v0, v2, v3}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 266
+    .line 263
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 
     return-void
@@ -812,14 +812,14 @@
 .method public final updateRows()V
     .locals 3
 
-    .line 235
+    .line 232
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 236
+    .line 233
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -832,7 +832,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setEnableRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 237
+    .line 234
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -845,7 +845,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 238
+    .line 235
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getNewIsEnabled$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)Z
@@ -854,7 +854,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 239
+    .line 236
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -867,7 +867,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setHideOnScrollRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 240
+    .line 237
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -880,7 +880,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setHideOnScrollSectionRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 241
+    .line 238
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -893,7 +893,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setDialogTypeTopicsBarRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 242
+    .line 239
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -906,7 +906,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setAllButtonsRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 243
+    .line 240
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -915,7 +915,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setButtonsStartRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 244
+    .line 241
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -940,7 +940,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 245
+    .line 242
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -949,7 +949,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setButtonsEndRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 246
+    .line 243
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)I
@@ -964,7 +964,7 @@
 
     goto :goto_0
 
-    .line 248
+    .line 245
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
@@ -972,22 +972,22 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setDialogTypeTopicsBarRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 249
+    .line 246
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setAllButtonsRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 250
+    .line 247
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setButtonsStartRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 251
+    .line 248
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setButtonsEndRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V
 
-    .line 252
+    .line 249
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$setSectionInfoRow$p(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;I)V

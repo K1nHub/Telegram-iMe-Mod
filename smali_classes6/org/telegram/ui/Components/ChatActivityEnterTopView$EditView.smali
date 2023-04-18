@@ -22,14 +22,14 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 67
+    .line 55
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x2
 
     new-array p1, p1, [Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;
 
-    .line 64
+    .line 52
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditView;->buttons:[Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;
 
     return-void
@@ -40,7 +40,7 @@
 .method public addButton(Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;Landroid/widget/LinearLayout$LayoutParams;)V
     .locals 2
 
-    .line 71
+    .line 59
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v0
@@ -49,7 +49,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 73
+    .line 61
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditView;->buttons:[Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;
 
     aput-object p1, v1, v0
@@ -63,7 +63,7 @@
 .method public getButtons()[Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;
     .locals 1
 
-    .line 78
+    .line 66
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditView;->buttons:[Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;
 
     return-object v0
@@ -72,7 +72,7 @@
 .method public updateColors()V
     .locals 4
 
-    .line 82
+    .line 70
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditView;->buttons:[Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;
 
     array-length v1, v0
@@ -84,7 +84,7 @@
 
     aget-object v3, v0, v2
 
-    .line 83
+    .line 71
     invoke-virtual {v3}, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->updateColors()V
 
     add-int/lit8 v2, v2, 0x1

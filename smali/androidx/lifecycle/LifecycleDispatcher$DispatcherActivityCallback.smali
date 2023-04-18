@@ -1,6 +1,6 @@
-.class Landroidx/lifecycle/LifecycleDispatcher$DispatcherActivityCallback;
+.class public final Landroidx/lifecycle/LifecycleDispatcher$DispatcherActivityCallback;
 .super Landroidx/lifecycle/EmptyActivityLifecycleCallbacks;
-.source "LifecycleDispatcher.java"
+.source "LifecycleDispatcher.kt"
 
 
 # annotations
@@ -9,16 +9,16 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x19
     name = "DispatcherActivityCallback"
 .end annotation
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    .line 49
+    .line 45
     invoke-direct {p0}, Landroidx/lifecycle/EmptyActivityLifecycleCallbacks;-><init>()V
 
     return-void
@@ -29,20 +29,14 @@
 .method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
     .locals 0
 
-    .line 53
-    invoke-static {p1}, Landroidx/lifecycle/ReportFragment;->injectIfNeededIn(Landroid/app/Activity;)V
+    const-string p2, "activity"
 
-    return-void
-.end method
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-.method public onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .locals 0
+    .line 47
+    sget-object p2, Landroidx/lifecycle/ReportFragment;->Companion:Landroidx/lifecycle/ReportFragment$Companion;
 
-    return-void
-.end method
-
-.method public onActivityStopped(Landroid/app/Activity;)V
-    .locals 0
+    invoke-virtual {p2, p1}, Landroidx/lifecycle/ReportFragment$Companion;->injectIfNeededIn(Landroid/app/Activity;)V
 
     return-void
 .end method

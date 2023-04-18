@@ -2,15 +2,17 @@ package org.bouncycastle.asn1;
 
 import java.io.IOException;
 import java.io.OutputStream;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
 public class DEROutputStream extends ASN1OutputStream {
+    /* JADX INFO: Access modifiers changed from: package-private */
     public DEROutputStream(OutputStream outputStream) {
         super(outputStream);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1OutputStream
-    public ASN1OutputStream getDERSubStream() {
+    public DEROutputStream getDERSubStream() {
         return this;
     }
 
@@ -20,11 +22,9 @@ public class DEROutputStream extends ASN1OutputStream {
         return this;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1OutputStream
-    public void writeObject(ASN1Encodable aSN1Encodable) throws IOException {
-        if (aSN1Encodable == null) {
-            throw new IOException("null object detected");
-        }
-        aSN1Encodable.toASN1Primitive().toDERObject().encode(this);
+    public void writePrimitive(ASN1Primitive aSN1Primitive, boolean z) throws IOException {
+        aSN1Primitive.toDERObject().encode(this, z);
     }
 }

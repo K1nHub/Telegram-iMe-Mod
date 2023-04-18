@@ -1,6 +1,7 @@
 package com.google.android.exoplayer2.offline;
 
 import android.util.SparseArray;
+import androidx.profileinstaller.ProfileInstallReceiver$$ExternalSyntheticLambda0;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.source.dash.offline.DashDownloader;
 import com.google.android.exoplayer2.source.hls.offline.HlsDownloader;
@@ -18,7 +19,7 @@ public class DefaultDownloaderFactory implements DownloaderFactory {
 
     @Deprecated
     public DefaultDownloaderFactory(CacheDataSource.Factory factory) {
-        this(factory, DefaultDownloaderFactory$$ExternalSyntheticLambda0.INSTANCE);
+        this(factory, ProfileInstallReceiver$$ExternalSyntheticLambda0.INSTANCE);
     }
 
     public DefaultDownloaderFactory(CacheDataSource.Factory factory, Executor executor) {

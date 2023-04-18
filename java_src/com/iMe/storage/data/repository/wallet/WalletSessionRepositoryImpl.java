@@ -72,7 +72,7 @@ public final class WalletSessionRepositoryImpl implements WalletSessionRepositor
     @Override // com.iMe.storage.domain.repository.wallet.WalletSessionRepository
     public Observable<Result<SessionTokens>> refreshToken(String token) {
         Intrinsics.checkNotNullParameter(token, "token");
-        Observable<R> map = this.walletApi.refreshToken(new RefreshTokenRequest(token)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionRepositoryImpl$refreshToken$$inlined$mapSuccess$1(this.firebaseErrorHandler, this)));
+        Observable<R> map = this.walletApi.refreshToken(new RefreshTokenRequest(token, null, 2, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionRepositoryImpl$refreshToken$$inlined$mapSuccess$1(this.firebaseErrorHandler, this)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         Observable<Result<SessionTokens>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionRepositoryImpl$refreshToken$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
@@ -82,7 +82,7 @@ public final class WalletSessionRepositoryImpl implements WalletSessionRepositor
     @Override // com.iMe.storage.domain.repository.wallet.WalletSessionRepository
     public Observable<Result<SessionTokens>> login(String url) {
         Intrinsics.checkNotNullParameter(url, "url");
-        Observable<R> map = this.walletApi.getAuthTokensByTelegramLoginData(new SessionTokensRequest(url)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionRepositoryImpl$login$$inlined$mapSuccess$1(this.firebaseErrorHandler, this)));
+        Observable<R> map = this.walletApi.getAuthTokensByTelegramLoginData(new SessionTokensRequest(url, null, 2, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionRepositoryImpl$login$$inlined$mapSuccess$1(this.firebaseErrorHandler, this)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         Observable<Result<SessionTokens>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionRepositoryImpl$login$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");

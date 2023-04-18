@@ -1,6 +1,6 @@
 package com.iMe.fork.controller;
 
-import com.iMe.storage.data.locale.p028db.model.bookmarks.BookmarksDb;
+import com.iMe.storage.data.locale.p027db.model.bookmarks.BookmarksDb;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;

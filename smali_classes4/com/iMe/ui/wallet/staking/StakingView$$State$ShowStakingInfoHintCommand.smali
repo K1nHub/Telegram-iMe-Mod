@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/staking/StakingView$$State;)V
     .locals 1
 
-    .line 203
+    .line 221
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showStakingInfoHint"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/StakingView;)V
     .locals 0
 
-    .line 208
+    .line 226
     invoke-interface {p1}, Lcom/iMe/ui/wallet/staking/StakingView;->showStakingInfoHint()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 201
+    .line 219
     check-cast p1, Lcom/iMe/ui/wallet/staking/StakingView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/StakingView$$State$ShowStakingInfoHintCommand;->apply(Lcom/iMe/ui/wallet/staking/StakingView;)V

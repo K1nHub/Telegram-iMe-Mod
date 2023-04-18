@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.source.ads;
 
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Player;
-import com.google.android.exoplayer2.p017ui.AdViewProvider;
+import com.google.android.exoplayer2.p016ui.AdViewProvider;
 import com.google.android.exoplayer2.source.ads.AdsMediaSource;
 import com.google.android.exoplayer2.upstream.DataSpec;
 import java.io.IOException;

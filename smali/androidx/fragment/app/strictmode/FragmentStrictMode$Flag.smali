@@ -104,7 +104,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 282
+    .line 283
     new-instance v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
     const-string v1, "PENALTY_LOG"
@@ -115,7 +115,7 @@
 
     sput-object v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;->PENALTY_LOG:Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
-    .line 283
+    .line 284
     new-instance v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
     const-string v1, "PENALTY_DEATH"
@@ -126,7 +126,7 @@
 
     sput-object v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;->PENALTY_DEATH:Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
-    .line 284
+    .line 285
     new-instance v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
     const-string v1, "DETECT_FRAGMENT_REUSE"
@@ -137,7 +137,7 @@
 
     sput-object v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;->DETECT_FRAGMENT_REUSE:Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
-    .line 285
+    .line 286
     new-instance v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
     const-string v1, "DETECT_FRAGMENT_TAG_USAGE"
@@ -148,7 +148,7 @@
 
     sput-object v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;->DETECT_FRAGMENT_TAG_USAGE:Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
-    .line 286
+    .line 287
     new-instance v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
     const-string v1, "DETECT_RETAIN_INSTANCE_USAGE"
@@ -159,7 +159,7 @@
 
     sput-object v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;->DETECT_RETAIN_INSTANCE_USAGE:Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
-    .line 287
+    .line 288
     new-instance v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
     const-string v1, "DETECT_SET_USER_VISIBLE_HINT"
@@ -170,7 +170,7 @@
 
     sput-object v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;->DETECT_SET_USER_VISIBLE_HINT:Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
-    .line 288
+    .line 289
     new-instance v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
     const-string v1, "DETECT_TARGET_FRAGMENT_USAGE"
@@ -181,7 +181,7 @@
 
     sput-object v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;->DETECT_TARGET_FRAGMENT_USAGE:Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
-    .line 289
+    .line 290
     new-instance v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Flag;
 
     const-string v1, "DETECT_WRONG_FRAGMENT_CONTAINER"
@@ -209,7 +209,7 @@
         }
     .end annotation
 
-    .line 281
+    .line 282
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

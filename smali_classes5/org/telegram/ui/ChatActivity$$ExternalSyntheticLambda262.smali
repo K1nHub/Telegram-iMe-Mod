@@ -8,18 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
+.field public final synthetic f$1:[Ljava/lang/Object;
+
+.field public final synthetic f$2:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;[Ljava/lang/Object;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda262;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda262;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda262;->f$1:[Ljava/lang/Object;
+
+    iput-wide p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda262;->f$2:J
 
     return-void
 .end method
@@ -27,13 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda262;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda262;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda262;->f$1:[Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$cJr8Lb4QxtLLHyQgBgarwwRuxNI(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    iget-wide v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda262;->f$2:J
+
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$2lewm5XOWW1kHT3UcYkY8pRVJ_c(Lorg/telegram/ui/ChatActivity;[Ljava/lang/Object;J)V
 
     return-void
 .end method

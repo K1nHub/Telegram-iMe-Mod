@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView$$State;)V
     .locals 1
 
-    .line 365
+    .line 383
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string/jumbo v0, "updateWithdrawalFee"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView;)V
     .locals 0
 
-    .line 370
+    .line 388
     invoke-interface {p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView;->updateWithdrawalFee()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 363
+    .line 381
     check-cast p1, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView$$State$UpdateWithdrawalFeeCommand;->apply(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView;)V

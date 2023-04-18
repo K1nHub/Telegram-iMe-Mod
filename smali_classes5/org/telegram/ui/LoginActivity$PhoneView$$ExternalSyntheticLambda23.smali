@@ -2,60 +2,64 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lj$/util/function/Function;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/LoginActivity$PhoneView;
-
-.field public final synthetic f$1:Landroid/os/Bundle;
-
-.field public final synthetic f$2:Ljava/lang/String;
-
-.field public final synthetic f$3:Lorg/telegram/ui/LoginActivity$PhoneInputData;
-
-.field public final synthetic f$4:Lorg/telegram/tgnet/TLObject;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LoginActivity$PhoneView;Landroid/os/Bundle;Ljava/lang/String;Lorg/telegram/ui/LoginActivity$PhoneInputData;Lorg/telegram/tgnet/TLObject;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;->INSTANCE:Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/LoginActivity$PhoneView;
-
-    iput-object p2, p0, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;->f$1:Landroid/os/Bundle;
-
-    iput-object p3, p0, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;->f$2:Ljava/lang/String;
-
-    iput-object p4, p0, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;->f$3:Lorg/telegram/ui/LoginActivity$PhoneInputData;
-
-    iput-object p5, p0, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;->f$4:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 7
+.method public synthetic andThen(Lj$/util/function/Function;)Lj$/util/function/Function;
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/LoginActivity$PhoneView;
+    invoke-static {p0, p1}, Lj$/util/function/Function$-CC;->$default$andThen(Lj$/util/function/Function;Lj$/util/function/Function;)Lj$/util/function/Function;
 
-    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;->f$1:Landroid/os/Bundle;
+    move-result-object p1
 
-    iget-object v2, p0, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;->f$2:Ljava/lang/String;
+    return-object p1
+.end method
 
-    iget-object v3, p0, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;->f$3:Lorg/telegram/ui/LoginActivity$PhoneInputData;
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v4, p0, Lorg/telegram/ui/LoginActivity$PhoneView$$ExternalSyntheticLambda23;->f$4:Lorg/telegram/tgnet/TLObject;
+    check-cast p1, Lorg/telegram/ui/CountrySelectActivity$Country;
 
-    move-object v5, p1
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneView;->$r8$lambda$B6gWYIwm5PmjYveFckU6O7pYC0M(Lorg/telegram/ui/CountrySelectActivity$Country;)Ljava/lang/String;
 
-    move-object v6, p2
+    move-result-object p1
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/LoginActivity$PhoneView;->$r8$lambda$nVQs_UqHjp3OVz_yMlHaKgyBiMk(Lorg/telegram/ui/LoginActivity$PhoneView;Landroid/os/Bundle;Ljava/lang/String;Lorg/telegram/ui/LoginActivity$PhoneInputData;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    return-object p1
+.end method
 
-    return-void
+.method public synthetic compose(Lj$/util/function/Function;)Lj$/util/function/Function;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/Function$-CC;->$default$compose(Lj$/util/function/Function;Lj$/util/function/Function;)Lj$/util/function/Function;
+
+    move-result-object p1
+
+    return-object p1
 .end method

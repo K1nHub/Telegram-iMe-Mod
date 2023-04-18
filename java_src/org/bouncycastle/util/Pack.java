@@ -61,6 +61,11 @@ public abstract class Pack {
         }
     }
 
+    public static void shortToBigEndian(short s, byte[] bArr, int i) {
+        bArr[i] = (byte) (s >>> 8);
+        bArr[i + 1] = (byte) s;
+    }
+
     public static void shortToLittleEndian(short s, byte[] bArr, int i) {
         bArr[i] = (byte) s;
         bArr[i + 1] = (byte) (s >>> 8);

@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchView$$State;J)V
     .locals 1
 
-    .line 99
+    .line 117
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "closeScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 101
+    .line 119
     iput-wide p2, p0, Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchView$$State$CloseScreenCommand;->delay:J
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchView;)V
     .locals 2
 
-    .line 106
+    .line 124
     iget-wide v0, p0, Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchView$$State$CloseScreenCommand;->delay:J
 
     invoke-interface {p1, v0, v1}, Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchView;->closeScreen(J)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 95
+    .line 113
     check-cast p1, Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchView$$State$CloseScreenCommand;->apply(Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchView;)V

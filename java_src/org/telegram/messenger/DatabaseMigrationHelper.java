@@ -182,7 +182,7 @@ public class DatabaseMigrationHelper {
                     byteBufferValue2.reuse();
                     if (TLdeserialize != null) {
                         TLRPC$TL_chatFull tLRPC$TL_chatFull = new TLRPC$TL_chatFull();
-                        tLRPC$TL_chatFull.f1503id = intValue2;
+                        tLRPC$TL_chatFull.f1428id = intValue2;
                         tLRPC$TL_chatFull.chat_photo = new TLRPC$TL_photoEmpty();
                         tLRPC$TL_chatFull.notify_settings = new TLRPC$TL_peerNotifySettingsEmpty_layer77();
                         tLRPC$TL_chatFull.exported_invite = null;
@@ -1181,7 +1181,14 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase.executeFast("CREATE TABLE bot_keyboard_topics(uid INTEGER, tid INTEGER, mid INTEGER, info BLOB, PRIMARY KEY(uid, tid))").stepThis().dispose();
             sQLiteDatabase.executeFast("CREATE INDEX IF NOT EXISTS bot_keyboard_topics_idx_mid_v2 ON bot_keyboard_topics(mid, uid, tid);").stepThis().dispose();
             sQLiteDatabase.executeFast("PRAGMA user_version = 115").stepThis().dispose();
-            return 115;
+            i6 = 115;
+        }
+        if (i6 == 115) {
+            sQLiteDatabase.executeFast("CREATE INDEX IF NOT EXISTS idx_to_reply_messages_v2 ON messages_v2(reply_to_message_id, mid);").stepThis().dispose();
+            sQLiteDatabase.executeFast("CREATE INDEX IF NOT EXISTS idx_to_reply_scheduled_messages_v2 ON scheduled_messages_v2(reply_to_message_id, mid);").stepThis().dispose();
+            sQLiteDatabase.executeFast("CREATE INDEX IF NOT EXISTS idx_to_reply_messages_topics ON messages_topics(reply_to_message_id, mid);").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 116").stepThis().dispose();
+            return 116;
         }
         return i6;
     }
@@ -1224,7 +1231,7 @@ public class DatabaseMigrationHelper {
             FileLog.m45e(e2);
             z = false;
         }
-        if (intValue != 115) {
+        if (intValue != 116) {
             FileLog.m47e("can't restore database from version " + intValue);
             return false;
         }

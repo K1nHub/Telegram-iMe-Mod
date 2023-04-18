@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 554
+    .line 567
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public createFromXmlInner(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
     .locals 4
 
-    .line 558
+    .line 571
     invoke-interface {p3}, Landroid/util/AttributeSet;->getClassAttribute()Ljava/lang/String;
 
     move-result-object v0
@@ -41,11 +41,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 561
+    .line 574
     :try_start_0
     const-class v2, Landroidx/appcompat/widget/ResourceManagerInternal$DrawableDelegate;
 
-    .line 562
+    .line 575
     invoke-virtual {v2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v2
@@ -56,7 +56,7 @@
 
     const-class v2, Landroid/graphics/drawable/Drawable;
 
-    .line 563
+    .line 576
     invoke-virtual {v0, v2}, Ljava/lang/Class;->asSubclass(Ljava/lang/Class;)Ljava/lang/Class;
 
     move-result-object v0
@@ -65,7 +65,7 @@
 
     new-array v3, v2, [Ljava/lang/Class;
 
-    .line 564
+    .line 577
     invoke-virtual {v0, v3}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object v0
@@ -78,14 +78,14 @@
 
     check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    .line 565
+    .line 578
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x15
 
     if-lt v2, v3, :cond_0
 
-    .line 566
+    .line 579
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -94,7 +94,7 @@
 
     goto :goto_0
 
-    .line 569
+    .line 582
     :cond_0
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -114,7 +114,7 @@
 
     const-string p3, "Exception while inflating <drawable>"
 
-    .line 573
+    .line 586
     invoke-static {p2, p3, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_1

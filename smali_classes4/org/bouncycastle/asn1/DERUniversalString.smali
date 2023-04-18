@@ -86,7 +86,7 @@
     return p1
 .end method
 
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -94,13 +94,11 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/DERUniversalString;->getOctets()[B
-
-    move-result-object v0
+    iget-object v0, p0, Lorg/bouncycastle/asn1/DERUniversalString;->string:[B
 
     const/16 v1, 0x1c
 
-    invoke-virtual {p1, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(I[B)V
+    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZI[B)V
 
     return-void
 .end method
@@ -127,18 +125,6 @@
     return v0
 .end method
 
-.method public getOctets()[B
-    .locals 1
-
-    iget-object v0, p0, Lorg/bouncycastle/asn1/DERUniversalString;->string:[B
-
-    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public getString()Ljava/lang/String;
     .locals 5
 
@@ -148,22 +134,12 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    new-instance v1, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    new-instance v2, Lorg/bouncycastle/asn1/ASN1OutputStream;
-
-    invoke-direct {v2, v1}, Lorg/bouncycastle/asn1/ASN1OutputStream;-><init>(Ljava/io/OutputStream;)V
-
     :try_start_0
-    invoke-virtual {v2, p0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Object;->getEncoded()[B
 
     move-result-object v1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v2, 0x0
 

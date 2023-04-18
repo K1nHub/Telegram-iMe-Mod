@@ -51,7 +51,7 @@
 .method public bridge synthetic call()Ljava/lang/Object;
     .locals 1
 
-    .line 101
+    .line 151
     invoke-virtual {p0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$1$1;->call()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -62,7 +62,7 @@
 .method public final call()V
     .locals 2
 
-    .line 101
+    .line 151
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$1$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
     invoke-static {v0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->access$getCryptoAccessManager$p(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;

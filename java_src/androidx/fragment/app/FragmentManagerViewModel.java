@@ -4,6 +4,7 @@ import android.util.Log;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
+import androidx.lifecycle.viewmodel.CreationExtras;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -12,6 +13,11 @@ import java.util.Iterator;
 /* loaded from: classes.dex */
 public final class FragmentManagerViewModel extends ViewModel {
     private static final ViewModelProvider.Factory FACTORY = new ViewModelProvider.Factory() { // from class: androidx.fragment.app.FragmentManagerViewModel.1
+        @Override // androidx.lifecycle.ViewModelProvider.Factory
+        public /* synthetic */ ViewModel create(Class cls, CreationExtras creationExtras) {
+            return ViewModelProvider.Factory.CC.$default$create(this, cls, creationExtras);
+        }
+
         @Override // androidx.lifecycle.ViewModelProvider.Factory
         public <T extends ViewModel> T create(Class<T> cls) {
             return new FragmentManagerViewModel(true);

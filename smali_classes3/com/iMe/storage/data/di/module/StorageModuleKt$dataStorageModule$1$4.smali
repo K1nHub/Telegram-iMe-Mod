@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStorageModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StorageModule.kt\ncom/iMe/storage/data/di/module/StorageModuleKt$dataStorageModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,27:1\n127#2,5:28\n*S KotlinDebug\n*F\n+ 1 StorageModule.kt\ncom/iMe/storage/data/di/module/StorageModuleKt$dataStorageModule$1$4\n*L\n24#1:28,5\n*E\n"
+    value = "SMAP\nStorageModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StorageModule.kt\ncom/iMe/storage/data/di/module/StorageModuleKt$dataStorageModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,27:1\n129#2,5:28\n*S KotlinDebug\n*F\n+ 1 StorageModule.kt\ncom/iMe/storage/data/di/module/StorageModuleKt$dataStorageModule$1$4\n*L\n24#1:28,5\n*E\n"
 .end annotation
 
 
@@ -79,7 +79,7 @@
 
     move-result-object v0
 
-    .line 131
+    .line 133
     const-class v1, Lcom/google/gson/Gson;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

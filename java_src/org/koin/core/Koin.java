@@ -2,9 +2,12 @@ package org.koin.core;
 
 import java.util.List;
 import java.util.Set;
+import kotlin.Pair;
+import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KClass;
+import org.koin.core.extension.ExtensionManager;
 import org.koin.core.logger.EmptyLogger;
 import org.koin.core.logger.Level;
 import org.koin.core.logger.Logger;
@@ -15,7 +18,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.registry.InstanceRegistry;
 import org.koin.core.registry.PropertyRegistry;
 import org.koin.core.registry.ScopeRegistry;
-import org.koin.core.time.MeasureKt;
+import org.koin.p043mp.KoinPlatformTimeTools;
 /* compiled from: Koin.kt */
 /* loaded from: classes4.dex */
 public final class Koin {
@@ -25,6 +28,7 @@ public final class Koin {
 
     public Koin() {
         new PropertyRegistry(this);
+        new ExtensionManager(this);
         this.logger = new EmptyLogger();
     }
 
@@ -65,13 +69,19 @@ public final class Koin {
     }
 
     public final void createEagerInstances() {
-        this.logger.info("create eager instances ...");
-        if (this.logger.isAt(Level.DEBUG)) {
-            double measureDuration = MeasureKt.measureDuration(new Koin$createEagerInstances$duration$1(this));
-            Logger logger = this.logger;
-            logger.debug("eager instances created in " + measureDuration + " ms");
-            return;
+        KoinPlatformTimeTools koinPlatformTimeTools;
+        Logger logger = this.logger;
+        Level level = Level.DEBUG;
+        if (logger.isAt(level)) {
+            logger.display(level, "Eager instances ...");
         }
+        long timeInNanoSeconds = KoinPlatformTimeTools.INSTANCE.getTimeInNanoSeconds();
         this.instanceRegistry.createAllEagerInstances$koin_core();
+        double doubleValue = ((Number) new Pair(Unit.INSTANCE, Double.valueOf((koinPlatformTimeTools.getTimeInNanoSeconds() - timeInNanoSeconds) / 1000000.0d)).getSecond()).doubleValue();
+        Logger logger2 = this.logger;
+        String str = "Eager instances created in " + doubleValue + " ms";
+        if (logger2.isAt(level)) {
+            logger2.display(level, str);
+        }
     }
 }

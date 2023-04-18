@@ -6,8 +6,8 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.vision.label.ImageLabeler;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.vision.label.FirebaseVisionImageLabel;
-import com.google.firebase.p021ml.vision.label.FirebaseVisionOnDeviceImageLabelerOptions;
+import com.google.firebase.p020ml.vision.label.FirebaseVisionImageLabel;
+import com.google.firebase.p020ml.vision.label.FirebaseVisionOnDeviceImageLabelerOptions;
 import java.util.List;
 /* loaded from: classes.dex */
 public final class zzqv implements zzno<List<FirebaseVisionImageLabel>, zzqp>, zznx {
@@ -39,7 +39,7 @@ public final class zzqv implements zzno<List<FirebaseVisionImageLabel>, zzqp>, z
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public final synchronized java.util.List<com.google.firebase.p021ml.vision.label.FirebaseVisionImageLabel> zza(com.google.android.gms.internal.firebase_ml.zzqp r9) throws com.google.firebase.p021ml.common.FirebaseMLException {
+    public final synchronized java.util.List<com.google.firebase.p020ml.vision.label.FirebaseVisionImageLabel> zza(com.google.android.gms.internal.firebase_ml.zzqp r9) throws com.google.firebase.p020ml.common.FirebaseMLException {
         /*
             r8 = this;
             monitor-enter(r8)

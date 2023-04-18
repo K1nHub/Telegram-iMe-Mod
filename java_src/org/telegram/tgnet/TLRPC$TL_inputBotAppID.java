@@ -5,18 +5,18 @@ public class TLRPC$TL_inputBotAppID extends TLRPC$InputBotApp {
     public long access_hash;
 
     /* renamed from: id */
-    public long f1561id;
+    public long f1486id;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1561id = abstractSerializedData.readInt64(z);
+        this.f1486id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1561id);
+        abstractSerializedData.writeInt64(this.f1486id);
         abstractSerializedData.writeInt64(this.access_hash);
     }
 }

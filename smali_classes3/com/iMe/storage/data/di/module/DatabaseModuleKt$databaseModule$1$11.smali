@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/storage/data/locale/db/dao/minor/catalog/CatalogCategoryDao;",
+        "Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDatabaseModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,42:1\n127#2,5:43\n*S KotlinDebug\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$11\n*L\n29#1:43,5\n*E\n"
+    value = "SMAP\nDatabaseModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,43:1\n129#2,5:44\n*S KotlinDebug\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$11\n*L\n29#1:44,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/locale/db/dao/minor/catalog/CatalogCategoryDao;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
     .locals 1
 
     const-string v0, "$this$single"
@@ -72,8 +72,8 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 131
-    const-class p2, Lcom/iMe/storage/data/locale/db/database/AppCacheDatabase;
+    .line 133
+    const-class p2, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -85,10 +85,10 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/storage/data/locale/db/database/AppCacheDatabase;
+    check-cast p1, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase;
 
     .line 29
-    invoke-virtual {p1}, Lcom/iMe/storage/data/locale/db/database/AppCacheDatabase;->catalogCategoryDao()Lcom/iMe/storage/data/locale/db/dao/minor/catalog/CatalogCategoryDao;
+    invoke-virtual {p1}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase;->playlistsDao()Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
     move-result-object p1
 
@@ -103,7 +103,7 @@
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$11;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/locale/db/dao/minor/catalog/CatalogCategoryDao;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$11;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
     move-result-object p1
 

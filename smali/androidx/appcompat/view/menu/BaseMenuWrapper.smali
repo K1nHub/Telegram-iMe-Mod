@@ -50,50 +50,51 @@
     .line 39
     instance-of v0, p1, Landroidx/core/internal/view/SupportMenuItem;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     .line 40
-    move-object v0, p1
-
-    check-cast v0, Landroidx/core/internal/view/SupportMenuItem;
+    check-cast p1, Landroidx/core/internal/view/SupportMenuItem;
 
     .line 43
-    iget-object v1, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
+    iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     .line 44
-    new-instance v1, Landroidx/collection/SimpleArrayMap;
+    new-instance v0, Landroidx/collection/SimpleArrayMap;
 
-    invoke-direct {v1}, Landroidx/collection/SimpleArrayMap;-><init>()V
+    invoke-direct {v0}, Landroidx/collection/SimpleArrayMap;-><init>()V
 
-    iput-object v1, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
+    iput-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
 
     .line 48
     :cond_0
-    iget-object v1, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
+    iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
 
-    invoke-virtual {v1, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    check-cast p1, Landroid/view/MenuItem;
+    check-cast v0, Landroid/view/MenuItem;
 
-    if-nez p1, :cond_1
+    if-nez v0, :cond_1
 
     .line 52
-    new-instance p1, Landroidx/appcompat/view/menu/MenuItemWrapperICS;
+    new-instance v0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;
 
     iget-object v1, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mContext:Landroid/content/Context;
 
-    invoke-direct {p1, v1, v0}, Landroidx/appcompat/view/menu/MenuItemWrapperICS;-><init>(Landroid/content/Context;Landroidx/core/internal/view/SupportMenuItem;)V
+    invoke-direct {v0, v1, p1}, Landroidx/appcompat/view/menu/MenuItemWrapperICS;-><init>(Landroid/content/Context;Landroidx/core/internal/view/SupportMenuItem;)V
 
     .line 53
     iget-object v1, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
 
-    invoke-virtual {v1, v0, p1}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p1, v0}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_1
+    return-object v0
+
+    :cond_2
     return-object p1
 .end method
 

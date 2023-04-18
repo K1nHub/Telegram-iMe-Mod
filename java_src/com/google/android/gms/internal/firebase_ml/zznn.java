@@ -7,7 +7,7 @@ import android.os.Message;
 import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.firebase.p021ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.FirebaseMLException;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 /* loaded from: classes.dex */

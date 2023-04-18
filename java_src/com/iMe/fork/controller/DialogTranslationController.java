@@ -1,9 +1,10 @@
 package com.iMe.fork.controller;
 
+import com.google.android.exoplayer2.util.Util;
 import com.iMe.fork.controller.DialogTranslationController;
 import com.iMe.fork.models.backup.Backup;
-import com.iMe.storage.data.locale.p028db.dao.main.DialogTranslationSettingsDao;
-import com.iMe.storage.data.locale.p028db.model.translation.DialogTranslationSettingsDb;
+import com.iMe.storage.data.locale.p027db.dao.main.DialogTranslationSettingsDao;
+import com.iMe.storage.data.locale.p027db.model.translation.DialogTranslationSettingsDb;
 import com.iMe.storage.data.mapper.dialogs.DialogSettingsMappingKt;
 import com.iMe.storage.domain.model.dialogs.DialogTranslationSettings;
 import java.util.ArrayList;
@@ -11,11 +12,13 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.TuplesKt;
+import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
@@ -28,13 +31,13 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
-import p035j$.util.concurrent.ConcurrentHashMap;
-import p035j$.util.concurrent.ConcurrentMap$EL;
-import p035j$.util.function.Function;
+import p034j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentMap$EL;
+import p034j$.util.function.Function;
 /* compiled from: DialogTranslationController.kt */
 /* loaded from: classes3.dex */
 public final class DialogTranslationController extends BaseController implements KoinComponent {
@@ -105,7 +108,7 @@ public final class DialogTranslationController extends BaseController implements
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(allTranslationSettingsForUser, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (DialogTranslationSettingsDb dialogTranslationSettingsDb : allTranslationSettingsForUser) {
-            arrayList.add(TuplesKt.m94to(Long.valueOf(dialogTranslationSettingsDb.getDialogId()), DialogSettingsMappingKt.mapToDomain(dialogTranslationSettingsDb)));
+            arrayList.add(TuplesKt.m80to(Long.valueOf(dialogTranslationSettingsDb.getDialogId()), DialogSettingsMappingKt.mapToDomain(dialogTranslationSettingsDb)));
         }
         MapsKt__MapsKt.putAll(map, arrayList);
     }
@@ -155,31 +158,34 @@ public final class DialogTranslationController extends BaseController implements
         private Companion() {
         }
 
-        public final Map<String, String> getVoiceTranslateLanguages() {
-            return DialogTranslationController.voiceTranslateLanguages;
-        }
-
         public final String getCurrentLocale() {
             Object obj;
             String str;
-            boolean contains$default;
-            Iterator<T> it = getVoiceTranslateLanguages().entrySet().iterator();
+            boolean contains;
+            Iterator it = DialogTranslationController.voiceTranslateLanguages.entrySet().iterator();
             while (true) {
-                obj = null;
                 if (!it.hasNext()) {
+                    obj = null;
                     break;
                 }
-                Object next = it.next();
-                String languageTag = LocaleController.getInstance().getCurrentLocale().toLanguageTag();
-                Intrinsics.checkNotNullExpressionValue(languageTag, "getInstance().currentLocale.toLanguageTag()");
-                contains$default = StringsKt__StringsKt.contains$default((CharSequence) ((Map.Entry) next).getKey(), (CharSequence) languageTag, false, 2, (Object) null);
-                if (contains$default) {
-                    obj = next;
+                obj = it.next();
+                Map.Entry entry = (Map.Entry) obj;
+                String[] systemLanguageCodes = Util.getSystemLanguageCodes();
+                Intrinsics.checkNotNullExpressionValue(systemLanguageCodes, "getSystemLanguageCodes()");
+                String langCode = (String) ArraysKt.firstOrNull(systemLanguageCodes);
+                if (langCode == null) {
+                    langCode = LocaleController.getInstance().getCurrentLocale().toLanguageTag();
+                }
+                Intrinsics.checkNotNullExpressionValue(langCode, "langCode");
+                String lowerCase = langCode.toLowerCase(Locale.ROOT);
+                Intrinsics.checkNotNullExpressionValue(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
+                contains = StringsKt__StringsKt.contains((CharSequence) entry.getKey(), (CharSequence) lowerCase, true);
+                if (contains) {
                     break;
                 }
             }
-            Map.Entry entry = (Map.Entry) obj;
-            return (entry == null || (str = (String) entry.getKey()) == null) ? "en-US" : str;
+            Map.Entry entry2 = (Map.Entry) obj;
+            return (entry2 == null || (str = (String) entry2.getKey()) == null) ? "en-US" : str;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -193,19 +199,19 @@ public final class DialogTranslationController extends BaseController implements
             Integer valueOf = Integer.valueOf(i);
             final DialogTranslationController$Companion$getInstance$1 dialogTranslationController$Companion$getInstance$1 = new DialogTranslationController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.DialogTranslationController$Companion$$ExternalSyntheticLambda0
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
                     DialogTranslationController instance$lambda$1;
                     instance$lambda$1 = DialogTranslationController.Companion.getInstance$lambda$1(Function1.this, obj);
                     return instance$lambda$1;
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }
@@ -217,7 +223,7 @@ public final class DialogTranslationController extends BaseController implements
 
     static {
         Map<String, String> mapOf;
-        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m94to("ru-RU", "Russian (Russia)"), TuplesKt.m94to("ja-JP", "Japanese (Japan)"), TuplesKt.m94to("hi-IN", "Hindi (India)"), TuplesKt.m94to("fr-FR", "French (France)"), TuplesKt.m94to("pt-PT", "Portuguese (Portugal)"), TuplesKt.m94to("tr-TR", "Turkish (Turkey)"), TuplesKt.m94to("fa-IR", "Persian (Iran)"), TuplesKt.m94to("es-ES", "Spanish (Spain)"), TuplesKt.m94to("de-DE", "German (Germany)"), TuplesKt.m94to("ko-KR", "Korean (South Korea)"), TuplesKt.m94to("it-IT", "Italian (Italy)"), TuplesKt.m94to("ar-AE", "Arabic (United Arab Emirates)"), TuplesKt.m94to("jv-ID", "Javanese (Indonesia)"), TuplesKt.m94to("yue-Hant-HK", "Vietnamese (Vietnam)"), TuplesKt.m94to("vi-VN", "Chinese, Cantonese (Traditional, Hong Kong)"), TuplesKt.m94to("zh-TW (cmn-Hant-TW)", "Chinese, Mandarin (Traditional, Taiwan)"), TuplesKt.m94to("az-AZ", "Azerbaijani (Azerbaijan)"), TuplesKt.m94to("uz-UZ", "Uzbek (Uzbekistan)"), TuplesKt.m94to("uk-UA", "Ukrainian (Ukraine)"), TuplesKt.m94to("en-US", "English (United States)"), TuplesKt.m94to("en-GB", "English (United Kingdom)"));
+        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m80to("ru-RU", "Russian (Russia)"), TuplesKt.m80to("ja-JP", "Japanese (Japan)"), TuplesKt.m80to("hi-IN", "Hindi (India)"), TuplesKt.m80to("fr-FR", "French (France)"), TuplesKt.m80to("pt-PT", "Portuguese (Portugal)"), TuplesKt.m80to("tr-TR", "Turkish (Turkey)"), TuplesKt.m80to("fa-IR", "Persian (Iran)"), TuplesKt.m80to("es-ES", "Spanish (Spain)"), TuplesKt.m80to("de-DE", "German (Germany)"), TuplesKt.m80to("ko-KR", "Korean (South Korea)"), TuplesKt.m80to("it-IT", "Italian (Italy)"), TuplesKt.m80to("ar-AE", "Arabic (United Arab Emirates)"), TuplesKt.m80to("jv-ID", "Javanese (Indonesia)"), TuplesKt.m80to("yue-Hant-HK", "Vietnamese (Vietnam)"), TuplesKt.m80to("vi-VN", "Chinese, Cantonese (Traditional, Hong Kong)"), TuplesKt.m80to("zh-TW (cmn-Hant-TW)", "Chinese, Mandarin (Traditional, Taiwan)"), TuplesKt.m80to("az-AZ", "Azerbaijani (Azerbaijan)"), TuplesKt.m80to("uz-UZ", "Uzbek (Uzbekistan)"), TuplesKt.m80to("uk-UA", "Ukrainian (Ukraine)"), TuplesKt.m80to("en-US", "English (United States)"), TuplesKt.m80to("en-GB", "English (United Kingdom)"));
         voiceTranslateLanguages = mapOf;
         accountInstances = new ConcurrentHashMap<>(5);
     }

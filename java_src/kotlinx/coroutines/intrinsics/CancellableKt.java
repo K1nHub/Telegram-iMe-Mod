@@ -18,10 +18,9 @@ public final class CancellableKt {
             createCoroutineUnintercepted = IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted(function1, continuation);
             intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(createCoroutineUnintercepted);
             Result.Companion companion = Result.Companion;
-            DispatchedContinuationKt.resumeCancellableWith$default(intercepted, Result.m1571constructorimpl(Unit.INSTANCE), null, 2, null);
+            DispatchedContinuationKt.resumeCancellableWith$default(intercepted, Result.m1555constructorimpl(Unit.INSTANCE), null, 2, null);
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.Companion;
-            continuation.resumeWith(Result.m1571constructorimpl(ResultKt.createFailure(th)));
+            dispatcherFailure(continuation, th);
         }
     }
 
@@ -39,10 +38,9 @@ public final class CancellableKt {
             createCoroutineUnintercepted = IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted(function2, r, continuation);
             intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(createCoroutineUnintercepted);
             Result.Companion companion = Result.Companion;
-            DispatchedContinuationKt.resumeCancellableWith(intercepted, Result.m1571constructorimpl(Unit.INSTANCE), function1);
+            DispatchedContinuationKt.resumeCancellableWith(intercepted, Result.m1555constructorimpl(Unit.INSTANCE), function1);
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.Companion;
-            continuation.resumeWith(Result.m1571constructorimpl(ResultKt.createFailure(th)));
+            dispatcherFailure(continuation, th);
         }
     }
 
@@ -51,10 +49,15 @@ public final class CancellableKt {
         try {
             intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(continuation);
             Result.Companion companion = Result.Companion;
-            DispatchedContinuationKt.resumeCancellableWith$default(intercepted, Result.m1571constructorimpl(Unit.INSTANCE), null, 2, null);
+            DispatchedContinuationKt.resumeCancellableWith$default(intercepted, Result.m1555constructorimpl(Unit.INSTANCE), null, 2, null);
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.Companion;
-            continuation2.resumeWith(Result.m1571constructorimpl(ResultKt.createFailure(th)));
+            dispatcherFailure(continuation2, th);
         }
+    }
+
+    private static final void dispatcherFailure(Continuation<?> continuation, Throwable th) {
+        Result.Companion companion = Result.Companion;
+        continuation.resumeWith(Result.m1555constructorimpl(ResultKt.createFailure(th)));
+        throw th;
     }
 }

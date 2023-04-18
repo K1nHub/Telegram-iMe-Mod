@@ -16,11 +16,22 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMusicActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MusicActivity.kt\ncom/iMe/fork/ui/fragment/MusicActivity\n+ 2 LongSparseArray.kt\nandroidx/core/util/LongSparseArrayKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 7 CommonExt.kt\ncom/iMe/storage/data/utils/extentions/CommonExtKt\n*L\n1#1,496:1\n104#2,4:497\n13579#3:501\n13580#3:506\n191#4,4:502\n1855#5,2:507\n1#6:509\n6#7,6:510\n*S KotlinDebug\n*F\n+ 1 MusicActivity.kt\ncom/iMe/fork/ui/fragment/MusicActivity\n*L\n259#1:497,4\n280#1:501\n280#1:506\n281#1:502,4\n296#1:507,2\n118#1:510,6\n*E\n"
+    value = "SMAP\nMusicActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MusicActivity.kt\ncom/iMe/fork/ui/fragment/MusicActivity\n+ 2 LongSparseArray.kt\nandroidx/core/util/LongSparseArrayKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 7 CommonExt.kt\ncom/iMe/storage/data/utils/extentions/CommonExtKt\n*L\n1#1,496:1\n104#2,4:497\n13579#3:501\n13580#3:506\n205#4,4:502\n1855#5,2:507\n1#6:509\n6#7,6:510\n*S KotlinDebug\n*F\n+ 1 MusicActivity.kt\ncom/iMe/fork/ui/fragment/MusicActivity\n*L\n259#1:497,4\n280#1:501\n280#1:506\n281#1:502,4\n296#1:507,2\n118#1:510,6\n*E\n"
 .end annotation
 
 
 # static fields
+.field static final synthetic $$delegatedProperties:[Lkotlin/reflect/KProperty;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Lkotlin/reflect/KProperty<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public static final Companion:Lcom/iMe/fork/ui/fragment/MusicActivity$Companion;
 
 .field private static final notifications:[I
@@ -37,7 +48,7 @@
     .end annotation
 .end field
 
-.field private final albumsAdapter$delegate:Lkotlin/Lazy;
+.field private final albumsAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
 .field private final bots:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -49,7 +60,7 @@
     .end annotation
 .end field
 
-.field private final botsAdapter$delegate:Lkotlin/Lazy;
+.field private final botsAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
 .field private final channels:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -61,7 +72,7 @@
     .end annotation
 .end field
 
-.field private final channelsAdapter$delegate:Lkotlin/Lazy;
+.field private final channelsAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
 .field private final countsMap:Landroid/util/LongSparseArray;
     .annotation system Ldalvik/annotation/Signature;
@@ -73,7 +84,7 @@
     .end annotation
 .end field
 
-.field private final deviceAdapter$delegate:Lkotlin/Lazy;
+.field private final deviceAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
 .field private deviceLoading:Z
 
@@ -95,14 +106,6 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$1wCiA3J4wHvuOu6Dzl-bENNA0NA(Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/MusicActivity;->showDeviceMusicDeleteConfirmDialog$lambda$24(Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$2tzuHnzusXzvEVF0gXarW8WtpCU(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
     .locals 0
 
@@ -111,26 +114,18 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$CMSH-5Z-Sflm5fVqSvCNkXxDGg0(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
+.method public static synthetic $r8$lambda$73Iy6SEW2lv_WVt6LBbppwnP0y8(Lcom/iMe/fork/ui/fragment/MusicActivity;Lorg/telegram/messenger/MessageObject;I)V
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/fork/ui/fragment/MusicActivity;->notifyDialogsAdapters$lambda$19(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
+    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/MusicActivity;->showDeviceMusicOptions$lambda$21(Lcom/iMe/fork/ui/fragment/MusicActivity;Lorg/telegram/messenger/MessageObject;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$MfksmPrU2XH59ABH-DEPTds5t2I(Lcom/iMe/fork/ui/fragment/MusicActivity;Lorg/telegram/messenger/MessageObject;I)V
+.method public static synthetic $r8$lambda$V2Ao6kET0ez3b4AZCPHyOeJGpB8(ZLorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/MusicActivity;->showDeviceMusicOptions$lambda$20(Lcom/iMe/fork/ui/fragment/MusicActivity;Lorg/telegram/messenger/MessageObject;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$Oyya20Bj-8--eRSPkiDIhwPs9Ew(Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/iMe/fork/ui/fragment/MusicActivity;->showDeviceMusicDeleteConfirmDialog$lambda$24$lambda$23(Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;)V
+    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/MusicActivity;->showDeviceMusicDeleteConfirmDialog$lambda$25$lambda$24$lambda$23$lambda$22(ZLorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;)V
 
     return-void
 .end method
@@ -151,56 +146,138 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$lVtK4RJMEQ1j6BOXPLDgceXF_hA(ZLorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;)V
+.method public static synthetic $r8$lambda$klA4u5doZtw-VSss5Q6OCwuNiQg(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/MusicActivity;->showDeviceMusicDeleteConfirmDialog$lambda$24$lambda$23$lambda$22$lambda$21(ZLorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;)V
+    invoke-static {p0}, Lcom/iMe/fork/ui/fragment/MusicActivity;->notifyDialogsAdapters$lambda$20(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$vfmO-4W3CBKlNQW5l0KrrtPAGxo(Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/MusicActivity;->showDeviceMusicDeleteConfirmDialog$lambda$25(Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$zmPJFqgwohg9BsrAxzgZkDru4kQ(Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/fork/ui/fragment/MusicActivity;->showDeviceMusicDeleteConfirmDialog$lambda$25$lambda$24(Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;)V
 
     return-void
 .end method
 
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 9
+
+    const-class v0, Lcom/iMe/fork/ui/fragment/MusicActivity;
+
+    const/4 v1, 0x4
+
+    new-array v2, v1, [Lkotlin/reflect/KProperty;
+
+    .line 50
+    new-instance v3, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v4, "albumsAdapter"
+
+    const-string v5, "getAlbumsAdapter()Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;"
+
+    const/4 v6, 0x0
+
+    invoke-direct {v3, v0, v4, v5, v6}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v3
+
+    aput-object v3, v2, v6
+
+    .line 51
+    new-instance v3, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v4, "channelsAdapter"
+
+    const-string v5, "getChannelsAdapter()Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;"
+
+    invoke-direct {v3, v0, v4, v5, v6}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v3
+
+    const/4 v4, 0x1
+
+    aput-object v3, v2, v4
+
+    .line 52
+    new-instance v3, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v5, "botsAdapter"
+
+    const-string v7, "getBotsAdapter()Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;"
+
+    invoke-direct {v3, v0, v5, v7, v6}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v3
+
+    const/4 v5, 0x2
+
+    aput-object v3, v2, v5
+
+    .line 53
+    new-instance v3, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v7, "deviceAdapter"
+
+    const-string v8, "getDeviceAdapter()Lcom/iMe/fork/ui/fragment/MusicActivity$DeviceAdapter;"
+
+    invoke-direct {v3, v0, v7, v8, v6}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v0
+
+    const/4 v3, 0x3
+
+    aput-object v0, v2, v3
+
+    sput-object v2, Lcom/iMe/fork/ui/fragment/MusicActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
     new-instance v0, Lcom/iMe/fork/ui/fragment/MusicActivity$Companion;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v1}, Lcom/iMe/fork/ui/fragment/MusicActivity$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {v0, v2}, Lcom/iMe/fork/ui/fragment/MusicActivity$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     sput-object v0, Lcom/iMe/fork/ui/fragment/MusicActivity;->Companion:Lcom/iMe/fork/ui/fragment/MusicActivity$Companion;
 
-    const/4 v0, 0x4
-
-    new-array v0, v0, [I
+    new-array v0, v1, [I
 
     .line 488
     sget v1, Lorg/telegram/messenger/NotificationCenter;->mediaCountDidLoad:I
 
-    const/4 v2, 0x0
-
-    aput v1, v0, v2
+    aput v1, v0, v6
 
     .line 489
     sget v1, Lorg/telegram/messenger/NotificationCenter;->messagePlayingDidReset:I
 
-    const/4 v2, 0x1
-
-    aput v1, v0, v2
+    aput v1, v0, v4
 
     .line 490
     sget v1, Lorg/telegram/messenger/NotificationCenter;->messagePlayingDidStart:I
 
-    const/4 v2, 0x2
-
-    aput v1, v0, v2
+    aput v1, v0, v5
 
     .line 491
     sget v1, Lorg/telegram/messenger/NotificationCenter;->messagePlayingPlayStateChanged:I
 
-    const/4 v2, 0x3
-
-    aput v1, v0, v2
+    aput v1, v0, v3
 
     .line 487
     sput-object v0, Lcom/iMe/fork/ui/fragment/MusicActivity;->notifications:[I
@@ -209,7 +286,7 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 3
 
     .line 47
     invoke-direct {p0}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;-><init>()V
@@ -219,44 +296,48 @@
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$albumsAdapter$2;-><init>(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->albumsAdapter$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->albumsAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     .line 51
     new-instance v0, Lcom/iMe/fork/ui/fragment/MusicActivity$channelsAdapter$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$channelsAdapter$2;-><init>(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->channelsAdapter$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->channelsAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     .line 52
     new-instance v0, Lcom/iMe/fork/ui/fragment/MusicActivity$botsAdapter$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$botsAdapter$2;-><init>(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->botsAdapter$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->botsAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     .line 53
     new-instance v0, Lcom/iMe/fork/ui/fragment/MusicActivity$deviceAdapter$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$deviceAdapter$2;-><init>(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->deviceAdapter$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->deviceAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     .line 55
     new-instance v0, Lcom/iMe/fork/ui/fragment/MusicActivity$musicCountComparator$2;
@@ -518,15 +599,11 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v7, "ext"
-
-    invoke-static {v4, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
     move-result v7
 
-    if-lez v7, :cond_0
+    if-nez v7, :cond_0
 
     move v7, p2
 
@@ -538,12 +615,9 @@
     :goto_0
     if-eqz v7, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     const-string v4, "mp3"
 
-    :goto_1
+    :cond_1
     invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -628,12 +702,18 @@
 .end method
 
 .method private final getAlbumsAdapter()Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;
-    .locals 1
+    .locals 3
 
     .line 50
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->albumsAdapter$delegate:Lkotlin/Lazy;
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->albumsAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/MusicActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x0
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -643,12 +723,18 @@
 .end method
 
 .method private final getBotsAdapter()Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;
-    .locals 1
+    .locals 3
 
     .line 52
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->botsAdapter$delegate:Lkotlin/Lazy;
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->botsAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/MusicActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x2
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -658,12 +744,18 @@
 .end method
 
 .method private final getChannelsAdapter()Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;
-    .locals 1
+    .locals 3
 
     .line 51
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->channelsAdapter$delegate:Lkotlin/Lazy;
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->channelsAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/MusicActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x1
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -673,12 +765,18 @@
 .end method
 
 .method private final getDeviceAdapter()Lcom/iMe/fork/ui/fragment/MusicActivity$DeviceAdapter;
-    .locals 1
+    .locals 3
 
     .line 53
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->deviceAdapter$delegate:Lkotlin/Lazy;
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity;->deviceAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/MusicActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x3
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1016,12 +1114,6 @@
     .locals 2
 
     .line 289
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt v0, v1, :cond_0
-
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -1051,16 +1143,16 @@
     .locals 1
 
     .line 342
-    new-instance v0, Lcom/iMe/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda2;
+    new-instance v0, Lcom/iMe/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda3;
 
-    invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
+    invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private static final notifyDialogsAdapters$lambda$19(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
+.method private static final notifyDialogsAdapters$lambda$20(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1250,7 +1342,7 @@
     return-void
 .end method
 
-.method private static final showDeviceMusicDeleteConfirmDialog$lambda$24(Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
+.method private static final showDeviceMusicDeleteConfirmDialog$lambda$25(Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
     .locals 1
 
     const-string v0, "$message"
@@ -1285,7 +1377,7 @@
     return-void
 .end method
 
-.method private static final showDeviceMusicDeleteConfirmDialog$lambda$24$lambda$23(Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;)V
+.method private static final showDeviceMusicDeleteConfirmDialog$lambda$25$lambda$24(Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;)V
     .locals 2
 
     const-string v0, "$message"
@@ -1319,7 +1411,7 @@
     return-void
 .end method
 
-.method private static final showDeviceMusicDeleteConfirmDialog$lambda$24$lambda$23$lambda$22$lambda$21(ZLorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;)V
+.method private static final showDeviceMusicDeleteConfirmDialog$lambda$25$lambda$24$lambda$23$lambda$22(ZLorg/telegram/messenger/MessageObject;Lcom/iMe/fork/ui/fragment/MusicActivity;)V
     .locals 2
 
     const-string v0, "$message"
@@ -1413,7 +1505,7 @@
     return-void
 .end method
 
-.method private static final showDeviceMusicOptions$lambda$20(Lcom/iMe/fork/ui/fragment/MusicActivity;Lorg/telegram/messenger/MessageObject;I)V
+.method private static final showDeviceMusicOptions$lambda$21(Lcom/iMe/fork/ui/fragment/MusicActivity;Lorg/telegram/messenger/MessageObject;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1562,7 +1654,7 @@
 
     move-result-object v4
 
-    .line 191
+    .line 205
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v5
@@ -1572,7 +1664,7 @@
     :goto_1
     if-ge v6, v5, :cond_1
 
-    .line 192
+    .line 206
     invoke-virtual {v4, v6}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
@@ -2243,9 +2335,9 @@
     .line 84
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v1, Lcom/iMe/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda3;
+    new-instance v1, Lcom/iMe/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda2;
 
-    invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
+    invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/ui/fragment/MusicActivity;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 

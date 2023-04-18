@@ -8,8 +8,8 @@ import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.vision.text.FirebaseVisionText;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.vision.text.FirebaseVisionText;
 /* loaded from: classes.dex */
 public final class zzra implements zzno<FirebaseVisionText, zzqp>, zznx {
     static boolean zzazs = true;

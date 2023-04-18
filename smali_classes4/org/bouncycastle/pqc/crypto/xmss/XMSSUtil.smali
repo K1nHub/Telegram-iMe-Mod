@@ -516,6 +516,48 @@
     return v3
 .end method
 
+.method public static isNewBDSInitNeeded(JII)Z
+    .locals 6
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v2, p0, v0
+
+    const/4 v3, 0x0
+
+    if-nez v2, :cond_0
+
+    return v3
+
+    :cond_0
+    const/4 v2, 0x1
+
+    shl-int p2, v2, p2
+
+    int-to-double v4, p2
+
+    add-int/2addr p3, v2
+
+    int-to-double p2, p3
+
+    invoke-static {v4, v5, p2, p3}, Ljava/lang/Math;->pow(DD)D
+
+    move-result-wide p2
+
+    double-to-long p2, p2
+
+    rem-long/2addr p0, p2
+
+    cmp-long p0, p0, v0
+
+    if-nez p0, :cond_1
+
+    move v3, v2
+
+    :cond_1
+    return v3
+.end method
+
 .method public static log2(I)I
     .locals 1
 

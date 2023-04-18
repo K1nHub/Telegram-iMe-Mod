@@ -10,7 +10,7 @@ import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.ExtractorsFactory;
 import com.google.android.exoplayer2.extractor.PositionHolder;
 import com.google.android.exoplayer2.extractor.TrackOutput;
-import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.exoplayer2.upstream.DataReader;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
@@ -165,7 +165,7 @@ public final class WavExtractor implements Extractor {
         this.dataEndPosition = this.dataStartPosition + longValue;
         long length = extractorInput.getLength();
         if (length != -1 && this.dataEndPosition > length) {
-            Log.m806w(TAG, "Data exceeds input length: " + this.dataEndPosition + ", " + length);
+            Log.m792w(TAG, "Data exceeds input length: " + this.dataEndPosition + ", " + length);
             this.dataEndPosition = length;
         }
         ((OutputWriter) Assertions.checkNotNull(this.outputWriter)).init(this.dataStartPosition, this.dataEndPosition);

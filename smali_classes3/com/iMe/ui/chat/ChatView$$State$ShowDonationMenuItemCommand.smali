@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/chat/ChatView$$State;Z)V
     .locals 1
 
-    .line 322
+    .line 308
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showDonationMenuItem"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 324
+    .line 310
     iput-boolean p2, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowDonationMenuItemCommand;->show:Z
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/chat/ChatView;)V
     .locals 1
 
-    .line 329
+    .line 315
     iget-boolean v0, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowDonationMenuItemCommand;->show:Z
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/chat/ChatView;->showDonationMenuItem(Z)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 318
+    .line 304
     check-cast p1, Lcom/iMe/ui/chat/ChatView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/chat/ChatView$$State$ShowDonationMenuItemCommand;->apply(Lcom/iMe/ui/chat/ChatView;)V

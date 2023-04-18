@@ -19,49 +19,36 @@ import com.iMe.fork.enums.StickersSize;
 import com.iMe.fork.enums.TemplatesMode;
 import com.iMe.fork.enums.TemplatesSortingType;
 import com.iMe.fork.enums.VideoVoiceCamera;
-import com.iMe.fork.models.DrawerHeaderSettings;
 import com.iMe.fork.models.backup.Backup;
-import com.iMe.fork.models.backup.MultiPanelButtonStateBackup;
 import com.iMe.fork.utils.Callbacks$Callback1;
-import com.iMe.p032ui.drawer.DrawerSwitchableItem;
+import com.iMe.p031ui.drawer.DrawerSwitchableItem;
 import com.iMe.storage.data.utils.extentions.DateExtKt;
-import com.iMe.storage.domain.model.filters.FilterFab;
 import com.iMe.utils.extentions.common.ContextExtKt;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.AccountInstance;
+import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.p048ui.ActionBar.BaseFragment;
-import p035j$.util.concurrent.ConcurrentHashMap;
-import p035j$.util.concurrent.ConcurrentMap$EL;
-import p035j$.util.function.Function;
+import org.telegram.p044ui.ActionBar.BaseFragment;
+import p034j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentMap$EL;
+import p034j$.util.function.Function;
 /* compiled from: BackupController.kt */
 /* loaded from: classes3.dex */
 public final class BackupController extends BaseController implements KoinComponent {
@@ -80,7 +67,7 @@ public final class BackupController extends BaseController implements KoinCompon
         static {
             int[] iArr = new int[BackupComponent.values().length];
             try {
-                iArr[BackupComponent.INTERFACE.ordinal()] = 1;
+                iArr[BackupComponent.TOOLS.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
@@ -88,40 +75,36 @@ public final class BackupController extends BaseController implements KoinCompon
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                iArr[BackupComponent.TOOLS.ordinal()] = 3;
+                iArr[BackupComponent.FILTERS.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                iArr[BackupComponent.FILTERS.ordinal()] = 4;
+                iArr[BackupComponent.SORTING.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                iArr[BackupComponent.SORTING.ordinal()] = 5;
+                iArr[BackupComponent.ALBUMS.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                iArr[BackupComponent.ALBUMS.ordinal()] = 6;
+                iArr[BackupComponent.BOOKMARKS.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                iArr[BackupComponent.BOOKMARKS.ordinal()] = 7;
+                iArr[BackupComponent.MUSIC.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
             try {
-                iArr[BackupComponent.MUSIC.ordinal()] = 8;
+                iArr[BackupComponent.TRANSLATION.ordinal()] = 8;
             } catch (NoSuchFieldError unused8) {
             }
             try {
-                iArr[BackupComponent.TRANSLATION.ordinal()] = 9;
+                iArr[BackupComponent.TEMPLATES.ordinal()] = 9;
             } catch (NoSuchFieldError unused9) {
             }
             try {
-                iArr[BackupComponent.TEMPLATES.ordinal()] = 10;
+                iArr[BackupComponent.TOPICS.ordinal()] = 10;
             } catch (NoSuchFieldError unused10) {
-            }
-            try {
-                iArr[BackupComponent.TOPICS.ordinal()] = 11;
-            } catch (NoSuchFieldError unused11) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -201,110 +184,20 @@ public final class BackupController extends BaseController implements KoinCompon
         this.lastAutoBackupTime = DateExtKt.now();
     }
 
-    public final void backup(boolean z) {
-        Backup backup;
-        ArrayList arrayListOf;
-        ArrayList arrayListOf2;
-        if (z && (!this.isAutoBackupEnabled || needSkipAutoBackup())) {
-            return;
-        }
-        try {
-            Boolean valueOf = Boolean.valueOf(getBackupController().isAutoBackupEnabled);
-            String name = getBackupController().selectedAutoBackupInterval.name();
-            Boolean valueOf2 = Boolean.valueOf(SharedConfig.isFilesSendingPreviewAndCaptionEnabled);
-            Boolean valueOf3 = Boolean.valueOf(SharedConfig.isVibrationEnabled);
-            String name2 = SharedConfig.selectedStickersSize.name();
-            Boolean valueOf4 = Boolean.valueOf(getForkCommonController().isQuickReactionEnabled());
-            Boolean valueOf5 = Boolean.valueOf(getForkCommonController().isPremiumAnimateStickers());
-            Boolean valueOf6 = Boolean.valueOf(getForkCommonController().isShowPremiumBadgeEnabled());
-            Boolean valueOf7 = Boolean.valueOf(getForkCommonController().isShowPremiumStatusEnabled());
-            Boolean valueOf8 = Boolean.valueOf(getForkCommonController().isPremiumAnimateAvatars());
-            Boolean valueOf9 = Boolean.valueOf(SharedConfig.isProxyButtonForceVisible);
-            String name3 = getForkCommonController().getSelectedContactsFilter().name();
-            Boolean valueOf10 = Boolean.valueOf(SharedConfig.isReadAllChatsConfirmationShown);
-            Boolean valueOf11 = Boolean.valueOf(SharedConfig.isProfileInfoHidden);
-            Boolean valueOf12 = Boolean.valueOf(SharedConfig.isMultiForwardingOptionsHintShown);
-            Boolean valueOf13 = Boolean.valueOf(SharedConfig.isSuggestPremiumReactionsEmoji);
-            DrawerHeaderSettings drawerHeaderSettings = SharedConfig.getDrawerHeaderSettings();
-            DrawerSwitchableItem.Companion companion = DrawerSwitchableItem.Companion;
-            try {
-                Set<DrawerSwitchableItem> selectedDrawerItems = SharedConfig.selectedDrawerItems;
-                Intrinsics.checkNotNullExpressionValue(selectedDrawerItems, "selectedDrawerItems");
-                Set<String> mapEnumsToNames = companion.mapEnumsToNames(selectedDrawerItems);
-                Boolean valueOf14 = Boolean.valueOf(SharedConfig.isActionBarAccountSwitchEnabled);
-                Boolean valueOf15 = Boolean.valueOf(SharedConfig.isMainActionBarMenuEnabled);
-                Boolean valueOf16 = Boolean.valueOf(SharedConfig.isDialogsCompactModeEnabled);
-                Boolean valueOf17 = Boolean.valueOf(getToolsController().isSwipeToGoToNextUnreadDialogEnabled());
-                Boolean valueOf18 = Boolean.valueOf(getToolsController().isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled());
-                DialogType.Companion companion2 = DialogType.Companion;
-                Set<String> mapEnumsToNames2 = companion2.mapEnumsToNames(getToolsController().getSelectedDialogTypesForSwipeToGoToNextUnreadDialog());
-                Boolean valueOf19 = Boolean.valueOf(getToolsController().isShowChannelBottomPanel());
-                Boolean valueOf20 = Boolean.valueOf(SharedConfig.isHideChatKeyboardOnScrollEnabled);
-                Boolean valueOf21 = Boolean.valueOf(SharedConfig.isChatThemesEnabled);
-                Map<String, Set<String>> chatAttachAlertButtonsBackupData = getToolsController().getChatAttachAlertButtonsBackupData();
-                Boolean valueOf22 = Boolean.valueOf(SharedConfig.isExtendedAvatarPreviewerEnabled);
-                Boolean valueOf23 = Boolean.valueOf(SharedConfig.isExtendedAvatarPreviewerByTapEnabled);
-                ExtendedAvatarPreviewerItem.Companion companion3 = ExtendedAvatarPreviewerItem.Companion;
-                List<ExtendedAvatarPreviewerItem> selectedExtendedAvatarPreviewerItems = SharedConfig.selectedExtendedAvatarPreviewerItems;
-                Intrinsics.checkNotNullExpressionValue(selectedExtendedAvatarPreviewerItems, "selectedExtendedAvatarPreviewerItems");
-                Set<String> mapEnumsToNames3 = companion3.mapEnumsToNames(selectedExtendedAvatarPreviewerItems);
-                List<String> messagePopupItemBackupData = getToolsController().getMessagePopupItemBackupData();
-                Boolean valueOf24 = Boolean.valueOf(getToolsController().isMessagePopupAggregatorEnabled());
-                Boolean valueOf25 = Boolean.valueOf(getToolsController().isChannelWidePostsEnabled());
-                Boolean valueOf26 = Boolean.valueOf(SharedConfig.isCallsConfirmationEnabled);
-                Boolean valueOf27 = Boolean.valueOf(SharedConfig.isDeleteCloudConfirmationEnabled);
-                Boolean valueOf28 = Boolean.valueOf(SharedConfig.isSendingGifConfirmationEnabled);
-                Boolean valueOf29 = Boolean.valueOf(SharedConfig.isSendingStickerConfirmationEnabled);
-                Boolean valueOf30 = Boolean.valueOf(SharedConfig.isSpeakWithoutHoldEnabled);
-                Boolean valueOf31 = Boolean.valueOf(SharedConfig.isVideoSpeakWithoutHoldEnabled);
-                String name4 = SharedConfig.selectedVideoVoiceCamera.name();
-                Boolean valueOf32 = Boolean.valueOf(getRecentChatsController().isRecentChatsEnabled());
-                Boolean valueOf33 = Boolean.valueOf(getRecentChatsController().isSaveArchiveRecentChatsEnabled());
-                Boolean valueOf34 = Boolean.valueOf(getMultiPanelController().isMultiPanelEnabled());
-                Boolean valueOf35 = Boolean.valueOf(getMultiPanelController().isHideMultiPanelOnScrollEnabled());
-                Map<String, List<MultiPanelButtonStateBackup>> backupData = getMultiPanelController().getBackupData();
-                Boolean valueOf36 = Boolean.valueOf(SharedConfig.isOpenForwardingOptionsAutomaticallyEnabled);
-                Boolean valueOf37 = Boolean.valueOf(SharedConfig.isCustomSharingModeEnabled);
-                Boolean valueOf38 = Boolean.valueOf(SharedConfig.isMultiReplyEnabled);
-                String name5 = SharedConfig.selectedChatProfileTelegramIdMode.name();
-                Boolean valueOf39 = Boolean.valueOf(SharedConfig.isMessageQuickTranslateEnabled);
-                Boolean valueOf40 = Boolean.valueOf(SharedConfig.isBotHelpTranslateEnabled);
-                Boolean valueOf41 = Boolean.valueOf(SharedConfig.isTranslateInSendPopupEnabled);
-                Boolean valueOf42 = Boolean.valueOf(getToolsController().isSilentSendingEnabled());
-                String name6 = getToolsController().getSelectedSentMessageFont().name();
-                Boolean valueOf43 = Boolean.valueOf(getToolsController().isRememberLastDialogEnabled());
-                Boolean valueOf44 = Boolean.valueOf(SharedConfig.isCombineMessagesEnabled);
-                PhotoViewerMenuItem.Companion companion4 = PhotoViewerMenuItem.Companion;
-                Set<PhotoViewerMenuItem> selectedPhotoViewerMenuItems = SharedConfig.selectedPhotoViewerMenuItems;
-                Intrinsics.checkNotNullExpressionValue(selectedPhotoViewerMenuItems, "selectedPhotoViewerMenuItems");
-                Set<String> mapEnumsToNames4 = companion4.mapEnumsToNames(selectedPhotoViewerMenuItems);
-                Boolean valueOf45 = Boolean.valueOf(SharedConfig.isReactionsEnabled);
-                Set<DialogType> selectedDialogTypesForMessagePopupReactions = SharedConfig.selectedDialogTypesForMessagePopupReactions;
-                Intrinsics.checkNotNullExpressionValue(selectedDialogTypesForMessagePopupReactions, "selectedDialogTypesForMessagePopupReactions");
-                backup = new Backup(valueOf, name, valueOf2, valueOf3, name2, valueOf4, valueOf5, valueOf6, valueOf7, valueOf8, valueOf9, name3, valueOf10, valueOf11, valueOf12, valueOf13, drawerHeaderSettings, mapEnumsToNames, valueOf14, valueOf15, valueOf16, valueOf17, valueOf18, mapEnumsToNames2, valueOf19, valueOf20, valueOf21, chatAttachAlertButtonsBackupData, valueOf22, valueOf23, mapEnumsToNames3, messagePopupItemBackupData, valueOf24, valueOf25, valueOf26, valueOf27, valueOf28, valueOf29, valueOf30, valueOf31, name4, valueOf32, null, valueOf33, null, valueOf34, valueOf35, backupData, valueOf36, valueOf37, valueOf38, name5, valueOf39, valueOf40, valueOf41, valueOf42, name6, valueOf43, valueOf44, mapEnumsToNames4, valueOf45, companion2.mapEnumsToNames(selectedDialogTypesForMessagePopupReactions), Boolean.valueOf(SharedConfig.isReactionsInSendPopupEnabled), null, null, Boolean.valueOf(SharedConfig.isFilterTabsAtBottomEnabled), SharedConfig.selectedFilterTabsNotificationMode.name(), SharedConfig.selectedFilterTabWidthMode.name(), Boolean.valueOf(SharedConfig.isRememberLastFilterTabEnabled), Boolean.valueOf(getFiltersController().isHideFoldersEnabled()), Boolean.valueOf(getFiltersController().isFoldersFirstEnabled()), getFiltersController().getFiltersBackupData(), Boolean.valueOf(SharedConfig.isChatSortingEnabledByDefault), Boolean.valueOf(getFiltersController().isAllChatsTabEnabled()), Boolean.valueOf(getFiltersController().isIconInsteadAllChatsTabTitleEnabled()), FilterFab.Companion.mapEnumsToNames(getFiltersController().getSelectedAllChatsTabFabs()), Boolean.valueOf(getFiltersController().isSortingEnabled(false)), getFiltersController().getBackupSortingTabs(false), Boolean.valueOf(getFiltersController().isSortingEnabled(true)), getFiltersController().getBackupSortingTabs(true), getFiltersController().getPinnedChats(false), getFiltersController().getPinnedChats(true), Boolean.valueOf(SharedConfig.isCloudAlbumsEnabled), Boolean.valueOf(SharedConfig.isAlbumsIntroShown), Boolean.valueOf(SharedConfig.isSortCloudAlbumsByNameEnabled), Boolean.valueOf(getAlbumsController().isOpenAlbumsInsteadCloudEnabled()), getAlbumsController().getAlbums(), getBookmarksController().getBookmarks(), getDialogTranslationSettingsController().getBackupData(), Boolean.valueOf(SharedConfig.isPlayerPinned), Boolean.valueOf(SharedConfig.isPinnedPlayerMinimized), Boolean.valueOf(SharedConfig.isPinnedPlayerThemeOverridden), Boolean.valueOf(SharedConfig.isPinnedPlayerNightThemeEnabled), Boolean.valueOf(SharedConfig.isMusicIntroShown), getMusicController().getSelectedMusicTab().name(), getMusicController().getPlaylists(), SharedConfig.selectedTemplatesMode.name(), SharedConfig.selectedTemplatesSortingType.name(), Long.valueOf(getTemplatesController().getTemplatesChannelId()), getTemplatesController().getTemplatesBackupData(), Boolean.valueOf(getForkTopicsController().isTopicsBarEnabled()), Boolean.valueOf(getForkTopicsController().isTopicsBarAtBottomEnabled()), Boolean.valueOf(getForkTopicsController().isAutoUpdateTopicsCatalogEnabled()), getForkTopicsController().getSelectedAutoUpdateTopicsCatalogInterval().name(), Boolean.valueOf(getForkTopicsController().isNoTopicFirstEnabled()), getForkTopicsController().getTopicsBackupData(), 12, null, null, 0, -2147478528, 1, 6144, null);
-            } catch (Exception e) {
-                e = e;
-            }
-            try {
-                File file = new File(ApplicationLoader.getFilesDirFixed(), buildBackupFileName(getUserConfig().clientUserId));
-                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(file));
-                outputStreamWriter.write(getGson().toJson(backup));
-                outputStreamWriter.flush();
-                AccountInstance accountInstance = getAccountInstance();
-                arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(file.getAbsolutePath());
-                arrayListOf2 = CollectionsKt__CollectionsKt.arrayListOf(file.getAbsolutePath());
-                SendMessagesHelper.prepareSendingDocuments(accountInstance, arrayListOf, arrayListOf2, null, null, null, getUserConfig().clientUserId, null, null, null, null, false, 0, null, true);
-                if (z) {
-                    resetLastAutoBackupTime();
-                    saveConfig();
-                }
-            } catch (Exception e2) {
-                e = e2;
-                ContextExtKt.toast(String.valueOf(e.getMessage()));
-            }
-        } catch (Exception e3) {
-            e = e3;
-        }
+    /*  JADX ERROR: IndexOutOfBoundsException in pass: SSATransform
+        java.lang.IndexOutOfBoundsException: bitIndex < 0: -79
+        	at java.base/java.util.BitSet.get(BitSet.java:626)
+        	at jadx.core.dex.visitors.ssa.LiveVarAnalysis.fillBasicBlockInfo(LiveVarAnalysis.java:65)
+        	at jadx.core.dex.visitors.ssa.LiveVarAnalysis.runAnalysis(LiveVarAnalysis.java:36)
+        	at jadx.core.dex.visitors.ssa.SSATransform.process(SSATransform.java:55)
+        	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:41)
+        */
+    public final void backup(boolean r177) {
+        /*
+            Method dump skipped, instructions count: 1249
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.controller.BackupController.backup(boolean):void");
     }
 
     public final void restore(final MessageObject backupMessage, final List<? extends BackupComponent> components, final BaseFragment parentFragment, final Callbacks$Callback1<Boolean> onEnd) {
@@ -315,13 +208,13 @@ public final class BackupController extends BaseController implements KoinCompon
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.BackupController$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                BackupController.restore$lambda$15(BackupController.this, backupMessage, components, parentFragment, onEnd);
+                BackupController.restore$lambda$14(BackupController.this, backupMessage, components, parentFragment, onEnd);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void restore$lambda$15(final BackupController this$0, MessageObject backupMessage, List components, BaseFragment parentFragment, final Callbacks$Callback1 onEnd) {
+    public static final void restore$lambda$14(final BackupController this$0, MessageObject backupMessage, List components, BaseFragment parentFragment, final Callbacks$Callback1 onEnd) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(backupMessage, "$backupMessage");
         Intrinsics.checkNotNullParameter(components, "$components");
@@ -414,18 +307,9 @@ public final class BackupController extends BaseController implements KoinCompon
                         if (migrateToCurrentVersion.isVideoSpeakWithoutHoldEnabled() != null) {
                             SharedConfig.setVideoSpeakWithoutHoldEnabled(migrateToCurrentVersion.isVideoSpeakWithoutHoldEnabled().booleanValue());
                         }
-                        if (migrateToCurrentVersion.getSelectedVideoVoiceCamera() == null) {
-                            break;
-                        } else {
+                        if (migrateToCurrentVersion.getSelectedVideoVoiceCamera() != null) {
                             SharedConfig.setSelectedVideoVoiceCamera(VideoVoiceCamera.Companion.mapNameToEnum(migrateToCurrentVersion.getSelectedVideoVoiceCamera()));
-                            break;
                         }
-                    case 2:
-                        this$0.getMultiPanelController().restoreBackup(migrateToCurrentVersion);
-                        break;
-                    case 3:
-                        this$0.getToolsController().restoreBackup(migrateToCurrentVersion);
-                        this$0.getRecentChatsController().restoreBackup(migrateToCurrentVersion);
                         if (migrateToCurrentVersion.isOpenForwardingOptionsAutomaticallyEnabled() != null) {
                             SharedConfig.setOpenForwardingOptionsAutomaticallyEnabled(migrateToCurrentVersion.isOpenForwardingOptionsAutomaticallyEnabled().booleanValue());
                         }
@@ -468,7 +352,10 @@ public final class BackupController extends BaseController implements KoinCompon
                             SharedConfig.setDrawerHolidayIconType(DrawerHolidayIconType.Companion.mapNameToEnum(migrateToCurrentVersion.getDrawerHolidayIconType().name()));
                             break;
                         }
-                    case 4:
+                    case 2:
+                        this$0.getMultiPanelController().restoreBackup(migrateToCurrentVersion);
+                        break;
+                    case 3:
                         this$0.getFiltersController().restoreBackup(migrateToCurrentVersion);
                         if (migrateToCurrentVersion.getFilterTabsAtBottom() != null) {
                             SharedConfig.setFilterTabsAtBottomEnabled(migrateToCurrentVersion.getFilterTabsAtBottom().booleanValue());
@@ -485,7 +372,7 @@ public final class BackupController extends BaseController implements KoinCompon
                             SharedConfig.setRememberLastFilterTabEnabled(migrateToCurrentVersion.getRememberLastFilterTab().booleanValue());
                             break;
                         }
-                    case 5:
+                    case 4:
                         FiltersController filtersController = this$0.getFiltersController();
                         filtersController.restoreAllChatsTabBackup(migrateToCurrentVersion);
                         filtersController.restoreSortingBackup(false, migrateToCurrentVersion, parentFragment);
@@ -497,7 +384,7 @@ public final class BackupController extends BaseController implements KoinCompon
                             SharedConfig.setChatSortingEnabledByDefault(migrateToCurrentVersion.isChatSortingEnabledByDefault().booleanValue());
                             break;
                         }
-                    case 6:
+                    case 5:
                         this$0.getAlbumsController().restoreBackup(migrateToCurrentVersion);
                         if (migrateToCurrentVersion.isCLoudAlbumsEnabled() != null) {
                             SharedConfig.setCloudAlbumsEnabled(migrateToCurrentVersion.isCLoudAlbumsEnabled().booleanValue());
@@ -511,10 +398,10 @@ public final class BackupController extends BaseController implements KoinCompon
                             SharedConfig.setSortCloudAlbumsByNameEnabled(migrateToCurrentVersion.isSortCloudAlbumsByNameEnabled().booleanValue());
                             break;
                         }
-                    case 7:
+                    case 6:
                         this$0.getBookmarksController().restoreBackup(migrateToCurrentVersion);
                         break;
-                    case 8:
+                    case 7:
                         this$0.getMusicController().restoreBackup(migrateToCurrentVersion);
                         if (migrateToCurrentVersion.isPlayerPinned() != null) {
                             SharedConfig.setPlayerPinned(migrateToCurrentVersion.isPlayerPinned().booleanValue());
@@ -534,10 +421,10 @@ public final class BackupController extends BaseController implements KoinCompon
                             SharedConfig.setMusicIntroShown(migrateToCurrentVersion.isMusicIntroShown().booleanValue());
                             break;
                         }
-                    case 9:
+                    case 8:
                         this$0.getDialogTranslationSettingsController().restoreBackup(migrateToCurrentVersion);
                         break;
-                    case 10:
+                    case 9:
                         this$0.getTemplatesController().restoreBackup(migrateToCurrentVersion);
                         if (migrateToCurrentVersion.getTemplatesMode() != null) {
                             SharedConfig.setSelectedTemplatesMode(TemplatesMode.Companion.mapNameToEnum(migrateToCurrentVersion.getTemplatesMode()));
@@ -548,7 +435,7 @@ public final class BackupController extends BaseController implements KoinCompon
                             SharedConfig.setSelectedTemplatesSortingType(TemplatesSortingType.Companion.mapNameToEnum(migrateToCurrentVersion.getSelectedTemplatesSortingType()));
                             break;
                         }
-                    case 11:
+                    case 10:
                         this$0.getForkTopicsController().restoreBackup(migrateToCurrentVersion);
                         break;
                 }
@@ -556,21 +443,21 @@ public final class BackupController extends BaseController implements KoinCompon
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.controller.BackupController$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BackupController.restore$lambda$15$lambda$13(BackupController.this, onEnd);
+                    BackupController.restore$lambda$14$lambda$12(BackupController.this, onEnd);
                 }
             });
         } catch (Exception e) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.controller.BackupController$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BackupController.restore$lambda$15$lambda$14(e, onEnd);
+                    BackupController.restore$lambda$14$lambda$13(e, onEnd);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void restore$lambda$15$lambda$13(BackupController this$0, Callbacks$Callback1 onEnd) {
+    public static final void restore$lambda$14$lambda$12(BackupController this$0, Callbacks$Callback1 onEnd) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(onEnd, "$onEnd");
         this$0.getMessagesController().sortDialogs(null);
@@ -578,7 +465,7 @@ public final class BackupController extends BaseController implements KoinCompon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void restore$lambda$15$lambda$14(Exception e, Callbacks$Callback1 onEnd) {
+    public static final void restore$lambda$14$lambda$13(Exception e, Callbacks$Callback1 onEnd) {
         Intrinsics.checkNotNullParameter(e, "$e");
         Intrinsics.checkNotNullParameter(onEnd, "$onEnd");
         ContextExtKt.toast(String.valueOf(e.getMessage()));
@@ -613,7 +500,7 @@ public final class BackupController extends BaseController implements KoinCompon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean migrateToCurrentVersion$lambda$20(Function1 tmp0, Object obj) {
+    public static final boolean migrateToCurrentVersion$lambda$19(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         return ((Boolean) tmp0.invoke(obj)).booleanValue();
     }
@@ -639,19 +526,19 @@ public final class BackupController extends BaseController implements KoinCompon
             Integer valueOf = Integer.valueOf(i);
             final BackupController$Companion$getInstance$1 backupController$Companion$getInstance$1 = new BackupController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.BackupController$Companion$$ExternalSyntheticLambda0
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
                     BackupController instance$lambda$0;
                     instance$lambda$0 = BackupController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

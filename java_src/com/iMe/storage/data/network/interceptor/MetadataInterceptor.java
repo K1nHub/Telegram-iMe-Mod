@@ -15,7 +15,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: MetadataInterceptor.kt */
 /* loaded from: classes3.dex */
 public final class MetadataInterceptor implements Interceptor, KoinComponent {
