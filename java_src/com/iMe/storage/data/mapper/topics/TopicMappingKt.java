@@ -1,7 +1,7 @@
 package com.iMe.storage.data.mapper.topics;
 
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
-import com.iMe.storage.data.locale.p028db.model.topics.TopicDb;
+import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
+import com.iMe.storage.data.locale.p027db.model.topics.TopicDb;
 import com.iMe.storage.data.repository.topics.Topic;
 import com.iMe.storage.domain.model.topics.TopicModel;
 import java.util.Collection;

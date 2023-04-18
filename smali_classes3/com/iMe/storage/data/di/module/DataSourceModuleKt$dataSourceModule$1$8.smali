@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$8\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,105:1\n127#2,5:106\n127#2,5:111\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$8\n*L\n85#1:106,5\n86#1:111,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$8\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,105:1\n129#2,5:106\n129#2,5:111\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$8\n*L\n85#1:106,5\n86#1:111,5\n*E\n"
 .end annotation
 
 
@@ -75,7 +75,7 @@
     .line 84
     new-instance p2, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -114,7 +114,7 @@
 
     check-cast v3, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 131
+    .line 133
     const-class v4, Lcom/iMe/storage/data/network/api/own/WalletApi;
 
     invoke-static {v4}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

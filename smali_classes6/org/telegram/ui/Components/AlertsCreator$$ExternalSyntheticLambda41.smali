@@ -55,7 +55,7 @@
 
     move v7, p2
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$HYmFXb3ti4Cv09mxbJsp0rWOtUQ(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;JZLorg/telegram/messenger/browser/Browser$Progress;Landroid/content/DialogInterface;I)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$Nu6PgiDouag-UKzb-rZrr3vJiLw(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;JZLorg/telegram/messenger/browser/Browser$Progress;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

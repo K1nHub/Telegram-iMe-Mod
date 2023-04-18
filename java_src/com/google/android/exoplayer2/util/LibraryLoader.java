@@ -8,7 +8,7 @@ public abstract class LibraryLoader {
     private boolean loadAttempted;
     private String[] nativeLibraries;
 
-    protected abstract void loadLibrary(String str);
+    protected abstract void oadLibrary(String str);
 
     public LibraryLoader(String... strArr) {
         this.nativeLibraries = strArr;
@@ -26,11 +26,11 @@ public abstract class LibraryLoader {
         this.loadAttempted = true;
         try {
             for (String str : this.nativeLibraries) {
-                loadLibrary(str);
+                System.loadLibrary(str);
             }
             this.isAvailable = true;
         } catch (UnsatisfiedLinkError unused) {
-            Log.m806w(TAG, "Failed to load " + Arrays.toString(this.nativeLibraries));
+            Log.m792w(TAG, "Failed to load " + Arrays.toString(this.nativeLibraries));
         }
         return this.isAvailable;
     }

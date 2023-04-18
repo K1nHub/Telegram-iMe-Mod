@@ -53,13 +53,13 @@
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 7
 
-    .line 62
+    .line 60
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 63
+    .line 61
     iput p2, p0, Lorg/telegram/ui/Components/StickerTabView;->type:I
 
-    .line 64
+    .line 62
     sget v0, Lorg/telegram/ui/Components/StickerTabView;->indexPointer:I
 
     add-int/lit8 v1, v0, 0x1
@@ -80,7 +80,7 @@
 
     if-ne p2, v4, :cond_0
 
-    .line 66
+    .line 64
     new-instance p2, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -91,17 +91,17 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 67
+    .line 65
     invoke-virtual {p2, v3}, Lorg/telegram/ui/Components/BackupImageView;->setLayerNum(I)V
 
-    .line 68
+    .line 66
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/4 v4, 0x0
 
     invoke-virtual {p2, v4}, Lorg/telegram/ui/Components/BackupImageView;->setAspectFit(Z)V
 
-    .line 69
+    .line 67
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -110,7 +110,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
-    .line 70
+    .line 68
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-static {v2, v2, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
@@ -119,7 +119,7 @@
 
     invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 71
+    .line 69
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
@@ -135,7 +135,7 @@
 
     goto :goto_0
 
-    .line 78
+    .line 76
     :cond_1
     new-instance p2, Lorg/telegram/ui/Components/BackupImageView;
 
@@ -147,15 +147,15 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 79
+    .line 77
     invoke-virtual {p2, v3}, Lorg/telegram/ui/Components/BackupImageView;->setLayerNum(I)V
 
-    .line 80
+    .line 78
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p2, v3}, Lorg/telegram/ui/Components/BackupImageView;->setAspectFit(Z)V
 
-    .line 81
+    .line 79
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -164,7 +164,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
-    .line 82
+    .line 80
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-static {v2, v2, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
@@ -173,14 +173,14 @@
 
     invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 83
+    .line 81
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
     goto :goto_1
 
-    .line 73
+    .line 71
     :cond_2
     :goto_0
     new-instance p2, Landroid/widget/ImageView;
@@ -189,12 +189,12 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->iconView:Landroid/widget/ImageView;
 
-    .line 74
+    .line 72
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 75
+    .line 73
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->iconView:Landroid/widget/ImageView;
 
     const/16 v0, 0x18
@@ -205,12 +205,12 @@
 
     invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 76
+    .line 74
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->iconView:Landroid/widget/ImageView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
-    .line 86
+    .line 84
     :goto_1
     new-instance p2, Lorg/telegram/ui/Components/StickerTabView$1;
 
@@ -218,38 +218,38 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
-    .line 92
+    .line 90
     new-instance p1, Lorg/telegram/ui/Components/StickerTabView$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/StickerTabView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/StickerTabView;)V
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 97
+    .line 95
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v3}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 98
+    .line 96
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     sget-object p2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 99
+    .line 97
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     const/high16 p2, 0x41300000    # 11.0f
 
     invoke-virtual {p1, v3, p2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 100
+    .line 98
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v3}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 101
+    .line 99
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     const-string p2, "windowBackgroundWhiteBlackText"
@@ -260,7 +260,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 102
+    .line 100
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     const/4 v0, -0x1
@@ -283,7 +283,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 104
+    .line 102
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     const/16 p2, 0x8
@@ -296,7 +296,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;IIIIIIII)V
     .locals 0
 
-    .line 93
+    .line 91
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     if-eqz p1, :cond_0
@@ -307,7 +307,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 94
+    .line 92
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
@@ -331,7 +331,7 @@
 .method public animateIfPositionChanged(Landroid/view/ViewGroup;)V
     .locals 4
 
-    .line 171
+    .line 169
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLeft()I
 
     move-result v0
@@ -350,7 +350,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 172
+    .line 170
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLeft()I
 
     move-result v0
@@ -361,15 +361,15 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/StickerTabView;->dragOffset:F
 
-    .line 173
+    .line 171
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerTabView;->dragOffsetAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 174
+    .line 172
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 175
+    .line 173
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerTabView;->dragOffsetAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -379,7 +379,7 @@
 
     new-array v0, v0, [F
 
-    .line 177
+    .line 175
     iget v1, p0, Lorg/telegram/ui/Components/StickerTabView;->dragOffset:F
 
     aput v1, v0, v2
@@ -396,14 +396,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/StickerTabView;->dragOffsetAnimator:Landroid/animation/ValueAnimator;
 
-    .line 178
+    .line 176
     new-instance v1, Lorg/telegram/ui/Components/StickerTabView$2;
 
     invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Components/StickerTabView$2;-><init>(Lorg/telegram/ui/Components/StickerTabView;Landroid/view/ViewGroup;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 186
+    .line 184
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerTabView;->dragOffsetAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/Components/StickerTabView$3;
@@ -412,12 +412,12 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 194
+    .line 192
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->dragOffsetAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 196
+    .line 194
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/ui/Components/StickerTabView;->hasSavedLeft:Z
 
@@ -427,7 +427,7 @@
 .method public getTextWidth()F
     .locals 1
 
-    .line 108
+    .line 106
     iget v0, p0, Lorg/telegram/ui/Components/StickerTabView;->textWidth:F
 
     return v0
@@ -436,7 +436,7 @@
 .method public saveXPosition()V
     .locals 1
 
-    .line 165
+    .line 163
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLeft()I
 
     move-result v0
@@ -447,10 +447,10 @@
 
     const/4 v0, 0x1
 
-    .line 166
+    .line 164
     iput-boolean v0, p0, Lorg/telegram/ui/Components/StickerTabView;->hasSavedLeft:Z
 
-    .line 167
+    .line 165
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -459,7 +459,7 @@
 .method public setExpanded(Z)V
     .locals 5
 
-    .line 112
+    .line 110
     iget v0, p0, Lorg/telegram/ui/Components/StickerTabView;->type:I
 
     const/4 v1, 0x2
@@ -468,7 +468,7 @@
 
     return-void
 
-    .line 115
+    .line 113
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/StickerTabView;->expanded:Z
 
@@ -493,7 +493,7 @@
     :cond_2
     const/high16 v0, 0x42300000    # 44.0f
 
-    .line 119
+    .line 117
     :goto_1
     iget-object v3, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
@@ -517,7 +517,7 @@
 
     iput v4, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 120
+    .line 118
     iget-object v3, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -535,7 +535,7 @@
 
     iput v0, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 122
+    .line 120
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     if-eqz p1, :cond_5
@@ -550,7 +550,7 @@
     :goto_3
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 124
+    .line 122
     iget p1, p0, Lorg/telegram/ui/Components/StickerTabView;->type:I
 
     if-eq p1, v1, :cond_6
@@ -559,7 +559,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 125
+    .line 123
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
@@ -591,7 +591,7 @@
 
     const/4 v0, 0x1
 
-    .line 200
+    .line 198
     iput-boolean v0, p0, Lorg/telegram/ui/Components/StickerTabView;->roundImage:Z
 
     return-void
@@ -600,7 +600,7 @@
 .method public updateExpandProgress(F)V
     .locals 9
 
-    .line 130
+    .line 128
     iget v0, p0, Lorg/telegram/ui/Components/StickerTabView;->type:I
 
     const/4 v1, 0x2
@@ -609,7 +609,7 @@
 
     return-void
 
-    .line 133
+    .line 131
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/StickerTabView;->expanded:Z
 
@@ -645,7 +645,7 @@
 
     sub-float/2addr v1, v4
 
-    .line 136
+    .line 134
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v1
@@ -660,7 +660,7 @@
 
     sub-float/2addr v6, v4
 
-    .line 137
+    .line 135
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v6
@@ -669,7 +669,7 @@
 
     div-float/2addr v6, v5
 
-    .line 138
+    .line 136
     sget v7, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->EXPANDED_WIDTH:F
 
     sub-float/2addr v7, v0
@@ -686,7 +686,7 @@
 
     sub-float/2addr v8, v0
 
-    .line 139
+    .line 137
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v8
@@ -695,7 +695,7 @@
 
     div-float/2addr v8, v5
 
-    .line 141
+    .line 139
     iget-object v5, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
     sub-float/2addr v6, v8
@@ -718,7 +718,7 @@
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 142
+    .line 140
     iget-object v5, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
     sub-float/2addr v1, v7
@@ -727,7 +727,7 @@
 
     invoke-virtual {v5, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 143
+    .line 141
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     const/high16 v5, 0x3f000000    # 0.5f
@@ -742,7 +742,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 144
+    .line 142
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     const/16 v5, 0x28
@@ -759,7 +759,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 145
+    .line 143
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     const/16 v5, 0xc
@@ -776,12 +776,12 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 148
+    .line 146
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setPivotX(F)V
 
-    .line 149
+    .line 147
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setPivotY(F)V
@@ -792,35 +792,35 @@
 
     add-float/2addr v4, p1
 
-    .line 152
+    .line 150
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setScaleX(F)V
 
-    .line 153
+    .line 151
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setScaleY(F)V
 
     goto :goto_2
 
-    .line 156
+    .line 154
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
     invoke-virtual {p1, v3}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 157
+    .line 155
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
     invoke-virtual {p1, v3}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 158
+    .line 156
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setScaleX(F)V
 
-    .line 159
+    .line 157
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView;->visibleView:Landroid/view/View;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setScaleY(F)V

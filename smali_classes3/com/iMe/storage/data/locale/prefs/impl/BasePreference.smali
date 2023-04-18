@@ -6,6 +6,12 @@
 .implements Lcom/iMe/storage/domain/storage/BasePreferenceHelper;
 
 
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nBasePreference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BasePreference.kt\ncom/iMe/storage/data/locale/prefs/impl/BasePreference\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,48:1\n1#2:49\n*E\n"
+.end annotation
+
+
 # instance fields
 .field private final context:Landroid/content/Context;
 
@@ -86,34 +92,27 @@
 .method private final getActualTgAccount()Ljava/lang/String;
     .locals 2
 
-    .line 46
+    .line 44
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getTempOneActionUserId()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
 
-    move-result v0
+    move-result v1
 
-    if-lez v0, :cond_0
+    if-nez v1, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :goto_0
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getTempOneActionUserId()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    :cond_1
     iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountId()J
@@ -124,7 +123,7 @@
 
     move-result-object v0
 
-    :goto_1
+    :cond_1
     return-object v0
 .end method
 
@@ -214,12 +213,10 @@
 
     move-result-object v0
 
-    .line 31
     invoke-interface {v0, p1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
 
-    .line 32
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
@@ -249,7 +246,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 40
+    .line 37
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -270,7 +267,7 @@
 .end method
 
 .method public withTgAccount(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     const-string v0, "key"
 
@@ -280,53 +277,31 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, ""
-
-    .line 36
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .line 34
+    invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
-    const/16 v1, 0x5f
+    if-nez v0, :cond_0
 
-    if-eqz v0, :cond_0
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-direct {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getActualTgAccount()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
+    const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 37
     :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    :goto_0
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getActualTgAccount()Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result-object p2
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_1
+    invoke-virtual {p0, p2, p1}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->withPrefix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    :goto_0
     return-object p1
 .end method

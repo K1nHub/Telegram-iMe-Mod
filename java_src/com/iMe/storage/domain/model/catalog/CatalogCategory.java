@@ -7,12 +7,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class CatalogCategory {
 
     /* renamed from: id */
-    private final long f319id;
+    private final long f314id;
     private final String title;
 
     public static /* synthetic */ CatalogCategory copy$default(CatalogCategory catalogCategory, long j, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = catalogCategory.f319id;
+            j = catalogCategory.f314id;
         }
         if ((i & 2) != 0) {
             str = catalogCategory.title;
@@ -21,7 +21,7 @@ public final class CatalogCategory {
     }
 
     public final long component1() {
-        return this.f319id;
+        return this.f314id;
     }
 
     public final String component2() {
@@ -39,27 +39,27 @@ public final class CatalogCategory {
         }
         if (obj instanceof CatalogCategory) {
             CatalogCategory catalogCategory = (CatalogCategory) obj;
-            return this.f319id == catalogCategory.f319id && Intrinsics.areEqual(this.title, catalogCategory.title);
+            return this.f314id == catalogCategory.f314id && Intrinsics.areEqual(this.title, catalogCategory.title);
         }
         return false;
     }
 
     public int hashCode() {
-        return (BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f319id) * 31) + this.title.hashCode();
+        return (BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f314id) * 31) + this.title.hashCode();
     }
 
     public String toString() {
-        return "CatalogCategory(id=" + this.f319id + ", title=" + this.title + ')';
+        return "CatalogCategory(id=" + this.f314id + ", title=" + this.title + ')';
     }
 
     public CatalogCategory(long j, String title) {
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f319id = j;
+        this.f314id = j;
         this.title = title;
     }
 
     public final long getId() {
-        return this.f319id;
+        return this.f314id;
     }
 
     public final String getTitle() {

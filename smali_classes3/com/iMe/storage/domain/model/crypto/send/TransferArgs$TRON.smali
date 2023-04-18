@@ -50,25 +50,25 @@
 
     const/4 v0, 0x0
 
-    .line 36
-    invoke-direct {p0, p1, p2, v0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DLkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 42
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 30
+    .line 36
     iput-wide p1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->amount:D
 
-    .line 31
+    .line 37
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 32
+    .line 38
     iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->recipientAddress:Ljava/lang/String;
 
-    .line 33
+    .line 39
     iput-object p5, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->feeLimit:Ljava/math/BigInteger;
 
-    .line 34
+    .line 40
     iput-object p6, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->contractAddress:Ljava/lang/String;
 
-    .line 35
+    .line 41
     iput-object p7, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->blockHeader:Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
 
     return-void
@@ -103,7 +103,7 @@
 
     move-object/from16 v8, p7
 
-    .line 29
+    .line 35
     invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;-><init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;Ljava/math/BigInteger;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;)V
 
     return-void
@@ -132,7 +132,9 @@
 
     if-eqz v3, :cond_1
 
-    iget-object v3, v0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v3
 
     goto :goto_1
 
@@ -219,10 +221,12 @@
     return-wide v0
 .end method
 
-.method public final component2()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+.method protected final component2()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -337,9 +341,13 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    move-result-object v1
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v3
 
     if-eq v1, v3, :cond_3
 
@@ -404,7 +412,7 @@
 .method public getAmount()D
     .locals 2
 
-    .line 30
+    .line 36
     iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->amount:D
 
     return-wide v0
@@ -413,7 +421,7 @@
 .method public final getBlockHeader()Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
     .locals 1
 
-    .line 35
+    .line 41
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->blockHeader:Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
 
     return-object v0
@@ -422,7 +430,7 @@
 .method public final getContractAddress()Ljava/lang/String;
     .locals 1
 
-    .line 34
+    .line 40
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->contractAddress:Ljava/lang/String;
 
     return-object v0
@@ -431,7 +439,7 @@
 .method public final getFeeLimit()Ljava/math/BigInteger;
     .locals 1
 
-    .line 33
+    .line 39
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->feeLimit:Ljava/math/BigInteger;
 
     return-object v0
@@ -440,16 +448,16 @@
 .method public final getRecipientAddress()Ljava/lang/String;
     .locals 1
 
-    .line 32
+    .line 38
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->recipientAddress:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+.method protected getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
     .locals 1
 
-    .line 31
+    .line 37
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     return-object v0
@@ -468,7 +476,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
 
@@ -548,7 +558,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

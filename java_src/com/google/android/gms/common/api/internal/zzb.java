@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 import java.lang.ref.WeakReference;
 import java.util.Map;
 import java.util.WeakHashMap;
-import p035j$.util.DesugarCollections;
+import p034j$.util.DesugarCollections;
 /* compiled from: com.google.android.gms:play-services-basement@@18.1.0 */
 /* loaded from: classes.dex */
 public final class zzb extends Fragment implements LifecycleFragment {

@@ -5,34 +5,37 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
 import java.util.concurrent.atomic.AtomicBoolean;
+import kotlin.jvm.internal.Intrinsics;
+/* compiled from: LifecycleDispatcher.kt */
 /* loaded from: classes.dex */
-class LifecycleDispatcher {
-    private static AtomicBoolean sInitialized = new AtomicBoolean(false);
+public final class LifecycleDispatcher {
+    private static final AtomicBoolean initialized;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static void init(Context context) {
-        if (sInitialized.getAndSet(true)) {
-            return;
-        }
-        ((Application) context.getApplicationContext()).registerActivityLifecycleCallbacks(new DispatcherActivityCallback());
+    private LifecycleDispatcher() {
     }
 
+    static {
+        new LifecycleDispatcher();
+        initialized = new AtomicBoolean(false);
+    }
+
+    public static final void init(Context context) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        if (initialized.getAndSet(true)) {
+            return;
+        }
+        Context applicationContext = context.getApplicationContext();
+        Intrinsics.checkNotNull(applicationContext, "null cannot be cast to non-null type android.app.Application");
+        ((Application) applicationContext).registerActivityLifecycleCallbacks(new DispatcherActivityCallback());
+    }
+
+    /* compiled from: LifecycleDispatcher.kt */
     /* loaded from: classes.dex */
-    static class DispatcherActivityCallback extends EmptyActivityLifecycleCallbacks {
-        @Override // androidx.lifecycle.EmptyActivityLifecycleCallbacks, android.app.Application.ActivityLifecycleCallbacks
-        public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
-        }
-
-        @Override // androidx.lifecycle.EmptyActivityLifecycleCallbacks, android.app.Application.ActivityLifecycleCallbacks
-        public void onActivityStopped(Activity activity) {
-        }
-
-        DispatcherActivityCallback() {
-        }
-
+    public static final class DispatcherActivityCallback extends EmptyActivityLifecycleCallbacks {
         @Override // androidx.lifecycle.EmptyActivityLifecycleCallbacks, android.app.Application.ActivityLifecycleCallbacks
         public void onActivityCreated(Activity activity, Bundle bundle) {
-            ReportFragment.injectIfNeededIn(activity);
+            Intrinsics.checkNotNullParameter(activity, "activity");
+            ReportFragment.Companion.injectIfNeededIn(activity);
         }
     }
 }

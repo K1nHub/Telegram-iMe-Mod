@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.firebase_ml;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.gms.internal.firebase_ml.zzrl;
 import com.google.android.gms.internal.firebase_ml.zzuu;
 import com.google.android.gms.wallet.WalletConstants;
@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 public final class zzlu {
 
     /* loaded from: classes.dex */
-    public static final class zza extends zzuu<zza, C6859zza> implements zzwg {
+    public static final class zza extends zzuu<zza, C6769zza> implements zzwg {
         private static final zza zzadc;
         private static volatile zzwr<zza> zzs;
         private int zzadb;
@@ -21,18 +21,18 @@ public final class zzlu {
 
         /* renamed from: com.google.android.gms.internal.firebase_ml.zzlu$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6859zza extends zzuu.zzb<zza, C6859zza> implements zzwg {
-            private C6859zza() {
+        public static final class C6769zza extends zzuu.zzb<zza, C6769zza> implements zzwg {
+            private C6769zza() {
                 super(zza.zzadc);
             }
 
-            public final C6859zza zza(zzmc zzmcVar) {
+            public final C6769zza zza(zzmc zzmcVar) {
                 zzrm();
                 ((zza) this.zzbst).zzb(zzmcVar);
                 return this;
             }
 
-            /* synthetic */ C6859zza(zzlt zzltVar) {
+            /* synthetic */ C6769zza(zzlt zzltVar) {
                 this();
             }
         }
@@ -44,7 +44,7 @@ public final class zzlu {
             this.zzadb = zzmcVar.zza();
         }
 
-        public static C6859zza zzij() {
+        public static C6769zza zzij() {
             return zzadc.zzrd();
         }
 
@@ -54,7 +54,7 @@ public final class zzlu {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C6859zza(null);
+                    return new C6769zza(null);
                 case 3:
                     return zzuu.zza(zzadc, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\f\u0000", new Object[]{"zzm", "zzadb", zzmc.zzc()});
                 case 4:
@@ -688,7 +688,7 @@ public final class zzlu {
         private int zzm;
 
         /* loaded from: classes.dex */
-        public static final class zza extends zzuu<zza, C6860zza> implements zzwg {
+        public static final class zza extends zzuu<zza, C6770zza> implements zzwg {
             private static final zza zzapn;
             private static volatile zzwr<zza> zzs;
             private float zzapl;
@@ -700,12 +700,12 @@ public final class zzlu {
 
             /* renamed from: com.google.android.gms.internal.firebase_ml.zzlu$zzae$zza$zza  reason: collision with other inner class name */
             /* loaded from: classes.dex */
-            public static final class C6860zza extends zzuu.zzb<zza, C6860zza> implements zzwg {
-                private C6860zza() {
+            public static final class C6770zza extends zzuu.zzb<zza, C6770zza> implements zzwg {
+                private C6770zza() {
                     super(zza.zzapn);
                 }
 
-                /* synthetic */ C6860zza(zzlt zzltVar) {
+                /* synthetic */ C6770zza(zzlt zzltVar) {
                     this();
                 }
             }
@@ -716,7 +716,7 @@ public final class zzlu {
                     case 1:
                         return new zza();
                     case 2:
-                        return new C6860zza(null);
+                        return new C6770zza(null);
                     case 3:
                         return zzuu.zza(zzapn, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0001\u0000\u0002\b\u0001", new Object[]{"zzm", "zzapl", "zzapm"});
                     case 4:
@@ -3123,14 +3123,14 @@ public final class zzlu {
 
             /* renamed from: com.google.android.gms.internal.firebase_ml.zzlu$zzp$zzb$zzb  reason: collision with other inner class name */
             /* loaded from: classes.dex */
-            public enum EnumC6861zzb implements zzuz {
+            public enum EnumC6771zzb implements zzuz {
                 UNKNOWN_DATA_TYPE(0),
                 TYPE_FLOAT32(1),
                 TYPE_INT32(2),
                 TYPE_BYTE(3),
                 TYPE_LONG(4);
                 
-                private static final zzuy<EnumC6861zzb> zzj = new zzly();
+                private static final zzuy<EnumC6771zzb> zzj = new zzly();
                 private final int value;
 
                 @Override // com.google.android.gms.internal.firebase_ml.zzuz
@@ -3138,7 +3138,7 @@ public final class zzlu {
                     return this.value;
                 }
 
-                public static EnumC6861zzb zzaj(int i) {
+                public static EnumC6771zzb zzaj(int i) {
                     if (i != 0) {
                         if (i != 1) {
                             if (i != 2) {
@@ -3161,7 +3161,7 @@ public final class zzlu {
                     return zzlz.zzx;
                 }
 
-                EnumC6861zzb(int i) {
+                EnumC6771zzb(int i) {
                     this.value = i;
                 }
             }
@@ -3175,9 +3175,9 @@ public final class zzlu {
                     super(zzb.zzaek);
                 }
 
-                public final zza zza(EnumC6861zzb enumC6861zzb) {
+                public final zza zza(EnumC6771zzb enumC6771zzb) {
                     zzrm();
-                    ((zzb) this.zzbst).zzb(enumC6861zzb);
+                    ((zzb) this.zzbst).zzb(enumC6771zzb);
                     return this;
                 }
 
@@ -3193,10 +3193,10 @@ public final class zzlu {
             }
 
             /* JADX INFO: Access modifiers changed from: private */
-            public final void zzb(EnumC6861zzb enumC6861zzb) {
-                Objects.requireNonNull(enumC6861zzb);
+            public final void zzb(EnumC6771zzb enumC6771zzb) {
+                Objects.requireNonNull(enumC6771zzb);
                 this.zzm |= 1;
-                this.zzaei = enumC6861zzb.zza();
+                this.zzaei = enumC6771zzb.zza();
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -3219,7 +3219,7 @@ public final class zzlu {
                     case 2:
                         return new zza(null);
                     case 3:
-                        return zzuu.zza(zzaek, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001\f\u0000\u0002\u0016", new Object[]{"zzm", "zzaei", EnumC6861zzb.zzc(), "zzaej"});
+                        return zzuu.zza(zzaek, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001\f\u0000\u0002\u0016", new Object[]{"zzm", "zzaei", EnumC6771zzb.zzc(), "zzaej"});
                     case 4:
                         return zzaek;
                     case 5:
@@ -4053,7 +4053,7 @@ public final class zzlu {
         /* JADX INFO: Access modifiers changed from: private */
         public final void zzb(zzc.zza zzaVar) {
             this.zzakm = (zzc) ((zzuu) zzaVar.zzrq());
-            this.zzm |= C0482C.BUFFER_FLAG_FIRST_SAMPLE;
+            this.zzm |= C0470C.BUFFER_FLAG_FIRST_SAMPLE;
         }
 
         /* JADX INFO: Access modifiers changed from: private */

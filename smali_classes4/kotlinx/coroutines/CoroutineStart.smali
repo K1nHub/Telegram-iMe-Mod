@@ -151,24 +151,20 @@
 
     move-result-object p0
 
-    .line 123
     check-cast p0, Lkotlinx/coroutines/CoroutineStart;
 
     return-object p0
 .end method
 
 .method public static values()[Lkotlinx/coroutines/CoroutineStart;
-    .locals 2
+    .locals 1
 
     sget-object v0, Lkotlinx/coroutines/CoroutineStart;->$VALUES:[Lkotlinx/coroutines/CoroutineStart;
 
-    array-length v1, v0
-
-    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 123
     check-cast v0, [Lkotlinx/coroutines/CoroutineStart;
 
     return-object v0

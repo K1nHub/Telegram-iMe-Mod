@@ -15,7 +15,7 @@
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    const-string v0, "string cannot be null"
+    const-string v0, "\'string\' cannot be null"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -140,38 +140,165 @@
 .end method
 
 .method public static getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/ASN1OctetString;
-    .locals 0
+    .locals 2
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->isExplicit()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getObject()Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object p0
 
-    if-nez p1, :cond_1
-
-    instance-of p1, p0, Lorg/bouncycastle/asn1/ASN1OctetString;
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1Sequence;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lorg/bouncycastle/asn1/BEROctetString;->fromSequence(Lorg/bouncycastle/asn1/ASN1Sequence;)Lorg/bouncycastle/asn1/BEROctetString;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_1
-    :goto_0
     invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1OctetString;
 
     move-result-object p0
 
     return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "object implicit - explicit expected."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->isExplicit()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1OctetString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    move-result-object p1
+
+    instance-of p0, p0, Lorg/bouncycastle/asn1/BERTaggedObject;
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    if-eqz p0, :cond_2
+
+    new-instance p0, Lorg/bouncycastle/asn1/BEROctetString;
+
+    new-array v1, v1, [Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    aput-object p1, v1, v0
+
+    invoke-direct {p0, v1}, Lorg/bouncycastle/asn1/BEROctetString;-><init>([Lorg/bouncycastle/asn1/ASN1OctetString;)V
+
+    return-object p0
+
+    :cond_2
+    new-instance p0, Lorg/bouncycastle/asn1/BEROctetString;
+
+    new-array v1, v1, [Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    aput-object p1, v1, v0
+
+    invoke-direct {p0, v1}, Lorg/bouncycastle/asn1/BEROctetString;-><init>([Lorg/bouncycastle/asn1/ASN1OctetString;)V
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    check-cast p0, Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    return-object p0
+
+    :cond_3
+    instance-of v0, p1, Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    if-eqz v0, :cond_5
+
+    check-cast p1, Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    instance-of p0, p0, Lorg/bouncycastle/asn1/BERTaggedObject;
+
+    if-eqz p0, :cond_4
+
+    return-object p1
+
+    :cond_4
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1OctetString;->toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    check-cast p0, Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    return-object p0
+
+    :cond_5
+    instance-of v0, p1, Lorg/bouncycastle/asn1/ASN1Sequence;
+
+    if-eqz v0, :cond_7
+
+    check-cast p1, Lorg/bouncycastle/asn1/ASN1Sequence;
+
+    instance-of p0, p0, Lorg/bouncycastle/asn1/BERTaggedObject;
+
+    if-eqz p0, :cond_6
+
+    invoke-static {p1}, Lorg/bouncycastle/asn1/BEROctetString;->fromSequence(Lorg/bouncycastle/asn1/ASN1Sequence;)Lorg/bouncycastle/asn1/BEROctetString;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_6
+    invoke-static {p1}, Lorg/bouncycastle/asn1/BEROctetString;->fromSequence(Lorg/bouncycastle/asn1/ASN1Sequence;)Lorg/bouncycastle/asn1/BEROctetString;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    check-cast p0, Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    return-object p0
+
+    :cond_7
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "unknown object in getInstance: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 

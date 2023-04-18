@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/recognition/PhotoView$$State;)V
     .locals 1
 
-    .line 262
+    .line 298
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showAppUpdateDialog"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/recognition/PhotoView;)V
     .locals 0
 
-    .line 267
+    .line 303
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/AppUpdateRequiredView;->showAppUpdateDialog()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 260
+    .line 296
     check-cast p1, Lcom/iMe/ui/recognition/PhotoView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/recognition/PhotoView$$State$ShowAppUpdateDialogCommand;->apply(Lcom/iMe/ui/recognition/PhotoView;)V

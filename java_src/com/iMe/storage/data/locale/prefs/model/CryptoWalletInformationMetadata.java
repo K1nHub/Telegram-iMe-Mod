@@ -26,9 +26,9 @@ public final class CryptoWalletInformationMetadata {
     }
 
     public int hashCode() {
-        int m716m = BotsDbModel$$ExternalSyntheticBackport0.m716m(this.lastUpdateMillis) * 31;
+        int m702m = BotsDbModel$$ExternalSyntheticBackport0.m702m(this.lastUpdateMillis) * 31;
         CryptoWalletInfo cryptoWalletInfo = this.walletInfo;
-        return m716m + (cryptoWalletInfo == null ? 0 : cryptoWalletInfo.hashCode());
+        return m702m + (cryptoWalletInfo == null ? 0 : cryptoWalletInfo.hashCode());
     }
 
     public String toString() {

@@ -184,7 +184,7 @@ public final class AudioFocusManager {
         }
         switch (audioAttributes.usage) {
             case 0:
-                Log.m806w(TAG, "Specify a proper usage in the audio attributes for audio focus handling. Using AUDIOFOCUS_GAIN by default.");
+                Log.m792w(TAG, "Specify a proper usage in the audio attributes for audio focus handling. Using AUDIOFOCUS_GAIN by default.");
                 return 1;
             case 1:
             case 14:
@@ -210,7 +210,7 @@ public final class AudioFocusManager {
                 break;
             case 15:
             default:
-                Log.m806w(TAG, "Unidentified audio usage: " + audioAttributes.usage);
+                Log.m792w(TAG, "Unidentified audio usage: " + audioAttributes.usage);
                 return 0;
             case 16:
                 return Util.SDK_INT >= 19 ? 4 : 2;
@@ -250,7 +250,7 @@ public final class AudioFocusManager {
             setAudioFocusState(1);
             executePlayerCommand(1);
         } else {
-            Log.m806w(TAG, "Unknown focus change type: " + i);
+            Log.m792w(TAG, "Unknown focus change type: " + i);
         }
     }
 

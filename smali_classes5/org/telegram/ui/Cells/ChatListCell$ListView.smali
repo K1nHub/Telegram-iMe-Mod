@@ -125,22 +125,22 @@
 
     invoke-virtual {p3, p1}, Lorg/telegram/ui/Components/RadioButton;->setSize(I)V
 
-    .line 73
+    .line 68
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->button:Lorg/telegram/ui/Components/RadioButton;
 
     const/16 v2, 0x16
 
     const/16 v3, 0x16
 
-    const/16 v4, 0x51
+    const/16 v4, 0x35
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    const/16 v6, 0x1a
 
-    const/4 v7, 0x0
+    const/16 v7, 0xa
 
-    const/16 v8, 0x31
+    const/4 v8, 0x0
 
     invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
@@ -148,83 +148,145 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 74
-    sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->isDialogsCompactModeEnabled:Z
+    .line 69
+    iget-object p1, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->button:Lorg/telegram/ui/Components/RadioButton;
 
-    if-eqz p1, :cond_2
-
-    iget-boolean p2, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isCompactMode:Z
+    iget-boolean p2, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isThreeLines:Z
 
     if-eqz p2, :cond_2
 
+    sget-boolean p3, Lorg/telegram/messenger/SharedConfig;->useThreeLinesLayout:Z
+
+    if-nez p3, :cond_3
+
+    :cond_2
+    if-nez p2, :cond_4
+
+    sget-boolean p2, Lorg/telegram/messenger/SharedConfig;->useThreeLinesLayout:Z
+
+    if-nez p2, :cond_4
+
+    :cond_3
     move p2, v1
 
     goto :goto_2
 
-    :cond_2
+    :cond_4
     move p2, v0
 
     :goto_2
-    if-nez p1, :cond_3
+    invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Components/RadioButton;->setChecked(ZZ)V
+
+    .line 71
+    iget-object p1, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->button:Lorg/telegram/ui/Components/RadioButton;
+
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/widget/FrameLayout$LayoutParams;
+
+    const/16 p2, 0x51
+
+    .line 72
+    iput p2, p1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+
+    .line 73
+    iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+
+    iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+
+    const/16 p2, 0x31
+
+    .line 74
+    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p2
+
+    iput p2, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     .line 75
-    sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->useThreeLinesLayout:Z
+    iget-object p2, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->button:Lorg/telegram/ui/Components/RadioButton;
 
-    if-nez p1, :cond_3
+    invoke-virtual {p2, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    iget-boolean p1, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isCompactMode:Z
+    .line 76
+    sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->isDialogsCompactModeEnabled:Z
 
-    if-nez p1, :cond_3
+    if-eqz p1, :cond_5
 
-    iget-boolean p1, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isThreeLines:Z
+    iget-boolean p2, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isCompactMode:Z
 
-    if-nez p1, :cond_3
+    if-eqz p2, :cond_5
 
-    move p1, v1
+    move p2, v1
 
     goto :goto_3
 
-    :cond_3
-    move p1, v0
+    :cond_5
+    move p2, v0
 
-    .line 76
     :goto_3
-    sget-boolean p3, Lorg/telegram/messenger/SharedConfig;->isDialogsCompactModeEnabled:Z
-
-    if-nez p3, :cond_4
-
-    sget-boolean p3, Lorg/telegram/messenger/SharedConfig;->useThreeLinesLayout:Z
-
-    if-eqz p3, :cond_4
-
-    iget-boolean p3, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isThreeLines:Z
-
-    if-eqz p3, :cond_4
-
-    move p3, v1
-
-    goto :goto_4
-
-    :cond_4
-    move p3, v0
+    if-nez p1, :cond_6
 
     .line 77
-    :goto_4
-    iget-object p4, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->button:Lorg/telegram/ui/Components/RadioButton;
-
-    if-nez p2, :cond_6
+    sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->useThreeLinesLayout:Z
 
     if-nez p1, :cond_6
 
-    if-eqz p3, :cond_5
+    iget-boolean p1, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isCompactMode:Z
+
+    if-nez p1, :cond_6
+
+    iget-boolean p1, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isThreeLines:Z
+
+    if-nez p1, :cond_6
+
+    move p1, v1
+
+    goto :goto_4
+
+    :cond_6
+    move p1, v0
+
+    .line 78
+    :goto_4
+    sget-boolean p3, Lorg/telegram/messenger/SharedConfig;->isDialogsCompactModeEnabled:Z
+
+    if-nez p3, :cond_7
+
+    sget-boolean p3, Lorg/telegram/messenger/SharedConfig;->useThreeLinesLayout:Z
+
+    if-eqz p3, :cond_7
+
+    iget-boolean p3, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isThreeLines:Z
+
+    if-eqz p3, :cond_7
+
+    move p3, v1
 
     goto :goto_5
 
-    :cond_5
+    :cond_7
+    move p3, v0
+
+    .line 79
+    :goto_5
+    iget-object p4, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->button:Lorg/telegram/ui/Components/RadioButton;
+
+    if-nez p2, :cond_9
+
+    if-nez p1, :cond_9
+
+    if-eqz p3, :cond_8
+
+    goto :goto_6
+
+    :cond_8
     move v1, v0
 
-    :cond_6
-    :goto_5
+    :cond_9
+    :goto_6
     invoke-virtual {p4, v1, v0}, Lorg/telegram/ui/Components/RadioButton;->setChecked(ZZ)V
 
     return-void
@@ -250,27 +312,27 @@
 
     const-string v2, "switchTrack"
 
-    .line 83
+    .line 85
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 84
+    .line 86
     invoke-static {v2}, Landroid/graphics/Color;->red(I)I
 
     move-result v3
 
-    .line 85
+    .line 87
     invoke-static {v2}, Landroid/graphics/Color;->green(I)I
 
     move-result v4
 
-    .line 86
+    .line 88
     invoke-static {v2}, Landroid/graphics/Color;->blue(I)I
 
     move-result v2
 
-    .line 88
+    .line 90
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->button:Lorg/telegram/ui/Components/RadioButton;
 
     const-string v6, "radioBackground"
@@ -287,7 +349,7 @@
 
     invoke-virtual {v5, v6, v7}, Lorg/telegram/ui/Components/RadioButton;->setColor(II)V
 
-    .line 90
+    .line 92
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
 
     const/4 v6, 0x1
@@ -326,7 +388,7 @@
 
     invoke-virtual {v5, v7, v8, v6, v9}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 91
+    .line 93
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
 
     iget v6, v5, Landroid/graphics/RectF;->bottom:F
@@ -343,7 +405,7 @@
 
     iput v6, v5, Landroid/graphics/RectF;->bottom:F
 
-    .line 92
+    .line 94
     sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->chat_instantViewRectPaint:Landroid/graphics/Paint;
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->button:Lorg/telegram/ui/Components/RadioButton;
@@ -364,7 +426,7 @@
 
     invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 93
+    .line 95
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
 
     const/4 v6, 0x6
@@ -385,7 +447,7 @@
 
     invoke-virtual {v1, v5, v7, v8, v9}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 95
+    .line 97
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -406,7 +468,7 @@
 
     invoke-virtual {v5, v9, v9, v7, v8}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 96
+    .line 98
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
 
     iget v7, v5, Landroid/graphics/RectF;->bottom:F
@@ -423,7 +485,7 @@
 
     iput v7, v5, Landroid/graphics/RectF;->bottom:F
 
-    .line 97
+    .line 99
     sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     iget-object v7, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->button:Lorg/telegram/ui/Components/RadioButton;
@@ -448,7 +510,7 @@
 
     invoke-virtual {v5, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 98
+    .line 100
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -467,7 +529,7 @@
 
     invoke-virtual {v1, v5, v7, v6, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 100
+    .line 102
     iget-boolean v5, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isThreeLines:Z
 
     if-eqz v5, :cond_0
@@ -488,19 +550,19 @@
 
     move-result-object v5
 
-    .line 102
+    .line 104
     iget-boolean v6, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isCompactMode:Z
 
     if-eqz v6, :cond_1
 
-    .line 103
+    .line 105
     sget v5, Lorg/telegram/messenger/R$string;->chat_settings_chat_list_compact_mode:I
 
     invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 106
+    .line 108
     :cond_1
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->textPaint:Landroid/text/TextPaint;
 
@@ -516,7 +578,7 @@
 
     double-to-int v6, v6
 
-    .line 108
+    .line 110
     iget-object v7, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->textPaint:Landroid/text/TextPaint;
 
     const-string v8, "windowBackgroundWhiteBlackText"
@@ -527,74 +589,72 @@
 
     invoke-virtual {v7, v8}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 110
+    .line 111
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v7
 
     sub-int/2addr v7, v6
 
-    int-to-float v6, v7
+    const/4 v6, 0x2
 
-    const/high16 v7, 0x40000000    # 2.0f
-
-    div-float/2addr v6, v7
-
-    const/16 v7, 0x80
-
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v7
+    div-int/2addr v7, v6
 
     int-to-float v7, v7
 
-    iget-object v8, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->textPaint:Landroid/text/TextPaint;
+    const/16 v8, 0x80
 
-    invoke-virtual {v1, v5, v6, v7, v8}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    .line 113
+    move-result v8
+
+    int-to-float v8, v8
+
+    iget-object v9, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->textPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v1, v5, v7, v8, v9}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+
+    .line 114
     iget-boolean v5, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isCompactMode:Z
 
-    const/4 v7, 0x3
+    const/4 v8, 0x3
 
-    const/16 v9, 0x16
+    const/16 v10, 0x16
 
-    const/16 v10, 0xcc
-
-    const/4 v11, 0x2
+    const/16 v11, 0xcc
 
     if-eqz v5, :cond_5
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
     :goto_1
-    if-ge v8, v7, :cond_10
+    if-ge v9, v8, :cond_10
 
     const/high16 v5, 0x418c0000    # 17.5f
 
-    if-nez v8, :cond_2
+    if-nez v9, :cond_2
 
     goto :goto_2
 
     :cond_2
-    mul-int/lit8 v12, v8, 0x13
+    mul-int/lit8 v12, v9, 0x13
 
     int-to-float v12, v12
 
     add-float/2addr v5, v12
 
-    .line 115
+    .line 116
     :goto_2
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v5
 
-    .line 116
+    .line 117
     sget-object v12, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    if-eqz v8, :cond_4
+    if-eqz v9, :cond_4
 
-    if-ne v8, v11, :cond_3
+    if-ne v9, v6, :cond_3
 
     goto :goto_3
 
@@ -605,7 +665,7 @@
 
     :cond_4
     :goto_3
-    move v13, v10
+    move v13, v11
 
     :goto_4
     invoke-static {v13, v3, v4, v2}, Landroid/graphics/Color;->argb(IIII)I
@@ -614,8 +674,8 @@
 
     invoke-virtual {v12, v13}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 117
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 118
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
@@ -635,16 +695,16 @@
 
     invoke-virtual {v1, v12, v13, v14, v15}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 118
+    .line 119
     sget-object v12, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-static {v10, v3, v4, v2}, Landroid/graphics/Color;->argb(IIII)I
+    invoke-static {v11, v3, v4, v2}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v13
 
     invoke-virtual {v12, v13}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 119
+    .line 120
     iget-object v12, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
 
     const/high16 v13, 0x42160000    # 37.5f
@@ -655,7 +715,7 @@
 
     int-to-float v13, v13
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v14
 
@@ -677,7 +737,7 @@
 
     int-to-float v15, v15
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v16
 
@@ -687,16 +747,16 @@
 
     invoke-virtual {v12, v13, v14, v15, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 120
+    .line 121
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
     int-to-float v12, v12
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
 
@@ -706,7 +766,7 @@
 
     invoke-virtual {v1, v5, v12, v13, v14}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v9, v9, 0x1
 
     goto :goto_1
 
@@ -714,7 +774,7 @@
     const/4 v5, 0x0
 
     :goto_5
-    if-ge v5, v11, :cond_10
+    if-ge v5, v6, :cond_10
 
     if-nez v5, :cond_6
 
@@ -725,18 +785,18 @@
     :cond_6
     const/16 v12, 0x35
 
-    .line 124
+    .line 125
     :goto_6
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
-    .line 125
+    .line 126
     sget-object v13, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     if-nez v5, :cond_7
 
-    move v14, v10
+    move v14, v11
 
     goto :goto_7
 
@@ -750,8 +810,8 @@
 
     invoke-virtual {v13, v14}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 126
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 127
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
 
@@ -763,38 +823,38 @@
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v6
+    move-result v7
 
-    int-to-float v6, v6
+    int-to-float v7, v7
 
-    sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v13, v14, v6, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v13, v14, v7, v8}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    .line 128
+    .line 129
     :goto_8
-    iget-boolean v7, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isThreeLines:Z
+    iget-boolean v8, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isThreeLines:Z
 
-    if-eqz v7, :cond_8
+    if-eqz v8, :cond_8
 
-    const/4 v7, 0x3
+    const/4 v8, 0x3
 
     goto :goto_9
 
     :cond_8
-    move v7, v11
+    move v8, v6
 
     :goto_9
-    if-ge v6, v7, :cond_f
+    if-ge v7, v8, :cond_f
 
-    .line 129
-    sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    .line 130
+    sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    if-nez v6, :cond_9
+    if-nez v7, :cond_9
 
-    move v13, v10
+    move v13, v11
 
     goto :goto_a
 
@@ -806,10 +866,10 @@
 
     move-result v13
 
-    invoke-virtual {v7, v13}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v8, v13}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 130
-    iget-boolean v7, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isThreeLines:Z
+    .line 131
+    iget-boolean v8, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isThreeLines:Z
 
     const/16 v13, 0x48
 
@@ -817,38 +877,38 @@
 
     const/16 v17, 0x29
 
-    if-eqz v7, :cond_c
+    if-eqz v8, :cond_c
 
-    .line 131
-    iget-object v7, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
+    .line 132
+    iget-object v8, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
 
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v8
-
-    int-to-float v8, v8
-
-    const v17, 0x4104cccd    # 8.3f
-
-    mul-int/lit8 v9, v6, 0x7
+    move-result v9
 
     int-to-float v9, v9
 
-    sub-float v17, v17, v9
+    const v17, 0x4104cccd    # 8.3f
+
+    mul-int/lit8 v10, v7, 0x7
+
+    int-to-float v10, v10
+
+    sub-float v17, v17, v10
 
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v17
 
-    sub-int v10, v12, v17
+    sub-int v11, v12, v17
 
-    int-to-float v10, v10
+    int-to-float v11, v11
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v17
 
-    if-nez v6, :cond_a
+    if-nez v7, :cond_a
 
     goto :goto_b
 
@@ -866,79 +926,9 @@
 
     const v14, 0x40a9999a    # 5.3f
 
-    sub-float/2addr v14, v9
+    sub-float/2addr v14, v10
 
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
-
-    move-result v9
-
-    sub-int v9, v12, v9
-
-    int-to-float v9, v9
-
-    invoke-virtual {v7, v8, v10, v13, v9}, Landroid/graphics/RectF;->set(FFFF)V
-
-    .line 132
-    iget-object v7, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
-
-    move-result v8
-
-    if-nez v6, :cond_b
-
-    const/16 v9, 0x16
-
-    goto :goto_c
-
-    :cond_b
-    move v9, v15
-
-    :goto_c
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    sub-int/2addr v8, v9
-
-    int-to-float v8, v8
-
-    iput v8, v7, Landroid/graphics/RectF;->right:F
-
-    .line 133
-    iget-object v7, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
-
-    const/high16 v8, 0x3fc00000    # 1.5f
-
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
-
-    move-result v9
-
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
-
-    move-result v8
-
-    sget-object v10, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v1, v7, v9, v8, v10}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
-
-    goto :goto_f
-
-    .line 135
-    :cond_c
-    iget-object v7, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
-
-    invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v8
-
-    int-to-float v8, v8
-
-    mul-int/lit8 v9, v6, 0xa
-
-    rsub-int/lit8 v10, v9, 0x7
-
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
@@ -946,11 +936,81 @@
 
     int-to-float v10, v10
 
+    invoke-virtual {v8, v9, v11, v13, v10}, Landroid/graphics/RectF;->set(FFFF)V
+
+    .line 133
+    iget-object v8, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
+
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v9
+
+    if-nez v7, :cond_b
+
+    const/16 v10, 0x16
+
+    goto :goto_c
+
+    :cond_b
+    move v10, v15
+
+    :goto_c
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v10
+
+    sub-int/2addr v9, v10
+
+    int-to-float v9, v9
+
+    iput v9, v8, Landroid/graphics/RectF;->right:F
+
+    .line 134
+    iget-object v8, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
+
+    const/high16 v9, 0x3fc00000    # 1.5f
+
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
+
+    move-result v10
+
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
+
+    move-result v9
+
+    sget-object v11, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v8, v10, v9, v11}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    goto :goto_f
+
+    .line 136
+    :cond_c
+    iget-object v8, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
+
+    invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v9
+
+    int-to-float v9, v9
+
+    mul-int/lit8 v10, v7, 0xa
+
+    rsub-int/lit8 v11, v10, 0x7
+
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v11
+
+    sub-int v11, v12, v11
+
+    int-to-float v11, v11
+
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v17
 
-    if-nez v6, :cond_d
+    if-nez v7, :cond_d
 
     goto :goto_d
 
@@ -966,81 +1026,81 @@
 
     int-to-float v13, v13
 
-    rsub-int/lit8 v9, v9, 0x3
+    rsub-int/lit8 v10, v10, 0x3
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v10
 
-    sub-int v9, v12, v9
+    sub-int v10, v12, v10
 
-    int-to-float v9, v9
+    int-to-float v10, v10
 
-    invoke-virtual {v7, v8, v10, v13, v9}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v8, v9, v11, v13, v10}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 136
-    iget-object v7, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
+    .line 137
+    iget-object v8, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v8
+    move-result v9
 
-    if-nez v6, :cond_e
+    if-nez v7, :cond_e
 
-    const/16 v9, 0x16
+    const/16 v10, 0x16
 
     goto :goto_e
 
     :cond_e
-    move v9, v15
+    move v10, v15
 
     :goto_e
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v10
 
-    sub-int/2addr v8, v9
+    sub-int/2addr v9, v10
 
-    int-to-float v8, v8
+    int-to-float v9, v9
 
-    iput v8, v7, Landroid/graphics/RectF;->right:F
+    iput v9, v8, Landroid/graphics/RectF;->right:F
 
-    .line 137
-    iget-object v7, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
+    .line 138
+    iget-object v8, v0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->rect:Landroid/graphics/RectF;
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v8
-
-    int-to-float v8, v8
-
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
     int-to-float v9, v9
 
-    sget-object v10, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-virtual {v1, v7, v8, v9, v10}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    move-result v10
+
+    int-to-float v10, v10
+
+    sget-object v11, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v8, v9, v10, v11}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     :goto_f
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v7, v7, 0x1
 
-    const/16 v9, 0x16
+    const/16 v10, 0x16
 
-    const/16 v10, 0xcc
+    const/16 v11, 0xcc
 
     goto/16 :goto_8
 
     :cond_f
     add-int/lit8 v5, v5, 0x1
 
-    const/4 v7, 0x3
+    const/4 v8, 0x3
 
-    const/16 v9, 0x16
+    const/16 v10, 0x16
 
-    const/16 v10, 0xcc
+    const/16 v11, 0xcc
 
     goto/16 :goto_5
 
@@ -1051,10 +1111,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 2
 
-    .line 145
+    .line 146
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 146
+    .line 147
     const-class v0, Lorg/telegram/ui/Components/RadioButton;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1063,7 +1123,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 147
+    .line 148
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->button:Lorg/telegram/ui/Components/RadioButton;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RadioButton;->isChecked()Z
@@ -1074,10 +1134,10 @@
 
     const/4 v0, 0x1
 
-    .line 148
+    .line 149
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 149
+    .line 150
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/ChatListCell$ListView;->isThreeLines:Z
 
     if-eqz v0, :cond_0

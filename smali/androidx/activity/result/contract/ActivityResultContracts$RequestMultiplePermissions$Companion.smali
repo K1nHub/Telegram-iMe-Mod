@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 130
+    .line 133
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 164
+    .line 167
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "androidx.activity.result.contract.action.REQUEST_PERMISSIONS"

@@ -10,15 +10,11 @@
 
 .field public final synthetic f$1:J
 
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:[Z
-
-.field public final synthetic f$4:Ljava/util/concurrent/CountDownLatch;
+.field public final synthetic f$2:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;JI[ZLjava/util/concurrent/CountDownLatch;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;JJ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,11 +23,7 @@
 
     iput-wide p2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda92;->f$1:J
 
-    iput p4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda92;->f$2:I
-
-    iput-object p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda92;->f$3:[Z
-
-    iput-object p6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda92;->f$4:Ljava/util/concurrent/CountDownLatch;
+    iput-wide p4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda92;->f$2:J
 
     return-void
 .end method
@@ -39,19 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 6
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda92;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
     iget-wide v1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda92;->f$1:J
 
-    iget v3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda92;->f$2:I
+    iget-wide v3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda92;->f$2:J
 
-    iget-object v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda92;->f$3:[Z
-
-    iget-object v5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda92;->f$4:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$2m6TKsBEkDHhicdrwUPNgnKB064(Lorg/telegram/messenger/MessagesStorage;JI[ZLjava/util/concurrent/CountDownLatch;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$UWlXygVHabH24mNX2hk08PU4JGI(Lorg/telegram/messenger/MessagesStorage;JJ)V
 
     return-void
 .end method

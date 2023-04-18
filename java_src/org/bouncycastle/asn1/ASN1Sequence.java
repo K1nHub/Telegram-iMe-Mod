@@ -1,23 +1,30 @@
 package org.bouncycastle.asn1;
 
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Iterator;
-import java.util.Vector;
+import java.util.NoSuchElementException;
+import java.util.Objects;
 import org.bouncycastle.util.Arrays;
 /* loaded from: classes4.dex */
 public abstract class ASN1Sequence extends ASN1Primitive implements Iterable {
-    protected Vector seq = new Vector();
+    ASN1Encodable[] elements;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public ASN1Sequence() {
+        this.elements = ASN1EncodableVector.EMPTY_ELEMENTS;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public ASN1Sequence(ASN1EncodableVector aSN1EncodableVector) {
-        for (int i = 0; i != aSN1EncodableVector.size(); i++) {
-            this.seq.addElement(aSN1EncodableVector.get(i));
-        }
+        Objects.requireNonNull(aSN1EncodableVector, "'elementVector' cannot be null");
+        this.elements = aSN1EncodableVector.takeElements();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public ASN1Sequence(ASN1Encodable[] aSN1EncodableArr, boolean z) {
+        this.elements = z ? ASN1EncodableVector.cloneElements(aSN1EncodableArr) : aSN1EncodableArr;
     }
 
     public static ASN1Sequence getInstance(Object obj) {
@@ -43,25 +50,19 @@ public abstract class ASN1Sequence extends ASN1Primitive implements Iterable {
         throw new IllegalArgumentException("unknown object in getInstance: " + obj.getClass().getName());
     }
 
-    private ASN1Encodable getNext(Enumeration enumeration) {
-        return (ASN1Encodable) enumeration.nextElement();
-    }
-
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    boolean asn1Equals(ASN1Primitive aSN1Primitive) {
+    public boolean asn1Equals(ASN1Primitive aSN1Primitive) {
         if (aSN1Primitive instanceof ASN1Sequence) {
             ASN1Sequence aSN1Sequence = (ASN1Sequence) aSN1Primitive;
-            if (size() != aSN1Sequence.size()) {
+            int size = size();
+            if (aSN1Sequence.size() != size) {
                 return false;
             }
-            Enumeration objects = getObjects();
-            Enumeration objects2 = aSN1Sequence.getObjects();
-            while (objects.hasMoreElements()) {
-                ASN1Encodable next = getNext(objects);
-                ASN1Encodable next2 = getNext(objects2);
-                ASN1Primitive aSN1Primitive2 = next.toASN1Primitive();
-                ASN1Primitive aSN1Primitive3 = next2.toASN1Primitive();
-                if (aSN1Primitive2 != aSN1Primitive3 && !aSN1Primitive2.equals(aSN1Primitive3)) {
+            for (int i = 0; i < size; i++) {
+                ASN1Primitive aSN1Primitive2 = this.elements[i].toASN1Primitive();
+                ASN1Primitive aSN1Primitive3 = aSN1Sequence.elements[i].toASN1Primitive();
+                if (aSN1Primitive2 != aSN1Primitive3 && !aSN1Primitive2.asn1Equals(aSN1Primitive3)) {
                     return false;
                 }
             }
@@ -71,21 +72,42 @@ public abstract class ASN1Sequence extends ASN1Primitive implements Iterable {
     }
 
     public ASN1Encodable getObjectAt(int i) {
-        return (ASN1Encodable) this.seq.elementAt(i);
+        return this.elements[i];
     }
 
     public Enumeration getObjects() {
-        return this.seq.elements();
+        return new Enumeration() { // from class: org.bouncycastle.asn1.ASN1Sequence.1
+            private int pos = 0;
+
+            @Override // java.util.Enumeration
+            public boolean hasMoreElements() {
+                return this.pos < ASN1Sequence.this.elements.length;
+            }
+
+            @Override // java.util.Enumeration
+            public Object nextElement() {
+                int i = this.pos;
+                ASN1Encodable[] aSN1EncodableArr = ASN1Sequence.this.elements;
+                if (i < aSN1EncodableArr.length) {
+                    this.pos = i + 1;
+                    return aSN1EncodableArr[i];
+                }
+                throw new NoSuchElementException();
+            }
+        };
     }
 
     @Override // org.bouncycastle.asn1.ASN1Object
     public int hashCode() {
-        Enumeration objects = getObjects();
-        int size = size();
-        while (objects.hasMoreElements()) {
-            size = (size * 17) ^ getNext(objects).hashCode();
+        int length = this.elements.length;
+        int i = length + 1;
+        while (true) {
+            length--;
+            if (length < 0) {
+                return i;
+            }
+            i = (i * TsExtractor.TS_STREAM_TYPE_AIT) ^ this.elements[length].toASN1Primitive().hashCode();
         }
-        return size;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -96,38 +118,46 @@ public abstract class ASN1Sequence extends ASN1Primitive implements Iterable {
 
     @Override // java.lang.Iterable
     public Iterator<ASN1Encodable> iterator() {
-        return new Arrays.Iterator(toArray());
+        return new Arrays.Iterator(this.elements);
     }
 
     public int size() {
-        return this.seq.size();
+        return this.elements.length;
     }
 
-    public ASN1Encodable[] toArray() {
-        ASN1Encodable[] aSN1EncodableArr = new ASN1Encodable[size()];
-        for (int i = 0; i != size(); i++) {
-            aSN1EncodableArr[i] = getObjectAt(i);
-        }
-        return aSN1EncodableArr;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public ASN1Encodable[] toArrayInternal() {
+        return this.elements;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
     public ASN1Primitive toDERObject() {
-        DERSequence dERSequence = new DERSequence();
-        dERSequence.seq = this.seq;
-        return dERSequence;
+        return new DERSequence(this.elements, false);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
     public ASN1Primitive toDLObject() {
-        DLSequence dLSequence = new DLSequence();
-        dLSequence.seq = this.seq;
-        return dLSequence;
+        return new DLSequence(this.elements, false);
     }
 
     public String toString() {
-        return this.seq.toString();
+        int size = size();
+        if (size == 0) {
+            return "[]";
+        }
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append('[');
+        int i = 0;
+        while (true) {
+            stringBuffer.append(this.elements[i]);
+            i++;
+            if (i >= size) {
+                stringBuffer.append(']');
+                return stringBuffer.toString();
+            }
+            stringBuffer.append(", ");
+        }
     }
 }

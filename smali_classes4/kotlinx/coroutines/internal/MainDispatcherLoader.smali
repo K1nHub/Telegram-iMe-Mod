@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMainDispatchers.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MainDispatchers.kt\nkotlinx/coroutines/internal/MainDispatcherLoader\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,129:1\n1895#2,14:130\n*S KotlinDebug\n*F\n+ 1 MainDispatchers.kt\nkotlinx/coroutines/internal/MainDispatcherLoader\n*L\n38#1:130,14\n*E\n"
+    value = "SMAP\nMainDispatchers.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MainDispatchers.kt\nkotlinx/coroutines/internal/MainDispatcherLoader\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,137:1\n1895#2,14:138\n*S KotlinDebug\n*F\n+ 1 MainDispatchers.kt\nkotlinx/coroutines/internal/MainDispatcherLoader\n*L\n38#1:138,14\n*E\n"
 .end annotation
 
 
@@ -103,13 +103,13 @@
 
     move-result-object v0
 
-    .line 130
+    .line 138
     :goto_0
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .line 131
+    .line 139
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
@@ -120,13 +120,13 @@
 
     goto :goto_1
 
-    .line 132
+    .line 140
     :cond_1
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 133
+    .line 141
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
@@ -135,7 +135,7 @@
 
     goto :goto_1
 
-    .line 134
+    .line 142
     :cond_2
     move-object v4, v3
 
@@ -180,20 +180,19 @@
     :goto_1
     check-cast v3, Lkotlinx/coroutines/internal/MainDispatcherFactory;
 
-    if-nez v3, :cond_5
+    if-eqz v3, :cond_5
 
+    invoke-static {v3, v0}, Lkotlinx/coroutines/internal/MainDispatchersKt;->tryCreateDispatcher(Lkotlinx/coroutines/internal/MainDispatcherFactory;Ljava/util/List;)Lkotlinx/coroutines/MainCoroutineDispatcher;
+
+    move-result-object v0
+
+    if-nez v0, :cond_6
+
+    :cond_5
     const/4 v0, 0x3
 
     .line 39
     invoke-static {v1, v1, v0, v1}, Lkotlinx/coroutines/internal/MainDispatchersKt;->createMissingDispatcher$default(Ljava/lang/Throwable;Ljava/lang/String;ILjava/lang/Object;)Lkotlinx/coroutines/internal/MissingMainCoroutineDispatcher;
-
-    move-result-object v0
-
-    goto :goto_2
-
-    .line 38
-    :cond_5
-    invoke-static {v3, v0}, Lkotlinx/coroutines/internal/MainDispatchersKt;->tryCreateDispatcher(Lkotlinx/coroutines/internal/MainDispatcherFactory;Ljava/util/List;)Lkotlinx/coroutines/MainCoroutineDispatcher;
 
     move-result-object v0
     :try_end_0
@@ -211,6 +210,7 @@
 
     move-result-object v0
 
+    :cond_6
     :goto_2
     return-object v0
 .end method

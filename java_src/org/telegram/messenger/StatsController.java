@@ -2,6 +2,7 @@ package org.telegram.messenger;
 
 import com.google.android.exoplayer2.ExoPlayer;
 import java.io.RandomAccessFile;
+import org.telegram.messenger.utils.ImmutableByteArrayOutputStream;
 /* loaded from: classes4.dex */
 public class StatsController extends BaseController {
     private static final int OLD_TYPES_COUNT = 7;
@@ -18,6 +19,7 @@ public class StatsController extends BaseController {
     public static final int TYPE_VIDEOS = 2;
     public static final int TYPE_WIFI = 1;
     private byte[] buffer;
+    ImmutableByteArrayOutputStream byteArrayOutputStream;
     private int[] callsTotalTime;
     private long lastInternalStatsSaveTime;
     private long[][] receivedBytes;
@@ -86,7 +88,7 @@ public class StatsController extends BaseController {
         return statsController;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0184  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x018b  */
     /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -94,7 +96,7 @@ public class StatsController extends BaseController {
     */
     private StatsController(int r15) {
         /*
-            Method dump skipped, instructions count: 672
+            Method dump skipped, instructions count: 680
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.StatsController.<init>(int):void");
@@ -179,6 +181,7 @@ public class StatsController extends BaseController {
         ThreadLocal<Long> threadLocal = lastStatsSaveTime;
         if (Math.abs(currentTimeMillis - threadLocal.get().longValue()) >= ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS) {
             threadLocal.set(Long.valueOf(currentTimeMillis));
+            statsSaveQueue.cancelRunnable(this.saveRunnable);
             statsSaveQueue.postRunnable(this.saveRunnable);
         }
     }

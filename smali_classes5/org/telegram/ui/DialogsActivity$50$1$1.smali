@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity$50$1;)V
     .locals 0
 
-    .line 8375
+    .line 8352
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$50$1$1;->this$2:Lorg/telegram/ui/DialogsActivity$50$1;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,12 +35,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 8378
+    .line 8355
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 8379
+    .line 8356
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$50$1$1;->this$2:Lorg/telegram/ui/DialogsActivity$50$1;
 
     iget-object v0, v0, Lorg/telegram/ui/DialogsActivity$50$1;->this$1:Lorg/telegram/ui/DialogsActivity$50;
@@ -49,7 +49,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$36900(Lorg/telegram/ui/DialogsActivity;Z)Ljava/util/ArrayList;
+    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$37000(Lorg/telegram/ui/DialogsActivity;Z)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -57,10 +57,10 @@
 
     const-wide/16 v0, 0xc8
 
-    .line 8380
+    .line 8357
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 8381
+    .line 8358
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     return-void

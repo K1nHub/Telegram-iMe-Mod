@@ -17,13 +17,13 @@ import com.google.android.gms.maps.GoogleMapOptions;
 /* loaded from: classes3.dex */
 public final class CameraPosition extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<CameraPosition> CREATOR = new zza();
-    @SafeParcelable.Field(m789id = 5)
+    @SafeParcelable.Field(m775id = 5)
     public final float bearing;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     public final LatLng target;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     public final float tilt;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     public final float zoom;
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
@@ -71,7 +71,7 @@ public final class CameraPosition extends AbstractSafeParcelable implements Refl
     }
 
     @SafeParcelable.Constructor
-    public CameraPosition(@SafeParcelable.Param(m788id = 2) LatLng latLng, @SafeParcelable.Param(m788id = 3) float f, @SafeParcelable.Param(m788id = 4) float f2, @SafeParcelable.Param(m788id = 5) float f3) {
+    public CameraPosition(@SafeParcelable.Param(m774id = 2) LatLng latLng, @SafeParcelable.Param(m774id = 3) float f, @SafeParcelable.Param(m774id = 4) float f2, @SafeParcelable.Param(m774id = 5) float f3) {
         Preconditions.checkNotNull(latLng, "camera target must not be null.");
         Preconditions.checkArgument(f2 >= BitmapDescriptorFactory.HUE_RED && f2 <= 90.0f, "Tilt needs to be between 0 and 90 inclusive: %s", Float.valueOf(f2));
         this.target = latLng;

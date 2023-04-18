@@ -32,7 +32,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectManagerImpl.kt\ncom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connectToStoredSessions$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,434:1\n1549#2:435\n1620#2,3:436\n*S KotlinDebug\n*F\n+ 1 WalletConnectManagerImpl.kt\ncom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connectToStoredSessions$1\n*L\n87#1:435\n87#1:436,3\n*E\n"
+    value = "SMAP\nWalletConnectManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectManagerImpl.kt\ncom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connectToStoredSessions$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,429:1\n1549#2:430\n1620#2,3:431\n*S KotlinDebug\n*F\n+ 1 WalletConnectManagerImpl.kt\ncom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connectToStoredSessions$1\n*L\n89#1:430\n89#1:431,3\n*E\n"
 .end annotation
 
 
@@ -58,7 +58,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 84
+    .line 86
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connectToStoredSessions$1;->invoke(Lcom/iMe/storage/domain/model/Result;)V
@@ -81,7 +81,7 @@
         }
     .end annotation
 
-    .line 87
+    .line 89
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Success;
 
     if-eqz v0, :cond_0
@@ -126,7 +126,7 @@
     .line 1621
     check-cast v2, Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
-    .line 87
+    .line 89
     invoke-static {v0, v2}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$mapSessionStoreItem(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
 
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -136,7 +136,7 @@
 
     goto :goto_0
 
-    .line 88
+    .line 90
     :cond_0
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 

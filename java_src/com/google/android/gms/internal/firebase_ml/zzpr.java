@@ -6,13 +6,13 @@ import com.google.android.gms.common.internal.GmsLogger;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseLocalModel;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseRemoteModel;
-import com.google.firebase.p021ml.custom.FirebaseModelDataType;
-import com.google.firebase.p021ml.custom.FirebaseModelInputOutputOptions;
-import com.google.firebase.p021ml.custom.FirebaseModelInputs;
-import com.google.firebase.p021ml.custom.FirebaseModelOutputs;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseLocalModel;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseRemoteModel;
+import com.google.firebase.p020ml.custom.FirebaseModelDataType;
+import com.google.firebase.p020ml.custom.FirebaseModelInputOutputOptions;
+import com.google.firebase.p020ml.custom.FirebaseModelInputs;
+import com.google.firebase.p020ml.custom.FirebaseModelOutputs;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.util.ArrayList;
@@ -52,7 +52,7 @@ public final class zzpr implements zzno<FirebaseModelOutputs, zzpn>, zznx {
         sb.append(valueOf);
         sb.append(". Local model is: ");
         sb.append(valueOf2);
-        gmsLogger.m799d("ModelInterpreterTask", sb.toString());
+        gmsLogger.m785d("ModelInterpreterTask", sb.toString());
         this.zzaxs = new zzon(zza, zzojVar, new zzop(this) { // from class: com.google.android.gms.internal.firebase_ml.zzpu
             private final zzpr zzaxx;
 

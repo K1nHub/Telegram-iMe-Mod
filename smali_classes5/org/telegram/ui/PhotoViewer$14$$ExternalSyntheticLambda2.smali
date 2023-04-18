@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda2;->f$1:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$62aOhR9vEQ3tSXx1YDbnV8HJpLE(Lorg/telegram/ui/PhotoViewer$14;Ljava/util/ArrayList;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$ibeqVfIbg40WcmQ70oIuloFWiUM(Lorg/telegram/ui/PhotoViewer$14;Ljava/util/ArrayList;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

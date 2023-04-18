@@ -14,12 +14,12 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public class LabelOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LabelOptions> CREATOR = new zzh();
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     @Deprecated
     public final int zzej;
 
     @SafeParcelable.Constructor
-    public LabelOptions(@SafeParcelable.Param(m788id = 2) int i) {
+    public LabelOptions(@SafeParcelable.Param(m774id = 2) int i) {
         this.zzej = i;
     }
 

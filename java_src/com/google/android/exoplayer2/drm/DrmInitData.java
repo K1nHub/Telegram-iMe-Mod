@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.drm;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
 import java.util.ArrayList;
@@ -140,7 +140,7 @@ public final class DrmInitData implements Comparator<SchemeData>, Parcelable {
 
     @Override // java.util.Comparator
     public int compare(SchemeData schemeData, SchemeData schemeData2) {
-        UUID uuid = C0482C.UUID_NIL;
+        UUID uuid = C0470C.UUID_NIL;
         if (uuid.equals(schemeData.uuid)) {
             return uuid.equals(schemeData2.uuid) ? 0 : 1;
         }
@@ -207,7 +207,7 @@ public final class DrmInitData implements Comparator<SchemeData>, Parcelable {
         }
 
         public boolean matches(UUID uuid) {
-            return C0482C.UUID_NIL.equals(this.uuid) || uuid.equals(this.uuid);
+            return C0470C.UUID_NIL.equals(this.uuid) || uuid.equals(this.uuid);
         }
 
         public boolean canReplace(SchemeData schemeData) {

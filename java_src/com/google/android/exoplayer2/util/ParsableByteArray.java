@@ -12,8 +12,8 @@ public final class ParsableByteArray {
     private static final char[] CR_AND_LF = {'\r', '\n'};
 
     /* renamed from: LF */
-    private static final char[] f144LF = {'\n'};
-    private static final ImmutableSet<Charset> SUPPORTED_CHARSETS_FOR_READLINE = ImmutableSet.m741of(Charsets.US_ASCII, Charsets.UTF_8, Charsets.UTF_16, Charsets.UTF_16BE, Charsets.UTF_16LE);
+    private static final char[] f141LF = {'\n'};
+    private static final ImmutableSet<Charset> SUPPORTED_CHARSETS_FOR_READLINE = ImmutableSet.m727of(Charsets.US_ASCII, Charsets.UTF_8, Charsets.UTF_16, Charsets.UTF_16BE, Charsets.UTF_16LE);
     private byte[] data;
     private int limit;
     private int position;
@@ -512,7 +512,7 @@ public final class ParsableByteArray {
 
     private void skipLineTerminator(Charset charset) {
         if (readCharacterIfInList(charset, CR_AND_LF) == '\r') {
-            readCharacterIfInList(charset, f144LF);
+            readCharacterIfInList(charset, f141LF);
         }
     }
 

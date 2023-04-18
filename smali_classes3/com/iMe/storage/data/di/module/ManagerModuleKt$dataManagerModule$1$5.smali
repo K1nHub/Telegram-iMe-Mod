@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$5\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,70:1\n127#2,5:71\n127#2,5:76\n127#2,5:81\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$5\n*L\n44#1:71,5\n45#1:76,5\n46#1:81,5\n*E\n"
+    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$5\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,70:1\n129#2,5:71\n129#2,5:76\n129#2,5:81\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$5\n*L\n44#1:71,5\n45#1:76,5\n46#1:81,5\n*E\n"
 .end annotation
 
 
@@ -82,7 +82,7 @@
 
     move-result-object v1
 
-    .line 131
+    .line 133
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v2
@@ -100,7 +100,7 @@
 
     move-result-object v2
 
-    .line 131
+    .line 133
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v4
@@ -116,7 +116,7 @@
 
     move-result-object v4
 
-    .line 131
+    .line 133
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v0

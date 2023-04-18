@@ -14,35 +14,35 @@ import com.google.android.gms.identity.intents.AddressConstants;
 /* loaded from: classes.dex */
 public final class UserAddress extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<UserAddress> CREATOR = new zzb();
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     String zza;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     String zzb;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     String zzc;
-    @SafeParcelable.Field(m789id = 5)
+    @SafeParcelable.Field(m775id = 5)
     String zzd;
-    @SafeParcelable.Field(m789id = 6)
+    @SafeParcelable.Field(m775id = 6)
     String zze;
-    @SafeParcelable.Field(m789id = 7)
+    @SafeParcelable.Field(m775id = 7)
     String zzf;
-    @SafeParcelable.Field(m789id = 8)
+    @SafeParcelable.Field(m775id = 8)
     String zzg;
-    @SafeParcelable.Field(m789id = 9)
+    @SafeParcelable.Field(m775id = 9)
     String zzh;
-    @SafeParcelable.Field(m789id = 10)
+    @SafeParcelable.Field(m775id = 10)
     String zzi;
-    @SafeParcelable.Field(m789id = 11)
+    @SafeParcelable.Field(m775id = 11)
     String zzj;
-    @SafeParcelable.Field(m789id = 12)
+    @SafeParcelable.Field(m775id = 12)
     String zzk;
-    @SafeParcelable.Field(m789id = 13)
+    @SafeParcelable.Field(m775id = 13)
     String zzl;
-    @SafeParcelable.Field(m789id = 14)
+    @SafeParcelable.Field(m775id = 14)
     boolean zzm;
-    @SafeParcelable.Field(m789id = 15)
+    @SafeParcelable.Field(m775id = 15)
     String zzn;
-    @SafeParcelable.Field(m789id = 16)
+    @SafeParcelable.Field(m775id = 16)
     String zzo;
 
     UserAddress() {
@@ -138,7 +138,7 @@ public final class UserAddress extends AbstractSafeParcelable implements Reflect
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public UserAddress(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) String str2, @SafeParcelable.Param(m788id = 4) String str3, @SafeParcelable.Param(m788id = 5) String str4, @SafeParcelable.Param(m788id = 6) String str5, @SafeParcelable.Param(m788id = 7) String str6, @SafeParcelable.Param(m788id = 8) String str7, @SafeParcelable.Param(m788id = 9) String str8, @SafeParcelable.Param(m788id = 10) String str9, @SafeParcelable.Param(m788id = 11) String str10, @SafeParcelable.Param(m788id = 12) String str11, @SafeParcelable.Param(m788id = 13) String str12, @SafeParcelable.Param(m788id = 14) boolean z, @SafeParcelable.Param(m788id = 15) String str13, @SafeParcelable.Param(m788id = 16) String str14) {
+    public UserAddress(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) String str3, @SafeParcelable.Param(m774id = 5) String str4, @SafeParcelable.Param(m774id = 6) String str5, @SafeParcelable.Param(m774id = 7) String str6, @SafeParcelable.Param(m774id = 8) String str7, @SafeParcelable.Param(m774id = 9) String str8, @SafeParcelable.Param(m774id = 10) String str9, @SafeParcelable.Param(m774id = 11) String str10, @SafeParcelable.Param(m774id = 12) String str11, @SafeParcelable.Param(m774id = 13) String str12, @SafeParcelable.Param(m774id = 14) boolean z, @SafeParcelable.Param(m774id = 15) String str13, @SafeParcelable.Param(m774id = 16) String str14) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = str3;

@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.rtsp.reader;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.audio.Ac3Util;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -22,7 +22,7 @@ public final class RtpAc3Reader implements RtpPayloadReader {
     private long startTimeOffsetUs;
     private TrackOutput trackOutput;
     private final ParsableBitArray scratchBitBuffer = new ParsableBitArray();
-    private long firstReceivedTimestamp = C0482C.TIME_UNSET;
+    private long firstReceivedTimestamp = C0470C.TIME_UNSET;
 
     public RtpAc3Reader(RtpPayloadFormat rtpPayloadFormat) {
         this.payloadFormat = rtpPayloadFormat;
@@ -37,7 +37,7 @@ public final class RtpAc3Reader implements RtpPayloadReader {
 
     @Override // com.google.android.exoplayer2.source.rtsp.reader.RtpPayloadReader
     public void onReceivingFirstPacket(long j, int i) {
-        Assertions.checkState(this.firstReceivedTimestamp == C0482C.TIME_UNSET);
+        Assertions.checkState(this.firstReceivedTimestamp == C0470C.TIME_UNSET);
         this.firstReceivedTimestamp = j;
     }
 

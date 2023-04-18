@@ -31,7 +31,7 @@
 
     check-cast p2, Ljava/lang/String;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$E1LAm-8AyLCQiapPIp9D163FYHE(Ljava/text/Collator;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$0Yse2Ktyi4door1777vi6lsKxeE(Ljava/text/Collator;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result p1
 

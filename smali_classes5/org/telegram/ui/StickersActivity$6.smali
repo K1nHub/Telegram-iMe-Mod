@@ -34,14 +34,14 @@
 .method constructor <init>(Lorg/telegram/ui/StickersActivity;Ljava/util/List;)V
     .locals 0
 
-    .line 662
+    .line 663
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$6;->this$0:Lorg/telegram/ui/StickersActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/StickersActivity$6;->val$newList:Ljava/util/List;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/DiffUtil$Callback;-><init>()V
 
-    .line 664
+    .line 665
     invoke-static {p1}, Lorg/telegram/ui/StickersActivity;->access$000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/StickersActivity$ListAdapter;
 
     move-result-object p1
@@ -60,7 +60,7 @@
 .method public areContentsTheSame(II)Z
     .locals 2
 
-    .line 683
+    .line 684
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$6;->oldList:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -71,7 +71,7 @@
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    .line 684
+    .line 685
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$6;->val$newList:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -82,7 +82,7 @@
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    .line 685
+    .line 686
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$StickerSet;->title:Ljava/lang/String;
 
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$StickerSet;->title:Ljava/lang/String;
@@ -113,7 +113,7 @@
 .method public areItemsTheSame(II)Z
     .locals 2
 
-    .line 678
+    .line 679
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$6;->oldList:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -156,7 +156,7 @@
 .method public getNewListSize()I
     .locals 1
 
-    .line 673
+    .line 674
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$6;->val$newList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -169,7 +169,7 @@
 .method public getOldListSize()I
     .locals 1
 
-    .line 668
+    .line 669
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$6;->oldList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I

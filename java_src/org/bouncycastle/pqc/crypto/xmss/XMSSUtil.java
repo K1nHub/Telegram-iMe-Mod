@@ -183,6 +183,10 @@ public class XMSSUtil {
         return j != 0 && (j + 1) % ((long) Math.pow((double) (1 << i), (double) i2)) == 0;
     }
 
+    public static boolean isNewBDSInitNeeded(long j, int i, int i2) {
+        return j != 0 && j % ((long) Math.pow((double) (1 << i), (double) (i2 + 1))) == 0;
+    }
+
     public static int log2(int i) {
         int i2 = 0;
         while (true) {

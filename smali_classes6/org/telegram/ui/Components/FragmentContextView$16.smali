@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FragmentContextView;I)V
     .locals 0
 
-    .line 2167
+    .line 2174
     iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$16;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     iput p2, p0, Lorg/telegram/ui/Components/FragmentContextView$16;->val$currentAccount:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 2170
+    .line 2177
     iget v0, p0, Lorg/telegram/ui/Components/FragmentContextView$16;->val$currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
 
-    .line 2171
+    .line 2178
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$16;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2300(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/animation/AnimatorSet;
@@ -75,21 +75,21 @@
 
     if-eqz p1, :cond_0
 
-    .line 2172
+    .line 2179
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$16;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$3102(Lorg/telegram/ui/Components/FragmentContextView;Z)Z
 
-    .line 2173
+    .line 2180
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$16;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     const/4 v1, 0x0
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/FragmentContextView;->access$2302(Lorg/telegram/ui/Components/FragmentContextView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 2174
+    .line 2181
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$16;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->checkCall(Z)V

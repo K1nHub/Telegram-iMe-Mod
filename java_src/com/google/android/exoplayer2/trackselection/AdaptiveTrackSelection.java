@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.trackselection;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.source.MediaSource;
@@ -123,7 +123,7 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
     }
 
     public AdaptiveTrackSelection(TrackGroup trackGroup, int[] iArr, BandwidthMeter bandwidthMeter) {
-        this(trackGroup, iArr, 0, bandwidthMeter, 10000L, 25000L, 25000L, DEFAULT_MAX_WIDTH_TO_DISCARD, DEFAULT_MAX_HEIGHT_TO_DISCARD, 0.7f, 0.75f, ImmutableList.m754of(), Clock.DEFAULT);
+        this(trackGroup, iArr, 0, bandwidthMeter, 10000L, 25000L, 25000L, DEFAULT_MAX_WIDTH_TO_DISCARD, DEFAULT_MAX_HEIGHT_TO_DISCARD, 0.7f, 0.75f, ImmutableList.m740of(), Clock.DEFAULT);
     }
 
     protected AdaptiveTrackSelection(TrackGroup trackGroup, int[] iArr, int i, BandwidthMeter bandwidthMeter, long j, long j2, long j3, int i2, int i3, float f, float f2, List<AdaptationCheckpoint> list, Clock clock) {
@@ -131,7 +131,7 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
         BandwidthMeter bandwidthMeter2;
         long j4;
         if (j3 < j) {
-            Log.m806w(TAG, "Adjusting minDurationToRetainAfterDiscardMs to be at least minDurationForQualityIncreaseMs");
+            Log.m792w(TAG, "Adjusting minDurationToRetainAfterDiscardMs to be at least minDurationForQualityIncreaseMs");
             bandwidthMeter2 = bandwidthMeter;
             j4 = j;
         } else {
@@ -150,12 +150,12 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
         this.clock = clock;
         this.playbackSpeed = 1.0f;
         this.reason = 0;
-        this.lastBufferEvaluationMs = C0482C.TIME_UNSET;
+        this.lastBufferEvaluationMs = C0470C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.trackselection.BaseTrackSelection, com.google.android.exoplayer2.trackselection.ExoTrackSelection
     public void enable() {
-        this.lastBufferEvaluationMs = C0482C.TIME_UNSET;
+        this.lastBufferEvaluationMs = C0470C.TIME_UNSET;
         this.lastBufferEvaluationMediaChunk = null;
     }
 
@@ -245,7 +245,7 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
 
     protected boolean shouldEvaluateQueueSize(long j, List<? extends MediaChunk> list) {
         long j2 = this.lastBufferEvaluationMs;
-        return j2 == C0482C.TIME_UNSET || j - j2 >= 1000 || !(list.isEmpty() || ((MediaChunk) Iterables.getLast(list)).equals(this.lastBufferEvaluationMediaChunk));
+        return j2 == C0470C.TIME_UNSET || j - j2 >= 1000 || !(list.isEmpty() || ((MediaChunk) Iterables.getLast(list)).equals(this.lastBufferEvaluationMediaChunk));
     }
 
     protected long getMinDurationToRetainAfterDiscardUs() {
@@ -268,10 +268,10 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
     }
 
     private long minDurationForQualityIncreaseUs(long j, long j2) {
-        if (j == C0482C.TIME_UNSET) {
+        if (j == C0470C.TIME_UNSET) {
             return this.minDurationForQualityIncreaseUs;
         }
-        if (j2 != C0482C.TIME_UNSET) {
+        if (j2 != C0470C.TIME_UNSET) {
             j -= j2;
         }
         return Math.min(((float) j) * this.bufferedFractionToLiveEdgeForQualityIncrease, this.minDurationForQualityIncreaseUs);
@@ -293,15 +293,15 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
 
     private long getLastChunkDurationUs(List<? extends MediaChunk> list) {
         if (list.isEmpty()) {
-            return C0482C.TIME_UNSET;
+            return C0470C.TIME_UNSET;
         }
         MediaChunk mediaChunk = (MediaChunk) Iterables.getLast(list);
         long j = mediaChunk.startTimeUs;
-        if (j != C0482C.TIME_UNSET) {
+        if (j != C0470C.TIME_UNSET) {
             long j2 = mediaChunk.endTimeUs;
-            return j2 != C0482C.TIME_UNSET ? j2 - j : C0482C.TIME_UNSET;
+            return j2 != C0470C.TIME_UNSET ? j2 - j : C0470C.TIME_UNSET;
         }
-        return C0482C.TIME_UNSET;
+        return C0470C.TIME_UNSET;
     }
 
     private long getAllocatedBandwidth(long j) {
@@ -323,7 +323,7 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
     private long getTotalAllocatableBandwidth(long j) {
         long timeToFirstByteEstimateUs;
         long bitrateEstimate = ((float) this.bandwidthMeter.getBitrateEstimate()) * this.bandwidthFraction;
-        if (this.bandwidthMeter.getTimeToFirstByteEstimateUs() == C0482C.TIME_UNSET || j == C0482C.TIME_UNSET) {
+        if (this.bandwidthMeter.getTimeToFirstByteEstimateUs() == C0470C.TIME_UNSET || j == C0470C.TIME_UNSET) {
             return ((float) bitrateEstimate) / this.playbackSpeed;
         }
         float f = (float) j;
@@ -366,7 +366,7 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
         ImmutableList.Builder builder2 = ImmutableList.builder();
         for (int i6 = 0; i6 < arrayList.size(); i6++) {
             ImmutableList.Builder builder3 = (ImmutableList.Builder) arrayList.get(i6);
-            builder2.add((ImmutableList.Builder) (builder3 == null ? ImmutableList.m754of() : builder3.build()));
+            builder2.add((ImmutableList.Builder) (builder3 == null ? ImmutableList.m740of() : builder3.build()));
         }
         return builder2.build();
     }

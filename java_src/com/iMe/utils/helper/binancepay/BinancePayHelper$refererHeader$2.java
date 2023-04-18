@@ -17,7 +17,7 @@ final class BinancePayHelper$refererHeader$2 extends Lambda implements Function0
     @Override // kotlin.jvm.functions.Function0
     public final HashMap<String, String> invoke() {
         HashMap<String, String> hashMapOf;
-        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m94to("referer", "https://www.binance.com/"));
+        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m80to("referer", "https://www.binance.com/"));
         return hashMapOf;
     }
 }

@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/settings/WalletAccountSettingsView$$State;)V
     .locals 1
 
-    .line 205
+    .line 223
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openBlockchainsScreen"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/settings/WalletAccountSettingsView;)V
     .locals 0
 
-    .line 210
+    .line 228
     invoke-interface {p1}, Lcom/iMe/ui/wallet/crypto/settings/WalletAccountSettingsView;->openBlockchainsScreen()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 203
+    .line 221
     check-cast p1, Lcom/iMe/ui/wallet/crypto/settings/WalletAccountSettingsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/settings/WalletAccountSettingsView$$State$OpenBlockchainsScreenCommand;->apply(Lcom/iMe/ui/wallet/crypto/settings/WalletAccountSettingsView;)V

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/RecyclerListView$FastScroll;)V
     .locals 0
 
-    .line 568
+    .line 555
     iput-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 3
 
-    .line 571
+    .line 558
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->access$100(Lorg/telegram/ui/Components/RecyclerListView$FastScroll;)Z
@@ -47,14 +47,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 572
+    .line 559
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->hideFloatingDateRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 573
+    .line 560
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->hideFloatingDateRunnable:Ljava/lang/Runnable;
@@ -65,7 +65,7 @@
 
     goto :goto_0
 
-    .line 575
+    .line 562
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
 
@@ -73,7 +73,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->access$202(Lorg/telegram/ui/Components/RecyclerListView$FastScroll;Z)Z
 
-    .line 576
+    .line 563
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V

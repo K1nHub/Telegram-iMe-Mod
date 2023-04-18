@@ -4,7 +4,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.KoinApplication;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: DefaultContextExt.kt */
 /* loaded from: classes4.dex */
 public final class DefaultContextExtKt {

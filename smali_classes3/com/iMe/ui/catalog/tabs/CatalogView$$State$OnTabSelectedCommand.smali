@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/tabs/CatalogView$$State;I)V
     .locals 1
 
-    .line 115
+    .line 133
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onTabSelected"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 117
+    .line 135
     iput p2, p0, Lcom/iMe/ui/catalog/tabs/CatalogView$$State$OnTabSelectedCommand;->position:I
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/catalog/tabs/CatalogView;)V
     .locals 1
 
-    .line 122
+    .line 140
     iget v0, p0, Lcom/iMe/ui/catalog/tabs/CatalogView$$State$OnTabSelectedCommand;->position:I
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/catalog/tabs/CatalogView;->onTabSelected(I)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 111
+    .line 129
     check-cast p1, Lcom/iMe/ui/catalog/tabs/CatalogView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/tabs/CatalogView$$State$OnTabSelectedCommand;->apply(Lcom/iMe/ui/catalog/tabs/CatalogView;)V

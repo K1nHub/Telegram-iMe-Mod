@@ -31,7 +31,7 @@
     new-array v0, v0, [I
 
     :try_start_0
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->INTERFACE:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TOOLS:Lcom/iMe/fork/enums/BackupComponent;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -59,7 +59,7 @@
 
     :catch_1
     :try_start_2
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TOOLS:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->FILTERS:Lcom/iMe/fork/enums/BackupComponent;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -73,7 +73,7 @@
 
     :catch_2
     :try_start_3
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->FILTERS:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->SORTING:Lcom/iMe/fork/enums/BackupComponent;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -87,7 +87,7 @@
 
     :catch_3
     :try_start_4
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->SORTING:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->ALBUMS:Lcom/iMe/fork/enums/BackupComponent;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -101,7 +101,7 @@
 
     :catch_4
     :try_start_5
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->ALBUMS:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->BOOKMARKS:Lcom/iMe/fork/enums/BackupComponent;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -115,7 +115,7 @@
 
     :catch_5
     :try_start_6
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->BOOKMARKS:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->MUSIC:Lcom/iMe/fork/enums/BackupComponent;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -129,7 +129,7 @@
 
     :catch_6
     :try_start_7
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->MUSIC:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TRANSLATION:Lcom/iMe/fork/enums/BackupComponent;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -143,7 +143,7 @@
 
     :catch_7
     :try_start_8
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TRANSLATION:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TEMPLATES:Lcom/iMe/fork/enums/BackupComponent;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -157,7 +157,7 @@
 
     :catch_8
     :try_start_9
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TEMPLATES:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TOPICS:Lcom/iMe/fork/enums/BackupComponent;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -170,20 +170,6 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
 
     :catch_9
-    :try_start_a
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TOPICS:Lcom/iMe/fork/enums/BackupComponent;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xb
-
-    aput v2, v0, v1
-    :try_end_a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_a
-
-    :catch_a
     sput-object v0, Lcom/iMe/fork/controller/BackupController$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;Landroid/content/Context;Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 3900
+    .line 3967
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$6;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 3901
+    .line 3968
     new-instance p1, Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-direct {p1}, Lorg/telegram/ui/Components/LoadingDrawable;-><init>()V
@@ -38,7 +38,7 @@
 
     const/4 p2, 0x1
 
-    .line 3904
+    .line 3971
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/LoadingDrawable;->setAppearByGradient(Z)V
 
     return-void
@@ -47,7 +47,7 @@
 .method private updateLoadingLayout()V
     .locals 6
 
-    .line 3922
+    .line 3989
     invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
     move-result-object v0
@@ -56,7 +56,7 @@
 
     return-void
 
-    .line 3926
+    .line 3993
     :cond_0
     invoke-virtual {v0}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
 
@@ -66,7 +66,7 @@
 
     return-void
 
-    .line 3930
+    .line 3997
     :cond_1
     new-instance v2, Lorg/telegram/ui/Components/LinkPath;
 
@@ -76,32 +76,32 @@
 
     const/4 v3, 0x0
 
-    .line 3932
+    .line 3999
     invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
     const/4 v4, 0x0
 
-    .line 3933
+    .line 4000
     invoke-virtual {v2, v0, v3, v4}, Lorg/telegram/ui/Components/LinkPath;->setCurrentLayout(Landroid/text/Layout;IF)V
 
-    .line 3934
+    .line 4001
     invoke-virtual {v0, v3, v1, v2}, Landroid/text/Layout;->getSelectionPath(IILandroid/graphics/Path;)V
 
-    .line 3935
+    .line 4002
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$6;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/LoadingDrawable;->usePath(Landroid/graphics/Path;)V
 
-    .line 3936
+    .line 4003
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$6;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     const/high16 v1, 0x40800000    # 4.0f
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/LoadingDrawable;->setRadiiDp(F)V
 
-    .line 3938
+    .line 4005
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$6;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     iget-object v0, v0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -112,41 +112,41 @@
 
     move-result v0
 
-    .line 3939
+    .line 4006
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$6;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     const v2, 0x3f59999a    # 0.85f
 
-    .line 3940
+    .line 4007
     invoke-static {v0, v2}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
     move-result v2
 
     const/high16 v3, 0x40000000    # 2.0f
 
-    .line 3941
+    .line 4008
     invoke-static {v0, v3}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
     move-result v3
 
     const/high16 v4, 0x40600000    # 3.5f
 
-    .line 3942
+    .line 4009
     invoke-static {v0, v4}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
     move-result v4
 
     const/high16 v5, 0x40c00000    # 6.0f
 
-    .line 3943
+    .line 4010
     invoke-static {v0, v5}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
     move-result v0
 
-    .line 3939
+    .line 4006
     invoke-virtual {v1, v2, v3, v4, v0}, Lorg/telegram/ui/Components/LoadingDrawable;->setColors(IIII)V
 
-    .line 3946
+    .line 4013
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$6;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/LoadingDrawable;->updateBounds()V
@@ -159,22 +159,22 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 3951
+    .line 4018
     invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 3953
+    .line 4020
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$6;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$9600(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Z
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$9700(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3954
+    .line 4021
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 3955
+    .line 4022
     invoke-virtual {p0}, Landroid/widget/TextView;->getPaddingLeft()I
 
     move-result v0
@@ -189,15 +189,15 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 3956
+    .line 4023
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$6;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/LoadingDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 3957
+    .line 4024
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 3958
+    .line 4025
     invoke-virtual {p0}, Landroid/widget/TextView;->invalidate()V
 
     :cond_0
@@ -207,10 +207,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 3916
+    .line 3983
     invoke-super/range {p0 .. p5}, Landroid/widget/TextView;->onLayout(ZIIII)V
 
-    .line 3918
+    .line 3985
     invoke-direct {p0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$6;->updateLoadingLayout()V
 
     return-void
@@ -219,10 +219,10 @@
 .method public setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
     .locals 0
 
-    .line 3909
+    .line 3976
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
-    .line 3911
+    .line 3978
     invoke-direct {p0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$6;->updateLoadingLayout()V
 
     return-void

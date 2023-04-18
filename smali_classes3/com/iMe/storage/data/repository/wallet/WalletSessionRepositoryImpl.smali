@@ -143,7 +143,7 @@
 .end method
 
 .method public login(Ljava/lang/String;)Lio/reactivex/Observable;
-    .locals 2
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -166,7 +166,11 @@
     .line 51
     new-instance v1, Lcom/iMe/storage/data/network/model/request/wallet/SessionTokensRequest;
 
-    invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/wallet/SessionTokensRequest;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-direct {v1, p1, v2, v3, v2}, Lcom/iMe/storage/data/network/model/request/wallet/SessionTokensRequest;-><init>(Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/WalletApi;->getAuthTokensByTelegramLoginData(Lcom/iMe/storage/data/network/model/request/wallet/SessionTokensRequest;)Lio/reactivex/Observable;
 
@@ -235,7 +239,7 @@
 .end method
 
 .method public refreshToken(Ljava/lang/String;)Lio/reactivex/Observable;
-    .locals 2
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -258,7 +262,11 @@
     .line 40
     new-instance v1, Lcom/iMe/storage/data/network/model/request/wallet/RefreshTokenRequest;
 
-    invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/wallet/RefreshTokenRequest;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-direct {v1, p1, v2, v3, v2}, Lcom/iMe/storage/data/network/model/request/wallet/RefreshTokenRequest;-><init>(Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/WalletApi;->refreshToken(Lcom/iMe/storage/data/network/model/request/wallet/RefreshTokenRequest;)Lio/reactivex/Observable;
 

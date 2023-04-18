@@ -29,7 +29,7 @@ public class McElieceKeyFactorySpi extends KeyFactorySpi implements AsymmetricKe
         try {
             PrivateKeyInfo privateKeyInfo = PrivateKeyInfo.getInstance(ASN1Primitive.fromByteArray(((PKCS8EncodedKeySpec) keySpec).getEncoded()));
             try {
-                if (PQCObjectIdentifiers.mcEliece.equals(privateKeyInfo.getPrivateKeyAlgorithm().getAlgorithm())) {
+                if (PQCObjectIdentifiers.mcEliece.equals((ASN1Primitive) privateKeyInfo.getPrivateKeyAlgorithm().getAlgorithm())) {
                     McEliecePrivateKey mcEliecePrivateKey = McEliecePrivateKey.getInstance(privateKeyInfo.parsePrivateKey());
                     return new BCMcEliecePrivateKey(new McEliecePrivateKeyParameters(mcEliecePrivateKey.getN(), mcEliecePrivateKey.getK(), mcEliecePrivateKey.getField(), mcEliecePrivateKey.getGoppaPoly(), mcEliecePrivateKey.getP1(), mcEliecePrivateKey.getP2(), mcEliecePrivateKey.getSInv()));
                 }
@@ -50,7 +50,7 @@ public class McElieceKeyFactorySpi extends KeyFactorySpi implements AsymmetricKe
         try {
             SubjectPublicKeyInfo subjectPublicKeyInfo = SubjectPublicKeyInfo.getInstance(ASN1Primitive.fromByteArray(((X509EncodedKeySpec) keySpec).getEncoded()));
             try {
-                if (PQCObjectIdentifiers.mcEliece.equals(subjectPublicKeyInfo.getAlgorithm().getAlgorithm())) {
+                if (PQCObjectIdentifiers.mcEliece.equals((ASN1Primitive) subjectPublicKeyInfo.getAlgorithm().getAlgorithm())) {
                     McEliecePublicKey mcEliecePublicKey = McEliecePublicKey.getInstance(subjectPublicKeyInfo.parsePublicKey());
                     return new BCMcEliecePublicKey(new McEliecePublicKeyParameters(mcEliecePublicKey.getN(), mcEliecePublicKey.getT(), mcEliecePublicKey.getG()));
                 }

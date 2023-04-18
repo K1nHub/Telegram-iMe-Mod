@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
     .locals 0
 
-    .line 692
+    .line 703
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$11;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public getContentDescription()Ljava/lang/CharSequence;
     .locals 8
 
-    .line 711
+    .line 722
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$11;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5100(Lorg/telegram/ui/Components/AudioPlayerAlert;)I
+    invoke-static {v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5000(Lorg/telegram/ui/Components/AudioPlayerAlert;)I
 
     move-result v1
 
@@ -69,7 +69,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$11;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5100(Lorg/telegram/ui/Components/AudioPlayerAlert;)I
+    invoke-static {v3}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5000(Lorg/telegram/ui/Components/AudioPlayerAlert;)I
 
     move-result v3
 
@@ -89,14 +89,14 @@
 
     move-result-object v0
 
-    .line 712
+    .line 723
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     iget-object v5, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$11;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5200(Lorg/telegram/ui/Components/AudioPlayerAlert;)I
+    invoke-static {v5}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5100(Lorg/telegram/ui/Components/AudioPlayerAlert;)I
 
     move-result v5
 
@@ -114,7 +114,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$11;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5200(Lorg/telegram/ui/Components/AudioPlayerAlert;)I
+    invoke-static {v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5100(Lorg/telegram/ui/Components/AudioPlayerAlert;)I
 
     move-result v1
 
@@ -132,7 +132,7 @@
 
     move-result-object v1
 
-    .line 713
+    .line 724
     sget v3, Lorg/telegram/messenger/R$string;->AccDescrPlayerDuration:I
 
     const/4 v4, 0x2
@@ -169,7 +169,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 696
+    .line 707
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -184,7 +184,7 @@
 
     invoke-virtual {p1, v0, p2}, Lorg/telegram/messenger/MediaController;->seekToProgress(Lorg/telegram/messenger/MessageObject;F)Z
 
-    .line 698
+    .line 709
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -196,14 +196,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 699
+    .line 710
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isMusic()Z
 
     move-result p2
 
     if-eqz p2, :cond_1
 
-    .line 700
+    .line 711
     iget-object p2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$11;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$000(Lorg/telegram/ui/Components/AudioPlayerAlert;Lorg/telegram/messenger/MessageObject;)V
@@ -215,10 +215,10 @@
 .method public onSeekBarPressed(Z)V
     .locals 1
 
-    .line 706
+    .line 717
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$11;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5002(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4902(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
 
     return-void
 .end method

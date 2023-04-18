@@ -6,56 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
+.field public final synthetic f$0:Z
 
-.field public final synthetic f$1:Z
-
-.field public final synthetic f$10:Z
-
-.field public final synthetic f$2:Ljava/io/File;
-
-.field public final synthetic f$3:Ljava/io/File;
-
-.field public final synthetic f$4:Lorg/telegram/messenger/FileLoader$FileResolver;
-
-.field public final synthetic f$5:I
-
-.field public final synthetic f$6:Lorg/telegram/messenger/MessageObject;
-
-.field public final synthetic f$7:Z
-
-.field public final synthetic f$8:Z
-
-.field public final synthetic f$9:Z
+.field public final synthetic f$1:Landroid/view/View;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;ZLjava/io/File;Ljava/io/File;Lorg/telegram/messenger/FileLoader$FileResolver;ILorg/telegram/messenger/MessageObject;ZZZZ)V
+.method public synthetic constructor <init>(ZLandroid/view/View;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$0:Lorg/telegram/ui/PhotoViewer;
+    iput-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$0:Z
 
-    iput-boolean p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$1:Z
-
-    iput-object p3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$2:Ljava/io/File;
-
-    iput-object p4, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$3:Ljava/io/File;
-
-    iput-object p5, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$4:Lorg/telegram/messenger/FileLoader$FileResolver;
-
-    iput p6, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$5:I
-
-    iput-object p7, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$6:Lorg/telegram/messenger/MessageObject;
-
-    iput-boolean p8, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$7:Z
-
-    iput-boolean p9, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$8:Z
-
-    iput-boolean p10, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$9:Z
-
-    iput-boolean p11, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$10:Z
+    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$1:Landroid/view/View;
 
     return-void
 .end method
@@ -63,31 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 11
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$0:Lorg/telegram/ui/PhotoViewer;
+    iget-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$0:Z
 
-    iget-boolean v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$1:Z
+    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$1:Landroid/view/View;
 
-    iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$2:Ljava/io/File;
-
-    iget-object v3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$3:Ljava/io/File;
-
-    iget-object v4, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$4:Lorg/telegram/messenger/FileLoader$FileResolver;
-
-    iget v5, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$5:I
-
-    iget-object v6, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$6:Lorg/telegram/messenger/MessageObject;
-
-    iget-boolean v7, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$7:Z
-
-    iget-boolean v8, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$8:Z
-
-    iget-boolean v9, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$9:Z
-
-    iget-boolean v10, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda84;->f$10:Z
-
-    invoke-static/range {v0 .. v10}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$KZsqbm8sekwWEYq0kiMqXPu_Ccg(Lorg/telegram/ui/PhotoViewer;ZLjava/io/File;Ljava/io/File;Lorg/telegram/messenger/FileLoader$FileResolver;ILorg/telegram/messenger/MessageObject;ZZZZ)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$wAUmp_beCrn7JSZXZDZlQdm_UJs(ZLandroid/view/View;)V
 
     return-void
 .end method

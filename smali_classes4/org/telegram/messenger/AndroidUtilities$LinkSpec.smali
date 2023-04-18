@@ -26,7 +26,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 764
+    .line 743
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/AndroidUtilities$1;)V
     .locals 0
 
-    .line 764
+    .line 743
     invoke-direct {p0}, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;-><init>()V
 
     return-void

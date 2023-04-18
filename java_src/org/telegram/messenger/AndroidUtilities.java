@@ -94,18 +94,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import com.android.internal.telephony.ITelephony;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.MediaPeriodQueue;
 import com.google.android.exoplayer2.source.rtsp.RtpPacket;
 import com.google.android.exoplayer2.source.rtsp.SessionDescription;
 import com.google.android.exoplayer2.text.ttml.TtmlNode;
 import com.google.android.gms.auth.api.phone.SmsRetriever;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.iMe.common.IdFabric$CustomType;
 import com.iMe.fork.controller.BackupController;
 import com.iMe.fork.controller.LockedSectionsController;
-import com.iMe.fork.enums.AutoLockTime;
 import com.iMe.fork.enums.LockedSection;
-import com.iMe.utils.extentions.common.ContextExtKt;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -137,43 +136,42 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.TreeMap;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.PhoneFormat.C3233PhoneFormat;
+import org.telegram.PhoneFormat.C3159PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.utils.CustomHtml;
-import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.BottomSheet;
-import org.telegram.p048ui.ActionBar.INavigationLayout;
-import org.telegram.p048ui.ActionBar.Theme;
-import org.telegram.p048ui.Cells.TextDetailSettingsCell;
-import org.telegram.p048ui.ChatActivity;
-import org.telegram.p048ui.Components.AlertsCreator;
-import org.telegram.p048ui.Components.BackgroundGradientDrawable;
-import org.telegram.p048ui.Components.BulletinFactory;
-import org.telegram.p048ui.Components.CubicBezierInterpolator;
-import org.telegram.p048ui.Components.EllipsizeSpanAnimator;
-import org.telegram.p048ui.Components.ForegroundColorSpanThemable;
-import org.telegram.p048ui.Components.ForegroundDetector;
-import org.telegram.p048ui.Components.HideViewAfterAnimation;
-import org.telegram.p048ui.Components.LayoutHelper;
-import org.telegram.p048ui.Components.MotionBackgroundDrawable;
-import org.telegram.p048ui.Components.PickerBottomLayout;
-import org.telegram.p048ui.Components.RecyclerListView;
-import org.telegram.p048ui.Components.ShareAlert;
-import org.telegram.p048ui.Components.TypefaceSpan;
-import org.telegram.p048ui.Components.URLSpanReplacement;
-import org.telegram.p048ui.Components.UndoView;
-import org.telegram.p048ui.LaunchActivity;
-import org.telegram.p048ui.ThemePreviewActivity;
-import org.telegram.p048ui.WallpapersListActivity;
+import org.telegram.p044ui.ActionBar.AlertDialog;
+import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p044ui.ActionBar.BottomSheet;
+import org.telegram.p044ui.ActionBar.INavigationLayout;
+import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p044ui.Cells.TextDetailSettingsCell;
+import org.telegram.p044ui.ChatActivity;
+import org.telegram.p044ui.Components.AlertsCreator;
+import org.telegram.p044ui.Components.BackgroundGradientDrawable;
+import org.telegram.p044ui.Components.BulletinFactory;
+import org.telegram.p044ui.Components.CubicBezierInterpolator;
+import org.telegram.p044ui.Components.EllipsizeSpanAnimator;
+import org.telegram.p044ui.Components.ForegroundColorSpanThemable;
+import org.telegram.p044ui.Components.ForegroundDetector;
+import org.telegram.p044ui.Components.HideViewAfterAnimation;
+import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p044ui.Components.MotionBackgroundDrawable;
+import org.telegram.p044ui.Components.PickerBottomLayout;
+import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p044ui.Components.ShareAlert;
+import org.telegram.p044ui.Components.TypefaceSpan;
+import org.telegram.p044ui.Components.URLSpanReplacement;
+import org.telegram.p044ui.Components.UndoView;
+import org.telegram.p044ui.LaunchActivity;
+import org.telegram.p044ui.ThemePreviewActivity;
+import org.telegram.p044ui.WallpapersListActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC$Document;
@@ -329,10 +327,18 @@ public class AndroidUtilities {
         return (i & RtpPacket.MAX_SEQUENCE_NUMBER) | (i2 << 16);
     }
 
+    public static boolean needShowPasscode(boolean z) {
+        return needShowPasscode(z, 0, null);
+    }
+
+    public static String formatWholeNumber(int i) {
+        return formatWholeNumber(i, 0);
+    }
+
     public static String formatNumber(long j) {
         StringBuilder sb;
         if (j == Long.MIN_VALUE) {
-            return formatNumber(C0482C.TIME_UNSET);
+            return formatNumber(C0470C.TIME_UNSET);
         }
         if (j < 0) {
             return "-" + formatNumber(-j);
@@ -340,16 +346,19 @@ public class AndroidUtilities {
             return Long.toString(j);
         } else {
             TreeMap treeMap = new TreeMap();
-            String[] stringArray = ApplicationLoader.applicationContext.getResources().getStringArray(C3316R.array.short_numbers);
+            String[] stringArray = ApplicationLoader.applicationContext.getResources().getStringArray(C3242R.array.short_numbers);
             boolean z = false;
             treeMap.put(1000L, stringArray[0]);
             treeMap.put(1000000L, stringArray[1]);
-            treeMap.put(Long.valueOf((long) C0482C.NANOS_PER_SECOND), stringArray[2]);
+            treeMap.put(Long.valueOf((long) C0470C.NANOS_PER_SECOND), stringArray[2]);
             treeMap.put(Long.valueOf((long) MediaPeriodQueue.INITIAL_RENDERER_POSITION_OFFSET_US), stringArray[3]);
             Map.Entry floorEntry = treeMap.floorEntry(Long.valueOf(j));
+            if (floorEntry == null) {
+                return null;
+            }
             String str = (String) floorEntry.getValue();
             long longValue = j / (((Long) floorEntry.getKey()).longValue() / 10);
-            if (longValue < 100 && longValue / 10.0d != longValue / 10) {
+            if (longValue < 100 && longValue / 10.0d != ((float) longValue) / 10.0f) {
                 z = true;
             }
             if (z) {
@@ -390,33 +399,6 @@ public class AndroidUtilities {
         return m51dp(i);
     }
 
-    public static void onLockedSectionClosed(Activity activity) {
-        if (activity instanceof LaunchActivity) {
-            ((LaunchActivity) activity).onLockedSectionClosed();
-        }
-    }
-
-    public static void showSectionPasscodeActivityIfNeeded(BaseFragment baseFragment) {
-        Activity parentActivity = baseFragment.getParentActivity();
-        LockedSection screenLockedSection = baseFragment.getScreenLockedSection();
-        if (!isSameLockedSectionScreen(baseFragment, screenLockedSection) && (parentActivity instanceof LaunchActivity) && needShowSectionPasscodeActivity(screenLockedSection)) {
-            ((LaunchActivity) parentActivity).onLockedSectionOpened(screenLockedSection);
-        }
-    }
-
-    public static boolean needShowSectionPasscodeActivity(LockedSection lockedSection) {
-        LockedSectionsController.SectionPasscodeData sectionsPasscodeData;
-        int i;
-        if (lockedSection == null || (sectionsPasscodeData = LockedSectionsController.getInstance(UserConfig.selectedAccount).getSectionsPasscodeData(lockedSection)) == null) {
-            return false;
-        }
-        int seconds = (int) TimeUnit.MILLISECONDS.toSeconds(SystemClock.elapsedRealtime());
-        if (sectionsPasscodeData.getPasscodeHash().isEmpty()) {
-            return false;
-        }
-        return sectionsPasscodeData.isSectionLocked() || !(sectionsPasscodeData.getAutoLockIn() == AutoLockTime.NONE || (i = SharedConfig.lastLockedSectionsPauseTime) == 0 || ((long) i) + sectionsPasscodeData.getAutoLockIn().getTimeInSeconds() > ((long) seconds)) || seconds + 5 < SharedConfig.lastLockedSectionsPauseTime;
-    }
-
     public static boolean isInLandscapeMode(Activity activity) {
         Point point = new Point();
         activity.getWindowManager().getDefaultDisplay().getSize(point);
@@ -434,25 +416,23 @@ public class AndroidUtilities {
 
     public static void copyImageToClipboard(BaseFragment baseFragment, MessageObject messageObject) {
         File pathToMessage = baseFragment.getFileLoader().getPathToMessage(messageObject.messageOwner);
-        if (pathToMessage.exists()) {
-            Activity parentActivity = baseFragment.getParentActivity();
-            ((ClipboardManager) parentActivity.getSystemService("clipboard")).setPrimaryClip(ClipData.newUri(parentActivity.getContentResolver(), "URI", FileProvider.getUriForFile(parentActivity, ApplicationLoader.getApplicationId() + ".provider", pathToMessage)));
-            BulletinFactory.m28of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createCopyBulletin(LocaleController.getInternalString(C3316R.string.photo_viewer_image_copied)).show();
-            return;
+        UndoView undoView = baseFragment instanceof ChatActivity ? ((ChatActivity) baseFragment).getUndoView() : null;
+        if (!pathToMessage.exists()) {
+            if (undoView != null) {
+                undoView.showError(LocaleController.getString("ErrorOccurred", C3242R.string.ErrorOccurred));
+                return;
+            } else {
+                BulletinFactory.m28of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createSimpleBulletin(C3242R.raw.error, LocaleController.getString("ErrorOccurred", C3242R.string.ErrorOccurred)).show();
+                return;
+            }
         }
-        ContextExtKt.toast(LocaleController.getString("ErrorOccurred", C3316R.string.ErrorOccurred));
-    }
-
-    private static boolean isSameLockedSectionScreen(BaseFragment baseFragment, LockedSection lockedSection) {
-        if (lockedSection == null) {
-            return false;
+        Activity parentActivity = baseFragment.getParentActivity();
+        ((ClipboardManager) parentActivity.getSystemService("clipboard")).setPrimaryClip(ClipData.newUri(parentActivity.getContentResolver(), "URI", FileProvider.getUriForFile(parentActivity, ApplicationLoader.getApplicationId() + ".provider", pathToMessage)));
+        if (undoView != null) {
+            undoView.showWithAction(0L, IdFabric$CustomType.UNDO_IMAGE_COPIED, (Runnable) null);
+        } else {
+            BulletinFactory.m28of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createCopyBulletin(LocaleController.getInternalString(C3242R.string.photo_viewer_image_copied)).show();
         }
-        INavigationLayout parentLayout = baseFragment.getParentLayout();
-        return !parentLayout.getFragmentStack().isEmpty() && parentLayout.getLastFragment().getScreenLockedSection() == lockedSection;
-    }
-
-    public static String formatWholeNumber(int i) {
-        return formatWholeNumber(i, 0);
     }
 
     static {
@@ -470,8 +450,8 @@ public class AndroidUtilities {
         }
         leftBaseline = isTablet() ? 80 : 72;
         checkDisplaySize(ApplicationLoader.applicationContext, null);
-        documentIcons = new int[]{C3316R.C3318drawable.media_doc_blue, C3316R.C3318drawable.media_doc_green, C3316R.C3318drawable.media_doc_red, C3316R.C3318drawable.media_doc_yellow};
-        documentMediaIcons = new int[]{C3316R.C3318drawable.media_doc_blue_b, C3316R.C3318drawable.media_doc_green_b, C3316R.C3318drawable.media_doc_red_b, C3316R.C3318drawable.media_doc_yellow_b};
+        documentIcons = new int[]{C3242R.C3244drawable.media_doc_blue, C3242R.C3244drawable.media_doc_green, C3242R.C3244drawable.media_doc_red, C3242R.C3244drawable.media_doc_yellow};
+        documentMediaIcons = new int[]{C3242R.C3244drawable.media_doc_blue_b, C3242R.C3244drawable.media_doc_green_b, C3242R.C3244drawable.media_doc_red_b, C3242R.C3244drawable.media_doc_yellow_b};
         sUrlMatchFilter = AndroidUtilities$$ExternalSyntheticLambda4.INSTANCE;
         hasCallPermissions = Build.VERSION.SDK_INT >= 23;
         numbersSignatureArray = new String[]{"", "K", "M", "G", "T", "P"};
@@ -733,7 +713,7 @@ public class AndroidUtilities {
                 }
                 if (user != null) {
                     ContactsController.getInstance(i).markAsContacted(stringExtra2);
-                    SendMessagesHelper.getInstance(i).sendMessage(stringExtra, user.f1642id, null, null, null, true, null, null, null, true, 0, null, false, null);
+                    SendMessagesHelper.getInstance(i).sendMessage(stringExtra, user.f1567id, null, null, null, true, null, null, null, true, 0, null, false, null);
                 }
             }
         } catch (Exception e) {
@@ -761,9 +741,10 @@ public class AndroidUtilities {
     }
 
     public static void removeFromParent(View view) {
-        if (view.getParent() != null) {
-            ((ViewGroup) view.getParent()).removeView(view);
+        if (view == null || view.getParent() == null) {
+            return;
         }
+        ((ViewGroup) view.getParent()).removeView(view);
     }
 
     public static boolean isFilNotFoundException(Throwable th) {
@@ -1282,13 +1263,13 @@ public class AndroidUtilities {
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
             builder.setMessage(LocaleController.getString(ApplicationLoader.getMapsProvider().getInstallMapsString()));
-            builder.setPositiveButton(LocaleController.getString("OK", C3316R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda3
+            builder.setPositiveButton(LocaleController.getString("OK", C3242R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda3
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     AndroidUtilities.lambda$isMapsInstalled$5(mapsAppPackageName, baseFragment, dialogInterface, i);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3316R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), null);
             baseFragment.showDialog(builder.create());
             return false;
         }
@@ -1533,7 +1514,7 @@ public class AndroidUtilities {
             if (z) {
                 int i2 = this.type;
                 if (i2 == 0) {
-                    return C3233PhoneFormat.getInstance().format(sb.toString());
+                    return C3159PhoneFormat.getInstance().format(sb.toString());
                 }
                 if (i2 == 5) {
                     String[] split3 = sb.toString().split("T");
@@ -1610,7 +1591,7 @@ public class AndroidUtilities {
         VcardItem vcardItem;
         ArrayList<VcardItem> arrayList2 = arrayList;
         ArrayList<TLRPC$User> arrayList3 = null;
-        C32341 c32341 = 0;
+        C31601 c31601 = 0;
         if (z) {
             try {
                 createInputStream = ApplicationLoader.applicationContext.getContentResolver().openAssetFileDescriptor(uri, "r").createInputStream();
@@ -1675,7 +1656,7 @@ public class AndroidUtilities {
                                                     vcardItem = new VcardItem();
                                                     vcardItem.type = 20;
                                                 }
-                                                vcardItem2 = c32341;
+                                                vcardItem2 = c31601;
                                                 if (vcardItem2 != null && vcardItem2.type >= 0) {
                                                     arrayList2.add(vcardItem2);
                                                 }
@@ -1695,7 +1676,7 @@ public class AndroidUtilities {
                             }
                             i3 = i2;
                         }
-                        vcardItem2 = c32341;
+                        vcardItem2 = c31601;
                         i3 = i2;
                     }
                     if (i3 == 0 && vcardData != null) {
@@ -1715,7 +1696,7 @@ public class AndroidUtilities {
                     String str4 = "=";
                     if (readLine.contains("=QUOTED-PRINTABLE") && readLine.endsWith("=")) {
                         str3 = readLine.substring(i2, readLine.length() - 1);
-                        c32341 = 0;
+                        c31601 = 0;
                     } else {
                         if (i3 == 0 && vcardData != null && vcardItem2 != null) {
                             vcardItem2.fullData = readLine;
@@ -1769,13 +1750,13 @@ public class AndroidUtilities {
                             }
                             arrayList2 = arrayList;
                             str3 = str2;
-                            c32341 = 0;
+                            c31601 = 0;
                             i2 = 0;
                         }
                         str2 = str3;
                         arrayList2 = arrayList;
                         str3 = str2;
-                        c32341 = 0;
+                        c31601 = 0;
                         i2 = 0;
                     }
                 }
@@ -1813,7 +1794,7 @@ public class AndroidUtilities {
                 tLRPC$TL_userContact_old2.phone = str8;
                 tLRPC$TL_userContact_old2.first_name = vcardData2.name;
                 tLRPC$TL_userContact_old2.last_name = "";
-                tLRPC$TL_userContact_old2.f1642id = 0L;
+                tLRPC$TL_userContact_old2.f1567id = 0L;
                 TLRPC$TL_restrictionReason tLRPC$TL_restrictionReason = new TLRPC$TL_restrictionReason();
                 tLRPC$TL_restrictionReason.text = vcardData2.vcard.toString();
                 tLRPC$TL_restrictionReason.platform = "";
@@ -2102,7 +2083,6 @@ public class AndroidUtilities {
 
     public static File getCacheDir() {
         String str;
-        File externalCacheDir;
         String str2 = null;
         try {
             str = Environment.getExternalStorageState();
@@ -2113,39 +2093,35 @@ public class AndroidUtilities {
         if (str == null || str.startsWith("mounted")) {
             FileLog.m48d("external dir mounted");
             try {
-                if (Build.VERSION.SDK_INT >= 19) {
-                    File[] externalCacheDirs = ApplicationLoader.applicationContext.getExternalCacheDirs();
-                    int i = 0;
-                    externalCacheDir = externalCacheDirs[0];
-                    if (!TextUtils.isEmpty(SharedConfig.storageCacheDir)) {
-                        while (true) {
-                            if (i < externalCacheDirs.length) {
-                                if (externalCacheDirs[i] != null && externalCacheDirs[i].getAbsolutePath().startsWith(SharedConfig.storageCacheDir)) {
-                                    externalCacheDir = externalCacheDirs[i];
-                                    break;
-                                }
-                                i++;
-                            } else {
+                File[] externalCacheDirs = ApplicationLoader.applicationContext.getExternalCacheDirs();
+                int i = 0;
+                File file = externalCacheDirs[0];
+                if (!TextUtils.isEmpty(SharedConfig.storageCacheDir)) {
+                    while (true) {
+                        if (i < externalCacheDirs.length) {
+                            if (externalCacheDirs[i] != null && externalCacheDirs[i].getAbsolutePath().startsWith(SharedConfig.storageCacheDir)) {
+                                file = externalCacheDirs[i];
                                 break;
                             }
+                            i++;
+                        } else {
+                            break;
                         }
                     }
-                } else {
-                    externalCacheDir = ApplicationLoader.applicationContext.getExternalCacheDir();
                 }
                 StringBuilder sb = new StringBuilder();
                 sb.append("check dir ");
-                if (externalCacheDir != null) {
-                    str2 = externalCacheDir.getPath();
+                if (file != null) {
+                    str2 = file.getPath();
                 }
                 sb.append(str2);
                 sb.append(" ");
                 FileLog.m48d(sb.toString());
-                if (externalCacheDir != null && ((externalCacheDir.exists() || externalCacheDir.mkdirs()) && externalCacheDir.canWrite())) {
-                    return externalCacheDir;
+                if (file != null && ((file.exists() || file.mkdirs()) && file.canWrite())) {
+                    return file;
                 }
-                if (externalCacheDir != null) {
-                    FileLog.m48d("check dir file exist " + externalCacheDir.exists() + " can write " + externalCacheDir.canWrite());
+                if (file != null) {
+                    FileLog.m48d("check dir file exist " + file.exists() + " can write " + file.canWrite());
                 }
             } catch (Exception e2) {
                 FileLog.m45e(e2);
@@ -2162,11 +2138,11 @@ public class AndroidUtilities {
         try {
             File filesDir = ApplicationLoader.applicationContext.getFilesDir();
             if (filesDir != null) {
-                File file = new File(filesDir, "cache/");
-                file.mkdirs();
+                File file2 = new File(filesDir, "cache/");
+                file2.mkdirs();
                 if (filesDir.exists() || filesDir.mkdirs()) {
                     if (filesDir.canWrite()) {
-                        return file;
+                        return file2;
                     }
                 }
             }
@@ -2315,7 +2291,7 @@ public class AndroidUtilities {
     }
 
     public static boolean isTabletForce() {
-        return ApplicationLoader.applicationContext != null && ApplicationLoader.applicationContext.getResources().getBoolean(C3316R.bool.isTablet);
+        return ApplicationLoader.applicationContext != null && ApplicationLoader.applicationContext.getResources().getBoolean(C3242R.bool.isTablet);
     }
 
     public static boolean isTabletInternal() {
@@ -2429,7 +2405,7 @@ public class AndroidUtilities {
     public static boolean checkPhonePattern(String str, String str2) {
         if (!TextUtils.isEmpty(str) && !str.equals("*")) {
             String[] split = str.split("\\*");
-            String stripExceptNumbers = C3233PhoneFormat.stripExceptNumbers(str2);
+            String stripExceptNumbers = C3159PhoneFormat.stripExceptNumbers(str2);
             int i = 0;
             for (String str3 : split) {
                 if (!TextUtils.isEmpty(str3)) {
@@ -2739,7 +2715,7 @@ public class AndroidUtilities {
         return needShowPasscode(false);
     }
 
-    public static boolean needShowPasscode(boolean z) {
+    public static boolean needShowPasscode(boolean z, int i, LockedSection lockedSection) {
         boolean isWasInBackground = ForegroundDetector.getInstance().isWasInBackground(z);
         if (z) {
             ForegroundDetector.getInstance().resetBackgroundVar();
@@ -2748,14 +2724,29 @@ public class AndroidUtilities {
         if (BuildVars.LOGS_ENABLED && z && SharedConfig.passcodeHash.length() > 0) {
             FileLog.m48d("wasInBackground = " + isWasInBackground + " appLocked = " + SharedConfig.appLocked + " autoLockIn = " + SharedConfig.autoLockIn + " lastPauseTime = " + SharedConfig.lastPauseTime + " uptime = " + elapsedRealtime);
         }
-        return SharedConfig.passcodeHash.length() > 0 && isWasInBackground && (SharedConfig.appLocked || (!(SharedConfig.autoLockIn == 0 || SharedConfig.lastPauseTime == 0 || SharedConfig.appLocked || SharedConfig.lastPauseTime + SharedConfig.autoLockIn > elapsedRealtime) || elapsedRealtime + 5 < SharedConfig.lastPauseTime));
+        if (lockedSection != null) {
+            LockedSectionsController.SectionPasscodeData sectionsPasscodeData = LockedSectionsController.getInstance(i).getSectionsPasscodeData(lockedSection);
+            if (sectionsPasscodeData == null) {
+                return false;
+            }
+            return !sectionsPasscodeData.getPasscodeHash().isEmpty() && (sectionsPasscodeData.isSectionLocked() || sectionsPasscodeData.getTimeout() == 0 || elapsedRealtime - sectionsPasscodeData.getLastAcceptedTime() > sectionsPasscodeData.getTimeout());
+        }
+        if (SharedConfig.passcodeHash.length() > 0 && isWasInBackground) {
+            if (SharedConfig.appLocked) {
+                return true;
+            }
+            if ((SharedConfig.autoLockIn != 0 && SharedConfig.lastPauseTime != 0 && !SharedConfig.appLocked && SharedConfig.lastPauseTime + SharedConfig.autoLockIn <= elapsedRealtime) || elapsedRealtime + 5 < SharedConfig.lastPauseTime) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static void shakeView(final View view) {
         if (view == null) {
             return;
         }
-        int i = C3316R.C3319id.shake_animation;
+        int i = C3242R.C3245id.shake_animation;
         Object tag = view.getTag(i);
         if (tag instanceof ValueAnimator) {
             ((ValueAnimator) tag).cancel();
@@ -2798,11 +2789,11 @@ public class AndroidUtilities {
 
     public static void shakeViewSpring(final View view, float f, final Runnable runnable) {
         int m51dp = m51dp(f);
-        int i = C3316R.C3319id.spring_tag;
+        int i = C3242R.C3245id.spring_tag;
         if (view.getTag(i) != null) {
             ((SpringAnimation) view.getTag(i)).cancel();
         }
-        int i2 = C3316R.C3319id.spring_was_translation_x_tag;
+        int i2 = C3242R.C3245id.spring_was_translation_x_tag;
         Float f2 = (Float) view.getTag(i2);
         if (f2 != null) {
             view.setTranslationX(f2.floatValue());
@@ -2825,8 +2816,8 @@ public class AndroidUtilities {
             runnable.run();
         }
         view.setTranslationX(f);
-        view.setTag(C3316R.C3319id.spring_tag, null);
-        view.setTag(C3316R.C3319id.spring_was_translation_x_tag, null);
+        view.setTag(C3242R.C3245id.spring_tag, null);
+        view.setTag(C3242R.C3245id.spring_was_translation_x_tag, null);
     }
 
     public static void appCenterLog(Throwable th) {
@@ -3316,10 +3307,10 @@ public class AndroidUtilities {
             HashMap hashMap = new HashMap();
             hashMap.put("info1.**", Integer.valueOf(baseFragment.getThemedColor("dialogTopBackground")));
             hashMap.put("info2.**", Integer.valueOf(baseFragment.getThemedColor("dialogTopBackground")));
-            builder.setTopAnimation(C3316R.C3321raw.not_available, 52, false, baseFragment.getThemedColor("dialogTopBackground"), hashMap);
+            builder.setTopAnimation(C3242R.raw.not_available, 52, false, baseFragment.getThemedColor("dialogTopBackground"), hashMap);
             builder.setTopAnimationIsNew(true);
-            builder.setMessage(LocaleController.getString("IncorrectTheme", C3316R.string.IncorrectTheme));
-            builder.setPositiveButton(LocaleController.getString("OK", C3316R.string.OK), null);
+            builder.setMessage(LocaleController.getString("IncorrectTheme", C3242R.string.IncorrectTheme));
+            builder.setPositiveButton(LocaleController.getString("OK", C3242R.string.OK), null);
             baseFragment.showDialog(builder.create());
             return;
         }
@@ -3359,10 +3350,10 @@ public class AndroidUtilities {
             HashMap hashMap2 = new HashMap();
             hashMap2.put("info1.**", Integer.valueOf(baseFragment.getThemedColor("dialogTopBackground")));
             hashMap2.put("info2.**", Integer.valueOf(baseFragment.getThemedColor("dialogTopBackground")));
-            builder2.setTopAnimation(C3316R.C3321raw.not_available, 52, false, baseFragment.getThemedColor("dialogTopBackground"), hashMap2);
+            builder2.setTopAnimation(C3242R.raw.not_available, 52, false, baseFragment.getThemedColor("dialogTopBackground"), hashMap2);
             builder2.setTopAnimationIsNew(true);
-            builder2.setPositiveButton(LocaleController.getString("OK", C3316R.string.OK), null);
-            builder2.setMessage(LocaleController.formatString("NoHandleAppInstalled", C3316R.string.NoHandleAppInstalled, messageObject.getDocument().mime_type));
+            builder2.setPositiveButton(LocaleController.getString("OK", C3242R.string.OK), null);
+            builder2.setMessage(LocaleController.formatString("NoHandleAppInstalled", C3242R.string.NoHandleAppInstalled, messageObject.getDocument().mime_type));
             baseFragment.showDialog(builder2.create());
         }
     }
@@ -3378,7 +3369,7 @@ public class AndroidUtilities {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static boolean openForView(java.io.File r6, java.lang.String r7, java.lang.String r8, android.app.Activity r9, org.telegram.p048ui.ActionBar.Theme.ResourcesProvider r10) {
+    public static boolean openForView(java.io.File r6, java.lang.String r7, java.lang.String r8, android.app.Activity r9, org.telegram.p044ui.ActionBar.Theme.ResourcesProvider r10) {
         /*
             if (r6 == 0) goto Lca
             boolean r0 = r6.exists()
@@ -3420,7 +3411,7 @@ public class AndroidUtilities {
             android.content.pm.PackageManager r2 = r2.getPackageManager()
             boolean r2 = r2.canRequestPackageInstalls()
             if (r2 != 0) goto L60
-            android.app.Dialog r6 = org.telegram.p048ui.Components.AlertsCreator.createApkRestrictedDialog(r9, r10)
+            android.app.Dialog r6 = org.telegram.p044ui.Components.AlertsCreator.createApkRestrictedDialog(r9, r10)
             r6.show()
             return r1
         L60:
@@ -3829,7 +3820,7 @@ public class AndroidUtilities {
         int i3 = 5;
         if (!TextUtils.isEmpty(str5)) {
             TextView textView = new TextView(activity);
-            textView.setText(LocaleController.getString("UseProxyTelegramInfo2", C3316R.string.UseProxyTelegramInfo2));
+            textView.setText(LocaleController.getString("UseProxyTelegramInfo2", C3242R.string.UseProxyTelegramInfo2));
             textView.setTextColor(Theme.getColor("dialogTextGray4"));
             textView.setTextSize(1, 14.0f);
             textView.setGravity(49);
@@ -3842,23 +3833,23 @@ public class AndroidUtilities {
         while (i4 < 6) {
             CharSequence charSequence2 = null;
             if (i4 == 0) {
-                charSequence = LocaleController.getString("UseProxyAddress", C3316R.string.UseProxyAddress);
+                charSequence = LocaleController.getString("UseProxyAddress", C3242R.string.UseProxyAddress);
                 charSequence2 = str;
             } else if (i4 == 1) {
                 charSequence2 = "" + str2;
-                charSequence = LocaleController.getString("UseProxyPort", C3316R.string.UseProxyPort);
+                charSequence = LocaleController.getString("UseProxyPort", C3242R.string.UseProxyPort);
             } else if (i4 == 2) {
-                charSequence = LocaleController.getString("UseProxySecret", C3316R.string.UseProxySecret);
+                charSequence = LocaleController.getString("UseProxySecret", C3242R.string.UseProxySecret);
                 charSequence2 = str5;
             } else if (i4 == i2) {
-                charSequence = LocaleController.getString("UseProxyUsername", C3316R.string.UseProxyUsername);
+                charSequence = LocaleController.getString("UseProxyUsername", C3242R.string.UseProxyUsername);
                 charSequence2 = str3;
             } else if (i4 == 4) {
-                charSequence = LocaleController.getString("UseProxyPassword", C3316R.string.UseProxyPassword);
+                charSequence = LocaleController.getString("UseProxyPassword", C3242R.string.UseProxyPassword);
                 charSequence2 = str4;
             } else if (i4 == i3) {
-                charSequence2 = LocaleController.getString(C3316R.string.ProxyBottomSheetChecking);
-                charSequence = LocaleController.getString(C3316R.string.ProxyStatus);
+                charSequence2 = LocaleController.getString(C3242R.string.ProxyBottomSheetChecking);
+                charSequence = LocaleController.getString(C3242R.string.ProxyStatus);
             } else {
                 charSequence = null;
             }
@@ -3908,7 +3899,7 @@ public class AndroidUtilities {
                             }
                         });
                     } catch (NumberFormatException unused) {
-                        textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3316R.string.Unavailable));
+                        textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3242R.string.Unavailable));
                         textDetailSettingsCell.getTextView().setTextColor(Theme.getColor("windowBackgroundWhiteRedText4"));
                     }
                 }
@@ -3922,7 +3913,7 @@ public class AndroidUtilities {
         linearLayout.addView(pickerBottomLayout, LayoutHelper.createFrame(-1, 48, 83));
         pickerBottomLayout.cancelButton.setPadding(m50dp(18), 0, m50dp(18), 0);
         pickerBottomLayout.cancelButton.setTextColor(Theme.getColor("dialogTextBlue2"));
-        pickerBottomLayout.cancelButton.setText(LocaleController.getString("Cancel", C3316R.string.Cancel).toUpperCase());
+        pickerBottomLayout.cancelButton.setText(LocaleController.getString("Cancel", C3242R.string.Cancel).toUpperCase());
         pickerBottomLayout.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -3932,7 +3923,7 @@ public class AndroidUtilities {
         pickerBottomLayout.doneButtonTextView.setTextColor(Theme.getColor("dialogTextBlue2"));
         pickerBottomLayout.doneButton.setPadding(m50dp(18), 0, m50dp(18), 0);
         pickerBottomLayout.doneButtonBadgeTextView.setVisibility(8);
-        pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("ConnectingConnectProxy", C3316R.string.ConnectingConnectProxy).toUpperCase());
+        pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("ConnectingConnectProxy", C3242R.string.ConnectingConnectProxy).toUpperCase());
         pickerBottomLayout.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -3955,12 +3946,12 @@ public class AndroidUtilities {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$showProxyAlert$11(long j, TextDetailSettingsCell textDetailSettingsCell) {
         if (j == -1) {
-            textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3316R.string.Unavailable));
+            textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3242R.string.Unavailable));
             textDetailSettingsCell.getTextView().setTextColor(Theme.getColor("windowBackgroundWhiteRedText4"));
             return;
         }
         TextView textView = textDetailSettingsCell.getTextView();
-        textView.setText(LocaleController.getString(C3316R.string.Available) + ", " + LocaleController.formatString(C3316R.string.Ping, Long.valueOf(j)));
+        textView.setText(LocaleController.getString(C3242R.string.Available) + ", " + LocaleController.formatString(C3242R.string.Ping, Long.valueOf(j)));
         textDetailSettingsCell.getTextView().setTextColor(Theme.getColor("windowBackgroundWhiteGreenText"));
     }
 
@@ -4006,10 +3997,10 @@ public class AndroidUtilities {
                 z = true;
             }
             if (!z) {
-                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString(C3316R.string.ProxyAddedSuccess));
+                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString(C3242R.string.ProxyAddedSuccess));
             }
         } else {
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString(C3316R.string.ProxyAddedSuccess));
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString(C3242R.string.ProxyAddedSuccess));
         }
         runnable.run();
     }
@@ -4530,7 +4521,7 @@ public class AndroidUtilities {
             declaredField.setAccessible(true);
             final RecyclerListView recyclerListView = (RecyclerListView) declaredField.get(baseFragment);
             recyclerListView.highlightRow(new RecyclerListView.IntReturnCallback() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda19
-                @Override // org.telegram.p048ui.Components.RecyclerListView.IntReturnCallback
+                @Override // org.telegram.p044ui.Components.RecyclerListView.IntReturnCallback
                 public final int run() {
                     int lambda$scrollToFragmentRow$16;
                     lambda$scrollToFragmentRow$16 = AndroidUtilities.lambda$scrollToFragmentRow$16(BaseFragment.this, str, recyclerListView);

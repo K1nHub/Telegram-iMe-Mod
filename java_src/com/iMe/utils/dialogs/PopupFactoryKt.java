@@ -5,13 +5,13 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.widget.AdapterView;
 import androidx.appcompat.widget.ListPopupWindow;
-import com.iMe.p032ui.translate.PopupOptionsAdapter;
+import com.iMe.p031ui.translate.PopupOptionsAdapter;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p048ui.ActionBar.Theme;
+import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: PopupFactory.kt */
 /* loaded from: classes4.dex */
 public final class PopupFactoryKt {

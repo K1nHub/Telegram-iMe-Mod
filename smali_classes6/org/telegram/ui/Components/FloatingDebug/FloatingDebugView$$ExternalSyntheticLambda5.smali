@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->$r8$lambda$nMq7iNm1GK6Bd16KFTefZoAAwTY(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->$r8$lambda$dBbNmaci7uE_ru68hxdVbNiajZA(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
 
     return-void
 .end method

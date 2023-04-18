@@ -17462,9 +17462,12 @@
 
     if-eqz v0, :cond_6
 
-    .line 1352
+    .line 1351
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity;->renderersContainer:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
+    if-eqz v1, :cond_6
+
+    .line 1352
     iget-boolean v1, v1, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->inFullscreenMode:Z
 
     const/high16 v2, 0x41700000    # 15.0f

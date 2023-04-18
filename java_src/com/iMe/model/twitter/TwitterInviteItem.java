@@ -8,12 +8,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class TwitterInviteItem extends NoChildNode {
 
     /* renamed from: id */
-    private final long f277id;
+    private final long f272id;
     private final String nickname;
 
     public static /* synthetic */ TwitterInviteItem copy$default(TwitterInviteItem twitterInviteItem, long j, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = twitterInviteItem.f277id;
+            j = twitterInviteItem.f272id;
         }
         if ((i & 2) != 0) {
             str = twitterInviteItem.nickname;
@@ -22,7 +22,7 @@ public final class TwitterInviteItem extends NoChildNode {
     }
 
     public final long component1() {
-        return this.f277id;
+        return this.f272id;
     }
 
     public final String component2() {
@@ -40,21 +40,21 @@ public final class TwitterInviteItem extends NoChildNode {
         }
         if (obj instanceof TwitterInviteItem) {
             TwitterInviteItem twitterInviteItem = (TwitterInviteItem) obj;
-            return this.f277id == twitterInviteItem.f277id && Intrinsics.areEqual(this.nickname, twitterInviteItem.nickname);
+            return this.f272id == twitterInviteItem.f272id && Intrinsics.areEqual(this.nickname, twitterInviteItem.nickname);
         }
         return false;
     }
 
     public int hashCode() {
-        return (BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f277id) * 31) + this.nickname.hashCode();
+        return (BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f272id) * 31) + this.nickname.hashCode();
     }
 
     public String toString() {
-        return "TwitterInviteItem(id=" + this.f277id + ", nickname=" + this.nickname + ')';
+        return "TwitterInviteItem(id=" + this.f272id + ", nickname=" + this.nickname + ')';
     }
 
     public final long getId() {
-        return this.f277id;
+        return this.f272id;
     }
 
     public final String getNickname() {
@@ -63,7 +63,7 @@ public final class TwitterInviteItem extends NoChildNode {
 
     public TwitterInviteItem(long j, String nickname) {
         Intrinsics.checkNotNullParameter(nickname, "nickname");
-        this.f277id = j;
+        this.f272id = j;
         this.nickname = nickname;
     }
 }

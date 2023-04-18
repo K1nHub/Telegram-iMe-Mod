@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$rw-Y2VUTqU7-QDzM9LeLcvI3UNw(Lorg/telegram/ui/Components/AudioPlayerAlert;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;)Z
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$3uH-T-gOfNLxFsYbLWqtkEbqDqk(Lorg/telegram/ui/Components/AudioPlayerAlert;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;)Z
 
     move-result p1
 

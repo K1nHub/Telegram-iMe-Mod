@@ -25,8 +25,8 @@ import org.telegram.messenger.support.customtabs.CustomTabsSession;
 import org.telegram.messenger.support.customtabsclient.shared.CustomTabsHelper;
 import org.telegram.messenger.support.customtabsclient.shared.ServiceConnection;
 import org.telegram.messenger.support.customtabsclient.shared.ServiceConnectionCallback;
-import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.LaunchActivity;
+import org.telegram.p044ui.ActionBar.AlertDialog;
+import org.telegram.p044ui.LaunchActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$TL_error;
@@ -279,7 +279,7 @@ public class Browser {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static /* synthetic */ void lambda$openUrl$0(org.telegram.messenger.browser.Browser.Progress r2, org.telegram.p048ui.ActionBar.AlertDialog[] r3, org.telegram.tgnet.TLObject r4, int r5, android.net.Uri r6, android.content.Context r7, boolean r8) {
+    public static /* synthetic */ void lambda$openUrl$0(org.telegram.messenger.browser.Browser.Progress r2, org.telegram.p044ui.ActionBar.AlertDialog[] r3, org.telegram.tgnet.TLObject r4, int r5, android.net.Uri r6, android.content.Context r7, boolean r8) {
         /*
             r0 = 0
             if (r2 == 0) goto L7

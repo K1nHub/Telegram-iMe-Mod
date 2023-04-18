@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
     .locals 0
 
-    .line 1687
+    .line 1699
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$19;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,12 +35,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1690
+    .line 1702
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$19;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$6302(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$6202(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
 
     return-void
 .end method

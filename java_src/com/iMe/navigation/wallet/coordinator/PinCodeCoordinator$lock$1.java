@@ -1,7 +1,7 @@
 package com.iMe.navigation.wallet.coordinator;
 
 import com.iMe.model.wallet.crypto.pin.EnterPinCodeResult;
-import com.iMe.p032ui.base.mvp.MvpFragment;
+import com.iMe.p031ui.base.mvp.MvpFragment;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;

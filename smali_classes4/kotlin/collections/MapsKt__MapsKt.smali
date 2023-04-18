@@ -376,7 +376,7 @@
 
     invoke-direct {v1, v0}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    invoke-static {p0, v1}, Lkotlin/collections/MapsKt;->toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {p0, v1}, Lkotlin/collections/MapsKt__MapsKt;->toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object p0
 
@@ -431,7 +431,7 @@
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    invoke-static {p0, v0}, Lkotlin/collections/MapsKt;->toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {p0, v0}, Lkotlin/collections/MapsKt__MapsKt;->toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object p0
 
@@ -442,7 +442,7 @@
     return-object p0
 .end method
 
-.method public static toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
+.method public static final toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {

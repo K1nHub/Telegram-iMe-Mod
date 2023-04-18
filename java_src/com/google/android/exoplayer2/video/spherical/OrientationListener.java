@@ -6,7 +6,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.opengl.Matrix;
 import android.view.Display;
-import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* loaded from: classes.dex */
 final class OrientationListener implements SensorEventListener {

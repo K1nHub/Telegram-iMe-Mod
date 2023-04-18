@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 53464
+    .line 53476
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 53469
+    .line 53481
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;
 
     move-result-object p1
@@ -39,7 +39,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 53473
+    .line 53485
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_getGlobalPrivacySettings;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

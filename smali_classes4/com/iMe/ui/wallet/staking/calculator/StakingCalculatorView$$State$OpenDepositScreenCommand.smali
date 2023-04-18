@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State;Lcom/iMe/model/staking/StakingDetailsItem;D)V
     .locals 1
 
-    .line 178
+    .line 196
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openDepositScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 180
+    .line 198
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$OpenDepositScreenCommand;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
-    .line 181
+    .line 199
     iput-wide p3, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$OpenDepositScreenCommand;->presetAmount:D
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;)V
     .locals 3
 
-    .line 186
+    .line 204
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$OpenDepositScreenCommand;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     iget-wide v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$OpenDepositScreenCommand;->presetAmount:D
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 172
+    .line 190
     check-cast p1, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$OpenDepositScreenCommand;->apply(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;)V

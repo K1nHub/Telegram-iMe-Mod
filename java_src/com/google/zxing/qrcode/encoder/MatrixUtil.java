@@ -1,6 +1,6 @@
 package com.google.zxing.qrcode.encoder;
 
-import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitArray;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;

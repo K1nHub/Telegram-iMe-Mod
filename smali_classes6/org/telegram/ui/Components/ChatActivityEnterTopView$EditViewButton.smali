@@ -26,7 +26,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 95
+    .line 83
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -37,12 +37,12 @@
 .method public addImageView(Landroid/widget/ImageView;Landroid/widget/LinearLayout$LayoutParams;)V
     .locals 1
 
-    .line 99
+    .line 87
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->imageView:Landroid/widget/ImageView;
 
     if-nez v0, :cond_0
 
-    .line 100
+    .line 88
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
@@ -54,12 +54,12 @@
 .method public addTextView(Landroid/widget/TextView;Landroid/widget/LinearLayout$LayoutParams;)V
     .locals 1
 
-    .line 105
+    .line 93
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->textView:Landroid/widget/TextView;
 
     if-nez v0, :cond_0
 
-    .line 106
+    .line 94
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
@@ -71,7 +71,7 @@
 .method public getImageView()Landroid/widget/ImageView;
     .locals 1
 
-    .line 111
+    .line 99
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->imageView:Landroid/widget/ImageView;
 
     return-object v0
@@ -80,7 +80,7 @@
 .method public getTextView()Landroid/widget/TextView;
     .locals 1
 
-    .line 115
+    .line 103
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->textView:Landroid/widget/TextView;
 
     return-object v0
@@ -89,7 +89,7 @@
 .method public isEditButton()Z
     .locals 1
 
-    .line 123
+    .line 111
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->editButton:Z
 
     return v0
@@ -98,7 +98,7 @@
 .method public setEditButton(Z)V
     .locals 0
 
-    .line 119
+    .line 107
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->editButton:Z
 
     return-void

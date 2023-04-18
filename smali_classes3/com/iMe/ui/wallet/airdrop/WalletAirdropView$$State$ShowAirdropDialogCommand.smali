@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/airdrop/WalletAirdropView$$State;)V
     .locals 1
 
-    .line 112
+    .line 130
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showAirdropDialog"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/airdrop/WalletAirdropView;)V
     .locals 0
 
-    .line 117
+    .line 135
     invoke-interface {p1}, Lcom/iMe/ui/wallet/airdrop/WalletAirdropView;->showAirdropDialog()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 110
+    .line 128
     check-cast p1, Lcom/iMe/ui/wallet/airdrop/WalletAirdropView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/airdrop/WalletAirdropView$$State$ShowAirdropDialogCommand;->apply(Lcom/iMe/ui/wallet/airdrop/WalletAirdropView;)V

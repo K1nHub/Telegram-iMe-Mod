@@ -967,6 +967,9 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/SafeVarargs;
+    .end annotation
+
     const-string v0, "elements"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V

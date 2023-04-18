@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FilterTabsView;Landroid/content/Context;)V
     .locals 0
 
-    .line 1208
+    .line 1209
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$3;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected allowSelectChildAtPosition(Landroid/view/View;)Z
     .locals 0
 
-    .line 1217
+    .line 1218
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$3;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->isEnabled()Z
@@ -70,7 +70,7 @@
 .method protected canHighlightChildAt(Landroid/view/View;FF)Z
     .locals 3
 
-    .line 1222
+    .line 1223
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$3;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$800(Lorg/telegram/ui/Components/FilterTabsView;)Z
@@ -79,12 +79,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1223
+    .line 1224
     move-object v0, p1
 
     check-cast v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
-    .line 1224
+    .line 1225
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
     invoke-virtual {v1}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
@@ -95,7 +95,7 @@
 
     move-result v1
 
-    .line 1225
+    .line 1226
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->access$4400(Lorg/telegram/ui/Components/FilterTabsView$TabView;)Landroid/graphics/RectF;
 
     move-result-object v2
@@ -126,7 +126,7 @@
 
     return p1
 
-    .line 1229
+    .line 1230
     :cond_0
     invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/Components/RecyclerListView;->canHighlightChildAt(Landroid/view/View;FF)Z
 
@@ -138,10 +138,10 @@
 .method public setAlpha(F)V
     .locals 0
 
-    .line 1211
+    .line 1212
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 1212
+    .line 1213
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$3;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

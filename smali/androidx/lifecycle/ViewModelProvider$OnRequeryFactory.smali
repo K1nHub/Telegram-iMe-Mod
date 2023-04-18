@@ -1,6 +1,6 @@
-.class Landroidx/lifecycle/ViewModelProvider$OnRequeryFactory;
+.class public Landroidx/lifecycle/ViewModelProvider$OnRequeryFactory;
 .super Ljava/lang/Object;
-.source "ViewModelProvider.java"
+.source "ViewModelProvider.kt"
 
 
 # annotations
@@ -9,16 +9,16 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x9
     name = "OnRequeryFactory"
 .end annotation
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    .line 54
+    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,8 +26,12 @@
 
 
 # virtual methods
-.method onRequery(Landroidx/lifecycle/ViewModel;)V
-    .locals 0
+.method public onRequery(Landroidx/lifecycle/ViewModel;)V
+    .locals 1
+
+    const-string v0, "viewModel"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
 .end method

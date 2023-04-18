@@ -32,7 +32,7 @@
     .end annotation
 
     :try_start_0
-    new-instance v0, Lorg/bouncycastle/asn1/DERExternal;
+    new-instance v0, Lorg/bouncycastle/asn1/DLExternal;
 
     iget-object v1, p0, Lorg/bouncycastle/asn1/DERExternalParser;->_parser:Lorg/bouncycastle/asn1/ASN1StreamParser;
 
@@ -40,7 +40,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/DERExternal;-><init>(Lorg/bouncycastle/asn1/ASN1EncodableVector;)V
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/DLExternal;-><init>(Lorg/bouncycastle/asn1/ASN1EncodableVector;)V
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 

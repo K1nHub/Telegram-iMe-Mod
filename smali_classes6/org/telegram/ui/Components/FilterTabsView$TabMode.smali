@@ -38,7 +38,7 @@
 .method static constructor <clinit>()V
     .locals 9
 
-    .line 279
+    .line 280
     new-instance v0, Lorg/telegram/ui/Components/FilterTabsView$TabMode;
 
     const-string v1, "MAIN"
@@ -91,7 +91,7 @@
 
     aput-object v5, v7, v8
 
-    .line 278
+    .line 279
     sput-object v7, Lorg/telegram/ui/Components/FilterTabsView$TabMode;->$VALUES:[Lorg/telegram/ui/Components/FilterTabsView$TabMode;
 
     return-void
@@ -105,7 +105,7 @@
         }
     .end annotation
 
-    .line 278
+    .line 279
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -114,7 +114,7 @@
 .method public static valueOf(Ljava/lang/String;)Lorg/telegram/ui/Components/FilterTabsView$TabMode;
     .locals 1
 
-    .line 278
+    .line 279
     const-class v0, Lorg/telegram/ui/Components/FilterTabsView$TabMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -129,7 +129,7 @@
 .method public static values()[Lorg/telegram/ui/Components/FilterTabsView$TabMode;
     .locals 1
 
-    .line 278
+    .line 279
     sget-object v0, Lorg/telegram/ui/Components/FilterTabsView$TabMode;->$VALUES:[Lorg/telegram/ui/Components/FilterTabsView$TabMode;
 
     invoke-virtual {v0}, [Lorg/telegram/ui/Components/FilterTabsView$TabMode;->clone()Ljava/lang/Object;

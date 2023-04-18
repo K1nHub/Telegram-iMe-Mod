@@ -2,6 +2,7 @@ package org.bouncycastle.asn1;
 
 import java.io.IOException;
 import java.util.Enumeration;
+import java.util.Iterator;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
 public class LazyEncodedSequence extends ASN1Sequence {
@@ -12,72 +13,90 @@ public class LazyEncodedSequence extends ASN1Sequence {
         this.encoded = bArr;
     }
 
-    private void parse() {
-        LazyConstructionEnumeration lazyConstructionEnumeration = new LazyConstructionEnumeration(this.encoded);
-        while (lazyConstructionEnumeration.hasMoreElements()) {
-            this.seq.addElement(lazyConstructionEnumeration.nextElement());
+    private void force() {
+        if (this.encoded != null) {
+            ASN1EncodableVector aSN1EncodableVector = new ASN1EncodableVector();
+            LazyConstructionEnumeration lazyConstructionEnumeration = new LazyConstructionEnumeration(this.encoded);
+            while (lazyConstructionEnumeration.hasMoreElements()) {
+                aSN1EncodableVector.add((ASN1Primitive) lazyConstructionEnumeration.nextElement());
+            }
+            this.elements = aSN1EncodableVector.takeElements();
+            this.encoded = null;
         }
-        this.encoded = null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    public void encode(ASN1OutputStream aSN1OutputStream) throws IOException {
+    public synchronized void encode(ASN1OutputStream aSN1OutputStream, boolean z) throws IOException {
         byte[] bArr = this.encoded;
         if (bArr != null) {
-            aSN1OutputStream.writeEncoded(48, bArr);
+            aSN1OutputStream.writeEncoded(z, 48, bArr);
         } else {
-            super.toDLObject().encode(aSN1OutputStream);
+            super.toDLObject().encode(aSN1OutputStream, z);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    public int encodedLength() throws IOException {
+    public synchronized int encodedLength() throws IOException {
         byte[] bArr = this.encoded;
-        return bArr != null ? StreamUtil.calculateBodyLength(bArr.length) + 1 + this.encoded.length : super.toDLObject().encodedLength();
+        if (bArr != null) {
+            return StreamUtil.calculateBodyLength(bArr.length) + 1 + this.encoded.length;
+        }
+        return super.toDLObject().encodedLength();
     }
 
     @Override // org.bouncycastle.asn1.ASN1Sequence
     public synchronized ASN1Encodable getObjectAt(int i) {
-        if (this.encoded != null) {
-            parse();
-        }
+        force();
         return super.getObjectAt(i);
     }
 
     @Override // org.bouncycastle.asn1.ASN1Sequence
     public synchronized Enumeration getObjects() {
         byte[] bArr = this.encoded;
-        if (bArr == null) {
-            return super.getObjects();
+        if (bArr != null) {
+            return new LazyConstructionEnumeration(bArr);
         }
-        return new LazyConstructionEnumeration(bArr);
+        return super.getObjects();
+    }
+
+    @Override // org.bouncycastle.asn1.ASN1Sequence, org.bouncycastle.asn1.ASN1Object
+    public synchronized int hashCode() {
+        force();
+        return super.hashCode();
+    }
+
+    @Override // org.bouncycastle.asn1.ASN1Sequence, java.lang.Iterable
+    public synchronized Iterator<ASN1Encodable> iterator() {
+        force();
+        return super.iterator();
     }
 
     @Override // org.bouncycastle.asn1.ASN1Sequence
     public synchronized int size() {
-        if (this.encoded != null) {
-            parse();
-        }
+        force();
         return super.size();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // org.bouncycastle.asn1.ASN1Sequence
+    public ASN1Encodable[] toArrayInternal() {
+        force();
+        return super.toArrayInternal();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Sequence, org.bouncycastle.asn1.ASN1Primitive
-    public ASN1Primitive toDERObject() {
-        if (this.encoded != null) {
-            parse();
-        }
+    public synchronized ASN1Primitive toDERObject() {
+        force();
         return super.toDERObject();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Sequence, org.bouncycastle.asn1.ASN1Primitive
-    public ASN1Primitive toDLObject() {
-        if (this.encoded != null) {
-            parse();
-        }
+    public synchronized ASN1Primitive toDLObject() {
+        force();
         return super.toDLObject();
     }
 }

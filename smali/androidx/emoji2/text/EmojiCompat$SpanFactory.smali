@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1010
+    .line 1159
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method createSpan(Landroidx/emoji2/text/EmojiMetadata;)Landroidx/emoji2/text/EmojiSpan;
     .locals 1
 
-    .line 1019
+    .line 1168
     new-instance v0, Landroidx/emoji2/text/TypefaceEmojiSpan;
 
     invoke-direct {v0, p1}, Landroidx/emoji2/text/TypefaceEmojiSpan;-><init>(Landroidx/emoji2/text/EmojiMetadata;)V

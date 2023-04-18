@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/translate/TranslationView$$State;)V
     .locals 1
 
-    .line 377
+    .line 413
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showAppUpdateDialog"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/translate/TranslationView;)V
     .locals 0
 
-    .line 382
+    .line 418
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/AppUpdateRequiredView;->showAppUpdateDialog()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 375
+    .line 411
     check-cast p1, Lcom/iMe/ui/translate/TranslationView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/translate/TranslationView$$State$ShowAppUpdateDialogCommand;->apply(Lcom/iMe/ui/translate/TranslationView;)V

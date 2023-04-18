@@ -11,8 +11,8 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* loaded from: classes4.dex */
 public final class BlockingObservableNext<T> implements Iterable<T> {
     final ObservableSource<T> source;
@@ -27,7 +27,7 @@ public final class BlockingObservableNext<T> implements Iterable<T> {
     }
 
     /* loaded from: classes4.dex */
-    static final class NextIterator<T> implements Iterator<T>, p035j$.util.Iterator {
+    static final class NextIterator<T> implements Iterator<T>, p034j$.util.Iterator {
         private Throwable error;
         private boolean hasNext = true;
         private boolean isNextConsumed = true;
@@ -36,7 +36,7 @@ public final class BlockingObservableNext<T> implements Iterable<T> {
         private final NextObserver<T> observer;
         private boolean started;
 
-        @Override // p035j$.util.Iterator
+        @Override // p034j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
@@ -46,7 +46,7 @@ public final class BlockingObservableNext<T> implements Iterable<T> {
             this.observer = nextObserver;
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public boolean hasNext() {
             Throwable th = this.error;
             if (th != null) {
@@ -85,7 +85,7 @@ public final class BlockingObservableNext<T> implements Iterable<T> {
             }
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public T next() {
             Throwable th = this.error;
             if (th != null) {
@@ -98,7 +98,7 @@ public final class BlockingObservableNext<T> implements Iterable<T> {
             throw new NoSuchElementException("No more elements");
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException("Read only iterator");
         }

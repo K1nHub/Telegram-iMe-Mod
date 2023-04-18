@@ -57,7 +57,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/controller/BackupController$$ExternalSyntheticLambda3;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {v0, p1}, Lcom/iMe/fork/controller/BackupController;->$r8$lambda$HRYPNMDzUSfQTPqbBbIp6VMTOBA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lcom/iMe/fork/controller/BackupController;->$r8$lambda$QdTtwQmRRJIeuyXCDh7vujjyPy4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
 
     move-result p1
 

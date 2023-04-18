@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;Landroid/content/Context;Landroid/content/Context;)V
     .locals 0
 
-    .line 646
+    .line 657
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$9;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$9;->val$context:Landroid/content/Context;
@@ -45,10 +45,10 @@
 .method private synthetic lambda$createTextView$0(Landroid/widget/TextView;Landroid/view/View;)V
     .locals 2
 
-    .line 658
+    .line 669
     iget-object p2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$9;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4800(Lorg/telegram/ui/Components/AudioPlayerAlert;)I
+    invoke-static {p2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4700(Lorg/telegram/ui/Components/AudioPlayerAlert;)I
 
     move-result p2
 
@@ -64,7 +64,7 @@
 
     if-le p2, v0, :cond_2
 
-    .line 659
+    .line 670
     invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object p2
@@ -81,7 +81,7 @@
 
     goto :goto_0
 
-    .line 662
+    .line 673
     :cond_0
     invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -91,10 +91,10 @@
 
     move-result-object p1
 
-    .line 663
+    .line 674
     iget-object p2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$9;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4900(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/LaunchActivity;
+    invoke-static {p2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4800(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/LaunchActivity;
 
     move-result-object p2
 
@@ -112,10 +112,10 @@
 
     if-eqz p2, :cond_1
 
-    .line 664
+    .line 675
     iget-object p2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$9;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4900(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/LaunchActivity;
+    invoke-static {p2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4800(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/LaunchActivity;
 
     move-result-object p2
 
@@ -129,24 +129,24 @@
 
     check-cast p2, Lorg/telegram/ui/DialogsActivity;
 
-    .line 665
+    .line 676
     invoke-virtual {p2}, Lorg/telegram/ui/DialogsActivity;->onlyDialogsAdapter()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 666
+    .line 677
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/DialogsActivity;->setShowSearch(Ljava/lang/String;I)V
 
-    .line 667
+    .line 678
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$9;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->dismiss()V
 
     return-void
 
-    .line 671
+    .line 682
     :cond_1
     new-instance p2, Lorg/telegram/ui/DialogsActivity;
 
@@ -154,16 +154,16 @@
 
     invoke-direct {p2, v1}, Lorg/telegram/ui/DialogsActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 672
+    .line 683
     invoke-virtual {p2, p1}, Lorg/telegram/ui/DialogsActivity;->setSearchString(Ljava/lang/String;)V
 
-    .line 673
+    .line 684
     invoke-virtual {p2, v0}, Lorg/telegram/ui/DialogsActivity;->setInitialSearchType(I)V
 
-    .line 674
+    .line 685
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$9;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4900(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/LaunchActivity;
+    invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4800(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/LaunchActivity;
 
     move-result-object p1
 
@@ -171,7 +171,7 @@
 
     invoke-virtual {p1, p2, v0, v0}, Lorg/telegram/ui/LaunchActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;ZZ)Z
 
-    .line 675
+    .line 686
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$9;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->dismiss()V
@@ -186,19 +186,19 @@
 .method protected createTextView()Landroid/widget/TextView;
     .locals 5
 
-    .line 649
+    .line 660
     new-instance v0, Landroid/widget/TextView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$9;->val$context:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 650
+    .line 661
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$9;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     const-string v2, "player_time"
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4600(Lorg/telegram/ui/Components/AudioPlayerAlert;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4500(Lorg/telegram/ui/Components/AudioPlayerAlert;Ljava/lang/String;)I
 
     move-result v1
 
@@ -208,20 +208,20 @@
 
     const/high16 v2, 0x41500000    # 13.0f
 
-    .line 651
+    .line 662
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 652
+    .line 663
     sget-object v2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 653
+    .line 664
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     const/4 v2, 0x6
 
-    .line 654
+    .line 665
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -238,12 +238,12 @@
 
     invoke-virtual {v0, v3, v4, v2, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 655
+    .line 666
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$9;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     const-string v2, "listSelectorSDK21"
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4700(Lorg/telegram/ui/Components/AudioPlayerAlert;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4600(Lorg/telegram/ui/Components/AudioPlayerAlert;Ljava/lang/String;)I
 
     move-result v1
 
@@ -263,7 +263,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 657
+    .line 668
     new-instance v1, Lorg/telegram/ui/Components/AudioPlayerAlert$9$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert$9$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/AudioPlayerAlert$9;Landroid/widget/TextView;)V

@@ -1,6 +1,5 @@
 package com.iMe.common;
 
-import com.iMe.fork.enums.AutoLockTime;
 import com.iMe.fork.enums.ChatProfileTelegramIdMode;
 import com.iMe.fork.enums.DialogType;
 import com.iMe.fork.enums.DrawStatusType;
@@ -20,9 +19,9 @@ import com.iMe.fork.enums.TemplatesMode;
 import com.iMe.fork.enums.TemplatesSortingType;
 import com.iMe.fork.enums.VideoVoiceCamera;
 import com.iMe.model.contacts.ContactsFilter;
-import com.iMe.p032ui.drawer.DrawerAccountData;
-import com.iMe.p032ui.drawer.DrawerSwitchableItem;
-import com.iMe.p032ui.music.MusicTab;
+import com.iMe.p031ui.drawer.DrawerAccountData;
+import com.iMe.p031ui.drawer.DrawerSwitchableItem;
+import com.iMe.p031ui.music.MusicTab;
 import com.iMe.storage.domain.model.filters.FilterFab;
 import java.util.ArrayList;
 import java.util.Set;
@@ -60,14 +59,6 @@ public final class TelegramPreferenceKeys {
 
         public static final String promoSubscribeDialogShowCountLeft() {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("promoSubscribeDialogShowCountLeft");
-        }
-
-        public static final String lastLockedSectionsPauseTime() {
-            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("lastLockedSectionsPauseTime");
-        }
-
-        public static final String isWaitingForSectionPasscodeEnter() {
-            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isWaitingForSectionPasscodeEnter");
         }
 
         public static final String isDebugThemeSwitchEnabled() {
@@ -521,14 +512,6 @@ public final class TelegramPreferenceKeys {
                 return false;
             }
 
-            public static final boolean isWaitingForSectionPasscodeEnter() {
-                return false;
-            }
-
-            public static final int lastLockedSectionsPauseTime() {
-                return 0;
-            }
-
             public static final String lastSelectedLanguages() {
                 return "";
             }
@@ -774,28 +757,10 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("deleteForAllSelectedByDefault");
         }
 
-        public static final String buildAutoLockInKey(LockedSection section) {
+        public static final String buildPasscodeTypeKey(LockedSection section) {
             Intrinsics.checkNotNullParameter(section, "section");
             TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
-            return telegramPreferenceKeys.withForkPrefix("autoLockIn_" + section.name());
-        }
-
-        public static final String buildBadPasscodeTriesKey(LockedSection section) {
-            Intrinsics.checkNotNullParameter(section, "section");
-            TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
-            return telegramPreferenceKeys.withForkPrefix("badPasscodeTries_" + section.name());
-        }
-
-        public static final String buildIsSectionLockedKey(LockedSection section) {
-            Intrinsics.checkNotNullParameter(section, "section");
-            TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
-            return telegramPreferenceKeys.withForkPrefix("isSectionLocked_" + section.name());
-        }
-
-        public static final String buildLastUptimeMillisKey(LockedSection section) {
-            Intrinsics.checkNotNullParameter(section, "section");
-            TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
-            return telegramPreferenceKeys.withForkPrefix("lastUptimeMillis_" + section.name());
+            return telegramPreferenceKeys.withForkPrefix("passcodeType_" + section.name());
         }
 
         public static final String buildPasscodeHashKey(LockedSection section) {
@@ -804,28 +769,46 @@ public final class TelegramPreferenceKeys {
             return telegramPreferenceKeys.withForkPrefix("passcodeHash_" + section.name());
         }
 
-        public static final String buildPasscodeRetryInMsKey(LockedSection section) {
-            Intrinsics.checkNotNullParameter(section, "section");
-            TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
-            return telegramPreferenceKeys.withForkPrefix("passcodeRetryInMs_" + section.name());
-        }
-
         public static final String buildPasscodeSaltStringKey(LockedSection section) {
             Intrinsics.checkNotNullParameter(section, "section");
             TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
             return telegramPreferenceKeys.withForkPrefix("passcodeSaltString_" + section.name());
         }
 
-        public static final String buildPasscodeTypeKey(LockedSection section) {
-            Intrinsics.checkNotNullParameter(section, "section");
-            TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
-            return telegramPreferenceKeys.withForkPrefix("passcodeType_" + section.name());
-        }
-
         public static final String buildUseFingerprintKey(LockedSection section) {
             Intrinsics.checkNotNullParameter(section, "section");
             TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
             return telegramPreferenceKeys.withForkPrefix("useFingerprint_" + section.name());
+        }
+
+        public static final String buildIsSectionLockedKey(LockedSection section) {
+            Intrinsics.checkNotNullParameter(section, "section");
+            TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
+            return telegramPreferenceKeys.withForkPrefix("isSectionLocked_" + section.name());
+        }
+
+        public static final String buildBadPasscodeTriesKey(LockedSection section) {
+            Intrinsics.checkNotNullParameter(section, "section");
+            TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
+            return telegramPreferenceKeys.withForkPrefix("badPasscodeTries_" + section.name());
+        }
+
+        public static final String buildPasscodeRetryInMsKey(LockedSection section) {
+            Intrinsics.checkNotNullParameter(section, "section");
+            TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
+            return telegramPreferenceKeys.withForkPrefix("passcodeRetryInMs_" + section.name());
+        }
+
+        public static final String buildLastUptimeMillisKey(LockedSection section) {
+            Intrinsics.checkNotNullParameter(section, "section");
+            TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
+            return telegramPreferenceKeys.withForkPrefix("lastUptimeMillis_" + section.name());
+        }
+
+        public static final String buildTimeoutKey(LockedSection section) {
+            Intrinsics.checkNotNullParameter(section, "section");
+            TelegramPreferenceKeys telegramPreferenceKeys = TelegramPreferenceKeys.INSTANCE;
+            return telegramPreferenceKeys.withForkPrefix("timeout_" + section.name());
         }
 
         public static final String isHideMultiPanelOnScrollEnabled() {
@@ -920,6 +903,10 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("saveArchiveRecentChatsEnabled");
         }
 
+        public static final String isHiddenChatsHidden() {
+            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("hiddenChatsHidden");
+        }
+
         public static final String walletPinCodeEncrypted() {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("walletPinCodeEncrypted");
         }
@@ -939,7 +926,9 @@ public final class TelegramPreferenceKeys {
         /* compiled from: TelegramPreferenceKeys.kt */
         /* loaded from: classes3.dex */
         public static final class Default {
-            public static final Default INSTANCE = new Default();
+            static {
+                new Default();
+            }
 
             public static final String appVersionRequiredUpdate() {
                 return null;
@@ -971,6 +960,10 @@ public final class TelegramPreferenceKeys {
 
             public static final boolean isFoldersFirstEnabled() {
                 return false;
+            }
+
+            public static final boolean isHiddenChatsHidden() {
+                return true;
             }
 
             public static final boolean isHideFoldersEnabled() {
@@ -1035,6 +1028,10 @@ public final class TelegramPreferenceKeys {
 
             public static final boolean isRevokeByDefault() {
                 return false;
+            }
+
+            public static final boolean isSaveArchiveRecentChatsEnabled() {
+                return true;
             }
 
             public static final boolean isSectionLocked() {
@@ -1125,6 +1122,10 @@ public final class TelegramPreferenceKeys {
                 return -1L;
             }
 
+            public static final int timeout() {
+                return 0;
+            }
+
             public static final boolean useFingerprint() {
                 return true;
             }
@@ -1139,10 +1140,6 @@ public final class TelegramPreferenceKeys {
 
             public static final String walletRefreshToken() {
                 return null;
-            }
-
-            public final boolean isSaveArchiveRecentChatsEnabled() {
-                return true;
             }
 
             private Default() {
@@ -1178,10 +1175,6 @@ public final class TelegramPreferenceKeys {
 
             public static final Set<String> selectedMessagePopupItems() {
                 return MessagePopupItem.Companion.getDefaultEnumNames();
-            }
-
-            public static final int autoLockInId() {
-                return AutoLockTime.HOUR.getId();
             }
 
             public static final MusicTab selectedMusicTab() {

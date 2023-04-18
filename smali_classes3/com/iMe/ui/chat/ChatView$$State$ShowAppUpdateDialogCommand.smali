@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/chat/ChatView$$State;)V
     .locals 1
 
-    .line 407
+    .line 411
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showAppUpdateDialog"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/chat/ChatView;)V
     .locals 0
 
-    .line 412
+    .line 416
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/AppUpdateRequiredView;->showAppUpdateDialog()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 405
+    .line 409
     check-cast p1, Lcom/iMe/ui/chat/ChatView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/chat/ChatView$$State$ShowAppUpdateDialogCommand;->apply(Lcom/iMe/ui/chat/ChatView;)V

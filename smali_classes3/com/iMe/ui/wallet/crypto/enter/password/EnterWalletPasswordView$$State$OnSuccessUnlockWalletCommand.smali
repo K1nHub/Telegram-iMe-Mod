@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView$$State;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 175
+    .line 193
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "onSuccessUnlockWallet"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 177
+    .line 195
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView$$State$OnSuccessUnlockWalletCommand;->password:Ljava/lang/String;
 
-    .line 178
+    .line 196
     iput-object p3, p0, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView$$State$OnSuccessUnlockWalletCommand;->guid:Ljava/lang/String;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView;)V
     .locals 2
 
-    .line 183
+    .line 201
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView$$State$OnSuccessUnlockWalletCommand;->password:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView$$State$OnSuccessUnlockWalletCommand;->guid:Ljava/lang/String;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 169
+    .line 187
     check-cast p1, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView$$State$OnSuccessUnlockWalletCommand;->apply(Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView;)V

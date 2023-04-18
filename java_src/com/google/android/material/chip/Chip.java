@@ -381,7 +381,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         }
     }
 
-    @Override // android.widget.TextView
+    @Override // androidx.appcompat.widget.AppCompatCheckBox, android.widget.TextView
     public void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
         if (drawable != null) {
             throw new UnsupportedOperationException("Please set start drawable using R.attr#chipIcon.");
@@ -414,7 +414,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         super.setCompoundDrawablesWithIntrinsicBounds(drawable, drawable2, drawable3, drawable4);
     }
 
-    @Override // android.widget.TextView
+    @Override // androidx.appcompat.widget.AppCompatCheckBox, android.widget.TextView
     public void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
         if (drawable != null) {
             throw new UnsupportedOperationException("Please set start drawable using R.attr#chipIcon.");

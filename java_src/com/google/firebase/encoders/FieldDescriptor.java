@@ -23,7 +23,7 @@ public final class FieldDescriptor {
     }
 
     /* renamed from: of */
-    public static FieldDescriptor m728of(String str) {
+    public static FieldDescriptor m714of(String str) {
         return new FieldDescriptor(str, Collections.emptyMap());
     }
 

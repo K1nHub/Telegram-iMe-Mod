@@ -12,9 +12,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerialize
 /* loaded from: classes.dex */
 public class AuthenticationExtensionsClientOutputs extends AbstractSafeParcelable {
     public static final Parcelable.Creator<AuthenticationExtensionsClientOutputs> CREATOR = new zzc();
-    @SafeParcelable.Field(getter = "getUvmEntries", m789id = 1)
+    @SafeParcelable.Field(getter = "getUvmEntries", m775id = 1)
     private final UvmEntries zza;
-    @SafeParcelable.Field(getter = "getDevicePubKey", m789id = 2)
+    @SafeParcelable.Field(getter = "getDevicePubKey", m775id = 2)
     private final zze zzb;
 
     /* compiled from: com.google.android.gms:play-services-fido@@19.0.0 */
@@ -34,7 +34,7 @@ public class AuthenticationExtensionsClientOutputs extends AbstractSafeParcelabl
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public AuthenticationExtensionsClientOutputs(@SafeParcelable.Param(m788id = 1) UvmEntries uvmEntries, @SafeParcelable.Param(m788id = 2) zze zzeVar) {
+    public AuthenticationExtensionsClientOutputs(@SafeParcelable.Param(m774id = 1) UvmEntries uvmEntries, @SafeParcelable.Param(m774id = 2) zze zzeVar) {
         this.zza = uvmEntries;
         this.zzb = zzeVar;
     }

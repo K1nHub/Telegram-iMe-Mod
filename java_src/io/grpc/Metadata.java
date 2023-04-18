@@ -3,8 +3,8 @@ package io.grpc;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
-import com.google.common.p020io.BaseEncoding;
-import com.google.common.p020io.ByteStreams;
+import com.google.common.p019io.BaseEncoding;
+import com.google.common.p019io.ByteStreams;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
@@ -270,18 +270,18 @@ public final class Metadata {
         abstract byte[] toBytes(T t);
 
         /* renamed from: of */
-        public static <T> Key<T> m694of(String str, AsciiMarshaller<T> asciiMarshaller) {
-            return m693of(str, false, (AsciiMarshaller) asciiMarshaller);
+        public static <T> Key<T> m680of(String str, AsciiMarshaller<T> asciiMarshaller) {
+            return m679of(str, false, (AsciiMarshaller) asciiMarshaller);
         }
 
         /* renamed from: of */
-        static <T> Key<T> m693of(String str, boolean z, AsciiMarshaller<T> asciiMarshaller) {
+        static <T> Key<T> m679of(String str, boolean z, AsciiMarshaller<T> asciiMarshaller) {
             return new AsciiKey(str, z, asciiMarshaller);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: of */
-        public static <T> Key<T> m692of(String str, boolean z, TrustedAsciiMarshaller<T> trustedAsciiMarshaller) {
+        public static <T> Key<T> m678of(String str, boolean z, TrustedAsciiMarshaller<T> trustedAsciiMarshaller) {
             return new TrustedAsciiKey(str, z, trustedAsciiMarshaller);
         }
 

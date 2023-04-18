@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.clearcut;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Objects;
@@ -10,7 +10,7 @@ public final class zzci {
     private static final ByteBuffer zzku;
     private static final zzbk zzkv;
     static final Charset UTF_8 = Charset.forName("UTF-8");
-    private static final Charset ISO_8859_1 = Charset.forName(C0482C.ISO88591_NAME);
+    private static final Charset ISO_8859_1 = Charset.forName(C0470C.ISO88591_NAME);
 
     static {
         byte[] bArr = new byte[0];

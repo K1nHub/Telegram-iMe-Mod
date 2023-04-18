@@ -34,15 +34,15 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/FilterTabsView;ILjava/lang/String;)V
     .locals 0
 
-    .line 364
+    .line 365
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 365
+    .line 366
     iput p2, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
 
-    .line 366
+    .line 367
     iput-object p3, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->title:Ljava/lang/String;
 
     return-void
@@ -53,7 +53,7 @@
 .method protected fixWidthForNoCounterMode(IF)I
     .locals 2
 
-    .line 345
+    .line 346
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$400(Lorg/telegram/ui/Components/FilterTabsView;)Z
@@ -68,7 +68,7 @@
 
     float-to-int p1, p1
 
-    .line 347
+    .line 348
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FilterTabsView$Tab;->isAllowEditing()Z
 
     move-result v0
@@ -98,7 +98,7 @@
     :cond_0
     int-to-float p1, p1
 
-    .line 348
+    .line 349
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$900(Lorg/telegram/ui/Components/FilterTabsView;)F
@@ -118,7 +118,7 @@
 .method public getWidth(Z)I
     .locals 4
 
-    .line 370
+    .line 371
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$1000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -145,7 +145,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 373
+    .line 374
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$300(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$FilterTabsViewDelegate;
@@ -165,16 +165,16 @@
     :cond_0
     if-eqz p1, :cond_2
 
-    .line 378
+    .line 379
     iput v2, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->counter:I
 
     goto :goto_0
 
-    .line 381
+    .line 382
     :cond_1
     iget v2, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->counter:I
 
-    .line 384
+    .line 385
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -196,7 +196,7 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 389
+    .line 390
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -209,7 +209,7 @@
 
     move-result-object v1
 
-    .line 390
+    .line 391
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$500(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -228,7 +228,7 @@
 
     double-to-int v1, v1
 
-    .line 391
+    .line 392
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -243,7 +243,7 @@
 
     add-int/2addr v1, v2
 
-    .line 392
+    .line 393
     sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
     invoke-virtual {v2}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
@@ -258,7 +258,7 @@
 
     add-int/2addr v0, v1
 
-    .line 395
+    .line 396
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -268,7 +268,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 396
+    .line 397
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
     sget-object v2, Lcom/iMe/fork/enums/FilterTabWidthMode;->MINIMUM:Lcom/iMe/fork/enums/FilterTabWidthMode;
@@ -294,7 +294,7 @@
     :cond_6
     const/16 p1, 0x28
 
-    .line 399
+    .line 400
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -309,7 +309,7 @@
 .method protected isAllChatsTabTitleEnabled()Z
     .locals 1
 
-    .line 334
+    .line 335
     iget-boolean v0, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->isDefault:Z
 
     if-eqz v0, :cond_0
@@ -332,7 +332,7 @@
 .method protected isAllowEditing()Z
     .locals 3
 
-    .line 338
+    .line 339
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$700(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$TabMode;
@@ -345,7 +345,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 339
+    .line 340
     iget-boolean v0, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->isDefault:Z
 
     if-nez v0, :cond_0
@@ -367,7 +367,7 @@
 .method public setTitle(Ljava/lang/String;)Z
     .locals 3
 
-    .line 404
+    .line 405
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
@@ -382,7 +382,7 @@
 
     if-ne v0, p0, :cond_2
 
-    .line 405
+    .line 406
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FilterTabsView$Tab;->isAllChatsTabTitleEnabled()Z
 
     move-result v0
@@ -391,7 +391,7 @@
 
     return v1
 
-    .line 408
+    .line 409
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -411,7 +411,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 409
+    .line 410
     :cond_1
     sget p1, Lorg/telegram/messenger/R$string;->FilterAllChats:I
 
@@ -421,7 +421,7 @@
 
     move-result-object p1
 
-    .line 413
+    .line 414
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->title:Ljava/lang/String;
 
@@ -433,7 +433,7 @@
 
     return v1
 
-    .line 416
+    .line 417
     :cond_3
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->title:Ljava/lang/String;
 

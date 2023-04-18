@@ -2,14 +2,13 @@ package org.koin.core.instance;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.koin.core.Koin;
 import org.koin.core.definition.BeanDefinition;
 import org.koin.core.error.InstanceCreationException;
 import org.koin.core.logger.Level;
 import org.koin.core.logger.Logger;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: InstanceFactory.kt */
 /* loaded from: classes4.dex */
 public abstract class InstanceFactory<T> {
@@ -32,10 +31,11 @@ public abstract class InstanceFactory<T> {
 
     public T create(InstanceContext context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        Koin koin = context.getKoin();
-        if (koin.getLogger().isAt(Level.DEBUG)) {
-            Logger logger = koin.getLogger();
-            logger.debug("| create instance for " + this.beanDefinition);
+        Logger logger = context.getLogger();
+        String str = "| (+) '" + this.beanDefinition + '\'';
+        Level level = Level.DEBUG;
+        if (logger.isAt(level)) {
+            logger.display(level, str);
         }
         try {
             ParametersHolder parameters = context.getParameters();
@@ -45,10 +45,23 @@ public abstract class InstanceFactory<T> {
             return this.beanDefinition.getDefinition().invoke(context.getScope(), parameters);
         } catch (Exception e) {
             String stackTrace = KoinPlatformTools.INSTANCE.getStackTrace(e);
-            Logger logger2 = koin.getLogger();
-            logger2.error("Instance creation error : could not create instance for " + this.beanDefinition + ": " + stackTrace);
-            throw new InstanceCreationException("Could not create instance for " + this.beanDefinition, e);
+            Logger logger2 = context.getLogger();
+            String str2 = "* Instance creation error : could not create instance for '" + this.beanDefinition + "': " + stackTrace;
+            Level level2 = Level.ERROR;
+            if (logger2.isAt(level2)) {
+                logger2.display(level2, str2);
+            }
+            throw new InstanceCreationException("Could not create instance for '" + this.beanDefinition + '\'', e);
         }
+    }
+
+    public boolean equals(Object obj) {
+        InstanceFactory instanceFactory = obj instanceof InstanceFactory ? (InstanceFactory) obj : null;
+        return Intrinsics.areEqual(this.beanDefinition, instanceFactory != null ? instanceFactory.beanDefinition : null);
+    }
+
+    public int hashCode() {
+        return this.beanDefinition.hashCode();
     }
 
     /* compiled from: InstanceFactory.kt */

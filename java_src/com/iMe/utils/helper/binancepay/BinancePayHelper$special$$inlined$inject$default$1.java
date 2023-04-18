@@ -1,6 +1,6 @@
 package com.iMe.utils.helper.binancepay;
 
-import com.iMe.storage.domain.utils.p031rx.RxEventBus;
+import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import kotlin.jvm.internal.Reflection;

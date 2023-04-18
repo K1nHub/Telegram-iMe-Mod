@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.ProviderInfo;
 import android.net.Uri;
 import android.util.Log;
-import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 /* loaded from: classes3.dex */
 public final class zzbg {

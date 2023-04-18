@@ -20,6 +20,10 @@
 
     move-result-object p0
 
+    const-string v0, "formatName(first_name, last_name)"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     return-object p0
 .end method
 
@@ -70,12 +74,21 @@
     :cond_2
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$User;->username:Ljava/lang/String;
 
-    goto :goto_2
+    :goto_2
+    const-string v0, "if (username.isNullOrEmpty()) \"$id\" else username"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_3
 
     .line 10
     :cond_3
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    :goto_2
+    const-string v0, "first_name"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_3
     return-object p0
 .end method

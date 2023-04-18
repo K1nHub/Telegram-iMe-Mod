@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectMessageSignBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectMessageSignBottomSheetDialog.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,147:1\n13#2,4:148\n56#3,6:152\n56#3,6:158\n*S KotlinDebug\n*F\n+ 1 WalletConnectMessageSignBottomSheetDialog.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog\n*L\n35#1:148,4\n40#1:152,6\n41#1:158,6\n*E\n"
+    value = "SMAP\nWalletConnectMessageSignBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectMessageSignBottomSheetDialog.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,141:1\n13#2,4:142\n56#3,6:146\n56#3,6:152\n*S KotlinDebug\n*F\n+ 1 WalletConnectMessageSignBottomSheetDialog.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog\n*L\n35#1:142,4\n40#1:146,6\n41#1:152,6\n*E\n"
 .end annotation
 
 
@@ -278,15 +278,6 @@
     return-object p0
 .end method
 
-.method public static final synthetic access$rejectSign(Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;)V
-    .locals 0
-
-    .line 26
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->rejectSign()V
-
-    return-void
-.end method
-
 .method public static final synthetic access$showSignConfirmationDialog(Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;)V
     .locals 0
 
@@ -390,41 +381,25 @@
     return-object p0
 .end method
 
-.method private final rejectSign()V
-    .locals 1
-
-    .line 130
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->getPresenter()Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->rejectSign()V
-
-    .line 131
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
-
-    return-void
-.end method
-
 .method private final setupColors()V
     .locals 3
 
-    .line 83
+    .line 82
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;
 
     move-result-object v0
 
-    .line 84
+    .line 83
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->buttonProcess:Lcom/iMe/ui/custom/BigActionButton;
 
     invoke-virtual {v1}, Lcom/iMe/ui/custom/ActionButton;->applyColors()V
 
-    .line 85
+    .line 84
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v2, "windowBackgroundWhiteGrayIcon"
 
-    .line 86
+    .line 85
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
     move-result v2
@@ -433,17 +408,17 @@
 
     const-string v2, "setupColors$lambda$4$lambda$1"
 
-    .line 87
+    .line 86
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setCircleRippleBackground(Landroid/view/View;)V
 
-    .line 89
+    .line 88
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string v2, "windowBackgroundWhiteBlueHeader"
 
-    .line 90
+    .line 89
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
     move-result v2
@@ -452,17 +427,17 @@
 
     const-string v2, "setupColors$lambda$4$lambda$2"
 
-    .line 91
+    .line 90
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 93
+    .line 92
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->textMessage:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string v1, "windowBackgroundWhiteBlackText"
 
-    .line 94
+    .line 93
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
     move-result v1
@@ -471,7 +446,7 @@
 
     const-string v1, "setupColors$lambda$4$lambda$3"
 
-    .line 95
+    .line 94
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMonoTypeface(Landroid/widget/TextView;)V
@@ -482,12 +457,12 @@
 .method private final setupListeners()V
     .locals 13
 
-    .line 112
+    .line 111
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;
 
     move-result-object v0
 
-    .line 113
+    .line 112
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->buttonProcess:Lcom/iMe/ui/custom/BigActionButton;
 
     const-string v2, "buttonProcess"
@@ -506,7 +481,7 @@
 
     invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
-    .line 114
+    .line 113
     iget-object v7, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v0, "buttonClose"
@@ -531,12 +506,12 @@
 .method private final setupViews()V
     .locals 4
 
-    .line 101
+    .line 100
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;
 
     move-result-object v0
 
-    .line 102
+    .line 101
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -551,34 +526,30 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 103
-    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->buttonProcess:Lcom/iMe/ui/custom/BigActionButton;
+    .line 102
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->buttonProcess:Lcom/iMe/ui/custom/BigActionButton;
 
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v1
+    move-result-object v2
 
-    sget v2, Lorg/telegram/messenger/R$string;->wallet_connect_transaction_button_sign:I
+    sget v3, Lorg/telegram/messenger/R$string;->wallet_connect_transaction_button_sign:I
 
-    invoke-interface {v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v2, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 104
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;
-
-    move-result-object v0
-
+    .line 103
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const/4 v1, 0x0
 
-    .line 105
+    .line 104
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setLongClickEnabled(Z)V
 
-    .line 106
+    .line 105
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_close_white:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
@@ -589,7 +560,7 @@
 .method private final showSignConfirmationDialog()V
     .locals 6
 
-    .line 120
+    .line 119
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -620,7 +591,7 @@
 
     move-result-object v0
 
-    .line 119
+    .line 118
     invoke-virtual {p0, v0}, Lcom/iMe/ui/base/mvp/MvpBottomSheet;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
@@ -633,7 +604,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 121
+    .line 120
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->getWalletFlowCoordinator()Lcom/iMe/navigation/wallet/coordinator/WalletFlowCoordinator;
 
     move-result-object v1
@@ -670,15 +641,15 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 122
+    .line 121
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->getPresenter()Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->approveSign()V
 
-    .line 123
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
+    .line 122
+    invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->dismiss()V
 
     return-void
 .end method
@@ -701,14 +672,18 @@
     return v0
 .end method
 
-.method public onBackPressed()V
-    .locals 0
+.method public dismiss()V
+    .locals 1
+
+    .line 73
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->getPresenter()Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->rejectSign()V
 
     .line 74
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog;->rejectSign()V
-
-    .line 75
-    invoke-super {p0}, Landroid/app/Dialog;->onBackPressed()V
+    invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
 .end method
@@ -730,7 +705,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->getRoot()Landroid/widget/LinearLayout;
+    invoke-virtual {p1}, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->getRoot()Landroidx/core/widget/NestedScrollView;
 
     move-result-object p1
 

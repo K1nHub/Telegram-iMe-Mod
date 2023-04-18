@@ -16,7 +16,7 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class Tracks implements Bundleable {
     private final ImmutableList<Group> groups;
-    public static final Tracks EMPTY = new Tracks(ImmutableList.m754of());
+    public static final Tracks EMPTY = new Tracks(ImmutableList.m740of());
     private static final String FIELD_TRACK_GROUPS = Util.intToStringMaxRadix(0);
     public static final Bundleable.Creator<Tracks> CREATOR = Tracks$$ExternalSyntheticLambda0.INSTANCE;
 
@@ -209,7 +209,7 @@ public final class Tracks implements Bundleable {
         ImmutableList fromBundleList;
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_TRACK_GROUPS);
         if (parcelableArrayList == null) {
-            fromBundleList = ImmutableList.m754of();
+            fromBundleList = ImmutableList.m740of();
         } else {
             fromBundleList = BundleableUtil.fromBundleList(Group.CREATOR, parcelableArrayList);
         }

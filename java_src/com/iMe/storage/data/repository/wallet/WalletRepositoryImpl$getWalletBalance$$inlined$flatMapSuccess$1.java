@@ -1,6 +1,6 @@
 package com.iMe.storage.data.repository.wallet;
 
-import com.iMe.storage.data.locale.p028db.dao.minor.wallet.WalletTokenBalanceDao;
+import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokenBalanceDao;
 import com.iMe.storage.data.mapper.wallet.WalletBalanceMappingKt;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
@@ -13,7 +13,7 @@ import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import com.iMe.storage.domain.model.wallet.token.TokenInfo;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
@@ -45,10 +45,10 @@ public final class WalletRepositoryImpl$getWalletBalance$$inlined$flatMapSuccess
     /* compiled from: FirebaseExt.kt */
     /* renamed from: com.iMe.storage.data.repository.wallet.WalletRepositoryImpl$getWalletBalance$$inlined$flatMapSuccess$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C18711 extends Lambda implements Function1<List<? extends TokenBalance>, Result<? extends List<? extends TokenBalance>>> {
-        public static final C18711 INSTANCE = new C18711();
+    public static final class C18581 extends Lambda implements Function1<List<? extends TokenBalance>, Result<? extends List<? extends TokenBalance>>> {
+        public static final C18581 INSTANCE = new C18581();
 
-        public C18711() {
+        public C18581() {
             super(1);
         }
 
@@ -105,11 +105,11 @@ public final class WalletRepositoryImpl$getWalletBalance$$inlined$flatMapSuccess
         }
         Completable andThen = rxDeleteAllWalletBalances.andThen(walletTokenBalanceDao2.rxInsert((List) arrayList2));
         schedulersProvider = this.this$0.schedulersProvider;
-        Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo708io());
+        Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo694io());
         Observable just2 = Observable.just(sortedWith);
         Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
         Observable andThen2 = subscribeOn.andThen(just2);
         Intrinsics.checkNotNullExpressionValue(andThen2, "walletBalanceDao\n       …etBalance.toObservable())");
-        return andThen2.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(C18711.INSTANCE));
+        return andThen2.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(C18581.INSTANCE));
     }
 }

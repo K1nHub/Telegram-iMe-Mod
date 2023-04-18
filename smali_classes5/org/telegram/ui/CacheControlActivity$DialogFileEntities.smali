@@ -36,17 +36,17 @@
 .method public constructor <init>(J)V
     .locals 1
 
-    .line 2879
+    .line 3033
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2877
+    .line 3031
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
-    .line 2880
+    .line 3034
     iput-wide p1, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->dialogId:J
 
     return-void
@@ -57,7 +57,7 @@
 .method public addFile(Lorg/telegram/ui/Storage/CacheModel$FileInfo;I)V
     .locals 5
 
-    .line 2884
+    .line 3038
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
     const/4 v1, 0x0
@@ -70,17 +70,17 @@
 
     if-nez v0, :cond_0
 
-    .line 2886
+    .line 3040
     new-instance v0, Lorg/telegram/ui/CacheControlActivity$FileEntities;
 
     invoke-direct {v0}, Lorg/telegram/ui/CacheControlActivity$FileEntities;-><init>()V
 
-    .line 2887
+    .line 3041
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p2, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 2889
+    .line 3043
     :cond_0
     iget p2, v0, Lorg/telegram/ui/CacheControlActivity$FileEntities;->count:I
 
@@ -88,31 +88,31 @@
 
     iput p2, v0, Lorg/telegram/ui/CacheControlActivity$FileEntities;->count:I
 
-    .line 2890
+    .line 3044
     iget-wide v1, p1, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->size:J
 
-    .line 2891
+    .line 3045
     iget-wide v3, v0, Lorg/telegram/ui/CacheControlActivity$FileEntities;->totalSize:J
 
     add-long/2addr v3, v1
 
     iput-wide v3, v0, Lorg/telegram/ui/CacheControlActivity$FileEntities;->totalSize:J
 
-    .line 2892
+    .line 3046
     iget-wide v3, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->totalSize:J
 
     add-long/2addr v3, v1
 
     iput-wide v3, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->totalSize:J
 
-    .line 2893
+    .line 3047
     iget p2, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->filesCount:I
 
     add-int/lit8 p2, p2, 0x1
 
     iput p2, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->filesCount:I
 
-    .line 2894
+    .line 3048
     iget-object p2, v0, Lorg/telegram/ui/CacheControlActivity$FileEntities;->files:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -123,14 +123,14 @@
 .method public createCacheModel()Lorg/telegram/ui/Storage/CacheModel;
     .locals 5
 
-    .line 2932
+    .line 3086
     new-instance v0, Lorg/telegram/ui/Storage/CacheModel;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Storage/CacheModel;-><init>(Z)V
 
-    .line 2933
+    .line 3087
     iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
     const/4 v3, 0x0
@@ -141,7 +141,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 2934
+    .line 3088
     iget-object v2, v0, Lorg/telegram/ui/Storage/CacheModel;->media:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
@@ -156,7 +156,7 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2936
+    .line 3090
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
@@ -166,7 +166,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 2937
+    .line 3091
     iget-object v2, v0, Lorg/telegram/ui/Storage/CacheModel;->media:Ljava/util/ArrayList;
 
     iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
@@ -181,7 +181,7 @@
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2939
+    .line 3093
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
@@ -193,7 +193,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 2940
+    .line 3094
     iget-object v1, v0, Lorg/telegram/ui/Storage/CacheModel;->documents:Ljava/util/ArrayList;
 
     iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
@@ -208,7 +208,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2942
+    .line 3096
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
@@ -220,7 +220,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 2943
+    .line 3097
     iget-object v1, v0, Lorg/telegram/ui/Storage/CacheModel;->music:Ljava/util/ArrayList;
 
     iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
@@ -235,7 +235,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2945
+    .line 3099
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
@@ -247,7 +247,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 2946
+    .line 3100
     iget-object v1, v0, Lorg/telegram/ui/Storage/CacheModel;->voice:Ljava/util/ArrayList;
 
     iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
@@ -262,11 +262,11 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2948
+    .line 3102
     :cond_4
     invoke-virtual {v0}, Lorg/telegram/ui/Storage/CacheModel;->selectAllFiles()V
 
-    .line 2949
+    .line 3103
     invoke-virtual {v0}, Lorg/telegram/ui/Storage/CacheModel;->sortBySize()V
 
     return-object v0
@@ -275,7 +275,7 @@
 .method public isEmpty()Z
     .locals 4
 
-    .line 2928
+    .line 3082
     iget-wide v0, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->totalSize:J
 
     const-wide/16 v2, 0x0
@@ -300,7 +300,7 @@
 
     const/4 v0, 0x0
 
-    .line 2898
+    .line 3052
     :goto_0
     iget-object v1, p1, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
@@ -310,14 +310,14 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 2899
+    .line 3053
     iget-object v1, p1, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v0}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v1
 
-    .line 2900
+    .line 3054
     iget-object v2, p1, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -326,7 +326,7 @@
 
     check-cast v2, Lorg/telegram/ui/CacheControlActivity$FileEntities;
 
-    .line 2901
+    .line 3055
     iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
     const/4 v4, 0x0
@@ -339,17 +339,17 @@
 
     if-nez v3, :cond_0
 
-    .line 2903
+    .line 3057
     new-instance v3, Lorg/telegram/ui/CacheControlActivity$FileEntities;
 
     invoke-direct {v3}, Lorg/telegram/ui/CacheControlActivity$FileEntities;-><init>()V
 
-    .line 2904
+    .line 3058
     iget-object v4, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
     invoke-virtual {v4, v1, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 2906
+    .line 3060
     :cond_0
     iget v1, v3, Lorg/telegram/ui/CacheControlActivity$FileEntities;->count:I
 
@@ -359,7 +359,7 @@
 
     iput v1, v3, Lorg/telegram/ui/CacheControlActivity$FileEntities;->count:I
 
-    .line 2907
+    .line 3061
     iget-wide v4, v3, Lorg/telegram/ui/CacheControlActivity$FileEntities;->totalSize:J
 
     iget-wide v6, v2, Lorg/telegram/ui/CacheControlActivity$FileEntities;->totalSize:J
@@ -368,7 +368,7 @@
 
     iput-wide v4, v3, Lorg/telegram/ui/CacheControlActivity$FileEntities;->totalSize:J
 
-    .line 2908
+    .line 3062
     iget-wide v4, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->totalSize:J
 
     iget-wide v6, v2, Lorg/telegram/ui/CacheControlActivity$FileEntities;->totalSize:J
@@ -377,7 +377,7 @@
 
     iput-wide v4, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->totalSize:J
 
-    .line 2909
+    .line 3063
     iget-object v1, v3, Lorg/telegram/ui/CacheControlActivity$FileEntities;->files:Ljava/util/ArrayList;
 
     iget-object v2, v2, Lorg/telegram/ui/CacheControlActivity$FileEntities;->files:Ljava/util/ArrayList;
@@ -388,7 +388,7 @@
 
     goto :goto_0
 
-    .line 2911
+    .line 3065
     :cond_1
     iget v0, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->filesCount:I
 
@@ -404,7 +404,7 @@
 .method public removeFile(Lorg/telegram/ui/Storage/CacheModel$FileInfo;)V
     .locals 5
 
-    .line 2915
+    .line 3069
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->entitiesByType:Landroid/util/SparseArray;
 
     iget v1, p1, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->type:I
@@ -421,7 +421,7 @@
 
     return-void
 
-    .line 2919
+    .line 3073
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$FileEntities;->files:Ljava/util/ArrayList;
 
@@ -431,14 +431,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 2920
+    .line 3074
     iget v1, v0, Lorg/telegram/ui/CacheControlActivity$FileEntities;->count:I
 
     add-int/lit8 v1, v1, -0x1
 
     iput v1, v0, Lorg/telegram/ui/CacheControlActivity$FileEntities;->count:I
 
-    .line 2921
+    .line 3075
     iget-wide v1, v0, Lorg/telegram/ui/CacheControlActivity$FileEntities;->totalSize:J
 
     iget-wide v3, p1, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->size:J
@@ -447,14 +447,14 @@
 
     iput-wide v1, v0, Lorg/telegram/ui/CacheControlActivity$FileEntities;->totalSize:J
 
-    .line 2922
+    .line 3076
     iget-wide v0, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->totalSize:J
 
     sub-long/2addr v0, v3
 
     iput-wide v0, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->totalSize:J
 
-    .line 2923
+    .line 3077
     iget p1, p0, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->filesCount:I
 
     add-int/lit8 p1, p1, -0x1

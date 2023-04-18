@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Cells/TextCheckBoxCell;
 
-    invoke-static {v0, p1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->$r8$lambda$_w-EcVmCx6W845-AuEn6fwqvV88(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->$r8$lambda$9gVAbVZN2-BHvZYO8vHPphYqDMo(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
 
     return-void
 .end method

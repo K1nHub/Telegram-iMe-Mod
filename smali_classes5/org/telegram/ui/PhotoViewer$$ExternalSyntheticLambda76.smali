@@ -8,22 +8,26 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
 
-.field public final synthetic f$1:Ljava/lang/String;
+.field public final synthetic f$1:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
-.field public final synthetic f$2:Z
+.field public final synthetic f$2:I
+
+.field public final synthetic f$3:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/messenger/ImageReceiver$BitmapHolder;ILjava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda76;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda76;->f$1:Ljava/lang/String;
+    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda76;->f$1:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
-    iput-boolean p3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda76;->f$2:Z
+    iput p3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda76;->f$2:I
+
+    iput-object p4, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda76;->f$3:Ljava/lang/String;
 
     return-void
 .end method
@@ -31,15 +35,17 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda76;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda76;->f$1:Ljava/lang/String;
+    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda76;->f$1:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
-    iget-boolean v2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda76;->f$2:Z
+    iget v2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda76;->f$2:I
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$3ud1eSfyr11_JSQeMXYzk4qKrVk(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;Z)V
+    iget-object v3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda76;->f$3:Ljava/lang/String;
+
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$-fdd3k2K7yq7hkp31u4utbDCkZ8(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/messenger/ImageReceiver$BitmapHolder;ILjava/lang/String;)V
 
     return-void
 .end method

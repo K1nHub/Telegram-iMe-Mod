@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EmojiView;->showBackspaceButton(ZZ)V
+    value = Lorg/telegram/ui/Components/EmojiView;->showBottomTab(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,17 +17,13 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/EmojiView;
 
-.field final synthetic val$show:Z
-
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Z)V
+.method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 5639
+    .line 5557
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$44;->this$0:Lorg/telegram/ui/Components/EmojiView;
-
-    iput-boolean p2, p0, Lorg/telegram/ui/Components/EmojiView$44;->val$show:Z
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -39,22 +35,48 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 5642
-    iget-boolean p1, p0, Lorg/telegram/ui/Components/EmojiView$44;->val$show:Z
+    .line 5560
+    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$44;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    if-nez p1, :cond_0
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$15800(Lorg/telegram/ui/Components/EmojiView;)Landroid/animation/ValueAnimator;
 
-    .line 5643
+    move-result-object v0
+
+    if-eq v0, p1, :cond_0
+
+    return-void
+
+    .line 5563
+    :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$44;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$13000(Lorg/telegram/ui/Components/EmojiView;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$15800(Lorg/telegram/ui/Components/EmojiView;)Landroid/animation/ValueAnimator;
 
-    move-result-object p1
+    move-result-object v0
 
-    const/4 v0, 0x4
+    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
+    move-result-object v0
 
-    :cond_0
+    check-cast v0, Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->access$15902(Lorg/telegram/ui/Components/EmojiView;F)F
+
+    .line 5564
+    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$44;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$16000(Lorg/telegram/ui/Components/EmojiView;)V
+
+    .line 5565
+    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$44;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->access$15802(Lorg/telegram/ui/Components/EmojiView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
+
     return-void
 .end method

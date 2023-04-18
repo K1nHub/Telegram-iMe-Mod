@@ -69,7 +69,7 @@ public abstract class TwitterAuthResult {
         }
 
         public int hashCode() {
-            return (((((((((this.accessToken.hashCode() * 31) + this.refreshToken.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.expiresIn)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.twitterUserId)) * 31) + this.twitterUsername.hashCode()) * 31) + this.status.hashCode();
+            return (((((((((this.accessToken.hashCode() * 31) + this.refreshToken.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.expiresIn)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.twitterUserId)) * 31) + this.twitterUsername.hashCode()) * 31) + this.status.hashCode();
         }
 
         public String toString() {

@@ -34,7 +34,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;IZZ)V
     .locals 0
 
-    .line 12996
+    .line 13006
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iput-boolean p3, p0, Lorg/telegram/ui/PhotoViewer$68;->val$isCurrentCaptionEmpty:Z
@@ -49,7 +49,7 @@
 .method private synthetic lambda$onAppear$0(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 13008
+    .line 13018
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -68,7 +68,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->access$27802(Lorg/telegram/ui/PhotoViewer$CaptionScrollView;F)F
 
-    .line 13009
+    .line 13019
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -85,12 +85,12 @@
 .method public onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 0
 
-    .line 12999
+    .line 13009
     invoke-super {p0, p1, p2, p3, p4}, Landroid/transition/Fade;->onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
 
     move-result-object p1
 
-    .line 13000
+    .line 13010
     iget-boolean p3, p0, Lorg/telegram/ui/PhotoViewer$68;->val$isCurrentCaptionEmpty:Z
 
     if-eqz p3, :cond_0
@@ -107,14 +107,14 @@
 
     if-ne p2, p3, :cond_0
 
-    .line 13001
+    .line 13011
     new-instance p2, Lorg/telegram/ui/PhotoViewer$68$1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/PhotoViewer$68$1;-><init>(Lorg/telegram/ui/PhotoViewer$68;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 13007
+    .line 13017
     move-object p2, p1
 
     check-cast p2, Landroid/animation/ObjectAnimator;

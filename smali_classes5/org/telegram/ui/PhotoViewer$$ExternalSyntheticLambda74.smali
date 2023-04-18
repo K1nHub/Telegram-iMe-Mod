@@ -8,46 +8,30 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
 
-.field public final synthetic f$1:I
+.field public final synthetic f$1:Ljava/io/File;
 
-.field public final synthetic f$2:Ljava/io/File;
+.field public final synthetic f$2:Z
 
-.field public final synthetic f$3:Ljava/io/File;
+.field public final synthetic f$3:Lorg/telegram/messenger/MessageObject;
 
 .field public final synthetic f$4:Z
 
-.field public final synthetic f$5:Z
-
-.field public final synthetic f$6:Z
-
-.field public final synthetic f$7:Z
-
-.field public final synthetic f$8:Z
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;ILjava/io/File;Ljava/io/File;ZZZZZ)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;Ljava/io/File;ZLorg/telegram/messenger/MessageObject;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    iput p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$1:I
+    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$1:Ljava/io/File;
 
-    iput-object p3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$2:Ljava/io/File;
+    iput-boolean p3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$2:Z
 
-    iput-object p4, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$3:Ljava/io/File;
+    iput-object p4, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$3:Lorg/telegram/messenger/MessageObject;
 
     iput-boolean p5, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$4:Z
-
-    iput-boolean p6, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$5:Z
-
-    iput-boolean p7, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$6:Z
-
-    iput-boolean p8, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$7:Z
-
-    iput-boolean p9, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$8:Z
 
     return-void
 .end method
@@ -55,27 +39,19 @@
 
 # virtual methods
 .method public final run()V
-    .locals 9
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    iget v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$1:I
+    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$1:Ljava/io/File;
 
-    iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$2:Ljava/io/File;
+    iget-boolean v2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$2:Z
 
-    iget-object v3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$3:Ljava/io/File;
+    iget-object v3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$3:Lorg/telegram/messenger/MessageObject;
 
     iget-boolean v4, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$4:Z
 
-    iget-boolean v5, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$5:Z
-
-    iget-boolean v6, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$6:Z
-
-    iget-boolean v7, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$7:Z
-
-    iget-boolean v8, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda74;->f$8:Z
-
-    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$1pCZn8BxFNDGu4VLOL4ZoVR6VU0(Lorg/telegram/ui/PhotoViewer;ILjava/io/File;Ljava/io/File;ZZZZZ)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$pxz0pS55c5jZkHORI9hhHwxfIsU(Lorg/telegram/ui/PhotoViewer;Ljava/io/File;ZLorg/telegram/messenger/MessageObject;Z)V
 
     return-void
 .end method

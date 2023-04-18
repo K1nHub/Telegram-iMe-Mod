@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.util;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 /* loaded from: classes.dex */
 public final class TimestampAdjuster {
     private static final long MAX_PTS_PLUS_ONE = 8589934592L;
@@ -17,13 +17,13 @@ public final class TimestampAdjuster {
 
     public synchronized void sharedInitializeOrWait(boolean z, long j) throws InterruptedException {
         Assertions.checkState(this.firstSampleTimestampUs == MODE_SHARED);
-        if (this.timestampOffsetUs != C0482C.TIME_UNSET) {
+        if (this.timestampOffsetUs != C0470C.TIME_UNSET) {
             return;
         }
         if (z) {
             this.nextSampleTimestampUs.set(Long.valueOf(j));
         } else {
-            while (this.timestampOffsetUs == C0482C.TIME_UNSET) {
+            while (this.timestampOffsetUs == C0470C.TIME_UNSET) {
                 wait();
             }
         }
@@ -33,7 +33,7 @@ public final class TimestampAdjuster {
         long j;
         j = this.firstSampleTimestampUs;
         if (j == Long.MAX_VALUE || j == MODE_SHARED) {
-            j = C0482C.TIME_UNSET;
+            j = C0470C.TIME_UNSET;
         }
         return j;
     }
@@ -41,7 +41,7 @@ public final class TimestampAdjuster {
     public synchronized long getLastAdjustedTimestampUs() {
         long firstSampleTimestampUs;
         long j = this.lastUnadjustedTimestampUs;
-        if (j != C0482C.TIME_UNSET) {
+        if (j != C0470C.TIME_UNSET) {
             firstSampleTimestampUs = j + this.timestampOffsetUs;
         } else {
             firstSampleTimestampUs = getFirstSampleTimestampUs();
@@ -56,15 +56,15 @@ public final class TimestampAdjuster {
     public synchronized void reset(long j) {
         this.firstSampleTimestampUs = j;
         this.timestampOffsetUs = j == Long.MAX_VALUE ? 0L : -9223372036854775807L;
-        this.lastUnadjustedTimestampUs = C0482C.TIME_UNSET;
+        this.lastUnadjustedTimestampUs = C0470C.TIME_UNSET;
     }
 
     public synchronized long adjustTsTimestamp(long j) {
-        if (j == C0482C.TIME_UNSET) {
-            return C0482C.TIME_UNSET;
+        if (j == C0470C.TIME_UNSET) {
+            return C0470C.TIME_UNSET;
         }
         long j2 = this.lastUnadjustedTimestampUs;
-        if (j2 != C0482C.TIME_UNSET) {
+        if (j2 != C0470C.TIME_UNSET) {
             long usToNonWrappedPts = usToNonWrappedPts(j2);
             long j3 = (4294967296L + usToNonWrappedPts) / MAX_PTS_PLUS_ONE;
             long j4 = ((j3 - 1) * MAX_PTS_PLUS_ONE) + j;
@@ -77,10 +77,10 @@ public final class TimestampAdjuster {
     }
 
     public synchronized long adjustSampleTimestamp(long j) {
-        if (j == C0482C.TIME_UNSET) {
-            return C0482C.TIME_UNSET;
+        if (j == C0470C.TIME_UNSET) {
+            return C0470C.TIME_UNSET;
         }
-        if (this.timestampOffsetUs == C0482C.TIME_UNSET) {
+        if (this.timestampOffsetUs == C0470C.TIME_UNSET) {
             long j2 = this.firstSampleTimestampUs;
             if (j2 == MODE_SHARED) {
                 j2 = ((Long) Assertions.checkNotNull(this.nextSampleTimestampUs.get())).longValue();

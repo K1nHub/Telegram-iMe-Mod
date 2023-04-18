@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/lang/Long;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$kmbza_B20rzQbldKu2AkHRLJHtI(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$jnHBL0BFjj3D33_zYXsW7rzm6QE(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;)V
 
     return-void
 .end method

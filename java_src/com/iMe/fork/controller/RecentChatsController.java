@@ -6,8 +6,8 @@ import com.iMe.fork.controller.RecentChatsController;
 import com.iMe.fork.enums.DrawStatusType;
 import com.iMe.fork.enums.RecentChatsDialogType;
 import com.iMe.fork.models.backup.Backup;
-import com.iMe.storage.data.locale.p028db.dao.main.HistoryDialogDao;
-import com.iMe.storage.data.locale.p028db.model.recent_chats.HistoryDialogDb;
+import com.iMe.storage.data.locale.p027db.dao.main.HistoryDialogDao;
+import com.iMe.storage.data.locale.p027db.model.recent_chats.HistoryDialogDb;
 import com.iMe.storage.data.mapper.recent_chats.RecentChatsMappingKt;
 import com.iMe.storage.domain.model.HistoryDialogModel;
 import java.util.ArrayList;
@@ -34,15 +34,15 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import p035j$.util.Collection$EL;
-import p035j$.util.concurrent.ConcurrentHashMap;
-import p035j$.util.concurrent.ConcurrentMap$EL;
-import p035j$.util.function.Function;
-import p035j$.util.function.Predicate;
+import p034j$.util.Collection$EL;
+import p034j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentMap$EL;
+import p034j$.util.function.Function;
+import p034j$.util.function.Predicate;
 /* compiled from: RecentChatsController.kt */
 /* loaded from: classes3.dex */
 public final class RecentChatsController extends BaseController implements KoinComponent {
@@ -67,7 +67,7 @@ public final class RecentChatsController extends BaseController implements KoinC
         this.isRecentChatsEnabled = TelegramPreferenceKeys.User.Default.isRecentChatsEnabled();
         this.selectedRecentChatsDialogTypes = new LinkedHashSet();
         this.selectedDrawStatusTypes = new LinkedHashSet();
-        this.isSaveArchiveRecentChatsEnabled = TelegramPreferenceKeys.User.Default.INSTANCE.isSaveArchiveRecentChatsEnabled();
+        this.isSaveArchiveRecentChatsEnabled = TelegramPreferenceKeys.User.Default.isSaveArchiveRecentChatsEnabled();
         this.historyDialogs = new LinkedHashMap();
     }
 
@@ -118,7 +118,7 @@ public final class RecentChatsController extends BaseController implements KoinC
         Intrinsics.checkNotNullParameter(preferences, "preferences");
         this.isRecentChatsEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isRecentChatsEnabled(), TelegramPreferenceKeys.User.Default.isRecentChatsEnabled());
         this.selectedRecentChatsDialogTypes = RecentChatsDialogType.Companion.mapNamesToEnums(preferences.getStringSet(TelegramPreferenceKeys.User.selectedRecentChatsDialogTypes(), TelegramPreferenceKeys.User.Default.selectedRecentChatsDialogTypes()));
-        this.isSaveArchiveRecentChatsEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isSaveArchiveRecentChatsEnabled(), TelegramPreferenceKeys.User.Default.INSTANCE.isSaveArchiveRecentChatsEnabled());
+        this.isSaveArchiveRecentChatsEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isSaveArchiveRecentChatsEnabled(), TelegramPreferenceKeys.User.Default.isSaveArchiveRecentChatsEnabled());
         this.selectedDrawStatusTypes = DrawStatusType.Companion.mapNamesToEnums(preferences.getStringSet(TelegramPreferenceKeys.User.selectedDrawStatusTypes(), TelegramPreferenceKeys.User.Default.selectedDrawStatusTypes()));
     }
 
@@ -264,8 +264,8 @@ public final class RecentChatsController extends BaseController implements KoinC
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (HistoryDialogDb historyDialogDb : historyDialog) {
-            Pair m94to = TuplesKt.m94to(Long.valueOf(historyDialogDb.getDialogId()), RecentChatsMappingKt.mapToDomain(historyDialogDb));
-            linkedHashMap.put(m94to.getFirst(), m94to.getSecond());
+            Pair m80to = TuplesKt.m80to(Long.valueOf(historyDialogDb.getDialogId()), RecentChatsMappingKt.mapToDomain(historyDialogDb));
+            linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.historyDialogs = mutableMap;
@@ -304,23 +304,23 @@ public final class RecentChatsController extends BaseController implements KoinC
         Collection<HistoryDialogModel> values = this.historyDialogs.values();
         final RecentChatsController$clearRecentChatsHistory$1 recentChatsController$clearRecentChatsHistory$1 = RecentChatsController$clearRecentChatsHistory$1.INSTANCE;
         Collection$EL.removeIf(values, new Predicate() { // from class: com.iMe.fork.controller.RecentChatsController$$ExternalSyntheticLambda5
-            @Override // p035j$.util.function.Predicate
+            @Override // p034j$.util.function.Predicate
             public /* synthetic */ Predicate and(Predicate predicate) {
                 return Objects.requireNonNull(predicate);
             }
 
-            @Override // p035j$.util.function.Predicate
+            @Override // p034j$.util.function.Predicate
             public /* synthetic */ Predicate negate() {
                 return Predicate.CC.$default$negate(this);
             }
 
-            @Override // p035j$.util.function.Predicate
+            @Override // p034j$.util.function.Predicate
             /* renamed from: or */
             public /* synthetic */ Predicate mo21or(Predicate predicate) {
                 return Objects.requireNonNull(predicate);
             }
 
-            @Override // p035j$.util.function.Predicate
+            @Override // p034j$.util.function.Predicate
             public final boolean test(Object obj) {
                 boolean clearRecentChatsHistory$lambda$12;
                 clearRecentChatsHistory$lambda$12 = RecentChatsController.clearRecentChatsHistory$lambda$12(Function1.this, obj);
@@ -385,19 +385,19 @@ public final class RecentChatsController extends BaseController implements KoinC
             Integer valueOf = Integer.valueOf(i);
             final RecentChatsController$Companion$getInstance$1 recentChatsController$Companion$getInstance$1 = new RecentChatsController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.RecentChatsController$Companion$$ExternalSyntheticLambda0
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
                     RecentChatsController instance$lambda$0;
                     instance$lambda$0 = RecentChatsController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

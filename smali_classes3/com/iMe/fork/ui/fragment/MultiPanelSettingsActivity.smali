@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMultiPanelSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiPanelSettingsActivity.kt\ncom/iMe/fork/ui/fragment/MultiPanelSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,404:1\n1#2:405\n361#3,7:406\n1726#4,3:413\n1855#4,2:416\n1179#4,2:418\n1253#4,2:420\n1549#4:422\n1620#4,3:423\n1256#4:426\n187#5,3:427\n*S KotlinDebug\n*F\n+ 1 MultiPanelSettingsActivity.kt\ncom/iMe/fork/ui/fragment/MultiPanelSettingsActivity\n*L\n195#1:406,7\n199#1:413,3\n202#1:416,2\n209#1:418,2\n209#1:420,2\n210#1:422\n210#1:423,3\n209#1:426\n217#1:427,3\n*E\n"
+    value = "SMAP\nMultiPanelSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiPanelSettingsActivity.kt\ncom/iMe/fork/ui/fragment/MultiPanelSettingsActivity\n+ 2 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,401:1\n361#2,7:402\n1726#3,3:409\n1855#3,2:412\n1179#3,2:414\n1253#3,2:416\n1549#3:418\n1620#3,3:419\n1256#3:422\n187#4,3:423\n1#5:426\n*S KotlinDebug\n*F\n+ 1 MultiPanelSettingsActivity.kt\ncom/iMe/fork/ui/fragment/MultiPanelSettingsActivity\n*L\n192#1:402,7\n196#1:409,3\n199#1:412,2\n206#1:414,2\n206#1:416,2\n207#1:418\n207#1:419,3\n206#1:422\n214#1:423,3\n*E\n"
 .end annotation
 
 
@@ -79,18 +79,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$1J25VFN63O6Y570bXCEah3mCWBw(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->initListView$lambda$12$lambda$11(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$DD_1afA_XOUTVF-nrni0p6mdhwk(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)V
     .locals 0
 
     invoke-static {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getThemeDescriptions$lambda$2(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$KSjEb1ndsWhg4SqdCxCqBtdXgk8(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->initListView$lambda$11$lambda$10(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -104,7 +104,7 @@
 
     new-array v1, v1, [Lkotlin/reflect/KProperty;
 
-    .line 39
+    .line 36
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "rootView"
@@ -121,7 +121,7 @@
 
     aput-object v2, v1, v5
 
-    .line 40
+    .line 37
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "listView"
@@ -138,7 +138,7 @@
 
     aput-object v2, v1, v3
 
-    .line 41
+    .line 38
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "listAdapter"
@@ -191,7 +191,7 @@
     .line 32
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->currentDialogType:Lcom/iMe/fork/enums/DialogType;
 
-    .line 39
+    .line 36
     new-instance p1, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$rootView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$rootView$2;-><init>(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)V
@@ -206,7 +206,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 40
+    .line 37
     new-instance p1, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$listView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$listView$2;-><init>(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)V
@@ -217,7 +217,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 41
+    .line 38
     new-instance p1, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$listAdapter$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$listAdapter$2;-><init>(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)V
@@ -560,12 +560,12 @@
 .method private final checkSettingsChanged()Z
     .locals 6
 
-    .line 216
+    .line 213
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
 
     move-result-object v0
 
-    .line 217
+    .line 214
     invoke-virtual {v0}, Lcom/iMe/fork/controller/MultiPanelController;->isMultiPanelEnabled()Z
 
     move-result v1
@@ -625,7 +625,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 217
+    .line 214
     iget-object v2, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->newButtonStates:Ljava/util/Map;
 
     if-nez v2, :cond_3
@@ -672,7 +672,7 @@
 .method private final getButton(I)Lcom/iMe/fork/models/MultiPanelButtonState;
     .locals 2
 
-    .line 197
+    .line 194
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getButtons()Ljava/util/List;
 
     move-result-object v0
@@ -701,7 +701,7 @@
         }
     .end annotation
 
-    .line 195
+    .line 192
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->newButtonStates:Ljava/util/Map;
 
     if-nez v0, :cond_0
@@ -722,7 +722,7 @@
 
     if-nez v2, :cond_1
 
-    .line 195
+    .line 192
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
@@ -740,7 +740,7 @@
 .method private final getListAdapter()Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
     .locals 3
 
-    .line 41
+    .line 38
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -761,7 +761,7 @@
 .method private final getListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 40
+    .line 37
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -782,7 +782,7 @@
 .method private final getRootView()Landroid/widget/FrameLayout;
     .locals 3
 
-    .line 39
+    .line 36
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -807,27 +807,21 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 87
+    .line 84
     iget-object p0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->topicsBar:Lcom/iMe/fork/ui/view/DialogTypeTopicsBar;
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    const-string p0, "topicsBar"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    :cond_0
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/DialogTypeTopicsBar;->notifyDataSetChanged()V
 
+    :cond_0
     return-void
 .end method
 
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 151
+    .line 148
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -838,10 +832,10 @@
 
     const/4 v1, 0x1
 
-    .line 152
+    .line 149
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setFocusable(Z)V
 
-    .line 153
+    .line 150
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -852,14 +846,14 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 154
+    .line 151
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 155
+    .line 152
     new-instance v1, Landroidx/recyclerview/widget/ItemTouchHelper;
 
     new-instance v2, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$TouchHelperCallback;
@@ -870,7 +864,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/ItemTouchHelper;->attachToRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
 
-    .line 156
+    .line 153
     new-instance v1, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)V
@@ -880,52 +874,52 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda$12$lambda$11(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
+.method private static final initListView$lambda$11$lambda$10(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
     .locals 2
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 158
+    .line 155
     instance-of v0, p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     if-eqz v0, :cond_3
 
     const-string v0, "view"
 
-    .line 159
+    .line 156
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 161
+    .line 158
     iget v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->enableRow:I
 
     if-ne p2, v0, :cond_1
 
-    .line 162
+    .line 159
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckbox()V
 
-    .line 163
+    .line 160
     iget-boolean p2, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->newIsEnabled:Z
 
     xor-int/lit8 p2, p2, 0x1
 
     iput-boolean p2, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->newIsEnabled:Z
 
-    .line 164
+    .line 161
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
 
     move-result-object p2
 
-    .line 165
+    .line 162
     iget v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->rowCount:I
 
-    .line 166
+    .line 163
     invoke-virtual {p2}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->updateRows()V
 
-    .line 167
+    .line 164
     iget v1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->rowCount:I
 
     sub-int/2addr v0, v1
@@ -934,14 +928,14 @@
 
     move-result v0
 
-    .line 168
+    .line 165
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->isChecked()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 169
+    .line 166
     iget p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->enableSectionRow:I
 
     add-int/lit8 p1, p1, 0x1
@@ -950,7 +944,7 @@
 
     goto :goto_0
 
-    .line 171
+    .line 168
     :cond_0
     iget p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->enableSectionRow:I
 
@@ -958,7 +952,7 @@
 
     invoke-virtual {p2, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    .line 173
+    .line 170
     :goto_0
     iget p0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->enableSectionRow:I
 
@@ -966,16 +960,16 @@
 
     goto :goto_1
 
-    .line 176
+    .line 173
     :cond_1
     iget v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->hideOnScrollRow:I
 
     if-ne p2, v0, :cond_2
 
-    .line 177
+    .line 174
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckbox()V
 
-    .line 178
+    .line 175
     iget-boolean p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->newIsHideOnScrollEnabled:Z
 
     xor-int/lit8 p1, p1, 0x1
@@ -984,13 +978,13 @@
 
     goto :goto_1
 
-    .line 180
+    .line 177
     :cond_2
     iget p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->allButtonsRow:I
 
     if-ne p2, p1, :cond_5
 
-    .line 181
+    .line 178
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->isAllButtonsEnabled()Z
 
     move-result p1
@@ -999,7 +993,7 @@
 
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->setAllButtonsEnabled(Z)V
 
-    .line 182
+    .line 179
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
 
     move-result-object p0
@@ -1008,13 +1002,13 @@
 
     goto :goto_1
 
-    .line 187
+    .line 184
     :cond_3
     instance-of p1, p1, Lcom/iMe/fork/ui/view/MovingCheckCell;
 
     if-eqz p1, :cond_5
 
-    .line 188
+    .line 185
     invoke-direct {p0, p2}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getButton(I)Lcom/iMe/fork/models/MultiPanelButtonState;
 
     move-result-object p1
@@ -1029,7 +1023,7 @@
 
     invoke-virtual {p1, p2}, Lcom/iMe/fork/models/MultiPanelButtonState;->setEnabled(Z)V
 
-    .line 189
+    .line 186
     :cond_4
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
 
@@ -1045,7 +1039,7 @@
 .method private final initRootView()Landroid/widget/FrameLayout;
     .locals 2
 
-    .line 147
+    .line 144
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1056,15 +1050,12 @@
 
     const-string v1, "windowBackgroundGray"
 
-    .line 148
+    .line 145
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 149
-    iput-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object v0
 .end method
@@ -1072,7 +1063,7 @@
 .method private final isAllButtonsEnabled()Z
     .locals 3
 
-    .line 199
+    .line 196
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getButtons()Ljava/util/List;
 
     move-result-object v0
@@ -1111,7 +1102,7 @@
 
     check-cast v1, Lcom/iMe/fork/models/MultiPanelButtonState;
 
-    .line 199
+    .line 196
     invoke-virtual {v1}, Lcom/iMe/fork/models/MultiPanelButtonState;->isEnabled()Z
 
     move-result v1
@@ -1128,7 +1119,7 @@
 .method private final isClickableViewType(I)Z
     .locals 1
 
-    .line 220
+    .line 217
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     if-eq p1, v0, :cond_1
@@ -1155,7 +1146,7 @@
 .method private final needDivider(I)Z
     .locals 1
 
-    .line 222
+    .line 219
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
     if-eq p1, v0, :cond_0
@@ -1178,7 +1169,7 @@
 .method private final readSettings()V
     .locals 10
 
-    .line 206
+    .line 203
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
 
     move-result-object v0
@@ -1189,7 +1180,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->newIsEnabled:Z
 
-    .line 207
+    .line 204
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
 
     move-result-object v0
@@ -1200,7 +1191,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->newIsHideOnScrollEnabled:Z
 
-    .line 208
+    .line 205
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
 
     move-result-object v0
@@ -1254,7 +1245,7 @@
     .line 1254
     check-cast v2, Lkotlin/Pair;
 
-    .line 210
+    .line 207
     invoke-virtual {v2}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v4
@@ -1293,7 +1284,7 @@
     .line 1621
     check-cast v6, Lcom/iMe/fork/models/MultiPanelButtonState;
 
-    .line 211
+    .line 208
     new-instance v7, Lcom/iMe/fork/models/MultiPanelButtonState;
 
     invoke-virtual {v6}, Lcom/iMe/fork/models/MultiPanelButtonState;->getType()Lcom/iMe/fork/enums/MultiPanelButton;
@@ -1315,13 +1306,13 @@
 
     goto :goto_1
 
-    .line 212
+    .line 209
     :cond_0
     invoke-static {v5}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v2
 
-    .line 210
+    .line 207
     invoke-static {v4, v2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v2
@@ -1339,13 +1330,13 @@
 
     goto :goto_0
 
-    .line 213
+    .line 210
     :cond_1
     invoke-static {v3}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    .line 208
+    .line 205
     iput-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->newButtonStates:Ljava/util/Map;
 
     return-void
@@ -1354,7 +1345,7 @@
 .method private final setAllButtonsEnabled(Z)V
     .locals 2
 
-    .line 202
+    .line 199
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getButtons()Ljava/util/List;
 
     move-result-object v0
@@ -1377,7 +1368,7 @@
 
     check-cast v1, Lcom/iMe/fork/models/MultiPanelButtonState;
 
-    .line 202
+    .line 199
     invoke-virtual {v1, p1}, Lcom/iMe/fork/models/MultiPanelButtonState;->setEnabled(Z)V
 
     goto :goto_0
@@ -1389,20 +1380,20 @@
 .method private final setupActionBar()V
     .locals 6
 
-    .line 122
+    .line 119
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 123
+    .line 120
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 124
+    .line 121
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 125
+    .line 122
     sget v2, Lorg/telegram/messenger/R$string;->settings_multi_panel_item_title:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1411,12 +1402,12 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 126
+    .line 123
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     move-result-object v2
 
-    .line 127
+    .line 124
     sget v3, Lorg/telegram/messenger/R$drawable;->ic_ab_other:I
 
     const/4 v4, 0x0
@@ -1425,7 +1416,7 @@
 
     move-result-object v2
 
-    .line 128
+    .line 125
     sget v3, Lorg/telegram/messenger/R$string;->AccDescrMoreOptions:I
 
     const-string v4, "AccDescrMoreOptions"
@@ -1436,7 +1427,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 129
+    .line 126
     sget v3, Lorg/telegram/messenger/R$drawable;->msg_reset:I
 
     sget v4, Lorg/telegram/messenger/R$string;->ThemeResetToDefaults:I
@@ -1449,7 +1440,7 @@
 
     invoke-virtual {v2, v1, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 132
+    .line 129
     new-instance v1, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;-><init>(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)V
@@ -1487,14 +1478,14 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 87
+    .line 84
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 86
+    .line 83
     new-instance v8, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {v8, v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)V
@@ -1509,14 +1500,14 @@
 
     move-object v2, v10
 
-    .line 87
+    .line 84
     invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
 
     const/4 v2, 0x0
 
     aput-object v10, v1, v2
 
-    .line 88
+    .line 85
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1541,7 +1532,7 @@
 
     aput-object v3, v1, v4
 
-    .line 89
+    .line 86
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1566,7 +1557,7 @@
 
     aput-object v3, v1, v5
 
-    .line 90
+    .line 87
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1585,7 +1576,7 @@
 
     aput-object v3, v1, v6
 
-    .line 91
+    .line 88
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1604,7 +1595,7 @@
 
     aput-object v3, v1, v7
 
-    .line 92
+    .line 89
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1625,7 +1616,7 @@
 
     aput-object v3, v1, v7
 
-    .line 93
+    .line 90
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1644,7 +1635,7 @@
 
     aput-object v3, v1, v7
 
-    .line 94
+    .line 91
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1669,7 +1660,7 @@
 
     aput-object v3, v1, v7
 
-    .line 95
+    .line 92
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1702,7 +1693,7 @@
 
     aput-object v3, v1, v5
 
-    .line 96
+    .line 93
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1735,7 +1726,7 @@
 
     aput-object v3, v1, v5
 
-    .line 97
+    .line 94
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1764,7 +1755,7 @@
 
     aput-object v3, v1, v5
 
-    .line 98
+    .line 95
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1797,7 +1788,7 @@
 
     aput-object v3, v1, v6
 
-    .line 99
+    .line 96
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1828,7 +1819,7 @@
 
     aput-object v3, v1, v6
 
-    .line 100
+    .line 97
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1859,7 +1850,7 @@
 
     aput-object v3, v1, v7
 
-    .line 101
+    .line 98
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1890,7 +1881,7 @@
 
     aput-object v3, v1, v7
 
-    .line 102
+    .line 99
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1917,7 +1908,7 @@
 
     aput-object v3, v1, v7
 
-    .line 103
+    .line 100
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1944,7 +1935,7 @@
 
     aput-object v3, v1, v7
 
-    .line 104
+    .line 101
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1971,7 +1962,7 @@
 
     aput-object v3, v1, v7
 
-    .line 105
+    .line 102
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1998,7 +1989,7 @@
 
     aput-object v3, v1, v7
 
-    .line 106
+    .line 103
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -2025,7 +2016,7 @@
 
     aput-object v3, v1, v7
 
-    .line 107
+    .line 104
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -2052,7 +2043,7 @@
 
     aput-object v3, v1, v5
 
-    .line 108
+    .line 105
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -2083,7 +2074,7 @@
 
     aput-object v3, v1, v5
 
-    .line 109
+    .line 106
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -2110,7 +2101,7 @@
 
     aput-object v3, v1, v5
 
-    .line 110
+    .line 107
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -2143,7 +2134,7 @@
 
     aput-object v3, v1, v5
 
-    .line 111
+    .line 108
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -2172,7 +2163,7 @@
 
     aput-object v3, v1, v5
 
-    .line 112
+    .line 109
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -2201,7 +2192,7 @@
 
     aput-object v3, v1, v5
 
-    .line 113
+    .line 110
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -2230,7 +2221,7 @@
 
     aput-object v3, v1, v5
 
-    .line 114
+    .line 111
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -2255,7 +2246,7 @@
 
     aput-object v3, v1, v2
 
-    .line 86
+    .line 83
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -2263,22 +2254,33 @@
     return-object v1
 .end method
 
-.method public onCreateView(Landroid/content/Context;)Landroid/view/View;
+.method public bridge synthetic onCreateView(Landroid/content/Context;)Landroid/view/View;
+    .locals 0
+
+    .line 31
+    invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
     .locals 1
 
     const-string v0, "context"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 61
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->setupActionBar()V
-
-    .line 63
+    .line 60
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getRootView()Landroid/widget/FrameLayout;
 
     move-result-object p1
 
-    .line 64
+    .line 61
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->setupActionBar()V
+
+    .line 62
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
@@ -2291,36 +2293,36 @@
 .method public onFragmentDestroy()V
     .locals 3
 
-    .line 73
+    .line 70
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->checkSettingsChanged()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 74
+    .line 71
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
 
     move-result-object v0
 
-    .line 75
+    .line 72
     iget-boolean v1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->newIsEnabled:Z
 
     invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/MultiPanelController;->setMultiPanelEnabled(Z)V
 
-    .line 76
+    .line 73
     iget-boolean v1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->newIsHideOnScrollEnabled:Z
 
     invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/MultiPanelController;->setHideMultiPanelOnScrollEnabled(Z)V
 
-    .line 77
+    .line 74
     invoke-virtual {v0}, Lcom/iMe/fork/controller/MultiPanelController;->getButtonStates()Ljava/util/Map;
 
     move-result-object v1
 
     invoke-interface {v1}, Ljava/util/Map;->clear()V
 
-    .line 78
+    .line 75
     invoke-virtual {v0}, Lcom/iMe/fork/controller/MultiPanelController;->getButtonStates()Ljava/util/Map;
 
     move-result-object v1
@@ -2338,10 +2340,10 @@
     :cond_0
     invoke-interface {v1, v2}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 79
+    .line 76
     invoke-virtual {v0}, Lcom/iMe/fork/controller/MultiPanelController;->saveConfig()V
 
-    .line 81
+    .line 78
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -2354,7 +2356,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 83
+    .line 80
     :cond_1
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 

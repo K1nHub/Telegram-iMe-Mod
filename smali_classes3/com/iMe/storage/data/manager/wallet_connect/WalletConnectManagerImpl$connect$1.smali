@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 116
+    .line 118
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connect$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,7 +63,7 @@
 .method public final invoke()V
     .locals 14
 
-    .line 117
+    .line 119
     new-instance v10, Lcom/trustwallet/walletconnect/models/WCPeerMeta;
 
     const-string v1, "iMe"
@@ -82,12 +82,12 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/trustwallet/walletconnect/models/WCPeerMeta;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 118
+    .line 120
     iget-object v11, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connect$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     new-instance v12, Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
-    .line 119
+    .line 121
     sget-object v13, Lcom/trustwallet/walletconnect/models/session/WCSession;->Companion:Lcom/trustwallet/walletconnect/models/session/WCSession$Companion;
 
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connect$1;->$uri:Ljava/lang/String;
@@ -98,7 +98,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 120
+    .line 122
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connect$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getCryptoPreferenceHelper$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
@@ -131,15 +131,15 @@
 
     move-object v5, v10
 
-    .line 118
+    .line 120
     invoke-direct/range {v0 .. v9}, Lcom/trustwallet/walletconnect/WCSessionStoreItem;-><init>(Lcom/trustwallet/walletconnect/models/session/WCSession;ILjava/lang/String;Ljava/lang/String;Lcom/trustwallet/walletconnect/models/WCPeerMeta;ZLjava/util/Date;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 124
+    .line 126
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connect$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connect$1;->$uri:Ljava/lang/String;
 
-    .line 125
+    .line 127
     new-instance v2, Lcom/trustwallet/walletconnect/WCClient;
 
     invoke-static {v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getGsonBuilder(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/google/gson/GsonBuilder;
@@ -152,10 +152,10 @@
 
     invoke-direct {v2, v3, v4}, Lcom/trustwallet/walletconnect/WCClient;-><init>(Lcom/google/gson/GsonBuilder;Lokhttp3/OkHttpClient;)V
 
-    .line 126
+    .line 128
     invoke-static {v0, v2, v12}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$setupClientListeners(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCClient;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
 
-    .line 127
+    .line 129
     invoke-static {v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getWcClients$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Ljava/util/Map;
 
     move-result-object v0
@@ -170,7 +170,7 @@
 
     invoke-interface {v0, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 128
+    .line 130
     invoke-virtual {v13, v1}, Lcom/trustwallet/walletconnect/models/session/WCSession$Companion;->from(Ljava/lang/String;)Lcom/trustwallet/walletconnect/models/session/WCSession;
 
     move-result-object v1
@@ -191,12 +191,12 @@
 
     invoke-static/range {v0 .. v6}, Lcom/trustwallet/walletconnect/WCClient;->connect$default(Lcom/trustwallet/walletconnect/WCClient;Lcom/trustwallet/walletconnect/models/session/WCSession;Lcom/trustwallet/walletconnect/models/WCPeerMeta;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
 
-    .line 118
+    .line 120
     invoke-static {v11, v12}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$setPendingSessionStoreItem$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
 
     return-void
 
-    .line 128
+    .line 130
     :cond_0
     new-instance v0, Lcom/trustwallet/walletconnect/exceptions/InvalidSessionException;
 
@@ -204,7 +204,7 @@
 
     throw v0
 
-    .line 119
+    .line 121
     :cond_1
     new-instance v0, Lcom/trustwallet/walletconnect/exceptions/InvalidSessionException;
 

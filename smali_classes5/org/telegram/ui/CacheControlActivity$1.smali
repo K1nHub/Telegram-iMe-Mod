@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/CacheControlActivity$1;
-.super Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;
+.super Lorg/telegram/ui/CacheControlActivity;
 .source "CacheControlActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/CacheControlActivity;->createView(Landroid/content/Context;)Landroid/view/View;
+    value = Lorg/telegram/ui/CacheControlActivity;->newInstanceAsBackend(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/CacheControlActivity;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,117 +15,82 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/CacheControlActivity;
+.field final synthetic val$frontendFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/CacheControlActivity;)V
+.method constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 1187
-    iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$1;->this$0:Lorg/telegram/ui/CacheControlActivity;
+    .line 141
+    iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$1;->val$frontendFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
+    invoke-direct {p0}, Lorg/telegram/ui/CacheControlActivity;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onItemClick(I)V
+.method public getContext()Landroid/content/Context;
     .locals 1
 
-    const/4 v0, -0x1
+    .line 149
+    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$1;->val$frontendFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    if-ne p1, v0, :cond_3
+    if-eqz v0, :cond_0
 
-    .line 1191
-    iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$1;->this$0:Lorg/telegram/ui/CacheControlActivity;
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
-    invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$100(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    move-result-object v0
 
-    move-result-object p1
+    goto :goto_0
 
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->isActionModeShowed()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    .line 1192
-    iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$1;->this$0:Lorg/telegram/ui/CacheControlActivity;
-
-    iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity;->cacheModel:Lorg/telegram/ui/Storage/CacheModel;
-
-    if-eqz p1, :cond_0
-
-    .line 1193
-    invoke-virtual {p1}, Lorg/telegram/ui/Storage/CacheModel;->clearSelection()V
-
-    .line 1195
     :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$1;->this$0:Lorg/telegram/ui/CacheControlActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$200(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/CachedMediaLayout;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_1
-
-    .line 1196
-    iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$1;->this$0:Lorg/telegram/ui/CacheControlActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$200(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/CachedMediaLayout;
-
-    move-result-object p1
-
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/CachedMediaLayout;->showActionMode(Z)V
+    :goto_0
+    return-object v0
+.end method
 
-    .line 1197
-    iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$1;->this$0:Lorg/telegram/ui/CacheControlActivity;
+.method public getParentActivity()Landroid/app/Activity;
+    .locals 1
 
-    invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$200(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/CachedMediaLayout;
+    .line 144
+    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$1;->val$frontendFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+.end method
+
+.method public showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
+    .locals 1
+
+    .line 154
+    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$1;->val$frontendFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lorg/telegram/ui/CachedMediaLayout;->updateVisibleRows()V
-
-    :cond_1
-    return-void
-
-    .line 1201
-    :cond_2
-    iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$1;->this$0:Lorg/telegram/ui/CacheControlActivity;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
-
     goto :goto_0
 
-    :cond_3
-    const/4 v0, 0x1
+    :cond_0
+    const/4 p1, 0x0
 
-    if-ne p1, v0, :cond_4
-
-    .line 1203
-    iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$1;->this$0:Lorg/telegram/ui/CacheControlActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$300(Lorg/telegram/ui/CacheControlActivity;)V
-
-    goto :goto_0
-
-    :cond_4
-    const/4 v0, 0x3
-
-    if-ne p1, v0, :cond_5
-
-    .line 1205
-    iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$1;->this$0:Lorg/telegram/ui/CacheControlActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$400(Lorg/telegram/ui/CacheControlActivity;)V
-
-    :cond_5
     :goto_0
-    return-void
+    return-object p1
 .end method

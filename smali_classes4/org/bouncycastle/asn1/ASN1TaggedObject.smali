@@ -6,13 +6,11 @@
 
 
 # instance fields
-.field empty:Z
+.field final explicit:Z
 
-.field explicit:Z
+.field final obj:Lorg/bouncycastle/asn1/ASN1Encodable;
 
-.field obj:Lorg/bouncycastle/asn1/ASN1Encodable;
-
-.field tagNo:I
+.field final tagNo:I
 
 
 # direct methods
@@ -21,39 +19,26 @@
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    const/4 v0, 0x0
+    const-string v0, "\'obj\' cannot be null"
 
-    iput-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->empty:Z
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->obj:Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    iput-boolean p1, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
+    invoke-static {p3, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     iput p2, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->tagNo:I
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    :goto_0
-    iput-object p3, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->obj:Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    goto :goto_1
-
-    :cond_0
-    invoke-interface {p3}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
-
-    move-result-object p1
-
-    instance-of p1, p1, Lorg/bouncycastle/asn1/ASN1Set;
+    const/4 p1, 0x0
 
     goto :goto_0
 
-    :goto_1
+    :cond_0
+    const/4 p1, 0x1
+
+    :goto_0
+    iput-boolean p1, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
+
+    iput-object p3, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->obj:Lorg/bouncycastle/asn1/ASN1Encodable;
+
     return-void
 .end method
 
@@ -171,13 +156,7 @@
 
     iget v2, p1, Lorg/bouncycastle/asn1/ASN1TaggedObject;->tagNo:I
 
-    if-ne v0, v2, :cond_4
-
-    iget-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->empty:Z
-
-    iget-boolean v2, p1, Lorg/bouncycastle/asn1/ASN1TaggedObject;->empty:Z
-
-    if-ne v0, v2, :cond_4
+    if-ne v0, v2, :cond_3
 
     iget-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
 
@@ -190,15 +169,6 @@
     :cond_1
     iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->obj:Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    if-nez v0, :cond_2
-
-    iget-object p1, p1, Lorg/bouncycastle/asn1/ASN1TaggedObject;->obj:Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    if-eqz p1, :cond_3
-
-    return v1
-
-    :cond_2
     invoke-interface {v0}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object v0
@@ -209,20 +179,18 @@
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Ljava/lang/Object;)Z
+    if-eq v0, p1, :cond_2
+
+    invoke-virtual {v0, p1}, Lorg/bouncycastle/asn1/ASN1Primitive;->asn1Equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
 
     move-result p1
 
-    if-nez p1, :cond_3
+    if-eqz p1, :cond_3
 
-    return v1
+    :cond_2
+    const/4 v1, 0x1
 
     :cond_3
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_4
     :goto_0
     return v1
 .end method
@@ -242,16 +210,9 @@
 
     iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->obj:Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    if-eqz v0, :cond_0
-
     invoke-interface {v0}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
 
     return-object v0
 .end method
@@ -269,17 +230,32 @@
 
     iget v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->tagNo:I
 
-    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->obj:Lorg/bouncycastle/asn1/ASN1Encodable;
+    iget-boolean v1, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    const/16 v1, 0xf
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v1, 0xf0
+
+    :goto_0
+    xor-int/2addr v0, v1
+
+    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->obj:Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    invoke-interface {v1}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Object;->hashCode()I
 
     move-result v1
 
     xor-int/2addr v0, v1
 
-    :cond_0
     return v0
 .end method
 

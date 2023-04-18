@@ -95,6 +95,17 @@
     <string name="archive_empty_subtitle">Здесь хранятся чаты, отправленные вами в архив</string>
     <string name="archive_empty_title">Архив пуст</string>
     <string name="attach_menu_select_all">Выбрать все</string>
+    <string name="auth_dialog_description">"Получите бесплатный доступ ко всем функциям, предоставляемых Платформой iMe! Полный функционал доступен пользователям, которые соглашаются с Пользовательским Соглашением. 
+
+Продолжая, вы соглашаетесь
+с *Пользовательским Соглашением*"</string>
+    <string name="auth_dialog_title">Экосистема iMe</string>
+    <string name="auth_login_terms_of_service">"Продолжая, вы соглашаетесь с
+*Пользовательским Соглашением*"</string>
+    <string name="auth_signup_terms_of_service_postfix">"
+Вы соглашаетесь с *Пользовательским Соглашением iMe*
+
+Мы оставляем за собой право обновлять данное Пользовательское Соглашение в будущем."</string>
     <string name="auto_open_forwarding_options">Автооткрытие опций пересылки</string>
     <string name="auto_open_forwarding_options_alert_message">Включить автооткрытие опций пересылки?</string>
     <string name="auto_open_forwarding_options_hint">"Вы всегда можете изменить это в 
@@ -644,6 +655,17 @@
     <string name="gif_sticker_preview_choose_alert_message">Включить предпросмотр стикеров и GIF перед отправкой в чате? Вы всегда сможете настроить данную опцию в настройках интерфейса.</string>
     <string name="google_assistant_verification_channel_name">Проверка с помощью Ассистента</string>
     <string name="google_assistant_verification_notification_title">Google Ассистент отправляет сообщение…</string>
+    <string name="hidden_chats_empty">Нет скрытых чатов</string>
+    <string name="hidden_chats_empty_title">У вас нет скрытых чатов</string>
+    <string name="hidden_chats_hide_chats">Скрыть</string>
+    <string name="hidden_chats_pinned">Скрытые чаты закреплены</string>
+    <string name="hidden_chats_release_for_hidden_chats">Отпустите для вывода скрытых чатов</string>
+    <string name="hidden_chats_swipe_for_hidden_chats">Тяните для вывода скрытых чатов</string>
+    <string name="hidden_chats_title">Скрытые чаты</string>
+    <string name="hidden_chats_undo_chat_hidden">Чат скрыт.</string>
+    <string name="hidden_chats_undo_chats_hidden">Чаты скрыты.</string>
+    <string name="hidden_chats_unhide_chats">Вернуть</string>
+    <string name="hidden_chats_unpinned">Скрытые чаты откреплены</string>
     <string name="icon_content_description">Значок диалогового окна</string>
     <string name="image_recognition_bottom_sheet_title">Описание фото</string>
     <string name="in_app_update_snackbar_action">ПЕРЕЗАПУСТИТЬ</string>
@@ -1253,7 +1275,7 @@
     <string name="stickers_size_title">Размер стикеров</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Учитывать архив</string>
     <string name="swipe_to_next_unread_dialog_hint">Включите это, если вы хотите читать ваши чаты, не возвращаясь в список чатов. Дойдя до последнего сообщения в чате, потяните экран вверх, чтобы перейти к следующему непрочитанному чату.</string>
-    <string name="swipe_to_next_unread_dialog_types">Типы диалогов</string>
+    <string name="swipe_to_next_unread_dialog_types">Типы чатов</string>
     <string name="text_recognition_bottom_sheet_title">Фото → Текст</string>
     <string name="topic">Топик</string>
     <string name="topic_add_archived_chats_hint">Выберите чаты из архивного списка, которые вы хотите добавить в этот топик.</string>
@@ -1413,7 +1435,7 @@
     <string name="wallet_amount_send_fee_value">%1$s %2$s (%3$s %4$s)</string>
     <string name="wallet_amount_send_invalid_chat_id">Выберите корректный чат для донатов</string>
     <string name="wallet_amount_send_invalid_eth_address">Введите правильный адрес</string>
-    <string name="wallet_amount_send_message_checkbox_title">Отправить получателю в чат сообщение о совершение перевода</string>
+    <string name="wallet_amount_send_message_checkbox_title">Отправить получателю в чат сообщение о совершении перевода</string>
     <string name="wallet_amount_send_recipient_crypto_bsc_unknown">Адрес BNB Chain</string>
     <string name="wallet_amount_send_recipient_crypto_unknown">Адрес Ethereum</string>
     <string name="wallet_amount_send_recipient_tg_id">ID %s</string>

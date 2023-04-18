@@ -187,7 +187,7 @@
 
     move-result p1
 
-    invoke-static {p0, p1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->take(Ljava/lang/Iterable;I)Ljava/util/List;
+    invoke-static {p0, p1}, Lkotlin/collections/CollectionsKt;->take(Ljava/lang/Iterable;I)Ljava/util/List;
 
     move-result-object p0
 
@@ -1830,7 +1830,7 @@
     return-object p0
 .end method
 
-.method public static final take(Ljava/lang/Iterable;I)Ljava/util/List;
+.method public static take(Ljava/lang/Iterable;I)Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {

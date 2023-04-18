@@ -68,12 +68,14 @@ public final class Component<T> {
         return new Builder<>(cls, new Class[0]);
     }
 
+    @SafeVarargs
     public static <T> Builder<T> builder(Class<T> cls, Class<? super T>... clsArr) {
         return new Builder<>(cls, clsArr);
     }
 
+    @SafeVarargs
     /* renamed from: of */
-    public static <T> Component<T> m740of(final T t, Class<T> cls, Class<? super T>... clsArr) {
+    public static <T> Component<T> m726of(final T t, Class<T> cls, Class<? super T>... clsArr) {
         return builder(cls, clsArr).factory(new ComponentFactory() { // from class: com.google.firebase.components.Component$$ExternalSyntheticLambda1
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
@@ -108,6 +110,7 @@ public final class Component<T> {
         private Set<Class<?>> publishedEvents;
         private int type;
 
+        @SafeVarargs
         private Builder(Class<T> cls, Class<? super T>... clsArr) {
             HashSet hashSet = new HashSet();
             this.providedInterfaces = hashSet;

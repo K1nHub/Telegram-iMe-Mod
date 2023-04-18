@@ -125,7 +125,7 @@
 
     check-cast p0, Lorg/bouncycastle/asn1/LimitedInputStream;
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LimitedInputStream;->getRemaining()I
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LimitedInputStream;->getLimit()I
 
     move-result p0
 

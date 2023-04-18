@@ -11,14 +11,14 @@ import com.google.android.gms.common.server.response.FastJsonResponse;
 /* loaded from: classes.dex */
 public final class zaa extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zaa> CREATOR = new zab();
-    @SafeParcelable.VersionField(m786id = 1)
+    @SafeParcelable.VersionField(m772id = 1)
     final int zaa;
-    @SafeParcelable.Field(getter = "getStringToIntConverter", m789id = 2)
+    @SafeParcelable.Field(getter = "getStringToIntConverter", m775id = 2)
     private final StringToIntConverter zab;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zaa(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) StringToIntConverter stringToIntConverter) {
+    public zaa(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) StringToIntConverter stringToIntConverter) {
         this.zaa = i;
         this.zab = stringToIntConverter;
     }

@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 361
+    .line 358
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$TouchHelperCallback;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;-><init>()V
@@ -48,10 +48,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 393
+    .line 390
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->clearView(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
-    .line 394
+    .line 391
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/4 p2, 0x0
@@ -72,7 +72,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 368
+    .line 365
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -90,7 +90,7 @@
     :cond_0
     move p1, v0
 
-    .line 367
+    .line 364
     :goto_0
     invoke-static {p1, v0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
 
@@ -122,7 +122,7 @@
 
     invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 373
+    .line 370
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -137,7 +137,7 @@
 
     return p1
 
-    .line 376
+    .line 373
     :cond_0
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$TouchHelperCallback;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
@@ -165,7 +165,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 382
+    .line 379
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$TouchHelperCallback;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getListView(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -178,7 +178,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 383
+    .line 380
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     goto :goto_0
@@ -196,7 +196,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 385
+    .line 382
     :cond_2
     :goto_1
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->onSelectedChanged(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V

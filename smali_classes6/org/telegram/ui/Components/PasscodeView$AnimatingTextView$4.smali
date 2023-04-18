@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)V
     .locals 0
 
-    .line 483
+    .line 457
     iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$4;->this$0:Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 486
+    .line 460
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$4;->this$0:Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$400(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Landroid/animation/AnimatorSet;
@@ -56,7 +56,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 487
+    .line 461
     iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$4;->this$0:Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;
 
     const/4 v0, 0x0

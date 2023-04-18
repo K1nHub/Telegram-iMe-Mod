@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;Ljava/lang/Integer;)V
     .locals 0
 
-    .line 614
+    .line 617
     iput-object p3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$4;->val$bubbleX:Ljava/lang/Integer;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -35,15 +35,15 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 617
+    .line 620
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
-    .line 618
+    .line 621
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$4;->val$bubbleX:Ljava/lang/Integer;
 
     if-eqz p1, :cond_0
 
-    .line 619
+    .line 622
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1

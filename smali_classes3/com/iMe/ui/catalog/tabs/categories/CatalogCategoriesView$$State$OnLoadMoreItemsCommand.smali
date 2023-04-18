@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 416
+    .line 452
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onLoadMoreItems"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 418
+    .line 454
     iput-object p2, p0, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreItemsCommand;->items:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;)V
     .locals 1
 
-    .line 423
+    .line 459
     iget-object v0, p0, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreItemsCommand;->items:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreItems(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 412
+    .line 448
     check-cast p1, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$OnLoadMoreItemsCommand;->apply(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;)V

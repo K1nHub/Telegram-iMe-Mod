@@ -17,18 +17,18 @@ import org.json.JSONObject;
 /* loaded from: classes.dex */
 public final class WebImage extends AbstractSafeParcelable {
     public static final Parcelable.Creator<WebImage> CREATOR = new zah();
-    @SafeParcelable.VersionField(m786id = 1)
+    @SafeParcelable.VersionField(m772id = 1)
     final int zaa;
-    @SafeParcelable.Field(getter = "getUrl", m789id = 2)
+    @SafeParcelable.Field(getter = "getUrl", m775id = 2)
     private final Uri zab;
-    @SafeParcelable.Field(getter = "getWidth", m789id = 3)
+    @SafeParcelable.Field(getter = "getWidth", m775id = 3)
     private final int zac;
-    @SafeParcelable.Field(getter = "getHeight", m789id = 4)
+    @SafeParcelable.Field(getter = "getHeight", m775id = 4)
     private final int zad;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public WebImage(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) Uri uri, @SafeParcelable.Param(m788id = 3) int i2, @SafeParcelable.Param(m788id = 4) int i3) {
+    public WebImage(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) Uri uri, @SafeParcelable.Param(m774id = 3) int i2, @SafeParcelable.Param(m774id = 4) int i3) {
         this.zaa = i;
         this.zab = uri;
         this.zac = i2;

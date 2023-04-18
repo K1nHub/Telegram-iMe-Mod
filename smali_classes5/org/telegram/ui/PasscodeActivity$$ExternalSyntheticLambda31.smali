@@ -2,42 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/NumberPicker$Formatter;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda31;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/PasscodeActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda31;
-
-    invoke-direct {v0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda31;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda31;->INSTANCE:Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda31;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PasscodeActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda31;->f$0:Lorg/telegram/ui/PasscodeActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final format(I)Ljava/lang/String;
-    .locals 0
+.method public final onItemClick(Landroid/view/View;I)V
+    .locals 1
 
-    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$AiwrRXTxmMJawrMAell0tmo4Uo8(I)Ljava/lang/String;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda31;->f$0:Lorg/telegram/ui/PasscodeActivity;
 
-    move-result-object p1
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$BVXjnoVxkywLzgFBW3z3HBRNWms(Lorg/telegram/ui/PasscodeActivity;Landroid/view/View;I)V
 
-    return-object p1
+    return-void
 .end method

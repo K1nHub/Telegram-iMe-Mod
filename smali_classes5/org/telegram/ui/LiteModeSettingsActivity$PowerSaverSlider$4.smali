@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;Lorg/telegram/ui/LiteModeSettingsActivity;)V
     .locals 0
 
-    .line 756
+    .line 761
     iput-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$4;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/IntSeekBarAccessibilityDelegate;-><init>()V
@@ -51,7 +51,7 @@
 .method protected getProgress()I
     .locals 1
 
-    .line 759
+    .line 764
     invoke-static {}, Lorg/telegram/messenger/LiteMode;->getPowerSaverLevel()I
 
     move-result v0
@@ -62,12 +62,12 @@
 .method public onInitializeAccessibilityNodeInfoInternal(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 0
 
-    .line 780
+    .line 785
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;->onInitializeAccessibilityNodeInfoInternal(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const/4 p1, 0x1
 
-    .line 782
+    .line 787
     invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
     return-void
@@ -76,10 +76,10 @@
 .method public onPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 4
 
-    .line 787
+    .line 792
     invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 789
+    .line 794
     new-instance p1, Ljava/lang/StringBuilder;
 
     sget v0, Lorg/telegram/messenger/R$string;->LiteBatteryTitle:I
@@ -94,14 +94,14 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 790
+    .line 795
     invoke-static {}, Lorg/telegram/messenger/LiteMode;->getPowerSaverLevel()I
 
     move-result v0
 
     if-gtz v0, :cond_0
 
-    .line 792
+    .line 797
     sget v0, Lorg/telegram/messenger/R$string;->LiteBatteryAlwaysDisabled:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -117,7 +117,7 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 794
+    .line 799
     sget v0, Lorg/telegram/messenger/R$string;->LiteBatteryAlwaysEnabled:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -128,7 +128,7 @@
 
     goto :goto_0
 
-    .line 796
+    .line 801
     :cond_1
     sget v1, Lorg/telegram/messenger/R$string;->AccDescrLiteBatteryWhenBelow:I
 
@@ -156,11 +156,11 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 799
+    .line 804
     :goto_0
     invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityEvent;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 800
+    .line 805
     iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$4;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
@@ -171,7 +171,7 @@
 .method protected setProgress(I)V
     .locals 2
 
-    .line 764
+    .line 769
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$4;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     iget-object v0, v0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
@@ -188,7 +188,7 @@
 
     invoke-interface {v0, v1, p1}, Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate;->onSeekBarDrag(ZF)V
 
-    .line 765
+    .line 770
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$4;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     iget-object v0, v0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;

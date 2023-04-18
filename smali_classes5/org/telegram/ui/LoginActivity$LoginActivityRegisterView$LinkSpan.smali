@@ -22,7 +22,7 @@
 .method public constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;)V
     .locals 0
 
-    .line 7530
+    .line 7623
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$LinkSpan;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
@@ -35,12 +35,12 @@
 .method public onClick(Landroid/view/View;)V
     .locals 1
 
-    .line 7539
+    .line 7632
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$LinkSpan;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;->access$16000(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;Z)V
+    invoke-static {p1, v0}, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;->access$16100(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;Z)V
 
     return-void
 .end method
@@ -48,12 +48,12 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 7533
+    .line 7626
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
     const/4 v0, 0x0
 
-    .line 7534
+    .line 7627
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
     return-void

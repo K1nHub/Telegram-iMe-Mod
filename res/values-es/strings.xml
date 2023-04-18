@@ -5636,7 +5636,7 @@ Tu saldo se actualizará cuando se haya confirmado la transacción en la cadena 
     <string name="stickers_size_title">Tamaño de pegatinas</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Considere los chats archivados</string>
     <string name="swipe_to_next_unread_dialog_hint">Actívelo si desea desplazarse por sus chats sin volver a su lista de chat. Cuando llegue al final de un chat, tire hacia arriba para ir al siguiente chat sin leer.</string>
-    <string name="swipe_to_next_unread_dialog_types">Topes de diálogo</string>
+    <string name="swipe_to_next_unread_dialog_types">Tipos de chat</string>
     <string name="text_recognition_bottom_sheet_title">Imagen → Texto</string>
     <string name="topic">Tema</string>
     <string name="topic_add_archived_chats_hint">Seleccione la lista de chats archivados que aparecerá en este tema.</string>

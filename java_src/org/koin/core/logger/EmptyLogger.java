@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class EmptyLogger extends Logger {
     @Override // org.koin.core.logger.Logger
-    public void log(Level level, String msg) {
+    public void display(Level level, String msg) {
         Intrinsics.checkNotNullParameter(level, "level");
         Intrinsics.checkNotNullParameter(msg, "msg");
     }

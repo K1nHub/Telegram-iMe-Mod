@@ -370,7 +370,7 @@
     .locals 1
 
     .line 123
-    invoke-static {}, Lcom/iMe/utils/helper/wallet/WalletHelper;->isWalletAuthorized()Z
+    invoke-static {}, Lcom/iMe/utils/helper/wallet/WalletHelper;->isAuthorized()Z
 
     move-result v0
 

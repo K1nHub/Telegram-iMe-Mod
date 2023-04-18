@@ -9,9 +9,9 @@ import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.FaceDetector;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.vision.face.FirebaseVisionFace;
-import com.google.firebase.p021ml.vision.face.FirebaseVisionFaceDetectorOptions;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.vision.face.FirebaseVisionFace;
+import com.google.firebase.p020ml.vision.face.FirebaseVisionFaceDetectorOptions;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -105,7 +105,7 @@ public final class zzqq implements zzno<List<FirebaseVisionFace>, zzqp>, zznx {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public final synchronized java.util.List<com.google.firebase.p021ml.vision.face.FirebaseVisionFace> zza(com.google.android.gms.internal.firebase_ml.zzqp r22) throws com.google.firebase.p021ml.common.FirebaseMLException {
+    public final synchronized java.util.List<com.google.firebase.p020ml.vision.face.FirebaseVisionFace> zza(com.google.android.gms.internal.firebase_ml.zzqp r22) throws com.google.firebase.p020ml.common.FirebaseMLException {
         /*
             Method dump skipped, instructions count: 342
             To view this dump add '--comments-level debug' option

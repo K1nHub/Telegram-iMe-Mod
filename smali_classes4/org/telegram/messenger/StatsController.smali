@@ -48,6 +48,8 @@
 # instance fields
 .field private buffer:[B
 
+.field byteArrayOutputStream:Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;
+
 .field private callsTotalTime:[I
 
 .field private lastInternalStatsSaveTime:J
@@ -71,7 +73,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 44
+    .line 46
     new-instance v0, Lorg/telegram/messenger/DispatchQueue;
 
     const-string v1, "statsSaveQueue"
@@ -80,7 +82,7 @@
 
     sput-object v0, Lorg/telegram/messenger/StatsController;->statsSaveQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    .line 46
+    .line 48
     new-instance v0, Lorg/telegram/messenger/StatsController$1;
 
     invoke-direct {v0}, Lorg/telegram/messenger/StatsController$1;-><init>()V
@@ -91,7 +93,7 @@
 
     new-array v0, v0, [Lorg/telegram/messenger/StatsController;
 
-    .line 116
+    .line 121
     sput-object v0, Lorg/telegram/messenger/StatsController;->Instance:[Lorg/telegram/messenger/StatsController;
 
     return-void
@@ -100,7 +102,7 @@
 .method private constructor <init>(I)V
     .locals 14
 
-    .line 132
+    .line 137
     const-class v0, I
 
     const-class v1, J
@@ -111,14 +113,14 @@
 
     new-array v3, v2, [B
 
-    .line 34
+    .line 36
     iput-object v3, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
 
     const/4 v3, 0x2
 
     new-array v4, v3, [I
 
-    .line 37
+    .line 39
     fill-array-data v4, :array_0
 
     invoke-static {v1, v4}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
@@ -131,7 +133,7 @@
 
     new-array v4, v3, [I
 
-    .line 38
+    .line 40
     fill-array-data v4, :array_1
 
     invoke-static {v1, v4}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
@@ -144,7 +146,7 @@
 
     new-array v1, v3, [I
 
-    .line 39
+    .line 41
     fill-array-data v1, :array_2
 
     invoke-static {v0, v1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
@@ -157,7 +159,7 @@
 
     new-array v1, v3, [I
 
-    .line 40
+    .line 42
     fill-array-data v1, :array_3
 
     invoke-static {v0, v1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
@@ -172,29 +174,36 @@
 
     new-array v1, v0, [J
 
-    .line 41
+    .line 43
     iput-object v1, p0, Lorg/telegram/messenger/StatsController;->resetStatsDate:[J
 
     new-array v1, v0, [I
 
-    .line 42
+    .line 44
     iput-object v1, p0, Lorg/telegram/messenger/StatsController;->callsTotalTime:[I
 
-    .line 81
+    .line 83
+    new-instance v1, Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;
+
+    invoke-direct {v1}, Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;-><init>()V
+
+    iput-object v1, p0, Lorg/telegram/messenger/StatsController;->byteArrayOutputStream:Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;
+
+    .line 84
     new-instance v1, Lorg/telegram/messenger/StatsController$2;
 
     invoke-direct {v1, p0}, Lorg/telegram/messenger/StatsController$2;-><init>(Lorg/telegram/messenger/StatsController;)V
 
     iput-object v1, p0, Lorg/telegram/messenger/StatsController;->saveRunnable:Ljava/lang/Runnable;
 
-    .line 133
+    .line 138
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
 
     move-result-object v1
 
     if-eqz p1, :cond_0
 
-    .line 135
+    .line 140
     new-instance v1, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
@@ -221,7 +230,7 @@
 
     invoke-direct {v1, v3, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 136
+    .line 141
     invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
 
     :cond_0
@@ -231,7 +240,7 @@
 
     const/4 v6, 0x0
 
-    .line 141
+    .line 146
     :try_start_0
     new-instance v7, Ljava/io/RandomAccessFile;
 
@@ -247,7 +256,7 @@
 
     iput-object v7, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
 
-    .line 142
+    .line 147
     invoke-virtual {v7}, Ljava/io/RandomAccessFile;->length()J
 
     move-result-wide v7
@@ -272,14 +281,14 @@
     :goto_1
     if-ge v10, v8, :cond_1
 
-    .line 146
+    .line 151
     iget-object v11, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
 
     iget-object v12, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
 
     invoke-virtual {v11, v12, v6, v2}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 147
+    .line 152
     iget-object v11, p0, Lorg/telegram/messenger/StatsController;->sentBytes:[[J
 
     aget-object v11, v11, v1
@@ -292,14 +301,14 @@
 
     aput-wide v12, v11, v10
 
-    .line 148
+    .line 153
     iget-object v11, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
 
     iget-object v12, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
 
     invoke-virtual {v11, v12, v6, v2}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 149
+    .line 154
     iget-object v11, p0, Lorg/telegram/messenger/StatsController;->receivedBytes:[[J
 
     aget-object v11, v11, v1
@@ -312,14 +321,14 @@
 
     aput-wide v12, v11, v10
 
-    .line 150
+    .line 155
     iget-object v11, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
 
     iget-object v12, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
 
     invoke-virtual {v11, v12, v6, v9}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 151
+    .line 156
     iget-object v11, p0, Lorg/telegram/messenger/StatsController;->sentItems:[[I
 
     aget-object v11, v11, v1
@@ -332,14 +341,14 @@
 
     aput v12, v11, v10
 
-    .line 152
+    .line 157
     iget-object v11, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
 
     iget-object v12, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
 
     invoke-virtual {v11, v12, v6, v9}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 153
+    .line 158
     iget-object v11, p0, Lorg/telegram/messenger/StatsController;->receivedItems:[[I
 
     aget-object v11, v11, v1
@@ -356,7 +365,7 @@
 
     goto :goto_1
 
-    .line 155
+    .line 160
     :cond_1
     iget-object v8, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
 
@@ -364,7 +373,7 @@
 
     invoke-virtual {v8, v10, v6, v9}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 156
+    .line 161
     iget-object v8, p0, Lorg/telegram/messenger/StatsController;->callsTotalTime:[I
 
     iget-object v9, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
@@ -375,14 +384,14 @@
 
     aput v9, v8, v1
 
-    .line 157
+    .line 162
     iget-object v8, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
 
     iget-object v9, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
 
     invoke-virtual {v8, v9, v6, v2}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 158
+    .line 163
     iget-object v8, p0, Lorg/telegram/messenger/StatsController;->resetStatsDate:[J
 
     iget-object v9, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
@@ -393,7 +402,7 @@
 
     aput-wide v9, v8, v1
 
-    .line 159
+    .line 164
     iget-object v8, p0, Lorg/telegram/messenger/StatsController;->resetStatsDate:[J
 
     aget-wide v9, v8, v1
@@ -402,7 +411,7 @@
 
     if-nez v9, :cond_2
 
-    .line 161
+    .line 166
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v9
@@ -425,14 +434,14 @@
     :goto_3
     if-ge v1, v0, :cond_4
 
-    .line 166
+    .line 171
     iget-object v10, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
 
     iget-object v11, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
 
     invoke-virtual {v10, v11, v6, v2}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 167
+    .line 172
     iget-object v10, p0, Lorg/telegram/messenger/StatsController;->sentBytes:[[J
 
     aget-object v10, v10, v1
@@ -445,14 +454,14 @@
 
     aput-wide v11, v10, v8
 
-    .line 168
+    .line 173
     iget-object v10, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
 
     iget-object v11, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
 
     invoke-virtual {v10, v11, v6, v2}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 169
+    .line 174
     iget-object v10, p0, Lorg/telegram/messenger/StatsController;->receivedBytes:[[J
 
     aget-object v10, v10, v1
@@ -465,14 +474,14 @@
 
     aput-wide v11, v10, v8
 
-    .line 170
+    .line 175
     iget-object v10, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
 
     iget-object v11, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
 
     invoke-virtual {v10, v11, v6, v9}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 171
+    .line 176
     iget-object v10, p0, Lorg/telegram/messenger/StatsController;->sentItems:[[I
 
     aget-object v10, v10, v1
@@ -485,14 +494,14 @@
 
     aput v11, v10, v8
 
-    .line 172
+    .line 177
     iget-object v10, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
 
     iget-object v11, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
 
     invoke-virtual {v10, v11, v6, v9}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 173
+    .line 178
     iget-object v10, p0, Lorg/telegram/messenger/StatsController;->receivedItems:[[I
 
     aget-object v10, v10, v1
@@ -517,7 +526,7 @@
     :cond_5
     if-eqz v7, :cond_6
 
-    .line 177
+    .line 182
     invoke-direct {p0}, Lorg/telegram/messenger/StatsController;->saveStats()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -538,7 +547,7 @@
 
     if-nez p1, :cond_8
 
-    .line 187
+    .line 192
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {p1, v1, v6}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
@@ -547,7 +556,7 @@
 
     goto :goto_5
 
-    .line 189
+    .line 194
     :cond_8
     sget-object v7, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -575,7 +584,7 @@
     :goto_6
     if-ge v1, v0, :cond_b
 
-    .line 193
+    .line 198
     iget-object v8, p0, Lorg/telegram/messenger/StatsController;->callsTotalTime:[I
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -598,7 +607,7 @@
 
     aput v9, v8, v1
 
-    .line 194
+    .line 199
     iget-object v8, p0, Lorg/telegram/messenger/StatsController;->resetStatsDate:[J
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -626,7 +635,7 @@
     :goto_7
     if-ge v8, v2, :cond_9
 
-    .line 196
+    .line 201
     iget-object v9, p0, Lorg/telegram/messenger/StatsController;->sentBytes:[[J
 
     aget-object v9, v9, v1
@@ -657,7 +666,7 @@
 
     aput-wide v12, v9, v8
 
-    .line 197
+    .line 202
     iget-object v9, p0, Lorg/telegram/messenger/StatsController;->receivedBytes:[[J
 
     aget-object v9, v9, v1
@@ -686,7 +695,7 @@
 
     aput-wide v12, v9, v8
 
-    .line 198
+    .line 203
     iget-object v9, p0, Lorg/telegram/messenger/StatsController;->sentItems:[[I
 
     aget-object v9, v9, v1
@@ -715,7 +724,7 @@
 
     aput v10, v9, v8
 
-    .line 199
+    .line 204
     iget-object v9, p0, Lorg/telegram/messenger/StatsController;->receivedItems:[[I
 
     aget-object v9, v9, v1
@@ -748,7 +757,7 @@
 
     goto/16 :goto_7
 
-    .line 201
+    .line 206
     :cond_9
     iget-object v8, p0, Lorg/telegram/messenger/StatsController;->resetStatsDate:[J
 
@@ -758,7 +767,7 @@
 
     if-nez v9, :cond_a
 
-    .line 203
+    .line 208
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v9
@@ -775,11 +784,13 @@
     :cond_b
     if-eqz v7, :cond_c
 
-    .line 207
+    .line 212
     invoke-direct {p0}, Lorg/telegram/messenger/StatsController;->saveStats()V
 
     :cond_c
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -809,7 +820,7 @@
 .method static synthetic access$000(Lorg/telegram/messenger/StatsController;)J
     .locals 2
 
-    .line 17
+    .line 19
     iget-wide v0, p0, Lorg/telegram/messenger/StatsController;->lastInternalStatsSaveTime:J
 
     return-wide v0
@@ -818,34 +829,25 @@
 .method static synthetic access$002(Lorg/telegram/messenger/StatsController;J)J
     .locals 0
 
-    .line 17
+    .line 19
     iput-wide p1, p0, Lorg/telegram/messenger/StatsController;->lastInternalStatsSaveTime:J
 
     return-wide p1
 .end method
 
-.method static synthetic access$100(Lorg/telegram/messenger/StatsController;)Ljava/io/RandomAccessFile;
+.method static synthetic access$100(Lorg/telegram/messenger/StatsController;)[[J
     .locals 0
 
-    .line 17
-    iget-object p0, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
-
-    return-object p0
-.end method
-
-.method static synthetic access$200(Lorg/telegram/messenger/StatsController;)[[J
-    .locals 0
-
-    .line 17
+    .line 19
     iget-object p0, p0, Lorg/telegram/messenger/StatsController;->sentBytes:[[J
 
     return-object p0
 .end method
 
-.method static synthetic access$300(Lorg/telegram/messenger/StatsController;J)[B
+.method static synthetic access$200(Lorg/telegram/messenger/StatsController;J)[B
     .locals 0
 
-    .line 17
+    .line 19
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/StatsController;->longToBytes(J)[B
 
     move-result-object p0
@@ -853,28 +855,28 @@
     return-object p0
 .end method
 
-.method static synthetic access$400(Lorg/telegram/messenger/StatsController;)[[J
+.method static synthetic access$300(Lorg/telegram/messenger/StatsController;)[[J
     .locals 0
 
-    .line 17
+    .line 19
     iget-object p0, p0, Lorg/telegram/messenger/StatsController;->receivedBytes:[[J
 
     return-object p0
 .end method
 
-.method static synthetic access$500(Lorg/telegram/messenger/StatsController;)[[I
+.method static synthetic access$400(Lorg/telegram/messenger/StatsController;)[[I
     .locals 0
 
-    .line 17
+    .line 19
     iget-object p0, p0, Lorg/telegram/messenger/StatsController;->sentItems:[[I
 
     return-object p0
 .end method
 
-.method static synthetic access$600(Lorg/telegram/messenger/StatsController;I)[B
+.method static synthetic access$500(Lorg/telegram/messenger/StatsController;I)[B
     .locals 0
 
-    .line 17
+    .line 19
     invoke-direct {p0, p1}, Lorg/telegram/messenger/StatsController;->intToBytes(I)[B
 
     move-result-object p0
@@ -882,29 +884,38 @@
     return-object p0
 .end method
 
-.method static synthetic access$700(Lorg/telegram/messenger/StatsController;)[[I
+.method static synthetic access$600(Lorg/telegram/messenger/StatsController;)[[I
     .locals 0
 
-    .line 17
+    .line 19
     iget-object p0, p0, Lorg/telegram/messenger/StatsController;->receivedItems:[[I
 
     return-object p0
 .end method
 
-.method static synthetic access$800(Lorg/telegram/messenger/StatsController;)[I
+.method static synthetic access$700(Lorg/telegram/messenger/StatsController;)[I
     .locals 0
 
-    .line 17
+    .line 19
     iget-object p0, p0, Lorg/telegram/messenger/StatsController;->callsTotalTime:[I
 
     return-object p0
 .end method
 
-.method static synthetic access$900(Lorg/telegram/messenger/StatsController;)[J
+.method static synthetic access$800(Lorg/telegram/messenger/StatsController;)[J
     .locals 0
 
-    .line 17
+    .line 19
     iget-object p0, p0, Lorg/telegram/messenger/StatsController;->resetStatsDate:[J
+
+    return-object p0
+.end method
+
+.method static synthetic access$900(Lorg/telegram/messenger/StatsController;)Ljava/io/RandomAccessFile;
+    .locals 0
+
+    .line 19
+    iget-object p0, p0, Lorg/telegram/messenger/StatsController;->statsFile:Ljava/io/RandomAccessFile;
 
     return-object p0
 .end method
@@ -914,7 +925,7 @@
 
     const/4 v0, 0x0
 
-    .line 62
+    .line 64
     aget-byte v0, p1, v0
 
     shl-int/lit8 v0, v0, 0x18
@@ -955,7 +966,7 @@
 
     const/4 v0, 0x0
 
-    .line 78
+    .line 80
     aget-byte v0, p1, v0
 
     int-to-long v0, v0
@@ -1068,19 +1079,19 @@
 .method public static getInstance(I)Lorg/telegram/messenger/StatsController;
     .locals 3
 
-    .line 119
+    .line 124
     sget-object v0, Lorg/telegram/messenger/StatsController;->Instance:[Lorg/telegram/messenger/StatsController;
 
     aget-object v0, v0, p0
 
     if-nez v0, :cond_1
 
-    .line 121
+    .line 126
     const-class v1, Lorg/telegram/messenger/StatsController;
 
     monitor-enter v1
 
-    .line 122
+    .line 127
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/StatsController;->Instance:[Lorg/telegram/messenger/StatsController;
 
@@ -1088,7 +1099,7 @@
 
     if-nez v0, :cond_0
 
-    .line 124
+    .line 129
     sget-object v0, Lorg/telegram/messenger/StatsController;->Instance:[Lorg/telegram/messenger/StatsController;
 
     new-instance v2, Lorg/telegram/messenger/StatsController;
@@ -1099,7 +1110,7 @@
 
     move-object v0, v2
 
-    .line 126
+    .line 131
     :cond_0
     monitor-exit v1
 
@@ -1122,7 +1133,7 @@
 .method private intToBytes(I)[B
     .locals 3
 
-    .line 54
+    .line 56
     iget-object v0, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
 
     ushr-int/lit8 v1, p1, 0x18
@@ -1139,7 +1150,7 @@
 
     const/4 v2, 0x1
 
-    .line 55
+    .line 57
     aput-byte v1, v0, v2
 
     ushr-int/lit8 v1, p1, 0x8
@@ -1148,14 +1159,14 @@
 
     const/4 v2, 0x2
 
-    .line 56
+    .line 58
     aput-byte v1, v0, v2
 
     int-to-byte p1, p1
 
     const/4 v1, 0x3
 
-    .line 57
+    .line 59
     aput-byte p1, v0, v1
 
     return-object v0
@@ -1164,7 +1175,7 @@
 .method private longToBytes(J)[B
     .locals 3
 
-    .line 66
+    .line 68
     iget-object v0, p0, Lorg/telegram/messenger/StatsController;->buffer:[B
 
     const/16 v1, 0x38
@@ -1189,7 +1200,7 @@
 
     const/4 v2, 0x1
 
-    .line 67
+    .line 69
     aput-byte v1, v0, v2
 
     const/16 v1, 0x28
@@ -1202,7 +1213,7 @@
 
     const/4 v2, 0x2
 
-    .line 68
+    .line 70
     aput-byte v1, v0, v2
 
     const/16 v1, 0x20
@@ -1215,7 +1226,7 @@
 
     const/4 v2, 0x3
 
-    .line 69
+    .line 71
     aput-byte v1, v0, v2
 
     const/16 v1, 0x18
@@ -1228,7 +1239,7 @@
 
     const/4 v2, 0x4
 
-    .line 70
+    .line 72
     aput-byte v1, v0, v2
 
     const/16 v1, 0x10
@@ -1241,7 +1252,7 @@
 
     const/4 v2, 0x5
 
-    .line 71
+    .line 73
     aput-byte v1, v0, v2
 
     const/16 v1, 0x8
@@ -1254,7 +1265,7 @@
 
     const/4 v2, 0x6
 
-    .line 72
+    .line 74
     aput-byte v1, v0, v2
 
     long-to-int p1, p1
@@ -1263,7 +1274,7 @@
 
     const/4 p2, 0x7
 
-    .line 73
+    .line 75
     aput-byte p1, v0, p2
 
     return-object v0
@@ -1272,12 +1283,12 @@
 .method private saveStats()V
     .locals 7
 
-    .line 280
+    .line 285
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 281
+    .line 286
     sget-object v2, Lorg/telegram/messenger/StatsController;->lastStatsSaveTime:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v2}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -1302,14 +1313,21 @@
 
     if-ltz v3, :cond_0
 
-    .line 282
+    .line 287
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
     invoke-virtual {v2, v0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
-    .line 283
+    .line 288
+    sget-object v0, Lorg/telegram/messenger/StatsController;->statsSaveQueue:Lorg/telegram/messenger/DispatchQueue;
+
+    iget-object v1, p0, Lorg/telegram/messenger/StatsController;->saveRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->cancelRunnable(Ljava/lang/Runnable;)V
+
+    .line 289
     sget-object v0, Lorg/telegram/messenger/StatsController;->statsSaveQueue:Lorg/telegram/messenger/DispatchQueue;
 
     iget-object v1, p0, Lorg/telegram/messenger/StatsController;->saveRunnable:Ljava/lang/Runnable;
@@ -1325,7 +1343,7 @@
 .method public getCallsTotalTime(I)I
     .locals 1
 
-    .line 260
+    .line 265
     iget-object v0, p0, Lorg/telegram/messenger/StatsController;->callsTotalTime:[I
 
     aget p1, v0, p1
@@ -1340,7 +1358,7 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 254
+    .line 259
     iget-object p2, p0, Lorg/telegram/messenger/StatsController;->receivedBytes:[[J
 
     aget-object v0, p2, p1
@@ -1391,7 +1409,7 @@
 
     return-wide v1
 
-    .line 256
+    .line 261
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/StatsController;->receivedBytes:[[J
 
@@ -1405,7 +1423,7 @@
 .method public getRecivedItemsCount(II)I
     .locals 1
 
-    .line 238
+    .line 243
     iget-object v0, p0, Lorg/telegram/messenger/StatsController;->receivedItems:[[I
 
     aget-object p1, v0, p1
@@ -1418,7 +1436,7 @@
 .method public getResetStatsDate(I)J
     .locals 3
 
-    .line 264
+    .line 269
     iget-object v0, p0, Lorg/telegram/messenger/StatsController;->resetStatsDate:[J
 
     aget-wide v1, v0, p1
@@ -1433,7 +1451,7 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 247
+    .line 252
     iget-object p2, p0, Lorg/telegram/messenger/StatsController;->sentBytes:[[J
 
     aget-object v0, p2, p1
@@ -1484,7 +1502,7 @@
 
     return-wide v1
 
-    .line 249
+    .line 254
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/StatsController;->sentBytes:[[J
 
@@ -1498,7 +1516,7 @@
 .method public getSentItemsCount(II)I
     .locals 1
 
-    .line 242
+    .line 247
     iget-object v0, p0, Lorg/telegram/messenger/StatsController;->sentItems:[[I
 
     aget-object p1, v0, p1
@@ -1511,48 +1529,8 @@
 .method public incrementReceivedBytesCount(IIJ)V
     .locals 2
 
-    .line 223
-    iget-object v0, p0, Lorg/telegram/messenger/StatsController;->receivedBytes:[[J
-
-    aget-object p1, v0, p1
-
-    aget-wide v0, p1, p2
-
-    add-long/2addr v0, p3
-
-    aput-wide v0, p1, p2
-
-    .line 224
-    invoke-direct {p0}, Lorg/telegram/messenger/StatsController;->saveStats()V
-
-    return-void
-.end method
-
-.method public incrementReceivedItemsCount(III)V
-    .locals 1
-
-    .line 213
-    iget-object v0, p0, Lorg/telegram/messenger/StatsController;->receivedItems:[[I
-
-    aget-object p1, v0, p1
-
-    aget v0, p1, p2
-
-    add-int/2addr v0, p3
-
-    aput v0, p1, p2
-
-    .line 214
-    invoke-direct {p0}, Lorg/telegram/messenger/StatsController;->saveStats()V
-
-    return-void
-.end method
-
-.method public incrementSentBytesCount(IIJ)V
-    .locals 2
-
     .line 228
-    iget-object v0, p0, Lorg/telegram/messenger/StatsController;->sentBytes:[[J
+    iget-object v0, p0, Lorg/telegram/messenger/StatsController;->receivedBytes:[[J
 
     aget-object p1, v0, p1
 
@@ -1568,11 +1546,11 @@
     return-void
 .end method
 
-.method public incrementSentItemsCount(III)V
+.method public incrementReceivedItemsCount(III)V
     .locals 1
 
     .line 218
-    iget-object v0, p0, Lorg/telegram/messenger/StatsController;->sentItems:[[I
+    iget-object v0, p0, Lorg/telegram/messenger/StatsController;->receivedItems:[[I
 
     aget-object p1, v0, p1
 
@@ -1588,10 +1566,50 @@
     return-void
 .end method
 
-.method public incrementTotalCallsTime(II)V
+.method public incrementSentBytesCount(IIJ)V
     .locals 2
 
     .line 233
+    iget-object v0, p0, Lorg/telegram/messenger/StatsController;->sentBytes:[[J
+
+    aget-object p1, v0, p1
+
+    aget-wide v0, p1, p2
+
+    add-long/2addr v0, p3
+
+    aput-wide v0, p1, p2
+
+    .line 234
+    invoke-direct {p0}, Lorg/telegram/messenger/StatsController;->saveStats()V
+
+    return-void
+.end method
+
+.method public incrementSentItemsCount(III)V
+    .locals 1
+
+    .line 223
+    iget-object v0, p0, Lorg/telegram/messenger/StatsController;->sentItems:[[I
+
+    aget-object p1, v0, p1
+
+    aget v0, p1, p2
+
+    add-int/2addr v0, p3
+
+    aput v0, p1, p2
+
+    .line 224
+    invoke-direct {p0}, Lorg/telegram/messenger/StatsController;->saveStats()V
+
+    return-void
+.end method
+
+.method public incrementTotalCallsTime(II)V
+    .locals 2
+
+    .line 238
     iget-object v0, p0, Lorg/telegram/messenger/StatsController;->callsTotalTime:[I
 
     aget v1, v0, p1
@@ -1600,7 +1618,7 @@
 
     aput v1, v0, p1
 
-    .line 234
+    .line 239
     invoke-direct {p0}, Lorg/telegram/messenger/StatsController;->saveStats()V
 
     return-void
@@ -1609,7 +1627,7 @@
 .method public resetStats(I)V
     .locals 5
 
-    .line 268
+    .line 273
     iget-object v0, p0, Lorg/telegram/messenger/StatsController;->resetStatsDate:[J
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -1627,7 +1645,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 270
+    .line 275
     iget-object v2, p0, Lorg/telegram/messenger/StatsController;->sentBytes:[[J
 
     aget-object v2, v2, p1
@@ -1636,21 +1654,21 @@
 
     aput-wide v3, v2, v1
 
-    .line 271
+    .line 276
     iget-object v2, p0, Lorg/telegram/messenger/StatsController;->receivedBytes:[[J
 
     aget-object v2, v2, p1
 
     aput-wide v3, v2, v1
 
-    .line 272
+    .line 277
     iget-object v2, p0, Lorg/telegram/messenger/StatsController;->sentItems:[[I
 
     aget-object v2, v2, p1
 
     aput v0, v2, v1
 
-    .line 273
+    .line 278
     iget-object v2, p0, Lorg/telegram/messenger/StatsController;->receivedItems:[[I
 
     aget-object v2, v2, p1
@@ -1661,13 +1679,13 @@
 
     goto :goto_0
 
-    .line 275
+    .line 280
     :cond_0
     iget-object v1, p0, Lorg/telegram/messenger/StatsController;->callsTotalTime:[I
 
     aput v0, v1, p1
 
-    .line 276
+    .line 281
     invoke-direct {p0}, Lorg/telegram/messenger/StatsController;->saveStats()V
 
     return-void

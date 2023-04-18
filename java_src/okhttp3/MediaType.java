@@ -11,7 +11,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntProgression;
 import kotlin.ranges.IntRange;
-import kotlin.ranges.RangesKt;
+import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt;
 /* compiled from: MediaType.kt */
 /* loaded from: classes4.dex */
@@ -72,9 +72,10 @@ public final class MediaType {
 
     public final String parameter(String name) {
         IntRange indices;
+        IntProgression step;
         Intrinsics.checkNotNullParameter(name, "name");
         indices = ArraysKt___ArraysKt.getIndices(this.parameterNamesAndValues);
-        IntProgression step = RangesKt.step(indices, 2);
+        step = RangesKt___RangesKt.step(indices, 2);
         int first = step.getFirst();
         int last = step.getLast();
         int step2 = step.getStep();

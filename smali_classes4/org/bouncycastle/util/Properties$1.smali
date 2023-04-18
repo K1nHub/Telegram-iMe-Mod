@@ -7,7 +7,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/bouncycastle/util/Properties;->fetchProperty(Ljava/lang/String;)Ljava/lang/String;
+    value = Lorg/bouncycastle/util/Properties;->getPropertyValue(Ljava/lang/String;)Ljava/lang/String;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,32 +34,11 @@
 
 # virtual methods
 .method public run()Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
-    invoke-static {}, Lorg/bouncycastle/util/Properties;->access$000()Ljava/lang/ThreadLocal;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map;
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Lorg/bouncycastle/util/Properties$1;->val$propertyName:Ljava/lang/String;
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
     iget-object v0, p0, Lorg/bouncycastle/util/Properties$1;->val$propertyName:Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Ljava/security/Security;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

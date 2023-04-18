@@ -5,23 +5,24 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Set;
 import org.telegram.messenger.CacheByChatsController;
-import p035j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes4.dex */
 public class AutoDeleteMediaTask {
     public static Set<String> usingFilePaths = Collections.newSetFromMap(new ConcurrentHashMap());
 
     public static void run() {
         final int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
-        if (BuildVars.DEBUG_PRIVATE_VERSION || Math.abs(currentTimeMillis - SharedConfig.lastKeepMediaCheckTime) >= 86400) {
-            SharedConfig.lastKeepMediaCheckTime = currentTimeMillis;
-            final File checkDirectory = FileLoader.checkDirectory(4);
-            Utilities.cacheClearQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.AutoDeleteMediaTask$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AutoDeleteMediaTask.lambda$run$1(currentTimeMillis, checkDirectory);
-                }
-            });
+        if (Math.abs(currentTimeMillis - SharedConfig.lastKeepMediaCheckTime) < 86400) {
+            return;
         }
+        SharedConfig.lastKeepMediaCheckTime = currentTimeMillis;
+        final File checkDirectory = FileLoader.checkDirectory(4);
+        Utilities.cacheClearQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.AutoDeleteMediaTask$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                AutoDeleteMediaTask.lambda$run$1(currentTimeMillis, checkDirectory);
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */

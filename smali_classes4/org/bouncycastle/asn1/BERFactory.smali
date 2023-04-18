@@ -36,15 +36,12 @@
 
     sget-object p0, Lorg/bouncycastle/asn1/BERFactory;->EMPTY_SEQUENCE:Lorg/bouncycastle/asn1/BERSequence;
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     new-instance v0, Lorg/bouncycastle/asn1/BERSequence;
 
     invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/BERSequence;-><init>(Lorg/bouncycastle/asn1/ASN1EncodableVector;)V
 
-    move-object p0, v0
-
-    :goto_0
-    return-object p0
+    return-object v0
 .end method

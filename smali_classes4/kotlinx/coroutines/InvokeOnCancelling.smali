@@ -52,15 +52,15 @@
         }
     .end annotation
 
-    .line 1453
+    .line 1454
     invoke-direct {p0}, Lkotlinx/coroutines/JobCancellingNode;-><init>()V
 
-    .line 1452
+    .line 1453
     iput-object p1, p0, Lkotlinx/coroutines/InvokeOnCancelling;->handler:Lkotlin/jvm/functions/Function1;
 
     const/4 p1, 0x0
 
-    .line 1455
+    .line 1456
     iput p1, p0, Lkotlinx/coroutines/InvokeOnCancelling;->_invoked:I
 
     return-void
@@ -71,7 +71,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1451
+    .line 1452
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/InvokeOnCancelling;->invoke(Ljava/lang/Throwable;)V
@@ -84,7 +84,7 @@
 .method public invoke(Ljava/lang/Throwable;)V
     .locals 3
 
-    .line 1457
+    .line 1458
     sget-object v0, Lkotlinx/coroutines/InvokeOnCancelling;->_invoked$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     const/4 v1, 0x0

@@ -38,7 +38,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FilterTabsView;)V
     .locals 0
 
-    .line 1233
+    .line 1234
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$4;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
@@ -49,7 +49,7 @@
 .method private static synthetic lambda$animateMoveImpl$1(Lorg/telegram/ui/Components/FilterTabsView$TabView;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1301
+    .line 1302
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -62,7 +62,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeProgress:F
 
-    .line 1302
+    .line 1303
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -71,7 +71,7 @@
 .method private synthetic lambda$runPendingAnimations$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1244
+    .line 1245
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$4;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4300(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -80,7 +80,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 1245
+    .line 1246
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$4;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -93,14 +93,14 @@
 .method public animateMove(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;IIII)Z
     .locals 8
 
-    .line 1255
+    .line 1256
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     if-eqz v1, :cond_4
 
-    .line 1257
+    .line 1258
     invoke-virtual {v0}, Landroid/view/View;->getTranslationX()F
 
     move-result p2
@@ -109,7 +109,7 @@
 
     add-int v3, p3, p2
 
-    .line 1258
+    .line 1259
     iget-object p2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {p2}, Landroid/view/View;->getTranslationY()F
@@ -120,7 +120,7 @@
 
     add-int v4, p4, p2
 
-    .line 1259
+    .line 1260
     invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/DefaultItemAnimator;->resetAnimation(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
     sub-int p2, p5, v3
@@ -133,7 +133,7 @@
 
     int-to-float p4, p4
 
-    .line 1263
+    .line 1264
     invoke-virtual {v0, p4}, Landroid/view/View;->setTranslationX(F)V
 
     :cond_0
@@ -143,16 +143,16 @@
 
     int-to-float p4, p4
 
-    .line 1266
+    .line 1267
     invoke-virtual {v0, p4}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1269
+    .line 1270
     :cond_1
     iget-object p4, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p4, Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
-    .line 1270
+    .line 1271
     invoke-virtual {p4}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateChange()Z
 
     move-result v0
@@ -163,13 +163,13 @@
 
     const/4 v1, 0x0
 
-    .line 1272
+    .line 1273
     iput v1, p4, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeProgress:F
 
-    .line 1273
+    .line 1274
     iput-boolean v7, p4, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateChange:Z
 
-    .line 1274
+    .line 1275
     iget-object p4, p0, Lorg/telegram/ui/Components/FilterTabsView$4;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-virtual {p4}, Landroid/widget/FrameLayout;->invalidate()V
@@ -181,14 +181,14 @@
 
     if-nez v0, :cond_3
 
-    .line 1278
+    .line 1279
     invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/SimpleItemAnimator;->dispatchMoveFinished(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
     const/4 p1, 0x0
 
     return p1
 
-    .line 1282
+    .line 1283
     :cond_3
     iget-object p2, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingMoves:Ljava/util/ArrayList;
 
@@ -208,7 +208,7 @@
 
     return v7
 
-    .line 1285
+    .line 1286
     :cond_4
     invoke-super/range {p0 .. p6}, Landroidx/recyclerview/widget/DefaultItemAnimator;->animateMove(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;IIII)Z
 
@@ -220,38 +220,38 @@
 .method protected animateMoveImpl(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/DefaultItemAnimator$MoveInfo;)V
     .locals 2
 
-    .line 1290
+    .line 1291
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/DefaultItemAnimator;->animateMoveImpl(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/DefaultItemAnimator$MoveInfo;)V
 
-    .line 1291
+    .line 1292
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of p2, p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     if-eqz p2, :cond_1
 
-    .line 1292
+    .line 1293
     check-cast p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
-    .line 1293
+    .line 1294
     iget-boolean p2, p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateChange:Z
 
     if-eqz p2, :cond_1
 
-    .line 1294
+    .line 1295
     iget-object p2, p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p2, :cond_0
 
-    .line 1295
+    .line 1296
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 1296
+    .line 1297
     iget-object p2, p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->removeAllUpdateListeners()V
 
-    .line 1297
+    .line 1298
     iget-object p2, p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->cancel()V
@@ -261,38 +261,38 @@
 
     new-array p2, p2, [F
 
-    .line 1299
+    .line 1300
     fill-array-data p2, :array_0
 
     invoke-static {p2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p2
 
-    .line 1300
+    .line 1301
     new-instance v0, Lorg/telegram/ui/Components/FilterTabsView$4$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/FilterTabsView$4$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/FilterTabsView$TabView;)V
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1304
+    .line 1305
     new-instance v0, Lorg/telegram/ui/Components/FilterTabsView$4$1;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/FilterTabsView$4$1;-><init>(Lorg/telegram/ui/Components/FilterTabsView$4;Lorg/telegram/ui/Components/FilterTabsView$TabView;)V
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1310
+    .line 1311
     iput-object p2, p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1311
+    .line 1312
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->getMoveDuration()J
 
     move-result-wide v0
 
     invoke-virtual {p2, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1312
+    .line 1313
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->start()V
 
     :cond_1
@@ -310,24 +310,24 @@
 .method public endAnimation(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 2
 
-    .line 1328
+    .line 1329
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/DefaultItemAnimator;->endAnimation(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
-    .line 1329
+    .line 1330
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1330
+    .line 1331
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     if-eqz v0, :cond_0
 
-    .line 1331
+    .line 1332
     check-cast p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->clearTransitionParams()V
@@ -339,24 +339,24 @@
 .method public onMoveFinished(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 2
 
-    .line 1319
+    .line 1320
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/SimpleItemAnimator;->onMoveFinished(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
-    .line 1320
+    .line 1321
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1321
+    .line 1322
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     if-eqz v0, :cond_0
 
-    .line 1322
+    .line 1323
     check-cast p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->clearTransitionParams()V
@@ -368,7 +368,7 @@
 .method public runPendingAnimations()V
     .locals 5
 
-    .line 1237
+    .line 1238
     iget-object v0, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingRemovals:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -379,7 +379,7 @@
 
     xor-int/2addr v0, v1
 
-    .line 1238
+    .line 1239
     iget-object v2, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingMoves:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -388,7 +388,7 @@
 
     xor-int/2addr v2, v1
 
-    .line 1239
+    .line 1240
     iget-object v3, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingChanges:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
@@ -397,7 +397,7 @@
 
     xor-int/2addr v3, v1
 
-    .line 1240
+    .line 1241
     iget-object v4, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingAdditions:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
@@ -423,29 +423,29 @@
 
     aput v2, v0, v1
 
-    .line 1242
+    .line 1243
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
-    .line 1243
+    .line 1244
     new-instance v1, Lorg/telegram/ui/Components/FilterTabsView$4$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/FilterTabsView$4$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/FilterTabsView$4;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1247
+    .line 1248
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->getMoveDuration()J
 
     move-result-wide v1
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1248
+    .line 1249
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 1250
+    .line 1251
     :cond_1
     invoke-super {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;->runPendingAnimations()V
 

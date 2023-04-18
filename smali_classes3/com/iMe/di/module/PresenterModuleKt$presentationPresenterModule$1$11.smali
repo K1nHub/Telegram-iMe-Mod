@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n127#2,5:434\n127#2,5:439\n127#2,5:444\n127#2,5:449\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$11\n*L\n157#1:434,5\n158#1:439,5\n159#1:444,5\n160#1:449,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n129#2,5:434\n129#2,5:439\n129#2,5:444\n129#2,5:449\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$11\n*L\n157#1:434,5\n158#1:439,5\n159#1:444,5\n160#1:449,5\n*E\n"
 .end annotation
 
 
@@ -79,7 +79,7 @@
     .line 156
     new-instance v1, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
 
-    .line 131
+    .line 133
     const-class v2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -124,7 +124,7 @@
 
     check-cast v6, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 131
+    .line 133
     const-class v2, Lcom/iMe/storage/domain/storage/HintsPreferenceHelper;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -167,7 +167,7 @@
 
     check-cast v9, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 131
+    .line 133
     const-class v2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -210,7 +210,7 @@
 
     check-cast v12, Lcom/iMe/gateway/TelegramControllersGateway;
 
-    .line 131
+    .line 133
     const-class v2, Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

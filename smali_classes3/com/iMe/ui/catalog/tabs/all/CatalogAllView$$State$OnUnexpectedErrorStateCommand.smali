@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State;)V
     .locals 1
 
-    .line 508
+    .line 544
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onUnexpectedErrorState"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/catalog/tabs/all/CatalogAllView;)V
     .locals 0
 
-    .line 513
+    .line 549
     invoke-interface {p1}, Lcom/iMe/ui/custom/state/GlobalStateView;->onUnexpectedErrorState()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 506
+    .line 542
     check-cast p1, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$OnUnexpectedErrorStateCommand;->apply(Lcom/iMe/ui/catalog/tabs/all/CatalogAllView;)V

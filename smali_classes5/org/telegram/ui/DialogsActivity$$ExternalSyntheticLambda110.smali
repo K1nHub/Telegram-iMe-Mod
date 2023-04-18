@@ -2,50 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
 
-.field public final synthetic f$1:Z
-
-.field public final synthetic f$2:Z
-
-.field public final synthetic f$3:Landroid/app/Activity;
+.field public final synthetic f$1:Lorg/telegram/messenger/MessagesController;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;ZZLandroid/app/Activity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/messenger/MessagesController;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda110;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    iput-boolean p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda110;->f$1:Z
-
-    iput-boolean p3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda110;->f$2:Z
-
-    iput-object p4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda110;->f$3:Landroid/app/Activity;
+    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda110;->f$1:Lorg/telegram/messenger/MessagesController;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda110;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    iget-boolean v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda110;->f$1:Z
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda110;->f$1:Lorg/telegram/messenger/MessagesController;
 
-    iget-boolean v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda110;->f$2:Z
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda110;->f$3:Landroid/app/Activity;
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$O6eshBwVBhnKiYyceOWUQNa3tUM(Lorg/telegram/ui/DialogsActivity;ZZLandroid/app/Activity;)V
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$NtpLiXFc0MfQSooiWfZCsZWZTHQ(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Dialog;Lorg/telegram/tgnet/TLRPC$Dialog;)I
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

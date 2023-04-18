@@ -28,7 +28,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.util.ObjectsCompat;
 import androidx.core.util.Preconditions;
 import androidx.versionedparcelable.CustomVersionedParcelable;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.source.rtsp.SessionDescription;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.ByteArrayOutputStream;
@@ -439,14 +439,14 @@ public class IconCompat extends CustomVersionedParcelable {
                 this.mParcelable = (Parcelable) this.mObj1;
                 return;
             case 2:
-                this.mData = ((String) this.mObj1).getBytes(Charset.forName(C0482C.UTF16_NAME));
+                this.mData = ((String) this.mObj1).getBytes(Charset.forName(C0470C.UTF16_NAME));
                 return;
             case 3:
                 this.mData = (byte[]) this.mObj1;
                 return;
             case 4:
             case 6:
-                this.mData = this.mObj1.toString().getBytes(Charset.forName(C0482C.UTF16_NAME));
+                this.mData = this.mObj1.toString().getBytes(Charset.forName(C0470C.UTF16_NAME));
                 return;
         }
     }
@@ -480,7 +480,7 @@ public class IconCompat extends CustomVersionedParcelable {
             case 2:
             case 4:
             case 6:
-                String str = new String(this.mData, Charset.forName(C0482C.UTF16_NAME));
+                String str = new String(this.mData, Charset.forName(C0470C.UTF16_NAME));
                 this.mObj1 = str;
                 if (this.mType == 2 && this.mString1 == null) {
                     this.mString1 = str.split(":", -1)[0];

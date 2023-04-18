@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nItemProviderModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ItemProviderModule.kt\ncom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$35\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,44:1\n127#2,5:45\n*S KotlinDebug\n*F\n+ 1 ItemProviderModule.kt\ncom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$35\n*L\n41#1:45,5\n*E\n"
+    value = "SMAP\nItemProviderModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ItemProviderModule.kt\ncom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$35\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,44:1\n129#2,5:45\n*S KotlinDebug\n*F\n+ 1 ItemProviderModule.kt\ncom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$35\n*L\n41#1:45,5\n*E\n"
 .end annotation
 
 
@@ -75,7 +75,7 @@
     .line 41
     new-instance p2, Lcom/iMe/ui/adapter/provider/TwitterInviteProvider;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

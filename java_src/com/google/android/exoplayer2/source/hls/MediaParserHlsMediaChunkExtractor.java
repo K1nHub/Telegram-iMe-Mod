@@ -50,7 +50,7 @@ public final class MediaParserHlsMediaChunkExtractor implements HlsMediaChunkExt
         ImmutableList build = builder.build();
         OutputConsumerAdapterV30 outputConsumerAdapterV30 = new OutputConsumerAdapterV30();
         if (list == null) {
-            list = ImmutableList.m754of();
+            list = ImmutableList.m740of();
         }
         outputConsumerAdapterV30.setMuxedCaptionFormats(list);
         outputConsumerAdapterV30.setTimestampAdjuster(timestampAdjuster);

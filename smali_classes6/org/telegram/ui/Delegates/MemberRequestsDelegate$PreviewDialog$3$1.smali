@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$3;)V
     .locals 0
 
-    .line 947
+    .line 949
     iput-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$3$1;->this$2:Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$3;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
@@ -43,7 +43,7 @@
 .method public onSingleTapUp(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 954
+    .line 956
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$3$1;->this$2:Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$3;
 
     iget-object v0, v0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$3;->this$1:Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;
@@ -78,7 +78,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$3;->this$1:Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;
 
-    .line 955
+    .line 957
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->access$1400(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     move-result-object v0
@@ -123,7 +123,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$3;->this$1:Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;
 
-    .line 956
+    .line 958
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->access$1400(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     move-result-object v0
@@ -178,14 +178,14 @@
     :goto_1
     if-nez v0, :cond_2
 
-    .line 958
+    .line 960
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$3$1;->this$2:Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$3;
 
     iget-object v0, v0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$3;->this$1:Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->dismiss()V
 
-    .line 960
+    .line 962
     :cond_2
     invoke-super {p0, p1}, Landroid/view/GestureDetector$SimpleOnGestureListener;->onSingleTapUp(Landroid/view/MotionEvent;)Z
 

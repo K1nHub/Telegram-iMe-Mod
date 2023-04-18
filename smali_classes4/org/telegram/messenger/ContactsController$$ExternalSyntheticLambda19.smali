@@ -8,18 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/ContactsController;
 
-.field public final synthetic f$1:Ljava/lang/Runnable;
+.field public final synthetic f$1:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/messenger/ContactsController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda19;->f$1:Ljava/lang/Runnable;
+    iput-object p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda19;->f$1:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -31,9 +31,9 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/messenger/ContactsController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda19;->f$1:Ljava/lang/Runnable;
+    iget-object v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda19;->f$1:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$nmK8hKo-bSApUt-k8Ec0vVpe1s0(Lorg/telegram/messenger/ContactsController;Ljava/lang/Runnable;)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$EiUMol7VIU7sncrnmRSDi65IQ8s(Lorg/telegram/messenger/ContactsController;Ljava/util/ArrayList;)V
 
     return-void
 .end method

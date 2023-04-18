@@ -24,8 +24,8 @@ public class ByteString implements Serializable, Comparable<ByteString> {
     }
 
     /* renamed from: of */
-    public static final ByteString m84of(byte... bArr) {
-        return Companion.m83of(bArr);
+    public static final ByteString m70of(byte... bArr) {
+        return Companion.m69of(bArr);
     }
 
     public String utf8() {
@@ -178,7 +178,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
             if ((i3 & 2) != 0) {
                 i2 = bArr.length;
             }
-            return companion.m82of(bArr, i, i2);
+            return companion.m68of(bArr, i, i2);
         }
 
         private Companion() {
@@ -197,7 +197,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         }
 
         /* renamed from: of */
-        public final ByteString m83of(byte... data) {
+        public final ByteString m69of(byte... data) {
             Intrinsics.checkNotNullParameter(data, "data");
             byte[] copyOf = Arrays.copyOf(data, data.length);
             Intrinsics.checkNotNullExpressionValue(copyOf, "java.util.Arrays.copyOf(this, size)");
@@ -205,7 +205,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         }
 
         /* renamed from: of */
-        public final ByteString m82of(byte[] toByteString, int i, int i2) {
+        public final ByteString m68of(byte[] toByteString, int i, int i2) {
             byte[] copyOfRange;
             Intrinsics.checkNotNullParameter(toByteString, "$this$toByteString");
             Util.checkOffsetAndCount(toByteString.length, i, i2);

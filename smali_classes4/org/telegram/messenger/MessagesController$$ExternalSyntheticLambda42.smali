@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda42;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$w5ym_Ia9x55p98rTMXEBv-ecSKU(Lorg/telegram/messenger/MessagesController;)V
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$pTdrtje6KC8nt2y28PGZm6Rom7c(Lorg/telegram/messenger/MessagesController;)V
 
     return-void
 .end method

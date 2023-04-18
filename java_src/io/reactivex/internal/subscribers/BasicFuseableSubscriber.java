@@ -13,7 +13,7 @@ public abstract class BasicFuseableSubscriber<T, R> implements FlowableSubscribe
     protected final Subscriber<? super R> downstream;
 
     /* renamed from: qs */
-    protected QueueSubscription<T> f479qs;
+    protected QueueSubscription<T> f474qs;
     protected int sourceMode;
     protected Subscription upstream;
 
@@ -33,7 +33,7 @@ public abstract class BasicFuseableSubscriber<T, R> implements FlowableSubscribe
         if (SubscriptionHelper.validate(this.upstream, subscription)) {
             this.upstream = subscription;
             if (subscription instanceof QueueSubscription) {
-                this.f479qs = (QueueSubscription) subscription;
+                this.f474qs = (QueueSubscription) subscription;
             }
             if (beforeDownstream()) {
                 this.downstream.onSubscribe(this);
@@ -70,7 +70,7 @@ public abstract class BasicFuseableSubscriber<T, R> implements FlowableSubscribe
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final int transitiveBoundaryFusion(int i) {
-        QueueSubscription<T> queueSubscription = this.f479qs;
+        QueueSubscription<T> queueSubscription = this.f474qs;
         if (queueSubscription == null || (i & 4) != 0) {
             return 0;
         }
@@ -93,12 +93,12 @@ public abstract class BasicFuseableSubscriber<T, R> implements FlowableSubscribe
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue
     public boolean isEmpty() {
-        return this.f479qs.isEmpty();
+        return this.f474qs.isEmpty();
     }
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue
     public void clear() {
-        this.f479qs.clear();
+        this.f474qs.clear();
     }
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue

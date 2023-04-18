@@ -1,22 +1,32 @@
 package androidx.fragment.app;
 
+import android.app.Application;
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.os.Bundle;
+import androidx.lifecycle.HasDefaultViewModelProviderFactory;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleRegistry;
+import androidx.lifecycle.SavedStateHandleSupport;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
+import androidx.lifecycle.viewmodel.CreationExtras;
+import androidx.lifecycle.viewmodel.MutableCreationExtras;
 import androidx.savedstate.SavedStateRegistry;
 import androidx.savedstate.SavedStateRegistryController;
 import androidx.savedstate.SavedStateRegistryOwner;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public class FragmentViewLifecycleOwner implements SavedStateRegistryOwner, ViewModelStoreOwner {
+public class FragmentViewLifecycleOwner implements HasDefaultViewModelProviderFactory, SavedStateRegistryOwner, ViewModelStoreOwner {
+    private final Fragment mFragment;
     private LifecycleRegistry mLifecycleRegistry = null;
     private SavedStateRegistryController mSavedStateRegistryController = null;
     private final ViewModelStore mViewModelStore;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FragmentViewLifecycleOwner(Fragment fragment, ViewModelStore viewModelStore) {
+        this.mFragment = fragment;
         this.mViewModelStore = viewModelStore;
     }
 
@@ -30,7 +40,9 @@ public class FragmentViewLifecycleOwner implements SavedStateRegistryOwner, View
     public void initialize() {
         if (this.mLifecycleRegistry == null) {
             this.mLifecycleRegistry = new LifecycleRegistry(this);
-            this.mSavedStateRegistryController = SavedStateRegistryController.create(this);
+            SavedStateRegistryController create = SavedStateRegistryController.create(this);
+            this.mSavedStateRegistryController = create;
+            create.performAttach();
         }
     }
 
@@ -53,6 +65,33 @@ public class FragmentViewLifecycleOwner implements SavedStateRegistryOwner, View
     /* JADX INFO: Access modifiers changed from: package-private */
     public void handleLifecycleEvent(Lifecycle.Event event) {
         this.mLifecycleRegistry.handleLifecycleEvent(event);
+    }
+
+    @Override // androidx.lifecycle.HasDefaultViewModelProviderFactory
+    public CreationExtras getDefaultViewModelCreationExtras() {
+        Application application;
+        Context applicationContext = this.mFragment.requireContext().getApplicationContext();
+        while (true) {
+            if (!(applicationContext instanceof ContextWrapper)) {
+                application = null;
+                break;
+            } else if (applicationContext instanceof Application) {
+                application = (Application) applicationContext;
+                break;
+            } else {
+                applicationContext = ((ContextWrapper) applicationContext).getBaseContext();
+            }
+        }
+        MutableCreationExtras mutableCreationExtras = new MutableCreationExtras();
+        if (application != null) {
+            mutableCreationExtras.set(ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY, application);
+        }
+        mutableCreationExtras.set(SavedStateHandleSupport.SAVED_STATE_REGISTRY_OWNER_KEY, this.mFragment);
+        mutableCreationExtras.set(SavedStateHandleSupport.VIEW_MODEL_STORE_OWNER_KEY, this);
+        if (this.mFragment.getArguments() != null) {
+            mutableCreationExtras.set(SavedStateHandleSupport.DEFAULT_ARGS_KEY, this.mFragment.getArguments());
+        }
+        return mutableCreationExtras;
     }
 
     @Override // androidx.savedstate.SavedStateRegistryOwner

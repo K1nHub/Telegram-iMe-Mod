@@ -7,6 +7,7 @@ import java.util.Objects;
 /* loaded from: classes4.dex */
 final class WOTSPlusOid implements XMSSOid {
     private static final Map<String, WOTSPlusOid> oidLookupTable;
+    private final int oid;
     private final String stringRepresentation;
 
     static {
@@ -19,6 +20,7 @@ final class WOTSPlusOid implements XMSSOid {
     }
 
     private WOTSPlusOid(int i, String str) {
+        this.oid = i;
         this.stringRepresentation = str;
     }
 
@@ -31,6 +33,11 @@ final class WOTSPlusOid implements XMSSOid {
     public static WOTSPlusOid lookup(String str, int i, int i2, int i3) {
         Objects.requireNonNull(str, "algorithmName == null");
         return oidLookupTable.get(createKey(str, i, i2, i3));
+    }
+
+    @Override // org.bouncycastle.pqc.crypto.xmss.XMSSOid
+    public int getOid() {
+        return this.oid;
     }
 
     public String toString() {

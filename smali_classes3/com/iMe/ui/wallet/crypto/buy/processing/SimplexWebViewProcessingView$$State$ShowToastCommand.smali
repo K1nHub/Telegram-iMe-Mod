@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 114
+    .line 132
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showToast"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 116
+    .line 134
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView;)V
     .locals 1
 
-    .line 121
+    .line 139
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 110
+    .line 128
     check-cast p1, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView$$State$ShowToastCommand;->apply(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView;)V

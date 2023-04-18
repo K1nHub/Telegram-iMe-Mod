@@ -69,24 +69,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 27750
+    .line 27762
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 27760
+    .line 27772
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
-    .line 27761
+    .line 27773
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Document;->video_thumbs:Ljava/util/ArrayList;
 
-    .line 27766
+    .line 27778
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -105,7 +105,7 @@
 
     goto :goto_0
 
-    .line 27777
+    .line 27789
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_document_layer92;
 
@@ -113,7 +113,7 @@
 
     goto :goto_0
 
-    .line 27798
+    .line 27810
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentEncrypted;
 
@@ -121,7 +121,7 @@
 
     goto :goto_0
 
-    .line 27783
+    .line 27795
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentEncrypted_old;
 
@@ -129,7 +129,7 @@
 
     goto :goto_0
 
-    .line 27795
+    .line 27807
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentEmpty;
 
@@ -137,7 +137,7 @@
 
     goto :goto_0
 
-    .line 27789
+    .line 27801
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_document_layer142;
 
@@ -145,7 +145,7 @@
 
     goto :goto_0
 
-    .line 27801
+    .line 27813
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_document_layer53;
 
@@ -153,7 +153,7 @@
 
     goto :goto_0
 
-    .line 27792
+    .line 27804
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_document_old;
 
@@ -161,7 +161,7 @@
 
     goto :goto_0
 
-    .line 27774
+    .line 27786
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_document_layer113;
 
@@ -169,7 +169,7 @@
 
     goto :goto_0
 
-    .line 27786
+    .line 27798
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_document;
 
@@ -177,7 +177,7 @@
 
     goto :goto_0
 
-    .line 27780
+    .line 27792
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_document_layer82;
 
@@ -190,7 +190,7 @@
 
     goto :goto_1
 
-    .line 27805
+    .line 27817
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -220,10 +220,10 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 27808
+    .line 27820
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
-    .line 27809
+    .line 27821
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getDocumentFileName(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/String;
 
     move-result-object p0

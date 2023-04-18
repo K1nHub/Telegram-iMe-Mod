@@ -3,8 +3,10 @@
     <string name="AreYouSureClearHistorySavedMessages">Ви дійсно хочете очистити **Хмару**?</string>
     <string name="AreYouSureDeleteThisChatSavedMessages">Ви дійсно хочете видалити **Хмару**?</string>
     <string name="AskAQuestion">Задати питання Telegram</string>
+    <string name="AuthAnotherClientInfo4">Ви можете увійти в додатки iMe для *iOS*, *Android* та *Desktop* за допомогою QR-коду.</string>
     <string name="AuthAnotherClientInfo5">Перейдіть до *imem.app/desktop*, щоб отримати QR-код</string>
     <string name="BackgroundToSavedMessages">Фон збережений в **Хмару**</string>
+    <string name="DidNotGetTheCodeSms">Відкрити Telegram</string>
     <string name="EventLogRestrictedSendStickers">Надсилання Стікери</string>
     <string name="FwdMessageToSavedMessages">Повідомлення переслано в **Хмара**.</string>
     <string name="FwdMessagesToSavedMessages">Повідомлення переслані в **Хмара**.</string>
@@ -91,6 +93,16 @@
     <string name="archive_empty_subtitle">Тут зберігаються чати відправлені вами в архів</string>
     <string name="archive_empty_title">Архів порожній</string>
     <string name="attach_menu_select_all">Обрати все</string>
+    <string name="auth_dialog_description">"Продовжуючи, ви погоджуєтесь
+з *Умовами надання послуг*"</string>
+    <string name="auth_dialog_title">Екосистема iMe</string>
+    <string name="auth_login_terms_of_service">"Авторизуючись, ви погоджуєтесь
+з *Умовами надання послуг*"</string>
+    <string name="auth_signup_terms_of_service_postfix">"
+Ви погоджуєтеся з *Умовами надання послуг*
+
+Ми залишаємо за собою право оновлювати ці
+Умови надання послуг пізніше."</string>
     <string name="auto_open_forwarding_options">Автовідкриття опцій пересилання</string>
     <string name="auto_open_forwarding_options_alert_message">Увімкнути автовідкриття опцій пересилання?</string>
     <string name="auto_open_forwarding_options_hint">"Ви завжди можете змінити це в
@@ -406,6 +418,12 @@
     <string name="create_chat_template">Створити шаблон</string>
     <string name="create_folder_change_fab_section_description">Виберіть тип кнопки FAB, яка з’явиться в цій папці.</string>
     <string name="create_folder_change_fab_title">Змінити кнопку FAB</string>
+    <string name="currency_punkpanda">PUNKPANDA</string>
+    <string name="currency_punkpanda_site">https://www.punkpandafarm.com/</string>
+    <string name="currency_short_punkpanda">PPM</string>
+    <string name="currency_short_sinverse">SIN</string>
+    <string name="currency_sinverse">Sinverse</string>
+    <string name="currency_sinverse_site">https://sinverse.com/</string>
     <string name="custom_avatar_downloading">Завантаження образу NFT…</string>
     <string name="custom_avatar_processing">В процесі…</string>
     <string name="custom_avatar_set">Встановити аватар</string>
@@ -540,6 +558,17 @@
     <string name="gif_sticker_preview_choose_alert_message">Включити попередній стікерів і GIF перед відправкою в чат? Ви завжди зможете налаштувати цю опцію в налаштуваннях інтерфейсу.</string>
     <string name="google_assistant_verification_channel_name">Інструмент перевірки Асистента</string>
     <string name="google_assistant_verification_notification_title">Google Асистент надсилає повідомлення</string>
+    <string name="hidden_chats_empty">Ніяких прихованих чатів</string>
+    <string name="hidden_chats_empty_title">У вас немає прихованих чатів</string>
+    <string name="hidden_chats_hide_chats">Приховати</string>
+    <string name="hidden_chats_pinned">Приховані чати закріплені</string>
+    <string name="hidden_chats_release_for_hidden_chats">Проведіть вниз, щоб переглянути приховані чати</string>
+    <string name="hidden_chats_swipe_for_hidden_chats">Проведіть вниз, щоб переглянути приховані чати</string>
+    <string name="hidden_chats_title">Приховані чати</string>
+    <string name="hidden_chats_undo_chat_hidden">Чат приховано.</string>
+    <string name="hidden_chats_undo_chats_hidden">Чати приховані.</string>
+    <string name="hidden_chats_unhide_chats">Відобразити</string>
+    <string name="hidden_chats_unpinned">Приховані чати не закріплені</string>
     <string name="icon_content_description">Значок вікна</string>
     <string name="image_recognition_bottom_sheet_title">Опис фото</string>
     <string name="in_app_update_snackbar_action">ПЕРЕЗАПУСТИТИ</string>
@@ -567,6 +596,7 @@
     <string name="loading_messages_error">Помилка завантаження повідомлень, спробуйте пізніше</string>
     <string name="loading_participants">Завантаження учасників... Надійшло: %d</string>
     <string name="loading_participants_error">Помилка завантаження учасників, повторіть спробу пізніше</string>
+    <string name="login_token_help">Відскануйте QR-код з іншого пристрою, щоб увійти</string>
     <string name="main_camera_popup_text">Задня камера</string>
     <string name="main_list">Основний список</string>
     <string name="management">Менеджмент</string>
@@ -713,6 +743,8 @@
     <string name="neurobots_store_tab_free">Безкоштовні</string>
     <string name="neurobots_store_tab_my">Мої</string>
     <string name="neurobots_store_tab_popular">Популярні</string>
+    <string name="new_telegram_authorization_rules_alert">З 18 лютого 2023 року набули чинності нові правила авторизації в Telegram, згідно з якими користувачі альтернативних клієнтів можуть отримати SMS-код тільки від офіційного клієнта Telegram. Будь ласка, встановіть додаток Telegram та увійдіть до свого облікового запису в ньому, якщо вам потрібен SMS-код, після чого ви можете повторно запросити код в iMe (він прийде в чаті сервісу Telegram).</string>
+    <string name="new_telegram_authorization_rules_info">Будь ласка, ознайомтеся з *новими правилами авторизації* в Telegram</string>
     <string name="nft_collection_size">Кількість NFT: %d</string>
     <string name="nft_preview_copy_token_id">Копіювати ID токена</string>
     <string name="nft_preview_open_contract">Адреса контракту</string>
@@ -765,6 +797,25 @@
     <string name="profile_group_filter_title">Фільтр учасників</string>
     <string name="profile_group_id_item_title">ID групи</string>
     <string name="profile_my_id_item_title">Мій ID</string>
+    <string name="profile_twitter_account_actions_title">Твіттері акаунт</string>
+    <string name="profile_twitter_auth_to_use_feature_description">Щоб скористатися цим функціоналом, ви повинні авторизувати свій Telegram-акаунт за допомогою нашого бота iMe Wallet.</string>
+    <string name="profile_twitter_bot_confirmation_alert_description">Щоб підключити Twitter, додайте бота %s як адміністратора групи, щоб підтвердити, що ви є власником чату</string>
+    <string name="profile_twitter_bot_confirmation_alert_title">Перевірка власника</string>
+    <string name="profile_twitter_link_confirmation_alert_description">"Ваш акаунт Twitter пов'язаний з іншим акаунтом, якщо ви зв'яжете його з поточним, інші зв'язки будуть скинуті"</string>
+    <string name="profile_twitter_link_confirmation_alert_title">Підтвердження</string>
+    <string name="profile_twitter_not_connected">Не підключено</string>
+    <string name="profile_twitter_reset_confirmation_alert_description">"Ви впевнені, що хочете скинути свій акаунт у Twitter?
+
+Після скидання ви зможете прив'язати новий акаунт."</string>
+    <string name="profile_twitter_reset_confirmation_alert_title">Скинути обліковий запис Twitter</string>
+    <string name="profile_twitter_unlinked_error_alert_description">"Раніше ваш акаунт Twitter був пов'язаний з Telegram з іншого пристрою, тому з'єднання було скинуто.
+
+Будь ласка, вийдіть з системи або прив'яжіть акаунт Twitter заново."</string>
+    <string name="profile_twitter_unlinked_error_alert_link">Посилання</string>
+    <string name="profile_twitter_unlinked_error_alert_log_out">Вийдіть з системи</string>
+    <string name="profile_twitter_unlinked_error_alert_title">"Обліковий запис від'єднано"</string>
+    <string name="profile_twitter_vpn_alert_description">Будь ласка, увімкніть VPN, якщо Twitter обмежений у вашому регіоні.</string>
+    <string name="profile_twitter_vpn_alert_title">VPN</string>
     <string name="profile_user_id_action_copy">Копіювати</string>
     <string name="profile_user_id_action_transfer">Зробити переказ</string>
     <string name="profile_user_id_item_title">ID користувача</string>
@@ -794,7 +845,13 @@
     <string name="push_notification_wallet_unsupported">Непідтримуване сповіщення</string>
     <string name="quick_reaction_settings_enable_item_hint">Увімкніть, щоб використовувати швидкі реакції для повідомлень у чатах</string>
     <string name="recent_chats_clear_history">Ви впевнені, що хочете очистити історію чатів?</string>
+    <string name="recent_chats_counters_and_reactions">Лічильники та реакції</string>
     <string name="recent_chats_hint">Увімкніть це, якщо ви хочете мати швидкий доступ до ваших недавніх чатів з можливістю закріпити необмежену кількість чатів. Панель відображатиметься над списком чатів.</string>
+    <string name="recent_chats_live">Відео чати</string>
+    <string name="recent_chats_mentions">Згадки</string>
+    <string name="recent_chats_new_messages">Нові повідомлення</string>
+    <string name="recent_chats_online_status">Статус в мережі</string>
+    <string name="recent_chats_reactions">Reactions</string>
     <string name="release_to_go_to_next_unread_bot">Відпустіть для переходу до нового бота</string>
     <string name="release_to_go_to_next_unread_group">Відпустіть, щоб перейти до непрочитаної групі</string>
     <string name="release_to_go_to_next_unread_personal_chat">Відпустіть, щоб перейти до непрочитаного особистого чату</string>
@@ -909,6 +966,8 @@
     <string name="settings_revoke_by_default">Видалити у співрозмовника</string>
     <string name="settings_section_passcode_archive">Пароль Архіву</string>
     <string name="settings_section_passcode_cloud">Пароль Хмари</string>
+    <string name="settings_speed_mega_fast">Мегашвидко</string>
+    <string name="settings_speed_super_fast">Супершвидко</string>
     <string name="settings_tools">Інструменти</string>
     <string name="settings_tools_base_toolbar">Основний тулбар</string>
     <string name="settings_tools_bot_help_translate">Переклад вітання в ботах</string>
@@ -1058,6 +1117,15 @@
     <string name="staking_programme_level_required_title">Необхідний рівень</string>
     <string name="staking_programmes_count">Стейкінги (%d)</string>
     <string name="staking_programmes_empty_state_description">Ви ще не брали участь у стейкінг програмах</string>
+    <string name="staking_programmes_filter_active">АКТИВНІ</string>
+    <string name="staking_programmes_filter_archive">АРХІВ</string>
+    <string name="staking_programmes_filter_completed">ЗАКІНЧЕНІ</string>
+    <string name="staking_programmes_filters_info_description">"Активні - програми стейкінгу, в яких ви берете участь і дата закінчення яких ще не настала.
+
+Закінчені - стейкінгові програми, дата завершення яких вже настала, але у вас ще залишилися токени для виведення
+
+Архів - прострочені програми стейкінгу, в яких ви брали участь і в яких не залишилося токенів для виведення"</string>
+    <string name="staking_programmes_filters_info_title">Стейкінгові фільтри</string>
     <string name="staking_replenishment_already_finished">Програма стейкінгу вже завершена</string>
     <string name="staking_replenishment_confirm_description">Ви впевнені, що хочете внести %1$s %2$s?</string>
     <string name="staking_replenishment_confirm_title">Підтвердження депозиту</string>
@@ -1112,7 +1180,7 @@
     <string name="stickers_size_title">Розмір стікерів</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Враховувати архів</string>
     <string name="swipe_to_next_unread_dialog_hint">Увімкніть це, якщо ви хочете читати ваші чати, не повертаючись до списку чатів. Під час останнього повідомлення в чаті потягніть екран вгору, щоб перейти до наступного непрочитаного чату.</string>
-    <string name="swipe_to_next_unread_dialog_types">Типи діалогів</string>
+    <string name="swipe_to_next_unread_dialog_types">Типи чатів</string>
     <string name="text_recognition_bottom_sheet_title">Фото → Текст</string>
     <string name="topic">Топік</string>
     <string name="topic_add_archived_chats_hint">Виберіть чати зі списку заархівованих, які з’являться в цій темі.</string>
@@ -1214,6 +1282,20 @@
     <string name="translation_rate_limit_error">API Google тимчасово обмежив переклад через дуже часті запити. Спробуйте пізніше або змініть IP-адресу.</string>
     <string name="translation_search_language">Пошук мови перекладу</string>
     <string name="translation_search_language_empty">Немає відповідних мов</string>
+    <string name="twitter_auth_title">Авторизація в Twitter</string>
+    <string name="twitter_empty_state_subtitle">Ще немає твітів</string>
+    <string name="twitter_empty_state_title">Користувач ще не має твітів</string>
+    <string name="twitter_open_in_twitter">Відкрити в Twitter</string>
+    <string name="twitter_search_hint">"Введіть ім'я користувача одержувача"</string>
+    <string name="twitter_search_invite_confirmation_description">Ви впевнені, що хочете надіслати запрошення %s?</string>
+    <string name="twitter_search_invite_confirmation_title">Надіслати запрошення</string>
+    <string name="twitter_search_invite_direct_messages_error">Виникла помилка при відправленні запрошення. Користувач відключив прямі повідомлення.</string>
+    <string name="twitter_search_invite_subtitle">Не знайдено в iMe</string>
+    <string name="twitter_search_invite_success">Запрошення успішно відправлено</string>
+    <string name="twitter_search_open_in_twitter">Відкрити в Twitter</string>
+    <string name="twitter_search_subtitle">"Введіть ім'я користувача Twitter одержувача в поле пошуку"</string>
+    <string name="twitter_search_title">Пошук у Твіттері</string>
+    <string name="twitter_title">Твіти</string>
     <string name="unlock_premium_transcription_hint">Для розшифровки голосу тривалістю понад 1 хвилину потрібен Telegram Premium.</string>
     <string name="user_restrictions_send_games">Ігр</string>
     <string name="user_restrictions_send_gifs">ГІФ</string>
@@ -1235,6 +1317,8 @@
     <string name="wallet_account_level_zero_description">= 0</string>
     <string name="wallet_account_type_crypto">Криптоактиви</string>
     <string name="wallet_account_type_fiat">Фіат</string>
+    <string name="wallet_activation_confirmation_description">Ви можете створити цей гаманець, використовуючи ту саму мнемоніку, що й у вашому гаманці EVM</string>
+    <string name="wallet_activation_confirmation_title">Швидке створення</string>
     <string name="wallet_amount_button_calculate">Розрахувати комісію</string>
     <string name="wallet_amount_button_txt">Надіслати</string>
     <string name="wallet_amount_confirm_alert_ok_btn">Надіслати</string>
@@ -1505,6 +1589,8 @@
     <string name="wallet_crypto_blockchains_title">Блокчейни</string>
     <string name="wallet_crypto_blockchains_ton_subtitle">The Open Network</string>
     <string name="wallet_crypto_blockchains_ton_title">TON</string>
+    <string name="wallet_crypto_blockchains_tron_subtitle">TRC20 мережа</string>
+    <string name="wallet_crypto_blockchains_tron_title">TRON</string>
     <string name="wallet_crypto_buy_amount_title">Кількість</string>
     <string name="wallet_crypto_buy_confirm_dialog_action_txt">Купити</string>
     <string name="wallet_crypto_buy_confirm_dialog_description">"Ви впевнені, що хочете купити  ~%1$s %2$s?"</string>
@@ -1544,6 +1630,7 @@
     <string name="wallet_crypto_wallet_not_created_dialog_positive_btn">Cтворити</string>
     <string name="wallet_crypto_wallet_not_created_dialog_title">Крипто гаманець не створено</string>
     <string name="wallet_dashboard_account_title">Акаунт %s</string>
+    <string name="wallet_dashboard_activate_wallet">Активувати гаманець %s</string>
     <string name="wallet_dashboard_balance_24h_rate">%1$.2f%% / 24h</string>
     <string name="wallet_dashboard_create_eth_wallet">Створити</string>
     <string name="wallet_dashboard_create_eth_wallet_success_dialog_description">"Ваш гаманець успішно створено.
@@ -1601,6 +1688,8 @@ iMe Wallet."</string>
     <string name="wallet_details_info_evm_title">EVM</string>
     <string name="wallet_details_info_ton_description">Це ваш активний обліковий запис блокчейна The Open Network (TON).</string>
     <string name="wallet_details_info_ton_title">TON</string>
+    <string name="wallet_details_info_tron_description">Це ваш активний обліковий запис у блокчейні TRON.</string>
+    <string name="wallet_details_info_tron_title">TRON</string>
     <string name="wallet_details_reset_description">Ви впевнені, що хочете скинути цей гаманець?</string>
     <string name="wallet_details_reset_title">Скинути гаманець</string>
     <string name="wallet_enter_eth_password_delete_wallet_dialog_description">"Ви впевнені, що хочете скинути свій аккаунт до початкового стану?

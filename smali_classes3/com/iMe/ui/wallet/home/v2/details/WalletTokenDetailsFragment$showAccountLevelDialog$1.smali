@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsFragment$showAccountLevelDialog$1;->this$0:Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsFragment;
 
-    .line 335
+    .line 336
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 .method public onChanged(Z)V
     .locals 1
 
-    .line 337
+    .line 338
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsFragment$showAccountLevelDialog$1;->this$0:Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsFragment;->access$getPresenter(Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsFragment;)Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;

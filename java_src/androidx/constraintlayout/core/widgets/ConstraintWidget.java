@@ -881,7 +881,7 @@ public class ConstraintWidget {
     }
 
     public ConstraintAnchor getAnchor(ConstraintAnchor.Type type) {
-        switch (C01051.f24x6930e354[type.ordinal()]) {
+        switch (C01011.f24x6930e354[type.ordinal()]) {
             case 1:
                 return this.mLeft;
             case 2:
@@ -1128,7 +1128,7 @@ public class ConstraintWidget {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: androidx.constraintlayout.core.widgets.ConstraintWidget$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C01051 {
+    public static /* synthetic */ class C01011 {
 
         /* renamed from: $SwitchMap$androidx$constraintlayout$core$widgets$ConstraintAnchor$Type */
         static final /* synthetic */ int[] f24x6930e354;

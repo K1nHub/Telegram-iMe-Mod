@@ -9,7 +9,7 @@ public final class TonTransactionParamsResponse {
     private final int walletSeqno;
 
     /* renamed from: wc */
-    private final int f309wc;
+    private final int f304wc;
 
     public static /* synthetic */ TonTransactionParamsResponse copy$default(TonTransactionParamsResponse tonTransactionParamsResponse, int i, String str, int i2, int i3, int i4, Object obj) {
         if ((i4 & 1) != 0) {
@@ -22,7 +22,7 @@ public final class TonTransactionParamsResponse {
             i2 = tonTransactionParamsResponse.walletSeqno;
         }
         if ((i4 & 8) != 0) {
-            i3 = tonTransactionParamsResponse.f309wc;
+            i3 = tonTransactionParamsResponse.f304wc;
         }
         return tonTransactionParamsResponse.copy(i, str, i2, i3);
     }
@@ -40,7 +40,7 @@ public final class TonTransactionParamsResponse {
     }
 
     public final int component4() {
-        return this.f309wc;
+        return this.f304wc;
     }
 
     public final TonTransactionParamsResponse copy(int i, String toWalletAddressFixed, int i2, int i3) {
@@ -54,17 +54,17 @@ public final class TonTransactionParamsResponse {
         }
         if (obj instanceof TonTransactionParamsResponse) {
             TonTransactionParamsResponse tonTransactionParamsResponse = (TonTransactionParamsResponse) obj;
-            return this.sendMode == tonTransactionParamsResponse.sendMode && Intrinsics.areEqual(this.toWalletAddressFixed, tonTransactionParamsResponse.toWalletAddressFixed) && this.walletSeqno == tonTransactionParamsResponse.walletSeqno && this.f309wc == tonTransactionParamsResponse.f309wc;
+            return this.sendMode == tonTransactionParamsResponse.sendMode && Intrinsics.areEqual(this.toWalletAddressFixed, tonTransactionParamsResponse.toWalletAddressFixed) && this.walletSeqno == tonTransactionParamsResponse.walletSeqno && this.f304wc == tonTransactionParamsResponse.f304wc;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((this.sendMode * 31) + this.toWalletAddressFixed.hashCode()) * 31) + this.walletSeqno) * 31) + this.f309wc;
+        return (((((this.sendMode * 31) + this.toWalletAddressFixed.hashCode()) * 31) + this.walletSeqno) * 31) + this.f304wc;
     }
 
     public String toString() {
-        return "TonTransactionParamsResponse(sendMode=" + this.sendMode + ", toWalletAddressFixed=" + this.toWalletAddressFixed + ", walletSeqno=" + this.walletSeqno + ", wc=" + this.f309wc + ')';
+        return "TonTransactionParamsResponse(sendMode=" + this.sendMode + ", toWalletAddressFixed=" + this.toWalletAddressFixed + ", walletSeqno=" + this.walletSeqno + ", wc=" + this.f304wc + ')';
     }
 
     public TonTransactionParamsResponse(int i, String toWalletAddressFixed, int i2, int i3) {
@@ -72,7 +72,7 @@ public final class TonTransactionParamsResponse {
         this.sendMode = i;
         this.toWalletAddressFixed = toWalletAddressFixed;
         this.walletSeqno = i2;
-        this.f309wc = i3;
+        this.f304wc = i3;
     }
 
     public final int getSendMode() {
@@ -88,6 +88,6 @@ public final class TonTransactionParamsResponse {
     }
 
     public final int getWc() {
-        return this.f309wc;
+        return this.f304wc;
     }
 }

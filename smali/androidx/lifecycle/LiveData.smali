@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/lifecycle/LiveData$AlwaysActiveObserver;,
         Landroidx/lifecycle/LiveData$ObserverWrapper;,
-        Landroidx/lifecycle/LiveData$LifecycleBoundObserver;
+        Landroidx/lifecycle/LiveData$LifecycleBoundObserver;,
+        Landroidx/lifecycle/LiveData$AlwaysActiveObserver;
     }
 .end annotation
 
@@ -123,7 +123,7 @@
 .method static assertMainThread(Ljava/lang/String;)V
     .locals 3
 
-    .line 486
+    .line 501
     invoke-static {}, Landroidx/arch/core/executor/ArchTaskExecutor;->getInstance()Landroidx/arch/core/executor/ArchTaskExecutor;
 
     move-result-object v0
@@ -136,7 +136,7 @@
 
     return-void
 
-    .line 487
+    .line 502
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -224,15 +224,15 @@
 .method changeActiveCounter(I)V
     .locals 4
 
-    .line 378
+    .line 393
     iget v0, p0, Landroidx/lifecycle/LiveData;->mActiveCount:I
 
     add-int/2addr p1, v0
 
-    .line 379
+    .line 394
     iput p1, p0, Landroidx/lifecycle/LiveData;->mActiveCount:I
 
-    .line 380
+    .line 395
     iget-boolean p1, p0, Landroidx/lifecycle/LiveData;->mChangingActiveState:Z
 
     if-eqz p1, :cond_0
@@ -242,13 +242,13 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 383
+    .line 398
     iput-boolean p1, p0, Landroidx/lifecycle/LiveData;->mChangingActiveState:Z
 
     :goto_0
     const/4 v1, 0x0
 
-    .line 385
+    .line 400
     :try_start_0
     iget v2, p0, Landroidx/lifecycle/LiveData;->mActiveCount:I
 
@@ -280,7 +280,7 @@
     :goto_2
     if-eqz v3, :cond_3
 
-    .line 390
+    .line 405
     invoke-virtual {p0}, Landroidx/lifecycle/LiveData;->onActive()V
 
     goto :goto_3
@@ -288,7 +288,7 @@
     :cond_3
     if-eqz v0, :cond_4
 
-    .line 392
+    .line 407
     invoke-virtual {p0}, Landroidx/lifecycle/LiveData;->onInactive()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -299,7 +299,7 @@
 
     goto :goto_0
 
-    .line 396
+    .line 411
     :cond_5
     iput-boolean v1, p0, Landroidx/lifecycle/LiveData;->mChangingActiveState:Z
 
@@ -310,7 +310,7 @@
 
     iput-boolean v1, p0, Landroidx/lifecycle/LiveData;->mChangingActiveState:Z
 
-    .line 397
+    .line 412
     throw p1
 .end method
 
@@ -412,10 +412,10 @@
         }
     .end annotation
 
-    .line 322
+    .line 323
     iget-object v0, p0, Landroidx/lifecycle/LiveData;->mData:Ljava/lang/Object;
 
-    .line 323
+    .line 324
     sget-object v1, Landroidx/lifecycle/LiveData;->NOT_SET:Ljava/lang/Object;
 
     if-eq v0, v1, :cond_0
@@ -431,7 +431,7 @@
 .method public hasActiveObservers()Z
     .locals 1
 
-    .line 373
+    .line 388
     iget v0, p0, Landroidx/lifecycle/LiveData;->mActiveCount:I
 
     if-lez v0, :cond_0

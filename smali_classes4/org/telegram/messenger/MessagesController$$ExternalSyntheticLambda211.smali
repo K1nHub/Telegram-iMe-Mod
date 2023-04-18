@@ -63,7 +63,7 @@
 
     iget v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda211;->f$6:I
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$awqox6kkKcrd0LoEKa8717o1lyY(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Ljava/util/ArrayList;IZ[JI)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$RtJMehJMncq76-2SbauP0qS-_eA(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Ljava/util/ArrayList;IZ[JI)V
 
     return-void
 .end method

@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import com.iMe.storage.domain.repository.wallet.WalletRepository;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import java.util.List;
@@ -35,7 +35,7 @@ final class WalletInteractor$getWalletBalance$1$1 extends Lambda implements Func
         walletRepository = this.this$0.walletRepository;
         Observable<Result<List<TokenBalance>>> walletBalance = walletRepository.getWalletBalance(this.$force, this.$networkType);
         schedulersProvider = this.this$0.schedulersProvider;
-        return walletBalance.subscribeOn(schedulersProvider.mo708io());
+        return walletBalance.subscribeOn(schedulersProvider.mo694io());
     }
 
     @Override // kotlin.jvm.functions.Function1

@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickerTabView;Landroid/view/ViewGroup;)V
     .locals 0
 
-    .line 178
+    .line 176
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerTabView$2;->this$0:Lorg/telegram/ui/Components/StickerTabView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/StickerTabView$2;->val$parent:Landroid/view/ViewGroup;
@@ -42,7 +42,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 181
+    .line 179
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerTabView$2;->this$0:Lorg/telegram/ui/Components/StickerTabView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,12 +57,12 @@
 
     iput p1, v0, Lorg/telegram/ui/Components/StickerTabView;->dragOffset:F
 
-    .line 182
+    .line 180
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView$2;->this$0:Lorg/telegram/ui/Components/StickerTabView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 183
+    .line 181
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerTabView$2;->val$parent:Landroid/view/ViewGroup;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V

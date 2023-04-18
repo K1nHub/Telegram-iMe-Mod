@@ -13,7 +13,11 @@
 
 .field public static final id_sha384:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
+.field public static final id_sha3_256:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
 .field public static final id_sha512:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+.field public static final id_sha512_256:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
 .field public static final id_shake128:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
@@ -82,6 +86,10 @@
 
     invoke-virtual {v2, v7}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
+    move-result-object v8
+
+    sput-object v8, Lorg/bouncycastle/asn1/nist/NISTObjectIdentifiers;->id_sha512_256:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
     const-string v8, "7"
 
     invoke-virtual {v2, v8}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
@@ -89,6 +97,10 @@
     const-string v9, "8"
 
     invoke-virtual {v2, v9}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object v10
+
+    sput-object v10, Lorg/bouncycastle/asn1/nist/NISTObjectIdentifiers;->id_sha3_256:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     const-string v10, "9"
 
@@ -134,6 +146,24 @@
 
     invoke-virtual {v2, v15}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
+    move-object/from16 v18, v15
+
+    const-string v15, "17"
+
+    invoke-virtual {v2, v15}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    const-string v15, "18"
+
+    invoke-virtual {v2, v15}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    const-string v15, "19"
+
+    invoke-virtual {v2, v15}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    const-string v15, "20"
+
+    invoke-virtual {v2, v15}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
     invoke-virtual {v0, v3}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     move-result-object v2
@@ -155,8 +185,6 @@
     invoke-virtual {v2, v8}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     invoke-virtual {v2, v9}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    move-object/from16 v18, v15
 
     const-string v15, "21"
 

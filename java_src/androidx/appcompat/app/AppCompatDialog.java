@@ -1,17 +1,17 @@
 package androidx.appcompat.app;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.activity.ComponentDialog;
 import androidx.appcompat.R$attr;
 import androidx.appcompat.view.ActionMode;
 import androidx.core.view.KeyEventDispatcher;
 /* loaded from: classes.dex */
-public class AppCompatDialog extends Dialog implements AppCompatCallback {
+public class AppCompatDialog extends ComponentDialog implements AppCompatCallback {
     private AppCompatDelegate mDelegate;
     private final KeyEventDispatcher.Component mKeyDispatcher;
 
@@ -34,9 +34,9 @@ public class AppCompatDialog extends Dialog implements AppCompatCallback {
 
     public AppCompatDialog(Context context, int i) {
         super(context, getThemeResId(context, i));
-        this.mKeyDispatcher = new KeyEventDispatcher.Component() { // from class: androidx.appcompat.app.AppCompatDialog.1
+        this.mKeyDispatcher = new KeyEventDispatcher.Component() { // from class: androidx.appcompat.app.AppCompatDialog$$ExternalSyntheticLambda0
             @Override // androidx.core.view.KeyEventDispatcher.Component
-            public boolean superDispatchKeyEvent(KeyEvent keyEvent) {
+            public final boolean superDispatchKeyEvent(KeyEvent keyEvent) {
                 return AppCompatDialog.this.superDispatchKeyEvent(keyEvent);
             }
         };
@@ -46,24 +46,24 @@ public class AppCompatDialog extends Dialog implements AppCompatCallback {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.app.Dialog
+    @Override // androidx.activity.ComponentDialog, android.app.Dialog
     public void onCreate(Bundle bundle) {
         getDelegate().installViewFactory();
         super.onCreate(bundle);
         getDelegate().onCreate(bundle);
     }
 
-    @Override // android.app.Dialog
+    @Override // androidx.activity.ComponentDialog, android.app.Dialog
     public void setContentView(int i) {
         getDelegate().setContentView(i);
     }
 
-    @Override // android.app.Dialog
+    @Override // androidx.activity.ComponentDialog, android.app.Dialog
     public void setContentView(View view) {
         getDelegate().setContentView(view);
     }
 
-    @Override // android.app.Dialog
+    @Override // androidx.activity.ComponentDialog, android.app.Dialog
     public void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
         getDelegate().setContentView(view, layoutParams);
     }
@@ -85,12 +85,12 @@ public class AppCompatDialog extends Dialog implements AppCompatCallback {
         getDelegate().setTitle(getContext().getString(i));
     }
 
-    @Override // android.app.Dialog
+    @Override // androidx.activity.ComponentDialog, android.app.Dialog
     public void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
         getDelegate().addContentView(view, layoutParams);
     }
 
-    @Override // android.app.Dialog
+    @Override // androidx.activity.ComponentDialog, android.app.Dialog
     protected void onStop() {
         super.onStop();
         getDelegate().onStop();
@@ -127,7 +127,8 @@ public class AppCompatDialog extends Dialog implements AppCompatCallback {
         return i;
     }
 
-    boolean superDispatchKeyEvent(KeyEvent keyEvent) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public boolean superDispatchKeyEvent(KeyEvent keyEvent) {
         return super.dispatchKeyEvent(keyEvent);
     }
 

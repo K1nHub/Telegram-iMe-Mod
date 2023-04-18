@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$5\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,153:1\n127#2,5:154\n127#2,5:159\n127#2,5:164\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$5\n*L\n77#1:154,5\n78#1:159,5\n79#1:164,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$5\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,153:1\n129#2,5:154\n129#2,5:159\n129#2,5:164\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$5\n*L\n77#1:154,5\n78#1:159,5\n79#1:164,5\n*E\n"
 .end annotation
 
 
@@ -75,7 +75,7 @@
     .line 76
     new-instance p2, Lcom/iMe/storage/data/repository/catalog/CatalogRepositoryImpl;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/data/network/api/own/CatalogApi;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -120,7 +120,7 @@
 
     check-cast v4, Lcom/iMe/storage/data/locale/db/dao/minor/catalog/CatalogLanguageDao;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -163,7 +163,7 @@
 
     check-cast v7, Lcom/iMe/storage/domain/storage/PreferenceHelper;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

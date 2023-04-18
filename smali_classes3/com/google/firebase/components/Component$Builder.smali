@@ -81,6 +81,9 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/SafeVarargs;
+    .end annotation
+
     .line 230
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;Landroid/content/Context;Landroidx/core/view/GestureDetectorCompat;)V
     .locals 0
 
-    .line 160
+    .line 161
     iput-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->val$gestureDetector:Landroidx/core/view/GestureDetectorCompat;
@@ -39,10 +39,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 163
+    .line 164
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 164
+    .line 165
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
@@ -53,21 +53,21 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 182
+    .line 183
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->val$gestureDetector:Landroidx/core/view/GestureDetectorCompat;
 
     invoke-virtual {v0, p1}, Landroidx/core/view/GestureDetectorCompat;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    .line 183
+    .line 184
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 184
+    .line 185
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$800(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Ljava/lang/Runnable;
@@ -80,7 +80,7 @@
 
     goto/16 :goto_1
 
-    .line 185
+    .line 186
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -98,7 +98,7 @@
 
     if-ne p1, v1, :cond_4
 
-    .line 186
+    .line 187
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
@@ -108,7 +108,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 188
+    .line 189
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$700(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Z
@@ -117,7 +117,7 @@
 
     if-nez p1, :cond_3
 
-    .line 189
+    .line 190
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$300(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -190,7 +190,7 @@
 
     invoke-virtual {p1, v1}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 190
+    .line 191
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$500(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -231,7 +231,7 @@
 
     invoke-virtual {p1, v1}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 191
+    .line 192
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$300(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -240,7 +240,7 @@
 
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
-    .line 192
+    .line 193
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$500(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -249,7 +249,7 @@
 
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
-    .line 194
+    .line 195
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
@@ -257,17 +257,17 @@
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$002(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;Z)Z
 
-    .line 195
+    .line 196
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$202(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;Z)Z
 
-    .line 196
+    .line 197
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$902(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;Z)Z
 
-    .line 197
+    .line 198
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->access$702(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;Z)Z
@@ -280,10 +280,10 @@
 .method public setTranslationX(F)V
     .locals 0
 
-    .line 169
+    .line 170
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 170
+    .line 171
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -294,10 +294,10 @@
 .method public setTranslationY(F)V
     .locals 0
 
-    .line 175
+    .line 176
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 176
+    .line 177
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$2;->this$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

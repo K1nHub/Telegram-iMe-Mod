@@ -16,6 +16,12 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1$WhenMappings;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
@@ -60,7 +66,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 170
+    .line 172
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -71,7 +77,7 @@
 .method public final invoke()V
     .locals 5
 
-    .line 171
+    .line 173
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getCryptoAccessManager$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
@@ -84,43 +90,95 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
-
-    .line 172
-    sget-object v0, Lcom/iMe/storage/data/utils/crypto/CryptoEVMUtils;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/CryptoEVMUtils;
-
-    .line 173
-    iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
-
-    invoke-static {v1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getWallet(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    return-void
+    if-eqz v0, :cond_3
 
     .line 174
-    :cond_0
-    iget-object v2, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->$message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
+    iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
-    invoke-virtual {v2}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;->getData()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 175
-    iget-object v3, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->$message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
-
-    invoke-virtual {v3}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;->getType()Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage$WCSignType;
-
-    move-result-object v3
-
-    .line 172
-    invoke-virtual {v0, v1, v2, v3}, Lcom/iMe/storage/data/utils/crypto/CryptoEVMUtils;->signMessage(Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;Ljava/lang/String;Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage$WCSignType;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getWallet(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
 
     move-result-object v0
 
-    .line 177
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getHdWallet()Lwallet/core/jni/HDWallet;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    sget-object v1, Lwallet/core/jni/CoinType;->ETHEREUM:Lwallet/core/jni/CoinType;
+
+    invoke-static {v0, v1}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->getPrivateKey(Lwallet/core/jni/HDWallet;Lwallet/core/jni/CoinType;)Lwallet/core/jni/PrivateKey;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_1
+
+    .line 176
+    :cond_0
+    iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->$message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
+
+    invoke-virtual {v1}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;->getType()Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage$WCSignType;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1$WhenMappings;->$EnumSwitchMapping$0:[I
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    aget v1, v2, v1
+
+    const/4 v2, 0x1
+
+    if-eq v1, v2, :cond_2
+
+    const/4 v2, 0x2
+
+    if-eq v1, v2, :cond_2
+
+    const/4 v2, 0x3
+
+    if-ne v1, v2, :cond_1
+
+    .line 181
+    iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->$message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
+
+    invoke-virtual {v1}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;->getData()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lwallet/core/jni/EthereumMessageSigner;->signTypedMessage(Lwallet/core/jni/PrivateKey;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    .line 179
+    :cond_2
+    iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->$message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
+
+    invoke-virtual {v1}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;->getData()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lwallet/core/jni/EthereumMessageSigner;->signMessage(Lwallet/core/jni/PrivateKey;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 183
+    :goto_0
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     iget-object v2, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->$sessionKey:Ljava/lang/String;
@@ -129,6 +187,9 @@
 
     invoke-virtual {v1, v2, v3, v4, v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->approveRequest(Ljava/lang/String;JLjava/lang/Object;)V
 
-    :cond_1
+    nop
+
+    :cond_3
+    :goto_1
     return-void
 .end method

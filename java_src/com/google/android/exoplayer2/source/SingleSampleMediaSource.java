@@ -81,10 +81,10 @@ public final class SingleSampleMediaSource extends BaseMediaSource {
         this.durationUs = j;
         this.loadErrorHandlingPolicy = loadErrorHandlingPolicy;
         this.treatLoadErrorsAsEndOfStream = z;
-        MediaItem build = new MediaItem.Builder().setUri(Uri.EMPTY).setMediaId(subtitleConfiguration.uri.toString()).setSubtitleConfigurations(ImmutableList.m753of(subtitleConfiguration)).setTag(obj).build();
+        MediaItem build = new MediaItem.Builder().setUri(Uri.EMPTY).setMediaId(subtitleConfiguration.uri.toString()).setSubtitleConfigurations(ImmutableList.m739of(subtitleConfiguration)).setTag(obj).build();
         this.mediaItem = build;
         Format.Builder label = new Format.Builder().setSampleMimeType((String) MoreObjects.firstNonNull(subtitleConfiguration.mimeType, MimeTypes.TEXT_UNKNOWN)).setLanguage(subtitleConfiguration.language).setSelectionFlags(subtitleConfiguration.selectionFlags).setRoleFlags(subtitleConfiguration.roleFlags).setLabel(subtitleConfiguration.label);
-        String str2 = subtitleConfiguration.f102id;
+        String str2 = subtitleConfiguration.f99id;
         this.format = label.setId(str2 == null ? str : str2).build();
         this.dataSpec = new DataSpec.Builder().setUri(subtitleConfiguration.uri).setFlags(1).build();
         this.timeline = new SinglePeriodTimeline(j, true, false, false, (Object) null, build);

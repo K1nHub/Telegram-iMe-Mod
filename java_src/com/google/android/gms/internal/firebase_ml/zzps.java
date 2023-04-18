@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.firebase_ml;
 
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.custom.FirebaseModelDataType;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.custom.FirebaseModelDataType;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;

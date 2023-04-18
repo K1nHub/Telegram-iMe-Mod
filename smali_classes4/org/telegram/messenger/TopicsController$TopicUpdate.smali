@@ -48,12 +48,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 1004
+    .line 1020
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 1005
+    .line 1021
     iput v0, p0, Lorg/telegram/messenger/TopicsController$TopicUpdate;->totalMessagesCount:I
 
     return-void

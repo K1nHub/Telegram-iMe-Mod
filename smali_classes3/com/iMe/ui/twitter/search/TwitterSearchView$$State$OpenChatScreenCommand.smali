@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/twitter/search/TwitterSearchView$$State;J)V
     .locals 1
 
-    .line 599
+    .line 635
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openChatScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 601
+    .line 637
     iput-wide p2, p0, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$OpenChatScreenCommand;->userId:J
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/twitter/search/TwitterSearchView;)V
     .locals 2
 
-    .line 606
+    .line 642
     iget-wide v0, p0, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$OpenChatScreenCommand;->userId:J
 
     invoke-interface {p1, v0, v1}, Lcom/iMe/manager/crypto/recipient/CryptoRecipientView;->openChatScreen(J)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 595
+    .line 631
     check-cast p1, Lcom/iMe/ui/twitter/search/TwitterSearchView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/twitter/search/TwitterSearchView$$State$OpenChatScreenCommand;->apply(Lcom/iMe/ui/twitter/search/TwitterSearchView;)V

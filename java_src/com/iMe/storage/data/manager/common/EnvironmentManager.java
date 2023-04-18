@@ -15,7 +15,7 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: EnvironmentManager.kt */
 /* loaded from: classes3.dex */
 public final class EnvironmentManager implements KoinComponent {

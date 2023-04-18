@@ -16,14 +16,14 @@ import java.util.ArrayList;
 /* loaded from: classes.dex */
 public final class zzm extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzm> CREATOR = new zzn();
-    @SafeParcelable.Field(m789id = 1)
+    @SafeParcelable.Field(m775id = 1)
     public final int zza;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     final Bundle zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzm(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) Bundle bundle) {
+    public zzm(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) Bundle bundle) {
         this.zza = i;
         this.zzb = bundle;
     }

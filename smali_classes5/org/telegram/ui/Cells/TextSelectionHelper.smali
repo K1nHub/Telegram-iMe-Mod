@@ -362,7 +362,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->hideActionsRunnable:Ljava/lang/Runnable;
 
-    .line 1635
+    .line 1634
     new-instance v0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;-><init>(Lorg/telegram/ui/Cells/TextSelectionHelper$1;)V
@@ -729,7 +729,7 @@
 .method private copyText()V
     .locals 1
 
-    .line 1490
+    .line 1489
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->isSelectionMode()Z
 
     move-result v0
@@ -738,7 +738,7 @@
 
     return-void
 
-    .line 1493
+    .line 1492
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getSelectedText()Ljava/lang/CharSequence;
 
@@ -748,24 +748,24 @@
 
     return-void
 
-    .line 1497
+    .line 1496
     :cond_1
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->addToClipboard(Ljava/lang/CharSequence;)Z
 
-    .line 1498
+    .line 1497
     invoke-direct {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->hideActions()V
 
     const/4 v0, 0x1
 
-    .line 1499
+    .line 1498
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->clear(Z)V
 
-    .line 1500
+    .line 1499
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->callback:Lorg/telegram/ui/Cells/TextSelectionHelper$Callback;
 
     if-eqz v0, :cond_2
 
-    .line 1501
+    .line 1500
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/TextSelectionHelper$Callback;->onTextCopied()V
 
     :cond_2
@@ -780,14 +780,14 @@
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$4;-><init>(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
-    .line 1434
+    .line 1433
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x17
 
     if-lt v1, v2, :cond_0
 
-    .line 1435
+    .line 1434
     new-instance v1, Lorg/telegram/ui/Cells/TextSelectionHelper$5;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/Cells/TextSelectionHelper$5;-><init>(Lorg/telegram/ui/Cells/TextSelectionHelper;Landroid/view/ActionMode$Callback;)V
@@ -809,17 +809,17 @@
 
     move/from16 v3, p4
 
-    .line 1637
+    .line 1636
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->tempPath2:Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->reset()V
 
-    .line 1638
+    .line 1637
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->tempPath2:Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/text/StaticLayout;->getSelectionPath(IILandroid/graphics/Path;)V
 
-    .line 1641
+    .line 1640
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->tempPath2:Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;
 
     iget v4, v4, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->lastBottom:F
@@ -836,12 +836,12 @@
 
     if-gez v4, :cond_0
 
-    .line 1642
+    .line 1641
     invoke-virtual/range {p1 .. p2}, Landroid/text/StaticLayout;->getLineTop(I)I
 
     move-result v4
 
-    .line 1643
+    .line 1642
     invoke-virtual/range {p1 .. p2}, Landroid/text/StaticLayout;->getLineBottom(I)I
 
     move-result v6
@@ -850,7 +850,7 @@
 
     int-to-float v6, v6
 
-    .line 1645
+    .line 1644
     iget-object v7, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->tempPath2:Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;
 
     iget v7, v7, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->lastBottom:F
@@ -871,7 +871,7 @@
     :goto_0
     const/4 v7, 0x0
 
-    .line 1650
+    .line 1649
     :goto_1
     iget-object v8, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->tempPath2:Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;
 
@@ -883,7 +883,7 @@
 
     if-ge v7, v8, :cond_3
 
-    .line 1651
+    .line 1650
     iget-object v8, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->tempPath2:Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;
 
     invoke-static {v8}, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->access$3200(Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;)Ljava/util/ArrayList;
@@ -896,12 +896,12 @@
 
     check-cast v8, Landroid/graphics/RectF;
 
-    .line 1652
+    .line 1651
     iget v10, v8, Landroid/graphics/RectF;->left:F
 
     if-eqz p5, :cond_1
 
-    .line 1653
+    .line 1652
     iget v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->cornerRadius:F
 
     div-float/2addr v11, v9
@@ -934,7 +934,7 @@
 
     if-eqz p6, :cond_2
 
-    .line 1655
+    .line 1654
     iget v13, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->cornerRadius:F
 
     div-float/2addr v13, v9
@@ -963,10 +963,10 @@
 
     int-to-float v12, v12
 
-    .line 1652
+    .line 1651
     invoke-virtual {v8, v10, v11, v9, v12}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1658
+    .line 1657
     iget-object v13, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionPath:Landroid/graphics/Path;
 
     iget v14, v8, Landroid/graphics/RectF;->left:F
@@ -989,7 +989,7 @@
 
     goto :goto_1
 
-    .line 1661
+    .line 1660
     :cond_3
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->tempPath2:Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;
 
@@ -1001,21 +1001,21 @@
 
     if-nez p6, :cond_4
 
-    .line 1662
+    .line 1661
     invoke-virtual {v1, v2}, Landroid/text/StaticLayout;->getPrimaryHorizontal(I)F
 
     move-result v2
 
     float-to-int v2, v2
 
-    .line 1663
+    .line 1662
     invoke-virtual {v1, v3}, Landroid/text/StaticLayout;->getPrimaryHorizontal(I)F
 
     move-result v3
 
     float-to-int v3, v3
 
-    .line 1664
+    .line 1663
     invoke-virtual/range {p1 .. p2}, Landroid/text/StaticLayout;->getLineTop(I)I
 
     move-result v4
@@ -1024,7 +1024,7 @@
 
     move-result v1
 
-    .line 1665
+    .line 1664
     iget-object v5, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionPath:Landroid/graphics/Path;
 
     int-to-float v2, v2
@@ -2388,7 +2388,7 @@
 .method private translateText()V
     .locals 1
 
-    .line 1506
+    .line 1505
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->isSelectionMode()Z
 
     move-result v0
@@ -2397,7 +2397,7 @@
 
     return-void
 
-    .line 1509
+    .line 1508
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getSelectedText()Ljava/lang/CharSequence;
 
@@ -2604,17 +2604,17 @@
 
     move/from16 v10, p4
 
-    .line 1540
+    .line 1539
     iget-object v0, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionPath:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->reset()V
 
-    .line 1541
+    .line 1540
     iget-object v0, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionHandlePath:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->reset()V
 
-    .line 1542
+    .line 1541
     iget v0, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->cornerRadius:F
 
     const v1, 0x3fd33333    # 1.65f
@@ -2627,12 +2627,12 @@
 
     float-to-int v12, v0
 
-    .line 1546
+    .line 1545
     invoke-virtual/range {p2 .. p3}, Landroid/text/StaticLayout;->getLineForOffset(I)I
 
     move-result v13
 
-    .line 1547
+    .line 1546
     invoke-virtual {v9, v10}, Landroid/text/StaticLayout;->getLineForOffset(I)I
 
     move-result v14
@@ -2655,12 +2655,12 @@
 
     move/from16 v4, p4
 
-    .line 1550
+    .line 1549
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->drawLine(Landroid/text/StaticLayout;IIIZZ)V
 
     goto/16 :goto_4
 
-    .line 1552
+    .line 1551
     :cond_0
     invoke-virtual {v9, v13}, Landroid/text/StaticLayout;->getLineEnd(I)I
 
@@ -2668,7 +2668,7 @@
 
     const/4 v1, 0x0
 
-    .line 1554
+    .line 1553
     invoke-virtual {v9, v13}, Landroid/text/StaticLayout;->getParagraphDirection(I)I
 
     move-result v2
@@ -2681,19 +2681,19 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 1556
+    .line 1555
     invoke-virtual/range {p2 .. p2}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 1557
+    .line 1556
     invoke-virtual {v9, v0}, Landroid/text/StaticLayout;->getPrimaryHorizontal(I)F
 
     move-result v3
 
     float-to-int v3, v3
 
-    .line 1559
+    .line 1558
     invoke-virtual {v9, v0}, Landroid/text/StaticLayout;->isRtlCharAt(I)Z
 
     move-result v4
@@ -2702,7 +2702,7 @@
 
     move v4, v0
 
-    .line 1561
+    .line 1560
     :goto_0
     invoke-virtual {v9, v4}, Landroid/text/StaticLayout;->isRtlCharAt(I)Z
 
@@ -2719,7 +2719,7 @@
 
     goto :goto_0
 
-    .line 1565
+    .line 1564
     :cond_2
     :goto_1
     invoke-virtual {v9, v4}, Landroid/text/StaticLayout;->getLineForOffset(I)I
@@ -2747,7 +2747,7 @@
 
     goto :goto_2
 
-    .line 1567
+    .line 1566
     :cond_4
     invoke-virtual {v9, v13}, Landroid/text/StaticLayout;->getLineRight(I)F
 
@@ -2756,19 +2756,19 @@
     :goto_2
     float-to-int v4, v4
 
-    .line 1569
+    .line 1568
     invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
 
     move-result v5
 
-    .line 1570
+    .line 1569
     invoke-static {v3, v4}, Ljava/lang/Math;->max(II)I
 
     move-result v3
 
     if-lez v0, :cond_5
 
-    .line 1571
+    .line 1570
     invoke-interface {v2}, Ljava/lang/CharSequence;->length()I
 
     move-result v4
@@ -2787,7 +2787,7 @@
 
     if-nez v2, :cond_5
 
-    .line 1572
+    .line 1571
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-virtual {v9, v13}, Landroid/text/StaticLayout;->getLineTop(I)I
@@ -2823,17 +2823,17 @@
 
     move/from16 v6, v16
 
-    .line 1575
+    .line 1574
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->drawLine(Landroid/text/StaticLayout;IIIZZ)V
 
     if-eqz v15, :cond_6
 
-    .line 1577
+    .line 1576
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {v0, v15}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 1578
+    .line 1577
     iget-object v1, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionPath:Landroid/graphics/Path;
 
     sget-object v2, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
@@ -2846,31 +2846,31 @@
     :goto_3
     if-ge v0, v14, :cond_7
 
-    .line 1581
+    .line 1580
     invoke-virtual {v9, v0}, Landroid/text/StaticLayout;->getLineLeft(I)F
 
     move-result v1
 
     float-to-int v1, v1
 
-    .line 1582
+    .line 1581
     invoke-virtual {v9, v0}, Landroid/text/StaticLayout;->getLineRight(I)F
 
     move-result v2
 
     float-to-int v2, v2
 
-    .line 1583
+    .line 1582
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v3
 
-    .line 1584
+    .line 1583
     invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    .line 1585
+    .line 1584
     iget-object v2, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionPath:Landroid/graphics/Path;
 
     sub-int/2addr v3, v12
@@ -2918,7 +2918,7 @@
     :cond_7
     const/4 v15, 0x1
 
-    .line 1587
+    .line 1586
     invoke-virtual {v9, v14}, Landroid/text/StaticLayout;->getLineStart(I)I
 
     move-result v3
@@ -2937,7 +2937,7 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->drawLine(Landroid/text/StaticLayout;IIIZZ)V
 
-    .line 1589
+    .line 1588
     :goto_4
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2953,28 +2953,28 @@
     :goto_5
     if-eqz v15, :cond_9
 
-    .line 1591
+    .line 1590
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1594
+    .line 1593
     :cond_9
     invoke-virtual/range {p2 .. p3}, Landroid/text/StaticLayout;->getPrimaryHorizontal(I)F
 
     move-result v2
 
-    .line 1595
+    .line 1594
     invoke-virtual {v9, v10}, Landroid/text/StaticLayout;->getPrimaryHorizontal(I)F
 
     move-result v3
 
-    .line 1596
+    .line 1595
     invoke-virtual {v9, v13}, Landroid/text/StaticLayout;->getLineBottom(I)I
 
     move-result v4
 
     int-to-float v4, v4
 
-    .line 1597
+    .line 1596
     invoke-virtual {v9, v14}, Landroid/text/StaticLayout;->getLineBottom(I)I
 
     move-result v5
@@ -2991,7 +2991,7 @@
 
     sub-float v6, v3, v2
 
-    .line 1599
+    .line 1598
     invoke-static {v6}, Ljava/lang/Math;->abs(F)F
 
     move-result v6
@@ -3000,7 +3000,7 @@
 
     if-gez v6, :cond_a
 
-    .line 1600
+    .line 1599
     invoke-static {v2, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v5
@@ -3009,7 +3009,7 @@
 
     move-result v2
 
-    .line 1601
+    .line 1600
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     float-to-int v5, v5
@@ -3024,12 +3024,12 @@
 
     invoke-virtual {v3, v5, v6, v2, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1602
+    .line 1601
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {v2, v3}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 1603
+    .line 1602
     iget-object v4, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionHandlePath:Landroid/graphics/Path;
 
     sget-object v5, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
@@ -3038,7 +3038,7 @@
 
     if-lt v0, v1, :cond_c
 
-    .line 1605
+    .line 1604
     invoke-virtual {v8, v3}, Landroid/graphics/Canvas;->clipOutRect(Landroid/graphics/Rect;)Z
 
     goto :goto_6
@@ -3046,14 +3046,14 @@
     :cond_a
     if-eqz p5, :cond_b
 
-    .line 1608
+    .line 1607
     invoke-virtual/range {p2 .. p3}, Landroid/text/StaticLayout;->isRtlCharAt(I)Z
 
     move-result v6
 
     if-nez v6, :cond_b
 
-    .line 1609
+    .line 1608
     sget-object v6, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     float-to-int v12, v2
@@ -3078,12 +3078,12 @@
 
     invoke-virtual {v6, v12, v1, v2, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1610
+    .line 1609
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {v1, v6}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 1611
+    .line 1610
     iget-object v2, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionHandlePath:Landroid/graphics/Path;
 
     sget-object v4, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
@@ -3094,7 +3094,7 @@
 
     if-lt v0, v1, :cond_b
 
-    .line 1613
+    .line 1612
     iget v1, v6, Landroid/graphics/Rect;->left:I
 
     float-to-int v2, v11
@@ -3109,20 +3109,20 @@
 
     invoke-virtual {v6, v1, v2, v4, v12}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1614
+    .line 1613
     invoke-virtual {v8, v6}, Landroid/graphics/Canvas;->clipOutRect(Landroid/graphics/Rect;)Z
 
     :cond_b
     if-eqz p6, :cond_c
 
-    .line 1618
+    .line 1617
     invoke-virtual {v9, v10}, Landroid/text/StaticLayout;->isRtlCharAt(I)Z
 
     move-result v1
 
     if-nez v1, :cond_c
 
-    .line 1619
+    .line 1618
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     sub-float v2, v3, v11
@@ -3147,12 +3147,12 @@
 
     invoke-virtual {v1, v2, v4, v3, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1620
+    .line 1619
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {v2, v1}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 1621
+    .line 1620
     iget-object v3, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionHandlePath:Landroid/graphics/Path;
 
     sget-object v4, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
@@ -3163,10 +3163,10 @@
 
     if-lt v0, v2, :cond_c
 
-    .line 1623
+    .line 1622
     invoke-virtual {v8, v1}, Landroid/graphics/Canvas;->clipOutRect(Landroid/graphics/Rect;)Z
 
-    .line 1628
+    .line 1627
     :cond_c
     :goto_6
     iget-object v0, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionPath:Landroid/graphics/Path;
@@ -3177,10 +3177,10 @@
 
     if-eqz v15, :cond_d
 
-    .line 1630
+    .line 1629
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1631
+    .line 1630
     iget-object v0, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionHandlePath:Landroid/graphics/Path;
 
     iget-object v1, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionHandlePaint:Landroid/graphics/Paint;
@@ -3196,7 +3196,7 @@
 
     const/4 v0, 0x0
 
-    .line 1686
+    .line 1685
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->fillLayoutForOffset(ILorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;Z)V
 
     return-void
@@ -3282,7 +3282,7 @@
 .method protected getSelectedText()Ljava/lang/CharSequence;
     .locals 3
 
-    .line 1516
+    .line 1515
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
 
     const/4 v1, 0x0
@@ -3293,7 +3293,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1518
+    .line 1517
     iget v1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
     iget v2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
@@ -3322,7 +3322,7 @@
 .method protected getThemedColor(Ljava/lang/String;)I
     .locals 0
 
-    .line 2951
+    .line 2950
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
@@ -3492,17 +3492,17 @@
 .method protected offsetToCord(I)[I
     .locals 5
 
-    .line 1524
+    .line 1523
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
 
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->fillLayoutForOffset(ILorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;)V
 
-    .line 1526
+    .line 1525
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
 
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;->layout:Landroid/text/StaticLayout;
 
-    .line 1527
+    .line 1526
     iget v0, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;->charOffset:I
 
     sub-int/2addr p1, v0
@@ -3511,7 +3511,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 1528
+    .line 1527
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -3524,13 +3524,13 @@
 
     goto :goto_0
 
-    .line 1532
+    .line 1531
     :cond_0
     invoke-virtual {v1, p1}, Landroid/text/StaticLayout;->getLineForOffset(I)I
 
     move-result v0
 
-    .line 1533
+    .line 1532
     iget-object v2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->tmpCoord:[I
 
     const/4 v3, 0x0
@@ -3549,7 +3549,7 @@
 
     aput p1, v2, v3
 
-    .line 1534
+    .line 1533
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->tmpCoord:[I
 
     invoke-virtual {v1, v0}, Landroid/text/StaticLayout;->getLineBottom(I)I
@@ -3560,7 +3560,7 @@
 
     aput v0, p1, v1
 
-    .line 1535
+    .line 1534
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->tmpCoord:[I
 
     aget v0, p1, v1
@@ -3579,7 +3579,7 @@
 
     return-object p1
 
-    .line 1529
+    .line 1528
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->tmpCoord:[I
@@ -4014,10 +4014,10 @@
 .method public setKeyboardSize(I)V
     .locals 0
 
-    .line 2938
+    .line 2937
     iput p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->keyboardSize:I
 
-    .line 2939
+    .line 2938
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->invalidate()V
 
     return-void

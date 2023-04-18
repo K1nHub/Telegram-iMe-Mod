@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 BlockchainsManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n*L\n1#1,111:1\n103#2,8:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 BlockchainsManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n*L\n1#1,111:1\n102#2,9:112\n*E\n"
 .end annotation
 
 
@@ -80,6 +80,10 @@
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
 
     .line 113
+    instance-of p1, p1, Lcom/iMe/storage/domain/model/Result$Success;
+
+    if-eqz p1, :cond_1
+
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter$handleWalletDeletionResult$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->access$getCryptoAccessManager$p(Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
@@ -115,6 +119,7 @@
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->access$showWallets(Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;)V
 
+    :cond_1
     :goto_0
     return-void
 .end method

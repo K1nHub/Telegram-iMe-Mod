@@ -3,7 +3,7 @@ package org.bouncycastle.asn1;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
-import org.bouncycastle.util.p046io.Streams;
+import org.bouncycastle.util.p042io.Streams;
 /* loaded from: classes4.dex */
 class DefiniteLengthInputStream extends LimitedInputStream {
     private static final byte[] EMPTY_BYTES = new byte[0];
@@ -11,8 +11,8 @@ class DefiniteLengthInputStream extends LimitedInputStream {
     private int _remaining;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public DefiniteLengthInputStream(InputStream inputStream, int i) {
-        super(inputStream, i);
+    public DefiniteLengthInputStream(InputStream inputStream, int i, int i2) {
+        super(inputStream, i2);
         if (i < 0) {
             throw new IllegalArgumentException("negative lengths not allowed");
         }
@@ -24,7 +24,6 @@ class DefiniteLengthInputStream extends LimitedInputStream {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // org.bouncycastle.asn1.LimitedInputStream
     public int getRemaining() {
         return this._remaining;
     }
@@ -65,10 +64,37 @@ class DefiniteLengthInputStream extends LimitedInputStream {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public byte[] toByteArray() throws IOException {
+    public void readAllIntoByteArray(byte[] bArr) throws IOException {
         int i = this._remaining;
+        if (i != bArr.length) {
+            throw new IllegalArgumentException("buffer length not right for data");
+        }
         if (i == 0) {
+            return;
+        }
+        int limit = getLimit();
+        int i2 = this._remaining;
+        if (i2 >= limit) {
+            throw new IOException("corrupted stream - out of bounds length found: " + this._remaining + " >= " + limit);
+        }
+        int readFully = i2 - Streams.readFully(this._in, bArr);
+        this._remaining = readFully;
+        if (readFully == 0) {
+            setParentEofDetect(true);
+            return;
+        }
+        throw new EOFException("DEF length " + this._originalLength + " object truncated by " + this._remaining);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public byte[] toByteArray() throws IOException {
+        if (this._remaining == 0) {
             return EMPTY_BYTES;
+        }
+        int limit = getLimit();
+        int i = this._remaining;
+        if (i >= limit) {
+            throw new IOException("corrupted stream - out of bounds length found: " + this._remaining + " >= " + limit);
         }
         byte[] bArr = new byte[i];
         int readFully = i - Streams.readFully(this._in, bArr);

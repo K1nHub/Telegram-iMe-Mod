@@ -21,7 +21,7 @@ public class XMSSKeyParams extends ASN1Object {
 
     private XMSSKeyParams(ASN1Sequence aSN1Sequence) {
         this.version = ASN1Integer.getInstance(aSN1Sequence.getObjectAt(0));
-        this.height = ASN1Integer.getInstance(aSN1Sequence.getObjectAt(1)).getValue().intValue();
+        this.height = ASN1Integer.getInstance(aSN1Sequence.getObjectAt(1)).intValueExact();
         this.treeDigest = AlgorithmIdentifier.getInstance(aSN1Sequence.getObjectAt(2));
     }
 

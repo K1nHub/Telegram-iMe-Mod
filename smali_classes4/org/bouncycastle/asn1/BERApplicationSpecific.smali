@@ -87,8 +87,8 @@
 
 
 # virtual methods
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
-    .locals 2
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -109,21 +109,9 @@
     :goto_0
     iget v1, p0, Lorg/bouncycastle/asn1/ASN1ApplicationSpecific;->tag:I
 
-    invoke-virtual {p1, v0, v1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeTag(II)V
+    iget-object v2, p0, Lorg/bouncycastle/asn1/ASN1ApplicationSpecific;->octets:[B
 
-    const/16 v0, 0x80
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
-
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1ApplicationSpecific;->octets:[B
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([B)V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
+    invoke-virtual {p1, p2, v0, v1, v2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncodedIndef(ZII[B)V
 
     return-void
 .end method

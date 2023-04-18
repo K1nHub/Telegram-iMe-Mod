@@ -27,29 +27,29 @@ public final class GlKt {
     }
 
     static {
-        UInt.m1575constructorimpl(37074);
-        UInt.m1575constructorimpl(5121);
-        GL_FLOAT = UInt.m1575constructorimpl(5126);
-        UInt.m1575constructorimpl(6408);
-        UInt.m1575constructorimpl(4);
-        UInt.m1575constructorimpl(6);
-        GL_TRIANGLE_STRIP = UInt.m1575constructorimpl(5);
-        GL_TEXTURE0 = UInt.m1575constructorimpl(33984);
-        GL_TEXTURE_EXTERNAL_OES = UInt.m1575constructorimpl(36197);
-        GL_TEXTURE_MIN_FILTER = UInt.m1575constructorimpl(10241);
-        GL_TEXTURE_MAG_FILTER = UInt.m1575constructorimpl(10240);
-        GL_TEXTURE_WRAP_S = UInt.m1575constructorimpl(10242);
-        GL_TEXTURE_WRAP_T = UInt.m1575constructorimpl(10243);
+        UInt.m1559constructorimpl(37074);
+        UInt.m1559constructorimpl(5121);
+        GL_FLOAT = UInt.m1559constructorimpl(5126);
+        UInt.m1559constructorimpl(6408);
+        UInt.m1559constructorimpl(4);
+        UInt.m1559constructorimpl(6);
+        GL_TRIANGLE_STRIP = UInt.m1559constructorimpl(5);
+        GL_TEXTURE0 = UInt.m1559constructorimpl(33984);
+        GL_TEXTURE_EXTERNAL_OES = UInt.m1559constructorimpl(36197);
+        GL_TEXTURE_MIN_FILTER = UInt.m1559constructorimpl(10241);
+        GL_TEXTURE_MAG_FILTER = UInt.m1559constructorimpl(10240);
+        GL_TEXTURE_WRAP_S = UInt.m1559constructorimpl(10242);
+        GL_TEXTURE_WRAP_T = UInt.m1559constructorimpl(10243);
         GL_CLAMP_TO_EDGE = 33071;
         GL_NEAREST = 9728.0f;
         GL_LINEAR = 9729.0f;
-        UInt.m1575constructorimpl(36160);
-        UInt.m1575constructorimpl(36053);
-        UInt.m1575constructorimpl(36064);
-        GL_COMPILE_STATUS = UInt.m1575constructorimpl(35713);
-        GL_LINK_STATUS = UInt.m1575constructorimpl(35714);
-        GL_VERTEX_SHADER = UInt.m1575constructorimpl(35633);
-        GL_FRAGMENT_SHADER = UInt.m1575constructorimpl(35632);
+        UInt.m1559constructorimpl(36160);
+        UInt.m1559constructorimpl(36053);
+        UInt.m1559constructorimpl(36064);
+        GL_COMPILE_STATUS = UInt.m1559constructorimpl(35713);
+        GL_LINK_STATUS = UInt.m1559constructorimpl(35714);
+        GL_VERTEX_SHADER = UInt.m1559constructorimpl(35633);
+        GL_FRAGMENT_SHADER = UInt.m1559constructorimpl(35632);
     }
 
     public static final int getGL_NO_ERROR() {

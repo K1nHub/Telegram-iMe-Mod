@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView$$State;)V
     .locals 1
 
-    .line 220
+    .line 256
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "finishScreen"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView;)V
     .locals 0
 
-    .line 225
+    .line 261
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->finishScreen()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 218
+    .line 254
     check-cast p1, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView$$State$FinishScreenCommand;->apply(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView;)V

@@ -7,12 +7,14 @@
 
 
 # instance fields
-.field private final params:Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
+.field private transient attributes:Lorg/bouncycastle/asn1/ASN1Set;
+
+.field private transient params:Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
 
 
 # direct methods
 .method public constructor <init>(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -21,59 +23,34 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
-
-    invoke-virtual {p1}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->parsePrivateKey()Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1OctetString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1OctetString;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
-
-    move-result-object p1
-
-    invoke-static {p1}, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->convert([B)[S
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;-><init>([S)V
-
-    iput-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->params:Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->init(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)V
 
     return-void
 .end method
 
-.method private static convert([B)[S
-    .locals 4
+.method private init(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    array-length v0, p0
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getAttributes()Lorg/bouncycastle/asn1/ASN1Set;
 
-    div-int/lit8 v0, v0, 0x2
+    move-result-object v0
 
-    new-array v1, v0, [S
+    iput-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->attributes:Lorg/bouncycastle/asn1/ASN1Set;
 
-    const/4 v2, 0x0
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/util/PrivateKeyFactory;->createKey(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;
 
-    :goto_0
-    if-eq v2, v0, :cond_0
+    move-result-object p1
 
-    mul-int/lit8 v3, v2, 0x2
+    check-cast p1, Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
 
-    invoke-static {p0, v3}, Lorg/bouncycastle/util/Pack;->littleEndianToShort([BI)S
+    iput-object p1, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->params:Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
 
-    move-result v3
-
-    aput-short v3, v1, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-object v1
+    return-void
 .end method
 
 
@@ -81,13 +58,13 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
 
-    if-eqz p1, :cond_1
-
     instance-of v0, p1, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;
 
     if-nez v0, :cond_0
 
-    goto :goto_0
+    const/4 p1, 0x0
+
+    return p1
 
     :cond_0
     check-cast p1, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;
@@ -109,12 +86,6 @@
     move-result p1
 
     return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x0
-
-    return p1
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
@@ -126,54 +97,18 @@
 .end method
 
 .method public getEncoded()[B
-    .locals 6
+    .locals 2
 
     :try_start_0
-    new-instance v0, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->params:Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
 
-    sget-object v1, Lorg/bouncycastle/pqc/asn1/PQCObjectIdentifiers;->newHope:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->attributes:Lorg/bouncycastle/asn1/ASN1Set;
 
-    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;-><init>(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+    invoke-static {v0, v1}, Lorg/bouncycastle/pqc/crypto/util/PrivateKeyInfoFactory;->createPrivateKeyInfo(Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;Lorg/bouncycastle/asn1/ASN1Set;)Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;
 
-    iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->params:Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
+    move-result-object v0
 
-    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;->getSecData()[S
-
-    move-result-object v1
-
-    array-length v2, v1
-
-    mul-int/lit8 v2, v2, 0x2
-
-    new-array v2, v2, [B
-
-    const/4 v3, 0x0
-
-    :goto_0
-    array-length v4, v1
-
-    if-eq v3, v4, :cond_0
-
-    aget-short v4, v1, v3
-
-    mul-int/lit8 v5, v3, 0x2
-
-    invoke-static {v4, v2, v5}, Lorg/bouncycastle/util/Pack;->shortToLittleEndian(S[BI)V
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v1, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;
-
-    new-instance v3, Lorg/bouncycastle/asn1/DEROctetString;
-
-    invoke-direct {v3, v2}, Lorg/bouncycastle/asn1/DEROctetString;-><init>([B)V
-
-    invoke-direct {v1, v0, v3}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;-><init>(Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Object;->getEncoded()[B
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Object;->getEncoded()[B
 
     move-result-object v0
     :try_end_0

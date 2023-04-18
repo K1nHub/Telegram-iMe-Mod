@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.SeekParameters;
@@ -67,7 +67,7 @@ public final class SingleSampleMediaPeriod implements MediaPeriod, Loader.Callba
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod
     public long readDiscontinuity() {
-        return C0482C.TIME_UNSET;
+        return C0470C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
@@ -180,10 +180,10 @@ public final class SingleSampleMediaPeriod implements MediaPeriod, Loader.Callba
         StatsDataSource statsDataSource = sourceLoadable.dataSource;
         LoadEventInfo loadEventInfo = new LoadEventInfo(sourceLoadable.loadTaskId, sourceLoadable.dataSpec, statsDataSource.getLastOpenedUri(), statsDataSource.getLastResponseHeaders(), j, j2, statsDataSource.getBytesRead());
         long retryDelayMsFor = this.loadErrorHandlingPolicy.getRetryDelayMsFor(new LoadErrorHandlingPolicy.LoadErrorInfo(loadEventInfo, new MediaLoadData(1, -1, this.format, 0, null, 0L, Util.usToMs(this.durationUs)), iOException, i));
-        int i2 = (retryDelayMsFor > C0482C.TIME_UNSET ? 1 : (retryDelayMsFor == C0482C.TIME_UNSET ? 0 : -1));
+        int i2 = (retryDelayMsFor > C0470C.TIME_UNSET ? 1 : (retryDelayMsFor == C0470C.TIME_UNSET ? 0 : -1));
         boolean z = i2 == 0 || i >= this.loadErrorHandlingPolicy.getMinimumLoadableRetryCount(1);
         if (this.treatLoadErrorsAsEndOfStream && z) {
-            Log.m805w(TAG, "Loading failed, treating as end-of-stream.", iOException);
+            Log.m791w(TAG, "Loading failed, treating as end-of-stream.", iOException);
             this.loadingFinished = true;
             loadErrorAction = Loader.DONT_RETRY;
         } else if (i2 != 0) {

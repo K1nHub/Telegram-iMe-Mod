@@ -1,6 +1,8 @@
 package org.koin.core.registry;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -10,29 +12,39 @@ import org.koin.core.Koin;
 import org.koin.core.definition.BeanDefinitionKt;
 import org.koin.core.instance.InstanceContext;
 import org.koin.core.instance.InstanceFactory;
+import org.koin.core.instance.ScopedInstanceFactory;
 import org.koin.core.instance.SingleInstanceFactory;
 import org.koin.core.logger.Level;
 import org.koin.core.logger.Logger;
 import org.koin.core.module.Module;
 import org.koin.core.module.ModuleKt;
 import org.koin.core.qualifier.Qualifier;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.core.scope.Scope;
+import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: InstanceRegistry.kt */
 /* loaded from: classes4.dex */
 public final class InstanceRegistry {
     private final Map<String, InstanceFactory<?>> _instances;
     private final Koin _koin;
-    private final HashSet<SingleInstanceFactory<?>> eagerInstances;
+    private final HashMap<Integer, SingleInstanceFactory<?>> eagerInstances;
 
     public InstanceRegistry(Koin _koin) {
         Intrinsics.checkNotNullParameter(_koin, "_koin");
         this._koin = _koin;
         this._instances = KoinPlatformTools.INSTANCE.safeHashMap();
-        this.eagerInstances = new HashSet<>();
+        this.eagerInstances = new HashMap<>();
+    }
+
+    private final void addAllEagerInstances(Module module) {
+        for (SingleInstanceFactory<?> singleInstanceFactory : module.getEagerInstances()) {
+            this.eagerInstances.put(Integer.valueOf(singleInstanceFactory.hashCode()), singleInstanceFactory);
+        }
     }
 
     public final void createAllEagerInstances$koin_core() {
-        createEagerInstances(this.eagerInstances);
+        Collection<SingleInstanceFactory<?>> values = this.eagerInstances.values();
+        Intrinsics.checkNotNullExpressionValue(values, "eagerInstances.values");
+        createEagerInstances(values);
         this.eagerInstances.clear();
     }
 
@@ -57,24 +69,26 @@ public final class InstanceRegistry {
                 ModuleKt.overrideError(factory, mapping);
             } else if (z2) {
                 Logger logger = this._koin.getLogger();
-                logger.info("Override Mapping '" + mapping + "' with " + factory.getBeanDefinition());
+                String str = "(+) override index '" + mapping + "' -> '" + factory.getBeanDefinition() + '\'';
+                Level level = Level.WARNING;
+                if (logger.isAt(level)) {
+                    logger.display(level, str);
+                }
             }
         }
-        if (this._koin.getLogger().isAt(Level.DEBUG) && z2) {
-            Logger logger2 = this._koin.getLogger();
-            logger2.debug("add mapping '" + mapping + "' for " + factory.getBeanDefinition());
+        Logger logger2 = this._koin.getLogger();
+        String str2 = "(+) index '" + mapping + "' -> '" + factory.getBeanDefinition() + '\'';
+        Level level2 = Level.DEBUG;
+        if (logger2.isAt(level2)) {
+            logger2.display(level2, str2);
         }
         this._instances.put(mapping, factory);
     }
 
-    private final void createEagerInstances(HashSet<SingleInstanceFactory<?>> hashSet) {
-        if (!hashSet.isEmpty()) {
-            if (this._koin.getLogger().isAt(Level.DEBUG)) {
-                this._koin.getLogger().debug("Creating eager instances ...");
-            }
-            Koin koin = this._koin;
-            InstanceContext instanceContext = new InstanceContext(koin, koin.getScopeRegistry().getRootScope(), null, 4, null);
-            Iterator<T> it = hashSet.iterator();
+    private final void createEagerInstances(Collection<? extends SingleInstanceFactory<?>> collection) {
+        if (!collection.isEmpty()) {
+            InstanceContext instanceContext = new InstanceContext(this._koin.getLogger(), this._koin.getScopeRegistry().getRootScope(), null, 4, null);
+            Iterator<T> it = collection.iterator();
             while (it.hasNext()) {
                 ((SingleInstanceFactory) it.next()).get(instanceContext);
             }
@@ -92,10 +106,25 @@ public final class InstanceRegistry {
         Intrinsics.checkNotNullParameter(scopeQualifier, "scopeQualifier");
         Intrinsics.checkNotNullParameter(instanceContext, "instanceContext");
         InstanceFactory<?> resolveDefinition$koin_core = resolveDefinition$koin_core(clazz, qualifier, scopeQualifier);
-        if (resolveDefinition$koin_core != null) {
-            return (T) resolveDefinition$koin_core.get(instanceContext);
+        Object obj = resolveDefinition$koin_core != null ? resolveDefinition$koin_core.get(instanceContext) : null;
+        if (obj == null) {
+            return null;
         }
-        return null;
+        return (T) obj;
+    }
+
+    public final void dropScopeInstances$koin_core(Scope scope) {
+        Intrinsics.checkNotNullParameter(scope, "scope");
+        Collection<InstanceFactory<?>> values = this._instances.values();
+        ArrayList<ScopedInstanceFactory> arrayList = new ArrayList();
+        for (Object obj : values) {
+            if (obj instanceof ScopedInstanceFactory) {
+                arrayList.add(obj);
+            }
+        }
+        for (ScopedInstanceFactory scopedInstanceFactory : arrayList) {
+            scopedInstanceFactory.drop(scope);
+        }
     }
 
     public final int size() {
@@ -106,7 +135,7 @@ public final class InstanceRegistry {
         Intrinsics.checkNotNullParameter(modules, "modules");
         for (Module module : modules) {
             loadModule(module, z);
-            this.eagerInstances.addAll(module.getEagerInstances());
+            addAllEagerInstances(module);
         }
     }
 }

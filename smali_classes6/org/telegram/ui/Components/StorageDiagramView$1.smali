@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StorageDiagramView;[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;)V
     .locals 0
 
-    .line 476
+    .line 489
     iput-object p2, p0, Lorg/telegram/ui/Components/StorageDiagramView$1;->val$data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,7 +39,7 @@
 
     move v0, p1
 
-    .line 479
+    .line 492
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/StorageDiagramView$1;->val$data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
@@ -47,12 +47,12 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 480
+    .line 493
     aget-object v2, v1, v0
 
     if-eqz v2, :cond_0
 
-    .line 481
+    .line 494
     aget-object v1, v1, v0
 
     iput-boolean p1, v1, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->firstDraw:Z

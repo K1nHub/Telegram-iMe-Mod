@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V
     .locals 0
 
-    .line 9341
+    .line 9290
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/PinchToZoomHelper;-><init>(Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V
 
     return-void
@@ -35,27 +35,27 @@
 
     if-lez v0, :cond_1
 
-    .line 9345
+    .line 9294
     invoke-virtual {p0}, Lorg/telegram/ui/PinchToZoomHelper;->getChild()Landroid/view/View;
 
     move-result-object v0
 
-    .line 9346
+    .line 9295
     instance-of v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v1, :cond_1
 
-    .line 9347
+    .line 9296
     check-cast v0, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 9349
+    .line 9298
     invoke-static {p5, p4}, Ljava/lang/Math;->max(FF)F
 
     move-result p5
 
     float-to-int p5, p5
 
-    .line 9350
+    .line 9299
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v1
@@ -70,7 +70,7 @@
 
     float-to-int p6, p6
 
-    .line 9351
+    .line 9300
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     int-to-float p5, p5
@@ -95,21 +95,21 @@
 
     const/16 p5, 0x1f
 
-    .line 9352
+    .line 9301
     invoke-virtual {p1, v1, p2, p5}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
-    .line 9353
+    .line 9302
     invoke-virtual {p1, p3, p4}, Landroid/graphics/Canvas;->translate(FF)V
 
     const/4 p2, 0x1
 
-    .line 9354
+    .line 9303
     iput-boolean p2, v0, Lorg/telegram/ui/Cells/ChatMessageCell;->drawFromPinchToZoom:Z
 
-    .line 9355
+    .line 9304
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->drawOverlays(Landroid/graphics/Canvas;)V
 
-    .line 9356
+    .line 9305
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->shouldDrawTimeOnMedia()Z
 
     move-result p2
@@ -126,14 +126,14 @@
 
     const/high16 p2, 0x3f800000    # 1.0f
 
-    .line 9357
+    .line 9306
     invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Cells/ChatMessageCell;->drawTime(Landroid/graphics/Canvas;FZ)V
 
-    .line 9359
+    .line 9308
     :cond_0
     iput-boolean p3, v0, Lorg/telegram/ui/Cells/ChatMessageCell;->drawFromPinchToZoom:Z
 
-    .line 9360
+    .line 9309
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_1

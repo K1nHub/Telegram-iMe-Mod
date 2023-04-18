@@ -367,7 +367,7 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 356
+    .line 335
     new-instance v0, Ljava/util/Hashtable;
 
     invoke-direct {v0}, Ljava/util/Hashtable;-><init>()V
@@ -376,43 +376,43 @@
 
     const/16 v0, -0xa
 
-    .line 358
+    .line 337
     sput v0, Lorg/telegram/messenger/AndroidUtilities;->prevOrientation:I
 
     const/4 v0, 0x0
 
-    .line 359
+    .line 338
     sput-boolean v0, Lorg/telegram/messenger/AndroidUtilities;->waitingForSms:Z
 
-    .line 360
+    .line 339
     sput-boolean v0, Lorg/telegram/messenger/AndroidUtilities;->waitingForCall:Z
 
-    .line 361
+    .line 340
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->smsLock:Ljava/lang/Object;
 
-    .line 362
+    .line 341
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->callLock:Ljava/lang/Object;
 
-    .line 364
+    .line 343
     sput v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    .line 365
+    .line 344
     sput v0, Lorg/telegram/messenger/AndroidUtilities;->navigationBarHeight:I
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 367
+    .line 346
     sput v1, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
-    .line 368
+    .line 347
     new-instance v1, Landroid/graphics/Point;
 
     invoke-direct {v1}, Landroid/graphics/Point;-><init>()V
@@ -421,88 +421,88 @@
 
     const/high16 v1, 0x42700000    # 60.0f
 
-    .line 369
+    .line 348
     sput v1, Lorg/telegram/messenger/AndroidUtilities;->screenRefreshRate:F
 
     const/4 v1, 0x0
 
-    .line 374
+    .line 353
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->photoSize:Ljava/lang/Integer;
 
-    .line 375
+    .line 354
     new-instance v2, Landroid/util/DisplayMetrics;
 
     invoke-direct {v2}, Landroid/util/DisplayMetrics;-><init>()V
 
     sput-object v2, Lorg/telegram/messenger/AndroidUtilities;->displayMetrics:Landroid/util/DisplayMetrics;
 
-    .line 380
+    .line 359
     new-instance v2, Landroid/view/animation/DecelerateInterpolator;
 
     invoke-direct {v2}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
     sput-object v2, Lorg/telegram/messenger/AndroidUtilities;->decelerateInterpolator:Landroid/view/animation/DecelerateInterpolator;
 
-    .line 381
+    .line 360
     new-instance v2, Landroid/view/animation/AccelerateInterpolator;
 
     invoke-direct {v2}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
 
     sput-object v2, Lorg/telegram/messenger/AndroidUtilities;->accelerateInterpolator:Landroid/view/animation/AccelerateInterpolator;
 
-    .line 382
+    .line 361
     new-instance v2, Landroid/view/animation/OvershootInterpolator;
 
     invoke-direct {v2}, Landroid/view/animation/OvershootInterpolator;-><init>()V
 
     sput-object v2, Lorg/telegram/messenger/AndroidUtilities;->overshootInterpolator:Landroid/view/animation/OvershootInterpolator;
 
-    .line 387
+    .line 366
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->isTablet:Ljava/lang/Boolean;
 
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->wasTablet:Ljava/lang/Boolean;
 
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->isSmallScreen:Ljava/lang/Boolean;
 
-    .line 388
+    .line 367
     sput v0, Lorg/telegram/messenger/AndroidUtilities;->adjustOwnerClassGuid:I
 
-    .line 389
+    .line 368
     sput v0, Lorg/telegram/messenger/AndroidUtilities;->altFocusableClassGuid:I
 
-    .line 394
+    .line 373
     new-instance v2, Landroid/graphics/RectF;
 
     invoke-direct {v2}, Landroid/graphics/RectF;-><init>()V
 
     sput-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    .line 395
+    .line 374
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     sput-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
-    .line 397
+    .line 376
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->WEB_URL:Ljava/util/regex/Pattern;
 
-    .line 398
+    .line 377
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->BAD_CHARS_PATTERN:Ljava/util/regex/Pattern;
 
-    .line 399
+    .line 378
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->BAD_CHARS_MESSAGE_PATTERN:Ljava/util/regex/Pattern;
 
-    .line 400
+    .line 379
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->BAD_CHARS_MESSAGE_LONG_PATTERN:Ljava/util/regex/Pattern;
 
-    .line 401
+    .line 380
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->singleTagPatter:Ljava/util/regex/Pattern;
 
     :try_start_0
     const-string v2, "[\u2500-\u25ff]"
 
-    .line 406
+    .line 385
     invoke-static {v2}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v2
@@ -511,7 +511,7 @@
 
     const-string v2, "[\u0300-\u036f\u2066-\u2067]+"
 
-    .line 407
+    .line 386
     invoke-static {v2}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v2
@@ -520,7 +520,7 @@
 
     const-string v2, "[\u2066-\u2067]+"
 
-    .line 408
+    .line 387
     invoke-static {v2}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v2
@@ -529,12 +529,12 @@
 
     const-string v2, "((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9])\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9]))"
 
-    .line 409
+    .line 388
     invoke-static {v2}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v2
 
-    .line 418
+    .line 397
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -557,7 +557,7 @@
 
     move-result-object v2
 
-    .line 419
+    .line 398
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -597,10 +597,10 @@
     :catch_0
     move-exception v2
 
-    .line 429
+    .line 408
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 434
+    .line 413
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
@@ -618,7 +618,7 @@
     :goto_1
     sput v2, Lorg/telegram/messenger/AndroidUtilities;->leftBaseline:I
 
-    .line 435
+    .line 414
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v2, v1}, Lorg/telegram/messenger/AndroidUtilities;->checkDisplaySize(Landroid/content/Context;Landroid/content/res/Configuration;)V
@@ -627,7 +627,7 @@
 
     new-array v2, v1, [I
 
-    .line 438
+    .line 417
     sget v3, Lorg/telegram/messenger/R$drawable;->media_doc_blue:I
 
     aput v3, v2, v0
@@ -654,7 +654,7 @@
 
     new-array v1, v1, [I
 
-    .line 445
+    .line 424
     sget v2, Lorg/telegram/messenger/R$drawable;->media_doc_blue_b:I
 
     aput v2, v1, v0
@@ -673,12 +673,12 @@
 
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->documentMediaIcons:[I
 
-    .line 817
+    .line 796
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda4;->INSTANCE:Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda4;
 
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->sUrlMatchFilter:Landroid/text/util/Linkify$MatchFilter;
 
-    .line 2435
+    .line 2412
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x17
@@ -702,7 +702,7 @@
 
     const-string v6, "P"
 
-    .line 3366
+    .line 3347
     filled-new-array/range {v1 .. v6}, [Ljava/lang/String;
 
     move-result-object v0
@@ -713,7 +713,7 @@
 
     new-array v0, v0, [C
 
-    .line 4458
+    .line 4439
     fill-array-data v0, :array_0
 
     sput-object v0, Lorg/telegram/messenger/AndroidUtilities;->characters:[C
@@ -1372,7 +1372,7 @@
     :cond_0
     float-to-double v4, p0
 
-    .line 4169
+    .line 4150
     invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v4
@@ -1387,7 +1387,7 @@
 
     float-to-double v4, p0
 
-    .line 4170
+    .line 4151
     invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v4
@@ -1590,7 +1590,7 @@
 
     new-array v0, v0, [F
 
-    .line 4125
+    .line 4106
     invoke-static {p0, p1}, Ljava/lang/Math;->max(II)I
 
     move-result v1
@@ -1599,7 +1599,7 @@
 
     move v1, p2
 
-    .line 4129
+    .line 4110
     :cond_0
     invoke-static {p0, p1}, Ljava/lang/Math;->min(II)I
 
@@ -1733,7 +1733,7 @@
 
     const/4 v0, 0x0
 
-    .line 828
+    .line 807
     invoke-static {p0, p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->addLinks(Landroid/text/Spannable;IZ)Z
 
     move-result p0
@@ -1746,7 +1746,7 @@
 
     const/4 v0, 0x1
 
-    .line 832
+    .line 811
     invoke-static {p0, p1, p2, v0}, Lorg/telegram/messenger/AndroidUtilities;->addLinks(Landroid/text/Spannable;IZZ)Z
 
     move-result p0
@@ -1761,7 +1761,7 @@
 
     if-eqz p0, :cond_b
 
-    .line 836
+    .line 815
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -1776,7 +1776,7 @@
 
     goto/16 :goto_3
 
-    .line 839
+    .line 818
     :cond_0
     invoke-interface {p0}, Landroid/text/Spannable;->length()I
 
@@ -1790,7 +1790,7 @@
 
     check-cast v1, [Landroid/text/style/URLSpan;
 
-    .line 840
+    .line 819
     array-length v2, v1
 
     const/4 v3, 0x1
@@ -1800,17 +1800,17 @@
     :goto_0
     if-ltz v2, :cond_3
 
-    .line 841
+    .line 820
     aget-object v4, v1, v2
 
-    .line 842
+    .line 821
     instance-of v5, v4, Lorg/telegram/ui/Components/URLSpanReplacement;
 
     if-eqz v5, :cond_1
 
     if-eqz p3, :cond_2
 
-    .line 843
+    .line 822
     :cond_1
     invoke-interface {p0, v4}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
@@ -1819,7 +1819,7 @@
 
     goto :goto_0
 
-    .line 846
+    .line 825
     :cond_3
     new-instance v1, Ljava/util/ArrayList;
 
@@ -1833,7 +1833,7 @@
 
     const/4 v2, 0x4
 
-    .line 848
+    .line 827
     invoke-static {p0, v2}, Landroid/text/util/Linkify;->addLinks(Landroid/text/Spannable;I)Z
 
     :cond_4
@@ -1841,7 +1841,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 851
+    .line 830
     sget-object v6, Lorg/telegram/messenger/LinkifyPort;->WEB_URL:Ljava/util/regex/Pattern;
 
     const-string p1, "http://"
@@ -1864,11 +1864,11 @@
 
     invoke-static/range {v4 .. v9}, Lorg/telegram/messenger/AndroidUtilities;->gatherLinks(Ljava/util/ArrayList;Landroid/text/Spannable;Ljava/util/regex/Pattern;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Z)V
 
-    .line 853
+    .line 832
     :cond_5
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->pruneOverlaps(Ljava/util/ArrayList;)V
 
-    .line 854
+    .line 833
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result p1
@@ -1877,7 +1877,7 @@
 
     return v0
 
-    .line 857
+    .line 836
     :cond_6
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -1888,14 +1888,14 @@
     :goto_1
     if-ge p2, p1, :cond_a
 
-    .line 858
+    .line 837
     invoke-virtual {v1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;
 
-    .line 859
+    .line 838
     iget v4, v2, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;->start:I
 
     iget v5, v2, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;->end:I
@@ -1910,33 +1910,33 @@
 
     if-eqz v4, :cond_9
 
-    .line 860
+    .line 839
     array-length v5, v4
 
     if-lez v5, :cond_9
 
     move v5, v0
 
-    .line 861
+    .line 840
     :goto_2
     array-length v6, v4
 
     if-ge v5, v6, :cond_9
 
-    .line 862
+    .line 841
     aget-object v6, v4, v5
 
-    .line 863
+    .line 842
     invoke-interface {p0, v6}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
-    .line 865
+    .line 844
     instance-of v7, v6, Lorg/telegram/ui/Components/URLSpanReplacement;
 
     if-eqz v7, :cond_7
 
     if-eqz p3, :cond_8
 
-    .line 866
+    .line 845
     :cond_7
     invoke-interface {p0, v6}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
@@ -1945,7 +1945,7 @@
 
     goto :goto_2
 
-    .line 870
+    .line 849
     :cond_9
     new-instance v4, Landroid/text/style/URLSpan;
 
@@ -1976,7 +1976,7 @@
 .method public static addMediaToGallery(Ljava/io/File;)V
     .locals 2
 
-    .line 2964
+    .line 2945
     invoke-static {p0}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
     move-result-object p0
@@ -1985,7 +1985,7 @@
 
     return-void
 
-    .line 2969
+    .line 2950
     :cond_0
     :try_start_0
     new-instance v0, Landroid/content/Intent;
@@ -1994,10 +1994,10 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2970
+    .line 2951
     invoke-virtual {v0, p0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 2971
+    .line 2952
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
@@ -2009,7 +2009,7 @@
     :catch_0
     move-exception p0
 
-    .line 2973
+    .line 2954
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -2023,13 +2023,13 @@
 
     return-void
 
-    .line 2959
+    .line 2940
     :cond_0
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 2960
+    .line 2941
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->addMediaToGallery(Ljava/io/File;)V
 
     return-void
@@ -2038,7 +2038,7 @@
 .method public static addToClipboard(Ljava/lang/CharSequence;)Z
     .locals 4
 
-    .line 2938
+    .line 2919
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -2050,7 +2050,7 @@
 
     check-cast v0, Landroid/content/ClipboardManager;
 
-    .line 2940
+    .line 2921
     instance-of v1, p0, Landroid/text/Spanned;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2061,7 +2061,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2941
+    .line 2922
     :try_start_1
     move-object v1, p0
 
@@ -2075,18 +2075,18 @@
 
     move-result-object p0
 
-    .line 2942
+    .line 2923
     invoke-virtual {v0, p0}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
 
     return v2
 
-    .line 2945
+    .line 2926
     :cond_0
     invoke-static {v3, p0}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
 
     move-result-object p0
 
-    .line 2946
+    .line 2927
     invoke-virtual {v0, p0}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -2096,7 +2096,7 @@
     :catch_0
     move-exception p0
 
-    .line 2950
+    .line 2931
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 p0, 0x0
@@ -2116,7 +2116,7 @@
 
     mul-float/2addr p1, v0
 
-    .line 1121
+    .line 1100
     new-instance v0, Landroid/graphics/ColorMatrix;
 
     const/16 v1, 0x14
@@ -2219,7 +2219,7 @@
 
     const/high16 v0, 0x43340000    # 180.0f
 
-    .line 1130
+    .line 1109
     invoke-static {p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->cleanValue(FF)F
 
     move-result p1
@@ -2241,14 +2241,14 @@
     :cond_0
     float-to-double v1, p1
 
-    .line 1134
+    .line 1113
     invoke-static {v1, v2}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v3
 
     double-to-float p1, v3
 
-    .line 1135
+    .line 1114
     invoke-static {v1, v2}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v1
@@ -2447,7 +2447,7 @@
 
     aput v1, v5, p1
 
-    .line 1146
+    .line 1125
     new-instance p1, Landroid/graphics/ColorMatrix;
 
     invoke-direct {p1, v5}, Landroid/graphics/ColorMatrix;-><init>([F)V
@@ -2469,7 +2469,7 @@
 
     add-float/2addr p1, v0
 
-    .line 1108
+    .line 1087
     new-instance v1, Landroid/graphics/ColorMatrix;
 
     const/16 v2, 0x14
@@ -2588,7 +2588,7 @@
 .method public static allowScreenCapture()Z
     .locals 1
 
-    .line 4434
+    .line 4415
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->passcodeHash:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -2619,7 +2619,7 @@
 .method public static appCenterLog(Ljava/lang/Throwable;)V
     .locals 0
 
-    .line 2929
+    .line 2910
     invoke-static {p0}, Lorg/telegram/messenger/ApplicationLoader;->appCenterLog(Ljava/lang/Throwable;)V
 
     return-void
@@ -2628,7 +2628,7 @@
 .method public static calcAuthKeyHash([B)[B
     .locals 3
 
-    .line 3455
+    .line 3436
     invoke-static {p0}, Lorg/telegram/messenger/Utilities;->computeSHA1([B)[B
 
     move-result-object p0
@@ -2639,7 +2639,7 @@
 
     const/4 v2, 0x0
 
-    .line 3457
+    .line 3438
     invoke-static {p0, v2, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-object v1
@@ -2657,7 +2657,7 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 969
+    .line 948
     :try_start_0
     invoke-static {p0, v1, v1, v1}, Lorg/telegram/messenger/Bitmaps;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
 
@@ -2665,14 +2665,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 971
+    .line 950
     invoke-virtual {v1, v0, v0}, Landroid/graphics/Bitmap;->getPixel(II)I
 
     move-result v2
 
     if-eq p0, v1, :cond_1
 
-    .line 973
+    .line 952
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2683,7 +2683,7 @@
     :catch_0
     move-exception p0
 
-    .line 978
+    .line 957
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -2709,33 +2709,33 @@
 
     const/high16 v6, -0x1000000
 
-    .line 987
+    .line 966
     :try_start_0
     instance-of v7, v0, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v7, :cond_0
 
-    .line 988
+    .line 967
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 989
+    .line 968
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->calcBitmapColor(Landroid/graphics/Bitmap;)I
 
     move-result v6
 
     goto :goto_1
 
-    .line 990
+    .line 969
     :cond_0
     instance-of v7, v0, Landroid/graphics/drawable/ColorDrawable;
 
     if-eqz v7, :cond_1
 
-    .line 991
+    .line 970
     check-cast v0, Landroid/graphics/drawable/ColorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/ColorDrawable;->getColor()I
@@ -2744,13 +2744,13 @@
 
     goto :goto_1
 
-    .line 992
+    .line 971
     :cond_1
     instance-of v7, v0, Lorg/telegram/ui/Components/BackgroundGradientDrawable;
 
     if-eqz v7, :cond_3
 
-    .line 993
+    .line 972
     check-cast v0, Lorg/telegram/ui/Components/BackgroundGradientDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;->getColorsList()[I
@@ -2759,12 +2759,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 995
+    .line 974
     array-length v7, v0
 
     if-le v7, v4, :cond_2
 
-    .line 996
+    .line 975
     aget v7, v0, v5
 
     aget v0, v0, v4
@@ -2775,13 +2775,13 @@
 
     goto :goto_0
 
-    .line 997
+    .line 976
     :cond_2
     array-length v7, v0
 
     if-lez v7, :cond_4
 
-    .line 998
+    .line 977
     aget v0, v0, v5
 
     :goto_0
@@ -2789,7 +2789,7 @@
 
     goto :goto_1
 
-    .line 1001
+    .line 980
     :cond_3
     instance-of v0, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -2797,7 +2797,7 @@
 
     const/16 v0, 0x2d
 
-    .line 1002
+    .line 981
     invoke-static {v0, v5, v5, v5}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v0
@@ -2808,7 +2808,7 @@
 
     const/16 v0, 0x3d
 
-    .line 1003
+    .line 982
     invoke-static {v0, v5, v5, v5}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v0
@@ -2824,7 +2824,7 @@
     :catch_0
     move-exception v0
 
-    .line 1007
+    .line 986
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_4
@@ -2839,12 +2839,12 @@
 
     and-int/lit16 v6, v6, 0xff
 
-    .line 1010
+    .line 989
     invoke-static {v0, v7, v6}, Lorg/telegram/messenger/AndroidUtilities;->rgbToHsv(III)[D
 
     move-result-object v0
 
-    .line 1011
+    .line 990
     aget-wide v6, v0, v4
 
     const-wide v8, 0x3fa999999999999aL    # 0.05
@@ -2869,7 +2869,7 @@
 
     aput-wide v6, v0, v4
 
-    .line 1012
+    .line 991
     aget-wide v6, v0, v3
 
     const-wide v8, 0x3fe4cccccccccccdL    # 0.65
@@ -2882,7 +2882,7 @@
 
     move-result-wide v14
 
-    .line 1013
+    .line 992
     aget-wide v10, v0, v5
 
     aget-wide v12, v0, v4
@@ -2891,7 +2891,7 @@
 
     move-result-object v6
 
-    .line 1014
+    .line 993
     aget v7, v6, v5
 
     aget v10, v6, v4
@@ -2906,7 +2906,7 @@
 
     aput v7, v1, v5
 
-    .line 1015
+    .line 994
     aget v7, v6, v5
 
     aget v10, v6, v4
@@ -2921,7 +2921,7 @@
 
     aput v6, v1, v4
 
-    .line 1017
+    .line 996
     aget-wide v6, v0, v3
 
     const-wide v13, 0x3fe70a3d70a3d70aL    # 0.72
@@ -2932,7 +2932,7 @@
 
     move-result-wide v17
 
-    .line 1018
+    .line 997
     aget-wide v13, v0, v5
 
     aget-wide v15, v0, v4
@@ -2941,7 +2941,7 @@
 
     move-result-object v0
 
-    .line 1019
+    .line 998
     aget v6, v0, v5
 
     aget v7, v0, v4
@@ -2954,7 +2954,7 @@
 
     aput v6, v1, v3
 
-    .line 1020
+    .line 999
     aget v5, v0, v5
 
     aget v4, v0, v4
@@ -2973,14 +2973,14 @@
 .method public static cancelRunOnUIThread(Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 2342
+    .line 2319
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 2345
+    .line 2322
     :cond_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationHandler:Landroid/os/Handler;
 
@@ -3010,7 +3010,7 @@
 
     const/4 p1, 0x0
 
-    .line 4388
+    .line 4369
     invoke-static {p0, p1, v0}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result p0
@@ -3021,7 +3021,7 @@
 .method public static charSequenceContains(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
     .locals 0
 
-    .line 2600
+    .line 2577
     invoke-static {p0, p1}, Lorg/telegram/messenger/AndroidUtilities;->charSequenceIndexOf(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)I
 
     move-result p0
@@ -3046,7 +3046,7 @@
 
     const/4 v0, 0x0
 
-    .line 2596
+    .line 2573
     invoke-static {p0, p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->charSequenceIndexOf(Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)I
 
     move-result p0
@@ -3057,7 +3057,7 @@
 .method public static charSequenceIndexOf(Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)I
     .locals 4
 
-    .line 2581
+    .line 2558
     :goto_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -3075,7 +3075,7 @@
 
     move v1, v0
 
-    .line 2583
+    .line 2560
     :goto_1
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
@@ -3083,7 +3083,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 2584
+    .line 2561
     invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v2
@@ -3127,11 +3127,11 @@
 
     const-string v0, " "
 
-    .line 2206
+    .line 2183
     :try_start_0
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
-    .line 2207
+    .line 2184
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -3144,7 +3144,7 @@
 
     sput v2, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
-    .line 2209
+    .line 2186
     sget-boolean v3, Lorg/telegram/messenger/AndroidUtilities;->firstConfigurationWas:Z
 
     if-eqz v3, :cond_0
@@ -3163,18 +3163,18 @@
 
     if-lez v1, :cond_0
 
-    .line 2210
+    .line 2187
     invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme;->reloadAllResources(Landroid/content/Context;)V
 
     :cond_0
     const/4 v1, 0x1
 
-    .line 2212
+    .line 2189
     sput-boolean v1, Lorg/telegram/messenger/AndroidUtilities;->firstConfigurationWas:Z
 
     if-nez p1, :cond_1
 
-    .line 2215
+    .line 2192
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -3183,7 +3183,7 @@
 
     move-result-object p1
 
-    .line 2217
+    .line 2194
     :cond_1
     iget v2, p1, Landroid/content/res/Configuration;->keyboard:I
 
@@ -3203,7 +3203,7 @@
 
     const-string/jumbo v1, "window"
 
-    .line 2218
+    .line 2195
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
@@ -3212,31 +3212,31 @@
 
     if-eqz v1, :cond_3
 
-    .line 2220
+    .line 2197
     invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v1
 
     if-eqz v1, :cond_3
 
-    .line 2222
+    .line 2199
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displayMetrics:Landroid/util/DisplayMetrics;
 
     invoke-virtual {v1, v2}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 2223
+    .line 2200
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     invoke-virtual {v1, v2}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
 
-    .line 2224
+    .line 2201
     invoke-virtual {v1}, Landroid/view/Display;->getRefreshRate()F
 
     move-result v1
 
     sput v1, Lorg/telegram/messenger/AndroidUtilities;->screenRefreshRate:F
 
-    .line 2227
+    .line 2204
     :cond_3
     iget v1, p1, Landroid/content/res/Configuration;->screenWidthDp:I
 
@@ -3246,7 +3246,7 @@
 
     int-to-float v1, v1
 
-    .line 2228
+    .line 2205
     sget v3, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     mul-float/2addr v1, v3
@@ -3259,7 +3259,7 @@
 
     double-to-int v1, v3
 
-    .line 2229
+    .line 2206
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v3, v3, Landroid/graphics/Point;->x:I
@@ -3272,12 +3272,12 @@
 
     if-le v3, v2, :cond_4
 
-    .line 2230
+    .line 2207
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iput v1, v3, Landroid/graphics/Point;->x:I
 
-    .line 2233
+    .line 2210
     :cond_4
     iget v1, p1, Landroid/content/res/Configuration;->screenHeightDp:I
 
@@ -3285,7 +3285,7 @@
 
     int-to-float v1, v1
 
-    .line 2234
+    .line 2211
     sget v3, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     mul-float/2addr v1, v3
@@ -3298,7 +3298,7 @@
 
     double-to-int v1, v3
 
-    .line 2235
+    .line 2212
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v3, v3, Landroid/graphics/Point;->y:I
@@ -3311,18 +3311,18 @@
 
     if-le v3, v2, :cond_5
 
-    .line 2236
+    .line 2213
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iput v1, v2, Landroid/graphics/Point;->y:I
 
-    .line 2239
+    .line 2216
     :cond_5
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->roundMessageSize:I
 
     if-nez v1, :cond_7
 
-    .line 2240
+    .line 2217
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v1
@@ -3333,7 +3333,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 2241
+    .line 2218
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getMinTabletSide()I
 
     move-result v1
@@ -3346,7 +3346,7 @@
 
     sput v1, Lorg/telegram/messenger/AndroidUtilities;->roundMessageSize:I
 
-    .line 2242
+    .line 2219
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getMinTabletSide()I
 
     move-result v1
@@ -3361,7 +3361,7 @@
 
     goto :goto_1
 
-    .line 2244
+    .line 2221
     :cond_6
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -3381,7 +3381,7 @@
 
     sput v1, Lorg/telegram/messenger/AndroidUtilities;->roundMessageSize:I
 
-    .line 2245
+    .line 2222
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v3, v1, Landroid/graphics/Point;->x:I
@@ -3403,28 +3403,28 @@
     :goto_1
     const/4 v1, 0x2
 
-    .line 2247
+    .line 2224
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     sput v1, Lorg/telegram/messenger/AndroidUtilities;->roundMessageInset:I
 
-    .line 2249
+    .line 2226
     :cond_7
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_9
 
-    .line 2250
+    .line 2227
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     if-nez v1, :cond_8
 
-    .line 2251
+    .line 2228
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->fillStatusBarHeight(Landroid/content/Context;)V
 
-    .line 2253
+    .line 2230
     :cond_8
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -3504,13 +3504,13 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 2255
+    .line 2232
     :cond_9
     invoke-static {p0}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object p0
 
-    .line 2256
+    .line 2233
     invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
     move-result p0
@@ -3526,7 +3526,7 @@
     :catch_0
     move-exception p0
 
-    .line 2258
+    .line 2235
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_2
@@ -3545,7 +3545,7 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 4636
+    .line 4617
     :try_start_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -3562,7 +3562,7 @@
     :goto_0
     if-ge v3, v2, :cond_6
 
-    .line 4637
+    .line 4618
     :try_start_1
     invoke-virtual {p0, v3}, Ljava/lang/String;->charAt(I)C
 
@@ -3647,7 +3647,7 @@
 
     move v5, v4
 
-    .line 4651
+    .line 4632
     :goto_3
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -3666,7 +3666,7 @@
 .method public static checkInlinePermissions(Landroid/content/Context;)Z
     .locals 2
 
-    .line 4699
+    .line 4680
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
@@ -3697,7 +3697,7 @@
 .method public static checkPhonePattern(Ljava/lang/String;Ljava/lang/String;)Z
     .locals 6
 
-    .line 2494
+    .line 2471
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -3719,12 +3719,12 @@
     :cond_0
     const-string v0, "\\*"
 
-    .line 2497
+    .line 2474
     invoke-virtual {p0, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p0
 
-    .line 2498
+    .line 2475
     invoke-static {p1}, Lorg/telegram/PhoneFormat/PhoneFormat;->stripExceptNumbers(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -3735,23 +3735,23 @@
 
     move v3, v2
 
-    .line 2501
+    .line 2478
     :goto_0
     array-length v4, p0
 
     if-ge v2, v4, :cond_3
 
-    .line 2502
+    .line 2479
     aget-object v4, p0, v2
 
-    .line 2503
+    .line 2480
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
     if-nez v5, :cond_2
 
-    .line 2504
+    .line 2481
     invoke-virtual {p1, v4, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
 
     move-result v3
@@ -3762,7 +3762,7 @@
 
     return v0
 
-    .line 2507
+    .line 2484
     :cond_1
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
@@ -3785,7 +3785,7 @@
 
     neg-float v0, p1
 
-    .line 1150
+    .line 1129
     invoke-static {v0, p0}, Ljava/lang/Math;->max(FF)F
 
     move-result p0
@@ -3800,7 +3800,7 @@
 .method public static clearDrawableAnimation(Landroid/view/View;)V
     .locals 2
 
-    .line 2689
+    .line 2666
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -3811,13 +3811,13 @@
 
     goto :goto_0
 
-    .line 2693
+    .line 2670
     :cond_0
     instance-of v0, p0, Landroid/widget/ListView;
 
     if-eqz v0, :cond_1
 
-    .line 2694
+    .line 2671
     check-cast p0, Landroid/widget/ListView;
 
     invoke-virtual {p0}, Landroid/widget/ListView;->getSelector()Landroid/graphics/drawable/Drawable;
@@ -3826,14 +3826,14 @@
 
     if-eqz p0, :cond_2
 
-    .line 2696
+    .line 2673
     sget-object v0, Landroid/util/StateSet;->NOTHING:[I
 
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
     goto :goto_0
 
-    .line 2699
+    .line 2676
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
@@ -3841,12 +3841,12 @@
 
     if-eqz p0, :cond_2
 
-    .line 2701
+    .line 2678
     sget-object v0, Landroid/util/StateSet;->NOTHING:[I
 
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 2702
+    .line 2679
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
 
     :cond_2
@@ -3907,7 +3907,7 @@
 
     float-to-double v0, p2
 
-    .line 4396
+    .line 4377
     invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v0
@@ -3926,7 +3926,7 @@
 .method public static computePerceivedBrightness(I)F
     .locals 3
 
-    .line 4211
+    .line 4192
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
@@ -3971,7 +3971,7 @@
 .method public static varargs concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 5
 
-    .line 4088
+    .line 4069
     array-length v0, p0
 
     if-nez v0, :cond_0
@@ -3980,7 +3980,7 @@
 
     return-object p0
 
-    .line 4092
+    .line 4073
     :cond_0
     array-length v0, p0
 
@@ -3990,12 +3990,12 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 4093
+    .line 4074
     aget-object p0, p0, v1
 
     return-object p0
 
-    .line 4097
+    .line 4078
     :cond_1
     array-length v0, p0
 
@@ -4006,7 +4006,7 @@
 
     aget-object v4, p0, v3
 
-    .line 4098
+    .line 4079
     instance-of v4, v4, Landroid/text/Spanned;
 
     if-eqz v4, :cond_2
@@ -4024,12 +4024,12 @@
     :goto_1
     if-eqz v2, :cond_6
 
-    .line 4105
+    .line 4086
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v0}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 4106
+    .line 4087
     array-length v2, p0
 
     :goto_2
@@ -4041,7 +4041,7 @@
 
     const-string v3, "null"
 
-    .line 4110
+    .line 4091
     :cond_4
     invoke-virtual {v0, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
@@ -4049,7 +4049,7 @@
 
     goto :goto_2
 
-    .line 4112
+    .line 4093
     :cond_5
     new-instance p0, Landroid/text/SpannedString;
 
@@ -4057,13 +4057,13 @@
 
     return-object p0
 
-    .line 4114
+    .line 4095
     :cond_6
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 4115
+    .line 4096
     array-length v2, p0
 
     :goto_3
@@ -4071,14 +4071,14 @@
 
     aget-object v3, p0, v1
 
-    .line 4116
+    .line 4097
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
 
-    .line 4118
+    .line 4099
     :cond_7
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -4092,7 +4092,7 @@
 
     const-string/jumbo v0, "\u202c"
 
-    .line 455
+    .line 434
     invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -4106,7 +4106,7 @@
     :cond_0
     const-string/jumbo v0, "\u202d"
 
-    .line 458
+    .line 437
     invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -4118,7 +4118,7 @@
     :cond_1
     const-string/jumbo v0, "\u202e"
 
-    .line 461
+    .line 440
     invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -4127,7 +4127,7 @@
 
     return v1
 
-    .line 465
+    .line 444
     :cond_2
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->BAD_CHARS_PATTERN:Ljava/util/regex/Pattern;
@@ -4163,7 +4163,7 @@
         }
     .end annotation
 
-    .line 3439
+    .line 3420
     invoke-virtual {p0, p1}, Ljava/io/File;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -4174,7 +4174,7 @@
 
     return v1
 
-    .line 3442
+    .line 3423
     :cond_0
     invoke-virtual {p1}, Ljava/io/File;->exists()Z
 
@@ -4182,10 +4182,10 @@
 
     if-nez v0, :cond_1
 
-    .line 3443
+    .line 3424
     invoke-virtual {p1}, Ljava/io/File;->createNewFile()Z
 
-    .line 3445
+    .line 3426
     :cond_1
     :try_start_0
     new-instance v0, Ljava/io/FileInputStream;
@@ -4201,7 +4201,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    .line 3446
+    .line 3427
     :try_start_2
     invoke-virtual {p0}, Ljava/io/FileOutputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
@@ -4225,7 +4225,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 3447
+    .line 3428
     :try_start_3
     invoke-virtual {p0}, Ljava/io/FileOutputStream;->close()V
     :try_end_3
@@ -4241,7 +4241,7 @@
     :catchall_0
     move-exception p1
 
-    .line 3445
+    .line 3426
     :try_start_5
     invoke-virtual {p0}, Ljava/io/FileOutputStream;->close()V
     :try_end_5
@@ -4284,7 +4284,7 @@
     :catch_0
     move-exception p0
 
-    .line 3448
+    .line 3429
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 p0, 0x0
@@ -4300,7 +4300,7 @@
         }
     .end annotation
 
-    .line 3424
+    .line 3405
     new-instance v0, Ljava/io/FileOutputStream;
 
     invoke-direct {v0, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
@@ -4324,7 +4324,7 @@
 
     new-array v0, v0, [B
 
-    .line 3430
+    .line 3411
     :goto_0
     invoke-virtual {p0, v0}, Ljava/io/InputStream;->read([B)I
 
@@ -4332,17 +4332,17 @@
 
     if-lez v1, :cond_0
 
-    .line 3431
+    .line 3412
     invoke-static {}, Ljava/lang/Thread;->yield()V
 
     const/4 v2, 0x0
 
-    .line 3432
+    .line 3413
     invoke-virtual {p1, v0, v2, v1}, Ljava/io/OutputStream;->write([BII)V
 
     goto :goto_0
 
-    .line 3434
+    .line 3415
     :cond_0
     invoke-virtual {p1}, Ljava/io/OutputStream;->close()V
 
@@ -4352,9 +4352,9 @@
 .end method
 
 .method public static copyImageToClipboard(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessageObject;)V
-    .locals 3
+    .locals 5
 
-    .line 313
+    .line 298
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFileLoader()Lorg/telegram/messenger/FileLoader;
 
     move-result-object v0
@@ -4365,65 +4365,145 @@
 
     move-result-object p1
 
-    .line 314
-    invoke-virtual {p1}, Ljava/io/File;->exists()Z
+    .line 299
+    instance-of v0, p0, Lorg/telegram/ui/ChatActivity;
 
-    move-result v0
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 315
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
+    move-object v0, p0
+
+    check-cast v0, Lorg/telegram/ui/ChatActivity;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getUndoView()Lorg/telegram/ui/Components/UndoView;
 
     move-result-object v0
 
-    .line 316
-    new-instance v1, Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    :cond_0
+    move-object v0, v1
 
-    invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getApplicationId()Ljava/lang/String;
+    .line 300
+    :goto_0
+    invoke-virtual {p1}, Ljava/io/File;->exists()Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    const-string p1, "ErrorOccurred"
+
+    if-eqz v0, :cond_1
+
+    .line 302
+    sget p0, Lorg/telegram/messenger/R$string;->ErrorOccurred:I
+
+    invoke-static {p1, p0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/UndoView;->showError(Ljava/lang/String;)V
+
+    goto :goto_1
+
+    .line 304
+    :cond_1
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLayoutContainer()Landroid/widget/FrameLayout;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
+
+    move-result-object p0
+
+    sget v0, Lorg/telegram/messenger/R$raw;->error:I
+
+    sget v1, Lorg/telegram/messenger/R$string;->ErrorOccurred:I
+
+    invoke-static {p1, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->createSimpleBulletin(ILjava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
+
+    :goto_1
+    return-void
+
+    .line 308
+    :cond_2
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 309
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v2, ".provider"
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getApplicationId()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v4
 
-    move-result-object v1
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1, p1}, Landroidx/core/content/FileProvider;->getUriForFile(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Landroid/net/Uri;
+    const-string v4, ".provider"
 
-    move-result-object p1
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "clipboard"
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 317
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object v3
 
-    move-result-object v1
-
-    check-cast v1, Landroid/content/ClipboardManager;
-
-    .line 318
-    invoke-virtual {v0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string v2, "URI"
-
-    invoke-static {v0, v2, p1}, Landroid/content/ClipData;->newUri(Landroid/content/ContentResolver;Ljava/lang/CharSequence;Landroid/net/Uri;)Landroid/content/ClipData;
+    invoke-static {v2, v3, p1}, Landroidx/core/content/FileProvider;->getUriForFile(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Landroid/net/Uri;
 
     move-result-object p1
 
-    .line 319
-    invoke-virtual {v1, p1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
+    const-string v3, "clipboard"
 
-    .line 321
+    .line 310
+    invoke-virtual {v2, v3}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/content/ClipboardManager;
+
+    .line 311
+    invoke-virtual {v2}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v4, "URI"
+
+    invoke-static {v2, v4, p1}, Landroid/content/ClipData;->newUri(Landroid/content/ContentResolver;Ljava/lang/CharSequence;Landroid/net/Uri;)Landroid/content/ClipData;
+
+    move-result-object p1
+
+    .line 312
+    invoke-virtual {v3, p1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
+
+    if-eqz v0, :cond_3
+
+    const-wide/16 p0, 0x0
+
+    .line 314
+    sget v2, Lcom/iMe/common/IdFabric$CustomType;->UNDO_IMAGE_COPIED:I
+
+    invoke-virtual {v0, p0, p1, v2, v1}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;)V
+
+    goto :goto_2
+
+    .line 316
+    :cond_3
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLayoutContainer()Landroid/widget/FrameLayout;
 
     move-result-object p1
@@ -4438,7 +4518,6 @@
 
     sget p1, Lorg/telegram/messenger/R$string;->photo_viewer_image_copied:I
 
-    .line 322
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object p1
@@ -4449,28 +4528,14 @@
 
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
-    goto :goto_0
-
-    .line 324
-    :cond_0
-    sget p0, Lorg/telegram/messenger/R$string;->ErrorOccurred:I
-
-    const-string p1, "ErrorOccurred"
-
-    invoke-static {p1, p0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lcom/iMe/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
-
-    :goto_0
+    :goto_2
     return-void
 .end method
 
 .method public static createEmptyFile(Ljava/io/File;)V
     .locals 1
 
-    .line 1259
+    .line 1238
     :try_start_0
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
@@ -4480,16 +4545,16 @@
 
     return-void
 
-    .line 1262
+    .line 1241
     :cond_0
     new-instance v0, Ljava/io/FileWriter;
 
     invoke-direct {v0, p0}, Ljava/io/FileWriter;-><init>(Ljava/io/File;)V
 
-    .line 1263
+    .line 1242
     invoke-virtual {v0}, Ljava/io/FileWriter;->flush()V
 
-    .line 1264
+    .line 1243
     invoke-virtual {v0}, Ljava/io/FileWriter;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -4501,7 +4566,7 @@
 
     const/4 v0, 0x0
 
-    .line 1266
+    .line 1245
     invoke-static {p0, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     :goto_0
@@ -4517,7 +4582,7 @@
 
     return-object v0
 
-    .line 3398
+    .line 3379
     :cond_0
     new-instance v1, Ljava/io/ByteArrayOutputStream;
 
@@ -4525,13 +4590,13 @@
 
     const/4 v2, 0x0
 
-    .line 3399
+    .line 3380
     :goto_0
     array-length v3, p0
 
     if-ge v2, v3, :cond_2
 
-    .line 3400
+    .line 3381
     aget-byte v3, p0, v2
 
     const/16 v4, 0x3d
@@ -4540,7 +4605,7 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    .line 3403
+    .line 3384
     :try_start_0
     aget-byte v3, p0, v2
 
@@ -4554,7 +4619,7 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    .line 3404
+    .line 3385
     aget-byte v5, p0, v2
 
     int-to-char v5, v5
@@ -4569,7 +4634,7 @@
 
     int-to-char v3, v3
 
-    .line 3405
+    .line 3386
     invoke-virtual {v1, v3}, Ljava/io/ByteArrayOutputStream;->write(I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -4579,12 +4644,12 @@
     :catch_0
     move-exception p0
 
-    .line 3407
+    .line 3388
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-object v0
 
-    .line 3411
+    .line 3392
     :cond_1
     invoke-virtual {v1, v3}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
@@ -4593,13 +4658,13 @@
 
     goto :goto_0
 
-    .line 3414
+    .line 3395
     :cond_2
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p0
 
-    .line 3416
+    .line 3397
     :try_start_1
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_1
@@ -4610,7 +4675,7 @@
     :catch_1
     move-exception v0
 
-    .line 3418
+    .line 3399
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_2
@@ -4630,7 +4695,7 @@
 
     float-to-double v0, p0
 
-    .line 4289
+    .line 4270
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v0
@@ -4653,7 +4718,7 @@
 
     return p0
 
-    .line 2162
+    .line 2139
     :cond_0
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
@@ -4675,7 +4740,7 @@
 
     int-to-float p0, p0
 
-    .line 256
+    .line 275
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p0
@@ -4696,7 +4761,7 @@
 
     return p0
 
-    .line 2176
+    .line 2153
     :cond_0
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
@@ -4724,7 +4789,7 @@
 
     return v0
 
-    .line 2201
+    .line 2178
     :cond_0
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
@@ -4746,7 +4811,7 @@
 
     return p0
 
-    .line 2169
+    .line 2146
     :cond_0
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
@@ -4764,13 +4829,13 @@
 
     const-string v0, "..."
 
-    .line 484
+    .line 463
     :try_start_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
-    .line 485
+    .line 464
     invoke-interface {p0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -4787,7 +4852,7 @@
 
     if-le v1, p4, :cond_0
 
-    .line 488
+    .line 467
     div-int/lit8 v3, p4, 0x2
 
     sub-int v3, p1, v3
@@ -4808,7 +4873,7 @@
 
     move-result-object p0
 
-    .line 489
+    .line 468
     div-int/lit8 p4, p4, 0x2
 
     sub-int p4, p1, p4
@@ -4819,10 +4884,10 @@
 
     sub-int/2addr p1, p4
 
-    .line 490
+    .line 469
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
-    .line 492
+    .line 471
     :cond_0
     new-instance p4, Landroid/text/StaticLayout;
 
@@ -4844,12 +4909,12 @@
 
     invoke-direct/range {v3 .. v10}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
 
-    .line 493
+    .line 472
     invoke-virtual {p4, v2}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v1
 
-    .line 494
+    .line 473
     invoke-virtual {p3, v0}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
 
     move-result v3
@@ -4869,7 +4934,7 @@
 
     move v3, p1
 
-    .line 499
+    .line 478
     :goto_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -4893,13 +4958,13 @@
 
     goto :goto_0
 
-    .line 504
+    .line 483
     :cond_2
     invoke-virtual {p4, v3}, Landroid/text/StaticLayout;->getPrimaryHorizontal(I)F
 
     move-result v4
 
-    .line 505
+    .line 484
     invoke-virtual {p4, v3}, Landroid/text/StaticLayout;->isRtlCharAt(I)Z
 
     move-result v5
@@ -4918,7 +4983,7 @@
     :cond_4
     sub-float/2addr v4, p2
 
-    .line 511
+    .line 490
     invoke-virtual {p3, v0}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
 
     move-result p3
@@ -4935,7 +5000,7 @@
 
     add-float/2addr v4, p3
 
-    .line 512
+    .line 491
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
@@ -4955,12 +5020,12 @@
 
     if-lez p3, :cond_b
 
-    .line 517
+    .line 496
     invoke-virtual {p4, v2, v4}, Landroid/text/StaticLayout;->getOffsetForHorizontal(IF)I
 
     move-result p3
 
-    .line 519
+    .line 498
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
@@ -4969,7 +5034,7 @@
 
     if-le p3, v1, :cond_6
 
-    .line 520
+    .line 499
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result p3
@@ -4979,7 +5044,7 @@
     :cond_6
     move v1, v2
 
-    .line 522
+    .line 501
     :cond_7
     invoke-interface {p0, p3}, Ljava/lang/CharSequence;->charAt(I)C
 
@@ -4999,7 +5064,7 @@
 
     add-int/lit8 p3, p3, 0x1
 
-    .line 525
+    .line 504
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v3
@@ -5008,7 +5073,7 @@
 
     if-le p3, v3, :cond_7
 
-    .line 526
+    .line 505
     invoke-virtual {p4, v2, v4}, Landroid/text/StaticLayout;->getOffsetForHorizontal(IF)I
 
     move-result p3
@@ -5016,7 +5081,7 @@
     :cond_8
     if-lt v1, v5, :cond_9
 
-    .line 532
+    .line 511
     invoke-virtual {p4, p1}, Landroid/text/StaticLayout;->getPrimaryHorizontal(I)F
 
     move-result p1
@@ -5027,7 +5092,7 @@
 
     sub-float/2addr p1, p2
 
-    .line 533
+    .line 512
     invoke-virtual {p4, v2, p1}, Landroid/text/StaticLayout;->getOffsetForHorizontal(IF)I
 
     move-result p1
@@ -5045,7 +5110,7 @@
     :cond_9
     if-lez p3, :cond_a
 
-    .line 535
+    .line 514
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
@@ -5066,7 +5131,7 @@
 
     add-int/lit8 p3, p3, 0x1
 
-    .line 538
+    .line 517
     :cond_a
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -5076,7 +5141,7 @@
 
     move-result-object p1
 
-    .line 540
+    .line 519
     :goto_1
     invoke-static {v0}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
@@ -5093,7 +5158,7 @@
     :catch_0
     move-exception p1
 
-    .line 543
+    .line 522
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_b
@@ -5103,14 +5168,14 @@
 .method public static endIncomingCall()V
     .locals 5
 
-    .line 2439
+    .line 2416
     sget-boolean v0, Lorg/telegram/messenger/AndroidUtilities;->hasCallPermissions:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 2443
+    .line 2420
     :cond_0
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -5123,7 +5188,7 @@
 
     check-cast v0, Landroid/telephony/TelephonyManager;
 
-    .line 2444
+    .line 2421
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -5142,19 +5207,19 @@
 
     new-array v4, v3, [Ljava/lang/Class;
 
-    .line 2445
+    .line 2422
     invoke-virtual {v1, v2, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v1
 
     const/4 v2, 0x1
 
-    .line 2446
+    .line 2423
     invoke-virtual {v1, v2}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
     new-array v2, v3, [Ljava/lang/Object;
 
-    .line 2447
+    .line 2424
     invoke-virtual {v1, v0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
@@ -5163,17 +5228,17 @@
 
     new-array v2, v3, [Ljava/lang/Object;
 
-    .line 2448
+    .line 2425
     invoke-virtual {v1, v0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/telephony/ITelephony;
 
-    .line 2449
+    .line 2426
     invoke-interface {v0}, Lcom/android/internal/telephony/ITelephony;->silenceRinger()V
 
-    .line 2450
+    .line 2427
     invoke-interface {v0}, Lcom/android/internal/telephony/ITelephony;->endCall()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -5183,7 +5248,7 @@
     :catchall_0
     move-exception v0
 
-    .line 2452
+    .line 2429
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -5195,14 +5260,14 @@
 
     if-eqz p0, :cond_1
 
-    .line 921
+    .line 900
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     if-lez v0, :cond_0
 
     goto :goto_0
 
-    .line 924
+    .line 903
     :cond_0
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->getStatusBarHeight(Landroid/content/Context;)I
 
@@ -5210,7 +5275,7 @@
 
     sput v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    .line 925
+    .line 904
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->getNavigationBarHeight(Landroid/content/Context;)I
 
     move-result p0
@@ -5225,23 +5290,23 @@
 .method public static findActivity(Landroid/content/Context;)Landroid/app/Activity;
     .locals 1
 
-    .line 586
+    .line 565
     instance-of v0, p0, Landroid/app/Activity;
 
     if-eqz v0, :cond_0
 
-    .line 587
+    .line 566
     check-cast p0, Landroid/app/Activity;
 
     return-object p0
 
-    .line 589
+    .line 568
     :cond_0
     instance-of v0, p0, Landroid/content/ContextWrapper;
 
     if-eqz v0, :cond_1
 
-    .line 590
+    .line 569
     check-cast p0, Landroid/content/ContextWrapper;
 
     invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
@@ -5267,7 +5332,7 @@
 
     move v1, v0
 
-    .line 711
+    .line 690
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -5275,12 +5340,12 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 712
+    .line 691
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 713
+    .line 692
     invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     move-result v3
@@ -5289,7 +5354,7 @@
 
     goto :goto_1
 
-    .line 716
+    .line 695
     :cond_0
     invoke-virtual {v2}, Landroid/view/View;->isClickable()Z
 
@@ -5301,7 +5366,7 @@
 
     return v4
 
-    .line 718
+    .line 697
     :cond_1
     instance-of v3, v2, Landroid/view/ViewGroup;
 
@@ -5344,7 +5409,7 @@
 .method public static fixGoogleMapsBug()V
     .locals 5
 
-    .line 4079
+    .line 4060
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "google_bug_154855417"
@@ -5357,14 +5422,14 @@
 
     const-string v1, "fixed"
 
-    .line 4080
+    .line 4061
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 4081
+    .line 4062
     new-instance v2, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
@@ -5375,10 +5440,10 @@
 
     invoke-direct {v2, v3, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 4082
+    .line 4063
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    .line 4083
+    .line 4064
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -5414,7 +5479,7 @@
 .method public static formapMapUrl(IDDIIZII)Ljava/lang/String;
     .locals 16
 
-    .line 2267
+    .line 2244
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     float-to-double v0, v0
@@ -5437,7 +5502,7 @@
 
     if-ne v3, v2, :cond_0
 
-    .line 2269
+    .line 2246
     invoke-static/range {p0 .. p0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -5474,7 +5539,7 @@
 
     goto/16 :goto_1
 
-    .line 2289
+    .line 2266
     :cond_1
     invoke-static/range {p0 .. p0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
@@ -5482,7 +5547,7 @@
 
     iget-object v2, v2, Lorg/telegram/messenger/MessagesController;->mapKey:Ljava/lang/String;
 
-    .line 2290
+    .line 2267
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v12
@@ -5491,7 +5556,7 @@
 
     if-eqz p7, :cond_2
 
-    .line 2292
+    .line 2269
     sget-object v12, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -5554,7 +5619,7 @@
 
     return-object v0
 
-    .line 2294
+    .line 2271
     :cond_2
     sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -5609,7 +5674,7 @@
     :cond_3
     if-eqz p7, :cond_4
 
-    .line 2298
+    .line 2275
     sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v3, v4, [Ljava/lang/Object;
@@ -5670,7 +5735,7 @@
 
     return-object v0
 
-    .line 2300
+    .line 2277
     :cond_4
     sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -5728,12 +5793,12 @@
 
     const-string/jumbo v13, "tr_TR"
 
-    .line 2273
+    .line 2250
     filled-new-array {v12, v13}, [Ljava/lang/String;
 
     move-result-object v12
 
-    .line 2274
+    .line 2251
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v13
@@ -5747,7 +5812,7 @@
     :goto_2
     if-ge v14, v1, :cond_7
 
-    .line 2276
+    .line 2253
     aget-object v15, v12, v14
 
     invoke-virtual {v15}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -5762,7 +5827,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 2277
+    .line 2254
     aget-object v2, v12, v14
 
     :cond_6
@@ -5780,7 +5845,7 @@
     :cond_8
     if-eqz p7, :cond_9
 
-    .line 2284
+    .line 2261
     sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -5849,7 +5914,7 @@
 
     return-object v0
 
-    .line 2286
+    .line 2263
     :cond_9
     sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -5913,14 +5978,14 @@
 
     if-ge p0, v0, :cond_0
 
-    .line 3343
+    .line 3324
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 3345
+    .line 3326
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -5931,15 +5996,15 @@
 
     if-eqz p0, :cond_2
 
-    .line 3347
+    .line 3328
     rem-int/lit16 v2, p0, 0x3e8
 
-    .line 3348
+    .line 3329
     div-int/lit16 p0, p0, 0x3e8
 
     if-lez p0, :cond_1
 
-    .line 3350
+    .line 3331
     sget-object v3, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -5962,7 +6027,7 @@
 
     goto :goto_0
 
-    .line 3352
+    .line 3333
     :cond_1
     invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -5972,13 +6037,13 @@
 
     goto :goto_0
 
-    .line 3355
+    .line 3336
     :cond_2
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 3356
+    .line 3337
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -5988,7 +6053,7 @@
     :goto_1
     if-ltz v2, :cond_4
 
-    .line 3357
+    .line 3338
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -6001,7 +6066,7 @@
 
     const-string v1, ","
 
-    .line 3359
+    .line 3340
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_3
@@ -6009,7 +6074,7 @@
 
     goto :goto_1
 
-    .line 3363
+    .line 3344
     :cond_4
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -6021,26 +6086,26 @@
 .method public static formatDuration(IIZ)Ljava/lang/String;
     .locals 10
 
-    .line 3289
+    .line 3270
     div-int/lit16 v0, p1, 0xe10
 
-    .line 3290
+    .line 3271
     div-int/lit8 v1, p1, 0x3c
 
     rem-int/lit8 v1, v1, 0x3c
 
-    .line 3291
+    .line 3272
     rem-int/lit8 v2, p1, 0x3c
 
-    .line 3293
+    .line 3274
     div-int/lit16 v3, p0, 0xe10
 
-    .line 3294
+    .line 3275
     div-int/lit8 v4, p0, 0x3c
 
     rem-int/lit8 v4, v4, 0x3c
 
-    .line 3295
+    .line 3276
     rem-int/lit8 p0, p0, 0x3c
 
     const/4 v5, 0x3
@@ -6057,7 +6122,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 3300
+    .line 3281
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array p2, v6, [Ljava/lang/Object;
@@ -6082,7 +6147,7 @@
 
     return-object p0
 
-    .line 3302
+    .line 3283
     :cond_0
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -6108,7 +6173,7 @@
 
     return-object p0
 
-    .line 3305
+    .line 3286
     :cond_1
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -6149,7 +6214,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 3310
+    .line 3291
     sget-object p2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array p1, p1, [Ljava/lang/Object;
@@ -6186,7 +6251,7 @@
 
     return-object p0
 
-    .line 3312
+    .line 3293
     :cond_3
     sget-object p2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -6224,7 +6289,7 @@
 
     return-object p0
 
-    .line 3315
+    .line 3296
     :cond_4
     sget-object p2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -6282,15 +6347,15 @@
 .method public static formatDuration(IZ)Ljava/lang/String;
     .locals 6
 
-    .line 3245
+    .line 3226
     div-int/lit16 v0, p0, 0xe10
 
-    .line 3246
+    .line 3227
     div-int/lit8 v1, p0, 0x3c
 
     rem-int/lit8 v1, v1, 0x3c
 
-    .line 3247
+    .line 3228
     rem-int/lit8 p0, p0, 0x3c
 
     const/4 v2, 0x2
@@ -6303,7 +6368,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 3250
+    .line 3231
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v0, v2, [Ljava/lang/Object;
@@ -6328,7 +6393,7 @@
 
     return-object p0
 
-    .line 3252
+    .line 3233
     :cond_0
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -6354,7 +6419,7 @@
 
     return-object p0
 
-    .line 3255
+    .line 3236
     :cond_1
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -6392,10 +6457,10 @@
 .method public static formatDurationNoHours(IZ)Ljava/lang/String;
     .locals 4
 
-    .line 3271
+    .line 3252
     div-int/lit8 v0, p0, 0x3c
 
-    .line 3272
+    .line 3253
     rem-int/lit8 p0, p0, 0x3c
 
     const/4 v1, 0x1
@@ -6406,7 +6471,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 3274
+    .line 3255
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -6431,7 +6496,7 @@
 
     return-object p0
 
-    .line 3276
+    .line 3257
     :cond_0
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -6463,7 +6528,7 @@
 
     const/4 v0, 0x0
 
-    .line 3204
+    .line 3185
     invoke-static {p0, p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZ)Ljava/lang/String;
 
     move-result-object p0
@@ -6488,7 +6553,7 @@
 
     new-array p0, v2, [Ljava/lang/Object;
 
-    .line 3209
+    .line 3190
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -6510,7 +6575,7 @@
 
     new-array p2, v2, [Ljava/lang/Object;
 
-    .line 3211
+    .line 3192
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p0
@@ -6558,7 +6623,7 @@
 
     new-array p0, v2, [Ljava/lang/Object;
 
-    .line 3215
+    .line 3196
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -6574,7 +6639,7 @@
     :cond_2
     new-array p1, v2, [Ljava/lang/Object;
 
-    .line 3217
+    .line 3198
     invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p0
@@ -6618,7 +6683,7 @@
 
     new-array p0, v2, [Ljava/lang/Object;
 
-    .line 3222
+    .line 3203
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -6636,7 +6701,7 @@
     :cond_4
     new-array p1, v2, [Ljava/lang/Object;
 
-    .line 3224
+    .line 3205
     invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p0
@@ -6651,7 +6716,7 @@
 
     return-object p0
 
-    .line 3227
+    .line 3208
     :cond_5
     div-long/2addr p0, v4
 
@@ -6681,7 +6746,7 @@
 
     new-array p0, v2, [Ljava/lang/Object;
 
-    .line 3229
+    .line 3210
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -6699,7 +6764,7 @@
     :cond_6
     new-array p1, v2, [Ljava/lang/Object;
 
-    .line 3231
+    .line 3212
     invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p0
@@ -6718,15 +6783,15 @@
 .method public static formatFullDuration(I)Ljava/lang/String;
     .locals 7
 
-    .line 3260
+    .line 3241
     div-int/lit16 v0, p0, 0xe10
 
-    .line 3261
+    .line 3242
     div-int/lit8 v1, p0, 0x3c
 
     rem-int/lit8 v1, v1, 0x3c
 
-    .line 3262
+    .line 3243
     rem-int/lit8 v2, p0, 0x3c
 
     const/4 v3, 0x2
@@ -6739,7 +6804,7 @@
 
     if-gez p0, :cond_0
 
-    .line 3264
+    .line 3245
     sget-object p0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v6, v6, [Ljava/lang/Object;
@@ -6782,7 +6847,7 @@
 
     return-object p0
 
-    .line 3266
+    .line 3247
     :cond_0
     sget-object p0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -6820,7 +6885,7 @@
 
     const/4 v0, 0x1
 
-    .line 3241
+    .line 3222
     invoke-static {p0, v0}, Lorg/telegram/messenger/AndroidUtilities;->formatDuration(IZ)Ljava/lang/String;
 
     move-result-object p0
@@ -6833,7 +6898,7 @@
 
     const/4 v0, 0x1
 
-    .line 3285
+    .line 3266
     invoke-static {p0, p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->formatDuration(IIZ)Ljava/lang/String;
 
     move-result-object p0
@@ -6852,7 +6917,7 @@
 
     const-wide p0, -0x7fffffffffffffffL    # -4.9E-324
 
-    .line 216
+    .line 227
     invoke-static {p0, p1}, Lorg/telegram/messenger/AndroidUtilities;->formatNumber(J)Ljava/lang/String;
 
     move-result-object p0
@@ -6866,7 +6931,7 @@
 
     if-gez v0, :cond_1
 
-    .line 217
+    .line 230
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6896,20 +6961,20 @@
 
     if-gez v2, :cond_2
 
-    .line 218
+    .line 233
     invoke-static {p0, p1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 220
+    .line 236
     :cond_2
     new-instance v2, Ljava/util/TreeMap;
 
     invoke-direct {v2}, Ljava/util/TreeMap;-><init>()V
 
-    .line 221
+    .line 237
     sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -6922,7 +6987,7 @@
 
     move-result-object v3
 
-    .line 222
+    .line 238
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
@@ -6935,7 +7000,7 @@
 
     const-wide/32 v4, 0xf4240
 
-    .line 223
+    .line 239
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
@@ -6948,7 +7013,7 @@
 
     const-wide/32 v5, 0x3b9aca00
 
-    .line 224
+    .line 240
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
@@ -6961,7 +7026,7 @@
 
     const-wide v5, 0xe8d4a51000L
 
-    .line 225
+    .line 241
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
@@ -6972,7 +7037,7 @@
 
     invoke-interface {v2, v0, v3}, Ljava/util/NavigableMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 227
+    .line 243
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
@@ -6981,21 +7046,28 @@
 
     move-result-object v0
 
-    .line 228
+    if-nez v0, :cond_3
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    .line 247
+    :cond_3
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/Long;
 
-    .line 229
+    .line 248
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
 
-    .line 231
+    .line 250
     invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v2
@@ -7012,27 +7084,30 @@
 
     const-wide/high16 v7, 0x4024000000000000L    # 10.0
 
-    if-gez v2, :cond_3
+    if-gez v2, :cond_4
 
     long-to-double v2, p0
 
     div-double/2addr v2, v7
 
-    .line 232
-    div-long v9, p0, v5
+    long-to-float v9, p0
 
-    long-to-double v9, v9
+    const/high16 v10, 0x41200000    # 10.0f
+
+    div-float/2addr v9, v10
+
+    float-to-double v9, v9
 
     cmpl-double v2, v2, v9
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
     move v1, v4
 
-    :cond_3
-    if-eqz v1, :cond_4
+    :cond_4
+    if-eqz v1, :cond_5
 
-    .line 233
+    .line 252
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -7045,7 +7120,7 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -7069,7 +7144,7 @@
 
     const/4 v0, 0x0
 
-    .line 3237
+    .line 3218
     invoke-static {p0, v0}, Lorg/telegram/messenger/AndroidUtilities;->formatDuration(IZ)Ljava/lang/String;
 
     move-result-object p0
@@ -7082,7 +7157,7 @@
 
     const/4 v0, 0x0
 
-    .line 3281
+    .line 3262
     invoke-static {p0, p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->formatDuration(IIZ)Ljava/lang/String;
 
     move-result-object p0
@@ -7106,12 +7181,12 @@
         }
     .end annotation
 
-    .line 3631
+    .line 3612
     invoke-interface {p0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3632
+    .line 3613
     invoke-static {p0}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p0
@@ -7120,13 +7195,13 @@
 
     move v2, v1
 
-    .line 3633
+    .line 3614
     :goto_0
     array-length v3, p2
 
     if-ge v2, v3, :cond_1
 
-    .line 3634
+    .line 3615
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -7137,7 +7212,7 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 3635
+    .line 3616
     invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v4
@@ -7146,7 +7221,7 @@
 
     if-eq v4, v5, :cond_0
 
-    .line 3637
+    .line 3618
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -7157,7 +7232,7 @@
 
     invoke-virtual {p0, v4, v5, v6}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 3638
+    .line 3619
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -7204,7 +7279,7 @@
 .method public static varargs formatSpannable(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
     .locals 2
 
-    .line 3625
+    .line 3606
     invoke-interface {p0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -7217,14 +7292,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 3626
+    .line 3607
     invoke-static {p0, p1}, Lorg/telegram/messenger/AndroidUtilities;->formatSpannableSimple(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p0
 
     return-object p0
 
-    .line 3627
+    .line 3608
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda16;->INSTANCE:Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda16;
 
@@ -7238,7 +7313,7 @@
 .method public static varargs formatSpannableSimple(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
     .locals 1
 
-    .line 3621
+    .line 3602
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda17;->INSTANCE:Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda17;
 
     invoke-static {p0, v0, p1}, Lorg/telegram/messenger/AndroidUtilities;->formatSpannable(Ljava/lang/CharSequence;Lorg/telegram/messenger/GenericProvider;[Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
@@ -7251,26 +7326,26 @@
 .method public static formatVideoDuration(II)Ljava/lang/String;
     .locals 12
 
-    .line 3321
+    .line 3302
     div-int/lit16 v0, p1, 0xe10
 
-    .line 3322
+    .line 3303
     div-int/lit8 v1, p1, 0x3c
 
     rem-int/lit8 v1, v1, 0x3c
 
-    .line 3323
+    .line 3304
     rem-int/lit8 p1, p1, 0x3c
 
-    .line 3325
+    .line 3306
     div-int/lit16 v2, p0, 0xe10
 
-    .line 3326
+    .line 3307
     div-int/lit8 v3, p0, 0x3c
 
     rem-int/lit8 v3, v3, 0x3c
 
-    .line 3327
+    .line 3308
     rem-int/lit8 p0, p0, 0x3c
 
     const/4 v4, 0x4
@@ -7287,7 +7362,7 @@
 
     if-nez v0, :cond_0
 
-    .line 3330
+    .line 3311
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v2, v4, [Ljava/lang/Object;
@@ -7329,7 +7404,7 @@
 
     if-nez v0, :cond_1
 
-    .line 3333
+    .line 3314
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v9, v9, [Ljava/lang/Object;
@@ -7375,7 +7450,7 @@
     :cond_1
     if-nez v2, :cond_2
 
-    .line 3335
+    .line 3316
     sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v9, v9, [Ljava/lang/Object;
@@ -7418,7 +7493,7 @@
 
     return-object p0
 
-    .line 3337
+    .line 3318
     :cond_2
     sget-object v10, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -7476,7 +7551,7 @@
 
     const/4 v0, 0x0
 
-    .line 338
+    .line 222
     invoke-static {p0, v0}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
 
     move-result-object p0
@@ -7505,7 +7580,7 @@
 
     if-ge p1, v2, :cond_2
 
-    .line 3376
+    .line 3357
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->formatCount(I)Ljava/lang/String;
 
     move-result-object p0
@@ -7522,7 +7597,7 @@
 
     if-lt p1, v2, :cond_3
 
-    .line 3378
+    .line 3359
     sget-object v5, Lorg/telegram/messenger/AndroidUtilities;->numbersSignatureArray:[Ljava/lang/String;
 
     array-length v5, v5
@@ -7531,7 +7606,7 @@
 
     if-ge v3, v5, :cond_3
 
-    .line 3379
+    .line 3360
     div-int/lit16 p1, p1, 0x3e8
 
     const/high16 v4, 0x447a0000    # 1000.0f
@@ -7568,7 +7643,7 @@
 
     if-nez v0, :cond_5
 
-    .line 3387
+    .line 3368
     sget-object p1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     new-array v0, v5, [Ljava/lang/Object;
@@ -7595,7 +7670,7 @@
 
     return-object p0
 
-    .line 3389
+    .line 3370
     :cond_5
     sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
@@ -7643,14 +7718,14 @@
 
     const/16 v0, 0x2500
 
-    .line 788
+    .line 767
     invoke-static {p1, v0}, Landroid/text/TextUtils;->indexOf(Ljava/lang/CharSequence;C)I
 
     move-result v1
 
     if-ltz v1, :cond_0
 
-    .line 789
+    .line 768
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -7667,7 +7742,7 @@
 
     move-object p1, v1
 
-    .line 791
+    .line 770
     :cond_0
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -7691,7 +7766,7 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 793
+    .line 772
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -7700,7 +7775,7 @@
 
     invoke-direct {v0, v2}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 794
+    .line 773
     invoke-interface {p1}, Landroid/text/Spannable;->length()I
 
     move-result v2
@@ -7717,13 +7792,13 @@
 
     move-result-object p1
 
-    .line 796
+    .line 775
     :cond_1
     invoke-virtual {p2, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object p2
 
-    .line 797
+    .line 776
     :cond_2
     :goto_0
     invoke-virtual {p2}, Ljava/util/regex/Matcher;->find()Z
@@ -7732,26 +7807,26 @@
 
     if-eqz v0, :cond_5
 
-    .line 798
+    .line 777
     invoke-virtual {p2}, Ljava/util/regex/Matcher;->start()I
 
     move-result v0
 
-    .line 799
+    .line 778
     invoke-virtual {p2}, Ljava/util/regex/Matcher;->end()I
 
     move-result v2
 
     if-eqz p4, :cond_3
 
-    .line 801
+    .line 780
     invoke-interface {p4, p1, v0, v2}, Landroid/text/util/Linkify$MatchFilter;->acceptMatch(Ljava/lang/CharSequence;II)Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 802
+    .line 781
     :cond_3
     new-instance v3, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;
 
@@ -7761,7 +7836,7 @@
 
     const/4 v5, 0x0
 
-    .line 804
+    .line 783
     invoke-virtual {p2, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v5
@@ -7772,7 +7847,7 @@
 
     if-eqz p5, :cond_4
 
-    .line 805
+    .line 784
     invoke-static {v5, v1, v4}, Lorg/telegram/messenger/browser/Browser;->isInternalUrl(Ljava/lang/String;Z[Z)Z
 
     move-result v4
@@ -7781,17 +7856,17 @@
 
     goto :goto_0
 
-    .line 808
+    .line 787
     :cond_4
     iput-object v5, v3, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;->url:Ljava/lang/String;
 
-    .line 809
+    .line 788
     iput v0, v3, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;->start:I
 
-    .line 810
+    .line 789
     iput v2, v3, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;->end:I
 
-    .line 812
+    .line 791
     invoke-virtual {p0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -7803,12 +7878,12 @@
 .method public static generateFileName(ILjava/lang/String;)Ljava/lang/String;
     .locals 5
 
-    .line 3106
+    .line 3087
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0}, Ljava/util/Date;-><init>()V
 
-    .line 3107
+    .line 3088
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -7831,7 +7906,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/Date;->setTime(J)V
 
-    .line 3108
+    .line 3089
     new-instance v1, Ljava/text/SimpleDateFormat;
 
     sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -7846,7 +7921,7 @@
 
     if-nez p0, :cond_1
 
-    .line 3110
+    .line 3091
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7878,7 +7953,7 @@
 
     return-object p0
 
-    .line 3112
+    .line 3093
     :cond_1
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -7908,7 +7983,7 @@
 
     const/4 v1, 0x0
 
-    .line 3087
+    .line 3068
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->generatePicturePath(ZLjava/lang/String;)Ljava/io/File;
 
     move-result-object v0
@@ -7921,7 +7996,7 @@
 
     const/16 v0, 0x64
 
-    .line 3092
+    .line 3073
     :try_start_0
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getDirectory(I)Ljava/io/File;
 
@@ -7935,7 +8010,7 @@
 
     goto :goto_0
 
-    .line 3097
+    .line 3078
     :cond_0
     new-instance p0, Ljava/io/File;
 
@@ -7947,7 +8022,7 @@
 
     return-object p0
 
-    .line 3094
+    .line 3075
     :cond_1
     :goto_0
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -7958,7 +8033,7 @@
 
     move-result-object p0
 
-    .line 3095
+    .line 3076
     new-instance v0, Ljava/io/File;
 
     invoke-static {v1, p1}, Lorg/telegram/messenger/AndroidUtilities;->generateFileName(ILjava/lang/String;)Ljava/lang/String;
@@ -7974,7 +8049,7 @@
     :catch_0
     move-exception p0
 
-    .line 3100
+    .line 3081
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 p0, 0x0
@@ -7989,7 +8064,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 3117
+    .line 3098
     :cond_0
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -8002,7 +8077,7 @@
 
     return-object p0
 
-    .line 3120
+    .line 3101
     :cond_2
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
@@ -8012,7 +8087,7 @@
 
     if-eqz p0, :cond_4
 
-    .line 3122
+    .line 3103
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -8024,14 +8099,14 @@
     :cond_3
     if-eqz p1, :cond_5
 
-    .line 3124
+    .line 3105
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
 
     if-eqz v2, :cond_5
 
-    .line 3125
+    .line 3106
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -8052,14 +8127,14 @@
     :goto_0
     move-object p0, p1
 
-    .line 3127
+    .line 3108
     :cond_5
     :goto_1
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 3128
+    .line 3109
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -8080,7 +8155,7 @@
 
     move v3, v2
 
-    .line 3132
+    .line 3113
     :goto_2
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -8116,7 +8191,7 @@
     :goto_3
     sub-int v6, v4, v6
 
-    .line 3134
+    .line 3115
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v7
@@ -8136,7 +8211,7 @@
 
     if-eq v3, v4, :cond_8
 
-    .line 3137
+    .line 3118
     invoke-virtual {p0, v3, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v3
@@ -8150,14 +8225,14 @@
 
     if-eqz v6, :cond_9
 
-    .line 3139
+    .line 3120
     invoke-virtual {p0, v2, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 3142
+    .line 3123
     :cond_9
     :goto_4
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -8172,31 +8247,31 @@
 
     move-result-object v3
 
-    .line 3143
+    .line 3124
     invoke-virtual {v3, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v4
 
     if-eqz v4, :cond_a
 
-    .line 3144
+    .line 3125
     invoke-virtual {v0, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 3146
+    .line 3127
     :cond_a
     invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 3148
+    .line 3129
     invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v4
 
-    .line 3149
+    .line 3130
     invoke-virtual {v0, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 3150
+    .line 3131
     new-instance v5, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;
 
     const-string/jumbo v6, "windowBackgroundWhiteBlueText4"
@@ -8220,14 +8295,14 @@
     :cond_b
     if-eq v3, v5, :cond_c
 
-    .line 3155
+    .line 3136
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result p1
 
     if-ge v3, p1, :cond_c
 
-    .line 3156
+    .line 3137
     invoke-virtual {p0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p0
@@ -8243,7 +8318,7 @@
 
     const/4 v0, 0x0
 
-    .line 3182
+    .line 3163
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->generateVideoPath(Z)Ljava/io/File;
 
     move-result-object v0
@@ -8254,18 +8329,18 @@
 .method public static generateVideoPath(Z)Ljava/io/File;
     .locals 5
 
-    .line 3189
+    .line 3170
     :try_start_0
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->getAlbumDir(Z)Ljava/io/File;
 
     move-result-object p0
 
-    .line 3190
+    .line 3171
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0}, Ljava/util/Date;-><init>()V
 
-    .line 3191
+    .line 3172
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -8288,12 +8363,12 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/Date;->setTime(J)V
 
-    .line 3192
+    .line 3173
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->generatingVideoPathFormat:Ljava/text/SimpleDateFormat;
 
     if-nez v1, :cond_0
 
-    .line 3193
+    .line 3174
     new-instance v1, Ljava/text/SimpleDateFormat;
 
     const-string/jumbo v2, "yyyyMMdd_HHmmss_SSS"
@@ -8304,7 +8379,7 @@
 
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->generatingVideoPathFormat:Ljava/text/SimpleDateFormat;
 
-    .line 3195
+    .line 3176
     :cond_0
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->generatingVideoPathFormat:Ljava/text/SimpleDateFormat;
 
@@ -8312,7 +8387,7 @@
 
     move-result-object v0
 
-    .line 3196
+    .line 3177
     new-instance v1, Ljava/io/File;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -8342,7 +8417,7 @@
     :catch_0
     move-exception p0
 
-    .line 3198
+    .line 3179
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 p0, 0x0
@@ -8355,7 +8430,7 @@
 
     if-nez p0, :cond_5
 
-    .line 2978
+    .line 2959
     sget-boolean p0, Lorg/telegram/messenger/BuildVars;->NO_SCOPED_STORAGE:Z
 
     if-eqz p0, :cond_5
@@ -8378,7 +8453,7 @@
 
     goto :goto_1
 
-    .line 2982
+    .line 2963
     :cond_0
     invoke-static {}, Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
 
@@ -8394,7 +8469,7 @@
 
     if-eqz p0, :cond_3
 
-    .line 2983
+    .line 2964
     new-instance p0, Ljava/io/File;
 
     sget-object v1, Landroid/os/Environment;->DIRECTORY_PICTURES:Ljava/lang/String;
@@ -8407,28 +8482,28 @@
 
     invoke-direct {p0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 2984
+    .line 2965
     invoke-virtual {p0}, Ljava/io/File;->mkdirs()Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 2985
+    .line 2966
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 2986
+    .line 2967
     sget-boolean p0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p0, :cond_1
 
     const-string p0, "failed to create directory"
 
-    .line 2987
+    .line 2968
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_1
@@ -8439,7 +8514,7 @@
 
     goto :goto_0
 
-    .line 2993
+    .line 2974
     :cond_3
     sget-boolean p0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -8447,7 +8522,7 @@
 
     const-string p0, "External storage is not mounted READ/WRITE."
 
-    .line 2994
+    .line 2975
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_4
@@ -8458,7 +8533,7 @@
     :goto_1
     const/4 p0, 0x0
 
-    .line 2979
+    .line 2960
     invoke-static {p0}, Lorg/telegram/messenger/FileLoader;->getDirectory(I)Ljava/io/File;
 
     move-result-object p0
@@ -8469,37 +8544,37 @@
 .method public static getAverageColor(II)I
     .locals 4
 
-    .line 4490
+    .line 4471
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
 
-    .line 4491
+    .line 4472
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
     move-result v1
 
-    .line 4492
+    .line 4473
     invoke-static {p0}, Landroid/graphics/Color;->green(I)I
 
     move-result v2
 
-    .line 4493
+    .line 4474
     invoke-static {p1}, Landroid/graphics/Color;->green(I)I
 
     move-result v3
 
-    .line 4494
+    .line 4475
     invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
 
     move-result p0
 
-    .line 4495
+    .line 4476
     invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
 
     move-result p1
 
-    .line 4496
+    .line 4477
     div-int/lit8 v0, v0, 0x2
 
     div-int/lit8 v1, v1, 0x2
@@ -8530,12 +8605,12 @@
 .method public static getBitmapShareUri(Landroid/graphics/Bitmap;Ljava/lang/String;Landroid/graphics/Bitmap$CompressFormat;)Landroid/net/Uri;
     .locals 3
 
-    .line 4900
+    .line 4881
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getCacheDir()Ljava/io/File;
 
     move-result-object v0
 
-    .line 4901
+    .line 4882
     invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
 
     move-result v1
@@ -8544,7 +8619,7 @@
 
     if-nez v1, :cond_0
 
-    .line 4903
+    .line 4884
     :try_start_0
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
     :try_end_0
@@ -8555,19 +8630,19 @@
     :catch_0
     move-exception p0
 
-    .line 4905
+    .line 4886
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-object v2
 
-    .line 4909
+    .line 4890
     :cond_0
     :goto_0
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, v0, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 4910
+    .line 4891
     :try_start_1
     new-instance p1, Ljava/io/FileOutputStream;
 
@@ -8577,14 +8652,14 @@
 
     const/16 v0, 0x64
 
-    .line 4911
+    .line 4892
     :try_start_2
     invoke-virtual {p0, p2, v0, p1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 4912
+    .line 4893
     invoke-virtual {p1}, Ljava/io/FileOutputStream;->close()V
 
-    .line 4913
+    .line 4894
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -8611,7 +8686,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 4914
+    .line 4895
     :try_start_3
     invoke-virtual {p1}, Ljava/io/FileOutputStream;->close()V
     :try_end_3
@@ -8622,7 +8697,7 @@
     :catchall_0
     move-exception p0
 
-    .line 4910
+    .line 4891
     :try_start_4
     invoke-virtual {p1}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
@@ -8644,7 +8719,7 @@
     :catch_1
     move-exception p0
 
-    .line 4915
+    .line 4896
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-object v2
@@ -8655,7 +8730,7 @@
 
     const/4 v0, 0x0
 
-    .line 2093
+    .line 2072
     :try_start_0
     invoke-static {}, Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
 
@@ -8668,7 +8743,7 @@
     :catch_0
     move-exception v1
 
-    .line 2095
+    .line 2074
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     move-object v1, v0
@@ -8678,28 +8753,21 @@
 
     const-string v2, "mounted"
 
-    .line 2098
+    .line 2077
     invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_6
 
     :cond_0
     const-string v1, "external dir mounted"
 
-    .line 2099
+    .line 2078
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 2102
+    .line 2082
     :try_start_1
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x13
-
-    if-lt v1, v2, :cond_2
-
-    .line 2103
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getExternalCacheDirs()[Ljava/io/File;
@@ -8708,25 +8776,25 @@
 
     const/4 v2, 0x0
 
-    .line 2104
+    .line 2083
     aget-object v3, v1, v2
 
-    .line 2105
+    .line 2084
     sget-object v4, Lorg/telegram/messenger/SharedConfig;->storageCacheDir:Ljava/lang/String;
 
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
-    if-nez v4, :cond_3
+    if-nez v4, :cond_2
 
-    .line 2106
+    .line 2085
     :goto_1
     array-length v4, v1
 
-    if-ge v2, v4, :cond_3
+    if-ge v2, v4, :cond_2
 
-    .line 2107
+    .line 2086
     aget-object v4, v1, v2
 
     if-eqz v4, :cond_1
@@ -8745,7 +8813,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 2108
+    .line 2087
     aget-object v3, v1, v2
 
     goto :goto_2
@@ -8755,16 +8823,8 @@
 
     goto :goto_1
 
-    .line 2114
+    .line 2093
     :cond_2
-    sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getExternalCacheDir()Ljava/io/File;
-
-    move-result-object v3
-
-    .line 2116
-    :cond_3
     :goto_2
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -8774,11 +8834,11 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-nez v3, :cond_4
+    if-nez v3, :cond_3
 
     goto :goto_3
 
-    :cond_4
+    :cond_3
     invoke-virtual {v3}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v0
@@ -8796,34 +8856,34 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_5
 
-    .line 2117
+    .line 2094
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result v0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_4
 
     invoke-virtual {v3}, Ljava/io/File;->mkdirs()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
-    :cond_5
+    :cond_4
     invoke-virtual {v3}, Ljava/io/File;->canWrite()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     return-object v3
 
-    :cond_6
-    if-eqz v3, :cond_7
+    :cond_5
+    if-eqz v3, :cond_6
 
-    .line 2129
+    .line 2106
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8861,11 +8921,11 @@
     :catch_1
     move-exception v0
 
-    .line 2132
+    .line 2109
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2136
-    :cond_7
+    .line 2113
+    :cond_6
     :goto_4
     :try_start_2
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -8876,18 +8936,18 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
     return-object v0
 
     :catch_2
     move-exception v0
 
-    .line 2141
+    .line 2118
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2144
-    :cond_8
+    .line 2121
+    :cond_7
     :try_start_3
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -8895,45 +8955,45 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_9
 
-    .line 2146
+    .line 2123
     new-instance v1, Ljava/io/File;
 
     const-string v2, "cache/"
 
     invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 2147
+    .line 2124
     invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
 
-    .line 2148
+    .line 2125
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v2
 
-    if-nez v2, :cond_9
+    if-nez v2, :cond_8
 
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_9
 
-    :cond_9
+    :cond_8
     invoke-virtual {v0}, Ljava/io/File;->canWrite()Z
 
     move-result v0
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_9
 
     return-object v1
 
-    .line 2155
+    .line 2132
     :catch_3
-    :cond_a
+    :cond_9
     new-instance v0, Ljava/io/File;
 
     const-string v1, ""
@@ -8946,14 +9006,14 @@
 .method public static getCertificateSHA256Fingerprint()Ljava/lang/String;
     .locals 3
 
-    .line 4442
+    .line 4423
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 4443
+    .line 4424
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -8962,44 +9022,44 @@
 
     const/16 v2, 0x40
 
-    .line 4445
+    .line 4426
     :try_start_0
     invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
     move-result-object v0
 
-    .line 4446
+    .line 4427
     iget-object v0, v0, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
     const/4 v1, 0x0
 
-    .line 4447
+    .line 4428
     aget-object v0, v0, v1
 
     invoke-virtual {v0}, Landroid/content/pm/Signature;->toByteArray()[B
 
     move-result-object v0
 
-    .line 4448
+    .line 4429
     new-instance v1, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v1, v0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
     const-string v0, "X509"
 
-    .line 4449
+    .line 4430
     invoke-static {v0}, Ljava/security/cert/CertificateFactory;->getInstance(Ljava/lang/String;)Ljava/security/cert/CertificateFactory;
 
     move-result-object v0
 
-    .line 4450
+    .line 4431
     invoke-virtual {v0, v1}, Ljava/security/cert/CertificateFactory;->generateCertificate(Ljava/io/InputStream;)Ljava/security/cert/Certificate;
 
     move-result-object v0
 
     check-cast v0, Ljava/security/cert/X509Certificate;
 
-    .line 4451
+    .line 4432
     invoke-virtual {v0}, Ljava/security/cert/X509Certificate;->getEncoded()[B
 
     move-result-object v0
@@ -9025,39 +9085,39 @@
 .method public static getColorDistance(II)I
     .locals 5
 
-    .line 4474
+    .line 4455
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
 
-    .line 4475
+    .line 4456
     invoke-static {p0}, Landroid/graphics/Color;->green(I)I
 
     move-result v1
 
-    .line 4476
+    .line 4457
     invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
 
     move-result p0
 
-    .line 4478
+    .line 4459
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
     move-result v2
 
-    .line 4479
+    .line 4460
     invoke-static {p1}, Landroid/graphics/Color;->green(I)I
 
     move-result v3
 
-    .line 4480
+    .line 4461
     invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
 
     move-result p1
 
     add-int v4, v0, v2
 
-    .line 4482
+    .line 4463
     div-int/lit8 v4, v4, 0x2
 
     sub-int/2addr v0, v2
@@ -9098,7 +9158,7 @@
 
     const-string v0, "en"
 
-    .line 1955
+    .line 1934
     :try_start_0
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -9110,7 +9170,7 @@
 
     check-cast v1, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 1956
+    .line 1935
     invoke-virtual {v1}, Landroid/view/inputmethod/InputMethodManager;->getCurrentInputMethodSubtype()Landroid/view/inputmethod/InputMethodSubtype;
 
     move-result-object v2
@@ -9121,12 +9181,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 1959
+    .line 1938
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v1, v3, :cond_0
 
-    .line 1960
+    .line 1939
     invoke-virtual {v2}, Landroid/view/inputmethod/InputMethodSubtype;->getLanguageTag()Ljava/lang/String;
 
     move-result-object v1
@@ -9136,7 +9196,7 @@
     :cond_0
     move-object v1, v4
 
-    .line 1962
+    .line 1941
     :goto_0
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -9144,14 +9204,14 @@
 
     if-eqz v3, :cond_5
 
-    .line 1963
+    .line 1942
     invoke-virtual {v2}, Landroid/view/inputmethod/InputMethodSubtype;->getLocale()Ljava/lang/String;
 
     move-result-object v1
 
     goto :goto_2
 
-    .line 1966
+    .line 1945
     :cond_1
     invoke-virtual {v1}, Landroid/view/inputmethod/InputMethodManager;->getLastInputMethodSubtype()Landroid/view/inputmethod/InputMethodSubtype;
 
@@ -9159,12 +9219,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 1968
+    .line 1947
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v2, v3, :cond_2
 
-    .line 1969
+    .line 1948
     invoke-virtual {v1}, Landroid/view/inputmethod/InputMethodSubtype;->getLanguageTag()Ljava/lang/String;
 
     move-result-object v2
@@ -9174,7 +9234,7 @@
     :cond_2
     move-object v2, v4
 
-    .line 1971
+    .line 1950
     :goto_1
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -9182,7 +9242,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 1972
+    .line 1951
     invoke-virtual {v1}, Landroid/view/inputmethod/InputMethodSubtype;->getLocale()Ljava/lang/String;
 
     move-result-object v1
@@ -9197,7 +9257,7 @@
     :cond_4
     move-object v1, v4
 
-    .line 1976
+    .line 1955
     :cond_5
     :goto_2
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -9214,12 +9274,12 @@
 
     if-eqz v2, :cond_b
 
-    .line 1977
+    .line 1956
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getSystemLocaleStringIso639()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1979
+    .line 1958
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v2
@@ -9228,24 +9288,24 @@
 
     move-result-object v2
 
-    .line 1980
+    .line 1959
     invoke-virtual {v2}, Lorg/telegram/messenger/LocaleController$LocaleInfo;->getBaseLangCode()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 1981
+    .line 1960
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v9
 
     if-eqz v9, :cond_6
 
-    .line 1982
+    .line 1961
     invoke-virtual {v2}, Lorg/telegram/messenger/LocaleController$LocaleInfo;->getLangCode()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 1984
+    .line 1963
     :cond_6
     invoke-virtual {v1, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
@@ -9266,7 +9326,7 @@
 
     goto :goto_4
 
-    .line 1985
+    .line 1964
     :cond_8
     :goto_3
     invoke-virtual {v1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -9277,7 +9337,7 @@
 
     move-object v4, v0
 
-    .line 1991
+    .line 1970
     :cond_9
     :goto_4
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -9290,7 +9350,7 @@
 
     new-array v2, v2, [Ljava/lang/String;
 
-    .line 1992
+    .line 1971
     invoke-virtual {v1, v5, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v1
@@ -9304,7 +9364,7 @@
     :cond_a
     new-array v2, v7, [Ljava/lang/String;
 
-    .line 1994
+    .line 1973
     invoke-virtual {v1, v5, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v1
@@ -9316,7 +9376,7 @@
     :cond_b
     new-array v2, v7, [Ljava/lang/String;
 
-    .line 1997
+    .line 1976
     invoke-virtual {v1, v5, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v1
@@ -9327,7 +9387,7 @@
 
     return-object v2
 
-    .line 2002
+    .line 1981
     :catch_0
     filled-new-array {v0}, [Ljava/lang/String;
 
@@ -9341,14 +9401,14 @@
 
     const-string v0, "_data"
 
-    .line 3056
+    .line 3037
     filled-new-array {v0}, [Ljava/lang/String;
 
     move-result-object v3
 
     const/4 v7, 0x0
 
-    .line 3059
+    .line 3040
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -9370,7 +9430,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 3060
+    .line 3041
     :try_start_1
     invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -9378,19 +9438,19 @@
 
     if-eqz p1, :cond_2
 
-    .line 3061
+    .line 3042
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result p1
 
-    .line 3062
+    .line 3043
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 
     const-string p2, "content://"
 
-    .line 3063
+    .line 3044
     invoke-virtual {p1, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p2
@@ -9417,7 +9477,7 @@
 
     goto :goto_0
 
-    .line 3068
+    .line 3049
     :cond_0
     :try_start_2
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
@@ -9435,7 +9495,7 @@
     :catchall_0
     move-exception p1
 
-    .line 3059
+    .line 3040
     :try_start_3
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
     :try_end_3
@@ -9455,7 +9515,7 @@
     :cond_2
     if-eqz p0, :cond_3
 
-    .line 3068
+    .line 3049
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
@@ -9476,7 +9536,7 @@
         }
     .end annotation
 
-    .line 2023
+    .line 2002
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x0
@@ -9485,7 +9545,7 @@
 
     if-lt v0, v2, :cond_2
 
-    .line 2024
+    .line 2003
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getExternalFilesDirs(Ljava/lang/String;)[Ljava/io/File;
@@ -9496,20 +9556,20 @@
 
     const/4 v2, 0x0
 
-    .line 2026
+    .line 2005
     :goto_0
     array-length v3, v0
 
     if-ge v2, v3, :cond_2
 
-    .line 2027
+    .line 2006
     aget-object v3, v0, v2
 
     if-nez v3, :cond_0
 
     goto :goto_1
 
-    .line 2030
+    .line 2009
     :cond_0
     aget-object v3, v0, v2
 
@@ -9517,12 +9577,12 @@
 
     if-nez v1, :cond_1
 
-    .line 2033
+    .line 2012
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2035
+    .line 2014
     :cond_1
     aget-object v3, v0, v2
 
@@ -9536,12 +9596,12 @@
     :cond_2
     if-nez v1, :cond_3
 
-    .line 2040
+    .line 2019
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2042
+    .line 2021
     :cond_3
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -9549,7 +9609,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 2043
+    .line 2022
     invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
     move-result-object v0
@@ -9569,7 +9629,7 @@
 
     return-object p0
 
-    .line 5191
+    .line 5172
     :cond_0
     invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
@@ -9591,7 +9651,7 @@
 
     return-object v0
 
-    .line 5176
+    .line 5157
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getURIParsePattern()Ljava/util/regex/Pattern;
 
@@ -9601,7 +9661,7 @@
 
     move-result-object p0
 
-    .line 5177
+    .line 5158
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v1
@@ -9610,14 +9670,14 @@
 
     const/4 v0, 0x4
 
-    .line 5178
+    .line 5159
     invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
 
     if-eqz p0, :cond_1
 
-    .line 5180
+    .line 5161
     invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object p0
@@ -9632,7 +9692,7 @@
 .method public static getLightNavigationBar(Landroid/view/Window;)Z
     .locals 3
 
-    .line 4540
+    .line 4521
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x0
@@ -9641,12 +9701,12 @@
 
     if-lt v0, v2, :cond_0
 
-    .line 4541
+    .line 4522
     invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
     move-result-object p0
 
-    .line 4542
+    .line 4523
     invoke-virtual {p0}, Landroid/view/View;->getSystemUiVisibility()I
 
     move-result p0
@@ -9671,7 +9731,7 @@
     :try_start_0
     const-string v2, "mounted"
 
-    .line 737
+    .line 716
     invoke-static {}, Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
 
     move-result-object v3
@@ -9682,14 +9742,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 738
+    .line 717
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v2, v1}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v2
 
-    .line 739
+    .line 718
     new-instance v3, Ljava/io/File;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -9710,14 +9770,14 @@
 
     invoke-direct {v3, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 740
+    .line 719
     invoke-virtual {v3}, Ljava/io/File;->mkdirs()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v3
 
-    .line 747
+    .line 726
     :catch_0
     :cond_0
     :try_start_1
@@ -9743,14 +9803,14 @@
 
     invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 748
+    .line 727
     invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     return-object v2
 
-    .line 754
+    .line 733
     :catch_1
     :try_start_2
     new-instance v2, Ljava/io/File;
@@ -9775,14 +9835,14 @@
 
     invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 755
+    .line 734
     invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     return-object v2
 
-    .line 760
+    .line 739
     :catch_2
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -9798,7 +9858,7 @@
 .method public static getMinTabletSide()I
     .locals 5
 
-    .line 2396
+    .line 2373
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isSmallTablet()Z
 
     move-result v0
@@ -9807,7 +9867,7 @@
 
     if-nez v0, :cond_1
 
-    .line 2397
+    .line 2374
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v2, v0, Landroid/graphics/Point;->x:I
@@ -9820,17 +9880,17 @@
 
     mul-int/lit8 v2, v0, 0x23
 
-    .line 2398
+    .line 2375
     div-int/lit8 v2, v2, 0x64
 
-    .line 2399
+    .line 2376
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     if-ge v2, v3, :cond_0
 
-    .line 2400
+    .line 2377
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -9840,7 +9900,7 @@
 
     return v0
 
-    .line 2404
+    .line 2381
     :cond_1
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -9852,7 +9912,7 @@
 
     move-result v0
 
-    .line 2405
+    .line 2382
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v3, v2, Landroid/graphics/Point;->x:I
@@ -9865,17 +9925,17 @@
 
     mul-int/lit8 v3, v2, 0x23
 
-    .line 2406
+    .line 2383
     div-int/lit8 v3, v3, 0x64
 
-    .line 2407
+    .line 2384
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     if-ge v3, v4, :cond_2
 
-    .line 2408
+    .line 2385
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -9883,7 +9943,7 @@
     :cond_2
     sub-int/2addr v2, v3
 
-    .line 2410
+    .line 2387
     invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v0
@@ -9904,7 +9964,7 @@
 .method private static getNavigationBarHeight(Landroid/content/Context;)I
     .locals 4
 
-    .line 934
+    .line 913
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -9921,7 +9981,7 @@
 
     if-lez v0, :cond_0
 
-    .line 935
+    .line 914
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -9942,42 +10002,42 @@
 .method public static getOffsetColor(IIFF)I
     .locals 7
 
-    .line 4303
+    .line 4284
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
 
-    .line 4304
+    .line 4285
     invoke-static {p1}, Landroid/graphics/Color;->green(I)I
 
     move-result v1
 
-    .line 4305
+    .line 4286
     invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
 
     move-result v2
 
-    .line 4306
+    .line 4287
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result p1
 
-    .line 4307
+    .line 4288
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v3
 
-    .line 4308
+    .line 4289
     invoke-static {p0}, Landroid/graphics/Color;->green(I)I
 
     move-result v4
 
-    .line 4309
+    .line 4290
     invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
 
     move-result v5
 
-    .line 4310
+    .line 4291
     invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
 
     move-result p0
@@ -10032,7 +10092,7 @@
 
     float-to-int p2, v0
 
-    .line 4311
+    .line 4292
     invoke-static {p0, p1, p3, p2}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result p0
@@ -10045,7 +10105,7 @@
 
     const/4 v0, 0x0
 
-    .line 3004
+    .line 2985
     :try_start_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -10067,7 +10127,7 @@
     :goto_0
     if-eqz v1, :cond_a
 
-    .line 3005
+    .line 2986
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v1, p0}, Landroid/provider/DocumentsContract;->isDocumentUri(Landroid/content/Context;Landroid/net/Uri;)Z
@@ -10076,7 +10136,7 @@
 
     if-eqz v1, :cond_a
 
-    .line 3006
+    .line 2987
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->isExternalStorageDocument(Landroid/net/Uri;)Z
 
     move-result v1
@@ -10087,30 +10147,30 @@
 
     if-eqz v1, :cond_1
 
-    .line 3007
+    .line 2988
     :try_start_1
     invoke-static {p0}, Landroid/provider/DocumentsContract;->getDocumentId(Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 3008
+    .line 2989
     invoke-virtual {p0, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p0
 
-    .line 3009
+    .line 2990
     aget-object v1, p0, v3
 
     const-string v2, "primary"
 
-    .line 3010
+    .line 2991
     invoke-virtual {v2, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_c
 
-    .line 3011
+    .line 2992
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -10135,7 +10195,7 @@
 
     return-object p0
 
-    .line 3013
+    .line 2994
     :cond_1
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->isDownloadsDocument(Landroid/net/Uri;)Z
 
@@ -10143,14 +10203,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 3014
+    .line 2995
     invoke-static {p0}, Landroid/provider/DocumentsContract;->getDocumentId(Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object p0
 
     const-string v1, "content://downloads/public_downloads"
 
-    .line 3015
+    .line 2996
     invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
@@ -10167,7 +10227,7 @@
 
     move-result-object p0
 
-    .line 3016
+    .line 2997
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v1, p0, v0, v0}, Lorg/telegram/messenger/AndroidUtilities;->getDataColumn(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
@@ -10176,7 +10236,7 @@
 
     return-object p0
 
-    .line 3017
+    .line 2998
     :cond_2
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->isMediaDocument(Landroid/net/Uri;)Z
 
@@ -10184,22 +10244,22 @@
 
     if-eqz v1, :cond_c
 
-    .line 3018
+    .line 2999
     invoke-static {p0}, Landroid/provider/DocumentsContract;->getDocumentId(Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 3019
+    .line 3000
     invoke-virtual {p0, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p0
 
-    .line 3020
+    .line 3001
     aget-object v1, p0, v3
 
     const/4 v2, -0x1
 
-    .line 3023
+    .line 3004
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v5
@@ -10269,31 +10329,31 @@
 
     goto :goto_2
 
-    .line 3031
+    .line 3012
     :cond_7
     sget-object v1, Landroid/provider/MediaStore$Audio$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     goto :goto_2
 
-    .line 3028
+    .line 3009
     :cond_8
     sget-object v1, Landroid/provider/MediaStore$Video$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     goto :goto_2
 
-    .line 3025
+    .line 3006
     :cond_9
     sget-object v1, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     :goto_2
     new-array v2, v4, [Ljava/lang/String;
 
-    .line 3036
+    .line 3017
     aget-object p0, p0, v4
 
     aput-object p0, v2, v3
 
-    .line 3040
+    .line 3021
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v3, "_id=?"
@@ -10307,7 +10367,7 @@
     :cond_a
     const-string v1, "content"
 
-    .line 3042
+    .line 3023
     invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v2
@@ -10318,7 +10378,7 @@
 
     if-eqz v1, :cond_b
 
-    .line 3043
+    .line 3024
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v1, p0, v0, v0}, Lorg/telegram/messenger/AndroidUtilities;->getDataColumn(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
@@ -10330,7 +10390,7 @@
     :cond_b
     const-string v1, "file"
 
-    .line 3044
+    .line 3025
     invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v2
@@ -10341,7 +10401,7 @@
 
     if-eqz v1, :cond_c
 
-    .line 3045
+    .line 3026
     invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object p0
@@ -10353,7 +10413,7 @@
     :catch_0
     move-exception p0
 
-    .line 3048
+    .line 3029
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_c
@@ -10365,7 +10425,7 @@
 
     const/4 v0, 0x0
 
-    .line 4215
+    .line 4196
     invoke-static {p0, v0}, Lorg/telegram/messenger/AndroidUtilities;->getPatternColor(IZ)I
 
     move-result p0
@@ -10376,7 +10436,7 @@
 .method public static getPatternColor(IZ)I
     .locals 7
 
-    .line 4219
+    .line 4200
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
@@ -10395,7 +10455,7 @@
 
     const/4 v0, 0x1
 
-    .line 4220
+    .line 4201
     aget v1, p0, v0
 
     const/4 v2, 0x0
@@ -10420,7 +10480,7 @@
 
     if-lez v1, :cond_2
 
-    .line 4221
+    .line 4202
     :cond_0
     aget v1, p0, v0
 
@@ -10457,7 +10517,7 @@
 
     if-nez p1, :cond_4
 
-    .line 4223
+    .line 4204
     aget v5, p0, v4
 
     const/high16 v6, 0x3f000000    # 0.5f
@@ -10468,7 +10528,7 @@
 
     goto :goto_1
 
-    .line 4226
+    .line 4207
     :cond_3
     aget v5, p0, v4
 
@@ -10488,7 +10548,7 @@
 
     goto :goto_2
 
-    .line 4224
+    .line 4205
     :cond_4
     :goto_1
     aget v3, p0, v4
@@ -10504,7 +10564,7 @@
     :goto_2
     const/4 v1, 0x0
 
-    .line 4228
+    .line 4209
     aget v1, p0, v1
 
     aget v0, p0, v0
@@ -10533,7 +10593,7 @@
 .method public static getPatternSideColor(I)I
     .locals 5
 
-    .line 4232
+    .line 4213
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
@@ -10552,7 +10612,7 @@
 
     const/4 v0, 0x1
 
-    .line 4233
+    .line 4214
     aget v1, p0, v0
 
     const v2, 0x3d4ccccd    # 0.05f
@@ -10569,7 +10629,7 @@
 
     const/4 v1, 0x2
 
-    .line 4234
+    .line 4215
     aget v2, p0, v1
 
     const/high16 v3, 0x3f000000    # 0.5f
@@ -10582,7 +10642,7 @@
 
     if-lez v2, :cond_0
 
-    .line 4235
+    .line 4216
     aget v2, p0, v1
 
     mul-float/2addr v2, v3
@@ -10595,7 +10655,7 @@
 
     goto :goto_0
 
-    .line 4237
+    .line 4218
     :cond_0
     aget v2, p0, v1
 
@@ -10610,7 +10670,7 @@
     :goto_0
     const/4 v2, 0x0
 
-    .line 4239
+    .line 4220
     aget v2, p0, v2
 
     aget v0, p0, v0
@@ -10639,7 +10699,7 @@
 
     const/16 v0, 0x49
 
-    .line 2315
+    .line 2292
     invoke-static {v0, p0}, Ljava/lang/Math;->max(II)I
 
     move-result p0
@@ -10650,21 +10710,21 @@
 .method public static getPhotoSize()I
     .locals 1
 
-    .line 2415
+    .line 2392
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->photoSize:Ljava/lang/Integer;
 
     if-nez v0, :cond_0
 
     const/16 v0, 0x500
 
-    .line 2416
+    .line 2393
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     sput-object v0, Lorg/telegram/messenger/AndroidUtilities;->photoSize:Ljava/lang/Integer;
 
-    .line 2418
+    .line 2395
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->photoSize:Ljava/lang/Integer;
 
@@ -10684,7 +10744,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2307
+    .line 2284
     sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->displayMetrics:Landroid/util/DisplayMetrics;
 
     iget p1, p1, Landroid/util/DisplayMetrics;->xdpi:F
@@ -10705,7 +10765,7 @@
 .method public static getPrefIntOrLong(Landroid/content/SharedPreferences;Ljava/lang/String;J)J
     .locals 0
 
-    .line 4843
+    .line 4824
     :try_start_0
     invoke-interface {p0, p1, p2, p3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
@@ -10718,7 +10778,7 @@
     :catch_0
     long-to-int p2, p2
 
-    .line 4845
+    .line 4826
     invoke-interface {p0, p1, p2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result p0
@@ -10731,12 +10791,12 @@
 .method public static getRealScreenSize()Landroid/graphics/Point;
     .locals 7
 
-    .line 2546
+    .line 2523
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
-    .line 2548
+    .line 2525
     :try_start_0
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -10748,14 +10808,14 @@
 
     check-cast v1, Landroid/view/WindowManager;
 
-    .line 2549
+    .line 2526
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x11
 
     if-lt v2, v3, :cond_0
 
-    .line 2550
+    .line 2527
     invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v1
@@ -10766,7 +10826,7 @@
 
     goto :goto_0
 
-    .line 2553
+    .line 2530
     :cond_0
     :try_start_1
     const-class v2, Landroid/view/Display;
@@ -10781,7 +10841,7 @@
 
     move-result-object v2
 
-    .line 2554
+    .line 2531
     const-class v3, Landroid/view/Display;
 
     const-string v5, "getRawHeight"
@@ -10792,7 +10852,7 @@
 
     move-result-object v3
 
-    .line 2555
+    .line 2532
     invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v5
@@ -10834,7 +10894,7 @@
     :catch_0
     move-exception v2
 
-    .line 2557
+    .line 2534
     :try_start_2
     invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
@@ -10854,7 +10914,7 @@
 
     invoke-virtual {v0, v3, v1}, Landroid/graphics/Point;->set(II)V
 
-    .line 2558
+    .line 2535
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
@@ -10864,7 +10924,7 @@
     :catch_1
     move-exception v1
 
-    .line 2562
+    .line 2539
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -10882,12 +10942,12 @@
         }
     .end annotation
 
-    .line 2049
+    .line 2028
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 2051
+    .line 2030
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v2, 0x0
@@ -10896,7 +10956,7 @@
 
     if-lt v1, v3, :cond_4
 
-    .line 2052
+    .line 2031
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getExternalFilesDirs(Ljava/lang/String;)[Ljava/io/File;
@@ -10909,20 +10969,20 @@
 
     move v4, v3
 
-    .line 2054
+    .line 2033
     :goto_0
     array-length v5, v1
 
     if-ge v4, v5, :cond_4
 
-    .line 2055
+    .line 2034
     aget-object v5, v1, v4
 
     if-nez v5, :cond_0
 
     goto :goto_2
 
-    .line 2058
+    .line 2037
     :cond_0
     aget-object v5, v1, v4
 
@@ -10932,7 +10992,7 @@
 
     const-string v6, "/Android"
 
-    .line 2059
+    .line 2038
     invoke-virtual {v5, v6}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v6
@@ -10941,12 +11001,12 @@
 
     if-nez v2, :cond_1
 
-    .line 2062
+    .line 2041
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2064
+    .line 2043
     :cond_1
     new-instance v7, Ljava/io/File;
 
@@ -10958,7 +11018,7 @@
 
     move v5, v3
 
-    .line 2065
+    .line 2044
     :goto_1
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -10966,7 +11026,7 @@
 
     if-ge v5, v6, :cond_2
 
-    .line 2066
+    .line 2045
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -10987,7 +11047,7 @@
 
     goto :goto_1
 
-    .line 2070
+    .line 2049
     :cond_2
     invoke-virtual {v7}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -10999,14 +11059,14 @@
 
     if-nez v5, :cond_3
 
-    .line 2071
+    .line 2050
     invoke-virtual {v7}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v0, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 2072
+    .line 2051
     invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_3
@@ -11018,12 +11078,12 @@
     :cond_4
     if-nez v2, :cond_5
 
-    .line 2079
+    .line 2058
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2081
+    .line 2060
     :cond_5
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -11031,14 +11091,14 @@
 
     if-eqz v1, :cond_6
 
-    .line 2082
+    .line 2061
     invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
     move-result-object v1
 
     if-eqz v1, :cond_6
 
-    .line 2083
+    .line 2062
     invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v3
@@ -11049,7 +11109,7 @@
 
     if-nez v0, :cond_6
 
-    .line 2084
+    .line 2063
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_6
@@ -11059,7 +11119,7 @@
 .method public static getSafeString(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    .line 476
+    .line 455
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->BAD_CHARS_MESSAGE_PATTERN:Ljava/util/regex/Pattern;
 
@@ -11084,7 +11144,7 @@
 
     const/4 v0, 0x0
 
-    .line 4852
+    .line 4833
     :try_start_0
     new-instance v1, Landroid/graphics/BitmapFactory$Options;
 
@@ -11092,19 +11152,19 @@
 
     const/4 v2, 0x1
 
-    .line 4853
+    .line 4834
     iput-boolean v2, v1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
     if-eqz p2, :cond_0
 
-    .line 4856
+    .line 4837
     invoke-static {p2, v1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-object v3, v0
 
     goto :goto_0
 
-    .line 4858
+    .line 4839
     :cond_0
     new-instance v3, Ljava/io/FileInputStream;
 
@@ -11112,7 +11172,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 4859
+    .line 4840
     :try_start_1
     invoke-virtual {v3}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
@@ -11122,10 +11182,10 @@
 
     invoke-virtual {p3, v4, v5}, Ljava/nio/channels/FileChannel;->position(J)Ljava/nio/channels/FileChannel;
 
-    .line 4860
+    .line 4841
     invoke-static {v3, v0, v1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 4862
+    .line 4843
     :goto_0
     iget p3, v1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
@@ -11156,12 +11216,12 @@
 
     div-float/2addr p0, p1
 
-    .line 4868
+    .line 4849
     invoke-static {p3, p0}, Ljava/lang/Math;->min(FF)F
 
     move-result p0
 
-    .line 4869
+    .line 4850
     iput v2, v1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
     const/high16 p1, 0x3f800000    # 1.0f
@@ -11170,7 +11230,7 @@
 
     if-lez p1, :cond_3
 
-    .line 4872
+    .line 4853
     :cond_2
     iget p1, v1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
@@ -11187,19 +11247,19 @@
     :cond_3
     const/4 p0, 0x0
 
-    .line 4875
+    .line 4856
     iput-boolean p0, v1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
     if-eqz p2, :cond_4
 
-    .line 4878
+    .line 4859
     invoke-static {p2, v1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object p0
 
     goto :goto_1
 
-    .line 4880
+    .line 4861
     :cond_4
     invoke-virtual {v3}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
@@ -11209,7 +11269,7 @@
 
     invoke-virtual {p0, p1, p2}, Ljava/nio/channels/FileChannel;->position(J)Ljava/nio/channels/FileChannel;
 
-    .line 4881
+    .line 4862
     invoke-static {v3, v0, v1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -11219,7 +11279,7 @@
     :goto_1
     if-eqz v3, :cond_5
 
-    .line 4890
+    .line 4871
     :try_start_2
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_2
@@ -11230,7 +11290,7 @@
     :catch_0
     move-exception p1
 
-    .line 4893
+    .line 4874
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_5
@@ -11240,7 +11300,7 @@
     :cond_6
     if-eqz v3, :cond_7
 
-    .line 4890
+    .line 4871
     :try_start_3
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_3
@@ -11258,7 +11318,7 @@
 
     move-object v3, v0
 
-    .line 4886
+    .line 4867
     :goto_3
     :try_start_4
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -11267,7 +11327,7 @@
 
     if-eqz v3, :cond_7
 
-    .line 4890
+    .line 4871
     :try_start_5
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_5
@@ -11278,7 +11338,7 @@
     :catch_1
     move-exception p0
 
-    .line 4893
+    .line 4874
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_7
@@ -11290,7 +11350,7 @@
 
     if-eqz v3, :cond_8
 
-    .line 4890
+    .line 4871
     :try_start_6
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_6
@@ -11301,10 +11361,10 @@
     :catch_2
     move-exception p1
 
-    .line 4893
+    .line 4874
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4895
+    .line 4876
     :cond_8
     :goto_5
     throw p0
@@ -11313,7 +11373,7 @@
 .method public static getShadowHeight()I
     .locals 2
 
-    .line 1900
+    .line 1879
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     const/high16 v1, 0x40800000    # 4.0f
@@ -11346,7 +11406,7 @@
 .method public static getSharingDirectory()Ljava/io/File;
     .locals 3
 
-    .line 4438
+    .line 4419
     new-instance v0, Ljava/io/File;
 
     const/4 v1, 0x4
@@ -11365,7 +11425,7 @@
 .method public static getStatusBarHeight(Landroid/content/Context;)I
     .locals 4
 
-    .line 929
+    .line 908
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -11382,7 +11442,7 @@
 
     if-lez v0, :cond_0
 
-    .line 930
+    .line 909
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -11406,7 +11466,7 @@
     :try_start_0
     const-string v0, "UTF-8"
 
-    .line 1654
+    .line 1633
     invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
     move-result-object p0
@@ -11426,14 +11486,14 @@
 .method public static getSysInfoLong(Ljava/lang/String;)Ljava/lang/Long;
     .locals 0
 
-    .line 5220
+    .line 5201
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->getSysInfoString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     if-eqz p0, :cond_0
 
-    .line 5223
+    .line 5204
     :try_start_0
     invoke-static {p0}, Lorg/telegram/messenger/Utilities;->parseLong(Ljava/lang/String;)Ljava/lang/Long;
 
@@ -11455,7 +11515,7 @@
 
     const/4 v0, 0x0
 
-    .line 5201
+    .line 5182
     :try_start_0
     new-instance v1, Ljava/io/RandomAccessFile;
 
@@ -11466,7 +11526,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 5202
+    .line 5183
     :try_start_1
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->readLine()Ljava/lang/String;
 
@@ -11477,7 +11537,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 5211
+    .line 5192
     :try_start_2
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_2
@@ -11513,7 +11573,7 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 5215
+    .line 5196
     :catch_1
     :cond_1
     throw p0
@@ -11540,7 +11600,7 @@
     :try_start_0
     const-string v1, "android.os.SystemProperties"
 
-    .line 4071
+    .line 4052
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v1
@@ -11551,7 +11611,7 @@
 
     new-array v4, v3, [Ljava/lang/Class;
 
-    .line 4072
+    .line 4053
     const-class v5, Ljava/lang/String;
 
     const/4 v6, 0x0
@@ -11587,7 +11647,7 @@
 
     if-eqz p0, :cond_c
 
-    .line 939
+    .line 918
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -11596,7 +11656,7 @@
 
     const-string v0, ".doc"
 
-    .line 941
+    .line 920
     invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -11628,7 +11688,7 @@
     :cond_0
     const-string v0, ".xls"
 
-    .line 943
+    .line 922
     invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -11648,7 +11708,7 @@
     :cond_1
     const-string v0, ".pdf"
 
-    .line 945
+    .line 924
     invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -11676,7 +11736,7 @@
     :cond_2
     const-string v0, ".zip"
 
-    .line 947
+    .line 926
     invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -11757,7 +11817,7 @@
 
     const/16 v0, 0x2e
 
-    .line 952
+    .line 931
     invoke-virtual {p0, v0}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v0
@@ -11775,7 +11835,7 @@
 
     move-result-object v0
 
-    .line 953
+    .line 932
     :goto_5
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -11783,7 +11843,7 @@
 
     if-eqz v1, :cond_9
 
-    .line 954
+    .line 933
     invoke-virtual {v0, p1}, Ljava/lang/String;->charAt(I)C
 
     move-result p0
@@ -11796,7 +11856,7 @@
 
     goto :goto_6
 
-    .line 956
+    .line 935
     :cond_9
     invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C
 
@@ -11812,7 +11872,7 @@
     :goto_6
     if-eqz p2, :cond_b
 
-    .line 959
+    .line 938
     sget-object p0, Lorg/telegram/messenger/AndroidUtilities;->documentMediaIcons:[I
 
     aget p0, p0, v0
@@ -11830,7 +11890,7 @@
     :cond_c
     if-eqz p2, :cond_d
 
-    .line 961
+    .line 940
     sget-object p0, Lorg/telegram/messenger/AndroidUtilities;->documentMediaIcons:[I
 
     aget p0, p0, p1
@@ -11851,7 +11911,7 @@
 
     if-eqz p0, :cond_4
 
-    .line 2604
+    .line 2581
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -11860,7 +11920,7 @@
 
     goto :goto_2
 
-    .line 2607
+    .line 2584
     :cond_0
     :goto_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
@@ -11889,7 +11949,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 2608
+    .line 2585
     :cond_1
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -11901,7 +11961,7 @@
 
     goto :goto_0
 
-    .line 2610
+    .line 2587
     :cond_2
     :goto_1
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
@@ -11934,7 +11994,7 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 2611
+    .line 2588
     :cond_3
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -11956,12 +12016,12 @@
 .method public static getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
     .locals 4
 
-    .line 1844
+    .line 1823
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->typefaceCache:Ljava/util/Hashtable;
 
     monitor-enter v0
 
-    .line 1845
+    .line 1824
     :try_start_0
     invoke-virtual {v0, p0}, Ljava/util/Hashtable;->containsKey(Ljava/lang/Object;)Z
 
@@ -11971,7 +12031,7 @@
 
     if-nez v1, :cond_4
 
-    .line 1848
+    .line 1827
     :try_start_1
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -11979,7 +12039,7 @@
 
     if-lt v1, v2, :cond_2
 
-    .line 1849
+    .line 1828
     new-instance v1, Landroid/graphics/Typeface$Builder;
 
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -11992,7 +12052,7 @@
 
     const-string v2, "medium"
 
-    .line 1850
+    .line 1829
     invoke-virtual {p0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -12001,13 +12061,13 @@
 
     const/16 v2, 0x2bc
 
-    .line 1851
+    .line 1830
     invoke-virtual {v1, v2}, Landroid/graphics/Typeface$Builder;->setWeight(I)Landroid/graphics/Typeface$Builder;
 
     :cond_0
     const-string v2, "italic"
 
-    .line 1853
+    .line 1832
     invoke-virtual {p0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -12016,10 +12076,10 @@
 
     const/4 v2, 0x1
 
-    .line 1854
+    .line 1833
     invoke-virtual {v1, v2}, Landroid/graphics/Typeface$Builder;->setItalic(Z)Landroid/graphics/Typeface$Builder;
 
-    .line 1856
+    .line 1835
     :cond_1
     invoke-virtual {v1}, Landroid/graphics/Typeface$Builder;->build()Landroid/graphics/Typeface;
 
@@ -12027,7 +12087,7 @@
 
     goto :goto_0
 
-    .line 1858
+    .line 1837
     :cond_2
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -12039,7 +12099,7 @@
 
     move-result-object v1
 
-    .line 1860
+    .line 1839
     :goto_0
     invoke-virtual {v0, p0, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_1
@@ -12051,13 +12111,13 @@
     :catch_0
     move-exception v1
 
-    .line 1862
+    .line 1841
     :try_start_2
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_3
 
-    .line 1863
+    .line 1842
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -12087,12 +12147,12 @@
     :cond_3
     const/4 p0, 0x0
 
-    .line 1865
+    .line 1844
     monitor-exit v0
 
     return-object p0
 
-    .line 1868
+    .line 1847
     :cond_4
     :goto_1
     invoke-virtual {v0, p0}, Ljava/util/Hashtable;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -12108,7 +12168,7 @@
     :catchall_0
     move-exception p0
 
-    .line 1869
+    .line 1848
     monitor-exit v0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -12119,21 +12179,21 @@
 .method private static getURIParsePattern()Ljava/util/regex/Pattern;
     .locals 1
 
-    .line 5165
+    .line 5146
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->uriParse:Ljava/util/regex/Pattern;
 
     if-nez v0, :cond_0
 
     const-string v0, "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?"
 
-    .line 5166
+    .line 5147
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Lorg/telegram/messenger/AndroidUtilities;->uriParse:Ljava/util/regex/Pattern;
 
-    .line 5168
+    .line 5149
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->uriParse:Ljava/util/regex/Pattern;
 
@@ -12143,12 +12203,12 @@
 .method public static getVibrator()Landroid/os/Vibrator;
     .locals 2
 
-    .line 3805
+    .line 3786
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->vibrator:Landroid/os/Vibrator;
 
     if-nez v0, :cond_0
 
-    .line 3806
+    .line 3787
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string/jumbo v1, "vibrator"
@@ -12161,7 +12221,7 @@
 
     sput-object v0, Lorg/telegram/messenger/AndroidUtilities;->vibrator:Landroid/os/Vibrator;
 
-    .line 3808
+    .line 3789
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->vibrator:Landroid/os/Vibrator;
 
@@ -12175,7 +12235,7 @@
 
     if-eqz p0, :cond_5
 
-    .line 2517
+    .line 2494
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x15
@@ -12213,7 +12273,7 @@
 
     if-lt v1, v2, :cond_2
 
-    .line 2522
+    .line 2499
     :try_start_0
     invoke-virtual {p0}, Landroid/view/View;->getRootWindowInsets()Landroid/view/WindowInsets;
 
@@ -12221,7 +12281,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 2523
+    .line 2500
     invoke-virtual {p0}, Landroid/view/WindowInsets;->getStableInsetBottom()I
 
     move-result v0
@@ -12229,7 +12289,7 @@
     :cond_1
     return v0
 
-    .line 2525
+    .line 2502
     :cond_2
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->mAttachInfoField:Ljava/lang/reflect/Field;
 
@@ -12237,7 +12297,7 @@
 
     if-nez v1, :cond_3
 
-    .line 2526
+    .line 2503
     const-class v1, Landroid/view/View;
 
     const-string v3, "mAttachInfo"
@@ -12248,10 +12308,10 @@
 
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->mAttachInfoField:Ljava/lang/reflect/Field;
 
-    .line 2527
+    .line 2504
     invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 2529
+    .line 2506
     :cond_3
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->mAttachInfoField:Ljava/lang/reflect/Field;
 
@@ -12261,12 +12321,12 @@
 
     if-eqz p0, :cond_5
 
-    .line 2531
+    .line 2508
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->mStableInsetsField:Ljava/lang/reflect/Field;
 
     if-nez v1, :cond_4
 
-    .line 2532
+    .line 2509
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -12279,10 +12339,10 @@
 
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->mStableInsetsField:Ljava/lang/reflect/Field;
 
-    .line 2533
+    .line 2510
     invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 2535
+    .line 2512
     :cond_4
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->mStableInsetsField:Ljava/lang/reflect/Field;
 
@@ -12292,7 +12352,7 @@
 
     check-cast p0, Landroid/graphics/Rect;
 
-    .line 2536
+    .line 2513
     iget p0, p0, Landroid/graphics/Rect;->bottom:I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -12302,7 +12362,7 @@
     :catch_0
     move-exception p0
 
-    .line 2540
+    .line 2517
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_5
@@ -12313,15 +12373,15 @@
 .method public static getWallPaperUrl(Ljava/lang/Object;)Ljava/lang/String;
     .locals 3
 
-    .line 4259
+    .line 4240
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
     if-eqz v0, :cond_3
 
-    .line 4260
+    .line 4241
     check-cast p0, Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
-    .line 4261
+    .line 4242
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -12352,27 +12412,27 @@
 
     move-result-object v0
 
-    .line 4262
+    .line 4243
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 4263
+    .line 4244
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$WallPaper;->settings:Lorg/telegram/tgnet/TLRPC$WallPaperSettings;
 
     if-eqz v2, :cond_2
 
-    .line 4264
+    .line 4245
     iget-boolean v2, v2, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->blur:Z
 
     if-eqz v2, :cond_0
 
     const-string v2, "blur"
 
-    .line 4265
+    .line 4246
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4267
+    .line 4248
     :cond_0
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$WallPaper;->settings:Lorg/telegram/tgnet/TLRPC$WallPaperSettings;
 
@@ -12380,7 +12440,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 4268
+    .line 4249
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result p0
@@ -12389,16 +12449,16 @@
 
     const-string p0, "+"
 
-    .line 4269
+    .line 4250
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_1
     const-string p0, "motion"
 
-    .line 4271
+    .line 4252
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4274
+    .line 4255
     :cond_2
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
@@ -12406,7 +12466,7 @@
 
     if-lez p0, :cond_5
 
-    .line 4275
+    .line 4256
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -12429,16 +12489,16 @@
 
     goto :goto_0
 
-    .line 4277
+    .line 4258
     :cond_3
     instance-of v0, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
 
     if-eqz v0, :cond_4
 
-    .line 4278
+    .line 4259
     check-cast p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
 
-    .line 4279
+    .line 4260
     invoke-virtual {p0}, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->getUrl()Ljava/lang/String;
 
     move-result-object v0
@@ -12489,7 +12549,7 @@
 .method public static getWasTablet()Ljava/lang/Boolean;
     .locals 1
 
-    .line 2376
+    .line 2353
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->wasTablet:Ljava/lang/Boolean;
 
     return-object v0
@@ -12502,7 +12562,7 @@
 
     return-void
 
-    .line 676
+    .line 655
     :cond_0
     new-instance p1, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda10;
 
@@ -12526,7 +12586,7 @@
 
     return v2
 
-    .line 3823
+    .line 3804
     :cond_0
     :try_start_0
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getFlags()I
@@ -12541,7 +12601,7 @@
 
     return v2
 
-    .line 3826
+    .line 3807
     :cond_1
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
@@ -12549,7 +12609,7 @@
 
     if-eqz v3, :cond_e
 
-    .line 3833
+    .line 3814
     invoke-virtual {v3}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v4
@@ -12562,7 +12622,7 @@
 
     const-string v7, "http"
 
-    .line 3835
+    .line 3816
     invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
@@ -12595,19 +12655,19 @@
     :cond_2
     const-string v7, "tg"
 
-    .line 3852
+    .line 3833
     invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_a
 
-    .line 3853
+    .line 3834
     invoke-virtual {v3}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 3854
+    .line 3835
     invoke-virtual {v3, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v4
@@ -12641,7 +12701,7 @@
 
     if-eqz v4, :cond_a
 
-    .line 3855
+    .line 3836
     :cond_3
     invoke-virtual {v3, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
@@ -12659,24 +12719,24 @@
 
     move-result-object v0
 
-    .line 3856
+    .line 3837
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 3857
+    .line 3838
     invoke-virtual {v0, v12}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3858
+    .line 3839
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->checkHostForPunycode(Ljava/lang/String;)Z
 
     move-result v3
 
     if-eqz v3, :cond_4
 
-    .line 3859
+    .line 3840
     invoke-static {v1, v5}, Ljava/net/IDN;->toASCII(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -12684,22 +12744,22 @@
     :cond_4
     move-object v6, v1
 
-    .line 3861
+    .line 3842
     invoke-virtual {v0, v11}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3862
+    .line 3843
     invoke-virtual {v0, v10}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 3863
+    .line 3844
     invoke-virtual {v0, v9}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 3864
+    .line 3845
     invoke-virtual {v0, v8}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -12712,7 +12772,7 @@
 
     goto/16 :goto_2
 
-    .line 3836
+    .line 3817
     :cond_5
     :goto_0
     invoke-virtual {v3}, Landroid/net/Uri;->getHost()Ljava/lang/String;
@@ -12725,7 +12785,7 @@
 
     const-string v1, "telegram.me"
 
-    .line 3837
+    .line 3818
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -12748,7 +12808,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 3838
+    .line 3819
     :cond_6
     invoke-virtual {v3}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
@@ -12758,7 +12818,7 @@
 
     const-string v1, "/socks"
 
-    .line 3840
+    .line 3821
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
@@ -12773,20 +12833,20 @@
 
     if-eqz v0, :cond_9
 
-    .line 3841
+    .line 3822
     :cond_7
     invoke-virtual {v3, v12}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3842
+    .line 3823
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->checkHostForPunycode(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_8
 
-    .line 3843
+    .line 3824
     invoke-static {v0, v5}, Ljava/net/IDN;->toASCII(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -12794,22 +12854,22 @@
     :cond_8
     move-object v6, v0
 
-    .line 3845
+    .line 3826
     invoke-virtual {v3, v11}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3846
+    .line 3827
     invoke-virtual {v3, v10}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3847
+    .line 3828
     invoke-virtual {v3, v9}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 3848
+    .line 3829
     invoke-virtual {v3, v8}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
@@ -12849,7 +12909,7 @@
 
     move-object v9, v8
 
-    .line 3868
+    .line 3849
     :goto_2
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -12899,7 +12959,7 @@
     :goto_5
     move-object/from16 v7, p0
 
-    .line 3878
+    .line 3859
     :try_start_3
     invoke-static/range {v7 .. v12}, Lorg/telegram/messenger/AndroidUtilities;->showProxyAlert(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_3
@@ -12915,7 +12975,7 @@
 .method public static hasFlagSecureFragment()Z
     .locals 1
 
-    .line 4402
+    .line 4383
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->flagSecureFragment:Ljava/lang/ref/WeakReference;
 
     if-eqz v0, :cond_0
@@ -12934,7 +12994,7 @@
 .method public static hasSystemFeature(Ljava/lang/String;)Z
     .locals 1
 
-    .line 238
+    .line 257
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -12963,7 +13023,7 @@
 
     return-void
 
-    .line 2010
+    .line 1989
     :cond_0
     :try_start_0
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -12978,7 +13038,7 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 2011
+    .line 1990
     invoke-virtual {v0}, Landroid/view/inputmethod/InputMethodManager;->isActive()Z
 
     move-result v1
@@ -12987,7 +13047,7 @@
 
     return-void
 
-    .line 2014
+    .line 1993
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
@@ -13004,7 +13064,7 @@
     :catch_0
     move-exception p0
 
-    .line 2017
+    .line 1996
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -13014,7 +13074,7 @@
 .method public static highlightText(Ljava/lang/CharSequence;Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Ljava/lang/CharSequence;
     .locals 6
 
-    .line 568
+    .line 547
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -13029,7 +13089,7 @@
 
     goto :goto_2
 
-    .line 571
+    .line 550
     :cond_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
@@ -13039,12 +13099,12 @@
 
     move-result-object v0
 
-    .line 572
+    .line 551
     invoke-static {p0}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v1
 
-    .line 573
+    .line 552
     invoke-virtual {v0, p1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v2
@@ -13052,7 +13112,7 @@
     :goto_0
     if-ltz v2, :cond_1
 
-    .line 576
+    .line 555
     :try_start_0
     new-instance v3, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;
 
@@ -13085,13 +13145,13 @@
     :catch_0
     move-exception v3
 
-    .line 578
+    .line 557
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    .line 580
+    .line 559
     invoke-virtual {v0, p1, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
 
     move-result v2
@@ -13134,7 +13194,7 @@
 
     move v2, v1
 
-    .line 553
+    .line 532
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -13142,7 +13202,7 @@
 
     if-ge v1, v3, :cond_2
 
-    .line 554
+    .line 533
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -13167,7 +13227,7 @@
 
     goto :goto_0
 
-    .line 561
+    .line 540
     :cond_2
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -13184,14 +13244,14 @@
 .method public static hsvToColor(DDD)I
     .locals 0
 
-    .line 1053
+    .line 1032
     invoke-static/range {p0 .. p5}, Lorg/telegram/messenger/AndroidUtilities;->hsvToRgb(DDD)[I
 
     move-result-object p0
 
     const/4 p1, 0x0
 
-    .line 1054
+    .line 1033
     aget p1, p0, p1
 
     const/4 p2, 0x1
@@ -13218,7 +13278,7 @@
 
     mul-double/2addr v0, p0
 
-    .line 1059
+    .line 1038
     invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v2
@@ -13251,7 +13311,7 @@
 
     double-to-int v2, v2
 
-    .line 1064
+    .line 1043
     rem-int/lit8 v2, v2, 0x6
 
     const/4 v3, 0x3
@@ -13360,7 +13420,7 @@
 .method public static indexOfIgnoreCase(Ljava/lang/String;Ljava/lang/String;)I
     .locals 6
 
-    .line 4315
+    .line 4296
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v0
@@ -13380,7 +13440,7 @@
 
     move v1, v0
 
-    .line 4319
+    .line 4300
     :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -13390,7 +13450,7 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 4320
+    .line 4301
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -13410,7 +13470,7 @@
 
     move v2, v1
 
-    .line 4325
+    .line 4306
     :goto_1
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -13424,7 +13484,7 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 4326
+    .line 4307
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
@@ -13433,7 +13493,7 @@
 
     move-result v4
 
-    .line 4327
+    .line 4308
     invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
 
     move-result v5
@@ -13453,7 +13513,7 @@
 
     goto :goto_1
 
-    .line 4334
+    .line 4315
     :cond_3
     :goto_2
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -13472,7 +13532,7 @@
     :cond_5
     return v3
 
-    .line 4316
+    .line 4297
     :cond_6
     :goto_3
     invoke-virtual {p0, p1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -13485,7 +13545,7 @@
 .method public static intersect1d(IIII)Z
     .locals 2
 
-    .line 5195
+    .line 5176
     invoke-static {p0, p1}, Ljava/lang/Math;->max(II)I
 
     move-result v0
@@ -13520,7 +13580,7 @@
 .method public static isAccessibilityScreenReaderEnabled()Z
     .locals 1
 
-    .line 4930
+    .line 4911
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isAccessibilityTouchExplorationEnabled()Z
 
     move-result v0
@@ -13531,12 +13591,12 @@
 .method public static isAccessibilityTouchExplorationEnabled()Z
     .locals 2
 
-    .line 3812
+    .line 3793
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->accessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
     if-nez v0, :cond_0
 
-    .line 3813
+    .line 3794
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "accessibility"
@@ -13549,7 +13609,7 @@
 
     sput-object v0, Lorg/telegram/messenger/AndroidUtilities;->accessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
-    .line 3815
+    .line 3796
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->accessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
@@ -13581,7 +13641,7 @@
 .method public static isAirplaneModeOn()Z
     .locals 5
 
-    .line 3174
+    .line 3155
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x1
@@ -13594,7 +13654,7 @@
 
     if-ge v0, v4, :cond_1
 
-    .line 3175
+    .line 3156
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -13615,7 +13675,7 @@
     :goto_0
     return v1
 
-    .line 3177
+    .line 3158
     :cond_1
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -13643,7 +13703,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 3743
+    .line 3724
     iget p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->until_date:I
 
     int-to-long v0, p0
@@ -13686,7 +13746,7 @@
 .method public static isDownloadsDocument(Landroid/net/Uri;)Z
     .locals 1
 
-    .line 3079
+    .line 3060
     invoke-virtual {p0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
 
     move-result-object p0
@@ -13703,7 +13763,7 @@
 .method public static isENOSPC(Ljava/lang/Exception;)Z
     .locals 2
 
-    .line 4954
+    .line 4935
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -13714,7 +13774,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4957
+    .line 4938
     invoke-virtual {p0}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
@@ -13723,7 +13783,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4958
+    .line 4939
     invoke-virtual {p0}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
@@ -13736,7 +13796,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 4959
+    .line 4940
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
@@ -13771,7 +13831,7 @@
 .method public static isEROFS(Ljava/lang/Exception;)Z
     .locals 2
 
-    .line 4964
+    .line 4945
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -13782,7 +13842,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4965
+    .line 4946
     invoke-virtual {p0}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
@@ -13803,7 +13863,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 4966
+    .line 4947
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
@@ -13842,7 +13902,7 @@
 .method public static isExternalStorageDocument(Landroid/net/Uri;)Z
     .locals 1
 
-    .line 3075
+    .line 3056
     invoke-virtual {p0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
 
     move-result-object p0
@@ -13859,7 +13919,7 @@
 .method public static isFilNotFoundException(Ljava/lang/Throwable;)Z
     .locals 1
 
-    .line 732
+    .line 711
     instance-of v0, p0, Ljava/io/FileNotFoundException;
 
     if-nez v0, :cond_1
@@ -13886,12 +13946,12 @@
 .method public static isInLandscapeMode(Landroid/app/Activity;)Z
     .locals 1
 
-    .line 294
+    .line 279
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
-    .line 295
+    .line 280
     invoke-virtual {p0}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
 
     move-result-object p0
@@ -13900,10 +13960,10 @@
 
     move-result-object p0
 
-    .line 296
+    .line 281
     invoke-virtual {p0, v0}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
 
-    .line 297
+    .line 282
     iget p0, v0, Landroid/graphics/Point;->x:I
 
     iget v0, v0, Landroid/graphics/Point;->y:I
@@ -13926,7 +13986,7 @@
 
     const/4 v0, 0x0
 
-    .line 1308
+    .line 1287
     invoke-static {v0, p0}, Lorg/telegram/messenger/AndroidUtilities;->isInternalUri(Landroid/net/Uri;I)Z
 
     move-result p0
@@ -13939,7 +13999,7 @@
 
     const/4 v0, 0x0
 
-    .line 1304
+    .line 1283
     invoke-static {p0, v0}, Lorg/telegram/messenger/AndroidUtilities;->isInternalUri(Landroid/net/Uri;I)Z
 
     move-result p0
@@ -13960,7 +14020,7 @@
 
     if-eqz p0, :cond_5
 
-    .line 1314
+    .line 1293
     invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object p0
@@ -13969,7 +14029,7 @@
 
     return v2
 
-    .line 1319
+    .line 1298
     :cond_0
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -14016,7 +14076,7 @@
     :cond_1
     move p1, v2
 
-    .line 1324
+    .line 1303
     :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -14026,7 +14086,7 @@
 
     return v3
 
-    .line 1329
+    .line 1308
     :cond_2
     :try_start_0
     invoke-static {p0}, Lorg/telegram/messenger/Utilities;->readlink(Ljava/lang/String;)Ljava/lang/String;
@@ -14037,7 +14097,7 @@
 
     if-eqz v4, :cond_9
 
-    .line 1333
+    .line 1312
     invoke-virtual {v4, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
@@ -14066,7 +14126,7 @@
 
     move v4, v2
 
-    .line 1346
+    .line 1325
     :goto_1
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -14076,7 +14136,7 @@
 
     return v3
 
-    .line 1351
+    .line 1330
     :cond_6
     :try_start_1
     invoke-static {p1}, Lorg/telegram/messenger/Utilities;->readlinkFd(I)Ljava/lang/String;
@@ -14087,7 +14147,7 @@
 
     if-eqz v5, :cond_9
 
-    .line 1355
+    .line 1334
     invoke-virtual {v5, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
@@ -14108,7 +14168,7 @@
 
     goto :goto_1
 
-    .line 1367
+    .line 1346
     :cond_9
     :goto_2
     :try_start_2
@@ -14133,14 +14193,14 @@
 
     const-string v0, "/"
 
-    .line 1372
+    .line 1351
     invoke-virtual {p0, p1, v0}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     :cond_a
     :goto_3
     const-string p1, ".attheme"
 
-    .line 1376
+    .line 1355
     invoke-virtual {p0, p1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result p1
@@ -14149,7 +14209,7 @@
 
     return v2
 
-    .line 1379
+    .line 1358
     :cond_b
     invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -14193,7 +14253,7 @@
 .method public static isKeyguardSecure()Z
     .locals 2
 
-    .line 3163
+    .line 3144
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "keyguard"
@@ -14204,7 +14264,7 @@
 
     check-cast v0, Landroid/app/KeyguardManager;
 
-    .line 3164
+    .line 3145
     invoke-virtual {v0}, Landroid/app/KeyguardManager;->isKeyguardSecure()Z
 
     move-result v0
@@ -14215,7 +14275,7 @@
 .method public static isMapsInstalled(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
     .locals 5
 
-    .line 1271
+    .line 1250
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getMapsProvider()Lorg/telegram/messenger/IMapsProvider;
 
     move-result-object v0
@@ -14226,7 +14286,7 @@
 
     const/4 v1, 0x0
 
-    .line 1273
+    .line 1252
     :try_start_0
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -14242,7 +14302,7 @@
 
     return p0
 
-    .line 1276
+    .line 1255
     :catch_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -14252,7 +14312,7 @@
 
     return v1
 
-    .line 1279
+    .line 1258
     :cond_0
     new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -14262,7 +14322,7 @@
 
     invoke-direct {v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1280
+    .line 1259
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getMapsProvider()Lorg/telegram/messenger/IMapsProvider;
 
     move-result-object v3
@@ -14277,7 +14337,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1281
+    .line 1260
     sget v3, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string v4, "OK"
@@ -14292,7 +14352,7 @@
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1289
+    .line 1268
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v3, "Cancel"
@@ -14305,7 +14365,7 @@
 
     invoke-virtual {v2, v0, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1290
+    .line 1269
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -14318,7 +14378,7 @@
 .method public static isMediaDocument(Landroid/net/Uri;)Z
     .locals 1
 
-    .line 3083
+    .line 3064
     invoke-virtual {p0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
 
     move-result-object p0
@@ -14335,7 +14395,7 @@
 .method public static isNumeric(Ljava/lang/String;)Z
     .locals 0
 
-    .line 4922
+    .line 4903
     :try_start_0
     invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
     :try_end_0
@@ -14354,12 +14414,12 @@
 .method public static isPunctuationCharacter(C)Z
     .locals 3
 
-    .line 4463
+    .line 4444
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->charactersMap:Ljava/util/HashSet;
 
     if-nez v0, :cond_0
 
-    .line 4464
+    .line 4445
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -14368,7 +14428,7 @@
 
     const/4 v0, 0x0
 
-    .line 4465
+    .line 4446
     :goto_0
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->characters:[C
 
@@ -14376,7 +14436,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 4466
+    .line 4447
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->charactersMap:Ljava/util/HashSet;
 
     aget-char v1, v1, v0
@@ -14391,7 +14451,7 @@
 
     goto :goto_0
 
-    .line 4470
+    .line 4451
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->charactersMap:Ljava/util/HashSet;
 
@@ -14413,7 +14473,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 5149
+    .line 5130
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
@@ -14425,7 +14485,7 @@
     :cond_0
     move v1, v0
 
-    .line 5153
+    .line 5134
     :goto_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -14433,7 +14493,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 5154
+    .line 5135
     invoke-interface {p0, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v2
@@ -14460,48 +14520,6 @@
     return v0
 .end method
 
-.method private static isSameLockedSectionScreen(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/enums/LockedSection;)Z
-    .locals 2
-
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_0
-
-    return v0
-
-    .line 332
-    :cond_0
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
-
-    move-result-object p0
-
-    .line 333
-    invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getScreenLockedSection()Lcom/iMe/fork/enums/LockedSection;
-
-    move-result-object p0
-
-    if-ne p0, p1, :cond_1
-
-    const/4 v0, 0x1
-
-    :cond_1
-    return v0
-.end method
-
 .method public static isServiceRunning(Ljava/lang/Class;)Z
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -14512,12 +14530,12 @@
         }
     .end annotation
 
-    .line 301
+    .line 286
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "activity"
 
-    .line 303
+    .line 288
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -14526,7 +14544,7 @@
 
     const v1, 0x7fffffff
 
-    .line 304
+    .line 289
     invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->getRunningServices(I)Ljava/util/List;
 
     move-result-object v0
@@ -14548,7 +14566,7 @@
 
     check-cast v1, Landroid/app/ActivityManager$RunningServiceInfo;
 
-    .line 305
+    .line 290
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v2
@@ -14578,7 +14596,7 @@
 .method public static isSimAvailable()Z
     .locals 3
 
-    .line 3168
+    .line 3149
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "phone"
@@ -14589,7 +14607,7 @@
 
     check-cast v0, Landroid/telephony/TelephonyManager;
 
-    .line 3169
+    .line 3150
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getSimState()I
 
     move-result v1
@@ -14600,7 +14618,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 3170
+    .line 3151
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getPhoneType()I
 
     move-result v0
@@ -14625,12 +14643,12 @@
 .method public static isSmallScreen()Z
     .locals 2
 
-    .line 2384
+    .line 2361
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->isSmallScreen:Ljava/lang/Boolean;
 
     if-nez v0, :cond_1
 
-    .line 2385
+    .line 2362
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -14675,7 +14693,7 @@
 
     sput-object v0, Lorg/telegram/messenger/AndroidUtilities;->isSmallScreen:Ljava/lang/Boolean;
 
-    .line 2387
+    .line 2364
     :cond_1
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->isSmallScreen:Ljava/lang/Boolean;
 
@@ -14689,7 +14707,7 @@
 .method public static isSmallTablet()Z
     .locals 2
 
-    .line 2391
+    .line 2368
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -14726,7 +14744,7 @@
 .method public static isTablet()Z
     .locals 1
 
-    .line 2380
+    .line 2357
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTabletInternal()Z
 
     move-result v0
@@ -14751,7 +14769,7 @@
 .method public static isTabletForce()Z
     .locals 2
 
-    .line 2353
+    .line 2330
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     if-eqz v0, :cond_0
@@ -14784,12 +14802,12 @@
 .method public static isTabletInternal()Z
     .locals 1
 
-    .line 2357
+    .line 2334
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->isTablet:Ljava/lang/Boolean;
 
     if-nez v0, :cond_0
 
-    .line 2358
+    .line 2335
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTabletForce()Z
 
     move-result v0
@@ -14800,7 +14818,7 @@
 
     sput-object v0, Lorg/telegram/messenger/AndroidUtilities;->isTablet:Ljava/lang/Boolean;
 
-    .line 2360
+    .line 2337
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->isTablet:Ljava/lang/Boolean;
 
@@ -14840,16 +14858,16 @@
 .method public static isWaitingForCall()Z
     .locals 2
 
-    .line 1911
+    .line 1890
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->callLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1912
+    .line 1891
     :try_start_0
     sget-boolean v1, Lorg/telegram/messenger/AndroidUtilities;->waitingForCall:Z
 
-    .line 1913
+    .line 1892
     monitor-exit v0
 
     return v1
@@ -14867,16 +14885,16 @@
 .method public static isWaitingForSms()Z
     .locals 2
 
-    .line 1874
+    .line 1853
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->smsLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1875
+    .line 1854
     :try_start_0
     sget-boolean v1, Lorg/telegram/messenger/AndroidUtilities;->waitingForSms:Z
 
-    .line 1876
+    .line 1855
     monitor-exit v0
 
     return v1
@@ -14894,7 +14912,7 @@
 .method private static synthetic lambda$formatSpannable$10(Ljava/lang/Integer;)Ljava/lang/String;
     .locals 2
 
-    .line 3627
+    .line 3608
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -14935,14 +14953,14 @@
 
     move-object/from16 v0, p0
 
-    .line 678
+    .line 657
     :try_start_0
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    .line 679
+    .line 658
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->postInitApplication()V
 
-    .line 680
+    .line 659
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->needShowPasscode()Z
 
     move-result v2
@@ -14958,12 +14976,12 @@
     :cond_0
     const-string v2, "android.intent.extra.TEXT"
 
-    .line 683
+    .line 662
     invoke-virtual {v0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 684
+    .line 663
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -14972,24 +14990,24 @@
 
     const-string v2, "com.google.android.voicesearch.extra.RECIPIENT_CONTACT_URI"
 
-    .line 685
+    .line 664
     invoke-virtual {v0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     const-string v3, "com.google.android.voicesearch.extra.RECIPIENT_CONTACT_CHAT_ID"
 
-    .line 686
+    .line 665
     invoke-virtual {v0, v3}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 687
+    .line 666
     invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v5
 
-    .line 688
+    .line 667
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -15004,7 +15022,7 @@
 
     if-nez v0, :cond_1
 
-    .line 690
+    .line 669
     invoke-static {v1}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v0
@@ -15015,7 +15033,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 692
+    .line 671
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v3
@@ -15027,14 +15045,14 @@
     :cond_1
     if-eqz v0, :cond_3
 
-    .line 696
+    .line 675
     invoke-static {v1}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
 
     move-result-object v3
 
     invoke-virtual {v3, v2}, Lorg/telegram/messenger/ContactsController;->markAsContacted(Ljava/lang/String;)V
 
-    .line 697
+    .line 676
     invoke-static {v1}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
     move-result-object v3
@@ -15078,7 +15096,7 @@
     :catch_0
     move-exception v0
 
-    .line 701
+    .line 680
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_3
@@ -15089,7 +15107,7 @@
 .method private static synthetic lambda$isMapsInstalled$5(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 1283
+    .line 1262
     :try_start_0
     new-instance p2, Landroid/content/Intent;
 
@@ -15115,7 +15133,7 @@
 
     invoke-direct {p2, p3, p0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 1284
+    .line 1263
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p0
@@ -15131,7 +15149,7 @@
     :catch_0
     move-exception p0
 
-    .line 1286
+    .line 1265
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -15141,7 +15159,7 @@
 .method private static synthetic lambda$makeGlobalBlurBitmap$18(Lorg/telegram/messenger/Utilities$Callback;Landroid/graphics/Bitmap;)V
     .locals 0
 
-    .line 5095
+    .line 5076
     invoke-interface {p0, p1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
     return-void
@@ -15152,7 +15170,7 @@
 
     const/4 v0, 0x0
 
-    .line 5100
+    .line 5081
     invoke-interface {p0, v0}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
     return-void
@@ -15161,7 +15179,7 @@
 .method private static synthetic lambda$pruneOverlaps$4(Lorg/telegram/messenger/AndroidUtilities$LinkSpec;Lorg/telegram/messenger/AndroidUtilities$LinkSpec;)I
     .locals 4
 
-    .line 877
+    .line 856
     iget v0, p0, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;->start:I
 
     iget v1, p1, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;->start:I
@@ -15179,7 +15197,7 @@
 
     return v3
 
-    .line 883
+    .line 862
     :cond_1
     iget p0, p0, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;->end:I
 
@@ -15205,7 +15223,7 @@
 
     const/4 v0, 0x0
 
-    .line 658
+    .line 637
     :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -15213,7 +15231,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 659
+    .line 638
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -15222,14 +15240,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 660
+    .line 639
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 662
+    .line 641
     :try_start_0
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_0
@@ -15240,7 +15258,7 @@
     :catch_0
     move-exception v1
 
-    .line 664
+    .line 643
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -15256,7 +15274,7 @@
 .method private static synthetic lambda$recycleBitmaps$1(Ljava/util/List;)V
     .locals 2
 
-    .line 657
+    .line 636
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda12;
@@ -15273,7 +15291,7 @@
 
     const/4 v0, -0x1
 
-    .line 4679
+    .line 4660
     :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -15285,24 +15303,24 @@
 
     const/4 v1, 0x1
 
-    .line 4680
+    .line 4661
     invoke-virtual {p1, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 4681
+    .line 4662
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     move-result-object p2
 
     check-cast p2, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    .line 4682
+    .line 4663
     invoke-virtual {p1, p0}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
 
     move-result v0
 
     const/16 p0, 0x3c
 
-    .line 4683
+    .line 4664
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p0
@@ -15311,7 +15329,7 @@
 
     const/4 p0, 0x0
 
-    .line 4684
+    .line 4665
     invoke-virtual {p1, p0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -15323,7 +15341,7 @@
 .method private static synthetic lambda$setNavigationBarColor$15(Lorg/telegram/messenger/AndroidUtilities$IntColorCallback;Landroid/view/Window;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 4601
+    .line 4582
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -15336,10 +15354,10 @@
 
     if-eqz p0, :cond_0
 
-    .line 4603
+    .line 4584
     invoke-interface {p0, p2}, Lorg/telegram/messenger/AndroidUtilities$IntColorCallback;->run(I)V
 
-    .line 4606
+    .line 4587
     :cond_0
     :try_start_0
     invoke-virtual {p1, p2}, Landroid/view/Window;->setNavigationBarColor(I)V
@@ -15353,14 +15371,14 @@
 .method private static synthetic lambda$setWaitingForSms$6(Ljava/lang/Void;)V
     .locals 0
 
-    .line 1888
+    .line 1867
     sget-boolean p0, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz p0, :cond_0
 
     const-string p0, "sms listener registered"
 
-    .line 1889
+    .line 1868
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_0
@@ -15370,7 +15388,7 @@
 .method private static synthetic lambda$shakeView$7(Landroid/view/View;Landroid/animation/ValueAnimator;)V
     .locals 7
 
-    .line 2827
+    .line 2808
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -15403,7 +15421,7 @@
 
     mul-double/2addr v3, v5
 
-    .line 2828
+    .line 2809
     invoke-static {v3, v4}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v3
@@ -15430,21 +15448,21 @@
 
     if-eqz p0, :cond_0
 
-    .line 2869
+    .line 2850
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
-    .line 2871
+    .line 2852
     :cond_0
     invoke-virtual {p1, p2}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 2872
+    .line 2853
     sget p0, Lorg/telegram/messenger/R$id;->spring_tag:I
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p0, p2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 2873
+    .line 2854
     sget p0, Lorg/telegram/messenger/R$id;->spring_was_translation_x_tag:I
 
     invoke-virtual {p1, p0, p2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
@@ -15461,7 +15479,7 @@
 
     if-nez v0, :cond_0
 
-    .line 3988
+    .line 3969
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object p0
@@ -15474,7 +15492,7 @@
 
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3989
+    .line 3970
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object p0
@@ -15489,7 +15507,7 @@
 
     goto :goto_0
 
-    .line 3991
+    .line 3972
     :cond_0
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->getTextView()Landroid/widget/TextView;
 
@@ -15537,7 +15555,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3992
+    .line 3973
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object p0
@@ -15557,7 +15575,7 @@
 .method private static synthetic lambda$showProxyAlert$12(Lorg/telegram/ui/Cells/TextDetailSettingsCell;J)V
     .locals 1
 
-    .line 3986
+    .line 3967
     new-instance v0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda9;
 
     invoke-direct {v0, p1, p2, p0}, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda9;-><init>(JLorg/telegram/ui/Cells/TextDetailSettingsCell;)V
@@ -15570,7 +15588,7 @@
 .method private static synthetic lambda$showProxyAlert$13(Ljava/lang/Runnable;Landroid/view/View;)V
     .locals 0
 
-    .line 4008
+    .line 3989
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -15579,7 +15597,7 @@
 .method private static synthetic lambda$showProxyAlert$14(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;Ljava/lang/Runnable;Landroid/view/View;)V
     .locals 8
 
-    .line 4014
+    .line 3995
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object p7
@@ -15592,15 +15610,15 @@
 
     const/4 v1, 0x1
 
-    .line 4015
+    .line 3996
     invoke-interface {p7, v0, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     const-string v0, "proxy_ip"
 
-    .line 4016
+    .line 3997
     invoke-interface {p7, v0, p0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 4017
+    .line 3998
     invoke-static {p1}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
     move-result-object p1
@@ -15611,10 +15629,10 @@
 
     const-string v0, "proxy_port"
 
-    .line 4018
+    .line 3999
     invoke-interface {p7, v0, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 4021
+    .line 4002
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -15627,26 +15645,26 @@
 
     if-eqz v0, :cond_2
 
-    .line 4022
+    .line 4003
     invoke-interface {p7, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 4023
+    .line 4004
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4024
+    .line 4005
     invoke-interface {p7, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
 
-    .line 4026
+    .line 4007
     :cond_0
     invoke-interface {p7, v4, p3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 4028
+    .line 4009
     :goto_0
     invoke-static {p4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -15654,16 +15672,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 4029
+    .line 4010
     invoke-interface {p7, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_1
 
-    .line 4031
+    .line 4012
     :cond_1
     invoke-interface {p7, v3, p4}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 4033
+    .line 4014
     :goto_1
     new-instance v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
@@ -15683,17 +15701,17 @@
 
     goto :goto_2
 
-    .line 4035
+    .line 4016
     :cond_2
     invoke-interface {p7, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 4036
+    .line 4017
     invoke-interface {p7, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 4037
+    .line 4018
     invoke-interface {p7, v2, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 4038
+    .line 4019
     new-instance v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
     const-string v5, ""
@@ -15710,11 +15728,11 @@
 
     invoke-direct/range {v2 .. v7}, Lorg/telegram/messenger/SharedConfig$ProxyInfo;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4040
+    .line 4021
     :goto_2
     invoke-interface {p7}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 4042
+    .line 4023
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->addProxy(Lorg/telegram/messenger/SharedConfig$ProxyInfo;)Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
     move-result-object p7
@@ -15733,10 +15751,10 @@
 
     move-object v7, p2
 
-    .line 4044
+    .line 4025
     invoke-static/range {v2 .. v7}, Lorg/telegram/tgnet/ConnectionsManager;->setProxySettings(ZLjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4045
+    .line 4026
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -15749,7 +15767,7 @@
 
     invoke-virtual {p0, p1, p3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 4046
+    .line 4027
     instance-of p0, p5, Lorg/telegram/ui/LaunchActivity;
 
     const/4 p1, 0x6
@@ -15758,24 +15776,24 @@
 
     if-eqz p0, :cond_4
 
-    .line 4047
+    .line 4028
     check-cast p5, Lorg/telegram/ui/LaunchActivity;
 
     invoke-virtual {p5}, Lorg/telegram/ui/LaunchActivity;->getActionBarLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object p0
 
-    .line 4048
+    .line 4029
     invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p0
 
-    .line 4050
+    .line 4031
     instance-of p4, p0, Lorg/telegram/ui/ChatActivity;
 
     if-eqz p4, :cond_3
 
-    .line 4051
+    .line 4032
     check-cast p0, Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ChatActivity;->getUndoView()Lorg/telegram/ui/Components/UndoView;
@@ -15790,7 +15808,7 @@
 
     const/4 v0, 0x0
 
-    .line 4053
+    .line 4034
     invoke-virtual {p0, p4, p5, p7, v0}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;)V
 
     move p0, v1
@@ -15803,7 +15821,7 @@
     :goto_3
     if-nez p0, :cond_5
 
-    .line 4058
+    .line 4039
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -15830,7 +15848,7 @@
 
     goto :goto_4
 
-    .line 4061
+    .line 4042
     :cond_4
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
@@ -15856,7 +15874,7 @@
 
     invoke-virtual {p0, p4, p3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 4063
+    .line 4044
     :cond_5
     :goto_4
     invoke-interface {p6}, Ljava/lang/Runnable;->run()V
@@ -15876,7 +15894,7 @@
     :cond_0
     sub-int/2addr p1, p2
 
-    .line 821
+    .line 800
     invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result p0
@@ -15896,7 +15914,7 @@
 .method private static synthetic lambda$updateImageViewImageAnimated$17(Landroid/widget/ImageView;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/graphics/drawable/Drawable;Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 4734
+    .line 4715
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p3
@@ -15911,24 +15929,24 @@
 
     sub-float v1, p3, v0
 
-    .line 4735
+    .line 4716
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
     move-result v1
 
     add-float/2addr v1, v0
 
-    .line 4736
+    .line 4717
     invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 4737
+    .line 4718
     invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
 
     cmpl-float p3, p3, v0
 
     if-ltz p3, :cond_0
 
-    .line 4738
+    .line 4719
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result p3
@@ -15937,10 +15955,10 @@
 
     const/4 p3, 0x1
 
-    .line 4739
+    .line 4720
     invoke-virtual {p1, p3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 4740
+    .line 4721
     invoke-virtual {p0, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :cond_0
@@ -15978,7 +15996,7 @@
 
     const/4 v0, 0x0
 
-    .line 4360
+    .line 4341
     aget v0, p0, v0
 
     const/4 v1, 0x1
@@ -16015,12 +16033,12 @@
 
     if-eqz p3, :cond_0
 
-    .line 4376
+    .line 4357
     iget v0, p0, Landroid/graphics/Rect;->left:I
 
     iget v1, p1, Landroid/graphics/Rect;->left:I
 
-    .line 4377
+    .line 4358
     invoke-static {v0, v1, p2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v0
@@ -16029,7 +16047,7 @@
 
     iget v2, p1, Landroid/graphics/Rect;->top:I
 
-    .line 4378
+    .line 4359
     invoke-static {v1, v2, p2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v1
@@ -16038,7 +16056,7 @@
 
     iget v3, p1, Landroid/graphics/Rect;->right:I
 
-    .line 4379
+    .line 4360
     invoke-static {v2, v3, p2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v2
@@ -16047,12 +16065,12 @@
 
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 4380
+    .line 4361
     invoke-static {p0, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result p0
 
-    .line 4376
+    .line 4357
     invoke-virtual {p3, v0, v1, v2, p0}, Landroid/graphics/Rect;->set(IIII)V
 
     :cond_0
@@ -16064,12 +16082,12 @@
 
     if-eqz p3, :cond_0
 
-    .line 4365
+    .line 4346
     iget v0, p0, Landroid/graphics/RectF;->left:F
 
     iget v1, p1, Landroid/graphics/RectF;->left:F
 
-    .line 4366
+    .line 4347
     invoke-static {v0, v1, p2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v0
@@ -16078,7 +16096,7 @@
 
     iget v2, p1, Landroid/graphics/RectF;->top:F
 
-    .line 4367
+    .line 4348
     invoke-static {v1, v2, p2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v1
@@ -16087,7 +16105,7 @@
 
     iget v3, p1, Landroid/graphics/RectF;->right:F
 
-    .line 4368
+    .line 4349
     invoke-static {v2, v3, p2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v2
@@ -16096,12 +16114,12 @@
 
     iget p1, p1, Landroid/graphics/RectF;->bottom:F
 
-    .line 4369
+    .line 4350
     invoke-static {p0, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result p0
 
-    .line 4365
+    .line 4346
     invoke-virtual {p3, v0, v1, v2, p0}, Landroid/graphics/RectF;->set(FFFF)V
 
     :cond_0
@@ -16164,7 +16182,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 1666
+    .line 1645
     :try_start_0
     sget-object v4, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -16178,7 +16196,7 @@
 
     move-result-object v0
 
-    .line 1667
+    .line 1646
     invoke-virtual {v0}, Landroid/content/res/AssetFileDescriptor;->createInputStream()Ljava/io/FileInputStream;
 
     move-result-object v0
@@ -16192,7 +16210,7 @@
 
     goto/16 :goto_17
 
-    .line 1669
+    .line 1648
     :cond_0
     :try_start_1
     sget-object v4, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -16201,18 +16219,18 @@
 
     move-result-object v4
 
-    .line 1670
+    .line 1649
     invoke-virtual {v4, v0}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
 
     move-result-object v0
 
-    .line 1673
+    .line 1652
     :goto_0
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1676
+    .line 1655
     new-instance v5, Ljava/io/BufferedReader;
 
     new-instance v6, Ljava/io/InputStreamReader;
@@ -16233,7 +16251,7 @@
 
     move v10, v7
 
-    .line 1682
+    .line 1661
     :goto_1
     invoke-virtual {v5}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
@@ -16243,7 +16261,7 @@
 
     const-string v13, "PHOTO"
 
-    .line 1683
+    .line 1662
     invoke-virtual {v12, v13}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v13
@@ -16257,7 +16275,7 @@
     :cond_1
     const/16 v13, 0x3a
 
-    .line 1687
+    .line 1666
     invoke-virtual {v12, v13}, Ljava/lang/String;->indexOf(I)I
 
     move-result v13
@@ -16275,14 +16293,14 @@
     :try_start_2
     const-string v10, "BEGIN:VCARD"
 
-    .line 1690
+    .line 1669
     invoke-virtual {v12, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
 
     if-eqz v10, :cond_2
 
-    .line 1691
+    .line 1670
     new-instance v8, Lorg/telegram/messenger/AndroidUtilities$VcardData;
 
     invoke-direct {v8, v3}, Lorg/telegram/messenger/AndroidUtilities$VcardData;-><init>(Lorg/telegram/messenger/AndroidUtilities$1;)V
@@ -16291,7 +16309,7 @@
 
     move-object/from16 v13, p4
 
-    .line 1692
+    .line 1671
     iput-object v13, v8, Lorg/telegram/messenger/AndroidUtilities$VcardData;->name:Ljava/lang/String;
 
     goto/16 :goto_7
@@ -16301,7 +16319,7 @@
 
     const-string v10, "END:VCARD"
 
-    .line 1693
+    .line 1672
     invoke-virtual {v12, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
@@ -16313,19 +16331,19 @@
     :cond_3
     if-eqz v1, :cond_10
 
-    .line 1696
+    .line 1675
     invoke-virtual {v12, v15}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
 
     if-eqz v10, :cond_4
 
-    .line 1697
+    .line 1676
     new-instance v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;
 
     invoke-direct {v10}, Lorg/telegram/messenger/AndroidUtilities$VcardItem;-><init>()V
 
-    .line 1698
+    .line 1677
     iput v7, v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;->type:I
 
     :goto_2
@@ -16336,21 +16354,21 @@
     :cond_4
     const-string v10, "EMAIL"
 
-    .line 1699
+    .line 1678
     invoke-virtual {v12, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
 
     if-eqz v10, :cond_5
 
-    .line 1700
+    .line 1679
     new-instance v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;
 
     invoke-direct {v10}, Lorg/telegram/messenger/AndroidUtilities$VcardItem;-><init>()V
 
     const/4 v11, 0x1
 
-    .line 1701
+    .line 1680
     iput v11, v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;->type:I
 
     goto :goto_2
@@ -16358,7 +16376,7 @@
     :cond_5
     const-string v10, "ADR"
 
-    .line 1702
+    .line 1681
     invoke-virtual {v12, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
@@ -16386,21 +16404,21 @@
     :cond_6
     const-string v10, "URL"
 
-    .line 1705
+    .line 1684
     invoke-virtual {v12, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
 
     if-eqz v10, :cond_7
 
-    .line 1706
+    .line 1685
     new-instance v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;
 
     invoke-direct {v10}, Lorg/telegram/messenger/AndroidUtilities$VcardItem;-><init>()V
 
     const/4 v11, 0x3
 
-    .line 1707
+    .line 1686
     iput v11, v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;->type:I
 
     goto :goto_2
@@ -16408,21 +16426,21 @@
     :cond_7
     const-string v10, "NOTE"
 
-    .line 1708
+    .line 1687
     invoke-virtual {v12, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
 
     if-eqz v10, :cond_8
 
-    .line 1709
+    .line 1688
     new-instance v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;
 
     invoke-direct {v10}, Lorg/telegram/messenger/AndroidUtilities$VcardItem;-><init>()V
 
     const/4 v11, 0x4
 
-    .line 1710
+    .line 1689
     iput v11, v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;->type:I
 
     goto :goto_2
@@ -16430,26 +16448,26 @@
     :cond_8
     const-string v10, "BDAY"
 
-    .line 1711
+    .line 1690
     invoke-virtual {v12, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
 
     if-eqz v10, :cond_9
 
-    .line 1712
+    .line 1691
     new-instance v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;
 
     invoke-direct {v10}, Lorg/telegram/messenger/AndroidUtilities$VcardItem;-><init>()V
 
     const/4 v11, 0x5
 
-    .line 1713
+    .line 1692
     iput v11, v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;->type:I
 
     goto :goto_2
 
-    .line 1714
+    .line 1693
     :cond_9
     invoke-virtual {v12, v14}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -16478,21 +16496,21 @@
     :cond_a
     const-string v10, "X-ANDROID"
 
-    .line 1719
+    .line 1698
     invoke-virtual {v12, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
 
     if-eqz v10, :cond_b
 
-    .line 1720
+    .line 1699
     new-instance v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;
 
     invoke-direct {v10}, Lorg/telegram/messenger/AndroidUtilities$VcardItem;-><init>()V
 
     const/4 v11, -0x1
 
-    .line 1721
+    .line 1700
     iput v11, v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;->type:I
 
     goto/16 :goto_2
@@ -16500,7 +16518,7 @@
     :cond_b
     const-string v10, "X-PHONETIC"
 
-    .line 1722
+    .line 1701
     invoke-virtual {v12, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
@@ -16512,21 +16530,21 @@
     :cond_c
     const-string v10, "X-"
 
-    .line 1724
+    .line 1703
     invoke-virtual {v12, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
 
     if-eqz v10, :cond_d
 
-    .line 1725
+    .line 1704
     new-instance v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;
 
     invoke-direct {v10}, Lorg/telegram/messenger/AndroidUtilities$VcardItem;-><init>()V
 
     const/16 v11, 0x14
 
-    .line 1726
+    .line 1705
     iput v11, v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;->type:I
 
     goto/16 :goto_2
@@ -16537,7 +16555,7 @@
 
     goto :goto_6
 
-    .line 1716
+    .line 1695
     :cond_e
     :goto_4
     new-instance v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;
@@ -16546,19 +16564,19 @@
 
     const/4 v11, 0x6
 
-    .line 1717
+    .line 1696
     iput v11, v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;->type:I
 
     goto/16 :goto_2
 
-    .line 1703
+    .line 1682
     :cond_f
     :goto_5
     new-instance v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;
 
     invoke-direct {v10}, Lorg/telegram/messenger/AndroidUtilities$VcardItem;-><init>()V
 
-    .line 1704
+    .line 1683
     iput v6, v10, Lorg/telegram/messenger/AndroidUtilities$VcardItem;->type:I
 
     goto/16 :goto_2
@@ -16566,12 +16584,12 @@
     :goto_6
     if-eqz v11, :cond_11
 
-    .line 1728
+    .line 1707
     iget v10, v11, Lorg/telegram/messenger/AndroidUtilities$VcardItem;->type:I
 
     if-ltz v10, :cond_11
 
-    .line 1729
+    .line 1708
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -16598,7 +16616,7 @@
 
     if-nez v11, :cond_14
 
-    .line 1736
+    .line 1715
     :try_start_3
     iget-object v3, v8, Lorg/telegram/messenger/AndroidUtilities$VcardData;->vcard:Ljava/lang/StringBuilder;
 
@@ -16608,14 +16626,14 @@
 
     if-lez v3, :cond_13
 
-    .line 1737
+    .line 1716
     iget-object v3, v8, Lorg/telegram/messenger/AndroidUtilities$VcardData;->vcard:Ljava/lang/StringBuilder;
 
     const/16 v6, 0xa
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1739
+    .line 1718
     :cond_13
     iget-object v3, v8, Lorg/telegram/messenger/AndroidUtilities$VcardData;->vcard:Ljava/lang/StringBuilder;
 
@@ -16623,7 +16641,7 @@
 
     goto :goto_a
 
-    .line 1741
+    .line 1720
     :cond_14
     iget-object v3, v11, Lorg/telegram/messenger/AndroidUtilities$VcardItem;->vcardData:Ljava/util/ArrayList;
 
@@ -16633,7 +16651,7 @@
     :goto_a
     if-eqz v9, :cond_16
 
-    .line 1745
+    .line 1724
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -16651,7 +16669,7 @@
     :cond_16
     const-string v3, "=QUOTED-PRINTABLE"
 
-    .line 1749
+    .line 1728
     invoke-virtual {v12, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v3
@@ -16669,7 +16687,7 @@
 
     if-eqz v3, :cond_17
 
-    .line 1750
+    .line 1729
     invoke-virtual {v12}, Ljava/lang/String;->length()I
 
     move-result v3
@@ -16693,13 +16711,13 @@
 
     if-eqz v11, :cond_18
 
-    .line 1754
+    .line 1733
     iput-object v12, v11, Lorg/telegram/messenger/AndroidUtilities$VcardItem;->fullData:Ljava/lang/String;
 
     :cond_18
     const-string v3, ":"
 
-    .line 1756
+    .line 1735
     invoke-virtual {v12, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v3
@@ -16712,7 +16730,7 @@
 
     const/4 v7, 0x0
 
-    .line 1760
+    .line 1739
     invoke-virtual {v12, v7, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v16
@@ -16721,7 +16739,7 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    .line 1761
+    .line 1740
     invoke-virtual {v12, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v3
@@ -16743,7 +16761,7 @@
 
     new-array v3, v1, [Ljava/lang/String;
 
-    .line 1764
+    .line 1743
     invoke-virtual {v12}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
@@ -16754,7 +16772,7 @@
 
     move-object v1, v3
 
-    .line 1766
+    .line 1745
     :goto_b
     array-length v3, v1
 
@@ -16766,7 +16784,7 @@
 
     goto/16 :goto_10
 
-    .line 1769
+    .line 1748
     :cond_1a
     aget-object v3, v1, v7
 
@@ -16814,7 +16832,7 @@
     :cond_1b
     const/4 v3, 0x0
 
-    .line 1798
+    .line 1777
     aget-object v6, v1, v3
 
     invoke-virtual {v6, v15}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -16823,7 +16841,7 @@
 
     if-eqz v3, :cond_22
 
-    .line 1799
+    .line 1778
     iget-object v3, v8, Lorg/telegram/messenger/AndroidUtilities$VcardData;->phones:Ljava/util/ArrayList;
 
     const/4 v6, 0x1
@@ -16837,7 +16855,7 @@
     :cond_1c
     move v3, v7
 
-    .line 1772
+    .line 1751
     :goto_c
     aget-object v7, v1, v3
 
@@ -16847,7 +16865,7 @@
 
     move-result-object v3
 
-    .line 1773
+    .line 1752
     array-length v7, v3
 
     move-object/from16 v17, v9
@@ -16865,14 +16883,14 @@
 
     aget-object v7, v3, v14
 
-    .line 1774
+    .line 1753
     invoke-virtual {v7, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v7
 
     move-object/from16 v19, v3
 
-    .line 1775
+    .line 1754
     array-length v3, v7
 
     move-object/from16 v20, v6
@@ -16886,7 +16904,7 @@
     :cond_1d
     const/4 v3, 0x0
 
-    .line 1778
+    .line 1757
     aget-object v6, v7, v3
 
     const-string v3, "CHARSET"
@@ -16899,7 +16917,7 @@
 
     const/4 v3, 0x1
 
-    .line 1779
+    .line 1758
     aget-object v9, v7, v3
 
     goto :goto_e
@@ -16907,7 +16925,7 @@
     :cond_1e
     const/4 v3, 0x0
 
-    .line 1780
+    .line 1759
     aget-object v6, v7, v3
 
     const-string v3, "ENCODING"
@@ -16920,7 +16938,7 @@
 
     const/4 v3, 0x1
 
-    .line 1781
+    .line 1760
     aget-object v15, v7, v3
 
     :cond_1f
@@ -16938,7 +16956,7 @@
     :cond_20
     const/4 v3, 0x0
 
-    .line 1784
+    .line 1763
     aget-object v6, v1, v3
 
     invoke-virtual {v6, v12}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -16949,7 +16967,7 @@
 
     const/4 v3, 0x1
 
-    .line 1785
+    .line 1764
     aget-object v1, v1, v3
 
     const/16 v3, 0x3b
@@ -16973,7 +16991,7 @@
     :cond_21
     const/4 v3, 0x1
 
-    .line 1787
+    .line 1766
     aget-object v1, v1, v3
 
     iput-object v1, v8, Lorg/telegram/messenger/AndroidUtilities$VcardData;->name:Ljava/lang/String;
@@ -16983,14 +17001,14 @@
 
     const-string v1, "QUOTED-PRINTABLE"
 
-    .line 1789
+    .line 1768
     invoke-virtual {v15, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_23
 
-    .line 1790
+    .line 1769
     iget-object v1, v8, Lorg/telegram/messenger/AndroidUtilities$VcardData;->name:Ljava/lang/String;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->getStringBytes(Ljava/lang/String;)[B
@@ -17003,17 +17021,17 @@
 
     if-eqz v1, :cond_23
 
-    .line 1791
+    .line 1770
     array-length v6, v1
 
     if-eqz v6, :cond_23
 
-    .line 1792
+    .line 1771
     new-instance v6, Ljava/lang/String;
 
     invoke-direct {v6, v1, v9}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
 
-    .line 1794
+    .line 1773
     iput-object v6, v8, Lorg/telegram/messenger/AndroidUtilities$VcardData;->name:Ljava/lang/String;
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
@@ -17038,12 +17056,12 @@
 
     goto/16 :goto_1
 
-    .line 1803
+    .line 1782
     :cond_24
     :try_start_6
     invoke-virtual {v5}, Ljava/io/BufferedReader;->close()V
 
-    .line 1804
+    .line 1783
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_0
@@ -17054,7 +17072,7 @@
     :catch_0
     move-exception v0
 
-    .line 1806
+    .line 1785
     :try_start_7
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_7
@@ -17065,7 +17083,7 @@
 
     const/4 v7, 0x0
 
-    .line 1808
+    .line 1787
     :goto_13
     :try_start_8
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -17074,14 +17092,14 @@
 
     if-ge v7, v0, :cond_29
 
-    .line 1809
+    .line 1788
     invoke-virtual {v4, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/messenger/AndroidUtilities$VcardData;
 
-    .line 1810
+    .line 1789
     iget-object v1, v0, Lorg/telegram/messenger/AndroidUtilities$VcardData;->name:Ljava/lang/String;
 
     if-eqz v1, :cond_28
@@ -17096,14 +17114,14 @@
 
     if-nez v3, :cond_25
 
-    .line 1812
+    .line 1791
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     move-object v3, v1
 
-    .line 1815
+    .line 1794
     :cond_25
     iget-object v1, v0, Lorg/telegram/messenger/AndroidUtilities$VcardData;->phones:Ljava/util/ArrayList;
 
@@ -17117,7 +17135,7 @@
 
     const/4 v5, 0x0
 
-    .line 1816
+    .line 1795
     :goto_14
     iget-object v6, v0, Lorg/telegram/messenger/AndroidUtilities$VcardData;->phones:Ljava/util/ArrayList;
 
@@ -17127,7 +17145,7 @@
 
     if-ge v5, v6, :cond_27
 
-    .line 1817
+    .line 1796
     iget-object v6, v0, Lorg/telegram/messenger/AndroidUtilities$VcardData;->phones:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -17136,7 +17154,7 @@
 
     check-cast v6, Ljava/lang/String;
 
-    .line 1818
+    .line 1797
     invoke-virtual {v6}, Ljava/lang/String;->length()I
 
     move-result v8
@@ -17153,7 +17171,7 @@
 
     move-result-object v8
 
-    .line 1819
+    .line 1798
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
 
     move-result-object v10
@@ -17178,34 +17196,34 @@
     :cond_27
     const/4 v9, 0x0
 
-    .line 1824
+    .line 1803
     :goto_15
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_userContact_old2;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_userContact_old2;-><init>()V
 
-    .line 1825
+    .line 1804
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
-    .line 1826
+    .line 1805
     iget-object v1, v0, Lorg/telegram/messenger/AndroidUtilities$VcardData;->name:Ljava/lang/String;
 
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    .line 1827
+    .line 1806
     iput-object v2, v5, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
 
     const-wide/16 v10, 0x0
 
-    .line 1828
+    .line 1807
     iput-wide v10, v5, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    .line 1829
+    .line 1808
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_restrictionReason;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_restrictionReason;-><init>()V
 
-    .line 1830
+    .line 1809
     iget-object v0, v0, Lorg/telegram/messenger/AndroidUtilities$VcardData;->vcard:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -17214,18 +17232,18 @@
 
     iput-object v0, v1, Lorg/telegram/tgnet/TLRPC$TL_restrictionReason;->text:Ljava/lang/String;
 
-    .line 1831
+    .line 1810
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_restrictionReason;->platform:Ljava/lang/String;
 
-    .line 1832
+    .line 1811
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_restrictionReason;->reason:Ljava/lang/String;
 
-    .line 1833
+    .line 1812
     iget-object v0, v5, Lorg/telegram/tgnet/TLRPC$User;->restriction_reason:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1834
+    .line 1813
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
@@ -17245,7 +17263,7 @@
 
     const/4 v3, 0x0
 
-    .line 1838
+    .line 1817
     :goto_17
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -17258,7 +17276,7 @@
 
     if-eqz p0, :cond_8
 
-    .line 1384
+    .line 1363
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->prevOrientation:I
 
     const/16 v1, -0xa
@@ -17267,7 +17285,7 @@
 
     goto :goto_0
 
-    .line 1388
+    .line 1367
     :cond_0
     :try_start_0
     invoke-virtual {p0}, Landroid/app/Activity;->getRequestedOrientation()I
@@ -17278,7 +17296,7 @@
 
     const-string/jumbo v0, "window"
 
-    .line 1389
+    .line 1368
     invoke-virtual {p0, v0}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -17287,14 +17305,14 @@
 
     if-eqz v0, :cond_8
 
-    .line 1390
+    .line 1369
     invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v1
 
     if-eqz v1, :cond_8
 
-    .line 1391
+    .line 1370
     invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v0
@@ -17303,7 +17321,7 @@
 
     move-result v0
 
-    .line 1392
+    .line 1371
     invoke-virtual {p0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -17324,12 +17342,12 @@
 
     if-ne v1, v4, :cond_1
 
-    .line 1396
+    .line 1375
     invoke-virtual {p0, v4}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
     goto :goto_0
 
-    .line 1398
+    .line 1377
     :cond_1
     invoke-virtual {p0, v3}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
@@ -17344,12 +17362,12 @@
 
     if-ne v1, v4, :cond_3
 
-    .line 1402
+    .line 1381
     invoke-virtual {p0, v2}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
     goto :goto_0
 
-    .line 1404
+    .line 1383
     :cond_3
     invoke-virtual {p0, v5}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
@@ -17362,12 +17380,12 @@
 
     if-ne v1, v6, :cond_5
 
-    .line 1408
+    .line 1387
     invoke-virtual {p0, v5}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
     goto :goto_0
 
-    .line 1410
+    .line 1389
     :cond_5
     invoke-virtual {p0, v4}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
@@ -17376,12 +17394,12 @@
     :cond_6
     if-ne v1, v6, :cond_7
 
-    .line 1414
+    .line 1393
     invoke-virtual {p0, v3}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
     goto :goto_0
 
-    .line 1416
+    .line 1395
     :cond_7
     invoke-virtual {p0, v2}, Landroid/app/Activity;->setRequestedOrientation(I)V
     :try_end_0
@@ -17392,7 +17410,7 @@
     :catch_0
     move-exception p0
 
-    .line 1421
+    .line 1400
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_8
@@ -17403,7 +17421,7 @@
 .method public static makeAccessibilityAnnouncement(Ljava/lang/CharSequence;)V
     .locals 3
 
-    .line 4293
+    .line 4274
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "accessibility"
@@ -17414,31 +17432,31 @@
 
     check-cast v0, Landroid/view/accessibility/AccessibilityManager;
 
-    .line 4294
+    .line 4275
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 4295
+    .line 4276
     invoke-static {}, Landroid/view/accessibility/AccessibilityEvent;->obtain()Landroid/view/accessibility/AccessibilityEvent;
 
     move-result-object v1
 
     const/16 v2, 0x4000
 
-    .line 4296
+    .line 4277
     invoke-virtual {v1, v2}, Landroid/view/accessibility/AccessibilityEvent;->setEventType(I)V
 
-    .line 4297
+    .line 4278
     invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
 
     move-result-object v2
 
     invoke-interface {v2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 4298
+    .line 4279
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityManager;->sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
     :cond_0
@@ -17452,7 +17470,7 @@
 
     const/4 v1, 0x7
 
-    .line 5000
+    .line 4981
     invoke-static {p0, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->makeBlurBitmap(Landroid/view/View;FI)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -17469,7 +17487,7 @@
 
     return-object p0
 
-    .line 5007
+    .line 4988
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
@@ -17481,7 +17499,7 @@
 
     float-to-int v0, v0
 
-    .line 5008
+    .line 4989
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v1
@@ -17492,14 +17510,14 @@
 
     float-to-int v1, v1
 
-    .line 5009
+    .line 4990
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v0, v1, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 5010
+    .line 4991
     new-instance v3, Landroid/graphics/Canvas;
 
     invoke-direct {v3, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
@@ -17508,22 +17526,22 @@
 
     div-float/2addr v4, p1
 
-    .line 5011
+    .line 4992
     invoke-virtual {v3, v4, v4}, Landroid/graphics/Canvas;->scale(FF)V
 
     const-string/jumbo p1, "windowBackgroundWhite"
 
-    .line 5012
+    .line 4993
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
 
     invoke-virtual {v3, p1}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 5013
+    .line 4994
     invoke-virtual {p0, v3}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 5014
+    .line 4995
     invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
     move-result p0
@@ -17561,7 +17579,7 @@
 
     const/4 v2, 0x0
 
-    .line 5025
+    .line 5006
     :try_start_0
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -17569,7 +17587,7 @@
 
     if-lt v3, v4, :cond_1
 
-    .line 5026
+    .line 5007
     invoke-static {}, Landroid/view/inspector/WindowInspector;->getGlobalWindowViews()Ljava/util/List;
 
     move-result-object v3
@@ -17583,7 +17601,7 @@
 
     const-string v3, "android.view.WindowManagerGlobal"
 
-    .line 5028
+    .line 5009
     invoke-static {v3}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v3
@@ -17592,7 +17610,7 @@
 
     new-array v5, v2, [Ljava/lang/Class;
 
-    .line 5029
+    .line 5010
     invoke-virtual {v3, v4, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v4
@@ -17605,7 +17623,7 @@
 
     new-array v6, v2, [Ljava/lang/Class;
 
-    .line 5031
+    .line 5012
     invoke-virtual {v3, v5, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v5
@@ -17614,7 +17632,7 @@
 
     new-array v7, v0, [Ljava/lang/Class;
 
-    .line 5032
+    .line 5013
     const-class v8, Ljava/lang/String;
 
     aput-object v8, v7, v2
@@ -17623,21 +17641,21 @@
 
     move-result-object v3
 
-    .line 5033
+    .line 5014
     invoke-virtual {v5, v4, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, [Ljava/lang/String;
 
-    .line 5035
+    .line 5016
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 5036
+    .line 5017
     :try_start_1
     array-length v7, v5
 
@@ -17652,7 +17670,7 @@
 
     aput-object v9, v10, v2
 
-    .line 5037
+    .line 5018
     invoke-virtual {v3, v4, v10}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v9
@@ -17682,7 +17700,7 @@
     :try_start_2
     const-string v3, "android.view.WindowManagerImpl"
 
-    .line 5040
+    .line 5021
     invoke-static {v3}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v3
@@ -17691,7 +17709,7 @@
 
     new-array v5, v2, [Ljava/lang/Class;
 
-    .line 5041
+    .line 5022
     invoke-virtual {v3, v4, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v4
@@ -17704,25 +17722,25 @@
 
     const-string v5, "mViews"
 
-    .line 5043
+    .line 5024
     invoke-virtual {v3, v5}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v3
 
-    .line 5044
+    .line 5025
     invoke-virtual {v3, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 5045
+    .line 5026
     invoke-virtual {v3, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
 
-    .line 5047
+    .line 5028
     instance-of v6, v5, Ljava/util/List;
 
     if-eqz v6, :cond_3
 
-    .line 5048
+    .line 5029
     invoke-virtual {v3, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -17731,13 +17749,13 @@
 
     goto :goto_2
 
-    .line 5049
+    .line 5030
     :cond_3
     instance-of v5, v5, [Landroid/view/View;
 
     if-eqz v5, :cond_4
 
-    .line 5050
+    .line 5031
     invoke-virtual {v3, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -17765,7 +17783,7 @@
     :goto_1
     const-string v4, "makeGlobalBlurBitmap()"
 
-    .line 5054
+    .line 5035
     invoke-static {v4, v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_5
@@ -17774,12 +17792,12 @@
     :goto_2
     if-nez v3, :cond_6
 
-    .line 5058
+    .line 5039
     invoke-interface {p0, v1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
     return-void
 
-    .line 5065
+    .line 5046
     :cond_6
     :try_start_3
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -17792,7 +17810,7 @@
 
     float-to-int v4, v4
 
-    .line 5066
+    .line 5047
     iget v1, v1, Landroid/graphics/Point;->y:I
 
     sget v5, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
@@ -17805,14 +17823,14 @@
 
     float-to-int v1, v1
 
-    .line 5067
+    .line 5048
     sget-object v5, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v4, v1, v5}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v5
 
-    .line 5068
+    .line 5049
     new-instance v6, Landroid/graphics/Canvas;
 
     invoke-direct {v6, v5}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
@@ -17821,12 +17839,12 @@
 
     div-float/2addr v7, p1
 
-    .line 5069
+    .line 5050
     invoke-virtual {v6, v7, v7}, Landroid/graphics/Canvas;->scale(FF)V
 
     const-string/jumbo v7, "windowBackgroundWhite"
 
-    .line 5070
+    .line 5051
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v7
@@ -17839,7 +17857,7 @@
 
     move v9, v2
 
-    .line 5072
+    .line 5053
     :goto_3
     invoke-interface {v3}, Ljava/util/List;->size()I
 
@@ -17847,27 +17865,27 @@
 
     if-ge v9, v10, :cond_8
 
-    .line 5073
+    .line 5054
     invoke-interface {v3, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v10
 
     check-cast v10, Landroid/view/View;
 
-    .line 5075
+    .line 5056
     invoke-virtual {v10}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v11
 
-    .line 5076
+    .line 5057
     instance-of v12, v11, Landroid/view/WindowManager$LayoutParams;
 
     if-eqz v12, :cond_7
 
-    .line 5077
+    .line 5058
     check-cast v11, Landroid/view/WindowManager$LayoutParams;
 
-    .line 5078
+    .line 5059
     iget v12, v11, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     and-int/2addr v12, v7
@@ -17878,7 +17896,7 @@
 
     const/high16 v13, 0x437f0000    # 255.0f
 
-    .line 5079
+    .line 5060
     iget v11, v11, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
     mul-float/2addr v11, v13
@@ -17891,14 +17909,14 @@
 
     invoke-virtual {v6, v11}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 5083
+    .line 5064
     :cond_7
     invoke-virtual {v6}, Landroid/graphics/Canvas;->save()I
 
-    .line 5084
+    .line 5065
     invoke-virtual {v10, v8}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 5085
+    .line 5066
     aget v11, v8, v2
 
     int-to-float v11, v11
@@ -17915,13 +17933,13 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 5087
+    .line 5068
     :try_start_4
     invoke-virtual {v10, v6}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
 
-    .line 5091
+    .line 5072
     :catch_2
     :try_start_5
     invoke-virtual {v6}, Landroid/graphics/Canvas;->restore()V
@@ -17933,7 +17951,7 @@
     :cond_8
     float-to-int p1, p1
 
-    .line 5093
+    .line 5074
     invoke-static {v4, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v0
@@ -17946,7 +17964,7 @@
 
     invoke-static {v5, p1}, Lorg/telegram/messenger/Utilities;->stackBlurBitmap(Landroid/graphics/Bitmap;I)V
 
-    .line 5094
+    .line 5075
     new-instance p1, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda14;
 
     invoke-direct {p1, p0, v5}, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/messenger/Utilities$Callback;Landroid/graphics/Bitmap;)V
@@ -17960,10 +17978,10 @@
     :catch_3
     move-exception p1
 
-    .line 5098
+    .line 5079
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 5099
+    .line 5080
     new-instance p1, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda13;
 
     invoke-direct {p1, p0}, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/messenger/Utilities$Callback;)V
@@ -17981,7 +17999,7 @@
 
     move v0, p2
 
-    .line 772
+    .line 751
     :goto_0
     array-length v1, p1
 
@@ -17993,7 +18011,7 @@
 
     const/4 v5, 0x0
 
-    .line 773
+    .line 752
     aget-object v6, p1, v0
 
     const/4 v7, 0x0
@@ -18016,7 +18034,7 @@
 
     const/4 v5, 0x0
 
-    .line 775
+    .line 754
     aget-object v6, p1, v0
 
     const/4 v7, 0x0
@@ -18035,7 +18053,7 @@
 
     if-nez v1, :cond_2
 
-    .line 776
+    .line 755
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -18074,12 +18092,12 @@
     :goto_1
     if-nez v2, :cond_3
 
-    .line 781
+    .line 760
     array-length v0, p1
 
     if-lez v0, :cond_3
 
-    .line 782
+    .line 761
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -18101,7 +18119,7 @@
 .method public static minScreenBound()I
     .locals 2
 
-    .line 252
+    .line 271
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -18118,7 +18136,7 @@
 .method public static multiplyAlphaComponent(IF)I
     .locals 1
 
-    .line 4392
+    .line 4373
     invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v0
@@ -18143,7 +18161,7 @@
 
     return-void
 
-    .line 1157
+    .line 1136
     :cond_0
     new-instance v0, Landroid/graphics/ColorMatrix;
 
@@ -18247,7 +18265,7 @@
 
     const/4 v0, 0x0
 
-    .line 2791
+    .line 2768
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->needShowPasscode(Z)Z
 
     move-result v0
@@ -18256,9 +18274,24 @@
 .end method
 
 .method public static needShowPasscode(Z)Z
+    .locals 2
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    .line 217
+    invoke-static {p0, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->needShowPasscode(ZILcom/iMe/fork/enums/LockedSection;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static needShowPasscode(ZILcom/iMe/fork/enums/LockedSection;)Z
     .locals 5
 
-    .line 2800
+    .line 2772
     invoke-static {}, Lorg/telegram/ui/Components/ForegroundDetector;->getInstance()Lorg/telegram/ui/Components/ForegroundDetector;
 
     move-result-object v0
@@ -18269,14 +18302,14 @@
 
     if-eqz p0, :cond_0
 
-    .line 2802
+    .line 2774
     invoke-static {}, Lorg/telegram/ui/Components/ForegroundDetector;->getInstance()Lorg/telegram/ui/Components/ForegroundDetector;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ForegroundDetector;->resetBackgroundVar()V
 
-    .line 2804
+    .line 2776
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -18288,7 +18321,7 @@
 
     long-to-int v1, v1
 
-    .line 2805
+    .line 2777
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_1
@@ -18303,7 +18336,7 @@
 
     if-lez p0, :cond_1
 
-    .line 2806
+    .line 2778
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -18350,167 +18383,129 @@
 
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 2809
     :cond_1
-    sget-object p0, Lorg/telegram/messenger/SharedConfig;->passcodeHash:Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result p0
-
-    if-lez p0, :cond_4
-
-    if-eqz v0, :cond_4
-
-    sget-boolean p0, Lorg/telegram/messenger/SharedConfig;->appLocked:Z
-
-    if-nez p0, :cond_3
-
-    sget p0, Lorg/telegram/messenger/SharedConfig;->autoLockIn:I
-
-    if-eqz p0, :cond_2
-
-    sget p0, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
-
-    if-eqz p0, :cond_2
-
-    sget-boolean p0, Lorg/telegram/messenger/SharedConfig;->appLocked:Z
-
-    if-nez p0, :cond_2
-
-    sget p0, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
-
-    sget v0, Lorg/telegram/messenger/SharedConfig;->autoLockIn:I
-
-    add-int/2addr p0, v0
-
-    if-le p0, v1, :cond_3
-
-    :cond_2
-    add-int/lit8 v1, v1, 0x5
-
-    sget p0, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
-
-    if-ge v1, p0, :cond_4
-
-    :cond_3
     const/4 p0, 0x1
+
+    const/4 v2, 0x0
+
+    if-eqz p2, :cond_5
+
+    .line 2783
+    invoke-static {p1}, Lcom/iMe/fork/controller/LockedSectionsController;->getInstance(I)Lcom/iMe/fork/controller/LockedSectionsController;
+
+    move-result-object p1
+
+    .line 2784
+    invoke-virtual {p1, p2}, Lcom/iMe/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
+
+    move-result-object p1
+
+    if-nez p1, :cond_2
+
+    return v2
+
+    .line 2788
+    :cond_2
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeHash()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Ljava/lang/String;->isEmpty()Z
+
+    move-result p2
+
+    if-nez p2, :cond_3
+
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->isSectionLocked()Z
+
+    move-result p2
+
+    if-nez p2, :cond_4
+
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getTimeout()I
+
+    move-result p2
+
+    if-eqz p2, :cond_4
+
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getLastAcceptedTime()I
+
+    move-result p2
+
+    sub-int/2addr v1, p2
+
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getTimeout()I
+
+    move-result p1
+
+    if-le v1, p1, :cond_3
 
     goto :goto_0
 
-    :cond_4
-    const/4 p0, 0x0
+    :cond_3
+    move p0, v2
 
+    :cond_4
     :goto_0
     return p0
-.end method
 
-.method public static needShowSectionPasscodeActivity(Lcom/iMe/fork/enums/LockedSection;)Z
-    .locals 6
+    .line 2791
+    :cond_5
+    sget-object p1, Lorg/telegram/messenger/SharedConfig;->passcodeHash:Ljava/lang/String;
 
-    const/4 v0, 0x0
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    if-nez p0, :cond_0
+    move-result p1
 
-    return v0
+    if-lez p1, :cond_7
 
-    .line 282
-    :cond_0
-    sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    if-eqz v0, :cond_7
 
-    invoke-static {v1}, Lcom/iMe/fork/controller/LockedSectionsController;->getInstance(I)Lcom/iMe/fork/controller/LockedSectionsController;
+    sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->appLocked:Z
 
-    move-result-object v1
+    if-nez p1, :cond_8
 
-    invoke-virtual {v1, p0}, Lcom/iMe/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
+    sget p1, Lorg/telegram/messenger/SharedConfig;->autoLockIn:I
 
-    move-result-object p0
+    if-eqz p1, :cond_6
 
-    if-nez p0, :cond_1
+    sget p1, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
 
-    return v0
+    if-eqz p1, :cond_6
 
-    .line 286
-    :cond_1
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->appLocked:Z
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    if-nez p1, :cond_6
 
-    move-result-wide v2
+    sget p1, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
+    sget p2, Lorg/telegram/messenger/SharedConfig;->autoLockIn:I
 
-    move-result-wide v1
+    add-int/2addr p1, p2
 
-    long-to-int v1, v1
+    if-le p1, v1, :cond_8
 
-    .line 287
-    invoke-virtual {p0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeHash()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    .line 288
-    invoke-virtual {p0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->isSectionLocked()Z
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
-    .line 289
-    invoke-virtual {p0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lcom/iMe/fork/enums/AutoLockTime;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/iMe/fork/enums/AutoLockTime;->NONE:Lcom/iMe/fork/enums/AutoLockTime;
-
-    if-eq v2, v3, :cond_2
-
-    sget v2, Lorg/telegram/messenger/SharedConfig;->lastLockedSectionsPauseTime:I
-
-    if-eqz v2, :cond_2
-
-    int-to-long v2, v2
-
-    invoke-virtual {p0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lcom/iMe/fork/enums/AutoLockTime;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lcom/iMe/fork/enums/AutoLockTime;->getTimeInSeconds()J
-
-    move-result-wide v4
-
-    add-long/2addr v2, v4
-
-    int-to-long v4, v1
-
-    cmp-long p0, v2, v4
-
-    if-lez p0, :cond_3
-
-    :cond_2
+    :cond_6
     add-int/lit8 v1, v1, 0x5
 
-    sget p0, Lorg/telegram/messenger/SharedConfig;->lastLockedSectionsPauseTime:I
+    sget p1, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
 
-    if-ge v1, p0, :cond_4
+    if-ge v1, p1, :cond_7
 
-    :cond_3
-    const/4 v0, 0x1
+    goto :goto_1
 
-    :cond_4
-    return v0
+    :cond_7
+    move p0, v2
+
+    :cond_8
+    :goto_1
+    return p0
 .end method
 
 .method public static obtainLoginPhoneCall(Ljava/lang/String;)Ljava/lang/String;
     .locals 8
 
-    .line 2457
+    .line 2434
     sget-boolean v0, Lorg/telegram/messenger/AndroidUtilities;->hasCallPermissions:Z
 
     const/4 v1, 0x0
@@ -18519,7 +18514,7 @@
 
     return-object v1
 
-    .line 2462
+    .line 2439
     :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -18537,7 +18532,7 @@
     :goto_0
     move-object v7, v0
 
-    .line 2467
+    .line 2444
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -18565,7 +18560,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2474
+    .line 2451
     :cond_2
     :goto_1
     :try_start_1
@@ -18577,24 +18572,24 @@
 
     const/4 v2, 0x0
 
-    .line 2475
+    .line 2452
     invoke-interface {v0, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     const/4 v3, 0x1
 
-    .line 2476
+    .line 2453
     invoke-interface {v0, v3}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v3
 
-    .line 2477
+    .line 2454
     sget-boolean v5, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v5, :cond_3
 
-    .line 2478
+    .line 2455
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -18611,7 +18606,7 @@
 
     invoke-static {v5}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 2480
+    .line 2457
     :cond_3
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -18631,7 +18626,7 @@
 
     goto :goto_1
 
-    .line 2483
+    .line 2460
     :cond_4
     invoke-static {p0, v2}, Lorg/telegram/messenger/AndroidUtilities;->checkPhonePattern(Ljava/lang/String;Ljava/lang/String;)Z
 
@@ -18641,7 +18636,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 2487
+    .line 2464
     :try_start_2
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
@@ -18659,7 +18654,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 2467
+    .line 2444
     :try_start_3
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
     :try_end_3
@@ -18682,28 +18677,11 @@
     :catch_0
     move-exception p0
 
-    .line 2488
+    .line 2465
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_3
     return-object v1
-.end method
-
-.method public static onLockedSectionClosed(Landroid/app/Activity;)V
-    .locals 1
-
-    .line 260
-    instance-of v0, p0, Lorg/telegram/ui/LaunchActivity;
-
-    if-eqz v0, :cond_0
-
-    .line 261
-    check-cast p0, Lorg/telegram/ui/LaunchActivity;
-
-    invoke-virtual {p0}, Lorg/telegram/ui/LaunchActivity;->onLockedSectionClosed()V
-
-    :cond_0
-    return-void
 .end method
 
 .method public static openDocument(Lorg/telegram/messenger/MessageObject;Landroid/app/Activity;Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -18719,7 +18697,7 @@
 
     return-void
 
-    .line 3465
+    .line 3446
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -18729,7 +18707,7 @@
 
     return-void
 
-    .line 3470
+    .line 3451
     :cond_1
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/MessageObject;->getDocumentName()Ljava/lang/String;
 
@@ -18741,7 +18719,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 3471
+    .line 3452
     invoke-static {v2, v0}, Lorg/telegram/ui/Components/AlertsCreator;->createRestoreBackupBottomSheetDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessageObject;)Landroid/app/Dialog;
 
     move-result-object v0
@@ -18750,7 +18728,7 @@
 
     return-void
 
-    .line 3476
+    .line 3457
     :cond_2
     iget-object v4, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -18767,7 +18745,7 @@
     :cond_3
     const-string v4, ""
 
-    .line 3477
+    .line 3458
     :goto_0
     iget-object v5, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -18783,7 +18761,7 @@
 
     if-eqz v5, :cond_4
 
-    .line 3478
+    .line 3459
     new-instance v5, Ljava/io/File;
 
     iget-object v7, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -18800,14 +18778,14 @@
     :goto_1
     if-eqz v5, :cond_5
 
-    .line 3480
+    .line 3461
     invoke-virtual {v5}, Ljava/io/File;->exists()Z
 
     move-result v7
 
     if-nez v7, :cond_6
 
-    .line 3481
+    .line 3462
     :cond_5
     sget v5, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -18824,7 +18802,7 @@
     :cond_6
     if-eqz v5, :cond_11
 
-    .line 3483
+    .line 3464
     invoke-virtual {v5}, Ljava/io/File;->exists()Z
 
     move-result v7
@@ -18843,7 +18821,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 3484
+    .line 3465
     invoke-virtual {v5}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v12
@@ -18860,7 +18838,7 @@
 
     if-eqz v12, :cond_8
 
-    .line 3485
+    .line 3466
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/MessageObject;->getDocumentName()Ljava/lang/String;
 
     move-result-object v0
@@ -18871,7 +18849,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 3487
+    .line 3468
     new-instance v1, Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/ThemePreviewActivity;-><init>(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
@@ -18880,18 +18858,18 @@
 
     goto/16 :goto_6
 
-    .line 3489
+    .line 3470
     :cond_7
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 3490
+    .line 3471
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 3491
+    .line 3472
     invoke-virtual {v2, v10}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v3
@@ -18902,7 +18880,7 @@
 
     invoke-interface {v1, v9, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3492
+    .line 3473
     invoke-virtual {v2, v10}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v3
@@ -18913,7 +18891,7 @@
 
     invoke-interface {v1, v8, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3493
+    .line 3474
     sget v13, Lorg/telegram/messenger/R$raw;->not_available:I
 
     const/16 v14, 0x34
@@ -18930,10 +18908,10 @@
 
     invoke-virtual/range {v12 .. v17}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopAnimation(IIZILjava/util/Map;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3494
+    .line 3475
     invoke-virtual {v0, v11}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopAnimationIsNew(Z)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3495
+    .line 3476
     sget v1, Lorg/telegram/messenger/R$string;->IncorrectTheme:I
 
     const-string v3, "IncorrectTheme"
@@ -18944,7 +18922,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3496
+    .line 3477
     sget v1, Lorg/telegram/messenger/R$string;->OK:I
 
     invoke-static {v7, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -18953,7 +18931,7 @@
 
     invoke-virtual {v0, v1, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3497
+    .line 3478
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -18962,7 +18940,7 @@
 
     goto/16 :goto_6
 
-    .line 3502
+    .line 3483
     :cond_8
     :try_start_0
     new-instance v12, Landroid/content/Intent;
@@ -18971,17 +18949,17 @@
 
     invoke-direct {v12, v13}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3503
+    .line 3484
     invoke-virtual {v12, v11}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 3504
+    .line 3485
     invoke-static {}, Landroid/webkit/MimeTypeMap;->getSingleton()Landroid/webkit/MimeTypeMap;
 
     move-result-object v13
 
     const/16 v14, 0x2e
 
-    .line 3505
+    .line 3486
     invoke-virtual {v4, v14}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v14
@@ -18992,12 +18970,12 @@
 
     add-int/2addr v14, v11
 
-    .line 3507
+    .line 3488
     invoke-virtual {v4, v14}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 3508
+    .line 3489
     invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v4
@@ -19008,12 +18986,12 @@
 
     if-nez v4, :cond_a
 
-    .line 3510
+    .line 3491
     iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
     if-eqz v4, :cond_9
 
-    .line 3511
+    .line 3492
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v3
@@ -19023,7 +19001,7 @@
     :cond_9
     move-object v4, v6
 
-    .line 3516
+    .line 3497
     :cond_a
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
     :try_end_0
@@ -19037,7 +19015,7 @@
 
     if-lt v3, v14, :cond_c
 
-    .line 3517
+    .line 3498
     :try_start_1
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -19073,7 +19051,7 @@
 
     goto :goto_4
 
-    .line 3519
+    .line 3500
     :cond_c
     invoke-static {v5}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
@@ -19098,7 +19076,7 @@
 
     if-eqz v4, :cond_f
 
-    .line 3523
+    .line 3504
     :try_start_2
     invoke-virtual {v1, v12, v3}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
     :try_end_2
@@ -19106,14 +19084,14 @@
 
     goto/16 :goto_6
 
-    .line 3525
+    .line 3506
     :catch_0
     :try_start_3
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v4, v14, :cond_e
 
-    .line 3526
+    .line 3507
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -19138,7 +19116,7 @@
 
     goto :goto_5
 
-    .line 3528
+    .line 3509
     :cond_e
     invoke-static {v5}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
@@ -19146,13 +19124,13 @@
 
     invoke-virtual {v12, v4, v15}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3530
+    .line 3511
     :goto_5
     invoke-virtual {v1, v12, v3}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_6
 
-    .line 3533
+    .line 3514
     :cond_f
     invoke-virtual {v1, v12, v3}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
     :try_end_3
@@ -19165,18 +19143,18 @@
 
     return-void
 
-    .line 3539
+    .line 3520
     :cond_10
     new-instance v3, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v3, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 3540
+    .line 3521
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 3541
+    .line 3522
     invoke-virtual {v2, v10}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v4
@@ -19187,7 +19165,7 @@
 
     invoke-interface {v1, v9, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3542
+    .line 3523
     invoke-virtual {v2, v10}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v4
@@ -19198,7 +19176,7 @@
 
     invoke-interface {v1, v8, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3543
+    .line 3524
     sget v18, Lorg/telegram/messenger/R$raw;->not_available:I
 
     const/16 v19, 0x34
@@ -19215,10 +19193,10 @@
 
     invoke-virtual/range {v17 .. v22}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopAnimation(IIZILjava/util/Map;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3544
+    .line 3525
     invoke-virtual {v3, v11}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopAnimationIsNew(Z)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3545
+    .line 3526
     sget v1, Lorg/telegram/messenger/R$string;->OK:I
 
     invoke-static {v7, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -19229,7 +19207,7 @@
 
     invoke-virtual {v3, v1, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3546
+    .line 3527
     sget v1, Lorg/telegram/messenger/R$string;->NoHandleAppInstalled:I
 
     new-array v4, v11, [Ljava/lang/Object;
@@ -19252,7 +19230,7 @@
 
     invoke-virtual {v3, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3548
+    .line 3529
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -19269,14 +19247,14 @@
 
     if-eqz p0, :cond_9
 
-    .line 3558
+    .line 3539
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
     move-result v0
 
     if-eqz v0, :cond_9
 
-    .line 3560
+    .line 3541
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW"
@@ -19285,17 +19263,17 @@
 
     const/4 v1, 0x1
 
-    .line 3561
+    .line 3542
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 3562
+    .line 3543
     invoke-static {}, Landroid/webkit/MimeTypeMap;->getSingleton()Landroid/webkit/MimeTypeMap;
 
     move-result-object v2
 
     const/16 v3, 0x2e
 
-    .line 3563
+    .line 3544
     invoke-virtual {p1, v3}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v3
@@ -19308,12 +19286,12 @@
 
     add-int/2addr v3, v1
 
-    .line 3565
+    .line 3546
     invoke-virtual {p1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 3566
+    .line 3547
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object p1
@@ -19326,7 +19304,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 3569
+    .line 3550
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result p1
@@ -19344,7 +19322,7 @@
     :goto_0
     move-object p2, v5
 
-    .line 3574
+    .line 3555
     :cond_2
     :goto_1
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -19375,7 +19353,7 @@
 
     if-nez v2, :cond_3
 
-    .line 3575
+    .line 3556
     invoke-static {p3, p4}, Lorg/telegram/ui/Components/AlertsCreator;->createApkRestrictedDialog(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/app/Dialog;
 
     move-result-object p0
@@ -19393,7 +19371,7 @@
 
     if-lt p1, v2, :cond_5
 
-    .line 3579
+    .line 3560
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -19428,7 +19406,7 @@
 
     goto :goto_4
 
-    .line 3581
+    .line 3562
     :cond_5
     invoke-static {p0}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
@@ -19451,7 +19429,7 @@
 
     if-eqz p2, :cond_8
 
-    .line 3585
+    .line 3566
     :try_start_0
     invoke-virtual {p3, v0, p1}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
     :try_end_0
@@ -19459,13 +19437,13 @@
 
     goto :goto_6
 
-    .line 3587
+    .line 3568
     :catch_0
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt p2, v2, :cond_7
 
-    .line 3588
+    .line 3569
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -19490,7 +19468,7 @@
 
     goto :goto_5
 
-    .line 3590
+    .line 3571
     :cond_7
     invoke-static {p0}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
@@ -19498,13 +19476,13 @@
 
     invoke-virtual {v0, p0, v3}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3592
+    .line 3573
     :goto_5
     invoke-virtual {p3, v0, p1}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_6
 
-    .line 3595
+    .line 3576
     :cond_8
     invoke-virtual {p3, v0, p1}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
 
@@ -19520,7 +19498,7 @@
 .method public static openForView(Lorg/telegram/messenger/MessageObject;Landroid/app/Activity;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Z
     .locals 4
 
-    .line 3604
+    .line 3585
     iget-object v0, p0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
@@ -19535,7 +19513,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3605
+    .line 3586
     new-instance v0, Ljava/io/File;
 
     iget-object v2, p0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -19552,14 +19530,14 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 3607
+    .line 3588
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 3608
+    .line 3589
     :cond_1
     iget v0, p0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
@@ -19573,7 +19551,7 @@
 
     move-result-object v0
 
-    .line 3610
+    .line 3591
     :cond_2
     iget v2, p0, Lorg/telegram/messenger/MessageObject;->type:I
 
@@ -19588,7 +19566,7 @@
 
     move-result-object v1
 
-    .line 3611
+    .line 3592
     :cond_4
     invoke-virtual {p0}, Lorg/telegram/messenger/MessageObject;->getFileName()Ljava/lang/String;
 
@@ -19612,13 +19590,13 @@
 
     goto/16 :goto_6
 
-    .line 3697
+    .line 3678
     :cond_0
     invoke-static {p0}, Lorg/telegram/messenger/FileLoader;->getAttachFileName(Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3698
+    .line 3679
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -19633,31 +19611,31 @@
 
     if-eqz v2, :cond_9
 
-    .line 3699
+    .line 3680
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
     move-result v4
 
     if-eqz v4, :cond_9
 
-    .line 3701
+    .line 3682
     new-instance v0, Landroid/content/Intent;
 
     const-string v4, "android.intent.action.VIEW"
 
     invoke-direct {v0, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3702
+    .line 3683
     invoke-virtual {v0, v3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 3703
+    .line 3684
     invoke-static {}, Landroid/webkit/MimeTypeMap;->getSingleton()Landroid/webkit/MimeTypeMap;
 
     move-result-object v4
 
     const/16 v5, 0x2e
 
-    .line 3704
+    .line 3685
     invoke-virtual {v1, v5}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v5
@@ -19670,12 +19648,12 @@
 
     add-int/2addr v5, v3
 
-    .line 3706
+    .line 3687
     invoke-virtual {v1, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3707
+    .line 3688
     invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
@@ -19686,12 +19664,12 @@
 
     if-nez v1, :cond_2
 
-    .line 3709
+    .line 3690
     instance-of v4, p0, Lorg/telegram/tgnet/TLRPC$TL_document;
 
     if-eqz v4, :cond_1
 
-    .line 3710
+    .line 3691
     check-cast p0, Lorg/telegram/tgnet/TLRPC$TL_document;
 
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
@@ -19699,7 +19677,7 @@
     :cond_1
     if-eqz v1, :cond_3
 
-    .line 3712
+    .line 3693
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result p0
@@ -19711,7 +19689,7 @@
     :cond_2
     move-object v7, v1
 
-    .line 3717
+    .line 3698
     :cond_3
     :goto_0
     sget p0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -19724,7 +19702,7 @@
 
     if-lt p0, v4, :cond_5
 
-    .line 3718
+    .line 3699
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -19759,7 +19737,7 @@
 
     goto :goto_3
 
-    .line 3720
+    .line 3701
     :cond_5
     invoke-static {v2}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
@@ -19782,7 +19760,7 @@
 
     if-eqz v7, :cond_8
 
-    .line 3724
+    .line 3705
     :try_start_0
     invoke-virtual {p1, v0, p0}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
     :try_end_0
@@ -19790,13 +19768,13 @@
 
     goto :goto_5
 
-    .line 3726
+    .line 3707
     :catch_0
     sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v6, v4, :cond_7
 
-    .line 3727
+    .line 3708
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -19821,7 +19799,7 @@
 
     goto :goto_4
 
-    .line 3729
+    .line 3710
     :cond_7
     invoke-static {v2}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
@@ -19829,13 +19807,13 @@
 
     invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3731
+    .line 3712
     :goto_4
     invoke-virtual {p1, v0, p0}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_5
 
-    .line 3734
+    .line 3715
     :cond_8
     invoke-virtual {p1, v0, p0}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
 
@@ -19850,12 +19828,12 @@
 .method public static openForView(Lorg/telegram/tgnet/TLRPC$Document;ZLandroid/app/Activity;)Z
     .locals 2
 
-    .line 3615
+    .line 3596
     invoke-static {p0}, Lorg/telegram/messenger/FileLoader;->getAttachFileName(Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 3616
+    .line 3597
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -19868,7 +19846,7 @@
 
     move-result-object v0
 
-    .line 3617
+    .line 3598
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -19885,7 +19863,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 4427
+    .line 4408
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -19894,7 +19872,7 @@
 
     goto :goto_0
 
-    .line 4430
+    .line 4411
     :cond_0
     new-instance v0, Lorg/telegram/ui/Components/ShareAlert;
 
@@ -19934,13 +19912,13 @@
         }
     .end annotation
 
-    .line 876
+    .line 855
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda15;->INSTANCE:Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda15;
 
-    .line 892
+    .line 871
     invoke-static {p0, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 894
+    .line 873
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -19952,7 +19930,7 @@
 
     if-ge v1, v2, :cond_4
 
-    .line 898
+    .line 877
     invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -19961,14 +19939,14 @@
 
     add-int/lit8 v3, v1, 0x1
 
-    .line 899
+    .line 878
     invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;
 
-    .line 902
+    .line 881
     iget v5, v2, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;->start:I
 
     iget v6, v4, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;->start:I
@@ -19979,7 +19957,7 @@
 
     if-le v2, v6, :cond_3
 
-    .line 903
+    .line 882
     iget v4, v4, Lorg/telegram/messenger/AndroidUtilities$LinkSpec;->end:I
 
     const/4 v7, -0x1
@@ -20017,7 +19995,7 @@
     :goto_2
     if-eq v2, v7, :cond_3
 
-    .line 911
+    .line 890
     invoke-virtual {p0, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     add-int/lit8 v0, v0, -0x1
@@ -20046,7 +20024,7 @@
 
     return p0
 
-    .line 248
+    .line 267
     :cond_0
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
@@ -20066,7 +20044,7 @@
 .method public static recycleBitmap(Landroid/graphics/Bitmap;)V
     .locals 0
 
-    .line 707
+    .line 686
     invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
@@ -20087,7 +20065,7 @@
         }
     .end annotation
 
-    .line 646
+    .line 625
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
@@ -20099,14 +20077,14 @@
     :cond_0
     if-eqz p0, :cond_1
 
-    .line 656
+    .line 635
     invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 657
+    .line 636
     new-instance v0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda11;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda11;-><init>(Ljava/util/List;)V
@@ -20124,7 +20102,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 1249
+    .line 1228
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
@@ -20133,13 +20111,13 @@
 
     goto :goto_0
 
-    .line 1252
+    .line 1231
     :cond_0
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->adjustOwnerClassGuid:I
 
     if-ne v0, p1, :cond_1
 
-    .line 1253
+    .line 1232
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object p0
@@ -20160,13 +20138,13 @@
 
     return-void
 
-    .line 1211
+    .line 1190
     :cond_0
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->altFocusableClassGuid:I
 
     if-ne v0, p1, :cond_1
 
-    .line 1212
+    .line 1191
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object p0
@@ -20182,14 +20160,16 @@
 .method public static removeFromParent(Landroid/view/View;)V
     .locals 1
 
-    .line 726
+    if-eqz p0, :cond_0
+
+    .line 705
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 727
+    .line 706
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -20205,25 +20185,25 @@
 .method public static replaceCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 1
 
-    .line 4972
+    .line 4953
     instance-of v0, p1, Landroid/text/SpannableStringBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 4973
+    .line 4954
     move-object v0, p1
 
     check-cast v0, Landroid/text/SpannableStringBuilder;
 
     goto :goto_0
 
-    .line 4975
+    .line 4956
     :cond_0
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v0, p1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 4977
+    .line 4958
     :goto_0
     invoke-static {p1, p0}, Landroid/text/TextUtils;->indexOf(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)I
 
@@ -20231,7 +20211,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 4979
+    .line 4960
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result p0
@@ -20247,25 +20227,25 @@
 .method public static replaceMultipleCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 2
 
-    .line 4986
+    .line 4967
     instance-of v0, p1, Landroid/text/SpannableStringBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 4987
+    .line 4968
     move-object v0, p1
 
     check-cast v0, Landroid/text/SpannableStringBuilder;
 
     goto :goto_0
 
-    .line 4989
+    .line 4970
     :cond_0
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v0, p1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 4991
+    .line 4972
     :goto_0
     invoke-static {p1, p0}, Landroid/text/TextUtils;->indexOf(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)I
 
@@ -20274,7 +20254,7 @@
     :goto_1
     if-ltz p1, :cond_1
 
-    .line 4993
+    .line 4974
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -20283,7 +20263,7 @@
 
     invoke-virtual {v0, p1, v1, p2}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 4994
+    .line 4975
     invoke-static {v0, p0}, Landroid/text/TextUtils;->indexOf(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)I
 
     move-result p1
@@ -20297,7 +20277,7 @@
 .method public static replaceNewLines(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 6
 
-    .line 3673
+    .line 3654
     instance-of v0, p0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x20
@@ -20308,12 +20288,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 3674
+    .line 3655
     move-object v0, p0
 
     check-cast v0, Ljava/lang/StringBuilder;
 
-    .line 3675
+    .line 3656
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v4
@@ -20321,14 +20301,14 @@
     :goto_0
     if-ge v2, v4, :cond_1
 
-    .line 3676
+    .line 3657
     invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v5
 
     if-ne v5, v3, :cond_0
 
-    .line 3677
+    .line 3658
     invoke-virtual {v0, v2, v1}, Ljava/lang/StringBuilder;->setCharAt(IC)V
 
     :cond_0
@@ -20339,18 +20319,18 @@
     :cond_1
     return-object p0
 
-    .line 3681
+    .line 3662
     :cond_2
     instance-of v0, p0, Landroid/text/SpannableStringBuilder;
 
     if-eqz v0, :cond_5
 
-    .line 3682
+    .line 3663
     move-object v0, p0
 
     check-cast v0, Landroid/text/SpannableStringBuilder;
 
-    .line 3683
+    .line 3664
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
@@ -20358,7 +20338,7 @@
     :goto_1
     if-ge v2, v1, :cond_4
 
-    .line 3684
+    .line 3665
     invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v4
@@ -20369,7 +20349,7 @@
 
     const-string v5, " "
 
-    .line 3685
+    .line 3666
     invoke-virtual {v0, v2, v4, v5}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     :cond_3
@@ -20380,7 +20360,7 @@
     :cond_4
     return-object p0
 
-    .line 3690
+    .line 3671
     :cond_5
     invoke-interface {p0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
@@ -20400,7 +20380,7 @@
 
     const/4 v1, 0x0
 
-    .line 596
+    .line 575
     invoke-static {p0, v0, v1, p1}, Lorg/telegram/messenger/AndroidUtilities;->replaceSingleTag(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)Ljava/lang/CharSequence;
 
     move-result-object p0
@@ -20413,21 +20393,21 @@
 
     const-string v0, "**"
 
-    .line 600
+    .line 579
     invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v1
 
     add-int/lit8 v2, v1, 0x1
 
-    .line 601
+    .line 580
     invoke-virtual {p0, v0, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
 
     move-result v2
 
     const-string v3, ""
 
-    .line 602
+    .line 581
     invoke-virtual {p0, v0, v3}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p0
@@ -20453,7 +20433,7 @@
 
     move v2, v0
 
-    .line 609
+    .line 588
     :goto_0
     new-instance v3, Landroid/text/SpannableStringBuilder;
 
@@ -20463,7 +20443,7 @@
 
     if-nez p2, :cond_1
 
-    .line 612
+    .line 591
     new-instance p0, Lorg/telegram/messenger/AndroidUtilities$1;
 
     invoke-direct {p0, p1, p3}, Lorg/telegram/messenger/AndroidUtilities$1;-><init>(Ljava/lang/String;Ljava/lang/Runnable;)V
@@ -20474,7 +20454,7 @@
 
     goto :goto_1
 
-    .line 631
+    .line 610
     :cond_1
     new-instance p0, Lorg/telegram/messenger/AndroidUtilities$2;
 
@@ -20498,7 +20478,7 @@
 
     const/16 v1, 0xb
 
-    .line 2714
+    .line 2691
     invoke-static {p0, v1, v0}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;I[Ljava/lang/Object;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p0
@@ -20511,7 +20491,7 @@
 
     const-string p2, "<b>"
 
-    .line 2721
+    .line 2698
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -20526,7 +20506,7 @@
     :goto_0
     const-string v1, "<br>"
 
-    .line 2723
+    .line 2700
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
 
     move-result v1
@@ -20539,7 +20519,7 @@
 
     add-int/lit8 v4, v1, 0x4
 
-    .line 2724
+    .line 2701
     :try_start_1
     invoke-virtual {v0, v1, v4, v3}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -20549,7 +20529,7 @@
     :goto_1
     const-string v1, "<br/>"
 
-    .line 2726
+    .line 2703
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
 
     move-result v1
@@ -20558,12 +20538,12 @@
 
     add-int/lit8 v4, v1, 0x5
 
-    .line 2727
+    .line 2704
     invoke-virtual {v0, v1, v4, v3}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
 
-    .line 2730
+    .line 2707
     :cond_1
     new-instance v1, Ljava/util/ArrayList;
 
@@ -20579,7 +20559,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 2732
+    .line 2709
     :goto_2
     :try_start_2
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
@@ -20590,19 +20570,19 @@
 
     add-int/lit8 v6, v3, 0x3
 
-    .line 2733
+    .line 2710
     invoke-virtual {v0, v3, v6, v5}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v6, "</b>"
 
-    .line 2734
+    .line 2711
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
 
     move-result v6
 
     if-ne v6, v2, :cond_2
 
-    .line 2736
+    .line 2713
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
 
     move-result v6
@@ -20610,17 +20590,17 @@
     :cond_2
     add-int/lit8 v7, v6, 0x4
 
-    .line 2738
+    .line 2715
     invoke-virtual {v0, v6, v7, v5}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2739
+    .line 2716
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2740
+    .line 2717
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -20629,7 +20609,7 @@
 
     goto :goto_2
 
-    .line 2742
+    .line 2719
     :cond_3
     :goto_3
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
@@ -20640,10 +20620,10 @@
 
     add-int/lit8 v3, p2, 0x2
 
-    .line 2743
+    .line 2720
     invoke-virtual {v0, p2, v3, v5}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2744
+    .line 2721
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
 
     move-result v3
@@ -20652,17 +20632,17 @@
 
     add-int/lit8 v6, v3, 0x2
 
-    .line 2746
+    .line 2723
     invoke-virtual {v0, v3, v6, v5}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2747
+    .line 2724
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
     invoke-virtual {v1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2748
+    .line 2725
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -20676,7 +20656,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 2753
+    .line 2730
     :cond_5
     :goto_4
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
@@ -20687,10 +20667,10 @@
 
     add-int/lit8 p2, p1, 0x2
 
-    .line 2754
+    .line 2731
     invoke-virtual {v0, p1, p2, v5}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2755
+    .line 2732
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
 
     move-result p2
@@ -20699,17 +20679,17 @@
 
     add-int/lit8 v3, p2, 0x2
 
-    .line 2757
+    .line 2734
     invoke-virtual {v0, p2, v3, v5}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2758
+    .line 2735
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2759
+    .line 2736
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -20718,7 +20698,7 @@
 
     goto :goto_4
 
-    .line 2763
+    .line 2740
     :cond_6
     new-instance p1, Landroid/text/SpannableStringBuilder;
 
@@ -20726,7 +20706,7 @@
 
     const/4 p2, 0x0
 
-    .line 2764
+    .line 2741
     :goto_5
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -20736,7 +20716,7 @@
 
     if-ge p2, v0, :cond_7
 
-    .line 2765
+    .line 2742
     new-instance v0, Lorg/telegram/ui/Components/TypefaceSpan;
 
     const-string v2, "fonts/rmedium.ttf"
@@ -20787,10 +20767,10 @@
     :catch_0
     move-exception p1
 
-    .line 2769
+    .line 2746
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2771
+    .line 2748
     new-instance p1, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {p1, p0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
@@ -20805,7 +20785,7 @@
 
     new-array v0, v0, [C
 
-    .line 3646
+    .line 3627
     instance-of v1, p0, Ljava/lang/StringBuilder;
 
     const-string v2, "\n"
@@ -20818,12 +20798,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 3647
+    .line 3628
     move-object v1, p0
 
     check-cast v1, Ljava/lang/StringBuilder;
 
-    .line 3648
+    .line 3629
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v6
@@ -20837,10 +20817,10 @@
 
     add-int/lit8 v8, v7, 0x2
 
-    .line 3649
+    .line 3630
     invoke-virtual {v1, v7, v8, v0, v5}, Ljava/lang/StringBuilder;->getChars(II[CI)V
 
-    .line 3650
+    .line 3631
     aget-char v9, v0, v5
 
     if-ne v9, v4, :cond_0
@@ -20849,7 +20829,7 @@
 
     if-ne v9, v4, :cond_0
 
-    .line 3651
+    .line 3632
     invoke-virtual {v1, v7, v8, v2}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -20866,18 +20846,18 @@
     :cond_1
     return-object p0
 
-    .line 3657
+    .line 3638
     :cond_2
     instance-of v1, p0, Landroid/text/SpannableStringBuilder;
 
     if-eqz v1, :cond_5
 
-    .line 3658
+    .line 3639
     move-object v1, p0
 
     check-cast v1, Landroid/text/SpannableStringBuilder;
 
-    .line 3659
+    .line 3640
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v6
@@ -20891,10 +20871,10 @@
 
     add-int/lit8 v8, v7, 0x2
 
-    .line 3660
+    .line 3641
     invoke-virtual {v1, v7, v8, v0, v5}, Landroid/text/SpannableStringBuilder;->getChars(II[CI)V
 
-    .line 3661
+    .line 3642
     aget-char v9, v0, v5
 
     if-ne v9, v4, :cond_3
@@ -20903,7 +20883,7 @@
 
     if-ne v9, v4, :cond_3
 
-    .line 3662
+    .line 3643
     invoke-virtual {v1, v7, v8, v2}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v1
@@ -20920,7 +20900,7 @@
     :cond_4
     return-object p0
 
-    .line 3669
+    .line 3650
     :cond_5
     invoke-interface {p0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
@@ -20940,7 +20920,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 1232
+    .line 1211
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
@@ -20949,7 +20929,7 @@
 
     goto :goto_0
 
-    .line 1235
+    .line 1214
     :cond_0
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
@@ -20959,7 +20939,7 @@
 
     invoke-virtual {p0, v0}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    .line 1236
+    .line 1215
     sput p1, Lorg/telegram/messenger/AndroidUtilities;->adjustOwnerClassGuid:I
 
     :cond_1
@@ -20974,7 +20954,7 @@
 
     return-void
 
-    .line 1220
+    .line 1199
     :cond_0
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
@@ -20990,7 +20970,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 1224
+    .line 1203
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
@@ -21002,10 +20982,10 @@
     :cond_0
     const/16 v0, 0x10
 
-    .line 1227
+    .line 1206
     invoke-virtual {p0, v0}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    .line 1228
+    .line 1207
     sput p1, Lorg/telegram/messenger/AndroidUtilities;->adjustOwnerClassGuid:I
 
     :cond_1
@@ -21020,7 +21000,7 @@
 
     return-void
 
-    .line 1202
+    .line 1181
     :cond_0
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
@@ -21030,7 +21010,7 @@
 
     invoke-virtual {p0, v0, v0}, Landroid/view/Window;->setFlags(II)V
 
-    .line 1204
+    .line 1183
     sput p1, Lorg/telegram/messenger/AndroidUtilities;->altFocusableClassGuid:I
 
     return-void
@@ -21039,12 +21019,12 @@
 .method public static resetTabletFlag()V
     .locals 1
 
-    .line 2364
+    .line 2341
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->wasTablet:Ljava/lang/Boolean;
 
     if-nez v0, :cond_0
 
-    .line 2365
+    .line 2342
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTabletInternal()Z
 
     move-result v0
@@ -21058,10 +21038,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 2367
+    .line 2344
     sput-object v0, Lorg/telegram/messenger/AndroidUtilities;->isTablet:Ljava/lang/Boolean;
 
-    .line 2368
+    .line 2345
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->updateTabletConfig()V
 
     return-void
@@ -21072,7 +21052,7 @@
 
     const/4 v0, 0x0
 
-    .line 2372
+    .line 2349
     sput-object v0, Lorg/telegram/messenger/AndroidUtilities;->wasTablet:Ljava/lang/Boolean;
 
     return-void
@@ -21081,7 +21061,7 @@
 .method public static rgbToHsv(I)[D
     .locals 2
 
-    .line 1025
+    .line 1004
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
@@ -21136,7 +21116,7 @@
 
     goto :goto_0
 
-    .line 1032
+    .line 1011
     :cond_0
     invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->max(DD)D
 
@@ -21155,7 +21135,7 @@
 
     goto :goto_1
 
-    .line 1033
+    .line 1012
     :cond_1
     invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->min(DD)D
 
@@ -21266,17 +21246,17 @@
 
     const-string v0, "percents or output is null"
 
-    .line 5109
+    .line 5090
     invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     if-nez p1, :cond_0
 
-    .line 5112
+    .line 5093
     array-length p1, p0
 
     new-array p1, p1, [I
 
-    .line 5114
+    .line 5095
     :cond_0
     array-length v0, p0
 
@@ -21292,13 +21272,13 @@
 
     move v2, v1
 
-    .line 5119
+    .line 5100
     :goto_0
     array-length v4, p0
 
     if-ge v2, v4, :cond_1
 
-    .line 5120
+    .line 5101
     aget v4, p0, v2
 
     add-float/2addr v3, v4
@@ -21312,7 +21292,7 @@
 
     move v4, v2
 
-    .line 5124
+    .line 5105
     :goto_1
     array-length v5, p0
 
@@ -21320,7 +21300,7 @@
 
     if-ge v2, v5, :cond_2
 
-    .line 5125
+    .line 5106
     aget v5, p0, v2
 
     div-float/2addr v5, v3
@@ -21355,13 +21335,13 @@
 
     move v5, v1
 
-    .line 5131
+    .line 5112
     :goto_3
     array-length v8, p0
 
     if-ge v5, v8, :cond_4
 
-    .line 5132
+    .line 5113
     aget v8, p0, v5
 
     div-float/2addr v8, v3
@@ -21374,7 +21354,7 @@
 
     sub-float/2addr v8, v9
 
-    .line 5133
+    .line 5114
     aget v9, p0, v5
 
     cmpl-float v9, v9, v0
@@ -21399,7 +21379,7 @@
 
     goto :goto_4
 
-    .line 5141
+    .line 5122
     :cond_5
     aget v5, p1, v2
 
@@ -21415,7 +21395,7 @@
     :goto_4
     return-object p1
 
-    .line 5115
+    .line 5096
     :cond_7
     new-instance p0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -21431,7 +21411,7 @@
 
     const-wide/16 v0, 0x0
 
-    .line 2327
+    .line 2304
     invoke-static {p0, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void
@@ -21440,7 +21420,7 @@
 .method public static runOnUIThread(Ljava/lang/Runnable;J)V
     .locals 2
 
-    .line 2331
+    .line 2308
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_0
@@ -21454,14 +21434,14 @@
 
     if-nez v0, :cond_1
 
-    .line 2335
+    .line 2312
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationHandler:Landroid/os/Handler;
 
     invoke-virtual {p1, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     goto :goto_0
 
-    .line 2337
+    .line 2314
     :cond_1
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationHandler:Landroid/os/Handler;
 
@@ -21480,7 +21460,7 @@
 
     goto :goto_0
 
-    .line 4671
+    .line 4652
     :cond_0
     invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
 
@@ -21504,7 +21484,7 @@
 
     check-cast p0, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 4673
+    .line 4654
     :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -21516,27 +21496,27 @@
 
     move-result-object v0
 
-    .line 4674
+    .line 4655
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 4675
+    .line 4656
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 4676
+    .line 4657
     new-instance v2, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda19;
 
     invoke-direct {v2, p0, p1, v1}, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lorg/telegram/ui/Components/RecyclerListView;)V
 
-    .line 4691
+    .line 4672
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->highlightRow(Lorg/telegram/ui/Components/RecyclerListView$IntReturnCallback;)V
 
     const/4 p0, 0x0
 
-    .line 4692
+    .line 4673
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -21552,7 +21532,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 1240
+    .line 1219
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
@@ -21561,7 +21541,7 @@
 
     goto :goto_0
 
-    .line 1243
+    .line 1222
     :cond_0
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->adjustOwnerClassGuid:I
 
@@ -21569,7 +21549,7 @@
 
     if-ne v0, p1, :cond_2
 
-    .line 1244
+    .line 1223
     :cond_1
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
@@ -21591,21 +21571,21 @@
 
     return-void
 
-    .line 2571
+    .line 2548
     :cond_0
     invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 2572
+    .line 2549
     instance-of v0, p0, Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_1
 
-    .line 2573
+    .line 2550
     check-cast p0, Landroid/view/ViewGroup;
 
     const/4 v0, 0x0
 
-    .line 2574
+    .line 2551
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -21613,7 +21593,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 2575
+    .line 2552
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
@@ -21633,7 +21613,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 4406
+    .line 4387
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -21647,7 +21627,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 4411
+    .line 4392
     :try_start_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -21659,7 +21639,7 @@
 
     invoke-virtual {p1, v0, v0}, Landroid/view/Window;->setFlags(II)V
 
-    .line 4412
+    .line 4393
     new-instance p1, Ljava/lang/ref/WeakReference;
 
     invoke-direct {p1, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -21670,7 +21650,7 @@
 
     goto :goto_0
 
-    .line 4416
+    .line 4397
     :cond_1
     sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->flagSecureFragment:Ljava/lang/ref/WeakReference;
 
@@ -21682,7 +21662,7 @@
 
     if-ne p1, p0, :cond_2
 
-    .line 4418
+    .line 4399
     :try_start_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -21699,7 +21679,7 @@
     :catch_0
     const/4 p0, 0x0
 
-    .line 4422
+    .line 4403
     sput-object p0, Lorg/telegram/messenger/AndroidUtilities;->flagSecureFragment:Ljava/lang/ref/WeakReference;
 
     :catch_1
@@ -21713,14 +21693,14 @@
 
     if-eqz p0, :cond_1
 
-    .line 4549
+    .line 4530
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1a
 
     if-lt v0, v1, :cond_1
 
-    .line 4550
+    .line 4531
     invoke-virtual {p0}, Landroid/view/View;->getSystemUiVisibility()I
 
     move-result v0
@@ -21734,7 +21714,7 @@
     :cond_0
     and-int/lit8 p1, v0, -0x11
 
-    .line 4556
+    .line 4537
     :goto_0
     invoke-virtual {p0, p1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
@@ -21747,7 +21727,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 4562
+    .line 4543
     invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
     move-result-object p0
@@ -21763,7 +21743,7 @@
 
     const/4 v0, 0x0
 
-    .line 4500
+    .line 4481
     invoke-static {p0, p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->setLightStatusBar(Landroid/view/Window;ZZ)V
 
     return-void
@@ -21772,19 +21752,19 @@
 .method public static setLightStatusBar(Landroid/view/Window;ZZ)V
     .locals 2
 
-    .line 4504
+    .line 4485
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x17
 
     if-lt p2, v0, :cond_3
 
-    .line 4505
+    .line 4486
     invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
     move-result-object p2
 
-    .line 4506
+    .line 4487
     invoke-virtual {p2}, Landroid/view/View;->getSystemUiVisibility()I
 
     move-result v0
@@ -21799,10 +21779,10 @@
 
     or-int/lit16 p1, v0, 0x2000
 
-    .line 4510
+    .line 4491
     invoke-virtual {p2, p1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    .line 4518
+    .line 4499
     :cond_0
     invoke-virtual {p0}, Landroid/view/Window;->getStatusBarColor()I
 
@@ -21810,7 +21790,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 4519
+    .line 4500
     invoke-virtual {p0, v1}, Landroid/view/Window;->setStatusBarColor(I)V
 
     goto :goto_0
@@ -21822,10 +21802,10 @@
 
     and-int/lit16 p1, v0, -0x2001
 
-    .line 4524
+    .line 4505
     invoke-virtual {p2, p1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    .line 4532
+    .line 4513
     :cond_2
     invoke-virtual {p0}, Landroid/view/Window;->getStatusBarColor()I
 
@@ -21833,7 +21813,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 4533
+    .line 4514
     invoke-virtual {p0, v1}, Landroid/view/Window;->setStatusBarColor(I)V
 
     :cond_3
@@ -21858,7 +21838,7 @@
 
     const/4 v0, 0x1
 
-    .line 4573
+    .line 4554
     invoke-static {p0, p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->setNavigationBarColor(Landroid/view/Window;IZ)V
 
     return-void
@@ -21869,7 +21849,7 @@
 
     const/4 v0, 0x0
 
-    .line 4577
+    .line 4558
     invoke-static {p0, p1, p2, v0}, Lorg/telegram/messenger/AndroidUtilities;->setNavigationBarColor(Landroid/view/Window;IZLorg/telegram/messenger/AndroidUtilities$IntColorCallback;)V
 
     return-void
@@ -21878,19 +21858,19 @@
 .method public static setNavigationBarColor(Landroid/view/Window;IZLorg/telegram/messenger/AndroidUtilities$IntColorCallback;)V
     .locals 2
 
-    .line 4581
+    .line 4562
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_4
 
-    .line 4582
+    .line 4563
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->navigationBarColorAnimators:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
 
-    .line 4583
+    .line 4564
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -21899,10 +21879,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 4585
+    .line 4566
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 4586
+    .line 4567
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->navigationBarColorAnimators:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -21912,10 +21892,10 @@
 
     if-eqz p3, :cond_1
 
-    .line 4592
+    .line 4573
     invoke-interface {p3, p1}, Lorg/telegram/messenger/AndroidUtilities$IntColorCallback;->run(I)V
 
-    .line 4595
+    .line 4576
     :cond_1
     :try_start_0
     invoke-virtual {p0, p1}, Landroid/view/Window;->setNavigationBarColor(I)V
@@ -21931,7 +21911,7 @@
 
     const/4 v0, 0x0
 
-    .line 4599
+    .line 4580
     invoke-virtual {p0}, Landroid/view/Window;->getNavigationBarColor()I
 
     move-result v1
@@ -21946,14 +21926,14 @@
 
     move-result-object p1
 
-    .line 4600
+    .line 4581
     new-instance p2, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda2;
 
     invoke-direct {p2, p3, p0}, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/messenger/AndroidUtilities$IntColorCallback;Landroid/view/Window;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 4610
+    .line 4591
     new-instance p2, Lorg/telegram/messenger/AndroidUtilities$5;
 
     invoke-direct {p2, p0}, Lorg/telegram/messenger/AndroidUtilities$5;-><init>(Landroid/view/Window;)V
@@ -21962,30 +21942,30 @@
 
     const-wide/16 p2, 0xc8
 
-    .line 4618
+    .line 4599
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 4619
+    .line 4600
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 4620
+    .line 4601
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 4621
+    .line 4602
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->navigationBarColorAnimators:Ljava/util/HashMap;
 
     if-nez p2, :cond_3
 
-    .line 4622
+    .line 4603
     new-instance p2, Ljava/util/HashMap;
 
     invoke-direct {p2}, Ljava/util/HashMap;-><init>()V
 
     sput-object p2, Lorg/telegram/messenger/AndroidUtilities;->navigationBarColorAnimators:Ljava/util/HashMap;
 
-    .line 4624
+    .line 4605
     :cond_3
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->navigationBarColorAnimators:Ljava/util/HashMap;
 
@@ -22024,7 +22004,7 @@
 
     goto :goto_0
 
-    .line 3754
+    .line 3735
     :cond_0
     invoke-virtual {p2}, Landroid/graphics/RectF;->width()F
 
@@ -22036,7 +22016,7 @@
 
     div-float/2addr v2, v3
 
-    .line 3755
+    .line 3736
     invoke-virtual {p2}, Landroid/graphics/RectF;->height()F
 
     move-result v3
@@ -22047,7 +22027,7 @@
 
     goto :goto_1
 
-    .line 3751
+    .line 3732
     :cond_1
     :goto_0
     invoke-virtual {p2}, Landroid/graphics/RectF;->height()F
@@ -22060,7 +22040,7 @@
 
     div-float/2addr v2, v3
 
-    .line 3752
+    .line 3733
     invoke-virtual {p2}, Landroid/graphics/RectF;->width()F
 
     move-result v3
@@ -22092,7 +22072,7 @@
     :goto_2
     if-eqz p4, :cond_3
 
-    .line 3764
+    .line 3745
     iget v4, p2, Landroid/graphics/RectF;->left:F
 
     iget v5, p2, Landroid/graphics/RectF;->top:F
@@ -22106,10 +22086,10 @@
 
     const/high16 p3, 0x42b40000    # 90.0f
 
-    .line 3767
+    .line 3748
     invoke-virtual {p0, p3}, Landroid/graphics/Matrix;->preRotate(F)Z
 
-    .line 3768
+    .line 3749
     invoke-virtual {p2}, Landroid/graphics/RectF;->width()F
 
     move-result p3
@@ -22127,10 +22107,10 @@
 
     const/high16 p3, 0x43340000    # 180.0f
 
-    .line 3770
+    .line 3751
     invoke-virtual {p0, p3}, Landroid/graphics/Matrix;->preRotate(F)Z
 
-    .line 3771
+    .line 3752
     invoke-virtual {p2}, Landroid/graphics/RectF;->width()F
 
     move-result p3
@@ -22152,10 +22132,10 @@
 
     const/high16 p3, 0x43870000    # 270.0f
 
-    .line 3773
+    .line 3754
     invoke-virtual {p0, p3}, Landroid/graphics/Matrix;->preRotate(F)Z
 
-    .line 3774
+    .line 3755
     invoke-virtual {p2}, Landroid/graphics/RectF;->height()F
 
     move-result p3
@@ -22168,14 +22148,14 @@
     :goto_3
     if-eqz p4, :cond_7
 
-    .line 3778
+    .line 3759
     iget p3, p1, Landroid/graphics/RectF;->left:F
 
     neg-float p3, p3
 
     mul-float/2addr p3, v2
 
-    .line 3779
+    .line 3760
     iget v0, p1, Landroid/graphics/RectF;->top:F
 
     neg-float v0, v0
@@ -22184,7 +22164,7 @@
 
     goto :goto_4
 
-    .line 3781
+    .line 3762
     :cond_7
     iget p3, p2, Landroid/graphics/RectF;->left:F
 
@@ -22194,7 +22174,7 @@
 
     sub-float/2addr p3, v0
 
-    .line 3782
+    .line 3763
     iget v0, p2, Landroid/graphics/RectF;->top:F
 
     iget v1, p1, Landroid/graphics/RectF;->top:F
@@ -22206,7 +22186,7 @@
     :goto_4
     if-eqz v3, :cond_8
 
-    .line 3787
+    .line 3768
     invoke-virtual {p2}, Landroid/graphics/RectF;->width()F
 
     move-result p2
@@ -22217,7 +22197,7 @@
 
     goto :goto_5
 
-    .line 3789
+    .line 3770
     :cond_8
     invoke-virtual {p2}, Landroid/graphics/RectF;->height()F
 
@@ -22245,13 +22225,13 @@
     :cond_9
     add-float/2addr v0, p2
 
-    .line 3798
+    .line 3779
     :goto_6
     invoke-virtual {p0, v2, v2}, Landroid/graphics/Matrix;->preScale(FF)Z
 
     if-eqz p4, :cond_a
 
-    .line 3800
+    .line 3781
     invoke-virtual {p0, p3, v0}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
     :cond_a
@@ -22261,14 +22241,14 @@
 .method public static setScrollViewEdgeEffectColor(Landroid/widget/HorizontalScrollView;I)V
     .locals 3
 
-    .line 2639
+    .line 2616
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
     if-lt v0, v1, :cond_0
 
-    .line 2640
+    .line 2617
     invoke-virtual {p0, p1}, Landroid/widget/HorizontalScrollView;->setEdgeEffectColor(I)V
 
     goto :goto_0
@@ -22278,7 +22258,7 @@
 
     if-lt v0, v1, :cond_2
 
-    .line 2643
+    .line 2620
     :try_start_0
     const-class v0, Landroid/widget/HorizontalScrollView;
 
@@ -22290,10 +22270,10 @@
 
     const/4 v1, 0x1
 
-    .line 2644
+    .line 2621
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 2645
+    .line 2622
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -22302,10 +22282,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 2647
+    .line 2624
     invoke-virtual {v0, p1}, Landroid/widget/EdgeEffect;->setColor(I)V
 
-    .line 2650
+    .line 2627
     :cond_1
     const-class v0, Landroid/widget/HorizontalScrollView;
 
@@ -22315,10 +22295,10 @@
 
     move-result-object v0
 
-    .line 2651
+    .line 2628
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 2652
+    .line 2629
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -22327,7 +22307,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 2654
+    .line 2631
     invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->setColor(I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -22337,7 +22317,7 @@
     :catch_0
     move-exception p0
 
-    .line 2657
+    .line 2634
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -22348,17 +22328,17 @@
 .method public static setScrollViewEdgeEffectColor(Landroid/widget/ScrollView;I)V
     .locals 3
 
-    .line 2663
+    .line 2640
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
     if-lt v0, v1, :cond_0
 
-    .line 2664
+    .line 2641
     invoke-virtual {p0, p1}, Landroid/widget/ScrollView;->setTopEdgeEffectColor(I)V
 
-    .line 2665
+    .line 2642
     invoke-virtual {p0, p1}, Landroid/widget/ScrollView;->setBottomEdgeEffectColor(I)V
 
     goto :goto_0
@@ -22368,7 +22348,7 @@
 
     if-lt v0, v1, :cond_2
 
-    .line 2668
+    .line 2645
     :try_start_0
     const-class v0, Landroid/widget/ScrollView;
 
@@ -22380,10 +22360,10 @@
 
     const/4 v1, 0x1
 
-    .line 2669
+    .line 2646
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 2670
+    .line 2647
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -22392,10 +22372,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 2672
+    .line 2649
     invoke-virtual {v0, p1}, Landroid/widget/EdgeEffect;->setColor(I)V
 
-    .line 2675
+    .line 2652
     :cond_1
     const-class v0, Landroid/widget/ScrollView;
 
@@ -22405,10 +22385,10 @@
 
     move-result-object v0
 
-    .line 2676
+    .line 2653
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 2677
+    .line 2654
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -22417,7 +22397,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 2679
+    .line 2656
     invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->setColor(I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -22431,14 +22411,14 @@
 .method public static setViewPagerEdgeEffectColor(Landroidx/viewpager/widget/ViewPager;I)V
     .locals 3
 
-    .line 2617
+    .line 2594
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_1
 
-    .line 2619
+    .line 2596
     :try_start_0
     const-class v0, Landroidx/viewpager/widget/ViewPager;
 
@@ -22450,10 +22430,10 @@
 
     const/4 v1, 0x1
 
-    .line 2620
+    .line 2597
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 2621
+    .line 2598
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -22462,10 +22442,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 2623
+    .line 2600
     invoke-virtual {v0, p1}, Landroid/widget/EdgeEffect;->setColor(I)V
 
-    .line 2626
+    .line 2603
     :cond_0
     const-class v0, Landroidx/viewpager/widget/ViewPager;
 
@@ -22475,10 +22455,10 @@
 
     move-result-object v0
 
-    .line 2627
+    .line 2604
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 2628
+    .line 2605
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -22487,7 +22467,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 2630
+    .line 2607
     invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->setColor(I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -22500,27 +22480,27 @@
 .method public static setWaitingForCall(Z)V
     .locals 4
 
-    .line 1920
+    .line 1899
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->callLock:Ljava/lang/Object;
 
     monitor-enter v0
 
     if-eqz p0, :cond_0
 
-    .line 1923
+    .line 1902
     :try_start_0
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->callReceiver:Lorg/telegram/messenger/CallReceiver;
 
     if-nez v1, :cond_1
 
-    .line 1924
+    .line 1903
     new-instance v1, Landroid/content/IntentFilter;
 
     const-string v2, "android.intent.action.PHONE_STATE"
 
     invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 1925
+    .line 1904
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     new-instance v3, Lorg/telegram/messenger/CallReceiver;
@@ -22533,13 +22513,13 @@
 
     goto :goto_0
 
-    .line 1928
+    .line 1907
     :cond_0
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->callReceiver:Lorg/telegram/messenger/CallReceiver;
 
     if-eqz v1, :cond_1
 
-    .line 1929
+    .line 1908
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->callReceiver:Lorg/telegram/messenger/CallReceiver;
@@ -22548,7 +22528,7 @@
 
     const/4 v1, 0x0
 
-    .line 1930
+    .line 1909
     sput-object v1, Lorg/telegram/messenger/AndroidUtilities;->callReceiver:Lorg/telegram/messenger/CallReceiver;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -22561,14 +22541,14 @@
 
     goto :goto_1
 
-    .line 1936
+    .line 1915
     :catch_0
     :cond_1
     :goto_0
     :try_start_1
     sput-boolean p0, Lorg/telegram/messenger/AndroidUtilities;->waitingForCall:Z
 
-    .line 1937
+    .line 1916
     monitor-exit v0
 
     return-void
@@ -22584,12 +22564,12 @@
 .method public static setWaitingForSms(Z)V
     .locals 2
 
-    .line 1881
+    .line 1860
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->smsLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1882
+    .line 1861
     :try_start_0
     sput-boolean p0, Lorg/telegram/messenger/AndroidUtilities;->waitingForSms:Z
     :try_end_0
@@ -22597,7 +22577,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 1885
+    .line 1864
     :try_start_1
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -22605,12 +22585,12 @@
 
     move-result-object p0
 
-    .line 1886
+    .line 1865
     invoke-virtual {p0}, Lcom/google/android/gms/auth/api/phone/SmsRetrieverClient;->startSmsRetriever()Lcom/google/android/gms/tasks/Task;
 
     move-result-object p0
 
-    .line 1887
+    .line 1866
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->INSTANCE:Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;
 
     invoke-virtual {p0, v1}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
@@ -22622,11 +22602,11 @@
     :catchall_0
     move-exception p0
 
-    .line 1894
+    .line 1873
     :try_start_2
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1896
+    .line 1875
     :cond_0
     :goto_0
     monitor-exit v0
@@ -22650,7 +22630,7 @@
 
     return-void
 
-    .line 2821
+    .line 2802
     :cond_0
     sget v0, Lorg/telegram/messenger/R$id;->shake_animation:I
 
@@ -22658,12 +22638,12 @@
 
     move-result-object v1
 
-    .line 2822
+    .line 2803
     instance-of v2, v1, Landroid/animation/ValueAnimator;
 
     if-eqz v2, :cond_1
 
-    .line 2823
+    .line 2804
     check-cast v1, Landroid/animation/ValueAnimator;
 
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->cancel()V
@@ -22673,21 +22653,21 @@
 
     new-array v1, v1, [F
 
-    .line 2825
+    .line 2806
     fill-array-data v1, :array_0
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v1
 
-    .line 2826
+    .line 2807
     new-instance v2, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p0}, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda0;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2830
+    .line 2811
     new-instance v2, Lorg/telegram/messenger/AndroidUtilities$3;
 
     invoke-direct {v2, p0}, Lorg/telegram/messenger/AndroidUtilities$3;-><init>(Landroid/view/View;)V
@@ -22696,13 +22676,13 @@
 
     const-wide/16 v2, 0x12c
 
-    .line 2836
+    .line 2817
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 2837
+    .line 2818
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 2838
+    .line 2819
     invoke-virtual {p0, v0, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     return-void
@@ -22721,7 +22701,7 @@
 
     const/4 v1, 0x0
 
-    .line 2842
+    .line 2823
     invoke-static {p0, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->shakeViewSpring(Landroid/view/View;FLjava/lang/Runnable;)V
 
     return-void
@@ -22732,7 +22712,7 @@
 
     const/4 v0, 0x0
 
-    .line 2846
+    .line 2827
     invoke-static {p0, p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->shakeViewSpring(Landroid/view/View;FLjava/lang/Runnable;)V
 
     return-void
@@ -22741,12 +22721,12 @@
 .method public static shakeViewSpring(Landroid/view/View;FLjava/lang/Runnable;)V
     .locals 5
 
-    .line 2854
+    .line 2835
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p1
 
-    .line 2855
+    .line 2836
     sget v0, Lorg/telegram/messenger/R$id;->spring_tag:I
 
     invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
@@ -22755,7 +22735,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2856
+    .line 2837
     invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -22764,7 +22744,7 @@
 
     invoke-virtual {v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 2858
+    .line 2839
     :cond_0
     sget v1, Lorg/telegram/messenger/R$id;->spring_was_translation_x_tag:I
 
@@ -22776,14 +22756,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 2860
+    .line 2841
     invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
 
     move-result v2
 
     invoke-virtual {p0, v2}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 2862
+    .line 2843
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getTranslationX()F
 
@@ -22795,12 +22775,12 @@
 
     invoke-virtual {p0, v1, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 2864
+    .line 2845
     invoke-virtual {p0}, Landroid/view/View;->getTranslationX()F
 
     move-result v1
 
-    .line 2865
+    .line 2846
     new-instance v2, Landroidx/dynamicanimation/animation/SpringAnimation;
 
     sget-object v3, Landroidx/dynamicanimation/animation/DynamicAnimation;->TRANSLATION_X:Landroidx/dynamicanimation/animation/DynamicAnimation$ViewProperty;
@@ -22813,7 +22793,7 @@
 
     const/high16 v4, 0x44160000    # 600.0f
 
-    .line 2866
+    .line 2847
     invoke-virtual {v3, v4}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v3
@@ -22828,7 +22808,7 @@
 
     int-to-float p1, p1
 
-    .line 2867
+    .line 2848
     invoke-virtual {v2, p1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->setStartVelocity(F)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
     move-result-object p1
@@ -22839,17 +22819,17 @@
 
     invoke-direct {v2, p2, p0, v1}, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda7;-><init>(Ljava/lang/Runnable;Landroid/view/View;F)V
 
-    .line 2868
+    .line 2849
     invoke-virtual {p1, v2}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
     move-result-object p1
 
     check-cast p1, Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 2875
+    .line 2856
     invoke-virtual {p0, v0, p1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 2876
+    .line 2857
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
     return-void
@@ -22860,7 +22840,7 @@
 
     const/high16 v0, 0x41200000    # 10.0f
 
-    .line 2850
+    .line 2831
     invoke-static {p0, v0, p1}, Lorg/telegram/messenger/AndroidUtilities;->shakeViewSpring(Landroid/view/View;FLjava/lang/Runnable;)V
 
     return-void
@@ -22869,7 +22849,7 @@
 .method public static shouldEnableAnimation()Z
     .locals 5
 
-    .line 3889
+    .line 3870
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x1
@@ -22884,7 +22864,7 @@
 
     goto :goto_0
 
-    .line 3892
+    .line 3873
     :cond_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -22896,7 +22876,7 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 3893
+    .line 3874
     invoke-virtual {v0}, Landroid/os/PowerManager;->isPowerSaveMode()Z
 
     move-result v0
@@ -22907,7 +22887,7 @@
 
     return v2
 
-    .line 3896
+    .line 3877
     :cond_1
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -22939,7 +22919,7 @@
 .method public static shouldShowClipboardToast()Z
     .locals 2
 
-    .line 2933
+    .line 2914
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
@@ -22971,18 +22951,18 @@
 .method public static shouldShowUrlInAlert(Ljava/lang/String;)Z
     .locals 0
 
-    .line 4658
+    .line 4639
     :try_start_0
     invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p0
 
-    .line 4659
+    .line 4640
     invoke-virtual {p0}, Landroid/net/Uri;->getHost()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 4660
+    .line 4641
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->checkHostForPunycode(Ljava/lang/String;)Z
 
     move-result p0
@@ -22994,7 +22974,7 @@
     :catch_0
     move-exception p0
 
-    .line 4662
+    .line 4643
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 p0, 0x0
@@ -23011,7 +22991,7 @@
 
     return v0
 
-    .line 1945
+    .line 1924
     :cond_0
     :try_start_0
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -23028,7 +23008,7 @@
 
     const/4 v2, 0x1
 
-    .line 1946
+    .line 1925
     invoke-virtual {v1, p0, v2}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
 
     move-result p0
@@ -23040,7 +23020,7 @@
     :catch_0
     move-exception p0
 
-    .line 1948
+    .line 1927
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return v0
@@ -23051,38 +23031,38 @@
 
     move-object/from16 v6, p0
 
-    .line 3904
+    .line 3885
     new-instance v8, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     invoke-direct {v8, v6}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 3905
+    .line 3886
     invoke-virtual {v8}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object v7
 
     const/4 v0, 0x0
 
-    .line 3907
+    .line 3888
     invoke-virtual {v8, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyTopPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 3908
+    .line 3889
     invoke-virtual {v8, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 3909
+    .line 3890
     new-instance v1, Landroid/widget/LinearLayout;
 
     invoke-direct {v1, v6}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 3910
+    .line 3891
     invoke-virtual {v8, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     const/4 v2, 0x1
 
-    .line 3911
+    .line 3892
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 3912
+    .line 3893
     invoke-static/range {p5 .. p5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
@@ -23097,12 +23077,12 @@
 
     if-nez v3, :cond_1
 
-    .line 3913
+    .line 3894
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, v6}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 3914
+    .line 3895
     sget v11, Lorg/telegram/messenger/R$string;->UseProxyTelegramInfo2:I
 
     const-string v12, "UseProxyTelegramInfo2"
@@ -23115,7 +23095,7 @@
 
     const-string v11, "dialogTextGray4"
 
-    .line 3915
+    .line 3896
     invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v11
@@ -23124,19 +23104,19 @@
 
     const/high16 v11, 0x41600000    # 14.0f
 
-    .line 3916
+    .line 3897
     invoke-virtual {v3, v2, v11}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const/16 v11, 0x31
 
-    .line 3917
+    .line 3898
     invoke-virtual {v3, v11}, Landroid/widget/TextView;->setGravity(I)V
 
     const/4 v12, -0x2
 
     const/4 v13, -0x2
 
-    .line 3918
+    .line 3899
     sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v11, :cond_0
@@ -23165,21 +23145,21 @@
 
     invoke-virtual {v1, v3, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3920
+    .line 3901
     new-instance v3, Landroid/view/View;
 
     invoke-direct {v3, v6}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const-string v11, "divider"
 
-    .line 3921
+    .line 3902
     invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v11
 
     invoke-virtual {v3, v11}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 3922
+    .line 3903
     new-instance v11, Landroid/widget/LinearLayout$LayoutParams;
 
     invoke-direct {v11, v9, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
@@ -23198,7 +23178,7 @@
 
     if-nez v3, :cond_2
 
-    .line 3929
+    .line 3910
     sget v11, Lorg/telegram/messenger/R$string;->UseProxyAddress:I
 
     const-string v12, "UseProxyAddress"
@@ -23218,7 +23198,7 @@
     :cond_2
     if-ne v3, v2, :cond_3
 
-    .line 3931
+    .line 3912
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -23235,7 +23215,7 @@
 
     move-result-object v11
 
-    .line 3932
+    .line 3913
     sget v13, Lorg/telegram/messenger/R$string;->UseProxyPort:I
 
     const-string v14, "UseProxyPort"
@@ -23253,7 +23233,7 @@
 
     if-ne v3, v13, :cond_4
 
-    .line 3935
+    .line 3916
     sget v11, Lorg/telegram/messenger/R$string;->UseProxySecret:I
 
     const-string v13, "UseProxySecret"
@@ -23271,7 +23251,7 @@
     :cond_4
     if-ne v3, v5, :cond_5
 
-    .line 3938
+    .line 3919
     sget v11, Lorg/telegram/messenger/R$string;->UseProxyUsername:I
 
     const-string v13, "UseProxyUsername"
@@ -23291,7 +23271,7 @@
 
     if-ne v3, v13, :cond_6
 
-    .line 3941
+    .line 3922
     sget v11, Lorg/telegram/messenger/R$string;->UseProxyPassword:I
 
     const-string v13, "UseProxyPassword"
@@ -23309,14 +23289,14 @@
     :cond_6
     if-ne v3, v10, :cond_7
 
-    .line 3943
+    .line 3924
     sget v11, Lorg/telegram/messenger/R$string;->ProxyBottomSheetChecking:I
 
     invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 3944
+    .line 3925
     sget v13, Lorg/telegram/messenger/R$string;->ProxyStatus:I
 
     invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -23328,7 +23308,7 @@
     :cond_7
     move-object v13, v11
 
-    .line 3946
+    .line 3927
     :goto_2
     invoke-static {v11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -23340,58 +23320,58 @@
 
     goto/16 :goto_4
 
-    .line 3949
+    .line 3930
     :cond_8
     new-instance v14, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v14}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    .line 3950
+    .line 3931
     new-instance v15, Lorg/telegram/messenger/AndroidUtilities$4;
 
     invoke-direct {v15, v6, v14}, Lorg/telegram/messenger/AndroidUtilities$4;-><init>(Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicReference;)V
 
     if-ne v3, v10, :cond_9
 
-    .line 3968
+    .line 3949
     invoke-static {v11}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v11
 
-    .line 3969
+    .line 3950
     new-instance v5, Lorg/telegram/ui/Components/EllipsizeSpanAnimator;
 
     invoke-direct {v5, v15}, Lorg/telegram/ui/Components/EllipsizeSpanAnimator;-><init>(Landroid/view/View;)V
 
-    .line 3970
+    .line 3951
     invoke-virtual {v5, v15}, Lorg/telegram/ui/Components/EllipsizeSpanAnimator;->addView(Landroid/view/View;)V
 
-    .line 3971
+    .line 3952
     new-instance v4, Landroid/text/SpannableString;
 
     const-string v10, "..."
 
     invoke-direct {v4, v10}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 3972
+    .line 3953
     invoke-virtual {v5, v4, v0}, Lorg/telegram/ui/Components/EllipsizeSpanAnimator;->wrap(Landroid/text/SpannableString;I)V
 
-    .line 3973
+    .line 3954
     invoke-virtual {v11, v4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 3974
+    .line 3955
     invoke-virtual {v14, v5}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 3976
+    .line 3957
     invoke-virtual {v15, v11, v13, v2}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     goto :goto_3
 
-    .line 3978
+    .line 3959
     :cond_9
     invoke-virtual {v15, v11, v13, v2}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
-    .line 3980
+    .line 3961
     :goto_3
     invoke-virtual {v15}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->getTextView()Landroid/widget/TextView;
 
@@ -23405,7 +23385,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 3981
+    .line 3962
     invoke-virtual {v15}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->getValueTextView()Landroid/widget/TextView;
 
     move-result-object v4
@@ -23420,7 +23400,7 @@
 
     const/4 v4, -0x2
 
-    .line 3982
+    .line 3963
     invoke-static {v9, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v4
@@ -23431,7 +23411,7 @@
 
     if-ne v3, v4, :cond_a
 
-    .line 3986
+    .line 3967
     :try_start_0
     sget v5, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -23463,7 +23443,7 @@
 
     goto :goto_4
 
-    .line 3996
+    .line 3977
     :catch_0
     invoke-virtual {v15}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->getTextView()Landroid/widget/TextView;
 
@@ -23477,7 +23457,7 @@
 
     invoke-virtual {v5, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3997
+    .line 3978
     invoke-virtual {v15}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object v5
@@ -23505,14 +23485,14 @@
     :cond_b
     move-object/from16 v12, p2
 
-    .line 4002
+    .line 3983
     new-instance v2, Lorg/telegram/ui/Components/PickerBottomLayout;
 
     invoke-direct {v2, v6, v0}, Lorg/telegram/ui/Components/PickerBottomLayout;-><init>(Landroid/content/Context;Z)V
 
     const-string v3, "dialogBackground"
 
-    .line 4003
+    .line 3984
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v3
@@ -23523,14 +23503,14 @@
 
     const/16 v4, 0x30
 
-    .line 4004
+    .line 3985
     invoke-static {v9, v4, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4005
+    .line 3986
     iget-object v1, v2, Lorg/telegram/ui/Components/PickerBottomLayout;->cancelButton:Landroid/widget/TextView;
 
     const/16 v3, 0x12
@@ -23545,7 +23525,7 @@
 
     invoke-virtual {v1, v4, v0, v5, v0}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 4006
+    .line 3987
     iget-object v1, v2, Lorg/telegram/ui/Components/PickerBottomLayout;->cancelButton:Landroid/widget/TextView;
 
     const-string v4, "dialogTextBlue2"
@@ -23556,7 +23536,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 4007
+    .line 3988
     iget-object v1, v2, Lorg/telegram/ui/Components/PickerBottomLayout;->cancelButton:Landroid/widget/TextView;
 
     sget v5, Lorg/telegram/messenger/R$string;->Cancel:I
@@ -23573,7 +23553,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4008
+    .line 3989
     iget-object v1, v2, Lorg/telegram/ui/Components/PickerBottomLayout;->cancelButton:Landroid/widget/TextView;
 
     new-instance v5, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda5;
@@ -23582,7 +23562,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 4009
+    .line 3990
     iget-object v1, v2, Lorg/telegram/ui/Components/PickerBottomLayout;->doneButtonTextView:Landroid/widget/TextView;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -23591,7 +23571,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 4010
+    .line 3991
     iget-object v1, v2, Lorg/telegram/ui/Components/PickerBottomLayout;->doneButton:Landroid/widget/LinearLayout;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -23604,14 +23584,14 @@
 
     invoke-virtual {v1, v4, v0, v3, v0}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 4011
+    .line 3992
     iget-object v0, v2, Lorg/telegram/ui/Components/PickerBottomLayout;->doneButtonBadgeTextView:Landroid/widget/TextView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 4012
+    .line 3993
     iget-object v0, v2, Lorg/telegram/ui/Components/PickerBottomLayout;->doneButtonTextView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->ConnectingConnectProxy:I
@@ -23628,7 +23608,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4013
+    .line 3994
     iget-object v9, v2, Lorg/telegram/ui/Components/PickerBottomLayout;->doneButton:Landroid/widget/LinearLayout;
 
     new-instance v10, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda6;
@@ -23651,80 +23631,41 @@
 
     invoke-virtual {v9, v10}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 4065
+    .line 4046
     invoke-virtual {v8}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->show()Lorg/telegram/ui/ActionBar/BottomSheet;
 
-    return-void
-.end method
-
-.method public static showSectionPasscodeActivityIfNeeded(Lorg/telegram/ui/ActionBar/BaseFragment;)V
-    .locals 2
-
-    .line 266
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    .line 267
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getScreenLockedSection()Lcom/iMe/fork/enums/LockedSection;
-
-    move-result-object v1
-
-    .line 268
-    invoke-static {p0, v1}, Lorg/telegram/messenger/AndroidUtilities;->isSameLockedSectionScreen(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/enums/LockedSection;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    instance-of p0, v0, Lorg/telegram/ui/LaunchActivity;
-
-    if-eqz p0, :cond_0
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->needShowSectionPasscodeActivity(Lcom/iMe/fork/enums/LockedSection;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    .line 269
-    check-cast v0, Lorg/telegram/ui/LaunchActivity;
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/LaunchActivity;->onLockedSectionOpened(Lcom/iMe/fork/enums/LockedSection;)V
-
-    :cond_0
     return-void
 .end method
 
 .method private static snapshotTextureViews(II[ILandroid/graphics/Canvas;Landroid/view/View;)V
     .locals 5
 
-    .line 1178
+    .line 1157
     instance-of v0, p4, Landroid/view/TextureView;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 1179
+    .line 1158
     move-object v0, p4
 
     check-cast v0, Landroid/view/TextureView;
 
-    .line 1180
+    .line 1159
     invoke-virtual {v0, p2}, Landroid/view/TextureView;->getLocationInWindow([I)V
 
-    .line 1182
+    .line 1161
     invoke-virtual {v0}, Landroid/view/TextureView;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1184
+    .line 1163
     invoke-virtual {p3}, Landroid/graphics/Canvas;->save()I
 
-    .line 1185
+    .line 1164
     aget v2, p2, v1
 
     sub-int/2addr v2, p0
@@ -23743,22 +23684,22 @@
 
     invoke-virtual {p3, v0, v2, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 1186
+    .line 1165
     invoke-virtual {p3}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1187
+    .line 1166
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1190
+    .line 1169
     :cond_0
     instance-of v0, p4, Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_1
 
-    .line 1191
+    .line 1170
     check-cast p4, Landroid/view/ViewGroup;
 
-    .line 1192
+    .line 1171
     :goto_0
     invoke-virtual {p4}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -23766,7 +23707,7 @@
 
     if-ge v1, v0, :cond_1
 
-    .line 1193
+    .line 1172
     invoke-virtual {p4, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
@@ -23784,7 +23725,7 @@
 .method public static snapshotView(Landroid/view/View;)Landroid/graphics/Bitmap;
     .locals 5
 
-    .line 1166
+    .line 1145
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -23799,24 +23740,24 @@
 
     move-result-object v0
 
-    .line 1167
+    .line 1146
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1168
+    .line 1147
     invoke-virtual {p0, v1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
     const/4 v2, 0x2
 
     new-array v2, v2, [I
 
-    .line 1171
+    .line 1150
     invoke-virtual {p0, v2}, Landroid/view/View;->getLocationInWindow([I)V
 
     const/4 v3, 0x0
 
-    .line 1172
+    .line 1151
     aget v3, v2, v3
 
     const/4 v4, 0x1
@@ -23839,7 +23780,7 @@
         }
     .end annotation
 
-    .line 1296
+    .line 1275
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -23851,7 +23792,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 1298
+    .line 1277
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -23881,7 +23822,7 @@
 
     return-object p0
 
-    .line 4937
+    .line 4918
     :cond_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -23896,7 +23837,7 @@
 
     if-ge v2, v0, :cond_1
 
-    .line 4940
+    .line 4921
     invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v4
@@ -23913,7 +23854,7 @@
 
     add-int/lit8 v4, v0, -0x1
 
-    .line 4943
+    .line 4924
     invoke-interface {p0, v4}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v4
@@ -23927,13 +23868,13 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    .line 4947
+    .line 4928
     aput v2, p1, v1
 
     :cond_3
     if-gtz v2, :cond_4
 
-    .line 4949
+    .line 4930
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
@@ -23956,7 +23897,7 @@
 
     return-void
 
-    .line 1431
+    .line 1410
     :cond_0
     :try_start_0
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->prevOrientation:I
@@ -23965,10 +23906,10 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 1432
+    .line 1411
     invoke-virtual {p0, v0}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
-    .line 1433
+    .line 1412
     sput v1, Lorg/telegram/messenger/AndroidUtilities;->prevOrientation:I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -23978,7 +23919,7 @@
     :catch_0
     move-exception p0
 
-    .line 1436
+    .line 1415
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -23989,7 +23930,7 @@
 .method public static updateImageViewImageAnimated(Landroid/widget/ImageView;I)V
     .locals 1
 
-    .line 4724
+    .line 4705
     invoke-virtual {p0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -24006,7 +23947,7 @@
 .method public static updateImageViewImageAnimated(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;)V
     .locals 3
 
-    .line 4728
+    .line 4709
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -24020,7 +23961,7 @@
 
     new-array v0, v0, [F
 
-    .line 4731
+    .line 4712
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -24033,19 +23974,19 @@
 
     move-result-object v0
 
-    .line 4732
+    .line 4713
     new-instance v1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
-    .line 4733
+    .line 4714
     new-instance v2, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, p0, v1, p1}, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda1;-><init>(Landroid/widget/ImageView;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/graphics/drawable/Drawable;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 4743
+    .line 4724
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
@@ -24062,7 +24003,7 @@
 
     const/4 v0, 0x1
 
-    .line 4783
+    .line 4764
     invoke-static {p0, p1, v0, v0}, Lorg/telegram/messenger/AndroidUtilities;->updateViewShow(Landroid/view/View;ZZZ)V
 
     return-void
@@ -24075,7 +24016,7 @@
 
     return-void
 
-    .line 4798
+    .line 4779
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -24087,7 +24028,7 @@
 
     move p4, v1
 
-    .line 4802
+    .line 4783
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -24116,7 +24057,7 @@
     :cond_2
     const/16 v1, 0x8
 
-    .line 4804
+    .line 4785
     :goto_0
     invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
 
@@ -24124,7 +24065,7 @@
 
     const/4 p4, 0x1
 
-    .line 4805
+    .line 4786
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -24132,7 +24073,7 @@
     :cond_3
     invoke-virtual {p0, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 4806
+    .line 4787
     invoke-virtual {p0, v3}, Landroid/view/View;->setAlpha(F)V
 
     if-eqz p2, :cond_4
@@ -24146,7 +24087,7 @@
     :cond_4
     move p4, v3
 
-    .line 4807
+    .line 4788
     :goto_1
     invoke-virtual {p0, p4}, Landroid/view/View;->setScaleX(F)V
 
@@ -24156,7 +24097,7 @@
 
     move v3, v4
 
-    .line 4808
+    .line 4789
     :cond_5
     invoke-virtual {p0, v3}, Landroid/view/View;->setScaleY(F)V
 
@@ -24168,7 +24109,7 @@
 
     goto :goto_2
 
-    .line 4810
+    .line 4791
     :cond_6
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -24184,7 +24125,7 @@
     :cond_7
     if-eqz p5, :cond_11
 
-    .line 4813
+    .line 4794
     invoke-interface {p5}, Ljava/lang/Runnable;->run()V
 
     goto/16 :goto_6
@@ -24194,17 +24135,17 @@
 
     if-eqz p1, :cond_d
 
-    .line 4816
+    .line 4797
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result p1
 
     if-eqz p1, :cond_b
 
-    .line 4817
+    .line 4798
     invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4818
+    .line 4799
     invoke-virtual {p0, v4}, Landroid/view/View;->setAlpha(F)V
 
     if-eqz p2, :cond_9
@@ -24216,7 +24157,7 @@
     :cond_9
     move p1, v3
 
-    .line 4819
+    .line 4800
     :goto_3
     invoke-virtual {p0, p1}, Landroid/view/View;->setScaleX(F)V
 
@@ -24229,7 +24170,7 @@
     :cond_a
     move p1, v3
 
-    .line 4820
+    .line 4801
     :goto_4
     invoke-virtual {p0, p1}, Landroid/view/View;->setScaleY(F)V
 
@@ -24237,7 +24178,7 @@
 
     if-eqz p1, :cond_b
 
-    .line 4822
+    .line 4803
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -24248,13 +24189,13 @@
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 4825
+    .line 4806
     :cond_b
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
-    .line 4826
+    .line 4807
     invoke-virtual {p0, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
@@ -24285,22 +24226,22 @@
 
     if-eqz p1, :cond_c
 
-    .line 4828
+    .line 4809
     invoke-virtual {p0, v4}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 4830
+    .line 4811
     :cond_c
     invoke-virtual {p0}, Landroid/view/ViewPropertyAnimator;->start()V
 
     goto :goto_6
 
-    .line 4832
+    .line 4813
     :cond_d
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    .line 4833
+    .line 4814
     invoke-virtual {p1, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -24354,7 +24295,7 @@
 
     if-eqz p1, :cond_10
 
-    .line 4835
+    .line 4816
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -24365,7 +24306,7 @@
 
     invoke-virtual {p0, p1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 4837
+    .line 4818
     :cond_10
     invoke-virtual {p0}, Landroid/view/ViewPropertyAnimator;->start()V
 
@@ -24389,7 +24330,7 @@
 
     move v4, p3
 
-    .line 4787
+    .line 4768
     invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/AndroidUtilities;->updateViewShow(Landroid/view/View;ZZFZLjava/lang/Runnable;)V
 
     return-void
@@ -24410,7 +24351,7 @@
 
     move-object v5, p4
 
-    .line 4791
+    .line 4772
     invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/AndroidUtilities;->updateViewShow(Landroid/view/View;ZZFZLjava/lang/Runnable;)V
 
     return-void
@@ -24423,7 +24364,7 @@
 
     const/4 v1, 0x1
 
-    .line 4747
+    .line 4728
     invoke-static {p0, p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
     return-void
@@ -24436,7 +24377,7 @@
 
     return-void
 
-    .line 4754
+    .line 4735
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -24457,7 +24398,7 @@
 
     if-nez p3, :cond_4
 
-    .line 4759
+    .line 4740
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p2
@@ -24475,13 +24416,13 @@
     :cond_2
     const/16 v1, 0x8
 
-    .line 4760
+    .line 4741
     :goto_0
     invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
 
     if-eqz p1, :cond_3
 
-    .line 4761
+    .line 4742
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -24489,13 +24430,13 @@
     :cond_3
     invoke-virtual {p0, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 4762
+    .line 4743
     invoke-virtual {p0, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 4763
+    .line 4744
     invoke-virtual {p0, v3}, Landroid/view/View;->setScaleX(F)V
 
-    .line 4764
+    .line 4745
     invoke-virtual {p0, v3}, Landroid/view/View;->setScaleY(F)V
 
     goto/16 :goto_1
@@ -24507,14 +24448,14 @@
 
     if-eqz p1, :cond_6
 
-    .line 4765
+    .line 4746
     invoke-virtual {p0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v6
 
     if-nez v6, :cond_6
 
-    .line 4766
+    .line 4747
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -24525,26 +24466,26 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 4767
+    .line 4748
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result p1
 
     if-eqz p1, :cond_5
 
-    .line 4768
+    .line 4749
     invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4769
+    .line 4750
     invoke-virtual {p0, p3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 4770
+    .line 4751
     invoke-virtual {p0, p2}, Landroid/view/View;->setScaleX(F)V
 
-    .line 4771
+    .line 4752
     invoke-virtual {p0, p2}, Landroid/view/View;->setScaleY(F)V
 
-    .line 4773
+    .line 4754
     :cond_5
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -24568,7 +24509,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 4774
+    .line 4755
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -24580,14 +24521,14 @@
     :cond_6
     if-nez p1, :cond_7
 
-    .line 4775
+    .line 4756
     invoke-virtual {p0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p1
 
     if-eqz p1, :cond_7
 
-    .line 4776
+    .line 4757
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -24598,7 +24539,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 4777
+    .line 4758
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -24629,7 +24570,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 4778
+    .line 4759
     invoke-virtual {p0, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     :cond_7
@@ -24644,7 +24585,7 @@
 
     return-void
 
-    .line 4706
+    .line 4687
     :cond_0
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
@@ -24657,7 +24598,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 4710
+    .line 4691
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -24665,26 +24606,26 @@
 
     if-ge v1, v2, :cond_4
 
-    .line 4711
+    .line 4692
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 4712
+    .line 4693
     invoke-virtual {p0, v2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v3
 
     if-ltz v3, :cond_3
 
-    .line 4714
+    .line 4695
     invoke-virtual {p0, v2}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object v2
 
     if-eqz v2, :cond_3
 
-    .line 4715
+    .line 4696
     invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->shouldIgnore()Z
 
     move-result v4
@@ -24693,7 +24634,7 @@
 
     goto :goto_1
 
-    .line 4718
+    .line 4699
     :cond_2
     invoke-virtual {v0, v2, v3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 

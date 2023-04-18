@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinView$$State;)V
     .locals 1
 
-    .line 166
+    .line 185
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "onSuccessCreateWallet"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinView;)V
     .locals 0
 
-    .line 171
+    .line 190
     invoke-interface {p1}, Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinView;->onSuccessCreateWallet()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 164
+    .line 183
     check-cast p1, Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinView$$State$OnSuccessCreateWalletCommand;->apply(Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinView;)V

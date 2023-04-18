@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/os/Bundle;)V
     .locals 0
 
-    .line 3859
+    .line 3697
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/DialogsActivity;-><init>(Landroid/os/Bundle;)V
@@ -46,10 +46,10 @@
         }
     .end annotation
 
-    .line 3862
+    .line 3700
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2300(Lorg/telegram/ui/LaunchActivity;)Landroid/net/Uri;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2000(Lorg/telegram/ui/LaunchActivity;)Landroid/net/Uri;
 
     move-result-object p1
 
@@ -59,11 +59,11 @@
 
     return p3
 
-    .line 3865
+    .line 3703
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2400(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2100(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -73,7 +73,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2400(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2100(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -83,7 +83,7 @@
 
     if-ne p1, p4, :cond_1
 
-    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->access$2100()Ljava/util/ArrayList;
+    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->access$1800()Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -95,7 +95,7 @@
 
     return p4
 
-    .line 3868
+    .line 3706
     :cond_1
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -103,10 +103,10 @@
 
     if-gt p1, p4, :cond_3
 
-    .line 3869
+    .line 3707
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2500(Lorg/telegram/ui/LaunchActivity;)Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2200(Lorg/telegram/ui/LaunchActivity;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -114,11 +114,11 @@
 
     return p4
 
-    .line 3871
+    .line 3709
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2600(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2300(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -126,7 +126,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2600(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2300(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
 
     move-result-object p1
 

@@ -90,17 +90,9 @@
 
     check-cast v1, Lcom/iMe/storage/domain/model/Result$Error;
 
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/Result$Error;->getError()Lcom/iMe/storage/data/network/model/error/ErrorModel;
-
-    move-result-object v1
-
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$saveWalletAddressSettingsObservable$1$invoke$$inlined$mapResultWithDefaultErrorHandle$1;->$resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    invoke-virtual {v1, v2}, Lcom/iMe/storage/data/network/model/error/ErrorModel;->getMessage(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
+    invoke-interface {v0, v1, v2}, Lcom/iMe/ui/base/mvp/base/BaseView;->showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
     :cond_0
     return-object p1

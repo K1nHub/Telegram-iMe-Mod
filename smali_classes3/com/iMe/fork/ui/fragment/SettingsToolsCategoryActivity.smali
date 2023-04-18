@@ -2154,7 +2154,7 @@
 
     move-result-object p1
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/AlertsCreator;->createChooseTemplatesModeDialog(Landroid/content/Context;Z)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static {p1, v2}, Lorg/telegram/ui/Components/AlertsCreator;->createChooseTemplatesModeDialog(Landroid/content/Context;Lorg/telegram/ui/Components/UndoView;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 

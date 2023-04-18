@@ -10,13 +10,13 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zze extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zze> CREATOR = new zzf();
-    @SafeParcelable.Field(getter = "getSignature", m789id = 1)
+    @SafeParcelable.Field(getter = "getSignature", m775id = 1)
     private final byte[] zza;
-    @SafeParcelable.Field(getter = "getAuthenticatorOutput", m789id = 2)
+    @SafeParcelable.Field(getter = "getAuthenticatorOutput", m775id = 2)
     private final byte[] zzb;
 
     @SafeParcelable.Constructor
-    public zze(@SafeParcelable.Param(m788id = 1) byte[] bArr, @SafeParcelable.Param(m788id = 2) byte[] bArr2) {
+    public zze(@SafeParcelable.Param(m774id = 1) byte[] bArr, @SafeParcelable.Param(m774id = 2) byte[] bArr2) {
         this.zza = bArr;
         this.zzb = bArr2;
     }

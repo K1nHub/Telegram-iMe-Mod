@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView$$State;Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;)V
     .locals 1
 
-    .line 262
+    .line 280
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showSelectStakingOrderTypeDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 264
+    .line 282
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView$$State$ShowSelectStakingOrderTypeDialogCommand;->orderType:Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView;)V
     .locals 1
 
-    .line 269
+    .line 287
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView$$State$ShowSelectStakingOrderTypeDialogCommand;->orderType:Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView;->showSelectStakingOrderTypeDialog(Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 258
+    .line 276
     check-cast p1, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView$$State$ShowSelectStakingOrderTypeDialogCommand;->apply(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView;)V

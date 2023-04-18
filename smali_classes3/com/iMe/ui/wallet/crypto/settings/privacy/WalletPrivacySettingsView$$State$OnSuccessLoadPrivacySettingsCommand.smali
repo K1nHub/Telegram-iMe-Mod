@@ -50,20 +50,20 @@
         }
     .end annotation
 
-    .line 139
+    .line 157
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onSuccessLoadPrivacySettings"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 141
+    .line 159
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView$$State$OnSuccessLoadPrivacySettingsCommand;->whitelistUsers:Ljava/util/List;
 
-    .line 142
+    .line 160
     iput p3, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView$$State$OnSuccessLoadPrivacySettingsCommand;->walletAddressAccessType:I
 
-    .line 143
+    .line 161
     iput p4, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView$$State$OnSuccessLoadPrivacySettingsCommand;->accountRankAccessType:I
 
     return-void
@@ -74,7 +74,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView;)V
     .locals 3
 
-    .line 148
+    .line 166
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView$$State$OnSuccessLoadPrivacySettingsCommand;->whitelistUsers:Ljava/util/List;
 
     iget v1, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView$$State$OnSuccessLoadPrivacySettingsCommand;->walletAddressAccessType:I
@@ -89,7 +89,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 130
+    .line 148
     check-cast p1, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView$$State$OnSuccessLoadPrivacySettingsCommand;->apply(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView;)V

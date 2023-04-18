@@ -6,14 +6,14 @@
 
 
 # instance fields
-.field private final keyParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
+.field private transient keyParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
 
-.field private final treeDigest:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+.field private transient treeDigest:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
 
 # direct methods
 .method public constructor <init>(Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;)V
-    .locals 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -22,73 +22,36 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;->getAlgorithm()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->init(Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    invoke-virtual {v0}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->getParameters()Lorg/bouncycastle/asn1/ASN1Encodable;
+.method private init(Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/bouncycastle/pqc/asn1/XMSSKeyParams;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/asn1/XMSSKeyParams;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/bouncycastle/pqc/asn1/XMSSKeyParams;->getTreeDigest()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->getAlgorithm()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->treeDigest:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    invoke-virtual {p1}, Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;->parsePublicKey()Lorg/bouncycastle/asn1/ASN1Primitive;
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory;->createKey(Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;)Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;
 
     move-result-object p1
 
-    invoke-static {p1}, Lorg/bouncycastle/pqc/asn1/XMSSPublicKey;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/asn1/XMSSPublicKey;
-
-    move-result-object p1
-
-    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;
-
-    new-instance v3, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
-
-    invoke-virtual {v0}, Lorg/bouncycastle/pqc/asn1/XMSSKeyParams;->getHeight()I
-
-    move-result v0
-
-    invoke-static {v1}, Lorg/bouncycastle/pqc/jcajce/provider/xmss/DigestUtil;->getDigest(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Lorg/bouncycastle/crypto/Digest;
-
-    move-result-object v1
-
-    invoke-direct {v3, v0, v1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;-><init>(ILorg/bouncycastle/crypto/Digest;)V
-
-    invoke-direct {v2, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;)V
-
-    invoke-virtual {p1}, Lorg/bouncycastle/pqc/asn1/XMSSPublicKey;->getPublicSeed()[B
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;->withPublicSeed([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lorg/bouncycastle/pqc/asn1/XMSSPublicKey;->getRoot()[B
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;->withRoot([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;->build()Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
-
-    move-result-object p1
+    check-cast p1, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
 
     iput-object p1, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->keyParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSKeyParameters;->getTreeDigest()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/bouncycastle/pqc/jcajce/provider/xmss/DigestUtil;->getDigestOID(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->treeDigest:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     return-void
 .end method
@@ -113,11 +76,12 @@
 
     check-cast p1, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;
 
+    :try_start_0
     iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->treeDigest:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     iget-object v3, p1, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->treeDigest:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    invoke-virtual {v1, v3}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
 
     move-result v1
 
@@ -125,19 +89,21 @@
 
     iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->keyParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
 
-    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;->toByteArray()[B
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;->getEncoded()[B
 
     move-result-object v1
 
     iget-object p1, p1, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->keyParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
 
-    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;->toByteArray()[B
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;->getEncoded()[B
 
     move-result-object p1
 
     invoke-static {v1, p1}, Lorg/bouncycastle/util/Arrays;->areEqual([B[B)Z
 
     move-result p1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     if-eqz p1, :cond_1
 
@@ -149,6 +115,7 @@
     :goto_0
     return v0
 
+    :catch_0
     :cond_2
     return v2
 .end method
@@ -162,56 +129,16 @@
 .end method
 
 .method public getEncoded()[B
-    .locals 6
+    .locals 1
 
     :try_start_0
-    new-instance v0, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->keyParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
 
-    sget-object v1, Lorg/bouncycastle/pqc/asn1/PQCObjectIdentifiers;->xmss:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/util/SubjectPublicKeyInfoFactory;->createSubjectPublicKeyInfo(Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;)Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;
 
-    new-instance v2, Lorg/bouncycastle/pqc/asn1/XMSSKeyParams;
+    move-result-object v0
 
-    iget-object v3, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->keyParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
-
-    invoke-virtual {v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;->getParameters()Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->getHeight()I
-
-    move-result v3
-
-    new-instance v4, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
-
-    iget-object v5, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->treeDigest:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    invoke-direct {v4, v5}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;-><init>(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/asn1/XMSSKeyParams;-><init>(ILorg/bouncycastle/asn1/x509/AlgorithmIdentifier;)V
-
-    invoke-direct {v0, v1, v2}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;-><init>(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    new-instance v1, Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;
-
-    new-instance v2, Lorg/bouncycastle/pqc/asn1/XMSSPublicKey;
-
-    iget-object v3, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->keyParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
-
-    invoke-virtual {v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;->getPublicSeed()[B
-
-    move-result-object v3
-
-    iget-object v4, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->keyParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
-
-    invoke-virtual {v4}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;->getRoot()[B
-
-    move-result-object v4
-
-    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/asn1/XMSSPublicKey;-><init>([B[B)V
-
-    invoke-direct {v1, v0, v2}, Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;-><init>(Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Object;->getEncoded()[B
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Object;->getEncoded()[B
 
     move-result-object v0
     :try_end_0
@@ -236,6 +163,7 @@
 .method public hashCode()I
     .locals 2
 
+    :try_start_0
     iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->treeDigest:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->hashCode()I
@@ -244,17 +172,28 @@
 
     iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->keyParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
 
-    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;->toByteArray()[B
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;->getEncoded()[B
 
     move-result-object v1
 
     invoke-static {v1}, Lorg/bouncycastle/util/Arrays;->hashCode([B)I
 
     move-result v1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     mul-int/lit8 v1, v1, 0x25
 
     add-int/2addr v0, v1
+
+    return v0
+
+    :catch_0
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/xmss/BCXMSSPublicKey;->treeDigest:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->hashCode()I
+
+    move-result v0
 
     return v0
 .end method

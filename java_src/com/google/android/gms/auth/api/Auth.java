@@ -10,7 +10,7 @@ import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.ShowFirstParty;
-import com.google.android.gms.internal.p019authapi.zbl;
+import com.google.android.gms.internal.p018authapi.zbl;
 /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
 /* loaded from: classes.dex */
 public final class Auth {

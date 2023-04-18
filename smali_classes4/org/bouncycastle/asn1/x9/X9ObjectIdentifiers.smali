@@ -21,17 +21,9 @@
 
 .field public static final id_publicKeyType:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-.field public static final ppBasis:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-.field public static final prime192v1:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-.field public static final prime256v1:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
 .field public static final primeCurve:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
 .field public static final prime_field:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-.field public static final tpBasis:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
 .field public static final x9_42_schemes:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
@@ -84,17 +76,9 @@
 
     invoke-virtual {v2, v4}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    move-result-object v4
-
-    sput-object v4, Lorg/bouncycastle/asn1/x9/X9ObjectIdentifiers;->tpBasis:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
     const-string v4, "3.3"
 
     invoke-virtual {v2, v4}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    move-result-object v2
-
-    sput-object v2, Lorg/bouncycastle/asn1/x9/X9ObjectIdentifiers;->ppBasis:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     const-string v2, "4"
 
@@ -224,10 +208,6 @@
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    move-result-object v4
-
-    sput-object v4, Lorg/bouncycastle/asn1/x9/X9ObjectIdentifiers;->prime192v1:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
     invoke-virtual {v0, v3}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     invoke-virtual {v0, v5}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
@@ -239,10 +219,6 @@
     invoke-virtual {v0, v7}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     invoke-virtual {v0, v8}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    move-result-object v0
-
-    sput-object v0, Lorg/bouncycastle/asn1/x9/X9ObjectIdentifiers;->prime256v1:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     new-instance v0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 

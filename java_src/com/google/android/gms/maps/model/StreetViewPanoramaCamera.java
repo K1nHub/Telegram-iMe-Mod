@@ -15,11 +15,11 @@ import com.google.android.gms.maps.model.StreetViewPanoramaOrientation;
 /* loaded from: classes3.dex */
 public class StreetViewPanoramaCamera extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<StreetViewPanoramaCamera> CREATOR = new zzp();
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     public final float bearing;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     public final float tilt;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     public final float zoom;
     private final StreetViewPanoramaOrientation zza;
 
@@ -68,7 +68,7 @@ public class StreetViewPanoramaCamera extends AbstractSafeParcelable implements 
     }
 
     @SafeParcelable.Constructor
-    public StreetViewPanoramaCamera(@SafeParcelable.Param(m788id = 2) float f, @SafeParcelable.Param(m788id = 3) float f2, @SafeParcelable.Param(m788id = 4) float f3) {
+    public StreetViewPanoramaCamera(@SafeParcelable.Param(m774id = 2) float f, @SafeParcelable.Param(m774id = 3) float f2, @SafeParcelable.Param(m774id = 4) float f3) {
         boolean z = false;
         if (f2 >= -90.0f && f2 <= 90.0f) {
             z = true;

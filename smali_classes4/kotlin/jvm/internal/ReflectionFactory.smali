@@ -43,6 +43,12 @@
     return-object v0
 .end method
 
+.method public property0(Lkotlin/jvm/internal/PropertyReference0;)Lkotlin/reflect/KProperty0;
+    .locals 0
+
+    return-object p1
+.end method
+
 .method public property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
     .locals 0
 

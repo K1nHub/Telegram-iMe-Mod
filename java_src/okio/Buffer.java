@@ -1,8 +1,8 @@
 package okio;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.MediaPeriodQueue;
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
@@ -640,7 +640,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
             i3 = i;
         } else if (j < MediaPeriodQueue.INITIAL_RENDERER_POSITION_OFFSET_US) {
             if (j < 10000000000L) {
-                i3 = j < C0482C.NANOS_PER_SECOND ? 9 : 10;
+                i3 = j < C0470C.NANOS_PER_SECOND ? 9 : 10;
             } else {
                 i = j < 100000000000L ? 11 : 12;
                 i3 = i;

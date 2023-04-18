@@ -229,7 +229,7 @@ public final class WebvttCueParser {
             webvttCueInfoBuilder.text = parseCueText(str, sb.toString(), list);
             return webvttCueInfoBuilder.build();
         } catch (NumberFormatException unused) {
-            Log.m806w(TAG, "Skipping cue with bad header: " + matcher.group());
+            Log.m792w(TAG, "Skipping cue with bad header: " + matcher.group());
             return null;
         }
     }
@@ -251,10 +251,10 @@ public final class WebvttCueParser {
                 } else if ("vertical".equals(str2)) {
                     webvttCueInfoBuilder.verticalType = parseVerticalAttribute(str3);
                 } else {
-                    Log.m806w(TAG, "Unknown cue setting " + str2 + ":" + str3);
+                    Log.m792w(TAG, "Unknown cue setting " + str2 + ":" + str3);
                 }
             } catch (NumberFormatException unused) {
-                Log.m806w(TAG, "Skipping bad cue setting: " + matcher.group());
+                Log.m792w(TAG, "Skipping bad cue setting: " + matcher.group());
             }
         }
     }
@@ -312,7 +312,7 @@ public final class WebvttCueParser {
             case 3:
                 return 0;
             default:
-                Log.m806w(TAG, "Invalid anchor value: " + str);
+                Log.m792w(TAG, "Invalid anchor value: " + str);
                 return Integer.MIN_VALUE;
         }
     }
@@ -378,7 +378,7 @@ public final class WebvttCueParser {
             case 4:
                 return 2;
             default:
-                Log.m806w(TAG, "Invalid anchor value: " + str);
+                Log.m792w(TAG, "Invalid anchor value: " + str);
                 return Integer.MIN_VALUE;
         }
     }
@@ -391,7 +391,7 @@ public final class WebvttCueParser {
         if (str.equals("rl")) {
             return 1;
         }
-        Log.m806w(TAG, "Invalid 'vertical' value: " + str);
+        Log.m792w(TAG, "Invalid 'vertical' value: " + str);
         return Integer.MIN_VALUE;
     }
 
@@ -449,7 +449,7 @@ public final class WebvttCueParser {
             case 5:
                 return 1;
             default:
-                Log.m806w(TAG, "Invalid alignment value: " + str);
+                Log.m792w(TAG, "Invalid alignment value: " + str);
                 return 2;
         }
     }
@@ -502,7 +502,7 @@ public final class WebvttCueParser {
                 spannableStringBuilder.append(CHAR_SPACE);
                 return;
             default:
-                Log.m806w(TAG, "ignoring unsupported entity: '&" + str + ";'");
+                Log.m792w(TAG, "ignoring unsupported entity: '&" + str + ";'");
                 return;
         }
     }
@@ -843,7 +843,7 @@ public final class WebvttCueParser {
                 if (i != 3) {
                     if (i != 4) {
                         if (i != 5) {
-                            Log.m806w(WebvttCueParser.TAG, "Unknown textAlignment: " + i);
+                            Log.m792w(WebvttCueParser.TAG, "Unknown textAlignment: " + i);
                             return null;
                         }
                     }

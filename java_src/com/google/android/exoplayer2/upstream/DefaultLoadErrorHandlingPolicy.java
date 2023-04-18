@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.upstream;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.upstream.HttpDataSource;
@@ -49,7 +49,7 @@ public class DefaultLoadErrorHandlingPolicy implements LoadErrorHandlingPolicy {
     @Override // com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy
     public long getRetryDelayMsFor(LoadErrorHandlingPolicy.LoadErrorInfo loadErrorInfo) {
         IOException iOException = loadErrorInfo.exception;
-        return ((iOException instanceof ParserException) || (iOException instanceof FileNotFoundException) || (iOException instanceof HttpDataSource.CleartextNotPermittedException) || (iOException instanceof Loader.UnexpectedLoaderException) || DataSourceException.isCausedByPositionOutOfRange(iOException)) ? C0482C.TIME_UNSET : Math.min((loadErrorInfo.errorCount - 1) * 1000, (int) DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS);
+        return ((iOException instanceof ParserException) || (iOException instanceof FileNotFoundException) || (iOException instanceof HttpDataSource.CleartextNotPermittedException) || (iOException instanceof Loader.UnexpectedLoaderException) || DataSourceException.isCausedByPositionOutOfRange(iOException)) ? C0470C.TIME_UNSET : Math.min((loadErrorInfo.errorCount - 1) * 1000, (int) DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS);
     }
 
     @Override // com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy

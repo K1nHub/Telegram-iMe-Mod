@@ -2,104 +2,66 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.implements Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_document;
+
+.field public final synthetic f$2:Ljava/lang/String;
+
+.field public final synthetic f$3:Ljava/lang/Object;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$TL_document;Ljava/lang/String;Ljava/lang/Object;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda314;->f$0:Lorg/telegram/ui/ChatActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda314;->f$1:Lorg/telegram/tgnet/TLRPC$TL_document;
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda314;->f$2:Ljava/lang/String;
+
+    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda314;->f$3:Ljava/lang/Object;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic applyServiceShaderMatrix(IIFF)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$applyServiceShaderMatrix(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;IIFF)V
-
-    return-void
-.end method
-
-.method public final getColor(Ljava/lang/String;)Ljava/lang/Integer;
-    .locals 1
+.method public final didSelectDate(ZILjava/lang/String;)V
+    .locals 7
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda314;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/ChatActivity;->getThemedColor(Ljava/lang/String;)I
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda314;->f$1:Lorg/telegram/tgnet/TLRPC$TL_document;
 
-    move-result p1
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda314;->f$2:Ljava/lang/String;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda314;->f$3:Ljava/lang/Object;
 
-    move-result-object p1
+    move v4, p1
 
-    return-object p1
-.end method
+    move v5, p2
 
-.method public synthetic getColorOrDefault(Ljava/lang/String;)I
-    .locals 0
+    move-object v6, p3
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getColorOrDefault(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public synthetic getCurrentColor(Ljava/lang/String;)Ljava/lang/Integer;
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getCurrentColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getDrawable(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getPaint(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)Landroid/graphics/Paint;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic hasGradientService()Z
-    .locals 1
-
-    invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$hasGradientService(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public synthetic setAnimatedColor(Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$setAnimatedColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;I)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$Y4T7nepnPov8i76GMIi1ohTihVs(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$TL_document;Ljava/lang/String;Ljava/lang/Object;ZILjava/lang/String;)V
 
     return-void
+.end method
+
+.method public synthetic getSelectedDialogs()Ljava/util/ArrayList;
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate$-CC;->$default$getSelectedDialogs(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    return-object v0
 .end method

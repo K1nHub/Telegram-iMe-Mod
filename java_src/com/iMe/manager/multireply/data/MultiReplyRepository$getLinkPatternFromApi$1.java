@@ -32,6 +32,6 @@ public final class MultiReplyRepository$getLinkPatternFromApi$1 extends Lambda i
         messageLinkCache = this.this$0.messageLinkCache;
         String str = it.link;
         Intrinsics.checkNotNullExpressionValue(str, "it.link");
-        return messageLinkCache.writeLinkToCache(str, this.$message.getId(), this.$currentChat.f1502id);
+        return messageLinkCache.writeLinkToCache(str, this.$message.getId(), this.$currentChat.f1427id);
     }
 }

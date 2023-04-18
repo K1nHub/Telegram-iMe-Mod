@@ -47,7 +47,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 66
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/TranslateAlert2;->cutInBlocks(Ljava/lang/CharSequence;I)Ljava/util/ArrayList;
+    invoke-static {p1, p2}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->cutInBlocks(Ljava/lang/CharSequence;I)Ljava/util/ArrayList;
 
     move-result-object p1
 

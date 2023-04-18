@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State;)V
     .locals 1
 
-    .line 196
+    .line 214
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showSuccessPurchase"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;)V
     .locals 0
 
-    .line 201
+    .line 219
     invoke-interface {p1}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;->showSuccessPurchase()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 194
+    .line 212
     check-cast p1, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowSuccessPurchaseCommand;->apply(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;)V

@@ -33,7 +33,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 58052
+    .line 58064
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 58064
+    .line 58076
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$Updates;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$Updates;
 
     move-result-object p1
@@ -55,12 +55,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 58068
+    .line 58080
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_phone_joinGroupCall;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58069
+    .line 58081
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_joinGroupCall;->muted:Z
 
     if-eqz v0, :cond_0
@@ -79,7 +79,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_joinGroupCall;->flags:I
 
-    .line 58070
+    .line 58082
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_joinGroupCall;->video_stopped:Z
 
     if-eqz v1, :cond_1
@@ -94,32 +94,32 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_joinGroupCall;->flags:I
 
-    .line 58071
+    .line 58083
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58072
+    .line 58084
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_joinGroupCall;->call:Lorg/telegram/tgnet/TLRPC$TL_inputGroupCall;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_inputGroupCall;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 58073
+    .line 58085
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_joinGroupCall;->join_as:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 58074
+    .line 58086
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_joinGroupCall;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_2
 
-    .line 58075
+    .line 58087
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_joinGroupCall;->invite_hash:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 58077
+    .line 58089
     :cond_2
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_joinGroupCall;->params:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 

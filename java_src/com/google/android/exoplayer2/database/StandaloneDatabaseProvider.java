@@ -42,7 +42,7 @@ public class StandaloneDatabaseProvider extends SQLiteOpenHelper implements Data
                     try {
                         sQLiteDatabase.execSQL(str);
                     } catch (SQLException e) {
-                        Log.m809e(TAG, "Error executing " + str, e);
+                        Log.m795e(TAG, "Error executing " + str, e);
                     }
                 }
             } catch (Throwable th) {

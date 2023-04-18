@@ -4,9 +4,9 @@ import com.google.firebase.firestore.local.TargetData;
 import com.google.firebase.firestore.model.SnapshotVersion;
 import com.google.firebase.firestore.util.Assert;
 import com.google.firebase.firestore.util.AsyncQueue;
-import com.google.firestore.p022v1.FirestoreGrpc;
-import com.google.firestore.p022v1.ListenRequest;
-import com.google.firestore.p022v1.ListenResponse;
+import com.google.firestore.p021v1.FirestoreGrpc;
+import com.google.firestore.p021v1.ListenRequest;
+import com.google.firestore.p021v1.ListenResponse;
 import com.google.protobuf.ByteString;
 import java.util.Map;
 /* loaded from: classes3.dex */

@@ -19,6 +19,8 @@
 
 
 # instance fields
+.field private final oid:I
+
 .field private final stringRepresentation:Ljava/lang/String;
 
 
@@ -118,6 +120,8 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusOid;->oid:I
+
     iput-object p2, p0, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusOid;->stringRepresentation:Ljava/lang/String;
 
     return-void
@@ -181,6 +185,14 @@
 
 
 # virtual methods
+.method public getOid()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusOid;->oid:I
+
+    return v0
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 1
 

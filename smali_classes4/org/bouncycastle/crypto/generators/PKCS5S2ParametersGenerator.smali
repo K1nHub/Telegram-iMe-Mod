@@ -236,15 +236,11 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    new-instance v1, Lorg/bouncycastle/crypto/params/KeyParameter;
 
-    invoke-static {v0, v1, p1}, Lorg/bouncycastle/util/Arrays;->copyOfRange([BII)[B
+    const/4 v2, 0x0
 
-    move-result-object v0
+    invoke-direct {v1, v0, v2, p1}, Lorg/bouncycastle/crypto/params/KeyParameter;-><init>([BII)V
 
-    new-instance v2, Lorg/bouncycastle/crypto/params/KeyParameter;
-
-    invoke-direct {v2, v0, v1, p1}, Lorg/bouncycastle/crypto/params/KeyParameter;-><init>([BII)V
-
-    return-object v2
+    return-object v1
 .end method

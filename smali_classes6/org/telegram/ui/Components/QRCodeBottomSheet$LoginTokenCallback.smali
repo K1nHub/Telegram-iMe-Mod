@@ -18,5 +18,8 @@
 .method public abstract onAuthorized(Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;)V
 .end method
 
+.method public abstract onError()V
+.end method
+
 .method public abstract onTwoStepVerificationNeeded()V
 .end method

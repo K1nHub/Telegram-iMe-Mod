@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 23
+    .line 26
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "CONDITION_FALSE"
@@ -20,7 +20,7 @@
 
     sput-object v0, Lkotlinx/coroutines/internal/LockFreeLinkedListKt;->CONDITION_FALSE:Ljava/lang/Object;
 
-    .line 26
+    .line 30
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "LIST_EMPTY"
@@ -33,19 +33,17 @@
 .method public static final getCONDITION_FALSE()Ljava/lang/Object;
     .locals 1
 
-    .line 23
+    .line 26
     sget-object v0, Lkotlinx/coroutines/internal/LockFreeLinkedListKt;->CONDITION_FALSE:Ljava/lang/Object;
 
     return-object v0
 .end method
 
 .method public static final unwrap(Ljava/lang/Object;)Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
-    .locals 2
+    .locals 1
 
-    .line 627
+    .line 631
     instance-of v0, p0, Lkotlinx/coroutines/internal/Removed;
-
-    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
@@ -56,23 +54,20 @@
     goto :goto_0
 
     :cond_0
-    move-object v0, v1
+    const/4 v0, 0x0
 
     :goto_0
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    goto :goto_1
+    iget-object v0, v0, Lkotlinx/coroutines/internal/Removed;->ref:Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    if-nez v0, :cond_2
 
     :cond_1
-    iget-object v1, v0, Lkotlinx/coroutines/internal/Removed;->ref:Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+    move-object v0, p0
 
-    :goto_1
-    if-nez v1, :cond_2
-
-    move-object v1, p0
-
-    check-cast v1, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+    check-cast v0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
     :cond_2
-    return-object v1
+    return-object v0
 .end method

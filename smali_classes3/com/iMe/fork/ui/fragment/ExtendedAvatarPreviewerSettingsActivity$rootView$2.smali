@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/FrameLayout;
     .locals 1
 
-    .line 30
+    .line 31
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$rootView$2;->this$0:Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->access$initRootView(Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)Landroid/widget/FrameLayout;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 30
+    .line 31
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$rootView$2;->invoke()Landroid/widget/FrameLayout;
 
     move-result-object v0

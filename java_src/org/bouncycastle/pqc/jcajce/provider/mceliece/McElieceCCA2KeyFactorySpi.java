@@ -29,7 +29,7 @@ public class McElieceCCA2KeyFactorySpi extends KeyFactorySpi implements Asymmetr
         try {
             PrivateKeyInfo privateKeyInfo = PrivateKeyInfo.getInstance(ASN1Primitive.fromByteArray(((PKCS8EncodedKeySpec) keySpec).getEncoded()));
             try {
-                if (PQCObjectIdentifiers.mcElieceCca2.equals(privateKeyInfo.getPrivateKeyAlgorithm().getAlgorithm())) {
+                if (PQCObjectIdentifiers.mcElieceCca2.equals((ASN1Primitive) privateKeyInfo.getPrivateKeyAlgorithm().getAlgorithm())) {
                     McElieceCCA2PrivateKey mcElieceCCA2PrivateKey = McElieceCCA2PrivateKey.getInstance(privateKeyInfo.parsePrivateKey());
                     return new BCMcElieceCCA2PrivateKey(new McElieceCCA2PrivateKeyParameters(mcElieceCCA2PrivateKey.getN(), mcElieceCCA2PrivateKey.getK(), mcElieceCCA2PrivateKey.getField(), mcElieceCCA2PrivateKey.getGoppaPoly(), mcElieceCCA2PrivateKey.getP(), Utils.getDigest(mcElieceCCA2PrivateKey.getDigest()).getAlgorithmName()));
                 }
@@ -50,7 +50,7 @@ public class McElieceCCA2KeyFactorySpi extends KeyFactorySpi implements Asymmetr
         try {
             SubjectPublicKeyInfo subjectPublicKeyInfo = SubjectPublicKeyInfo.getInstance(ASN1Primitive.fromByteArray(((X509EncodedKeySpec) keySpec).getEncoded()));
             try {
-                if (PQCObjectIdentifiers.mcElieceCca2.equals(subjectPublicKeyInfo.getAlgorithm().getAlgorithm())) {
+                if (PQCObjectIdentifiers.mcElieceCca2.equals((ASN1Primitive) subjectPublicKeyInfo.getAlgorithm().getAlgorithm())) {
                     McElieceCCA2PublicKey mcElieceCCA2PublicKey = McElieceCCA2PublicKey.getInstance(subjectPublicKeyInfo.parsePublicKey());
                     return new BCMcElieceCCA2PublicKey(new McElieceCCA2PublicKeyParameters(mcElieceCCA2PublicKey.getN(), mcElieceCCA2PublicKey.getT(), mcElieceCCA2PublicKey.getG(), Utils.getDigest(mcElieceCCA2PublicKey.getDigest()).getAlgorithmName()));
                 }

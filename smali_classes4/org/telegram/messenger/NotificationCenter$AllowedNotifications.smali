@@ -24,10 +24,10 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 732
+    .line 733
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 733
+    .line 734
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -40,7 +40,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/NotificationCenter$1;)V
     .locals 0
 
-    .line 727
+    .line 728
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;-><init>()V
 
     return-void

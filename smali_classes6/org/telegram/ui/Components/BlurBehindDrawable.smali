@@ -1246,6 +1246,15 @@
     :goto_2
     if-eqz v0, :cond_b
 
+    .line 106
+    aget-object v3, v0, v1
+
+    if-eqz v3, :cond_b
+
+    aget-object v3, v0, v2
+
+    if-eqz v3, :cond_b
+
     .line 107
     iget-object v3, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->emptyPaint:Landroid/graphics/Paint;
 

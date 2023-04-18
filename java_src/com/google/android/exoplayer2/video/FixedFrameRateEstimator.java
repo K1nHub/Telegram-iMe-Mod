@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.video;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import java.util.Arrays;
 /* loaded from: classes.dex */
 final class FixedFrameRateEstimator {
@@ -11,13 +11,13 @@ final class FixedFrameRateEstimator {
     private boolean switchToCandidateMatcherWhenSynced;
     private Matcher currentMatcher = new Matcher();
     private Matcher candidateMatcher = new Matcher();
-    private long lastFramePresentationTimeNs = C0482C.TIME_UNSET;
+    private long lastFramePresentationTimeNs = C0470C.TIME_UNSET;
 
     public void reset() {
         this.currentMatcher.reset();
         this.candidateMatcher.reset();
         this.candidateMatcherActive = false;
-        this.lastFramePresentationTimeNs = C0482C.TIME_UNSET;
+        this.lastFramePresentationTimeNs = C0470C.TIME_UNSET;
         this.framesWithoutSyncCount = 0;
     }
 
@@ -25,7 +25,7 @@ final class FixedFrameRateEstimator {
         this.currentMatcher.onNextFrame(j);
         if (this.currentMatcher.isSynced() && !this.switchToCandidateMatcherWhenSynced) {
             this.candidateMatcherActive = false;
-        } else if (this.lastFramePresentationTimeNs != C0482C.TIME_UNSET) {
+        } else if (this.lastFramePresentationTimeNs != C0470C.TIME_UNSET) {
             if (!this.candidateMatcherActive || this.candidateMatcher.isLastFrameOutlier()) {
                 this.candidateMatcher.reset();
                 this.candidateMatcher.onNextFrame(this.lastFramePresentationTimeNs);
@@ -53,11 +53,11 @@ final class FixedFrameRateEstimator {
     }
 
     public long getMatchingFrameDurationSumNs() {
-        return isSynced() ? this.currentMatcher.getMatchingFrameDurationSumNs() : C0482C.TIME_UNSET;
+        return isSynced() ? this.currentMatcher.getMatchingFrameDurationSumNs() : C0470C.TIME_UNSET;
     }
 
     public long getFrameDurationNs() {
-        return isSynced() ? this.currentMatcher.getFrameDurationNs() : C0482C.TIME_UNSET;
+        return isSynced() ? this.currentMatcher.getFrameDurationNs() : C0470C.TIME_UNSET;
     }
 
     public float getFrameRate() {

@@ -20,13 +20,17 @@ final class AppCompatTextClassifierHelper {
 
     public TextClassifier getTextClassifier() {
         TextClassifier textClassifier = this.mTextClassifier;
-        if (textClassifier == null) {
-            TextClassificationManager textClassificationManager = (TextClassificationManager) this.mTextView.getContext().getSystemService(TextClassificationManager.class);
+        return textClassifier == null ? Api26Impl.getTextClassifier(this.mTextView) : textClassifier;
+    }
+
+    /* loaded from: classes.dex */
+    private static final class Api26Impl {
+        static TextClassifier getTextClassifier(TextView textView) {
+            TextClassificationManager textClassificationManager = (TextClassificationManager) textView.getContext().getSystemService(TextClassificationManager.class);
             if (textClassificationManager != null) {
                 return textClassificationManager.getTextClassifier();
             }
             return TextClassifier.NO_OP;
         }
-        return textClassifier;
     }
 }

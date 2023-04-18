@@ -177,7 +177,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
     public Map<String, List<String>> getResponseHeaders() {
         HttpURLConnection httpURLConnection = this.connection;
         if (httpURLConnection == null) {
-            return ImmutableMap.m747of();
+            return ImmutableMap.m733of();
         }
         return new NullFilteringHeadersMap(httpURLConnection.getHeaderFields());
     }
@@ -505,7 +505,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
             try {
                 httpURLConnection.disconnect();
             } catch (Exception e) {
-                Log.m809e(TAG, "Unexpected error while disconnecting", e);
+                Log.m795e(TAG, "Unexpected error while disconnecting", e);
             }
             this.connection = null;
         }
@@ -550,7 +550,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
 
         @Override // com.google.common.collect.ForwardingMap, java.util.Map
         public Set<String> keySet() {
-            return Sets.filter(super.keySet(), C0670x828bc3d2.INSTANCE);
+            return Sets.filter(super.keySet(), C0655x828bc3d2.INSTANCE);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -560,7 +560,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
 
         @Override // com.google.common.collect.ForwardingMap, java.util.Map
         public Set<Map.Entry<String, List<String>>> entrySet() {
-            return Sets.filter(super.entrySet(), C0671x828bc3d3.INSTANCE);
+            return Sets.filter(super.entrySet(), C0656x828bc3d3.INSTANCE);
         }
 
         @Override // com.google.common.collect.ForwardingMap, java.util.Map

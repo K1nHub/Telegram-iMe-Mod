@@ -534,8 +534,9 @@ public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedB
         return this.behavior;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onAttachedToWindow() {
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // androidx.appcompat.widget.Toolbar, android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
         super.onAttachedToWindow();
         MaterialShapeUtils.setParentAbsoluteElevation(this, this.materialShapeDrawable);
         if (getParent() instanceof ViewGroup) {

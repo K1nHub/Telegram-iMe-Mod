@@ -2,6 +2,10 @@ package kotlinx.coroutines;
 
 import java.util.List;
 import java.util.ServiceLoader;
+import kotlin.ExceptionsKt__ExceptionsKt;
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.Unit;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt__SequencesKt;
@@ -29,6 +33,14 @@ public final class CoroutineExceptionHandlerImplKt {
             }
         }
         Thread currentThread2 = Thread.currentThread();
+        try {
+            Result.Companion companion = Result.Companion;
+            ExceptionsKt__ExceptionsKt.addSuppressed(th, new DiagnosticCoroutineContextException(coroutineContext));
+            Result.m1555constructorimpl(Unit.INSTANCE);
+        } catch (Throwable th3) {
+            Result.Companion companion2 = Result.Companion;
+            Result.m1555constructorimpl(ResultKt.createFailure(th3));
+        }
         currentThread2.getUncaughtExceptionHandler().uncaughtException(currentThread2, th);
     }
 }

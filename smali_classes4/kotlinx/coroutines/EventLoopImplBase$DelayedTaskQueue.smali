@@ -30,10 +30,10 @@
 .method public constructor <init>(J)V
     .locals 0
 
-    .line 518
+    .line 529
     invoke-direct {p0}, Lkotlinx/coroutines/internal/ThreadSafeHeap;-><init>()V
 
-    .line 517
+    .line 528
     iput-wide p1, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTaskQueue;->timeNow:J
 
     return-void

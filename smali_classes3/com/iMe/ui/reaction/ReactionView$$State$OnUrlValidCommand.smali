@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/ui/reaction/ReactionView$$State;ILjava/lang/String;)V
     .locals 1
 
-    .line 145
+    .line 163
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onUrlValid"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 147
+    .line 165
     iput p2, p0, Lcom/iMe/ui/reaction/ReactionView$$State$OnUrlValidCommand;->position:I
 
-    .line 148
+    .line 166
     iput-object p3, p0, Lcom/iMe/ui/reaction/ReactionView$$State$OnUrlValidCommand;->url:Ljava/lang/String;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/ui/reaction/ReactionView;)V
     .locals 2
 
-    .line 153
+    .line 171
     iget v0, p0, Lcom/iMe/ui/reaction/ReactionView$$State$OnUrlValidCommand;->position:I
 
     iget-object v1, p0, Lcom/iMe/ui/reaction/ReactionView$$State$OnUrlValidCommand;->url:Ljava/lang/String;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 139
+    .line 157
     check-cast p1, Lcom/iMe/ui/reaction/ReactionView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/reaction/ReactionView$$State$OnUrlValidCommand;->apply(Lcom/iMe/ui/reaction/ReactionView;)V

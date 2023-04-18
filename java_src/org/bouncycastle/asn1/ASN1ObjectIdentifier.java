@@ -3,9 +3,10 @@ package org.bouncycastle.asn1;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.math.BigInteger;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentMap;
 import org.bouncycastle.util.Arrays;
-import p035j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes4.dex */
 public class ASN1ObjectIdentifier extends ASN1Primitive {
     private static final ConcurrentMap<OidHandle, ASN1ObjectIdentifier> pool = new ConcurrentHashMap();
@@ -36,9 +37,7 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
     }
 
     public ASN1ObjectIdentifier(String str) {
-        if (str == null) {
-            throw new IllegalArgumentException("'identifier' cannot be null");
-        }
+        Objects.requireNonNull(str, "'identifier' cannot be null");
         if (isValidIdentifier(str)) {
             this.identifier = str;
             return;
@@ -141,9 +140,9 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
             return (ASN1ObjectIdentifier) obj;
         }
         if (obj instanceof ASN1Encodable) {
-            ASN1Encodable aSN1Encodable = (ASN1Encodable) obj;
-            if (aSN1Encodable.toASN1Primitive() instanceof ASN1ObjectIdentifier) {
-                return (ASN1ObjectIdentifier) aSN1Encodable.toASN1Primitive();
+            ASN1Primitive aSN1Primitive = ((ASN1Encodable) obj).toASN1Primitive();
+            if (aSN1Primitive instanceof ASN1ObjectIdentifier) {
+                return (ASN1ObjectIdentifier) aSN1Primitive;
             }
         }
         if (!(obj instanceof byte[])) {
@@ -156,37 +155,62 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x001a, code lost:
-        if (r3 != '.') goto L17;
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x001f, code lost:
+        if (r7.charAt(r0 + 1) != '0') goto L23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x002b, code lost:
+        return false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0015, code lost:
+        if (r2 == 0) goto L26;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0017, code lost:
+        if (r2 <= 1) goto L25;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private static boolean isValidBranchID(java.lang.String r5, int r6) {
+    private static boolean isValidBranchID(java.lang.String r7, int r8) {
         /*
-            int r0 = r5.length()
+            int r0 = r7.length()
             r1 = 0
         L5:
             r2 = r1
         L6:
             int r0 = r0 + (-1)
-            if (r0 < r6) goto L1f
-            char r3 = r5.charAt(r0)
-            r4 = 48
-            if (r4 > r3) goto L18
-            r4 = 57
-            if (r3 > r4) goto L18
-            r2 = 1
-            goto L6
-        L18:
-            r4 = 46
-            if (r3 != r4) goto L1e
-            if (r2 != 0) goto L5
-        L1e:
+            r3 = 48
+            r4 = 1
+            if (r0 < r8) goto L2c
+            char r5 = r7.charAt(r0)
+            r6 = 46
+            if (r5 != r6) goto L22
+            if (r2 == 0) goto L21
+            if (r2 <= r4) goto L5
+            int r2 = r0 + 1
+            char r2 = r7.charAt(r2)
+            if (r2 != r3) goto L5
+        L21:
             return r1
-        L1f:
-            return r2
+        L22:
+            if (r3 > r5) goto L2b
+            r3 = 57
+            if (r5 > r3) goto L2b
+            int r2 = r2 + 1
+            goto L6
+        L2b:
+            return r1
+        L2c:
+            if (r2 == 0) goto L39
+            if (r2 <= r4) goto L38
+            int r0 = r0 + r4
+            char r7 = r7.charAt(r0)
+            if (r7 != r3) goto L38
+            goto L39
+        L38:
+            return r4
+        L39:
+            return r1
         */
         throw new UnsupportedOperationException("Method not decompiled: org.bouncycastle.asn1.ASN1ObjectIdentifier.isValidBranchID(java.lang.String, int):boolean");
     }
@@ -227,8 +251,9 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
         byteArrayOutputStream.write(bArr, 0, bitLength);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    boolean asn1Equals(ASN1Primitive aSN1Primitive) {
+    public boolean asn1Equals(ASN1Primitive aSN1Primitive) {
         if (aSN1Primitive == this) {
             return true;
         }
@@ -244,11 +269,8 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    public void encode(ASN1OutputStream aSN1OutputStream) throws IOException {
-        byte[] body = getBody();
-        aSN1OutputStream.write(6);
-        aSN1OutputStream.writeLength(body.length);
-        aSN1OutputStream.write(body);
+    public void encode(ASN1OutputStream aSN1OutputStream, boolean z) throws IOException {
+        aSN1OutputStream.writeEncoded(z, 6, getBody());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -267,10 +289,28 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
         return this.identifier.hashCode();
     }
 
+    public ASN1ObjectIdentifier intern() {
+        OidHandle oidHandle = new OidHandle(getBody());
+        ConcurrentMap<OidHandle, ASN1ObjectIdentifier> concurrentMap = pool;
+        ASN1ObjectIdentifier aSN1ObjectIdentifier = concurrentMap.get(oidHandle);
+        if (aSN1ObjectIdentifier == null) {
+            ASN1ObjectIdentifier putIfAbsent = concurrentMap.putIfAbsent(oidHandle, this);
+            return putIfAbsent == null ? this : putIfAbsent;
+        }
+        return aSN1ObjectIdentifier;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
     public boolean isConstructed() {
         return false;
+    }
+
+    /* renamed from: on */
+    public boolean m66on(ASN1ObjectIdentifier aSN1ObjectIdentifier) {
+        String id = getId();
+        String id2 = aSN1ObjectIdentifier.getId();
+        return id.length() > id2.length() && id.charAt(id2.length()) == '.' && id.startsWith(id2);
     }
 
     public String toString() {

@@ -14,7 +14,7 @@ public abstract class LimitedInputStream extends InputStream {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public int getRemaining() {
+    public int getLimit() {
         return this._limit;
     }
 

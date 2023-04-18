@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Module.kt\norg/koin/core/module/ModuleKt\n+ 2 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,253:1\n102#2,14:254\n102#2,14:268\n102#2,14:282\n*S KotlinDebug\n*F\n+ 1 Module.kt\norg/koin/core/module/ModuleKt\n*L\n207#1:254,14\n217#1:268,14\n227#1:282,14\n*E\n"
+    value = "SMAP\nModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Module.kt\norg/koin/core/module/ModuleKt\n+ 2 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,251:1\n105#2,14:252\n105#2,14:266\n105#2,14:280\n*S KotlinDebug\n*F\n+ 1 Module.kt\norg/koin/core/module/ModuleKt\n*L\n206#1:252,14\n216#1:266,14\n226#1:280,14\n*E\n"
 .end annotation
 
 
@@ -35,7 +35,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 242
+    .line 240
     :goto_0
     invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
 
@@ -45,7 +45,7 @@
 
     return-object p1
 
-    .line 245
+    .line 243
     :cond_0
     invoke-static {p0}, Lkotlin/collections/CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
 
@@ -57,7 +57,7 @@
 
     const/4 v1, 0x1
 
-    .line 246
+    .line 244
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
@@ -66,8 +66,8 @@
 
     move-result-object p0
 
-    .line 247
-    invoke-virtual {v0}, Lorg/koin/core/module/Module;->getIncludedModules$koin_core()Ljava/util/List;
+    .line 245
+    invoke-virtual {v0}, Lorg/koin/core/module/Module;->getIncludedModules()Ljava/util/List;
 
     move-result-object v1
 
@@ -77,16 +77,16 @@
 
     if-eqz v1, :cond_1
 
-    .line 248
+    .line 246
     invoke-static {p1, v0}, Lkotlin/collections/SetsKt;->plus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 250
+    .line 248
     :cond_1
-    invoke-virtual {v0}, Lorg/koin/core/module/Module;->getIncludedModules$koin_core()Ljava/util/List;
+    invoke-virtual {v0}, Lorg/koin/core/module/Module;->getIncludedModules()Ljava/util/List;
 
     move-result-object v1
 
@@ -100,7 +100,7 @@
 
     goto :goto_0
 
-    .line 245
+    .line 243
     :cond_2
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -122,7 +122,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 241
+    .line 239
     invoke-static {}, Lkotlin/collections/SetsKt;->emptySet()Ljava/util/Set;
 
     move-result-object p1
@@ -155,7 +155,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 197
+    .line 196
     new-instance v0, Lorg/koin/core/error/DefinitionOverrideException;
 
     new-instance v1, Ljava/lang/StringBuilder;

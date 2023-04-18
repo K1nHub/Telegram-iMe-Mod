@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoAccessManagerImpl.kt */
@@ -158,12 +159,9 @@ public final class CryptoAccessManagerImpl implements CryptoAccessManager {
     public boolean isAuthorized(BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         if (!this.wallets.isEmpty()) {
-            if (getLastLoggedInGuid().length() > 0) {
-                Wallet wallet2 = this.wallets.get(blockchainType);
-                if (Intrinsics.areEqual(wallet2 != null ? wallet2.getGuid() : null, getLastLoggedInGuid())) {
-                    if (this.walletPassword.length() > 0) {
-                        return true;
-                    }
+            if ((getLastLoggedInGuid().length() > 0) && Intrinsics.areEqual(((Wallet) CollectionsKt.last(this.wallets.values())).getGuid(), getLastLoggedInGuid())) {
+                if (this.walletPassword.length() > 0) {
+                    return true;
                 }
             }
         }

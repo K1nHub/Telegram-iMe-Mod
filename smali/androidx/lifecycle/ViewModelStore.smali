@@ -1,13 +1,13 @@
 .class public Landroidx/lifecycle/ViewModelStore;
 .super Ljava/lang/Object;
-.source "ViewModelStore.java"
+.source "ViewModelStore.kt"
 
 
 # instance fields
-.field private final mMap:Ljava/util/HashMap;
+.field private final map:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/HashMap<",
+            "Ljava/util/Map<",
             "Ljava/lang/String;",
             "Landroidx/lifecycle/ViewModel;",
             ">;"
@@ -20,15 +20,15 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 38
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
-    new-instance v0, Ljava/util/HashMap;
+    .line 37
+    new-instance v0, Ljava/util/LinkedHashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    iput-object v0, p0, Landroidx/lifecycle/ViewModelStore;->mMap:Ljava/util/HashMap;
+    iput-object v0, p0, Landroidx/lifecycle/ViewModelStore;->map:Ljava/util/Map;
 
     return-void
 .end method
@@ -38,10 +38,10 @@
 .method public final clear()V
     .locals 2
 
-    .line 61
-    iget-object v0, p0, Landroidx/lifecycle/ViewModelStore;->mMap:Ljava/util/HashMap;
+    .line 71
+    iget-object v0, p0, Landroidx/lifecycle/ViewModelStore;->map:Ljava/util/Map;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -62,27 +62,31 @@
 
     check-cast v1, Landroidx/lifecycle/ViewModel;
 
-    .line 62
+    .line 72
     invoke-virtual {v1}, Landroidx/lifecycle/ViewModel;->clear()V
 
     goto :goto_0
 
-    .line 64
+    .line 74
     :cond_0
-    iget-object v0, p0, Landroidx/lifecycle/ViewModelStore;->mMap:Ljava/util/HashMap;
+    iget-object v0, p0, Landroidx/lifecycle/ViewModelStore;->map:Ljava/util/Map;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
 
     return-void
 .end method
 
-.method final get(Ljava/lang/String;)Landroidx/lifecycle/ViewModel;
+.method public final get(Ljava/lang/String;)Landroidx/lifecycle/ViewModel;
     .locals 1
 
-    .line 50
-    iget-object v0, p0, Landroidx/lifecycle/ViewModelStore;->mMap:Ljava/util/HashMap;
+    const-string v0, "key"
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 56
+    iget-object v0, p0, Landroidx/lifecycle/ViewModelStore;->map:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -91,7 +95,7 @@
     return-object p1
 .end method
 
-.method keys()Ljava/util/Set;
+.method public final keys()Ljava/util/Set;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -102,12 +106,12 @@
         }
     .end annotation
 
-    .line 54
+    .line 64
     new-instance v0, Ljava/util/HashSet;
 
-    iget-object v1, p0, Landroidx/lifecycle/ViewModelStore;->mMap:Ljava/util/HashMap;
+    iget-object v1, p0, Landroidx/lifecycle/ViewModelStore;->map:Ljava/util/Map;
 
-    invoke-virtual {v1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+    invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v1
 
@@ -116,13 +120,21 @@
     return-object v0
 .end method
 
-.method final put(Ljava/lang/String;Landroidx/lifecycle/ViewModel;)V
+.method public final put(Ljava/lang/String;Landroidx/lifecycle/ViewModel;)V
     .locals 1
 
-    .line 43
-    iget-object v0, p0, Landroidx/lifecycle/ViewModelStore;->mMap:Ljava/util/HashMap;
+    const-string v0, "key"
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "viewModel"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 44
+    iget-object v0, p0, Landroidx/lifecycle/ViewModelStore;->map:Ljava/util/Map;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

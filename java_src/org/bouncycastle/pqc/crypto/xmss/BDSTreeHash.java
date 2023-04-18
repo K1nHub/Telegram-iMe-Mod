@@ -6,9 +6,8 @@ import java.util.Stack;
 import org.bouncycastle.pqc.crypto.xmss.HashTreeAddress;
 import org.bouncycastle.pqc.crypto.xmss.LTreeAddress;
 import org.bouncycastle.pqc.crypto.xmss.OTSHashAddress;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
-public class BDSTreeHash implements Serializable {
+class BDSTreeHash implements Serializable, Cloneable {
     private int height;
     private final int initialHeight;
     private int nextIndex;
@@ -19,6 +18,17 @@ public class BDSTreeHash implements Serializable {
     /* JADX INFO: Access modifiers changed from: package-private */
     public BDSTreeHash(int i) {
         this.initialHeight = i;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public BDSTreeHash clone() {
+        BDSTreeHash bDSTreeHash = new BDSTreeHash(this.initialHeight);
+        bDSTreeHash.tailNode = this.tailNode;
+        bDSTreeHash.height = this.height;
+        bDSTreeHash.nextIndex = this.nextIndex;
+        bDSTreeHash.initialized = this.initialized;
+        bDSTreeHash.finished = this.finished;
+        return bDSTreeHash;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -35,7 +45,7 @@ public class BDSTreeHash implements Serializable {
     }
 
     public XMSSNode getTailNode() {
-        return this.tailNode.clone();
+        return this.tailNode;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

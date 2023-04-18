@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 96
+    .line 95
     invoke-virtual {p0}, Lcom/iMe/utils/extentions/common/ViewExtKt$setRightDrawableOnClickListener$2;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -59,7 +59,7 @@
 .method public final invoke()V
     .locals 1
 
-    .line 96
+    .line 95
     iget-object v0, p0, Lcom/iMe/utils/extentions/common/ViewExtKt$setRightDrawableOnClickListener$2;->$action:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V

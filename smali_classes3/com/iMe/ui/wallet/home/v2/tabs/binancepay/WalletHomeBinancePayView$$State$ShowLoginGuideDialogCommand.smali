@@ -49,17 +49,17 @@
         }
     .end annotation
 
-    .line 377
+    .line 395
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showLoginGuideDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 379
+    .line 397
     iput-object p2, p0, Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView$$State$ShowLoginGuideDialogCommand;->model:Lcom/iMe/model/dialog/DialogModel;
 
-    .line 380
+    .line 398
     iput-object p3, p0, Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView$$State$ShowLoginGuideDialogCommand;->action:Lkotlin/jvm/functions/Function0;
 
     return-void
@@ -70,7 +70,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView;)V
     .locals 2
 
-    .line 385
+    .line 403
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView$$State$ShowLoginGuideDialogCommand;->model:Lcom/iMe/model/dialog/DialogModel;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView$$State$ShowLoginGuideDialogCommand;->action:Lkotlin/jvm/functions/Function0;
@@ -83,7 +83,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 371
+    .line 389
     check-cast p1, Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView$$State$ShowLoginGuideDialogCommand;->apply(Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView;)V

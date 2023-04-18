@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 178
+    .line 196
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showToast"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 180
+    .line 198
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView;)V
     .locals 1
 
-    .line 185
+    .line 203
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 174
+    .line 192
     check-cast p1, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$ShowToastCommand;->apply(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView;)V

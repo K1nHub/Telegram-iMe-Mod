@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.firebase_ml;
 
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.FirebaseMLException;
 /* loaded from: classes.dex */
 public final class zzok {
     private zzom zzaud;

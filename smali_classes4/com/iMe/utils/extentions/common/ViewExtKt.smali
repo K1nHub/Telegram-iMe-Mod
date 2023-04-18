@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nViewExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,331:1\n1855#2,2:332\n13579#3,2:334\n341#4:336\n350#4:337\n359#4:338\n368#4:339\n*S KotlinDebug\n*F\n+ 1 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n78#1:332,2\n317#1:334,2\n323#1:336\n324#1:337\n325#1:338\n326#1:339\n*E\n"
+    value = "SMAP\nViewExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,345:1\n1855#2,2:346\n13579#3,2:348\n341#4:350\n350#4:351\n359#4:352\n368#4:353\n*S KotlinDebug\n*F\n+ 1 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n77#1:346,2\n331#1:348,2\n337#1:350\n338#1:351\n339#1:352\n340#1:353\n*E\n"
 .end annotation
 
 
@@ -20,22 +20,22 @@
     return p0
 .end method
 
+.method public static synthetic $r8$lambda$ALHGZVhJZ9727xSOY7duE_OeABA(ILcom/iMe/fork/utils/Callbacks$Callback;Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->onAction$lambda$5(ILcom/iMe/fork/utils/Callbacks$Callback;Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public static synthetic $r8$lambda$JcyRg-Umj4GOIz7PfIgfV8ljlhc(Lkotlin/jvm/internal/Ref$LongRef;JLkotlin/jvm/functions/Function1;Landroid/view/View;)V
     .locals 0
 
     invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$lambda$3(Lkotlin/jvm/internal/Ref$LongRef;JLkotlin/jvm/functions/Function1;Landroid/view/View;)V
 
     return-void
-.end method
-
-.method public static synthetic $r8$lambda$ssLsQaxdAxooJHehZ9iVn3dTBm4(ILcom/iMe/fork/utils/Callbacks$Callback;Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->onAction$lambda$4(ILcom/iMe/fork/utils/Callbacks$Callback;Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-
-    move-result p0
-
-    return p0
 .end method
 
 .method public static synthetic $r8$lambda$tsSxDemaXrep121qvnzLyNZ7lUI(Ljava/util/Map;)Ljava/util/Map;
@@ -48,6 +48,16 @@
     return-object p0
 .end method
 
+.method public static synthetic $r8$lambda$uQ0gPNc1kiAAMGiKzVnPG9HhSNs(Lkotlin/jvm/internal/Ref$BooleanRef;Landroid/view/View;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener$lambda$4(Lkotlin/jvm/internal/Ref$BooleanRef;Landroid/view/View;Landroid/view/View;Landroid/view/MotionEvent;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public static final applyDefaultProperties(Landroidx/viewpager/widget/ViewPager;)V
     .locals 2
 
@@ -57,22 +67,22 @@
 
     const/4 v0, 0x3
 
-    .line 260
+    .line 274
     invoke-virtual {p0, v0}, Landroidx/viewpager/widget/ViewPager;->setOffscreenPageLimit(I)V
 
     const/4 v0, 0x0
 
-    .line 261
+    .line 275
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->setClipToPadding(Z)V
 
     const/high16 v1, 0x41c00000    # 24.0f
 
-    .line 262
+    .line 276
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v1
 
-    .line 263
+    .line 277
     invoke-virtual {p0, v1, v0, v1, v0}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
     return-void
@@ -87,7 +97,7 @@
 
     const-string v0, ""
 
-    .line 236
+    .line 250
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     return-void
@@ -102,12 +112,12 @@
 
     const/high16 v0, 0x3f000000    # 0.5f
 
-    .line 209
+    .line 223
     invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
     const/4 v0, 0x0
 
-    .line 210
+    .line 224
     invoke-virtual {p0, v0}, Landroid/view/View;->setEnabled(Z)V
 
     return-void
@@ -122,12 +132,12 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 214
+    .line 228
     invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
     const/4 v0, 0x1
 
-    .line 215
+    .line 229
     invoke-virtual {p0, v0}, Landroid/view/View;->setEnabled(Z)V
 
     return-void
@@ -142,7 +152,7 @@
 
     const/16 v0, 0x8
 
-    .line 104
+    .line 103
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -157,7 +167,7 @@
 
     const/4 v0, 0x4
 
-    .line 108
+    .line 107
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -174,7 +184,7 @@
 
     new-array v0, v0, [Lcom/iMe/utils/common/DigitsInputFilter;
 
-    .line 281
+    .line 295
     new-instance v8, Lcom/iMe/utils/common/DigitsInputFilter;
 
     const-wide/16 v4, 0x0
@@ -211,7 +221,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 57
+    .line 56
     instance-of v0, p1, Lcom/iMe/model/wallet/select/SelectableToken$WithLogoUrl$Binance;
 
     if-eqz v0, :cond_0
@@ -232,7 +242,7 @@
 
     goto :goto_0
 
-    .line 58
+    .line 57
     :cond_0
     instance-of v0, p1, Lcom/iMe/model/wallet/select/SelectableToken$WithResLogo;
 
@@ -277,47 +287,47 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 63
+    .line 62
     new-instance v0, Lcom/bumptech/glide/load/model/GlideUrl;
 
-    new-instance v1, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda3;
+    new-instance v1, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda4;
 
-    invoke-direct {v1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda3;-><init>(Ljava/util/Map;)V
+    invoke-direct {v1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda4;-><init>(Ljava/util/Map;)V
 
     invoke-direct {v0, p1, v1}, Lcom/bumptech/glide/load/model/GlideUrl;-><init>(Ljava/lang/String;Lcom/bumptech/glide/load/model/Headers;)V
 
-    .line 65
+    .line 64
     invoke-static {p0}, Lcom/bumptech/glide/Glide;->with(Landroid/view/View;)Lcom/bumptech/glide/RequestManager;
 
     move-result-object p1
 
-    .line 66
+    .line 65
     invoke-virtual {p1, v0}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/Object;)Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object p1
 
-    .line 67
+    .line 66
     invoke-virtual {p1}, Lcom/bumptech/glide/request/BaseRequestOptions;->dontAnimate()Lcom/bumptech/glide/request/BaseRequestOptions;
 
     move-result-object p1
 
     check-cast p1, Lcom/bumptech/glide/RequestBuilder;
 
-    .line 68
+    .line 67
     invoke-virtual {p1}, Lcom/bumptech/glide/request/BaseRequestOptions;->centerCrop()Lcom/bumptech/glide/request/BaseRequestOptions;
 
     move-result-object p1
 
     check-cast p1, Lcom/bumptech/glide/RequestBuilder;
 
-    .line 69
+    .line 68
     invoke-virtual {p1}, Lcom/bumptech/glide/request/BaseRequestOptions;->circleCrop()Lcom/bumptech/glide/request/BaseRequestOptions;
 
     move-result-object p1
 
     check-cast p1, Lcom/bumptech/glide/RequestBuilder;
 
-    .line 70
+    .line 69
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
@@ -328,7 +338,7 @@
 
     check-cast p1, Lcom/bumptech/glide/RequestBuilder;
 
-    .line 71
+    .line 70
     sget-object p2, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->ALL:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
 
     invoke-virtual {p1, p2}, Lcom/bumptech/glide/request/BaseRequestOptions;->diskCacheStrategy(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/request/BaseRequestOptions;
@@ -337,7 +347,7 @@
 
     check-cast p1, Lcom/bumptech/glide/RequestBuilder;
 
-    .line 72
+    .line 71
     invoke-virtual {p1, p0}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
 
     return-void
@@ -360,7 +370,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 230
+    .line 244
     invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
@@ -383,7 +393,7 @@
 
     if-le v0, v1, :cond_1
 
-    .line 231
+    .line 245
     invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
 
     move-result v0
@@ -407,17 +417,17 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 197
-    new-instance v0, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda2;
+    .line 211
+    new-instance v0, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda3;
 
-    invoke-direct {v0, p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda2;-><init>(ILcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v0, p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda3;-><init>(ILcom/iMe/fork/utils/Callbacks$Callback;)V
 
     invoke-virtual {p0, v0}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
     return-void
 .end method
 
-.method private static final onAction$lambda$4(ILcom/iMe/fork/utils/Callbacks$Callback;Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+.method private static final onAction$lambda$5(ILcom/iMe/fork/utils/Callbacks$Callback;Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
     .locals 0
 
     const-string p2, "$runAction"
@@ -426,7 +436,7 @@
 
     if-ne p3, p0, :cond_0
 
-    .line 200
+    .line 214
     invoke-interface {p1}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     const/4 p0, 0x1
@@ -447,7 +457,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 295
+    .line 309
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -466,7 +476,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 297
+    .line 311
     :try_start_0
     invoke-virtual {v0, p0}, Landroid/view/ViewGroup;->removeViewInLayout(Landroid/view/View;)V
     :try_end_0
@@ -477,7 +487,7 @@
     :catch_0
     move-exception p0
 
-    .line 299
+    .line 313
     invoke-static {p0}, Ltimber/log/Timber;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -508,12 +518,12 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 138
+    .line 135
     new-instance v0, Lkotlin/jvm/internal/Ref$LongRef;
 
     invoke-direct {v0}, Lkotlin/jvm/internal/Ref$LongRef;-><init>()V
 
-    .line 139
+    .line 136
     new-instance v1, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, v0, p1, p2, p3}, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/internal/Ref$LongRef;JLkotlin/jvm/functions/Function1;)V
@@ -532,7 +542,7 @@
 
     const-wide/16 p1, 0x1f4
 
-    .line 137
+    .line 134
     :cond_0
     invoke-static {p0, p1, p2, p3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick(Landroid/view/View;JLkotlin/jvm/functions/Function1;)V
 
@@ -550,7 +560,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 140
+    .line 137
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -565,12 +575,12 @@
 
     const-string/jumbo p1, "view"
 
-    .line 141
+    .line 138
     invoke-static {p4, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p3, p4}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 142
+    .line 139
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide p1
@@ -588,7 +598,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 314
+    .line 328
     invoke-virtual {p0, p1}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
@@ -620,7 +630,7 @@
     :cond_0
     const/4 p1, 0x2
 
-    .line 285
+    .line 299
     :goto_0
     invoke-virtual {p0, p1}, Landroid/widget/EditText;->setInputType(I)V
 
@@ -636,7 +646,7 @@
 
     const-string v0, "player_actionBarSelector"
 
-    .line 124
+    .line 123
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
@@ -661,12 +671,12 @@
 
     const-string v0, "player_actionBarSelector"
 
-    .line 120
+    .line 119
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
-    const/4 v1, 0x5
+    const/4 v1, 0x3
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
 
@@ -686,7 +696,7 @@
 
     const-string v0, "player_actionBarSelector"
 
-    .line 116
+    .line 115
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
@@ -709,7 +719,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 76
+    .line 75
     invoke-virtual {p0}, Landroid/widget/TextView;->getCompoundDrawables()[Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
@@ -718,7 +728,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 77
+    .line 76
     invoke-static {p0}, Lkotlin/collections/ArraysKt;->filterNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
@@ -741,7 +751,7 @@
 
     check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    .line 78
+    .line 77
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -765,7 +775,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 305
+    .line 319
     sget p1, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
     goto :goto_0
@@ -773,7 +783,7 @@
     :cond_0
     sget p1, Lorg/telegram/messenger/R$drawable;->greydivider_top:I
 
-    .line 306
+    .line 320
     :goto_0
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -801,7 +811,7 @@
 
     move p1, p3
 
-    .line 304
+    .line 318
     :cond_0
     invoke-static {p0, p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setGreyShadowBackground(Landroid/view/View;Z)V
 
@@ -819,7 +829,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 52
+    .line 51
     invoke-virtual {p1}, Ljava/lang/Number;->floatValue()F
 
     move-result v0
@@ -856,7 +866,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 134
+    .line 131
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -875,7 +885,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 328
+    .line 342
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -886,10 +896,10 @@
 
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 329
+    .line 343
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 328
+    .line 342
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
@@ -1025,12 +1035,111 @@
     :cond_a
     move p4, v0
 
-    .line 322
+    .line 336
     :cond_b
     :goto_6
     invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMargins(Landroid/view/View;IIII)V
 
     return-void
+.end method
+
+.method public static final setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/view/View;",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Landroid/view/View;",
+            "Lkotlin/Unit;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "listener"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-wide/16 v2, 0x0
+
+    const/4 v5, 0x1
+
+    const/4 v6, 0x0
+
+    move-object v1, p0
+
+    move-object v4, p1
+
+    .line 145
+    invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 146
+    new-instance p1, Lkotlin/jvm/internal/Ref$BooleanRef;
+
+    invoke-direct {p1}, Lkotlin/jvm/internal/Ref$BooleanRef;-><init>()V
+
+    .line 147
+    new-instance v0, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda2;
+
+    invoke-direct {v0, p1, p0}, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/internal/Ref$BooleanRef;Landroid/view/View;)V
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+
+    return-void
+.end method
+
+.method private static final setMixedClickListener$lambda$4(Lkotlin/jvm/internal/Ref$BooleanRef;Landroid/view/View;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 1
+
+    const-string p2, "$isPressedDown"
+
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p2, "$this_setMixedClickListener"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 148
+    invoke-virtual {p3}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result p2
+
+    const/4 p3, 0x0
+
+    const/4 v0, 0x1
+
+    if-eqz p2, :cond_2
+
+    if-eq p2, v0, :cond_0
+
+    goto :goto_0
+
+    .line 151
+    :cond_0
+    iget-boolean p2, p0, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
+
+    if-eqz p2, :cond_1
+
+    .line 152
+    invoke-virtual {p1}, Landroid/view/View;->performClick()Z
+
+    .line 154
+    :cond_1
+    iput-boolean p3, p0, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
+
+    goto :goto_0
+
+    .line 149
+    :cond_2
+    iput-boolean v0, p0, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
+
+    :goto_0
+    return p3
 .end method
 
 .method public static final setRightDrawableOnClickListener(Landroid/widget/TextView;Ljava/lang/Runnable;)V
@@ -1044,7 +1153,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 96
+    .line 95
     new-instance v0, Lcom/iMe/utils/extentions/common/ViewExtKt$setRightDrawableOnClickListener$2;
 
     invoke-direct {v0, p1}, Lcom/iMe/utils/extentions/common/ViewExtKt$setRightDrawableOnClickListener$2;-><init>(Ljava/lang/Runnable;)V
@@ -1074,7 +1183,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 82
+    .line 81
     new-instance v0, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/utils/extentions/common/ViewExtKt$$ExternalSyntheticLambda1;-><init>(Landroid/widget/TextView;Lkotlin/jvm/functions/Function0;)V
@@ -1095,7 +1204,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 84
+    .line 83
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p2
@@ -1104,7 +1213,7 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 85
+    .line 84
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result p2
@@ -1137,7 +1246,7 @@
 
     if-ltz p0, :cond_0
 
-    .line 86
+    .line 85
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     return v0
@@ -1155,7 +1264,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 112
+    .line 111
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
@@ -1174,7 +1283,7 @@
 
     const/4 p1, 0x0
 
-    .line 111
+    .line 110
     :cond_0
     invoke-static {p0, p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setRippleBackground(Landroid/view/View;Z)V
 
@@ -1182,27 +1291,19 @@
 .end method
 
 .method public static final setRippleForeground(Landroid/view/View;Z)V
-    .locals 2
+    .locals 1
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 128
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt v0, v1, :cond_0
-
-    .line 129
+    .line 127
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setForeground(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_0
     return-void
 .end method
 
@@ -1215,7 +1316,7 @@
 
     const/4 p1, 0x0
 
-    .line 127
+    .line 126
     :cond_0
     invoke-static {p0, p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setRippleForeground(Landroid/view/View;Z)V
 
@@ -1229,10 +1330,10 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 310
+    .line 324
     invoke-virtual {p0, p1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 311
+    .line 325
     invoke-virtual {p0, p1}, Landroid/view/View;->setScaleY(F)V
 
     return-void
@@ -1245,7 +1346,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 291
+    .line 305
     invoke-virtual {p0}, Landroid/widget/EditText;->length()I
 
     move-result v0
@@ -1270,7 +1371,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 153
+    .line 167
     :try_start_0
     invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -1298,14 +1399,14 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 156
+    .line 170
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result p1
 
     add-int/2addr p1, v0
 
-    .line 158
+    .line 172
     new-instance v1, Landroid/text/SpannableString;
 
     invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -1314,32 +1415,32 @@
 
     invoke-direct {v1, v2}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 159
+    .line 173
     new-instance v2, Lcom/iMe/utils/extentions/common/ViewExtKt$setSubstringClickListener$clickSpan$1;
 
     invoke-direct {v2, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt$setSubstringClickListener$clickSpan$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     const/16 p2, 0x21
 
-    .line 171
+    .line 185
     invoke-virtual {v1, v2, v0, p1, p2}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     const/4 p1, 0x1
 
-    .line 172
+    .line 186
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setLinksClickable(Z)V
 
-    .line 173
+    .line 187
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setClickable(Z)V
 
-    .line 174
+    .line 188
     invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
 
     move-result-object p1
 
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 175
+    .line 189
     invoke-virtual {p0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1370,7 +1471,7 @@
 
     aget-object v2, p1, v1
 
-    .line 318
+    .line 332
     invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v3
@@ -1396,7 +1497,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 48
+    .line 47
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v0
@@ -1433,12 +1534,12 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 241
+    .line 255
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->shakeView(Landroid/view/View;)V
 
     if-eqz p1, :cond_1
 
-    .line 242
+    .line 256
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p0
@@ -1482,7 +1583,7 @@
 
     move p1, p3
 
-    .line 240
+    .line 254
     :cond_0
     invoke-static {p0, p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->shake(Landroid/view/View;Z)V
 
@@ -1498,13 +1599,13 @@
 
     const/4 v0, 0x1
 
-    .line 275
+    .line 289
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 276
+    .line 290
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 277
+    .line 291
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setLines(I)V
 
     return-void
@@ -1517,7 +1618,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 148
+    .line 162
     invoke-static {p1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
     move-result-object p1
@@ -1536,7 +1637,7 @@
 
     const/4 v0, 0x0
 
-    .line 100
+    .line 99
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -1553,7 +1654,7 @@
 
     float-to-int p1, v0
 
-    .line 253
+    .line 267
     invoke-static {p0, p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withAlpha(II)I
 
     move-result p0
@@ -1564,7 +1665,7 @@
 .method public static final withAlpha(II)I
     .locals 0
 
-    .line 257
+    .line 271
     invoke-static {p0, p1}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result p0
@@ -1581,7 +1682,7 @@
 
     const-string v0, "fonts/rmedium.ttf"
 
-    .line 267
+    .line 281
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
@@ -1600,7 +1701,7 @@
 
     const-string v0, "fonts/rmono.ttf"
 
-    .line 271
+    .line 285
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0

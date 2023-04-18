@@ -38,26 +38,26 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 153
+    .line 171
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "setupScreenWithData"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 155
+    .line 173
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$SetupScreenWithDataCommand;->transactionAmount:Ljava/lang/String;
 
-    .line 156
+    .line 174
     iput-object p3, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$SetupScreenWithDataCommand;->network:Ljava/lang/String;
 
-    .line 157
+    .line 175
     iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$SetupScreenWithDataCommand;->from:Ljava/lang/String;
 
-    .line 158
+    .line 176
     iput-object p5, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$SetupScreenWithDataCommand;->to:Ljava/lang/String;
 
-    .line 159
+    .line 177
     iput-object p6, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$SetupScreenWithDataCommand;->peerUrl:Ljava/lang/String;
 
     return-void
@@ -68,7 +68,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;)V
     .locals 6
 
-    .line 164
+    .line 182
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$SetupScreenWithDataCommand;->transactionAmount:Ljava/lang/String;
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$SetupScreenWithDataCommand;->network:Ljava/lang/String;
@@ -89,7 +89,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 140
+    .line 158
     check-cast p1, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$SetupScreenWithDataCommand;->apply(Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;)V

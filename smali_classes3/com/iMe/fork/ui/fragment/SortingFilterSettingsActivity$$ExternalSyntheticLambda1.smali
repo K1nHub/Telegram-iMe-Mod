@@ -45,7 +45,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->$r8$lambda$qhyWZ45JouzvLDAe3Zb_5qg1FN0(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {v0, p1, p2, p3, p4}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->$r8$lambda$Pjs9xm0xNN6ReUQ_Lqp45GgCl7c(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method

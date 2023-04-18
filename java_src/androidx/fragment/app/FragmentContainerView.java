@@ -34,6 +34,7 @@ public final class FragmentContainerView extends FrameLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FragmentContainerView(Context context, AttributeSet attrs, FragmentManager fm) {
         super(context, attrs);
+        String str;
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(attrs, "attrs");
         Intrinsics.checkNotNullParameter(fm, "fm");
@@ -51,8 +52,12 @@ public final class FragmentContainerView extends FrameLayout {
         Fragment findFragmentById = fm.findFragmentById(id);
         if (classAttribute != null && findFragmentById == null) {
             if (id == -1) {
-                String stringPlus = string != null ? Intrinsics.stringPlus(" with tag ", string) : "";
-                throw new IllegalStateException("FragmentContainerView must have an android:id to add Fragment " + ((Object) classAttribute) + stringPlus);
+                if (string != null) {
+                    str = " with tag " + string;
+                } else {
+                    str = "";
+                }
+                throw new IllegalStateException("FragmentContainerView must have an android:id to add Fragment " + classAttribute + str);
             }
             Fragment instantiate = fm.getFragmentFactory().instantiate(context.getClassLoader(), classAttribute);
             Intrinsics.checkNotNullExpressionValue(instantiate, "fm.fragmentFactory.insta…ontext.classLoader, name)");
@@ -91,18 +96,11 @@ public final class FragmentContainerView extends FrameLayout {
         } else {
             onApplyWindowInsets = ViewCompat.onApplyWindowInsets(this, windowInsetsCompat);
         }
+        Intrinsics.checkNotNullExpressionValue(onApplyWindowInsets, "if (applyWindowInsetsLis…, insetsCompat)\n        }");
         if (!onApplyWindowInsets.isConsumed()) {
-            int i = 0;
             int childCount = getChildCount();
-            if (childCount > 0) {
-                while (true) {
-                    int i2 = i + 1;
-                    ViewCompat.dispatchApplyWindowInsets(getChildAt(i), onApplyWindowInsets);
-                    if (i2 >= childCount) {
-                        break;
-                    }
-                    i = i2;
-                }
+            for (int i = 0; i < childCount; i++) {
+                ViewCompat.dispatchApplyWindowInsets(getChildAt(i), onApplyWindowInsets);
             }
         }
         return insets;
@@ -186,18 +184,10 @@ public final class FragmentContainerView extends FrameLayout {
     @Override // android.view.ViewGroup
     public void removeViews(int i, int i2) {
         int i3 = i + i2;
-        if (i < i3) {
-            int i4 = i;
-            while (true) {
-                int i5 = i4 + 1;
-                View view = getChildAt(i4);
-                Intrinsics.checkNotNullExpressionValue(view, "view");
-                addDisappearingFragmentView(view);
-                if (i5 >= i3) {
-                    break;
-                }
-                i4 = i5;
-            }
+        for (int i4 = i; i4 < i3; i4++) {
+            View view = getChildAt(i4);
+            Intrinsics.checkNotNullExpressionValue(view, "view");
+            addDisappearingFragmentView(view);
         }
         super.removeViews(i, i2);
     }
@@ -205,38 +195,28 @@ public final class FragmentContainerView extends FrameLayout {
     @Override // android.view.ViewGroup
     public void removeViewsInLayout(int i, int i2) {
         int i3 = i + i2;
-        if (i < i3) {
-            int i4 = i;
-            while (true) {
-                int i5 = i4 + 1;
-                View view = getChildAt(i4);
-                Intrinsics.checkNotNullExpressionValue(view, "view");
-                addDisappearingFragmentView(view);
-                if (i5 >= i3) {
-                    break;
-                }
-                i4 = i5;
-            }
+        for (int i4 = i; i4 < i3; i4++) {
+            View view = getChildAt(i4);
+            Intrinsics.checkNotNullExpressionValue(view, "view");
+            addDisappearingFragmentView(view);
         }
         super.removeViewsInLayout(i, i2);
     }
 
     @Override // android.view.ViewGroup
     public void removeAllViewsInLayout() {
-        int childCount = getChildCount() - 1;
-        if (childCount >= 0) {
-            while (true) {
-                int i = childCount - 1;
+        int childCount = getChildCount();
+        while (true) {
+            childCount--;
+            if (-1 < childCount) {
                 View view = getChildAt(childCount);
                 Intrinsics.checkNotNullExpressionValue(view, "view");
                 addDisappearingFragmentView(view);
-                if (i < 0) {
-                    break;
-                }
-                childCount = i;
+            } else {
+                super.removeAllViewsInLayout();
+                return;
             }
         }
-        super.removeAllViewsInLayout();
     }
 
     private final void addDisappearingFragmentView(View view) {

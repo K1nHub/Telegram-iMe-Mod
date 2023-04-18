@@ -32,9 +32,9 @@ import kotlin.ranges.RangesKt___RangesKt;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import p035j$.util.concurrent.ConcurrentHashMap;
-import p035j$.util.concurrent.ConcurrentMap$EL;
-import p035j$.util.function.Function;
+import p034j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentMap$EL;
+import p034j$.util.function.Function;
 /* compiled from: ToolsController.kt */
 /* loaded from: classes3.dex */
 public final class ToolsController extends BaseController {
@@ -275,8 +275,8 @@ public final class ToolsController extends BaseController {
             for (Map.Entry entry : arrayList) {
                 DialogType mapNameToEnum = DialogType.Companion.mapNameToEnum((String) entry.getKey());
                 Intrinsics.checkNotNull(mapNameToEnum, "null cannot be cast to non-null type com.iMe.fork.enums.DialogType");
-                Pair m94to = TuplesKt.m94to(mapNameToEnum, ChatAttachAlertButton.Companion.mapNamesToEnums((Set) entry.getValue()));
-                linkedHashMap.put(m94to.getFirst(), m94to.getSecond());
+                Pair m80to = TuplesKt.m80to(mapNameToEnum, ChatAttachAlertButton.Companion.mapNamesToEnums((Set) entry.getValue()));
+                linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
             }
             mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
             this.selectedChatAttachAlertButtons = mutableMap;
@@ -354,8 +354,8 @@ public final class ToolsController extends BaseController {
         Iterator<T> it = entrySet.iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            Pair m94to = TuplesKt.m94to(((DialogType) entry.getKey()).name(), ChatAttachAlertButton.Companion.mapEnumsToNames((Set) entry.getValue()));
-            linkedHashMap.put(m94to.getFirst(), m94to.getSecond());
+            Pair m80to = TuplesKt.m80to(((DialogType) entry.getKey()).name(), ChatAttachAlertButton.Companion.mapEnumsToNames((Set) entry.getValue()));
+            linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;
@@ -382,19 +382,19 @@ public final class ToolsController extends BaseController {
             Integer valueOf = Integer.valueOf(i);
             final ToolsController$Companion$getInstance$1 toolsController$Companion$getInstance$1 = new ToolsController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.ToolsController$Companion$$ExternalSyntheticLambda0
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
                     ToolsController instance$lambda$0;
                     instance$lambda$0 = ToolsController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

@@ -6,18 +6,18 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* loaded from: classes3.dex */
 public class ImmutableSortedSet<T> implements Iterable<T> {
     private final ImmutableSortedMap<T, Void> map;
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
-    public static class WrappedEntryIterator<T> implements Iterator<T>, p035j$.util.Iterator {
+    public static class WrappedEntryIterator<T> implements Iterator<T>, p034j$.util.Iterator {
         final Iterator<Map.Entry<T, Void>> iterator;
 
-        @Override // p035j$.util.Iterator
+        @Override // p034j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
@@ -26,17 +26,17 @@ public class ImmutableSortedSet<T> implements Iterable<T> {
             this.iterator = it;
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public boolean hasNext() {
             return this.iterator.hasNext();
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public T next() {
             return this.iterator.next().getKey();
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public void remove() {
             this.iterator.remove();
         }

@@ -11,19 +11,19 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zax extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zax> CREATOR = new zay();
-    @SafeParcelable.VersionField(m786id = 1)
+    @SafeParcelable.VersionField(m772id = 1)
     final int zaa;
-    @SafeParcelable.Field(getter = "getButtonSize", m789id = 2)
+    @SafeParcelable.Field(getter = "getButtonSize", m775id = 2)
     private final int zab;
-    @SafeParcelable.Field(getter = "getColorScheme", m789id = 3)
+    @SafeParcelable.Field(getter = "getColorScheme", m775id = 3)
     private final int zac;
-    @SafeParcelable.Field(getter = "getScopes", m789id = 4)
+    @SafeParcelable.Field(getter = "getScopes", m775id = 4)
     @Deprecated
     private final Scope[] zad;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zax(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) int i2, @SafeParcelable.Param(m788id = 3) int i3, @SafeParcelable.Param(m788id = 4) Scope[] scopeArr) {
+    public zax(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) int i2, @SafeParcelable.Param(m774id = 3) int i3, @SafeParcelable.Param(m774id = 4) Scope[] scopeArr) {
         this.zaa = i;
         this.zab = i2;
         this.zac = i3;

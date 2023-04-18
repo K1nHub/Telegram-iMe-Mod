@@ -15,17 +15,19 @@
 
 # direct methods
 .method public constructor <init>(Lorg/bouncycastle/math/ec/ECCurve;[B)V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Object;-><init>()V
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    iput-object v0, p0, Lorg/bouncycastle/asn1/x9/X9Curve;->fieldIdentifier:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    iput-object p1, p0, Lorg/bouncycastle/asn1/x9/X9Curve;->fieldIdentifier:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    iput-object p1, p0, Lorg/bouncycastle/asn1/x9/X9Curve;->curve:Lorg/bouncycastle/math/ec/ECCurve;
+    invoke-static {p2}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
 
-    iput-object p2, p0, Lorg/bouncycastle/asn1/x9/X9Curve;->seed:[B
+    move-result-object p1
+
+    iput-object p1, p0, Lorg/bouncycastle/asn1/x9/X9Curve;->seed:[B
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/x9/X9Curve;->setFieldIdentifier()V
 
@@ -79,101 +81,39 @@
 
 # virtual methods
 .method public toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
-    .locals 3
+    .locals 4
 
     new-instance v0, Lorg/bouncycastle/asn1/ASN1EncodableVector;
 
-    invoke-direct {v0}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>(I)V
 
     iget-object v1, p0, Lorg/bouncycastle/asn1/x9/X9Curve;->fieldIdentifier:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     sget-object v2, Lorg/bouncycastle/asn1/x9/X9ObjectIdentifiers;->prime_field:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    invoke-virtual {v1, v2}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    const/4 v2, 0x0
 
-    new-instance v1, Lorg/bouncycastle/asn1/x9/X9FieldElement;
+    if-nez v1, :cond_2
 
-    iget-object v2, p0, Lorg/bouncycastle/asn1/x9/X9Curve;->curve:Lorg/bouncycastle/math/ec/ECCurve;
-
-    invoke-virtual {v2}, Lorg/bouncycastle/math/ec/ECCurve;->getA()Lorg/bouncycastle/math/ec/ECFieldElement;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Lorg/bouncycastle/asn1/x9/X9FieldElement;-><init>(Lorg/bouncycastle/math/ec/ECFieldElement;)V
-
-    invoke-virtual {v1}, Lorg/bouncycastle/asn1/x9/X9FieldElement;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->add(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    new-instance v1, Lorg/bouncycastle/asn1/x9/X9FieldElement;
-
-    iget-object v2, p0, Lorg/bouncycastle/asn1/x9/X9Curve;->curve:Lorg/bouncycastle/math/ec/ECCurve;
-
-    invoke-virtual {v2}, Lorg/bouncycastle/math/ec/ECCurve;->getB()Lorg/bouncycastle/math/ec/ECFieldElement;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Lorg/bouncycastle/asn1/x9/X9FieldElement;-><init>(Lorg/bouncycastle/math/ec/ECFieldElement;)V
-
-    :goto_0
-    invoke-virtual {v1}, Lorg/bouncycastle/asn1/x9/X9FieldElement;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->add(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    goto :goto_1
-
-    :cond_0
     iget-object v1, p0, Lorg/bouncycastle/asn1/x9/X9Curve;->fieldIdentifier:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    sget-object v2, Lorg/bouncycastle/asn1/x9/X9ObjectIdentifiers;->characteristic_two_field:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    sget-object v3, Lorg/bouncycastle/asn1/x9/X9ObjectIdentifiers;->characteristic_two_field:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    invoke-virtual {v1, v2}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-nez v1, :cond_1
 
-    new-instance v1, Lorg/bouncycastle/asn1/x9/X9FieldElement;
-
-    iget-object v2, p0, Lorg/bouncycastle/asn1/x9/X9Curve;->curve:Lorg/bouncycastle/math/ec/ECCurve;
-
-    invoke-virtual {v2}, Lorg/bouncycastle/math/ec/ECCurve;->getA()Lorg/bouncycastle/math/ec/ECFieldElement;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Lorg/bouncycastle/asn1/x9/X9FieldElement;-><init>(Lorg/bouncycastle/math/ec/ECFieldElement;)V
-
-    invoke-virtual {v1}, Lorg/bouncycastle/asn1/x9/X9FieldElement;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->add(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    new-instance v1, Lorg/bouncycastle/asn1/x9/X9FieldElement;
-
-    iget-object v2, p0, Lorg/bouncycastle/asn1/x9/X9Curve;->curve:Lorg/bouncycastle/math/ec/ECCurve;
-
-    invoke-virtual {v2}, Lorg/bouncycastle/math/ec/ECCurve;->getB()Lorg/bouncycastle/math/ec/ECFieldElement;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Lorg/bouncycastle/asn1/x9/X9FieldElement;-><init>(Lorg/bouncycastle/math/ec/ECFieldElement;)V
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
     iget-object v1, p0, Lorg/bouncycastle/asn1/x9/X9Curve;->seed:[B
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_0
 
     new-instance v1, Lorg/bouncycastle/asn1/DERBitString;
 
@@ -183,10 +123,20 @@
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->add(Lorg/bouncycastle/asn1/ASN1Encodable;)V
 
-    :cond_2
+    :cond_0
     new-instance v1, Lorg/bouncycastle/asn1/DERSequence;
 
     invoke-direct {v1, v0}, Lorg/bouncycastle/asn1/DERSequence;-><init>(Lorg/bouncycastle/asn1/ASN1EncodableVector;)V
 
     return-object v1
+
+    :cond_1
+    new-instance v0, Lorg/bouncycastle/asn1/x9/X9FieldElement;
+
+    throw v2
+
+    :cond_2
+    new-instance v0, Lorg/bouncycastle/asn1/x9/X9FieldElement;
+
+    throw v2
 .end method

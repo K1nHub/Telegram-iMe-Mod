@@ -4,10 +4,10 @@ import com.iMe.model.common.NavigationTab;
 import com.iMe.model.wallet.navigation.WalletBottomNavigationTab;
 import com.iMe.navigation.common.configuration.NavigationConfiguration;
 import com.iMe.navigation.common.router.CommonBottomNavigationRouter;
-import com.iMe.p032ui.wallet.common.WalletTabFragment;
+import com.iMe.p031ui.wallet.common.WalletTabFragment;
 import java.util.Iterator;
-import org.telegram.messenger.C3316R;
-import org.telegram.p048ui.ActionBar.C3381ActionBar;
+import org.telegram.messenger.C3242R;
+import org.telegram.p044ui.ActionBar.C3306ActionBar;
 /* compiled from: WalletBottomNavigationRouter.kt */
 /* loaded from: classes3.dex */
 public final class WalletBottomNavigationRouter extends CommonBottomNavigationRouter<WalletTabFragment> {
@@ -19,7 +19,7 @@ public final class WalletBottomNavigationRouter extends CommonBottomNavigationRo
 
     private final void showTitle(int i) {
         Object obj;
-        C3381ActionBar actionBar;
+        C3306ActionBar actionBar;
         boolean z;
         NavigationConfiguration<? extends NavigationTab<T>> configuration = getConfiguration();
         if (configuration == 0) {
@@ -48,6 +48,6 @@ public final class WalletBottomNavigationRouter extends CommonBottomNavigationRo
             return;
         }
         actionBar.setTitle(walletBottomNavigationTab.getTitle());
-        actionBar.setCastShadows(i != C3316R.C3319id.wallet_root_bottom_navigation_home);
+        actionBar.setCastShadows(i != C3242R.C3245id.wallet_root_bottom_navigation_home);
     }
 }

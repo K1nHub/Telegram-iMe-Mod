@@ -10,24 +10,24 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzkv extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzkv> CREATOR = new zzkw();
-    @SafeParcelable.Field(m789id = 1)
+    @SafeParcelable.Field(m775id = 1)
     public final int zza;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     public final String zzb;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     public final long zzc;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     public final Long zzd;
-    @SafeParcelable.Field(m789id = 6)
+    @SafeParcelable.Field(m775id = 6)
     public final String zze;
-    @SafeParcelable.Field(m789id = 7)
+    @SafeParcelable.Field(m775id = 7)
     public final String zzf;
-    @SafeParcelable.Field(m789id = 8)
+    @SafeParcelable.Field(m775id = 8)
     public final Double zzg;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzkv(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) long j, @SafeParcelable.Param(m788id = 4) Long l, @SafeParcelable.Param(m788id = 5) Float f, @SafeParcelable.Param(m788id = 6) String str2, @SafeParcelable.Param(m788id = 7) String str3, @SafeParcelable.Param(m788id = 8) Double d) {
+    public zzkv(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) long j, @SafeParcelable.Param(m774id = 4) Long l, @SafeParcelable.Param(m774id = 5) Float f, @SafeParcelable.Param(m774id = 6) String str2, @SafeParcelable.Param(m774id = 7) String str3, @SafeParcelable.Param(m774id = 8) Double d) {
         this.zza = i;
         this.zzb = str;
         this.zzc = j;

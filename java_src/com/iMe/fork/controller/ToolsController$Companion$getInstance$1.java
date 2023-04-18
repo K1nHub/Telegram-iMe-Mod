@@ -3,10 +3,9 @@ package com.iMe.fork.controller;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ToolsController.kt */
 /* loaded from: classes3.dex */
-public final class ToolsController$Companion$getInstance$1 extends Lambda implements Function1<Integer, ToolsController> {
+final class ToolsController$Companion$getInstance$1 extends Lambda implements Function1<Integer, ToolsController> {
     final /* synthetic */ int $accountIndex;
 
     /* JADX INFO: Access modifiers changed from: package-private */

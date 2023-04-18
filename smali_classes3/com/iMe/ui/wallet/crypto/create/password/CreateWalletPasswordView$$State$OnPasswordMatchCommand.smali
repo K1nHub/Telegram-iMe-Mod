@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 141
+    .line 159
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "onPasswordMatch"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 143
+    .line 161
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State$OnPasswordMatchCommand;->password:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView;)V
     .locals 1
 
-    .line 148
+    .line 166
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State$OnPasswordMatchCommand;->password:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView;->onPasswordMatch(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 137
+    .line 155
     check-cast p1, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView$$State$OnPasswordMatchCommand;->apply(Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView;)V

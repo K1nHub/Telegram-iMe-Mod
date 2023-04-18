@@ -14,12 +14,12 @@ import java.util.Map;
 /* loaded from: classes3.dex */
 public final class RemoteMessage extends AbstractSafeParcelable {
     public static final Parcelable.Creator<RemoteMessage> CREATOR = new RemoteMessageCreator();
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     Bundle bundle;
     private Map<String, String> data;
 
     @SafeParcelable.Constructor
-    public RemoteMessage(@SafeParcelable.Param(m788id = 2) Bundle bundle) {
+    public RemoteMessage(@SafeParcelable.Param(m774id = 2) Bundle bundle) {
         this.bundle = bundle;
     }
 

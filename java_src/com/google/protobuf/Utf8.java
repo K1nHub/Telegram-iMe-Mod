@@ -1,7 +1,7 @@
 package com.google.protobuf;
 
 import com.google.android.exoplayer2.analytics.AnalyticsListener;
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Arrays;

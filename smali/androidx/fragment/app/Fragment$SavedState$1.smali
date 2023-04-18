@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 493
+    .line 538
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/Fragment$SavedState;
     .locals 2
 
-    .line 496
+    .line 541
     new-instance v0, Landroidx/fragment/app/Fragment$SavedState;
 
     const/4 v1, 0x0
@@ -54,7 +54,7 @@
 .method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/fragment/app/Fragment$SavedState;
     .locals 1
 
-    .line 501
+    .line 546
     new-instance v0, Landroidx/fragment/app/Fragment$SavedState;
 
     invoke-direct {v0, p1, p2}, Landroidx/fragment/app/Fragment$SavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
@@ -65,7 +65,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 493
+    .line 538
     invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/Fragment$SavedState;
 
     move-result-object p1
@@ -76,7 +76,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
     .locals 0
 
-    .line 493
+    .line 538
     invoke-virtual {p0, p1, p2}, Landroidx/fragment/app/Fragment$SavedState$1;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/fragment/app/Fragment$SavedState;
 
     move-result-object p1
@@ -87,7 +87,7 @@
 .method public newArray(I)[Landroidx/fragment/app/Fragment$SavedState;
     .locals 0
 
-    .line 506
+    .line 551
     new-array p1, p1, [Landroidx/fragment/app/Fragment$SavedState;
 
     return-object p1
@@ -96,7 +96,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 493
+    .line 538
     invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment$SavedState$1;->newArray(I)[Landroidx/fragment/app/Fragment$SavedState;
 
     move-result-object p1

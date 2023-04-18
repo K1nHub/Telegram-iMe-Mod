@@ -3,6 +3,14 @@
 .source "ActionBarBackgroundDrawable.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/appcompat/widget/ActionBarBackgroundDrawable$Api21Impl;
+    }
+.end annotation
+
+
 # instance fields
 .field final mContainer:Landroidx/appcompat/widget/ActionBarContainer;
 
@@ -90,12 +98,14 @@
     if-eqz v1, :cond_0
 
     .line 69
-    iget-object v0, v0, Landroidx/appcompat/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
+    iget-object v1, v0, Landroidx/appcompat/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
     .line 70
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
+    iget-object v0, v0, Landroidx/appcompat/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
+
+    invoke-static {v0, p1}, Landroidx/appcompat/widget/ActionBarBackgroundDrawable$Api21Impl;->getOutline(Landroid/graphics/drawable/Drawable;Landroid/graphics/Outline;)V
 
     goto :goto_0
 
@@ -106,7 +116,7 @@
     if-eqz v0, :cond_1
 
     .line 75
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
+    invoke-static {v0, p1}, Landroidx/appcompat/widget/ActionBarBackgroundDrawable$Api21Impl;->getOutline(Landroid/graphics/drawable/Drawable;Landroid/graphics/Outline;)V
 
     :cond_1
     :goto_0

@@ -32,35 +32,35 @@
 .method public constructor <init>(IJI)V
     .locals 2
 
-    .line 10219
+    .line 9971
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 10225
+    .line 9977
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->visible:Z
 
     const-wide/16 v0, -0x1
 
-    .line 10227
+    .line 9979
     iput-wide v0, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->lastActionTime:J
 
-    .line 10220
+    .line 9972
     iput p1, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->currentAccount:I
 
-    .line 10221
+    .line 9973
     iput-wide p2, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->dialogId:J
 
-    .line 10222
+    .line 9974
     iput p4, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->threadId:I
 
     return-void
 .end method
 
-.method static synthetic access$22800(Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;)V
+.method static synthetic access$22700(Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;)V
     .locals 0
 
-    .line 10213
+    .line 9965
     invoke-direct {p0}, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->reset()V
 
     return-void
@@ -69,12 +69,12 @@
 .method private reset()V
     .locals 7
 
-    .line 10244
+    .line 9996
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->typingWasSent:Z
 
     if-eqz v0, :cond_0
 
-    .line 10245
+    .line 9997
     iget v0, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -94,7 +94,7 @@
     :cond_0
     const-wide/16 v0, -0x1
 
-    .line 10247
+    .line 9999
     iput-wide v0, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->lastActionTime:J
 
     return-void
@@ -105,7 +105,7 @@
 .method public checkVisibility()V
     .locals 1
 
-    .line 10251
+    .line 10003
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->isShown()Z
 
     move-result v0
@@ -114,7 +114,7 @@
 
     if-nez v0, :cond_0
 
-    .line 10253
+    .line 10005
     invoke-direct {p0}, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->reset()V
 
     :cond_0
@@ -124,12 +124,12 @@
 .method public doSomeAction()V
     .locals 7
 
-    .line 10230
+    .line 9982
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->visible:Z
 
     if-eqz v0, :cond_1
 
-    .line 10231
+    .line 9983
     iget-wide v0, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->lastActionTime:J
 
     const-wide/16 v2, -0x1
@@ -138,7 +138,7 @@
 
     if-nez v0, :cond_0
 
-    .line 10232
+    .line 9984
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -147,7 +147,7 @@
 
     return-void
 
-    .line 10235
+    .line 9987
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -165,17 +165,17 @@
 
     const/4 v0, 0x1
 
-    .line 10236
+    .line 9988
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->typingWasSent:Z
 
-    .line 10237
+    .line 9989
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->lastActionTime:J
 
-    .line 10238
+    .line 9990
     iget v0, p0, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;

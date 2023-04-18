@@ -21,52 +21,52 @@ import java.util.Collection;
 /* loaded from: classes3.dex */
 public final class LoyaltyWalletObject extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LoyaltyWalletObject> CREATOR = new zzs();
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     String zza;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     String zzb;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     String zzc;
-    @SafeParcelable.Field(m789id = 5)
+    @SafeParcelable.Field(m775id = 5)
     String zzd;
-    @SafeParcelable.Field(m789id = 6)
+    @SafeParcelable.Field(m775id = 6)
     String zze;
-    @SafeParcelable.Field(m789id = 7)
+    @SafeParcelable.Field(m775id = 7)
     String zzf;
-    @SafeParcelable.Field(m789id = 8)
+    @SafeParcelable.Field(m775id = 8)
     String zzg;
-    @SafeParcelable.Field(m789id = 9)
+    @SafeParcelable.Field(m775id = 9)
     String zzh;
-    @SafeParcelable.Field(m789id = 10)
+    @SafeParcelable.Field(m775id = 10)
     @Deprecated
     String zzi;
-    @SafeParcelable.Field(m789id = 11)
+    @SafeParcelable.Field(m775id = 11)
     String zzj;
-    @SafeParcelable.Field(m789id = 12)
+    @SafeParcelable.Field(m775id = 12)
     int zzk;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 13)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 13)
     ArrayList zzl;
-    @SafeParcelable.Field(m789id = 14)
+    @SafeParcelable.Field(m775id = 14)
     TimeInterval zzm;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 15)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 15)
     ArrayList zzn;
-    @SafeParcelable.Field(m789id = 16)
+    @SafeParcelable.Field(m775id = 16)
     @Deprecated
     String zzo;
-    @SafeParcelable.Field(m789id = 17)
+    @SafeParcelable.Field(m775id = 17)
     @Deprecated
     String zzp;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 18)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 18)
     ArrayList zzq;
-    @SafeParcelable.Field(m789id = 19)
+    @SafeParcelable.Field(m775id = 19)
     boolean zzr;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 20)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 20)
     ArrayList zzs;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 21)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 21)
     ArrayList zzt;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m789id = 22)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.common.util.ArrayUtils.newArrayList()", m775id = 22)
     ArrayList zzu;
-    @SafeParcelable.Field(m789id = 23)
+    @SafeParcelable.Field(m775id = 23)
     LoyaltyPoints zzv;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
@@ -357,7 +357,7 @@ public final class LoyaltyWalletObject extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public LoyaltyWalletObject(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) String str2, @SafeParcelable.Param(m788id = 4) String str3, @SafeParcelable.Param(m788id = 5) String str4, @SafeParcelable.Param(m788id = 6) String str5, @SafeParcelable.Param(m788id = 7) String str6, @SafeParcelable.Param(m788id = 8) String str7, @SafeParcelable.Param(m788id = 9) String str8, @SafeParcelable.Param(m788id = 10) String str9, @SafeParcelable.Param(m788id = 11) String str10, @SafeParcelable.Param(m788id = 12) int i, @SafeParcelable.Param(m788id = 13) ArrayList arrayList, @SafeParcelable.Param(m788id = 14) TimeInterval timeInterval, @SafeParcelable.Param(m788id = 15) ArrayList arrayList2, @SafeParcelable.Param(m788id = 16) String str11, @SafeParcelable.Param(m788id = 17) String str12, @SafeParcelable.Param(m788id = 18) ArrayList arrayList3, @SafeParcelable.Param(m788id = 19) boolean z, @SafeParcelable.Param(m788id = 20) ArrayList arrayList4, @SafeParcelable.Param(m788id = 21) ArrayList arrayList5, @SafeParcelable.Param(m788id = 22) ArrayList arrayList6, @SafeParcelable.Param(m788id = 23) LoyaltyPoints loyaltyPoints) {
+    public LoyaltyWalletObject(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) String str3, @SafeParcelable.Param(m774id = 5) String str4, @SafeParcelable.Param(m774id = 6) String str5, @SafeParcelable.Param(m774id = 7) String str6, @SafeParcelable.Param(m774id = 8) String str7, @SafeParcelable.Param(m774id = 9) String str8, @SafeParcelable.Param(m774id = 10) String str9, @SafeParcelable.Param(m774id = 11) String str10, @SafeParcelable.Param(m774id = 12) int i, @SafeParcelable.Param(m774id = 13) ArrayList arrayList, @SafeParcelable.Param(m774id = 14) TimeInterval timeInterval, @SafeParcelable.Param(m774id = 15) ArrayList arrayList2, @SafeParcelable.Param(m774id = 16) String str11, @SafeParcelable.Param(m774id = 17) String str12, @SafeParcelable.Param(m774id = 18) ArrayList arrayList3, @SafeParcelable.Param(m774id = 19) boolean z, @SafeParcelable.Param(m774id = 20) ArrayList arrayList4, @SafeParcelable.Param(m774id = 21) ArrayList arrayList5, @SafeParcelable.Param(m774id = 22) ArrayList arrayList6, @SafeParcelable.Param(m774id = 23) LoyaltyPoints loyaltyPoints) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = str3;

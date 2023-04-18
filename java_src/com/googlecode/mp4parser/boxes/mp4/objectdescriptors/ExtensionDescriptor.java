@@ -1,8 +1,8 @@
 package com.googlecode.mp4parser.boxes.mp4.objectdescriptors;
 
 import com.coremedia.iso.Hex;
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
-import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.logging.Logger;

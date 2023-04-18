@@ -6,8 +6,8 @@ import com.google.firebase.firestore.util.Preconditions;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* loaded from: classes3.dex */
 public class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
     private final FirebaseFirestore firestore;
@@ -24,31 +24,31 @@ public class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
     }
 
     /* loaded from: classes3.dex */
-    private class QuerySnapshotIterator implements Iterator<QueryDocumentSnapshot>, p035j$.util.Iterator {
+    private class QuerySnapshotIterator implements Iterator<QueryDocumentSnapshot>, p034j$.util.Iterator {
 
         /* renamed from: it */
-        private final Iterator<Document> f165it;
+        private final Iterator<Document> f162it;
 
-        @Override // p035j$.util.Iterator
+        @Override // p034j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
         QuerySnapshotIterator(java.util.Iterator<Document> it) {
-            this.f165it = it;
+            this.f162it = it;
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public boolean hasNext() {
-            return this.f165it.hasNext();
+            return this.f162it.hasNext();
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public QueryDocumentSnapshot next() {
-            return QuerySnapshot.this.convertDocument(this.f165it.next());
+            return QuerySnapshot.this.convertDocument(this.f162it.next());
         }
 
-        @Override // java.util.Iterator, p035j$.util.Iterator
+        @Override // java.util.Iterator, p034j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException("QuerySnapshot does not support remove().");
         }

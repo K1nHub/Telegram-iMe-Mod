@@ -10,7 +10,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.InlineMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.p036io.CloseableKt;
+import kotlin.p035io.CloseableKt;
 import kotlin.text.Charsets;
 import okhttp3.MediaType;
 import okhttp3.internal.Util;

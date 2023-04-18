@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25705
+    .line 25717
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$ReportReason;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 25710
+    .line 25722
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPornography;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

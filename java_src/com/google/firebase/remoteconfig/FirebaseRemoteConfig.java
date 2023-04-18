@@ -3,6 +3,7 @@ package com.google.firebase.remoteconfig;
 import android.content.Context;
 import android.util.Log;
 import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.FirebaseApp;
@@ -57,6 +58,22 @@ public class FirebaseRemoteConfig {
         this.frcMetadata = configMetadataClient;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Task lambda$fetchAndActivate$1(Void r1) throws Exception {
+        return activate();
+    }
+
+    public Task<Boolean> fetchAndActivate() {
+        return fetch().onSuccessTask(this.executor, new SuccessContinuation() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda2
+            @Override // com.google.android.gms.tasks.SuccessContinuation
+            public final Task then(Object obj) {
+                Task lambda$fetchAndActivate$1;
+                lambda$fetchAndActivate$1 = FirebaseRemoteConfig.this.lambda$fetchAndActivate$1((Void) obj);
+                return lambda$fetchAndActivate$1;
+            }
+        });
+    }
+
     public Task<Boolean> activate() {
         final Task<ConfigContainer> task = this.fetchedConfigsCache.get();
         final Task<ConfigContainer> task2 = this.activatedConfigsCache.get();
@@ -89,12 +106,20 @@ public class FirebaseRemoteConfig {
         });
     }
 
+    public Task<Void> fetch() {
+        return this.fetchHandler.fetch().onSuccessTask(FirebaseRemoteConfig$$ExternalSyntheticLambda5.INSTANCE);
+    }
+
     public Task<Void> fetch(long j) {
-        return this.fetchHandler.fetch(j).onSuccessTask(FirebaseRemoteConfig$$ExternalSyntheticLambda3.INSTANCE);
+        return this.fetchHandler.fetch(j).onSuccessTask(FirebaseRemoteConfig$$ExternalSyntheticLambda4.INSTANCE);
     }
 
     public String getString(String str) {
         return this.getHandler.getString(str);
+    }
+
+    public boolean getBoolean(String str) {
+        return this.getHandler.getBoolean(str);
     }
 
     public FirebaseRemoteConfigInfo getInfo() {
@@ -102,7 +127,7 @@ public class FirebaseRemoteConfig {
     }
 
     public Task<Void> setConfigSettingsAsync(final FirebaseRemoteConfigSettings firebaseRemoteConfigSettings) {
-        return Tasks.call(this.executor, new Callable() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda4
+        return Tasks.call(this.executor, new Callable() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda6
             @Override // java.util.concurrent.Callable
             public final Object call() {
                 Void lambda$setConfigSettingsAsync$5;
@@ -154,7 +179,7 @@ public class FirebaseRemoteConfig {
 
     private Task<Void> setDefaultsWithStringsMapAsync(Map<String, String> map) {
         try {
-            return this.defaultConfigsCache.put(ConfigContainer.newBuilder().replaceConfigsWith(map).build()).onSuccessTask(FirebaseRemoteConfig$$ExternalSyntheticLambda2.INSTANCE);
+            return this.defaultConfigsCache.put(ConfigContainer.newBuilder().replaceConfigsWith(map).build()).onSuccessTask(FirebaseRemoteConfig$$ExternalSyntheticLambda3.INSTANCE);
         } catch (JSONException e) {
             Log.e("FirebaseRemoteConfig", "The provided defaults map could not be processed.", e);
             return Tasks.forResult(null);

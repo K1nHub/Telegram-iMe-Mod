@@ -2,38 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
-
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$User;
+.field public final synthetic f$0:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$User;)V
+.method public synthetic constructor <init>(Lcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda308;->f$0:Lorg/telegram/ui/ChatActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda308;->f$1:Lorg/telegram/tgnet/TLRPC$User;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda308;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 2
+.method public final didSelectDate(ZILjava/lang/String;)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda308;->f$0:Lorg/telegram/ui/ChatActivity;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda308;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda308;->f$1:Lorg/telegram/tgnet/TLRPC$User;
-
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$NdnOFbiWY0HeZh6GCohogohp6Vw(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$D-Ew_QwrxGly7kQnH3aps5S58a4(Lcom/iMe/fork/utils/Callbacks$Callback1;ZILjava/lang/String;)V
 
     return-void
+.end method
+
+.method public synthetic getSelectedDialogs()Ljava/util/ArrayList;
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate$-CC;->$default$getSelectedDialogs(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    return-object v0
 .end method

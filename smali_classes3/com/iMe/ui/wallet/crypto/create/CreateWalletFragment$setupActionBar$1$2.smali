@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupActionBar$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 881
+    .line 865
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -39,14 +39,14 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 884
+    .line 868
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupActionBar$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto :goto_0
 
-    .line 885
+    .line 869
     :cond_0
     sget v0, Lcom/iMe/common/IdFabric$Menu;->PDF:I
 

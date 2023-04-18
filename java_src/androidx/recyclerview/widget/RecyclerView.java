@@ -48,7 +48,7 @@ import androidx.recyclerview.widget.ChildHelper;
 import androidx.recyclerview.widget.GapWorker;
 import androidx.recyclerview.widget.ViewBoundsCheck;
 import androidx.recyclerview.widget.ViewInfoStore;
-import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import java.lang.ref.WeakReference;

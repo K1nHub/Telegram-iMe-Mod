@@ -7,9 +7,9 @@ import android.os.Build;
 import android.system.OsConstants;
 import android.util.Log;
 import androidx.exifinterface.media.ExifInterfaceUtils;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.DefaultLoadControl;
-import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.DataInput;
@@ -33,7 +33,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.regex.Pattern;
 import java.util.zip.CRC32;
-import p035j$.util.DesugarTimeZone;
+import p034j$.util.DesugarTimeZone;
 /* loaded from: classes.dex */
 public class ExifInterface {
     static final Charset ASCII;
@@ -133,7 +133,7 @@ public class ExifInterface {
         sExifTagMapsForWriting = new HashMap[exifTagArr11.length];
         sTagSetForCompatibility = new HashSet<>(Arrays.asList("FNumber", "DigitalZoomRatio", "ExposureTime", "SubjectDistance", "GPSTimeStamp"));
         sExifPointerTagMap = new HashMap<>();
-        Charset forName = Charset.forName(C0482C.ASCII_NAME);
+        Charset forName = Charset.forName(C0470C.ASCII_NAME);
         ASCII = forName;
         IDENTIFIER_EXIF_APP1 = "Exif\u0000\u0000".getBytes(forName);
         IDENTIFIER_XMP_APP1 = "http://ns.adobe.com/xap/1.0/\u0000".getBytes(forName);

@@ -11,7 +11,7 @@ public class DSAValidationParameters {
     }
 
     public DSAValidationParameters(byte[] bArr, int i, int i2) {
-        this.seed = bArr;
+        this.seed = Arrays.clone(bArr);
         this.counter = i;
     }
 
@@ -31,7 +31,7 @@ public class DSAValidationParameters {
     }
 
     public byte[] getSeed() {
-        return this.seed;
+        return Arrays.clone(this.seed);
     }
 
     public int hashCode() {

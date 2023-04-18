@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Landroidx/fragment/app/FragmentActivity$$ExternalSyntheticLambda0;->f$0:Landroidx/fragment/app/FragmentActivity;
 
-    invoke-static {v0, p1}, Landroidx/fragment/app/FragmentActivity;->$r8$lambda$QtiQ2ZI3e38UkO1_xuJ8vE_JZj4(Landroidx/fragment/app/FragmentActivity;Landroid/content/Context;)V
+    invoke-static {v0, p1}, Landroidx/fragment/app/FragmentActivity;->$r8$lambda$euPNEtWNfVdMY89Jt5kWt_WEHqw(Landroidx/fragment/app/FragmentActivity;Landroid/content/Context;)V
 
     return-void
 .end method

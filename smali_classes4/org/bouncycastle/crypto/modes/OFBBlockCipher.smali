@@ -18,13 +18,29 @@
 
 # direct methods
 .method public constructor <init>(Lorg/bouncycastle/crypto/BlockCipher;I)V
-    .locals 0
+    .locals 2
 
     invoke-direct {p0, p1}, Lorg/bouncycastle/crypto/StreamBlockCipher;-><init>(Lorg/bouncycastle/crypto/BlockCipher;)V
 
+    invoke-interface {p1}, Lorg/bouncycastle/crypto/BlockCipher;->getBlockSize()I
+
+    move-result v0
+
+    const/16 v1, 0x8
+
+    mul-int/2addr v0, v1
+
+    if-gt p2, v0, :cond_0
+
+    if-lt p2, v1, :cond_0
+
+    rem-int/lit8 v0, p2, 0x8
+
+    if-nez v0, :cond_0
+
     iput-object p1, p0, Lorg/bouncycastle/crypto/modes/OFBBlockCipher;->cipher:Lorg/bouncycastle/crypto/BlockCipher;
 
-    div-int/lit8 p2, p2, 0x8
+    div-int/2addr p2, v1
 
     iput p2, p0, Lorg/bouncycastle/crypto/modes/OFBBlockCipher;->blockSize:I
 
@@ -53,6 +69,31 @@
     iput-object p1, p0, Lorg/bouncycastle/crypto/modes/OFBBlockCipher;->ofbOutV:[B
 
     return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "0FB"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p2, " not supported"
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 

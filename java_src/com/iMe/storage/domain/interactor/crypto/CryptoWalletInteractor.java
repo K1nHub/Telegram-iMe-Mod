@@ -1,6 +1,7 @@
 package com.iMe.storage.domain.interactor.crypto;
 
 import com.iMe.storage.data.utils.extentions.CollectionExtKt;
+import com.iMe.storage.data.utils.extentions.StringExtKt;
 import com.iMe.storage.domain.interactor.crypto.pin.PinCodeInteractor;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.Result;
@@ -13,18 +14,21 @@ import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
 import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
-import com.iMe.storage.domain.utils.p031rx.RxEventBus;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.RxEventBus;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import io.reactivex.functions.Function;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.concurrent.Callable;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
+import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
+import wallet.core.jni.Mnemonic;
 /* compiled from: CryptoWalletInteractor.kt */
 /* loaded from: classes3.dex */
 public final class CryptoWalletInteractor {
@@ -37,7 +41,7 @@ public final class CryptoWalletInteractor {
     private final SchedulersProvider schedulersProvider;
 
     private final Observable<Result<Wallet>> withAllBip39BasedWalletsActivationCheck(Observable<Result<Wallet>> observable, BlockchainType blockchainType) {
-        Observable flatMap = observable.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1908xc8c5d4ec(blockchainType, this)));
+        Observable flatMap = observable.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1895xc8c5d4ec(blockchainType, this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
@@ -59,50 +63,110 @@ public final class CryptoWalletInteractor {
         this.schedulersProvider = schedulersProvider;
     }
 
-    public final Observable<Result<Wallet>> createWallet(String password, String pinCode, String guid, String seed, BlockchainType blockchainType) {
+    public final Observable<Result<Wallet>> createLocalWallet(BlockchainType blockchainType) {
+        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
+        Observable<Result<Wallet>> subscribeOn = this.cryptoLocalWalletRepository.createWallet(blockchainType).subscribeOn(this.schedulersProvider.mo694io());
+        Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
+        return subscribeOn;
+    }
+
+    public final Observable<Result<Wallet>> importWallet(String seed, String password, String pinCode, BlockchainType blockchainType) {
+        String generateUuid;
+        Intrinsics.checkNotNullParameter(seed, "seed");
         Intrinsics.checkNotNullParameter(password, "password");
         Intrinsics.checkNotNullParameter(pinCode, "pinCode");
-        Intrinsics.checkNotNullParameter(guid, "guid");
-        Intrinsics.checkNotNullParameter(seed, "seed");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        if (guid.length() > 0) {
-            return recreateWallet(password, pinCode, blockchainType);
+        if (this.cryptoAccessManager.isAnyWalletCreated()) {
+            generateUuid = this.cryptoPreferenceHelper.getLastLoggedInGuid();
+        } else {
+            generateUuid = CryptoExtKt.generateUuid();
         }
-        return seed.length() > 0 ? importWallet(password, seed, pinCode, blockchainType) : createWallet(password, pinCode, blockchainType);
+        Observable<R> flatMap = this.cryptoLocalWalletRepository.importWallet(generateUuid, seed, password, blockchainType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletInteractor$importWallet$$inlined$flatMapSuccess$1(this)));
+        Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
+        Observable<Result<Wallet>> finalObservable = flatMap.subscribeOn(this.schedulersProvider.mo694io());
+        if (!(pinCode.length() == 0)) {
+            Intrinsics.checkNotNullExpressionValue(finalObservable, "importWalletObservable");
+            finalObservable = getCreatePinCodeObservable(pinCode, password, generateUuid, finalObservable);
+        }
+        Intrinsics.checkNotNullExpressionValue(finalObservable, "finalObservable");
+        Observable<Result<Wallet>> doOnNext = finalObservable.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new CryptoWalletInteractor$importWallet$$inlined$doOnSuccessNext$1(this)));
+        Intrinsics.checkNotNullExpressionValue(doOnNext, "crossinline body: (T) ->…ult as T)\n        }\n    }");
+        Observable<Result<Wallet>> subscribeOn = withAllBip39BasedWalletsActivationCheck(doOnNext, blockchainType).startWith((Observable<Result<Wallet>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo694io());
+        Intrinsics.checkNotNullExpressionValue(subscribeOn, "finalObservable\n        …(schedulersProvider.io())");
+        return subscribeOn;
+    }
+
+    public final Observable<Result<Wallet>> recreateWallet(String password, String pinCode, BlockchainType blockchainType) {
+        Intrinsics.checkNotNullParameter(password, "password");
+        Intrinsics.checkNotNullParameter(pinCode, "pinCode");
+        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
+        String generateUuid = CryptoExtKt.generateUuid();
+        Observable<R> map = this.cryptoLocalWalletRepository.unlockAllWallets(this.cryptoAccessManager.getLastLoggedInGuid(), generateUuid, password).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletInteractor$recreateWallet$$inlined$mapSuccess$1(blockchainType)));
+        Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
+        Observable<Result<Wallet>> finalObservable = map.subscribeOn(this.schedulersProvider.mo694io());
+        if (!(pinCode.length() == 0)) {
+            Intrinsics.checkNotNullExpressionValue(finalObservable, "unlockWalletsObservable");
+            finalObservable = getCreatePinCodeObservable(pinCode, password, generateUuid, finalObservable);
+        }
+        Intrinsics.checkNotNullExpressionValue(finalObservable, "finalObservable");
+        Observable<Result<Wallet>> doOnNext = finalObservable.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new CryptoWalletInteractor$recreateWallet$$inlined$doOnSuccessNext$1(this)));
+        Intrinsics.checkNotNullExpressionValue(doOnNext, "crossinline body: (T) ->…ult as T)\n        }\n    }");
+        Observable<Result<Wallet>> subscribeOn = withAllBip39BasedWalletsActivationCheck(doOnNext, blockchainType).startWith((Observable<Result<Wallet>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo694io());
+        Intrinsics.checkNotNullExpressionValue(subscribeOn, "finalObservable\n        …(schedulersProvider.io())");
+        return subscribeOn;
     }
 
     public final Observable<Result<Wallet>> activateBip39BasedWallet(BlockchainType blockchainType) {
         List<? extends BlockchainType> listOf;
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         listOf = CollectionsKt__CollectionsJVMKt.listOf(blockchainType);
-        Observable flatMap = importBib39BasedWallets(listOf).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1900xfb32ecc7()));
+        Observable flatMap = importBib39BasedWallets(listOf).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1887xfb32ecc7()));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
 
     public final Observable<Result<String>> getLinkedCryptoWalletAddress(BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<R> flatMap = this.cryptoWalletRepository.getLinkedCryptoWalletInfo().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1903xc1cdc982(blockchainType)));
+        Observable<R> flatMap = this.cryptoWalletRepository.getLinkedCryptoWalletInfo().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1890xc1cdc982(blockchainType)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<String>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<String>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoWalletRepository\n …(schedulersProvider.io())");
         return subscribeOn;
     }
 
-    public final Observable<Result<Boolean>> isPasswordForWallet(String password, BlockchainType blockchainType) {
+    public final Observable<Result<Boolean>> isValidPasswordForWallet(String password, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(password, "password");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidPasswordForWallet(password, blockchainType).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidPasswordForWallet(password, blockchainType).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
         return subscribeOn;
     }
 
-    public final Observable<Result<String>> generateMnemonic(String guid, String password) {
-        Intrinsics.checkNotNullParameter(guid, "guid");
-        Intrinsics.checkNotNullParameter(password, "password");
-        Observable<Result<String>> subscribeOn = this.cryptoLocalWalletRepository.generateMnemonic(guid, password, this.cryptoPreferenceHelper.getCurrentBlockchainType()).subscribeOn(this.schedulersProvider.mo708io());
-        Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
-        return subscribeOn;
+    public final Observable<List<String>> getMnemonicWordsSuggestions(final String query) {
+        Intrinsics.checkNotNullParameter(query, "query");
+        Observable<List<String>> fromCallable = Observable.fromCallable(new Callable() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$$ExternalSyntheticLambda2
+            @Override // java.util.concurrent.Callable
+            public final Object call() {
+                List mnemonicWordsSuggestions$lambda$8;
+                mnemonicWordsSuggestions$lambda$8 = CryptoWalletInteractor.getMnemonicWordsSuggestions$lambda$8(query);
+                return mnemonicWordsSuggestions$lambda$8;
+            }
+        });
+        Intrinsics.checkNotNullExpressionValue(fromCallable, "fromCallable {\n         …se listOf()\n            }");
+        return fromCallable;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final List getMnemonicWordsSuggestions$lambda$8(String query) {
+        List emptyList;
+        Intrinsics.checkNotNullParameter(query, "$query");
+        String words = Mnemonic.suggest(query);
+        Intrinsics.checkNotNullExpressionValue(words, "words");
+        if (words.length() > 0) {
+            return StringExtKt.splitBySpace(words);
+        }
+        emptyList = CollectionsKt__CollectionsKt.emptyList();
+        return emptyList;
     }
 
     public final Observable<Result<Boolean>> isValidAddress(String address, BlockchainType blockchainType) {
@@ -114,7 +178,7 @@ public final class CryptoWalletInteractor {
     public final Observable<Result<Boolean>> isValidSeed(String seed, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(seed, "seed");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidSeed(seed, blockchainType).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidSeed(seed, blockchainType).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -123,7 +187,7 @@ public final class CryptoWalletInteractor {
         Intrinsics.checkNotNullParameter(seed, "seed");
         Intrinsics.checkNotNullParameter(address, "address");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidRestoredAddress(seed, address, blockchainType).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidRestoredAddress(seed, address, blockchainType).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -158,7 +222,7 @@ public final class CryptoWalletInteractor {
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         Observable doOnNext = flatMap.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new CryptoWalletInteractor$deleteWallet$$inlined$doOnSuccessNext$1(z2, this)));
         Intrinsics.checkNotNullExpressionValue(doOnNext, "crossinline body: (T) ->…ult as T)\n        }\n    }");
-        Observable<Result<Boolean>> subscribeOn = doOnNext.startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Boolean>> subscribeOn = doOnNext.startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "observable\n             …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -192,39 +256,22 @@ public final class CryptoWalletInteractor {
             finalObservable = Observable.zip(arrayList2, new Function() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$$ExternalSyntheticLambda0
                 @Override // io.reactivex.functions.Function
                 public final Object apply(Object obj) {
-                    Result deleteAllWallets$lambda$8;
-                    deleteAllWallets$lambda$8 = CryptoWalletInteractor.deleteAllWallets$lambda$8(Function1.this, obj);
-                    return deleteAllWallets$lambda$8;
+                    Result deleteAllWallets$lambda$14;
+                    deleteAllWallets$lambda$14 = CryptoWalletInteractor.deleteAllWallets$lambda$14(Function1.this, obj);
+                    return deleteAllWallets$lambda$14;
                 }
             });
         }
         Intrinsics.checkNotNullExpressionValue(finalObservable, "finalObservable");
-        Observable<Result<Boolean>> doOnNext = finalObservable.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1901x5e7d6f0b(this)));
+        Observable<Result<Boolean>> doOnNext = finalObservable.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1888x5e7d6f0b(this)));
         Intrinsics.checkNotNullExpressionValue(doOnNext, "crossinline body: (T) ->…ult as T)\n        }\n    }");
         return doOnNext;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Result deleteAllWallets$lambda$8(Function1 tmp0, Object obj) {
+    public static final Result deleteAllWallets$lambda$14(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         return (Result) tmp0.invoke(obj);
-    }
-
-    private final Observable<Result<Wallet>> recreateWallet(String str, String str2, BlockchainType blockchainType) {
-        String generateUuid = CryptoExtKt.generateUuid();
-        Observable<R> map = this.cryptoLocalWalletRepository.unlockAllWallets(this.cryptoAccessManager.getLastLoggedInGuid(), generateUuid, str).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletInteractor$recreateWallet$$inlined$mapSuccess$1(blockchainType)));
-        Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
-        Observable<Result<Wallet>> finalObservable = map.subscribeOn(this.schedulersProvider.mo708io());
-        if (!(str2.length() == 0)) {
-            Intrinsics.checkNotNullExpressionValue(finalObservable, "unlockWalletsObservable");
-            finalObservable = getCreatePinCodeObservable(str2, str, generateUuid, finalObservable);
-        }
-        Intrinsics.checkNotNullExpressionValue(finalObservable, "finalObservable");
-        Observable<Result<Wallet>> doOnNext = finalObservable.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new CryptoWalletInteractor$recreateWallet$$inlined$doOnSuccessNext$1(this)));
-        Intrinsics.checkNotNullExpressionValue(doOnNext, "crossinline body: (T) ->…ult as T)\n        }\n    }");
-        Observable<Result<Wallet>> subscribeOn = withAllBip39BasedWalletsActivationCheck(doOnNext, blockchainType).startWith((Observable<Result<Wallet>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
-        Intrinsics.checkNotNullExpressionValue(subscribeOn, "finalObservable\n        …(schedulersProvider.io())");
-        return subscribeOn;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -243,86 +290,42 @@ public final class CryptoWalletInteractor {
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(list, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (BlockchainType blockchainType : list) {
-            Observable<R> flatMap = this.cryptoLocalWalletRepository.importWallet(this.cryptoPreferenceHelper.getLastLoggedInGuid(), mnemonic, walletPassword, blockchainType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1904x3c514ad4(this)));
+            Observable<R> flatMap = this.cryptoLocalWalletRepository.importWallet(this.cryptoPreferenceHelper.getLastLoggedInGuid(), mnemonic, walletPassword, blockchainType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1891xe8447d17(this)));
             Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-            arrayList.add(flatMap.subscribeOn(this.schedulersProvider.mo708io()));
+            arrayList.add(flatMap.subscribeOn(this.schedulersProvider.mo694io()));
         }
         final CryptoWalletInteractor$importBib39BasedWallets$2 cryptoWalletInteractor$importBib39BasedWallets$2 = CryptoWalletInteractor$importBib39BasedWallets$2.INSTANCE;
         Observable<Result<List<Wallet>>> subscribeOn = Observable.zip(arrayList, new Function() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                Result importBib39BasedWallets$lambda$15;
-                importBib39BasedWallets$lambda$15 = CryptoWalletInteractor.importBib39BasedWallets$lambda$15(Function1.this, obj);
-                return importBib39BasedWallets$lambda$15;
+                Result importBib39BasedWallets$lambda$18;
+                importBib39BasedWallets$lambda$18 = CryptoWalletInteractor.importBib39BasedWallets$lambda$18(Function1.this, obj);
+                return importBib39BasedWallets$lambda$18;
             }
-        }).subscribeOn(this.schedulersProvider.mo708io());
+        }).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "zip(\n                   …(schedulersProvider.io())");
         return subscribeOn;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Result importBib39BasedWallets$lambda$15(Function1 tmp0, Object obj) {
+    public static final Result importBib39BasedWallets$lambda$18(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         return (Result) tmp0.invoke(obj);
     }
 
-    private final Observable<Result<Wallet>> createWallet(String str, String str2, BlockchainType blockchainType) {
-        String generateUuid;
-        if (this.cryptoAccessManager.isAnyWalletCreated()) {
-            generateUuid = this.cryptoPreferenceHelper.getLastLoggedInGuid();
-        } else {
-            generateUuid = CryptoExtKt.generateUuid();
-        }
-        Observable<R> flatMap = this.cryptoLocalWalletRepository.createWallet(generateUuid, str, blockchainType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletInteractor$createWallet$$inlined$flatMapSuccess$1(this)));
-        Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<Wallet>> finalObservable = flatMap.subscribeOn(this.schedulersProvider.mo708io());
-        if (!(str2.length() == 0)) {
-            Intrinsics.checkNotNullExpressionValue(finalObservable, "createWalletObservable");
-            finalObservable = getCreatePinCodeObservable(str2, str, generateUuid, finalObservable);
-        }
-        Intrinsics.checkNotNullExpressionValue(finalObservable, "finalObservable");
-        Observable<Result<Wallet>> doOnNext = finalObservable.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new CryptoWalletInteractor$createWallet$$inlined$doOnSuccessNext$1(this)));
-        Intrinsics.checkNotNullExpressionValue(doOnNext, "crossinline body: (T) ->…ult as T)\n        }\n    }");
-        Observable<Result<Wallet>> subscribeOn = withAllBip39BasedWalletsActivationCheck(doOnNext, blockchainType).startWith((Observable<Result<Wallet>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
-        Intrinsics.checkNotNullExpressionValue(subscribeOn, "finalObservable\n        …(schedulersProvider.io())");
-        return subscribeOn;
-    }
-
-    private final Observable<Result<Wallet>> importWallet(String str, String str2, String str3, BlockchainType blockchainType) {
-        String generateUuid;
-        if (this.cryptoAccessManager.isAnyWalletCreated()) {
-            generateUuid = this.cryptoPreferenceHelper.getLastLoggedInGuid();
-        } else {
-            generateUuid = CryptoExtKt.generateUuid();
-        }
-        Observable<R> flatMap = this.cryptoLocalWalletRepository.importWallet(generateUuid, str2, str, blockchainType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletInteractor$importWallet$$inlined$flatMapSuccess$1(this)));
-        Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<Wallet>> finalObservable = flatMap.subscribeOn(this.schedulersProvider.mo708io());
-        if (!(str3.length() == 0)) {
-            Intrinsics.checkNotNullExpressionValue(finalObservable, "importWalletObservable");
-            finalObservable = getCreatePinCodeObservable(str3, str, generateUuid, finalObservable);
-        }
-        Intrinsics.checkNotNullExpressionValue(finalObservable, "finalObservable");
-        Observable<Result<Wallet>> doOnNext = finalObservable.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new CryptoWalletInteractor$importWallet$$inlined$doOnSuccessNext$1(this)));
-        Intrinsics.checkNotNullExpressionValue(doOnNext, "crossinline body: (T) ->…ult as T)\n        }\n    }");
-        Observable<Result<Wallet>> subscribeOn = withAllBip39BasedWalletsActivationCheck(doOnNext, blockchainType).startWith((Observable<Result<Wallet>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
-        Intrinsics.checkNotNullExpressionValue(subscribeOn, "finalObservable\n        …(schedulersProvider.io())");
-        return subscribeOn;
-    }
-
     private final Observable<Result<Wallet>> getCreatePinCodeObservable(String str, String str2, String str3, Observable<Result<Wallet>> observable) {
-        Observable flatMap = this.pinCodeInteractor.createPinCode(str, str2, str3).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1902x237bf90a(observable)));
+        Observable flatMap = this.pinCodeInteractor.createPinCode(str, str2, str3).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1889x237bf90a(observable)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Observable<Result<Wallet>> linkWalletAddressWithCheck(Wallet wallet2) {
-        Observable<R> flatMap = getLinkedCryptoWalletAddress(wallet2.getBlockchainType()).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1905xffacd658(this, wallet2)));
+        Observable<R> flatMap = getLinkedCryptoWalletAddress(wallet2.getBlockchainType()).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1892xffacd658(this, wallet2)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable map = flatMap.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1906x3cb7ddbf(wallet2)));
+        Observable map = flatMap.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1893x3cb7ddbf(wallet2)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
-        Observable<Result<Wallet>> subscribeOn = map.subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Wallet>> subscribeOn = map.subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "getLinkedCryptoWalletAdd…(schedulersProvider.io())");
         return subscribeOn;
     }

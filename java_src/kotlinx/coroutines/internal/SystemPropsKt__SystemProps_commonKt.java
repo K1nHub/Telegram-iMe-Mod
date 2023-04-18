@@ -7,7 +7,7 @@ import kotlin.text.StringsKt;
 public final /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
     public static final boolean systemProp(String str, boolean z) {
         String systemProp = SystemPropsKt.systemProp(str);
-        return systemProp == null ? z : Boolean.parseBoolean(systemProp);
+        return systemProp != null ? Boolean.parseBoolean(systemProp) : z;
     }
 
     public static /* synthetic */ int systemProp$default(String str, int i, int i2, int i3, int i4, Object obj) {

@@ -66,7 +66,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2486
+    .line 2487
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -84,7 +84,7 @@
         }
     .end annotation
 
-    .line 2546
+    .line 2547
     invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -102,7 +102,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2547
+    .line 2548
     iget-wide v1, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     cmp-long v1, v1, p0
@@ -130,29 +130,29 @@
         }
     .end annotation
 
-    .line 2510
+    .line 2511
     new-instance v0, Lorg/telegram/ui/StatisticActivity$MemberData;
 
     invoke-direct {v0}, Lorg/telegram/ui/StatisticActivity$MemberData;-><init>()V
 
-    .line 2511
+    .line 2512
     iget-wide v1, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->user_id:J
 
     iput-wide v1, v0, Lorg/telegram/ui/StatisticActivity$MemberData;->user_id:J
 
-    .line 2512
+    .line 2513
     invoke-static {v1, v2, p1}, Lorg/telegram/ui/StatisticActivity$MemberData;->find(JLjava/util/ArrayList;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object p1
 
     iput-object p1, v0, Lorg/telegram/ui/StatisticActivity$MemberData;->user:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2513
+    .line 2514
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2514
+    .line 2515
     iget v1, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->deleted:I
 
     const/4 v2, 0x0
@@ -163,14 +163,14 @@
 
     const-string v4, "Deletions"
 
-    .line 2515
+    .line 2516
     invoke-static {v4, v1, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2517
+    .line 2518
     :cond_0
     iget v1, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->banned:I
 
@@ -178,17 +178,17 @@
 
     if-lez v1, :cond_2
 
-    .line 2518
+    .line 2519
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
 
     if-lez v1, :cond_1
 
-    .line 2519
+    .line 2520
     invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2521
+    .line 2522
     :cond_1
     iget v1, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->banned:I
 
@@ -202,23 +202,23 @@
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2523
+    .line 2524
     :cond_2
     iget v1, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->kicked:I
 
     if-lez v1, :cond_4
 
-    .line 2524
+    .line 2525
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
 
     if-lez v1, :cond_3
 
-    .line 2525
+    .line 2526
     invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2527
+    .line 2528
     :cond_3
     iget p0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->kicked:I
 
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2529
+    .line 2530
     :cond_4
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -256,24 +256,24 @@
         }
     .end annotation
 
-    .line 2534
+    .line 2535
     new-instance v0, Lorg/telegram/ui/StatisticActivity$MemberData;
 
     invoke-direct {v0}, Lorg/telegram/ui/StatisticActivity$MemberData;-><init>()V
 
-    .line 2535
+    .line 2536
     iget-wide v1, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopInviter;->user_id:J
 
     iput-wide v1, v0, Lorg/telegram/ui/StatisticActivity$MemberData;->user_id:J
 
-    .line 2536
+    .line 2537
     invoke-static {v1, v2, p1}, Lorg/telegram/ui/StatisticActivity$MemberData;->find(JLjava/util/ArrayList;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object p1
 
     iput-object p1, v0, Lorg/telegram/ui/StatisticActivity$MemberData;->user:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2537
+    .line 2538
     iget p0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopInviter;->invitations:I
 
     if-lez p0, :cond_0
@@ -284,7 +284,7 @@
 
     const-string v1, "Invitations"
 
-    .line 2538
+    .line 2539
     invoke-static {v1, p0, p1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -296,7 +296,7 @@
     :cond_0
     const-string p0, ""
 
-    .line 2540
+    .line 2541
     iput-object p0, v0, Lorg/telegram/ui/StatisticActivity$MemberData;->description:Ljava/lang/String;
 
     :goto_0
@@ -316,29 +316,29 @@
         }
     .end annotation
 
-    .line 2492
+    .line 2493
     new-instance v0, Lorg/telegram/ui/StatisticActivity$MemberData;
 
     invoke-direct {v0}, Lorg/telegram/ui/StatisticActivity$MemberData;-><init>()V
 
-    .line 2493
+    .line 2494
     iget-wide v1, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopPoster;->user_id:J
 
     iput-wide v1, v0, Lorg/telegram/ui/StatisticActivity$MemberData;->user_id:J
 
-    .line 2494
+    .line 2495
     invoke-static {v1, v2, p1}, Lorg/telegram/ui/StatisticActivity$MemberData;->find(JLjava/util/ArrayList;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object p1
 
     iput-object p1, v0, Lorg/telegram/ui/StatisticActivity$MemberData;->user:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2495
+    .line 2496
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2496
+    .line 2497
     iget v1, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopPoster;->messages:I
 
     const/4 v2, 0x0
@@ -349,20 +349,20 @@
 
     const-string v4, "messages"
 
-    .line 2497
+    .line 2498
     invoke-static {v4, v1, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2499
+    .line 2500
     :cond_0
     iget v1, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopPoster;->avg_chars:I
 
     if-lez v1, :cond_2
 
-    .line 2500
+    .line 2501
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -371,10 +371,10 @@
 
     const-string v1, ", "
 
-    .line 2501
+    .line 2502
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2503
+    .line 2504
     :cond_1
     sget v1, Lorg/telegram/messenger/R$string;->CharactersPerMessage:I
 
@@ -402,7 +402,7 @@
 
     invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2505
+    .line 2506
     :cond_2
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -416,7 +416,7 @@
 .method private synthetic lambda$onLongClick$0(Lorg/telegram/ui/StatisticActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$ChatFull;)V
     .locals 3
 
-    .line 2608
+    .line 2609
     invoke-static {p1}, Lorg/telegram/ui/StatisticActivity;->access$4600(Lorg/telegram/ui/StatisticActivity;)Z
 
     move-result v0
@@ -434,7 +434,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 2611
+    .line 2612
     aget-object v1, p2, v0
 
     if-nez v1, :cond_1
@@ -444,39 +444,39 @@
     :cond_1
     if-nez p3, :cond_2
 
-    .line 2615
+    .line 2616
     check-cast p4, Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipant;
 
-    .line 2616
+    .line 2617
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;-><init>()V
 
-    .line 2617
+    .line 2618
     iget-object p4, p4, Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipant;->participant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     iput-object p4, p3, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 2618
+    .line 2619
     iget-object p4, p0, Lorg/telegram/ui/StatisticActivity$MemberData;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-wide v1, p4, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iput-wide v1, p3, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
 
-    .line 2619
+    .line 2620
     iget-object p4, p5, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
 
     iget-object p4, p4, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
 
     invoke-virtual {p4, v0, p3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 2620
+    .line 2621
     invoke-virtual {p0, p5, p1, p2}, Lorg/telegram/ui/StatisticActivity$MemberData;->onLongClick(Lorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/ui/StatisticActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     goto :goto_0
 
-    .line 2622
+    .line 2623
     :cond_2
     invoke-direct {p0, p5, p1, p2, v0}, Lorg/telegram/ui/StatisticActivity$MemberData;->onLongClick(Lorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/ui/StatisticActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Z)V
 
@@ -488,7 +488,7 @@
 .method private synthetic lambda$onLongClick$1(Lorg/telegram/ui/StatisticActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 8
 
-    .line 2607
+    .line 2608
     new-instance v7, Lorg/telegram/ui/StatisticActivity$MemberData$$ExternalSyntheticLambda2;
 
     move-object v0, v7
@@ -515,7 +515,7 @@
 .method private synthetic lambda$onLongClick$2(Lorg/telegram/ui/StatisticActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$ChatFull;)V
     .locals 3
 
-    .line 2637
+    .line 2638
     invoke-static {p1}, Lorg/telegram/ui/StatisticActivity;->access$4500(Lorg/telegram/ui/StatisticActivity;)Z
 
     move-result v0
@@ -533,7 +533,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 2640
+    .line 2641
     aget-object v1, p2, v0
 
     if-nez v1, :cond_1
@@ -543,20 +543,20 @@
     :cond_1
     if-nez p3, :cond_2
 
-    .line 2644
+    .line 2645
     check-cast p4, Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipant;
 
-    .line 2645
+    .line 2646
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;-><init>()V
 
-    .line 2646
+    .line 2647
     iget-object p4, p4, Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipant;->participant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     iput-object p4, p3, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 2647
+    .line 2648
     sget p4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p4}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -567,19 +567,19 @@
 
     iput-wide v1, p3, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
 
-    .line 2648
+    .line 2649
     iget-object p4, p5, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
 
     iget-object p4, p4, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
 
     invoke-virtual {p4, v0, p3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 2649
+    .line 2650
     invoke-virtual {p0, p5, p1, p2}, Lorg/telegram/ui/StatisticActivity$MemberData;->onLongClick(Lorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/ui/StatisticActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     goto :goto_0
 
-    .line 2651
+    .line 2652
     :cond_2
     invoke-direct {p0, p5, p1, p2, v0}, Lorg/telegram/ui/StatisticActivity$MemberData;->onLongClick(Lorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/ui/StatisticActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Z)V
 
@@ -591,7 +591,7 @@
 .method private synthetic lambda$onLongClick$3(Lorg/telegram/ui/StatisticActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 8
 
-    .line 2636
+    .line 2637
     new-instance v7, Lorg/telegram/ui/StatisticActivity$MemberData$$ExternalSyntheticLambda1;
 
     move-object v0, v7
@@ -630,7 +630,7 @@
 
     move/from16 v2, p7
 
-    .line 2681
+    .line 2682
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -647,7 +647,7 @@
 
     new-array v12, v0, [Z
 
-    .line 2683
+    .line 2684
     new-instance v11, Lorg/telegram/ui/StatisticActivity$MemberData$1;
 
     iget-object v0, v15, Lorg/telegram/ui/StatisticActivity$MemberData;->user:Lorg/telegram/tgnet/TLRPC$User;
@@ -692,7 +692,7 @@
 
     invoke-direct/range {v0 .. v15}, Lorg/telegram/ui/StatisticActivity$MemberData$1;-><init>(Lorg/telegram/ui/StatisticActivity$MemberData;JJLorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;IZZLjava/lang/String;[ZLorg/telegram/ui/StatisticActivity;)V
 
-    .line 2691
+    .line 2692
     new-instance v0, Lorg/telegram/ui/StatisticActivity$MemberData$2;
 
     move-object/from16 v3, p0
@@ -711,7 +711,7 @@
 
     move-object/from16 v4, p5
 
-    .line 2711
+    .line 2712
     invoke-virtual {v4, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto :goto_0
@@ -721,7 +721,7 @@
 
     move-object v3, v15
 
-    .line 2712
+    .line 2713
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -736,25 +736,25 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 2713
+    .line 2714
     invoke-virtual {v3, v4}, Lorg/telegram/ui/StatisticActivity$MemberData;->onClick(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     goto :goto_0
 
-    .line 2715
+    .line 2716
     :cond_1
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2716
+    .line 2717
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$ChatFull;->id:J
 
     const-string v5, "chat_id"
 
     invoke-virtual {v0, v5, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 2717
+    .line 2718
     iget-object v1, v3, Lorg/telegram/ui/StatisticActivity$MemberData;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -763,7 +763,7 @@
 
     invoke-virtual {v0, v5, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 2718
+    .line 2719
     new-instance v1, Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
@@ -785,7 +785,7 @@
 
     move-object/from16 v0, p3
 
-    .line 2566
+    .line 2567
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -798,31 +798,31 @@
 
     invoke-virtual {v1, v2, v4}, Lorg/telegram/messenger/MessagesController;->putUser(Lorg/telegram/tgnet/TLRPC$User;Z)Z
 
-    .line 2568
+    .line 2569
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2569
+    .line 2570
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2570
+    .line 2571
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     if-eqz p4, :cond_3
 
-    .line 2575
+    .line 2576
     iget-object v9, v3, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
 
     iget-object v9, v9, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
 
     if-eqz v9, :cond_3
 
-    .line 2576
+    .line 2577
     invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v9
@@ -836,7 +836,7 @@
     :goto_0
     if-ge v10, v9, :cond_2
 
-    .line 2578
+    .line 2579
     iget-object v13, v3, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
 
     iget-object v13, v13, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
@@ -847,7 +847,7 @@
 
     check-cast v13, Lorg/telegram/tgnet/TLRPC$ChatParticipant;
 
-    .line 2579
+    .line 2580
     iget-wide v14, v13, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
 
     iget-object v6, v7, Lorg/telegram/ui/StatisticActivity$MemberData;->user:Lorg/telegram/tgnet/TLRPC$User;
@@ -860,17 +860,17 @@
 
     if-nez v4, :cond_0
 
-    .line 2580
+    .line 2581
     instance-of v4, v13, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
     if-eqz v4, :cond_0
 
-    .line 2581
+    .line 2582
     move-object v11, v13
 
     check-cast v11, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
-    .line 2584
+    .line 2585
     :cond_0
     sget v4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -884,12 +884,12 @@
 
     if-nez v4, :cond_1
 
-    .line 2585
+    .line 2586
     instance-of v4, v13, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
     if-eqz v4, :cond_1
 
-    .line 2586
+    .line 2587
     move-object v12, v13
 
     check-cast v12, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
@@ -917,7 +917,7 @@
 
     const/4 v12, 0x0
 
-    .line 2592
+    .line 2593
     :goto_1
     sget v5, Lorg/telegram/messenger/R$string;->StatisticOpenProfile:I
 
@@ -929,7 +929,7 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2593
+    .line 2594
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_openprofile:I
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -942,14 +942,14 @@
 
     const/4 v5, 0x2
 
-    .line 2594
+    .line 2595
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2595
+    .line 2596
     sget v5, Lorg/telegram/messenger/R$string;->StatisticSearchUserHistory:I
 
     const-string v9, "StatisticSearchUserHistory"
@@ -960,7 +960,7 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2596
+    .line 2597
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_msgbubble3:I
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -971,7 +971,7 @@
 
     const/4 v5, 0x1
 
-    .line 2597
+    .line 2598
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
@@ -988,12 +988,12 @@
 
     const/4 v13, 0x0
 
-    .line 2600
+    .line 2601
     aget-object v1, v0, v13
 
     if-nez v1, :cond_4
 
-    .line 2601
+    .line 2602
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFragmentView()Landroid/view/View;
@@ -1008,18 +1008,18 @@
 
     aput-object v1, v0, v13
 
-    .line 2602
+    .line 2603
     aget-object v1, v0, v13
 
     invoke-virtual {v1, v9, v10}, Lorg/telegram/ui/ActionBar/AlertDialog;->showDelayed(J)V
 
-    .line 2604
+    .line 2605
     :cond_4
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipant;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipant;-><init>()V
 
-    .line 2605
+    .line 2606
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1034,7 +1034,7 @@
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipant;->channel:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
-    .line 2606
+    .line 2607
     iget-object v2, v7, Lorg/telegram/ui/StatisticActivity$MemberData;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInputPeer(Lorg/telegram/tgnet/TLRPC$User;)Lorg/telegram/tgnet/TLRPC$InputPeer;
@@ -1043,7 +1043,7 @@
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipant;->participant:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 2607
+    .line 2608
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -1065,12 +1065,12 @@
 
     const/4 v13, 0x0
 
-    .line 2629
+    .line 2630
     aget-object v1, v0, v13
 
     if-nez v1, :cond_6
 
-    .line 2630
+    .line 2631
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFragmentView()Landroid/view/View;
@@ -1085,18 +1085,18 @@
 
     aput-object v1, v0, v13
 
-    .line 2631
+    .line 2632
     aget-object v1, v0, v13
 
     invoke-virtual {v1, v9, v10}, Lorg/telegram/ui/ActionBar/AlertDialog;->showDelayed(J)V
 
-    .line 2633
+    .line 2634
     :cond_6
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipant;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipant;-><init>()V
 
-    .line 2634
+    .line 2635
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1111,7 +1111,7 @@
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipant;->channel:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
-    .line 2635
+    .line 2636
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1132,7 +1132,7 @@
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipant;->participant:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 2636
+    .line 2637
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -1150,19 +1150,19 @@
     :cond_7
     const/4 v9, 0x0
 
-    .line 2657
+    .line 2658
     aget-object v10, v0, v9
 
     if-eqz v10, :cond_8
 
-    .line 2658
+    .line 2659
     aget-object v10, v0, v9
 
     invoke-virtual {v10}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
     const/4 v10, 0x0
 
-    .line 2659
+    .line 2660
     aput-object v10, v0, v9
 
     :cond_8
@@ -1170,7 +1170,7 @@
 
     if-eqz v4, :cond_f
 
-    .line 2663
+    .line 2664
     iget-wide v9, v12, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
 
     iget-wide v13, v4, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
@@ -1179,10 +1179,10 @@
 
     if-eqz v0, :cond_f
 
-    .line 2664
+    .line 2665
     iget-object v0, v4, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 2665
+    .line 2666
     iget-object v9, v12, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     iget-object v9, v9, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1203,7 +1203,7 @@
     :goto_2
     if-eqz v13, :cond_b
 
-    .line 2666
+    .line 2667
     instance-of v9, v0, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantCreator;
 
     if-nez v9, :cond_a
@@ -1222,7 +1222,7 @@
     :cond_b
     if-eqz v13, :cond_f
 
-    .line 2670
+    .line 2671
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     if-nez v0, :cond_c
@@ -1235,7 +1235,7 @@
     :goto_3
     if-eqz v5, :cond_d
 
-    .line 2671
+    .line 2672
     sget v0, Lorg/telegram/messenger/R$string;->SetAsAdmin:I
 
     const-string v9, "SetAsAdmin"
@@ -1256,7 +1256,7 @@
 
     if-eqz v5, :cond_e
 
-    .line 2672
+    .line 2673
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_admins:I
 
     goto :goto_5
@@ -1273,7 +1273,7 @@
 
     const/4 v0, 0x0
 
-    .line 2673
+    .line 2674
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -1287,7 +1287,7 @@
 
     move v5, v0
 
-    .line 2677
+    .line 2678
     :goto_6
     new-instance v9, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -1297,7 +1297,7 @@
 
     invoke-direct {v9, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 2680
+    .line 2681
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -1330,12 +1330,12 @@
 
     invoke-virtual {v9, v10, v11, v12}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setItems([Ljava/lang/CharSequence;[ILandroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2721
+    .line 2722
     invoke-virtual {v9}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
-    .line 2722
+    .line 2723
     invoke-virtual {v8, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
@@ -1346,12 +1346,12 @@
 .method public onClick(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 4
 
-    .line 2555
+    .line 2556
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2556
+    .line 2557
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$MemberData;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -1360,7 +1360,7 @@
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 2557
+    .line 2558
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1373,7 +1373,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->putUser(Lorg/telegram/tgnet/TLRPC$User;Z)Z
 
-    .line 2558
+    .line 2559
     new-instance v1, Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/ProfileActivity;-><init>(Landroid/os/Bundle;)V
@@ -1388,7 +1388,7 @@
 
     const/4 v0, 0x1
 
-    .line 2562
+    .line 2563
     invoke-direct {p0, p1, p2, p3, v0}, Lorg/telegram/ui/StatisticActivity$MemberData;->onLongClick(Lorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/ui/StatisticActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Z)V
 
     return-void

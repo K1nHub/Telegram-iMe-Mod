@@ -11,8 +11,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.StateSet;
-import androidx.appcompat.graphics.drawable.DrawableContainer;
-import androidx.appcompat.graphics.drawable.StateListDrawable;
+import androidx.appcompat.graphics.drawable.DrawableContainerCompat;
+import androidx.appcompat.graphics.drawable.StateListDrawableCompat;
 import androidx.appcompat.resources.Compatibility$Api18Impl;
 import androidx.appcompat.resources.Compatibility$Api21Impl;
 import androidx.appcompat.resources.R$styleable;
@@ -28,14 +28,14 @@ import java.io.IOException;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 /* loaded from: classes.dex */
-public class AnimatedStateListDrawableCompat extends StateListDrawable implements TintAwareDrawable {
+public class AnimatedStateListDrawableCompat extends StateListDrawableCompat implements TintAwareDrawable {
     private boolean mMutated;
     private AnimatedStateListState mState;
     private Transition mTransition;
     private int mTransitionFromIndex;
     private int mTransitionToIndex;
 
-    @Override // androidx.appcompat.graphics.drawable.StateListDrawable, android.graphics.drawable.Drawable
+    @Override // androidx.appcompat.graphics.drawable.StateListDrawableCompat, android.graphics.drawable.Drawable
     public boolean isStateful() {
         return true;
     }
@@ -73,7 +73,7 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
         init();
     }
 
-    @Override // androidx.appcompat.graphics.drawable.DrawableContainer, android.graphics.drawable.Drawable
+    @Override // androidx.appcompat.graphics.drawable.DrawableContainerCompat, android.graphics.drawable.Drawable
     public boolean setVisible(boolean z, boolean z2) {
         boolean visible = super.setVisible(z, z2);
         Transition transition = this.mTransition;
@@ -87,7 +87,7 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
         return visible;
     }
 
-    @Override // androidx.appcompat.graphics.drawable.DrawableContainer, android.graphics.drawable.Drawable
+    @Override // androidx.appcompat.graphics.drawable.DrawableContainerCompat, android.graphics.drawable.Drawable
     public void jumpToCurrentState() {
         super.jumpToCurrentState();
         Transition transition = this.mTransition;
@@ -101,7 +101,7 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // androidx.appcompat.graphics.drawable.StateListDrawable, androidx.appcompat.graphics.drawable.DrawableContainer, android.graphics.drawable.Drawable
+    @Override // androidx.appcompat.graphics.drawable.StateListDrawableCompat, androidx.appcompat.graphics.drawable.DrawableContainerCompat, android.graphics.drawable.Drawable
     public boolean onStateChange(int[] iArr) {
         int indexOfKeyframe = this.mState.indexOfKeyframe(iArr);
         boolean z = indexOfKeyframe != getCurrentIndex() && (selectTransition(indexOfKeyframe) || selectDrawable(indexOfKeyframe));
@@ -360,7 +360,7 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
         return this.mState.addStateSet(extractStateSet, drawable, resourceId);
     }
 
-    @Override // androidx.appcompat.graphics.drawable.StateListDrawable, androidx.appcompat.graphics.drawable.DrawableContainer, android.graphics.drawable.Drawable
+    @Override // androidx.appcompat.graphics.drawable.StateListDrawableCompat, androidx.appcompat.graphics.drawable.DrawableContainerCompat, android.graphics.drawable.Drawable
     public Drawable mutate() {
         if (!this.mMutated && super.mutate() == this) {
             this.mState.mutate();
@@ -370,14 +370,14 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // androidx.appcompat.graphics.drawable.StateListDrawable, androidx.appcompat.graphics.drawable.DrawableContainer
+    @Override // androidx.appcompat.graphics.drawable.StateListDrawableCompat, androidx.appcompat.graphics.drawable.DrawableContainerCompat
     public AnimatedStateListState cloneConstantState() {
         return new AnimatedStateListState(this.mState, this, null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public static class AnimatedStateListState extends StateListDrawable.StateListState {
+    public static class AnimatedStateListState extends StateListDrawableCompat.StateListState {
         SparseArrayCompat<Integer> mStateIds;
         LongSparseArray<Long> mTransitions;
 
@@ -396,10 +396,10 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
             this.mStateIds = new SparseArrayCompat<>();
         }
 
-        @Override // androidx.appcompat.graphics.drawable.StateListDrawable.StateListState, androidx.appcompat.graphics.drawable.DrawableContainer.DrawableContainerState
+        @Override // androidx.appcompat.graphics.drawable.StateListDrawableCompat.StateListState, androidx.appcompat.graphics.drawable.DrawableContainerCompat.DrawableContainerState
         void mutate() {
-            this.mTransitions = this.mTransitions.m862clone();
-            this.mStateIds = this.mStateIds.m863clone();
+            this.mTransitions = this.mTransitions.m848clone();
+            this.mStateIds = this.mStateIds.m849clone();
         }
 
         int addTransition(int i, int i2, Drawable drawable, boolean z) {
@@ -444,20 +444,20 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
             return (this.mTransitions.get(generateTransitionKey(i, i2), -1L).longValue() & 8589934592L) != 0;
         }
 
-        @Override // androidx.appcompat.graphics.drawable.StateListDrawable.StateListState, android.graphics.drawable.Drawable.ConstantState
+        @Override // androidx.appcompat.graphics.drawable.StateListDrawableCompat.StateListState, android.graphics.drawable.Drawable.ConstantState
         public Drawable newDrawable() {
             return new AnimatedStateListDrawableCompat(this, null);
         }
 
-        @Override // androidx.appcompat.graphics.drawable.StateListDrawable.StateListState, android.graphics.drawable.Drawable.ConstantState
+        @Override // androidx.appcompat.graphics.drawable.StateListDrawableCompat.StateListState, android.graphics.drawable.Drawable.ConstantState
         public Drawable newDrawable(Resources resources) {
             return new AnimatedStateListDrawableCompat(this, resources);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // androidx.appcompat.graphics.drawable.StateListDrawable, androidx.appcompat.graphics.drawable.DrawableContainer
-    public void setConstantState(DrawableContainer.DrawableContainerState drawableContainerState) {
+    @Override // androidx.appcompat.graphics.drawable.StateListDrawableCompat, androidx.appcompat.graphics.drawable.DrawableContainerCompat
+    public void setConstantState(DrawableContainerCompat.DrawableContainerState drawableContainerState) {
         super.setConstantState(drawableContainerState);
         if (drawableContainerState instanceof AnimatedStateListState) {
             this.mState = (AnimatedStateListState) drawableContainerState;

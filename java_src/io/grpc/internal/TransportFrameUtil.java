@@ -1,7 +1,7 @@
 package io.grpc.internal;
 
 import com.google.common.base.Charsets;
-import com.google.common.p020io.BaseEncoding;
+import com.google.common.p019io.BaseEncoding;
 import io.grpc.InternalMetadata;
 import io.grpc.Metadata;
 import java.util.ArrayList;

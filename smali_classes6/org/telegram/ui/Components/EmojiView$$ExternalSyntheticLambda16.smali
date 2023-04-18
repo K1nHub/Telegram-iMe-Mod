@@ -2,38 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/EmojiView;
 
-.field public final synthetic f$1:I
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/EmojiView;I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/Components/EmojiView;
 
-    iput p2, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda16;->f$1:I
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final onItemClick(Landroid/view/View;I)V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/Components/EmojiView;
 
-    iget v1, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda16;->f$1:I
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$ZsZv8ad2Ld70wohDZSIsSh5UPsk(Lorg/telegram/ui/Components/EmojiView;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$V3T5HhzyGk8ireciEeN-Zd7vzMI(Lorg/telegram/ui/Components/EmojiView;Landroid/view/View;I)V
 
     return-void
 .end method

@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30976
+    .line 30988
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_messages_messageEditData;
     .locals 1
 
-    .line 30983
+    .line 30995
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_messageEditData;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -43,7 +43,7 @@
 
     return-object p0
 
-    .line 30985
+    .line 30997
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -69,13 +69,13 @@
 
     throw p0
 
-    .line 30990
+    .line 31002
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messages_messageEditData;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messages_messageEditData;-><init>()V
 
-    .line 30991
+    .line 31003
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_messages_messageEditData;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -86,7 +86,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 30996
+    .line 31008
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -104,7 +104,7 @@
     :cond_0
     const/4 p2, 0x0
 
-    .line 30997
+    .line 31009
     :goto_0
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_messageEditData;->caption:Z
 
@@ -114,12 +114,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 31001
+    .line 31013
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_messageEditData;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 31002
+    .line 31014
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_messageEditData;->caption:Z
 
     if-eqz v0, :cond_0
@@ -138,7 +138,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_messageEditData;->flags:I
 
-    .line 31003
+    .line 31015
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     return-void

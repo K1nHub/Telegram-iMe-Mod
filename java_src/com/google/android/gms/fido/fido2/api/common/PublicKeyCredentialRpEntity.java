@@ -13,15 +13,15 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class PublicKeyCredentialRpEntity extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PublicKeyCredentialRpEntity> CREATOR = new zzak();
-    @SafeParcelable.Field(getter = "getId", m789id = 2)
+    @SafeParcelable.Field(getter = "getId", m775id = 2)
     private final String zza;
-    @SafeParcelable.Field(getter = "getName", m789id = 3)
+    @SafeParcelable.Field(getter = "getName", m775id = 3)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getIcon", m789id = 4)
+    @SafeParcelable.Field(getter = "getIcon", m775id = 4)
     private final String zzc;
 
     @SafeParcelable.Constructor
-    public PublicKeyCredentialRpEntity(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) String str2, @SafeParcelable.Param(m788id = 4) String str3) {
+    public PublicKeyCredentialRpEntity(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) String str3) {
         this.zza = (String) Preconditions.checkNotNull(str);
         this.zzb = (String) Preconditions.checkNotNull(str2);
         this.zzc = str3;

@@ -9,7 +9,7 @@ public final class NftToken {
     private final String description;
 
     /* renamed from: id */
-    private final long f331id;
+    private final long f326id;
     private final String image;
     private final String meta;
     private final String owner;
@@ -17,7 +17,7 @@ public final class NftToken {
     private final String tokenId;
 
     public final long component1() {
-        return this.f331id;
+        return this.f326id;
     }
 
     public final String component2() {
@@ -65,17 +65,17 @@ public final class NftToken {
         }
         if (obj instanceof NftToken) {
             NftToken nftToken = (NftToken) obj;
-            return this.f331id == nftToken.f331id && Intrinsics.areEqual(this.tokenId, nftToken.tokenId) && Intrinsics.areEqual(this.owner, nftToken.owner) && Intrinsics.areEqual(this.image, nftToken.image) && Intrinsics.areEqual(this.meta, nftToken.meta) && Intrinsics.areEqual(this.title, nftToken.title) && Intrinsics.areEqual(this.description, nftToken.description) && Intrinsics.areEqual(this.collection, nftToken.collection);
+            return this.f326id == nftToken.f326id && Intrinsics.areEqual(this.tokenId, nftToken.tokenId) && Intrinsics.areEqual(this.owner, nftToken.owner) && Intrinsics.areEqual(this.image, nftToken.image) && Intrinsics.areEqual(this.meta, nftToken.meta) && Intrinsics.areEqual(this.title, nftToken.title) && Intrinsics.areEqual(this.description, nftToken.description) && Intrinsics.areEqual(this.collection, nftToken.collection);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f331id) * 31) + this.tokenId.hashCode()) * 31) + this.owner.hashCode()) * 31) + this.image.hashCode()) * 31) + this.meta.hashCode()) * 31) + this.title.hashCode()) * 31) + this.description.hashCode()) * 31) + this.collection.hashCode();
+        return (((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f326id) * 31) + this.tokenId.hashCode()) * 31) + this.owner.hashCode()) * 31) + this.image.hashCode()) * 31) + this.meta.hashCode()) * 31) + this.title.hashCode()) * 31) + this.description.hashCode()) * 31) + this.collection.hashCode();
     }
 
     public String toString() {
-        return "NftToken(id=" + this.f331id + ", tokenId=" + this.tokenId + ", owner=" + this.owner + ", image=" + this.image + ", meta=" + this.meta + ", title=" + this.title + ", description=" + this.description + ", collection=" + this.collection + ')';
+        return "NftToken(id=" + this.f326id + ", tokenId=" + this.tokenId + ", owner=" + this.owner + ", image=" + this.image + ", meta=" + this.meta + ", title=" + this.title + ", description=" + this.description + ", collection=" + this.collection + ')';
     }
 
     public NftToken(long j, String tokenId, String owner, String image, String meta, String title, String description, NftCollection collection) {
@@ -86,7 +86,7 @@ public final class NftToken {
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(description, "description");
         Intrinsics.checkNotNullParameter(collection, "collection");
-        this.f331id = j;
+        this.f326id = j;
         this.tokenId = tokenId;
         this.owner = owner;
         this.image = image;
@@ -97,7 +97,7 @@ public final class NftToken {
     }
 
     public final long getId() {
-        return this.f331id;
+        return this.f326id;
     }
 
     public final String getTokenId() {

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    invoke-static {v0, p1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->$r8$lambda$FfLJ7aHRBidGc44ZuJauAqSeUnM(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->$r8$lambda$OMabMfDfO09ZisbAWXP3wBp-E-4(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
 
     return-void
 .end method

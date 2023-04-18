@@ -6,7 +6,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseAppLifecycleListener;
 import com.google.firebase.FirebaseOptions;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseRemoteModel;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseRemoteModel;
 import java.util.HashMap;
 import java.util.Map;
 /* loaded from: classes.dex */
@@ -134,7 +134,7 @@ public final class zzob {
         try {
             return zzor.zzbu(str);
         } catch (IllegalArgumentException unused) {
-            zzass.m797e("SharedPrefManager", str.length() != 0 ? "Invalid model type ".concat(str) : new String("Invalid model type "));
+            zzass.m783e("SharedPrefManager", str.length() != 0 ? "Invalid model type ".concat(str) : new String("Invalid model type "));
             return zzor.UNKNOWN;
         }
     }

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final koin:Lorg/koin/core/Koin;
+.field private final logger:Lorg/koin/core/logger/Logger;
 
 .field private final parameters:Lorg/koin/core/parameter/ParametersHolder;
 
@@ -12,10 +12,10 @@
 
 
 # direct methods
-.method public constructor <init>(Lorg/koin/core/Koin;Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)V
+.method public constructor <init>(Lorg/koin/core/logger/Logger;Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)V
     .locals 1
 
-    const-string v0, "koin"
+    const-string v0, "logger"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -23,22 +23,22 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 28
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
-    iput-object p1, p0, Lorg/koin/core/instance/InstanceContext;->koin:Lorg/koin/core/Koin;
+    .line 28
+    iput-object p1, p0, Lorg/koin/core/instance/InstanceContext;->logger:Lorg/koin/core/logger/Logger;
 
-    .line 30
+    .line 29
     iput-object p2, p0, Lorg/koin/core/instance/InstanceContext;->scope:Lorg/koin/core/scope/Scope;
 
-    .line 31
+    .line 30
     iput-object p3, p0, Lorg/koin/core/instance/InstanceContext;->parameters:Lorg/koin/core/parameter/ParametersHolder;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lorg/koin/core/Koin;Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Lorg/koin/core/logger/Logger;Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
     and-int/lit8 p4, p4, 0x4
@@ -47,20 +47,20 @@
 
     const/4 p3, 0x0
 
-    .line 28
+    .line 27
     :cond_0
-    invoke-direct {p0, p1, p2, p3}, Lorg/koin/core/instance/InstanceContext;-><init>(Lorg/koin/core/Koin;Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/koin/core/instance/InstanceContext;-><init>(Lorg/koin/core/logger/Logger;Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getKoin()Lorg/koin/core/Koin;
+.method public final getLogger()Lorg/koin/core/logger/Logger;
     .locals 1
 
-    .line 29
-    iget-object v0, p0, Lorg/koin/core/instance/InstanceContext;->koin:Lorg/koin/core/Koin;
+    .line 28
+    iget-object v0, p0, Lorg/koin/core/instance/InstanceContext;->logger:Lorg/koin/core/logger/Logger;
 
     return-object v0
 .end method
@@ -68,7 +68,7 @@
 .method public final getParameters()Lorg/koin/core/parameter/ParametersHolder;
     .locals 1
 
-    .line 31
+    .line 30
     iget-object v0, p0, Lorg/koin/core/instance/InstanceContext;->parameters:Lorg/koin/core/parameter/ParametersHolder;
 
     return-object v0
@@ -77,7 +77,7 @@
 .method public final getScope()Lorg/koin/core/scope/Scope;
     .locals 1
 
-    .line 30
+    .line 29
     iget-object v0, p0, Lorg/koin/core/instance/InstanceContext;->scope:Lorg/koin/core/scope/Scope;
 
     return-object v0

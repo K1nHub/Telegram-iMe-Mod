@@ -33,7 +33,7 @@ public class View {
         final ImmutableSortedSet<DocumentKey> mutatedKeys;
         private final boolean needsRefill;
 
-        /* synthetic */ DocumentChanges(DocumentSet documentSet, DocumentViewChangeSet documentViewChangeSet, ImmutableSortedSet immutableSortedSet, boolean z, C10191 c10191) {
+        /* synthetic */ DocumentChanges(DocumentSet documentSet, DocumentViewChangeSet documentViewChangeSet, ImmutableSortedSet immutableSortedSet, boolean z, C10041 c10041) {
             this(documentSet, documentViewChangeSet, immutableSortedSet, z);
         }
 
@@ -196,35 +196,35 @@ public class View {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.core.View$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10191 {
+    public static /* synthetic */ class C10041 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$DocumentViewChange$Type */
-        static final /* synthetic */ int[] f169x33862af7;
+        static final /* synthetic */ int[] f166x33862af7;
 
         static {
             int[] iArr = new int[DocumentViewChange.Type.values().length];
-            f169x33862af7 = iArr;
+            f166x33862af7 = iArr;
             try {
                 iArr[DocumentViewChange.Type.ADDED.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f169x33862af7[DocumentViewChange.Type.MODIFIED.ordinal()] = 2;
+                f166x33862af7[DocumentViewChange.Type.MODIFIED.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f169x33862af7[DocumentViewChange.Type.METADATA.ordinal()] = 3;
+                f166x33862af7[DocumentViewChange.Type.METADATA.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f169x33862af7[DocumentViewChange.Type.REMOVED.ordinal()] = 4;
+                f166x33862af7[DocumentViewChange.Type.REMOVED.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
         }
     }
 
     private static int changeTypeOrder(DocumentViewChange documentViewChange) {
-        int i = C10191.f169x33862af7[documentViewChange.getType().ordinal()];
+        int i = C10041.f166x33862af7[documentViewChange.getType().ordinal()];
         int i2 = 1;
         if (i != 1) {
             i2 = 2;

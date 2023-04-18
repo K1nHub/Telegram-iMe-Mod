@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda0;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-static {v0, v1}, Lcom/iMe/utils/helper/wallet/WalletHelper;->$r8$lambda$jjJzeux1_0EbfzCvQYPFtuqg69A(Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {v0, v1}, Lcom/iMe/utils/helper/wallet/WalletHelper;->$r8$lambda$bRTFiuVMlXWUHblHaFAV6SNS-U8(Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method

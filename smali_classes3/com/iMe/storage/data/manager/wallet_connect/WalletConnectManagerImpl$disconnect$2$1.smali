@@ -53,7 +53,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 201
+    .line 207
     invoke-virtual {p1}, Lcom/trustwallet/walletconnect/WCSessionStoreItem;->getSession()Lcom/trustwallet/walletconnect/models/session/WCSession;
 
     move-result-object p1
@@ -78,7 +78,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 201
+    .line 207
     check-cast p1, Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$disconnect$2$1;->invoke(Lcom/trustwallet/walletconnect/WCSessionStoreItem;)Ljava/lang/Boolean;

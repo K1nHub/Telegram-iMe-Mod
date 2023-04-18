@@ -12,9 +12,9 @@ import com.google.firebase.firestore.proto.UnknownDocument;
 import com.google.firebase.firestore.proto.WriteBatch;
 import com.google.firebase.firestore.remote.RemoteSerializer;
 import com.google.firebase.firestore.util.Assert;
-import com.google.firestore.p022v1.Document;
-import com.google.firestore.p022v1.DocumentTransform;
-import com.google.firestore.p022v1.Write;
+import com.google.firestore.p021v1.Document;
+import com.google.firestore.p021v1.DocumentTransform;
+import com.google.firestore.p021v1.Write;
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
 /* loaded from: classes3.dex */
@@ -43,7 +43,7 @@ public final class LocalSerializer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public MutableDocument decodeMaybeDocument(MaybeDocument maybeDocument) {
-        int i = C10201.f170xe45654f0[maybeDocument.getDocumentTypeCase().ordinal()];
+        int i = C10051.f167xe45654f0[maybeDocument.getDocumentTypeCase().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
@@ -145,7 +145,7 @@ public final class LocalSerializer {
         SnapshotVersion decodeVersion2 = this.rpcSerializer.decodeVersion(target.getLastLimboFreeSnapshotVersion());
         ByteString resumeToken = target.getResumeToken();
         long lastListenSequenceNumber = target.getLastListenSequenceNumber();
-        int i = C10201.f171x5167ea64[target.getTargetTypeCase().ordinal()];
+        int i = C10051.f168x5167ea64[target.getTargetTypeCase().ordinal()];
         if (i == 1) {
             decodeDocumentsTarget = this.rpcSerializer.decodeDocumentsTarget(target.getDocuments());
         } else if (i != 2) {
@@ -159,37 +159,37 @@ public final class LocalSerializer {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.local.LocalSerializer$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10201 {
+    public static /* synthetic */ class C10051 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$proto$MaybeDocument$DocumentTypeCase */
-        static final /* synthetic */ int[] f170xe45654f0;
+        static final /* synthetic */ int[] f167xe45654f0;
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$proto$Target$TargetTypeCase */
-        static final /* synthetic */ int[] f171x5167ea64;
+        static final /* synthetic */ int[] f168x5167ea64;
 
         static {
             int[] iArr = new int[Target.TargetTypeCase.values().length];
-            f171x5167ea64 = iArr;
+            f168x5167ea64 = iArr;
             try {
                 iArr[Target.TargetTypeCase.DOCUMENTS.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f171x5167ea64[Target.TargetTypeCase.QUERY.ordinal()] = 2;
+                f168x5167ea64[Target.TargetTypeCase.QUERY.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             int[] iArr2 = new int[MaybeDocument.DocumentTypeCase.values().length];
-            f170xe45654f0 = iArr2;
+            f167xe45654f0 = iArr2;
             try {
                 iArr2[MaybeDocument.DocumentTypeCase.DOCUMENT.ordinal()] = 1;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f170xe45654f0[MaybeDocument.DocumentTypeCase.NO_DOCUMENT.ordinal()] = 2;
+                f167xe45654f0[MaybeDocument.DocumentTypeCase.NO_DOCUMENT.ordinal()] = 2;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f170xe45654f0[MaybeDocument.DocumentTypeCase.UNKNOWN_DOCUMENT.ordinal()] = 3;
+                f167xe45654f0[MaybeDocument.DocumentTypeCase.UNKNOWN_DOCUMENT.ordinal()] = 3;
             } catch (NoSuchFieldError unused5) {
             }
         }

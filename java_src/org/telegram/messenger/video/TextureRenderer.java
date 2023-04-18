@@ -22,12 +22,12 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.p048ui.Components.AnimatedEmojiDrawable;
-import org.telegram.p048ui.Components.AnimatedFileDrawable;
-import org.telegram.p048ui.Components.EditTextEffects;
-import org.telegram.p048ui.Components.FilterShaders;
-import org.telegram.p048ui.Components.Paint.Views.EditTextOutline;
-import org.telegram.p048ui.Components.RLottieDrawable;
+import org.telegram.p044ui.Components.AnimatedEmojiDrawable;
+import org.telegram.p044ui.Components.AnimatedFileDrawable;
+import org.telegram.p044ui.Components.EditTextEffects;
+import org.telegram.p044ui.Components.FilterShaders;
+import org.telegram.p044ui.Components.Paint.Views.EditTextOutline;
+import org.telegram.p044ui.Components.RLottieDrawable;
 /* loaded from: classes4.dex */
 public class TextureRenderer {
     private static final String FRAGMENT_EXTERNAL_SHADER = "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform samplerExternalOES sTexture;\nvoid main() {\n  gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n";
@@ -281,7 +281,7 @@ public class TextureRenderer {
                     if (f >= mediaEntity.metadata[0]) {
                         mediaEntity.currentFrame = BitmapDescriptorFactory.HUE_RED;
                     }
-                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1479x, mediaEntity.f1480y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
+                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1404x, mediaEntity.f1405y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
                 } else if (mediaEntity.animatedFileDrawable != null) {
                     float f2 = mediaEntity.currentFrame;
                     int i7 = (int) f2;
@@ -305,7 +305,7 @@ public class TextureRenderer {
                             applyRoundRadius(mediaEntity, this.stickerBitmap);
                             GLES20.glBindTexture(3553, this.stickerTexture[0]);
                             GLUtils.texImage2D(3553, 0, this.stickerBitmap, 0);
-                            drawTexture(false, this.stickerTexture[0], mediaEntity.f1479x, mediaEntity.f1480y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
+                            drawTexture(false, this.stickerTexture[0], mediaEntity.f1404x, mediaEntity.f1405y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
                         }
                     }
                 } else if (mediaEntity.view != null && mediaEntity.canvas != null && (bitmap = mediaEntity.bitmap) != null) {
@@ -319,11 +319,11 @@ public class TextureRenderer {
                     applyRoundRadius(mediaEntity, mediaEntity.bitmap);
                     GLES20.glBindTexture(3553, this.stickerTexture[0]);
                     GLUtils.texImage2D(3553, 0, mediaEntity.bitmap, 0);
-                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1479x, mediaEntity.f1480y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
+                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1404x, mediaEntity.f1405y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
                 } else if (mediaEntity.bitmap != null) {
                     GLES20.glBindTexture(3553, this.stickerTexture[0]);
                     GLUtils.texImage2D(3553, 0, mediaEntity.bitmap, 0);
-                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1479x, mediaEntity.f1480y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
+                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1404x, mediaEntity.f1405y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
                 }
             }
         }

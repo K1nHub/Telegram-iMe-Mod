@@ -1,11 +1,14 @@
 .class Landroidx/fragment/app/Fragment$8;
-.super Landroidx/fragment/app/Fragment$OnPreAttachedListener;
+.super Ljava/lang/Object;
 .source "Fragment.java"
+
+# interfaces
+.implements Landroidx/arch/core/util/Function;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/fragment/app/Fragment;->prepareCallInternal(Landroidx/activity/result/contract/ActivityResultContract;Landroidx/arch/core/util/Function;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
+    value = Landroidx/fragment/app/Fragment;->registerForActivityResult(Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultRegistry;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -13,78 +16,53 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroidx/arch/core/util/Function<",
+        "Ljava/lang/Void;",
+        "Landroidx/activity/result/ActivityResultRegistry;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
-.field final synthetic this$0:Landroidx/fragment/app/Fragment;
-
-.field final synthetic val$callback:Landroidx/activity/result/ActivityResultCallback;
-
-.field final synthetic val$contract:Landroidx/activity/result/contract/ActivityResultContract;
-
-.field final synthetic val$ref:Ljava/util/concurrent/atomic/AtomicReference;
-
-.field final synthetic val$registryProvider:Landroidx/arch/core/util/Function;
+.field final synthetic val$registry:Landroidx/activity/result/ActivityResultRegistry;
 
 
 # direct methods
-.method constructor <init>(Landroidx/fragment/app/Fragment;Landroidx/arch/core/util/Function;Ljava/util/concurrent/atomic/AtomicReference;Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)V
+.method constructor <init>(Landroidx/fragment/app/Fragment;Landroidx/activity/result/ActivityResultRegistry;)V
     .locals 0
 
-    .line 3490
-    iput-object p1, p0, Landroidx/fragment/app/Fragment$8;->this$0:Landroidx/fragment/app/Fragment;
+    .line 3569
+    iput-object p2, p0, Landroidx/fragment/app/Fragment$8;->val$registry:Landroidx/activity/result/ActivityResultRegistry;
 
-    iput-object p2, p0, Landroidx/fragment/app/Fragment$8;->val$registryProvider:Landroidx/arch/core/util/Function;
-
-    iput-object p3, p0, Landroidx/fragment/app/Fragment$8;->val$ref:Ljava/util/concurrent/atomic/AtomicReference;
-
-    iput-object p4, p0, Landroidx/fragment/app/Fragment$8;->val$contract:Landroidx/activity/result/contract/ActivityResultContract;
-
-    iput-object p5, p0, Landroidx/fragment/app/Fragment$8;->val$callback:Landroidx/activity/result/ActivityResultCallback;
-
-    const/4 p1, 0x0
-
-    invoke-direct {p0, p1}, Landroidx/fragment/app/Fragment$OnPreAttachedListener;-><init>(Landroidx/fragment/app/Fragment$1;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method onPreAttached()V
-    .locals 6
+.method public apply(Ljava/lang/Void;)Landroidx/activity/result/ActivityResultRegistry;
+    .locals 0
 
-    .line 3493
-    iget-object v0, p0, Landroidx/fragment/app/Fragment$8;->this$0:Landroidx/fragment/app/Fragment;
+    .line 3572
+    iget-object p1, p0, Landroidx/fragment/app/Fragment$8;->val$registry:Landroidx/activity/result/ActivityResultRegistry;
 
-    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->generateActivityResultKey()Ljava/lang/String;
+    return-object p1
+.end method
 
-    move-result-object v0
+.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    .line 3494
-    iget-object v1, p0, Landroidx/fragment/app/Fragment$8;->val$registryProvider:Landroidx/arch/core/util/Function;
+    .line 3569
+    check-cast p1, Ljava/lang/Void;
 
-    const/4 v2, 0x0
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment$8;->apply(Ljava/lang/Void;)Landroidx/activity/result/ActivityResultRegistry;
 
-    invoke-interface {v1, v2}, Landroidx/arch/core/util/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v1
-
-    check-cast v1, Landroidx/activity/result/ActivityResultRegistry;
-
-    .line 3495
-    iget-object v2, p0, Landroidx/fragment/app/Fragment$8;->val$ref:Ljava/util/concurrent/atomic/AtomicReference;
-
-    iget-object v3, p0, Landroidx/fragment/app/Fragment$8;->this$0:Landroidx/fragment/app/Fragment;
-
-    iget-object v4, p0, Landroidx/fragment/app/Fragment$8;->val$contract:Landroidx/activity/result/contract/ActivityResultContract;
-
-    iget-object v5, p0, Landroidx/fragment/app/Fragment$8;->val$callback:Landroidx/activity/result/ActivityResultCallback;
-
-    invoke-virtual {v1, v0, v3, v4, v5}, Landroidx/activity/result/ActivityResultRegistry;->register(Ljava/lang/String;Landroidx/lifecycle/LifecycleOwner;Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    return-void
+    return-object p1
 .end method

@@ -29,7 +29,7 @@
 
     check-cast p1, Lcom/iMe/storage/domain/model/filters/FilterFab;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$wSXXfDQaQ_zBtH3CrptR5lWFaNU(Lorg/telegram/ui/DialogsActivity;Lcom/iMe/storage/domain/model/filters/FilterFab;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$neV8hztEPaSc0_Nc_AFSFuYJxKY(Lorg/telegram/ui/DialogsActivity;Lcom/iMe/storage/domain/model/filters/FilterFab;)V
 
     return-void
 .end method

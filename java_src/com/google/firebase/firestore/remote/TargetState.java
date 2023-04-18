@@ -50,7 +50,7 @@ final class TargetState {
         for (Map.Entry<DocumentKey, DocumentViewChange.Type> entry : this.documentChanges.entrySet()) {
             DocumentKey key = entry.getKey();
             DocumentViewChange.Type value = entry.getValue();
-            int i = C10401.f193x33862af7[value.ordinal()];
+            int i = C10251.f190x33862af7[value.ordinal()];
             if (i == 1) {
                 immutableSortedSet = immutableSortedSet.insert(key);
             } else if (i == 2) {
@@ -66,24 +66,24 @@ final class TargetState {
 
     /* renamed from: com.google.firebase.firestore.remote.TargetState$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10401 {
+    static /* synthetic */ class C10251 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$DocumentViewChange$Type */
-        static final /* synthetic */ int[] f193x33862af7;
+        static final /* synthetic */ int[] f190x33862af7;
 
         static {
             int[] iArr = new int[DocumentViewChange.Type.values().length];
-            f193x33862af7 = iArr;
+            f190x33862af7 = iArr;
             try {
                 iArr[DocumentViewChange.Type.ADDED.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f193x33862af7[DocumentViewChange.Type.MODIFIED.ordinal()] = 2;
+                f190x33862af7[DocumentViewChange.Type.MODIFIED.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f193x33862af7[DocumentViewChange.Type.REMOVED.ordinal()] = 3;
+                f190x33862af7[DocumentViewChange.Type.REMOVED.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
         }

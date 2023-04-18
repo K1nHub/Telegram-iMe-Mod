@@ -6,7 +6,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/emoji2/text/EmojiProcessor$DefaultGlyphChecker;,
         Landroidx/emoji2/text/EmojiProcessor$CodepointIndexFinder;,
         Landroidx/emoji2/text/EmojiProcessor$ProcessorSm;
     }
@@ -29,22 +28,22 @@
 .method constructor <init>(Landroidx/emoji2/text/MetadataRepo;Landroidx/emoji2/text/EmojiCompat$SpanFactory;Landroidx/emoji2/text/EmojiCompat$GlyphChecker;Z[I)V
     .locals 0
 
-    .line 115
+    .line 112
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 116
+    .line 113
     iput-object p2, p0, Landroidx/emoji2/text/EmojiProcessor;->mSpanFactory:Landroidx/emoji2/text/EmojiCompat$SpanFactory;
 
-    .line 117
+    .line 114
     iput-object p1, p0, Landroidx/emoji2/text/EmojiProcessor;->mMetadataRepo:Landroidx/emoji2/text/MetadataRepo;
 
-    .line 118
+    .line 115
     iput-object p3, p0, Landroidx/emoji2/text/EmojiProcessor;->mGlyphChecker:Landroidx/emoji2/text/EmojiCompat$GlyphChecker;
 
-    .line 119
+    .line 116
     iput-boolean p4, p0, Landroidx/emoji2/text/EmojiProcessor;->mUseEmojiAsDefaultStyle:Z
 
-    .line 120
+    .line 117
     iput-object p5, p0, Landroidx/emoji2/text/EmojiProcessor;->mEmojiAsDefaultStyleExceptions:[I
 
     return-void
@@ -53,7 +52,7 @@
 .method private addEmoji(Landroid/text/Spannable;Landroidx/emoji2/text/EmojiMetadata;II)V
     .locals 1
 
-    .line 443
+    .line 490
     iget-object v0, p0, Landroidx/emoji2/text/EmojiProcessor;->mSpanFactory:Landroidx/emoji2/text/EmojiCompat$SpanFactory;
 
     invoke-virtual {v0, p2}, Landroidx/emoji2/text/EmojiCompat$SpanFactory;->createSpan(Landroidx/emoji2/text/EmojiMetadata;)Landroidx/emoji2/text/EmojiSpan;
@@ -62,7 +61,7 @@
 
     const/16 v0, 0x21
 
-    .line 444
+    .line 491
     invoke-interface {p1, p2, p3, p4, v0}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
     return-void
@@ -71,7 +70,7 @@
 .method private static delete(Landroid/text/Editable;Landroid/view/KeyEvent;Z)Z
     .locals 6
 
-    .line 328
+    .line 375
     invoke-static {p1}, Landroidx/emoji2/text/EmojiProcessor;->hasModifiers(Landroid/view/KeyEvent;)Z
 
     move-result p1
@@ -82,18 +81,18 @@
 
     return v0
 
-    .line 332
+    .line 379
     :cond_0
     invoke-static {p0}, Landroid/text/Selection;->getSelectionStart(Ljava/lang/CharSequence;)I
 
     move-result p1
 
-    .line 333
+    .line 380
     invoke-static {p0}, Landroid/text/Selection;->getSelectionEnd(Ljava/lang/CharSequence;)I
 
     move-result v1
 
-    .line 334
+    .line 381
     invoke-static {p1, v1}, Landroidx/emoji2/text/EmojiProcessor;->hasInvalidSelection(II)Z
 
     move-result v2
@@ -102,7 +101,7 @@
 
     return v0
 
-    .line 338
+    .line 385
     :cond_1
     const-class v2, Landroidx/emoji2/text/EmojiSpan;
 
@@ -114,12 +113,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 339
+    .line 386
     array-length v2, v1
 
     if-lez v2, :cond_6
 
-    .line 340
+    .line 387
     array-length v2, v1
 
     move v3, v0
@@ -127,15 +126,15 @@
     :goto_0
     if-ge v3, v2, :cond_6
 
-    .line 342
+    .line 389
     aget-object v4, v1, v3
 
-    .line 343
+    .line 390
     invoke-interface {p0, v4}, Landroid/text/Editable;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v5
 
-    .line 344
+    .line 391
     invoke-interface {p0, v4}, Landroid/text/Editable;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result v4
@@ -154,7 +153,7 @@
 
     if-ge p1, v4, :cond_5
 
-    .line 348
+    .line 395
     :cond_4
     invoke-interface {p0, v5, v4}, Landroid/text/Editable;->delete(II)Landroid/text/Editable;
 
@@ -189,18 +188,18 @@
 
     goto/16 :goto_1
 
-    .line 385
+    .line 432
     :cond_1
     invoke-static {p1}, Landroid/text/Selection;->getSelectionStart(Ljava/lang/CharSequence;)I
 
     move-result v1
 
-    .line 386
+    .line 433
     invoke-static {p1}, Landroid/text/Selection;->getSelectionEnd(Ljava/lang/CharSequence;)I
 
     move-result v2
 
-    .line 388
+    .line 435
     invoke-static {v1, v2}, Landroidx/emoji2/text/EmojiProcessor;->hasInvalidSelection(II)Z
 
     move-result v3
@@ -212,22 +211,22 @@
     :cond_2
     if-eqz p4, :cond_4
 
-    .line 397
+    .line 444
     invoke-static {p2, v0}, Ljava/lang/Math;->max(II)I
 
     move-result p2
 
-    .line 396
+    .line 443
     invoke-static {p1, v1, p2}, Landroidx/emoji2/text/EmojiProcessor$CodepointIndexFinder;->findIndexBackward(Ljava/lang/CharSequence;II)I
 
     move-result p2
 
-    .line 399
+    .line 446
     invoke-static {p3, v0}, Ljava/lang/Math;->max(II)I
 
     move-result p3
 
-    .line 398
+    .line 445
     invoke-static {p1, v2, p3}, Landroidx/emoji2/text/EmojiProcessor$CodepointIndexFinder;->findIndexForward(Ljava/lang/CharSequence;II)I
 
     move-result p3
@@ -244,14 +243,14 @@
     :cond_4
     sub-int/2addr v1, p2
 
-    .line 406
+    .line 453
     invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result p2
 
     add-int/2addr v2, p3
 
-    .line 407
+    .line 454
     invoke-interface {p1}, Landroid/text/Editable;->length()I
 
     move-result p3
@@ -260,7 +259,7 @@
 
     move-result p3
 
-    .line 410
+    .line 457
     :cond_5
     const-class p4, Landroidx/emoji2/text/EmojiSpan;
 
@@ -272,12 +271,12 @@
 
     if-eqz p4, :cond_7
 
-    .line 411
+    .line 458
     array-length v1, p4
 
     if-lez v1, :cond_7
 
-    .line 412
+    .line 459
     array-length v1, p4
 
     move v2, v0
@@ -285,25 +284,25 @@
     :goto_0
     if-ge v2, v1, :cond_6
 
-    .line 414
+    .line 461
     aget-object v3, p4, v2
 
-    .line 415
+    .line 462
     invoke-interface {p1, v3}, Landroid/text/Editable;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v4
 
-    .line 416
+    .line 463
     invoke-interface {p1, v3}, Landroid/text/Editable;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result v3
 
-    .line 417
+    .line 464
     invoke-static {v4, p2}, Ljava/lang/Math;->min(II)I
 
     move-result p2
 
-    .line 418
+    .line 465
     invoke-static {v3, p3}, Ljava/lang/Math;->max(II)I
 
     move-result p3
@@ -312,13 +311,13 @@
 
     goto :goto_0
 
-    .line 421
+    .line 468
     :cond_6
     invoke-static {p2, v0}, Ljava/lang/Math;->max(II)I
 
     move-result p2
 
-    .line 422
+    .line 469
     invoke-interface {p1}, Landroid/text/Editable;->length()I
 
     move-result p4
@@ -327,13 +326,13 @@
 
     move-result p3
 
-    .line 424
+    .line 471
     invoke-interface {p0}, Landroid/view/inputmethod/InputConnection;->beginBatchEdit()Z
 
-    .line 425
+    .line 472
     invoke-interface {p1, p2, p3}, Landroid/text/Editable;->delete(II)Landroid/text/Editable;
 
-    .line 426
+    .line 473
     invoke-interface {p0}, Landroid/view/inputmethod/InputConnection;->endBatchEdit()Z
 
     const/4 p0, 0x1
@@ -364,7 +363,7 @@
 
     goto :goto_0
 
-    .line 311
+    .line 358
     :cond_0
     invoke-static {p0, p2, v1}, Landroidx/emoji2/text/EmojiProcessor;->delete(Landroid/text/Editable;Landroid/view/KeyEvent;Z)Z
 
@@ -372,7 +371,7 @@
 
     goto :goto_0
 
-    .line 308
+    .line 355
     :cond_1
     invoke-static {p0, p2, v2}, Landroidx/emoji2/text/EmojiProcessor;->delete(Landroid/text/Editable;Landroid/view/KeyEvent;Z)Z
 
@@ -381,7 +380,7 @@
     :goto_0
     if-eqz p1, :cond_2
 
-    .line 319
+    .line 366
     invoke-static {p0}, Landroid/text/method/MetaKeyKeyListener;->adjustMetaAfterKeypress(Landroid/text/Spannable;)V
 
     return v1
@@ -393,30 +392,30 @@
 .method private hasGlyph(Ljava/lang/CharSequence;IILandroidx/emoji2/text/EmojiMetadata;)Z
     .locals 2
 
-    .line 462
+    .line 509
     invoke-virtual {p4}, Landroidx/emoji2/text/EmojiMetadata;->getHasGlyph()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 463
+    .line 510
     iget-object v0, p0, Landroidx/emoji2/text/EmojiProcessor;->mGlyphChecker:Landroidx/emoji2/text/EmojiCompat$GlyphChecker;
 
-    .line 464
+    .line 511
     invoke-virtual {p4}, Landroidx/emoji2/text/EmojiMetadata;->getSdkAdded()S
 
     move-result v1
 
-    .line 463
+    .line 510
     invoke-interface {v0, p1, p2, p3, v1}, Landroidx/emoji2/text/EmojiCompat$GlyphChecker;->hasGlyph(Ljava/lang/CharSequence;III)Z
 
     move-result p1
 
-    .line 465
+    .line 512
     invoke-virtual {p4, p1}, Landroidx/emoji2/text/EmojiMetadata;->setHasGlyph(Z)V
 
-    .line 468
+    .line 515
     :cond_0
     invoke-virtual {p4}, Landroidx/emoji2/text/EmojiMetadata;->getHasGlyph()I
 
@@ -466,7 +465,7 @@
 .method private static hasModifiers(Landroid/view/KeyEvent;)Z
     .locals 0
 
-    .line 438
+    .line 485
     invoke-virtual {p0}, Landroid/view/KeyEvent;->getMetaState()I
 
     move-result p0
@@ -485,12 +484,12 @@
 .method process(Ljava/lang/CharSequence;IIIZ)Ljava/lang/CharSequence;
     .locals 9
 
-    .line 169
+    .line 210
     instance-of v0, p1, Landroidx/emoji2/text/SpannableBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 171
+    .line 212
     move-object v1, p1
 
     check-cast v1, Landroidx/emoji2/text/SpannableBuilder;
@@ -502,7 +501,7 @@
 
     if-nez v0, :cond_2
 
-    .line 179
+    .line 220
     :try_start_0
     instance-of v2, p1, Landroid/text/Spannable;
 
@@ -510,13 +509,13 @@
 
     goto :goto_0
 
-    .line 181
+    .line 222
     :cond_1
     instance-of v2, p1, Landroid/text/Spanned;
 
     if-eqz v2, :cond_3
 
-    .line 184
+    .line 225
     move-object v2, p1
 
     check-cast v2, Landroid/text/Spanned;
@@ -533,19 +532,23 @@
 
     if-gt v2, p3, :cond_3
 
-    .line 188
-    new-instance v1, Landroid/text/SpannableString;
+    .line 229
+    new-instance v1, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;
 
-    invoke-direct {v1, p1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v1, p1}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;-><init>(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
-    .line 180
+    .line 221
     :cond_2
     :goto_0
-    move-object v1, p1
+    new-instance v1, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;
 
-    check-cast v1, Landroid/text/Spannable;
+    move-object v2, p1
+
+    check-cast v2, Landroid/text/Spannable;
+
+    invoke-direct {v1, v2}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;-><init>(Landroid/text/Spannable;)V
 
     :cond_3
     :goto_1
@@ -553,10 +556,10 @@
 
     if-eqz v1, :cond_5
 
-    .line 193
+    .line 234
     const-class v3, Landroidx/emoji2/text/EmojiSpan;
 
-    invoke-interface {v1, p2, p3, v3}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+    invoke-virtual {v1, p2, p3, v3}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
 
     move-result-object v3
 
@@ -564,12 +567,12 @@
 
     if-eqz v3, :cond_5
 
-    .line 194
+    .line 235
     array-length v4, v3
 
     if-lez v4, :cond_5
 
-    .line 197
+    .line 238
     array-length v4, v3
 
     move v5, v2
@@ -577,31 +580,31 @@
     :goto_2
     if-ge v5, v4, :cond_5
 
-    .line 199
+    .line 240
     aget-object v6, v3, v5
 
-    .line 200
-    invoke-interface {v1, v6}, Landroid/text/Spannable;->getSpanStart(Ljava/lang/Object;)I
+    .line 241
+    invoke-virtual {v1, v6}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v7
 
-    .line 201
-    invoke-interface {v1, v6}, Landroid/text/Spannable;->getSpanEnd(Ljava/lang/Object;)I
+    .line 242
+    invoke-virtual {v1, v6}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result v8
 
     if-eq v7, p3, :cond_4
 
-    .line 207
-    invoke-interface {v1, v6}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
+    .line 248
+    invoke-virtual {v1, v6}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->removeSpan(Ljava/lang/Object;)V
 
-    .line 209
+    .line 250
     :cond_4
     invoke-static {v7, p2}, Ljava/lang/Math;->min(II)I
 
     move-result p2
 
-    .line 210
+    .line 251
     invoke-static {v8, p3}, Ljava/lang/Math;->max(II)I
 
     move-result p3
@@ -611,9 +614,9 @@
     goto :goto_2
 
     :cond_5
-    if-eq p2, p3, :cond_16
+    if-eq p2, p3, :cond_17
 
-    .line 215
+    .line 256
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v3
@@ -629,14 +632,14 @@
 
     if-eqz v1, :cond_7
 
-    .line 222
-    invoke-interface {v1}, Landroid/text/Spannable;->length()I
+    .line 263
+    invoke-virtual {v1}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->length()I
 
     move-result v3
 
     const-class v4, Landroidx/emoji2/text/EmojiSpan;
 
-    invoke-interface {v1, v2, v3, v4}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+    invoke-virtual {v1, v2, v3, v4}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
 
     move-result-object v3
 
@@ -646,7 +649,7 @@
 
     sub-int/2addr p4, v3
 
-    .line 226
+    .line 267
     :cond_7
     new-instance v3, Landroidx/emoji2/text/EmojiProcessor$ProcessorSm;
 
@@ -662,7 +665,7 @@
 
     invoke-direct {v3, v4, v5, v6}, Landroidx/emoji2/text/EmojiProcessor$ProcessorSm;-><init>(Landroidx/emoji2/text/MetadataRepo$Node;Z[I)V
 
-    .line 230
+    .line 271
     invoke-static {p1, p2}, Ljava/lang/Character;->codePointAt(Ljava/lang/CharSequence;I)I
 
     move-result v4
@@ -683,7 +686,7 @@
 
     if-ge v4, p4, :cond_10
 
-    .line 233
+    .line 274
     invoke-virtual {v3, v5}, Landroidx/emoji2/text/EmojiProcessor$ProcessorSm;->check(I)I
 
     move-result v6
@@ -705,12 +708,12 @@
     :cond_a
     if-nez p5, :cond_b
 
-    .line 251
+    .line 292
     invoke-virtual {v3}, Landroidx/emoji2/text/EmojiProcessor$ProcessorSm;->getFlushMetadata()Landroidx/emoji2/text/EmojiMetadata;
 
     move-result-object v6
 
-    .line 250
+    .line 291
     invoke-direct {p0, p1, v1, p2, v6}, Landroidx/emoji2/text/EmojiProcessor;->hasGlyph(Ljava/lang/CharSequence;IILandroidx/emoji2/text/EmojiMetadata;)Z
 
     move-result v6
@@ -720,12 +723,16 @@
     :cond_b
     if-nez v2, :cond_c
 
-    .line 253
-    new-instance v2, Landroid/text/SpannableString;
+    .line 294
+    new-instance v2, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;
 
-    invoke-direct {v2, p1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    new-instance v6, Landroid/text/SpannableString;
 
-    .line 255
+    invoke-direct {v6, p1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+
+    invoke-direct {v2, v6}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;-><init>(Landroid/text/Spannable;)V
+
+    .line 297
     :cond_c
     invoke-virtual {v3}, Landroidx/emoji2/text/EmojiProcessor$ProcessorSm;->getFlushMetadata()Landroidx/emoji2/text/EmojiMetadata;
 
@@ -737,7 +744,7 @@
 
     goto :goto_3
 
-    .line 244
+    .line 285
     :cond_d
     invoke-static {v5}, Ljava/lang/Character;->charCount(I)I
 
@@ -747,14 +754,14 @@
 
     if-ge p2, p3, :cond_9
 
-    .line 246
+    .line 287
     invoke-static {p1, p2}, Ljava/lang/Character;->codePointAt(Ljava/lang/CharSequence;I)I
 
     move-result v5
 
     goto :goto_4
 
-    .line 237
+    .line 278
     :cond_e
     invoke-static {p1, v1}, Ljava/lang/Character;->codePointAt(Ljava/lang/CharSequence;I)I
 
@@ -768,7 +775,7 @@
 
     if-ge v1, p3, :cond_f
 
-    .line 240
+    .line 281
     invoke-static {p1, v1}, Ljava/lang/Character;->codePointAt(Ljava/lang/CharSequence;I)I
 
     move-result p2
@@ -780,7 +787,7 @@
 
     goto :goto_4
 
-    .line 267
+    .line 309
     :cond_10
     invoke-virtual {v3}, Landroidx/emoji2/text/EmojiProcessor$ProcessorSm;->isInFlushableState()Z
 
@@ -792,12 +799,12 @@
 
     if-nez p5, :cond_11
 
-    .line 269
+    .line 311
     invoke-virtual {v3}, Landroidx/emoji2/text/EmojiProcessor$ProcessorSm;->getCurrentMetadata()Landroidx/emoji2/text/EmojiMetadata;
 
     move-result-object p3
 
-    .line 268
+    .line 310
     invoke-direct {p0, p1, v1, p2, p3}, Landroidx/emoji2/text/EmojiProcessor;->hasGlyph(Ljava/lang/CharSequence;IILandroidx/emoji2/text/EmojiMetadata;)Z
 
     move-result p3
@@ -807,42 +814,43 @@
     :cond_11
     if-nez v2, :cond_12
 
-    .line 271
-    new-instance p3, Landroid/text/SpannableString;
+    .line 313
+    new-instance p3, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;
 
-    invoke-direct {p3, p1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {p3, p1}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;-><init>(Ljava/lang/CharSequence;)V
 
     move-object v2, p3
 
-    .line 273
+    .line 315
     :cond_12
     invoke-virtual {v3}, Landroidx/emoji2/text/EmojiProcessor$ProcessorSm;->getCurrentMetadata()Landroidx/emoji2/text/EmojiMetadata;
 
     move-result-object p3
 
     invoke-direct {p0, v2, p3, v1, p2}, Landroidx/emoji2/text/EmojiProcessor;->addEmoji(Landroid/text/Spannable;Landroidx/emoji2/text/EmojiMetadata;II)V
+
+    :cond_13
+    if-eqz v2, :cond_15
+
+    .line 321
+    invoke-virtual {v2}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->getUnwrappedSpannable()Landroid/text/Spannable;
+
+    move-result-object p2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_13
-    if-nez v2, :cond_14
+    if-eqz v0, :cond_14
 
-    move-object v2, p1
-
-    :cond_14
-    if-eqz v0, :cond_15
-
-    .line 280
+    .line 327
     check-cast p1, Landroidx/emoji2/text/SpannableBuilder;
 
     invoke-virtual {p1}, Landroidx/emoji2/text/SpannableBuilder;->endBatchEdit()V
 
-    :cond_15
-    return-object v2
+    :cond_14
+    return-object p2
 
-    :cond_16
-    :goto_5
-    if-eqz v0, :cond_17
+    :cond_15
+    if-eqz v0, :cond_16
 
     move-object p2, p1
 
@@ -850,19 +858,32 @@
 
     invoke-virtual {p2}, Landroidx/emoji2/text/SpannableBuilder;->endBatchEdit()V
 
+    :cond_16
+    return-object p1
+
     :cond_17
+    :goto_5
+    if-eqz v0, :cond_18
+
+    move-object p2, p1
+
+    check-cast p2, Landroidx/emoji2/text/SpannableBuilder;
+
+    invoke-virtual {p2}, Landroidx/emoji2/text/SpannableBuilder;->endBatchEdit()V
+
+    :cond_18
     return-object p1
 
     :catchall_0
     move-exception p2
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_19
 
     check-cast p1, Landroidx/emoji2/text/SpannableBuilder;
 
     invoke-virtual {p1}, Landroidx/emoji2/text/SpannableBuilder;->endBatchEdit()V
 
-    .line 282
-    :cond_18
+    .line 329
+    :cond_19
     throw p2
 .end method

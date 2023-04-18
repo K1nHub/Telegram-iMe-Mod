@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/CacheControlActivity$6;
-.super Ljava/lang/Object;
+.super Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 .source "CacheControlActivity.java"
-
-# interfaces
-.implements Lorg/telegram/ui/DilogCacheBottomSheet$Delegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/CacheControlActivity;->showClearCacheDialog(Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;)V
+    value = Lorg/telegram/ui/CacheControlActivity;->createView(Landroid/content/Context;)Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,92 +15,107 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/CacheControlActivity;
+.field pinned:Z
 
-.field final synthetic val$entities:Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
+.field final synthetic this$0:Lorg/telegram/ui/CacheControlActivity;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/CacheControlActivity;Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;)V
+.method constructor <init>(Lorg/telegram/ui/CacheControlActivity;)V
     .locals 0
 
-    .line 1414
+    .line 1480
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$6;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/CacheControlActivity$6;->val$entities:Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public cleanupDialogFiles(Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;Lorg/telegram/ui/Storage/CacheModel;)V
-    .locals 1
+.method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
+    .locals 0
 
-    .line 1429
-    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$6;->this$0:Lorg/telegram/ui/CacheControlActivity;
+    .line 1485
+    invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/CacheControlActivity;->access$1800(Lorg/telegram/ui/CacheControlActivity;Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;Lorg/telegram/ui/Storage/CacheModel;)V
+    .line 1486
+    iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$6;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
-    return-void
-.end method
+    invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$1300(Lorg/telegram/ui/CacheControlActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
 
-.method public onAvatarClick()V
-    .locals 5
+    move-result-object p2
 
-    .line 1417
-    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$6;->this$0:Lorg/telegram/ui/CacheControlActivity;
+    invoke-virtual {p2}, Landroidx/recyclerview/widget/LinearLayoutManager;->findFirstVisibleItemPosition()I
 
-    invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$1700(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/ActionBar/BottomSheet;
+    move-result p2
 
-    move-result-object v0
+    if-gtz p2, :cond_1
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
+    iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$6;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
-    .line 1418
-    new-instance v0, Landroid/os/Bundle;
+    invoke-static {p2}, Lorg/telegram/ui/CacheControlActivity;->access$1400(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    move-result-object p2
 
-    .line 1419
-    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$6;->val$entities:Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/ActionBar;->isActionModeShowed()Z
 
-    iget-wide v1, v1, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->dialogId:J
+    move-result p2
 
-    const-wide/16 v3, 0x0
-
-    cmp-long v3, v1, v3
-
-    if-lez v3, :cond_0
-
-    const-string v3, "user_id"
-
-    .line 1420
-    invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    if-eqz p2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    neg-long v1, v1
+    const/4 p2, 0x0
 
-    const-string v3, "chat_id"
+    goto :goto_1
 
-    .line 1422
-    invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-
-    .line 1424
+    :cond_1
     :goto_0
-    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$6;->this$0:Lorg/telegram/ui/CacheControlActivity;
+    const/4 p2, 0x1
 
-    new-instance v2, Lorg/telegram/ui/ProfileActivity;
+    :goto_1
+    invoke-static {p1, p2}, Lorg/telegram/ui/CacheControlActivity;->access$1500(Lorg/telegram/ui/CacheControlActivity;Z)V
 
-    const/4 v3, 0x0
+    .line 1487
+    iget-boolean p1, p0, Lorg/telegram/ui/CacheControlActivity$6;->pinned:Z
 
-    invoke-direct {v2, v0, v3}, Lorg/telegram/ui/ProfileActivity;-><init>(Landroid/os/Bundle;Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;)V
+    iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$6;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+    invoke-static {p2}, Lorg/telegram/ui/CacheControlActivity;->access$1600(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/Components/NestedSizeNotifierLayout;
 
+    move-result-object p2
+
+    invoke-virtual {p2}, Lorg/telegram/ui/Components/NestedSizeNotifierLayout;->isPinnedToTop()Z
+
+    move-result p2
+
+    if-eq p1, p2, :cond_2
+
+    .line 1488
+    iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$6;->this$0:Lorg/telegram/ui/CacheControlActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$1600(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/Components/NestedSizeNotifierLayout;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/NestedSizeNotifierLayout;->isPinnedToTop()Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lorg/telegram/ui/CacheControlActivity$6;->pinned:Z
+
+    .line 1489
+    iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$6;->this$0:Lorg/telegram/ui/CacheControlActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$1600(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/Components/NestedSizeNotifierLayout;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
+
+    :cond_2
     return-void
 .end method

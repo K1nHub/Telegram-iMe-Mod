@@ -3,8 +3,8 @@ package com.google.android.gms.auth.api.identity;
 import android.app.Activity;
 import android.content.Context;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.internal.p019authapi.zbao;
-import com.google.android.gms.internal.p019authapi.zbay;
+import com.google.android.gms.internal.p018authapi.zbao;
+import com.google.android.gms.internal.p018authapi.zbay;
 /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
 /* loaded from: classes.dex */
 public final class Identity {

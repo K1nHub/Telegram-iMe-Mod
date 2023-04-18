@@ -12,15 +12,11 @@
 
 .field public final synthetic f$2:I
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$InputChannel;
-
-.field public final synthetic f$4:I
-
-.field public final synthetic f$5:J
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_updates_channelDifferenceTooLong;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;JILorg/telegram/tgnet/TLRPC$InputChannel;IJ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;JILorg/telegram/tgnet/TLRPC$TL_updates_channelDifferenceTooLong;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,11 +27,7 @@
 
     iput p4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda87;->f$2:I
 
-    iput-object p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda87;->f$3:Lorg/telegram/tgnet/TLRPC$InputChannel;
-
-    iput p6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda87;->f$4:I
-
-    iput-wide p7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda87;->f$5:J
+    iput-object p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda87;->f$3:Lorg/telegram/tgnet/TLRPC$TL_updates_channelDifferenceTooLong;
 
     return-void
 .end method
@@ -43,7 +35,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 8
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda87;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
@@ -51,13 +43,9 @@
 
     iget v3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda87;->f$2:I
 
-    iget-object v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda87;->f$3:Lorg/telegram/tgnet/TLRPC$InputChannel;
+    iget-object v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda87;->f$3:Lorg/telegram/tgnet/TLRPC$TL_updates_channelDifferenceTooLong;
 
-    iget v5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda87;->f$4:I
-
-    iget-wide v6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda87;->f$5:J
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$DG6jBv6B7TqR29VHkdLSO76Jx24(Lorg/telegram/messenger/MessagesStorage;JILorg/telegram/tgnet/TLRPC$InputChannel;IJ)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$GiEtviNJY78tFf40tM-MRR4xslw(Lorg/telegram/messenger/MessagesStorage;JILorg/telegram/tgnet/TLRPC$TL_updates_channelDifferenceTooLong;)V
 
     return-void
 .end method

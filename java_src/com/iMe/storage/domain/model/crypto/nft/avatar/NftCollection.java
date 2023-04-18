@@ -8,14 +8,14 @@ public final class NftCollection {
     private final String contractAddress;
 
     /* renamed from: id */
-    private final long f330id;
+    private final long f325id;
     private final NftCollectionStatus status;
     private final String title;
     private final String transactionHash;
 
     public static /* synthetic */ NftCollection copy$default(NftCollection nftCollection, long j, String str, String str2, String str3, NftCollectionStatus nftCollectionStatus, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = nftCollection.f330id;
+            j = nftCollection.f325id;
         }
         long j2 = j;
         if ((i & 2) != 0) {
@@ -37,7 +37,7 @@ public final class NftCollection {
     }
 
     public final long component1() {
-        return this.f330id;
+        return this.f325id;
     }
 
     public final String component2() {
@@ -70,17 +70,17 @@ public final class NftCollection {
         }
         if (obj instanceof NftCollection) {
             NftCollection nftCollection = (NftCollection) obj;
-            return this.f330id == nftCollection.f330id && Intrinsics.areEqual(this.title, nftCollection.title) && Intrinsics.areEqual(this.contractAddress, nftCollection.contractAddress) && Intrinsics.areEqual(this.transactionHash, nftCollection.transactionHash) && this.status == nftCollection.status;
+            return this.f325id == nftCollection.f325id && Intrinsics.areEqual(this.title, nftCollection.title) && Intrinsics.areEqual(this.contractAddress, nftCollection.contractAddress) && Intrinsics.areEqual(this.transactionHash, nftCollection.transactionHash) && this.status == nftCollection.status;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f330id) * 31) + this.title.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.transactionHash.hashCode()) * 31) + this.status.hashCode();
+        return (((((((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f325id) * 31) + this.title.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.transactionHash.hashCode()) * 31) + this.status.hashCode();
     }
 
     public String toString() {
-        return "NftCollection(id=" + this.f330id + ", title=" + this.title + ", contractAddress=" + this.contractAddress + ", transactionHash=" + this.transactionHash + ", status=" + this.status + ')';
+        return "NftCollection(id=" + this.f325id + ", title=" + this.title + ", contractAddress=" + this.contractAddress + ", transactionHash=" + this.transactionHash + ", status=" + this.status + ')';
     }
 
     public NftCollection(long j, String title, String contractAddress, String transactionHash, NftCollectionStatus status) {
@@ -88,7 +88,7 @@ public final class NftCollection {
         Intrinsics.checkNotNullParameter(contractAddress, "contractAddress");
         Intrinsics.checkNotNullParameter(transactionHash, "transactionHash");
         Intrinsics.checkNotNullParameter(status, "status");
-        this.f330id = j;
+        this.f325id = j;
         this.title = title;
         this.contractAddress = contractAddress;
         this.transactionHash = transactionHash;
@@ -96,7 +96,7 @@ public final class NftCollection {
     }
 
     public final long getId() {
-        return this.f330id;
+        return this.f325id;
     }
 
     public final String getTitle() {

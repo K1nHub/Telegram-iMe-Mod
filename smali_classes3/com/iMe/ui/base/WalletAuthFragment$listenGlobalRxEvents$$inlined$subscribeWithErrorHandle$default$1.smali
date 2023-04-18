@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletAuthFragment.kt\ncom/iMe/ui/base/WalletAuthFragment\n*L\n1#1,111:1\n60#2,13:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletAuthFragment.kt\ncom/iMe/ui/base/WalletAuthFragment\n*L\n1#1,111:1\n59#2,7:112\n*E\n"
 .end annotation
 
 
@@ -83,7 +83,17 @@
 
     if-eqz v0, :cond_0
 
+    const/4 p1, 0x1
+
+    goto :goto_0
+
     .line 114
+    :cond_0
+    instance-of p1, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$AppUpdateRequired;
+
+    :goto_0
+    if-eqz p1, :cond_1
+
     iget-object p1, p0, Lcom/iMe/ui/base/WalletAuthFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/base/WalletAuthFragment;
 
     new-instance v0, Lcom/iMe/ui/base/WalletAuthFragment$listenGlobalRxEvents$1$1;
@@ -92,24 +102,6 @@
 
     invoke-virtual {p1, v0}, Lcom/iMe/ui/base/WalletAuthFragment;->closeAllWalletFragments(Lkotlin/jvm/functions/Function0;)V
 
-    goto :goto_0
-
-    .line 118
-    :cond_0
-    instance-of p1, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$AppUpdateRequired;
-
-    if-eqz p1, :cond_1
-
-    .line 119
-    iget-object p1, p0, Lcom/iMe/ui/base/WalletAuthFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/base/WalletAuthFragment;
-
-    new-instance v0, Lcom/iMe/ui/base/WalletAuthFragment$listenGlobalRxEvents$1$2;
-
-    invoke-direct {v0, p1}, Lcom/iMe/ui/base/WalletAuthFragment$listenGlobalRxEvents$1$2;-><init>(Lcom/iMe/ui/base/WalletAuthFragment;)V
-
-    invoke-virtual {p1, v0}, Lcom/iMe/ui/base/WalletAuthFragment;->closeAllWalletFragments(Lkotlin/jvm/functions/Function0;)V
-
     :cond_1
-    :goto_0
     return-void
 .end method

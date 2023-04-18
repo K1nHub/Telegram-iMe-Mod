@@ -36,7 +36,7 @@ public interface Inventory {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public void add(Product product) {
-            this.mMap.put(product.f1424id, product);
+            this.mMap.put(product.f1348id, product);
         }
 
         public Product get(String str) {
@@ -64,7 +64,7 @@ public interface Inventory {
     public static final class Product {
 
         /* renamed from: id */
-        public final String f1424id;
+        public final String f1348id;
         final List<Purchase> mPurchases = new ArrayList();
         final List<Sku> mSkus = new ArrayList();
         public final boolean supported;
@@ -72,12 +72,12 @@ public interface Inventory {
         /* JADX INFO: Access modifiers changed from: package-private */
         public Product(String str, boolean z) {
             ProductTypes.checkSupported(str);
-            this.f1424id = str;
+            this.f1348id = str;
             this.supported = z;
         }
 
         public boolean isPurchased(Sku sku) {
-            return isPurchased(sku.f1426id.code);
+            return isPurchased(sku.f1350id.code);
         }
 
         public boolean isPurchased(String str) {

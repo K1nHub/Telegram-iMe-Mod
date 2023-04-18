@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->$r8$lambda$3oCzpmHchfKlEre5kYyqczOS3qQ(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->$r8$lambda$xbbMrK76fbkuiPk3UNNJE2ANmSk(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

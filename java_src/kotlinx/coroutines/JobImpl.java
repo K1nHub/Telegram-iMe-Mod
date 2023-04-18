@@ -21,20 +21,21 @@ public class JobImpl extends JobSupport implements CompletableJob {
     }
 
     private final boolean handlesException() {
+        JobSupport job;
         ChildHandle parentHandle$kotlinx_coroutines_core = getParentHandle$kotlinx_coroutines_core();
         ChildHandleNode childHandleNode = parentHandle$kotlinx_coroutines_core instanceof ChildHandleNode ? (ChildHandleNode) parentHandle$kotlinx_coroutines_core : null;
-        if (childHandleNode == null) {
-            return false;
-        }
-        JobSupport job = childHandleNode.getJob();
-        while (!job.getHandlesException$kotlinx_coroutines_core()) {
-            ChildHandle parentHandle$kotlinx_coroutines_core2 = job.getParentHandle$kotlinx_coroutines_core();
-            ChildHandleNode childHandleNode2 = parentHandle$kotlinx_coroutines_core2 instanceof ChildHandleNode ? (ChildHandleNode) parentHandle$kotlinx_coroutines_core2 : null;
-            if (childHandleNode2 == null) {
-                return false;
+        if (childHandleNode != null && (job = childHandleNode.getJob()) != null) {
+            while (!job.getHandlesException$kotlinx_coroutines_core()) {
+                ChildHandle parentHandle$kotlinx_coroutines_core2 = job.getParentHandle$kotlinx_coroutines_core();
+                ChildHandleNode childHandleNode2 = parentHandle$kotlinx_coroutines_core2 instanceof ChildHandleNode ? (ChildHandleNode) parentHandle$kotlinx_coroutines_core2 : null;
+                if (childHandleNode2 != null) {
+                    job = childHandleNode2.getJob();
+                    if (job == null) {
+                    }
+                }
             }
-            job = childHandleNode2.getJob();
+            return true;
         }
-        return true;
+        return false;
     }
 }

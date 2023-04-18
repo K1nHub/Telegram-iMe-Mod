@@ -241,7 +241,7 @@ public class HorizontalWidgetRun extends WidgetRun {
 
     /* renamed from: androidx.constraintlayout.core.widgets.analyzer.HorizontalWidgetRun$1 */
     /* loaded from: classes.dex */
-    static /* synthetic */ class C01071 {
+    static /* synthetic */ class C01031 {
 
         /* renamed from: $SwitchMap$androidx$constraintlayout$core$widgets$analyzer$WidgetRun$RunType */
         static final /* synthetic */ int[] f27x56910102;

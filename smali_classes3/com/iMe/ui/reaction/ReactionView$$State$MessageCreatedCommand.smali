@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/reaction/ReactionView$$State;)V
     .locals 1
 
-    .line 130
+    .line 148
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "messageCreated"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/reaction/ReactionView;)V
     .locals 0
 
-    .line 135
+    .line 153
     invoke-interface {p1}, Lcom/iMe/ui/reaction/ReactionView;->messageCreated()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 128
+    .line 146
     check-cast p1, Lcom/iMe/ui/reaction/ReactionView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/reaction/ReactionView$$State$MessageCreatedCommand;->apply(Lcom/iMe/ui/reaction/ReactionView;)V

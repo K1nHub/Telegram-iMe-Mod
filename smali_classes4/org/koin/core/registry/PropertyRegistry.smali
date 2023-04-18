@@ -3,6 +3,12 @@
 .source "PropertyRegistry.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nPropertyRegistry.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PropertyRegistry.kt\norg/koin/core/registry/PropertyRegistry\n+ 2 Logger.kt\norg/koin/core/logger/Logger\n*L\n1#1,68:1\n28#2:69\n46#2,2:70\n29#2:72\n*S KotlinDebug\n*F\n+ 1 PropertyRegistry.kt\norg/koin/core/registry/PropertyRegistry\n*L\n38#1:69\n38#1:70,2\n38#1:72\n*E\n"
+.end annotation
+
+
 # direct methods
 .method public constructor <init>(Lorg/koin/core/Koin;)V
     .locals 1

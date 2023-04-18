@@ -1,7 +1,7 @@
 package com.iMe.model.wallet.crypto.swap;
 
 import com.iMe.model.wallet.select.SelectableToken;
-import com.iMe.p032ui.custom.FeeView;
+import com.iMe.p031ui.custom.FeeView;
 import com.iMe.storage.domain.model.binancepay.BinanceConvertQuote;
 import com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;

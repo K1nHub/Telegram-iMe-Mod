@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$setupActionBar$1$1;->this$0:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
 
-    .line 97
+    .line 102
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 100
+    .line 105
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$setupActionBar$1$1;->this$0:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 279
+    .line 297
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onFilteredMembers"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 281
+    .line 299
     iput-object p2, p0, Lcom/iMe/ui/profile/ProfileView$$State$OnFilteredMembersCommand;->members:Ljava/util/ArrayList;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/ui/profile/ProfileView;)V
     .locals 1
 
-    .line 286
+    .line 304
     iget-object v0, p0, Lcom/iMe/ui/profile/ProfileView$$State$OnFilteredMembersCommand;->members:Ljava/util/ArrayList;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/profile/ProfileView;->onFilteredMembers(Ljava/util/ArrayList;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 275
+    .line 293
     check-cast p1, Lcom/iMe/ui/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/profile/ProfileView$$State$OnFilteredMembersCommand;->apply(Lcom/iMe/ui/profile/ProfileView;)V

@@ -65,17 +65,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 26104
+    .line 26116
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 26118
+    .line 26130
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->prices:Ljava/util/ArrayList;
 
-    .line 26120
+    .line 26132
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -88,7 +88,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_invoice;
     .locals 1
 
-    .line 26124
+    .line 26136
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -99,7 +99,7 @@
 
     return-object p0
 
-    .line 26126
+    .line 26138
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -125,13 +125,13 @@
 
     throw p0
 
-    .line 26131
+    .line 26143
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_invoice;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_invoice;-><init>()V
 
-    .line 26132
+    .line 26144
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_invoice;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -142,7 +142,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 8
 
-    .line 26137
+    .line 26149
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -164,7 +164,7 @@
     :cond_0
     move v1, v2
 
-    .line 26138
+    .line 26150
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->test:Z
 
@@ -179,7 +179,7 @@
     :cond_1
     move v1, v2
 
-    .line 26139
+    .line 26151
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->name_requested:Z
 
@@ -194,7 +194,7 @@
     :cond_2
     move v1, v2
 
-    .line 26140
+    .line 26152
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->phone_requested:Z
 
@@ -209,7 +209,7 @@
     :cond_3
     move v1, v2
 
-    .line 26141
+    .line 26153
     :goto_3
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->email_requested:Z
 
@@ -224,7 +224,7 @@
     :cond_4
     move v1, v2
 
-    .line 26142
+    .line 26154
     :goto_4
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->shipping_address_requested:Z
 
@@ -239,7 +239,7 @@
     :cond_5
     move v1, v2
 
-    .line 26143
+    .line 26155
     :goto_5
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flexible:Z
 
@@ -254,7 +254,7 @@
     :cond_6
     move v1, v2
 
-    .line 26144
+    .line 26156
     :goto_6
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->phone_to_provider:Z
 
@@ -269,7 +269,7 @@
     :cond_7
     move v1, v2
 
-    .line 26145
+    .line 26157
     :goto_7
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->email_to_provider:Z
 
@@ -284,18 +284,18 @@
     :cond_8
     move v0, v2
 
-    .line 26146
+    .line 26158
     :goto_8
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->recurring:Z
 
-    .line 26147
+    .line 26159
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->currency:Ljava/lang/String;
 
-    .line 26148
+    .line 26160
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -310,7 +310,7 @@
 
     return-void
 
-    .line 26151
+    .line 26163
     :cond_9
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -330,7 +330,7 @@
 
     throw p1
 
-    .line 26155
+    .line 26167
     :cond_a
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -341,7 +341,7 @@
     :goto_9
     if-ge v5, v0, :cond_c
 
-    .line 26157
+    .line 26169
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -354,7 +354,7 @@
 
     return-void
 
-    .line 26161
+    .line 26173
     :cond_b
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->prices:Ljava/util/ArrayList;
 
@@ -364,7 +364,7 @@
 
     goto :goto_9
 
-    .line 26163
+    .line 26175
     :cond_c
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
@@ -372,14 +372,14 @@
 
     if-eqz v0, :cond_d
 
-    .line 26164
+    .line 26176
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v5
 
     iput-wide v5, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->max_tip_amount:J
 
-    .line 26166
+    .line 26178
     :cond_d
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
@@ -387,7 +387,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 26167
+    .line 26179
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -398,7 +398,7 @@
 
     return-void
 
-    .line 26170
+    .line 26182
     :cond_e
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -418,7 +418,7 @@
 
     throw p1
 
-    .line 26174
+    .line 26186
     :cond_f
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -427,7 +427,7 @@
     :goto_a
     if-ge v2, v0, :cond_10
 
-    .line 26176
+    .line 26188
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->suggested_tip_amounts:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
@@ -444,7 +444,7 @@
 
     goto :goto_a
 
-    .line 26179
+    .line 26191
     :cond_10
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
@@ -452,7 +452,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 26180
+    .line 26192
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -466,12 +466,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    .line 26185
+    .line 26197
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 26186
+    .line 26198
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->test:Z
 
     if-eqz v0, :cond_0
@@ -490,7 +490,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
-    .line 26187
+    .line 26199
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->name_requested:Z
 
     if-eqz v1, :cond_1
@@ -505,7 +505,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
-    .line 26188
+    .line 26200
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->phone_requested:Z
 
     if-eqz v1, :cond_2
@@ -520,7 +520,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
-    .line 26189
+    .line 26201
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->email_requested:Z
 
     if-eqz v1, :cond_3
@@ -535,7 +535,7 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
-    .line 26190
+    .line 26202
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->shipping_address_requested:Z
 
     if-eqz v1, :cond_4
@@ -550,7 +550,7 @@
     :goto_4
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
-    .line 26191
+    .line 26203
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flexible:Z
 
     if-eqz v1, :cond_5
@@ -565,7 +565,7 @@
     :goto_5
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
-    .line 26192
+    .line 26204
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->phone_to_provider:Z
 
     if-eqz v1, :cond_6
@@ -580,7 +580,7 @@
     :goto_6
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
-    .line 26193
+    .line 26205
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->email_to_provider:Z
 
     if-eqz v1, :cond_7
@@ -595,7 +595,7 @@
     :goto_7
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
-    .line 26194
+    .line 26206
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->recurring:Z
 
     if-eqz v1, :cond_8
@@ -610,27 +610,27 @@
     :goto_8
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
-    .line 26195
+    .line 26207
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 26196
+    .line 26208
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->currency:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
     const v0, 0x1cb5c415
 
-    .line 26197
+    .line 26209
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 26198
+    .line 26210
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->prices:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 26199
+    .line 26211
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v2, 0x0
@@ -640,7 +640,7 @@
     :goto_9
     if-ge v3, v1, :cond_9
 
-    .line 26201
+    .line 26213
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->prices:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -655,7 +655,7 @@
 
     goto :goto_9
 
-    .line 26203
+    .line 26215
     :cond_9
     iget v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
@@ -663,12 +663,12 @@
 
     if-eqz v1, :cond_a
 
-    .line 26204
+    .line 26216
     iget-wide v3, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->max_tip_amount:J
 
     invoke-virtual {p1, v3, v4}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 26206
+    .line 26218
     :cond_a
     iget v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
@@ -676,23 +676,23 @@
 
     if-eqz v1, :cond_b
 
-    .line 26207
+    .line 26219
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 26208
+    .line 26220
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->suggested_tip_amounts:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 26209
+    .line 26221
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     :goto_a
     if-ge v2, v0, :cond_b
 
-    .line 26211
+    .line 26223
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->suggested_tip_amounts:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -711,7 +711,7 @@
 
     goto :goto_a
 
-    .line 26214
+    .line 26226
     :cond_b
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->flags:I
 
@@ -719,7 +719,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 26215
+    .line 26227
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_invoice;->recurring_terms_url:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

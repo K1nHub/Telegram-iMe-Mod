@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Landroid/view/View;
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/view/View;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda163;->f$0:Landroid/view/View;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda163;->f$0:Lorg/telegram/ui/ChatActivity;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda163;->f$0:Landroid/view/View;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda163;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$YbxZ1N3KUMmgD-b6jayDwaq5Esg(Landroid/view/View;)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$7KL99Jz97Uc7jO1mRwmWoyWC2t0(Lorg/telegram/ui/ChatActivity;)V
 
     return-void
 .end method

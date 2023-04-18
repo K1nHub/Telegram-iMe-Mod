@@ -2,8 +2,8 @@ package com.iMe.fork.controller;
 
 import com.iMe.fork.controller.BookmarksController;
 import com.iMe.fork.models.backup.Backup;
-import com.iMe.storage.data.locale.p028db.dao.main.BookmarksDao;
-import com.iMe.storage.data.locale.p028db.model.bookmarks.BookmarksDb;
+import com.iMe.storage.data.locale.p027db.dao.main.BookmarksDao;
+import com.iMe.storage.data.locale.p027db.model.bookmarks.BookmarksDb;
 import com.iMe.storage.data.mapper.bookmarks.BookmarksMappingKt;
 import com.iMe.storage.domain.model.bookmarks.BookmarksModel;
 import java.util.ArrayList;
@@ -28,12 +28,12 @@ import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.Utilities;
-import p035j$.util.concurrent.ConcurrentHashMap;
-import p035j$.util.concurrent.ConcurrentMap$EL;
-import p035j$.util.function.Function;
+import p034j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentMap$EL;
+import p034j$.util.function.Function;
 /* compiled from: BookmarksController.kt */
 /* loaded from: classes3.dex */
 public final class BookmarksController extends BaseController implements KoinComponent {
@@ -75,8 +75,8 @@ public final class BookmarksController extends BaseController implements KoinCom
         filter = SequencesKt___SequencesKt.filter(asSequence, BookmarksController$loadBookmarks$1.INSTANCE);
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (BookmarksDb bookmarksDb : filter) {
-            Pair m94to = TuplesKt.m94to(Long.valueOf(bookmarksDb.getDialogId()), BookmarksMappingKt.mapToDomain(bookmarksDb));
-            linkedHashMap.put(m94to.getFirst(), m94to.getSecond());
+            Pair m80to = TuplesKt.m80to(Long.valueOf(bookmarksDb.getDialogId()), BookmarksMappingKt.mapToDomain(bookmarksDb));
+            linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.bookmarks = mutableMap;
@@ -242,19 +242,19 @@ public final class BookmarksController extends BaseController implements KoinCom
             Integer valueOf = Integer.valueOf(i);
             final BookmarksController$Companion$getInstance$1 bookmarksController$Companion$getInstance$1 = new BookmarksController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.BookmarksController$Companion$$ExternalSyntheticLambda0
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
                     BookmarksController instance$lambda$0;
                     instance$lambda$0 = BookmarksController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

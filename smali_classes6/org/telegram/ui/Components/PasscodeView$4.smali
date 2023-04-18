@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Components/PasscodeView$4;
-.super Ljava/lang/Object;
+.super Landroid/widget/FrameLayout;
 .source "PasscodeView.java"
-
-# interfaces
-.implements Landroid/view/ActionMode$Callback;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lcom/iMe/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
+    value = Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lcom/iMe/fork/enums/LockedSection;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/util/AttributeSet;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,43 +15,27 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/PasscodeView;)V
+.method constructor <init>(Lorg/telegram/ui/Components/PasscodeView;Landroid/content/Context;)V
     .locals 0
 
-    .line 773
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 868
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
-    .locals 0
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 1
 
-    const/4 p1, 0x0
+    .line 871
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    return p1
-.end method
+    const-string v0, "android.widget.Button"
 
-.method public onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public onDestroyActionMode(Landroid/view/ActionMode;)V
-    .locals 0
+    .line 872
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
-.end method
-
-.method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
 .end method

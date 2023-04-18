@@ -4,15 +4,15 @@ import android.content.DialogInterface;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.model.dialog.AnimatedSpannableDialogModel;
 import com.iMe.model.dialog.DialogModel;
-import com.iMe.p032ui.base.mvp.base.BaseView;
-import java.util.List;
+import com.iMe.p031ui.base.mvp.base.BaseView;
+import com.iMe.storage.domain.model.crypto.Wallet;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletCreateManagerView.kt */
 @OneExecution
 /* loaded from: classes3.dex */
 public interface WalletCreateManagerView extends BaseView {
-    void openCreateWalletScreen(List<String> list, String str);
+    void openCreateWalletScreen(Wallet wallet2, String str);
 
     void openImportWalletScreen(String str, String str2);
 

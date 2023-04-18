@@ -26,7 +26,7 @@ public abstract class VideoFrameDropper {
             this.mInFrameRateReciprocal = 1.0d / i;
             this.mOutFrameRateReciprocal = 1.0d / i2;
             Logger logger = VideoFrameDropper.LOG;
-            logger.m700i("inFrameRateReciprocal:" + this.mInFrameRateReciprocal + " outFrameRateReciprocal:" + this.mOutFrameRateReciprocal);
+            logger.m686i("inFrameRateReciprocal:" + this.mInFrameRateReciprocal + " outFrameRateReciprocal:" + this.mOutFrameRateReciprocal);
         }
 
         @Override // com.otaliastudios.gif.transcode.internal.VideoFrameDropper
@@ -37,18 +37,18 @@ public abstract class VideoFrameDropper {
             this.mFrameCount = i + 1;
             if (i == 0) {
                 Logger logger = VideoFrameDropper.LOG;
-                logger.m698v("RENDERING (first frame) - frameRateReciprocalSum:" + this.mFrameRateReciprocalSum);
+                logger.m684v("RENDERING (first frame) - frameRateReciprocalSum:" + this.mFrameRateReciprocalSum);
                 return true;
             }
             double d2 = this.mOutFrameRateReciprocal;
             if (d <= d2) {
                 Logger logger2 = VideoFrameDropper.LOG;
-                logger2.m698v("DROPPING - frameRateReciprocalSum:" + this.mFrameRateReciprocalSum);
+                logger2.m684v("DROPPING - frameRateReciprocalSum:" + this.mFrameRateReciprocalSum);
                 return false;
             }
             this.mFrameRateReciprocalSum = d - d2;
             Logger logger3 = VideoFrameDropper.LOG;
-            logger3.m698v("RENDERING - frameRateReciprocalSum:" + this.mFrameRateReciprocalSum);
+            logger3.m684v("RENDERING - frameRateReciprocalSum:" + this.mFrameRateReciprocalSum);
             return true;
         }
     }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$61;)V
     .locals 0
 
-    .line 10567
+    .line 10575
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$61$1;->this$1:Lorg/telegram/ui/PhotoViewer$61;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 10575
+    .line 10583
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$61$1;->this$1:Lorg/telegram/ui/PhotoViewer$61;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$61;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -46,7 +46,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/PhotoFilterView;->init()V
 
-    .line 10576
+    .line 10584
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$61$1;->this$1:Lorg/telegram/ui/PhotoViewer$61;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$61;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -55,7 +55,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$21502(Lorg/telegram/ui/PhotoViewer;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 10577
+    .line 10585
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$61$1;->this$1:Lorg/telegram/ui/PhotoViewer$61;
 
     iget-object v0, p1, Lorg/telegram/ui/PhotoViewer$61;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -64,7 +64,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->access$2402(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 10578
+    .line 10586
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$61$1;->this$1:Lorg/telegram/ui/PhotoViewer$61;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$61;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -73,7 +73,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$2902(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 10579
+    .line 10587
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$61$1;->this$1:Lorg/telegram/ui/PhotoViewer$61;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$61;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -82,7 +82,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$22102(Lorg/telegram/ui/PhotoViewer;F)F
 
-    .line 10580
+    .line 10588
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$61$1;->this$1:Lorg/telegram/ui/PhotoViewer$61;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$61;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -91,21 +91,21 @@
 
     invoke-static {p1, v1}, Lorg/telegram/ui/PhotoViewer;->access$25502(Lorg/telegram/ui/PhotoViewer;F)F
 
-    .line 10581
+    .line 10589
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$61$1;->this$1:Lorg/telegram/ui/PhotoViewer$61;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$61;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/PhotoViewer;->access$25602(Lorg/telegram/ui/PhotoViewer;F)F
 
-    .line 10582
+    .line 10590
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$61$1;->this$1:Lorg/telegram/ui/PhotoViewer$61;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$61;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$10602(Lorg/telegram/ui/PhotoViewer;F)F
 
-    .line 10583
+    .line 10591
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$61$1;->this$1:Lorg/telegram/ui/PhotoViewer$61;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$61;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -116,7 +116,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$12700(Lorg/telegram/ui/PhotoViewer;F)V
 
-    .line 10584
+    .line 10592
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$61$1;->this$1:Lorg/telegram/ui/PhotoViewer$61;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$61;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -125,7 +125,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$27002(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 10585
+    .line 10593
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$61$1;->this$1:Lorg/telegram/ui/PhotoViewer$61;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$61;->this$0:Lorg/telegram/ui/PhotoViewer;

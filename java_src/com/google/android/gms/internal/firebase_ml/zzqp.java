@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.firebase_ml;
 
 import com.google.android.gms.vision.Frame;
-import com.google.firebase.p021ml.vision.common.FirebaseVisionImage;
+import com.google.firebase.p020ml.vision.common.FirebaseVisionImage;
 /* loaded from: classes.dex */
 public final class zzqp implements zzns {
     public final Frame zzbay;

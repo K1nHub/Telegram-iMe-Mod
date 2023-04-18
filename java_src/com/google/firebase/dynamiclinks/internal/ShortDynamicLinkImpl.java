@@ -11,15 +11,15 @@ import java.util.List;
 /* loaded from: classes3.dex */
 public final class ShortDynamicLinkImpl extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ShortDynamicLinkImpl> CREATOR = new ShortDynamicLinkImplCreator();
-    @SafeParcelable.Field(getter = "getPreviewLink", m789id = 2)
+    @SafeParcelable.Field(getter = "getPreviewLink", m775id = 2)
     private final Uri previewLink;
-    @SafeParcelable.Field(getter = "getShortLink", m789id = 1)
+    @SafeParcelable.Field(getter = "getShortLink", m775id = 1)
     private final Uri shortLink;
-    @SafeParcelable.Field(getter = "getWarnings", m789id = 3)
+    @SafeParcelable.Field(getter = "getWarnings", m775id = 3)
     private final List<WarningImpl> warnings;
 
     @SafeParcelable.Constructor
-    public ShortDynamicLinkImpl(@SafeParcelable.Param(m788id = 1) Uri uri, @SafeParcelable.Param(m788id = 2) Uri uri2, @SafeParcelable.Param(m788id = 3) List<WarningImpl> list) {
+    public ShortDynamicLinkImpl(@SafeParcelable.Param(m774id = 1) Uri uri, @SafeParcelable.Param(m774id = 2) Uri uri2, @SafeParcelable.Param(m774id = 3) List<WarningImpl> list) {
         this.shortLink = uri;
         this.previewLink = uri2;
         this.warnings = list == null ? new ArrayList<>() : list;
@@ -46,12 +46,12 @@ public final class ShortDynamicLinkImpl extends AbstractSafeParcelable {
     /* loaded from: classes3.dex */
     public static class WarningImpl extends AbstractSafeParcelable {
         public static final Parcelable.Creator<WarningImpl> CREATOR = new WarningImplCreator();
-        @SafeParcelable.Field(getter = "getMessage", m789id = 2)
+        @SafeParcelable.Field(getter = "getMessage", m775id = 2)
         @SafeParcelable.Reserved({1})
         private final String message;
 
         @SafeParcelable.Constructor
-        public WarningImpl(@SafeParcelable.Param(m788id = 2) String str) {
+        public WarningImpl(@SafeParcelable.Param(m774id = 2) String str) {
             this.message = str;
         }
 

@@ -1,9 +1,10 @@
 package com.iMe.storage.domain.model.crypto;
 
+import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
 import drinkless.org.ton.TonApi;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.web3j.crypto.Credentials;
+import wallet.core.jni.CoinType;
 import wallet.core.jni.HDWallet;
 /* compiled from: Wallet.kt */
 /* loaded from: classes3.dex */
@@ -43,40 +44,31 @@ public abstract class Wallet {
     /* compiled from: Wallet.kt */
     /* loaded from: classes3.dex */
     public static final class EVM extends Wallet {
-        private final Credentials credentials;
         private final String guid;
-        private final String mnemonic;
+        private final HDWallet hdWallet;
 
-        public static /* synthetic */ EVM copy$default(EVM evm, String str, String str2, Credentials credentials, int i, Object obj) {
+        public static /* synthetic */ EVM copy$default(EVM evm, String str, HDWallet hDWallet, int i, Object obj) {
             if ((i & 1) != 0) {
                 str = evm.getGuid();
             }
             if ((i & 2) != 0) {
-                str2 = evm.getMnemonic();
+                hDWallet = evm.hdWallet;
             }
-            if ((i & 4) != 0) {
-                credentials = evm.credentials;
-            }
-            return evm.copy(str, str2, credentials);
+            return evm.copy(str, hDWallet);
         }
 
         public final String component1() {
             return getGuid();
         }
 
-        public final String component2() {
-            return getMnemonic();
+        public final HDWallet component2() {
+            return this.hdWallet;
         }
 
-        public final Credentials component3() {
-            return this.credentials;
-        }
-
-        public final EVM copy(String guid, String mnemonic, Credentials credentials) {
+        public final EVM copy(String guid, HDWallet hdWallet) {
             Intrinsics.checkNotNullParameter(guid, "guid");
-            Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
-            Intrinsics.checkNotNullParameter(credentials, "credentials");
-            return new EVM(guid, mnemonic, credentials);
+            Intrinsics.checkNotNullParameter(hdWallet, "hdWallet");
+            return new EVM(guid, hdWallet);
         }
 
         public boolean equals(Object obj) {
@@ -85,17 +77,17 @@ public abstract class Wallet {
             }
             if (obj instanceof EVM) {
                 EVM evm = (EVM) obj;
-                return Intrinsics.areEqual(getGuid(), evm.getGuid()) && Intrinsics.areEqual(getMnemonic(), evm.getMnemonic()) && Intrinsics.areEqual(this.credentials, evm.credentials);
+                return Intrinsics.areEqual(getGuid(), evm.getGuid()) && Intrinsics.areEqual(this.hdWallet, evm.hdWallet);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((getGuid().hashCode() * 31) + getMnemonic().hashCode()) * 31) + this.credentials.hashCode();
+            return (getGuid().hashCode() * 31) + this.hdWallet.hashCode();
         }
 
         public String toString() {
-            return "EVM(guid=" + getGuid() + ", mnemonic=" + getMnemonic() + ", credentials=" + this.credentials + ')';
+            return "EVM(guid=" + getGuid() + ", hdWallet=" + this.hdWallet + ')';
         }
 
         @Override // com.iMe.storage.domain.model.crypto.Wallet
@@ -103,13 +95,8 @@ public abstract class Wallet {
             return this.guid;
         }
 
-        @Override // com.iMe.storage.domain.model.crypto.Wallet
-        public String getMnemonic() {
-            return this.mnemonic;
-        }
-
-        public final Credentials getCredentials() {
-            return this.credentials;
+        public final HDWallet getHdWallet() {
+            return this.hdWallet;
         }
 
         /* JADX WARN: Illegal instructions before constructor call */
@@ -117,31 +104,34 @@ public abstract class Wallet {
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        public EVM(java.lang.String r8, java.lang.String r9, org.web3j.crypto.Credentials r10) {
+        public EVM(java.lang.String r8, wallet.core.jni.HDWallet r9) {
             /*
                 r7 = this;
                 java.lang.String r0 = "guid"
                 kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, r0)
-                java.lang.String r0 = "mnemonic"
+                java.lang.String r0 = "hdWallet"
                 kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, r0)
-                java.lang.String r0 = "credentials"
-                kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, r0)
-                java.lang.String r0 = r10.getAddress()
-                java.lang.String r4 = org.web3j.crypto.Keys.toChecksumAddress(r0)
-                java.lang.String r0 = "toChecksumAddress(credentials.address)"
+                java.lang.String r3 = r9.mnemonic()
+                java.lang.String r0 = "hdWallet.mnemonic()"
+                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, r0)
+                wallet.core.jni.CoinType r0 = wallet.core.jni.CoinType.ETHEREUM
+                java.lang.String r4 = r9.getAddressForCoin(r0)
+                java.lang.String r0 = "hdWallet.getAddressForCoin(CoinType.ETHEREUM)"
                 kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r4, r0)
                 com.iMe.storage.domain.model.crypto.BlockchainType r5 = com.iMe.storage.domain.model.crypto.BlockchainType.EVM
                 r6 = 0
                 r1 = r7
                 r2 = r8
-                r3 = r9
                 r1.<init>(r2, r3, r4, r5, r6)
                 r7.guid = r8
-                r7.mnemonic = r9
-                r7.credentials = r10
+                r7.hdWallet = r9
                 return
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.crypto.Wallet.EVM.<init>(java.lang.String, java.lang.String, org.web3j.crypto.Credentials):void");
+            throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.crypto.Wallet.EVM.<init>(java.lang.String, wallet.core.jni.HDWallet):void");
+        }
+
+        public final byte[] getPrivateKeyBytes() {
+            return CryptoExtKt.getPrivateKeyBytes(this.hdWallet, CoinType.ETHEREUM);
         }
     }
 

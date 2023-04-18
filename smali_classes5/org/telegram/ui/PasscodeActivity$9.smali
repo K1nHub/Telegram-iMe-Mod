@@ -1,9 +1,6 @@
 .class Lorg/telegram/ui/PasscodeActivity$9;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/CodeFieldContainer;
 .source "PasscodeActivity.java"
-
-# interfaces
-.implements Landroid/text/TextWatcher;
 
 
 # annotations
@@ -22,67 +19,94 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/PasscodeActivity;)V
+.method public static synthetic $r8$lambda$f4bRMZbwu8GL51YxuINyHr_3E_I(Lorg/telegram/ui/PasscodeActivity$9;)V
     .locals 0
 
-    .line 1038
+    invoke-direct {p0}, Lorg/telegram/ui/PasscodeActivity$9;->lambda$processNextPressed$0()V
+
+    return-void
+.end method
+
+.method constructor <init>(Lorg/telegram/ui/PasscodeActivity;Landroid/content/Context;)V
+    .locals 0
+
+    .line 980
     iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/CodeFieldContainer;-><init>(Landroid/content/Context;)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$processNextPressed$0()V
+    .locals 1
+
+    .line 984
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1900(Lorg/telegram/ui/PasscodeActivity;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public afterTextChanged(Landroid/text/Editable;)V
-    .locals 0
+.method protected processNextPressed()V
+    .locals 3
 
-    return-void
-.end method
+    .line 983
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1200(Lorg/telegram/ui/PasscodeActivity;)I
 
-    .line 1041
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
+    move-result v0
 
-    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$1400(Lorg/telegram/ui/PasscodeActivity;)Z
+    if-nez v0, :cond_0
 
-    move-result p1
+    .line 984
+    new-instance v0, Lorg/telegram/ui/PasscodeActivity$9$$ExternalSyntheticLambda0;
 
-    if-eqz p1, :cond_0
+    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$9$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PasscodeActivity$9;)V
 
-    .line 1042
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
+    const-wide/16 v1, 0x104
 
-    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$400(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/CodeFieldContainer;
+    invoke-virtual {p0, v0, v1, v2}, Landroid/widget/LinearLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    move-result-object p1
+    goto :goto_0
 
-    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
-
-    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$1500(Lorg/telegram/ui/PasscodeActivity;)Ljava/lang/Runnable;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
-
-    .line 1043
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$1500(Lorg/telegram/ui/PasscodeActivity;)Ljava/lang/Runnable;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
-
+    .line 987
     :cond_0
-    return-void
-.end method
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-.method public onTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1300(Lorg/telegram/ui/PasscodeActivity;)I
 
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 988
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
+
+    iget-object v1, v0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePinPresenter:Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
+
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$600(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/CodeFieldContainer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/CodeFieldContainer;->getCode()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->onPinChanged(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 990
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1800(Lorg/telegram/ui/PasscodeActivity;)V
+
+    :goto_0
     return-void
 .end method

@@ -2,32 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnShowListener;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda60;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda60;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda60;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda60;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda60;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda60;->f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onShow(Landroid/content/DialogInterface;)V
-    .locals 1
+.method public final onDismiss(Landroid/content/DialogInterface;)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda60;->f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$kpH1_-7dFfJx1mgZbCfFXSuOHts(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$0wM0pzzFPw8WgQtnSEd6-jOH9QM(Landroid/content/DialogInterface;)V
 
     return-void
 .end method

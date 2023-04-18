@@ -2,7 +2,7 @@ package com.google.android.gms.internal.firebase_ml;
 
 import com.google.android.gms.common.internal.GmsLogger;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.firebase.p021ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.FirebaseMLException;
 import java.nio.MappedByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,17 +77,17 @@ public class zzon {
                 if (load != null) {
                     try {
                         zzoqVar.zza(load);
-                        zzass.m799d("ModelLoader", "Remote model source is loaded successfully");
+                        zzass.m785d("ModelLoader", "Remote model source is loaded successfully");
                         return true;
                     } catch (RuntimeException e) {
                         list.add(zzmc.REMOTE_MODEL_INVALID);
                         throw e;
                     }
                 }
-                zzass.m799d("ModelLoader", "Remote model source can NOT be loaded, try local model.");
+                zzass.m785d("ModelLoader", "Remote model source can NOT be loaded, try local model.");
                 list.add(zzmc.REMOTE_MODEL_LOADER_LOADS_NO_MODEL);
             } catch (FirebaseMLException e2) {
-                zzass.m799d("ModelLoader", "Remote model source can NOT be loaded, try local model.");
+                zzass.m785d("ModelLoader", "Remote model source can NOT be loaded, try local model.");
                 list.add(zzmc.REMOTE_MODEL_LOADER_ERROR);
                 throw e2;
             }
@@ -103,7 +103,7 @@ public class zzon {
         }
         try {
             zzoqVar.zza(load);
-            zzass.m799d("ModelLoader", "Local model source is loaded successfully");
+            zzass.m785d("ModelLoader", "Local model source is loaded successfully");
             return true;
         } catch (RuntimeException e) {
             list.add(zzmc.LOCAL_MODEL_INVALID);

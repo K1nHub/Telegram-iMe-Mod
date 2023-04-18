@@ -111,7 +111,7 @@
 
     iget-object v14, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda174;->f$14:Ljava/util/ArrayList;
 
-    invoke-static/range {v0 .. v14}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$Z3jJj0XPuObaOzGVqm5JUuoOKQw(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Message;ILorg/telegram/tgnet/TLRPC$messages_Dialogs;Ljava/util/ArrayList;Ljava/util/ArrayList;ZILandroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;IZILjava/util/ArrayList;)V
+    invoke-static/range {v0 .. v14}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$pB7qctFoCccq4Bha0o14h-77lMg(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Message;ILorg/telegram/tgnet/TLRPC$messages_Dialogs;Ljava/util/ArrayList;Ljava/util/ArrayList;ZILandroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;IZILjava/util/ArrayList;)V
 
     return-void
 .end method

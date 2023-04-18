@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: MaskFormatter.kt */
 /* loaded from: classes4.dex */
 public final class MaskFormatter implements KoinComponent {

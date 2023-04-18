@@ -31,13 +31,13 @@
 .method public constructor <init>(Landroid/view/View;Ljava/lang/String;)V
     .locals 0
 
-    .line 429
+    .line 456
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 430
+    .line 457
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mHostView:Landroid/view/View;
 
-    .line 431
+    .line 458
     iput-object p2, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mMethodName:Ljava/lang/String;
 
     return-void
@@ -49,7 +49,7 @@
     :goto_0
     if-eqz p1, :cond_2
 
-    .line 454
+    .line 481
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->isRestricted()Z
 
@@ -57,7 +57,7 @@
 
     if-nez v0, :cond_0
 
-    .line 455
+    .line 482
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -80,24 +80,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 457
+    .line 484
     iput-object v0, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mResolvedMethod:Ljava/lang/reflect/Method;
 
-    .line 458
+    .line 485
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mResolvedContext:Landroid/content/Context;
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    .line 466
+    .line 493
     :catch_0
     :cond_0
     instance-of v0, p1, Landroid/content/ContextWrapper;
 
     if-eqz v0, :cond_1
 
-    .line 467
+    .line 494
     check-cast p1, Landroid/content/ContextWrapper;
 
     invoke-virtual {p1}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 474
+    .line 501
     :cond_2
     iget-object p1, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mHostView:Landroid/view/View;
 
@@ -127,7 +127,7 @@
 
     goto :goto_1
 
-    .line 476
+    .line 503
     :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -161,7 +161,7 @@
 
     move-result-object p1
 
-    .line 477
+    .line 504
     :goto_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -183,7 +183,7 @@
 
     iget-object v2, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mHostView:Landroid/view/View;
 
-    .line 479
+    .line 506
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -206,12 +206,12 @@
 .method public onClick(Landroid/view/View;)V
     .locals 4
 
-    .line 436
+    .line 463
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mResolvedMethod:Ljava/lang/reflect/Method;
 
     if-nez v0, :cond_0
 
-    .line 437
+    .line 464
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mHostView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -220,7 +220,7 @@
 
     invoke-direct {p0, v0}, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->resolveMethod(Landroid/content/Context;)V
 
-    .line 441
+    .line 468
     :cond_0
     :try_start_0
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mResolvedMethod:Ljava/lang/reflect/Method;
@@ -245,7 +245,7 @@
     :catch_0
     move-exception p1
 
-    .line 446
+    .line 473
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Could not execute method for android:onClick"
@@ -257,7 +257,7 @@
     :catch_1
     move-exception p1
 
-    .line 443
+    .line 470
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Could not execute non-public method for android:onClick"

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 /* loaded from: classes.dex */
 public class FastSafeIterableMap<K, V> extends SafeIterableMap<K, V> {
-    private HashMap<K, SafeIterableMap.Entry<K, V>> mHashMap = new HashMap<>();
+    private final HashMap<K, SafeIterableMap.Entry<K, V>> mHashMap = new HashMap<>();
 
     @Override // androidx.arch.core.internal.SafeIterableMap
     protected SafeIterableMap.Entry<K, V> get(K k) {

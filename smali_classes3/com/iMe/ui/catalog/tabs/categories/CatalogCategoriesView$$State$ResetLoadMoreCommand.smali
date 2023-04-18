@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State;)V
     .locals 1
 
-    .line 451
+    .line 487
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "resetLoadMore"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;)V
     .locals 0
 
-    .line 456
+    .line 492
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/LoadMoreView;->resetLoadMore()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 449
+    .line 485
     check-cast p1, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView$$State$ResetLoadMoreCommand;->apply(Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesView;)V

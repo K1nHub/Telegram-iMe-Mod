@@ -2,32 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+.field public final synthetic f$0:Ljava/lang/CharSequence;
+
+.field public final synthetic f$1:[Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+.method public synthetic constructor <init>(Ljava/lang/CharSequence;[Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda65;->f$0:Lorg/telegram/ui/ChatActivity;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda65;->f$0:Ljava/lang/CharSequence;
+
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda65;->f$1:[Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDismiss(Landroid/content/DialogInterface;)V
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda65;->f$0:Lorg/telegram/ui/ChatActivity;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda65;->f$0:Ljava/lang/CharSequence;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$rBshPyb36tvJg2ziHhv97lhK7Xk(Lorg/telegram/ui/ChatActivity;Landroid/content/DialogInterface;)V
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda65;->f$1:[Ljava/lang/Runnable;
+
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$JVqSfPhtH9aBFp6MMaTYJ2cra9E(Ljava/lang/CharSequence;[Ljava/lang/Runnable;Landroid/view/View;)V
 
     return-void
 .end method

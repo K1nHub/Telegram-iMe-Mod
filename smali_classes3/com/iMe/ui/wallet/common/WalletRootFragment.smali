@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletRootFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 6 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 7 View.kt\nandroidx/core/view/ViewKt\n+ 8 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,279:1\n13#2,4:280\n13#2,4:284\n56#3,6:288\n1855#4,2:294\n1855#4,2:296\n1855#4,2:307\n2634#4:315\n219#5,9:298\n215#6,2:309\n262#7,2:311\n262#7,2:313\n1#8:316\n*S KotlinDebug\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment\n*L\n46#1:280,4\n47#1:284,4\n48#1:288,6\n81#1:294,2\n86#1:296,2\n124#1:307,2\n231#1:315\n90#1:298,9\n138#1:309,2\n145#1:311,2\n149#1:313,2\n231#1:316\n*E\n"
+    value = "SMAP\nWalletRootFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 6 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 7 View.kt\nandroidx/core/view/ViewKt\n+ 8 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,279:1\n13#2,4:280\n13#2,4:284\n56#3,6:288\n1855#4,2:294\n1855#4,2:296\n1855#4,2:307\n2634#4:315\n233#5,9:298\n215#6,2:309\n262#7,2:311\n262#7,2:313\n1#8:316\n*S KotlinDebug\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment\n*L\n46#1:280,4\n47#1:284,4\n48#1:288,6\n81#1:294,2\n86#1:296,2\n124#1:307,2\n231#1:315\n90#1:298,9\n138#1:309,2\n145#1:311,2\n149#1:313,2\n231#1:316\n*E\n"
 .end annotation
 
 
@@ -937,7 +937,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 219
+    .line 233
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v1

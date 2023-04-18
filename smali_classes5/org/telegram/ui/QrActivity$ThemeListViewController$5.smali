@@ -42,7 +42,7 @@
 .method constructor <init>(Lorg/telegram/ui/QrActivity$ThemeListViewController;Landroid/content/Context;ZLandroid/graphics/Canvas;FFFLandroid/graphics/Paint;Landroid/graphics/Bitmap;Landroid/graphics/Paint;FF)V
     .locals 0
 
-    .line 1576
+    .line 1578
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$5;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     iput-boolean p3, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$5;->val$isDark:Z
@@ -75,15 +75,15 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 1579
+    .line 1581
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 1580
+    .line 1582
     iget-boolean v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$5;->val$isDark:Z
 
     if-eqz v0, :cond_1
 
-    .line 1581
+    .line 1583
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$5;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-static {v0}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->access$2700(Lorg/telegram/ui/QrActivity$ThemeListViewController;)F
@@ -96,7 +96,7 @@
 
     if-lez v0, :cond_0
 
-    .line 1582
+    .line 1584
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$5;->val$bitmapCanvas:Landroid/graphics/Canvas;
 
     iget v2, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$5;->val$cx:F
@@ -117,7 +117,7 @@
 
     invoke-virtual {v0, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1584
+    .line 1586
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$5;->val$bitmap:Landroid/graphics/Bitmap;
 
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 1586
+    .line 1588
     :cond_1
     iget v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$5;->val$cx:F
 
@@ -151,18 +151,18 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1588
+    .line 1590
     :goto_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1589
+    .line 1591
     iget v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$5;->val$x:F
 
     iget v1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$5;->val$y:F
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1590
+    .line 1592
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$5;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-static {v0}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->access$2800(Lorg/telegram/ui/QrActivity$ThemeListViewController;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -171,7 +171,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1591
+    .line 1593
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void

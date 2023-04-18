@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 112
+    .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
 .method isHorizontallyScrollable(Landroid/widget/TextView;)Z
     .locals 2
 
-    .line 115
+    .line 117
     sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     const-string v1, "getHorizontallyScrolling"

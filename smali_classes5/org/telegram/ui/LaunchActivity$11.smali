@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LaunchActivity;->lambda$onCreate$10(Landroidx/recyclerview/widget/ItemTouchHelper;Landroid/view/View;IFF)Z
+    value = Lorg/telegram/ui/LaunchActivity;->lambda$onCreate$8(Landroidx/recyclerview/widget/ItemTouchHelper;Landroid/view/View;IFF)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,7 +34,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/os/Bundle;I)V
     .locals 0
 
-    .line 1348
+    .line 1203
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iput p3, p0, Lorg/telegram/ui/LaunchActivity$11;->val$accountNumber:I
@@ -47,7 +47,7 @@
 .method private synthetic lambda$onTransitionAnimationEnd$0(Lorg/telegram/ui/ChatActivity;)V
     .locals 4
 
-    .line 1392
+    .line 1247
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -78,13 +78,13 @@
 .method protected onPreviewChatOpened(Landroid/os/Bundle;)V
     .locals 0
 
-    .line 1359
+    .line 1214
     invoke-super {p0, p1}, Lorg/telegram/ui/DialogsActivity;->onPreviewChatOpened(Landroid/os/Bundle;)V
 
-    .line 1360
+    .line 1215
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->chatArgs:Landroid/os/Bundle;
 
-    .line 1361
+    .line 1216
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishPreviewFragment()V
 
     return-void
@@ -93,10 +93,10 @@
 .method public onPreviewOpenAnimationEnd()V
     .locals 3
 
-    .line 1401
+    .line 1256
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onPreviewOpenAnimationEnd()V
 
-    .line 1402
+    .line 1257
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
@@ -105,14 +105,14 @@
 
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->setAllowOpenDrawer(ZZ)V
 
-    .line 1403
+    .line 1258
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->setDrawCurrentPreviewFragmentAbove(Z)V
 
-    .line 1404
+    .line 1259
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iget v1, p0, Lorg/telegram/ui/LaunchActivity$11;->val$accountNumber:I
@@ -121,7 +121,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/LaunchActivity;->switchToAccount(IZ)V
 
-    .line 1405
+    .line 1260
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -140,31 +140,31 @@
 .method public onTransitionAnimationEnd(ZZ)V
     .locals 2
 
-    .line 1370
+    .line 1225
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/DialogsActivity;->onTransitionAnimationEnd(ZZ)V
 
     if-nez p1, :cond_1
 
     if-eqz p2, :cond_1
 
-    .line 1373
+    .line 1228
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->chatArgs:Landroid/os/Bundle;
 
     if-eqz p1, :cond_0
 
-    .line 1374
+    .line 1229
     new-instance p1, Lorg/telegram/ui/LaunchActivity$11$1;
 
     iget-object p2, p0, Lorg/telegram/ui/LaunchActivity$11;->chatArgs:Landroid/os/Bundle;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/LaunchActivity$11$1;-><init>(Lorg/telegram/ui/LaunchActivity$11;Landroid/os/Bundle;)V
 
-    .line 1391
+    .line 1246
     iget p2, p0, Lorg/telegram/ui/LaunchActivity$11;->val$accountNumber:I
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->setCurrentAccount(I)V
 
-    .line 1392
+    .line 1247
     new-instance p2, Lorg/telegram/ui/LaunchActivity$11$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/LaunchActivity$11$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/LaunchActivity$11;Lorg/telegram/ui/ChatActivity;)V
@@ -175,7 +175,7 @@
 
     goto :goto_0
 
-    .line 1394
+    .line 1249
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -185,7 +185,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->setDrawCurrentPreviewFragmentAbove(Z)V
 
-    .line 1395
+    .line 1250
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 

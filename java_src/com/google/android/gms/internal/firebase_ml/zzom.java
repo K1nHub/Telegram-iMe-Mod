@@ -4,7 +4,7 @@ import android.os.Build;
 import com.google.android.exoplayer2.text.ttml.TtmlNode;
 import com.google.android.gms.common.internal.GmsLogger;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.FirebaseMLException;
 import java.io.File;
 /* loaded from: classes.dex */
 public final class zzom {
@@ -30,7 +30,7 @@ public final class zzom {
         }
         GmsLogger gmsLogger = zzass;
         String valueOf = String.valueOf(zza.getParentFile().getAbsolutePath());
-        gmsLogger.m797e("ModelFileHelper", valueOf.length() != 0 ? "Failed to delete the temp labels file directory: ".concat(valueOf) : new String("Failed to delete the temp labels file directory: "));
+        gmsLogger.m783e("ModelFileHelper", valueOf.length() != 0 ? "Failed to delete the temp labels file directory: ".concat(valueOf) : new String("Failed to delete the temp labels file directory: "));
     }
 
     public final boolean zzb(String str, zzor zzorVar) throws FirebaseMLException {
@@ -63,7 +63,7 @@ public final class zzom {
         if (!zzb.exists()) {
             GmsLogger gmsLogger = zzass;
             String valueOf = String.valueOf(zzb.getAbsolutePath());
-            gmsLogger.m799d("ModelFileHelper", valueOf.length() != 0 ? "model folder does not exist, creating one: ".concat(valueOf) : new String("model folder does not exist, creating one: "));
+            gmsLogger.m785d("ModelFileHelper", valueOf.length() != 0 ? "model folder does not exist, creating one: ".concat(valueOf) : new String("model folder does not exist, creating one: "));
             zzb.mkdirs();
         } else if (!zzb.isDirectory()) {
             String valueOf2 = String.valueOf(zzb);
@@ -124,7 +124,7 @@ public final class zzom {
             } catch (NumberFormatException unused) {
                 GmsLogger gmsLogger = zzass;
                 String valueOf = String.valueOf(file2.getName());
-                gmsLogger.m799d("ModelFileHelper", valueOf.length() != 0 ? "Contains non-integer file name ".concat(valueOf) : new String("Contains non-integer file name "));
+                gmsLogger.m785d("ModelFileHelper", valueOf.length() != 0 ? "Contains non-integer file name ".concat(valueOf) : new String("Contains non-integer file name "));
             }
         }
         return i;

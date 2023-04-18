@@ -4,7 +4,7 @@ import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.model.Document;
 import com.google.firebase.firestore.model.DocumentKey;
 import com.google.firebase.firestore.util.Preconditions;
-import com.google.firestore.p022v1.Value;
+import com.google.firestore.p021v1.Value;
 /* loaded from: classes3.dex */
 public class DocumentSnapshot {
     private final Document doc;

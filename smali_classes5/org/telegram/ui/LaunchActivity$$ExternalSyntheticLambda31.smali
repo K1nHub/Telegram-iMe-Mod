@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda31;->f$2:Ljava/lang/Runnable;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$oHGwr0q7t70ywqLREzIzFkEqKSs(I[ILjava/lang/Runnable;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$qkB2gDjg5rxS_45r9wUZadlGqp0(I[ILjava/lang/Runnable;)V
 
     return-void
 .end method

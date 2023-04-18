@@ -4,8 +4,8 @@ import android.os.ParcelFileDescriptor;
 import com.google.android.gms.common.internal.GmsLogger;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseRemoteModel;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseRemoteModel;
 import java.io.File;
 import java.nio.MappedByteBuffer;
 import java.util.HashMap;
@@ -49,15 +49,15 @@ public final class zzpk {
     public final synchronized MappedByteBuffer load() throws FirebaseMLException {
         MappedByteBuffer zzah;
         GmsLogger gmsLogger = zzass;
-        gmsLogger.m799d("RemoteModelLoader", "Try to load newly downloaded model file.");
+        gmsLogger.m785d("RemoteModelLoader", "Try to load newly downloaded model file.");
         zzah = zzah(this.zzawe);
         if (zzah == null) {
-            gmsLogger.m799d("RemoteModelLoader", "Loading existing model file.");
+            gmsLogger.m785d("RemoteModelLoader", "Loading existing model file.");
             zzah = zzmq();
         }
         if (this.zzawe || !this.zzawb.zzmj()) {
             this.zzawe = false;
-            gmsLogger.m799d("RemoteModelLoader", "Initial loading, check for model updates.");
+            gmsLogger.m785d("RemoteModelLoader", "Initial loading, check for model updates.");
             this.zzavp.zza(zzmc.NO_ERROR, false, this.zzavv, zzlu.zzw.zza.IMPLICITLY_REQUESTED);
             this.zzawb.zzmb();
         }
@@ -73,7 +73,7 @@ public final class zzpk {
         Long zzmc = this.zzawb.zzmc();
         String zzmd = this.zzawb.zzmd();
         if (zzmc == null || zzmd == null) {
-            zzass.m799d("RemoteModelLoader", "No new model is downloading.");
+            zzass.m785d("RemoteModelLoader", "No new model is downloading.");
             return null;
         }
         Integer zzmf = this.zzawb.zzmf();
@@ -85,15 +85,15 @@ public final class zzpk {
         StringBuilder sb = new StringBuilder(valueOf.length() + 22);
         sb.append("Download Status code: ");
         sb.append(valueOf);
-        gmsLogger.m799d("RemoteModelLoader", sb.toString());
+        gmsLogger.m785d("RemoteModelLoader", sb.toString());
         if (zzmf.intValue() == 8) {
-            gmsLogger.m799d("RemoteModelLoader", "Model downloaded successfully");
+            gmsLogger.m785d("RemoteModelLoader", "Model downloaded successfully");
             this.zzavp.zza(zzmc.NO_ERROR, true, this.zzavv, zzlu.zzw.zza.SUCCEEDED);
             ParcelFileDescriptor zzmg = this.zzawb.zzmg();
             if (zzmg == null) {
                 return null;
             }
-            gmsLogger.m799d("RemoteModelLoader", "moving downloaded model from external storage to private folder.");
+            gmsLogger.m785d("RemoteModelLoader", "moving downloaded model from external storage to private folder.");
             try {
                 File zza = this.zzawc.zza(zzmg, zzmd, this.zzavp);
                 if (zza == null) {
@@ -101,10 +101,10 @@ public final class zzpk {
                 }
                 MappedByteBuffer zzg = zzg(zza);
                 String valueOf2 = String.valueOf(zza.getParent());
-                gmsLogger.m799d("RemoteModelLoader", valueOf2.length() != 0 ? "Moved the downloaded model to private folder successfully: ".concat(valueOf2) : new String("Moved the downloaded model to private folder successfully: "));
+                gmsLogger.m785d("RemoteModelLoader", valueOf2.length() != 0 ? "Moved the downloaded model to private folder successfully: ".concat(valueOf2) : new String("Moved the downloaded model to private folder successfully: "));
                 this.zzawb.zze(zzmd, this.zzavv);
                 if (z && this.zzawc.zzd(zza)) {
-                    gmsLogger.m799d("RemoteModelLoader", "All old models are deleted.");
+                    gmsLogger.m785d("RemoteModelLoader", "All old models are deleted.");
                     return zzg(this.zzawc.zzf(zza));
                 }
                 return zzg;
@@ -130,7 +130,7 @@ public final class zzpk {
     private final MappedByteBuffer zzmq() throws FirebaseMLException {
         String zzmm = this.zzawc.zzmm();
         if (zzmm == null) {
-            zzass.m799d("RemoteModelLoader", "No existing model file");
+            zzass.m785d("RemoteModelLoader", "No existing model file");
             return null;
         }
         try {

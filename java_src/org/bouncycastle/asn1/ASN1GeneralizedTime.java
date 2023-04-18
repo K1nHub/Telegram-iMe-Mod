@@ -8,7 +8,13 @@ public class ASN1GeneralizedTime extends ASN1Primitive {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ASN1GeneralizedTime(byte[] bArr) {
+        if (bArr.length < 4) {
+            throw new IllegalArgumentException("GeneralizedTime string too short");
+        }
         this.time = bArr;
+        if (!isDigit(0) || !isDigit(1) || !isDigit(2) || !isDigit(3)) {
+            throw new IllegalArgumentException("illegal characters in GeneralizedTime string");
+        }
     }
 
     private boolean isDigit(int i) {
@@ -16,8 +22,9 @@ public class ASN1GeneralizedTime extends ASN1Primitive {
         return bArr.length > i && bArr[i] >= 48 && bArr[i] <= 57;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    boolean asn1Equals(ASN1Primitive aSN1Primitive) {
+    public boolean asn1Equals(ASN1Primitive aSN1Primitive) {
         if (aSN1Primitive instanceof ASN1GeneralizedTime) {
             return Arrays.areEqual(this.time, ((ASN1GeneralizedTime) aSN1Primitive).time);
         }
@@ -26,8 +33,8 @@ public class ASN1GeneralizedTime extends ASN1Primitive {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    public void encode(ASN1OutputStream aSN1OutputStream) throws IOException {
-        aSN1OutputStream.writeEncoded(24, this.time);
+    public void encode(ASN1OutputStream aSN1OutputStream, boolean z) throws IOException {
+        aSN1OutputStream.writeEncoded(z, 24, this.time);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -76,6 +83,12 @@ public class ASN1GeneralizedTime extends ASN1Primitive {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
     public ASN1Primitive toDERObject() {
+        return new DERGeneralizedTime(this.time);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // org.bouncycastle.asn1.ASN1Primitive
+    public ASN1Primitive toDLObject() {
         return new DERGeneralizedTime(this.time);
     }
 }

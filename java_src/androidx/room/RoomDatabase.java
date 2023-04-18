@@ -35,7 +35,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import p035j$.util.DesugarCollections;
+import p034j$.util.DesugarCollections;
 /* loaded from: classes.dex */
 public abstract class RoomDatabase {
     private boolean mAllowMainThreadQueries;

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHandlerDispatcher.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HandlerDispatcher.kt\nkotlinx/coroutines/android/HandlerDispatcherKt\n+ 2 CancellableContinuation.kt\nkotlinx/coroutines/CancellableContinuationKt\n+ 3 Runnable.kt\nkotlinx/coroutines/RunnableKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,194:1\n310#2,11:195\n310#2,9:206\n319#2,2:216\n17#3:215\n1#4:218\n*S KotlinDebug\n*F\n+ 1 HandlerDispatcher.kt\nkotlinx/coroutines/android/HandlerDispatcherKt\n*L\n171#1:195,11\n176#1:206,9\n176#1:216,2\n177#1:215\n*E\n"
+    value = "SMAP\nHandlerDispatcher.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HandlerDispatcher.kt\nkotlinx/coroutines/android/HandlerDispatcherKt\n+ 2 CancellableContinuation.kt\nkotlinx/coroutines/CancellableContinuationKt\n+ 3 Runnable.kt\nkotlinx/coroutines/RunnableKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,212:1\n314#2,11:213\n314#2,9:224\n323#2,2:234\n17#3:233\n1#4:236\n*S KotlinDebug\n*F\n+ 1 HandlerDispatcher.kt\nkotlinx/coroutines/android/HandlerDispatcherKt\n*L\n189#1:213,11\n194#1:224,9\n194#1:234,2\n195#1:233\n*E\n"
 .end annotation
 
 
@@ -19,7 +19,7 @@
 
     const/4 v0, 0x0
 
-    .line 100
+    .line 109
     :try_start_0
     sget-object v1, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
@@ -83,7 +83,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 77
+    .line 86
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x10
@@ -103,12 +103,12 @@
 
     if-lt p1, v0, :cond_1
 
-    .line 81
+    .line 90
     const-class p1, Landroid/os/Handler;
 
     new-array v0, v3, [Ljava/lang/Class;
 
-    .line 83
+    .line 92
     const-class v4, Landroid/os/Looper;
 
     aput-object v4, v0, v2
@@ -123,7 +123,7 @@
 
     aput-object p0, v0, v2
 
-    .line 84
+    .line 93
     invoke-virtual {p1, v1, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -136,7 +136,7 @@
 
     return-object p0
 
-    .line 89
+    .line 98
     :cond_1
     :try_start_0
     const-class p1, Landroid/os/Handler;
@@ -171,7 +171,7 @@
 
     aput-object v1, v0, v3
 
-    .line 95
+    .line 104
     sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     aput-object p0, v0, v6
@@ -184,7 +184,7 @@
 
     return-object p0
 
-    .line 93
+    .line 102
     :catch_0
     new-instance p1, Landroid/os/Handler;
 
@@ -192,7 +192,7 @@
 
     return-object p1
 
-    .line 78
+    .line 87
     :cond_2
     :goto_0
     new-instance p1, Landroid/os/Handler;

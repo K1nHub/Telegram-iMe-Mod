@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MessagesController;IIIJLorg/telegram/messenger/MessagesController$MessagesLoadedCallback;)V
     .locals 0
 
-    .line 17862
+    .line 17923
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$2;->this$0:Lorg/telegram/messenger/MessagesController;
 
     iput p2, p0, Lorg/telegram/messenger/MessagesController$2;->val$classGuid:I
@@ -62,7 +62,7 @@
 
     move/from16 v1, p1
 
-    .line 17865
+    .line 17926
     sget v2, Lorg/telegram/messenger/NotificationCenter;->messagesDidLoadWithoutProcess:I
 
     const/4 v3, 0x0
@@ -83,7 +83,7 @@
 
     const/4 v1, 0x1
 
-    .line 17866
+    .line 17927
     aget-object v1, p3, v1
 
     check-cast v1, Ljava/lang/Integer;
@@ -94,7 +94,7 @@
 
     const/4 v3, 0x2
 
-    .line 17867
+    .line 17928
     aget-object v3, p3, v3
 
     check-cast v3, Ljava/lang/Boolean;
@@ -105,7 +105,7 @@
 
     const/4 v4, 0x3
 
-    .line 17868
+    .line 17929
     aget-object v4, p3, v4
 
     check-cast v4, Ljava/lang/Boolean;
@@ -116,7 +116,7 @@
 
     const/4 v5, 0x4
 
-    .line 17869
+    .line 17930
     aget-object v5, p3, v5
 
     check-cast v5, Ljava/lang/Integer;
@@ -125,7 +125,7 @@
 
     move-result v19
 
-    .line 17870
+    .line 17931
     iget v12, v0, Lorg/telegram/messenger/MessagesController$2;->val$count:I
 
     div-int/lit8 v5, v12, 0x2
@@ -136,12 +136,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 17871
+    .line 17932
     iget v13, v0, Lorg/telegram/messenger/MessagesController$2;->val$finalMessageId:I
 
     if-eqz v13, :cond_0
 
-    .line 17872
+    .line 17933
     iget-object v6, v0, Lorg/telegram/messenger/MessagesController$2;->this$0:Lorg/telegram/messenger/MessagesController;
 
     iget-wide v7, v0, Lorg/telegram/messenger/MessagesController$2;->val$dialogId:J
@@ -188,7 +188,7 @@
 
     goto :goto_0
 
-    .line 17874
+    .line 17935
     :cond_0
     iget-object v6, v0, Lorg/telegram/messenger/MessagesController$2;->this$0:Lorg/telegram/messenger/MessagesController;
 
@@ -236,7 +236,7 @@
 
     goto :goto_0
 
-    .line 17877
+    .line 17938
     :cond_1
     iget-object v1, v0, Lorg/telegram/messenger/MessagesController$2;->this$0:Lorg/telegram/messenger/MessagesController;
 
@@ -246,7 +246,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 17878
+    .line 17939
     iget-object v1, v0, Lorg/telegram/messenger/MessagesController$2;->this$0:Lorg/telegram/messenger/MessagesController;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -257,17 +257,17 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 17879
+    .line 17940
     iget-object v1, v0, Lorg/telegram/messenger/MessagesController$2;->val$callback:Lorg/telegram/messenger/MessagesController$MessagesLoadedCallback;
 
     if-eqz v1, :cond_3
 
-    .line 17880
+    .line 17941
     invoke-interface {v1, v3}, Lorg/telegram/messenger/MessagesController$MessagesLoadedCallback;->onMessagesLoaded(Z)V
 
     goto :goto_0
 
-    .line 17883
+    .line 17944
     :cond_2
     sget v4, Lorg/telegram/messenger/NotificationCenter;->loadingMessagesFailed:I
 
@@ -285,7 +285,7 @@
 
     if-ne v1, v3, :cond_3
 
-    .line 17884
+    .line 17945
     iget-object v1, v0, Lorg/telegram/messenger/MessagesController$2;->this$0:Lorg/telegram/messenger/MessagesController;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -294,7 +294,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 17885
+    .line 17946
     iget-object v1, v0, Lorg/telegram/messenger/MessagesController$2;->this$0:Lorg/telegram/messenger/MessagesController;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -303,12 +303,12 @@
 
     invoke-virtual {v1, v0, v4}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 17886
+    .line 17947
     iget-object v1, v0, Lorg/telegram/messenger/MessagesController$2;->val$callback:Lorg/telegram/messenger/MessagesController$MessagesLoadedCallback;
 
     if-eqz v1, :cond_3
 
-    .line 17887
+    .line 17948
     invoke-interface {v1}, Lorg/telegram/messenger/MessagesController$MessagesLoadedCallback;->onError()V
 
     :cond_3

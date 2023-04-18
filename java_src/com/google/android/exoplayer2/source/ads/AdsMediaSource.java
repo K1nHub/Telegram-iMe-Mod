@@ -4,10 +4,10 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Timeline;
-import com.google.android.exoplayer2.p017ui.AdViewProvider;
+import com.google.android.exoplayer2.p016ui.AdViewProvider;
 import com.google.android.exoplayer2.source.CompositeMediaSource;
 import com.google.android.exoplayer2.source.LoadEventInfo;
 import com.google.android.exoplayer2.source.MaskingMediaPeriod;
@@ -149,7 +149,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
     @Override // com.google.android.exoplayer2.source.MediaSource
     public void releasePeriod(MediaPeriod mediaPeriod) {
         MaskingMediaPeriod maskingMediaPeriod = (MaskingMediaPeriod) mediaPeriod;
-        MediaSource.MediaPeriodId mediaPeriodId = maskingMediaPeriod.f124id;
+        MediaSource.MediaPeriodId mediaPeriodId = maskingMediaPeriod.f121id;
         if (mediaPeriodId.isAd()) {
             AdMediaSourceHolder adMediaSourceHolder = (AdMediaSourceHolder) Assertions.checkNotNull(this.adMediaSourceHolders[mediaPeriodId.adGroupIndex][mediaPeriodId.adIndexInAdGroup]);
             adMediaSourceHolder.releaseMediaPeriod(maskingMediaPeriod);
@@ -277,7 +277,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
                 AdMediaSourceHolder[][] adMediaSourceHolderArr2 = this.adMediaSourceHolders;
                 if (i2 < adMediaSourceHolderArr2[i].length) {
                     AdMediaSourceHolder adMediaSourceHolder = adMediaSourceHolderArr2[i][i2];
-                    jArr[i][i2] = adMediaSourceHolder == null ? C0482C.TIME_UNSET : adMediaSourceHolder.getDurationUs();
+                    jArr[i][i2] = adMediaSourceHolder == null ? C0470C.TIME_UNSET : adMediaSourceHolder.getDurationUs();
                     i2++;
                 }
             }
@@ -388,11 +388,11 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
         private Uri adUri;
 
         /* renamed from: id */
-        private final MediaSource.MediaPeriodId f127id;
+        private final MediaSource.MediaPeriodId f124id;
         private Timeline timeline;
 
         public AdMediaSourceHolder(MediaSource.MediaPeriodId mediaPeriodId) {
-            this.f127id = mediaPeriodId;
+            this.f124id = mediaPeriodId;
         }
 
         public void initializeWithMediaSource(MediaSource mediaSource, Uri uri) {
@@ -403,7 +403,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
                 maskingMediaPeriod.setMediaSource(mediaSource);
                 maskingMediaPeriod.setPrepareListener(new AdPrepareListener(uri));
             }
-            AdsMediaSource.this.prepareChildSource(this.f127id, mediaSource);
+            AdsMediaSource.this.prepareChildSource(this.f124id, mediaSource);
         }
 
         public MediaPeriod createMediaPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
@@ -427,7 +427,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
                 Object uidOfPeriod = timeline.getUidOfPeriod(0);
                 for (int i = 0; i < this.activeMediaPeriods.size(); i++) {
                     MaskingMediaPeriod maskingMediaPeriod = this.activeMediaPeriods.get(i);
-                    maskingMediaPeriod.createPeriod(new MediaSource.MediaPeriodId(uidOfPeriod, maskingMediaPeriod.f124id.windowSequenceNumber));
+                    maskingMediaPeriod.createPeriod(new MediaSource.MediaPeriodId(uidOfPeriod, maskingMediaPeriod.f121id.windowSequenceNumber));
                 }
             }
             this.timeline = timeline;
@@ -435,7 +435,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
 
         public long getDurationUs() {
             Timeline timeline = this.timeline;
-            return timeline == null ? C0482C.TIME_UNSET : timeline.getPeriod(0, AdsMediaSource.this.period).getDurationUs();
+            return timeline == null ? C0470C.TIME_UNSET : timeline.getPeriod(0, AdsMediaSource.this.period).getDurationUs();
         }
 
         public void releaseMediaPeriod(MaskingMediaPeriod maskingMediaPeriod) {
@@ -445,7 +445,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
 
         public void release() {
             if (hasMediaSource()) {
-                AdsMediaSource.this.releaseChildSource(this.f127id);
+                AdsMediaSource.this.releaseChildSource(this.f124id);
             }
         }
 

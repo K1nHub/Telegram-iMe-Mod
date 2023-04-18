@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State;ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 227
+    .line 245
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showLoadingDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 229
+    .line 247
     iput-boolean p2, p0, Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State$ShowLoadingDialogCommand;->show:Z
 
-    .line 230
+    .line 248
     iput-boolean p3, p0, Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State$ShowLoadingDialogCommand;->cancellable:Z
 
-    .line 231
+    .line 249
     iput-object p4, p0, Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State$ShowLoadingDialogCommand;->actionToCancel:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/wallet/donations/WalletDonationsView;)V
     .locals 3
 
-    .line 236
+    .line 254
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State$ShowLoadingDialogCommand;->show:Z
 
     iget-boolean v1, p0, Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State$ShowLoadingDialogCommand;->cancellable:Z
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 219
+    .line 237
     check-cast p1, Lcom/iMe/ui/wallet/donations/WalletDonationsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State$ShowLoadingDialogCommand;->apply(Lcom/iMe/ui/wallet/donations/WalletDonationsView;)V

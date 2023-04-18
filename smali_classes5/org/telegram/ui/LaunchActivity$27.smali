@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    .line 7519
+    .line 7345
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$27;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +38,10 @@
 .method public run()V
     .locals 8
 
-    .line 7522
+    .line 7348
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$27;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$600(Lorg/telegram/ui/LaunchActivity;)Ljava/lang/Runnable;
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$2900(Lorg/telegram/ui/LaunchActivity;)Ljava/lang/Runnable;
 
     move-result-object v0
 
@@ -49,24 +49,24 @@
 
     const/4 v0, 0x1
 
-    .line 7523
+    .line 7349
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->needShowPasscode(Z)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 7524
+    .line 7350
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "lock app"
 
-    .line 7525
+    .line 7351
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 7527
+    .line 7353
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$27;->this$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -84,7 +84,7 @@
 
     invoke-virtual/range {v1 .. v7}, Lorg/telegram/ui/LaunchActivity;->showPasscodeActivity(ZZIILjava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    .line 7529
+    .line 7355
     :try_start_0
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -101,12 +101,12 @@
     :catch_0
     move-exception v0
 
-    .line 7531
+    .line 7357
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_0
 
-    .line 7534
+    .line 7360
     :cond_1
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -114,17 +114,17 @@
 
     const-string v0, "didn\'t pass lock check"
 
-    .line 7535
+    .line 7361
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 7538
+    .line 7364
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$27;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/LaunchActivity;->access$602(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+    invoke-static {v0, v1}, Lorg/telegram/ui/LaunchActivity;->access$2902(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
     :cond_3
     return-void

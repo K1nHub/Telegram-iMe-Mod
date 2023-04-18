@@ -18,6 +18,8 @@
 
 .field private index:J
 
+.field private maxIndex:J
+
 .field private final params:Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
 
 .field private privateKey:[B
@@ -42,6 +44,10 @@
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->index:J
+
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->maxIndex:J
 
     const/4 v0, 0x0
 
@@ -136,6 +142,14 @@
     return-object p0
 .end method
 
+.method static synthetic access$900(Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;)J
+    .locals 2
+
+    iget-wide v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->maxIndex:J
+
+    return-wide v0
+.end method
+
 
 # virtual methods
 .method public build()Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters;
@@ -151,10 +165,42 @@
 .end method
 
 .method public withBDSState(Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;)Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;
-    .locals 0
+    .locals 6
 
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;->getMaxIndex()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;
+
+    iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->params:Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->getHeight()I
+
+    move-result v1
+
+    const-wide/16 v2, 0x1
+
+    shl-long v4, v2, v1
+
+    sub-long/2addr v4, v2
+
+    invoke-direct {v0, p1, v4, v5}, Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;J)V
+
+    iput-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->bdsState:Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;
+
+    goto :goto_0
+
+    :cond_0
     iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->bdsState:Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;
 
+    :goto_0
     return-object p0
 .end method
 
@@ -162,6 +208,14 @@
     .locals 0
 
     iput-wide p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->index:J
+
+    return-object p0
+.end method
+
+.method public withMaxIndex(J)Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;
+    .locals 0
+
+    iput-wide p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->maxIndex:J
 
     return-object p0
 .end method

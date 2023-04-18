@@ -39,14 +39,14 @@ public interface ImageHeaderParser {
         }
 
         public boolean isWebp() {
-            int i = C04001.$SwitchMap$com$bumptech$glide$load$ImageHeaderParser$ImageType[ordinal()];
+            int i = C03921.$SwitchMap$com$bumptech$glide$load$ImageHeaderParser$ImageType[ordinal()];
             return i == 1 || i == 2 || i == 3;
         }
     }
 
     /* renamed from: com.bumptech.glide.load.ImageHeaderParser$1 */
     /* loaded from: classes.dex */
-    static /* synthetic */ class C04001 {
+    static /* synthetic */ class C03921 {
         static final /* synthetic */ int[] $SwitchMap$com$bumptech$glide$load$ImageHeaderParser$ImageType;
 
         static {

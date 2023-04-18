@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletTransactionsBinding implements ViewBinding {
     public final RecyclerView recycleTransactions;
@@ -28,7 +28,7 @@ public final class ForkFragmentWalletTransactionsBinding implements ViewBinding 
     }
 
     public static ForkFragmentWalletTransactionsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3316R.layout.fork_fragment_wallet_transactions, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3242R.layout.fork_fragment_wallet_transactions, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,7 +36,7 @@ public final class ForkFragmentWalletTransactionsBinding implements ViewBinding 
     }
 
     public static ForkFragmentWalletTransactionsBinding bind(View view) {
-        int i = C3316R.C3319id.recycle_transactions;
+        int i = C3242R.C3245id.recycle_transactions;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentWalletTransactionsBinding((SwipeRefreshLayout) view, recyclerView);

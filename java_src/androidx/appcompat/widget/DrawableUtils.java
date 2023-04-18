@@ -9,7 +9,7 @@ import android.graphics.drawable.InsetDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.ScaleDrawable;
 import android.os.Build;
-import androidx.appcompat.graphics.drawable.DrawableWrapper;
+import androidx.appcompat.graphics.drawable.DrawableWrapperCompat;
 import androidx.core.graphics.drawable.WrappedDrawable;
 /* loaded from: classes.dex */
 public class DrawableUtils {
@@ -34,6 +34,9 @@ public class DrawableUtils {
 
     public static boolean canSafelyMutateDrawable(Drawable drawable) {
         int i = Build.VERSION.SDK_INT;
+        if (i >= 17) {
+            return true;
+        }
         if (i >= 15 || !(drawable instanceof InsetDrawable)) {
             if (i >= 15 || !(drawable instanceof GradientDrawable)) {
                 if (i >= 17 || !(drawable instanceof LayerDrawable)) {
@@ -45,20 +48,18 @@ public class DrawableUtils {
                                     return false;
                                 }
                             }
-                            return true;
                         }
-                        return true;
                     } else if (drawable instanceof WrappedDrawable) {
                         return canSafelyMutateDrawable(((WrappedDrawable) drawable).getWrappedDrawable());
                     } else {
-                        if (drawable instanceof DrawableWrapper) {
-                            return canSafelyMutateDrawable(((DrawableWrapper) drawable).getWrappedDrawable());
+                        if (drawable instanceof DrawableWrapperCompat) {
+                            return canSafelyMutateDrawable(((DrawableWrapperCompat) drawable).getDrawable());
                         }
                         if (drawable instanceof ScaleDrawable) {
                             return canSafelyMutateDrawable(((ScaleDrawable) drawable).getDrawable());
                         }
-                        return true;
                     }
+                    return true;
                 }
                 return false;
             }

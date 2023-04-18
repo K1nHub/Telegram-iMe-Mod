@@ -4,8 +4,8 @@ import com.google.android.gms.common.internal.GmsLogger;
 import com.google.android.gms.common.util.IOUtils;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseRemoteModel;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseRemoteModel;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.SocketTimeoutException;
@@ -39,7 +39,7 @@ public final class zzph {
         }
         try {
             zzpl zzplVar = new zzpl(str);
-            zzass.m799d("RmModelInfoRetriever", str.length() != 0 ? "Checking model URL: ".concat(str) : new String("Checking model URL: "));
+            zzass.m785d("RmModelInfoRetriever", str.length() != 0 ? "Checking model URL: ".concat(str) : new String("Checking model URL: "));
             HttpsURLConnection httpsURLConnection = (HttpsURLConnection) zzplVar.openConnection();
             httpsURLConnection.setConnectTimeout(2000);
             httpsURLConnection.connect();

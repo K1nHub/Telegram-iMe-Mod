@@ -1,7 +1,6 @@
 package kotlinx.coroutines.android;
 
 import android.os.Build;
-import androidx.annotation.Keep;
 import java.lang.Thread;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -9,7 +8,6 @@ import kotlin.coroutines.AbstractCoroutineContextElement;
 import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.CoroutineExceptionHandler;
 /* compiled from: AndroidExceptionPreHandler.kt */
-@Keep
 /* loaded from: classes4.dex */
 public final class AndroidExceptionPreHandler extends AbstractCoroutineContextElement implements CoroutineExceptionHandler {
     private volatile Object _preHandler;
@@ -44,17 +42,14 @@ public final class AndroidExceptionPreHandler extends AbstractCoroutineContextEl
 
     @Override // kotlinx.coroutines.CoroutineExceptionHandler
     public void handleException(CoroutineContext coroutineContext, Throwable th) {
-        Thread currentThread = Thread.currentThread();
-        if (Build.VERSION.SDK_INT >= 28) {
-            currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, th);
-            return;
+        int i = Build.VERSION.SDK_INT;
+        if (26 <= i && i < 28) {
+            Method preHandler = preHandler();
+            Object invoke = preHandler != null ? preHandler.invoke(null, new Object[0]) : null;
+            Thread.UncaughtExceptionHandler uncaughtExceptionHandler = invoke instanceof Thread.UncaughtExceptionHandler ? (Thread.UncaughtExceptionHandler) invoke : null;
+            if (uncaughtExceptionHandler != null) {
+                uncaughtExceptionHandler.uncaughtException(Thread.currentThread(), th);
+            }
         }
-        Method preHandler = preHandler();
-        Object invoke = preHandler == null ? null : preHandler.invoke(null, new Object[0]);
-        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = invoke instanceof Thread.UncaughtExceptionHandler ? (Thread.UncaughtExceptionHandler) invoke : null;
-        if (uncaughtExceptionHandler == null) {
-            return;
-        }
-        uncaughtExceptionHandler.uncaughtException(currentThread, th);
     }
 }

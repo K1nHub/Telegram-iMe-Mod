@@ -1,6 +1,6 @@
 package com.iMe.common;
 
-import com.iMe.p032ui.drawer.DrawerSwitchableItem;
+import com.iMe.p031ui.drawer.DrawerSwitchableItem;
 import java.util.Locale;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TelegramThemeKeys.kt */

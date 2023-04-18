@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/voip/VoIPService;)V
     .locals 0
 
-    .line 4204
+    .line 4212
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$9;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 3
 
-    .line 4207
+    .line 4215
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$9;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-static {v0}, Lorg/telegram/messenger/voip/VoIPService;->access$2000(Lorg/telegram/messenger/voip/VoIPService;)[Lorg/telegram/messenger/voip/NativeInstance;
@@ -51,7 +51,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4208
+    .line 4216
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$9;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-static {v0}, Lorg/telegram/messenger/voip/VoIPService;->access$3100(Lorg/telegram/messenger/voip/VoIPService;)I
@@ -74,7 +74,7 @@
 
     const-wide/16 v0, 0x1388
 
-    .line 4209
+    .line 4217
     invoke-static {p0, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     :cond_0

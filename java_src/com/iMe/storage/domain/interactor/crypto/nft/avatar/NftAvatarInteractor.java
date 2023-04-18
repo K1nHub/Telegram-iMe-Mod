@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.nft.avatar.NftToken;
 import com.iMe.storage.domain.repository.crypto.nft.avatar.NftAvatarRepository;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
@@ -23,7 +23,7 @@ public final class NftAvatarInteractor {
 
     public final Observable<Result<List<NftToken>>> getNftAvatars(NetworkType networkType) {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<Result<List<NftToken>>> subscribeOn = this.nftAvatarRepository.getNftAvatars(networkType).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<List<NftToken>>> subscribeOn = this.nftAvatarRepository.getNftAvatars(networkType).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "nftAvatarRepository\n    …(schedulersProvider.io())");
         return subscribeOn;
     }

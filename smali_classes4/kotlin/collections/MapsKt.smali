@@ -198,31 +198,6 @@
     return-object p0
 .end method
 
-.method public static bridge synthetic toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            "M::",
-            "Ljava/util/Map<",
-            "-TK;-TV;>;>(",
-            "Ljava/lang/Iterable<",
-            "+",
-            "Lkotlin/Pair<",
-            "+TK;+TV;>;>;TM;)TM;"
-        }
-    .end annotation
-
-    invoke-static {p0, p1}, Lkotlin/collections/MapsKt__MapsKt;->toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 .method public static bridge synthetic toMap(Ljava/util/Map;)Ljava/util/Map;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;

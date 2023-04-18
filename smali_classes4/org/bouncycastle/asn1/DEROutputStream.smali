@@ -1,9 +1,9 @@
-.class public Lorg/bouncycastle/asn1/DEROutputStream;
+.class Lorg/bouncycastle/asn1/DEROutputStream;
 .super Lorg/bouncycastle/asn1/ASN1OutputStream;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/OutputStream;)V
+.method constructor <init>(Ljava/io/OutputStream;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;-><init>(Ljava/io/OutputStream;)V
@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method getDERSubStream()Lorg/bouncycastle/asn1/ASN1OutputStream;
+.method getDERSubStream()Lorg/bouncycastle/asn1/DEROutputStream;
     .locals 0
 
     return-object p0
@@ -25,34 +25,19 @@
     return-object p0
 .end method
 
-.method public writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-    .locals 1
+.method writePrimitive(Lorg/bouncycastle/asn1/ASN1Primitive;Z)V
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
-
-    move-result-object p1
-
     invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1Primitive;->toDERObject()Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object p1
 
-    invoke-virtual {p1, p0}, Lorg/bouncycastle/asn1/ASN1Primitive;->encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
+    invoke-virtual {p1, p0, p2}, Lorg/bouncycastle/asn1/ASN1Primitive;->encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
 
     return-void
-
-    :cond_0
-    new-instance p1, Ljava/io/IOException;
-
-    const-string v0, "null object detected"
-
-    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method

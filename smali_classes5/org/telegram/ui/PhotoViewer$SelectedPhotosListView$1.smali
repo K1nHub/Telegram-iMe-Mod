@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;)V
     .locals 0
 
-    .line 1699
+    .line 1706
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView$1;->this$0:Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
@@ -35,7 +35,7 @@
 .method protected onMoveAnimationUpdate(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 0
 
-    .line 1702
+    .line 1709
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView$1;->this$0:Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V

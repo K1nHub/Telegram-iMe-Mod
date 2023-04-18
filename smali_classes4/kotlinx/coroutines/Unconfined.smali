@@ -34,7 +34,7 @@
 .method public dispatch(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 18
+    .line 24
     sget-object p2, Lkotlinx/coroutines/YieldContext;->Key:Lkotlinx/coroutines/YieldContext$Key;
 
     invoke-interface {p1, p2}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
@@ -47,7 +47,7 @@
 
     return-void
 
-    .line 24
+    .line 30
     :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 

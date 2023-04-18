@@ -26,39 +26,6 @@
 
 
 # virtual methods
-.method protected bridge synthetic clone()Ljava/lang/Object;
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/CloneNotSupportedException;
-        }
-    .end annotation
-
-    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSNode;->clone()Lorg/bouncycastle/pqc/crypto/xmss/XMSSNode;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected clone()Lorg/bouncycastle/pqc/crypto/xmss/XMSSNode;
-    .locals 3
-
-    new-instance v0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSNode;
-
-    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSNode;->getHeight()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSNode;->getValue()[B
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSNode;-><init>(I[B)V
-
-    return-object v0
-.end method
-
 .method public getHeight()I
     .locals 1
 

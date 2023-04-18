@@ -2,83 +2,140 @@ package org.bouncycastle.asn1;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Enumeration;
 /* loaded from: classes4.dex */
 public class ASN1OutputStream {
 
     /* renamed from: os */
-    private OutputStream f1238os;
-
-    /* loaded from: classes4.dex */
-    private class ImplicitOutputStream extends ASN1OutputStream {
-        private boolean first;
-
-        public ImplicitOutputStream(ASN1OutputStream aSN1OutputStream, OutputStream outputStream) {
-            super(outputStream);
-            this.first = true;
-        }
-
-        @Override // org.bouncycastle.asn1.ASN1OutputStream
-        public void write(int i) throws IOException {
-            if (this.first) {
-                this.first = false;
-            } else {
-                super.write(i);
-            }
-        }
-    }
+    private OutputStream f1231os;
 
     public ASN1OutputStream(OutputStream outputStream) {
-        this.f1238os = outputStream;
+        this.f1231os = outputStream;
+    }
+
+    public static ASN1OutputStream create(OutputStream outputStream) {
+        return new ASN1OutputStream(outputStream);
+    }
+
+    public static ASN1OutputStream create(OutputStream outputStream, String str) {
+        return str.equals("DER") ? new DEROutputStream(outputStream) : str.equals("DL") ? new DLOutputStream(outputStream) : new ASN1OutputStream(outputStream);
+    }
+
+    void flushInternal() throws IOException {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public ASN1OutputStream getDERSubStream() {
-        return new DEROutputStream(this.f1238os);
+    public DEROutputStream getDERSubStream() {
+        return new DEROutputStream(this.f1231os);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ASN1OutputStream getDLSubStream() {
-        return new DLOutputStream(this.f1238os);
+        return new DLOutputStream(this.f1231os);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public void write(int i) throws IOException {
-        this.f1238os.write(i);
+    public final void write(int i) throws IOException {
+        this.f1231os.write(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public void write(byte[] bArr) throws IOException {
-        this.f1238os.write(bArr);
-    }
-
-    void write(byte[] bArr, int i, int i2) throws IOException {
-        this.f1238os.write(bArr, i, i2);
+    public final void write(byte[] bArr, int i, int i2) throws IOException {
+        this.f1231os.write(bArr, i, i2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public void writeEncoded(int i, int i2, byte[] bArr) throws IOException {
-        writeTag(i, i2);
-        writeLength(bArr.length);
-        write(bArr);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public void writeEncoded(int i, byte[] bArr) throws IOException {
-        write(i);
-        writeLength(bArr.length);
-        write(bArr);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public void writeImplicitObject(ASN1Primitive aSN1Primitive) throws IOException {
-        if (aSN1Primitive == null) {
-            throw new IOException("null object detected");
+    public final void writeElements(Enumeration enumeration) throws IOException {
+        while (enumeration.hasMoreElements()) {
+            writePrimitive(((ASN1Encodable) enumeration.nextElement()).toASN1Primitive(), true);
         }
-        aSN1Primitive.encode(new ImplicitOutputStream(this, this.f1238os));
+    }
+
+    final void writeElements(ASN1Encodable[] aSN1EncodableArr) throws IOException {
+        for (ASN1Encodable aSN1Encodable : aSN1EncodableArr) {
+            writePrimitive(aSN1Encodable.toASN1Primitive(), true);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public void writeLength(int i) throws IOException {
+    public final void writeEncoded(boolean z, int i, byte b) throws IOException {
+        if (z) {
+            write(i);
+        }
+        writeLength(1);
+        write(b);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void writeEncoded(boolean z, int i, byte b, byte[] bArr) throws IOException {
+        if (z) {
+            write(i);
+        }
+        writeLength(bArr.length + 1);
+        write(b);
+        write(bArr, 0, bArr.length);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void writeEncoded(boolean z, int i, byte b, byte[] bArr, int i2, int i3, byte b2) throws IOException {
+        if (z) {
+            write(i);
+        }
+        writeLength(i3 + 2);
+        write(b);
+        write(bArr, i2, i3);
+        write(b2);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void writeEncoded(boolean z, int i, int i2, byte[] bArr) throws IOException {
+        writeTag(z, i, i2);
+        writeLength(bArr.length);
+        write(bArr, 0, bArr.length);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void writeEncoded(boolean z, int i, byte[] bArr) throws IOException {
+        if (z) {
+            write(i);
+        }
+        writeLength(bArr.length);
+        write(bArr, 0, bArr.length);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void writeEncodedIndef(boolean z, int i, int i2, byte[] bArr) throws IOException {
+        writeTag(z, i, i2);
+        write(128);
+        write(bArr, 0, bArr.length);
+        write(0);
+        write(0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void writeEncodedIndef(boolean z, int i, Enumeration enumeration) throws IOException {
+        if (z) {
+            write(i);
+        }
+        write(128);
+        writeElements(enumeration);
+        write(0);
+        write(0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void writeEncodedIndef(boolean z, int i, ASN1Encodable[] aSN1EncodableArr) throws IOException {
+        if (z) {
+            write(i);
+        }
+        write(128);
+        writeElements(aSN1EncodableArr);
+        write(0);
+        write(0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void writeLength(int i) throws IOException {
         if (i <= 127) {
             write((byte) i);
             return;
@@ -102,28 +159,44 @@ public class ASN1OutputStream {
         if (aSN1Encodable == null) {
             throw new IOException("null object detected");
         }
-        aSN1Encodable.toASN1Primitive().encode(this);
+        writePrimitive(aSN1Encodable.toASN1Primitive(), true);
+        flushInternal();
+    }
+
+    public void writeObject(ASN1Primitive aSN1Primitive) throws IOException {
+        if (aSN1Primitive == null) {
+            throw new IOException("null object detected");
+        }
+        writePrimitive(aSN1Primitive, true);
+        flushInternal();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public void writeTag(int i, int i2) throws IOException {
-        if (i2 < 31) {
-            write(i | i2);
-            return;
+    public void writePrimitive(ASN1Primitive aSN1Primitive, boolean z) throws IOException {
+        aSN1Primitive.encode(this, z);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void writeTag(boolean z, int i, int i2) throws IOException {
+        if (z) {
+            if (i2 < 31) {
+                write(i | i2);
+                return;
+            }
+            write(31 | i);
+            if (i2 < 128) {
+                write(i2);
+                return;
+            }
+            byte[] bArr = new byte[5];
+            int i3 = 4;
+            bArr[4] = (byte) (i2 & 127);
+            do {
+                i2 >>= 7;
+                i3--;
+                bArr[i3] = (byte) ((i2 & 127) | 128);
+            } while (i2 > 127);
+            write(bArr, i3, 5 - i3);
         }
-        write(i | 31);
-        if (i2 < 128) {
-            write(i2);
-            return;
-        }
-        byte[] bArr = new byte[5];
-        int i3 = 4;
-        bArr[4] = (byte) (i2 & 127);
-        do {
-            i2 >>= 7;
-            i3--;
-            bArr[i3] = (byte) ((i2 & 127) | 128);
-        } while (i2 > 127);
-        write(bArr, i3, 5 - i3);
     }
 }

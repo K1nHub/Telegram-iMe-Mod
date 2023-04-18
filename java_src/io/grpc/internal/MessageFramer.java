@@ -1,7 +1,7 @@
 package io.grpc.internal;
 
 import com.google.common.base.Preconditions;
-import com.google.common.p020io.ByteStreams;
+import com.google.common.p019io.ByteStreams;
 import io.grpc.Codec;
 import io.grpc.Compressor;
 import io.grpc.Drainable;

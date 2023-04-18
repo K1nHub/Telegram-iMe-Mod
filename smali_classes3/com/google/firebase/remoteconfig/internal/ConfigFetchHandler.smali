@@ -1187,6 +1187,31 @@
 
 
 # virtual methods
+.method public fetch()Lcom/google/android/gms/tasks/Task;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Lcom/google/firebase/remoteconfig/internal/ConfigFetchHandler$FetchResponse;",
+            ">;"
+        }
+    .end annotation
+
+    .line 122
+    iget-object v0, p0, Lcom/google/firebase/remoteconfig/internal/ConfigFetchHandler;->frcMetadata:Lcom/google/firebase/remoteconfig/internal/ConfigMetadataClient;
+
+    invoke-virtual {v0}, Lcom/google/firebase/remoteconfig/internal/ConfigMetadataClient;->getMinimumFetchIntervalInSeconds()J
+
+    move-result-wide v0
+
+    invoke-virtual {p0, v0, v1}, Lcom/google/firebase/remoteconfig/internal/ConfigFetchHandler;->fetch(J)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public fetch(J)Lcom/google/android/gms/tasks/Task;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;

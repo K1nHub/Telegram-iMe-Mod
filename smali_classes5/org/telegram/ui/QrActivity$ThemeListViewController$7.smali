@@ -27,14 +27,14 @@
 .method constructor <init>(Lorg/telegram/ui/QrActivity$ThemeListViewController;)V
     .locals 0
 
-    .line 1689
+    .line 1691
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$7;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 1691
+    .line 1693
     iput-boolean p1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$7;->isAnimationStarted:Z
 
     return-void
@@ -57,22 +57,22 @@
 
     if-nez v0, :cond_0
 
-    .line 1695
+    .line 1697
     iget-boolean v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$7;->isAnimationStarted:Z
 
     if-nez v0, :cond_0
 
-    .line 1696
+    .line 1698
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$7;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-static {v0}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->access$3100(Lorg/telegram/ui/QrActivity$ThemeListViewController;)V
 
     const/4 v0, 0x1
 
-    .line 1697
+    .line 1699
     iput-boolean v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$7;->isAnimationStarted:Z
 
-    .line 1699
+    .line 1701
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$7;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
@@ -100,14 +100,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/BitmapDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1700
+    .line 1702
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$7;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     iget-boolean v1, v0, Lorg/telegram/ui/QrActivity$ThemeListViewController;->isLightDarkChangeAnimation:Z
 
     if-eqz v1, :cond_1
 
-    .line 1701
+    .line 1703
     invoke-static {v0, p1}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->access$3400(Lorg/telegram/ui/QrActivity$ThemeListViewController;F)V
 
     :cond_1
@@ -117,22 +117,22 @@
 
     if-nez p1, :cond_2
 
-    .line 1703
+    .line 1705
     iget-boolean p1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$7;->isAnimationStarted:Z
 
     if-eqz p1, :cond_2
 
-    .line 1704
+    .line 1706
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$7;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     const/4 v0, 0x0
 
     iput-boolean v0, p1, Lorg/telegram/ui/QrActivity$ThemeListViewController;->isLightDarkChangeAnimation:Z
 
-    .line 1705
+    .line 1707
     invoke-static {p1}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->access$3500(Lorg/telegram/ui/QrActivity$ThemeListViewController;)V
 
-    .line 1706
+    .line 1708
     iput-boolean v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$7;->isAnimationStarted:Z
 
     :cond_2

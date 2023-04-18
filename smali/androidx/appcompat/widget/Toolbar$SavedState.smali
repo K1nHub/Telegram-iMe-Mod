@@ -36,7 +36,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 2532
+    .line 2652
     new-instance v0, Landroidx/appcompat/widget/Toolbar$SavedState$1;
 
     invoke-direct {v0}, Landroidx/appcompat/widget/Toolbar$SavedState$1;-><init>()V
@@ -49,17 +49,17 @@
 .method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
     .locals 0
 
-    .line 2516
+    .line 2636
     invoke-direct {p0, p1, p2}, Landroidx/customview/view/AbsSavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    .line 2517
+    .line 2637
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result p2
 
     iput p2, p0, Landroidx/appcompat/widget/Toolbar$SavedState;->expandedMenuItemId:I
 
-    .line 2518
+    .line 2638
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result p1
@@ -82,7 +82,7 @@
 .method public constructor <init>(Landroid/os/Parcelable;)V
     .locals 0
 
-    .line 2522
+    .line 2642
     invoke-direct {p0, p1}, Landroidx/customview/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
 
     return-void
@@ -93,15 +93,15 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    .line 2527
+    .line 2647
     invoke-super {p0, p1, p2}, Landroidx/customview/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 2528
+    .line 2648
     iget p2, p0, Landroidx/appcompat/widget/Toolbar$SavedState;->expandedMenuItemId:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2529
+    .line 2649
     iget-boolean p2, p0, Landroidx/appcompat/widget/Toolbar$SavedState;->isOverflowOpen:Z
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V

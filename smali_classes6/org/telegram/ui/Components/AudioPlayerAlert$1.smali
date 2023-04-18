@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
     .locals 0
 
-    .line 237
+    .line 236
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$1;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 14
 
-    .line 240
+    .line 239
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -61,33 +61,33 @@
 
     goto/16 :goto_2
 
-    .line 245
+    .line 244
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$1;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     iget v2, v2, Lorg/telegram/ui/Components/AudioPlayerAlert;->rewindingProgress:F
 
-    .line 247
+    .line 246
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    .line 248
+    .line 247
     iget-object v5, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$1;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     iget-wide v6, v5, Lorg/telegram/ui/Components/AudioPlayerAlert;->lastRewindingTime:J
 
     sub-long v6, v3, v6
 
-    .line 249
+    .line 248
     iput-wide v3, v5, Lorg/telegram/ui/Components/AudioPlayerAlert;->lastRewindingTime:J
 
-    .line 250
+    .line 249
     iget-wide v8, v5, Lorg/telegram/ui/Components/AudioPlayerAlert;->lastUpdateRewindingPlayerTime:J
 
     sub-long v8, v3, v8
 
-    .line 251
+    .line 250
     iget v10, v5, Lorg/telegram/ui/Components/AudioPlayerAlert;->rewindingForwardPressedCount:I
 
     const/4 v11, 0x1
@@ -140,11 +140,11 @@
 
     move v1, v0
 
-    .line 263
+    .line 262
     :cond_3
     iput v1, v5, Lorg/telegram/ui/Components/AudioPlayerAlert;->rewindingProgress:F
 
-    .line 264
+    .line 263
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v2
@@ -155,14 +155,14 @@
 
     if-eqz v2, :cond_5
 
-    .line 265
+    .line 264
     invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isMusic()Z
 
     move-result v5
 
     if-eqz v5, :cond_5
 
-    .line 266
+    .line 265
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v5
@@ -173,7 +173,7 @@
 
     if-nez v5, :cond_4
 
-    .line 267
+    .line 266
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v5
@@ -188,13 +188,13 @@
 
     iput v6, v5, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
-    .line 269
+    .line 268
     :cond_4
     iget-object v5, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$1;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {v5, v2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$000(Lorg/telegram/ui/Components/AudioPlayerAlert;Lorg/telegram/messenger/MessageObject;)V
 
-    .line 271
+    .line 270
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$1;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
@@ -222,7 +222,7 @@
 
     if-gtz v2, :cond_6
 
-    .line 272
+    .line 271
     iget-object v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$1;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     iget v2, v2, Lorg/telegram/ui/Components/AudioPlayerAlert;->rewindingProgress:F
@@ -231,13 +231,13 @@
 
     if-nez v2, :cond_7
 
-    .line 273
+    .line 272
     :cond_6
     iget-object v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$1;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     iput-wide v3, v2, Lorg/telegram/ui/Components/AudioPlayerAlert;->lastUpdateRewindingPlayerTime:J
 
-    .line 274
+    .line 273
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v2
@@ -252,7 +252,7 @@
 
     invoke-virtual {v2, v3, v1}, Lorg/telegram/messenger/MediaController;->seekToProgress(Lorg/telegram/messenger/MessageObject;F)Z
 
-    .line 276
+    .line 275
     :cond_7
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$1;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
@@ -266,7 +266,7 @@
 
     if-lez v0, :cond_8
 
-    .line 277
+    .line 276
     invoke-static {v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$100(Lorg/telegram/ui/Components/AudioPlayerAlert;)Ljava/lang/Runnable;
 
     move-result-object v0
@@ -278,7 +278,7 @@
     :cond_8
     return-void
 
-    .line 242
+    .line 241
     :cond_9
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$1;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;

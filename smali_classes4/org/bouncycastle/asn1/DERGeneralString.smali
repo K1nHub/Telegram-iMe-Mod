@@ -44,7 +44,7 @@
     return p1
 .end method
 
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -56,7 +56,7 @@
 
     const/16 v1, 0x1b
 
-    invoke-virtual {p1, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(I[B)V
+    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZI[B)V
 
     return-void
 .end method

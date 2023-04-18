@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
     .locals 1
 
-    .line 386
+    .line 422
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onLoadingState"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;)V
     .locals 0
 
-    .line 391
+    .line 427
     invoke-interface {p1}, Lcom/iMe/ui/custom/state/GlobalStateView;->onLoadingState()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 384
+    .line 420
     check-cast p1, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadingStateCommand;->apply(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;)V

@@ -5,27 +5,17 @@
 .implements Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$$ExternalSyntheticLambda3;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$$ExternalSyntheticLambda3;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$$ExternalSyntheticLambda3;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$$ExternalSyntheticLambda3;->INSTANCE:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$$ExternalSyntheticLambda3;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
     return-void
 .end method
@@ -33,15 +23,13 @@
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)V
-    .locals 0
+    .locals 1
+
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
     check-cast p1, Ljava/lang/Boolean;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setCombineMessagesEnabled(Z)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;->$r8$lambda$9YjPz0qKoLsw1H7qPmvElhj1RCc(Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;Ljava/lang/Boolean;)V
 
     return-void
 .end method

@@ -412,7 +412,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             if (indexOf$default < 0) {
                 return null;
             }
-            return TuplesKt.m94to(Integer.valueOf(indexOf$default), str);
+            return TuplesKt.m80to(Integer.valueOf(indexOf$default), str);
         }
         if (z2) {
             coerceAtMost = RangesKt___RangesKt.coerceAtMost(i, StringsKt.getLastIndex(charSequence));
@@ -446,7 +446,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
                         }
                         first += step;
                     } else {
-                        return TuplesKt.m94to(Integer.valueOf(first), str3);
+                        return TuplesKt.m80to(Integer.valueOf(first), str3);
                     }
                 }
             }
@@ -475,7 +475,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
                         }
                         first2 += step2;
                     } else {
-                        return TuplesKt.m94to(Integer.valueOf(first2), str5);
+                        return TuplesKt.m80to(Integer.valueOf(first2), str5);
                     }
                 }
             }

@@ -25,27 +25,27 @@ public abstract class ImmutableSet<E> extends ImmutableCollection<E> implements 
     }
 
     /* renamed from: of */
-    public static <E> ImmutableSet<E> m745of() {
+    public static <E> ImmutableSet<E> m731of() {
         return RegularImmutableSet.EMPTY;
     }
 
     /* renamed from: of */
-    public static <E> ImmutableSet<E> m744of(E e) {
+    public static <E> ImmutableSet<E> m730of(E e) {
         return new SingletonImmutableSet(e);
     }
 
     /* renamed from: of */
-    public static <E> ImmutableSet<E> m743of(E e, E e2) {
+    public static <E> ImmutableSet<E> m729of(E e, E e2) {
         return construct(2, e, e2);
     }
 
     /* renamed from: of */
-    public static <E> ImmutableSet<E> m742of(E e, E e2, E e3) {
+    public static <E> ImmutableSet<E> m728of(E e, E e2, E e3) {
         return construct(3, e, e2, e3);
     }
 
     /* renamed from: of */
-    public static <E> ImmutableSet<E> m741of(E e, E e2, E e3, E e4, E e5) {
+    public static <E> ImmutableSet<E> m727of(E e, E e2, E e3, E e4, E e5) {
         return construct(5, e, e2, e3, e4, e5);
     }
 
@@ -54,7 +54,7 @@ public abstract class ImmutableSet<E> extends ImmutableCollection<E> implements 
             if (i == 1) {
                 Object obj = objArr[0];
                 Objects.requireNonNull(obj);
-                return m744of(obj);
+                return m730of(obj);
             }
             int chooseTableSize = chooseTableSize(i);
             Object[] objArr2 = new Object[chooseTableSize];
@@ -95,7 +95,7 @@ public abstract class ImmutableSet<E> extends ImmutableCollection<E> implements 
                 return new RegularImmutableSet(objArr, i3, objArr2, i2, i4);
             }
         }
-        return m745of();
+        return m731of();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -127,11 +127,11 @@ public abstract class ImmutableSet<E> extends ImmutableCollection<E> implements 
         int length = eArr.length;
         if (length != 0) {
             if (length == 1) {
-                return m744of((Object) eArr[0]);
+                return m730of((Object) eArr[0]);
             }
             return construct(eArr.length, (Object[]) eArr.clone());
         }
-        return m745of();
+        return m731of();
     }
 
     @Override // java.util.Collection, java.util.Set

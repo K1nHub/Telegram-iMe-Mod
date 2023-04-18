@@ -5,7 +5,7 @@ import java.io.EOFException;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import org.bouncycastle.util.p046io.Streams;
+import org.bouncycastle.util.p042io.Streams;
 /* loaded from: classes4.dex */
 public class ASN1InputStream extends FilterInputStream {
     private final boolean lazyEvaluate;
@@ -90,35 +90,66 @@ public class ASN1InputStream extends FilterInputStream {
     }
 
     private static char[] getBMPCharBuffer(DefiniteLengthInputStream definiteLengthInputStream) throws IOException {
-        int read;
-        int remaining = definiteLengthInputStream.getRemaining() / 2;
-        char[] cArr = new char[remaining];
-        for (int i = 0; i < remaining; i++) {
-            int read2 = definiteLengthInputStream.read();
-            if (read2 < 0 || (read = definiteLengthInputStream.read()) < 0) {
-                break;
+        int i;
+        int remaining = definiteLengthInputStream.getRemaining();
+        if ((remaining & 1) == 0) {
+            int i2 = remaining / 2;
+            char[] cArr = new char[i2];
+            byte[] bArr = new byte[8];
+            int i3 = 0;
+            int i4 = 0;
+            while (remaining >= 8) {
+                if (Streams.readFully(definiteLengthInputStream, bArr, 0, 8) != 8) {
+                    throw new EOFException("EOF encountered in middle of BMPString");
+                }
+                cArr[i4] = (char) ((bArr[0] << 8) | (bArr[1] & 255));
+                cArr[i4 + 1] = (char) ((bArr[2] << 8) | (bArr[3] & 255));
+                cArr[i4 + 2] = (char) ((bArr[4] << 8) | (bArr[5] & 255));
+                cArr[i4 + 3] = (char) ((bArr[6] << 8) | (bArr[7] & 255));
+                i4 += 4;
+                remaining -= 8;
             }
-            cArr[i] = (char) ((read2 << 8) | (read & 255));
+            if (remaining > 0) {
+                if (Streams.readFully(definiteLengthInputStream, bArr, 0, remaining) != remaining) {
+                    throw new EOFException("EOF encountered in middle of BMPString");
+                }
+                while (true) {
+                    int i5 = i3 + 1;
+                    int i6 = i5 + 1;
+                    i = i4 + 1;
+                    cArr[i4] = (char) ((bArr[i3] << 8) | (bArr[i5] & 255));
+                    if (i6 >= remaining) {
+                        break;
+                    }
+                    i3 = i6;
+                    i4 = i;
+                }
+                i4 = i;
+            }
+            if (definiteLengthInputStream.getRemaining() == 0 && i2 == i4) {
+                return cArr;
+            }
+            throw new IllegalStateException();
         }
-        return cArr;
+        throw new IOException("malformed BMPString encoding encountered");
     }
 
     private static byte[] getBuffer(DefiniteLengthInputStream definiteLengthInputStream, byte[][] bArr) throws IOException {
         int remaining = definiteLengthInputStream.getRemaining();
-        if (definiteLengthInputStream.getRemaining() < bArr.length) {
-            byte[] bArr2 = bArr[remaining];
-            if (bArr2 == null) {
-                bArr2 = new byte[remaining];
-                bArr[remaining] = bArr2;
-            }
-            Streams.readFully(definiteLengthInputStream, bArr2);
-            return bArr2;
+        if (remaining >= bArr.length) {
+            return definiteLengthInputStream.toByteArray();
         }
-        return definiteLengthInputStream.toByteArray();
+        byte[] bArr2 = bArr[remaining];
+        if (bArr2 == null) {
+            bArr2 = new byte[remaining];
+            bArr[remaining] = bArr2;
+        }
+        definiteLengthInputStream.readAllIntoByteArray(bArr2);
+        return bArr2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static int readLength(InputStream inputStream, int i) throws IOException {
+    public static int readLength(InputStream inputStream, int i, boolean z) throws IOException {
         int read = inputStream.read();
         if (read >= 0) {
             if (read == 128) {
@@ -138,10 +169,10 @@ public class ASN1InputStream extends FilterInputStream {
                     i3 = (i3 << 8) + read2;
                 }
                 if (i3 >= 0) {
-                    if (i3 < i) {
+                    if (i3 < i || z) {
                         return i3;
                     }
-                    throw new IOException("corrupted stream - out of bounds length found");
+                    throw new IOException("corrupted stream - out of bounds length found: " + i3 + " >= " + i);
                 }
                 throw new IOException("corrupted stream - negative length found");
             }
@@ -171,50 +202,39 @@ public class ASN1InputStream extends FilterInputStream {
         return i2;
     }
 
-    ASN1EncodableVector buildDEREncodableVector(DefiniteLengthInputStream definiteLengthInputStream) throws IOException {
-        return new ASN1InputStream(definiteLengthInputStream).buildEncodableVector();
-    }
-
-    ASN1EncodableVector buildEncodableVector() throws IOException {
-        ASN1EncodableVector aSN1EncodableVector = new ASN1EncodableVector();
-        while (true) {
-            ASN1Primitive readObject = readObject();
-            if (readObject == null) {
-                return aSN1EncodableVector;
-            }
-            aSN1EncodableVector.add(readObject);
-        }
-    }
-
     protected ASN1Primitive buildObject(int i, int i2, int i3) throws IOException {
         boolean z = (i & 32) != 0;
-        DefiniteLengthInputStream definiteLengthInputStream = new DefiniteLengthInputStream(this, i3);
+        DefiniteLengthInputStream definiteLengthInputStream = new DefiniteLengthInputStream(this, i3, this.limit);
         if ((i & 64) != 0) {
-            return new DERApplicationSpecific(z, i2, definiteLengthInputStream.toByteArray());
+            return new DLApplicationSpecific(z, i2, definiteLengthInputStream.toByteArray());
         }
         if ((i & 128) != 0) {
             return new ASN1StreamParser(definiteLengthInputStream).readTaggedObject(z, i2);
         }
         if (z) {
-            if (i2 == 4) {
-                ASN1EncodableVector buildDEREncodableVector = buildDEREncodableVector(definiteLengthInputStream);
-                int size = buildDEREncodableVector.size();
-                ASN1OctetString[] aSN1OctetStringArr = new ASN1OctetString[size];
-                for (int i4 = 0; i4 != size; i4++) {
-                    aSN1OctetStringArr[i4] = (ASN1OctetString) buildDEREncodableVector.get(i4);
+            if (i2 != 4) {
+                if (i2 != 8) {
+                    if (i2 == 16) {
+                        return this.lazyEvaluate ? new LazyEncodedSequence(definiteLengthInputStream.toByteArray()) : DLFactory.createSequence(readVector(definiteLengthInputStream));
+                    } else if (i2 == 17) {
+                        return DLFactory.createSet(readVector(definiteLengthInputStream));
+                    } else {
+                        throw new IOException("unknown tag " + i2 + " encountered");
+                    }
                 }
-                return new BEROctetString(aSN1OctetStringArr);
-            } else if (i2 != 8) {
-                if (i2 == 16) {
-                    return this.lazyEvaluate ? new LazyEncodedSequence(definiteLengthInputStream.toByteArray()) : DERFactory.createSequence(buildDEREncodableVector(definiteLengthInputStream));
-                } else if (i2 == 17) {
-                    return DERFactory.createSet(buildDEREncodableVector(definiteLengthInputStream));
-                } else {
-                    throw new IOException("unknown tag " + i2 + " encountered");
-                }
-            } else {
-                return new DERExternal(buildDEREncodableVector(definiteLengthInputStream));
+                return new DLExternal(readVector(definiteLengthInputStream));
             }
+            ASN1EncodableVector readVector = readVector(definiteLengthInputStream);
+            int size = readVector.size();
+            ASN1OctetString[] aSN1OctetStringArr = new ASN1OctetString[size];
+            for (int i4 = 0; i4 != size; i4++) {
+                ASN1Encodable aSN1Encodable = readVector.get(i4);
+                if (!(aSN1Encodable instanceof ASN1OctetString)) {
+                    throw new ASN1Exception("unknown object encountered in constructed OCTET STRING: " + aSN1Encodable.getClass());
+                }
+                aSN1OctetStringArr[i4] = (ASN1OctetString) aSN1Encodable;
+            }
+            return new BEROctetString(aSN1OctetStringArr);
         }
         return createPrimitiveDERObject(i2, definiteLengthInputStream, this.tmpBuffers);
     }
@@ -225,7 +245,7 @@ public class ASN1InputStream extends FilterInputStream {
     }
 
     protected int readLength() throws IOException {
-        return readLength(this, this.limit);
+        return readLength(this, this.limit, false);
     }
 
     public ASN1Primitive readObject() throws IOException {
@@ -268,6 +288,21 @@ public class ASN1InputStream extends FilterInputStream {
             return new BEROctetStringParser(aSN1StreamParser).getLoadedObject();
         } else {
             throw new IOException("indefinite-length primitive encoding encountered");
+        }
+    }
+
+    ASN1EncodableVector readVector(DefiniteLengthInputStream definiteLengthInputStream) throws IOException {
+        if (definiteLengthInputStream.getRemaining() < 1) {
+            return new ASN1EncodableVector(0);
+        }
+        ASN1InputStream aSN1InputStream = new ASN1InputStream(definiteLengthInputStream);
+        ASN1EncodableVector aSN1EncodableVector = new ASN1EncodableVector();
+        while (true) {
+            ASN1Primitive readObject = aSN1InputStream.readObject();
+            if (readObject == null) {
+                return aSN1EncodableVector;
+            }
+            aSN1EncodableVector.add(readObject);
         }
     }
 }

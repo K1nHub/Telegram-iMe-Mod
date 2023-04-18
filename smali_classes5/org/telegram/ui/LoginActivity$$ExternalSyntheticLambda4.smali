@@ -95,7 +95,7 @@
 
     move-object v12, p1
 
-    invoke-static/range {v0 .. v12}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$4h0HGcnyApsnrxgr3rGKop_QZl8(Lorg/telegram/ui/LoginActivity;IILandroid/view/ViewGroup$MarginLayoutParams;IIILorg/telegram/ui/Components/TransformableLoginButtonView;FIFILandroid/animation/ValueAnimator;)V
+    invoke-static/range {v0 .. v12}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$BpCbRicO23P7E-A59PGKKcCZABM(Lorg/telegram/ui/LoginActivity;IILandroid/view/ViewGroup$MarginLayoutParams;IIILorg/telegram/ui/Components/TransformableLoginButtonView;FIFILandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

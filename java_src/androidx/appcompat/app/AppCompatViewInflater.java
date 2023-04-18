@@ -45,7 +45,6 @@ public class AppCompatViewInflater {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public final View createView(View view, String str, Context context, AttributeSet attributeSet, boolean z, boolean z2, boolean z3, boolean z4) {
         View createRatingBar;
         Context context2 = (!z || view == null) ? context : view.getContext();

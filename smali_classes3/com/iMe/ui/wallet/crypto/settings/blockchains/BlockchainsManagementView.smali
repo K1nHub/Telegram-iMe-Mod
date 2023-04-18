@@ -12,17 +12,7 @@
 
 
 # virtual methods
-.method public abstract openBackupScreen(Ljava/util/List;Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;",
-            "Ljava/lang/String;",
-            ")V"
-        }
-    .end annotation
+.method public abstract openBackupScreen(Lcom/iMe/storage/domain/model/crypto/Wallet;)V
 .end method
 
 .method public abstract setupWalletsItems(Ljava/util/List;)V

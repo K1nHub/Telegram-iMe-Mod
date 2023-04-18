@@ -1,6 +1,6 @@
-.class Landroidx/lifecycle/LifecycleDispatcher;
+.class public final Landroidx/lifecycle/LifecycleDispatcher;
 .super Ljava/lang/Object;
-.source "LifecycleDispatcher.java"
+.source "LifecycleDispatcher.kt"
 
 
 # annotations
@@ -12,30 +12,47 @@
 
 
 # static fields
-.field private static sInitialized:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private static final initialized:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 37
+    new-instance v0, Landroidx/lifecycle/LifecycleDispatcher;
+
+    invoke-direct {v0}, Landroidx/lifecycle/LifecycleDispatcher;-><init>()V
+
+    .line 33
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    sput-object v0, Landroidx/lifecycle/LifecycleDispatcher;->sInitialized:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sput-object v0, Landroidx/lifecycle/LifecycleDispatcher;->initialized:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
-.method static init(Landroid/content/Context;)V
+.method private constructor <init>()V
+    .locals 0
+
+    .line 32
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static final init(Landroid/content/Context;)V
     .locals 2
 
-    .line 40
-    sget-object v0, Landroidx/lifecycle/LifecycleDispatcher;->sInitialized:Ljava/util/concurrent/atomic/AtomicBoolean;
+    const-string v0, "context"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 37
+    sget-object v0, Landroidx/lifecycle/LifecycleDispatcher;->initialized:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
 
@@ -47,19 +64,23 @@
 
     return-void
 
-    .line 43
+    .line 40
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p0
 
+    const-string v0, "null cannot be cast to non-null type android.app.Application"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast p0, Landroid/app/Application;
 
+    .line 41
     new-instance v0, Landroidx/lifecycle/LifecycleDispatcher$DispatcherActivityCallback;
 
     invoke-direct {v0}, Landroidx/lifecycle/LifecycleDispatcher$DispatcherActivityCallback;-><init>()V
 
-    .line 44
     invoke-virtual {p0, v0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
     return-void

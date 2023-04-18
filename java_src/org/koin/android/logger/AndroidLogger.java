@@ -15,9 +15,22 @@ public final class AndroidLogger extends Logger {
 
         static {
             int[] iArr = new int[Level.values().length];
-            iArr[Level.DEBUG.ordinal()] = 1;
-            iArr[Level.INFO.ordinal()] = 2;
-            iArr[Level.ERROR.ordinal()] = 3;
+            try {
+                iArr[Level.DEBUG.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[Level.INFO.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[Level.WARNING.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[Level.ERROR.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -29,24 +42,20 @@ public final class AndroidLogger extends Logger {
     }
 
     @Override // org.koin.core.logger.Logger
-    public void log(Level level, String msg) {
+    public void display(Level level, String msg) {
         Intrinsics.checkNotNullParameter(level, "level");
         Intrinsics.checkNotNullParameter(msg, "msg");
-        if (getLevel().compareTo(level) <= 0) {
-            logOnLevel(msg, level);
-        }
-    }
-
-    private final void logOnLevel(String str, Level level) {
         int i = WhenMappings.$EnumSwitchMapping$0[level.ordinal()];
         if (i == 1) {
-            Log.d("[Koin]", str);
+            Log.d("[Koin]", msg);
         } else if (i == 2) {
-            Log.i("[Koin]", str);
+            Log.i("[Koin]", msg);
         } else if (i == 3) {
-            Log.e("[Koin]", str);
+            Log.w("[Koin]", msg);
+        } else if (i == 4) {
+            Log.e("[Koin]", msg);
         } else {
-            Log.e("[Koin]", str);
+            Log.e("[Koin]", msg);
         }
     }
 }

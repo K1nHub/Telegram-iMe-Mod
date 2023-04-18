@@ -7,8 +7,8 @@ import com.google.firebase.firestore.model.ServerTimestamps;
 import com.google.firebase.firestore.model.Values;
 import com.google.firebase.firestore.util.Assert;
 import com.google.firebase.firestore.util.Logger;
-import com.google.firestore.p022v1.ArrayValue;
-import com.google.firestore.p022v1.Value;
+import com.google.firestore.p021v1.ArrayValue;
+import com.google.firestore.p021v1.Value;
 import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,27 +67,27 @@ public class UserDataWriter {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.UserDataWriter$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10141 {
+    public static /* synthetic */ class C09991 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$DocumentSnapshot$ServerTimestampBehavior */
-        static final /* synthetic */ int[] f166x1f31a5ae;
+        static final /* synthetic */ int[] f163x1f31a5ae;
 
         static {
             int[] iArr = new int[DocumentSnapshot.ServerTimestampBehavior.values().length];
-            f166x1f31a5ae = iArr;
+            f163x1f31a5ae = iArr;
             try {
                 iArr[DocumentSnapshot.ServerTimestampBehavior.PREVIOUS.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f166x1f31a5ae[DocumentSnapshot.ServerTimestampBehavior.ESTIMATE.ordinal()] = 2;
+                f163x1f31a5ae[DocumentSnapshot.ServerTimestampBehavior.ESTIMATE.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
         }
     }
 
     private Object convertServerTimestamp(Value value) {
-        int i = C10141.f166x1f31a5ae[this.serverTimestampBehavior.ordinal()];
+        int i = C09991.f163x1f31a5ae[this.serverTimestampBehavior.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 return null;

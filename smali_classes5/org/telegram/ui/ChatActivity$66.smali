@@ -26,17 +26,17 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 10862
+    .line 10809
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
-    .line 10863
+    .line 10810
     new-instance p1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-direct {p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->spoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 10864
+    .line 10811
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
@@ -47,7 +47,7 @@
 
     new-array p1, p1, [F
 
-    .line 10865
+    .line 10812
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->radii:[F
 
     return-void
@@ -58,18 +58,18 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 10869
+    .line 10816
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 10871
+    .line 10818
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->hasBlur:Z
 
     if-eqz v0, :cond_0
 
-    .line 10872
+    .line 10819
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 10873
+    .line 10820
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
@@ -88,14 +88,14 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 10875
+    .line 10822
     iget-object v1, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
 
     move-result-object v1
 
-    .line 10876
+    .line 10823
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$66;->radii:[F
 
     const/4 v3, 0x0
@@ -110,7 +110,7 @@
 
     aput v4, v2, v3
 
-    .line 10877
+    .line 10824
     aget v4, v1, v5
 
     int-to-float v4, v4
@@ -127,7 +127,7 @@
 
     const/4 v7, 0x5
 
-    .line 10878
+    .line 10825
     aget v6, v1, v6
 
     int-to-float v6, v6
@@ -140,7 +140,7 @@
 
     const/4 v6, 0x7
 
-    .line 10879
+    .line 10826
     aget v1, v1, v5
 
     int-to-float v1, v1
@@ -149,12 +149,12 @@
 
     aput v1, v2, v4
 
-    .line 10881
+    .line 10828
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$66;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
 
-    .line 10882
+    .line 10829
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$66;->path:Landroid/graphics/Path;
 
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$66;->radii:[F
@@ -163,14 +163,14 @@
 
     invoke-virtual {v1, v0, v2, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 10883
+    .line 10830
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$66;->path:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
     const/4 v0, -0x1
 
-    .line 10886
+    .line 10833
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$66;->spoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
@@ -191,7 +191,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setColor(I)V
 
-    .line 10887
+    .line 10834
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$66;->spoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
@@ -204,15 +204,15 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setBounds(IIII)V
 
-    .line 10888
+    .line 10835
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$66;->spoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->draw(Landroid/graphics/Canvas;)V
 
-    .line 10890
+    .line 10837
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 10891
+    .line 10838
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0

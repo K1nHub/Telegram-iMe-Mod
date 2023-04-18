@@ -2,8 +2,8 @@ package com.google.android.gms.auth.api.phone;
 
 import android.app.Activity;
 import android.content.Context;
-import com.google.android.gms.internal.p018authapiphone.zzr;
-import com.google.android.gms.internal.p018authapiphone.zzv;
+import com.google.android.gms.internal.p017authapiphone.zzr;
+import com.google.android.gms.internal.p017authapiphone.zzv;
 /* compiled from: com.google.android.gms:play-services-auth-api-phone@@17.5.1 */
 /* loaded from: classes.dex */
 public final class SmsCodeRetriever {

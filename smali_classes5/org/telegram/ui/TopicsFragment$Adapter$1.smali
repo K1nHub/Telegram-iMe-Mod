@@ -33,12 +33,12 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment$Adapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 2748
+    .line 2750
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$Adapter$1;->this$1:Lorg/telegram/ui/TopicsFragment$Adapter;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 2749
+    .line 2751
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
@@ -53,14 +53,14 @@
 .method protected onMeasure(II)V
     .locals 12
 
-    .line 2753
+    .line 2755
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
     const/16 v0, 0x40
 
-    .line 2755
+    .line 2757
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -73,7 +73,7 @@
 
     move v5, v4
 
-    .line 2756
+    .line 2758
     :goto_0
     iget-object v6, p0, Lorg/telegram/ui/TopicsFragment$Adapter$1;->this$1:Lorg/telegram/ui/TopicsFragment$Adapter;
 
@@ -87,7 +87,7 @@
 
     if-ge v3, v6, :cond_b
 
-    .line 2757
+    .line 2759
     iget-object v6, p0, Lorg/telegram/ui/TopicsFragment$Adapter$1;->this$1:Lorg/telegram/ui/TopicsFragment$Adapter;
 
     invoke-virtual {v6}, Lorg/telegram/ui/TopicsFragment$Adapter;->getArray()Ljava/util/ArrayList;
@@ -118,7 +118,7 @@
 
     goto/16 :goto_8
 
-    .line 2760
+    .line 2762
     :cond_0
     iget-object v6, p0, Lorg/telegram/ui/TopicsFragment$Adapter$1;->this$1:Lorg/telegram/ui/TopicsFragment$Adapter;
 
@@ -136,7 +136,7 @@
 
     iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->title:Ljava/lang/String;
 
-    .line 2761
+    .line 2763
     iget-object v7, p0, Lorg/telegram/ui/TopicsFragment$Adapter$1;->precalcEllipsized:Ljava/util/HashMap;
 
     invoke-virtual {v7, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -149,7 +149,7 @@
 
     if-nez v7, :cond_6
 
-    .line 2763
+    .line 2765
     sget-boolean v7, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v9, 0xb
@@ -188,7 +188,7 @@
 
     move-result v7
 
-    .line 2764
+    .line 2766
     sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v11, :cond_3
@@ -197,7 +197,7 @@
 
     const/16 v9, 0x16
 
-    .line 2765
+    .line 2767
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -210,7 +210,7 @@
     :cond_3
     sub-int v7, p2, v7
 
-    .line 2766
+    .line 2768
     iget-object v11, p0, Lorg/telegram/ui/TopicsFragment$Adapter$1;->this$1:Lorg/telegram/ui/TopicsFragment$Adapter;
 
     iget-object v11, v11, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -237,7 +237,7 @@
 
     goto :goto_3
 
-    .line 2767
+    .line 2769
     :goto_5
     sget-object v9, Lorg/telegram/ui/ActionBar/Theme;->dialogs_timePaint:Landroid/text/TextPaint;
 
@@ -257,7 +257,7 @@
 
     sub-int/2addr v7, v9
 
-    .line 2768
+    .line 2770
     sget-object v9, Lorg/telegram/ui/ActionBar/Theme;->dialogs_namePaint:[Landroid/text/TextPaint;
 
     aget-object v9, v9, v2
@@ -284,12 +284,12 @@
 
     move-result-object v7
 
-    .line 2769
+    .line 2771
     iget-object v9, p0, Lorg/telegram/ui/TopicsFragment$Adapter$1;->precalcEllipsized:Ljava/util/HashMap;
 
     invoke-virtual {v9, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2771
+    .line 2773
     :cond_6
     invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -311,7 +311,7 @@
 
     move-result v6
 
-    .line 2772
+    .line 2774
     iget-object v7, p0, Lorg/telegram/ui/TopicsFragment$Adapter$1;->this$1:Lorg/telegram/ui/TopicsFragment$Adapter;
 
     invoke-virtual {v7}, Lorg/telegram/ui/TopicsFragment$Adapter;->getArray()Ljava/util/ArrayList;
@@ -332,7 +332,7 @@
 
     move v1, v6
 
-    .line 2775
+    .line 2777
     :cond_8
     iget-object v7, p0, Lorg/telegram/ui/TopicsFragment$Adapter$1;->this$1:Lorg/telegram/ui/TopicsFragment$Adapter;
 
@@ -366,7 +366,7 @@
     :cond_b
     if-lez v4, :cond_c
 
-    .line 2780
+    .line 2782
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$Adapter$1;->this$1:Lorg/telegram/ui/TopicsFragment$Adapter;
 
     iget-object p2, p2, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -423,7 +423,7 @@
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 2781
+    .line 2783
     invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2

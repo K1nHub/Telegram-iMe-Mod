@@ -1,14 +1,50 @@
 .class public final Landroidx/lifecycle/SavedStateHandle;
 .super Ljava/lang/Object;
-.source "SavedStateHandle.java"
+.source "SavedStateHandle.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/lifecycle/SavedStateHandle$Companion;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nSavedStateHandle.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SavedStateHandle.kt\nandroidx/lifecycle/SavedStateHandle\n+ 2 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,450:1\n361#2,3:451\n364#2,4:455\n1#3:454\n*S KotlinDebug\n*F\n+ 1 SavedStateHandle.kt\nandroidx/lifecycle/SavedStateHandle\n*L\n198#1:451,3\n198#1:455,4\n*E\n"
+.end annotation
 
 
 # static fields
 .field private static final ACCEPTABLE_CLASSES:[Ljava/lang/Class;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Ljava/lang/Class<",
+            "+",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final Companion:Landroidx/lifecycle/SavedStateHandle$Companion;
 
 
 # instance fields
-.field private final mLiveDatas:Ljava/util/Map;
+.field private final flows:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Lkotlinx/coroutines/flow/MutableStateFlow<",
+            "Ljava/lang/Object;",
+            ">;>;"
+        }
+    .end annotation
+.end field
+
+.field private final liveDatas:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -19,7 +55,7 @@
     .end annotation
 .end field
 
-.field final mRegular:Ljava/util/Map;
+.field private final regular:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -30,9 +66,9 @@
     .end annotation
 .end field
 
-.field private final mSavedStateProvider:Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
+.field private final savedStateProvider:Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
 
-.field final mSavedStateProviders:Ljava/util/Map;
+.field private final savedStateProviders:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -45,14 +81,32 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$aMir0GWwzPQviKVGE0DPm0kayew(Landroidx/lifecycle/SavedStateHandle;)Landroid/os/Bundle;
+    .locals 0
+
+    invoke-static {p0}, Landroidx/lifecycle/SavedStateHandle;->savedStateProvider$lambda$0(Landroidx/lifecycle/SavedStateHandle;)Landroid/os/Bundle;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method static constructor <clinit>()V
     .locals 6
+
+    new-instance v0, Landroidx/lifecycle/SavedStateHandle$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Landroidx/lifecycle/SavedStateHandle$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Landroidx/lifecycle/SavedStateHandle;->Companion:Landroidx/lifecycle/SavedStateHandle$Companion;
 
     const/16 v0, 0x1d
 
     new-array v0, v0, [Ljava/lang/Class;
 
-    .line 376
+    .line 411
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
     const/4 v2, 0x0
@@ -215,7 +269,7 @@
 
     aput-object v4, v0, v2
 
-    .line 407
+    .line 439
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v2, v3, :cond_0
@@ -236,12 +290,13 @@
 
     if-lt v2, v3, :cond_1
 
-    .line 408
+    .line 443
     const-class v1, Landroid/util/SizeF;
 
     :cond_1
     aput-object v1, v0, v4
 
+    .line 410
     sput-object v0, Landroidx/lifecycle/SavedStateHandle;->ACCEPTABLE_CLASSES:[Ljava/lang/Class;
 
     return-void
@@ -250,341 +305,279 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 104
+    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
-    new-instance v0, Ljava/util/HashMap;
+    .line 51
+    new-instance v0, Ljava/util/LinkedHashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->mSavedStateProviders:Ljava/util/Map;
+    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
 
-    .line 59
-    new-instance v0, Ljava/util/HashMap;
+    .line 52
+    new-instance v0, Ljava/util/LinkedHashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->mLiveDatas:Ljava/util/Map;
+    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->savedStateProviders:Ljava/util/Map;
 
-    .line 64
-    new-instance v0, Landroidx/lifecycle/SavedStateHandle$1;
+    .line 53
+    new-instance v0, Ljava/util/LinkedHashMap;
 
-    invoke-direct {v0, p0}, Landroidx/lifecycle/SavedStateHandle$1;-><init>(Landroidx/lifecycle/SavedStateHandle;)V
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->mSavedStateProvider:Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
+    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->liveDatas:Ljava/util/Map;
 
-    .line 105
-    new-instance v0, Ljava/util/HashMap;
+    .line 54
+    new-instance v0, Ljava/util/LinkedHashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->mRegular:Ljava/util/Map;
+    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->flows:Ljava/util/Map;
+
+    .line 56
+    new-instance v0, Landroidx/lifecycle/SavedStateHandle$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0, p0}, Landroidx/lifecycle/SavedStateHandle$$ExternalSyntheticLambda0;-><init>(Landroidx/lifecycle/SavedStateHandle;)V
+
+    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->savedStateProvider:Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
 
     return-void
 .end method
 
 .method public constructor <init>(Ljava/util/Map;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0
-        }
-        names = {
-            "initialState"
-        }
-    .end annotation
-
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/Map<",
             "Ljava/lang/String;",
+            "+",
             "Ljava/lang/Object;",
             ">;)V"
         }
     .end annotation
 
-    .line 97
+    const-string v0, "initialState"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
-    new-instance v0, Ljava/util/HashMap;
+    .line 51
+    new-instance v0, Ljava/util/LinkedHashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->mSavedStateProviders:Ljava/util/Map;
+    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
 
-    .line 59
-    new-instance v0, Ljava/util/HashMap;
+    .line 52
+    new-instance v1, Ljava/util/LinkedHashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->mLiveDatas:Ljava/util/Map;
+    iput-object v1, p0, Landroidx/lifecycle/SavedStateHandle;->savedStateProviders:Ljava/util/Map;
 
-    .line 64
-    new-instance v0, Landroidx/lifecycle/SavedStateHandle$1;
+    .line 53
+    new-instance v1, Ljava/util/LinkedHashMap;
 
-    invoke-direct {v0, p0}, Landroidx/lifecycle/SavedStateHandle$1;-><init>(Landroidx/lifecycle/SavedStateHandle;)V
+    invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->mSavedStateProvider:Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
+    iput-object v1, p0, Landroidx/lifecycle/SavedStateHandle;->liveDatas:Ljava/util/Map;
 
-    .line 98
-    new-instance v0, Ljava/util/HashMap;
+    .line 54
+    new-instance v1, Ljava/util/LinkedHashMap;
 
-    invoke-direct {v0, p1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+    invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    iput-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->mRegular:Ljava/util/Map;
+    iput-object v1, p0, Landroidx/lifecycle/SavedStateHandle;->flows:Ljava/util/Map;
+
+    .line 56
+    new-instance v1, Landroidx/lifecycle/SavedStateHandle$$ExternalSyntheticLambda0;
+
+    invoke-direct {v1, p0}, Landroidx/lifecycle/SavedStateHandle$$ExternalSyntheticLambda0;-><init>(Landroidx/lifecycle/SavedStateHandle;)V
+
+    iput-object v1, p0, Landroidx/lifecycle/SavedStateHandle;->savedStateProvider:Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
+
+    .line 81
+    invoke-interface {v0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     return-void
 .end method
 
-.method static createHandle(Landroid/os/Bundle;Landroid/os/Bundle;)Landroidx/lifecycle/SavedStateHandle;
-    .locals 4
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0
-        }
-        names = {
-            "restoredState",
-            "defaultState"
-        }
-    .end annotation
+.method public static final synthetic access$getACCEPTABLE_CLASSES$cp()[Ljava/lang/Class;
+    .locals 1
 
-    if-nez p0, :cond_0
+    .line 50
+    sget-object v0, Landroidx/lifecycle/SavedStateHandle;->ACCEPTABLE_CLASSES:[Ljava/lang/Class;
 
-    if-nez p1, :cond_0
+    return-object v0
+.end method
 
-    .line 111
-    new-instance p0, Landroidx/lifecycle/SavedStateHandle;
+.method private static final savedStateProvider$lambda$0(Landroidx/lifecycle/SavedStateHandle;)Landroid/os/Bundle;
+    .locals 5
 
-    invoke-direct {p0}, Landroidx/lifecycle/SavedStateHandle;-><init>()V
+    const-string v0, "this$0"
 
-    return-object p0
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 114
-    :cond_0
-    new-instance v0, Ljava/util/HashMap;
+    .line 59
+    iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->savedStateProviders:Ljava/util/Map;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-static {v0}, Lkotlin/collections/MapsKt;->toMap(Ljava/util/Map;)Ljava/util/Map;
 
-    if-eqz p1, :cond_1
+    move-result-object v0
 
-    .line 116
-    invoke-virtual {p1}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
+    .line 60
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object v0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    .line 117
-    invoke-virtual {p1, v2}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_1
-    if-nez p0, :cond_2
-
-    .line 122
-    new-instance p0, Landroidx/lifecycle/SavedStateHandle;
-
-    invoke-direct {p0, v0}, Landroidx/lifecycle/SavedStateHandle;-><init>(Ljava/util/Map;)V
-
-    return-object p0
-
-    :cond_2
-    const-string p1, "keys"
-
-    .line 125
-    invoke-virtual {p0, p1}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    const-string v1, "values"
-
-    .line 126
-    invoke-virtual {p0, v1}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
-
-    move-result-object p0
-
-    if-eqz p1, :cond_4
-
-    if-eqz p0, :cond_4
-
-    .line 127
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+    if-eqz v1, :cond_0
 
-    move-result v2
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    if-ne v1, v2, :cond_4
+    move-result-object v1
 
-    const/4 v1, 0x0
+    check-cast v1, Ljava/util/Map$Entry;
 
-    .line 130
-    :goto_1
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    if-ge v1, v2, :cond_3
-
-    .line 131
-    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/String;
 
-    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v1, Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
 
-    add-int/lit8 v1, v1, 0x1
+    .line 61
+    invoke-interface {v1}, Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;->saveState()Landroid/os/Bundle;
 
-    goto :goto_1
+    move-result-object v1
 
-    .line 133
-    :cond_3
-    new-instance p0, Landroidx/lifecycle/SavedStateHandle;
+    .line 62
+    invoke-virtual {p0, v2, v1}, Landroidx/lifecycle/SavedStateHandle;->set(Ljava/lang/String;Ljava/lang/Object;)V
 
-    invoke-direct {p0, v0}, Landroidx/lifecycle/SavedStateHandle;-><init>(Ljava/util/Map;)V
+    goto :goto_0
 
-    return-object p0
-
-    .line 128
-    :cond_4
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "Invalid bundle passed as restored state"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method private static validateValue(Ljava/lang/Object;)V
-    .locals 4
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0
-        }
-        names = {
-            "value"
-        }
-    .end annotation
-
-    if-nez p0, :cond_0
-
-    return-void
-
-    .line 266
+    .line 65
     :cond_0
-    sget-object v0, Landroidx/lifecycle/SavedStateHandle;->ACCEPTABLE_CLASSES:[Ljava/lang/Class;
+    iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
 
-    array-length v1, v0
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    :goto_0
-    if-ge v2, v1, :cond_2
+    .line 66
+    new-instance v1, Ljava/util/ArrayList;
 
-    aget-object v3, v0, v2
+    invoke-interface {v0}, Ljava/util/Set;->size()I
 
-    .line 267
-    invoke-virtual {v3, p0}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+    move-result v2
+
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 67
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 68
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    return-void
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    .line 69
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 70
+    iget-object v4, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
+
+    invoke-interface {v4, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
 
     :cond_1
-    add-int/lit8 v2, v2, 0x1
+    const/4 p0, 0x2
 
-    goto :goto_0
+    new-array p0, p0, [Lkotlin/Pair;
 
-    .line 271
-    :cond_2
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    const/4 v0, 0x0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v3, "keys"
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 72
+    invoke-static {v3, v1}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
-    const-string v2, "Can\'t put value with type "
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aput-object v1, p0, v0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v0, 0x1
+
+    const-string v1, "values"
+
+    invoke-static {v1, v2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
+
+    move-result-object v1
+
+    aput-object v1, p0, v0
+
+    invoke-static {p0}, Landroidx/core/os/BundleKt;->bundleOf([Lkotlin/Pair;)Landroid/os/Bundle;
 
     move-result-object p0
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, " into saved state"
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-object p0
 .end method
 
 
 # virtual methods
-.method savedStateProvider()Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
+.method public final savedStateProvider()Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
     .locals 1
 
-    .line 138
-    iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->mSavedStateProvider:Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
+    .line 91
+    iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->savedStateProvider:Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
 
     return-object v0
 .end method
 
-.method public set(Ljava/lang/String;Ljava/lang/Object;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0
-        }
-        names = {
-            "key",
-            "value"
-        }
-    .end annotation
-
+.method public final set(Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -595,31 +588,102 @@
         }
     .end annotation
 
-    .line 251
-    invoke-static {p2}, Landroidx/lifecycle/SavedStateHandle;->validateValue(Ljava/lang/Object;)V
+    const-string v0, "key"
 
-    .line 253
-    iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->mLiveDatas:Ljava/util/Map;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 248
+    sget-object v0, Landroidx/lifecycle/SavedStateHandle;->Companion:Landroidx/lifecycle/SavedStateHandle$Companion;
+
+    invoke-virtual {v0, p2}, Landroidx/lifecycle/SavedStateHandle$Companion;->validateValue(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    .line 254
+    iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->liveDatas:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
+    instance-of v1, v0, Landroidx/lifecycle/MutableLiveData;
+
+    if-eqz v1, :cond_0
+
     check-cast v0, Landroidx/lifecycle/MutableLiveData;
-
-    if-eqz v0, :cond_0
-
-    .line 256
-    invoke-virtual {v0, p2}, Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 258
     :cond_0
-    iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->mRegular:Ljava/util/Map;
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 257
+    invoke-virtual {v0, p2}, Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    .line 259
+    :cond_1
+    iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_0
+    .line 261
+    :goto_1
+    iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->flows:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lkotlinx/coroutines/flow/MutableStateFlow;
+
+    if-nez p1, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    invoke-interface {p1, p2}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
+
+    :goto_2
     return-void
+
+    .line 249
+    :cond_3
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    .line 250
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Can\'t put value with type "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p2
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p2, " into saved state"
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 249
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

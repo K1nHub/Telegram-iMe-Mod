@@ -1,12 +1,14 @@
 package org.koin.core;
 
 import java.util.List;
+import kotlin.Pair;
+import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.logger.Level;
 import org.koin.core.logger.Logger;
 import org.koin.core.module.Module;
-import org.koin.core.time.MeasureKt;
+import org.koin.p043mp.KoinPlatformTimeTools;
 /* compiled from: KoinApplication.kt */
 /* loaded from: classes4.dex */
 public final class KoinApplication {
@@ -29,11 +31,16 @@ public final class KoinApplication {
 
     public final KoinApplication modules(List<Module> modules) {
         Intrinsics.checkNotNullParameter(modules, "modules");
-        if (this.koin.getLogger().isAt(Level.INFO)) {
-            double measureDuration = MeasureKt.measureDuration(new KoinApplication$modules$duration$1(this, modules));
+        Logger logger = this.koin.getLogger();
+        Level level = Level.INFO;
+        if (logger.isAt(level)) {
+            KoinPlatformTimeTools koinPlatformTimeTools = KoinPlatformTimeTools.INSTANCE;
+            long timeInNanoSeconds = koinPlatformTimeTools.getTimeInNanoSeconds();
+            loadModules(modules);
+            double doubleValue = ((Number) new Pair(Unit.INSTANCE, Double.valueOf((koinPlatformTimeTools.getTimeInNanoSeconds() - timeInNanoSeconds) / 1000000.0d)).getSecond()).doubleValue();
             int size = this.koin.getInstanceRegistry().size();
-            Logger logger = this.koin.getLogger();
-            logger.info("loaded " + size + " definitions - " + measureDuration + " ms");
+            Logger logger2 = this.koin.getLogger();
+            logger2.display(level, "loaded " + size + " definitions in " + doubleValue + " ms");
         } else {
             loadModules(modules);
         }
@@ -44,8 +51,7 @@ public final class KoinApplication {
         this.koin.createEagerInstances();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void loadModules(List<Module> list) {
+    private final void loadModules(List<Module> list) {
         this.koin.loadModules(list, this.allowOverride);
     }
 

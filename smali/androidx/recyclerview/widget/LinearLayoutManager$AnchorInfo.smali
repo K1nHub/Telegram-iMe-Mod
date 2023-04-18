@@ -30,10 +30,10 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 2496
+    .line 2500
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2497
+    .line 2501
     invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->reset()V
 
     return-void
@@ -44,12 +44,12 @@
 .method assignCoordinateFromPadding()V
     .locals 1
 
-    .line 2512
+    .line 2516
     iget-boolean v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
     if-eqz v0, :cond_0
 
-    .line 2513
+    .line 2517
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/OrientationHelper;->getEndAfterPadding()I
@@ -58,7 +58,7 @@
 
     goto :goto_0
 
-    .line 2514
+    .line 2518
     :cond_0
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
@@ -75,12 +75,12 @@
 .method public assignFromView(Landroid/view/View;I)V
     .locals 1
 
-    .line 2581
+    .line 2585
     iget-boolean v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
     if-eqz v0, :cond_0
 
-    .line 2582
+    .line 2586
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
@@ -89,7 +89,7 @@
 
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
-    .line 2583
+    .line 2587
     invoke-virtual {v0}, Landroidx/recyclerview/widget/OrientationHelper;->getTotalSpaceChange()I
 
     move-result v0
@@ -100,7 +100,7 @@
 
     goto :goto_0
 
-    .line 2585
+    .line 2589
     :cond_0
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
@@ -110,7 +110,7 @@
 
     iput p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mCoordinate:I
 
-    .line 2588
+    .line 2592
     :goto_0
     iput p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mPosition:I
 
@@ -120,7 +120,7 @@
 .method public assignFromViewAndKeepVisibleRect(Landroid/view/View;I)V
     .locals 4
 
-    .line 2534
+    .line 2538
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/OrientationHelper;->getTotalSpaceChange()I
@@ -129,23 +129,23 @@
 
     if-ltz v0, :cond_0
 
-    .line 2536
+    .line 2540
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->assignFromView(Landroid/view/View;I)V
 
     return-void
 
-    .line 2539
+    .line 2543
     :cond_0
     iput p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mPosition:I
 
-    .line 2540
+    .line 2544
     iget-boolean p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
     const/4 v1, 0x0
 
     if-eqz p2, :cond_1
 
-    .line 2541
+    .line 2545
     iget-object p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     invoke-virtual {p2}, Landroidx/recyclerview/widget/OrientationHelper;->getEndAfterPadding()I
@@ -154,7 +154,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 2542
+    .line 2546
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
@@ -163,7 +163,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 2544
+    .line 2548
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/OrientationHelper;->getEndAfterPadding()I
@@ -176,26 +176,26 @@
 
     if-lez p2, :cond_2
 
-    .line 2547
+    .line 2551
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedMeasurement(Landroid/view/View;)I
 
     move-result v0
 
-    .line 2548
+    .line 2552
     iget v2, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mCoordinate:I
 
     sub-int/2addr v2, v0
 
-    .line 2549
+    .line 2553
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/OrientationHelper;->getStartAfterPadding()I
 
     move-result v0
 
-    .line 2550
+    .line 2554
     iget-object v3, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     invoke-virtual {v3, p1}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
@@ -204,7 +204,7 @@
 
     sub-int/2addr p1, v0
 
-    .line 2552
+    .line 2556
     invoke-static {p1, v1}, Ljava/lang/Math;->min(II)I
 
     move-result p1
@@ -215,7 +215,7 @@
 
     if-gez v2, :cond_2
 
-    .line 2556
+    .line 2560
     iget p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mCoordinate:I
 
     neg-int v0, v2
@@ -230,7 +230,7 @@
 
     goto :goto_0
 
-    .line 2560
+    .line 2564
     :cond_1
     iget-object p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
@@ -238,7 +238,7 @@
 
     move-result p2
 
-    .line 2561
+    .line 2565
     iget-object v2, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     invoke-virtual {v2}, Landroidx/recyclerview/widget/OrientationHelper;->getStartAfterPadding()I
@@ -247,22 +247,22 @@
 
     sub-int v2, p2, v2
 
-    .line 2562
+    .line 2566
     iput p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mCoordinate:I
 
     if-lez v2, :cond_2
 
-    .line 2564
+    .line 2568
     iget-object v3, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
-    .line 2565
+    .line 2569
     invoke-virtual {v3, p1}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedMeasurement(Landroid/view/View;)I
 
     move-result v3
 
     add-int/2addr p2, v3
 
-    .line 2566
+    .line 2570
     iget-object v3, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     invoke-virtual {v3}, Landroidx/recyclerview/widget/OrientationHelper;->getEndAfterPadding()I
@@ -271,24 +271,24 @@
 
     sub-int/2addr v3, v0
 
-    .line 2568
+    .line 2572
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
-    .line 2569
+    .line 2573
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
 
     move-result p1
 
     sub-int/2addr v3, p1
 
-    .line 2570
+    .line 2574
     iget-object p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/OrientationHelper;->getEndAfterPadding()I
 
     move-result p1
 
-    .line 2571
+    .line 2575
     invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
 
     move-result v0
@@ -299,7 +299,7 @@
 
     if-gez p1, :cond_2
 
-    .line 2574
+    .line 2578
     iget p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mCoordinate:I
 
     neg-int p1, p1
@@ -320,14 +320,14 @@
 .method isViewValidAsAnchor(Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView$State;)Z
     .locals 1
 
-    .line 2528
+    .line 2532
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p1
 
     check-cast p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
-    .line 2529
+    .line 2533
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->isItemRemoved()Z
 
     move-result v0
@@ -340,7 +340,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 2530
+    .line 2534
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->getViewLayoutPosition()I
 
     move-result p1
@@ -367,20 +367,20 @@
 
     const/4 v0, -0x1
 
-    .line 2501
+    .line 2505
     iput v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mPosition:I
 
     const/high16 v0, -0x80000000
 
-    .line 2502
+    .line 2506
     iput v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mCoordinate:I
 
     const/4 v0, 0x0
 
-    .line 2503
+    .line 2507
     iput-boolean v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
-    .line 2504
+    .line 2508
     iput-boolean v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mValid:Z
 
     return-void
@@ -389,7 +389,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 2519
+    .line 2523
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

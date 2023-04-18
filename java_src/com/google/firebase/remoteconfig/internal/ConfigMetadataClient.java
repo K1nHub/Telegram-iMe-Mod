@@ -20,6 +20,10 @@ public class ConfigMetadataClient {
         return this.frcMetadata.getLong("fetch_timeout_in_seconds", 60L);
     }
 
+    public long getMinimumFetchIntervalInSeconds() {
+        return this.frcMetadata.getLong("minimum_fetch_interval_in_seconds", ConfigFetchHandler.DEFAULT_MINIMUM_FETCH_INTERVAL_IN_SECONDS);
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public Date getLastSuccessfulFetchTime() {
         return new Date(this.frcMetadata.getLong("last_fetch_time_in_millis", -1L));

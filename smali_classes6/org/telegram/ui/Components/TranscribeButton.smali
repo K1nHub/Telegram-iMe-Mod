@@ -226,7 +226,7 @@
     .line 188
     iput-boolean v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->pressed:Z
 
-    .line 297
+    .line 302
     new-instance v1, Landroidx/interpolator/view/animation/FastOutSlowInInterpolator;
 
     invoke-direct {v1}, Landroidx/interpolator/view/animation/FastOutSlowInInterpolator;-><init>()V
@@ -448,12 +448,12 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 485
+    .line 490
     invoke-static {p6, v0, v1}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result p6
 
-    .line 486
+    .line 491
     invoke-static {p7, v0, v1}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result p7
@@ -471,7 +471,7 @@
 
     if-ne p5, v0, :cond_1
 
-    .line 491
+    .line 496
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     sub-int v1, p2, p4
@@ -495,7 +495,7 @@
 
     if-ne p5, v0, :cond_2
 
-    .line 493
+    .line 498
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     sub-int v1, p2, p4
@@ -519,7 +519,7 @@
 
     if-ne p5, v0, :cond_3
 
-    .line 495
+    .line 500
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     int-to-float v1, p2
@@ -543,7 +543,7 @@
 
     if-ne p5, v0, :cond_4
 
-    .line 497
+    .line 502
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     int-to-float v1, p2
@@ -560,7 +560,7 @@
 
     invoke-virtual {v0, v1, v2, p2, p3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 499
+    .line 504
     :cond_4
     :goto_0
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
@@ -615,7 +615,7 @@
 
     move/from16 v8, p5
 
-    .line 469
+    .line 474
     invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/Components/TranscribeButton;->addCorner(Landroid/graphics/Path;IIIIFF)V
 
     const/16 v17, 0x0
@@ -636,7 +636,7 @@
 
     move/from16 v16, p5
 
-    .line 470
+    .line 475
     invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/Components/TranscribeButton;->addCorner(Landroid/graphics/Path;IIIIFF)V
 
     goto :goto_0
@@ -646,7 +646,7 @@
 
     sub-float v3, p6, p8
 
-    .line 472
+    .line 477
     invoke-static {v2, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v2
@@ -695,12 +695,12 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 444
+    .line 449
     invoke-static {p6, v0, v1}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result p6
 
-    .line 445
+    .line 450
     invoke-static {p7, v0, v1}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result p7
@@ -713,7 +713,7 @@
 
     return-void
 
-    .line 450
+    .line 455
     :cond_1
     invoke-static {p2, p4, p6}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
@@ -721,31 +721,31 @@
 
     int-to-float v0, v0
 
-    .line 451
+    .line 456
     invoke-static {p3, p5, p6}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result p6
 
     int-to-float p6, p6
 
-    .line 449
+    .line 454
     invoke-virtual {p1, v0, p6}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 454
+    .line 459
     invoke-static {p2, p4, p7}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result p2
 
     int-to-float p2, p2
 
-    .line 455
+    .line 460
     invoke-static {p3, p5, p7}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result p3
 
     int-to-float p3, p3
 
-    .line 453
+    .line 458
     invoke-virtual {p1, p2, p3}, Landroid/graphics/Path;->lineTo(FF)V
 
     return-void
@@ -797,7 +797,7 @@
 
     move/from16 v6, p5
 
-    .line 425
+    .line 430
     invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/Components/TranscribeButton;->addLine(Landroid/graphics/Path;IIIIFF)V
 
     const/4 v6, 0x0
@@ -818,7 +818,7 @@
 
     move/from16 v5, p5
 
-    .line 426
+    .line 431
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Components/TranscribeButton;->addLine(Landroid/graphics/Path;IIIIFF)V
 
     goto :goto_0
@@ -828,7 +828,7 @@
 
     sub-float v3, p6, p8
 
-    .line 428
+    .line 433
     invoke-static {v2, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v2
@@ -883,7 +883,7 @@
 
     const/4 v1, 0x0
 
-    .line 694
+    .line 699
     :try_start_0
     sget-object v2, Lorg/telegram/ui/Components/TranscribeButton;->transcribeOperationsById:Ljava/util/HashMap;
 
@@ -899,7 +899,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 695
+    .line 700
     sget-object v0, Lorg/telegram/ui/Components/TranscribeButton;->transcribeOperationsById:Ljava/util/HashMap;
 
     invoke-static/range {p1 .. p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -925,20 +925,20 @@
     :goto_0
     if-eqz v3, :cond_6
 
-    .line 700
+    .line 705
     iget-object v0, v3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-nez v0, :cond_2
 
     goto :goto_2
 
-    .line 704
+    .line 709
     :cond_2
     sget-object v0, Lorg/telegram/ui/Components/TranscribeButton;->transcribeOperationsByDialogPosition:Ljava/util/HashMap;
 
     if-eqz v0, :cond_3
 
-    .line 705
+    .line 710
     invoke-static {v3}, Lorg/telegram/ui/Components/TranscribeButton;->reqInfoHash(Lorg/telegram/messenger/MessageObject;)I
 
     move-result v2
@@ -949,7 +949,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 707
+    .line 712
     :cond_3
     iget-object v0, v3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -971,7 +971,7 @@
     :goto_1
     if-nez v7, :cond_5
 
-    .line 711
+    .line 716
     iget v0, v3, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -992,7 +992,7 @@
 
     invoke-virtual/range {v9 .. v14}, Lorg/telegram/messenger/MessagesStorage;->updateMessageVoiceTranscription(JILjava/lang/String;Lorg/telegram/tgnet/TLRPC$Message;)V
 
-    .line 712
+    .line 717
     :cond_5
     new-instance v0, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda5;
 
@@ -1019,7 +1019,7 @@
 .method private getSegments(J)[F
     .locals 11
 
-    .line 399
+    .line 404
     iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->segments:[F
 
     if-nez v0, :cond_0
@@ -1028,16 +1028,16 @@
 
     new-array v0, v0, [F
 
-    .line 400
+    .line 405
     iput-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->segments:[F
 
     :cond_0
     const-wide/16 v0, 0x1518
 
-    .line 402
+    .line 407
     rem-long/2addr p1, v0
 
-    .line 403
+    .line 408
     iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->segments:[F
 
     const-wide/16 v1, 0x5f0
@@ -1060,7 +1060,7 @@
 
     const/4 v2, 0x1
 
-    .line 404
+    .line 409
     aput v1, v0, v2
 
     move v0, v3
@@ -1070,7 +1070,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 406
+    .line 411
     iget-object v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->segments:[F
 
     aget v4, v1, v2
@@ -1101,7 +1101,7 @@
 
     aput v4, v1, v2
 
-    .line 407
+    .line 412
     iget-object v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->segments:[F
 
     aget v4, v1, v3
@@ -1132,7 +1132,7 @@
 
     goto :goto_0
 
-    .line 409
+    .line 414
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->segments:[F
 
@@ -1142,12 +1142,12 @@
 .method public static isTranscribing(Lorg/telegram/messenger/MessageObject;)Z
     .locals 3
 
-    .line 604
+    .line 609
     sget-object v0, Lorg/telegram/ui/Components/TranscribeButton;->transcribeOperationsByDialogPosition:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
 
-    .line 605
+    .line 610
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->containsValue(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1183,7 +1183,7 @@
 
     iget-wide v1, p0, Lorg/telegram/tgnet/TLRPC$Message;->voiceTranscriptionId:J
 
-    .line 606
+    .line 611
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p0
@@ -1209,7 +1209,7 @@
 .method public static isVideoTranscriptionOpen(Lorg/telegram/messenger/MessageObject;)Z
     .locals 1
 
-    .line 594
+    .line 599
     sget-object v0, Lorg/telegram/ui/Components/TranscribeButton;->videoTranscriptionsOpen:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_1
@@ -1251,7 +1251,7 @@
 .method private static synthetic lambda$finishTranscription$7(Lorg/telegram/messenger/MessageObject;JLjava/lang/String;Z)V
     .locals 4
 
-    .line 713
+    .line 718
     iget v0, p0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -1368,7 +1368,7 @@
 
     const/4 v0, 0x0
 
-    .line 216
+    .line 221
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/TranscribeButton;->onTap(Z)V
 
     return-void
@@ -1377,7 +1377,7 @@
 .method private static synthetic lambda$showOffTranscribe$8(Lorg/telegram/messenger/MessageObject;)V
     .locals 4
 
-    .line 733
+    .line 738
     iget v0, p0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -1402,7 +1402,7 @@
 .method private static synthetic lambda$transcribePressed$3(ILorg/telegram/messenger/MessageObject;)V
     .locals 3
 
-    .line 625
+    .line 630
     invoke-static {p0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -1445,7 +1445,7 @@
 .method private static synthetic lambda$transcribePressed$4(Lorg/telegram/messenger/MessageObject;JLjava/lang/String;)V
     .locals 0
 
-    .line 675
+    .line 680
     invoke-static {p0, p1, p2, p3}, Lorg/telegram/ui/Components/TranscribeButton;->finishTranscription(Lorg/telegram/messenger/MessageObject;JLjava/lang/String;)Z
 
     return-void
@@ -1458,7 +1458,7 @@
 
     move-object/from16 v1, p7
 
-    .line 646
+    .line 651
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_transcribedAudio;
 
     const-string v3, ""
@@ -1469,21 +1469,21 @@
 
     if-eqz v2, :cond_3
 
-    .line 647
+    .line 652
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_messages_transcribedAudio;
 
-    .line 648
+    .line 653
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_transcribedAudio;->text:Ljava/lang/String;
 
-    .line 649
+    .line 654
     iget-wide v7, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_transcribedAudio;->transcription_id:J
 
-    .line 650
+    .line 655
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_transcribedAudio;->pending:Z
 
     xor-int/2addr v1, v6
 
-    .line 651
+    .line 656
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v9
@@ -1499,21 +1499,21 @@
     :cond_0
     move-object v3, v2
 
-    .line 654
+    .line 659
     :cond_1
     :goto_0
     sget-object v2, Lorg/telegram/ui/Components/TranscribeButton;->transcribeOperationsById:Ljava/util/HashMap;
 
     if-nez v2, :cond_2
 
-    .line 655
+    .line 660
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     sput-object v2, Lorg/telegram/ui/Components/TranscribeButton;->transcribeOperationsById:Ljava/util/HashMap;
 
-    .line 657
+    .line 662
     :cond_2
     sget-object v2, Lorg/telegram/ui/Components/TranscribeButton;->transcribeOperationsById:Ljava/util/HashMap;
 
@@ -1523,7 +1523,7 @@
 
     invoke-virtual {v2, v9, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 658
+    .line 663
     iget-object v2, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iput-wide v7, v2, Lorg/telegram/tgnet/TLRPC$Message;->voiceTranscriptionId:J
@@ -1537,7 +1537,7 @@
 
     move v1, v6
 
-    .line 665
+    .line 670
     :goto_1
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -1545,23 +1545,23 @@
 
     sub-long v15, v7, p1
 
-    .line 666
+    .line 671
     invoke-static/range {p0 .. p0}, Lorg/telegram/ui/Components/TranscribeButton;->openVideoTranscription(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 667
+    .line 672
     iget-object v2, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iput-boolean v6, v2, Lorg/telegram/tgnet/TLRPC$Message;->voiceTranscriptionOpen:Z
 
-    .line 668
+    .line 673
     iput-boolean v1, v2, Lorg/telegram/tgnet/TLRPC$Message;->voiceTranscriptionFinal:Z
 
-    .line 669
+    .line 674
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_4
 
-    .line 670
+    .line 675
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1590,7 +1590,7 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 673
+    .line 678
     :cond_4
     invoke-static/range {p3 .. p3}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
@@ -1608,7 +1608,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 675
+    .line 680
     new-instance v1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda4;
 
     invoke-direct {v1, v0, v13, v14, v3}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/messenger/MessageObject;JLjava/lang/String;)V
@@ -1630,7 +1630,7 @@
 .method private static synthetic lambda$transcribePressed$6(ILorg/telegram/messenger/MessageObject;)V
     .locals 4
 
-    .line 686
+    .line 691
     invoke-static {p0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -1675,7 +1675,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 584
+    .line 589
     invoke-static {p0}, Lorg/telegram/ui/Components/TranscribeButton;->isVideoTranscriptionOpen(Lorg/telegram/messenger/MessageObject;)Z
 
     move-result v0
@@ -1684,13 +1684,13 @@
 
     goto :goto_0
 
-    .line 587
+    .line 592
     :cond_0
     sget-object v0, Lorg/telegram/ui/Components/TranscribeButton;->videoTranscriptionsOpen:Ljava/util/ArrayList;
 
     if-nez v0, :cond_1
 
-    .line 588
+    .line 593
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x1
@@ -1699,7 +1699,7 @@
 
     sput-object v0, Lorg/telegram/ui/Components/TranscribeButton;->videoTranscriptionsOpen:Ljava/util/ArrayList;
 
-    .line 590
+    .line 595
     :cond_1
     sget-object v0, Lorg/telegram/ui/Components/TranscribeButton;->videoTranscriptionsOpen:Ljava/util/ArrayList;
 
@@ -1732,7 +1732,7 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 576
+    .line 581
     iget v2, p0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1775,12 +1775,12 @@
 .method public static resetVideoTranscriptionsOpen()V
     .locals 1
 
-    .line 598
+    .line 603
     sget-object v0, Lorg/telegram/ui/Components/TranscribeButton;->videoTranscriptionsOpen:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
-    .line 599
+    .line 604
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     :cond_0
@@ -1792,7 +1792,7 @@
 
     const/4 v0, 0x1
 
-    .line 721
+    .line 726
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/TranscribeButton;->showOffTranscribe(Lorg/telegram/messenger/MessageObject;Z)V
 
     return-void
@@ -1803,7 +1803,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 725
+    .line 730
     iget-object v0, p0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-nez v0, :cond_0
@@ -1813,10 +1813,10 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 729
+    .line 734
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->voiceTranscriptionForce:Z
 
-    .line 730
+    .line 735
     iget v0, p0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -1837,7 +1837,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 732
+    .line 737
     new-instance p1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda3;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/MessageObject;)V
@@ -1854,7 +1854,7 @@
 
     if-eqz p0, :cond_7
 
-    .line 611
+    .line 616
     iget-object v0, p0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-eqz v0, :cond_7
@@ -1867,16 +1867,16 @@
 
     goto/16 :goto_0
 
-    .line 614
+    .line 619
     :cond_0
     iget v5, p0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
-    .line 615
+    .line 620
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v3
 
-    .line 616
+    .line 621
     invoke-static {v5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -1889,19 +1889,19 @@
 
     move-result-object v0
 
-    .line 617
+    .line 622
     invoke-static {v0}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$InputPeer;)J
 
     move-result-wide v6
 
-    .line 618
+    .line 623
     iget-object v1, p0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget v8, v1, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
     if-eqz p1, :cond_5
 
-    .line 620
+    .line 625
     iget-object p1, v1, Lorg/telegram/tgnet/TLRPC$Message;->voiceTranscription:Ljava/lang/String;
 
     if-eqz p1, :cond_1
@@ -1910,17 +1910,17 @@
 
     if-eqz p1, :cond_1
 
-    .line 621
+    .line 626
     invoke-static {p0}, Lorg/telegram/ui/Components/TranscribeButton;->openVideoTranscription(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 622
+    .line 627
     iget-object p1, p0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     const/4 p2, 0x1
 
     iput-boolean p2, p1, Lorg/telegram/tgnet/TLRPC$Message;->voiceTranscriptionOpen:Z
 
-    .line 623
+    .line 628
     invoke-static {v5}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p1
@@ -1929,7 +1929,7 @@
 
     invoke-virtual {p1, v6, v7, v8, p2}, Lorg/telegram/messenger/MessagesStorage;->updateMessageVoiceTranscriptionOpen(JILorg/telegram/tgnet/TLRPC$Message;)V
 
-    .line 624
+    .line 629
     new-instance p1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, v5, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda1;-><init>(ILorg/telegram/messenger/MessageObject;)V
@@ -1938,13 +1938,13 @@
 
     goto/16 :goto_0
 
-    .line 628
+    .line 633
     :cond_1
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_2
 
-    .line 629
+    .line 634
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1967,31 +1967,31 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 631
+    .line 636
     :cond_2
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messages_transcribeAudio;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messages_transcribeAudio;-><init>()V
 
-    .line 632
+    .line 637
     iput-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_transcribeAudio;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 633
+    .line 638
     iput v8, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_transcribeAudio;->msg_id:I
 
-    .line 634
+    .line 639
     sget-object v0, Lorg/telegram/ui/Components/TranscribeButton;->transcribeOperationsByDialogPosition:Ljava/util/HashMap;
 
     if-nez v0, :cond_3
 
-    .line 635
+    .line 640
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lorg/telegram/ui/Components/TranscribeButton;->transcribeOperationsByDialogPosition:Ljava/util/HashMap;
 
-    .line 637
+    .line 642
     :cond_3
     sget-object v0, Lorg/telegram/ui/Components/TranscribeButton;->transcribeOperationsByDialogPosition:Ljava/util/HashMap;
 
@@ -2007,7 +2007,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 640
+    .line 645
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->getDelegate()Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
 
     move-result-object p0
@@ -2016,7 +2016,7 @@
 
     goto :goto_0
 
-    .line 642
+    .line 647
     :cond_4
     invoke-static {v5}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
@@ -2034,13 +2034,13 @@
 
     goto :goto_0
 
-    .line 680
+    .line 685
     :cond_5
     sget-object p1, Lorg/telegram/ui/Components/TranscribeButton;->transcribeOperationsByDialogPosition:Ljava/util/HashMap;
 
     if-eqz p1, :cond_6
 
-    .line 681
+    .line 686
     invoke-static {p0}, Lorg/telegram/ui/Components/TranscribeButton;->reqInfoHash(Lorg/telegram/messenger/MessageObject;)I
 
     move-result p2
@@ -2051,7 +2051,7 @@
 
     invoke-virtual {p1, p2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 683
+    .line 688
     :cond_6
     iget-object p1, p0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -2059,7 +2059,7 @@
 
     iput-boolean p2, p1, Lorg/telegram/tgnet/TLRPC$Message;->voiceTranscriptionOpen:Z
 
-    .line 684
+    .line 689
     invoke-static {v5}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p1
@@ -2068,7 +2068,7 @@
 
     invoke-virtual {p1, v6, v7, v8, p2}, Lorg/telegram/messenger/MessagesStorage;->updateMessageVoiceTranscriptionOpen(JILorg/telegram/tgnet/TLRPC$Message;)V
 
-    .line 685
+    .line 690
     new-instance p1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, v5, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda2;-><init>(ILorg/telegram/messenger/MessageObject;)V
@@ -2089,7 +2089,7 @@
 
     move-object/from16 v11, p1
 
-    .line 322
+    .line 327
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->pressBounds:Landroid/graphics/Rect;
 
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
@@ -2136,12 +2136,12 @@
 
     invoke-virtual {v0, v1, v3, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 323
+    .line 328
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->boundsPath:Landroid/graphics/Path;
 
     if-nez v0, :cond_0
 
-    .line 324
+    .line 329
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
@@ -2150,11 +2150,11 @@
 
     goto :goto_0
 
-    .line 326
+    .line 331
     :cond_0
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 328
+    .line 333
     :goto_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
@@ -2162,7 +2162,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 329
+    .line 334
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->boundsPath:Landroid/graphics/Path;
 
     iget v2, v10, Lorg/telegram/ui/Components/TranscribeButton;->radius:I
@@ -2175,15 +2175,15 @@
 
     invoke-virtual {v1, v0, v3, v2, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 330
+    .line 335
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 331
+    .line 336
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->boundsPath:Landroid/graphics/Path;
 
     invoke-virtual {v11, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 332
+    .line 337
     iget v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->backgroundBack:F
 
     mul-float v1, v0, p2
@@ -2194,25 +2194,25 @@
 
     if-lez v1, :cond_1
 
-    .line 333
+    .line 338
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
 
     mul-float v0, v0, p2
 
     invoke-virtual {v10, v11, v1, v0}, Lorg/telegram/ui/Components/TranscribeButton;->drawGradientBackground(Landroid/graphics/Canvas;Landroid/graphics/Rect;F)V
 
-    .line 335
+    .line 340
     :cond_1
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->backgroundPaint:Landroid/graphics/Paint;
 
     if-eqz v0, :cond_2
 
-    .line 336
+    .line 341
     invoke-virtual {v0}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result v0
 
-    .line 337
+    .line 342
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->backgroundPaint:Landroid/graphics/Paint;
 
     int-to-float v3, v0
@@ -2223,39 +2223,39 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 338
+    .line 343
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
 
     iget-object v3, v10, Lorg/telegram/ui/Components/TranscribeButton;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v11, v1, v3}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 339
+    .line 344
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 341
+    .line 346
     :cond_2
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_3
 
-    .line 342
+    .line 347
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 343
+    .line 348
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v11}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 345
+    .line 350
     :cond_3
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 347
+    .line 352
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->loadingFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->loading:Z
@@ -2280,7 +2280,7 @@
 
     if-lez v1, :cond_9
 
-    .line 349
+    .line 354
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
@@ -2301,12 +2301,12 @@
 
     move-result-object v1
 
-    .line 351
+    .line 356
     iget-object v4, v10, Lorg/telegram/ui/Components/TranscribeButton;->progressClipPath:Landroid/graphics/Path;
 
     if-nez v4, :cond_5
 
-    .line 352
+    .line 357
     new-instance v4, Landroid/graphics/Path;
 
     invoke-direct {v4}, Landroid/graphics/Path;-><init>()V
@@ -2315,7 +2315,7 @@
 
     goto :goto_2
 
-    .line 354
+    .line 359
     :cond_5
     invoke-virtual {v4}, Landroid/graphics/Path;->rewind()V
 
@@ -2326,7 +2326,7 @@
 
     const/4 v5, 0x1
 
-    .line 356
+    .line 361
     aget v5, v1, v5
 
     const/4 v6, 0x0
@@ -2339,7 +2339,7 @@
 
     move-result v4
 
-    .line 357
+    .line 362
     aget v1, v1, v6
 
     sub-float v5, v3, v0
@@ -2385,7 +2385,7 @@
     :cond_8
     move v14, v4
 
-    .line 366
+    .line 371
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->progressClipPath:Landroid/graphics/Path;
 
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
@@ -2418,7 +2418,7 @@
 
     invoke-direct/range {v0 .. v9}, Lorg/telegram/ui/Components/TranscribeButton;->addLine(Landroid/graphics/Path;IIIIFFFF)V
 
-    .line 367
+    .line 372
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->progressClipPath:Landroid/graphics/Path;
 
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
@@ -2439,7 +2439,7 @@
 
     invoke-direct/range {v0 .. v9}, Lorg/telegram/ui/Components/TranscribeButton;->addCorner(Landroid/graphics/Path;IIIIFFFF)V
 
-    .line 368
+    .line 373
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->progressClipPath:Landroid/graphics/Path;
 
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
@@ -2474,7 +2474,7 @@
 
     invoke-direct/range {v0 .. v9}, Lorg/telegram/ui/Components/TranscribeButton;->addLine(Landroid/graphics/Path;IIIIFFFF)V
 
-    .line 369
+    .line 374
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->progressClipPath:Landroid/graphics/Path;
 
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
@@ -2499,7 +2499,7 @@
 
     invoke-direct/range {v0 .. v9}, Lorg/telegram/ui/Components/TranscribeButton;->addCorner(Landroid/graphics/Path;IIIIFFFF)V
 
-    .line 370
+    .line 375
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->progressClipPath:Landroid/graphics/Path;
 
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
@@ -2528,7 +2528,7 @@
 
     invoke-direct/range {v0 .. v9}, Lorg/telegram/ui/Components/TranscribeButton;->addLine(Landroid/graphics/Path;IIIIFFFF)V
 
-    .line 371
+    .line 376
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->progressClipPath:Landroid/graphics/Path;
 
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
@@ -2553,7 +2553,7 @@
 
     invoke-direct/range {v0 .. v9}, Lorg/telegram/ui/Components/TranscribeButton;->addCorner(Landroid/graphics/Path;IIIIFFFF)V
 
-    .line 372
+    .line 377
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->progressClipPath:Landroid/graphics/Path;
 
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
@@ -2588,7 +2588,7 @@
 
     invoke-direct/range {v0 .. v9}, Lorg/telegram/ui/Components/TranscribeButton;->addLine(Landroid/graphics/Path;IIIIFFFF)V
 
-    .line 373
+    .line 378
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->progressClipPath:Landroid/graphics/Path;
 
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
@@ -2613,7 +2613,7 @@
 
     invoke-direct/range {v0 .. v9}, Lorg/telegram/ui/Components/TranscribeButton;->addCorner(Landroid/graphics/Path;IIIIFFFF)V
 
-    .line 374
+    .line 379
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->progressClipPath:Landroid/graphics/Path;
 
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
@@ -2644,7 +2644,7 @@
 
     invoke-direct/range {v0 .. v9}, Lorg/telegram/ui/Components/TranscribeButton;->addLine(Landroid/graphics/Path;IIIIFFFF)V
 
-    .line 376
+    .line 381
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->strokePaint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x3fc00000    # 1.5f
@@ -2657,14 +2657,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 377
+    .line 382
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->strokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result v0
 
-    .line 378
+    .line 383
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->strokePaint:Landroid/graphics/Paint;
 
     int-to-float v2, v0
@@ -2675,28 +2675,28 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 379
+    .line 384
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->progressClipPath:Landroid/graphics/Path;
 
     iget-object v2, v10, Lorg/telegram/ui/Components/TranscribeButton;->strokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v11, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 380
+    .line 385
     iget-object v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->strokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 382
+    .line 387
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V
 
-    .line 385
+    .line 390
     :cond_9
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 386
+    .line 391
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
@@ -2729,12 +2729,12 @@
 
     invoke-virtual {v11, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 387
+    .line 392
     iget-boolean v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->isOpen:Z
 
     if-eqz v0, :cond_a
 
-    .line 388
+    .line 393
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->inIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget v1, v10, Lorg/telegram/ui/Components/TranscribeButton;->inIconDrawableAlpha:I
@@ -2747,14 +2747,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
 
-    .line 389
+    .line 394
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->inIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, v11}, Lorg/telegram/ui/Components/RLottieDrawable;->draw(Landroid/graphics/Canvas;)V
 
     goto :goto_3
 
-    .line 391
+    .line 396
     :cond_a
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->outIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -2768,12 +2768,12 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
 
-    .line 392
+    .line 397
     iget-object v0, v10, Lorg/telegram/ui/Components/TranscribeButton;->outIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, v11}, Lorg/telegram/ui/Components/RLottieDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 394
+    .line 399
     :goto_3
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -2791,7 +2791,7 @@
 .method public height()I
     .locals 1
 
-    .line 318
+    .line 323
     iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
@@ -2826,11 +2826,34 @@
     .line 215
     iget-boolean v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->isForkTranscribe:Z
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
-    if-eqz p1, :cond_0
+    if-eqz v0, :cond_1
+
+    if-eqz p1, :cond_1
 
     .line 216
+    iget-object p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
+
+    instance-of v0, p1, Landroid/graphics/drawable/RippleDrawable;
+
+    if-eqz v0, :cond_0
+
+    .line 217
+    sget-object v0, Landroid/util/StateSet;->NOTHING:[I
+
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    .line 218
+    iget-object p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V
+
+    .line 220
+    :cond_0
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->pressed:Z
+
+    .line 221
     iget-object p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getDelegate()Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -2845,30 +2868,28 @@
 
     return-void
 
-    :cond_0
-    const/4 p1, 0x0
+    .line 225
+    :cond_1
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->clickedToOpen:Z
 
-    .line 220
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->clickedToOpen:Z
+    .line 226
+    iget-boolean p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->shouldBeOpen:Z
 
-    .line 221
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->shouldBeOpen:Z
-
-    xor-int/lit8 v1, v0, 0x1
+    xor-int/lit8 v0, p1, 0x1
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_1
+    if-nez p1, :cond_2
 
-    .line 223
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->loading:Z
+    .line 228
+    iget-boolean p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->loading:Z
 
-    xor-int/2addr v0, v2
+    xor-int/2addr p1, v2
 
-    .line 224
+    .line 229
     iget-boolean v3, p0, Lorg/telegram/ui/Components/TranscribeButton;->premium:Z
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_3
 
     iget-object v3, p0, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2880,109 +2901,109 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_3
 
-    .line 225
+    .line 230
     invoke-virtual {p0, v2, v2}, Lorg/telegram/ui/Components/TranscribeButton;->setLoading(ZZ)V
 
     goto :goto_0
 
-    .line 229
-    :cond_1
-    invoke-virtual {p0, p1, v2}, Lorg/telegram/ui/Components/TranscribeButton;->setOpen(ZZ)V
-
-    .line 230
-    invoke-virtual {p0, p1, v2}, Lorg/telegram/ui/Components/TranscribeButton;->setLoading(ZZ)V
-
-    move v0, v2
-
-    .line 232
+    .line 234
     :cond_2
+    invoke-virtual {p0, v1, v2}, Lorg/telegram/ui/Components/TranscribeButton;->setOpen(ZZ)V
+
+    .line 235
+    invoke-virtual {p0, v1, v2}, Lorg/telegram/ui/Components/TranscribeButton;->setLoading(ZZ)V
+
+    move p1, v2
+
+    .line 237
+    :cond_3
     :goto_0
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x15
 
-    if-lt v3, v4, :cond_3
+    if-lt v3, v4, :cond_4
 
     iget-object v3, p0, Lorg/telegram/ui/Components/TranscribeButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v4, v3, Landroid/graphics/drawable/RippleDrawable;
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_4
 
-    .line 233
+    .line 238
     sget-object v4, Landroid/util/StateSet;->NOTHING:[I
 
     invoke-virtual {v3, v4}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 234
+    .line 239
     iget-object v3, p0, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V
 
-    .line 236
-    :cond_3
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->pressed:Z
+    .line 241
+    :cond_4
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->pressed:Z
 
-    if-eqz v0, :cond_7
+    if-eqz p1, :cond_8
 
-    .line 238
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->premium:Z
+    .line 243
+    iget-boolean p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->premium:Z
 
-    if-nez v0, :cond_4
+    if-nez p1, :cond_5
 
-    if-eqz v1, :cond_4
+    if-eqz v0, :cond_5
 
-    .line 239
-    iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
+    .line 244
+    iget-object p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getDelegate()Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
+    invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getDelegate()Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
 
-    move-result-object v0
+    move-result-object p1
 
-    if-eqz v0, :cond_7
+    if-eqz p1, :cond_8
 
-    .line 240
-    iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
+    .line 245
+    iget-object p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getDelegate()Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
+    invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getDelegate()Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-interface {v0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;->needShowPremiumBulletin(I)V
+    invoke-interface {p1, v1}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;->needShowPremiumBulletin(I)V
 
     goto :goto_2
 
-    :cond_4
-    if-eqz v1, :cond_5
+    :cond_5
+    if-eqz v0, :cond_6
 
-    .line 244
+    .line 249
     iput-boolean v2, p0, Lorg/telegram/ui/Components/TranscribeButton;->clickedToOpen:Z
 
-    .line 246
-    :cond_5
+    .line 251
+    :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object p1
 
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->isForkTranscribe:Z
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->isForkTranscribe:Z
 
-    if-eqz v0, :cond_6
+    if-eqz v1, :cond_7
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     goto :goto_1
 
-    :cond_6
-    const/4 v0, 0x0
+    :cond_7
+    const/4 v1, 0x0
 
     :goto_1
-    invoke-static {p1, v1, v0}, Lorg/telegram/ui/Components/TranscribeButton;->transcribePressed(Lorg/telegram/messenger/MessageObject;ZLorg/telegram/ui/Cells/ChatMessageCell;)V
+    invoke-static {p1, v0, v1}, Lorg/telegram/ui/Components/TranscribeButton;->transcribePressed(Lorg/telegram/messenger/MessageObject;ZLorg/telegram/ui/Cells/ChatMessageCell;)V
 
-    :cond_7
+    :cond_8
     :goto_2
     return-void
 .end method
@@ -3096,7 +3117,7 @@
 
     move/from16 v5, p5
 
-    .line 304
+    .line 309
     iget-object v6, v0, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
 
     invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
@@ -3132,7 +3153,7 @@
 
     float-to-double v11, v9
 
-    .line 305
+    .line 310
     invoke-static {v11, v12}, Ljava/lang/Math;->atan(D)D
 
     move-result-wide v11
@@ -3155,7 +3176,7 @@
 
     float-to-double v6, v6
 
-    .line 306
+    .line 311
     invoke-static {v6, v7}, Ljava/lang/Math;->atan(D)D
 
     move-result-wide v6
@@ -3168,7 +3189,7 @@
 
     iput v6, v0, Lorg/telegram/ui/Components/TranscribeButton;->b:F
 
-    .line 308
+    .line 313
     :cond_1
     iget-object v6, v0, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
 
@@ -3178,7 +3199,7 @@
 
     invoke-virtual {v6, v1, v2, v7, v8}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 309
+    .line 314
     invoke-static/range {p3 .. p4}, Ljava/lang/Math;->min(II)I
 
     move-result v1
@@ -3193,7 +3214,7 @@
 
     mul-int/lit8 v1, v1, 0x2
 
-    .line 310
+    .line 315
     iput v1, v0, Lorg/telegram/ui/Components/TranscribeButton;->diameter:I
 
     return-void
@@ -3202,7 +3223,7 @@
 .method public setColor(IIZF)V
     .locals 4
 
-    .line 261
+    .line 266
     iget p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->color:I
 
     const/4 p3, 0x1
@@ -3218,13 +3239,13 @@
     :cond_0
     move p2, v0
 
-    .line 262
+    .line 267
     :goto_0
     iput p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->color:I
 
     iput p1, p0, Lorg/telegram/ui/Components/TranscribeButton;->iconColor:I
 
-    .line 263
+    .line 268
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v1
@@ -3243,10 +3264,10 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->backgroundColor:I
 
-    .line 264
+    .line 269
     iput p4, p0, Lorg/telegram/ui/Components/TranscribeButton;->backgroundBack:F
 
-    .line 265
+    .line 270
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v2
@@ -3281,19 +3302,19 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->rippleColor:I
 
-    .line 266
+    .line 271
     iget-object v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->backgroundPaint:Landroid/graphics/Paint;
 
     if-nez v1, :cond_2
 
-    .line 267
+    .line 272
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 269
+    .line 274
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->backgroundPaint:Landroid/graphics/Paint;
 
@@ -3301,7 +3322,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 270
+    .line 275
     iget-object v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1}, Landroid/graphics/Paint;->getAlpha()I
@@ -3322,7 +3343,7 @@
 
     if-nez p2, :cond_3
 
-    .line 271
+    .line 276
     iget-object p4, p0, Lorg/telegram/ui/Components/TranscribeButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez p4, :cond_4
@@ -3330,7 +3351,7 @@
     :cond_3
     const/16 p4, 0x8
 
-    .line 272
+    .line 277
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p4
@@ -3343,7 +3364,7 @@
 
     iput-object p4, p0, Lorg/telegram/ui/Components/TranscribeButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 273
+    .line 278
     iget-object v1, p0, Lorg/telegram/ui/Components/TranscribeButton;->parent:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {p4, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
@@ -3351,12 +3372,12 @@
     :cond_4
     if-eqz p2, :cond_5
 
-    .line 276
+    .line 281
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->inIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieDrawable;->beginApplyLayerColors()V
 
-    .line 277
+    .line 282
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->inIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget p4, p0, Lorg/telegram/ui/Components/TranscribeButton;->iconColor:I
@@ -3365,24 +3386,24 @@
 
     invoke-virtual {p2, v1, p4}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 278
+    .line 283
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->inIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieDrawable;->commitApplyLayerColors()V
 
-    .line 279
+    .line 284
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->inIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
 
-    .line 280
+    .line 285
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->inIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const-wide/16 v2, 0x0
 
     invoke-virtual {p2, v2, v3, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->updateCurrentFrame(JZ)V
 
-    .line 281
+    .line 286
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->inIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
@@ -3393,34 +3414,34 @@
 
     invoke-virtual {p2, p4}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
 
-    .line 282
+    .line 287
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->outIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieDrawable;->beginApplyLayerColors()V
 
-    .line 283
+    .line 288
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->outIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget p4, p0, Lorg/telegram/ui/Components/TranscribeButton;->iconColor:I
 
     invoke-virtual {p2, v1, p4}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 284
+    .line 289
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->outIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieDrawable;->commitApplyLayerColors()V
 
-    .line 285
+    .line 290
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->outIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
 
-    .line 286
+    .line 291
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->outIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2, v2, v3, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->updateCurrentFrame(JZ)V
 
-    .line 287
+    .line 292
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->outIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
@@ -3431,32 +3452,32 @@
 
     invoke-virtual {p2, p4}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
 
-    .line 289
+    .line 294
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->strokePaint:Landroid/graphics/Paint;
 
     if-nez p2, :cond_6
 
-    .line 290
+    .line 295
     new-instance p2, Landroid/graphics/Paint;
 
     invoke-direct {p2, p3}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->strokePaint:Landroid/graphics/Paint;
 
-    .line 291
+    .line 296
     sget-object p3, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p2, p3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 292
+    .line 297
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->strokePaint:Landroid/graphics/Paint;
 
     sget-object p3, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {p2, p3}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 294
+    .line 299
     :cond_6
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->strokePaint:Landroid/graphics/Paint;
 
@@ -3652,7 +3673,7 @@
 .method public width()I
     .locals 1
 
-    .line 314
+    .line 319
     iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->bounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I

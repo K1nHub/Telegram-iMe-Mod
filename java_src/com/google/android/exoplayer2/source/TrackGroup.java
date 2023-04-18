@@ -19,7 +19,7 @@ public final class TrackGroup implements Bundleable {
     private int hashCode;
 
     /* renamed from: id */
-    public final String f126id;
+    public final String f123id;
     public final int length;
     public final int type;
     private static final String FIELD_FORMATS = Util.intToStringMaxRadix(0);
@@ -36,7 +36,7 @@ public final class TrackGroup implements Bundleable {
 
     public TrackGroup(String str, Format... formatArr) {
         Assertions.checkArgument(formatArr.length > 0);
-        this.f126id = str;
+        this.f123id = str;
         this.formats = formatArr;
         this.length = formatArr.length;
         int trackType = MimeTypes.getTrackType(formatArr[0].sampleMimeType);
@@ -68,7 +68,7 @@ public final class TrackGroup implements Bundleable {
 
     public int hashCode() {
         if (this.hashCode == 0) {
-            this.hashCode = ((527 + this.f126id.hashCode()) * 31) + Arrays.hashCode(this.formats);
+            this.hashCode = ((527 + this.f123id.hashCode()) * 31) + Arrays.hashCode(this.formats);
         }
         return this.hashCode;
     }
@@ -81,7 +81,7 @@ public final class TrackGroup implements Bundleable {
             return false;
         }
         TrackGroup trackGroup = (TrackGroup) obj;
-        return this.f126id.equals(trackGroup.f126id) && Arrays.equals(this.formats, trackGroup.formats);
+        return this.f123id.equals(trackGroup.f123id) && Arrays.equals(this.formats, trackGroup.formats);
     }
 
     @Override // com.google.android.exoplayer2.Bundleable
@@ -92,7 +92,7 @@ public final class TrackGroup implements Bundleable {
             arrayList.add(format.toBundle(true));
         }
         bundle.putParcelableArrayList(FIELD_FORMATS, arrayList);
-        bundle.putString(FIELD_ID, this.f126id);
+        bundle.putString(FIELD_ID, this.f123id);
         return bundle;
     }
 
@@ -101,7 +101,7 @@ public final class TrackGroup implements Bundleable {
         ImmutableList fromBundleList;
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_FORMATS);
         if (parcelableArrayList == null) {
-            fromBundleList = ImmutableList.m754of();
+            fromBundleList = ImmutableList.m740of();
         } else {
             fromBundleList = BundleableUtil.fromBundleList(Format.CREATOR, parcelableArrayList);
         }
@@ -135,6 +135,6 @@ public final class TrackGroup implements Bundleable {
     }
 
     private static void logErrorMessage(String str, String str2, String str3, int i) {
-        Log.m809e(TAG, "", new IllegalStateException("Different " + str + " combined in one TrackGroup: '" + str2 + "' (track 0) and '" + str3 + "' (track " + i + ")"));
+        Log.m795e(TAG, "", new IllegalStateException("Different " + str + " combined in one TrackGroup: '" + str2 + "' (track 0) and '" + str3 + "' (track " + i + ")"));
     }
 }

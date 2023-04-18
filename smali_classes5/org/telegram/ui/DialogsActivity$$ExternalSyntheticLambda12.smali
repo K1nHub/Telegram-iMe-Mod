@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda12;->f$0:Ljava/lang/Runnable;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$hYmb8q9CEm-c4ZMmbfWfxdmmr7Q(Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$xH3GE-0EPHeqwi6Gq3PyHM-oSiI(Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

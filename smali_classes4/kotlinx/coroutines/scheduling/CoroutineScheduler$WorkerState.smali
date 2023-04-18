@@ -167,24 +167,20 @@
 
     move-result-object p0
 
-    .line 964
     check-cast p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
     return-object p0
 .end method
 
 .method public static values()[Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
-    .locals 2
+    .locals 1
 
     sget-object v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;->$VALUES:[Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
-    array-length v1, v0
-
-    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 964
     check-cast v0, [Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
     return-object v0

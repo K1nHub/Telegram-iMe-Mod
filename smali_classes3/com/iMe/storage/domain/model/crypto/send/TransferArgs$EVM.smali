@@ -58,31 +58,31 @@
 
     const/4 v0, 0x0
 
-    .line 18
-    invoke-direct {p0, p1, p2, v0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DLkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 10
-    iput-wide p1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->amount:D
-
-    .line 11
-    iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
-
-    .line 12
-    iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->recipientAddress:Ljava/lang/String;
-
-    .line 13
-    iput-wide p5, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->chainId:J
-
-    .line 14
-    iput-object p7, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->nonce:Ljava/math/BigInteger;
-
-    .line 15
-    iput-object p8, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->gasPrice:Ljava/math/BigInteger;
+    .line 24
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 16
-    iput-object p9, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->gasLimit:Ljava/math/BigInteger;
+    iput-wide p1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->amount:D
 
     .line 17
+    iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    .line 18
+    iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->recipientAddress:Ljava/lang/String;
+
+    .line 19
+    iput-wide p5, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->chainId:J
+
+    .line 20
+    iput-object p7, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->nonce:Ljava/math/BigInteger;
+
+    .line 21
+    iput-object p8, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->gasPrice:Ljava/math/BigInteger;
+
+    .line 22
+    iput-object p9, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->gasLimit:Ljava/math/BigInteger;
+
+    .line 23
     iput-object p10, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->contractAddress:Ljava/lang/String;
 
     return-void
@@ -123,7 +123,7 @@
 
     move-object/from16 v10, p9
 
-    .line 9
+    .line 15
     invoke-direct/range {v1 .. v11}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;-><init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;)V
 
     return-void
@@ -154,7 +154,9 @@
 
     if-eqz v4, :cond_1
 
-    iget-object v4, v0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v4
 
     goto :goto_1
 
@@ -269,10 +271,12 @@
     return-wide v0
 .end method
 
-.method public final component2()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+.method protected final component2()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -411,9 +415,13 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    move-result-object v1
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v3
 
     if-eq v1, v3, :cond_3
 
@@ -502,7 +510,7 @@
 .method public getAmount()D
     .locals 2
 
-    .line 10
+    .line 16
     iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->amount:D
 
     return-wide v0
@@ -511,7 +519,7 @@
 .method public final getChainId()J
     .locals 2
 
-    .line 13
+    .line 19
     iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->chainId:J
 
     return-wide v0
@@ -520,7 +528,7 @@
 .method public final getContractAddress()Ljava/lang/String;
     .locals 1
 
-    .line 17
+    .line 23
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->contractAddress:Ljava/lang/String;
 
     return-object v0
@@ -529,7 +537,7 @@
 .method public final getGasLimit()Ljava/math/BigInteger;
     .locals 1
 
-    .line 16
+    .line 22
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->gasLimit:Ljava/math/BigInteger;
 
     return-object v0
@@ -538,7 +546,7 @@
 .method public final getGasPrice()Ljava/math/BigInteger;
     .locals 1
 
-    .line 15
+    .line 21
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->gasPrice:Ljava/math/BigInteger;
 
     return-object v0
@@ -547,7 +555,7 @@
 .method public final getNonce()Ljava/math/BigInteger;
     .locals 1
 
-    .line 14
+    .line 20
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->nonce:Ljava/math/BigInteger;
 
     return-object v0
@@ -556,16 +564,16 @@
 .method public final getRecipientAddress()Ljava/lang/String;
     .locals 1
 
-    .line 12
+    .line 18
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->recipientAddress:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+.method protected getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
     .locals 1
 
-    .line 11
+    .line 17
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     return-object v0
@@ -584,7 +592,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
 
@@ -684,7 +694,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

@@ -3,21 +3,21 @@ package com.google.android.gms.internal.common;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import org.jspecify.nullness.NullMarked;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* compiled from: com.google.android.gms:play-services-basement@@18.1.0 */
 @NullMarked
 /* loaded from: classes.dex */
-abstract class zzj implements Iterator, p035j$.util.Iterator {
+abstract class zzj implements Iterator, p034j$.util.Iterator {
     private Object zza;
     private int zzb = 2;
 
-    @Override // p035j$.util.Iterator
+    @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final Object next() {
         if (hasNext()) {
             this.zzb = 2;
@@ -28,7 +28,7 @@ abstract class zzj implements Iterator, p035j$.util.Iterator {
         throw new NoSuchElementException();
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final void remove() {
         throw new UnsupportedOperationException();
     }
@@ -41,7 +41,7 @@ abstract class zzj implements Iterator, p035j$.util.Iterator {
         return null;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final boolean hasNext() {
         int i = this.zzb;
         if (i != 4) {

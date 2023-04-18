@@ -42,25 +42,25 @@
 
     const/4 v0, 0x0
 
-    .line 27
-    invoke-direct {p0, p1, p2, v0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DLkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 33
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 21
+    .line 27
     iput-wide p1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->amount:D
 
-    .line 22
+    .line 28
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 23
+    .line 29
     iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->recipientAddress:Ljava/lang/String;
 
-    .line 24
+    .line 30
     iput-object p5, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->message:Ljava/lang/String;
 
-    .line 25
+    .line 31
     iput p6, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->sendMode:I
 
-    .line 26
+    .line 32
     iput-boolean p7, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
 
     return-void
@@ -95,7 +95,7 @@
 
     move v7, p6
 
-    .line 20
+    .line 26
     invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;-><init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;Ljava/lang/String;IZ)V
 
     return-void
@@ -124,7 +124,9 @@
 
     if-eqz v3, :cond_1
 
-    iget-object v3, v0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v3
 
     goto :goto_1
 
@@ -211,10 +213,12 @@
     return-wide v0
 .end method
 
-.method public final component2()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+.method protected final component2()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -321,9 +325,13 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    move-result-object v1
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v3
 
     if-eq v1, v3, :cond_3
 
@@ -380,7 +388,7 @@
 .method public getAmount()D
     .locals 2
 
-    .line 21
+    .line 27
     iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->amount:D
 
     return-wide v0
@@ -389,7 +397,7 @@
 .method public final getMessage()Ljava/lang/String;
     .locals 1
 
-    .line 24
+    .line 30
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->message:Ljava/lang/String;
 
     return-object v0
@@ -398,7 +406,7 @@
 .method public final getRecipientAddress()Ljava/lang/String;
     .locals 1
 
-    .line 23
+    .line 29
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->recipientAddress:Ljava/lang/String;
 
     return-object v0
@@ -407,16 +415,16 @@
 .method public final getSendMode()I
     .locals 1
 
-    .line 25
+    .line 31
     iget v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->sendMode:I
 
     return v0
 .end method
 
-.method public final getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+.method protected getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
     .locals 1
 
-    .line 22
+    .line 28
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     return-object v0
@@ -435,7 +443,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
 
@@ -494,7 +504,7 @@
 .method public final isUnencrypted()Z
     .locals 1
 
-    .line 26
+    .line 32
     iget-boolean v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
 
     return v0
@@ -521,7 +531,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

@@ -195,9 +195,7 @@
     iput-object p1, p0, Lcom/iMe/fork/controller/RecentChatsController;->selectedDrawStatusTypes:Ljava/util/Set;
 
     .line 26
-    sget-object p1, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys$User$Default;
-
-    invoke-virtual {p1}, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->isSaveArchiveRecentChatsEnabled()Z
+    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->isSaveArchiveRecentChatsEnabled()Z
 
     move-result p1
 
@@ -834,9 +832,7 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys$User$Default;
-
-    invoke-virtual {v1}, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->isSaveArchiveRecentChatsEnabled()Z
+    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->isSaveArchiveRecentChatsEnabled()Z
 
     move-result v1
 

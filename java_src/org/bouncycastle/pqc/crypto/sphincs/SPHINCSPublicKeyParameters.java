@@ -1,13 +1,12 @@
 package org.bouncycastle.pqc.crypto.sphincs;
 
-import org.bouncycastle.crypto.params.AsymmetricKeyParameter;
 import org.bouncycastle.util.Arrays;
 /* loaded from: classes4.dex */
-public class SPHINCSPublicKeyParameters extends AsymmetricKeyParameter {
+public class SPHINCSPublicKeyParameters extends SPHINCSKeyParameters {
     private final byte[] keyData;
 
-    public SPHINCSPublicKeyParameters(byte[] bArr) {
-        super(false);
+    public SPHINCSPublicKeyParameters(byte[] bArr, String str) {
+        super(false, str);
         this.keyData = Arrays.clone(bArr);
     }
 

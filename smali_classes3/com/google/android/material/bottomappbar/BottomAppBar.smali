@@ -1442,7 +1442,7 @@
     .locals 2
 
     .line 986
-    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
+    invoke-super {p0}, Landroidx/appcompat/widget/Toolbar;->onAttachedToWindow()V
 
     .line 988
     iget-object v0, p0, Lcom/google/android/material/bottomappbar/BottomAppBar;->materialShapeDrawable:Lcom/google/android/material/shape/MaterialShapeDrawable;

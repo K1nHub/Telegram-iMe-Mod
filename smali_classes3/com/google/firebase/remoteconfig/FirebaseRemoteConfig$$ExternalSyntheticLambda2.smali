@@ -5,27 +5,17 @@
 .implements Lcom/google/android/gms/tasks/SuccessContinuation;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig$$ExternalSyntheticLambda2;
+# instance fields
+.field public final synthetic f$0:Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig$$ExternalSyntheticLambda2;
-
-    invoke-direct {v0}, Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig$$ExternalSyntheticLambda2;-><init>()V
-
-    sput-object v0, Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig$$ExternalSyntheticLambda2;->INSTANCE:Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig$$ExternalSyntheticLambda2;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig$$ExternalSyntheticLambda2;->f$0:Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;
 
     return-void
 .end method
@@ -33,11 +23,13 @@
 
 # virtual methods
 .method public final then(Ljava/lang/Object;)Lcom/google/android/gms/tasks/Task;
-    .locals 0
+    .locals 1
 
-    check-cast p1, Lcom/google/firebase/remoteconfig/internal/ConfigContainer;
+    iget-object v0, p0, Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig$$ExternalSyntheticLambda2;->f$0:Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;
 
-    invoke-static {p1}, Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;->$r8$lambda$Zxj7vj2VFSzqm5ULSomVu6gUxlM(Lcom/google/firebase/remoteconfig/internal/ConfigContainer;)Lcom/google/android/gms/tasks/Task;
+    check-cast p1, Ljava/lang/Void;
+
+    invoke-static {v0, p1}, Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;->$r8$lambda$_X3DF30YxyLOxq-6pZ_DZMNlf2s(Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;Ljava/lang/Void;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 

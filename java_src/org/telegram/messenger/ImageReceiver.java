@@ -25,13 +25,13 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SvgHelper;
-import org.telegram.p048ui.Components.AnimatedFileDrawable;
-import org.telegram.p048ui.Components.AttachableDrawable;
-import org.telegram.p048ui.Components.AvatarDrawable;
-import org.telegram.p048ui.Components.ClipRoundedDrawable;
-import org.telegram.p048ui.Components.RLottieDrawable;
-import org.telegram.p048ui.Components.RecyclableDrawable;
-import org.telegram.p048ui.Components.VectorAvatarThumbDrawable;
+import org.telegram.p044ui.Components.AnimatedFileDrawable;
+import org.telegram.p044ui.Components.AttachableDrawable;
+import org.telegram.p044ui.Components.AvatarDrawable;
+import org.telegram.p044ui.Components.ClipRoundedDrawable;
+import org.telegram.p044ui.Components.RLottieDrawable;
+import org.telegram.p044ui.Components.RecyclableDrawable;
+import org.telegram.p044ui.Components.VectorAvatarThumbDrawable;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive;
@@ -535,8 +535,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 if (tLRPC$Document == null) {
                     tLRPC$Document = ((MessageObject) obj).getDocument();
                 }
-                if (tLRPC$Document != null && tLRPC$Document.dc_id != 0 && tLRPC$Document.f1510id != 0) {
-                    key = "q_" + tLRPC$Document.dc_id + "_" + tLRPC$Document.f1510id;
+                if (tLRPC$Document != null && tLRPC$Document.dc_id != 0 && tLRPC$Document.f1435id != 0) {
+                    key = "q_" + tLRPC$Document.dc_id + "_" + tLRPC$Document.f1435id;
                     this.currentKeyQuality = true;
                 }
             }
@@ -1879,9 +1879,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             android.graphics.drawable.Drawable r0 = r5.currentMediaDrawable
             boolean r1 = r0 instanceof android.graphics.drawable.BitmapDrawable
             if (r1 == 0) goto L4e
-            boolean r1 = r0 instanceof org.telegram.p048ui.Components.AnimatedFileDrawable
+            boolean r1 = r0 instanceof org.telegram.p044ui.Components.AnimatedFileDrawable
             if (r1 != 0) goto L4e
-            boolean r1 = r0 instanceof org.telegram.p048ui.Components.RLottieDrawable
+            boolean r1 = r0 instanceof org.telegram.p044ui.Components.RLottieDrawable
             if (r1 != 0) goto L4e
             android.graphics.drawable.BitmapDrawable r0 = (android.graphics.drawable.BitmapDrawable) r0
             android.graphics.Bitmap r0 = r0.getBitmap()
@@ -1891,9 +1891,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             android.graphics.drawable.Drawable r1 = r5.currentImageDrawable
             boolean r4 = r1 instanceof android.graphics.drawable.BitmapDrawable
             if (r4 == 0) goto L65
-            boolean r4 = r1 instanceof org.telegram.p048ui.Components.AnimatedFileDrawable
+            boolean r4 = r1 instanceof org.telegram.p044ui.Components.AnimatedFileDrawable
             if (r4 != 0) goto L65
-            boolean r4 = r0 instanceof org.telegram.p048ui.Components.RLottieDrawable
+            boolean r4 = r0 instanceof org.telegram.p044ui.Components.RLottieDrawable
             if (r4 != 0) goto L65
             android.graphics.drawable.BitmapDrawable r1 = (android.graphics.drawable.BitmapDrawable) r1
             android.graphics.Bitmap r0 = r1.getBitmap()
@@ -1903,9 +1903,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             android.graphics.drawable.Drawable r1 = r5.currentThumbDrawable
             boolean r4 = r1 instanceof android.graphics.drawable.BitmapDrawable
             if (r4 == 0) goto L7c
-            boolean r4 = r1 instanceof org.telegram.p048ui.Components.AnimatedFileDrawable
+            boolean r4 = r1 instanceof org.telegram.p044ui.Components.AnimatedFileDrawable
             if (r4 != 0) goto L7c
-            boolean r0 = r0 instanceof org.telegram.p048ui.Components.RLottieDrawable
+            boolean r0 = r0 instanceof org.telegram.p044ui.Components.RLottieDrawable
             if (r0 != 0) goto L7c
             android.graphics.drawable.BitmapDrawable r1 = (android.graphics.drawable.BitmapDrawable) r1
             android.graphics.Bitmap r0 = r1.getBitmap()

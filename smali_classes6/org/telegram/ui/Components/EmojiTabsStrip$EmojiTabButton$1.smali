@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;Landroid/content/Context;Lorg/telegram/ui/Components/EmojiTabsStrip;)V
     .locals 0
 
-    .line 931
+    .line 936
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$1;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
 
     invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -35,14 +35,14 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 945
+    .line 950
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 947
+    .line 952
     invoke-virtual {p0}, Landroid/widget/ImageView;->getMeasuredWidth()I
 
     move-result v1
@@ -57,10 +57,10 @@
 
     const/16 v1, 0xff
 
-    .line 948
+    .line 953
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 949
+    .line 954
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     :cond_0
@@ -70,10 +70,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 934
+    .line 939
     invoke-super {p0}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 935
+    .line 940
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$1;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->updateLockImageReceiver()V
@@ -90,7 +90,7 @@
 .method public setImageDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 955
+    .line 960
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     return-void

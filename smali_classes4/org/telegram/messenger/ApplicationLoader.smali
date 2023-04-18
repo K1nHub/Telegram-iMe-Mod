@@ -74,10 +74,10 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 364
+    .line 369
     invoke-direct {p0}, Landroid/app/Application;-><init>()V
 
-    .line 77
+    .line 78
     new-instance v0, Lorg/solovyev/android/checkout/Billing;
 
     new-instance v1, Lcom/iMe/ui/shop/configuration/BillingConfiguration;
@@ -94,7 +94,7 @@
 .method static synthetic access$000()Landroid/net/ConnectivityManager;
     .locals 1
 
-    .line 68
+    .line 69
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->connectivityManager:Landroid/net/ConnectivityManager;
 
     return-object v0
@@ -103,7 +103,7 @@
 .method static synthetic access$100(Z)V
     .locals 0
 
-    .line 68
+    .line 69
     invoke-static {p0}, Lorg/telegram/messenger/ApplicationLoader;->ensureCurrentNetworkGet(Z)V
 
     return-void
@@ -112,7 +112,7 @@
 .method static synthetic access$202(I)I
     .locals 0
 
-    .line 68
+    .line 69
     sput p0, Lorg/telegram/messenger/ApplicationLoader;->lastKnownNetworkType:I
 
     return p0
@@ -121,7 +121,7 @@
 .method public static appCenterLog(Ljava/lang/Throwable;)V
     .locals 1
 
-    .line 665
+    .line 674
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationLoaderInstance:Lorg/telegram/messenger/ApplicationLoader;
 
     invoke-virtual {v0, p0}, Lorg/telegram/messenger/ApplicationLoader;->appCenterLogInternal(Ljava/lang/Throwable;)V
@@ -132,7 +132,7 @@
 .method public static checkForUpdates()V
     .locals 1
 
-    .line 661
+    .line 670
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationLoaderInstance:Lorg/telegram/messenger/ApplicationLoader;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ApplicationLoader;->checkForUpdatesInternal()V
@@ -140,10 +140,10 @@
     return-void
 .end method
 
-.method static checkKoinInit()V
+.method public static checkKoinInit()V
     .locals 0
 
-    .line 131
+    .line 84
     :try_start_0
     invoke-static {}, Lorg/koin/java/KoinJavaComponent;->getKoin()Lorg/koin/core/Koin;
     :try_end_0
@@ -151,10 +151,14 @@
 
     goto :goto_0
 
-    .line 133
+    .line 87
     :catch_0
+    :try_start_1
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->initKoin()V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
+    :catch_1
     :goto_0
     return-void
 .end method
@@ -164,7 +168,7 @@
 
     const/4 v0, 0x1
 
-    .line 464
+    .line 473
     :try_start_0
     invoke-static {p0}, Lcom/google/android/gms/common/GooglePlayServicesUtil;->isGooglePlayServicesAvailable(Landroid/content/Context;)I
 
@@ -185,7 +189,7 @@
     :catch_0
     move-exception v1
 
-    .line 467
+    .line 476
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return v0
@@ -196,19 +200,19 @@
 
     if-nez p0, :cond_0
 
-    .line 473
+    .line 482
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
     if-nez p0, :cond_2
 
-    .line 475
+    .line 484
     :cond_0
     :try_start_0
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->connectivityManager:Landroid/net/ConnectivityManager;
 
     if-nez p0, :cond_1
 
-    .line 476
+    .line 485
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v0, "connectivity"
@@ -221,7 +225,7 @@
 
     sput-object p0, Lorg/telegram/messenger/ApplicationLoader;->connectivityManager:Landroid/net/ConnectivityManager;
 
-    .line 478
+    .line 487
     :cond_1
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->connectivityManager:Landroid/net/ConnectivityManager;
 
@@ -231,26 +235,26 @@
 
     sput-object p0, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
-    .line 479
+    .line 488
     sget p0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x18
 
     if-lt p0, v0, :cond_2
 
-    .line 480
+    .line 489
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->networkCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
     if-nez p0, :cond_2
 
-    .line 481
+    .line 490
     new-instance p0, Lorg/telegram/messenger/ApplicationLoader$4;
 
     invoke-direct {p0}, Lorg/telegram/messenger/ApplicationLoader$4;-><init>()V
 
     sput-object p0, Lorg/telegram/messenger/ApplicationLoader;->networkCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
-    .line 492
+    .line 501
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->connectivityManager:Landroid/net/ConnectivityManager;
 
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->networkCallback:Landroid/net/ConnectivityManager$NetworkCallback;
@@ -267,7 +271,7 @@
 .method public static getApplicationId()Ljava/lang/String;
     .locals 1
 
-    .line 231
+    .line 235
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationLoaderInstance:Lorg/telegram/messenger/ApplicationLoader;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ApplicationLoader;->onGetApplicationId()Ljava/lang/String;
@@ -282,18 +286,18 @@
 
     const/4 v0, 0x0
 
-    .line 559
+    .line 568
     :try_start_0
     invoke-static {v0}, Lorg/telegram/messenger/ApplicationLoader;->ensureCurrentNetworkGet(Z)V
 
-    .line 560
+    .line 569
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
     if-nez v1, :cond_0
 
     return v0
 
-    .line 563
+    .line 572
     :cond_0
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
@@ -317,7 +321,7 @@
 
     goto :goto_0
 
-    .line 575
+    .line 584
     :cond_1
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
@@ -331,7 +335,7 @@
 
     return v0
 
-    .line 564
+    .line 573
     :cond_2
     :goto_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -361,12 +365,12 @@
 
     if-gez v1, :cond_4
 
-    .line 565
+    .line 574
     sget v0, Lorg/telegram/messenger/ApplicationLoader;->lastKnownNetworkType:I
 
     return v0
 
-    .line 567
+    .line 576
     :cond_4
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->connectivityManager:Landroid/net/ConnectivityManager;
 
@@ -376,16 +380,16 @@
 
     if-eqz v1, :cond_5
 
-    .line 568
+    .line 577
     sput v0, Lorg/telegram/messenger/ApplicationLoader;->lastKnownNetworkType:I
 
     goto :goto_1
 
-    .line 570
+    .line 579
     :cond_5
     sput v2, Lorg/telegram/messenger/ApplicationLoader;->lastKnownNetworkType:I
 
-    .line 572
+    .line 581
     :goto_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -393,7 +397,7 @@
 
     sput-wide v1, Lorg/telegram/messenger/ApplicationLoader;->lastNetworkCheckTypeTime:J
 
-    .line 573
+    .line 582
     sget v0, Lorg/telegram/messenger/ApplicationLoader;->lastKnownNetworkType:I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -403,7 +407,7 @@
     :catch_0
     move-exception v1
 
-    .line 579
+    .line 588
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_6
@@ -413,7 +417,7 @@
 .method public static getCurrentNetworkType()I
     .locals 1
 
-    .line 585
+    .line 594
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isConnectedOrConnectingToWiFi()Z
 
     move-result v0
@@ -424,7 +428,7 @@
 
     return v0
 
-    .line 587
+    .line 596
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isRoaming()Z
 
@@ -452,7 +456,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 248
+    .line 252
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
@@ -468,7 +472,7 @@
 
     goto :goto_0
 
-    .line 254
+    .line 258
     :cond_1
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -477,7 +481,7 @@
 
     move-result-object v0
 
-    .line 255
+    .line 259
     new-instance v1, Ljava/io/File;
 
     iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->dataDir:Ljava/lang/String;
@@ -486,7 +490,7 @@
 
     invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 256
+    .line 260
     invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -496,10 +500,10 @@
     :catch_0
     move-exception v0
 
-    .line 259
+    .line 263
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 261
+    .line 265
     new-instance v0, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getApplicationId()Ljava/lang/String;
@@ -522,12 +526,12 @@
 .method public static getLocationServiceProvider()Lorg/telegram/messenger/ILocationServiceProvider;
     .locals 2
 
-    .line 197
+    .line 201
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->locationServiceProvider:Lorg/telegram/messenger/ILocationServiceProvider;
 
     if-nez v0, :cond_0
 
-    .line 198
+    .line 202
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationLoaderInstance:Lorg/telegram/messenger/ApplicationLoader;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ApplicationLoader;->onCreateLocationServiceProvider()Lorg/telegram/messenger/ILocationServiceProvider;
@@ -536,12 +540,12 @@
 
     sput-object v0, Lorg/telegram/messenger/ApplicationLoader;->locationServiceProvider:Lorg/telegram/messenger/ILocationServiceProvider;
 
-    .line 199
+    .line 203
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-interface {v0, v1}, Lorg/telegram/messenger/ILocationServiceProvider;->init(Landroid/content/Context;)V
 
-    .line 201
+    .line 205
     :cond_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->locationServiceProvider:Lorg/telegram/messenger/ILocationServiceProvider;
 
@@ -551,12 +555,12 @@
 .method public static getMapsProvider()Lorg/telegram/messenger/IMapsProvider;
     .locals 1
 
-    .line 209
+    .line 213
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->mapsProvider:Lorg/telegram/messenger/IMapsProvider;
 
     if-nez v0, :cond_0
 
-    .line 210
+    .line 214
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationLoaderInstance:Lorg/telegram/messenger/ApplicationLoader;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ApplicationLoader;->onCreateMapsProvider()Lorg/telegram/messenger/IMapsProvider;
@@ -565,7 +569,7 @@
 
     sput-object v0, Lorg/telegram/messenger/ApplicationLoader;->mapsProvider:Lorg/telegram/messenger/IMapsProvider;
 
-    .line 212
+    .line 216
     :cond_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->mapsProvider:Lorg/telegram/messenger/IMapsProvider;
 
@@ -575,12 +579,12 @@
 .method public static getPushProvider()Lorg/telegram/messenger/PushListenerController$IPushListenerServiceProvider;
     .locals 1
 
-    .line 220
+    .line 224
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->pushProvider:Lorg/telegram/messenger/PushListenerController$IPushListenerServiceProvider;
 
     if-nez v0, :cond_0
 
-    .line 221
+    .line 225
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationLoaderInstance:Lorg/telegram/messenger/ApplicationLoader;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ApplicationLoader;->onCreatePushProvider()Lorg/telegram/messenger/PushListenerController$IPushListenerServiceProvider;
@@ -589,7 +593,7 @@
 
     sput-object v0, Lorg/telegram/messenger/ApplicationLoader;->pushProvider:Lorg/telegram/messenger/PushListenerController$IPushListenerServiceProvider;
 
-    .line 223
+    .line 227
     :cond_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->pushProvider:Lorg/telegram/messenger/PushListenerController$IPushListenerServiceProvider;
 
@@ -599,7 +603,7 @@
 .method public static getVersionCode()I
     .locals 1
 
-    .line 86
+    .line 98
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationLoaderInstance:Lorg/telegram/messenger/ApplicationLoader;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ApplicationLoader;->onGetVersionCode()I
@@ -612,7 +616,7 @@
 .method public static getVersionName()Ljava/lang/String;
     .locals 1
 
-    .line 82
+    .line 94
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationLoaderInstance:Lorg/telegram/messenger/ApplicationLoader;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ApplicationLoader;->onGetVersionName()Ljava/lang/String;
@@ -625,7 +629,7 @@
 .method private static initCryptoSecureServices()V
     .locals 2
 
-    .line 122
+    .line 134
     invoke-static {}, Landroidx/lifecycle/ProcessLifecycleOwner;->get()Landroidx/lifecycle/LifecycleOwner;
 
     move-result-object v0
@@ -646,14 +650,14 @@
 .method private static initDebugTools()V
     .locals 1
 
-    .line 113
+    .line 125
     new-instance v0, Lcom/iMe/utils/debug/FileLogTree;
 
     invoke-direct {v0}, Lcom/iMe/utils/debug/FileLogTree;-><init>()V
 
     invoke-static {v0}, Ltimber/log/Timber;->plant(Ltimber/log/Timber$Tree;)V
 
-    .line 114
+    .line 126
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader$$ExternalSyntheticLambda0;->INSTANCE:Lorg/telegram/messenger/ApplicationLoader$$ExternalSyntheticLambda0;
 
     invoke-static {v0}, Lio/reactivex/plugins/RxJavaPlugins;->setErrorHandler(Lio/reactivex/functions/Consumer;)V
@@ -664,7 +668,7 @@
 .method private static initForkSmartBots()V
     .locals 4
 
-    .line 91
+    .line 103
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -674,7 +678,7 @@
 
     move-result-object v0
 
-    .line 92
+    .line 104
     new-instance v1, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
@@ -691,7 +695,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 94
+    .line 106
     sget-object v2, Lcom/iMe/bots/usecase/AiBotsManager;->Companion:Lcom/iMe/bots/usecase/AiBotsManager$Companion;
 
     sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -702,7 +706,7 @@
 
     sput-object v0, Lorg/telegram/messenger/ApplicationLoader;->smartBotsManager:Lcom/iMe/bots/usecase/AiBotsManager;
 
-    .line 96
+    .line 108
     :cond_0
     sget-object v0, Lcom/iMe/ui/shop/PurchaseHelper;->Companion:Lcom/iMe/ui/shop/PurchaseHelper$Companion;
 
@@ -714,19 +718,19 @@
 
     sput-object v0, Lorg/telegram/messenger/ApplicationLoader;->purchaseHelper:Lcom/iMe/ui/shop/PurchaseHelper;
 
-    .line 97
+    .line 109
     new-instance v0, Lorg/telegram/messenger/ApplicationLoader$1;
 
     invoke-direct {v0}, Lorg/telegram/messenger/ApplicationLoader$1;-><init>()V
 
-    .line 104
+    .line 116
     new-instance v1, Landroid/content/IntentFilter;
 
     const-string v2, "android.intent.action.DOWNLOAD_COMPLETE"
 
     invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 105
+    .line 117
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v2, v0, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
@@ -738,10 +742,10 @@
     :catch_0
     move-exception v0
 
-    .line 107
+    .line 119
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 108
+    .line 120
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -751,7 +755,7 @@
 .method private static initGoogleServices()Lcom/google/firebase/FirebaseApp;
     .locals 3
 
-    .line 118
+    .line 130
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     sget-object v1, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
@@ -782,7 +786,7 @@
 .method private static initKoin()V
     .locals 1
 
-    .line 126
+    .line 138
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/iMe/di/KoinJavaAppKt;->start(Landroid/content/Context;)V
@@ -793,7 +797,7 @@
 .method private initPushServices()V
     .locals 3
 
-    .line 449
+    .line 458
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/messenger/ApplicationLoader$$ExternalSyntheticLambda1;
 
     const-wide/16 v1, 0x3e8
@@ -808,11 +812,11 @@
 
     const/4 v0, 0x0
 
-    .line 513
+    .line 522
     :try_start_0
     invoke-static {v0}, Lorg/telegram/messenger/ApplicationLoader;->ensureCurrentNetworkGet(Z)V
 
-    .line 514
+    .line 523
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
     if-eqz v1, :cond_2
@@ -837,7 +841,7 @@
 
     if-ne v1, v3, :cond_2
 
-    .line 515
+    .line 524
     :cond_0
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
@@ -845,7 +849,7 @@
 
     move-result-object v1
 
-    .line 516
+    .line 525
     sget-object v3, Landroid/net/NetworkInfo$State;->CONNECTED:Landroid/net/NetworkInfo$State;
 
     if-eq v1, v3, :cond_1
@@ -866,7 +870,7 @@
     :catch_0
     move-exception v1
 
-    .line 521
+    .line 530
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -878,11 +882,11 @@
 
     const/4 v0, 0x0
 
-    .line 528
+    .line 537
     :try_start_0
     invoke-static {v0}, Lorg/telegram/messenger/ApplicationLoader;->ensureCurrentNetworkGet(Z)V
 
-    .line 529
+    .line 538
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
     if-eqz v1, :cond_1
@@ -925,7 +929,7 @@
     :catch_0
     move-exception v1
 
-    .line 533
+    .line 542
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -937,11 +941,11 @@
 
     const/4 v0, 0x0
 
-    .line 540
+    .line 549
     :try_start_0
     invoke-static {v0}, Lorg/telegram/messenger/ApplicationLoader;->ensureCurrentNetworkGet(Z)V
 
-    .line 541
+    .line 550
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
     if-eqz v1, :cond_1
@@ -954,7 +958,7 @@
 
     if-nez v1, :cond_1
 
-    .line 542
+    .line 551
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->getSubtype()I
@@ -997,7 +1001,7 @@
 .method public static isHuaweiStoreBuild()Z
     .locals 1
 
-    .line 239
+    .line 243
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationLoaderInstance:Lorg/telegram/messenger/ApplicationLoader;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ApplicationLoader;->isHuaweiBuild()Z
@@ -1010,17 +1014,17 @@
 .method public static isNetworkOnline()Z
     .locals 2
 
-    .line 646
+    .line 655
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isNetworkOnlineRealtime()Z
 
     move-result v0
 
-    .line 647
+    .line 656
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-eqz v1, :cond_0
 
-    .line 648
+    .line 657
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isNetworkOnlineFast()Z
 
     move-result v1
@@ -1029,7 +1033,7 @@
 
     const-string v1, "network online mismatch"
 
-    .line 650
+    .line 659
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_0
@@ -1043,18 +1047,18 @@
 
     const/4 v1, 0x1
 
-    .line 596
+    .line 605
     :try_start_0
     invoke-static {v0}, Lorg/telegram/messenger/ApplicationLoader;->ensureCurrentNetworkGet(Z)V
 
-    .line 597
+    .line 606
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
     if-nez v2, :cond_0
 
     return v1
 
-    .line 600
+    .line 609
     :cond_0
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
@@ -1074,7 +1078,7 @@
 
     goto :goto_0
 
-    .line 604
+    .line 613
     :cond_1
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->connectivityManager:Landroid/net/ConnectivityManager;
 
@@ -1084,7 +1088,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 605
+    .line 614
     invoke-virtual {v2}, Landroid/net/NetworkInfo;->isConnectedOrConnecting()Z
 
     move-result v2
@@ -1093,7 +1097,7 @@
 
     return v1
 
-    .line 608
+    .line 617
     :cond_2
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->connectivityManager:Landroid/net/ConnectivityManager;
 
@@ -1103,7 +1107,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 609
+    .line 618
     invoke-virtual {v2}, Landroid/net/NetworkInfo;->isConnectedOrConnecting()Z
 
     move-result v2
@@ -1124,7 +1128,7 @@
     :catch_0
     move-exception v0
 
-    .line 614
+    .line 623
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return v1
@@ -1135,7 +1139,7 @@
 
     const/4 v0, 0x1
 
-    .line 622
+    .line 631
     :try_start_0
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -1147,14 +1151,14 @@
 
     check-cast v1, Landroid/net/ConnectivityManager;
 
-    .line 623
+    .line 632
     invoke-virtual {v1}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v2
 
     if-eqz v2, :cond_1
 
-    .line 624
+    .line 633
     invoke-virtual {v2}, Landroid/net/NetworkInfo;->isConnectedOrConnecting()Z
 
     move-result v3
@@ -1173,14 +1177,14 @@
     :cond_1
     const/4 v2, 0x0
 
-    .line 628
+    .line 637
     invoke-virtual {v1, v2}, Landroid/net/ConnectivityManager;->getNetworkInfo(I)Landroid/net/NetworkInfo;
 
     move-result-object v3
 
     if-eqz v3, :cond_2
 
-    .line 630
+    .line 639
     invoke-virtual {v3}, Landroid/net/NetworkInfo;->isConnectedOrConnecting()Z
 
     move-result v3
@@ -1189,7 +1193,7 @@
 
     return v0
 
-    .line 633
+    .line 642
     :cond_2
     invoke-virtual {v1, v0}, Landroid/net/ConnectivityManager;->getNetworkInfo(I)Landroid/net/NetworkInfo;
 
@@ -1197,7 +1201,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 634
+    .line 643
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->isConnectedOrConnecting()Z
 
     move-result v1
@@ -1214,7 +1218,7 @@
     :catch_0
     move-exception v1
 
-    .line 639
+    .line 648
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return v0
@@ -1225,11 +1229,11 @@
 
     const/4 v0, 0x0
 
-    .line 503
+    .line 512
     :try_start_0
     invoke-static {v0}, Lorg/telegram/messenger/ApplicationLoader;->ensureCurrentNetworkGet(Z)V
 
-    .line 504
+    .line 513
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->currentNetworkInfo:Landroid/net/NetworkInfo;
 
     if-eqz v1, :cond_0
@@ -1252,7 +1256,7 @@
     :catch_0
     move-exception v1
 
-    .line 506
+    .line 515
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return v0
@@ -1261,7 +1265,7 @@
 .method private static synthetic lambda$initPushServices$0()V
     .locals 2
 
-    .line 450
+    .line 459
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getPushProvider()Lorg/telegram/messenger/PushListenerController$IPushListenerServiceProvider;
 
     move-result-object v0
@@ -1272,7 +1276,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 451
+    .line 460
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getPushProvider()Lorg/telegram/messenger/PushListenerController$IPushListenerServiceProvider;
 
     move-result-object v0
@@ -1281,13 +1285,13 @@
 
     goto :goto_0
 
-    .line 453
+    .line 462
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1
 
-    .line 454
+    .line 463
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1319,10 +1323,10 @@
     :cond_1
     const-string v0, "__NO_GOOGLE_PLAY_SERVICES__"
 
-    .line 456
+    .line 465
     sput-object v0, Lorg/telegram/messenger/SharedConfig;->pushStringStatus:Ljava/lang/String;
 
-    .line 457
+    .line 466
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getPushProvider()Lorg/telegram/messenger/PushListenerController$IPushListenerServiceProvider;
 
     move-result-object v0
@@ -1342,7 +1346,7 @@
 .method public static postInitApplication()V
     .locals 6
 
-    .line 265
+    .line 269
     sget-boolean v0, Lorg/telegram/messenger/ApplicationLoader;->applicationInited:Z
 
     if-nez v0, :cond_8
@@ -1356,21 +1360,21 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 269
+    .line 273
     sput-boolean v0, Lorg/telegram/messenger/ApplicationLoader;->applicationInited:Z
 
-    .line 272
+    .line 276
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->initForkSmartBots()V
 
-    .line 273
+    .line 277
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->checkKoinInit()V
 
-    .line 274
+    .line 278
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->initGoogleServices()Lcom/google/firebase/FirebaseApp;
 
     move-result-object v1
 
-    .line 275
+    .line 279
     sget-object v2, Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;->INSTANCE:Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;
 
     const-class v3, Lcom/google/firebase/messaging/FirebaseMessaging;
@@ -1383,10 +1387,10 @@
 
     iput-object v1, v2, Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;->firebaseMessaging:Lcom/google/firebase/messaging/FirebaseMessaging;
 
-    .line 276
+    .line 280
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->initDebugTools()V
 
-    .line 277
+    .line 281
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->initCryptoSecureServices()V
 
     const/4 v1, 0x0
@@ -1398,7 +1402,7 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 279
+    .line 283
     invoke-static {v2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v3
@@ -1409,8 +1413,11 @@
 
     goto :goto_0
 
-    .line 283
+    .line 285
     :cond_1
+    invoke-static {}, Lcom/iMe/storage/data/utils/crypto/CryptoLibsLoader;->initTrustWalletCoreLibrary()V
+
+    .line 288
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
     :try_end_0
@@ -1421,10 +1428,10 @@
     :catch_0
     move-exception v2
 
-    .line 285
+    .line 290
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 289
+    .line 294
     :goto_1
     :try_start_1
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -1439,19 +1446,19 @@
 
     sput-object v2, Lorg/telegram/messenger/ApplicationLoader;->connectivityManager:Landroid/net/ConnectivityManager;
 
-    .line 290
+    .line 295
     new-instance v2, Lorg/telegram/messenger/ApplicationLoader$2;
 
     invoke-direct {v2}, Lorg/telegram/messenger/ApplicationLoader$2;-><init>()V
 
-    .line 306
+    .line 311
     new-instance v4, Landroid/content/IntentFilter;
 
     const-string v5, "android.net.conn.CONNECTIVITY_CHANGE"
 
     invoke-direct {v4, v5}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 307
+    .line 312
     sget-object v5, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v5, v2, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
@@ -1463,10 +1470,10 @@
     :catch_1
     move-exception v2
 
-    .line 309
+    .line 314
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 313
+    .line 318
     :goto_2
     :try_start_2
     new-instance v2, Landroid/content/IntentFilter;
@@ -1477,15 +1484,15 @@
 
     const-string v4, "android.intent.action.SCREEN_OFF"
 
-    .line 314
+    .line 319
     invoke-virtual {v2, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 315
+    .line 320
     new-instance v4, Lorg/telegram/messenger/ScreenReceiver;
 
     invoke-direct {v4}, Lorg/telegram/messenger/ScreenReceiver;-><init>()V
 
-    .line 316
+    .line 321
     sget-object v5, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v5, v4, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
@@ -1497,10 +1504,10 @@
     :catch_2
     move-exception v2
 
-    .line 318
+    .line 323
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 322
+    .line 327
     :goto_3
     :try_start_3
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -1513,19 +1520,19 @@
 
     check-cast v2, Landroid/os/PowerManager;
 
-    .line 323
+    .line 328
     invoke-virtual {v2}, Landroid/os/PowerManager;->isScreenOn()Z
 
     move-result v2
 
     sput-boolean v2, Lorg/telegram/messenger/ApplicationLoader;->isScreenOn:Z
 
-    .line 324
+    .line 329
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_2
 
-    .line 325
+    .line 330
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1551,15 +1558,15 @@
     :catch_3
     move-exception v2
 
-    .line 328
+    .line 333
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 331
+    .line 336
     :cond_2
     :goto_4
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->loadConfig()V
 
-    .line 332
+    .line 337
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v2}, Lorg/telegram/messenger/SharedPrefsHelper;->init(Landroid/content/Context;)V
@@ -1569,12 +1576,12 @@
     :goto_5
     if-ge v2, v3, :cond_5
 
-    .line 335
+    .line 340
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     if-nez v2, :cond_3
 
-    .line 337
+    .line 342
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1605,11 +1612,11 @@
 
     goto :goto_6
 
-    .line 339
+    .line 344
     :cond_3
     invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
-    .line 341
+    .line 346
     :goto_6
     invoke-static {v2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
@@ -1621,14 +1628,14 @@
 
     if-eqz v4, :cond_4
 
-    .line 343
+    .line 348
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v5
 
     invoke-virtual {v5, v4, v0}, Lorg/telegram/messenger/MessagesController;->putUser(Lorg/telegram/tgnet/TLRPC$User;Z)Z
 
-    .line 344
+    .line 349
     invoke-static {v2}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
     move-result-object v4
@@ -1640,51 +1647,51 @@
 
     goto :goto_5
 
-    .line 348
+    .line 353
     :cond_5
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     check-cast v0, Lorg/telegram/messenger/ApplicationLoader;
 
-    .line 349
+    .line 354
     invoke-direct {v0}, Lorg/telegram/messenger/ApplicationLoader;->initPushServices()V
 
-    .line 350
+    .line 355
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_6
 
     const-string v0, "app initied"
 
-    .line 351
+    .line 356
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 354
+    .line 359
     :cond_6
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     :goto_7
     if-ge v1, v3, :cond_7
 
-    .line 356
+    .line 361
     invoke-static {v1}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ContactsController;->checkAppAccount()V
 
-    .line 357
+    .line 362
     invoke-static {v1}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_7
 
-    .line 359
+    .line 364
     :cond_7
     invoke-static {}, Lorg/telegram/messenger/ChatThemeController;->init()V
 
-    .line 360
+    .line 365
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
 
     move-result-object v0
@@ -1693,7 +1700,7 @@
 
     return-void
 
-    .line 266
+    .line 270
     :cond_8
     :goto_8
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->checkKoinInit()V
@@ -1704,7 +1711,7 @@
 .method public static startAppCenter(Landroid/app/Activity;)V
     .locals 1
 
-    .line 657
+    .line 666
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationLoaderInstance:Lorg/telegram/messenger/ApplicationLoader;
 
     invoke-virtual {v0, p0}, Lorg/telegram/messenger/ApplicationLoader;->startAppCenterInternal(Landroid/app/Activity;)V
@@ -1715,14 +1722,14 @@
 .method public static startPushService()V
     .locals 4
 
-    .line 417
+    .line 426
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalNotificationsSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
     const-string v1, "pushService"
 
-    .line 419
+    .line 428
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v2
@@ -1731,14 +1738,14 @@
 
     const/4 v2, 0x1
 
-    .line 420
+    .line 429
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
     goto :goto_0
 
-    .line 422
+    .line 431
     :cond_0
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -1757,7 +1764,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 426
+    .line 435
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -1775,7 +1782,7 @@
 
     goto :goto_1
 
-    .line 431
+    .line 440
     :cond_1
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -1805,10 +1812,10 @@
 .method protected attachBaseContext(Landroid/content/Context;)V
     .locals 0
 
-    .line 192
+    .line 196
     invoke-super {p0, p1}, Landroid/app/Application;->attachBaseContext(Landroid/content/Context;)V
 
-    .line 193
+    .line 197
     invoke-static {p0}, Landroidx/multidex/MultiDex;->install(Landroid/content/Context;)V
 
     return-void
@@ -1831,10 +1838,10 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 1
 
-    .line 437
+    .line 446
     invoke-super {p0, p1}, Landroid/app/Application;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 439
+    .line 448
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -1842,15 +1849,15 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/LocaleController;->onDeviceConfigurationChange(Landroid/content/res/Configuration;)V
 
-    .line 440
+    .line 449
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v0, p1}, Lorg/telegram/messenger/AndroidUtilities;->checkDisplaySize(Landroid/content/Context;Landroid/content/res/Configuration;)V
 
-    .line 441
+    .line 450
     invoke-static {}, Lorg/telegram/messenger/voip/VideoCapturerDevice;->checkScreenCapturerSize()V
 
-    .line 442
+    .line 451
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->resetTabletFlag()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1860,7 +1867,7 @@
     :catch_0
     move-exception p1
 
-    .line 444
+    .line 453
     invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_0
@@ -1870,7 +1877,7 @@
 .method public onCreate()V
     .locals 5
 
-    .line 370
+    .line 375
     invoke-static {p0}, Lcom/jakewharton/processphoenix/ProcessPhoenix;->isPhoenixProcess(Landroid/content/Context;)Z
 
     move-result v0
@@ -1879,11 +1886,11 @@
 
     return-void
 
-    .line 374
+    .line 379
     :cond_0
     sput-object p0, Lorg/telegram/messenger/ApplicationLoader;->applicationLoaderInstance:Lorg/telegram/messenger/ApplicationLoader;
 
-    .line 376
+    .line 381
     :try_start_0
     invoke-virtual {p0}, Landroid/app/Application;->getApplicationContext()Landroid/content/Context;
 
@@ -1893,16 +1900,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 381
+    .line 386
     :catchall_0
     invoke-super {p0}, Landroid/app/Application;->onCreate()V
 
-    .line 383
+    .line 388
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1
 
-    .line 384
+    .line 389
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1925,7 +1932,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 385
+    .line 390
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1944,20 +1951,20 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 387
+    .line 392
     :cond_1
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     if-nez v0, :cond_2
 
-    .line 388
+    .line 393
     invoke-virtual {p0}, Landroid/app/Application;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     sput-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    .line 391
+    .line 396
     :cond_2
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -1965,20 +1972,23 @@
 
     const/4 v0, 0x0
 
-    .line 392
+    .line 398
+    :try_start_1
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->native_setJava(Z)V
+    :try_end_1
+    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 393
+    .line 402
     new-instance v0, Lorg/telegram/messenger/ApplicationLoader$3;
 
     invoke-direct {v0, p0, p0}, Lorg/telegram/messenger/ApplicationLoader$3;-><init>(Lorg/telegram/messenger/ApplicationLoader;Landroid/app/Application;)V
 
-    .line 403
+    .line 412
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_3
 
-    .line 404
+    .line 413
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2003,7 +2013,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 407
+    .line 416
     :cond_3
     new-instance v0, Landroid/os/Handler;
 
@@ -2017,27 +2027,61 @@
 
     sput-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationHandler:Landroid/os/Handler;
 
-    .line 409
+    .line 418
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader$$ExternalSyntheticLambda2;->INSTANCE:Lorg/telegram/messenger/ApplicationLoader$$ExternalSyntheticLambda2;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 411
+    .line 420
     invoke-static {}, Lorg/telegram/ui/LauncherIconController;->tryFixLauncherIconIfNeeded()V
 
-    .line 412
+    .line 421
     invoke-static {}, Lorg/telegram/messenger/ProxyRotationController;->init()V
 
-    .line 413
+    .line 422
     invoke-static {p0}, Lcom/iMe/storage/data/manager/FlipperManager;->start(Landroid/content/Context;)V
 
     return-void
+
+    .line 400
+    :catch_0
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "can\'t load native libraries "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget-object v2, Landroid/os/Build;->CPU_ABI:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, " lookup folder "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {}, Lorg/telegram/messenger/NativeLoader;->getAbiFolder()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method protected onCreateLocationServiceProvider()Lorg/telegram/messenger/ILocationServiceProvider;
     .locals 1
 
-    .line 205
+    .line 209
     new-instance v0, Lorg/telegram/messenger/GoogleLocationProvider;
 
     invoke-direct {v0}, Lorg/telegram/messenger/GoogleLocationProvider;-><init>()V
@@ -2048,7 +2092,7 @@
 .method protected onCreateMapsProvider()Lorg/telegram/messenger/IMapsProvider;
     .locals 1
 
-    .line 216
+    .line 220
     new-instance v0, Lorg/telegram/messenger/GoogleMapsProvider;
 
     invoke-direct {v0}, Lorg/telegram/messenger/GoogleMapsProvider;-><init>()V
@@ -2059,7 +2103,7 @@
 .method protected onCreatePushProvider()Lorg/telegram/messenger/PushListenerController$IPushListenerServiceProvider;
     .locals 1
 
-    .line 227
+    .line 231
     sget-object v0, Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;->INSTANCE:Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;
 
     return-object v0
@@ -2092,7 +2136,7 @@
 .method public provideBilling()Lorg/solovyev/android/checkout/Billing;
     .locals 1
 
-    .line 156
+    .line 160
     iget-object v0, p0, Lorg/telegram/messenger/ApplicationLoader;->mBilling:Lorg/solovyev/android/checkout/Billing;
 
     return-object v0

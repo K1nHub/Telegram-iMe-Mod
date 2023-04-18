@@ -52,10 +52,10 @@
 
     move-object/from16 v1, p1
 
-    .line 2257
+    .line 2258
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2258
+    .line 2259
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_broadcastStats;->followers:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -89,12 +89,12 @@
 
     mul-float/2addr v7, v8
 
-    .line 2259
+    .line 2260
     invoke-static {v7}, Ljava/lang/Math;->abs(F)F
 
     move-result v5
 
-    .line 2260
+    .line 2261
     :goto_0
     sget v6, Lorg/telegram/messenger/R$string;->FollowersChartTitle:I
 
@@ -106,7 +106,7 @@
 
     iput-object v6, v0, Lorg/telegram/ui/StatisticActivity$OverviewChannelData;->followersTitle:Ljava/lang/String;
 
-    .line 2261
+    .line 2262
     iget-object v6, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_broadcastStats;->followers:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -154,7 +154,7 @@
 
     if-nez v8, :cond_3
 
-    .line 2266
+    .line 2267
     sget-object v5, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     new-array v8, v12, [Ljava/lang/Object;
@@ -203,7 +203,7 @@
 
     goto :goto_4
 
-    .line 2268
+    .line 2269
     :cond_3
     sget-object v3, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
@@ -253,7 +253,7 @@
 
     goto :goto_4
 
-    .line 2264
+    .line 2265
     :cond_5
     :goto_3
     iput-object v15, v0, Lorg/telegram/ui/StatisticActivity$OverviewChannelData;->followersSecondary:Ljava/lang/String;
@@ -268,11 +268,11 @@
     :cond_6
     move v2, v7
 
-    .line 2270
+    .line 2271
     :goto_5
     iput-boolean v2, v0, Lorg/telegram/ui/StatisticActivity$OverviewChannelData;->followersUp:Z
 
-    .line 2272
+    .line 2273
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_broadcastStats;->shares_per_post:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -304,12 +304,12 @@
 
     mul-float/2addr v3, v4
 
-    .line 2273
+    .line 2274
     invoke-static {v3}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
 
-    .line 2274
+    .line 2275
     :goto_6
     sget v4, Lorg/telegram/messenger/R$string;->SharesPerPost:I
 
@@ -321,7 +321,7 @@
 
     iput-object v4, v0, Lorg/telegram/ui/StatisticActivity$OverviewChannelData;->sharesTitle:Ljava/lang/String;
 
-    .line 2275
+    .line 2276
     iget-object v4, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_broadcastStats;->shares_per_post:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -353,7 +353,7 @@
 
     if-nez v5, :cond_a
 
-    .line 2280
+    .line 2281
     sget-object v3, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     new-array v5, v12, [Ljava/lang/Object;
@@ -402,7 +402,7 @@
 
     goto :goto_a
 
-    .line 2282
+    .line 2283
     :cond_a
     sget-object v4, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
@@ -452,7 +452,7 @@
 
     goto :goto_a
 
-    .line 2278
+    .line 2279
     :cond_c
     :goto_9
     iput-object v15, v0, Lorg/telegram/ui/StatisticActivity$OverviewChannelData;->sharesSecondary:Ljava/lang/String;
@@ -467,11 +467,11 @@
     :cond_d
     move v2, v7
 
-    .line 2284
+    .line 2285
     :goto_b
     iput-boolean v2, v0, Lorg/telegram/ui/StatisticActivity$OverviewChannelData;->sharesUp:Z
 
-    .line 2286
+    .line 2287
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_broadcastStats;->views_per_post:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -503,12 +503,12 @@
 
     mul-float/2addr v3, v4
 
-    .line 2287
+    .line 2288
     invoke-static {v3}, Ljava/lang/Math;->abs(F)F
 
     move-result v4
 
-    .line 2288
+    .line 2289
     :goto_c
     sget v3, Lorg/telegram/messenger/R$string;->ViewsPerPost:I
 
@@ -520,7 +520,7 @@
 
     iput-object v3, v0, Lorg/telegram/ui/StatisticActivity$OverviewChannelData;->viewsTitle:Ljava/lang/String;
 
-    .line 2289
+    .line 2290
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_broadcastStats;->views_per_post:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v8, v3, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -552,7 +552,7 @@
 
     if-nez v5, :cond_11
 
-    .line 2293
+    .line 2294
     sget-object v4, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     new-array v5, v12, [Ljava/lang/Object;
@@ -599,7 +599,7 @@
 
     goto :goto_10
 
-    .line 2295
+    .line 2296
     :cond_11
     sget-object v3, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
@@ -647,7 +647,7 @@
 
     goto :goto_10
 
-    .line 2291
+    .line 2292
     :cond_13
     :goto_f
     iput-object v15, v0, Lorg/telegram/ui/StatisticActivity$OverviewChannelData;->viewsSecondary:Ljava/lang/String;
@@ -662,11 +662,11 @@
     :cond_14
     move v2, v7
 
-    .line 2297
+    .line 2298
     :goto_11
     iput-boolean v2, v0, Lorg/telegram/ui/StatisticActivity$OverviewChannelData;->viewsUp:Z
 
-    .line 2299
+    .line 2300
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_broadcastStats;->enabled_notifications:Lorg/telegram/tgnet/TLRPC$TL_statsPercentValue;
 
     iget-wide v2, v1, Lorg/telegram/tgnet/TLRPC$TL_statsPercentValue;->part:D
@@ -681,7 +681,7 @@
 
     double-to-float v1, v2
 
-    .line 2300
+    .line 2301
     sget v2, Lorg/telegram/messenger/R$string;->EnabledNotifications:I
 
     const-string v3, "EnabledNotifications"
@@ -700,7 +700,7 @@
 
     if-nez v3, :cond_15
 
-    .line 2302
+    .line 2303
     sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     new-array v3, v14, [Ljava/lang/Object;
@@ -723,7 +723,7 @@
 
     goto :goto_12
 
-    .line 2304
+    .line 2305
     :cond_15
     sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 

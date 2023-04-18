@@ -27,12 +27,12 @@
         }
     .end annotation
 
-    .line 225
+    .line 234
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 228
+    .line 237
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->updateRows()V
 
     return-void
@@ -43,7 +43,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 249
+    .line 258
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
@@ -56,7 +56,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 252
+    .line 261
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
@@ -69,7 +69,7 @@
 
     goto :goto_0
 
-    .line 253
+    .line 262
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
@@ -83,7 +83,7 @@
 
     goto :goto_0
 
-    .line 254
+    .line 263
     :cond_1
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
@@ -97,7 +97,7 @@
 
     goto :goto_0
 
-    .line 255
+    .line 264
     :cond_2
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
 
@@ -112,7 +112,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 258
+    .line 267
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
@@ -133,7 +133,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 276
+    .line 285
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     add-int/lit8 v1, p2, 0x1
@@ -146,19 +146,19 @@
 
     move-result v0
 
-    .line 277
+    .line 286
     invoke-virtual {p0, p2}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->getItemViewType(I)I
 
     move-result v1
 
-    .line 278
+    .line 287
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v2, "holder.itemView"
 
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 280
+    .line 289
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     if-ne v1, v2, :cond_0
@@ -167,19 +167,19 @@
 
     if-eqz v2, :cond_0
 
-    .line 281
+    .line 290
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 282
+    .line 291
     invoke-static {v1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
 
     move-result v1
 
     if-ne p2, v1, :cond_8
 
-    .line 283
+    .line 292
     sget p2, Lorg/telegram/messenger/R$string;->EnableReactions:I
 
     const-string v1, "EnableReactions"
@@ -194,7 +194,7 @@
 
     goto/16 :goto_2
 
-    .line 287
+    .line 296
     :cond_0
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
@@ -206,12 +206,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 288
+    .line 297
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 289
+    .line 298
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
 
     move-result v1
@@ -224,7 +224,7 @@
 
     if-nez p2, :cond_1
 
-    .line 290
+    .line 299
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p2
@@ -237,7 +237,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 291
+    .line 300
     sget p2, Lorg/telegram/messenger/R$string;->settings_reactions_enable_hint:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -248,12 +248,12 @@
 
     const/4 p2, 0x0
 
-    .line 292
+    .line 301
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     goto/16 :goto_2
 
-    .line 294
+    .line 303
     :cond_1
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -267,17 +267,17 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 295
+    .line 304
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     const/16 p2, 0xc
 
-    .line 296
+    .line 305
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     goto/16 :goto_2
 
-    .line 300
+    .line 309
     :cond_2
     sget p2, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
 
@@ -287,7 +287,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 301
+    .line 310
     sget-object p2, Lcom/iMe/fork/enums/DialogType;->Companion:Lcom/iMe/fork/enums/DialogType$Companion;
 
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDialogTypesForMessagePopupReactions:Ljava/util/Set;
@@ -300,17 +300,17 @@
 
     move-result-object p2
 
-    .line 302
+    .line 311
     invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v1
 
     xor-int/lit8 v1, v1, 0x1
 
-    .line 303
+    .line 312
     check-cast p1, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
-    .line 304
+    .line 313
     sget v2, Lorg/telegram/messenger/R$string;->settings_tools_message_popup_reactions:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -321,14 +321,14 @@
 
     const-string v3, ", "
 
-    .line 305
+    .line 314
     invoke-static {v3, p2}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object p2
 
     goto :goto_0
 
-    .line 306
+    .line 315
     :cond_3
     sget p2, Lorg/telegram/messenger/R$string;->common_off:I
 
@@ -336,13 +336,13 @@
 
     move-result-object p2
 
-    .line 303
+    .line 312
     :goto_0
     invoke-virtual {p1, v2, p2, v1, v0}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setTextAndValueAndCheck(Ljava/lang/String;Ljava/lang/CharSequence;ZZ)V
 
     goto/16 :goto_2
 
-    .line 311
+    .line 320
     :cond_4
     sget p2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
 
@@ -352,12 +352,12 @@
 
     if-eqz p2, :cond_8
 
-    .line 312
+    .line 321
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    .line 313
+    .line 322
     sget v1, Lorg/telegram/messenger/R$string;->DoubleTapSetting:I
 
     const-string v2, "DoubleTapSetting"
@@ -368,7 +368,7 @@
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 314
+    .line 323
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
@@ -381,7 +381,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 315
+    .line 324
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSettingsCell;->getValueBackupImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v0
@@ -390,12 +390,12 @@
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
 
-    .line 316
+    .line 325
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Cells/TextSettingsCell;->setValue(Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 318
+    .line 327
     :cond_5
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSettingsCell;->getValueBackupImageView()Lorg/telegram/ui/Components/BackupImageView;
 
@@ -405,7 +405,7 @@
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
 
-    .line 319
+    .line 328
     sget v0, Lorg/telegram/messenger/R$string;->common_off:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -414,7 +414,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextSettingsCell;->setValue(Ljava/lang/String;)V
 
-    .line 321
+    .line 330
     :goto_1
     invoke-static {p2}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$getCurrentAccount$p$s645086140(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
 
@@ -432,7 +432,7 @@
 
     return-void
 
-    .line 323
+    .line 332
     :cond_6
     invoke-static {p2}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$getCurrentAccount$p$s645086140(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
 
@@ -463,7 +463,7 @@
 
     invoke-static {v5, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 325
+    .line 334
     iget-object p2, v5, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->static_icon:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
@@ -476,7 +476,7 @@
 
     move-result-object v3
 
-    .line 326
+    .line 335
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSettingsCell;->getValueBackupImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
@@ -485,7 +485,7 @@
 
     move-result-object v0
 
-    .line 327
+    .line 336
     iget-object p1, v5, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->static_icon:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-static {p1}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -498,7 +498,7 @@
 
     const-string v4, "webp"
 
-    .line 326
+    .line 335
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
     :cond_8
@@ -509,7 +509,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 225
+    .line 234
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -524,7 +524,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 261
+    .line 270
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     if-ne p2, p1, :cond_0
@@ -541,12 +541,12 @@
 
     const/4 p2, 0x1
 
-    .line 262
+    .line 271
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
     goto :goto_0
 
-    .line 264
+    .line 273
     :cond_0
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
@@ -564,7 +564,7 @@
 
     goto :goto_0
 
-    .line 265
+    .line 274
     :cond_1
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
 
@@ -582,7 +582,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/NotificationsCheckCell;-><init>(Landroid/content/Context;)V
 
-    .line 266
+    .line 275
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -591,7 +591,7 @@
 
     goto :goto_0
 
-    .line 268
+    .line 277
     :cond_2
     new-instance p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
@@ -603,14 +603,14 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
-    .line 269
+    .line 278
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 272
+    .line 281
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -622,7 +622,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 260
+    .line 269
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -633,26 +633,26 @@
 .method public final updateRows()V
     .locals 3
 
-    .line 234
+    .line 243
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     const/4 v1, -0x1
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$setMessagePopupRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)V
 
-    .line 235
+    .line 244
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$setQuickReactionRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)V
 
-    .line 236
+    .line 245
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)V
 
-    .line 237
+    .line 246
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
@@ -665,7 +665,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$setEnableRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)V
 
-    .line 238
+    .line 247
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
@@ -678,12 +678,12 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$setEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)V
 
-    .line 239
+    .line 248
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isReactionsEnabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 240
+    .line 249
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
@@ -696,7 +696,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$setMessagePopupRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)V
 
-    .line 241
+    .line 250
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I

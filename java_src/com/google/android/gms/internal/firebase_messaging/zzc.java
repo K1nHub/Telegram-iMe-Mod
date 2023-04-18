@@ -8,7 +8,7 @@ import java.io.IOException;
 /* loaded from: classes.dex */
 final class zzc implements ObjectEncoder<zze> {
     static final zzc zza = new zzc();
-    private static final FieldDescriptor zzb = FieldDescriptor.m728of("messagingClientEventExtension");
+    private static final FieldDescriptor zzb = FieldDescriptor.m714of("messagingClientEventExtension");
 
     private zzc() {
     }

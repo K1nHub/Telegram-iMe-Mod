@@ -50,44 +50,44 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 123
+    .line 141
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "setupScreenWithData"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 125
+    .line 143
     iput p2, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->iconResId:I
 
-    .line 126
+    .line 144
     iput p3, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->networkIconResId:I
 
-    .line 127
+    .line 145
     iput-object p4, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->name:Ljava/lang/String;
 
-    .line 128
+    .line 146
     iput-object p5, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->author:Ljava/lang/String;
 
-    .line 129
+    .line 147
     iput-object p6, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->annualPercentage:Ljava/lang/String;
 
-    .line 130
+    .line 148
     iput-object p7, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->startDate:Ljava/lang/String;
 
-    .line 131
+    .line 149
     iput-object p8, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->completionDate:Ljava/lang/String;
 
-    .line 132
+    .line 150
     iput-object p9, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->compoundThreshold:Ljava/lang/String;
 
-    .line 133
+    .line 151
     iput-object p10, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->plannedWithdrawalFeeText:Ljava/lang/String;
 
-    .line 134
+    .line 152
     iput-object p11, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->immediateWithdrawalFeeText:Ljava/lang/String;
 
-    .line 135
+    .line 153
     iput-object p12, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->finishedFeeText:Ljava/lang/String;
 
     return-void
@@ -98,7 +98,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView;)V
     .locals 12
 
-    .line 140
+    .line 158
     iget v1, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->iconResId:I
 
     iget v2, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->networkIconResId:I
@@ -131,7 +131,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 97
+    .line 115
     check-cast p1, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;->apply(Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView;)V

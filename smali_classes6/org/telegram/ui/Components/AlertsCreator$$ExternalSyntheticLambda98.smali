@@ -2,40 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Landroid/view/View$OnKeyListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda98;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda98;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda98;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda98;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda98;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda98;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 0
+.method public final onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
+    .locals 1
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$X1qO1VYvVbD7XW782mItAyLG59k(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda98;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$SyGXaljObN2JX99zASfb6dDt3JM(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/view/View;ILandroid/view/KeyEvent;)Z
 
     move-result p1
 

@@ -6,7 +6,7 @@ import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.internal.ClientSettings;
-import com.google.android.gms.internal.p019authapi.zbo;
+import com.google.android.gms.internal.p018authapi.zbo;
 /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
 /* loaded from: classes.dex */
 final class zba extends Api.AbstractClientBuilder {

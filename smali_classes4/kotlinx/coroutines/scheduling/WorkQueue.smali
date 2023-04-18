@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWorkQueue.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WorkQueue.kt\nkotlinx/coroutines/scheduling/WorkQueue\n+ 2 Tasks.kt\nkotlinx/coroutines/scheduling/TasksKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,201:1\n88#2:202\n88#2:204\n88#2:205\n88#2:206\n1#3:203\n*S KotlinDebug\n*F\n+ 1 WorkQueue.kt\nkotlinx/coroutines/scheduling/WorkQueue\n*L\n83#1:202\n129#1:204\n153#1:205\n195#1:206\n*E\n"
+    value = "SMAP\nWorkQueue.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WorkQueue.kt\nkotlinx/coroutines/scheduling/WorkQueue\n+ 2 Tasks.kt\nkotlinx/coroutines/scheduling/TasksKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,201:1\n85#2:202\n85#2:204\n85#2:205\n85#2:206\n1#3:203\n*S KotlinDebug\n*F\n+ 1 WorkQueue.kt\nkotlinx/coroutines/scheduling/WorkQueue\n*L\n83#1:202\n129#1:204\n153#1:205\n195#1:206\n*E\n"
 .end annotation
 
 
@@ -137,7 +137,7 @@
 .method private final addLast(Lkotlinx/coroutines/scheduling/Task;)Lkotlinx/coroutines/scheduling/Task;
     .locals 2
 
-    .line 88
+    .line 85
     iget-object v0, p1, Lkotlinx/coroutines/scheduling/Task;->taskContext:Lkotlinx/coroutines/scheduling/TaskContext;
 
     invoke-interface {v0}, Lkotlinx/coroutines/scheduling/TaskContext;->getTaskMode()I
@@ -215,7 +215,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 88
+    .line 85
     iget-object p1, p1, Lkotlinx/coroutines/scheduling/Task;->taskContext:Lkotlinx/coroutines/scheduling/TaskContext;
 
     invoke-interface {p1}, Lkotlinx/coroutines/scheduling/TaskContext;->getTaskMode()I
@@ -369,7 +369,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 88
+    .line 85
     iget-object v4, v0, Lkotlinx/coroutines/scheduling/Task;->taskContext:Lkotlinx/coroutines/scheduling/TaskContext;
 
     invoke-interface {v4}, Lkotlinx/coroutines/scheduling/TaskContext;->getTaskMode()I
@@ -527,24 +527,18 @@
 
     check-cast v0, Lkotlinx/coroutines/scheduling/Task;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p1, v0}, Lkotlinx/coroutines/internal/LockFreeTaskQueue;->addLast(Ljava/lang/Object;)Z
 
     .line 142
-    :goto_0
+    :cond_0
     invoke-direct {p0, p1}, Lkotlinx/coroutines/scheduling/WorkQueue;->pollTo(Lkotlinx/coroutines/scheduling/GlobalQueue;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_0
 
-    goto :goto_0
-
-    :cond_1
     return-void
 .end method
 
@@ -623,45 +617,42 @@
     iget-object v4, p1, Lkotlinx/coroutines/scheduling/WorkQueue;->buffer:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     :goto_2
-    if-eq v0, v3, :cond_6
+    if-eq v0, v3, :cond_5
 
     and-int/lit8 v5, v0, 0x7f
 
     .line 127
     iget v6, p1, Lkotlinx/coroutines/scheduling/WorkQueue;->blockingTasksInBuffer:I
 
-    if-nez v6, :cond_3
-
-    goto :goto_4
+    if-eqz v6, :cond_5
 
     .line 128
-    :cond_3
     invoke-virtual {v4, v5}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Lkotlinx/coroutines/scheduling/Task;
 
-    if-eqz v6, :cond_5
+    if-eqz v6, :cond_4
 
-    .line 88
+    .line 85
     iget-object v7, v6, Lkotlinx/coroutines/scheduling/Task;->taskContext:Lkotlinx/coroutines/scheduling/TaskContext;
 
     invoke-interface {v7}, Lkotlinx/coroutines/scheduling/TaskContext;->getTaskMode()I
 
     move-result v7
 
-    if-ne v7, v2, :cond_4
+    if-ne v7, v2, :cond_3
 
     move v7, v2
 
     goto :goto_3
 
-    :cond_4
+    :cond_3
     move v7, v1
 
     :goto_3
-    if-eqz v7, :cond_5
+    if-eqz v7, :cond_4
 
     const/4 v7, 0x0
 
@@ -670,7 +661,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_4
 
     .line 130
     sget-object v0, Lkotlinx/coroutines/scheduling/WorkQueue;->blockingTasksInBuffer$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
@@ -686,14 +677,13 @@
 
     return-wide v0
 
-    :cond_5
+    :cond_4
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
     .line 137
-    :cond_6
-    :goto_4
+    :cond_5
     invoke-direct {p0, p1, v2}, Lkotlinx/coroutines/scheduling/WorkQueue;->tryStealLastScheduled(Lkotlinx/coroutines/scheduling/WorkQueue;Z)J
 
     move-result-wide v0

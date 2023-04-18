@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 CreateWalletPresenter.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletPresenter\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,80:1\n166#2,11:81\n177#2:93\n26#3:92\n*S KotlinDebug\n*F\n+ 1 CreateWalletPresenter.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletPresenter\n*L\n176#1:92\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 CreateWalletPresenter.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletPresenter\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,80:1\n182#2,10:81\n192#2:92\n26#3:91\n*S KotlinDebug\n*F\n+ 1 CreateWalletPresenter.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletPresenter\n*L\n191#1:91\n*E\n"
 .end annotation
 
 
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final invoke(Lcom/iMe/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
-    .locals 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -114,45 +114,43 @@
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->access$getCryptoWalletInteractor$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    move-result-object v0
-
-    .line 84
-    iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
-
-    invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->access$getScreenType$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
-
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;
+    .line 84
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$flatMapSuccess$1;->$seed$inlined:Ljava/lang/String;
 
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;->getPassword()Ljava/lang/String;
+    .line 85
+    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
+
+    invoke-static {v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->access$getScreenType$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;
+
+    invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;->getPassword()Ljava/lang/String;
 
     move-result-object v1
 
     .line 87
-    iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$flatMapSuccess$1;->$seed$inlined:Ljava/lang/String;
+    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
 
-    .line 88
-    iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
+    invoke-static {v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->access$getCryptoPreferenceHelper$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->access$getCryptoPreferenceHelper$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    move-result-object v2
 
-    move-result-object p1
+    invoke-interface {v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    invoke-interface {p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
-
-    move-result-object v5
-
-    const-string v2, ""
+    move-result-object v2
 
     const-string v3, ""
 
     .line 83
-    invoke-virtual/range {v0 .. v5}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->createWallet(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
+    invoke-virtual {p1, v0, v1, v3, v2}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->importWallet(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 90
+    .line 89
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->access$getSchedulersProvider$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -169,13 +167,13 @@
 
     const-string v0, "cryptoWalletInteractor\n \u2026(schedulersProvider.ui())"
 
-    .line 84
+    .line 85
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 26
-    new-instance v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$lambda$4$$inlined$mapSuccess$1;
+    new-instance v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$lambda$6$$inlined$mapSuccess$1;
 
-    invoke-direct {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$lambda$4$$inlined$mapSuccess$1;-><init>()V
+    invoke-direct {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$lambda$6$$inlined$mapSuccess$1;-><init>()V
 
     new-instance v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$inlined$sam$i$io_reactivex_functions_Function$0;
 
@@ -191,7 +189,7 @@
 
     goto :goto_0
 
-    .line 93
+    .line 92
     :cond_0
     invoke-static {p1}, Lio/reactivex/Observable;->just(Ljava/lang/Object;)Lio/reactivex/Observable;
 

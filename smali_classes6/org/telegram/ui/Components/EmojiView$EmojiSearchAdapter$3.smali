@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
     .locals 0
 
-    .line 8639
+    .line 8408
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->val$query:Ljava/lang/String;
@@ -56,7 +56,7 @@
         }
     .end annotation
 
-    .line 8642
+    .line 8411
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->val$query:Ljava/lang/String;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
@@ -71,17 +71,17 @@
 
     if-eqz v0, :cond_5
 
-    .line 8643
+    .line 8412
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
-    invoke-static {v0, p2}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$20002(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p2}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$19902(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 8644
+    .line 8413
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$9000(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$SearchField;
+    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$8900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$SearchField;
 
     move-result-object p2
 
@@ -89,14 +89,14 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/EmojiView$SearchField;->showProgress(Z)V
 
-    .line 8645
+    .line 8414
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
     const/4 v1, 0x1
 
-    invoke-static {p2, v1}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$7602(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;Z)Z
+    invoke-static {p2, v1}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$7502(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;Z)Z
 
-    .line 8646
+    .line 8415
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -119,7 +119,7 @@
 
     if-eq p2, v1, :cond_0
 
-    .line 8647
+    .line 8416
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -138,26 +138,26 @@
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 8649
+    .line 8418
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$7700(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;)Ljava/util/ArrayList;
+    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$7600(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;)Ljava/util/ArrayList;
 
     move-result-object p2
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->clear()V
 
-    .line 8650
+    .line 8419
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->val$query:Ljava/lang/String;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->val$documentIds:Ljava/util/LinkedHashSet;
 
-    invoke-static {p2, v1, v2}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$20100(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
+    invoke-static {p2, v1, v2}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$20000(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
 
-    .line 8651
+    .line 8420
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->val$documentIds:Ljava/util/LinkedHashSet;
 
     invoke-virtual {p2}, Ljava/util/LinkedHashSet;->iterator()Ljava/util/Iterator;
@@ -183,17 +183,17 @@
 
     move-result-wide v3
 
-    .line 8652
+    .line 8421
     new-instance v1, Lorg/telegram/messenger/MediaDataController$KeywordResult;
 
     invoke-direct {v1}, Lorg/telegram/messenger/MediaDataController$KeywordResult;-><init>()V
 
     const-string v5, ""
 
-    .line 8653
+    .line 8422
     iput-object v5, v1, Lorg/telegram/messenger/MediaDataController$KeywordResult;->keyword:Ljava/lang/String;
 
-    .line 8654
+    .line 8423
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -208,10 +208,10 @@
 
     iput-object v2, v1, Lorg/telegram/messenger/MediaDataController$KeywordResult;->emoji:Ljava/lang/String;
 
-    .line 8655
+    .line 8424
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$7700(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$7600(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;)Ljava/util/ArrayList;
 
     move-result-object v2
 
@@ -219,7 +219,7 @@
 
     goto :goto_0
 
-    .line 8657
+    .line 8426
     :cond_1
     :goto_1
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -228,7 +228,7 @@
 
     if-ge v0, p2, :cond_4
 
-    .line 8658
+    .line 8427
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
@@ -237,7 +237,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 8659
+    .line 8428
     iget-object v1, p2, Lorg/telegram/messenger/MediaDataController$KeywordResult;->emoji:Ljava/lang/String;
 
     if-eqz v1, :cond_3
@@ -272,11 +272,11 @@
 
     if-nez v1, :cond_3
 
-    .line 8660
+    .line 8429
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$7700(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$7600(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;)Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -287,7 +287,7 @@
 
     goto :goto_1
 
-    .line 8663
+    .line 8432
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$3;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 

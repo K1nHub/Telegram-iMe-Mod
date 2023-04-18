@@ -36,7 +36,7 @@ public final class ChannelTracer {
                         removeFirst();
                     }
                     ChannelTracer.access$008(ChannelTracer.this);
-                    return super.add((C24691) internalChannelz$ChannelTrace$Event);
+                    return super.add((C24561) internalChannelz$ChannelTrace$Event);
                 }
             };
         } else {
@@ -49,7 +49,7 @@ public final class ChannelTracer {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.internal.ChannelTracer$2 */
     /* loaded from: classes4.dex */
-    public static /* synthetic */ class C24702 {
+    public static /* synthetic */ class C24572 {
         static final /* synthetic */ int[] $SwitchMap$io$grpc$InternalChannelz$ChannelTrace$Event$Severity;
 
         static {
@@ -69,7 +69,7 @@ public final class ChannelTracer {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void reportEvent(InternalChannelz$ChannelTrace$Event internalChannelz$ChannelTrace$Event) {
         Level level;
-        int i = C24702.$SwitchMap$io$grpc$InternalChannelz$ChannelTrace$Event$Severity[internalChannelz$ChannelTrace$Event.severity.ordinal()];
+        int i = C24572.$SwitchMap$io$grpc$InternalChannelz$ChannelTrace$Event$Severity[internalChannelz$ChannelTrace$Event.severity.ordinal()];
         if (i == 1) {
             level = Level.FINE;
         } else if (i == 2) {

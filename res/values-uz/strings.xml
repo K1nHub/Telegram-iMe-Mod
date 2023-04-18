@@ -1061,7 +1061,7 @@ Sizning balansingiz blokcheynda tranzaksiya tasdiqlanganidan keyin yangilanadi."
     <string name="stickers_size_title">Stiker hajmi</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">"Arxivni o'z ichiga olmaydi"</string>
     <string name="swipe_to_next_unread_dialog_hint">Chat roʻyxatiga qaytmasdan chatlaringizni aylantirishni istasangiz, buni YOQING. Chatning oxiriga yetganingizda, keyingi o‘qilmagan chatga o‘tish uchun yuqoriga torting.</string>
-    <string name="swipe_to_next_unread_dialog_types">Dialog turlari</string>
+    <string name="swipe_to_next_unread_dialog_types">Suhbat turlari</string>
     <string name="text_recognition_bottom_sheet_title">Surat → Matn</string>
     <string name="topic">Mavzu</string>
     <string name="topic_add_archived_chats_hint">"Ushbu mavzuda paydo bo'ladigan Arxivlangan ro'yxatdan chatlarni tanlang."</string>

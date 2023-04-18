@@ -18,7 +18,7 @@
 .method constructor <init>(Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;Landroid/content/Context;)V
     .locals 0
 
-    .line 1645
+    .line 1650
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 1648
+    .line 1653
     invoke-static {}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$1500()I
 
     move-result p1

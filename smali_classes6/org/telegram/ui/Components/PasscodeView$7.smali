@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/Components/PasscodeView$7;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "PasscodeView.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/PasscodeView;->shakeTextView(FI)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/telegram/ui/Components/PasscodeView;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,54 +20,39 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/PasscodeView;
 
-.field final synthetic val$num:I
-
-.field final synthetic val$x:F
-
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/PasscodeView;IF)V
+.method constructor <init>(Lorg/telegram/ui/Components/PasscodeView;)V
     .locals 0
 
-    .line 1184
+    .line 1173
     iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$7;->this$0:Lorg/telegram/ui/Components/PasscodeView;
 
-    iput p2, p0, Lorg/telegram/ui/Components/PasscodeView$7;->val$num:I
-
-    iput p3, p0, Lorg/telegram/ui/Components/PasscodeView$7;->val$x:F
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public run()V
+    .locals 3
 
-    .line 1187
-    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$7;->this$0:Lorg/telegram/ui/Components/PasscodeView;
+    .line 1176
+    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$7;->this$0:Lorg/telegram/ui/Components/PasscodeView;
 
-    iget v0, p0, Lorg/telegram/ui/Components/PasscodeView$7;->val$num:I
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/PasscodeView;->checkRetryTextView()V
 
-    const/4 v1, 0x5
+    .line 1177
+    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$7;->this$0:Lorg/telegram/ui/Components/PasscodeView;
 
-    if-ne v0, v1, :cond_0
+    invoke-static {v0}, Lorg/telegram/ui/Components/PasscodeView;->access$1500(Lorg/telegram/ui/Components/PasscodeView;)Ljava/lang/Runnable;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    goto :goto_0
+    const-wide/16 v1, 0x64
 
-    :cond_0
-    iget v1, p0, Lorg/telegram/ui/Components/PasscodeView$7;->val$x:F
-
-    neg-float v1, v1
-
-    :goto_0
-    add-int/lit8 v0, v0, 0x1
-
-    invoke-static {p1, v1, v0}, Lorg/telegram/ui/Components/PasscodeView;->access$1300(Lorg/telegram/ui/Components/PasscodeView;FI)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void
 .end method

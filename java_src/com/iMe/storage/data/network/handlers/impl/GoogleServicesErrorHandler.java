@@ -1,7 +1,7 @@
 package com.iMe.storage.data.network.handlers.impl;
 
 import com.google.firebase.FirebaseException;
-import com.google.firebase.p021ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.FirebaseMLException;
 import com.iMe.storage.R$string;
 import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.iMe.storage.data.network.model.error.ErrorModel;

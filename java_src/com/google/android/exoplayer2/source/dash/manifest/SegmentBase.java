@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.dash.manifest;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.util.Util;
 import com.google.common.math.BigIntegerMath;
@@ -130,7 +130,7 @@ public abstract class SegmentBase {
         public long getFirstAvailableSegmentNum(long j, long j2) {
             if (getSegmentCount(j) == -1) {
                 long j3 = this.timeShiftBufferDepthUs;
-                if (j3 != C0482C.TIME_UNSET) {
+                if (j3 != C0470C.TIME_UNSET) {
                     return Math.max(getFirstSegmentNum(), getSegmentNum((j2 - this.periodStartUnixTimeUs) - j3, j));
                 }
             }
@@ -144,7 +144,7 @@ public abstract class SegmentBase {
 
         public long getNextSegmentAvailableTimeUs(long j, long j2) {
             if (this.segmentTimeline != null) {
-                return C0482C.TIME_UNSET;
+                return C0470C.TIME_UNSET;
             }
             long firstAvailableSegmentNum = getFirstAvailableSegmentNum(j, j2) + getAvailableSegmentCount(j, j2);
             return (getSegmentTimeUs(firstAvailableSegmentNum) + getSegmentDurationUs(firstAvailableSegmentNum, j)) - this.availabilityTimeOffsetUs;
@@ -198,7 +198,7 @@ public abstract class SegmentBase {
             UrlTemplate urlTemplate = this.initializationTemplate;
             if (urlTemplate != null) {
                 Format format = representation.format;
-                return new RangedUri(urlTemplate.buildUri(format.f100id, 0L, format.bitrate, 0L), 0L, -1L);
+                return new RangedUri(urlTemplate.buildUri(format.f97id, 0L, format.bitrate, 0L), 0L, -1L);
             }
             return super.getInitialization(representation);
         }
@@ -215,7 +215,7 @@ public abstract class SegmentBase {
             long j3 = j2;
             UrlTemplate urlTemplate = this.mediaTemplate;
             Format format = representation.format;
-            return new RangedUri(urlTemplate.buildUri(format.f100id, j, format.bitrate, j3), 0L, -1L);
+            return new RangedUri(urlTemplate.buildUri(format.f97id, j, format.bitrate, j3), 0L, -1L);
         }
 
         @Override // com.google.android.exoplayer2.source.dash.manifest.SegmentBase.MultiSegmentBase
@@ -228,7 +228,7 @@ public abstract class SegmentBase {
             if (j2 != -1) {
                 return (j2 - this.startNumber) + 1;
             }
-            if (j != C0482C.TIME_UNSET) {
+            if (j != C0470C.TIME_UNSET) {
                 return BigIntegerMath.divide(BigInteger.valueOf(j).multiply(BigInteger.valueOf(this.timescale)), BigInteger.valueOf(this.duration).multiply(BigInteger.valueOf(1000000L)), RoundingMode.CEILING).longValue();
             }
             return -1L;

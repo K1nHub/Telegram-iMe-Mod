@@ -2,32 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
+.field public final synthetic f$1:I
+
+.field public final synthetic f$2:F
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;IF)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
+    iput p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda2;->f$1:I
+
+    iput p3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda2;->f$2:F
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 1
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->$r8$lambda$9w8G8pIrvktnSmg8x7uZ22UQgvg(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/view/View;)V
+    iget v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda2;->f$1:I
+
+    iget v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda2;->f$2:F
+
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->$r8$lambda$TCyldmptr5sDyOjHHyKah4kHwvg(Lorg/telegram/ui/Components/ForwardingPreviewView;IFLandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

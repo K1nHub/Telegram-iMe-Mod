@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 1237
+    .line 1239
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$17;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 4
 
-    .line 1240
+    .line 1242
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$17;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1241
+    .line 1243
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$17;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
@@ -79,7 +79,7 @@
 
     float-to-int v0, v0
 
-    .line 1242
+    .line 1244
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$17;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -100,7 +100,7 @@
 
     invoke-interface {v1, p1, v2, v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->drawHeaderShadow(Landroid/graphics/Canvas;II)V
 
-    .line 1254
+    .line 1256
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 

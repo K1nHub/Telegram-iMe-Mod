@@ -22,8 +22,6 @@
 
 .field public static final enum FILTERS:Lcom/iMe/fork/enums/BackupComponent;
 
-.field public static final enum INTERFACE:Lcom/iMe/fork/enums/BackupComponent;
-
 .field public static final enum MULTI_PANEL:Lcom/iMe/fork/enums/BackupComponent;
 
 .field public static final enum MUSIC:Lcom/iMe/fork/enums/BackupComponent;
@@ -47,11 +45,11 @@
 .method private static final synthetic $values()[Lcom/iMe/fork/enums/BackupComponent;
     .locals 3
 
-    const/16 v0, 0xb
+    const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/iMe/fork/enums/BackupComponent;
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->INTERFACE:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TOOLS:Lcom/iMe/fork/enums/BackupComponent;
 
     const/4 v2, 0x0
 
@@ -63,57 +61,51 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TOOLS:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->FILTERS:Lcom/iMe/fork/enums/BackupComponent;
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->FILTERS:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->SORTING:Lcom/iMe/fork/enums/BackupComponent;
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->SORTING:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->ALBUMS:Lcom/iMe/fork/enums/BackupComponent;
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->ALBUMS:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->BOOKMARKS:Lcom/iMe/fork/enums/BackupComponent;
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->BOOKMARKS:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->MUSIC:Lcom/iMe/fork/enums/BackupComponent;
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->MUSIC:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TRANSLATION:Lcom/iMe/fork/enums/BackupComponent;
 
     const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TRANSLATION:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TEMPLATES:Lcom/iMe/fork/enums/BackupComponent;
 
     const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TEMPLATES:Lcom/iMe/fork/enums/BackupComponent;
-
-    const/16 v2, 0x9
-
-    aput-object v1, v0, v2
-
     sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TOPICS:Lcom/iMe/fork/enums/BackupComponent;
 
-    const/16 v2, 0xa
+    const/16 v2, 0x9
 
     aput-object v1, v0, v2
 
@@ -126,15 +118,15 @@
     .line 7
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
-    sget v1, Lorg/telegram/messenger/R$string;->settings_interface:I
+    sget v1, Lorg/telegram/messenger/R$string;->settings_tools:I
 
-    const-string v2, "INTERFACE"
+    const-string v2, "TOOLS"
 
     const/4 v3, 0x0
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->INTERFACE:Lcom/iMe/fork/enums/BackupComponent;
+    sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->TOOLS:Lcom/iMe/fork/enums/BackupComponent;
 
     .line 8
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
@@ -152,115 +144,102 @@
     .line 9
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
-    sget v1, Lorg/telegram/messenger/R$string;->settings_tools:I
+    sget v1, Lorg/telegram/messenger/R$string;->backup_component_filters:I
 
-    const-string v2, "TOOLS"
+    const-string v2, "FILTERS"
 
     const/4 v3, 0x2
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->TOOLS:Lcom/iMe/fork/enums/BackupComponent;
-
-    .line 10
-    new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
-
-    sget v1, Lorg/telegram/messenger/R$string;->backup_component_filters:I
-
-    const-string v2, "FILTERS"
-
-    const/4 v3, 0x3
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
-
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->FILTERS:Lcom/iMe/fork/enums/BackupComponent;
 
-    .line 11
+    .line 10
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
     sget v1, Lorg/telegram/messenger/R$string;->backup_component_sorting:I
 
     const-string v2, "SORTING"
 
-    const/4 v3, 0x4
+    const/4 v3, 0x3
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->SORTING:Lcom/iMe/fork/enums/BackupComponent;
 
-    .line 12
+    .line 11
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
     sget v1, Lorg/telegram/messenger/R$string;->backup_component_albums:I
 
     const-string v2, "ALBUMS"
 
-    const/4 v3, 0x5
+    const/4 v3, 0x4
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->ALBUMS:Lcom/iMe/fork/enums/BackupComponent;
 
-    .line 13
+    .line 12
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
     sget v1, Lorg/telegram/messenger/R$string;->chat_bookmarks:I
 
     const-string v2, "BOOKMARKS"
 
-    const/4 v3, 0x6
+    const/4 v3, 0x5
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->BOOKMARKS:Lcom/iMe/fork/enums/BackupComponent;
 
-    .line 14
+    .line 13
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
     sget v1, Lorg/telegram/messenger/R$string;->cloud_filter_music:I
 
     const-string v2, "MUSIC"
 
-    const/4 v3, 0x7
+    const/4 v3, 0x6
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->MUSIC:Lcom/iMe/fork/enums/BackupComponent;
 
-    .line 15
+    .line 14
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
     sget v1, Lorg/telegram/messenger/R$string;->backup_component_translation:I
 
     const-string v2, "TRANSLATION"
 
-    const/16 v3, 0x8
+    const/4 v3, 0x7
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->TRANSLATION:Lcom/iMe/fork/enums/BackupComponent;
 
-    .line 16
+    .line 15
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
     sget v1, Lorg/telegram/messenger/R$string;->chat_templates:I
 
     const-string v2, "TEMPLATES"
 
-    const/16 v3, 0x9
+    const/16 v3, 0x8
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->TEMPLATES:Lcom/iMe/fork/enums/BackupComponent;
 
-    .line 17
+    .line 16
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
     sget v1, Lorg/telegram/messenger/R$string;->backup_component_topics:I
 
     const-string v2, "TOPICS"
 
-    const/16 v3, 0xa
+    const/16 v3, 0x9
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 

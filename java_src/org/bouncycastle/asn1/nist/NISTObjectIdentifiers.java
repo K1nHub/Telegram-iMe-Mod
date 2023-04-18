@@ -9,7 +9,9 @@ public interface NISTObjectIdentifiers {
     public static final ASN1ObjectIdentifier id_sha224;
     public static final ASN1ObjectIdentifier id_sha256;
     public static final ASN1ObjectIdentifier id_sha384;
+    public static final ASN1ObjectIdentifier id_sha3_256;
     public static final ASN1ObjectIdentifier id_sha512;
+    public static final ASN1ObjectIdentifier id_sha512_256;
     public static final ASN1ObjectIdentifier id_shake128;
     public static final ASN1ObjectIdentifier id_shake256;
     public static final ASN1ObjectIdentifier nistAlgorithm;
@@ -25,9 +27,9 @@ public interface NISTObjectIdentifiers {
         id_sha512 = branch.branch("3");
         id_sha224 = branch.branch("4");
         branch.branch("5");
-        branch.branch("6");
+        id_sha512_256 = branch.branch("6");
         branch.branch("7");
-        branch.branch("8");
+        id_sha3_256 = branch.branch("8");
         branch.branch("9");
         branch.branch("10");
         id_shake128 = branch.branch("11");
@@ -36,6 +38,10 @@ public interface NISTObjectIdentifiers {
         branch.branch("14");
         branch.branch("15");
         branch.branch("16");
+        branch.branch("17");
+        branch.branch("18");
+        branch.branch("19");
+        branch.branch("20");
         ASN1ObjectIdentifier branch2 = aSN1ObjectIdentifier.branch(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE);
         aes = branch2;
         branch2.branch(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE);

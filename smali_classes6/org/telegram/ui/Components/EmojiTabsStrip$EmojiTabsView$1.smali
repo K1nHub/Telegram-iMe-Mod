@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;Landroid/content/Context;Lorg/telegram/ui/Components/EmojiTabsStrip;)V
     .locals 0
 
-    .line 1293
+    .line 1298
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView$1;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;
 
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onLayout(ZIIII)V
     .locals 3
 
-    .line 1296
+    .line 1301
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getPaddingLeft()I
 
     move-result p1
@@ -48,7 +48,7 @@
 
     const/4 p3, 0x0
 
-    .line 1297
+    .line 1302
     :goto_0
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
@@ -56,12 +56,12 @@
 
     if-ge p3, p4, :cond_2
 
-    .line 1298
+    .line 1303
     invoke-virtual {p0, p3}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object p4
 
-    .line 1299
+    .line 1304
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView$1;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
@@ -77,7 +77,7 @@
     :cond_0
     if-eqz p4, :cond_1
 
-    .line 1303
+    .line 1308
     invoke-virtual {p4}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -102,7 +102,7 @@
 
     invoke-virtual {p4, p1, v0, v1, v2}, Landroid/view/View;->layout(IIII)V
 
-    .line 1304
+    .line 1309
     invoke-virtual {p4}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result p4
@@ -128,7 +128,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 1312
+    .line 1317
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -157,7 +157,7 @@
 
     move-result p1
 
-    .line 1311
+    .line 1316
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
     return-void

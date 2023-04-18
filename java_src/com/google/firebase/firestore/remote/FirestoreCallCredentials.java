@@ -12,7 +12,7 @@ import io.grpc.Status;
 import java.util.concurrent.Executor;
 /* loaded from: classes3.dex */
 final class FirestoreCallCredentials extends CallCredentials {
-    private static final Metadata.Key<String> AUTHORIZATION_HEADER = Metadata.Key.m694of(RtspHeaders.AUTHORIZATION, Metadata.ASCII_STRING_MARSHALLER);
+    private static final Metadata.Key<String> AUTHORIZATION_HEADER = Metadata.Key.m680of(RtspHeaders.AUTHORIZATION, Metadata.ASCII_STRING_MARSHALLER);
     private final CredentialsProvider credentialsProvider;
 
     /* JADX INFO: Access modifiers changed from: package-private */

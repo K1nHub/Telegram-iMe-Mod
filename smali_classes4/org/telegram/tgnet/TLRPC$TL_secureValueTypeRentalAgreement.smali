@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27649
+    .line 27661
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$SecureValueType;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 27654
+    .line 27666
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeRentalAgreement;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

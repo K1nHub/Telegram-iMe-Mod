@@ -143,138 +143,136 @@
     return-void
 .end method
 
-.method private Ch(III)I
+.method private static Ch(III)I
     .locals 0
 
-    and-int/2addr p2, p1
+    and-int/2addr p1, p0
 
-    not-int p1, p1
+    not-int p0, p0
 
-    and-int/2addr p1, p3
+    and-int/2addr p0, p2
 
-    xor-int/2addr p1, p2
+    xor-int/2addr p0, p1
 
-    return p1
+    return p0
 .end method
 
-.method private Maj(III)I
+.method private static Maj(III)I
     .locals 1
 
-    and-int v0, p1, p2
+    and-int v0, p0, p1
 
-    and-int/2addr p1, p3
+    xor-int/2addr p0, p1
 
-    xor-int/2addr p1, v0
+    and-int/2addr p0, p2
 
-    and-int/2addr p2, p3
+    or-int/2addr p0, v0
 
-    xor-int/2addr p1, p2
-
-    return p1
+    return p0
 .end method
 
-.method private Sum0(I)I
+.method private static Sum0(I)I
     .locals 3
 
-    ushr-int/lit8 v0, p1, 0x2
+    ushr-int/lit8 v0, p0, 0x2
 
-    shl-int/lit8 v1, p1, 0x1e
+    shl-int/lit8 v1, p0, 0x1e
 
     or-int/2addr v0, v1
 
-    ushr-int/lit8 v1, p1, 0xd
+    ushr-int/lit8 v1, p0, 0xd
 
-    shl-int/lit8 v2, p1, 0x13
+    shl-int/lit8 v2, p0, 0x13
 
     or-int/2addr v1, v2
 
     xor-int/2addr v0, v1
 
-    ushr-int/lit8 v1, p1, 0x16
+    ushr-int/lit8 v1, p0, 0x16
 
-    shl-int/lit8 p1, p1, 0xa
+    shl-int/lit8 p0, p0, 0xa
 
-    or-int/2addr p1, v1
+    or-int/2addr p0, v1
 
-    xor-int/2addr p1, v0
+    xor-int/2addr p0, v0
 
-    return p1
+    return p0
 .end method
 
-.method private Sum1(I)I
+.method private static Sum1(I)I
     .locals 3
 
-    ushr-int/lit8 v0, p1, 0x6
+    ushr-int/lit8 v0, p0, 0x6
 
-    shl-int/lit8 v1, p1, 0x1a
+    shl-int/lit8 v1, p0, 0x1a
 
     or-int/2addr v0, v1
 
-    ushr-int/lit8 v1, p1, 0xb
+    ushr-int/lit8 v1, p0, 0xb
 
-    shl-int/lit8 v2, p1, 0x15
+    shl-int/lit8 v2, p0, 0x15
 
     or-int/2addr v1, v2
 
     xor-int/2addr v0, v1
 
-    ushr-int/lit8 v1, p1, 0x19
+    ushr-int/lit8 v1, p0, 0x19
 
-    shl-int/lit8 p1, p1, 0x7
+    shl-int/lit8 p0, p0, 0x7
 
-    or-int/2addr p1, v1
+    or-int/2addr p0, v1
 
-    xor-int/2addr p1, v0
+    xor-int/2addr p0, v0
 
-    return p1
+    return p0
 .end method
 
-.method private Theta0(I)I
+.method private static Theta0(I)I
     .locals 3
 
-    ushr-int/lit8 v0, p1, 0x7
+    ushr-int/lit8 v0, p0, 0x7
 
-    shl-int/lit8 v1, p1, 0x19
+    shl-int/lit8 v1, p0, 0x19
 
     or-int/2addr v0, v1
 
-    ushr-int/lit8 v1, p1, 0x12
+    ushr-int/lit8 v1, p0, 0x12
 
-    shl-int/lit8 v2, p1, 0xe
+    shl-int/lit8 v2, p0, 0xe
 
     or-int/2addr v1, v2
 
     xor-int/2addr v0, v1
 
-    ushr-int/lit8 p1, p1, 0x3
+    ushr-int/lit8 p0, p0, 0x3
 
-    xor-int/2addr p1, v0
+    xor-int/2addr p0, v0
 
-    return p1
+    return p0
 .end method
 
-.method private Theta1(I)I
+.method private static Theta1(I)I
     .locals 3
 
-    ushr-int/lit8 v0, p1, 0x11
+    ushr-int/lit8 v0, p0, 0x11
 
-    shl-int/lit8 v1, p1, 0xf
+    shl-int/lit8 v1, p0, 0xf
 
     or-int/2addr v0, v1
 
-    ushr-int/lit8 v1, p1, 0x13
+    ushr-int/lit8 v1, p0, 0x13
 
-    shl-int/lit8 v2, p1, 0xd
+    shl-int/lit8 v2, p0, 0xd
 
     or-int/2addr v1, v2
 
     xor-int/2addr v0, v1
 
-    ushr-int/lit8 p1, p1, 0xa
+    ushr-int/lit8 p0, p0, 0xa
 
-    xor-int/2addr p1, v0
+    xor-int/2addr p0, v0
 
-    return p1
+    return p0
 .end method
 
 .method private copyIn(Lorg/bouncycastle/crypto/digests/SHA256Digest;)V
@@ -435,7 +433,7 @@
 
     aget v3, v2, v3
 
-    invoke-direct {p0, v3}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Theta1(I)I
+    invoke-static {v3}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Theta1(I)I
 
     move-result v3
 
@@ -451,7 +449,7 @@
 
     aget v4, v4, v5
 
-    invoke-direct {p0, v4}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Theta0(I)I
+    invoke-static {v4}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Theta0(I)I
 
     move-result v4
 
@@ -499,11 +497,11 @@
 
     if-ge v10, v12, :cond_1
 
-    invoke-direct {p0, v5}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
+    invoke-static {v5}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
 
     move-result v12
 
-    invoke-direct {p0, v5, v6, v7}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
+    invoke-static {v5, v6, v7}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
 
     move-result v13
 
@@ -525,11 +523,11 @@
 
     add-int/2addr v4, v8
 
-    invoke-direct {p0, v1}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
+    invoke-static {v1}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
 
     move-result v12
 
-    invoke-direct {p0, v1, v2, v3}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
+    invoke-static {v1, v2, v3}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
 
     move-result v14
 
@@ -539,11 +537,11 @@
 
     add-int/lit8 v11, v11, 0x1
 
-    invoke-direct {p0, v4}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
+    invoke-static {v4}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
 
     move-result v12
 
-    invoke-direct {p0, v4, v5, v6}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
+    invoke-static {v4, v5, v6}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
 
     move-result v14
 
@@ -563,11 +561,11 @@
 
     add-int/2addr v3, v7
 
-    invoke-direct {p0, v8}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
+    invoke-static {v8}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
 
     move-result v12
 
-    invoke-direct {p0, v8, v1, v2}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
+    invoke-static {v8, v1, v2}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
 
     move-result v14
 
@@ -577,11 +575,11 @@
 
     add-int/lit8 v11, v11, 0x1
 
-    invoke-direct {p0, v3}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
+    invoke-static {v3}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
 
     move-result v12
 
-    invoke-direct {p0, v3, v4, v5}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
+    invoke-static {v3, v4, v5}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
 
     move-result v14
 
@@ -601,11 +599,11 @@
 
     add-int/2addr v2, v6
 
-    invoke-direct {p0, v7}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
+    invoke-static {v7}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
 
     move-result v12
 
-    invoke-direct {p0, v7, v8, v1}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
+    invoke-static {v7, v8, v1}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
 
     move-result v14
 
@@ -615,11 +613,11 @@
 
     add-int/lit8 v11, v11, 0x1
 
-    invoke-direct {p0, v2}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
+    invoke-static {v2}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
 
     move-result v12
 
-    invoke-direct {p0, v2, v3, v4}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
+    invoke-static {v2, v3, v4}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
 
     move-result v14
 
@@ -639,11 +637,11 @@
 
     add-int/2addr v1, v5
 
-    invoke-direct {p0, v6}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
+    invoke-static {v6}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
 
     move-result v12
 
-    invoke-direct {p0, v6, v7, v8}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
+    invoke-static {v6, v7, v8}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
 
     move-result v14
 
@@ -653,11 +651,11 @@
 
     add-int/lit8 v11, v11, 0x1
 
-    invoke-direct {p0, v1}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
+    invoke-static {v1}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
 
     move-result v12
 
-    invoke-direct {p0, v1, v2, v3}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
+    invoke-static {v1, v2, v3}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
 
     move-result v14
 
@@ -677,11 +675,11 @@
 
     add-int/2addr v8, v4
 
-    invoke-direct {p0, v5}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
+    invoke-static {v5}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
 
     move-result v12
 
-    invoke-direct {p0, v5, v6, v7}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
+    invoke-static {v5, v6, v7}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
 
     move-result v14
 
@@ -691,11 +689,11 @@
 
     add-int/lit8 v11, v11, 0x1
 
-    invoke-direct {p0, v8}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
+    invoke-static {v8}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
 
     move-result v12
 
-    invoke-direct {p0, v8, v1, v2}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
+    invoke-static {v8, v1, v2}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
 
     move-result v14
 
@@ -715,11 +713,11 @@
 
     add-int/2addr v7, v3
 
-    invoke-direct {p0, v4}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
+    invoke-static {v4}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
 
     move-result v12
 
-    invoke-direct {p0, v4, v5, v6}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
+    invoke-static {v4, v5, v6}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
 
     move-result v14
 
@@ -729,11 +727,11 @@
 
     add-int/lit8 v11, v11, 0x1
 
-    invoke-direct {p0, v7}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
+    invoke-static {v7}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
 
     move-result v12
 
-    invoke-direct {p0, v7, v8, v1}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
+    invoke-static {v7, v8, v1}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
 
     move-result v14
 
@@ -753,11 +751,11 @@
 
     add-int/2addr v6, v2
 
-    invoke-direct {p0, v3}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
+    invoke-static {v3}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
 
     move-result v12
 
-    invoke-direct {p0, v3, v4, v5}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
+    invoke-static {v3, v4, v5}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
 
     move-result v14
 
@@ -767,11 +765,11 @@
 
     add-int/lit8 v11, v11, 0x1
 
-    invoke-direct {p0, v6}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
+    invoke-static {v6}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum1(I)I
 
     move-result v12
 
-    invoke-direct {p0, v6, v7, v8}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
+    invoke-static {v6, v7, v8}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Ch(III)I
 
     move-result v14
 
@@ -791,11 +789,11 @@
 
     add-int/2addr v5, v1
 
-    invoke-direct {p0, v2}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
+    invoke-static {v2}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Sum0(I)I
 
     move-result v12
 
-    invoke-direct {p0, v2, v3, v4}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
+    invoke-static {v2, v3, v4}, Lorg/bouncycastle/crypto/digests/SHA256Digest;->Maj(III)I
 
     move-result v13
 

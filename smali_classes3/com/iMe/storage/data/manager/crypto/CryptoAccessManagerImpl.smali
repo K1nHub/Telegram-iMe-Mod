@@ -540,71 +540,67 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 82
-    iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->wallets:Ljava/util/Map;
+    iget-object p1, p0, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->wallets:Ljava/util/Map;
 
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+    invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
 
-    move-result v0
+    move-result p1
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    xor-int/2addr v0, v1
+    xor-int/2addr p1, v0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    if-eqz v0, :cond_3
+    if-eqz p1, :cond_2
 
     .line 83
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->getLastLoggedInGuid()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result v0
+    move-result p1
 
-    if-lez v0, :cond_0
+    if-lez p1, :cond_0
 
-    move v0, v1
+    move p1, v0
 
     goto :goto_0
 
     :cond_0
-    move v0, v2
+    move p1, v1
 
     :goto_0
-    if-eqz v0, :cond_3
+    if-eqz p1, :cond_2
 
     .line 84
-    iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->wallets:Ljava/util/Map;
+    iget-object p1, p0, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->wallets:Ljava/util/Map;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lkotlin/collections/CollectionsKt;->last(Ljava/lang/Iterable;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/Wallet;
 
-    if-eqz p1, :cond_1
-
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getGuid()Ljava/lang/String;
 
     move-result-object p1
 
-    goto :goto_1
-
-    :cond_1
-    const/4 p1, 0x0
-
-    :goto_1
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->getLastLoggedInGuid()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     .line 85
     iget-object p1, p0, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->walletPassword:Ljava/lang/String;
@@ -613,25 +609,25 @@
 
     move-result p1
 
-    if-lez p1, :cond_2
+    if-lez p1, :cond_1
 
+    move p1, v0
+
+    goto :goto_1
+
+    :cond_1
     move p1, v1
+
+    :goto_1
+    if-eqz p1, :cond_2
 
     goto :goto_2
 
     :cond_2
-    move p1, v2
+    move v0, v1
 
     :goto_2
-    if-eqz p1, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    move v1, v2
-
-    :goto_3
-    return v1
+    return v0
 .end method
 
 .method public isCurrentBlockchainWalletCreated()Z

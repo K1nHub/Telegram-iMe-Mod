@@ -73,15 +73,19 @@ public final class ErrorModel {
     }
 
     public final String getMessage(ResourceManager resourceManager) {
-        String str;
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         IErrorStatus iErrorStatus = this.status;
-        boolean z = true;
-        if (iErrorStatus != ApiErrorHandler.ErrorStatus.NO_CONNECTION && iErrorStatus != ApiErrorHandler.ErrorStatus.TIMEOUT) {
-            z = false;
+        if (iErrorStatus == ApiErrorHandler.ErrorStatus.NO_CONNECTION || iErrorStatus == ApiErrorHandler.ErrorStatus.TIMEOUT) {
+            return getErrorMessage(resourceManager);
         }
-        if (!z && (str = this.errorMessage) != null) {
-            return str;
+        String str = this.errorMessage;
+        if (str != null) {
+            if (str.length() == 0) {
+                str = getErrorMessage(resourceManager);
+            }
+            if (str != null) {
+                return str;
+            }
         }
         return getErrorMessage(resourceManager);
     }

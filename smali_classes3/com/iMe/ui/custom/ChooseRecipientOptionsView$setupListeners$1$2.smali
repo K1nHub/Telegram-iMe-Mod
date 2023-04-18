@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 54
+    .line 52
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$setupListeners$1$2;->invoke(Landroid/view/View;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 54
+    .line 52
     iget-object p1, p0, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$setupListeners$1$2;->$onTwitterClickAction:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     invoke-interface {p1}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V

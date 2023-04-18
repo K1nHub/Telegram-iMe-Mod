@@ -71,7 +71,7 @@
 
     goto :goto_1
 
-    .line 136
+    .line 148
     :cond_0
     invoke-virtual {p1}, Landroid/widget/TextView;->getFilters()[Landroid/text/InputFilter;
 
@@ -84,13 +84,13 @@
     :cond_1
     move v1, v0
 
-    .line 141
+    .line 153
     :goto_0
     array-length v2, p1
 
     if-ge v1, v2, :cond_3
 
-    .line 142
+    .line 154
     aget-object v2, p1, v1
 
     if-ne v2, p2, :cond_2
@@ -150,44 +150,50 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     .line 117
-    invoke-static {}, Landroidx/emoji2/text/EmojiCompat;->get()Landroidx/emoji2/text/EmojiCompat;
+    invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    .line 118
+    invoke-static {}, Landroidx/emoji2/text/EmojiCompat;->get()Landroidx/emoji2/text/EmojiCompat;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroidx/emoji2/text/EmojiCompat;->process(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-virtual {v2, v1}, Landroidx/emoji2/text/EmojiCompat;->process(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 119
-    invoke-static {v1}, Landroid/text/Selection;->getSelectionStart(Ljava/lang/CharSequence;)I
+    if-ne v1, v2, :cond_1
 
-    move-result v2
+    return-void
 
-    .line 120
-    invoke-static {v1}, Landroid/text/Selection;->getSelectionEnd(Ljava/lang/CharSequence;)I
+    .line 131
+    :cond_1
+    invoke-static {v2}, Landroid/text/Selection;->getSelectionStart(Ljava/lang/CharSequence;)I
+
+    move-result v1
+
+    .line 132
+    invoke-static {v2}, Landroid/text/Selection;->getSelectionEnd(Ljava/lang/CharSequence;)I
 
     move-result v3
 
-    .line 122
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    .line 134
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 124
-    instance-of v0, v1, Landroid/text/Spannable;
+    .line 136
+    instance-of v0, v2, Landroid/text/Spannable;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 125
-    check-cast v1, Landroid/text/Spannable;
+    .line 137
+    check-cast v2, Landroid/text/Spannable;
 
-    invoke-static {v1, v2, v3}, Landroidx/emoji2/viewsintegration/EmojiInputFilter;->updateSelection(Landroid/text/Spannable;II)V
+    invoke-static {v2, v1, v3}, Landroidx/emoji2/viewsintegration/EmojiInputFilter;->updateSelection(Landroid/text/Spannable;II)V
 
-    :cond_1
+    :cond_2
     return-void
 .end method

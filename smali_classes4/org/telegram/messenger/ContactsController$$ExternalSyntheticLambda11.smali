@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/messenger/ContactsController;
 
-    invoke-static {v0}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$mb56EJCF7ulpdcrvj4Af7pIBzow(Lorg/telegram/messenger/ContactsController;)V
+    invoke-static {v0}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$uqTUKVIZiTkSt4rH0dWWWSm3bMc(Lorg/telegram/messenger/ContactsController;)V
 
     return-void
 .end method

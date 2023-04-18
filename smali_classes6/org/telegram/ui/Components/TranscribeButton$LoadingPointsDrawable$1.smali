@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable;ILjava/lang/String;II)V
     .locals 0
 
-    .line 529
+    .line 534
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;II)V
 
     return-void

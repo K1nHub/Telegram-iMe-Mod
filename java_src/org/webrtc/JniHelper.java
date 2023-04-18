@@ -1,6 +1,6 @@
 package org.webrtc;
 
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 /* loaded from: classes6.dex */
@@ -11,7 +11,7 @@ class JniHelper {
     @CalledByNative
     static byte[] getStringBytes(String str) {
         try {
-            return str.getBytes(C0482C.ISO88591_NAME);
+            return str.getBytes(C0470C.ISO88591_NAME);
         } catch (UnsupportedEncodingException unused) {
             throw new RuntimeException("ISO-8859-1 is unsupported");
         }

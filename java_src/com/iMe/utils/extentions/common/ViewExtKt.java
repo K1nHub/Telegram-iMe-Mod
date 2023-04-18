@@ -4,7 +4,6 @@ import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Vibrator;
 import android.text.SpannableString;
 import android.text.TextPaint;
@@ -38,11 +37,12 @@ import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Ref$BooleanRef;
 import kotlin.jvm.internal.Ref$LongRef;
 import kotlin.text.StringsKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3316R;
-import org.telegram.p048ui.ActionBar.Theme;
+import org.telegram.messenger.C3242R;
+import org.telegram.p044ui.ActionBar.Theme;
 import timber.log.Timber;
 /* compiled from: ViewExt.kt */
 /* loaded from: classes4.dex */
@@ -73,7 +73,7 @@ public final class ViewExtKt {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
         Intrinsics.checkNotNullParameter(url, "url");
         Intrinsics.checkNotNullParameter(headers, "headers");
-        Glide.with(imageView).load(new GlideUrl(url, new Headers() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda3
+        Glide.with(imageView).load(new GlideUrl(url, new Headers() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda4
             @Override // com.bumptech.glide.load.model.Headers
             public final Map getHeaders() {
                 Map checkNotNullParameter;
@@ -158,7 +158,7 @@ public final class ViewExtKt {
 
     public static final void setBoundedCircleRippleBackground(View view) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setBackground(Theme.createSelectorDrawable(Theme.getColor("player_actionBarSelector"), 5));
+        view.setBackground(Theme.createSelectorDrawable(Theme.getColor("player_actionBarSelector"), 3));
     }
 
     public static final void setAutoSizedCircleRippleBackground(View view) {
@@ -175,9 +175,7 @@ public final class ViewExtKt {
 
     public static final void setRippleForeground(View view, boolean z) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        if (Build.VERSION.SDK_INT >= 23) {
-            view.setForeground(Theme.getSelectorDrawable(z));
-        }
+        view.setForeground(Theme.getSelectorDrawable(z));
     }
 
     public static final void setImageColor(ImageView imageView, int i) {
@@ -213,6 +211,37 @@ public final class ViewExtKt {
             listener.invoke(view);
             lastClickTime.element = System.currentTimeMillis();
         }
+    }
+
+    public static final void setMixedClickListener(final View view, Function1<? super View, Unit> listener) {
+        Intrinsics.checkNotNullParameter(view, "<this>");
+        Intrinsics.checkNotNullParameter(listener, "listener");
+        safeThrottledClick$default(view, 0L, listener, 1, null);
+        final Ref$BooleanRef ref$BooleanRef = new Ref$BooleanRef();
+        view.setOnTouchListener(new View.OnTouchListener() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda2
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view2, MotionEvent motionEvent) {
+                boolean mixedClickListener$lambda$4;
+                mixedClickListener$lambda$4 = ViewExtKt.setMixedClickListener$lambda$4(Ref$BooleanRef.this, view, view2, motionEvent);
+                return mixedClickListener$lambda$4;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean setMixedClickListener$lambda$4(Ref$BooleanRef isPressedDown, View this_setMixedClickListener, View view, MotionEvent motionEvent) {
+        Intrinsics.checkNotNullParameter(isPressedDown, "$isPressedDown");
+        Intrinsics.checkNotNullParameter(this_setMixedClickListener, "$this_setMixedClickListener");
+        int action = motionEvent.getAction();
+        if (action == 0) {
+            isPressedDown.element = true;
+        } else if (action == 1) {
+            if (isPressedDown.element) {
+                this_setMixedClickListener.performClick();
+            }
+            isPressedDown.element = false;
+        }
+        return false;
     }
 
     public static final void tintIndeterminateProgress(ProgressBar progressBar, int i) {
@@ -256,18 +285,18 @@ public final class ViewExtKt {
     public static final void onAction(EditText editText, final int i, final Callbacks$Callback runAction) {
         Intrinsics.checkNotNullParameter(editText, "<this>");
         Intrinsics.checkNotNullParameter(runAction, "runAction");
-        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda2
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda3
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
-                boolean onAction$lambda$4;
-                onAction$lambda$4 = ViewExtKt.onAction$lambda$4(i, runAction, textView, i2, keyEvent);
-                return onAction$lambda$4;
+                boolean onAction$lambda$5;
+                onAction$lambda$5 = ViewExtKt.onAction$lambda$5(i, runAction, textView, i2, keyEvent);
+                return onAction$lambda$5;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean onAction$lambda$4(int i, Callbacks$Callback runAction, TextView textView, int i2, KeyEvent keyEvent) {
+    public static final boolean onAction$lambda$5(int i, Callbacks$Callback runAction, TextView textView, int i2, KeyEvent keyEvent) {
         Intrinsics.checkNotNullParameter(runAction, "$runAction");
         if (i2 == i) {
             runAction.invoke();
@@ -390,7 +419,7 @@ public final class ViewExtKt {
 
     public static final void setGreyShadowBackground(View view, boolean z) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3316R.C3318drawable.greydivider_bottom : C3316R.C3318drawable.greydivider_top, "windowBackgroundGrayShadow"));
+        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3242R.C3244drawable.greydivider_bottom : C3242R.C3244drawable.greydivider_top, "windowBackgroundGrayShadow"));
     }
 
     public static final void setScale(View view, float f) {
@@ -404,15 +433,6 @@ public final class ViewExtKt {
         ViewPropertyAnimator scaleY = viewPropertyAnimator.scaleX(f).scaleY(f);
         Intrinsics.checkNotNullExpressionValue(scaleY, "scaleX(value).scaleY(value)");
         return scaleY;
-    }
-
-    public static final void setMargins(View view, int i, int i2, int i3, int i4) {
-        Intrinsics.checkNotNullParameter(view, "<this>");
-        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-        Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
-        marginLayoutParams.setMargins(i, i2, i3, i4);
-        view.setLayoutParams(marginLayoutParams);
     }
 
     public static /* synthetic */ void setMargins$default(View view, int i, int i2, int i3, int i4, int i5, Object obj) {
@@ -437,6 +457,15 @@ public final class ViewExtKt {
             i4 = marginLayoutParams4 != null ? marginLayoutParams4.bottomMargin : 0;
         }
         setMargins(view, i, i2, i3, i4);
+    }
+
+    public static final void setMargins(View view, int i, int i2, int i3, int i4) {
+        Intrinsics.checkNotNullParameter(view, "<this>");
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
+        marginLayoutParams.setMargins(i, i2, i3, i4);
+        view.setLayoutParams(marginLayoutParams);
     }
 
     public static final void setTextsColor(String key, TextView... textViews) {

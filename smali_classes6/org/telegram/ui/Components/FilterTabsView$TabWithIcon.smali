@@ -26,12 +26,12 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/FilterTabsView;I)V
     .locals 1
 
-    .line 238
+    .line 239
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     const-string v0, ""
 
-    .line 239
+    .line 240
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/Components/FilterTabsView$Tab;-><init>(Lorg/telegram/ui/Components/FilterTabsView;ILjava/lang/String;)V
 
     return-void
@@ -40,7 +40,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/FilterTabsView;ILorg/telegram/ui/Components/FilterTabsView$1;)V
     .locals 0
 
-    .line 233
+    .line 234
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;-><init>(Lorg/telegram/ui/Components/FilterTabsView;I)V
 
     return-void
@@ -49,7 +49,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 233
+    .line 234
     iget-object p0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->outlinedDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -58,7 +58,7 @@
 .method static synthetic access$102(Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 233
+    .line 234
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->outlinedDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p1
@@ -67,7 +67,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 233
+    .line 234
     iget-object p0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->filledDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -76,7 +76,7 @@
 .method static synthetic access$202(Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 233
+    .line 234
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->filledDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p1
@@ -87,7 +87,7 @@
 .method public getWidth(Z)I
     .locals 4
 
-    .line 246
+    .line 247
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->outlinedDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -108,7 +108,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 249
+    .line 250
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$300(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$FilterTabsViewDelegate;
@@ -128,16 +128,16 @@
     :cond_0
     if-eqz p1, :cond_2
 
-    .line 254
+    .line 255
     iput v2, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->counter:I
 
     goto :goto_0
 
-    .line 257
+    .line 258
     :cond_1
     iget v2, p0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->counter:I
 
-    .line 259
+    .line 260
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -159,7 +159,7 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 263
+    .line 264
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -172,7 +172,7 @@
 
     move-result-object v1
 
-    .line 264
+    .line 265
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$500(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -191,7 +191,7 @@
 
     double-to-int v1, v1
 
-    .line 265
+    .line 266
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -206,7 +206,7 @@
 
     add-int/2addr v1, v2
 
-    .line 266
+    .line 267
     sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
     invoke-virtual {v2}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
@@ -221,7 +221,7 @@
 
     add-int/2addr v0, v1
 
-    .line 269
+    .line 270
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -231,7 +231,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 270
+    .line 271
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
     sget-object v2, Lcom/iMe/fork/enums/FilterTabWidthMode;->MINIMUM:Lcom/iMe/fork/enums/FilterTabWidthMode;
@@ -257,7 +257,7 @@
     :cond_6
     const/16 p1, 0x28
 
-    .line 272
+    .line 273
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1

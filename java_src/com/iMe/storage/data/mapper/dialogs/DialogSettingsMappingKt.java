@@ -1,6 +1,6 @@
 package com.iMe.storage.data.mapper.dialogs;
 
-import com.iMe.storage.data.locale.p028db.model.translation.DialogTranslationSettingsDb;
+import com.iMe.storage.data.locale.p027db.model.translation.DialogTranslationSettingsDb;
 import com.iMe.storage.domain.model.dialogs.DialogTranslationSettings;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DialogSettingsMapping.kt */

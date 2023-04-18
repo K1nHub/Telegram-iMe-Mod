@@ -109,7 +109,7 @@ public class WindowInsetsCompat {
 
     @Deprecated
     public WindowInsetsCompat replaceSystemWindowInsets(int i, int i2, int i3, int i4) {
-        return new Builder(this).setSystemWindowInsets(Insets.m855of(i, i2, i3, i4)).build();
+        return new Builder(this).setSystemWindowInsets(Insets.m840of(i, i2, i3, i4)).build();
     }
 
     @Deprecated
@@ -316,15 +316,15 @@ public class WindowInsetsCompat {
             DisplayCutoutCompat displayCutout;
             if (i == 1) {
                 if (z) {
-                    return Insets.m855of(0, Math.max(getRootStableInsets().top, getSystemWindowInsets().top), 0, 0);
+                    return Insets.m840of(0, Math.max(getRootStableInsets().top, getSystemWindowInsets().top), 0, 0);
                 }
-                return Insets.m855of(0, getSystemWindowInsets().top, 0, 0);
+                return Insets.m840of(0, getSystemWindowInsets().top, 0, 0);
             }
             if (i == 2) {
                 if (z) {
                     Insets rootStableInsets = getRootStableInsets();
                     Insets stableInsets2 = getStableInsets();
-                    return Insets.m855of(Math.max(rootStableInsets.left, stableInsets2.left), 0, Math.max(rootStableInsets.right, stableInsets2.right), Math.max(rootStableInsets.bottom, stableInsets2.bottom));
+                    return Insets.m840of(Math.max(rootStableInsets.left, stableInsets2.left), 0, Math.max(rootStableInsets.right, stableInsets2.right), Math.max(rootStableInsets.bottom, stableInsets2.bottom));
                 }
                 Insets systemWindowInsets = getSystemWindowInsets();
                 WindowInsetsCompat windowInsetsCompat = this.mRootWindowInsets;
@@ -333,7 +333,7 @@ public class WindowInsetsCompat {
                 if (stableInsets != null) {
                     i3 = Math.min(i3, stableInsets.bottom);
                 }
-                return Insets.m855of(systemWindowInsets.left, 0, systemWindowInsets.right, i3);
+                return Insets.m840of(systemWindowInsets.left, 0, systemWindowInsets.right, i3);
             } else if (i != 8) {
                 if (i != 16) {
                     if (i != 32) {
@@ -346,7 +346,7 @@ public class WindowInsetsCompat {
                                     displayCutout = getDisplayCutout();
                                 }
                                 if (displayCutout != null) {
-                                    return Insets.m855of(displayCutout.getSafeInsetLeft(), displayCutout.getSafeInsetTop(), displayCutout.getSafeInsetRight(), displayCutout.getSafeInsetBottom());
+                                    return Insets.m840of(displayCutout.getSafeInsetLeft(), displayCutout.getSafeInsetTop(), displayCutout.getSafeInsetRight(), displayCutout.getSafeInsetBottom());
                                 }
                                 return Insets.NONE;
                             }
@@ -367,11 +367,11 @@ public class WindowInsetsCompat {
                 Insets rootStableInsets2 = getRootStableInsets();
                 int i4 = systemWindowInsets2.bottom;
                 if (i4 > rootStableInsets2.bottom) {
-                    return Insets.m855of(0, 0, 0, i4);
+                    return Insets.m840of(0, 0, 0, i4);
                 }
                 Insets insets = this.mRootViewVisibleInsets;
                 if (insets != null && !insets.equals(Insets.NONE) && (i2 = this.mRootViewVisibleInsets.bottom) > rootStableInsets2.bottom) {
-                    return Insets.m855of(0, 0, 0, i2);
+                    return Insets.m840of(0, 0, 0, i2);
                 }
                 return Insets.NONE;
             }
@@ -380,7 +380,7 @@ public class WindowInsetsCompat {
         @Override // androidx.core.view.WindowInsetsCompat.Impl
         final Insets getSystemWindowInsets() {
             if (this.mSystemWindowInsets == null) {
-                this.mSystemWindowInsets = Insets.m855of(this.mPlatformInsets.getSystemWindowInsetLeft(), this.mPlatformInsets.getSystemWindowInsetTop(), this.mPlatformInsets.getSystemWindowInsetRight(), this.mPlatformInsets.getSystemWindowInsetBottom());
+                this.mSystemWindowInsets = Insets.m840of(this.mPlatformInsets.getSystemWindowInsetLeft(), this.mPlatformInsets.getSystemWindowInsetTop(), this.mPlatformInsets.getSystemWindowInsetRight(), this.mPlatformInsets.getSystemWindowInsetBottom());
             }
             return this.mSystemWindowInsets;
         }
@@ -443,7 +443,7 @@ public class WindowInsetsCompat {
                     }
                     Rect rect = (Rect) sVisibleInsetsField.get(sAttachInfoField.get(invoke));
                     if (rect != null) {
-                        return Insets.m854of(rect);
+                        return Insets.m839of(rect);
                     }
                     return null;
                 } catch (ReflectiveOperationException e) {
@@ -515,7 +515,7 @@ public class WindowInsetsCompat {
         @Override // androidx.core.view.WindowInsetsCompat.Impl
         final Insets getStableInsets() {
             if (this.mStableInsets == null) {
-                this.mStableInsets = Insets.m855of(this.mPlatformInsets.getStableInsetLeft(), this.mPlatformInsets.getStableInsetTop(), this.mPlatformInsets.getStableInsetRight(), this.mPlatformInsets.getStableInsetBottom());
+                this.mStableInsets = Insets.m840of(this.mPlatformInsets.getStableInsetLeft(), this.mPlatformInsets.getStableInsetTop(), this.mPlatformInsets.getStableInsetRight(), this.mPlatformInsets.getStableInsetBottom());
             }
             return this.mStableInsets;
         }
@@ -623,7 +623,7 @@ public class WindowInsetsCompat {
         int max2 = Math.max(0, insets.top - i2);
         int max3 = Math.max(0, insets.right - i3);
         int max4 = Math.max(0, insets.bottom - i4);
-        return (max == i && max2 == i2 && max3 == i3 && max4 == i4) ? insets : Insets.m855of(max, max2, max3, max4);
+        return (max == i && max2 == i2 && max3 == i3 && max4 == i4) ? insets : Insets.m840of(max, max2, max3, max4);
     }
 
     /* loaded from: classes.dex */
@@ -1026,7 +1026,7 @@ public class WindowInsetsCompat {
                         Rect rect = (Rect) sStableInsets.get(obj);
                         Rect rect2 = (Rect) sContentInsets.get(obj);
                         if (rect != null && rect2 != null) {
-                            WindowInsetsCompat build = new Builder().setStableInsets(Insets.m854of(rect)).setSystemWindowInsets(Insets.m854of(rect2)).build();
+                            WindowInsetsCompat build = new Builder().setStableInsets(Insets.m839of(rect)).setSystemWindowInsets(Insets.m839of(rect2)).build();
                             build.setRootWindowInsets(build);
                             build.copyRootViewBounds(view.getRootView());
                             return build;

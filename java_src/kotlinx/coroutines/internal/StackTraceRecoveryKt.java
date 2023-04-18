@@ -10,6 +10,7 @@ import kotlin.TuplesKt;
 import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
+import kotlinx.coroutines.CopyableThrowable;
 /* compiled from: StackTraceRecovery.kt */
 /* loaded from: classes4.dex */
 public final class StackTraceRecoveryKt {
@@ -21,44 +22,55 @@ public final class StackTraceRecoveryKt {
 
     static {
         Object obj;
-        Object m1571constructorimpl;
+        Object m1555constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            obj = Result.m1571constructorimpl(Class.forName("kotlin.coroutines.jvm.internal.BaseContinuationImpl").getCanonicalName());
+            obj = Result.m1555constructorimpl(Class.forName("kotlin.coroutines.jvm.internal.BaseContinuationImpl").getCanonicalName());
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            obj = Result.m1571constructorimpl(ResultKt.createFailure(th));
+            obj = Result.m1555constructorimpl(ResultKt.createFailure(th));
         }
-        baseContinuationImplClassName = (String) (Result.m1572exceptionOrNullimpl(obj) == null ? obj : "kotlin.coroutines.jvm.internal.BaseContinuationImpl");
+        baseContinuationImplClassName = (String) (Result.m1556exceptionOrNullimpl(obj) == null ? obj : "kotlin.coroutines.jvm.internal.BaseContinuationImpl");
         try {
             Result.Companion companion3 = Result.Companion;
-            m1571constructorimpl = Result.m1571constructorimpl(StackTraceRecoveryKt.class.getCanonicalName());
+            m1555constructorimpl = Result.m1555constructorimpl(StackTraceRecoveryKt.class.getCanonicalName());
         } catch (Throwable th2) {
             Result.Companion companion4 = Result.Companion;
-            m1571constructorimpl = Result.m1571constructorimpl(ResultKt.createFailure(th2));
+            m1555constructorimpl = Result.m1555constructorimpl(ResultKt.createFailure(th2));
         }
-        if (Result.m1572exceptionOrNullimpl(m1571constructorimpl) != null) {
-            m1571constructorimpl = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
+        if (Result.m1556exceptionOrNullimpl(m1555constructorimpl) != null) {
+            m1555constructorimpl = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
         }
-        String str = (String) m1571constructorimpl;
+        String str = (String) m1555constructorimpl;
     }
 
     public static final <E extends Throwable> E recoverFromStackFrame(E e, CoroutineStackFrame coroutineStackFrame) {
         Pair causeAndStacktrace = causeAndStacktrace(e);
         Throwable th = (Throwable) causeAndStacktrace.component1();
         StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) causeAndStacktrace.component2();
-        Throwable tryCopyException = ExceptionsConstuctorKt.tryCopyException(th);
-        if (tryCopyException != null && Intrinsics.areEqual(tryCopyException.getMessage(), th.getMessage())) {
-            ArrayDeque<StackTraceElement> createStackTrace = createStackTrace(coroutineStackFrame);
-            if (createStackTrace.isEmpty()) {
-                return e;
-            }
-            if (th != e) {
-                mergeRecoveredTraces(stackTraceElementArr, createStackTrace);
-            }
-            return (E) createFinalException(th, tryCopyException, createStackTrace);
+        Throwable tryCopyAndVerify = tryCopyAndVerify(th);
+        if (tryCopyAndVerify == null) {
+            return e;
         }
-        return e;
+        ArrayDeque<StackTraceElement> createStackTrace = createStackTrace(coroutineStackFrame);
+        if (createStackTrace.isEmpty()) {
+            return e;
+        }
+        if (th != e) {
+            mergeRecoveredTraces(stackTraceElementArr, createStackTrace);
+        }
+        return (E) createFinalException(th, tryCopyAndVerify, createStackTrace);
+    }
+
+    private static final <E extends Throwable> E tryCopyAndVerify(E e) {
+        E e2 = (E) ExceptionsConstructorKt.tryCopyException(e);
+        if (e2 == null) {
+            return null;
+        }
+        if ((e instanceof CopyableThrowable) || Intrinsics.areEqual(e2.getMessage(), e.getMessage())) {
+            return e2;
+        }
+        return null;
     }
 
     private static final <E extends Throwable> E createFinalException(E e, E e2, ArrayDeque<StackTraceElement> arrayDeque) {
@@ -68,21 +80,13 @@ public final class StackTraceRecoveryKt {
         int i = 0;
         if (frameIndex == -1) {
             Object[] array = arrayDeque.toArray(new StackTraceElement[0]);
-            Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T>");
+            Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
             e2.setStackTrace((StackTraceElement[]) array);
             return e2;
         }
         StackTraceElement[] stackTraceElementArr = new StackTraceElement[arrayDeque.size() + frameIndex];
-        if (frameIndex > 0) {
-            int i2 = 0;
-            while (true) {
-                int i3 = i2 + 1;
-                stackTraceElementArr[i2] = stackTrace[i2];
-                if (i3 >= frameIndex) {
-                    break;
-                }
-                i2 = i3;
-            }
+        for (int i2 = 0; i2 < frameIndex; i2++) {
+            stackTraceElementArr[i2] = stackTrace[i2];
         }
         Iterator<StackTraceElement> it = arrayDeque.iterator();
         while (it.hasNext()) {
@@ -112,11 +116,11 @@ public final class StackTraceRecoveryKt {
                 }
             }
             if (z) {
-                return TuplesKt.m94to(cause, stackTrace);
+                return TuplesKt.m80to(cause, stackTrace);
             }
-            return TuplesKt.m94to(e, new StackTraceElement[0]);
+            return TuplesKt.m80to(e, new StackTraceElement[0]);
         }
-        return TuplesKt.m94to(e, new StackTraceElement[0]);
+        return TuplesKt.m80to(e, new StackTraceElement[0]);
     }
 
     public static final <E extends Throwable> E unwrapImpl(E e) {
@@ -162,7 +166,7 @@ public final class StackTraceRecoveryKt {
     }
 
     public static final StackTraceElement artificialFrame(String str) {
-        return new StackTraceElement(Intrinsics.stringPlus("\b\b\b(", str), "\b", "\b", -1);
+        return new StackTraceElement("\b\b\b(" + str, "\b", "\b", -1);
     }
 
     public static final boolean isArtificial(StackTraceElement stackTraceElement) {
@@ -204,7 +208,6 @@ public final class StackTraceRecoveryKt {
             return;
         }
         while (true) {
-            int i3 = length2 - 1;
             if (elementWiseEquals(stackTraceElementArr[length2], arrayDeque.getLast())) {
                 arrayDeque.removeLast();
             }
@@ -212,7 +215,7 @@ public final class StackTraceRecoveryKt {
             if (length2 == i2) {
                 return;
             }
-            length2 = i3;
+            length2--;
         }
     }
 }

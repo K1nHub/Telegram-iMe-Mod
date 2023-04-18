@@ -15,32 +15,32 @@ public class Logger {
     }
 
     /* renamed from: v */
-    public void m698v(String str) {
-        m697v(str, null);
+    public void m684v(String str) {
+        m683v(str, null);
     }
 
     /* renamed from: i */
-    public void m700i(String str) {
-        m699i(str, null);
+    public void m686i(String str) {
+        m685i(str, null);
     }
 
     /* renamed from: v */
-    public void m697v(String str, Throwable th) {
+    public void m683v(String str, Throwable th) {
         log(0, str, th);
     }
 
     /* renamed from: i */
-    public void m699i(String str, Throwable th) {
+    public void m685i(String str, Throwable th) {
         log(1, str, th);
     }
 
     /* renamed from: w */
-    public void m696w(String str, Throwable th) {
+    public void m682w(String str, Throwable th) {
         log(2, str, th);
     }
 
     /* renamed from: e */
-    public void m701e(String str, Throwable th) {
+    public void m687e(String str, Throwable th) {
         log(3, str, th);
     }
 

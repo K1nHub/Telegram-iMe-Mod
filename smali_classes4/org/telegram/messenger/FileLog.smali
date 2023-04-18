@@ -127,43 +127,43 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 63
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 33
+    .line 35
     iput-object v0, p0, Lorg/telegram/messenger/FileLog;->streamWriter:Ljava/io/OutputStreamWriter;
 
-    .line 34
+    .line 36
     iput-object v0, p0, Lorg/telegram/messenger/FileLog;->dateFormat:Lorg/telegram/messenger/time/FastDateFormat;
 
-    .line 35
+    .line 37
     iput-object v0, p0, Lorg/telegram/messenger/FileLog;->logQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    .line 37
+    .line 39
     iput-object v0, p0, Lorg/telegram/messenger/FileLog;->currentFile:Ljava/io/File;
 
-    .line 38
+    .line 40
     iput-object v0, p0, Lorg/telegram/messenger/FileLog;->networkFile:Ljava/io/File;
 
-    .line 39
+    .line 41
     iput-object v0, p0, Lorg/telegram/messenger/FileLog;->tonlibFile:Ljava/io/File;
 
-    .line 43
+    .line 45
     iput-object v0, p0, Lorg/telegram/messenger/FileLog;->tlStreamWriter:Ljava/io/OutputStreamWriter;
 
-    .line 44
+    .line 46
     iput-object v0, p0, Lorg/telegram/messenger/FileLog;->tlRequestsFile:Ljava/io/File;
 
-    .line 64
+    .line 66
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 67
+    .line 69
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/messenger/FileLog;->init()V
 
@@ -173,67 +173,72 @@
 .method private static checkGson()V
     .locals 3
 
-    .line 150
+    .line 152
     sget-object v0, Lorg/telegram/messenger/FileLog;->gson:Lcom/google/gson/Gson;
 
     if-nez v0, :cond_0
 
-    .line 151
+    .line 153
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     const-string v1, "message"
 
-    .line 152
+    .line 154
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v1, "phone"
 
-    .line 153
+    .line 155
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v1, "about"
 
-    .line 154
+    .line 156
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v1, "status_text"
 
-    .line 155
+    .line 157
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v1, "bytes"
 
-    .line 156
+    .line 158
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v1, "secret"
 
-    .line 157
+    .line 159
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v1, "stripped_thumb"
 
-    .line 158
+    .line 160
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v1, "strippedBitmap"
 
-    .line 159
+    .line 161
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v1, "networkType"
 
-    .line 161
+    .line 163
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v1, "disableFree"
 
-    .line 162
+    .line 164
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    const-string v1, "mContext"
+
     .line 165
+    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    .line 168
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
@@ -242,17 +247,17 @@
 
     const-string v2, "TL_upload_getFile"
 
-    .line 166
+    .line 169
     invoke-virtual {v1, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 167
+    .line 170
     sget-object v1, Lorg/telegram/messenger/FileLog;->excludeRequests:Ljava/util/HashSet;
 
     const-string v2, "TL_upload_getWebFile"
 
     invoke-virtual {v1, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 169
+    .line 172
     new-instance v1, Lcom/google/gson/GsonBuilder;
 
     invoke-direct {v1}, Lcom/google/gson/GsonBuilder;-><init>()V
@@ -265,7 +270,7 @@
 
     move-result-object v0
 
-    .line 183
+    .line 189
     invoke-virtual {v0}, Lcom/google/gson/GsonBuilder;->create()Lcom/google/gson/Gson;
 
     move-result-object v0
@@ -279,10 +284,10 @@
 .method public static cleanupLogs()V
     .locals 5
 
-    .line 430
+    .line 436
     invoke-static {}, Lorg/telegram/messenger/FileLog;->ensureInitied()V
 
-    .line 431
+    .line 437
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getLogsDir()Ljava/io/File;
 
     move-result-object v0
@@ -291,7 +296,7 @@
 
     return-void
 
-    .line 435
+    .line 441
     :cond_0
     invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
@@ -301,16 +306,16 @@
 
     const/4 v1, 0x0
 
-    .line 437
+    .line 443
     :goto_0
     array-length v2, v0
 
     if-ge v1, v2, :cond_4
 
-    .line 438
+    .line 444
     aget-object v2, v0, v1
 
-    .line 439
+    .line 445
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v3
@@ -341,7 +346,7 @@
 
     goto :goto_1
 
-    .line 442
+    .line 448
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -373,7 +378,7 @@
 
     goto :goto_1
 
-    .line 445
+    .line 451
     :cond_2
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -405,7 +410,7 @@
 
     goto :goto_1
 
-    .line 448
+    .line 454
     :cond_3
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
@@ -421,23 +426,23 @@
 .method public static d(Ljava/lang/String;)V
     .locals 2
 
-    .line 391
+    .line 397
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 394
+    .line 400
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->ensureInitied()V
 
     const-string/jumbo v0, "tmessages"
 
-    .line 395
+    .line 401
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 396
+    .line 402
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -446,7 +451,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 397
+    .line 403
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -474,7 +479,7 @@
 
     const-string v3, " : "
 
-    .line 75
+    .line 77
     sget-boolean v4, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-eqz v4, :cond_4
@@ -493,7 +498,7 @@
 
     goto/16 :goto_1
 
-    .line 78
+    .line 80
     :cond_0
     invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -503,10 +508,10 @@
 
     move-result-object v4
 
-    .line 79
+    .line 81
     invoke-static {}, Lorg/telegram/messenger/FileLog;->checkGson()V
 
-    .line 81
+    .line 83
     sget-object v5, Lorg/telegram/messenger/FileLog;->excludeRequests:Ljava/util/HashSet;
 
     invoke-virtual {v5, v4}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -519,7 +524,7 @@
 
     return-void
 
-    .line 85
+    .line 87
     :cond_1
     :try_start_0
     new-instance v5, Ljava/lang/StringBuilder;
@@ -550,7 +555,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 88
+    .line 90
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -588,7 +593,7 @@
     :cond_2
     if-eqz v2, :cond_3
 
-    .line 90
+    .line 92
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -623,12 +628,12 @@
     :goto_0
     move-object v15, v0
 
-    .line 93
+    .line 95
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v12
 
-    .line 94
+    .line 96
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -656,7 +661,7 @@
     :catchall_0
     move-exception v0
 
-    .line 114
+    .line 116
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
@@ -669,7 +674,7 @@
 .method public static dumpUnparsedMessage(Lorg/telegram/tgnet/TLObject;J)V
     .locals 7
 
-    .line 119
+    .line 121
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-eqz v0, :cond_1
@@ -678,16 +683,22 @@
 
     if-eqz v0, :cond_1
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_1
+
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     goto :goto_0
 
-    .line 123
+    .line 125
     :cond_0
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->checkGson()V
 
-    .line 124
+    .line 126
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -700,7 +711,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/time/FastDateFormat;->format(J)Ljava/lang/String;
 
-    .line 125
+    .line 127
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -735,12 +746,12 @@
 
     move-result-object v4
 
-    .line 127
+    .line 129
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    .line 128
+    .line 130
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p0
@@ -768,23 +779,23 @@
 .method public static e(Ljava/lang/String;)V
     .locals 2
 
-    .line 281
+    .line 287
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 284
+    .line 290
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->ensureInitied()V
 
     const-string/jumbo v0, "tmessages"
 
-    .line 285
+    .line 291
     invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 286
+    .line 292
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -793,7 +804,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 287
+    .line 293
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -813,23 +824,23 @@
 .method public static e(Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 2
 
-    .line 262
+    .line 268
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 265
+    .line 271
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->ensureInitied()V
 
     const-string/jumbo v0, "tmessages"
 
-    .line 266
+    .line 272
     invoke-static {v0, p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 267
+    .line 273
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -838,7 +849,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 268
+    .line 274
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -860,7 +871,7 @@
 
     const/4 v0, 0x1
 
-    .line 299
+    .line 305
     invoke-static {p0, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     return-void
@@ -869,14 +880,14 @@
 .method public static e(Ljava/lang/Throwable;Z)V
     .locals 5
 
-    .line 303
+    .line 309
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 306
+    .line 312
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
@@ -890,10 +901,10 @@
 
     if-eqz p1, :cond_1
 
-    .line 307
+    .line 313
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->appCenterLog(Ljava/lang/Throwable;)V
 
-    .line 309
+    .line 315
     :cond_1
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
@@ -923,30 +934,30 @@
 
     const-string p1, "copy malformed files"
 
-    .line 310
+    .line 316
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     const/4 p1, 0x1
 
-    .line 311
+    .line 317
     sput-boolean p1, Lorg/telegram/messenger/FileLog;->databaseIsMalformed:Z
 
-    .line 312
+    .line 318
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
 
     move-result-object p1
 
-    .line 313
+    .line 319
     new-instance v0, Ljava/io/File;
 
     const-string v1, "malformed_database/"
 
     invoke-direct {v0, p1, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 314
+    .line 320
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 315
+    .line 321
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -959,7 +970,7 @@
 
     const/4 v1, 0x0
 
-    .line 316
+    .line 322
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -967,7 +978,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 318
+    .line 324
     :try_start_0
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -998,7 +1009,7 @@
     :catch_0
     move-exception v2
 
-    .line 320
+    .line 326
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -1006,14 +1017,14 @@
 
     goto :goto_0
 
-    .line 324
+    .line 330
     :cond_2
     invoke-static {}, Lorg/telegram/messenger/FileLog;->ensureInitied()V
 
-    .line 325
+    .line 331
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 326
+    .line 332
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p1
@@ -1022,7 +1033,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 327
+    .line 333
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p1
@@ -1037,7 +1048,7 @@
 
     goto :goto_2
 
-    .line 341
+    .line 347
     :cond_3
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
@@ -1048,7 +1059,7 @@
 .method public static ensureInitied()V
     .locals 1
 
-    .line 224
+    .line 230
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -1063,7 +1074,7 @@
 
     const/4 v0, 0x1
 
-    .line 346
+    .line 352
     invoke-static {p0, v0}, Lorg/telegram/messenger/FileLog;->fatal(Ljava/lang/Throwable;Z)V
 
     return-void
@@ -1072,14 +1083,14 @@
 .method public static fatal(Ljava/lang/Throwable;Z)V
     .locals 1
 
-    .line 350
+    .line 356
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 353
+    .line 359
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
@@ -1093,17 +1104,17 @@
 
     if-eqz p1, :cond_1
 
-    .line 354
+    .line 360
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->appCenterLog(Ljava/lang/Throwable;)V
 
-    .line 356
+    .line 362
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/FileLog;->ensureInitied()V
 
-    .line 357
+    .line 363
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 358
+    .line 364
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p1
@@ -1112,7 +1123,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 359
+    .line 365
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p1
@@ -1127,18 +1138,18 @@
 
     goto :goto_0
 
-    .line 376
+    .line 382
     :cond_2
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 377
+    .line 383
     sget-boolean p0, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-eqz p0, :cond_3
 
     const/4 p0, 0x2
 
-    .line 378
+    .line 384
     invoke-static {p0}, Ljava/lang/System;->exit(I)V
 
     :cond_3
@@ -1149,30 +1160,30 @@
 .method public static getInstance()Lorg/telegram/messenger/FileLog;
     .locals 2
 
-    .line 51
+    .line 53
     sget-object v0, Lorg/telegram/messenger/FileLog;->Instance:Lorg/telegram/messenger/FileLog;
 
     if-nez v0, :cond_1
 
-    .line 53
+    .line 55
     const-class v1, Lorg/telegram/messenger/FileLog;
 
     monitor-enter v1
 
-    .line 54
+    .line 56
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/FileLog;->Instance:Lorg/telegram/messenger/FileLog;
 
     if-nez v0, :cond_0
 
-    .line 56
+    .line 58
     new-instance v0, Lorg/telegram/messenger/FileLog;
 
     invoke-direct {v0}, Lorg/telegram/messenger/FileLog;-><init>()V
 
     sput-object v0, Lorg/telegram/messenger/FileLog;->Instance:Lorg/telegram/messenger/FileLog;
 
-    .line 58
+    .line 60
     :cond_0
     monitor-exit v1
 
@@ -1195,7 +1206,7 @@
 .method public static getNetworkLogPath()Ljava/lang/String;
     .locals 8
 
-    .line 228
+    .line 234
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     const-string v1, ""
@@ -1204,7 +1215,7 @@
 
     return-object v1
 
-    .line 232
+    .line 238
     :cond_0
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getLogsDir()Ljava/io/File;
@@ -1215,7 +1226,7 @@
 
     return-object v1
 
-    .line 236
+    .line 242
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -1255,7 +1266,7 @@
 
     iput-object v3, v2, Lorg/telegram/messenger/FileLog;->networkFile:Ljava/io/File;
 
-    .line 237
+    .line 243
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -1273,7 +1284,7 @@
     :catchall_0
     move-exception v0
 
-    .line 239
+    .line 245
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-object v1
@@ -1282,7 +1293,7 @@
 .method public static getTonlibLogPath()Ljava/lang/String;
     .locals 8
 
-    .line 245
+    .line 251
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     const-string v1, ""
@@ -1291,7 +1302,7 @@
 
     return-object v1
 
-    .line 249
+    .line 255
     :cond_0
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getLogsDir()Ljava/io/File;
@@ -1302,7 +1313,7 @@
 
     return-object v1
 
-    .line 253
+    .line 259
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -1342,7 +1353,7 @@
 
     iput-object v3, v2, Lorg/telegram/messenger/FileLog;->tonlibFile:Ljava/io/File;
 
-    .line 254
+    .line 260
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -1360,7 +1371,7 @@
     :catchall_0
     move-exception v0
 
-    .line 256
+    .line 262
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-object v1
@@ -1369,7 +1380,7 @@
 .method private static synthetic lambda$d$6(Ljava/lang/String;)V
     .locals 5
 
-    .line 399
+    .line 405
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -1413,7 +1424,7 @@
 
     invoke-virtual {v0, p0}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 400
+    .line 406
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p0
@@ -1429,10 +1440,10 @@
     :catch_0
     move-exception p0
 
-    .line 402
+    .line 408
     invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 403
+    .line 409
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->isENOSPC(Ljava/lang/Exception;)Z
 
     move-result p0
@@ -1441,7 +1452,7 @@
 
     const/4 p0, 0x1
 
-    .line 404
+    .line 410
     invoke-static {p0}, Lorg/telegram/ui/LaunchActivity;->checkFreeDiscSpaceStatic(I)V
 
     :cond_0
@@ -1458,7 +1469,7 @@
 
     const-string v2, "MTProto"
 
-    .line 96
+    .line 98
     :try_start_0
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1492,7 +1503,7 @@
 
     move-result-object p0
 
-    .line 97
+    .line 99
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p1
@@ -1525,24 +1536,6 @@
 
     invoke-virtual {p1, p2}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 98
-    invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
-
-    move-result-object p1
-
-    iget-object p1, p1, Lorg/telegram/messenger/FileLog;->tlStreamWriter:Ljava/io/OutputStreamWriter;
-
-    invoke-virtual {p1, v0}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
-
-    .line 99
-    invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
-
-    move-result-object p1
-
-    iget-object p1, p1, Lorg/telegram/messenger/FileLog;->tlStreamWriter:Ljava/io/OutputStreamWriter;
-
-    invoke-virtual {p1, p7}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
-
     .line 100
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -1559,9 +1552,27 @@
 
     iget-object p1, p1, Lorg/telegram/messenger/FileLog;->tlStreamWriter:Ljava/io/OutputStreamWriter;
 
-    invoke-virtual {p1, p8}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p1, p7}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
     .line 102
+    invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lorg/telegram/messenger/FileLog;->tlStreamWriter:Ljava/io/OutputStreamWriter;
+
+    invoke-virtual {p1, v0}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
+
+    .line 103
+    invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lorg/telegram/messenger/FileLog;->tlStreamWriter:Ljava/io/OutputStreamWriter;
+
+    invoke-virtual {p1, p8}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
+
+    .line 104
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p1
@@ -1572,7 +1583,7 @@
 
     invoke-virtual {p1, p2}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 103
+    .line 105
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p1
@@ -1581,16 +1592,16 @@
 
     invoke-virtual {p1}, Ljava/io/OutputStreamWriter;->flush()V
 
-    .line 105
+    .line 107
     invoke-static {v2, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 106
+    .line 108
     invoke-static {v2, p7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 107
+    .line 109
     invoke-static {v2, p8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 108
+    .line 110
     invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1600,7 +1611,7 @@
     :catch_0
     move-exception p0
 
-    .line 110
+    .line 112
     invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_0
@@ -1612,7 +1623,7 @@
 
     const-string v0, "MTProto"
 
-    .line 130
+    .line 132
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -1624,7 +1635,7 @@
 
     move-result-object p0
 
-    .line 132
+    .line 134
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p1
@@ -1633,7 +1644,7 @@
 
     invoke-virtual {p1, p0}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 133
+    .line 135
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p0
@@ -1644,7 +1655,7 @@
 
     invoke-virtual {p0, p1}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 134
+    .line 136
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p0
@@ -1653,7 +1664,7 @@
 
     invoke-virtual {p0, p2}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 135
+    .line 137
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p0
@@ -1664,7 +1675,7 @@
 
     invoke-virtual {p0, p1}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 136
+    .line 138
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p0
@@ -1673,7 +1684,7 @@
 
     invoke-virtual {p0}, Ljava/io/OutputStreamWriter;->flush()V
 
-    .line 138
+    .line 140
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1690,12 +1701,12 @@
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 139
+    .line 141
     invoke-static {v0, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     const-string p0, " "
 
-    .line 140
+    .line 142
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1705,7 +1716,7 @@
     :catch_0
     move-exception p0
 
-    .line 142
+    .line 144
     invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_0
@@ -1715,7 +1726,7 @@
 .method private static synthetic lambda$e$2(Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 5
 
-    .line 270
+    .line 276
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -1759,7 +1770,7 @@
 
     invoke-virtual {v0, p0}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 271
+    .line 277
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p0
@@ -1772,7 +1783,7 @@
 
     invoke-virtual {p0, p1}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 272
+    .line 278
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p0
@@ -1788,7 +1799,7 @@
     :catch_0
     move-exception p0
 
-    .line 274
+    .line 280
     invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_0
@@ -1798,7 +1809,7 @@
 .method private static synthetic lambda$e$3(Ljava/lang/String;)V
     .locals 5
 
-    .line 289
+    .line 295
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -1842,7 +1853,7 @@
 
     invoke-virtual {v0, p0}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 290
+    .line 296
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p0
@@ -1858,7 +1869,7 @@
     :catch_0
     move-exception p0
 
-    .line 292
+    .line 298
     invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_0
@@ -1872,7 +1883,7 @@
 
     const-string v1, " E/tmessages: "
 
-    .line 330
+    .line 336
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -1912,20 +1923,20 @@
 
     invoke-virtual {v2, v3}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 331
+    .line 337
     invoke-virtual {p0}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
 
     move-result-object p0
 
     const/4 v2, 0x0
 
-    .line 332
+    .line 338
     :goto_0
     array-length v3, p0
 
     if-ge v2, v3, :cond_0
 
-    .line 333
+    .line 339
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v3
@@ -1970,7 +1981,7 @@
 
     goto :goto_0
 
-    .line 335
+    .line 341
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -1987,7 +1998,7 @@
     :catch_0
     move-exception p0
 
-    .line 337
+    .line 343
     invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_1
@@ -2001,7 +2012,7 @@
 
     const-string v1, " E/tmessages: "
 
-    .line 361
+    .line 367
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -2041,20 +2052,20 @@
 
     invoke-virtual {v2, v3}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 362
+    .line 368
     invoke-virtual {p0}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
 
     move-result-object p0
 
     const/4 v2, 0x0
 
-    .line 363
+    .line 369
     :goto_0
     array-length v3, p0
 
     if-ge v2, v3, :cond_0
 
-    .line 364
+    .line 370
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v3
@@ -2099,7 +2110,7 @@
 
     goto :goto_0
 
-    .line 366
+    .line 372
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -2116,10 +2127,10 @@
     :catch_0
     move-exception p0
 
-    .line 368
+    .line 374
     invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 371
+    .line 377
     :goto_1
     sget-boolean p0, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
@@ -2127,7 +2138,7 @@
 
     const/4 p0, 0x2
 
-    .line 372
+    .line 378
     invoke-static {p0}, Ljava/lang/System;->exit(I)V
 
     :cond_1
@@ -2137,7 +2148,7 @@
 .method private static synthetic lambda$w$7(Ljava/lang/String;)V
     .locals 5
 
-    .line 420
+    .line 426
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
@@ -2181,7 +2192,7 @@
 
     invoke-virtual {v0, p0}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 421
+    .line 427
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object p0
@@ -2197,7 +2208,7 @@
     :catch_0
     move-exception p0
 
-    .line 423
+    .line 429
     invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_0
@@ -2207,7 +2218,7 @@
 .method private static needSent(Ljava/lang/Throwable;)Z
     .locals 1
 
-    .line 384
+    .line 390
     instance-of v0, p0, Ljava/lang/InterruptedException;
 
     if-nez v0, :cond_1
@@ -2237,23 +2248,23 @@
 .method public static w(Ljava/lang/String;)V
     .locals 2
 
-    .line 412
+    .line 418
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 415
+    .line 421
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->ensureInitied()V
 
     const-string/jumbo v0, "tmessages"
 
-    .line 416
+    .line 422
     invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 417
+    .line 423
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -2262,7 +2273,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 418
+    .line 424
     invoke-static {}, Lorg/telegram/messenger/FileLog;->getInstance()Lorg/telegram/messenger/FileLog;
 
     move-result-object v0
@@ -2288,14 +2299,14 @@
 
     const-string v1, "-----start log "
 
-    .line 190
+    .line 196
     iget-boolean v2, p0, Lorg/telegram/messenger/FileLog;->initied:Z
 
     if-eqz v2, :cond_0
 
     return-void
 
-    .line 193
+    .line 199
     :cond_0
     sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -2307,7 +2318,7 @@
 
     iput-object v2, p0, Lorg/telegram/messenger/FileLog;->dateFormat:Lorg/telegram/messenger/time/FastDateFormat;
 
-    .line 194
+    .line 200
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -2316,7 +2327,7 @@
 
     move-result-object v2
 
-    .line 196
+    .line 202
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getLogsDir()Ljava/io/File;
 
@@ -2326,7 +2337,7 @@
 
     return-void
 
-    .line 200
+    .line 206
     :cond_1
     new-instance v4, Ljava/io/File;
 
@@ -2348,7 +2359,7 @@
 
     iput-object v4, p0, Lorg/telegram/messenger/FileLog;->currentFile:Ljava/io/File;
 
-    .line 201
+    .line 207
     new-instance v4, Ljava/io/File;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -2376,10 +2387,10 @@
     :catch_0
     move-exception v3
 
-    .line 203
+    .line 209
     invoke-virtual {v3}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 206
+    .line 212
     :goto_0
     :try_start_1
     new-instance v3, Lorg/telegram/messenger/DispatchQueue;
@@ -2390,26 +2401,26 @@
 
     iput-object v3, p0, Lorg/telegram/messenger/FileLog;->logQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    .line 207
+    .line 213
     iget-object v3, p0, Lorg/telegram/messenger/FileLog;->currentFile:Ljava/io/File;
 
     invoke-virtual {v3}, Ljava/io/File;->createNewFile()Z
 
-    .line 208
+    .line 214
     new-instance v3, Ljava/io/FileOutputStream;
 
     iget-object v4, p0, Lorg/telegram/messenger/FileLog;->currentFile:Ljava/io/File;
 
     invoke-direct {v3, v4}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 209
+    .line 215
     new-instance v4, Ljava/io/OutputStreamWriter;
 
     invoke-direct {v4, v3}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;)V
 
     iput-object v4, p0, Lorg/telegram/messenger/FileLog;->streamWriter:Ljava/io/OutputStreamWriter;
 
-    .line 210
+    .line 216
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -2426,26 +2437,26 @@
 
     invoke-virtual {v4, v3}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 211
+    .line 217
     iget-object v3, p0, Lorg/telegram/messenger/FileLog;->streamWriter:Ljava/io/OutputStreamWriter;
 
     invoke-virtual {v3}, Ljava/io/OutputStreamWriter;->flush()V
 
-    .line 213
+    .line 219
     new-instance v3, Ljava/io/FileOutputStream;
 
     iget-object v4, p0, Lorg/telegram/messenger/FileLog;->tlRequestsFile:Ljava/io/File;
 
     invoke-direct {v3, v4}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 214
+    .line 220
     new-instance v4, Ljava/io/OutputStreamWriter;
 
     invoke-direct {v4, v3}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;)V
 
     iput-object v4, p0, Lorg/telegram/messenger/FileLog;->tlStreamWriter:Ljava/io/OutputStreamWriter;
 
-    .line 215
+    .line 221
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -2462,7 +2473,7 @@
 
     invoke-virtual {v4, v0}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 216
+    .line 222
     iget-object v0, p0, Lorg/telegram/messenger/FileLog;->tlStreamWriter:Ljava/io/OutputStreamWriter;
 
     invoke-virtual {v0}, Ljava/io/OutputStreamWriter;->flush()V
@@ -2474,13 +2485,13 @@
     :catch_1
     move-exception v0
 
-    .line 218
+    .line 224
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_1
     const/4 v0, 0x1
 
-    .line 220
+    .line 226
     iput-boolean v0, p0, Lorg/telegram/messenger/FileLog;->initied:Z
 
     return-void

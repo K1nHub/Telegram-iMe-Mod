@@ -50,7 +50,7 @@ public class AlgorithmIdentifier extends ASN1Object {
 
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable
     public ASN1Primitive toASN1Primitive() {
-        ASN1EncodableVector aSN1EncodableVector = new ASN1EncodableVector();
+        ASN1EncodableVector aSN1EncodableVector = new ASN1EncodableVector(2);
         aSN1EncodableVector.add(this.algorithm);
         ASN1Encodable aSN1Encodable = this.parameters;
         if (aSN1Encodable != null) {

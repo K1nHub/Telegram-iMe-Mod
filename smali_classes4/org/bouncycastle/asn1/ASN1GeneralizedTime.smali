@@ -8,13 +8,69 @@
 
 # direct methods
 .method constructor <init>([B)V
-    .locals 0
+    .locals 2
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
+    array-length v0, p1
+
+    const/4 v1, 0x4
+
+    if-lt v0, v1, :cond_1
+
     iput-object p1, p0, Lorg/bouncycastle/asn1/ASN1GeneralizedTime;->time:[B
 
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1GeneralizedTime;->isDigit(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1GeneralizedTime;->isDigit(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1GeneralizedTime;->isDigit(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x3
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1GeneralizedTime;->isDigit(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
     return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "illegal characters in GeneralizedTime string"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "GeneralizedTime string too short"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 .method private isDigit(I)Z
@@ -76,7 +132,7 @@
     return p1
 .end method
 
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -88,7 +144,7 @@
 
     const/16 v1, 0x18
 
-    invoke-virtual {p1, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(I[B)V
+    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZI[B)V
 
     return-void
 .end method
@@ -229,6 +285,18 @@
 .end method
 
 .method toDERObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+    .locals 2
+
+    new-instance v0, Lorg/bouncycastle/asn1/DERGeneralizedTime;
+
+    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1GeneralizedTime;->time:[B
+
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/DERGeneralizedTime;-><init>([B)V
+
+    return-object v0
+.end method
+
+.method toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
     .locals 2
 
     new-instance v0, Lorg/bouncycastle/asn1/DERGeneralizedTime;

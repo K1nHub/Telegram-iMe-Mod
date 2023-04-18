@@ -45,6 +45,8 @@
 
 .field enabledCount:I
 
+.field private isNotClickableAvatar:Z
+
 .field pressedProgress:F
 
 .field private rectF:Landroid/graphics/RectF;
@@ -82,56 +84,117 @@
 
     const/4 v0, 0x0
 
-    .line 53
+    .line 55
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/StorageDiagramView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;J)V
+.method public constructor <init>(Landroid/content/Context;JZ)V
     .locals 2
 
-    .line 111
+    .line 117
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/StorageDiagramView;-><init>(Landroid/content/Context;)V
 
-    .line 112
+    .line 118
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogId:Ljava/lang/Long;
+
+    .line 120
+    new-instance v0, Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    const/high16 v1, 0x3fc00000    # 1.5f
+
+    .line 121
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
+
+    .line 122
+    new-instance v0, Lorg/telegram/messenger/ImageReceiver;
+
+    invoke-direct {v0}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
+
+    .line 123
+    invoke-virtual {v0, p0}, Lorg/telegram/messenger/ImageReceiver;->setParentView(Landroid/view/View;)V
+
+    if-eqz p4, :cond_0
+
+    .line 127
+    sget p2, Lorg/telegram/messenger/R$string;->ArchivedChats:I
+
+    const-string p3, "ArchivedChats"
+
+    invoke-static {p3, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogText:Ljava/lang/CharSequence;
+
+    .line 128
+    new-instance p2, Lorg/telegram/ui/Components/CombinedDrawable;
+
+    const/16 p3, 0x5a
+
+    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p3
+
+    const-string p4, "chats_archiveBackground"
+
+    invoke-static {p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+
+    move-result p4
+
+    invoke-static {p3, p4}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawable(II)Landroid/graphics/drawable/ShapeDrawable;
+
+    move-result-object p3
+
+    sget p4, Lorg/telegram/messenger/R$drawable;->fork_fab_archive:I
+
+    invoke-static {p1, p4}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogId:Ljava/lang/Long;
+    invoke-direct {p2, p3, p1}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 114
-    new-instance p1, Lorg/telegram/ui/Components/AvatarDrawable;
+    const/16 p1, 0x1e
 
-    invoke-direct {p1}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
+    .line 129
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+    move-result p3
 
-    const/high16 v0, 0x3fc00000    # 1.5f
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    .line 115
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
+    move-result p1
 
-    .line 116
-    new-instance p1, Lorg/telegram/messenger/ImageReceiver;
+    invoke-virtual {p2, p3, p1}, Lorg/telegram/ui/Components/CombinedDrawable;->setIconSize(II)V
 
-    invoke-direct {p1}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
+    .line 130
+    iget-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
+    invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/drawable/Drawable;)V
 
-    .line 117
-    invoke-virtual {p1, p0}, Lorg/telegram/messenger/ImageReceiver;->setParentView(Landroid/view/View;)V
+    goto :goto_0
 
+    :cond_0
     const-wide v0, 0x7fffffffffffffffL
 
     cmp-long p1, p2, v0
 
-    const/4 v0, 0x0
+    const/4 p4, 0x0
 
-    if-nez p1, :cond_0
+    if-nez p1, :cond_1
 
-    .line 120
+    .line 133
     sget p1, Lorg/telegram/messenger/R$string;->CacheOtherChats:I
 
     const-string p2, "CacheOtherChats"
@@ -142,24 +205,24 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogText:Ljava/lang/CharSequence;
 
-    .line 121
+    .line 134
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const/16 p2, 0xe
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 122
+    .line 135
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {p1, v0, p2}, Lorg/telegram/messenger/ImageReceiver;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p1, p4, p2}, Lorg/telegram/messenger/ImageReceiver;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
-    .line 124
-    :cond_0
+    .line 137
+    :cond_1
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -170,7 +233,7 @@
 
     move-result-object p1
 
-    .line 125
+    .line 138
     iget-object p2, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object p3, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
@@ -183,14 +246,14 @@
 
     const/4 p2, 0x6
 
-    .line 126
+    .line 139
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
     const/4 p3, 0x0
 
-    invoke-static {p1, v0, p2, p3}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;IZ)Ljava/lang/CharSequence;
+    invoke-static {p1, p4, p2, p3}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;IZ)Ljava/lang/CharSequence;
 
     move-result-object p1
 
@@ -203,10 +266,10 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
-    .line 101
+    .line 107
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 76
+    .line 82
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -215,10 +278,10 @@
 
     const/4 p1, 0x0
 
-    .line 82
+    .line 88
     iput p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->singleProgress:F
 
-    .line 88
+    .line 94
     new-instance p1, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/4 p2, 0x0
@@ -229,19 +292,19 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    .line 89
+    .line 95
     new-instance p1, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-direct {p1, p2, v0, p2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;-><init>(ZZZ)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    .line 102
+    .line 108
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 103
+    .line 109
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
@@ -252,7 +315,7 @@
 .method private synthetic lambda$setPressed$1(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 535
+    .line 559
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -265,7 +328,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->pressedProgress:F
 
-    .line 536
+    .line 560
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -274,7 +337,7 @@
 .method private synthetic lambda$update$0([Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;Landroid/animation/ValueAnimator;)V
     .locals 4
 
-    .line 470
+    .line 483
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -287,13 +350,13 @@
 
     const/4 v0, 0x0
 
-    .line 471
+    .line 484
     :goto_0
     array-length v1, p1
 
     if-ge v0, v1, :cond_0
 
-    .line 472
+    .line 485
     iget-object v1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->drawingPercentage:[F
 
     iget-object v2, p0, Lorg/telegram/ui/Components/StorageDiagramView;->startFromPercentage:[F
@@ -320,7 +383,7 @@
 
     goto :goto_0
 
-    .line 474
+    .line 487
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -332,7 +395,7 @@
 .method public calculateSize()J
     .locals 9
 
-    .line 570
+    .line 594
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
     const-wide/16 v1, 0x0
@@ -346,7 +409,7 @@
 
     move-wide v3, v1
 
-    .line 574
+    .line 598
     :goto_0
     iget-object v5, p0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
@@ -354,7 +417,7 @@
 
     if-ge v0, v5, :cond_5
 
-    .line 575
+    .line 599
     iget-object v5, p0, Lorg/telegram/ui/Components/StorageDiagramView;->cacheModel:Lorg/telegram/ui/Storage/CacheModel;
 
     if-nez v5, :cond_1
@@ -368,7 +431,7 @@
 
     move-result-wide v5
 
-    .line 576
+    .line 600
     :goto_1
     iget-object v7, p0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
@@ -395,7 +458,7 @@
 
     goto :goto_2
 
-    .line 579
+    .line 603
     :cond_3
     aget-object v5, v7, v0
 
@@ -417,12 +480,12 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 604
+    .line 628
     sget p2, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
     if-ne p1, p2, :cond_0
 
-    .line 605
+    .line 629
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0
@@ -432,18 +495,18 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 586
+    .line 610
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 587
+    .line 611
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_0
 
-    .line 588
+    .line 612
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 590
+    .line 614
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
@@ -465,18 +528,18 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 595
+    .line 619
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 596
+    .line 620
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_0
 
-    .line 597
+    .line 621
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 599
+    .line 623
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
@@ -496,14 +559,14 @@
 
     move-object/from16 v7, p1
 
-    .line 217
+    .line 230
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
     if-nez v1, :cond_0
 
     return-void
 
-    .line 221
+    .line 234
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -513,10 +576,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 222
+    .line 235
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 223
+    .line 236
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->isPressed()Z
 
     move-result v1
@@ -533,7 +596,7 @@
 
     const/high16 v3, 0x447a0000    # 1000.0f
 
-    .line 224
+    .line 237
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->screenRefreshRate:F
 
     div-float/2addr v3, v4
@@ -550,14 +613,14 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->pressedProgress:F
 
-    .line 225
+    .line 238
     invoke-static {v1, v8, v9}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v1
 
     iput v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->pressedProgress:F
 
-    .line 226
+    .line 239
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
     :cond_1
@@ -565,7 +628,7 @@
 
     const v2, 0x3e19999a    # 0.15f
 
-    .line 228
+    .line 241
     iget v3, v0, Lorg/telegram/ui/Components/StorageDiagramView;->pressedProgress:F
 
     sub-float v3, v8, v3
@@ -574,7 +637,7 @@
 
     add-float/2addr v3, v1
 
-    .line 229
+    .line 242
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->getCenterX()F
@@ -589,7 +652,7 @@
 
     invoke-virtual {v7, v3, v3, v1, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 232
+    .line 245
     :cond_2
     iget v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->enabledCount:I
 
@@ -599,7 +662,7 @@
 
     if-le v1, v4, :cond_3
 
-    .line 233
+    .line 246
     iget v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->singleProgress:F
 
     cmpl-float v4, v1, v9
@@ -612,19 +675,19 @@
 
     double-to-float v1, v4
 
-    .line 234
+    .line 247
     iput v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->singleProgress:F
 
     cmpg-float v1, v1, v9
 
     if-gez v1, :cond_4
 
-    .line 236
+    .line 249
     iput v9, v0, Lorg/telegram/ui/Components/StorageDiagramView;->singleProgress:F
 
     goto :goto_0
 
-    .line 240
+    .line 253
     :cond_3
     iget v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->singleProgress:F
 
@@ -638,14 +701,14 @@
 
     double-to-float v1, v4
 
-    .line 241
+    .line 254
     iput v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->singleProgress:F
 
     cmpl-float v1, v1, v8
 
     if-lez v1, :cond_4
 
-    .line 243
+    .line 256
     iput v8, v0, Lorg/telegram/ui/Components/StorageDiagramView;->singleProgress:F
 
     :cond_4
@@ -656,7 +719,7 @@
 
     move v11, v10
 
-    .line 249
+    .line 262
     :goto_1
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
@@ -680,7 +743,7 @@
 
     if-ge v11, v2, :cond_b
 
-    .line 250
+    .line 263
     aget-object v2, v1, v11
 
     if-eqz v2, :cond_a
@@ -695,11 +758,11 @@
 
     goto/16 :goto_4
 
-    .line 253
+    .line 266
     :cond_5
     aget v22, v2, v11
 
-    .line 254
+    .line 267
     aget-object v2, v1, v11
 
     iget-boolean v2, v2, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->firstDraw:Z
@@ -708,7 +771,7 @@
 
     mul-float v19, v19, v22
 
-    .line 255
+    .line 268
     iget v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->singleProgress:F
 
     sub-float v2, v8, v2
@@ -728,7 +791,7 @@
     :cond_6
     move/from16 v4, v19
 
-    .line 259
+    .line 272
     :goto_2
     aget-object v2, v1, v11
 
@@ -744,7 +807,7 @@
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 260
+    .line 273
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
     aget-object v1, v1, v11
@@ -753,7 +816,7 @@
 
     invoke-virtual {v1, v6}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 261
+    .line 274
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v1}, Landroid/graphics/RectF;->width()F
@@ -774,7 +837,7 @@
 
     double-to-float v3, v5
 
-    .line 263
+    .line 276
     invoke-static {v3}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
@@ -783,7 +846,7 @@
 
     if-gtz v3, :cond_8
 
-    .line 264
+    .line 277
     iget-object v3, v0, Lorg/telegram/ui/Components/StorageDiagramView;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->centerX()F
@@ -816,7 +879,7 @@
 
     add-float/2addr v3, v4
 
-    .line 265
+    .line 278
     iget-object v4, v0, Lorg/telegram/ui/Components/StorageDiagramView;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->centerY()F
@@ -847,12 +910,12 @@
 
     add-float/2addr v4, v1
 
-    .line 266
+    .line 279
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v1, v13, :cond_7
 
-    .line 267
+    .line 280
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
     aget-object v1, v1, v11
@@ -863,7 +926,7 @@
 
     goto :goto_3
 
-    .line 269
+    .line 282
     :cond_7
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
@@ -875,7 +938,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 270
+    .line 283
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
     aget-object v1, v1, v11
@@ -898,7 +961,7 @@
 
     goto :goto_3
 
-    .line 273
+    .line 286
     :cond_8
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
@@ -910,7 +973,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 274
+    .line 287
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->rectF:Landroid/graphics/RectF;
 
     iget v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->arcDrawingRadianOffset:I
@@ -950,7 +1013,7 @@
 
     move v11, v10
 
-    .line 281
+    .line 294
     :goto_5
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
@@ -958,7 +1021,7 @@
 
     if-ge v11, v2, :cond_12
 
-    .line 282
+    .line 295
     aget-object v2, v1, v11
 
     if-eqz v2, :cond_11
@@ -973,11 +1036,11 @@
 
     goto/16 :goto_9
 
-    .line 285
+    .line 298
     :cond_c
     aget v22, v2, v11
 
-    .line 286
+    .line 299
     aget-object v2, v1, v11
 
     iget-boolean v2, v2, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->firstDraw:Z
@@ -986,7 +1049,7 @@
 
     mul-float v2, v22, v19
 
-    .line 287
+    .line 300
     iget v3, v0, Lorg/telegram/ui/Components/StorageDiagramView;->singleProgress:F
 
     sub-float v3, v8, v3
@@ -1006,7 +1069,7 @@
     :cond_d
     move v4, v2
 
-    .line 291
+    .line 304
     :goto_6
     aget-object v2, v1, v11
 
@@ -1022,7 +1085,7 @@
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 292
+    .line 305
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
     aget-object v1, v1, v11
@@ -1031,7 +1094,7 @@
 
     invoke-virtual {v1, v6}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 293
+    .line 306
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v1}, Landroid/graphics/RectF;->width()F
@@ -1052,7 +1115,7 @@
 
     double-to-float v3, v14
 
-    .line 295
+    .line 308
     invoke-static {v3}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
@@ -1061,7 +1124,7 @@
 
     if-gtz v3, :cond_f
 
-    .line 296
+    .line 309
     iget-object v3, v0, Lorg/telegram/ui/Components/StorageDiagramView;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->centerX()F
@@ -1094,7 +1157,7 @@
 
     add-float/2addr v3, v4
 
-    .line 297
+    .line 310
     iget-object v4, v0, Lorg/telegram/ui/Components/StorageDiagramView;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->centerY()F
@@ -1125,12 +1188,12 @@
 
     add-float/2addr v4, v1
 
-    .line 298
+    .line 311
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v1, v13, :cond_e
 
-    .line 299
+    .line 312
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
     aget-object v1, v1, v11
@@ -1141,7 +1204,7 @@
 
     goto :goto_7
 
-    .line 301
+    .line 314
     :cond_e
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
@@ -1153,7 +1216,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 302
+    .line 315
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
     aget-object v1, v1, v11
@@ -1176,7 +1239,7 @@
 
     goto :goto_7
 
-    .line 305
+    .line 318
     :cond_f
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
@@ -1188,7 +1251,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 306
+    .line 319
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->rectF:Landroid/graphics/RectF;
 
     iget v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->arcDrawingRadianOffset:I
@@ -1241,19 +1304,19 @@
 
     goto/16 :goto_5
 
-    .line 312
+    .line 325
     :cond_12
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v1, :cond_13
 
-    .line 313
+    .line 326
     invoke-virtual {v1, v7}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 314
+    .line 327
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 317
+    .line 330
     :cond_13
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -1263,14 +1326,14 @@
 
     if-eqz v1, :cond_15
 
-    .line 318
+    .line 331
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v4
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 319
+    .line 332
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1279,12 +1342,12 @@
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 320
+    .line 333
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogId:Ljava/lang/Long;
 
     if-eqz v1, :cond_14
 
-    .line 321
+    .line 334
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
@@ -1309,7 +1372,7 @@
 
     add-float/2addr v1, v4
 
-    .line 322
+    .line 335
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v4
@@ -1320,7 +1383,7 @@
 
     div-float v4, v4, v21
 
-    .line 323
+    .line 336
     iget-object v5, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/16 v6, 0x73
@@ -1347,7 +1410,7 @@
 
     invoke-virtual {v5, v10, v6, v8, v9}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 324
+    .line 337
     iget-object v5, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     add-float/2addr v4, v1
@@ -1376,29 +1439,29 @@
 
     invoke-virtual {v5, v1, v4, v6, v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 326
+    .line 339
     :cond_14
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1, v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 327
+    .line 340
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1, v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 330
+    .line 343
     :cond_15
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogTextLayout:Landroid/text/StaticLayout;
 
     if-eqz v1, :cond_16
 
-    .line 331
+    .line 344
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     const/16 v1, 0x1e
 
-    .line 332
+    .line 345
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1433,7 +1496,7 @@
 
     invoke-virtual {v7, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 333
+    .line 346
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogTextPaint:Landroid/text/TextPaint;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1442,12 +1505,12 @@
 
     invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 334
+    .line 347
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogTextLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, v7}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 335
+    .line 348
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_16
@@ -1459,7 +1522,7 @@
 
     move-object/from16 v0, p0
 
-    .line 133
+    .line 146
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogId:Ljava/lang/Long;
 
     const/high16 v2, 0x40000000    # 2.0f
@@ -1478,7 +1541,7 @@
 
     const/16 v1, 0xa6
 
-    .line 136
+    .line 149
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1489,15 +1552,15 @@
 
     move/from16 v8, p1
 
-    .line 134
+    .line 147
     invoke-super {v0, v8, v1}, Landroid/view/View;->onMeasure(II)V
 
-    .line 138
+    .line 151
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    .line 139
+    .line 152
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1506,7 +1569,7 @@
 
     div-int/2addr v1, v5
 
-    .line 140
+    .line 153
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->rectF:Landroid/graphics/RectF;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1544,7 +1607,7 @@
     :cond_0
     move/from16 v8, p1
 
-    .line 144
+    .line 157
     iget v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->customSize:I
 
     if-eqz v1, :cond_1
@@ -1563,7 +1626,7 @@
 
     move-result v1
 
-    .line 145
+    .line 158
     iget v9, v0, Lorg/telegram/ui/Components/StorageDiagramView;->customSize:I
 
     if-eqz v9, :cond_2
@@ -1582,10 +1645,10 @@
 
     move-result v2
 
-    .line 143
+    .line 156
     invoke-super {v0, v1, v2}, Landroid/view/View;->onMeasure(II)V
 
-    .line 148
+    .line 161
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->rectF:Landroid/graphics/RectF;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1638,7 +1701,7 @@
 
     move v1, v3
 
-    .line 151
+    .line 164
     :goto_4
     iget-object v9, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -1654,14 +1717,14 @@
 
     invoke-virtual/range {v9 .. v15}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 153
+    .line 166
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->customCenterText:Ljava/lang/String;
 
     const/16 v4, 0xd
 
     if-eqz v2, :cond_5
 
-    .line 154
+    .line 167
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1674,7 +1737,7 @@
 
     goto :goto_5
 
-    .line 156
+    .line 169
     :cond_5
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -1688,7 +1751,7 @@
 
     invoke-virtual {v2, v9}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 157
+    .line 170
     :goto_5
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -1700,7 +1763,7 @@
 
     invoke-virtual {v2, v9}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 159
+    .line 172
     iget-object v15, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const v16, 0x3e3851ec    # 0.18f
@@ -1711,12 +1774,12 @@
 
     invoke-virtual/range {v15 .. v21}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 161
+    .line 174
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogId:Ljava/lang/Long;
 
     if-eqz v2, :cond_6
 
-    .line 162
+    .line 175
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/16 v3, 0x10
@@ -1729,21 +1792,21 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 163
+    .line 176
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/4 v3, 0x5
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
-    .line 164
+    .line 177
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v2, v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
     goto :goto_7
 
-    .line 166
+    .line 179
     :cond_6
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -1755,7 +1818,7 @@
 
     invoke-virtual {v2, v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 167
+    .line 180
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getTextSize()F
@@ -1772,14 +1835,14 @@
 
     float-to-int v7, v7
 
-    .line 169
+    .line 182
     iget-object v9, v0, Lorg/telegram/ui/Components/StorageDiagramView;->customCenterText:Ljava/lang/String;
 
     if-eqz v9, :cond_7
 
     move v7, v3
 
-    .line 173
+    .line 186
     :cond_7
     iget v9, v0, Lorg/telegram/ui/Components/StorageDiagramView;->customSize:I
 
@@ -1799,7 +1862,7 @@
 
     div-int/2addr v9, v5
 
-    .line 174
+    .line 187
     iget-object v6, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -1810,7 +1873,7 @@
 
     invoke-virtual {v6, v3, v9, v10, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 175
+    .line 188
     iget-object v6, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1833,30 +1896,30 @@
 
     invoke-virtual {v6, v3, v9, v10, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 176
+    .line 189
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/16 v3, 0x11
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
-    .line 177
+    .line 190
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
-    .line 180
+    .line 193
     :goto_7
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogText:Ljava/lang/CharSequence;
 
     if-eqz v2, :cond_a
 
-    .line 181
+    .line 194
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogTextPaint:Landroid/text/TextPaint;
 
     if-nez v2, :cond_9
 
-    .line 182
+    .line 195
     new-instance v2, Landroid/text/TextPaint;
 
     const/4 v3, 0x1
@@ -1865,7 +1928,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogTextPaint:Landroid/text/TextPaint;
 
-    .line 184
+    .line 197
     :cond_9
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogTextPaint:Landroid/text/TextPaint;
 
@@ -1877,7 +1940,7 @@
 
     invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 185
+    .line 198
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v2
@@ -1890,7 +1953,7 @@
 
     sub-int v12, v2, v3
 
-    .line 186
+    .line 199
     iget-object v4, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogText:Ljava/lang/CharSequence;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogTextPaint:Landroid/text/TextPaint;
@@ -1915,7 +1978,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogTextLayout:Landroid/text/StaticLayout;
 
-    .line 188
+    .line 201
     :cond_a
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1923,7 +1986,7 @@
 
     const/16 v3, 0xa
 
-    .line 189
+    .line 202
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -1954,7 +2017,7 @@
 
     invoke-virtual {v2, v1, v3, v5, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 190
+    .line 203
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     const/16 v2, 0x2d
@@ -1965,7 +2028,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    .line 193
+    .line 206
     :cond_b
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/StorageDiagramView;->updateDescription()J
 
@@ -1975,20 +2038,33 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 498
+    .line 512
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->isNotClickableAvatar:Z
+
+    if-eqz v0, :cond_0
+
+    .line 513
+    invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+
+    return p1
+
+    .line 516
+    :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogId:Ljava/lang/Long;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 499
+    .line 517
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v3
@@ -1997,9 +2073,9 @@
 
     cmp-long v0, v3, v5
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 500
+    .line 518
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -2012,7 +2088,7 @@
 
     cmpl-float v0, v0, v3
 
-    if-lez v0, :cond_0
+    if-lez v0, :cond_1
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -2026,9 +2102,9 @@
 
     cmpg-float v0, v0, v3
 
-    if-gtz v0, :cond_0
+    if-gtz v0, :cond_1
 
-    .line 501
+    .line 519
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
@@ -2041,7 +2117,7 @@
 
     cmpl-float v0, v0, v3
 
-    if-lez v0, :cond_0
+    if-lez v0, :cond_1
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -2055,68 +2131,68 @@
 
     cmpg-float v0, v0, v3
 
-    if-gtz v0, :cond_0
+    if-gtz v0, :cond_1
 
     move v0, v2
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     move v0, v1
 
-    .line 503
+    .line 521
     :goto_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
 
-    if-nez v3, :cond_1
+    if-nez v3, :cond_2
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
-    .line 505
+    .line 523
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/StorageDiagramView;->setPressed(Z)V
 
     return v2
 
-    .line 508
-    :cond_1
+    .line 526
+    :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
 
     const/4 v4, 0x3
 
-    if-eq v3, v2, :cond_3
+    if-eq v3, v2, :cond_4
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
 
-    if-ne v3, v4, :cond_2
+    if-ne v3, v4, :cond_3
 
     goto :goto_1
 
-    .line 515
-    :cond_2
+    .line 533
+    :cond_3
     invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
     return p1
 
-    :cond_3
+    :cond_4
     :goto_1
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
-    .line 509
+    .line 527
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
 
-    if-eq p1, v4, :cond_4
+    if-eq p1, v4, :cond_5
 
-    .line 510
+    .line 528
     new-instance p1, Lorg/telegram/ui/Components/StorageDiagramView$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/StorageDiagramView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/StorageDiagramView;)V
@@ -2125,8 +2201,8 @@
 
     invoke-static {p1, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 512
-    :cond_4
+    .line 530
+    :cond_5
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/StorageDiagramView;->setPressed(Z)V
 
     return v2
@@ -2135,10 +2211,10 @@
 .method public setArcDrawingRadianOffset(I)V
     .locals 0
 
-    .line 68
+    .line 70
     iput p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->arcDrawingRadianOffset:I
 
-    .line 69
+    .line 71
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -2147,7 +2223,7 @@
 .method public setCacheModel(Lorg/telegram/ui/Storage/CacheModel;)V
     .locals 0
 
-    .line 107
+    .line 113
     iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->cacheModel:Lorg/telegram/ui/Storage/CacheModel;
 
     return-void
@@ -2156,10 +2232,10 @@
 .method public setCustomCenterText(Ljava/lang/String;)V
     .locals 2
 
-    .line 59
+    .line 61
     iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->customCenterText:Ljava/lang/String;
 
-    .line 60
+    .line 62
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/4 v1, 0x0
@@ -2172,7 +2248,7 @@
 .method public setCustomSize(I)V
     .locals 0
 
-    .line 64
+    .line 66
     iput p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->customSize:I
 
     return-void
@@ -2181,30 +2257,30 @@
 .method public setData(Lorg/telegram/ui/Storage/CacheModel;[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;)V
     .locals 0
 
-    .line 197
+    .line 210
     iput-object p2, p0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
-    .line 198
+    .line 211
     iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->cacheModel:Lorg/telegram/ui/Storage/CacheModel;
 
-    .line 199
+    .line 212
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 200
+    .line 213
     array-length p1, p2
 
     new-array p1, p1, [F
 
     iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->drawingPercentage:[F
 
-    .line 201
+    .line 214
     array-length p1, p2
 
     new-array p1, p1, [F
 
     iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->animateToPercentage:[F
 
-    .line 202
+    .line 215
     array-length p1, p2
 
     new-array p1, p1, [F
@@ -2213,10 +2289,10 @@
 
     const/4 p1, 0x0
 
-    .line 204
+    .line 217
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/StorageDiagramView;->update(Z)V
 
-    .line 206
+    .line 219
     iget p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->enabledCount:I
 
     const/4 p2, 0x1
@@ -2225,7 +2301,7 @@
 
     const/4 p1, 0x0
 
-    .line 207
+    .line 220
     iput p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->singleProgress:F
 
     goto :goto_0
@@ -2233,55 +2309,75 @@
     :cond_0
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 209
+    .line 222
     iput p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->singleProgress:F
 
     :goto_0
     return-void
 .end method
 
+.method public setNotClickableAvatar(Z)V
+    .locals 0
+
+    .line 75
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->isNotClickableAvatar:Z
+
+    return-void
+.end method
+
 .method public setPressed(Z)V
     .locals 3
 
-    .line 523
+    .line 542
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->isNotClickableAvatar:Z
+
+    if-eqz v0, :cond_0
+
+    .line 543
+    invoke-super {p0, p1}, Landroid/view/View;->setPressed(Z)V
+
+    return-void
+
+    .line 547
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->isPressed()Z
 
     move-result v0
 
-    if-eq v0, p1, :cond_1
+    if-eq v0, p1, :cond_2
 
-    .line 524
+    .line 548
     invoke-super {p0, p1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 525
+    .line 549
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_1
 
-    .line 527
+    .line 551
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->backAnimator:Landroid/animation/ValueAnimator;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 528
+    .line 552
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 529
+    .line 553
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->backAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    :cond_0
-    if-nez p1, :cond_1
+    :cond_1
+    if-nez p1, :cond_2
 
-    .line 532
+    .line 556
     iget p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->pressedProgress:F
 
     const/4 v0, 0x0
 
     cmpl-float v1, p1, v0
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     const/4 v1, 0x2
 
@@ -2295,21 +2391,21 @@
 
     aput v0, v1, p1
 
-    .line 533
+    .line 557
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->backAnimator:Landroid/animation/ValueAnimator;
 
-    .line 534
+    .line 558
     new-instance v0, Lorg/telegram/ui/Components/StorageDiagramView$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/StorageDiagramView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/StorageDiagramView;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 538
+    .line 562
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->backAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Components/StorageDiagramView$2;
@@ -2318,7 +2414,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 545
+    .line 569
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->backAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Landroid/view/animation/OvershootInterpolator;
@@ -2329,19 +2425,19 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 546
+    .line 570
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->backAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x15e
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 547
+    .line 571
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView;->backAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
-    :cond_1
+    :cond_2
     return-void
 .end method
 
@@ -2350,7 +2446,7 @@
 
     move-object/from16 v0, p0
 
-    .line 401
+    .line 414
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->data:[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
     if-nez v1, :cond_0
@@ -2368,13 +2464,13 @@
 
     move v7, v4
 
-    .line 405
+    .line 418
     :goto_0
     array-length v10, v1
 
     if-ge v7, v10, :cond_6
 
-    .line 406
+    .line 419
     iget-object v10, v0, Lorg/telegram/ui/Components/StorageDiagramView;->cacheModel:Lorg/telegram/ui/Storage/CacheModel;
 
     if-nez v10, :cond_1
@@ -2388,7 +2484,7 @@
 
     move-result-wide v11
 
-    .line 407
+    .line 420
     :goto_1
     aget-object v10, v1, v7
 
@@ -2406,7 +2502,7 @@
 
     goto :goto_3
 
-    .line 411
+    .line 424
     :cond_2
     aget-object v10, v1, v7
 
@@ -2414,7 +2510,7 @@
 
     if-eqz v10, :cond_3
 
-    .line 412
+    .line 425
     aget-object v10, v1, v7
 
     iget-object v10, v10, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->sizeAsDouble:Ljava/lang/Double;
@@ -2434,7 +2530,7 @@
 
     goto :goto_2
 
-    .line 414
+    .line 427
     :cond_4
     aget-object v10, v1, v7
 
@@ -2449,7 +2545,7 @@
 
     goto :goto_0
 
-    .line 419
+    .line 432
     :cond_6
     iput v4, v0, Lorg/telegram/ui/Components/StorageDiagramView;->enabledCount:I
 
@@ -2461,13 +2557,13 @@
 
     move v14, v13
 
-    .line 421
+    .line 434
     :goto_4
     array-length v15, v1
 
     if-ge v10, v15, :cond_11
 
-    .line 422
+    .line 435
     iget-object v15, v0, Lorg/telegram/ui/Components/StorageDiagramView;->cacheModel:Lorg/telegram/ui/Storage/CacheModel;
 
     if-nez v15, :cond_7
@@ -2481,13 +2577,13 @@
 
     move-result-wide v15
 
-    .line 423
+    .line 436
     :goto_5
     aget-object v17, v1, v10
 
     if-eqz v17, :cond_9
 
-    .line 424
+    .line 437
     aget-object v11, v1, v10
 
     iget-boolean v11, v11, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->clear:Z
@@ -2498,7 +2594,7 @@
 
     if-lez v11, :cond_9
 
-    .line 425
+    .line 438
     :cond_8
     iget v11, v0, Lorg/telegram/ui/Components/StorageDiagramView;->enabledCount:I
 
@@ -2506,7 +2602,7 @@
 
     iput v11, v0, Lorg/telegram/ui/Components/StorageDiagramView;->enabledCount:I
 
-    .line 429
+    .line 442
     :cond_9
     aget-object v11, v1, v10
 
@@ -2533,7 +2629,7 @@
 
     goto :goto_6
 
-    .line 433
+    .line 446
     :cond_b
     aget-object v12, v1, v10
 
@@ -2546,14 +2642,14 @@
 
     div-float/2addr v2, v3
 
-    .line 436
+    .line 449
     aget-object v3, v1, v10
 
     iget-object v3, v3, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->sizeAsDouble:Ljava/lang/Double;
 
     if-eqz v3, :cond_c
 
-    .line 437
+    .line 450
     aget-object v2, v1, v10
 
     iget-object v2, v2, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->sizeAsDouble:Ljava/lang/Double;
@@ -2582,7 +2678,7 @@
 
     if-lez v3, :cond_f
 
-    .line 444
+    .line 457
     aget-object v3, v1, v10
 
     iget-boolean v3, v3, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->clear:Z
@@ -2594,7 +2690,7 @@
     :cond_e
     move v14, v2
 
-    .line 447
+    .line 460
     :cond_f
     iget-object v3, v0, Lorg/telegram/ui/Components/StorageDiagramView;->animateToPercentage:[F
 
@@ -2602,7 +2698,7 @@
 
     goto :goto_8
 
-    .line 430
+    .line 443
     :cond_10
     :goto_7
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->animateToPercentage:[F
@@ -2627,20 +2723,20 @@
 
     move v3, v4
 
-    .line 451
+    .line 464
     :goto_9
     array-length v5, v1
 
     if-ge v3, v5, :cond_13
 
-    .line 452
+    .line 465
     aget-object v5, v1, v3
 
     if-nez v5, :cond_12
 
     goto :goto_a
 
-    .line 455
+    .line 468
     :cond_12
     iget-object v5, v0, Lorg/telegram/ui/Components/StorageDiagramView;->animateToPercentage:[F
 
@@ -2658,7 +2754,7 @@
     :cond_13
     if-nez p1, :cond_14
 
-    .line 460
+    .line 473
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->animateToPercentage:[F
 
     iget-object v3, v0, Lorg/telegram/ui/Components/StorageDiagramView;->drawingPercentage:[F
@@ -2669,7 +2765,7 @@
 
     goto :goto_b
 
-    .line 462
+    .line 475
     :cond_14
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->drawingPercentage:[F
 
@@ -2679,15 +2775,15 @@
 
     invoke-static {v2, v4, v3, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 464
+    .line 477
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v2, :cond_15
 
-    .line 465
+    .line 478
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 466
+    .line 479
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->cancel()V
@@ -2697,7 +2793,7 @@
 
     new-array v2, v2, [F
 
-    .line 468
+    .line 481
     fill-array-data v2, :array_0
 
     invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -2706,14 +2802,14 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->valueAnimator:Landroid/animation/ValueAnimator;
 
-    .line 469
+    .line 482
     new-instance v3, Lorg/telegram/ui/Components/StorageDiagramView$$ExternalSyntheticLambda1;
 
     invoke-direct {v3, v0, v1}, Lorg/telegram/ui/Components/StorageDiagramView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/StorageDiagramView;[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;)V
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 476
+    .line 489
     iget-object v2, v0, Lorg/telegram/ui/Components/StorageDiagramView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v3, Lorg/telegram/ui/Components/StorageDiagramView$1;
@@ -2722,14 +2818,14 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 486
+    .line 499
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v2, 0x1c2
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 487
+    .line 500
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v2, Landroidx/interpolator/view/animation/FastOutSlowInInterpolator;
@@ -2738,7 +2834,7 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 488
+    .line 501
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
@@ -2756,7 +2852,7 @@
 .method public updateDescription()J
     .locals 9
 
-    .line 554
+    .line 578
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->customCenterText:Ljava/lang/String;
 
     const-wide/16 v1, 0x0
@@ -2767,12 +2863,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 555
+    .line 579
     iget-object v5, p0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v5, v0, v4, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;ZZ)V
 
-    .line 556
+    .line 580
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const-string v5, ""
@@ -2781,13 +2877,13 @@
 
     return-wide v1
 
-    .line 560
+    .line 584
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/StorageDiagramView;->calculateSize()J
 
     move-result-wide v5
 
-    .line 561
+    .line 585
     invoke-static {v5, v6}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
 
     move-result-object v0
@@ -2798,12 +2894,12 @@
 
     move-result-object v0
 
-    .line 562
+    .line 586
     array-length v8, v0
 
     if-le v8, v4, :cond_3
 
-    .line 563
+    .line 587
     iget-object v8, p0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     cmp-long v1, v5, v1
@@ -2820,7 +2916,7 @@
     :goto_0
     invoke-virtual {v8, v2, v4, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;ZZ)V
 
-    .line 564
+    .line 588
     iget-object v2, p0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     if-nez v1, :cond_2

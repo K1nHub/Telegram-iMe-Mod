@@ -11,12 +11,17 @@ import android.view.View;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.util.Preconditions;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
 /* loaded from: classes.dex */
 public abstract class FragmentHostCallback<E> extends FragmentContainer {
     private final Activity mActivity;
     private final Context mContext;
     final FragmentManager mFragmentManager;
     private final Handler mHandler;
+
+    public void onDump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+    }
 
     @Override // androidx.fragment.app.FragmentContainer
     public View onFindViewById(int i) {

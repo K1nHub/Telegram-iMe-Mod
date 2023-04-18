@@ -10,6 +10,17 @@
 
 
 # direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    const/16 v0, 0x20
+
+    .line 14
+    invoke-direct {p0, v0}, Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;-><init>(I)V
+
+    return-void
+.end method
+
 .method public constructor <init>(I)V
     .locals 0
 
@@ -109,6 +120,15 @@
 
 
 # virtual methods
+.method public count()I
+    .locals 1
+
+    .line 94
+    iget v0, p0, Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;->count:I
+
+    return v0
+.end method
+
 .method public declared-synchronized reset()V
     .locals 1
 

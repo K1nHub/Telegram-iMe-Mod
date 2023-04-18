@@ -41,10 +41,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
-            "Ljava/lang/Class<",
-            "+",
-            "Landroidx/fragment/app/Fragment;",
-            ">;",
+            "Ljava/lang/String;",
             "Ljava/util/Set<",
             "Ljava/lang/Class<",
             "+",
@@ -65,7 +62,7 @@
 
     invoke-direct {v0, v1}, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 453
+    .line 473
     new-instance v0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;
 
     invoke-static {}, Lkotlin/collections/SetsKt;->emptySet()Ljava/util/Set;
@@ -94,10 +91,8 @@
             ">;",
             "Landroidx/fragment/app/strictmode/FragmentStrictMode$OnViolationListener;",
             "Ljava/util/Map<",
-            "Ljava/lang/Class<",
+            "Ljava/lang/String;",
             "+",
-            "Landroidx/fragment/app/Fragment;",
-            ">;+",
             "Ljava/util/Set<",
             "Ljava/lang/Class<",
             "+",
@@ -114,21 +109,21 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 313
+    .line 314
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 314
+    .line 315
     iput-object p1, p0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;->flags:Ljava/util/Set;
 
-    .line 457
+    .line 477
     iput-object p2, p0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;->listener:Landroidx/fragment/app/strictmode/FragmentStrictMode$OnViolationListener;
 
-    .line 459
+    .line 479
     new-instance p1, Ljava/util/LinkedHashMap;
 
     invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 460
+    .line 480
     invoke-interface {p3}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p2
@@ -154,7 +149,7 @@
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Class;
+    check-cast v0, Ljava/lang/String;
 
     invoke-interface {p3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -162,12 +157,12 @@
 
     check-cast p3, Ljava/util/Set;
 
-    .line 461
+    .line 481
     invoke-interface {p1, v0, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 463
+    .line 483
     :cond_0
     iput-object p1, p0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;->mAllowedViolations:Ljava/util/Map;
 
@@ -187,7 +182,7 @@
         }
     .end annotation
 
-    .line 314
+    .line 315
     iget-object v0, p0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;->flags:Ljava/util/Set;
 
     return-object v0
@@ -196,7 +191,7 @@
 .method public final getListener$fragment_release()Landroidx/fragment/app/strictmode/FragmentStrictMode$OnViolationListener;
     .locals 1
 
-    .line 318
+    .line 319
     iget-object v0, p0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;->listener:Landroidx/fragment/app/strictmode/FragmentStrictMode$OnViolationListener;
 
     return-object v0
@@ -208,10 +203,7 @@
         value = {
             "()",
             "Ljava/util/Map<",
-            "Ljava/lang/Class<",
-            "+",
-            "Landroidx/fragment/app/Fragment;",
-            ">;",
+            "Ljava/lang/String;",
             "Ljava/util/Set<",
             "Ljava/lang/Class<",
             "+",
@@ -220,7 +212,7 @@
         }
     .end annotation
 
-    .line 319
+    .line 320
     iget-object v0, p0, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;->mAllowedViolations:Ljava/util/Map;
 
     return-object v0

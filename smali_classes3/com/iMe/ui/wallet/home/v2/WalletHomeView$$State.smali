@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$ShowErrorToastCommand;,
         Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$ShowLoadingDialogCommand;,
         Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$ShowToastCommand;,
         Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$OnSetupNavigationRouterCommand;,
@@ -32,7 +33,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 13
+    .line 15
     invoke-direct {p0}, Lmoxy/viewstate/MvpViewState;-><init>()V
 
     return-void
@@ -51,17 +52,17 @@
 .method public loadBalances()V
     .locals 3
 
-    .line 32
+    .line 34
     new-instance v0, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$LoadBalancesCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$LoadBalancesCommand;-><init>(Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State;)V
 
-    .line 33
+    .line 35
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 35
+    .line 37
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -74,7 +75,7 @@
 
     return-void
 
-    .line 39
+    .line 41
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -95,12 +96,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;
 
-    .line 40
+    .line 42
     invoke-interface {v2}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;->loadBalances()V
 
     goto :goto_0
 
-    .line 43
+    .line 45
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -112,17 +113,17 @@
 .method public loadTabsInfo()V
     .locals 3
 
-    .line 16
+    .line 18
     new-instance v0, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$LoadTabsInfoCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$LoadTabsInfoCommand;-><init>(Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State;)V
 
-    .line 17
+    .line 19
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 19
+    .line 21
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -135,7 +136,7 @@
 
     return-void
 
-    .line 23
+    .line 25
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -156,12 +157,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;
 
-    .line 24
+    .line 26
     invoke-interface {v2}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;->loadTabsInfo()V
 
     goto :goto_0
 
-    .line 27
+    .line 29
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -173,17 +174,17 @@
 .method public onSetupNavigationRouter()V
     .locals 3
 
-    .line 64
+    .line 66
     new-instance v0, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$OnSetupNavigationRouterCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$OnSetupNavigationRouterCommand;-><init>(Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State;)V
 
-    .line 65
+    .line 67
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 67
+    .line 69
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -196,7 +197,7 @@
 
     return-void
 
-    .line 71
+    .line 73
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -217,12 +218,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;
 
-    .line 72
+    .line 74
     invoke-interface {v2}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;->onSetupNavigationRouter()V
 
     goto :goto_0
 
-    .line 75
+    .line 77
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -234,17 +235,17 @@
 .method public onTabSelected(I)V
     .locals 3
 
-    .line 48
+    .line 50
     new-instance v0, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$OnTabSelectedCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$OnTabSelectedCommand;-><init>(Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State;I)V
 
-    .line 49
+    .line 51
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 51
+    .line 53
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -257,7 +258,7 @@
 
     return-void
 
-    .line 55
+    .line 57
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -278,12 +279,84 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;
 
-    .line 56
+    .line 58
     invoke-interface {v2, p1}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;->onTabSelected(I)V
 
     goto :goto_0
 
-    .line 59
+    .line 61
+    :cond_1
+    iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {p1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/iMe/storage/domain/model/Result$Error<",
+            "+TT;>;",
+            "Lcom/iMe/storage/domain/utils/system/ResourceManager;",
+            ")V"
+        }
+    .end annotation
+
+    .line 114
+    new-instance v0, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$ShowErrorToastCommand;
+
+    invoke-direct {v0, p0, p1, p2}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$ShowErrorToastCommand;-><init>(Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State;Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+
+    .line 115
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
+
+    .line 117
+    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    .line 121
+    :cond_0
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;
+
+    .line 122
+    invoke-interface {v2, p1, p2}, Lcom/iMe/ui/base/mvp/base/BaseView;->showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+
+    goto :goto_0
+
+    .line 125
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -295,17 +368,17 @@
 .method public showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
     .locals 3
 
-    .line 96
+    .line 98
     new-instance v0, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$ShowLoadingDialogCommand;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$ShowLoadingDialogCommand;-><init>(Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State;ZZLio/reactivex/disposables/Disposable;)V
 
-    .line 97
+    .line 99
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 99
+    .line 101
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -318,7 +391,7 @@
 
     return-void
 
-    .line 103
+    .line 105
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -339,12 +412,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;
 
-    .line 104
+    .line 106
     invoke-interface {v2, p1, p2, p3}, Lcom/iMe/ui/base/mvp/base/BaseView;->showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
 
     goto :goto_0
 
-    .line 107
+    .line 109
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -356,17 +429,17 @@
 .method public showToast(Ljava/lang/String;)V
     .locals 3
 
-    .line 80
+    .line 82
     new-instance v0, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$ShowToastCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State$ShowToastCommand;-><init>(Lcom/iMe/ui/wallet/home/v2/WalletHomeView$$State;Ljava/lang/String;)V
 
-    .line 81
+    .line 83
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 83
+    .line 85
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -379,7 +452,7 @@
 
     return-void
 
-    .line 87
+    .line 89
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -400,12 +473,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/home/v2/WalletHomeView;
 
-    .line 88
+    .line 90
     invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 91
+    .line 93
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

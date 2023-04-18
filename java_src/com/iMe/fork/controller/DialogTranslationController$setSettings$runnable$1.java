@@ -1,6 +1,6 @@
 package com.iMe.fork.controller;
 
-import com.iMe.storage.data.locale.p028db.dao.main.DialogTranslationSettingsDao;
+import com.iMe.storage.data.locale.p027db.dao.main.DialogTranslationSettingsDao;
 import com.iMe.storage.data.mapper.dialogs.DialogSettingsMappingKt;
 import com.iMe.storage.domain.model.dialogs.DialogTranslationSettings;
 import kotlin.Unit;

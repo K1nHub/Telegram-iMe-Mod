@@ -16,34 +16,34 @@ import java.util.List;
 /* loaded from: classes3.dex */
 public class ConnectionConfiguration extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new zzd();
-    @SafeParcelable.Field(getter = "getName", m789id = 2)
+    @SafeParcelable.Field(getter = "getName", m775id = 2)
     private final String zza;
-    @SafeParcelable.Field(getter = "getAddress", m789id = 3)
+    @SafeParcelable.Field(getter = "getAddress", m775id = 3)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getType", m789id = 4)
+    @SafeParcelable.Field(getter = "getType", m775id = 4)
     private final int zzc;
-    @SafeParcelable.Field(getter = "getRole", m789id = 5)
+    @SafeParcelable.Field(getter = "getRole", m775id = 5)
     private final int zzd;
-    @SafeParcelable.Field(getter = "isEnabled", m789id = 6)
+    @SafeParcelable.Field(getter = "isEnabled", m775id = 6)
     private final boolean zze;
-    @SafeParcelable.Field(getter = "isConnected", m789id = 7)
+    @SafeParcelable.Field(getter = "isConnected", m775id = 7)
     private volatile boolean zzf;
-    @SafeParcelable.Field(getter = "getPeerNodeId", m789id = 8)
+    @SafeParcelable.Field(getter = "getPeerNodeId", m775id = 8)
     private volatile String zzg;
-    @SafeParcelable.Field(getter = "getBtlePriority", m789id = 9)
+    @SafeParcelable.Field(getter = "getBtlePriority", m775id = 9)
     private boolean zzh;
-    @SafeParcelable.Field(getter = "getNodeId", m789id = 10)
+    @SafeParcelable.Field(getter = "getNodeId", m775id = 10)
     private String zzi;
-    @SafeParcelable.Field(getter = "getPackageName", m789id = 11)
+    @SafeParcelable.Field(getter = "getPackageName", m775id = 11)
     private String zzj;
-    @SafeParcelable.Field(getter = "getConnectionRetryStrategy", m789id = 12)
+    @SafeParcelable.Field(getter = "getConnectionRetryStrategy", m775id = 12)
     private int zzk;
-    @SafeParcelable.Field(getter = "getAllowedConfigPackages", m789id = 13)
+    @SafeParcelable.Field(getter = "getAllowedConfigPackages", m775id = 13)
     private List zzl;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public ConnectionConfiguration(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) String str2, @SafeParcelable.Param(m788id = 4) int i, @SafeParcelable.Param(m788id = 5) int i2, @SafeParcelable.Param(m788id = 6) boolean z, @SafeParcelable.Param(m788id = 7) boolean z2, @SafeParcelable.Param(m788id = 8) String str3, @SafeParcelable.Param(m788id = 9) boolean z3, @SafeParcelable.Param(m788id = 10) String str4, @SafeParcelable.Param(m788id = 11) String str5, @SafeParcelable.Param(m788id = 12) int i3, @SafeParcelable.Param(m788id = 13) List list) {
+    public ConnectionConfiguration(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) int i, @SafeParcelable.Param(m774id = 5) int i2, @SafeParcelable.Param(m774id = 6) boolean z, @SafeParcelable.Param(m774id = 7) boolean z2, @SafeParcelable.Param(m774id = 8) String str3, @SafeParcelable.Param(m774id = 9) boolean z3, @SafeParcelable.Param(m774id = 10) String str4, @SafeParcelable.Param(m774id = 11) String str5, @SafeParcelable.Param(m774id = 12) int i3, @SafeParcelable.Param(m774id = 13) List list) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = i;

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingModule.kt\ncom/iMe/i_staking/di/StakingModuleKt$stakingModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,51:1\n127#2,5:52\n*S KotlinDebug\n*F\n+ 1 StakingModule.kt\ncom/iMe/i_staking/di/StakingModuleKt$stakingModule$1$1\n*L\n22#1:52,5\n*E\n"
+    value = "SMAP\nStakingModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingModule.kt\ncom/iMe/i_staking/di/StakingModuleKt$stakingModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,51:1\n129#2,5:52\n*S KotlinDebug\n*F\n+ 1 StakingModule.kt\ncom/iMe/i_staking/di/StakingModuleKt$stakingModule$1$1\n*L\n22#1:52,5\n*E\n"
 .end annotation
 
 
@@ -92,7 +92,7 @@
 
     move-result-object p2
 
-    .line 131
+    .line 133
     const-class v0, Lokhttp3/OkHttpClient;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -114,7 +114,7 @@
 
     move-result-object v0
 
-    .line 131
+    .line 133
     const-class v2, Lcom/google/gson/Gson;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

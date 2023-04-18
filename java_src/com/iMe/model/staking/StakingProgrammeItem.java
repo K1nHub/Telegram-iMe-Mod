@@ -13,13 +13,13 @@ public final class StakingProgrammeItem extends NoChildNode {
     private final String endsAt;
 
     /* renamed from: id */
-    private final long f275id;
+    private final long f270id;
     private final boolean isParticipated;
     private final String name;
     private final TokenBalance tokenBalance;
 
     public final long component1() {
-        return this.f275id;
+        return this.f270id;
     }
 
     public final String component2() {
@@ -66,28 +66,28 @@ public final class StakingProgrammeItem extends NoChildNode {
         }
         if (obj instanceof StakingProgrammeItem) {
             StakingProgrammeItem stakingProgrammeItem = (StakingProgrammeItem) obj;
-            return this.f275id == stakingProgrammeItem.f275id && Intrinsics.areEqual(this.name, stakingProgrammeItem.name) && this.isParticipated == stakingProgrammeItem.isParticipated && Intrinsics.areEqual(this.tokenBalance, stakingProgrammeItem.tokenBalance) && Intrinsics.areEqual(this.apr, stakingProgrammeItem.apr) && Intrinsics.areEqual(this.apy, stakingProgrammeItem.apy) && this.annualPercentageMode == stakingProgrammeItem.annualPercentageMode && Intrinsics.areEqual(this.endsAt, stakingProgrammeItem.endsAt);
+            return this.f270id == stakingProgrammeItem.f270id && Intrinsics.areEqual(this.name, stakingProgrammeItem.name) && this.isParticipated == stakingProgrammeItem.isParticipated && Intrinsics.areEqual(this.tokenBalance, stakingProgrammeItem.tokenBalance) && Intrinsics.areEqual(this.apr, stakingProgrammeItem.apr) && Intrinsics.areEqual(this.apy, stakingProgrammeItem.apy) && this.annualPercentageMode == stakingProgrammeItem.annualPercentageMode && Intrinsics.areEqual(this.endsAt, stakingProgrammeItem.endsAt);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m716m = ((BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f275id) * 31) + this.name.hashCode()) * 31;
+        int m702m = ((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f270id) * 31) + this.name.hashCode()) * 31;
         boolean z = this.isParticipated;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return ((((((((((m716m + i) * 31) + this.tokenBalance.hashCode()) * 31) + this.apr.hashCode()) * 31) + this.apy.hashCode()) * 31) + this.annualPercentageMode.hashCode()) * 31) + this.endsAt.hashCode();
+        return ((((((((((m702m + i) * 31) + this.tokenBalance.hashCode()) * 31) + this.apr.hashCode()) * 31) + this.apy.hashCode()) * 31) + this.annualPercentageMode.hashCode()) * 31) + this.endsAt.hashCode();
     }
 
     public String toString() {
-        return "StakingProgrammeItem(id=" + this.f275id + ", name=" + this.name + ", isParticipated=" + this.isParticipated + ", tokenBalance=" + this.tokenBalance + ", apr=" + this.apr + ", apy=" + this.apy + ", annualPercentageMode=" + this.annualPercentageMode + ", endsAt=" + this.endsAt + ')';
+        return "StakingProgrammeItem(id=" + this.f270id + ", name=" + this.name + ", isParticipated=" + this.isParticipated + ", tokenBalance=" + this.tokenBalance + ", apr=" + this.apr + ", apy=" + this.apy + ", annualPercentageMode=" + this.annualPercentageMode + ", endsAt=" + this.endsAt + ')';
     }
 
     public final long getId() {
-        return this.f275id;
+        return this.f270id;
     }
 
     public final String getName() {
@@ -125,7 +125,7 @@ public final class StakingProgrammeItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(apy, "apy");
         Intrinsics.checkNotNullParameter(annualPercentageMode, "annualPercentageMode");
         Intrinsics.checkNotNullParameter(endsAt, "endsAt");
-        this.f275id = j;
+        this.f270id = j;
         this.name = name;
         this.isParticipated = z;
         this.tokenBalance = tokenBalance;

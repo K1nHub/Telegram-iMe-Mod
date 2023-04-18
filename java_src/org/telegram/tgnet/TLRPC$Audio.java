@@ -7,10 +7,10 @@ public abstract class TLRPC$Audio extends TLObject {
     public int duration;
 
     /* renamed from: id */
-    public long f1497id;
+    public long f1422id;
 
     /* renamed from: iv */
-    public byte[] f1498iv;
+    public byte[] f1423iv;
     public byte[] key;
     public String mime_type;
     public int size;
@@ -25,7 +25,7 @@ public abstract class TLRPC$Audio extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_audio_layer45, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1497id = abstractSerializedData2.readInt64(z2);
+                        this.f1422id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.user_id = abstractSerializedData2.readInt32(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
@@ -38,7 +38,7 @@ public abstract class TLRPC$Audio extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_audio_layer45, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1497id);
+                        abstractSerializedData2.writeInt64(this.f1422id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32((int) this.user_id);
                         abstractSerializedData2.writeInt32(this.date);
@@ -58,7 +58,7 @@ public abstract class TLRPC$Audio extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_audio_layer45, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1497id = abstractSerializedData2.readInt64(z2);
+                        this.f1422id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.user_id = abstractSerializedData2.readInt32(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
@@ -70,7 +70,7 @@ public abstract class TLRPC$Audio extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_audio_layer45, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1497id);
+                        abstractSerializedData2.writeInt64(this.f1422id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32((int) this.user_id);
                         abstractSerializedData2.writeInt32(this.date);
@@ -86,7 +86,7 @@ public abstract class TLRPC$Audio extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_audio_layer45, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1497id = abstractSerializedData2.readInt64(z2);
+                        this.f1422id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.user_id = abstractSerializedData2.readInt32(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
@@ -94,13 +94,13 @@ public abstract class TLRPC$Audio extends TLObject {
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.dc_id = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1498iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1423iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_audio_layer45, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1497id);
+                        abstractSerializedData2.writeInt64(this.f1422id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32((int) this.user_id);
                         abstractSerializedData2.writeInt32(this.date);
@@ -108,7 +108,7 @@ public abstract class TLRPC$Audio extends TLObject {
                         abstractSerializedData2.writeInt32(this.size);
                         abstractSerializedData2.writeInt32(this.dc_id);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1498iv);
+                        abstractSerializedData2.writeByteArray(this.f1423iv);
                     }
                 };
                 break;
@@ -118,13 +118,13 @@ public abstract class TLRPC$Audio extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1497id = abstractSerializedData2.readInt64(z2);
+                        this.f1422id = abstractSerializedData2.readInt64(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1497id);
+                        abstractSerializedData2.writeInt64(this.f1422id);
                     }
                 };
                 break;

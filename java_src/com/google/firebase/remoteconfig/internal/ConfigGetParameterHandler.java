@@ -10,6 +10,8 @@ import java.util.regex.Pattern;
 import org.json.JSONException;
 /* loaded from: classes3.dex */
 public class ConfigGetParameterHandler {
+    static final Pattern FALSE_REGEX;
+    static final Pattern TRUE_REGEX;
     private final ConfigCacheClient activatedConfigsCache;
     private final ConfigCacheClient defaultConfigsCache;
     private final Executor executor;
@@ -17,8 +19,8 @@ public class ConfigGetParameterHandler {
 
     static {
         Charset.forName("UTF-8");
-        Pattern.compile("^(1|true|t|yes|y|on)$", 2);
-        Pattern.compile("^(0|false|f|no|n|off|)$", 2);
+        TRUE_REGEX = Pattern.compile("^(1|true|t|yes|y|on)$", 2);
+        FALSE_REGEX = Pattern.compile("^(0|false|f|no|n|off|)$", 2);
     }
 
     public ConfigGetParameterHandler(Executor executor, ConfigCacheClient configCacheClient, ConfigCacheClient configCacheClient2) {
@@ -39,6 +41,30 @@ public class ConfigGetParameterHandler {
         }
         logParameterValueDoesNotExist(str, "String");
         return "";
+    }
+
+    public boolean getBoolean(String str) {
+        String stringFromCache = getStringFromCache(this.activatedConfigsCache, str);
+        if (stringFromCache != null) {
+            if (TRUE_REGEX.matcher(stringFromCache).matches()) {
+                callListeners(str, getConfigsFromCache(this.activatedConfigsCache));
+                return true;
+            } else if (FALSE_REGEX.matcher(stringFromCache).matches()) {
+                callListeners(str, getConfigsFromCache(this.activatedConfigsCache));
+                return false;
+            }
+        }
+        String stringFromCache2 = getStringFromCache(this.defaultConfigsCache, str);
+        if (stringFromCache2 != null) {
+            if (TRUE_REGEX.matcher(stringFromCache2).matches()) {
+                return true;
+            }
+            if (FALSE_REGEX.matcher(stringFromCache2).matches()) {
+                return false;
+            }
+        }
+        logParameterValueDoesNotExist(str, "Boolean");
+        return false;
     }
 
     public void addListener(BiConsumer<String, ConfigContainer> biConsumer) {

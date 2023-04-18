@@ -20,6 +20,13 @@ public class MenuHostHelper {
         this.mOnInvalidateMenuCallback = runnable;
     }
 
+    public void onPrepareMenu(Menu menu) {
+        Iterator<MenuProvider> it = this.mMenuProviders.iterator();
+        while (it.hasNext()) {
+            it.next().onPrepareMenu(menu);
+        }
+    }
+
     public void onCreateMenu(Menu menu, MenuInflater menuInflater) {
         Iterator<MenuProvider> it = this.mMenuProviders.iterator();
         while (it.hasNext()) {
@@ -35,6 +42,13 @@ public class MenuHostHelper {
             }
         }
         return false;
+    }
+
+    public void onMenuClosed(Menu menu) {
+        Iterator<MenuProvider> it = this.mMenuProviders.iterator();
+        while (it.hasNext()) {
+            it.next().onMenuClosed(menu);
+        }
     }
 
     public void addMenuProvider(MenuProvider menuProvider) {

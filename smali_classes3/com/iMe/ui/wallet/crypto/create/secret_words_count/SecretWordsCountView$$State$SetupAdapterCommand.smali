@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 116
+    .line 134
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "setupAdapter"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 118
+    .line 136
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountView$$State$SetupAdapterCommand;->items:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountView;)V
     .locals 1
 
-    .line 123
+    .line 141
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountView$$State$SetupAdapterCommand;->items:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountView;->setupAdapter(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 112
+    .line 130
     check-cast p1, Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountView$$State$SetupAdapterCommand;->apply(Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountView;)V

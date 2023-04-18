@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 212
+    .line 209
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 216
+    .line 213
     new-instance v0, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;
 
     invoke-direct {v0, p1}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V

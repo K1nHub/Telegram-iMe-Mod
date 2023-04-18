@@ -4,12 +4,10 @@
 
 
 # virtual methods
-.method public abstract createWallet(Ljava/lang/String;)Lio/reactivex/Observable;
+.method public abstract createWallet()Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
+            "()",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
             "Lcom/iMe/storage/domain/model/crypto/Wallet;",
@@ -18,17 +16,16 @@
     .end annotation
 .end method
 
-.method public abstract importWallet(Ljava/lang/String;Ljava/util/List;)Lio/reactivex/Observable;
+.method public abstract importWallet(Ljava/util/List;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/lang/String;",
             "Ljava/util/List<",
             "Ljava/lang/String;",
             ">;)",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
-            "Lcom/iMe/storage/domain/model/crypto/Wallet;",
+            "Lcom/iMe/storage/domain/model/crypto/Wallet$TON;",
             ">;>;"
         }
     .end annotation

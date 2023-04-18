@@ -5,7 +5,7 @@ import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 import org.telegram.messenger.LocaleController;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum OPEN uses external variables
@@ -60,12 +60,12 @@ public final class ProfileTwitterAction {
     }
 
     static {
-        int i = C3316R.C3318drawable.msg_view_file;
-        String string = LocaleController.getString("Open", C3316R.string.Open);
+        int i = C3242R.C3244drawable.msg_view_file;
+        String string = LocaleController.getString("Open", C3242R.string.Open);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Open\", R.string.Open)");
         OPEN = new ProfileTwitterAction("OPEN", 0, i, string);
-        int i2 = C3316R.C3318drawable.msg_delete;
-        String string2 = LocaleController.getString("Reset", C3316R.string.Reset);
+        int i2 = C3242R.C3244drawable.msg_delete;
+        String string2 = LocaleController.getString("Reset", C3242R.string.Reset);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Reset\", R.string.Reset)");
         RESET = new ProfileTwitterAction("RESET", 1, i2, string2);
         $VALUES = $values();

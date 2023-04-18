@@ -71,7 +71,7 @@ public class RainbowPublicKey extends ASN1Object {
     }
 
     public int getDocLength() {
-        return this.docLength.getValue().intValue();
+        return this.docLength.intValueExact();
     }
 
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable

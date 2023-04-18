@@ -40,7 +40,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;Lorg/telegram/messenger/ForwardingMessagesParams;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;ILorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;Z)V
     .locals 7
 
-    .line 1368
+    .line 1305
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-boolean p8, p0, Lorg/telegram/ui/DialogsActivity$5;->val$keyboardVisible:Z
@@ -67,12 +67,12 @@
 .method private synthetic lambda$didOpenEditorPressed$1(Lorg/telegram/messenger/ForwardingMessagesParams;)V
     .locals 1
 
-    .line 1408
+    .line 1345
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->access$802(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/messenger/ForwardingMessagesParams;)Lorg/telegram/messenger/ForwardingMessagesParams;
 
-    .line 1409
+    .line 1346
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$1000(Lorg/telegram/ui/DialogsActivity;)V
@@ -83,7 +83,7 @@
 .method private synthetic lambda$onDismiss$0()V
     .locals 1
 
-    .line 1373
+    .line 1310
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -92,7 +92,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1374
+    .line 1311
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -110,7 +110,7 @@
 .method protected didOpenEditorPressed()V
     .locals 6
 
-    .line 1404
+    .line 1341
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$800(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -121,7 +121,7 @@
 
     return-void
 
-    .line 1407
+    .line 1344
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -157,7 +157,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/DialogsActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 1411
+    .line 1348
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
 
     return-void
@@ -168,10 +168,10 @@
 
     const/4 v0, 0x1
 
-    .line 1382
+    .line 1319
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
 
-    .line 1383
+    .line 1320
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -190,14 +190,14 @@
 .method protected onDismiss(Z)V
     .locals 2
 
-    .line 1371
+    .line 1308
     iget-boolean v0, p0, Lorg/telegram/ui/DialogsActivity$5;->val$keyboardVisible:Z
 
     if-eqz v0, :cond_0
 
     if-eqz p1, :cond_0
 
-    .line 1372
+    .line 1309
     new-instance p1, Lorg/telegram/ui/DialogsActivity$5$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/DialogsActivity$5$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/DialogsActivity$5;)V
@@ -221,7 +221,7 @@
 
     if-nez p1, :cond_2
 
-    .line 1389
+    .line 1326
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->isCustomForward()Z
@@ -230,7 +230,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1390
+    .line 1327
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$700(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
@@ -243,7 +243,7 @@
 
     goto :goto_0
 
-    .line 1392
+    .line 1329
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -257,7 +257,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1393
+    .line 1330
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$700(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
@@ -278,7 +278,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1396
+    .line 1333
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -293,7 +293,7 @@
 
     goto :goto_1
 
-    .line 1398
+    .line 1335
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 

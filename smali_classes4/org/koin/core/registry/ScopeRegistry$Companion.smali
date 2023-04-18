@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 104
+    .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 .method public final getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
     .locals 1
 
-    .line 107
+    .line 109
     invoke-static {}, Lorg/koin/core/registry/ScopeRegistry;->access$getRootScopeQualifier$cp()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0

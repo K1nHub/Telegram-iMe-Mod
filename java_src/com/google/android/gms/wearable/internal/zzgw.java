@@ -12,14 +12,14 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzgw extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzgw> CREATOR = new zzgx();
-    @SafeParcelable.VersionField(m786id = 1)
+    @SafeParcelable.VersionField(m772id = 1)
     final int zza;
-    @SafeParcelable.Field(getter = "getListenerAsBinder", m789id = 2, type = "android.os.IBinder")
+    @SafeParcelable.Field(getter = "getListenerAsBinder", m775id = 2, type = "android.os.IBinder")
     public final zzfa zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzgw(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) IBinder iBinder) {
+    public zzgw(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) IBinder iBinder) {
         this.zza = i;
         if (iBinder == null) {
             this.zzb = null;

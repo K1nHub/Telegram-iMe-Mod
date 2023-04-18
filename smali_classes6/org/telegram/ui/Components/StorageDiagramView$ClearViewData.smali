@@ -32,10 +32,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/StorageDiagramView;)V
     .locals 1
 
-    .line 381
+    .line 394
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 373
+    .line 386
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -44,20 +44,20 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->paint:Landroid/graphics/Paint;
 
-    .line 375
+    .line 388
     iput-boolean v0, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->clear:Z
 
     const/4 v0, 0x0
 
-    .line 376
+    .line 389
     iput-boolean v0, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->firstDraw:Z
 
-    .line 384
+    .line 397
     sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 385
+    .line 398
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->paint:Landroid/graphics/Paint;
 
     const/4 v0, 0x5
@@ -70,14 +70,14 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 386
+    .line 399
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->paint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 387
+    .line 400
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->paint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
@@ -89,29 +89,20 @@
 
 
 # virtual methods
-.method public isClear()Z
-    .locals 1
-
-    .line 365
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->clear:Z
-
-    return v0
-.end method
-
 .method public setClear(Z)V
     .locals 1
 
-    .line 391
+    .line 404
     iget-boolean v0, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->clear:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 392
+    .line 405
     iput-boolean p1, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->clear:Z
 
     const/4 p1, 0x1
 
-    .line 393
+    .line 406
     iput-boolean p1, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->firstDraw:Z
 
     :cond_0
@@ -121,7 +112,7 @@
 .method public setSize(J)V
     .locals 0
 
-    .line 361
+    .line 374
     iput-wide p1, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->size:J
 
     return-void
@@ -130,7 +121,7 @@
 .method public setSizeAsDouble(Ljava/lang/Double;)V
     .locals 0
 
-    .line 349
+    .line 362
     iput-object p1, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->sizeAsDouble:Ljava/lang/Double;
 
     return-void
@@ -139,7 +130,7 @@
 .method public setStrokeWidth(F)V
     .locals 1
 
-    .line 353
+    .line 366
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setStrokeWidth(F)V

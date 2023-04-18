@@ -7,7 +7,7 @@
 .method public static final emptyParametersHolder()Lorg/koin/core/parameter/ParametersHolder;
     .locals 3
 
-    .line 123
+    .line 125
     new-instance v0, Lorg/koin/core/parameter/ParametersHolder;
 
     const/4 v1, 0x0
@@ -26,7 +26,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 118
+    .line 120
     new-instance v0, Lorg/koin/core/parameter/ParametersHolder;
 
     invoke-static {p0}, Lkotlin/collections/ArraysKt;->toMutableList([Ljava/lang/Object;)Ljava/util/List;

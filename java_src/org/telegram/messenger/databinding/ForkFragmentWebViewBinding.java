@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWebViewBinding implements ViewBinding {
     public final ProgressBar progressBar;
@@ -31,7 +31,7 @@ public final class ForkFragmentWebViewBinding implements ViewBinding {
     }
 
     public static ForkFragmentWebViewBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3316R.layout.fork_fragment_web_view, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3242R.layout.fork_fragment_web_view, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +39,10 @@ public final class ForkFragmentWebViewBinding implements ViewBinding {
     }
 
     public static ForkFragmentWebViewBinding bind(View view) {
-        int i = C3316R.C3319id.progress_bar;
+        int i = C3242R.C3245id.progress_bar;
         ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(view, i);
         if (progressBar != null) {
-            i = C3316R.C3319id.web_view;
+            i = C3242R.C3245id.web_view;
             WebView webView = (WebView) ViewBindings.findChildViewById(view, i);
             if (webView != null) {
                 return new ForkFragmentWebViewBinding((LinearLayout) view, progressBar, webView);

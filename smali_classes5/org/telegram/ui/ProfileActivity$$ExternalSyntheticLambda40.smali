@@ -6,16 +6,24 @@
 
 
 # instance fields
-.field public final synthetic f$0:Landroid/animation/AnimatorSet;
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Landroid/app/Activity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/animation/AnimatorSet;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;ZLandroid/app/Activity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$0:Landroid/animation/AnimatorSet;
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iput-boolean p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$1:Z
+
+    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$2:Landroid/app/Activity;
 
     return-void
 .end method
@@ -23,11 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$0:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
+    iget-boolean v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$1:Z
+
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$2:Landroid/app/Activity;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$576ykt493WYMHNGS2U6OO0hdCX4(Lorg/telegram/ui/ActionBar/AlertDialog;ZLandroid/app/Activity;)V
 
     return-void
 .end method

@@ -2,50 +2,36 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lj$/util/function/ToIntFunction;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
-.field public final synthetic f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
-
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:Lorg/telegram/ui/Cells/ChatMessageCell;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;ILorg/telegram/ui/Cells/ChatMessageCell;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda275;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda275;->f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iput p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda275;->f$2:I
-
-    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda275;->f$3:Lorg/telegram/ui/Cells/ChatMessageCell;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final applyAsInt(Ljava/lang/Object;)I
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda275;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda275;->f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+    check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    iget v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda275;->f$2:I
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$L2hIOnEye_yaYzcILLi4XwfnW30(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)I
 
-    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda275;->f$3:Lorg/telegram/ui/Cells/ChatMessageCell;
+    move-result p1
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$1Xyl2ZEK4Fualg69yVk_YhwaGhQ(Lorg/telegram/ui/ChatActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;ILorg/telegram/ui/Cells/ChatMessageCell;)V
-
-    return-void
+    return p1
 .end method

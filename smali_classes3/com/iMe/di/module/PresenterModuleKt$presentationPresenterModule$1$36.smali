@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$36\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n42#2,2:434\n127#3,5:436\n127#3,5:441\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$36\n*L\n265#1:434,2\n266#1:436,5\n267#1:441,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$36\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n44#2,2:434\n129#3,5:436\n129#3,5:441\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$36\n*L\n265#1:434,2\n266#1:436,5\n267#1:441,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 44
     const-class v0, Ljava/lang/Integer;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -91,7 +91,7 @@
 
     move-result v2
 
-    .line 43
+    .line 45
     const-class v0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -108,7 +108,7 @@
 
     check-cast v3, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -126,7 +126,7 @@
 
     check-cast v10, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -142,7 +142,7 @@
 
     check-cast v9, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -158,7 +158,7 @@
 
     check-cast v8, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/interactor/binancepay/BinanceInternalInteractor;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -174,7 +174,7 @@
 
     check-cast v7, Lcom/iMe/storage/domain/interactor/binancepay/BinanceInternalInteractor;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/gateway/TelegramControllersGateway;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -190,7 +190,7 @@
 
     check-cast v6, Lcom/iMe/gateway/TelegramControllersGateway;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/manager/TelegramApi;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -206,7 +206,7 @@
 
     check-cast v4, Lcom/iMe/manager/TelegramApi;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

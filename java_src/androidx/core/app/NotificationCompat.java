@@ -1189,7 +1189,7 @@ public class NotificationCompat {
         }
 
         /* renamed from: clone */
-        public WearableExtender m865clone() {
+        public WearableExtender m851clone() {
             WearableExtender wearableExtender = new WearableExtender();
             wearableExtender.mActions = new ArrayList<>(this.mActions);
             wearableExtender.mFlags = this.mFlags;

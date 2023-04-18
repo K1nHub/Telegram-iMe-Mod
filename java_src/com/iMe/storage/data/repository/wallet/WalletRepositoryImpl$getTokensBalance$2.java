@@ -1,6 +1,6 @@
 package com.iMe.storage.data.repository.wallet;
 
-import com.iMe.storage.data.locale.p028db.model.wallet.WalletTokenBalanceDb;
+import com.iMe.storage.data.locale.p027db.model.wallet.WalletTokenBalanceDb;
 import com.iMe.storage.data.mapper.wallet.WalletBalanceMappingKt;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;

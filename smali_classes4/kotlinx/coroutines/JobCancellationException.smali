@@ -16,9 +16,13 @@
     }
 .end annotation
 
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nExceptions.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Exceptions.kt\nkotlinx/coroutines/JobCancellationException\n+ 2 ArrayIntrinsics.kt\nkotlin/ArrayIntrinsicsKt\n*L\n1#1,76:1\n26#2:77\n*S KotlinDebug\n*F\n+ 1 Exceptions.kt\nkotlinx/coroutines/JobCancellationException\n*L\n44#1:77\n*E\n"
+.end annotation
+
 
 # instance fields
-.field public final job:Lkotlinx/coroutines/Job;
+.field public final transient job:Lkotlinx/coroutines/Job;
 
 
 # direct methods
@@ -207,16 +211,16 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v1, 0x0
+    invoke-virtual {v1}, Ljava/lang/Throwable;->hashCode()I
+
+    move-result v1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1}, Ljava/lang/Throwable;->hashCode()I
-
-    move-result v1
+    const/4 v1, 0x0
 
     :goto_0
     add-int/2addr v0, v1

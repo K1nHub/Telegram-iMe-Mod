@@ -13,17 +13,17 @@
 .method public constructor <init>(I)V
     .locals 1
 
-    .line 96
+    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 97
+    .line 102
     invoke-static {p1}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
-    .line 98
+    .line 103
     iput p1, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     return-void
@@ -34,7 +34,7 @@
 .method protected final getAccountInstance()Lorg/telegram/messenger/AccountInstance;
     .locals 1
 
-    .line 102
+    .line 107
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     return-object v0
@@ -43,7 +43,7 @@
 .method protected final getAlbumsController()Lcom/iMe/fork/controller/AlbumsController;
     .locals 1
 
-    .line 30
+    .line 31
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getAlbumsController()Lcom/iMe/fork/controller/AlbumsController;
@@ -56,7 +56,7 @@
 .method protected final getBackupController()Lcom/iMe/fork/controller/BackupController;
     .locals 1
 
-    .line 34
+    .line 35
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getBackupController()Lcom/iMe/fork/controller/BackupController;
@@ -69,7 +69,7 @@
 .method protected final getBookmarksController()Lcom/iMe/fork/controller/BookmarksController;
     .locals 1
 
-    .line 38
+    .line 39
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getBookmarksController()Lcom/iMe/fork/controller/BookmarksController;
@@ -82,7 +82,7 @@
 .method protected final getColorPalette()Lorg/telegram/ui/Components/Paint/PersistColorPalette;
     .locals 1
 
-    .line 114
+    .line 119
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getColorPalette()Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -95,7 +95,7 @@
 .method protected final getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
     .locals 1
 
-    .line 122
+    .line 127
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -108,7 +108,7 @@
 .method protected final getContactsController()Lorg/telegram/messenger/ContactsController;
     .locals 1
 
-    .line 110
+    .line 115
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getContactsController()Lorg/telegram/messenger/ContactsController;
@@ -121,7 +121,7 @@
 .method protected final getDialogTranslationSettingsController()Lcom/iMe/fork/controller/DialogTranslationController;
     .locals 1
 
-    .line 42
+    .line 43
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getDialogTranslationSettingsController()Lcom/iMe/fork/controller/DialogTranslationController;
@@ -134,7 +134,7 @@
 .method protected final getDownloadController()Lorg/telegram/messenger/DownloadController;
     .locals 1
 
-    .line 146
+    .line 151
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getDownloadController()Lorg/telegram/messenger/DownloadController;
@@ -147,7 +147,7 @@
 .method protected final getFileLoader()Lorg/telegram/messenger/FileLoader;
     .locals 1
 
-    .line 162
+    .line 167
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getFileLoader()Lorg/telegram/messenger/FileLoader;
@@ -160,7 +160,7 @@
 .method protected final getFileRefController()Lorg/telegram/messenger/FileRefController;
     .locals 1
 
-    .line 166
+    .line 171
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getFileRefController()Lorg/telegram/messenger/FileRefController;
@@ -173,7 +173,7 @@
 .method protected final getFiltersController()Lcom/iMe/fork/controller/FiltersController;
     .locals 1
 
-    .line 46
+    .line 47
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
@@ -186,7 +186,7 @@
 .method protected final getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
     .locals 1
 
-    .line 50
+    .line 51
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
@@ -199,7 +199,7 @@
 .method protected final getForkTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
     .locals 1
 
-    .line 82
+    .line 87
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
@@ -209,10 +209,23 @@
     return-object v0
 .end method
 
+.method public getHiddenChatsController()Lcom/iMe/fork/controller/HiddenChatsController;
+    .locals 1
+
+    .line 83
+    iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getHiddenChatsController()Lcom/iMe/fork/controller/HiddenChatsController;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method protected final getLocationController()Lorg/telegram/messenger/LocationController;
     .locals 1
 
-    .line 126
+    .line 131
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getLocationController()Lorg/telegram/messenger/LocationController;
@@ -225,7 +238,7 @@
 .method protected final getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
     .locals 1
 
-    .line 54
+    .line 55
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
@@ -238,7 +251,7 @@
 .method protected final getMediaDataController()Lorg/telegram/messenger/MediaDataController;
     .locals 1
 
-    .line 118
+    .line 123
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
@@ -251,7 +264,7 @@
 .method protected final getMemberRequestsController()Lorg/telegram/messenger/MemberRequestsController;
     .locals 1
 
-    .line 170
+    .line 175
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getMemberRequestsController()Lorg/telegram/messenger/MemberRequestsController;
@@ -264,7 +277,7 @@
 .method protected final getMessagesController()Lorg/telegram/messenger/MessagesController;
     .locals 1
 
-    .line 106
+    .line 111
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -277,7 +290,7 @@
 .method protected final getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
     .locals 1
 
-    .line 142
+    .line 147
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
@@ -290,7 +303,7 @@
 .method protected final getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
     .locals 1
 
-    .line 58
+    .line 59
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
@@ -303,7 +316,7 @@
 .method protected final getMusicController()Lcom/iMe/fork/controller/MusicController;
     .locals 1
 
-    .line 62
+    .line 63
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getMusicController()Lcom/iMe/fork/controller/MusicController;
@@ -316,7 +329,7 @@
 .method protected final getNeuroBotsController()Lcom/iMe/fork/controller/NeuroBotsController;
     .locals 1
 
-    .line 66
+    .line 67
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getNeuroBotsController()Lcom/iMe/fork/controller/NeuroBotsController;
@@ -329,7 +342,7 @@
 .method protected final getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
     .locals 1
 
-    .line 134
+    .line 139
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -342,7 +355,7 @@
 .method protected final getNotificationsController()Lorg/telegram/messenger/NotificationsController;
     .locals 1
 
-    .line 130
+    .line 135
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getNotificationsController()Lorg/telegram/messenger/NotificationsController;
@@ -355,7 +368,7 @@
 .method public getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
     .locals 1
 
-    .line 78
+    .line 79
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
@@ -368,7 +381,7 @@
 .method protected final getSecretChatHelper()Lorg/telegram/messenger/SecretChatHelper;
     .locals 1
 
-    .line 154
+    .line 159
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getSecretChatHelper()Lorg/telegram/messenger/SecretChatHelper;
@@ -381,7 +394,7 @@
 .method protected final getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
     .locals 1
 
-    .line 150
+    .line 155
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
@@ -394,7 +407,7 @@
 .method protected final getStatsController()Lorg/telegram/messenger/StatsController;
     .locals 1
 
-    .line 158
+    .line 163
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getStatsController()Lorg/telegram/messenger/StatsController;
@@ -407,7 +420,7 @@
 .method protected final getTemplatesController()Lcom/iMe/fork/controller/TemplatesController;
     .locals 1
 
-    .line 70
+    .line 71
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getTemplatesController()Lcom/iMe/fork/controller/TemplatesController;
@@ -420,7 +433,7 @@
 .method protected final getToolsController()Lcom/iMe/fork/controller/ToolsController;
     .locals 1
 
-    .line 74
+    .line 75
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
@@ -433,7 +446,7 @@
 .method protected final getUserConfig()Lorg/telegram/messenger/UserConfig;
     .locals 1
 
-    .line 138
+    .line 143
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
@@ -446,7 +459,7 @@
 .method protected final getWalletFingerprintController()Lcom/iMe/fork/controller/WalletFingerprintController;
     .locals 1
 
-    .line 86
+    .line 91
     iget-object v0, p0, Lorg/telegram/messenger/BaseController;->parentAccountInstance:Lorg/telegram/messenger/AccountInstance;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getWalletFingerprintController()Lcom/iMe/fork/controller/WalletFingerprintController;

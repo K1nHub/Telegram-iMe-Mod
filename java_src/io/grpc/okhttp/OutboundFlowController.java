@@ -173,7 +173,7 @@ public class OutboundFlowController {
         }
 
         OutboundFlowState(OutboundFlowController outboundFlowController, OkHttpClientStream okHttpClientStream, int i) {
-            this(okHttpClientStream.m691id(), i);
+            this(okHttpClientStream.m677id(), i);
             this.stream = okHttpClientStream;
         }
 

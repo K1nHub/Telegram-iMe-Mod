@@ -15,21 +15,21 @@ import com.google.android.gms.identity.intents.model.UserAddress;
 /* loaded from: classes3.dex */
 public final class PaymentData extends AbstractSafeParcelable implements AutoResolvableResult {
     public static final Parcelable.Creator<PaymentData> CREATOR = new zzaa();
-    @SafeParcelable.Field(m789id = 1)
+    @SafeParcelable.Field(m775id = 1)
     String zza;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     CardInfo zzb;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     UserAddress zzc;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     PaymentMethodToken zzd;
-    @SafeParcelable.Field(m789id = 5)
+    @SafeParcelable.Field(m775id = 5)
     String zze;
-    @SafeParcelable.Field(m789id = 6)
+    @SafeParcelable.Field(m775id = 6)
     Bundle zzf;
-    @SafeParcelable.Field(m789id = 7)
+    @SafeParcelable.Field(m775id = 7)
     String zzg;
-    @SafeParcelable.Field(m789id = 8)
+    @SafeParcelable.Field(m775id = 8)
     Bundle zzh;
 
     private PaymentData() {
@@ -109,7 +109,7 @@ public final class PaymentData extends AbstractSafeParcelable implements AutoRes
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PaymentData(@SafeParcelable.Param(m788id = 1) String str, @SafeParcelable.Param(m788id = 2) CardInfo cardInfo, @SafeParcelable.Param(m788id = 3) UserAddress userAddress, @SafeParcelable.Param(m788id = 4) PaymentMethodToken paymentMethodToken, @SafeParcelable.Param(m788id = 5) String str2, @SafeParcelable.Param(m788id = 6) Bundle bundle, @SafeParcelable.Param(m788id = 7) String str3, @SafeParcelable.Param(m788id = 8) Bundle bundle2) {
+    public PaymentData(@SafeParcelable.Param(m774id = 1) String str, @SafeParcelable.Param(m774id = 2) CardInfo cardInfo, @SafeParcelable.Param(m774id = 3) UserAddress userAddress, @SafeParcelable.Param(m774id = 4) PaymentMethodToken paymentMethodToken, @SafeParcelable.Param(m774id = 5) String str2, @SafeParcelable.Param(m774id = 6) Bundle bundle, @SafeParcelable.Param(m774id = 7) String str3, @SafeParcelable.Param(m774id = 8) Bundle bundle2) {
         this.zza = str;
         this.zzb = cardInfo;
         this.zzc = userAddress;

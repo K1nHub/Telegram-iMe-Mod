@@ -8,9 +8,13 @@
 
 # direct methods
 .method constructor <init>([C)V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
+
+    const-string v0, "\'string\' cannot be null"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     iput-object p1, p0, Lorg/bouncycastle/asn1/DERBMPString;->string:[C
 
@@ -44,52 +48,149 @@
     return p1
 .end method
 
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
-    .locals 3
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const/16 v0, 0x1e
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
-
     iget-object v0, p0, Lorg/bouncycastle/asn1/DERBMPString;->string:[C
 
     array-length v0, v0
 
-    mul-int/lit8 v0, v0, 0x2
+    if-eqz p2, :cond_0
 
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeLength(I)V
+    const/16 p2, 0x1e
 
-    const/4 v0, 0x0
+    invoke-virtual {p1, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
+
+    :cond_0
+    mul-int/lit8 p2, v0, 0x2
+
+    invoke-virtual {p1, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeLength(I)V
+
+    const/16 p2, 0x8
+
+    new-array v1, p2, [B
+
+    and-int/lit8 v2, v0, -0x4
+
+    const/4 v3, 0x0
+
+    move v4, v3
 
     :goto_0
-    iget-object v1, p0, Lorg/bouncycastle/asn1/DERBMPString;->string:[C
+    const/4 v5, 0x1
 
-    array-length v2, v1
+    if-ge v4, v2, :cond_1
 
-    if-eq v0, v2, :cond_0
+    iget-object v6, p0, Lorg/bouncycastle/asn1/DERBMPString;->string:[C
 
-    aget-char v1, v1, v0
+    aget-char v7, v6, v4
 
-    shr-int/lit8 v2, v1, 0x8
+    add-int/lit8 v8, v4, 0x1
 
-    int-to-byte v2, v2
+    aget-char v8, v6, v8
 
-    invoke-virtual {p1, v2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
+    add-int/lit8 v9, v4, 0x2
 
-    int-to-byte v1, v1
+    aget-char v9, v6, v9
 
-    invoke-virtual {p1, v1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
+    add-int/lit8 v10, v4, 0x3
 
-    add-int/lit8 v0, v0, 0x1
+    aget-char v6, v6, v10
+
+    add-int/lit8 v4, v4, 0x4
+
+    shr-int/lit8 v10, v7, 0x8
+
+    int-to-byte v10, v10
+
+    aput-byte v10, v1, v3
+
+    int-to-byte v7, v7
+
+    aput-byte v7, v1, v5
+
+    shr-int/lit8 v5, v8, 0x8
+
+    int-to-byte v5, v5
+
+    const/4 v7, 0x2
+
+    aput-byte v5, v1, v7
+
+    int-to-byte v5, v8
+
+    const/4 v7, 0x3
+
+    aput-byte v5, v1, v7
+
+    shr-int/lit8 v5, v9, 0x8
+
+    int-to-byte v5, v5
+
+    const/4 v7, 0x4
+
+    aput-byte v5, v1, v7
+
+    const/4 v5, 0x5
+
+    int-to-byte v7, v9
+
+    aput-byte v7, v1, v5
+
+    const/4 v5, 0x6
+
+    shr-int/lit8 v7, v6, 0x8
+
+    int-to-byte v7, v7
+
+    aput-byte v7, v1, v5
+
+    const/4 v5, 0x7
+
+    int-to-byte v6, v6
+
+    aput-byte v6, v1, v5
+
+    invoke-virtual {p1, v1, v3, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([BII)V
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
+    if-ge v4, v0, :cond_3
+
+    move p2, v3
+
+    :cond_2
+    iget-object v2, p0, Lorg/bouncycastle/asn1/DERBMPString;->string:[C
+
+    aget-char v2, v2, v4
+
+    add-int/2addr v4, v5
+
+    add-int/lit8 v6, p2, 0x1
+
+    shr-int/lit8 v7, v2, 0x8
+
+    int-to-byte v7, v7
+
+    aput-byte v7, v1, p2
+
+    add-int/lit8 p2, v6, 0x1
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v1, v6
+
+    if-lt v4, v0, :cond_2
+
+    invoke-virtual {p1, v1, v3, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([BII)V
+
+    :cond_3
     return-void
 .end method
 

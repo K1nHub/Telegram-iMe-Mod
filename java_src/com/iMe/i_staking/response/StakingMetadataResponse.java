@@ -16,7 +16,7 @@ public final class StakingMetadataResponse {
     private final StakingTokenResponse feeToken;
 
     /* renamed from: id */
-    private final long f263id;
+    private final long f258id;
     private final double immediateWithdrawalFee;
     private final double incomePercent;
     private final long incomePeriod;
@@ -24,7 +24,7 @@ public final class StakingMetadataResponse {
     private final String name;
 
     /* renamed from: net  reason: collision with root package name */
-    private final String f1914net;
+    private final String f1834net;
     private final double prematureWithdrawalFee;
     private final long safeWithdrawalDuration;
     private final double safeWithdrawalFee;
@@ -34,7 +34,7 @@ public final class StakingMetadataResponse {
     private final String website;
 
     public final long component1() {
-        return this.f263id;
+        return this.f258id;
     }
 
     public final StakingTokenResponse component10() {
@@ -78,7 +78,7 @@ public final class StakingMetadataResponse {
     }
 
     public final String component2() {
-        return this.f1914net;
+        return this.f1834net;
     }
 
     public final StakingStatsResponse component20() {
@@ -143,19 +143,19 @@ public final class StakingMetadataResponse {
         }
         if (obj instanceof StakingMetadataResponse) {
             StakingMetadataResponse stakingMetadataResponse = (StakingMetadataResponse) obj;
-            return this.f263id == stakingMetadataResponse.f263id && Intrinsics.areEqual(this.f1914net, stakingMetadataResponse.f1914net) && Intrinsics.areEqual(this.name, stakingMetadataResponse.name) && Intrinsics.areEqual(this.author, stakingMetadataResponse.author) && Intrinsics.areEqual(this.contract, stakingMetadataResponse.contract) && Intrinsics.areEqual(this.startsAt, stakingMetadataResponse.startsAt) && Intrinsics.areEqual(this.endsAt, stakingMetadataResponse.endsAt) && Intrinsics.areEqual(this.debt, stakingMetadataResponse.debt) && Intrinsics.areEqual(this.token, stakingMetadataResponse.token) && Intrinsics.areEqual(this.feeToken, stakingMetadataResponse.feeToken) && Double.compare(this.apy, stakingMetadataResponse.apy) == 0 && Double.compare(this.apr, stakingMetadataResponse.apr) == 0 && this.incomePeriod == stakingMetadataResponse.incomePeriod && Double.compare(this.incomePercent, stakingMetadataResponse.incomePercent) == 0 && Double.compare(this.prematureWithdrawalFee, stakingMetadataResponse.prematureWithdrawalFee) == 0 && Double.compare(this.immediateWithdrawalFee, stakingMetadataResponse.immediateWithdrawalFee) == 0 && Double.compare(this.safeWithdrawalFee, stakingMetadataResponse.safeWithdrawalFee) == 0 && this.safeWithdrawalDuration == stakingMetadataResponse.safeWithdrawalDuration && Intrinsics.areEqual(this.compoundAccrualThreshold, stakingMetadataResponse.compoundAccrualThreshold) && Intrinsics.areEqual(this.stats, stakingMetadataResponse.stats) && Intrinsics.areEqual(this.minimalRank, stakingMetadataResponse.minimalRank) && Intrinsics.areEqual(this.website, stakingMetadataResponse.website);
+            return this.f258id == stakingMetadataResponse.f258id && Intrinsics.areEqual(this.f1834net, stakingMetadataResponse.f1834net) && Intrinsics.areEqual(this.name, stakingMetadataResponse.name) && Intrinsics.areEqual(this.author, stakingMetadataResponse.author) && Intrinsics.areEqual(this.contract, stakingMetadataResponse.contract) && Intrinsics.areEqual(this.startsAt, stakingMetadataResponse.startsAt) && Intrinsics.areEqual(this.endsAt, stakingMetadataResponse.endsAt) && Intrinsics.areEqual(this.debt, stakingMetadataResponse.debt) && Intrinsics.areEqual(this.token, stakingMetadataResponse.token) && Intrinsics.areEqual(this.feeToken, stakingMetadataResponse.feeToken) && Double.compare(this.apy, stakingMetadataResponse.apy) == 0 && Double.compare(this.apr, stakingMetadataResponse.apr) == 0 && this.incomePeriod == stakingMetadataResponse.incomePeriod && Double.compare(this.incomePercent, stakingMetadataResponse.incomePercent) == 0 && Double.compare(this.prematureWithdrawalFee, stakingMetadataResponse.prematureWithdrawalFee) == 0 && Double.compare(this.immediateWithdrawalFee, stakingMetadataResponse.immediateWithdrawalFee) == 0 && Double.compare(this.safeWithdrawalFee, stakingMetadataResponse.safeWithdrawalFee) == 0 && this.safeWithdrawalDuration == stakingMetadataResponse.safeWithdrawalDuration && Intrinsics.areEqual(this.compoundAccrualThreshold, stakingMetadataResponse.compoundAccrualThreshold) && Intrinsics.areEqual(this.stats, stakingMetadataResponse.stats) && Intrinsics.areEqual(this.minimalRank, stakingMetadataResponse.minimalRank) && Intrinsics.areEqual(this.website, stakingMetadataResponse.website);
         }
         return false;
     }
 
     public int hashCode() {
-        int m716m = ((((((((((((((((((((((((((((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f263id) * 31) + this.f1914net.hashCode()) * 31) + this.name.hashCode()) * 31) + this.author.hashCode()) * 31) + this.contract.hashCode()) * 31) + this.startsAt.hashCode()) * 31) + this.endsAt.hashCode()) * 31) + this.debt.hashCode()) * 31) + this.token.hashCode()) * 31) + this.feeToken.hashCode()) * 31) + Double.doubleToLongBits(this.apy)) * 31) + Double.doubleToLongBits(this.apr)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.incomePeriod)) * 31) + Double.doubleToLongBits(this.incomePercent)) * 31) + Double.doubleToLongBits(this.prematureWithdrawalFee)) * 31) + Double.doubleToLongBits(this.immediateWithdrawalFee)) * 31) + Double.doubleToLongBits(this.safeWithdrawalFee)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.safeWithdrawalDuration)) * 31) + this.compoundAccrualThreshold.hashCode()) * 31) + this.stats.hashCode()) * 31;
+        int m702m = ((((((((((((((((((((((((((((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f258id) * 31) + this.f1834net.hashCode()) * 31) + this.name.hashCode()) * 31) + this.author.hashCode()) * 31) + this.contract.hashCode()) * 31) + this.startsAt.hashCode()) * 31) + this.endsAt.hashCode()) * 31) + this.debt.hashCode()) * 31) + this.token.hashCode()) * 31) + this.feeToken.hashCode()) * 31) + Double.doubleToLongBits(this.apy)) * 31) + Double.doubleToLongBits(this.apr)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.incomePeriod)) * 31) + Double.doubleToLongBits(this.incomePercent)) * 31) + Double.doubleToLongBits(this.prematureWithdrawalFee)) * 31) + Double.doubleToLongBits(this.immediateWithdrawalFee)) * 31) + Double.doubleToLongBits(this.safeWithdrawalFee)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.safeWithdrawalDuration)) * 31) + this.compoundAccrualThreshold.hashCode()) * 31) + this.stats.hashCode()) * 31;
         String str = this.minimalRank;
-        return ((m716m + (str == null ? 0 : str.hashCode())) * 31) + this.website.hashCode();
+        return ((m702m + (str == null ? 0 : str.hashCode())) * 31) + this.website.hashCode();
     }
 
     public String toString() {
-        return "StakingMetadataResponse(id=" + this.f263id + ", net=" + this.f1914net + ", name=" + this.name + ", author=" + this.author + ", contract=" + this.contract + ", startsAt=" + this.startsAt + ", endsAt=" + this.endsAt + ", debt=" + this.debt + ", token=" + this.token + ", feeToken=" + this.feeToken + ", apy=" + this.apy + ", apr=" + this.apr + ", incomePeriod=" + this.incomePeriod + ", incomePercent=" + this.incomePercent + ", prematureWithdrawalFee=" + this.prematureWithdrawalFee + ", immediateWithdrawalFee=" + this.immediateWithdrawalFee + ", safeWithdrawalFee=" + this.safeWithdrawalFee + ", safeWithdrawalDuration=" + this.safeWithdrawalDuration + ", compoundAccrualThreshold=" + this.compoundAccrualThreshold + ", stats=" + this.stats + ", minimalRank=" + this.minimalRank + ", website=" + this.website + ')';
+        return "StakingMetadataResponse(id=" + this.f258id + ", net=" + this.f1834net + ", name=" + this.name + ", author=" + this.author + ", contract=" + this.contract + ", startsAt=" + this.startsAt + ", endsAt=" + this.endsAt + ", debt=" + this.debt + ", token=" + this.token + ", feeToken=" + this.feeToken + ", apy=" + this.apy + ", apr=" + this.apr + ", incomePeriod=" + this.incomePeriod + ", incomePercent=" + this.incomePercent + ", prematureWithdrawalFee=" + this.prematureWithdrawalFee + ", immediateWithdrawalFee=" + this.immediateWithdrawalFee + ", safeWithdrawalFee=" + this.safeWithdrawalFee + ", safeWithdrawalDuration=" + this.safeWithdrawalDuration + ", compoundAccrualThreshold=" + this.compoundAccrualThreshold + ", stats=" + this.stats + ", minimalRank=" + this.minimalRank + ", website=" + this.website + ')';
     }
 
     public StakingMetadataResponse(long j, String net2, String name, String author, String contract, String startsAt, String endsAt, StakingValuesResponse debt, StakingTokenResponse token, StakingTokenResponse feeToken, double d, double d2, long j2, double d3, double d4, double d5, double d6, long j3, BigDecimal compoundAccrualThreshold, StakingStatsResponse stats, String str, String website) {
@@ -171,8 +171,8 @@ public final class StakingMetadataResponse {
         Intrinsics.checkNotNullParameter(compoundAccrualThreshold, "compoundAccrualThreshold");
         Intrinsics.checkNotNullParameter(stats, "stats");
         Intrinsics.checkNotNullParameter(website, "website");
-        this.f263id = j;
-        this.f1914net = net2;
+        this.f258id = j;
+        this.f1834net = net2;
         this.name = name;
         this.author = author;
         this.contract = contract;
@@ -196,11 +196,11 @@ public final class StakingMetadataResponse {
     }
 
     public final long getId() {
-        return this.f263id;
+        return this.f258id;
     }
 
     public final String getNet() {
-        return this.f1914net;
+        return this.f1834net;
     }
 
     public final String getName() {

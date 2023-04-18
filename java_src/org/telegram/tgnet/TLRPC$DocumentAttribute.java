@@ -7,7 +7,7 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
     public int flags;
 
     /* renamed from: h */
-    public int f1512h;
+    public int f1437h;
     public boolean mask;
     public TLRPC$TL_maskCoords mask_coords;
     public String performer;
@@ -18,7 +18,7 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
     public boolean voice;
 
     /* renamed from: w */
-    public int f1513w;
+    public int f1438w;
     public byte[] waveform;
 
     public static TLRPC$DocumentAttribute TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -118,16 +118,16 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_documentAttributeVideo, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.duration = abstractSerializedData2.readInt32(z2);
-                        this.f1513w = abstractSerializedData2.readInt32(z2);
-                        this.f1512h = abstractSerializedData2.readInt32(z2);
+                        this.f1438w = abstractSerializedData2.readInt32(z2);
+                        this.f1437h = abstractSerializedData2.readInt32(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_documentAttributeVideo, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeInt32(this.duration);
-                        abstractSerializedData2.writeInt32(this.f1513w);
-                        abstractSerializedData2.writeInt32(this.f1512h);
+                        abstractSerializedData2.writeInt32(this.f1438w);
+                        abstractSerializedData2.writeInt32(this.f1437h);
                     }
                 };
                 break;

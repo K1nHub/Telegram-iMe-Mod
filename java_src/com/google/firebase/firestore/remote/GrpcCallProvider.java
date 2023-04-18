@@ -1,7 +1,7 @@
 package com.google.firebase.firestore.remote;
 
 import android.content.Context;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.security.ProviderInstaller;
@@ -13,7 +13,7 @@ import com.google.firebase.firestore.util.AsyncQueue;
 import com.google.firebase.firestore.util.Executors;
 import com.google.firebase.firestore.util.Logger;
 import com.google.firebase.firestore.util.Supplier;
-import com.google.firestore.p022v1.FirestoreGrpc;
+import com.google.firestore.p021v1.FirestoreGrpc;
 import io.grpc.CallCredentials;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
@@ -90,7 +90,7 @@ public class GrpcCallProvider {
         clearConnectivityAttemptTimer();
         if (state == ConnectivityState.CONNECTING) {
             Logger.debug("GrpcCallProvider", "Setting the connectivityAttemptTimer", new Object[0]);
-            this.connectivityAttemptTimer = this.asyncQueue.enqueueAfterDelay(AsyncQueue.TimerId.CONNECTIVITY_ATTEMPT_TIMER, C0482C.DEFAULT_SEEK_FORWARD_INCREMENT_MS, new Runnable() { // from class: com.google.firebase.firestore.remote.GrpcCallProvider$$ExternalSyntheticLambda3
+            this.connectivityAttemptTimer = this.asyncQueue.enqueueAfterDelay(AsyncQueue.TimerId.CONNECTIVITY_ATTEMPT_TIMER, C0470C.DEFAULT_SEEK_FORWARD_INCREMENT_MS, new Runnable() { // from class: com.google.firebase.firestore.remote.GrpcCallProvider$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     GrpcCallProvider.this.lambda$onConnectivityStateChange$1(managedChannel);

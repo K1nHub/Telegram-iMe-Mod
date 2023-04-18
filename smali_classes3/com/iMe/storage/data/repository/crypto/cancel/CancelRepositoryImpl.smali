@@ -93,7 +93,7 @@
     move-result-object v0
 
     .line 40
-    invoke-interface {v0, p1}, Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSource;->cancel(Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;)Lio/reactivex/Observable;
+    invoke-interface {v0, p1}, Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSource;->cancel(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 

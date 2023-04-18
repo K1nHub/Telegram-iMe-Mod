@@ -2,7 +2,7 @@ package com.google.android.gms.common.internal;
 
 import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.util.VisibleForTesting;
-import p035j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentHashMap;
 /* compiled from: com.google.android.gms:play-services-basement@@18.1.0 */
 @KeepForSdk
 @Deprecated
@@ -75,7 +75,7 @@ public class LibraryVersion {
             r5.append(r6)     // Catch: java.lang.Throwable -> L71 java.io.IOException -> L74
             r5.append(r4)     // Catch: java.lang.Throwable -> L71 java.io.IOException -> L74
             java.lang.String r5 = r5.toString()     // Catch: java.lang.Throwable -> L71 java.io.IOException -> L74
-            r2.m793v(r1, r5)     // Catch: java.lang.Throwable -> L71 java.io.IOException -> L74
+            r2.m779v(r1, r5)     // Catch: java.lang.Throwable -> L71 java.io.IOException -> L74
             goto L6b
         L57:
             com.google.android.gms.common.internal.GmsLogger r2 = com.google.android.gms.common.internal.LibraryVersion.zza     // Catch: java.lang.Throwable -> L71 java.io.IOException -> L74
@@ -84,7 +84,7 @@ public class LibraryVersion {
             r5.append(r0)     // Catch: java.lang.Throwable -> L71 java.io.IOException -> L74
             r5.append(r9)     // Catch: java.lang.Throwable -> L71 java.io.IOException -> L74
             java.lang.String r5 = r5.toString()     // Catch: java.lang.Throwable -> L71 java.io.IOException -> L74
-            r2.m791w(r1, r5)     // Catch: java.lang.Throwable -> L71 java.io.IOException -> L74
+            r2.m777w(r1, r5)     // Catch: java.lang.Throwable -> L71 java.io.IOException -> L74
         L6b:
             if (r3 == 0) goto L97
             com.google.android.gms.common.util.IOUtils.closeQuietly(r3)
@@ -112,7 +112,7 @@ public class LibraryVersion {
             r6.append(r0)     // Catch: java.lang.Throwable -> L79
             r6.append(r9)     // Catch: java.lang.Throwable -> L79
             java.lang.String r0 = r6.toString()     // Catch: java.lang.Throwable -> L79
-            r5.m796e(r1, r0, r2)     // Catch: java.lang.Throwable -> L79
+            r5.m782e(r1, r0, r2)     // Catch: java.lang.Throwable -> L79
             if (r4 == 0) goto L96
             com.google.android.gms.common.util.IOUtils.closeQuietly(r4)
         L96:
@@ -121,7 +121,7 @@ public class LibraryVersion {
             if (r4 != 0) goto La2
             com.google.android.gms.common.internal.GmsLogger r0 = com.google.android.gms.common.internal.LibraryVersion.zza
             java.lang.String r2 = ".properties file is dropped during release process. Failure to read app version is expected during Google internal testing where locally-built libraries are used"
-            r0.m799d(r1, r2)
+            r0.m785d(r1, r2)
             java.lang.String r4 = "UNKNOWN"
         La2:
             j$.util.concurrent.ConcurrentHashMap r0 = r8.zzc

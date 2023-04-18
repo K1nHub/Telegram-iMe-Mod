@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/messenger/ForwardingMessagesParams;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->$r8$lambda$PdWppiHdTvvjEc3JknYS1t3slIY(Lorg/telegram/ui/Components/ForwardingPreviewView;Lorg/telegram/messenger/ForwardingMessagesParams;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->$r8$lambda$BDtZDmeWgkGfiu1joorKs1p7gNc(Lorg/telegram/ui/Components/ForwardingPreviewView;Lorg/telegram/messenger/ForwardingMessagesParams;Landroid/view/View;)V
 
     return-void
 .end method

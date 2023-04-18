@@ -1,8 +1,10 @@
 package kotlinx.coroutines;
 
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
 import kotlin.ranges.RangesKt___RangesKt;
+import kotlinx.coroutines.EventLoopImplBase;
 /* compiled from: DefaultExecutor.kt */
 /* loaded from: classes4.dex */
 public final class DefaultExecutor extends EventLoopImplBase implements Runnable {
@@ -34,9 +36,36 @@ public final class DefaultExecutor extends EventLoopImplBase implements Runnable
         return thread == null ? createThreadSync() : thread;
     }
 
+    private final boolean isShutDown() {
+        return debugStatus == 4;
+    }
+
     private final boolean isShutdownRequested() {
         int i = debugStatus;
         return i == 2 || i == 3;
+    }
+
+    @Override // kotlinx.coroutines.EventLoopImplBase
+    public void enqueue(Runnable runnable) {
+        if (isShutDown()) {
+            shutdownError();
+        }
+        super.enqueue(runnable);
+    }
+
+    @Override // kotlinx.coroutines.EventLoopImplPlatform
+    protected void reschedule(long j, EventLoopImplBase.DelayedTask delayedTask) {
+        shutdownError();
+    }
+
+    private final void shutdownError() {
+        throw new RejectedExecutionException("DefaultExecutor was shut down. This error indicates that Dispatchers.shutdown() was invoked prior to completion of exiting coroutines, leaving coroutines in incomplete state. Please refer to Dispatchers.shutdown documentation for more details");
+    }
+
+    @Override // kotlinx.coroutines.EventLoopImplBase, kotlinx.coroutines.EventLoop
+    public void shutdown() {
+        debugStatus = 4;
+        super.shutdown();
     }
 
     @Override // java.lang.Runnable

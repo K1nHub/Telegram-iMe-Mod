@@ -672,41 +672,41 @@
     .line 1134
     invoke-direct {p0}, Lcom/iMe/ui/base/JavaWalletAuthFragment;-><init>()V
 
-    .line 203
+    .line 204
     const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 204
+    .line 205
     invoke-static {v0}, Lorg/koin/java/KoinJavaComponent;->inject(Ljava/lang/Class;)Lkotlin/Lazy;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 205
+    .line 206
     const-class v0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;
 
-    .line 206
+    .line 207
     invoke-static {v0}, Lorg/koin/java/KoinJavaComponent;->inject(Ljava/lang/Class;)Lkotlin/Lazy;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->tokenBuyCoordinator:Lkotlin/Lazy;
 
-    .line 220
+    .line 221
     new-instance v0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
 
     invoke-direct {v0}, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->transferScreenArgs:Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
 
-    .line 221
+    .line 222
     new-instance v0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
 
     invoke-direct {v0}, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->binancePayScreenArgs:Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
 
-    .line 222
+    .line 223
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -715,49 +715,49 @@
 
     const/4 v0, 0x0
 
-    .line 223
+    .line 224
     iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
-    .line 224
+    .line 225
     iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->presetAmount:Ljava/lang/Double;
 
     const/4 v1, -0x1
 
-    .line 226
+    .line 227
     iput v1, p0, Lorg/telegram/ui/ManageLinksActivity;->screenType:I
 
-    .line 261
+    .line 262
     iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->forcedAmountText:Ljava/lang/String;
-
-    .line 1004
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->invites:Ljava/util/ArrayList;
 
     .line 1005
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedInvites:Ljava/util/ArrayList;
+    iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->invites:Ljava/util/ArrayList;
 
     .line 1006
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedInvites:Ljava/util/ArrayList;
+
+    .line 1007
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->users:Ljava/util/HashMap;
 
-    .line 1009
+    .line 1010
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->admins:Ljava/util/ArrayList;
 
-    .line 1016
+    .line 1017
     new-instance v0, Lorg/telegram/ui/ManageLinksActivity$4;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ManageLinksActivity$4;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
@@ -769,14 +769,14 @@
     .line 1149
     iput-boolean v0, p0, Lorg/telegram/ui/ManageLinksActivity;->loadRevoked:Z
 
-    .line 3061
+    .line 3062
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$9;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/ManageLinksActivity$9;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
 
     iput-object v2, p0, Lorg/telegram/ui/ManageLinksActivity;->linkEditActivityCallback:Lorg/telegram/ui/LinkEditActivity$Callback;
 
-    .line 3399
+    .line 3398
     iput v1, p0, Lorg/telegram/ui/ManageLinksActivity;->animationIndex:I
 
     .line 1135
@@ -911,10 +911,10 @@
 
     move-object v0, p0
 
-    .line 264
+    .line 265
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/ManageLinksActivity;-><init>(JJI)V
 
-    .line 265
+    .line 266
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->arguments:Landroid/os/Bundle;
 
     return-void
@@ -923,7 +923,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 162
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object p0
@@ -932,7 +932,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->isForkScreenType()Z
 
     move-result p0
@@ -943,62 +943,62 @@
 .method static synthetic access$1000(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
+    .line 163
     iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingProfitType:Z
 
     return p0
 .end method
 
-.method static synthetic access$1100(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
+.method static synthetic access$1100(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
+    .line 163
+    iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingWithdrawType:Z
+
+    return p0
+.end method
+
+.method static synthetic access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
+    .locals 0
+
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
     return-object p0
 .end method
 
-.method static synthetic access$1200(Lorg/telegram/ui/ManageLinksActivity;Ljava/lang/String;Ljava/lang/String;)V
+.method static synthetic access$1300(Lorg/telegram/ui/ManageLinksActivity;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->showCommonInfoAlert(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method static synthetic access$1300(Lorg/telegram/ui/ManageLinksActivity;)I
+.method static synthetic access$1400(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->rowCount:I
 
     return p0
 .end method
 
-.method static synthetic access$1400(Lorg/telegram/ui/ManageLinksActivity;Z)V
+.method static synthetic access$1500(Lorg/telegram/ui/ManageLinksActivity;Z)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->loadLinks(Z)V
 
     return-void
 .end method
 
-.method static synthetic access$1500(Lorg/telegram/ui/ManageLinksActivity;)Z
+.method static synthetic access$1600(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
+    .line 163
     iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isChannel:Z
-
-    return p0
-.end method
-
-.method static synthetic access$1600(Lorg/telegram/ui/ManageLinksActivity;)I
-    .locals 0
-
-    .line 162
-    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationTransactionsStartRow:I
 
     return p0
 .end method
@@ -1006,8 +1006,8 @@
 .method static synthetic access$1700(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
-    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationTransactionsEndRow:I
+    .line 163
+    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationTransactionsStartRow:I
 
     return p0
 .end method
@@ -1015,8 +1015,8 @@
 .method static synthetic access$1800(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
-    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->creatorRow:I
+    .line 163
+    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationTransactionsEndRow:I
 
     return p0
 .end method
@@ -1024,8 +1024,8 @@
 .method static synthetic access$1900(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
-    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->createNewLinkRow:I
+    .line 163
+    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->creatorRow:I
 
     return p0
 .end method
@@ -1033,7 +1033,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
+    .line 163
     iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isBinancePayCreateCollectionType:Z
 
     return p0
@@ -1042,8 +1042,8 @@
 .method static synthetic access$2000(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
-    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->linksStartRow:I
+    .line 163
+    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->createNewLinkRow:I
 
     return p0
 .end method
@@ -1051,8 +1051,8 @@
 .method static synthetic access$2100(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
-    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->linksEndRow:I
+    .line 163
+    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->linksStartRow:I
 
     return p0
 .end method
@@ -1060,8 +1060,8 @@
 .method static synthetic access$2200(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
-    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedLinksStartRow:I
+    .line 163
+    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->linksEndRow:I
 
     return p0
 .end method
@@ -1069,8 +1069,8 @@
 .method static synthetic access$2300(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
-    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedLinksEndRow:I
+    .line 163
+    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedLinksStartRow:I
 
     return p0
 .end method
@@ -1078,8 +1078,8 @@
 .method static synthetic access$2400(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
-    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->revokeAllRow:I
+    .line 163
+    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedLinksEndRow:I
 
     return p0
 .end method
@@ -1087,8 +1087,8 @@
 .method static synthetic access$2500(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
-    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->adminsStartRow:I
+    .line 163
+    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->revokeAllRow:I
 
     return p0
 .end method
@@ -1096,8 +1096,8 @@
 .method static synthetic access$2600(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
-    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->adminsEndRow:I
+    .line 163
+    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->adminsStartRow:I
 
     return p0
 .end method
@@ -1105,99 +1105,97 @@
 .method static synthetic access$2700(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
+    iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->adminsEndRow:I
+
+    return p0
+.end method
+
+.method static synthetic access$2800(Lorg/telegram/ui/ManageLinksActivity;)I
+    .locals 0
+
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->feeRow:I
 
     return p0
 .end method
 
-.method static synthetic access$2800(Lorg/telegram/ui/ManageLinksActivity;)J
+.method static synthetic access$2900(Lorg/telegram/ui/ManageLinksActivity;)J
     .locals 2
 
-    .line 162
+    .line 163
     iget-wide v0, p0, Lorg/telegram/ui/ManageLinksActivity;->currentChatId:J
 
     return-wide v0
 .end method
 
-.method static synthetic access$2900(Lorg/telegram/ui/ManageLinksActivity;)V
-    .locals 0
-
-    .line 162
-    invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->revokePermanent()V
-
-    return-void
-.end method
-
 .method static synthetic access$300(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
+    .line 163
     iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isWalletTransferType:Z
 
     return p0
 .end method
 
-.method static synthetic access$3000(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/ui/Components/InviteLinkBottomSheet;
+.method static synthetic access$3000(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 162
+    .line 163
+    invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->revokePermanent()V
+
+    return-void
+.end method
+
+.method static synthetic access$3100(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/ui/Components/InviteLinkBottomSheet;
+    .locals 0
+
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ManageLinksActivity;->inviteLinkBottomSheet:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
     return-object p0
 .end method
 
-.method static synthetic access$3002(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/InviteLinkBottomSheet;)Lorg/telegram/ui/Components/InviteLinkBottomSheet;
+.method static synthetic access$3102(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/InviteLinkBottomSheet;)Lorg/telegram/ui/Components/InviteLinkBottomSheet;
     .locals 0
 
-    .line 162
+    .line 163
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->inviteLinkBottomSheet:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
     return-object p1
 .end method
 
-.method static synthetic access$3100(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
+.method static synthetic access$3200(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
     .locals 0
 
-    .line 162
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ManageLinksActivity;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     return-object p0
 .end method
 
-.method static synthetic access$3200(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+.method static synthetic access$3300(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
     .locals 0
 
-    .line 162
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ManageLinksActivity;->info:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     return-object p0
 .end method
 
-.method static synthetic access$3300(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/HashMap;
+.method static synthetic access$3400(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/HashMap;
     .locals 0
 
-    .line 162
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ManageLinksActivity;->users:Ljava/util/HashMap;
 
     return-object p0
 .end method
 
-.method static synthetic access$3400(Lorg/telegram/ui/ManageLinksActivity;)Z
-    .locals 0
-
-    .line 162
-    invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->isStakingTransactionScreenType()Z
-
-    move-result p0
-
-    return p0
-.end method
-
 .method static synthetic access$3500(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->chooseContactHeaderRow:I
 
     return p0
@@ -1206,7 +1204,7 @@
 .method static synthetic access$3600(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationTransactionsHeaderRow:I
 
     return p0
@@ -1215,7 +1213,7 @@
 .method static synthetic access$3700(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 162
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsTransactions:Ljava/util/ArrayList;
 
     return-object p0
@@ -1224,7 +1222,7 @@
 .method static synthetic access$3800(Lorg/telegram/ui/ManageLinksActivity;)J
     .locals 2
 
-    .line 162
+    .line 163
     iget-wide v0, p0, Lorg/telegram/ui/ManageLinksActivity;->adminId:J
 
     return-wide v0
@@ -1233,7 +1231,7 @@
 .method static synthetic access$3900(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->chooseContactRow:I
 
     return p0
@@ -1242,7 +1240,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
+    .line 163
     iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isBinanceReplenishType:Z
 
     return p0
@@ -1251,7 +1249,7 @@
 .method static synthetic access$4000(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->selectTokenRow:I
 
     return p0
@@ -1260,7 +1258,7 @@
 .method static synthetic access$4100(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->inputRow:I
 
     return p0
@@ -1269,7 +1267,7 @@
 .method static synthetic access$4200(Lorg/telegram/ui/ManageLinksActivity;)Ljava/lang/String;
     .locals 0
 
-    .line 162
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ManageLinksActivity;->forcedAmountText:Ljava/lang/String;
 
     return-object p0
@@ -1278,7 +1276,7 @@
 .method static synthetic access$4202(Lorg/telegram/ui/ManageLinksActivity;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 162
+    .line 163
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->forcedAmountText:Ljava/lang/String;
 
     return-object p1
@@ -1287,7 +1285,7 @@
 .method static synthetic access$4300(Lorg/telegram/ui/ManageLinksActivity;)Ljava/lang/String;
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->getCurrentForcedAmount()Ljava/lang/String;
 
     move-result-object p0
@@ -1298,7 +1296,7 @@
 .method static synthetic access$4400(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->checkButtonEnabled(Lorg/telegram/ui/Components/LinkActionView;)V
 
     return-void
@@ -1307,7 +1305,7 @@
 .method static synthetic access$4500(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->getInputOptionsMenuItems(Lorg/telegram/ui/Components/LinkActionView;)Ljava/util/ArrayList;
 
     move-result-object p0
@@ -1318,7 +1316,7 @@
 .method static synthetic access$4600(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->commentRow:I
 
     return p0
@@ -1327,7 +1325,7 @@
 .method static synthetic access$4700(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
+    .line 163
     iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isPublic:Z
 
     return p0
@@ -1336,7 +1334,7 @@
 .method static synthetic access$4800(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$Chat;
     .locals 0
 
-    .line 162
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ManageLinksActivity;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     return-object p0
@@ -1345,7 +1343,7 @@
 .method static synthetic access$4900(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
+    .line 163
     iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->canEdit:Z
 
     return p0
@@ -1354,7 +1352,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
+    .line 163
     iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isDonationsType:Z
 
     return p0
@@ -1363,7 +1361,7 @@
 .method static synthetic access$5000(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->commentHeaderRow:I
 
     return p0
@@ -1372,7 +1370,7 @@
 .method static synthetic access$5100(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->selectTokenHeaderRow:I
 
     return p0
@@ -1381,7 +1379,7 @@
 .method static synthetic access$5200(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->inputHeaderRow:I
 
     return p0
@@ -1390,7 +1388,7 @@
 .method static synthetic access$5300(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationBalanceHeaderRow:I
 
     return p0
@@ -1399,7 +1397,7 @@
 .method static synthetic access$5400(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->permanentLinkHeaderRow:I
 
     return p0
@@ -1408,7 +1406,7 @@
 .method static synthetic access$5500(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedHeader:I
 
     return p0
@@ -1417,7 +1415,7 @@
 .method static synthetic access$5600(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->linksHeaderRow:I
 
     return p0
@@ -1426,7 +1424,7 @@
 .method static synthetic access$5700(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->adminsHeaderRow:I
 
     return p0
@@ -1435,7 +1433,7 @@
 .method static synthetic access$5800(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 162
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ManageLinksActivity;->invites:Ljava/util/ArrayList;
 
     return-object p0
@@ -1444,7 +1442,7 @@
 .method static synthetic access$5900(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 162
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedInvites:Ljava/util/ArrayList;
 
     return-object p0
@@ -1453,7 +1451,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
+    .line 163
     iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isDonationsTransferType:Z
 
     return p0
@@ -1462,7 +1460,7 @@
 .method static synthetic access$6000(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->invitesCount:I
 
     return p0
@@ -1471,7 +1469,7 @@
 .method static synthetic access$6100(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 162
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ManageLinksActivity;->admins:Ljava/util/ArrayList;
 
     return-object p0
@@ -1480,7 +1478,7 @@
 .method static synthetic access$6200(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->chooseRecipientOptionsRow:I
 
     return p0
@@ -1489,7 +1487,7 @@
 .method static synthetic access$6300(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->stakingPrognosisRow:I
 
     return p0
@@ -1498,7 +1496,7 @@
 .method static synthetic access$6400(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->stakingInfoRow:I
 
     return p0
@@ -1507,7 +1505,7 @@
 .method static synthetic access$6500(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->stakingActionsRow:I
 
     return p0
@@ -1516,7 +1514,7 @@
 .method static synthetic access$6600(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->stakingSafeWithdrawalRow:I
 
     return p0
@@ -1525,7 +1523,7 @@
 .method static synthetic access$6700(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->stakingWithdrawalFeeRow:I
 
     return p0
@@ -1534,7 +1532,7 @@
 .method static synthetic access$6800(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->stakingSelectProgrammeHeaderRow:I
 
     return p0
@@ -1543,7 +1541,7 @@
 .method static synthetic access$6900(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationTransactionsSeeMoreRow:I
 
     return p0
@@ -1552,8 +1550,10 @@
 .method static synthetic access$700(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
-    iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingDepositType:Z
+    .line 163
+    invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->isStakingTransactionScreenType()Z
+
+    move-result p0
 
     return p0
 .end method
@@ -1561,7 +1561,7 @@
 .method static synthetic access$7000(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationBalanceRow:I
 
     return p0
@@ -1570,7 +1570,7 @@
 .method static synthetic access$7100(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->helpRow:I
 
     return p0
@@ -1579,7 +1579,7 @@
 .method static synthetic access$7200(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->permanentLinkRow:I
 
     return p0
@@ -1588,7 +1588,7 @@
 .method static synthetic access$7300(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsDividerRow:I
 
     return p0
@@ -1597,7 +1597,7 @@
 .method static synthetic access$7400(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->dividerRow:I
 
     return p0
@@ -1606,7 +1606,7 @@
 .method static synthetic access$7500(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedDivider:I
 
     return p0
@@ -1615,7 +1615,7 @@
 .method static synthetic access$7600(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->revokeAllDivider:I
 
     return p0
@@ -1624,7 +1624,7 @@
 .method static synthetic access$7700(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->creatorDividerRow:I
 
     return p0
@@ -1633,7 +1633,7 @@
 .method static synthetic access$7800(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->adminsDividerRow:I
 
     return p0
@@ -1642,7 +1642,7 @@
 .method static synthetic access$7900(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->linksLoadingRow:I
 
     return p0
@@ -1651,8 +1651,8 @@
 .method static synthetic access$800(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
-    iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingWithdrawType:Z
+    .line 163
+    iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingCalculatorType:Z
 
     return p0
 .end method
@@ -1660,7 +1660,7 @@
 .method static synthetic access$8000(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->lastDivider:I
 
     return p0
@@ -1669,7 +1669,7 @@
 .method static synthetic access$8100(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->informationRow:I
 
     return p0
@@ -1678,7 +1678,7 @@
 .method static synthetic access$8200(Lorg/telegram/ui/ManageLinksActivity;)I
     .locals 0
 
-    .line 162
+    .line 163
     iget p0, p0, Lorg/telegram/ui/ManageLinksActivity;->createLinkHelpRow:I
 
     return p0
@@ -1687,7 +1687,7 @@
 .method static synthetic access$8300(Lorg/telegram/ui/ManageLinksActivity;Ljava/lang/String;)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->saveDonationsAddress(Ljava/lang/String;)V
 
     return-void
@@ -1696,7 +1696,7 @@
 .method static synthetic access$8400(Lorg/telegram/ui/ManageLinksActivity;Ljava/lang/String;)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->createCollection(Ljava/lang/String;)V
 
     return-void
@@ -1705,7 +1705,7 @@
 .method static synthetic access$8500(Lorg/telegram/ui/ManageLinksActivity;Ljava/lang/String;)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->transferAmount(Ljava/lang/String;)V
 
     return-void
@@ -1714,7 +1714,7 @@
 .method static synthetic access$8600(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->openSelectToken(Lorg/telegram/ui/Components/LinkActionView;)V
 
     return-void
@@ -1723,7 +1723,7 @@
 .method static synthetic access$8700(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->openChooseContact()V
 
     return-void
@@ -1732,7 +1732,7 @@
 .method static synthetic access$8800(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->openDonationAddressOnScanner()V
 
     return-void
@@ -1741,7 +1741,7 @@
 .method static synthetic access$8900(Lorg/telegram/ui/ManageLinksActivity;)Landroid/view/View;
     .locals 0
 
-    .line 162
+    .line 163
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p0
@@ -1750,8 +1750,8 @@
 .method static synthetic access$900(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
-    iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingCalculatorType:Z
+    .line 163
+    iget-boolean p0, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingDepositType:Z
 
     return p0
 .end method
@@ -1759,7 +1759,7 @@
 .method static synthetic access$9000(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->openAddAdminScreen()V
 
     return-void
@@ -1768,7 +1768,7 @@
 .method static synthetic access$9100(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->openScanQrCodeScreen()V
 
     return-void
@@ -1777,7 +1777,7 @@
 .method static synthetic access$9200(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->openTwitterSearchScreen()V
 
     return-void
@@ -1786,7 +1786,7 @@
 .method static synthetic access$9300(Lorg/telegram/ui/ManageLinksActivity;)Z
     .locals 0
 
-    .line 162
+    .line 163
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->isPaused:Z
 
     return p0
@@ -1795,7 +1795,7 @@
 .method static synthetic access$9400(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/ui/ManageLinksActivity$DiffCallback;
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->saveListState()Lorg/telegram/ui/ManageLinksActivity$DiffCallback;
 
     move-result-object p0
@@ -1806,7 +1806,7 @@
 .method static synthetic access$9500(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/ManageLinksActivity$DiffCallback;)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->updateRecyclerViewAnimated(Lorg/telegram/ui/ManageLinksActivity$DiffCallback;)V
 
     return-void
@@ -1815,7 +1815,7 @@
 .method static synthetic access$9600(Lorg/telegram/ui/ManageLinksActivity;Z)V
     .locals 0
 
-    .line 162
+    .line 163
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->updateRows(Z)V
 
     return-void
@@ -1824,12 +1824,12 @@
 .method private checkButtonEnabled(Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 2
 
-    .line 757
+    .line 758
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
     if-eqz v0, :cond_2
 
-    .line 758
+    .line 759
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;->getCurrentDonationsAddress()Ljava/lang/String;
 
     move-result-object v0
@@ -1878,7 +1878,7 @@
     :goto_1
     const/4 v1, 0x0
 
-    .line 759
+    .line 760
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/LinkActionView;->setEnabledActionButton(ZLjava/util/ArrayList;)V
 
     :cond_2
@@ -1888,17 +1888,17 @@
 .method private createCollection(Ljava/lang/String;)V
     .locals 1
 
-    .line 792
+    .line 793
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 793
+    .line 794
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->binanceReceivePresenter:Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
 
     if-eqz v0, :cond_0
 
-    .line 794
+    .line 795
     invoke-virtual {v0, p0, p1}, Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;->createCollection(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)V
 
     :cond_0
@@ -1908,7 +1908,7 @@
 .method private getCurrentForcedAmount()Ljava/lang/String;
     .locals 1
 
-    .line 934
+    .line 935
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->forcedAmountText:Ljava/lang/String;
 
     return-object v0
@@ -1927,17 +1927,17 @@
         }
     .end annotation
 
-    .line 648
+    .line 649
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 649
+    .line 650
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
     if-eqz v1, :cond_2
 
-    .line 651
+    .line 652
     invoke-virtual {v1}, Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;->getCurrentDonationsAddress()Ljava/lang/String;
 
     move-result-object v1
@@ -1952,7 +1952,7 @@
 
     if-nez v1, :cond_0
 
-    .line 652
+    .line 653
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1961,7 +1961,7 @@
 
     invoke-direct {v1, v4, v3, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 653
+    .line 654
     sget v4, Lorg/telegram/messenger/R$string;->GetQRCode:I
 
     const-string v5, "GetQRCode"
@@ -1974,17 +1974,17 @@
 
     invoke-virtual {v1, v4, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 654
+    .line 655
     new-instance v4, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda5;
 
     invoke-direct {v4, p0, p1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)V
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 658
+    .line 659
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 659
+    .line 660
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1993,7 +1993,7 @@
 
     invoke-direct {v1, v4, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 660
+    .line 661
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
     invoke-interface {v2}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -2014,7 +2014,7 @@
 
     const-string v2, "windowBackgroundWhiteRedText"
 
-    .line 661
+    .line 662
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v3
@@ -2025,19 +2025,19 @@
 
     invoke-virtual {v1, v3, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 662
+    .line 663
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda6;
 
     invoke-direct {v2, p0, p1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 666
+    .line 667
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 667
+    .line 668
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
@@ -2051,7 +2051,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 668
+    .line 669
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
     invoke-virtual {v1}, Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;->isCryptoAddressCreated()Z
@@ -2060,7 +2060,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 669
+    .line 670
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2069,7 +2069,7 @@
 
     invoke-direct {v1, v4, v3, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 670
+    .line 671
     iget-object v4, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
     invoke-interface {v4}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -2088,17 +2088,17 @@
 
     invoke-virtual {v1, v4, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 671
+    .line 672
     new-instance v4, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda7;
 
     invoke-direct {v4, p0, p1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)V
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 675
+    .line 676
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 677
+    .line 678
     :cond_1
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -2108,7 +2108,7 @@
 
     invoke-direct {v1, v4, v3, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 678
+    .line 679
     sget v2, Lorg/telegram/messenger/R$string;->AuthAnotherClientScan:I
 
     const-string v3, "AuthAnotherClientScan"
@@ -2121,14 +2121,14 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 679
+    .line 680
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda4;
 
     invoke-direct {v2, p0, p1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 683
+    .line 684
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_2
@@ -2139,12 +2139,12 @@
 .method private getStakingLastRow()I
     .locals 2
 
-    .line 928
+    .line 929
     iget-boolean v0, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingWithdrawType:Z
 
     if-eqz v0, :cond_0
 
-    .line 929
+    .line 930
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity;->stakingWithdrawalFeeRow:I
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->stakingActionsRow:I
@@ -2155,7 +2155,7 @@
 
     goto :goto_0
 
-    .line 930
+    .line 931
     :cond_0
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity;->feeRow:I
 
@@ -2172,7 +2172,7 @@
 .method private isForkScreenType()Z
     .locals 2
 
-    .line 938
+    .line 939
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity;->screenType:I
 
     const/4 v1, -0x1
@@ -2193,7 +2193,7 @@
 .method private isStakingTransactionScreenType()Z
     .locals 1
 
-    .line 942
+    .line 943
     iget-boolean v0, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingDepositType:Z
 
     if-nez v0, :cond_1
@@ -2808,7 +2808,7 @@
 
     if-nez p1, :cond_0
 
-    .line 3009
+    .line 3010
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->linkEditActivityCallback:Lorg/telegram/ui/LinkEditActivity$Callback;
 
     invoke-interface {p1, p2}, Lorg/telegram/ui/LinkEditActivity$Callback;->onLinkRemoved(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
@@ -2820,7 +2820,7 @@
 .method private synthetic lambda$deleteLink$37(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 3007
+    .line 3008
     new-instance p2, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda26;
 
     invoke-direct {p2, p0, p3, p1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda26;-><init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
@@ -2833,10 +2833,10 @@
 .method private synthetic lambda$getInputOptionsMenuItems$11(Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
     .locals 0
 
-    .line 655
+    .line 656
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkActionView;->dismissPopupWindow()V
 
-    .line 656
+    .line 657
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->showDonationAddressQrCode()V
 
     return-void
@@ -2845,10 +2845,10 @@
 .method private synthetic lambda$getInputOptionsMenuItems$12(Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
     .locals 0
 
-    .line 663
+    .line 664
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkActionView;->dismissPopupWindow()V
 
-    .line 664
+    .line 665
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
     invoke-virtual {p1}, Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;->unlinkWalletAddress()V
@@ -2859,10 +2859,10 @@
 .method private synthetic lambda$getInputOptionsMenuItems$13(Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
     .locals 0
 
-    .line 672
+    .line 673
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkActionView;->dismissPopupWindow()V
 
-    .line 673
+    .line 674
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
     invoke-virtual {p1}, Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;->linkCryptoWalletAddress()V
@@ -2873,10 +2873,10 @@
 .method private synthetic lambda$getInputOptionsMenuItems$14(Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
     .locals 0
 
-    .line 680
+    .line 681
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkActionView;->dismissPopupWindow()V
 
-    .line 681
+    .line 682
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->openScanQrCodeScreen()V
 
     return-void
@@ -2885,12 +2885,12 @@
 .method private synthetic lambda$getThemeDescriptions$40()V
     .locals 6
 
-    .line 3302
+    .line 3301
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz v0, :cond_f
 
-    .line 3303
+    .line 3302
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -2902,19 +2902,19 @@
     :goto_0
     if-ge v2, v0, :cond_f
 
-    .line 3305
+    .line 3304
     iget-object v3, p0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 3307
+    .line 3306
     instance-of v4, v3, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;
 
     if-eqz v4, :cond_0
 
-    .line 3308
+    .line 3307
     move-object v4, v3
 
     check-cast v4, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;
@@ -2923,13 +2923,13 @@
 
     goto/16 :goto_1
 
-    .line 3309
+    .line 3308
     :cond_0
     instance-of v4, v3, Lcom/iMe/ui/custom/StakingPrognosisView;
 
     if-eqz v4, :cond_1
 
-    .line 3310
+    .line 3309
     move-object v4, v3
 
     check-cast v4, Lcom/iMe/ui/custom/StakingPrognosisView;
@@ -2938,13 +2938,13 @@
 
     goto/16 :goto_1
 
-    .line 3311
+    .line 3310
     :cond_1
     instance-of v4, v3, Lcom/iMe/ui/custom/StakingPercentageView;
 
     if-eqz v4, :cond_2
 
-    .line 3312
+    .line 3311
     move-object v4, v3
 
     check-cast v4, Lcom/iMe/ui/custom/StakingPercentageView;
@@ -2953,13 +2953,13 @@
 
     goto/16 :goto_1
 
-    .line 3313
+    .line 3312
     :cond_2
     instance-of v4, v3, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;
 
     if-eqz v4, :cond_3
 
-    .line 3314
+    .line 3313
     move-object v4, v3
 
     check-cast v4, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;
@@ -2968,13 +2968,13 @@
 
     goto/16 :goto_1
 
-    .line 3315
+    .line 3314
     :cond_3
     instance-of v4, v3, Lcom/iMe/ui/custom/StakingSafeWithdrawalView;
 
     if-eqz v4, :cond_4
 
-    .line 3316
+    .line 3315
     move-object v4, v3
 
     check-cast v4, Lcom/iMe/ui/custom/StakingSafeWithdrawalView;
@@ -2983,13 +2983,13 @@
 
     goto/16 :goto_1
 
-    .line 3317
+    .line 3316
     :cond_4
     instance-of v4, v3, Lcom/iMe/ui/custom/StakingWithdrawalFeeView;
 
     if-eqz v4, :cond_5
 
-    .line 3318
+    .line 3317
     move-object v4, v3
 
     check-cast v4, Lcom/iMe/ui/custom/StakingWithdrawalFeeView;
@@ -2998,13 +2998,13 @@
 
     goto :goto_1
 
-    .line 3319
+    .line 3318
     :cond_5
     instance-of v4, v3, Lcom/iMe/ui/custom/FeeView;
 
     if-eqz v4, :cond_6
 
-    .line 3320
+    .line 3319
     move-object v4, v3
 
     check-cast v4, Lcom/iMe/ui/custom/FeeView;
@@ -3013,13 +3013,13 @@
 
     goto :goto_1
 
-    .line 3321
+    .line 3320
     :cond_6
     instance-of v4, v3, Lcom/iMe/fork/ui/view/HeaderCellWithNetworkViewWrapper;
 
     if-eqz v4, :cond_7
 
-    .line 3322
+    .line 3321
     move-object v4, v3
 
     check-cast v4, Lcom/iMe/fork/ui/view/HeaderCellWithNetworkViewWrapper;
@@ -3028,13 +3028,13 @@
 
     goto :goto_1
 
-    .line 3323
+    .line 3322
     :cond_7
     instance-of v4, v3, Lcom/iMe/fork/ui/view/HeaderCellWithImageViewButtonWrapper;
 
     if-eqz v4, :cond_8
 
-    .line 3324
+    .line 3323
     move-object v4, v3
 
     check-cast v4, Lcom/iMe/fork/ui/view/HeaderCellWithImageViewButtonWrapper;
@@ -3043,7 +3043,7 @@
 
     goto :goto_1
 
-    .line 3325
+    .line 3324
     :cond_8
     instance-of v4, v3, Lorg/telegram/ui/Components/LinkActionView;
 
@@ -3063,7 +3063,7 @@
 
     if-nez v5, :cond_9
 
-    .line 3326
+    .line 3325
     invoke-direct {p0, v4}, Lorg/telegram/ui/ManageLinksActivity;->getInputOptionsMenuItems(Lorg/telegram/ui/Components/LinkActionView;)Ljava/util/ArrayList;
 
     move-result-object v5
@@ -3072,13 +3072,13 @@
 
     goto :goto_1
 
-    .line 3327
+    .line 3326
     :cond_9
     instance-of v4, v3, Lcom/iMe/ui/custom/donation/DonationBalanceView;
 
     if-eqz v4, :cond_a
 
-    .line 3328
+    .line 3327
     move-object v4, v3
 
     check-cast v4, Lcom/iMe/ui/custom/donation/DonationBalanceView;
@@ -3087,13 +3087,13 @@
 
     goto :goto_1
 
-    .line 3329
+    .line 3328
     :cond_a
     instance-of v4, v3, Lcom/iMe/ui/custom/donation/DonationTransactionView;
 
     if-eqz v4, :cond_b
 
-    .line 3330
+    .line 3329
     move-object v4, v3
 
     check-cast v4, Lcom/iMe/ui/custom/donation/DonationTransactionView;
@@ -3102,13 +3102,13 @@
 
     goto :goto_1
 
-    .line 3331
+    .line 3330
     :cond_b
     instance-of v4, v3, Lcom/iMe/ui/custom/donation/DonationSeeMoreButton;
 
     if-eqz v4, :cond_c
 
-    .line 3332
+    .line 3331
     move-object v4, v3
 
     check-cast v4, Lcom/iMe/ui/custom/donation/DonationSeeMoreButton;
@@ -3117,27 +3117,27 @@
 
     goto :goto_1
 
-    .line 3334
+    .line 3333
     :cond_c
     instance-of v4, v3, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     if-eqz v4, :cond_d
 
-    .line 3335
+    .line 3334
     move-object v4, v3
 
     check-cast v4, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     invoke-virtual {v4, v1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->update(I)V
 
-    .line 3337
+    .line 3336
     :cond_d
     :goto_1
     instance-of v4, v3, Lorg/telegram/ui/Components/LinkActionView;
 
     if-eqz v4, :cond_e
 
-    .line 3338
+    .line 3337
     check-cast v3, Lorg/telegram/ui/Components/LinkActionView;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/LinkActionView;->updateColors()V
@@ -3147,13 +3147,13 @@
 
     goto/16 :goto_0
 
-    .line 3342
+    .line 3341
     :cond_f
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->inviteLinkBottomSheet:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
     if-eqz v0, :cond_10
 
-    .line 3343
+    .line 3342
     invoke-virtual {v0}, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->updateColors()V
 
     :cond_10
@@ -3921,7 +3921,7 @@
 .method private synthetic lambda$onRequestPermissionsResultFragment$10(Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 630
+    .line 631
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -3929,7 +3929,7 @@
 
     invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 631
+    .line 632
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3956,7 +3956,7 @@
 
     invoke-virtual {p1, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 632
+    .line 633
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p2
@@ -3970,7 +3970,7 @@
     :catch_0
     move-exception p1
 
-    .line 634
+    .line 635
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -3980,7 +3980,7 @@
 .method private synthetic lambda$onSuccessValidation$5(Lorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
     .locals 1
 
-    .line 500
+    .line 501
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/CheckBoxCell;->isChecked()Z
 
     move-result p2
@@ -3991,12 +3991,12 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
 
-    .line 501
+    .line 502
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz p2, :cond_0
 
-    .line 502
+    .line 503
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/CheckBoxCell;->isChecked()Z
 
     move-result p1
@@ -4010,12 +4010,12 @@
 .method private synthetic lambda$onSuccessValidation$6(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 510
+    .line 511
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz p1, :cond_0
 
-    .line 511
+    .line 512
     invoke-virtual {p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedAmount()Ljava/lang/String;
 
     move-result-object p2
@@ -4029,7 +4029,7 @@
 .method private synthetic lambda$openChooseContact$20(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;)V
     .locals 1
 
-    .line 877
+    .line 878
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -4038,28 +4038,28 @@
 
     return-void
 
-    .line 879
+    .line 880
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz v0, :cond_1
 
-    .line 880
+    .line 881
     invoke-virtual {v0, p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->setSelectedUser(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 881
+    .line 882
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->setSelectedTwitterUserAvatarUrl(Ljava/lang/String;)V
 
-    .line 882
+    .line 883
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     invoke-virtual {p1, p2}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->setSelectedAddress(Ljava/lang/String;)V
 
-    .line 883
+    .line 884
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget p2, p0, Lorg/telegram/ui/ManageLinksActivity;->chooseContactRow:I
@@ -4073,7 +4073,7 @@
 .method private synthetic lambda$openChooseContact$21(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/ui/ContactsActivity;)V
     .locals 0
 
-    .line 888
+    .line 889
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p2
@@ -4082,16 +4082,16 @@
 
     return-void
 
-    .line 890
+    .line 891
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity;->binanceReceivePresenter:Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
 
     if-eqz p2, :cond_1
 
-    .line 891
+    .line 892
     invoke-virtual {p2, p1}, Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;->setSelectedUser(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 893
+    .line 894
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
@@ -4105,7 +4105,7 @@
 .method private static synthetic lambda$openSelectToken$16(Lorg/telegram/ui/Components/LinkActionView;Landroid/graphics/Bitmap;)V
     .locals 0
 
-    .line 824
+    .line 825
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/LinkActionView;->setAvatar(Landroid/graphics/Bitmap;)V
 
     return-void
@@ -4114,7 +4114,7 @@
 .method private synthetic lambda$openSelectToken$17(Lorg/telegram/ui/Components/LinkActionView;Lcom/iMe/model/wallet/select/SelectableToken;)V
     .locals 5
 
-    .line 816
+    .line 817
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedAmount()Ljava/lang/String;
@@ -4127,12 +4127,12 @@
 
     if-nez v0, :cond_0
 
-    .line 817
+    .line 818
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->resetStateIfNeed()V
 
-    .line 819
+    .line 820
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
@@ -4170,12 +4170,12 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/LinkActionView;->setText(Ljava/lang/String;)V
 
-    .line 820
+    .line 821
     instance-of v0, p2, Lcom/iMe/model/wallet/select/SelectableToken$WithResLogo;
 
     if-eqz v0, :cond_1
 
-    .line 821
+    .line 822
     check-cast p2, Lcom/iMe/model/wallet/select/SelectableToken$WithResLogo;
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/select/SelectableToken$WithResLogo;->getLogoRes()I
@@ -4186,13 +4186,13 @@
 
     goto :goto_0
 
-    .line 822
+    .line 823
     :cond_1
     instance-of v0, p2, Lcom/iMe/model/wallet/select/SelectableToken$WithLogoUrl;
 
     if-eqz v0, :cond_2
 
-    .line 823
+    .line 824
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -4209,7 +4209,7 @@
 
     invoke-static {v0, p2, v1}, Lcom/iMe/utils/helper/GlideHelper;->loadBinanceImageAsBitmap(Landroid/content/Context;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
-    .line 827
+    .line 828
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
@@ -4224,7 +4224,7 @@
 .method private static synthetic lambda$openSelectToken$18(Lorg/telegram/ui/Components/LinkActionView;Landroid/graphics/Bitmap;)V
     .locals 0
 
-    .line 836
+    .line 837
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/LinkActionView;->setAvatar(Landroid/graphics/Bitmap;)V
 
     return-void
@@ -4233,7 +4233,7 @@
 .method private synthetic lambda$openSelectToken$19(Lorg/telegram/ui/Components/LinkActionView;Lcom/iMe/model/wallet/select/SelectableToken;)V
     .locals 5
 
-    .line 833
+    .line 834
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -4270,12 +4270,12 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/LinkActionView;->setText(Ljava/lang/String;)V
 
-    .line 834
+    .line 835
     instance-of v0, p2, Lcom/iMe/model/wallet/select/SelectableToken$WithLogoUrl$Binance;
 
     if-eqz v0, :cond_0
 
-    .line 835
+    .line 836
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -4299,7 +4299,7 @@
 .method private synthetic lambda$openTwitterSearchScreen$15(Lcom/iMe/model/twitter/TwitterUserItem;Ljava/lang/String;)V
     .locals 2
 
-    .line 716
+    .line 717
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -4308,7 +4308,7 @@
 
     return-void
 
-    .line 717
+    .line 718
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
@@ -4318,7 +4318,7 @@
 
     invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->setSelectedUser(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 718
+    .line 719
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     invoke-virtual {p1}, Lcom/iMe/model/twitter/TwitterUserItem;->getAvatarUrl()Ljava/lang/String;
@@ -4327,12 +4327,12 @@
 
     invoke-virtual {v0, p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->setSelectedTwitterUserAvatarUrl(Ljava/lang/String;)V
 
-    .line 719
+    .line 720
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     invoke-virtual {p1, p2}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->setSelectedAddress(Ljava/lang/String;)V
 
-    .line 720
+    .line 721
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget p2, p0, Lorg/telegram/ui/ManageLinksActivity;->chooseContactRow:I
@@ -4349,7 +4349,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 180
+    .line 181
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->screenType:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4380,7 +4380,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 195
+    .line 196
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->screenType:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4415,7 +4415,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 185
+    .line 186
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->screenType:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4446,7 +4446,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 200
+    .line 201
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     const/4 v2, 0x0
@@ -4467,7 +4467,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 190
+    .line 191
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->screenType:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4502,7 +4502,7 @@
 
     if-nez p1, :cond_6
 
-    .line 3028
+    .line 3029
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInviteReplaced;
 
     const/4 v0, 0x1
@@ -4511,31 +4511,31 @@
 
     if-eqz p1, :cond_3
 
-    .line 3029
+    .line 3030
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInviteReplaced;
 
-    .line 3030
+    .line 3031
     iget-boolean p1, p0, Lorg/telegram/ui/ManageLinksActivity;->isPublic:Z
 
     if-nez p1, :cond_0
 
-    .line 3031
+    .line 3032
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInviteReplaced;->new_invite:Lorg/telegram/tgnet/TLRPC$ExportedChatInvite;
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 3034
+    .line 3035
     :cond_0
     iput-boolean v0, p3, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->revoked:Z
 
-    .line 3035
+    .line 3036
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->saveListState()Lorg/telegram/ui/ManageLinksActivity$DiffCallback;
 
     move-result-object p1
 
-    .line 3036
+    .line 3037
     iget-boolean v0, p0, Lorg/telegram/ui/ManageLinksActivity;->isPublic:Z
 
     if-eqz v0, :cond_1
@@ -4558,12 +4558,12 @@
 
     if-nez v0, :cond_1
 
-    .line 3037
+    .line 3038
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->invites:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 3038
+    .line 3039
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->invites:Ljava/util/ArrayList;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInviteReplaced;->new_invite:Lorg/telegram/tgnet/TLRPC$ExportedChatInvite;
@@ -4574,43 +4574,43 @@
 
     goto :goto_0
 
-    .line 3039
+    .line 3040
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     if-eqz v0, :cond_2
 
-    .line 3040
+    .line 3041
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInviteReplaced;->new_invite:Lorg/telegram/tgnet/TLRPC$ExportedChatInvite;
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 3042
+    .line 3043
     :cond_2
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedInvites:Ljava/util/ArrayList;
 
     invoke-virtual {p2, v1, p3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 3043
+    .line 3044
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->updateRecyclerViewAnimated(Lorg/telegram/ui/ManageLinksActivity$DiffCallback;)V
 
     goto :goto_1
 
-    .line 3045
+    .line 3046
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->linkEditActivityCallback:Lorg/telegram/ui/LinkEditActivity$Callback;
 
     invoke-interface {p1, p3, p2}, Lorg/telegram/ui/LinkEditActivity$Callback;->onLinkEdited(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;Lorg/telegram/tgnet/TLObject;)V
 
-    .line 3046
+    .line 3047
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->info:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     if-eqz p1, :cond_5
 
-    .line 3047
+    .line 3048
     iget p2, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->invitesCount:I
 
     sub-int/2addr p2, v0
@@ -4619,10 +4619,10 @@
 
     if-gez p2, :cond_4
 
-    .line 3049
+    .line 3050
     iput v1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->invitesCount:I
 
-    .line 3051
+    .line 3052
     :cond_4
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -4636,7 +4636,7 @@
 
     invoke-virtual {p1, p2, p3, v0}, Lorg/telegram/messenger/MessagesStorage;->saveChatLinksCount(JI)V
 
-    .line 3054
+    .line 3055
     :cond_5
     :goto_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -4645,7 +4645,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 3055
+    .line 3056
     invoke-static {p0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
 
     move-result-object p1
@@ -4673,7 +4673,7 @@
 .method private synthetic lambda$revokeLink$39(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 3026
+    .line 3027
     new-instance v0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda24;
 
     invoke-direct {v0, p0, p3, p2, p1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda24;-><init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
@@ -4688,20 +4688,20 @@
 
     if-nez p1, :cond_3
 
-    .line 2578
+    .line 2579
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 2579
+    .line 2580
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->info:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     if-eqz p1, :cond_0
 
-    .line 2580
+    .line 2581
     iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->exported_invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 2583
+    .line 2584
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -4719,25 +4719,25 @@
     :cond_2
     const/4 p1, 0x1
 
-    .line 2592
+    .line 2593
     iput-boolean p1, p3, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->revoked:Z
 
-    .line 2593
+    .line 2594
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->saveListState()Lorg/telegram/ui/ManageLinksActivity$DiffCallback;
 
     move-result-object p1
 
-    .line 2594
+    .line 2595
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedInvites:Ljava/util/ArrayList;
 
     const/4 v0, 0x0
 
     invoke-virtual {p2, v0, p3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 2595
+    .line 2596
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->updateRecyclerViewAnimated(Lorg/telegram/ui/ManageLinksActivity$DiffCallback;)V
 
-    .line 2596
+    .line 2597
     invoke-static {p0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
 
     move-result-object p1
@@ -4765,7 +4765,7 @@
 .method private synthetic lambda$revokePermanent$35(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 2576
+    .line 2577
     new-instance v0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda25;
 
     invoke-direct {v0, p0, p3, p2, p1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda25;-><init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
@@ -4778,21 +4778,21 @@
 .method private synthetic lambda$setupScreenState$7()V
     .locals 2
 
-    .line 527
+    .line 528
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->feeRow:I
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 528
+    .line 529
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->inputRow:I
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 529
+    .line 530
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->commentRow:I
@@ -4805,7 +4805,7 @@
 .method private static synthetic lambda$showChooseNetworkDialog$9(Lcom/iMe/fork/utils/Callbacks$Callback1;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
     .locals 0
 
-    .line 589
+    .line 590
     invoke-interface {p0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     return-void
@@ -4820,7 +4820,7 @@
 .method private synthetic lambda$showLevelRequiredDialog$8()V
     .locals 2
 
-    .line 560
+    .line 561
     sget-object v0, Lcom/iMe/model/common/ScreenType;->FULLSCREEN:Lcom/iMe/model/common/ScreenType;
 
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->LIME:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
@@ -5143,24 +5143,24 @@
 .method public static newInstanceForBinancePay(Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;)Lorg/telegram/ui/ManageLinksActivity;
     .locals 2
 
-    .line 277
+    .line 278
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     const-string v1, "binance_pay_args"
 
-    .line 278
+    .line 279
     invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 279
+    .line 280
     sget p0, Lorg/telegram/ui/ManageLinksActivity;->BINANCE_PAY_CREATE_COLLECTION_SCREEN_TYPE:I
 
     const-string v1, "screen_type"
 
     invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 280
+    .line 281
     new-instance p0, Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/ManageLinksActivity;-><init>(Landroid/os/Bundle;)V
@@ -5171,24 +5171,24 @@
 .method public static newInstanceForBinanceReplenish(Lcom/iMe/model/wallet/transfer/TransferScreenArgs;)Lorg/telegram/ui/ManageLinksActivity;
     .locals 2
 
-    .line 305
+    .line 306
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     const-string v1, "wallet_transfer_args"
 
-    .line 306
+    .line 307
     invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 307
+    .line 308
     sget p0, Lorg/telegram/ui/ManageLinksActivity;->BINANCE_REPLENISH_SCREEN_TYPE:I
 
     const-string v1, "screen_type"
 
     invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 308
+    .line 309
     new-instance p0, Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/ManageLinksActivity;-><init>(Landroid/os/Bundle;)V
@@ -5199,24 +5199,24 @@
 .method public static newInstanceForDonationTransfer(Lcom/iMe/model/wallet/transfer/TransferScreenArgs;)Lorg/telegram/ui/ManageLinksActivity;
     .locals 2
 
-    .line 291
+    .line 292
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     const-string v1, "wallet_transfer_args"
 
-    .line 292
+    .line 293
     invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 293
+    .line 294
     sget p0, Lorg/telegram/ui/ManageLinksActivity;->WALLET_TRANSFER_DONATIONS_SCREEN_TYPE:I
 
     const-string v1, "screen_type"
 
     invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 294
+    .line 295
     new-instance p0, Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/ManageLinksActivity;-><init>(Landroid/os/Bundle;)V
@@ -5227,7 +5227,7 @@
 .method public static newInstanceForDonations(J)Lorg/telegram/ui/ManageLinksActivity;
     .locals 7
 
-    .line 298
+    .line 299
     new-instance v6, Lorg/telegram/ui/ManageLinksActivity;
 
     const-wide/16 v3, 0x0
@@ -5240,14 +5240,14 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/ManageLinksActivity;-><init>(JJI)V
 
-    .line 299
+    .line 300
     sget p0, Lorg/telegram/ui/ManageLinksActivity;->CHANNEL_ADMIN_DONATIONS:I
 
     iput p0, v6, Lorg/telegram/ui/ManageLinksActivity;->screenType:I
 
     const/4 p0, 0x1
 
-    .line 300
+    .line 301
     iput-boolean p0, v6, Lorg/telegram/ui/ManageLinksActivity;->isDonationsType:Z
 
     return-object v6
@@ -5256,19 +5256,19 @@
 .method private static newInstanceForStaking(Lcom/iMe/model/staking/StakingDetailsItem;Ljava/lang/Double;I)Lorg/telegram/ui/ManageLinksActivity;
     .locals 2
 
-    .line 328
+    .line 329
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     const-string v1, "staking_args"
 
-    .line 329
+    .line 330
     invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     if-eqz p1, :cond_0
 
-    .line 331
+    .line 332
     invoke-virtual {p1}, Ljava/lang/Double;->doubleValue()D
 
     move-result-wide p0
@@ -5280,10 +5280,10 @@
     :cond_0
     const-string p0, "screen_type"
 
-    .line 333
+    .line 334
     invoke-virtual {v0, p0, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 334
+    .line 335
     new-instance p0, Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/ManageLinksActivity;-><init>(Landroid/os/Bundle;)V
@@ -5294,7 +5294,7 @@
 .method public static newInstanceForStakingCalculator(Lcom/iMe/model/staking/StakingDetailsItem;)Lorg/telegram/ui/ManageLinksActivity;
     .locals 2
 
-    .line 324
+    .line 325
     sget v0, Lorg/telegram/ui/ManageLinksActivity;->STAKING_CALCULATOR_SCREEN_TYPE:I
 
     const/4 v1, 0x0
@@ -5309,7 +5309,7 @@
 .method public static newInstanceForStakingProfit(Lcom/iMe/model/staking/StakingDetailsItem;)Lorg/telegram/ui/ManageLinksActivity;
     .locals 2
 
-    .line 316
+    .line 317
     sget v0, Lorg/telegram/ui/ManageLinksActivity;->STAKING_PROFIT_SCREEN_TYPE:I
 
     const/4 v1, 0x0
@@ -5324,7 +5324,7 @@
 .method public static newInstanceForStakingReplenish(Lcom/iMe/model/staking/StakingDetailsItem;Ljava/lang/Double;)Lorg/telegram/ui/ManageLinksActivity;
     .locals 1
 
-    .line 312
+    .line 313
     sget v0, Lorg/telegram/ui/ManageLinksActivity;->STAKING_REPLENISH_SCREEN_TYPE:I
 
     invoke-static {p0, p1, v0}, Lorg/telegram/ui/ManageLinksActivity;->newInstanceForStaking(Lcom/iMe/model/staking/StakingDetailsItem;Ljava/lang/Double;I)Lorg/telegram/ui/ManageLinksActivity;
@@ -5337,7 +5337,7 @@
 .method public static newInstanceForStakingWithdraw(Lcom/iMe/model/staking/StakingDetailsItem;)Lorg/telegram/ui/ManageLinksActivity;
     .locals 2
 
-    .line 320
+    .line 321
     sget v0, Lorg/telegram/ui/ManageLinksActivity;->STAKING_WITHDRAW_SCREEN_TYPE:I
 
     const/4 v1, 0x0
@@ -5352,17 +5352,17 @@
 .method public static newInstanceForType(I)Lorg/telegram/ui/ManageLinksActivity;
     .locals 2
 
-    .line 271
+    .line 272
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     const-string v1, "screen_type"
 
-    .line 272
+    .line 273
     invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 273
+    .line 274
     new-instance p0, Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/ManageLinksActivity;-><init>(Landroid/os/Bundle;)V
@@ -5373,24 +5373,24 @@
 .method public static newInstanceForWalletTransfer(Lcom/iMe/model/wallet/transfer/TransferScreenArgs;)Lorg/telegram/ui/ManageLinksActivity;
     .locals 2
 
-    .line 284
+    .line 285
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     const-string v1, "wallet_transfer_args"
 
-    .line 285
+    .line 286
     invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 286
+    .line 287
     sget p0, Lorg/telegram/ui/ManageLinksActivity;->WALLET_TRANSFER_SCREEN_TYPE:I
 
     const-string v1, "screen_type"
 
     invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 287
+    .line 288
     new-instance p0, Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/ManageLinksActivity;-><init>(Landroid/os/Bundle;)V
@@ -5401,7 +5401,7 @@
 .method private openAddAdminScreen()V
     .locals 14
 
-    .line 764
+    .line 765
     new-instance v13, Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {}, Lcom/iMe/storage/common/AppConfiguration$Wallet;->getWalletBotId()J
@@ -5430,14 +5430,14 @@
 
     invoke-direct/range {v0 .. v12}, Lorg/telegram/ui/ChatRightsEditActivity;-><init>(JJLorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;IZZLjava/lang/String;)V
 
-    .line 765
+    .line 766
     new-instance v0, Lorg/telegram/ui/ManageLinksActivity$3;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ManageLinksActivity$3;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
 
     invoke-virtual {v13, v0}, Lorg/telegram/ui/ChatRightsEditActivity;->setDelegate(Lorg/telegram/ui/ChatRightsEditActivity$ChatRightsEditActivityDelegate;)V
 
-    .line 783
+    .line 784
     invoke-virtual {p0, v13}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -5446,17 +5446,17 @@
 .method private openChooseContact()V
     .locals 4
 
-    .line 851
+    .line 852
     iget-boolean v0, p0, Lorg/telegram/ui/ManageLinksActivity;->isBinanceReplenishType:Z
 
     if-eqz v0, :cond_2
 
-    .line 852
+    .line 853
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz v0, :cond_1
 
-    .line 853
+    .line 854
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedAddress()Ljava/lang/String;
 
     move-result-object v0
@@ -5467,7 +5467,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 854
+    .line 855
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -5484,7 +5484,7 @@
 
     goto :goto_0
 
-    .line 855
+    .line 856
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
@@ -5500,14 +5500,14 @@
 
     move-result-object v0
 
-    .line 853
+    .line 854
     :goto_0
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
 
     :cond_1
     return-void
 
-    .line 861
+    .line 862
     :cond_2
     new-instance v0, Landroid/os/Bundle;
 
@@ -5517,42 +5517,42 @@
 
     const/4 v2, 0x1
 
-    .line 862
+    .line 863
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     const-string v1, "returnAsResult"
 
-    .line 863
+    .line 864
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     const-string v1, "allowSelf"
 
     const/4 v3, 0x0
 
-    .line 864
+    .line 865
     invoke-virtual {v0, v1, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     const-string v1, "allowBots"
 
-    .line 865
+    .line 866
     invoke-virtual {v0, v1, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 866
+    .line 867
     iget-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isWalletTransferType:Z
 
     if-eqz v1, :cond_3
 
     const-string v1, "is_choose_wallet_transfer_recipient"
 
-    .line 867
+    .line 868
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 868
+    .line 869
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz v1, :cond_4
 
-    .line 869
+    .line 870
     invoke-virtual {v1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-result-object v1
@@ -5567,7 +5567,7 @@
 
     goto :goto_1
 
-    .line 871
+    .line 872
     :cond_3
     iget-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isBinancePayCreateCollectionType:Z
 
@@ -5575,22 +5575,22 @@
 
     const-string v1, "onlyUsers"
 
-    .line 872
+    .line 873
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 874
+    .line 875
     :cond_4
     :goto_1
     new-instance v1, Lorg/telegram/ui/ContactsActivity;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/ContactsActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 875
+    .line 876
     iget-boolean v0, p0, Lorg/telegram/ui/ManageLinksActivity;->isWalletTransferType:Z
 
     if-eqz v0, :cond_5
 
-    .line 876
+    .line 877
     new-instance v0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda14;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
@@ -5599,20 +5599,20 @@
 
     goto :goto_2
 
-    .line 886
+    .line 887
     :cond_5
     iget-boolean v0, p0, Lorg/telegram/ui/ManageLinksActivity;->isBinancePayCreateCollectionType:Z
 
     if-eqz v0, :cond_6
 
-    .line 887
+    .line 888
     new-instance v0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda41;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda41;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ContactsActivity;->setDelegate(Lorg/telegram/ui/ContactsActivity$ContactsActivityDelegate;)V
 
-    .line 897
+    .line 898
     :cond_6
     :goto_2
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
@@ -5623,7 +5623,7 @@
 .method private openDonationAddressOnScanner()V
     .locals 4
 
-    .line 845
+    .line 846
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
     if-eqz v0, :cond_0
@@ -5638,7 +5638,7 @@
 
     if-nez v0, :cond_0
 
-    .line 846
+    .line 847
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -5666,7 +5666,7 @@
 .method private openScanQrCodeScreen()V
     .locals 3
 
-    .line 690
+    .line 691
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
@@ -5685,7 +5685,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 691
+    .line 692
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -5700,7 +5700,7 @@
 
     return-void
 
-    .line 694
+    .line 695
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->showCameraScanner()V
 
@@ -5710,7 +5710,7 @@
 .method private openSelectToken(Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 2
 
-    .line 813
+    .line 814
     iget-boolean v0, p0, Lorg/telegram/ui/ManageLinksActivity;->isWalletTransferType:Z
 
     if-nez v0, :cond_1
@@ -5721,18 +5721,18 @@
 
     goto :goto_0
 
-    .line 830
+    .line 831
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/ManageLinksActivity;->isBinancePayCreateCollectionType:Z
 
     if-eqz v0, :cond_2
 
-    .line 831
+    .line 832
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->binanceReceivePresenter:Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
 
     if-eqz v0, :cond_2
 
-    .line 832
+    .line 833
     new-instance v1, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda11;
 
     invoke-direct {v1, p0, p1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)V
@@ -5741,14 +5741,14 @@
 
     goto :goto_1
 
-    .line 814
+    .line 815
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz v0, :cond_2
 
-    .line 815
+    .line 816
     new-instance v1, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda12;
 
     invoke-direct {v1, p0, p1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)V
@@ -5763,12 +5763,12 @@
 .method private openTwitterSearchScreen()V
     .locals 2
 
-    .line 711
+    .line 712
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz v0, :cond_0
 
-    .line 714
+    .line 715
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0
@@ -5781,12 +5781,12 @@
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
 
-    .line 713
+    .line 714
     invoke-static {v0, v1}, Lcom/iMe/ui/twitter/search/TwitterSearchFragment;->newInstance(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lcom/iMe/fork/utils/Callbacks$Callback2;)Lcom/iMe/ui/twitter/search/TwitterSearchFragment;
 
     move-result-object v0
 
-    .line 712
+    .line 713
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     :cond_0
@@ -5798,12 +5798,12 @@
 
     const/4 v0, -0x1
 
-    .line 787
+    .line 788
     iput v0, p0, Lorg/telegram/ui/ManageLinksActivity;->permanentLinkRow:I
 
     iput v0, p0, Lorg/telegram/ui/ManageLinksActivity;->permanentLinkHeaderRow:I
 
-    .line 788
+    .line 789
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity;->rowCount:I
 
     add-int/lit8 v0, v0, -0x2
@@ -5816,7 +5816,7 @@
 .method private revokePermanent()V
     .locals 4
 
-    .line 2569
+    .line 2570
     iget-wide v0, p0, Lorg/telegram/ui/ManageLinksActivity;->adminId:J
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
@@ -5833,12 +5833,12 @@
 
     if-nez v0, :cond_0
 
-    .line 2570
+    .line 2571
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_exportChatInvite;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_exportChatInvite;-><init>()V
 
-    .line 2571
+    .line 2572
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -5855,23 +5855,23 @@
 
     const/4 v1, 0x1
 
-    .line 2572
+    .line 2573
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_exportChatInvite;->legacy_revoke_permanent:Z
 
-    .line 2573
+    .line 2574
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     const/4 v2, 0x0
 
-    .line 2574
+    .line 2575
     iput-object v2, p0, Lorg/telegram/ui/ManageLinksActivity;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 2575
+    .line 2576
     iget-object v3, p0, Lorg/telegram/ui/ManageLinksActivity;->info:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     iput-object v2, v3, Lorg/telegram/tgnet/TLRPC$ChatFull;->exported_invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 2576
+    .line 2577
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v2
@@ -5884,12 +5884,12 @@
 
     move-result v0
 
-    .line 2600
+    .line 2601
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->updateVisibleRows(Lorg/telegram/ui/Components/RecyclerListView;)V
 
-    .line 2601
+    .line 2602
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
@@ -5900,7 +5900,7 @@
 
     goto :goto_0
 
-    .line 2603
+    .line 2604
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
@@ -5913,17 +5913,17 @@
 .method private saveDonationsAddress(Ljava/lang/String;)V
     .locals 1
 
-    .line 799
+    .line 800
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 800
+    .line 801
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
     if-eqz v0, :cond_0
 
-    .line 801
+    .line 802
     invoke-virtual {v0, p1}, Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;->linkAddress(Ljava/lang/String;)V
 
     :cond_0
@@ -5933,93 +5933,93 @@
 .method private saveListState()Lorg/telegram/ui/ManageLinksActivity$DiffCallback;
     .locals 3
 
-    .line 3256
+    .line 3255
     new-instance v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p0, v1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;-><init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/ManageLinksActivity$1;)V
 
-    .line 3257
+    .line 3256
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldPositionToItem:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->fillPositions(Landroid/util/SparseIntArray;)V
 
-    .line 3259
+    .line 3258
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->donationTransactionsStartRow:I
 
     iput v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldDonationTransactionsStartRow:I
 
-    .line 3260
+    .line 3259
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->donationTransactionsEndRow:I
 
     iput v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldDonationTransactionsEndRow:I
 
-    .line 3261
+    .line 3260
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldDonationsTransactions:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 3262
+    .line 3261
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldDonationsTransactions:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsTransactions:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 3264
+    .line 3263
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->linksStartRow:I
 
     iput v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldLinksStartRow:I
 
-    .line 3265
+    .line 3264
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->linksEndRow:I
 
     iput v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldLinksEndRow:I
 
-    .line 3266
+    .line 3265
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedLinksStartRow:I
 
     iput v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldRevokedLinksStartRow:I
 
-    .line 3267
+    .line 3266
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedLinksEndRow:I
 
     iput v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldRevokedLinksEndRow:I
 
-    .line 3268
+    .line 3267
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->adminsStartRow:I
 
     iput v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldAdminsStartRow:I
 
-    .line 3269
+    .line 3268
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->adminsEndRow:I
 
     iput v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldAdminsEndRow:I
 
-    .line 3270
+    .line 3269
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->rowCount:I
 
     iput v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldRowCount:I
 
-    .line 3271
+    .line 3270
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldLinks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 3272
+    .line 3271
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldLinks:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity;->invites:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 3274
+    .line 3273
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldRevokedLinks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 3275
+    .line 3274
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldRevokedLinks:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity;->revokedInvites:Ljava/util/ArrayList;
@@ -6032,7 +6032,7 @@
 .method private setupStakingReplenishmentInfoMenu()V
     .locals 5
 
-    .line 913
+    .line 914
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
@@ -6047,7 +6047,7 @@
 
     move-result-object v0
 
-    .line 914
+    .line 915
     sget v1, Lorg/telegram/messenger/R$string;->AccDescrMoreOptions:I
 
     const-string v2, "AccDescrMoreOptions"
@@ -6058,14 +6058,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 915
+    .line 916
     sget v1, Lcom/iMe/common/IdFabric$Menu;->STAKING_CONTRACT:I
 
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_web_26:I
 
     iget-object v3, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 918
+    .line 919
     invoke-interface {v3}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -6078,17 +6078,17 @@
 
     move-result-object v3
 
-    .line 915
+    .line 916
     invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 920
+    .line 921
     sget v1, Lcom/iMe/common/IdFabric$Menu;->STAKING_CONDITIONS:I
 
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_description_26:I
 
     iget-object v3, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 923
+    .line 924
     invoke-interface {v3}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -6101,7 +6101,7 @@
 
     move-result-object v3
 
-    .line 920
+    .line 921
     invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     return-void
@@ -6110,7 +6110,7 @@
 .method private showCameraScanner()V
     .locals 2
 
-    .line 698
+    .line 699
     new-instance v0, Lorg/telegram/ui/ManageLinksActivity$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ManageLinksActivity$1;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
@@ -6125,24 +6125,24 @@
 .method private showCommonInfoAlert(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
 
-    .line 901
+    .line 902
     sget v0, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string v1, "OK"
 
-    .line 906
+    .line 907
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
     sget-object v1, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda17;->INSTANCE:Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda17;
 
-    .line 902
+    .line 903
     invoke-static {p0, p1, p2, v0, v1}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->createInfoBottomSheetDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object p1
 
-    .line 901
+    .line 902
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
@@ -6151,17 +6151,17 @@
 .method private showDonationAddressQrCode()V
     .locals 9
 
-    .line 728
+    .line 729
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;->getCurrentDonationsAddress()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 729
+    .line 730
     new-instance v8, Lorg/telegram/ui/ManageLinksActivity$2;
 
-    .line 730
+    .line 731
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -6180,10 +6180,10 @@
 
     invoke-direct/range {v1 .. v7}, Lorg/telegram/ui/ManageLinksActivity$2;-><init>(Lorg/telegram/ui/ManageLinksActivity;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 746
+    .line 747
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 747
+    .line 748
     invoke-interface {v1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -6198,7 +6198,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 748
+    .line 749
     invoke-interface {v1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -6219,10 +6219,10 @@
 
     move-object v4, v0
 
-    .line 746
+    .line 747
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->setupWalletTypeReceive(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
-    .line 753
+    .line 754
     invoke-virtual {p0, v8}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
@@ -6231,17 +6231,17 @@
 .method private transferAmount(Ljava/lang/String;)V
     .locals 1
 
-    .line 806
+    .line 807
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 807
+    .line 808
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz v0, :cond_0
 
-    .line 808
+    .line 809
     invoke-virtual {v0, p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->validateSend(Ljava/lang/String;)V
 
     :cond_0
@@ -6251,7 +6251,7 @@
 .method private updateRecyclerViewAnimated(Lorg/telegram/ui/ManageLinksActivity$DiffCallback;)V
     .locals 1
 
-    .line 3118
+    .line 3119
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->isPaused:Z
 
     if-nez v0, :cond_1
@@ -6269,15 +6269,15 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 3122
+    .line 3123
     invoke-direct {p0, v0}, Lorg/telegram/ui/ManageLinksActivity;->updateRows(Z)V
 
-    .line 3123
+    .line 3124
     iget-object v0, p1, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->newPositionToItem:Landroid/util/SparseIntArray;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->fillPositions(Landroid/util/SparseIntArray;)V
 
-    .line 3124
+    .line 3125
     invoke-static {p1}, Landroidx/recyclerview/widget/DiffUtil;->calculateDiff(Landroidx/recyclerview/widget/DiffUtil$Callback;)Landroidx/recyclerview/widget/DiffUtil$DiffResult;
 
     move-result-object p1
@@ -6286,7 +6286,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->dispatchUpdatesTo(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 3125
+    .line 3126
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->updateVisibleRows(Lorg/telegram/ui/Components/RecyclerListView;)V
@@ -6297,7 +6297,7 @@
     :goto_0
     const/4 p1, 0x1
 
-    .line 3119
+    .line 3120
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->updateRows(Z)V
 
     return-void
@@ -7991,17 +7991,17 @@
 .method public deleteLink(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
     .locals 4
 
-    .line 3004
+    .line 3005
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_deleteExportedChatInvite;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_deleteExportedChatInvite;-><init>()V
 
-    .line 3005
+    .line 3006
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->link:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_deleteExportedChatInvite;->link:Ljava/lang/String;
 
-    .line 3006
+    .line 3007
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -8016,7 +8016,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_deleteExportedChatInvite;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 3007
+    .line 3008
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
@@ -8033,12 +8033,12 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 343
+    .line 344
     sget p3, Lorg/telegram/messenger/NotificationCenter;->didUpdateConnectionState:I
 
     if-ne p1, p3, :cond_0
 
-    .line 344
+    .line 345
     iget-boolean p1, p0, Lorg/telegram/ui/ManageLinksActivity;->isDonationsType:Z
 
     if-eqz p1, :cond_0
@@ -8047,7 +8047,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 345
+    .line 346
     invoke-static {p2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p1
@@ -8056,7 +8056,7 @@
 
     move-result p1
 
-    .line 346
+    .line 347
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
     invoke-virtual {p2, p1}, Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;->checkLoadedDataOnConnectionChanged(I)V
@@ -8068,7 +8068,7 @@
 .method public editLink(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
     .locals 4
 
-    .line 3015
+    .line 3016
     new-instance v0, Lorg/telegram/ui/LinkEditActivity;
 
     iget-wide v1, p0, Lorg/telegram/ui/ManageLinksActivity;->currentChatId:J
@@ -8077,15 +8077,15 @@
 
     invoke-direct {v0, v3, v1, v2}, Lorg/telegram/ui/LinkEditActivity;-><init>(IJ)V
 
-    .line 3016
+    .line 3017
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->linkEditActivityCallback:Lorg/telegram/ui/LinkEditActivity$Callback;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/LinkEditActivity;->setCallback(Lorg/telegram/ui/LinkEditActivity$Callback;)V
 
-    .line 3017
+    .line 3018
     invoke-virtual {v0, p1}, Lorg/telegram/ui/LinkEditActivity;->setInviteToEdit(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
 
-    .line 3018
+    .line 3019
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -8094,7 +8094,7 @@
 .method public fixDate(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
     .locals 4
 
-    .line 3281
+    .line 3280
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->expire_date:I
 
     const/4 v1, 0x1
@@ -8103,7 +8103,7 @@
 
     if-lez v0, :cond_1
 
-    .line 3282
+    .line 3281
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v0
@@ -8126,13 +8126,13 @@
 
     goto :goto_2
 
-    .line 3283
+    .line 3282
     :cond_1
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->usage_limit:I
 
     if-lez v0, :cond_3
 
-    .line 3284
+    .line 3283
     iget v3, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->usage:I
 
     if-lt v3, v0, :cond_2
@@ -8163,12 +8163,12 @@
 
     move-object/from16 v0, p0
 
-    .line 3290
+    .line 3289
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3292
+    .line 3291
     new-instance v11, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8205,7 +8205,7 @@
 
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3293
+    .line 3292
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8234,7 +8234,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3294
+    .line 3293
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8257,7 +8257,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3295
+    .line 3294
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8280,7 +8280,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3296
+    .line 3295
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8301,7 +8301,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3297
+    .line 3296
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8324,7 +8324,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3298
+    .line 3297
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8345,12 +8345,12 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3301
+    .line 3300
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda38;
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda38;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
 
-    .line 3347
+    .line 3346
     new-instance v11, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8391,7 +8391,7 @@
 
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3348
+    .line 3347
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -8412,7 +8412,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3349
+    .line 3348
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -8433,7 +8433,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3351
+    .line 3350
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -8448,7 +8448,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3352
+    .line 3351
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8463,7 +8463,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3353
+    .line 3352
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -8478,7 +8478,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3354
+    .line 3353
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -8493,7 +8493,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3355
+    .line 3354
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -8508,7 +8508,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3357
+    .line 3356
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8523,7 +8523,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3359
+    .line 3358
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8548,7 +8548,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3361
+    .line 3360
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8579,7 +8579,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3362
+    .line 3361
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8608,7 +8608,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3364
+    .line 3363
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8643,7 +8643,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3365
+    .line 3364
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8672,7 +8672,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3366
+    .line 3365
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8699,7 +8699,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3367
+    .line 3366
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8726,7 +8726,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3368
+    .line 3367
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const/4 v15, 0x0
@@ -8745,7 +8745,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3369
+    .line 3368
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v21, "avatar_backgroundOrange"
@@ -8756,7 +8756,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3370
+    .line 3369
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v21, "avatar_backgroundViolet"
@@ -8767,7 +8767,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3371
+    .line 3370
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v21, "avatar_backgroundGreen"
@@ -8778,7 +8778,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3372
+    .line 3371
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v21, "avatar_backgroundCyan"
@@ -8789,7 +8789,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3373
+    .line 3372
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v21, "avatar_backgroundBlue"
@@ -8800,7 +8800,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3374
+    .line 3373
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v21, "avatar_backgroundPink"
@@ -8811,7 +8811,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3376
+    .line 3375
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8844,7 +8844,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3378
+    .line 3377
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8875,7 +8875,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3379
+    .line 3378
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8908,7 +8908,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3380
+    .line 3379
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8935,7 +8935,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3381
+    .line 3380
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8964,7 +8964,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3383
+    .line 3382
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8991,7 +8991,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3384
+    .line 3383
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -9020,7 +9020,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3385
+    .line 3384
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -9045,7 +9045,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3386
+    .line 3385
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -9074,7 +9074,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3388
+    .line 3387
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -9101,7 +9101,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3389
+    .line 3388
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -9130,7 +9130,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3390
+    .line 3389
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ManageLinksActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -9173,7 +9173,7 @@
 .method public onDonationsAddressLoaded(Ljava/lang/String;)V
     .locals 1
 
-    .line 595
+    .line 596
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity;->inputRow:I
@@ -9194,7 +9194,7 @@
         }
     .end annotation
 
-    .line 600
+    .line 601
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
@@ -9203,7 +9203,7 @@
 
     const/4 p1, 0x1
 
-    .line 601
+    .line 602
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity;->updateRows(Z)V
 
     return-void
@@ -9212,7 +9212,7 @@
 .method public onFragmentCreate()Z
     .locals 5
 
-    .line 358
+    .line 359
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->arguments:Landroid/os/Bundle;
 
     if-eqz v0, :cond_b
@@ -9221,14 +9221,14 @@
 
     const-string v2, "screen_type"
 
-    .line 359
+    .line 360
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/ManageLinksActivity;->screenType:I
 
-    .line 360
+    .line 361
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->arguments:Landroid/os/Bundle;
 
     const-string v1, "wallet_transfer_args"
@@ -9239,7 +9239,7 @@
 
     check-cast v0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
 
-    .line 361
+    .line 362
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->arguments:Landroid/os/Bundle;
 
     const-string v2, "binance_pay_args"
@@ -9250,7 +9250,7 @@
 
     check-cast v1, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
 
-    .line 362
+    .line 363
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->arguments:Landroid/os/Bundle;
 
     const-string v3, "staking_args"
@@ -9261,7 +9261,7 @@
 
     check-cast v2, Lcom/iMe/model/staking/StakingDetailsItem;
 
-    .line 363
+    .line 364
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->arguments:Landroid/os/Bundle;
 
     const-string v4, "staking_preset_amount"
@@ -9278,7 +9278,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 365
+    .line 366
     iput-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->transferScreenArgs:Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
 
     goto :goto_0
@@ -9286,7 +9286,7 @@
     :cond_0
     if-eqz v1, :cond_1
 
-    .line 367
+    .line 368
     iput-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->binancePayScreenArgs:Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
 
     goto :goto_0
@@ -9294,10 +9294,10 @@
     :cond_1
     if-eqz v2, :cond_2
 
-    .line 369
+    .line 370
     iput-object v2, p0, Lorg/telegram/ui/ManageLinksActivity;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
-    .line 371
+    .line 372
     :cond_2
     :goto_0
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity;->screenType:I
@@ -9320,7 +9320,7 @@
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isBinancePayCreateCollectionType:Z
 
-    .line 372
+    .line 373
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->WALLET_TRANSFER_SCREEN_TYPE:I
 
     if-ne v0, v1, :cond_4
@@ -9335,7 +9335,7 @@
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isWalletTransferType:Z
 
-    .line 373
+    .line 374
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->BINANCE_REPLENISH_SCREEN_TYPE:I
 
     if-ne v0, v1, :cond_5
@@ -9350,7 +9350,7 @@
     :goto_3
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isBinanceReplenishType:Z
 
-    .line 374
+    .line 375
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->WALLET_TRANSFER_DONATIONS_SCREEN_TYPE:I
 
     if-ne v0, v1, :cond_6
@@ -9365,7 +9365,7 @@
     :goto_4
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isDonationsTransferType:Z
 
-    .line 375
+    .line 376
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->STAKING_REPLENISH_SCREEN_TYPE:I
 
     if-ne v0, v1, :cond_7
@@ -9380,7 +9380,7 @@
     :goto_5
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingDepositType:Z
 
-    .line 376
+    .line 377
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->STAKING_PROFIT_SCREEN_TYPE:I
 
     if-ne v0, v1, :cond_8
@@ -9395,7 +9395,7 @@
     :goto_6
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingProfitType:Z
 
-    .line 377
+    .line 378
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->STAKING_WITHDRAW_SCREEN_TYPE:I
 
     if-ne v0, v1, :cond_9
@@ -9410,7 +9410,7 @@
     :goto_7
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingWithdrawType:Z
 
-    .line 378
+    .line 379
     sget v1, Lorg/telegram/ui/ManageLinksActivity;->STAKING_CALCULATOR_SCREEN_TYPE:I
 
     if-ne v0, v1, :cond_a
@@ -9423,7 +9423,7 @@
     :goto_8
     iput-boolean v2, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingCalculatorType:Z
 
-    .line 380
+    .line 381
     :cond_b
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
@@ -9433,7 +9433,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 381
+    .line 382
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentCreate()Z
 
     move-result v0
@@ -9444,10 +9444,10 @@
 .method public onFragmentDestroy()V
     .locals 2
 
-    .line 386
+    .line 387
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 
-    .line 387
+    .line 388
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -9466,7 +9466,7 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 622
+    .line 623
     array-length p1, p3
 
     if-lez p1, :cond_0
@@ -9477,12 +9477,12 @@
 
     if-nez p1, :cond_0
 
-    .line 623
+    .line 624
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity;->showCameraScanner()V
 
     goto :goto_0
 
-    .line 625
+    .line 626
     :cond_0
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -9492,7 +9492,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 626
+    .line 627
     sget p2, Lorg/telegram/messenger/R$string;->AppName:I
 
     const-string p3, "AppName"
@@ -9503,7 +9503,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 627
+    .line 628
     sget p2, Lorg/telegram/messenger/R$string;->QRCodePermissionNoCameraWithHint:I
 
     const-string p3, "QRCodePermissionNoCameraWithHint"
@@ -9518,7 +9518,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 628
+    .line 629
     sget p2, Lorg/telegram/messenger/R$string;->PermissionOpenSettings:I
 
     const-string p3, "PermissionOpenSettings"
@@ -9533,7 +9533,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 637
+    .line 638
     sget p2, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string p3, "OK"
@@ -9546,7 +9546,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 638
+    .line 639
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     :cond_1
@@ -9575,12 +9575,12 @@
 .method public onSuccessValidation(Lcom/iMe/model/dialog/DialogModel;Z)V
     .locals 6
 
-    .line 487
+    .line 488
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 488
+    .line 489
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -9589,14 +9589,14 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 490
+    .line 491
     invoke-virtual {p1}, Lcom/iMe/model/dialog/DialogModel;->getTitle()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 491
+    .line 492
     invoke-virtual {p1}, Lcom/iMe/model/dialog/DialogModel;->getMessage()Ljava/lang/String;
 
     move-result-object v1
@@ -9605,7 +9605,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 494
+    .line 495
     new-instance p2, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -9618,17 +9618,17 @@
 
     const/4 v1, 0x0
 
-    .line 495
+    .line 496
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
     invoke-virtual {p2, v3}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 496
+    .line 497
     invoke-virtual {p2, v2}, Lorg/telegram/ui/Cells/CheckBoxCell;->setMultiline(Z)V
 
-    .line 497
+    .line 498
     iget-object v3, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
     invoke-interface {v3}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -9647,7 +9647,7 @@
 
     invoke-virtual {p2, v3, v4, v2, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 498
+    .line 499
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v3, 0x10
@@ -9686,7 +9686,7 @@
     :goto_1
     invoke-virtual {p2, v2, v1, v3, v1}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 499
+    .line 500
     new-instance v1, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, p0, p2}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Cells/CheckBoxCell;)V
@@ -9695,13 +9695,13 @@
 
     const/16 v1, 0xc
 
-    .line 505
+    .line 506
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setCustomViewOffset(I)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 506
+    .line 507
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 509
+    .line 510
     :cond_2
     invoke-virtual {p1}, Lcom/iMe/model/dialog/DialogModel;->getPositiveButtonText()Ljava/lang/String;
 
@@ -9713,7 +9713,7 @@
 
     invoke-virtual {v0, p2, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 514
+    .line 515
     invoke-virtual {p1}, Lcom/iMe/model/dialog/DialogModel;->getNegativeButtonText()Ljava/lang/String;
 
     move-result-object p1
@@ -9722,7 +9722,7 @@
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 516
+    .line 517
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -9735,19 +9735,19 @@
 .method public onTransitionAnimationEnd(ZZ)V
     .locals 0
 
-    .line 3403
+    .line 3402
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->onTransitionAnimationEnd(ZZ)V
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    .line 3405
+    .line 3404
     iput-boolean p1, p0, Lorg/telegram/ui/ManageLinksActivity;->isOpened:Z
 
     if-eqz p2, :cond_0
 
-    .line 3406
+    .line 3405
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->inviteLinkBottomSheet:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
     if-eqz p1, :cond_0
@@ -9756,10 +9756,10 @@
 
     if-eqz p2, :cond_0
 
-    .line 3407
+    .line 3406
     invoke-virtual {p1}, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->show()V
 
-    .line 3410
+    .line 3409
     :cond_0
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -9777,10 +9777,10 @@
 .method public onTransitionAnimationStart(ZZ)V
     .locals 1
 
-    .line 3415
+    .line 3414
     invoke-super {p0, p1, p2}, Lcom/iMe/ui/base/mvp/MvpFragment;->onTransitionAnimationStart(ZZ)V
 
-    .line 3416
+    .line 3415
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -9803,17 +9803,17 @@
 .method public openChatScreen(J)V
     .locals 2
 
-    .line 412
+    .line 413
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     const-string v1, "user_id"
 
-    .line 413
+    .line 414
     invoke-virtual {v0, v1, p1, p2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 414
+    .line 415
     new-instance p1, Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
@@ -9828,7 +9828,7 @@
 .method public openDepositScreen(Lcom/iMe/model/staking/StakingDetailsItem;D)V
     .locals 0
 
-    .line 551
+    .line 552
     invoke-static {p2, p3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object p2
@@ -9847,7 +9847,7 @@
     .annotation runtime Lmoxy/presenter/ProvidePresenter;
     .end annotation
 
-    .line 180
+    .line 181
     const-class v0, Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
 
     new-instance v1, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda29;
@@ -9870,7 +9870,7 @@
     .annotation runtime Lmoxy/presenter/ProvidePresenter;
     .end annotation
 
-    .line 195
+    .line 196
     const-class v0, Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
     new-instance v1, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda27;
@@ -9893,7 +9893,7 @@
     .annotation runtime Lmoxy/presenter/ProvidePresenter;
     .end annotation
 
-    .line 185
+    .line 186
     const-class v0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     new-instance v1, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda28;
@@ -9916,7 +9916,7 @@
     .annotation runtime Lmoxy/presenter/ProvidePresenter;
     .end annotation
 
-    .line 200
+    .line 201
     const-class v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
     new-instance v1, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda30;
@@ -9939,7 +9939,7 @@
     .annotation runtime Lmoxy/presenter/ProvidePresenter;
     .end annotation
 
-    .line 190
+    .line 191
     const-class v0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     new-instance v1, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda31;
@@ -9962,7 +9962,7 @@
 
     const/4 v0, 0x1
 
-    .line 521
+    .line 522
     invoke-direct {p0, v0}, Lorg/telegram/ui/ManageLinksActivity;->updateRows(Z)V
 
     return-void
@@ -9971,22 +9971,22 @@
 .method public revokeLink(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
     .locals 4
 
-    .line 3022
+    .line 3023
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;-><init>()V
 
-    .line 3023
+    .line 3024
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->link:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;->link:Ljava/lang/String;
 
     const/4 v1, 0x1
 
-    .line 3024
+    .line 3025
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;->revoked:Z
 
-    .line 3025
+    .line 3026
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -10001,7 +10001,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 3026
+    .line 3027
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
@@ -10054,7 +10054,7 @@
 .method public setupReplenishAddress()V
     .locals 2
 
-    .line 616
+    .line 617
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->chooseContactRow:I
@@ -10067,7 +10067,7 @@
 .method public setupScreenState(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$SendScreenState;)V
     .locals 0
 
-    .line 526
+    .line 527
     new-instance p1, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda18;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
@@ -10080,7 +10080,7 @@
 .method public shouldAskPinCode()Z
     .locals 1
 
-    .line 353
+    .line 354
     iget-boolean v0, p0, Lorg/telegram/ui/ManageLinksActivity;->isBinancePayCreateCollectionType:Z
 
     if-nez v0, :cond_2
@@ -10136,10 +10136,10 @@
 .method public showActionError(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
 
-    .line 438
+    .line 439
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 442
+    .line 443
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -10156,7 +10156,7 @@
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
 
-    .line 438
+    .line 439
     invoke-static {p0, p1, p2, v0, v1}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->showErrorAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback;)Landroid/app/Dialog;
 
     return-void
@@ -10165,10 +10165,10 @@
 .method public showActionSuccess(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
 
-    .line 427
+    .line 428
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 431
+    .line 432
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -10185,7 +10185,7 @@
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
 
-    .line 427
+    .line 428
     invoke-static {p0, p1, p2, v0, v1}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->showSuccessAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback;)Landroid/app/Dialog;
 
     return-void
@@ -10194,7 +10194,7 @@
 .method public showBalance(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)V
     .locals 1
 
-    .line 540
+    .line 541
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity;->inputHeaderRow:I
@@ -10220,7 +10220,7 @@
         }
     .end annotation
 
-    .line 588
+    .line 589
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -10241,7 +10241,7 @@
 .method public showConfirmDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 2
 
-    .line 611
+    .line 612
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -10260,7 +10260,7 @@
 .method public showCreatedCollectionSuccessDialog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 0
 
-    .line 392
+    .line 393
     invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->showSuccessAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback;)Landroid/app/Dialog;
 
     return-void
@@ -10269,10 +10269,10 @@
 .method public showLevelRequiredDialog(Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
     .locals 2
 
-    .line 556
+    .line 557
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 558
+    .line 559
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -10283,7 +10283,7 @@
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
 
-    .line 556
+    .line 557
     invoke-static {p0, v0, p1, v1}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->showStakingLevelRequiredDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     return-void
@@ -10292,7 +10292,7 @@
 .method public showNoEnoughMoneyErrorDialog(Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
     .locals 2
 
-    .line 449
+    .line 450
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->tokenBuyCoordinator:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -10311,10 +10311,10 @@
 .method public showRecipientNotFoundError()V
     .locals 4
 
-    .line 465
+    .line 466
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 467
+    .line 468
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -10329,7 +10329,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 468
+    .line 469
     invoke-interface {v1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -10344,7 +10344,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 469
+    .line 470
     invoke-interface {v2}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -10361,7 +10361,7 @@
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
 
-    .line 465
+    .line 466
     invoke-static {p0, v0, v1, v2, v3}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->showErrorAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback;)Landroid/app/Dialog;
 
     return-void
@@ -10370,10 +10370,10 @@
 .method public showRecipientWalletNotActivatedError()V
     .locals 4
 
-    .line 476
+    .line 477
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 478
+    .line 479
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -10388,7 +10388,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 479
+    .line 480
     invoke-interface {v1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -10403,7 +10403,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 480
+    .line 481
     invoke-interface {v2}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -10420,7 +10420,7 @@
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
 
-    .line 476
+    .line 477
     invoke-static {p0, v0, v1, v2, v3}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->showErrorAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback;)Landroid/app/Dialog;
 
     return-void
@@ -10456,7 +10456,7 @@
 
     move-object v5, p5
 
-    .line 397
+    .line 398
     invoke-static/range {v0 .. v5}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->newInstance(Lcom/iMe/model/wallet/select/SelectableType;Lcom/iMe/model/wallet/select/SelectableToken;Ljava/util/List;Lcom/iMe/storage/domain/model/crypto/NetworkType;ZLcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
 
     move-result-object p1
@@ -10469,7 +10469,7 @@
 .method public showStakingConditionsDialog(Lcom/iMe/model/staking/StakingDetailsItem;)V
     .locals 0
 
-    .line 583
+    .line 584
     invoke-static {p1, p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->newInstance(Lcom/iMe/model/staking/StakingDetailsItem;Lorg/telegram/ui/ActionBar/BaseFragment;)Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;
 
     move-result-object p1
@@ -10482,10 +10482,10 @@
 .method public showSuccessSend(Ljava/lang/String;)V
     .locals 2
 
-    .line 419
+    .line 420
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->resourceManager:Lkotlin/Lazy;
 
-    .line 420
+    .line 421
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -10498,7 +10498,7 @@
 
     move-result-object v0
 
-    .line 419
+    .line 420
     invoke-virtual {p0, v0, p1}, Lorg/telegram/ui/ManageLinksActivity;->showActionSuccess(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -10509,10 +10509,10 @@
 
     const/4 v0, 0x0
 
-    .line 566
+    .line 567
     invoke-direct {p0, v0}, Lorg/telegram/ui/ManageLinksActivity;->updateRows(Z)V
 
-    .line 567
+    .line 568
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->inputRow:I
@@ -10535,7 +10535,7 @@
 .method public updateFeeView()V
     .locals 2
 
-    .line 535
+    .line 536
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->feeRow:I
@@ -10550,7 +10550,7 @@
 
     const/4 v0, 0x1
 
-    .line 606
+    .line 607
     invoke-direct {p0, v0}, Lorg/telegram/ui/ManageLinksActivity;->updateRows(Z)V
 
     return-void
@@ -10559,7 +10559,7 @@
 .method public updateSelectedToken()V
     .locals 2
 
-    .line 407
+    .line 408
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->selectTokenRow:I
@@ -10572,7 +10572,7 @@
 .method public updateSelectedUser()V
     .locals 2
 
-    .line 402
+    .line 403
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->chooseContactRow:I
@@ -10587,10 +10587,10 @@
 
     const/4 v0, 0x0
 
-    .line 545
+    .line 546
     invoke-direct {p0, v0}, Lorg/telegram/ui/ManageLinksActivity;->updateRows(Z)V
 
-    .line 546
+    .line 547
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->selectTokenRow:I
@@ -10609,10 +10609,10 @@
 
     const/4 v0, 0x0
 
-    .line 572
+    .line 573
     invoke-direct {p0, v0}, Lorg/telegram/ui/ManageLinksActivity;->updateRows(Z)V
 
-    .line 573
+    .line 574
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->inputRow:I
@@ -10635,7 +10635,7 @@
 .method public updateWithdrawalFee()V
     .locals 2
 
-    .line 578
+    .line 579
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity;->listViewAdapter:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity;->stakingWithdrawalFeeRow:I

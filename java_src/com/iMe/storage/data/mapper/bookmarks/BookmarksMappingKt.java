@@ -1,6 +1,6 @@
 package com.iMe.storage.data.mapper.bookmarks;
 
-import com.iMe.storage.data.locale.p028db.model.bookmarks.BookmarksDb;
+import com.iMe.storage.data.locale.p027db.model.bookmarks.BookmarksDb;
 import com.iMe.storage.domain.model.bookmarks.BookmarksModel;
 import java.util.ArrayList;
 import java.util.Collection;

@@ -14,21 +14,21 @@ import java.util.Arrays;
 /* loaded from: classes.dex */
 public class PublicKeyCredential extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PublicKeyCredential> CREATOR = new zzag();
-    @SafeParcelable.Field(getter = "getId", m789id = 1)
+    @SafeParcelable.Field(getter = "getId", m775id = 1)
     private final String zza;
-    @SafeParcelable.Field(getter = "getType", m789id = 2)
+    @SafeParcelable.Field(getter = "getType", m775id = 2)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getRawId", m789id = 3)
+    @SafeParcelable.Field(getter = "getRawId", m775id = 3)
     private final byte[] zzc;
-    @SafeParcelable.Field(getter = "getRegisterResponse", m789id = 4)
+    @SafeParcelable.Field(getter = "getRegisterResponse", m775id = 4)
     private final AuthenticatorAttestationResponse zzd;
-    @SafeParcelable.Field(getter = "getSignResponse", m789id = 5)
+    @SafeParcelable.Field(getter = "getSignResponse", m775id = 5)
     private final AuthenticatorAssertionResponse zze;
-    @SafeParcelable.Field(getter = "getErrorResponse", m789id = 6)
+    @SafeParcelable.Field(getter = "getErrorResponse", m775id = 6)
     private final AuthenticatorErrorResponse zzf;
-    @SafeParcelable.Field(getter = "getClientExtensionResults", m789id = 7)
+    @SafeParcelable.Field(getter = "getClientExtensionResults", m775id = 7)
     private final AuthenticationExtensionsClientOutputs zzg;
-    @SafeParcelable.Field(getter = "getAuthenticatorAttachment", m789id = 8)
+    @SafeParcelable.Field(getter = "getAuthenticatorAttachment", m775id = 8)
     private final String zzh;
 
     /* compiled from: com.google.android.gms:play-services-fido@@19.0.0 */
@@ -73,7 +73,7 @@ public class PublicKeyCredential extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PublicKeyCredential(@SafeParcelable.Param(m788id = 1) String str, @SafeParcelable.Param(m788id = 2) String str2, @SafeParcelable.Param(m788id = 3) byte[] bArr, @SafeParcelable.Param(m788id = 4) AuthenticatorAttestationResponse authenticatorAttestationResponse, @SafeParcelable.Param(m788id = 5) AuthenticatorAssertionResponse authenticatorAssertionResponse, @SafeParcelable.Param(m788id = 6) AuthenticatorErrorResponse authenticatorErrorResponse, @SafeParcelable.Param(m788id = 7) AuthenticationExtensionsClientOutputs authenticationExtensionsClientOutputs, @SafeParcelable.Param(m788id = 8) String str3) {
+    public PublicKeyCredential(@SafeParcelable.Param(m774id = 1) String str, @SafeParcelable.Param(m774id = 2) String str2, @SafeParcelable.Param(m774id = 3) byte[] bArr, @SafeParcelable.Param(m774id = 4) AuthenticatorAttestationResponse authenticatorAttestationResponse, @SafeParcelable.Param(m774id = 5) AuthenticatorAssertionResponse authenticatorAssertionResponse, @SafeParcelable.Param(m774id = 6) AuthenticatorErrorResponse authenticatorErrorResponse, @SafeParcelable.Param(m774id = 7) AuthenticationExtensionsClientOutputs authenticationExtensionsClientOutputs, @SafeParcelable.Param(m774id = 8) String str3) {
         boolean z = true;
         if ((authenticatorAttestationResponse == null || authenticatorAssertionResponse != null || authenticatorErrorResponse != null) && ((authenticatorAttestationResponse != null || authenticatorAssertionResponse == null || authenticatorErrorResponse != null) && (authenticatorAttestationResponse != null || authenticatorAssertionResponse != null || authenticatorErrorResponse == null))) {
             z = false;

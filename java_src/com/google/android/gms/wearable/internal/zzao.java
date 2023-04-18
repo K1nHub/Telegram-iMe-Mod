@@ -17,15 +17,15 @@ import java.util.Set;
 /* loaded from: classes3.dex */
 public final class zzao extends AbstractSafeParcelable implements CapabilityInfo {
     public static final Parcelable.Creator<zzao> CREATOR = new zzap();
-    @SafeParcelable.Field(getter = "getName", m789id = 2)
+    @SafeParcelable.Field(getter = "getName", m775id = 2)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getNodeParcelables", m789id = 3)
+    @SafeParcelable.Field(getter = "getNodeParcelables", m775id = 3)
     private final List zzc;
     private final Object zza = new Object();
     private Set zzd = null;
 
     @SafeParcelable.Constructor
-    public zzao(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) List list) {
+    public zzao(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) List list) {
         this.zzb = str;
         this.zzc = list;
         Preconditions.checkNotNull(str);

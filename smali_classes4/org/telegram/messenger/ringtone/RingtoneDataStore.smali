@@ -678,6 +678,8 @@
 
     check-cast v3, Lorg/telegram/messenger/ringtone/RingtoneDataStore$CachedTone;
 
+    if-eqz v3, :cond_1
+
     .line 122
     iget-object v4, v3, Lorg/telegram/messenger/ringtone/RingtoneDataStore$CachedTone;->localUri:Ljava/lang/String;
 

@@ -73,7 +73,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContentPreviewViewer;)V
     .locals 0
 
-    .line 413
+    .line 412
     iput-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 .method private synthetic lambda$run$0(Ljava/util/ArrayList;Landroid/view/View;)V
     .locals 1
 
-    .line 661
+    .line 659
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$500(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/app/Activity;
@@ -103,7 +103,7 @@
 
     goto/16 :goto_1
 
-    .line 664
+    .line 662
     :cond_0
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -115,7 +115,7 @@
 
     move-result p2
 
-    .line 665
+    .line 663
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -128,7 +128,7 @@
 
     if-nez p1, :cond_1
 
-    .line 667
+    .line 665
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -152,7 +152,7 @@
 
     if-ne p1, p2, :cond_2
 
-    .line 669
+    .line 667
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -174,7 +174,7 @@
 
     if-ne p1, p2, :cond_3
 
-    .line 671
+    .line 669
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -190,7 +190,7 @@
 
     if-ne p1, p2, :cond_4
 
-    .line 673
+    .line 671
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -212,7 +212,7 @@
 
     if-ne p1, p2, :cond_5
 
-    .line 675
+    .line 673
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -227,7 +227,7 @@
 
     invoke-interface {p1, p2}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->removeFromRecent(Lorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 677
+    .line 675
     :cond_5
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
@@ -236,7 +236,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 678
+    .line 676
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     :cond_6
@@ -247,7 +247,7 @@
 .method private synthetic lambda$run$1(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 737
+    .line 735
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -262,7 +262,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ContentPreviewViewer;->access$3302(Lorg/telegram/ui/ContentPreviewViewer;F)F
 
-    .line 738
+    .line 736
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ContentPreviewViewer;->access$3000(Lorg/telegram/ui/ContentPreviewViewer;)F
@@ -295,7 +295,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$2502(Lorg/telegram/ui/ContentPreviewViewer;F)F
 
-    .line 739
+    .line 737
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -322,7 +322,7 @@
 
     move v5, p4
 
-    .line 921
+    .line 919
     invoke-interface/range {v0 .. v5}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->sendKiklikoVideo(Ljava/lang/String;Ljava/lang/String;ZZI)V
 
     return-void
@@ -338,7 +338,7 @@
     :cond_0
     move-object p1, p2
 
-    .line 923
+    .line 921
     :goto_0
     invoke-interface {p0, p1, p3, p4, p5}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->sendGif(Ljava/lang/Object;Ljava/lang/Object;ZI)V
 
@@ -348,7 +348,7 @@
 .method private synthetic lambda$run$4(Ljava/util/ArrayList;Landroid/view/View;)V
     .locals 13
 
-    .line 859
+    .line 853
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$500(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/app/Activity;
@@ -359,7 +359,7 @@
 
     return-void
 
-    .line 862
+    .line 856
     :cond_0
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -371,7 +371,7 @@
 
     move-result p2
 
-    .line 864
+    .line 858
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -382,7 +382,7 @@
 
     return-void
 
-    .line 869
+    .line 863
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -396,7 +396,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 870
+    .line 864
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$200(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/io/File;
@@ -407,7 +407,7 @@
 
     move-result-object v1
 
-    .line 871
+    .line 865
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3100(Lorg/telegram/ui/ContentPreviewViewer;)Lcom/iMe/storage/data/network/model/response/kikliko/GifResponse;
@@ -429,7 +429,7 @@
 
     move-object v4, v3
 
-    .line 875
+    .line 869
     :goto_0
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -447,21 +447,21 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 876
+    .line 870
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isSendingGifConfirmationEnabled:Z
 
     xor-int/2addr v0, v2
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSendingGifConfirmationEnabled(Z)V
 
-    .line 877
+    .line 871
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1600(Lorg/telegram/ui/ContentPreviewViewer;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_3
 
-    .line 878
+    .line 872
     :cond_3
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -477,7 +477,7 @@
 
     if-ne v0, v5, :cond_4
 
-    .line 879
+    .line 873
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -496,9 +496,9 @@
 
     invoke-interface {v0, v2}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->openKiklikoReport(Ljava/lang/String;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_3
 
-    .line 880
+    .line 874
     :cond_4
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -514,7 +514,7 @@
 
     if-ne v0, v5, :cond_5
 
-    .line 881
+    .line 875
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -529,9 +529,9 @@
 
     invoke-interface/range {v2 .. v7}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->sendKiklikoVideo(Ljava/lang/String;Ljava/lang/String;ZZI)V
 
-    goto/16 :goto_6
+    goto/16 :goto_3
 
-    .line 882
+    .line 876
     :cond_5
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -547,7 +547,7 @@
 
     if-ne v0, v5, :cond_6
 
-    .line 883
+    .line 877
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3200(Lorg/telegram/ui/ContentPreviewViewer;)Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;
@@ -568,9 +568,9 @@
 
     invoke-static {v0, v2}, Lcom/iMe/utils/extentions/common/ContextExtKt;->copyToClipboard(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_3
 
-    .line 884
+    .line 878
     :cond_6
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -586,7 +586,7 @@
 
     if-ne v0, v5, :cond_7
 
-    .line 885
+    .line 879
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$500(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/app/Activity;
@@ -615,9 +615,9 @@
 
     invoke-static {v0, v2}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_3
 
-    .line 886
+    .line 880
     :cond_7
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -633,7 +633,7 @@
 
     if-ne v0, v5, :cond_8
 
-    .line 887
+    .line 881
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$500(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/app/Activity;
@@ -652,9 +652,9 @@
 
     invoke-static {v0, v2}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_3
 
-    .line 888
+    .line 882
     :cond_8
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -670,7 +670,7 @@
 
     if-ne v0, v5, :cond_b
 
-    .line 889
+    .line 883
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3200(Lorg/telegram/ui/ContentPreviewViewer;)Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;
@@ -679,14 +679,14 @@
 
     if-eqz v0, :cond_9
 
-    .line 890
+    .line 884
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3500(Lorg/telegram/ui/ContentPreviewViewer;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_3
 
-    .line 891
+    .line 885
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -696,7 +696,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 892
+    .line 886
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -715,9 +715,9 @@
 
     invoke-interface {v0, v2}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->setKiklikoAvatar(Ljava/lang/String;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_3
 
-    .line 894
+    .line 888
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -727,9 +727,9 @@
 
     invoke-static {v0, v3, v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$1700(Lorg/telegram/ui/ContentPreviewViewer;Lorg/telegram/tgnet/TLRPC$Document;Z)V
 
-    goto/16 :goto_6
+    goto/16 :goto_3
 
-    .line 897
+    .line 891
     :cond_b
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -743,26 +743,80 @@
 
     const/4 v5, 0x0
 
-    if-eqz v0, :cond_12
+    if-nez v0, :cond_e
 
-    invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 893
+    iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3400(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    instance-of v0, v0, Lcom/iMe/fork/ui/view/KiklikoGifView;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    if-eqz v0, :cond_c
 
-    move-result v0
+    .line 894
+    iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    sget v6, Lcom/iMe/common/IdFabric$Menu;->SEND_SILENT:I
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
-    if-ne v0, v6, :cond_c
+    move-result-object v2
 
-    goto/16 :goto_2
+    const/4 v5, 0x0
 
-    .line 903
+    const/4 v6, 0x1
+
+    const/4 v7, 0x0
+
+    invoke-interface/range {v2 .. v7}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->sendKiklikoVideo(Ljava/lang/String;Ljava/lang/String;ZZI)V
+
+    goto/16 :goto_3
+
+    .line 896
     :cond_c
+    iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+
+    move-result-object v0
+
+    iget-object v3, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_d
+
+    iget-object v3, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
+
+    move-result-object v3
+
+    goto :goto_1
+
+    :cond_d
+    iget-object v3, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$3600(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$BotInlineResult;
+
+    move-result-object v3
+
+    :goto_1
+    iget-object v4, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v4}, Lorg/telegram/ui/ContentPreviewViewer;->access$1900(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-interface {v0, v3, v4, v2, v5}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->sendGif(Ljava/lang/Object;Ljava/lang/Object;ZI)V
+
+    goto/16 :goto_3
+
+    .line 897
+    :cond_e
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -775,9 +829,38 @@
 
     const/4 v6, 0x4
 
-    if-ne v0, v6, :cond_e
+    if-ne v0, v6, :cond_11
 
-    .line 904
+    .line 899
+    iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3400(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/view/View;
+
+    move-result-object v0
+
+    instance-of v0, v0, Lcom/iMe/fork/ui/view/KiklikoGifView;
+
+    if-eqz v0, :cond_f
+
+    .line 900
+    iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+
+    move-result-object v2
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-interface/range {v2 .. v7}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->sendKiklikoVideo(Ljava/lang/String;Ljava/lang/String;ZZI)V
+
+    goto/16 :goto_3
+
+    .line 902
+    :cond_f
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -790,7 +873,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_10
 
     iget-object v2, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -798,16 +881,16 @@
 
     move-result-object v2
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_d
+    :cond_10
     iget-object v2, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$3600(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
     move-result-object v2
 
-    :goto_1
+    :goto_2
     iget-object v3, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$1900(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/Object;
@@ -816,10 +899,10 @@
 
     invoke-interface {v0, v2, v3, v5, v5}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->sendGif(Ljava/lang/Object;Ljava/lang/Object;ZI)V
 
-    goto/16 :goto_6
+    goto/16 :goto_3
 
-    .line 905
-    :cond_e
+    .line 903
+    :cond_11
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -830,9 +913,9 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_f
+    if-ne v0, v2, :cond_12
 
-    .line 906
+    .line 904
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$800(Lorg/telegram/ui/ContentPreviewViewer;)I
@@ -851,7 +934,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/MediaDataController;->removeRecentGif(Lorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 907
+    .line 905
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -860,10 +943,10 @@
 
     invoke-interface {v0}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->gifAddedOrDeleted()V
 
-    goto/16 :goto_6
+    goto/16 :goto_3
 
-    .line 908
-    :cond_f
+    .line 906
+    :cond_12
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -876,9 +959,9 @@
 
     const/4 v5, 0x2
 
-    if-ne v0, v5, :cond_10
+    if-ne v0, v5, :cond_13
 
-    .line 909
+    .line 907
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$800(Lorg/telegram/ui/ContentPreviewViewer;)I
@@ -907,7 +990,7 @@
 
     invoke-virtual {v0, v3, v4, v2}, Lorg/telegram/messenger/MediaDataController;->addRecentGif(Lorg/telegram/tgnet/TLRPC$Document;IZ)V
 
-    .line 910
+    .line 908
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$800(Lorg/telegram/ui/ContentPreviewViewer;)I
@@ -928,7 +1011,7 @@
 
     invoke-virtual {v0, v3, v2}, Lorg/telegram/messenger/MessagesController;->saveGif(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 911
+    .line 909
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -937,10 +1020,10 @@
 
     invoke-interface {v0}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->gifAddedOrDeleted()V
 
-    goto/16 :goto_6
+    goto :goto_3
 
-    .line 912
-    :cond_10
+    .line 910
+    :cond_13
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -953,37 +1036,37 @@
 
     const/4 v2, 0x3
 
-    if-ne v0, v2, :cond_17
+    if-ne v0, v2, :cond_15
 
-    .line 913
+    .line 911
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v0
 
-    .line 914
+    .line 912
     iget-object v2, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$3600(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
     move-result-object v2
 
-    .line 915
+    .line 913
     iget-object v5, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v5}, Lorg/telegram/ui/ContentPreviewViewer;->access$1900(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/Object;
 
     move-result-object v5
 
-    .line 916
+    .line 914
     iget-object v6, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v6}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
     move-result-object v6
 
-    .line 918
+    .line 916
     iget-object v7, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$3400(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/view/View;
@@ -992,9 +1075,9 @@
 
     instance-of v7, v7, Lcom/iMe/fork/ui/view/KiklikoGifView;
 
-    if-eqz v7, :cond_11
+    if-eqz v7, :cond_14
 
-    .line 921
+    .line 919
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$500(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/app/Activity;
@@ -1019,10 +1102,10 @@
 
     invoke-static/range {v7 .. v12}, Lorg/telegram/ui/Components/AlertsCreator;->createScheduleDatePickerDialog(Landroid/content/Context;JLorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    goto/16 :goto_6
+    goto :goto_3
 
-    .line 923
-    :cond_11
+    .line 921
+    :cond_14
     iget-object v3, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$500(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/app/Activity;
@@ -1047,125 +1130,9 @@
 
     invoke-static/range {v7 .. v12}, Lorg/telegram/ui/Components/AlertsCreator;->createScheduleDatePickerDialog(Landroid/content/Context;JLorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    goto :goto_6
-
-    .line 899
-    :cond_12
-    :goto_2
-    iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3400(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/view/View;
-
-    move-result-object v0
-
-    instance-of v0, v0, Lcom/iMe/fork/ui/view/KiklikoGifView;
-
-    if-eqz v0, :cond_14
-
-    .line 900
-    iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
-
-    move-result-object v0
-
-    const/4 v6, 0x0
-
-    invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljava/lang/Integer;
-
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
-    move-result v7
-
-    if-nez v7, :cond_13
-
-    move v7, v2
-
-    goto :goto_3
-
-    :cond_13
-    move v7, v5
-
-    :goto_3
-    const/4 v8, 0x0
-
-    move-object v2, v0
-
-    move v5, v6
-
-    move v6, v7
-
-    move v7, v8
-
-    invoke-interface/range {v2 .. v7}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->sendKiklikoVideo(Ljava/lang/String;Ljava/lang/String;ZZI)V
-
-    goto :goto_6
-
-    .line 902
-    :cond_14
-    iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
-
-    move-result-object v0
-
-    iget-object v3, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_15
-
-    iget-object v3, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
-
-    move-result-object v3
-
-    goto :goto_4
-
+    .line 924
     :cond_15
-    iget-object v3, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$3600(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$BotInlineResult;
-
-    move-result-object v3
-
-    :goto_4
-    iget-object v4, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v4}, Lorg/telegram/ui/ContentPreviewViewer;->access$1900(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Ljava/lang/Integer;
-
-    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
-
-    move-result v6
-
-    if-nez v6, :cond_16
-
-    goto :goto_5
-
-    :cond_16
-    move v2, v5
-
-    :goto_5
-    invoke-interface {v0, v3, v4, v2, v5}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->sendGif(Ljava/lang/Object;Ljava/lang/Object;ZI)V
-
-    .line 926
-    :cond_17
-    :goto_6
+    :goto_3
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -1176,26 +1143,26 @@
 
     move-result p1
 
-    if-eq p1, v1, :cond_18
+    if-eq p1, v1, :cond_16
 
-    .line 927
+    .line 925
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_16
 
-    .line 928
+    .line 926
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
-    :cond_18
+    :cond_16
     return-void
 .end method
 
 .method private synthetic lambda$run$5(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 1028
+    .line 1027
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -1210,7 +1177,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ContentPreviewViewer;->access$3302(Lorg/telegram/ui/ContentPreviewViewer;F)F
 
-    .line 1029
+    .line 1028
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ContentPreviewViewer;->access$3000(Lorg/telegram/ui/ContentPreviewViewer;)F
@@ -1243,7 +1210,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$2502(Lorg/telegram/ui/ContentPreviewViewer;F)F
 
-    .line 1030
+    .line 1029
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -1262,7 +1229,7 @@
 
     move-object/from16 v0, p0
 
-    .line 416
+    .line 415
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$500(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/app/Activity;
@@ -1273,7 +1240,7 @@
 
     return-void
 
-    .line 419
+    .line 418
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -1281,7 +1248,7 @@
 
     invoke-static {v1, v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$602(Lorg/telegram/ui/ContentPreviewViewer;Z)Z
 
-    .line 420
+    .line 419
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -1325,7 +1292,7 @@
     :cond_1
     move v1, v3
 
-    .line 421
+    .line 420
     :goto_0
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -1333,11 +1300,11 @@
 
     move-result v4
 
-    const-string v5, "Schedule"
+    const-string v5, "SendWithoutSound"
 
-    const-string v6, ""
+    const-string v6, "Schedule"
 
-    const-string v10, "SendWithoutSound"
+    const-string v7, ""
 
     const/4 v11, 0x3
 
@@ -1349,7 +1316,7 @@
 
     if-nez v4, :cond_1a
 
-    .line 422
+    .line 421
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v4}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
@@ -1382,17 +1349,17 @@
 
     if-nez v4, :cond_2
 
-    .line 423
+    .line 422
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$1100(Lorg/telegram/ui/ContentPreviewViewer;)V
 
-    .line 424
+    .line 423
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1, v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$1202(Lorg/telegram/ui/ContentPreviewViewer;Z)Z
 
-    .line 425
+    .line 424
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -1401,7 +1368,7 @@
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 426
+    .line 425
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -1412,7 +1379,7 @@
 
     return-void
 
-    .line 429
+    .line 428
     :cond_2
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -1424,54 +1391,37 @@
 
     move-result-object v4
 
-    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
-
-    move-result-object v8
-
-    invoke-virtual {v4, v8}, Lorg/telegram/messenger/MediaDataController;->isStickerInFavorites(Lorg/telegram/tgnet/TLRPC$Document;)Z
-
-    move-result v4
-
-    .line 430
-    new-instance v8, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
-
-    iget-object v13, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v13}, Lorg/telegram/ui/ContentPreviewViewer;->access$500(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/app/Activity;
-
-    move-result-object v13
-
     iget-object v9, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v9}, Lorg/telegram/ui/ContentPreviewViewer;->access$100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v9}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v9
 
-    invoke-direct {v8, v13, v2, v9}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-virtual {v4, v9}, Lorg/telegram/messenger/MediaDataController;->isStickerInFavorites(Lorg/telegram/tgnet/TLRPC$Document;)Z
 
-    .line 431
-    new-instance v8, Ljava/util/ArrayList;
+    move-result v4
 
-    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
-
-    .line 432
+    .line 429
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    .line 433
+    .line 430
     new-instance v13, Ljava/util/ArrayList;
 
     invoke-direct {v13}, Ljava/util/ArrayList;-><init>()V
 
-    .line 434
+    .line 431
+    new-instance v10, Ljava/util/ArrayList;
+
+    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
+
+    .line 432
     iget-object v15, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v15, v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$1202(Lorg/telegram/ui/ContentPreviewViewer;Z)Z
 
-    .line 435
+    .line 433
     iget-object v15, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v15}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -1480,7 +1430,7 @@
 
     invoke-virtual {v15}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 436
+    .line 434
     iget-object v15, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v15}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
@@ -1489,157 +1439,157 @@
 
     if-eqz v15, :cond_a
 
-    .line 437
+    .line 435
     iget-object v15, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v15}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
     move-result-object v15
 
-    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
+    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
 
-    move-result v7
+    move-result v8
 
-    invoke-interface {v15, v7}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->needSend(I)Z
+    invoke-interface {v15, v8}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->needSend(I)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_3
+    if-eqz v8, :cond_3
 
-    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-interface {v7}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->isInScheduleMode()Z
+    invoke-interface {v8}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->isInScheduleMode()Z
 
-    move-result v7
+    move-result v8
 
-    if-nez v7, :cond_3
+    if-nez v8, :cond_3
 
-    .line 438
-    sget v7, Lorg/telegram/messenger/R$string;->SendStickerPreview:I
+    .line 436
+    sget v8, Lorg/telegram/messenger/R$string;->SendStickerPreview:I
 
     const-string v15, "SendStickerPreview"
 
-    invoke-static {v15, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v15, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 439
-    sget v7, Lorg/telegram/messenger/R$drawable;->msg_send:I
+    .line 437
+    sget v8, Lorg/telegram/messenger/R$drawable;->msg_send:I
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v13, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 440
+    .line 438
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v9, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 441
+    :cond_3
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+
+    move-result-object v8
+
+    iget-object v15, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v15}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
+
+    move-result v15
+
+    invoke-interface {v8, v15}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->needSend(I)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_4
+
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+
+    move-result-object v8
+
+    invoke-interface {v8}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->isInScheduleMode()Z
+
+    move-result v8
+
+    if-nez v8, :cond_4
+
+    .line 442
+    sget v8, Lorg/telegram/messenger/R$string;->sticker_edit_and_send:I
+
+    invoke-static {v8}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v9, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 443
-    :cond_3
-    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    sget v8, Lorg/telegram/messenger/R$drawable;->msg_edit:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v8
 
-    iget-object v15, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v15}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
-
-    move-result v15
-
-    invoke-interface {v7, v15}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->needSend(I)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_4
-
-    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
-
-    move-result-object v7
-
-    invoke-interface {v7}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->isInScheduleMode()Z
-
-    move-result v7
-
-    if-nez v7, :cond_4
+    invoke-virtual {v10, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 444
-    sget v7, Lorg/telegram/messenger/R$string;->sticker_edit_and_send:I
+    sget v8, Lcom/iMe/common/IdFabric$Menu;->EDIT_AND_SEND:I
 
-    invoke-static {v7}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 445
-    sget v7, Lorg/telegram/messenger/R$drawable;->msg_edit:I
-
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    invoke-virtual {v13, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 446
-    sget v7, Lcom/iMe/common/IdFabric$Menu;->EDIT_AND_SEND:I
+    :cond_4
+    sget v8, Lorg/telegram/messenger/R$string;->custom_avatar_set:I
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v8}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v9, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 447
+    sget v8, Lorg/telegram/messenger/R$drawable;->msg_openprofile:I
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-virtual {v10, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 448
-    :cond_4
-    sget v7, Lorg/telegram/messenger/R$string;->custom_avatar_set:I
+    sget v8, Lcom/iMe/common/IdFabric$Menu;->SET_AS_AVATAR:I
 
-    invoke-static {v7}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 449
-    sget v7, Lorg/telegram/messenger/R$drawable;->msg_openprofile:I
-
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    invoke-virtual {v13, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 450
-    sget v7, Lcom/iMe/common/IdFabric$Menu;->SET_AS_AVATAR:I
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
-    move-result-object v7
-
-    invoke-virtual {v9, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 452
-    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
-
-    move-result-object v7
+    move-result-object v8
 
     iget-object v15, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -1647,62 +1597,62 @@
 
     move-result v15
 
-    invoke-interface {v7, v15}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->needSend(I)Z
+    invoke-interface {v8, v15}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->needSend(I)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_7
+    if-eqz v8, :cond_7
 
-    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-interface {v7}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->isInScheduleMode()Z
+    invoke-interface {v8}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->isInScheduleMode()Z
 
-    move-result v7
+    move-result v8
 
-    if-nez v7, :cond_7
+    if-nez v8, :cond_7
 
     if-eqz v1, :cond_5
 
-    .line 455
-    sget v7, Lorg/telegram/messenger/R$string;->send_with_sound:I
+    .line 453
+    sget v5, Lorg/telegram/messenger/R$string;->send_with_sound:I
 
-    invoke-static {v7}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 457
+    .line 455
     :cond_5
-    sget v7, Lorg/telegram/messenger/R$string;->SendWithoutSound:I
+    sget v8, Lorg/telegram/messenger/R$string;->SendWithoutSound:I
 
-    invoke-static {v10, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_1
     if-eqz v1, :cond_6
 
-    .line 460
+    .line 458
     sget v1, Lorg/telegram/messenger/R$drawable;->input_notify_on:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 462
+    .line 460
     :cond_6
     sget v1, Lorg/telegram/messenger/R$drawable;->input_notify_off:I
 
@@ -1710,19 +1660,19 @@
 
     move-result-object v1
 
-    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_2
     const/4 v1, 0x6
 
-    .line 463
+    .line 461
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 465
+    .line 463
     :cond_7
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -1736,32 +1686,32 @@
 
     if-eqz v1, :cond_8
 
-    .line 466
+    .line 464
     sget v1, Lorg/telegram/messenger/R$string;->Schedule:I
 
-    invoke-static {v5, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 467
+    .line 465
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_autodelete:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 468
+    .line 466
     invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 470
+    .line 468
     :cond_8
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -1783,36 +1733,36 @@
 
     if-eqz v1, :cond_9
 
-    .line 471
+    .line 469
     sget v1, Lorg/telegram/messenger/R$string;->ViewPackPreview:I
 
     new-array v5, v3, [Ljava/lang/Object;
 
-    const-string v7, "ViewPackPreview"
+    const-string v6, "ViewPackPreview"
 
-    invoke-static {v7, v1, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, v1, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 472
+    .line 470
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_media:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 473
+    .line 471
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 475
+    .line 473
     :cond_9
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -1826,7 +1776,7 @@
 
     if-eqz v1, :cond_a
 
-    .line 476
+    .line 474
     sget v1, Lorg/telegram/messenger/R$string;->ImportStickersRemoveMenu:I
 
     const-string v5, "ImportStickersRemoveMenu"
@@ -1835,27 +1785,27 @@
 
     move-result-object v1
 
-    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 477
+    .line 475
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_delete:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     const/4 v1, 0x5
 
-    .line 478
+    .line 476
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 481
+    .line 479
     :cond_a
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -1902,7 +1852,7 @@
     :cond_b
     if-eqz v4, :cond_c
 
-    .line 482
+    .line 480
     sget v1, Lorg/telegram/messenger/R$string;->DeleteFromFavorites:I
 
     const-string v5, "DeleteFromFavorites"
@@ -1919,11 +1869,11 @@
 
     move-result-object v1
 
-    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     if-eqz v4, :cond_d
 
-    .line 483
+    .line 481
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_unfave:I
 
     goto :goto_4
@@ -1936,16 +1886,16 @@
 
     move-result-object v1
 
-    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 484
+    .line 482
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 486
+    .line 484
     :cond_e
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -1955,7 +1905,7 @@
 
     if-eqz v1, :cond_f
 
-    .line 487
+    .line 485
     sget v1, Lorg/telegram/messenger/R$string;->DeleteFromRecent:I
 
     const-string v5, "DeleteFromRecent"
@@ -1964,46 +1914,46 @@
 
     move-result-object v1
 
-    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 488
+    .line 486
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_delete:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 489
+    .line 487
     invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 492
+    .line 490
     :cond_f
-    invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 493
+    .line 491
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 494
+    .line 492
     sget v1, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_AUTO_PREVIEW:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 496
-    invoke-virtual {v8}, Ljava/util/ArrayList;->isEmpty()Z
+    .line 494
+    invoke-virtual {v9}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v1
 
@@ -2011,9 +1961,9 @@
 
     return-void
 
-    .line 499
+    .line 497
     :cond_10
-    invoke-virtual {v13}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
@@ -2021,16 +1971,16 @@
 
     move v5, v3
 
-    .line 500
+    .line 498
     :goto_5
-    invoke-virtual {v13}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
     if-ge v5, v6, :cond_11
 
-    .line 501
-    invoke-virtual {v13, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 499
+    invoke-virtual {v10, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
@@ -2046,13 +1996,13 @@
 
     goto :goto_5
 
-    .line 504
+    .line 502
     :cond_11
     new-instance v1, Lorg/telegram/ui/ContentPreviewViewer$2$1;
 
-    invoke-direct {v1, v0, v9, v4}, Lorg/telegram/ui/ContentPreviewViewer$2$1;-><init>(Lorg/telegram/ui/ContentPreviewViewer$2;Ljava/util/ArrayList;Z)V
+    invoke-direct {v1, v0, v13, v4}, Lorg/telegram/ui/ContentPreviewViewer$2$1;-><init>(Lorg/telegram/ui/ContentPreviewViewer$2;Ljava/util/ArrayList;Z)V
 
-    .line 551
+    .line 549
     new-instance v4, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     iget-object v5, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
@@ -2077,16 +2027,16 @@
 
     move v5, v3
 
-    .line 553
+    .line 551
     :goto_6
-    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
     if-ge v5, v6, :cond_14
 
-    .line 554
-    invoke-virtual {v13, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 552
+    invoke-virtual {v10, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
@@ -2096,34 +2046,34 @@
 
     move-result v6
 
-    invoke-virtual {v8, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v9, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Ljava/lang/CharSequence;
 
-    iget-object v10, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v10}, Lorg/telegram/ui/ContentPreviewViewer;->access$100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-static {v4, v6, v7, v3, v10}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    invoke-static {v4, v6, v7, v3, v8}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     move-result-object v6
 
-    .line 555
+    .line 553
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
     invoke-virtual {v6, v7}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 556
+    .line 554
     invoke-virtual {v6, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 558
-    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
+    .line 556
+    invoke-virtual {v13}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
@@ -2133,7 +2083,7 @@
 
     add-int/lit8 v7, v5, 0x1
 
-    invoke-virtual {v9, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v13, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -2143,11 +2093,11 @@
 
     move-result v7
 
-    sget v10, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_AUTO_PREVIEW:I
+    sget v8, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_AUTO_PREVIEW:I
 
-    if-ne v7, v10, :cond_12
+    if-ne v7, v8, :cond_12
 
-    .line 559
+    .line 557
     iget-object v6, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v6}, Lorg/telegram/ui/ContentPreviewViewer;->access$100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -2158,9 +2108,9 @@
 
     goto :goto_7
 
-    .line 560
+    .line 558
     :cond_12
-    invoke-virtual {v9, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v13, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -2170,16 +2120,16 @@
 
     move-result v7
 
-    sget v10, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_AUTO_PREVIEW:I
+    sget v8, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_AUTO_PREVIEW:I
 
-    if-ne v7, v10, :cond_13
+    if-ne v7, v8, :cond_13
 
-    .line 561
+    .line 559
     iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v7, v6}, Lorg/telegram/ui/ContentPreviewViewer;->access$2202(Lorg/telegram/ui/ContentPreviewViewer;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 562
+    .line 560
     iget-object v6, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v6}, Lorg/telegram/ui/ContentPreviewViewer;->access$1600(Lorg/telegram/ui/ContentPreviewViewer;)V
@@ -2190,7 +2140,7 @@
 
     goto :goto_6
 
-    .line 566
+    .line 564
     :cond_14
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -2202,14 +2152,14 @@
 
     iput-object v5, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 577
+    .line 575
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setPauseNotifications(Z)V
 
-    .line 578
+    .line 576
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -2218,28 +2168,28 @@
 
     invoke-virtual {v1, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setDismissAnimationDuration(I)V
 
-    .line 579
+    .line 577
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setScaleOut(Z)V
 
-    .line 580
+    .line 578
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 581
+    .line 579
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 582
+    .line 580
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -2248,14 +2198,14 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 583
+    .line 581
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
-    .line 584
+    .line 582
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2276,14 +2226,14 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 585
+    .line 583
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v12}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 586
+    .line 584
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -2294,7 +2244,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setFocusableInTouchMode(Z)V
 
-    .line 590
+    .line 588
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v5, 0x15
@@ -2309,7 +2259,7 @@
 
     if-eqz v1, :cond_15
 
-    .line 591
+    .line 589
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$2300(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/view/WindowInsets;
@@ -2332,7 +2282,7 @@
 
     add-int/2addr v1, v5
 
-    .line 592
+    .line 590
     iget-object v5, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v5}, Lorg/telegram/ui/ContentPreviewViewer;->access$2300(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/view/WindowInsets;
@@ -2345,13 +2295,13 @@
 
     goto :goto_8
 
-    .line 594
+    .line 592
     :cond_15
     sget v5, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     move v1, v3
 
-    .line 597
+    .line 595
     :goto_8
     iget-object v6, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -2361,7 +2311,7 @@
 
     if-ne v6, v2, :cond_16
 
-    .line 598
+    .line 596
     iget-object v2, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -2398,7 +2348,7 @@
 
     goto :goto_a
 
-    .line 600
+    .line 598
     :cond_16
     iget-object v2, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -2408,7 +2358,7 @@
 
     if-eqz v2, :cond_17
 
-    .line 601
+    .line 599
     iget-object v2, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -2447,7 +2397,7 @@
 
     goto :goto_9
 
-    .line 603
+    .line 601
     :cond_17
     iget-object v2, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -2484,7 +2434,7 @@
     :goto_9
     float-to-int v2, v2
 
-    .line 607
+    .line 605
     :goto_a
     iget-object v6, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -2556,14 +2506,14 @@
 
     const/16 v2, 0x18
 
-    .line 608
+    .line 606
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     add-int/2addr v1, v5
 
-    .line 609
+    .line 607
     iget-object v5, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v5}, Lorg/telegram/ui/ContentPreviewViewer;->access$2400(Lorg/telegram/ui/ContentPreviewViewer;)Z
@@ -2572,14 +2522,14 @@
 
     if-eqz v5, :cond_19
 
-    .line 610
+    .line 608
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     add-int/2addr v1, v2
 
-    .line 612
+    .line 610
     :cond_19
     iget-object v2, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -2615,7 +2565,7 @@
 
     invoke-virtual {v5, v2, v3, v4, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 614
+    .line 612
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -2624,9 +2574,9 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
 
-    goto/16 :goto_21
+    goto/16 :goto_22
 
-    .line 615
+    .line 613
     :cond_1a
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -2634,7 +2584,7 @@
 
     move-result v4
 
-    const-string v9, "dialogTextRed"
+    const-string v10, "dialogTextRed"
 
     const-string v13, "dialogRedIcon"
 
@@ -2650,12 +2600,12 @@
 
     if-eqz v4, :cond_29
 
-    .line 616
+    .line 614
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1, v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$1202(Lorg/telegram/ui/ContentPreviewViewer;Z)Z
 
-    .line 617
+    .line 615
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -2664,52 +2614,52 @@
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 618
+    .line 616
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 619
+    .line 617
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 620
+    .line 618
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 622
+    .line 620
     iget-object v6, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v6}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
     move-result-object v6
 
-    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
+    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
 
-    move-result v8
+    move-result v7
 
-    invoke-interface {v6, v8}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->needSend(I)Z
+    invoke-interface {v6, v7}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->needSend(I)Z
 
     move-result v6
 
     if-eqz v6, :cond_1b
 
-    .line 623
+    .line 621
     sget v6, Lorg/telegram/messenger/R$string;->SendEmojiPreview:I
 
-    const-string v8, "SendEmojiPreview"
+    const-string v7, "SendEmojiPreview"
 
-    invoke-static {v8, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 624
+    .line 622
     sget v6, Lorg/telegram/messenger/R$drawable;->msg_send:I
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2718,14 +2668,14 @@
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 625
+    .line 623
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 627
+    .line 625
     :cond_1b
     iget-object v6, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -2733,37 +2683,37 @@
 
     move-result-object v6
 
-    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
+    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-interface {v6, v8}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->canSetAsStatus(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/Boolean;
+    invoke-interface {v6, v7}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->canSetAsStatus(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/Boolean;
 
     move-result-object v6
 
     if-eqz v6, :cond_1d
 
-    .line 629
+    .line 627
     invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v6
 
     if-eqz v6, :cond_1c
 
-    .line 630
+    .line 628
     sget v6, Lorg/telegram/messenger/R$string;->SetAsEmojiStatus:I
 
-    const-string v8, "SetAsEmojiStatus"
+    const-string v7, "SetAsEmojiStatus"
 
-    invoke-static {v8, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 631
+    .line 629
     sget v6, Lorg/telegram/messenger/R$drawable;->msg_smile_status:I
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2772,7 +2722,7 @@
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 632
+    .line 630
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -2781,19 +2731,19 @@
 
     goto :goto_c
 
-    .line 634
+    .line 632
     :cond_1c
     sget v6, Lorg/telegram/messenger/R$string;->RemoveStatus:I
 
-    const-string v8, "RemoveStatus"
+    const-string v7, "RemoveStatus"
 
-    invoke-static {v8, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 635
+    .line 633
     sget v6, Lorg/telegram/messenger/R$drawable;->msg_smile_status:I
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2802,14 +2752,14 @@
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 636
+    .line 634
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 639
+    .line 637
     :cond_1d
     :goto_c
     iget-object v6, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
@@ -2824,18 +2774,18 @@
 
     if-eqz v6, :cond_1e
 
-    .line 640
+    .line 638
     sget v6, Lorg/telegram/messenger/R$string;->CopyEmojiPreview:I
 
-    const-string v8, "CopyEmojiPreview"
+    const-string v7, "CopyEmojiPreview"
 
-    invoke-static {v8, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 641
+    .line 639
     sget v6, Lorg/telegram/messenger/R$drawable;->msg_copy:I
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2844,14 +2794,14 @@
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 642
+    .line 640
     invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 644
+    .line 642
     :cond_1e
     iget-object v6, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -2859,30 +2809,30 @@
 
     move-result-object v6
 
-    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
+    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-interface {v6, v8}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->needRemoveFromRecent(Lorg/telegram/tgnet/TLRPC$Document;)Z
+    invoke-interface {v6, v7}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->needRemoveFromRecent(Lorg/telegram/tgnet/TLRPC$Document;)Z
 
     move-result v6
 
     if-eqz v6, :cond_1f
 
-    .line 645
+    .line 643
     sget v6, Lorg/telegram/messenger/R$string;->RemoveFromRecent:I
 
-    const-string v8, "RemoveFromRecent"
+    const-string v7, "RemoveFromRecent"
 
-    invoke-static {v8, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 646
+    .line 644
     sget v6, Lorg/telegram/messenger/R$drawable;->msg_delete:I
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2891,14 +2841,14 @@
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 647
+    .line 645
     invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 649
+    .line 647
     :cond_1f
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -2908,7 +2858,7 @@
 
     return-void
 
-    .line 653
+    .line 651
     :cond_20
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
@@ -2916,48 +2866,48 @@
 
     new-array v6, v6, [I
 
-    move v8, v3
+    move v7, v3
 
-    .line 654
+    .line 652
     :goto_d
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
-    move-result v10
+    move-result v9
 
-    if-ge v8, v10, :cond_21
+    if-ge v7, v9, :cond_21
 
-    .line 655
-    invoke-virtual {v5, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 653
+    invoke-virtual {v5, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v9
 
-    check-cast v10, Ljava/lang/Integer;
+    check-cast v9, Ljava/lang/Integer;
 
-    invoke-virtual {v10}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
-    move-result v10
+    move-result v9
 
-    aput v10, v6, v8
+    aput v9, v6, v7
 
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_d
 
-    .line 658
+    .line 656
     :cond_21
     new-instance v6, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
+    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v8}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
+    invoke-virtual {v7}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v8
+    move-result-object v7
 
-    sget v10, Lorg/telegram/messenger/R$drawable;->popup_fixed_alert2:I
+    sget v9, Lorg/telegram/messenger/R$drawable;->popup_fixed_alert2:I
 
     iget-object v11, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -2965,24 +2915,24 @@
 
     move-result-object v11
 
-    invoke-direct {v6, v8, v10, v11}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v6, v7, v9, v11}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 660
-    new-instance v8, Lorg/telegram/ui/ContentPreviewViewer$2$$ExternalSyntheticLambda3;
+    .line 658
+    new-instance v7, Lorg/telegram/ui/ContentPreviewViewer$2$$ExternalSyntheticLambda3;
 
-    invoke-direct {v8, v0, v4}, Lorg/telegram/ui/ContentPreviewViewer$2$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ContentPreviewViewer$2;Ljava/util/ArrayList;)V
+    invoke-direct {v7, v0, v4}, Lorg/telegram/ui/ContentPreviewViewer$2$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ContentPreviewViewer$2;Ljava/util/ArrayList;)V
 
-    move v10, v3
+    move v9, v3
 
-    .line 682
+    .line 680
     :goto_e
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v11
 
-    if-ge v10, v11, :cond_25
+    if-ge v9, v11, :cond_25
 
-    if-nez v10, :cond_22
+    if-nez v9, :cond_22
 
     move/from16 v18, v2
 
@@ -2991,7 +2941,7 @@
     :cond_22
     move/from16 v18, v3
 
-    .line 683
+    .line 681
     :goto_f
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -2999,7 +2949,7 @@
 
     sub-int/2addr v11, v2
 
-    if-ne v10, v11, :cond_23
+    if-ne v9, v11, :cond_23
 
     move/from16 v19, v2
 
@@ -3009,7 +2959,7 @@
     move/from16 v19, v3
 
     :goto_10
-    invoke-virtual {v5, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v11
 
@@ -3019,7 +2969,7 @@
 
     move-result v21
 
-    invoke-virtual {v1, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v11
 
@@ -3041,8 +2991,8 @@
 
     move-result-object v11
 
-    .line 684
-    invoke-virtual {v4, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 682
+    invoke-virtual {v4, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v18
 
@@ -3050,44 +3000,44 @@
 
     invoke-virtual/range {v18 .. v18}, Ljava/lang/Integer;->intValue()I
 
-    move-result v7
+    move-result v8
 
-    if-ne v7, v14, :cond_24
+    if-ne v8, v14, :cond_24
 
-    .line 685
-    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    .line 683
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v7, v13}, Lorg/telegram/ui/ContentPreviewViewer;->access$2800(Lorg/telegram/ui/ContentPreviewViewer;Ljava/lang/String;)I
+    invoke-static {v8, v13}, Lorg/telegram/ui/ContentPreviewViewer;->access$2800(Lorg/telegram/ui/ContentPreviewViewer;Ljava/lang/String;)I
 
-    move-result v7
+    move-result v8
 
-    invoke-virtual {v11, v7}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setIconColor(I)V
+    invoke-virtual {v11, v8}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setIconColor(I)V
+
+    .line 684
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v8, v10}, Lorg/telegram/ui/ContentPreviewViewer;->access$2800(Lorg/telegram/ui/ContentPreviewViewer;Ljava/lang/String;)I
+
+    move-result v8
+
+    invoke-virtual {v11, v8}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextColor(I)V
 
     .line 686
-    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v7, v9}, Lorg/telegram/ui/ContentPreviewViewer;->access$2800(Lorg/telegram/ui/ContentPreviewViewer;Ljava/lang/String;)I
-
-    move-result v7
-
-    invoke-virtual {v11, v7}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextColor(I)V
-
-    .line 688
     :cond_24
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v11, v7}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v11, v8}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 689
-    invoke-virtual {v11, v8}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    .line 687
+    invoke-virtual {v11, v7}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v9, v9, 0x1
 
     goto :goto_e
 
-    .line 691
+    .line 689
     :cond_25
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -3099,42 +3049,42 @@
 
     iput-object v4, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 702
+    .line 700
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setPauseNotifications(Z)V
 
-    .line 703
+    .line 701
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v15}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setDismissAnimationDuration(I)V
 
-    .line 704
+    .line 702
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setScaleOut(Z)V
 
-    .line 705
+    .line 703
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 706
+    .line 704
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 707
+    .line 705
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -3143,14 +3093,14 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 708
+    .line 706
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
-    .line 709
+    .line 707
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -3171,14 +3121,14 @@
 
     invoke-virtual {v6, v1, v4}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 710
+    .line 708
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v12}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 711
+    .line 709
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -3189,7 +3139,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setFocusableInTouchMode(Z)V
 
-    .line 715
+    .line 713
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x15
@@ -3204,7 +3154,7 @@
 
     if-eqz v1, :cond_26
 
-    .line 716
+    .line 714
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$2300(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/view/WindowInsets;
@@ -3227,7 +3177,7 @@
 
     add-int/2addr v1, v2
 
-    .line 717
+    .line 715
     iget-object v2, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$2300(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/view/WindowInsets;
@@ -3240,13 +3190,13 @@
 
     goto :goto_11
 
-    .line 719
+    .line 717
     :cond_26
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     move v1, v3
 
-    .line 721
+    .line 719
     :goto_11
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -3282,7 +3232,7 @@
 
     sub-int/2addr v4, v5
 
-    .line 723
+    .line 721
     iget-object v5, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v5}, Lorg/telegram/ui/ContentPreviewViewer;->access$2500(Lorg/telegram/ui/ContentPreviewViewer;)F
@@ -3355,7 +3305,7 @@
 
     const/16 v2, 0x18
 
-    .line 724
+    .line 722
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -3374,7 +3324,7 @@
 
     float-to-int v1, v1
 
-    .line 725
+    .line 723
     iget-object v2, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v4, v2, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -3409,10 +3359,10 @@
 
     invoke-virtual {v4, v2, v3, v5, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 726
+    .line 724
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->startAnimation(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Landroid/animation/AnimatorSet;
 
-    .line 728
+    .line 726
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -3421,7 +3371,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
 
-    .line 730
+    .line 728
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$2500(Lorg/telegram/ui/ContentPreviewViewer;)F
@@ -3434,7 +3384,7 @@
 
     if-eqz v1, :cond_48
 
-    .line 731
+    .line 729
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$2900(Lorg/telegram/ui/ContentPreviewViewer;)F
@@ -3445,12 +3395,12 @@
 
     if-nez v1, :cond_28
 
-    .line 732
+    .line 730
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1, v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$2902(Lorg/telegram/ui/ContentPreviewViewer;F)F
 
-    .line 733
+    .line 731
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$2500(Lorg/telegram/ui/ContentPreviewViewer;)F
@@ -3462,14 +3412,14 @@
     :cond_28
     new-array v1, v12, [F
 
-    .line 735
+    .line 733
     fill-array-data v1, :array_0
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v1
 
-    .line 736
+    .line 734
     new-instance v2, Lorg/telegram/ui/ContentPreviewViewer$2$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/ContentPreviewViewer$2$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ContentPreviewViewer$2;)V
@@ -3478,20 +3428,20 @@
 
     const-wide/16 v2, 0x15e
 
-    .line 741
+    .line 739
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 742
+    .line 740
     sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 743
+    .line 741
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
-    goto/16 :goto_21
+    goto/16 :goto_22
 
-    .line 745
+    .line 743
     :cond_29
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -3501,12 +3451,12 @@
 
     if-eqz v4, :cond_48
 
-    .line 746
+    .line 744
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v4, v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$1202(Lorg/telegram/ui/ContentPreviewViewer;Z)Z
 
-    .line 747
+    .line 745
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v4}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -3515,16 +3465,16 @@
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 749
+    .line 747
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v4}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
 
     move-result v4
 
-    sget v7, Lcom/iMe/common/IdFabric$CustomType;->CONTENT_TYPE_KIKLIKO:I
+    sget v8, Lcom/iMe/common/IdFabric$CustomType;->CONTENT_TYPE_KIKLIKO:I
 
-    if-ne v4, v7, :cond_2a
+    if-ne v4, v8, :cond_2a
 
     move v4, v2
 
@@ -3533,53 +3483,53 @@
     :cond_2a
     move v4, v3
 
-    .line 750
+    .line 748
     :goto_13
-    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
+    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
 
-    move-result v7
+    move-result v8
 
-    sget v8, Lcom/iMe/common/IdFabric$CustomType;->CONTENT_TYPE_NFT:I
+    sget v9, Lcom/iMe/common/IdFabric$CustomType;->CONTENT_TYPE_NFT:I
 
-    if-ne v7, v8, :cond_2b
+    if-ne v8, v9, :cond_2b
 
-    move v7, v2
+    move v8, v2
 
     goto :goto_14
 
     :cond_2b
-    move v7, v3
+    move v8, v3
 
-    .line 752
+    .line 750
     :goto_14
-    new-instance v8, Ljava/util/ArrayList;
+    new-instance v9, Ljava/util/ArrayList;
 
-    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    .line 753
+    .line 751
     new-instance v15, Ljava/util/ArrayList;
 
     invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
 
-    .line 754
+    .line 752
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
-    if-eqz v7, :cond_2c
+    if-eqz v8, :cond_2c
 
-    .line 758
+    .line 756
     sget v21, Lorg/telegram/messenger/R$string;->nft_preview_copy_token_id:I
 
     invoke-static/range {v21 .. v21}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 759
+    .line 757
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_copy:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3588,7 +3538,7 @@
 
     invoke-virtual {v12, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 760
+    .line 758
     sget v2, Lcom/iMe/common/IdFabric$Menu;->NFT_COPY_ID:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3597,16 +3547,16 @@
 
     invoke-virtual {v15, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 762
+    .line 760
     sget v2, Lorg/telegram/messenger/R$string;->nft_preview_open_contract:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 763
+    .line 761
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_etherscan_24:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3615,7 +3565,7 @@
 
     invoke-virtual {v12, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 764
+    .line 762
     sget v2, Lcom/iMe/common/IdFabric$Menu;->NFT_OPEN_CONTRACT:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3624,16 +3574,16 @@
 
     invoke-virtual {v15, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 766
+    .line 764
     sget v2, Lorg/telegram/messenger/R$string;->custom_avatar_set:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 767
+    .line 765
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_openprofile:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3642,7 +3592,7 @@
 
     invoke-virtual {v12, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 768
+    .line 766
     sget v2, Lcom/iMe/common/IdFabric$Menu;->SET_AS_AVATAR:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3651,16 +3601,16 @@
 
     invoke-virtual {v15, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 770
+    .line 768
     sget v2, Lorg/telegram/messenger/R$string;->nft_preview_open_source:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 771
+    .line 769
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_photos:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3669,7 +3619,7 @@
 
     invoke-virtual {v12, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 772
+    .line 770
     sget v2, Lcom/iMe/common/IdFabric$Menu;->NFT_OPEN_SOURCE:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3678,7 +3628,7 @@
 
     invoke-virtual {v15, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 775
+    .line 773
     :cond_2c
     iget-object v2, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -3712,7 +3662,7 @@
 
     if-eqz v4, :cond_2d
 
-    .line 778
+    .line 776
     sget v2, Lorg/telegram/messenger/R$string;->Send:I
 
     const-string v11, "Send"
@@ -3721,11 +3671,11 @@
 
     move-result-object v2
 
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_15
 
-    .line 780
+    .line 778
     :cond_2d
     sget v2, Lorg/telegram/messenger/R$string;->SendGifPreview:I
 
@@ -3735,9 +3685,9 @@
 
     move-result-object v2
 
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 781
+    .line 779
     :goto_15
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_send:I
 
@@ -3747,23 +3697,23 @@
 
     invoke-virtual {v12, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 782
+    .line 780
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     invoke-virtual {v15, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 784
+    .line 782
     sget v2, Lorg/telegram/messenger/R$string;->custom_avatar_set:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 785
+    .line 783
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_openprofile:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3772,7 +3722,7 @@
 
     invoke-virtual {v12, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 786
+    .line 784
     sget v2, Lcom/iMe/common/IdFabric$Menu;->SET_AS_AVATAR:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3783,16 +3733,16 @@
 
     if-eqz v4, :cond_2e
 
-    .line 788
+    .line 786
     sget v2, Lorg/telegram/messenger/R$string;->kikliko_send_as_gif:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 789
+    .line 787
     sget v2, Lorg/telegram/messenger/R$drawable;->smiles_tab_gif:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3801,7 +3751,7 @@
 
     invoke-virtual {v12, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 790
+    .line 788
     sget v2, Lcom/iMe/common/IdFabric$Menu;->SEND_AS_GIF:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3810,7 +3760,7 @@
 
     invoke-virtual {v15, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 795
+    .line 792
     :cond_2e
     iget-object v2, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -3828,7 +3778,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_31
 
     iget-object v2, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -3840,20 +3790,35 @@
 
     move-result v2
 
-    if-nez v2, :cond_30
+    if-nez v2, :cond_31
 
     if-eqz v1, :cond_2f
 
+    .line 795
+    sget v2, Lorg/telegram/messenger/R$string;->send_with_sound:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_16
+
     .line 797
-    sget v1, Lorg/telegram/messenger/R$string;->send_with_sound:I
+    :cond_2f
+    sget v2, Lorg/telegram/messenger/R$string;->SendWithoutSound:I
 
-    invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v5, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 798
+    :goto_16
+    if-eqz v1, :cond_30
+
+    .line 800
     sget v1, Lorg/telegram/messenger/R$drawable;->input_notify_on:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3862,19 +3827,10 @@
 
     invoke-virtual {v12, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_16
+    goto :goto_17
 
-    .line 800
-    :cond_2f
-    sget v1, Lorg/telegram/messenger/R$string;->SendWithoutSound:I
-
-    invoke-static {v10, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 801
+    .line 802
+    :cond_30
     sget v1, Lorg/telegram/messenger/R$drawable;->input_notify_off:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3884,73 +3840,14 @@
     invoke-virtual {v12, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 803
-    :goto_16
-    sget v1, Lcom/iMe/common/IdFabric$Menu;->SEND_SILENT:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v15, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 806
-    :cond_30
-    iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
-
-    move-result-object v1
-
-    iget-object v2, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
-
-    move-result v2
-
-    invoke-interface {v1, v2}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->needSend(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_31
-
-    iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->isInScheduleMode()Z
-
-    move-result v1
-
-    if-nez v1, :cond_31
-
-    .line 807
-    sget v1, Lorg/telegram/messenger/R$string;->SendWithoutSound:I
-
-    invoke-static {v10, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 808
-    sget v1, Lorg/telegram/messenger/R$drawable;->input_notify_off:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v12, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 809
+    :goto_17
     invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {v15, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 811
+    .line 805
     :cond_31
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -3964,16 +3861,16 @@
 
     if-eqz v1, :cond_32
 
-    .line 812
+    .line 806
     sget v1, Lorg/telegram/messenger/R$string;->Schedule:I
 
-    invoke-static {v5, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 813
+    .line 807
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_autodelete:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3984,14 +3881,14 @@
 
     const/4 v1, 0x3
 
-    .line 814
+    .line 808
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {v15, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 818
+    .line 812
     :cond_32
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -4001,7 +3898,7 @@
 
     if-eqz v1, :cond_34
 
-    .line 819
+    .line 813
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$800(Lorg/telegram/ui/ContentPreviewViewer;)I
@@ -4024,20 +3921,20 @@
 
     if-eqz v1, :cond_33
 
-    .line 820
+    .line 814
     sget v2, Lorg/telegram/messenger/R$string;->Delete:I
 
     new-array v5, v3, [Ljava/lang/Object;
 
-    const-string v10, "Delete"
+    const-string v6, "Delete"
 
-    invoke-static {v10, v2, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, v2, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 821
+    .line 815
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_delete:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4048,30 +3945,30 @@
 
     const/4 v2, 0x1
 
-    .line 822
+    .line 816
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
     invoke-virtual {v15, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_17
+    goto :goto_18
 
-    .line 824
+    .line 818
     :cond_33
     sget v2, Lorg/telegram/messenger/R$string;->SaveToGIFs:I
 
     new-array v5, v3, [Ljava/lang/Object;
 
-    const-string v10, "SaveToGIFs"
+    const-string v6, "SaveToGIFs"
 
-    invoke-static {v10, v2, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, v2, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 825
+    .line 819
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_gif_add:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4082,22 +3979,22 @@
 
     const/4 v2, 0x2
 
-    .line 826
+    .line 820
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
     invoke-virtual {v15, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_17
+    goto :goto_18
 
     :cond_34
     move v1, v3
 
-    :goto_17
+    :goto_18
     if-eqz v4, :cond_35
 
-    .line 833
+    .line 827
     sget v2, Lorg/telegram/messenger/R$string;->ReportChat:I
 
     const-string v5, "ReportChat"
@@ -4106,9 +4003,9 @@
 
     move-result-object v2
 
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 834
+    .line 828
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_report:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4117,7 +4014,7 @@
 
     invoke-virtual {v12, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 835
+    .line 829
     sget v2, Lcom/iMe/common/IdFabric$Menu;->REPORT:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4126,9 +4023,9 @@
 
     invoke-virtual {v15, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_18
+    goto :goto_19
 
-    .line 836
+    .line 830
     :cond_35
     iget-object v2, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -4140,17 +4037,17 @@
 
     if-ne v2, v5, :cond_36
 
-    .line 837
-    invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 831
+    invoke-virtual {v9, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 838
+    .line 832
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     invoke-virtual {v12, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 839
+    .line 833
     sget v2, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_AUTO_PREVIEW:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4159,10 +4056,10 @@
 
     invoke-virtual {v15, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 842
+    .line 836
     :cond_36
-    :goto_18
-    invoke-virtual {v8}, Ljava/util/ArrayList;->isEmpty()Z
+    :goto_19
+    invoke-virtual {v9}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v2
 
@@ -4170,7 +4067,7 @@
 
     return-void
 
-    .line 846
+    .line 840
     :cond_37
     invoke-virtual {v12}, Ljava/util/ArrayList;->size()I
 
@@ -4180,15 +4077,15 @@
 
     move v5, v3
 
-    .line 847
-    :goto_19
+    .line 841
+    :goto_1a
     invoke-virtual {v12}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
     if-ge v5, v6, :cond_38
 
-    .line 848
+    .line 842
     invoke-virtual {v12, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -4203,9 +4100,9 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_19
+    goto :goto_1a
 
-    .line 851
+    .line 845
     :cond_38
     new-instance v2, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
@@ -4221,25 +4118,25 @@
 
     sget v6, Lorg/telegram/messenger/R$drawable;->popup_fixed_alert2:I
 
-    iget-object v10, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v10}, Lorg/telegram/ui/ContentPreviewViewer;->access$100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result-object v10
+    move-result-object v7
 
-    invoke-direct {v2, v5, v6, v10}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v2, v5, v6, v7}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     if-nez v4, :cond_39
 
-    if-eqz v7, :cond_3a
+    if-eqz v8, :cond_3a
 
     :cond_39
     const/4 v5, 0x1
 
-    .line 854
+    .line 848
     invoke-virtual {v2, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setFitItems(Z)V
 
-    .line 858
+    .line 852
     :cond_3a
     new-instance v5, Lorg/telegram/ui/ContentPreviewViewer$2$$ExternalSyntheticLambda2;
 
@@ -4247,32 +4144,32 @@
 
     move v6, v3
 
+    .line 930
+    :goto_1b
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
+
+    move-result v7
+
+    if-ge v6, v7, :cond_44
+
     .line 932
-    :goto_1a
-    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
-
-    move-result v10
-
-    if-ge v6, v10, :cond_44
-
-    .line 934
     invoke-virtual {v15, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v7
 
-    check-cast v10, Ljava/lang/Integer;
+    check-cast v7, Ljava/lang/Integer;
 
-    invoke-virtual {v10}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
-    move-result v10
+    move-result v7
 
     if-nez v6, :cond_3e
 
     if-nez v4, :cond_3b
 
-    if-eqz v7, :cond_3e
+    if-eqz v8, :cond_3e
 
-    .line 936
+    .line 934
     :cond_3b
     new-instance v11, Landroid/widget/LinearLayout;
 
@@ -4282,7 +4179,7 @@
 
     invoke-direct {v11, v14}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 937
+    .line 935
     sget v14, Lorg/telegram/messenger/R$id;->fit_width_tag:I
 
     const/16 v21, 0x1
@@ -4295,10 +4192,10 @@
 
     move/from16 v3, v21
 
-    .line 938
+    .line 936
     invoke-virtual {v11, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 939
+    .line 937
     new-instance v14, Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -4307,18 +4204,18 @@
 
     invoke-direct {v14, v3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 940
+    .line 938
     iget-object v3, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v3
 
-    move/from16 v21, v7
+    move/from16 v21, v8
 
-    const-string v7, "windowBackgroundWhiteBlackText"
+    const-string v8, "windowBackgroundWhiteBlackText"
 
-    invoke-static {v7, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v8, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
@@ -4326,28 +4223,28 @@
 
     const/high16 v3, 0x41800000    # 16.0f
 
-    const/4 v7, 0x1
+    const/4 v8, 0x1
+
+    .line 939
+    invoke-virtual {v14, v8, v3}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    .line 940
+    invoke-virtual {v14, v8}, Landroid/widget/TextView;->setLines(I)V
 
     .line 941
-    invoke-virtual {v14, v7, v3}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v14, v8}, Landroid/widget/TextView;->setMaxLines(I)V
 
     .line 942
-    invoke-virtual {v14, v7}, Landroid/widget/TextView;->setLines(I)V
+    invoke-virtual {v14, v8}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     .line 943
-    invoke-virtual {v14, v7}, Landroid/widget/TextView;->setMaxLines(I)V
-
-    .line 944
-    invoke-virtual {v14, v7}, Landroid/widget/TextView;->setSingleLine(Z)V
-
-    .line 945
     sget-object v3, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v14, v3}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     if-eqz v4, :cond_3c
 
-    .line 947
+    .line 945
     iget-object v3, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$3100(Lorg/telegram/ui/ContentPreviewViewer;)Lcom/iMe/storage/data/network/model/response/kikliko/GifResponse;
@@ -4360,9 +4257,9 @@
 
     invoke-virtual {v14, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_1b
+    goto :goto_1c
 
-    .line 949
+    .line 947
     :cond_3c
     iget-object v3, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -4376,7 +4273,7 @@
 
     invoke-virtual {v14, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :goto_1b
+    :goto_1c
     const/16 v24, -0x2
 
     const/16 v25, -0x2
@@ -4391,76 +4288,76 @@
 
     const/16 v30, 0x8
 
-    .line 951
+    .line 949
     invoke-static/range {v24 .. v30}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v11, v14, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 953
+    .line 951
     new-instance v3, Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-direct {v3, v7}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 954
-    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    .line 952
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result-object v7
+    move-result-object v8
 
     const-string v14, "windowBackgroundWhiteGrayText2"
 
-    invoke-static {v14, v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v14, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result v7
+    move-result v8
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v3, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const/high16 v7, 0x41500000    # 13.0f
+    const/high16 v8, 0x41500000    # 13.0f
 
     const/4 v14, 0x1
 
-    .line 955
-    invoke-virtual {v3, v14, v7}, Landroid/widget/TextView;->setTextSize(IF)V
+    .line 953
+    invoke-virtual {v3, v14, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
     if-eqz v4, :cond_3d
 
+    .line 955
+    sget v8, Lorg/telegram/messenger/R$string;->kikliko_promo:I
+
+    invoke-static {v8}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v3, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_1d
+
     .line 957
-    sget v7, Lorg/telegram/messenger/R$string;->kikliko_promo:I
+    :cond_3d
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v7}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$3200(Lorg/telegram/ui/ContentPreviewViewer;)Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;->getDescription()Ljava/lang/String;
 
-    goto :goto_1c
+    move-result-object v8
+
+    invoke-virtual {v3, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :goto_1d
+    const/4 v8, -0x2
 
     .line 959
-    :cond_3d
-    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
-
-    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$3200(Lorg/telegram/ui/ContentPreviewViewer;)Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;->getDescription()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    :goto_1c
-    const/4 v7, -0x2
-
-    .line 961
-    invoke-static {v7, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v8, v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v14
 
@@ -4468,7 +4365,7 @@
 
     const/16 v3, 0x12
 
-    .line 962
+    .line 960
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v14
@@ -4477,7 +4374,7 @@
 
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v8
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -4489,20 +4386,20 @@
 
     move-result v4
 
-    invoke-virtual {v11, v14, v7, v3, v4}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+    invoke-virtual {v11, v14, v8, v3, v4}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
     const/4 v3, -0x1
 
     const/4 v4, -0x2
 
-    .line 963
+    .line 961
     invoke-static {v3, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v2, v11, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;Landroid/widget/LinearLayout$LayoutParams;)V
 
-    .line 964
+    .line 962
     iget-object v3, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -4511,23 +4408,23 @@
 
     invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addColoredGap(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;
 
-    goto :goto_1d
+    goto :goto_1e
 
     :cond_3e
     move/from16 v25, v4
 
-    move/from16 v21, v7
+    move/from16 v21, v8
 
-    .line 965
+    .line 963
     sget v3, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_AUTO_PREVIEW:I
 
-    if-eq v10, v3, :cond_3f
+    if-eq v7, v3, :cond_3f
 
     sget v3, Lcom/iMe/common/IdFabric$Menu;->REPORT:I
 
-    if-ne v10, v3, :cond_40
+    if-ne v7, v3, :cond_40
 
-    .line 966
+    .line 964
     :cond_3f
     iget-object v3, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -4537,9 +4434,9 @@
 
     invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addColoredGap(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;
 
-    .line 969
+    .line 967
     :cond_40
-    :goto_1d
+    :goto_1e
     invoke-virtual {v12, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -4550,45 +4447,45 @@
 
     move-result v3
 
-    invoke-virtual {v8, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v9, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/lang/CharSequence;
 
-    iget-object v7, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v7}, Lorg/telegram/ui/ContentPreviewViewer;->access$100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result-object v7
+    move-result-object v8
 
     const/4 v11, 0x0
 
-    invoke-static {v2, v3, v4, v11, v7}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    invoke-static {v2, v3, v4, v11, v8}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     move-result-object v3
 
-    .line 970
+    .line 968
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 971
+    .line 969
     invoke-virtual {v3, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 973
+    .line 971
     sget v4, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_AUTO_PREVIEW:I
 
-    if-ne v10, v4, :cond_41
+    if-ne v7, v4, :cond_41
 
-    .line 974
+    .line 972
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v4, v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$2202(Lorg/telegram/ui/ContentPreviewViewer;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 975
+    .line 973
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v4}, Lorg/telegram/ui/ContentPreviewViewer;->access$1600(Lorg/telegram/ui/ContentPreviewViewer;)V
@@ -4596,8 +4493,8 @@
     :cond_41
     if-eqz v1, :cond_43
 
-    .line 978
-    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
+    .line 977
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
@@ -4605,30 +4502,30 @@
 
     sub-int/2addr v4, v7
 
-    iget-object v10, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+    iget-object v8, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v10}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
+    invoke-static {v8}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
 
-    move-result v10
+    move-result v8
 
-    if-ne v10, v7, :cond_42
+    if-ne v8, v7, :cond_42
 
     const/4 v7, 0x1
 
-    goto :goto_1e
+    goto :goto_1f
 
     :cond_42
     const/4 v7, 0x0
 
-    :goto_1e
+    :goto_1f
     sub-int/2addr v4, v7
 
     if-ne v6, v4, :cond_43
 
-    .line 979
+    .line 978
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v4, v9}, Lorg/telegram/ui/ContentPreviewViewer;->access$2800(Lorg/telegram/ui/ContentPreviewViewer;Ljava/lang/String;)I
+    invoke-static {v4, v10}, Lorg/telegram/ui/ContentPreviewViewer;->access$2800(Lorg/telegram/ui/ContentPreviewViewer;Ljava/lang/String;)I
 
     move-result v4
 
@@ -4643,15 +4540,15 @@
     :cond_43
     add-int/lit8 v6, v6, 0x1
 
-    move/from16 v7, v21
+    move/from16 v8, v21
 
     move/from16 v4, v25
 
     const/4 v3, 0x0
 
-    goto/16 :goto_1a
+    goto/16 :goto_1b
 
-    .line 982
+    .line 981
     :cond_44
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
@@ -4663,7 +4560,7 @@
 
     iput-object v3, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 993
+    .line 992
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -4672,7 +4569,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setPauseNotifications(Z)V
 
-    .line 994
+    .line 993
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -4681,28 +4578,28 @@
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setDismissAnimationDuration(I)V
 
-    .line 995
+    .line 994
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setScaleOut(Z)V
 
-    .line 996
+    .line 995
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v3}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 997
+    .line 996
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v3}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 998
+    .line 997
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -4711,14 +4608,14 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 999
+    .line 998
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v1, v3}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
-    .line 1000
+    .line 999
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -4739,7 +4636,7 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1001
+    .line 1000
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -4748,7 +4645,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 1002
+    .line 1001
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -4761,7 +4658,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setFocusableInTouchMode(Z)V
 
-    .line 1006
+    .line 1005
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x15
@@ -4776,7 +4673,7 @@
 
     if-eqz v1, :cond_45
 
-    .line 1007
+    .line 1006
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$2300(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/view/WindowInsets;
@@ -4799,7 +4696,7 @@
 
     add-int v11, v1, v3
 
-    .line 1008
+    .line 1007
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$2300(Lorg/telegram/ui/ContentPreviewViewer;)Landroid/view/WindowInsets;
@@ -4810,16 +4707,16 @@
 
     move-result v1
 
-    goto :goto_1f
+    goto :goto_20
 
-    .line 1010
+    .line 1009
     :cond_45
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     const/4 v11, 0x0
 
-    .line 1012
-    :goto_1f
+    .line 1011
+    :goto_20
     iget-object v3, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -4854,7 +4751,7 @@
 
     sub-int/2addr v3, v4
 
-    .line 1015
+    .line 1014
     iget-object v4, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v4}, Lorg/telegram/ui/ContentPreviewViewer;->access$2500(Lorg/telegram/ui/ContentPreviewViewer;)F
@@ -4881,12 +4778,12 @@
 
     move-result v5
 
-    goto :goto_20
+    goto :goto_21
 
     :cond_46
     const/4 v5, 0x0
 
-    :goto_20
+    :goto_21
     add-int/2addr v1, v5
 
     iget-object v5, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
@@ -4931,7 +4828,7 @@
 
     const/16 v3, 0x18
 
-    .line 1016
+    .line 1015
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -4950,7 +4847,7 @@
 
     float-to-int v1, v1
 
-    .line 1017
+    .line 1016
     iget-object v3, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     iget-object v4, v3, Lorg/telegram/ui/ContentPreviewViewer;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -4987,7 +4884,7 @@
 
     invoke-virtual {v4, v3, v5, v2, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 1019
+    .line 1018
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$1300(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;
@@ -4996,7 +4893,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
 
-    .line 1021
+    .line 1020
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$2500(Lorg/telegram/ui/ContentPreviewViewer;)F
@@ -5009,7 +4906,7 @@
 
     if-eqz v1, :cond_48
 
-    .line 1022
+    .line 1021
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$2900(Lorg/telegram/ui/ContentPreviewViewer;)F
@@ -5020,12 +4917,12 @@
 
     if-nez v1, :cond_47
 
-    .line 1023
+    .line 1022
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1, v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$2902(Lorg/telegram/ui/ContentPreviewViewer;F)F
 
-    .line 1024
+    .line 1023
     iget-object v1, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$2500(Lorg/telegram/ui/ContentPreviewViewer;)F
@@ -5039,14 +4936,14 @@
 
     new-array v1, v1, [F
 
-    .line 1026
+    .line 1025
     fill-array-data v1, :array_1
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v1
 
-    .line 1027
+    .line 1026
     new-instance v2, Lorg/telegram/ui/ContentPreviewViewer$2$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/ContentPreviewViewer$2$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ContentPreviewViewer$2;)V
@@ -5055,20 +4952,22 @@
 
     const-wide/16 v2, 0x15e
 
-    .line 1032
+    .line 1031
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1033
+    .line 1032
     sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1034
+    .line 1033
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
     :cond_48
-    :goto_21
+    :goto_22
     return-void
+
+    nop
 
     :array_0
     .array-data 4

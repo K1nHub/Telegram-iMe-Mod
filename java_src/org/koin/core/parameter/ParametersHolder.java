@@ -49,7 +49,7 @@ public class ParametersHolder {
                 break;
             }
             T next = it.next();
-            if (clazz.isInstance(next)) {
+            if (clazz.isInstance(next) && next != null) {
                 t = next;
                 continue;
             }

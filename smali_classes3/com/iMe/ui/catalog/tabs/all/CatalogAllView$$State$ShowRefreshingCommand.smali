@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State;Z)V
     .locals 1
 
-    .line 591
+    .line 627
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "showRefreshing"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 593
+    .line 629
     iput-boolean p2, p0, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$ShowRefreshingCommand;->show:Z
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/catalog/tabs/all/CatalogAllView;)V
     .locals 1
 
-    .line 598
+    .line 634
     iget-boolean v0, p0, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$ShowRefreshingCommand;->show:Z
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/SwipeRefreshView;->showRefreshing(Z)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 587
+    .line 623
     check-cast p1, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/tabs/all/CatalogAllView$$State$ShowRefreshingCommand;->apply(Lcom/iMe/ui/catalog/tabs/all/CatalogAllView;)V

@@ -28,7 +28,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.xml.parsers.SAXParserFactory;
-import org.telegram.p048ui.ActionBar.Theme;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
@@ -45,22 +45,22 @@ public class SvgHelper {
     public static class Line {
 
         /* renamed from: x1 */
-        float f1470x1;
+        float f1395x1;
 
         /* renamed from: x2 */
-        float f1471x2;
+        float f1396x2;
 
         /* renamed from: y1 */
-        float f1472y1;
+        float f1397y1;
 
         /* renamed from: y2 */
-        float f1473y2;
+        float f1398y2;
 
         public Line(float f, float f2, float f3, float f4) {
-            this.f1470x1 = f;
-            this.f1472y1 = f2;
-            this.f1471x2 = f3;
-            this.f1473y2 = f4;
+            this.f1395x1 = f;
+            this.f1397y1 = f2;
+            this.f1396x2 = f3;
+            this.f1398y2 = f4;
         }
     }
 
@@ -69,14 +69,14 @@ public class SvgHelper {
         float rad;
 
         /* renamed from: x1 */
-        float f1468x1;
+        float f1393x1;
 
         /* renamed from: y1 */
-        float f1469y1;
+        float f1394y1;
 
         public Circle(float f, float f2, float f3) {
-            this.f1468x1 = f;
-            this.f1469y1 = f2;
+            this.f1393x1 = f;
+            this.f1394y1 = f2;
             this.rad = f3;
         }
     }
@@ -97,11 +97,11 @@ public class SvgHelper {
         RectF rect;
 
         /* renamed from: rx */
-        float f1476rx;
+        float f1401rx;
 
         public RoundRect(RectF rectF, float f) {
             this.rect = rectF;
-            this.f1476rx = f;
+            this.f1401rx = f;
         }
     }
 
@@ -277,16 +277,16 @@ public class SvgHelper {
                         canvas.drawRect((RectF) obj, paint);
                     } else if (obj instanceof Line) {
                         Line line = (Line) obj;
-                        canvas.drawLine(line.f1470x1, line.f1472y1, line.f1471x2, line.f1473y2, paint);
+                        canvas.drawLine(line.f1395x1, line.f1397y1, line.f1396x2, line.f1398y2, paint);
                     } else if (obj instanceof Circle) {
                         Circle circle = (Circle) obj;
-                        canvas.drawCircle(circle.f1468x1, circle.f1469y1, circle.rad, paint);
+                        canvas.drawCircle(circle.f1393x1, circle.f1394y1, circle.rad, paint);
                     } else if (obj instanceof Oval) {
                         canvas.drawOval(((Oval) obj).rect, paint);
                     } else if (obj instanceof RoundRect) {
                         RoundRect roundRect = (RoundRect) obj;
                         RectF rectF = roundRect.rect;
-                        float f10 = roundRect.f1476rx;
+                        float f10 = roundRect.f1401rx;
                         canvas.drawRoundRect(rectF, f10, f10, paint);
                     }
                     paint.setAlpha(alpha);
@@ -419,6 +419,26 @@ public class SvgHelper {
         public void copyCommandFromPosition(int i) {
             ArrayList<Object> arrayList = this.commands;
             arrayList.add(arrayList.get(i));
+        }
+
+        public SvgDrawable clone() {
+            SvgDrawable svgDrawable = new SvgDrawable();
+            for (int i = 0; i < this.commands.size(); i++) {
+                svgDrawable.commands.add(this.commands.get(i));
+                Paint paint = this.paints.get(this.commands.get(i));
+                if (paint != null) {
+                    Paint paint2 = new Paint();
+                    paint2.setColor(paint.getColor());
+                    paint2.setStrokeCap(paint.getStrokeCap());
+                    paint2.setStrokeJoin(paint.getStrokeJoin());
+                    paint2.setStrokeWidth(paint.getStrokeWidth());
+                    paint2.setStyle(paint.getStyle());
+                    svgDrawable.paints.put(this.commands.get(i), paint2);
+                }
+            }
+            svgDrawable.width = this.width;
+            svgDrawable.height = this.height;
+            return svgDrawable;
         }
     }
 
@@ -1560,22 +1580,22 @@ public class SvgHelper {
         private char current;
 
         /* renamed from: n */
-        private int f1474n;
+        private int f1399n;
         public int pos;
 
         /* renamed from: s */
-        private CharSequence f1475s;
+        private CharSequence f1400s;
 
         public ParserHelper(CharSequence charSequence, int i) {
-            this.f1475s = charSequence;
+            this.f1400s = charSequence;
             this.pos = i;
-            this.f1474n = charSequence.length();
+            this.f1399n = charSequence.length();
             this.current = charSequence.charAt(i);
         }
 
         private char read() {
             int i = this.pos;
-            int i2 = this.f1474n;
+            int i2 = this.f1399n;
             if (i < i2) {
                 this.pos = i + 1;
             }
@@ -1583,13 +1603,13 @@ public class SvgHelper {
             if (i3 == i2) {
                 return (char) 0;
             }
-            return this.f1475s.charAt(i3);
+            return this.f1400s.charAt(i3);
         }
 
         public void skipWhitespace() {
             while (true) {
                 int i = this.pos;
-                if (i >= this.f1474n || !Character.isWhitespace(this.f1475s.charAt(i))) {
+                if (i >= this.f1399n || !Character.isWhitespace(this.f1400s.charAt(i))) {
                     return;
                 }
                 advance();
@@ -1599,10 +1619,10 @@ public class SvgHelper {
         public void skipNumberSeparator() {
             while (true) {
                 int i = this.pos;
-                if (i >= this.f1474n) {
+                if (i >= this.f1399n) {
                     return;
                 }
-                char charAt = this.f1475s.charAt(i);
+                char charAt = this.f1400s.charAt(i);
                 if (charAt != '\t' && charAt != '\n' && charAt != ' ' && charAt != ',') {
                     return;
                 }

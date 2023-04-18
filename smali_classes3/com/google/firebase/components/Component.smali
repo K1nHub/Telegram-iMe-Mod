@@ -194,6 +194,9 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/SafeVarargs;
+    .end annotation
+
     .line 180
     new-instance v0, Lcom/google/firebase/components/Component$Builder;
 
@@ -290,6 +293,9 @@
             "Lcom/google/firebase/components/Component<",
             "TT;>;"
         }
+    .end annotation
+
+    .annotation runtime Ljava/lang/SafeVarargs;
     .end annotation
 
     .line 197

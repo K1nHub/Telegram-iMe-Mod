@@ -59,7 +59,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 33
+    .line 34
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$items$2;->invoke()[Lcom/iMe/fork/enums/ExtendedAvatarPreviewerItem;
 
     move-result-object v0
@@ -70,7 +70,7 @@
 .method public final invoke()[Lcom/iMe/fork/enums/ExtendedAvatarPreviewerItem;
     .locals 1
 
-    .line 33
+    .line 34
     invoke-static {}, Lcom/iMe/fork/enums/ExtendedAvatarPreviewerItem;->values()[Lcom/iMe/fork/enums/ExtendedAvatarPreviewerItem;
 
     move-result-object v0

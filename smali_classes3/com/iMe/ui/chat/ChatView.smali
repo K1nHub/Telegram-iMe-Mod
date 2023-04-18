@@ -33,9 +33,6 @@
     .end annotation
 .end method
 
-.method public abstract onSuccessGetAuthTokens(Lcom/iMe/storage/domain/model/wallet/SessionTokens;)V
-.end method
-
 .method public abstract onVoiceToTextCompleted(Lorg/telegram/messenger/MessageObject;Ljava/lang/String;)V
 .end method
 

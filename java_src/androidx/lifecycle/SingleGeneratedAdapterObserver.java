@@ -1,19 +1,22 @@
 package androidx.lifecycle;
 
 import androidx.lifecycle.Lifecycle;
-/* JADX INFO: Access modifiers changed from: package-private */
+import kotlin.jvm.internal.Intrinsics;
+/* compiled from: SingleGeneratedAdapterObserver.kt */
 /* loaded from: classes.dex */
-public class SingleGeneratedAdapterObserver implements LifecycleEventObserver {
-    private final GeneratedAdapter mGeneratedAdapter;
+public final class SingleGeneratedAdapterObserver implements LifecycleEventObserver {
+    private final GeneratedAdapter generatedAdapter;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public SingleGeneratedAdapterObserver(GeneratedAdapter generatedAdapter) {
-        this.mGeneratedAdapter = generatedAdapter;
+        Intrinsics.checkNotNullParameter(generatedAdapter, "generatedAdapter");
+        this.generatedAdapter = generatedAdapter;
     }
 
     @Override // androidx.lifecycle.LifecycleEventObserver
-    public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-        this.mGeneratedAdapter.callMethods(lifecycleOwner, event, false, null);
-        this.mGeneratedAdapter.callMethods(lifecycleOwner, event, true, null);
+    public void onStateChanged(LifecycleOwner source, Lifecycle.Event event) {
+        Intrinsics.checkNotNullParameter(source, "source");
+        Intrinsics.checkNotNullParameter(event, "event");
+        this.generatedAdapter.callMethods(source, event, false, null);
+        this.generatedAdapter.callMethods(source, event, true, null);
     }
 }

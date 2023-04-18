@@ -1,14 +1,11 @@
 package androidx.emoji2.text;
 
-import android.os.Build;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.Spannable;
-import android.text.TextPaint;
 import android.text.method.MetaKeyKeyListener;
 import android.view.KeyEvent;
 import android.view.inputmethod.InputConnection;
-import androidx.core.graphics.PaintCompat;
 import androidx.emoji2.text.EmojiCompat;
 import androidx.emoji2.text.MetadataRepo;
 import java.util.Arrays;
@@ -35,23 +32,22 @@ public final class EmojiProcessor {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x010f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x0125, code lost:
         ((androidx.emoji2.text.SpannableBuilder) r10).endBatchEdit();
      */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0042 A[Catch: all -> 0x0116, TryCatch #0 {all -> 0x0116, blocks: (B:7:0x000d, B:10:0x0012, B:12:0x0016, B:14:0x0025, B:18:0x0031, B:20:0x003b, B:22:0x003e, B:24:0x0042, B:26:0x004e, B:27:0x0051, B:29:0x005e, B:35:0x006d, B:36:0x007b, B:40:0x0096, B:48:0x00a6, B:51:0x00b2, B:52:0x00b7, B:53:0x00c1, B:55:0x00c8, B:56:0x00cd, B:58:0x00d8, B:60:0x00df, B:64:0x00e9, B:67:0x00f5, B:68:0x00fb, B:15:0x002b), top: B:81:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x00f5 A[Catch: all -> 0x0116, TryCatch #0 {all -> 0x0116, blocks: (B:7:0x000d, B:10:0x0012, B:12:0x0016, B:14:0x0025, B:18:0x0031, B:20:0x003b, B:22:0x003e, B:24:0x0042, B:26:0x004e, B:27:0x0051, B:29:0x005e, B:35:0x006d, B:36:0x007b, B:40:0x0096, B:48:0x00a6, B:51:0x00b2, B:52:0x00b7, B:53:0x00c1, B:55:0x00c8, B:56:0x00cd, B:58:0x00d8, B:60:0x00df, B:64:0x00e9, B:67:0x00f5, B:68:0x00fb, B:15:0x002b), top: B:81:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0107 A[DONT_GENERATE] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x00cd A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x009d A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x00a2 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0047 A[Catch: all -> 0x012c, TryCatch #0 {all -> 0x012c, blocks: (B:7:0x000d, B:10:0x0012, B:12:0x0016, B:14:0x0025, B:18:0x0036, B:20:0x0040, B:22:0x0043, B:24:0x0047, B:26:0x0053, B:27:0x0056, B:29:0x0063, B:35:0x0072, B:36:0x0080, B:40:0x009b, B:48:0x00ab, B:51:0x00b7, B:52:0x00c1, B:53:0x00cb, B:55:0x00d2, B:56:0x00d7, B:58:0x00e2, B:60:0x00e9, B:64:0x00f3, B:67:0x00ff, B:68:0x0105, B:70:0x010e, B:15:0x002b), top: B:84:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00ff A[Catch: all -> 0x012c, TryCatch #0 {all -> 0x012c, blocks: (B:7:0x000d, B:10:0x0012, B:12:0x0016, B:14:0x0025, B:18:0x0036, B:20:0x0040, B:22:0x0043, B:24:0x0047, B:26:0x0053, B:27:0x0056, B:29:0x0063, B:35:0x0072, B:36:0x0080, B:40:0x009b, B:48:0x00ab, B:51:0x00b7, B:52:0x00c1, B:53:0x00cb, B:55:0x00d2, B:56:0x00d7, B:58:0x00e2, B:60:0x00e9, B:64:0x00f3, B:67:0x00ff, B:68:0x0105, B:70:0x010e, B:15:0x002b), top: B:84:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x010e A[Catch: all -> 0x012c, TRY_LEAVE, TryCatch #0 {all -> 0x012c, blocks: (B:7:0x000d, B:10:0x0012, B:12:0x0016, B:14:0x0025, B:18:0x0036, B:20:0x0040, B:22:0x0043, B:24:0x0047, B:26:0x0053, B:27:0x0056, B:29:0x0063, B:35:0x0072, B:36:0x0080, B:40:0x009b, B:48:0x00ab, B:51:0x00b7, B:52:0x00c1, B:53:0x00cb, B:55:0x00d2, B:56:0x00d7, B:58:0x00e2, B:60:0x00e9, B:64:0x00f3, B:67:0x00ff, B:68:0x0105, B:70:0x010e, B:15:0x002b), top: B:84:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x00d7 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public java.lang.CharSequence process(java.lang.CharSequence r10, int r11, int r12, int r13, boolean r14) {
         /*
-            Method dump skipped, instructions count: 287
+            Method dump skipped, instructions count: 309
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.EmojiProcessor.process(java.lang.CharSequence, int, int, int, boolean):java.lang.CharSequence");
@@ -313,42 +309,6 @@ public final class EmojiProcessor {
                 }
                 return i;
             }
-        }
-    }
-
-    /* loaded from: classes.dex */
-    public static class DefaultGlyphChecker implements EmojiCompat.GlyphChecker {
-        private static final ThreadLocal<StringBuilder> sStringBuilder = new ThreadLocal<>();
-        private final TextPaint mTextPaint;
-
-        /* JADX INFO: Access modifiers changed from: package-private */
-        public DefaultGlyphChecker() {
-            TextPaint textPaint = new TextPaint();
-            this.mTextPaint = textPaint;
-            textPaint.setTextSize(10.0f);
-        }
-
-        @Override // androidx.emoji2.text.EmojiCompat.GlyphChecker
-        public boolean hasGlyph(CharSequence charSequence, int i, int i2, int i3) {
-            int i4 = Build.VERSION.SDK_INT;
-            if (i4 >= 23 || i3 <= i4) {
-                StringBuilder stringBuilder = getStringBuilder();
-                stringBuilder.setLength(0);
-                while (i < i2) {
-                    stringBuilder.append(charSequence.charAt(i));
-                    i++;
-                }
-                return PaintCompat.hasGlyph(this.mTextPaint, stringBuilder.toString());
-            }
-            return false;
-        }
-
-        private static StringBuilder getStringBuilder() {
-            ThreadLocal<StringBuilder> threadLocal = sStringBuilder;
-            if (threadLocal.get() == null) {
-                threadLocal.set(new StringBuilder());
-            }
-            return threadLocal.get();
         }
     }
 }

@@ -22,14 +22,16 @@
 
 .field private static final SYMMETRIC_MACS:[Ljava/lang/String;
 
-.field private static info:Ljava/lang/String; = "BouncyCastle Security Provider v1.60"
+.field private static info:Ljava/lang/String; = "BouncyCastle Security Provider v1.68"
 
 .field private static final keyInfoConverters:Ljava/util/Map;
+
+.field private static final revChkClass:Ljava/lang/Class;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 38
+    .locals 39
 
     new-instance v0, Lorg/bouncycastle/jce/provider/BouncyCastleProviderConfiguration;
 
@@ -40,6 +42,16 @@
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->keyInfoConverters:Ljava/util/Map;
+
+    const-class v0, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;
+
+    const-string v1, "java.security.cert.PKIXRevocationChecker"
+
+    invoke-static {v0, v1}, Lorg/bouncycastle/jcajce/provider/symmetric/util/ClassUtil;->loadClass(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    sput-object v0, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->revChkClass:Ljava/lang/Class;
 
     const-string v0, "PBEPBKDF1"
 
@@ -59,9 +71,11 @@
 
     const-string v0, "SipHash"
 
-    const-string v1, "Poly1305"
+    const-string v1, "SipHash128"
 
-    filled-new-array {v0, v1}, [Ljava/lang/String;
+    const-string v2, "Poly1305"
+
+    filled-new-array {v0, v1, v2}, [Ljava/lang/String;
 
     move-result-object v0
 
@@ -141,7 +155,9 @@
 
     const-string v37, "GOST3412_2015"
 
-    filled-new-array/range {v1 .. v37}, [Ljava/lang/String;
+    const-string v38, "Zuc"
+
+    filled-new-array/range {v1 .. v38}, [Ljava/lang/String;
 
     move-result-object v0
 
@@ -151,7 +167,9 @@
 
     const-string v1, "IES"
 
-    filled-new-array {v0, v1}, [Ljava/lang/String;
+    const-string v2, "COMPOSITE"
+
+    filled-new-array {v0, v1, v2}, [Ljava/lang/String;
 
     move-result-object v0
 
@@ -175,7 +193,9 @@
 
     const-string v9, "GM"
 
-    filled-new-array/range {v1 .. v9}, [Ljava/lang/String;
+    const-string v10, "EdEC"
+
+    filled-new-array/range {v1 .. v10}, [Ljava/lang/String;
 
     move-result-object v0
 
@@ -225,7 +245,9 @@
 
     const-string v22, "DSTU7564"
 
-    filled-new-array/range {v1 .. v22}, [Ljava/lang/String;
+    const-string v23, "Haraka"
+
+    filled-new-array/range {v1 .. v23}, [Ljava/lang/String;
 
     move-result-object v0
 
@@ -261,7 +283,7 @@
 
     const-string v1, "BC"
 
-    const-wide v2, 0x3ff999999999999aL    # 1.6
+    const-wide v2, 0x3ffae147ae147ae1L    # 1.68
 
     invoke-direct {p0, v1, v2, v3, v0}, Ljava/security/Provider;-><init>(Ljava/lang/String;DLjava/lang/String;)V
 
@@ -401,7 +423,23 @@
 
     invoke-virtual {p0, v0, v1}, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->addKeyInfoConverter(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Lorg/bouncycastle/jcajce/provider/util/AsymmetricKeyInfoConverter;)V
 
+    sget-object v0, Lorg/bouncycastle/asn1/isara/IsaraObjectIdentifiers;->id_alg_xmss:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    new-instance v1, Lorg/bouncycastle/pqc/jcajce/provider/xmss/XMSSKeyFactorySpi;
+
+    invoke-direct {v1}, Lorg/bouncycastle/pqc/jcajce/provider/xmss/XMSSKeyFactorySpi;-><init>()V
+
+    invoke-virtual {p0, v0, v1}, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->addKeyInfoConverter(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Lorg/bouncycastle/jcajce/provider/util/AsymmetricKeyInfoConverter;)V
+
     sget-object v0, Lorg/bouncycastle/pqc/asn1/PQCObjectIdentifiers;->xmss_mt:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    new-instance v1, Lorg/bouncycastle/pqc/jcajce/provider/xmss/XMSSMTKeyFactorySpi;
+
+    invoke-direct {v1}, Lorg/bouncycastle/pqc/jcajce/provider/xmss/XMSSMTKeyFactorySpi;-><init>()V
+
+    invoke-virtual {p0, v0, v1}, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->addKeyInfoConverter(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Lorg/bouncycastle/jcajce/provider/util/AsymmetricKeyInfoConverter;)V
+
+    sget-object v0, Lorg/bouncycastle/asn1/isara/IsaraObjectIdentifiers;->id_alg_xmssmt:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     new-instance v1, Lorg/bouncycastle/pqc/jcajce/provider/xmss/XMSSMTKeyFactorySpi;
 
@@ -433,11 +471,35 @@
 
     invoke-virtual {p0, v0, v1}, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->addKeyInfoConverter(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Lorg/bouncycastle/jcajce/provider/util/AsymmetricKeyInfoConverter;)V
 
+    sget-object v0, Lorg/bouncycastle/pqc/asn1/PQCObjectIdentifiers;->qTESLA_p_I:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    new-instance v1, Lorg/bouncycastle/pqc/jcajce/provider/qtesla/QTESLAKeyFactorySpi;
+
+    invoke-direct {v1}, Lorg/bouncycastle/pqc/jcajce/provider/qtesla/QTESLAKeyFactorySpi;-><init>()V
+
+    invoke-virtual {p0, v0, v1}, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->addKeyInfoConverter(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Lorg/bouncycastle/jcajce/provider/util/AsymmetricKeyInfoConverter;)V
+
+    sget-object v0, Lorg/bouncycastle/pqc/asn1/PQCObjectIdentifiers;->qTESLA_p_III:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    new-instance v1, Lorg/bouncycastle/pqc/jcajce/provider/qtesla/QTESLAKeyFactorySpi;
+
+    invoke-direct {v1}, Lorg/bouncycastle/pqc/jcajce/provider/qtesla/QTESLAKeyFactorySpi;-><init>()V
+
+    invoke-virtual {p0, v0, v1}, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->addKeyInfoConverter(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Lorg/bouncycastle/jcajce/provider/util/AsymmetricKeyInfoConverter;)V
+
+    sget-object v0, Lorg/bouncycastle/asn1/pkcs/PKCSObjectIdentifiers;->id_alg_hss_lms_hashsig:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    new-instance v1, Lorg/bouncycastle/pqc/jcajce/provider/lms/LMSKeyFactorySpi;
+
+    invoke-direct {v1}, Lorg/bouncycastle/pqc/jcajce/provider/lms/LMSKeyFactorySpi;-><init>()V
+
+    invoke-virtual {p0, v0, v1}, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->addKeyInfoConverter(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Lorg/bouncycastle/jcajce/provider/util/AsymmetricKeyInfoConverter;)V
+
     return-void
 .end method
 
 .method private setup()V
-    .locals 3
+    .locals 9
 
     sget-object v0, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->DIGESTS:[Ljava/lang/String;
 
@@ -573,37 +635,51 @@
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v0, "CertPathValidator.RFC3281"
+    sget-object v0, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->revChkClass:Ljava/lang/Class;
 
-    const-string v1, "org.bouncycastle.jce.provider.PKIXAttrCertPathValidatorSpi"
+    const-string v1, "CertPathBuilder.PKIX"
 
-    invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v2, "CertPathValidator.PKIX"
 
-    const-string v0, "CertPathBuilder.RFC3281"
+    const-string v3, "CertPathBuilder.RFC3280"
 
-    const-string v1, "org.bouncycastle.jce.provider.PKIXAttrCertPathBuilderSpi"
+    const-string v4, "CertPathValidator.RFC3280"
 
-    invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v5, "org.bouncycastle.jce.provider.PKIXAttrCertPathBuilderSpi"
 
-    const-string v0, "CertPathValidator.RFC3280"
+    const-string v6, "CertPathBuilder.RFC3281"
 
-    const-string v1, "org.bouncycastle.jce.provider.PKIXCertPathValidatorSpi"
+    const-string v7, "org.bouncycastle.jce.provider.PKIXAttrCertPathValidatorSpi"
 
-    invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v8, "CertPathValidator.RFC3281"
 
-    const-string v0, "CertPathBuilder.RFC3280"
+    invoke-virtual {p0, v8, v7}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "org.bouncycastle.jce.provider.PKIXCertPathBuilderSpi"
+    invoke-virtual {p0, v6, v5}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p0, v0, v2}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    const-string v0, "CertPathValidator.PKIX"
+    const-string v0, "org.bouncycastle.jce.provider.PKIXCertPathValidatorSpi_8"
 
-    invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v4, v0}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v0, "CertPathBuilder.PKIX"
+    const-string v4, "org.bouncycastle.jce.provider.PKIXCertPathBuilderSpi_8"
 
-    invoke-virtual {p0, v0, v2}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    goto :goto_0
+
+    :cond_0
+    const-string v0, "org.bouncycastle.jce.provider.PKIXCertPathValidatorSpi"
+
+    invoke-virtual {p0, v4, v0}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v4, "org.bouncycastle.jce.provider.PKIXCertPathBuilderSpi"
+
+    :goto_0
+    invoke-virtual {p0, v3, v4}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0, v2, v0}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0, v1, v4}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "CertStore.Collection"
 

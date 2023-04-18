@@ -17,18 +17,7 @@
     .end annotation
 .end method
 
-.method public abstract createNewWalletWithPassword(Ljava/util/List;Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;",
-            "Ljava/lang/String;",
-            ")V"
-        }
-    .end annotation
-
+.method public abstract createNewWalletWithPassword(Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
     .annotation runtime Lmoxy/viewstate/strategy/alias/OneExecution;
     .end annotation
 .end method
@@ -41,7 +30,10 @@
 .method public abstract onSuccessEnterSeed(Ljava/lang/String;)V
 .end method
 
-.method public abstract setHintWords(Ljava/util/List;)V
+.method public abstract setWalletAddress(Ljava/lang/String;)V
+.end method
+
+.method public abstract showWordsSuggestions(Ljava/util/List;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -50,7 +42,4 @@
             ">;)V"
         }
     .end annotation
-.end method
-
-.method public abstract setWalletAddress(Ljava/lang/String;)V
 .end method

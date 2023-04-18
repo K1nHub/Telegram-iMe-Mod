@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)V
     .locals 7
 
-    .line 7676
+    .line 7634
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$44;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-object p8, p0, Lorg/telegram/ui/DialogsActivity$44;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
@@ -55,7 +55,7 @@
 
     if-nez p2, :cond_0
 
-    .line 7681
+    .line 7639
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;-><init>()V
@@ -65,19 +65,19 @@
     :cond_0
     if-eqz p4, :cond_1
 
-    .line 7683
+    .line 7641
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;-><init>()V
 
-    .line 7684
+    .line 7642
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
 
     iput-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->document_id:J
 
-    .line 7685
+    .line 7643
     invoke-virtual {p4}, Ljava/lang/Integer;->intValue()I
 
     move-result p3
@@ -86,20 +86,20 @@
 
     goto :goto_0
 
-    .line 7687
+    .line 7645
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;-><init>()V
 
-    .line 7688
+    .line 7646
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
 
     move-result-wide p3
 
     iput-wide p3, p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;->document_id:J
 
-    .line 7690
+    .line 7648
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$44;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -111,7 +111,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 7691
+    .line 7649
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$44;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
@@ -124,10 +124,10 @@
 
     if-eqz p1, :cond_2
 
-    .line 7692
+    .line 7650
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$44;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$35400(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$35500(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;
 
     move-result-object p1
 
@@ -137,7 +137,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animateChange(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
 
-    .line 7694
+    .line 7652
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$44;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 
@@ -147,14 +147,14 @@
 
     if-eqz p1, :cond_3
 
-    .line 7695
+    .line 7653
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$44;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 p3, 0x0
 
-    invoke-static {p1, p3}, Lorg/telegram/ui/DialogsActivity;->access$12502(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
+    invoke-static {p1, p3}, Lorg/telegram/ui/DialogsActivity;->access$12602(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 
-    .line 7696
+    .line 7654
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$44;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 
     aget-object p1, p1, p2

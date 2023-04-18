@@ -33,7 +33,7 @@
 
     const/4 p2, 0x0
 
-    .line 15
+    .line 16
     :cond_0
     invoke-interface {p0, p1, p2}, Lcom/iMe/manager/wallet/create/WalletCreateManagerView;->openImportWalletScreen(Ljava/lang/String;Ljava/lang/String;)V
 

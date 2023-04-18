@@ -13,15 +13,15 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzi extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzi> CREATOR = new zzj();
-    @SafeParcelable.Field(m789id = 1)
+    @SafeParcelable.Field(m775id = 1)
     final String zza;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     final String zzb;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     final String zzc;
 
     @SafeParcelable.Constructor
-    public zzi(@SafeParcelable.Param(m788id = 1) String str, @SafeParcelable.Param(m788id = 2) String str2, @SafeParcelable.Param(m788id = 3) String str3) {
+    public zzi(@SafeParcelable.Param(m774id = 1) String str, @SafeParcelable.Param(m774id = 2) String str2, @SafeParcelable.Param(m774id = 3) String str3) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = str3;

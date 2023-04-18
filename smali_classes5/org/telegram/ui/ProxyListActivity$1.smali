@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProxyListActivity;)V
     .locals 0
 
-    .line 372
+    .line 373
     iput-object p1, p0, Lorg/telegram/ui/ProxyListActivity$1;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 376
+    .line 377
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$1;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

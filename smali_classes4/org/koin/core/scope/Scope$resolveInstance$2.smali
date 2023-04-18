@@ -20,35 +20,29 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
-        "Ljava/lang/String;",
+        "Lkotlin/Unit;",
         ">;"
     }
 .end annotation
 
 
-# static fields
-.field public static final INSTANCE:Lorg/koin/core/scope/Scope$resolveInstance$2;
+# instance fields
+.field final synthetic $parameters:Lorg/koin/core/parameter/ParametersHolder;
+
+.field final synthetic this$0:Lorg/koin/core/scope/Scope;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)V
+    .locals 0
 
-    new-instance v0, Lorg/koin/core/scope/Scope$resolveInstance$2;
+    iput-object p1, p0, Lorg/koin/core/scope/Scope$resolveInstance$2;->this$0:Lorg/koin/core/scope/Scope;
 
-    invoke-direct {v0}, Lorg/koin/core/scope/Scope$resolveInstance$2;-><init>()V
+    iput-object p2, p0, Lorg/koin/core/scope/Scope$resolveInstance$2;->$parameters:Lorg/koin/core/parameter/ParametersHolder;
 
-    sput-object v0, Lorg/koin/core/scope/Scope$resolveInstance$2;->INSTANCE:Lorg/koin/core/scope/Scope$resolveInstance$2;
+    const/4 p1, 0x0
 
-    return-void
-.end method
-
-.method constructor <init>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
@@ -58,18 +52,27 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 244
-    invoke-virtual {p0}, Lorg/koin/core/scope/Scope$resolveInstance$2;->invoke()Ljava/lang/String;
+    .line 226
+    invoke-virtual {p0}, Lorg/koin/core/scope/Scope$resolveInstance$2;->invoke()V
 
-    move-result-object v0
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 .end method
 
-.method public final invoke()Ljava/lang/String;
-    .locals 1
+.method public final invoke()V
+    .locals 2
 
-    const-string/jumbo v0, "| remove parameters from stack"
+    .line 227
+    iget-object v0, p0, Lorg/koin/core/scope/Scope$resolveInstance$2;->this$0:Lorg/koin/core/scope/Scope;
 
-    return-object v0
+    invoke-virtual {v0}, Lorg/koin/core/scope/Scope;->get_parameterStack()Lkotlin/collections/ArrayDeque;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/koin/core/scope/Scope$resolveInstance$2;->$parameters:Lorg/koin/core/parameter/ParametersHolder;
+
+    invoke-virtual {v0, v1}, Lkotlin/collections/ArrayDeque;->addFirst(Ljava/lang/Object;)V
+
+    return-void
 .end method

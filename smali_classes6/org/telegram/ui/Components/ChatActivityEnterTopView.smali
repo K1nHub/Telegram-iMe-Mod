@@ -24,7 +24,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 29
+    .line 17
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -35,20 +35,20 @@
 .method public addEditView(Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditView;Landroid/widget/FrameLayout$LayoutParams;)V
     .locals 1
 
-    .line 39
+    .line 27
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView;->editView:Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditView;
 
     if-nez v0, :cond_0
 
-    .line 40
+    .line 28
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView;->editView:Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditView;
 
     const/16 v0, 0x8
 
-    .line 41
+    .line 29
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 42
+    .line 30
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     :cond_0
@@ -58,12 +58,12 @@
 .method public addReplyView(Landroid/view/View;Landroid/widget/FrameLayout$LayoutParams;)V
     .locals 1
 
-    .line 33
+    .line 21
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView;->replyView:Landroid/view/View;
 
     if-nez v0, :cond_0
 
-    .line 34
+    .line 22
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView;->replyView:Landroid/view/View;
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
@@ -75,17 +75,8 @@
 .method public getEditView()Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditView;
     .locals 1
 
-    .line 59
+    .line 47
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView;->editView:Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditView;
-
-    return-object v0
-.end method
-
-.method public getReplyView()Landroid/view/View;
-    .locals 1
-
-    .line 17
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView;->replyView:Landroid/view/View;
 
     return-object v0
 .end method
@@ -93,7 +84,7 @@
 .method public isEditMode()Z
     .locals 1
 
-    .line 55
+    .line 43
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView;->editMode:Z
 
     return v0
@@ -102,15 +93,15 @@
 .method public setEditMode(Z)V
     .locals 4
 
-    .line 47
+    .line 35
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView;->editMode:Z
 
     if-eq p1, v0, :cond_2
 
-    .line 48
+    .line 36
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView;->editMode:Z
 
-    .line 49
+    .line 37
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView;->replyView:Landroid/view/View;
 
     const/16 v1, 0x8
@@ -129,7 +120,7 @@
     :goto_0
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 50
+    .line 38
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterTopView;->editView:Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditView;
 
     if-eqz p1, :cond_1

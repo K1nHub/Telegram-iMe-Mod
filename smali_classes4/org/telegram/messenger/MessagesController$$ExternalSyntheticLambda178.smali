@@ -45,7 +45,7 @@
 
     iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda178;->f$3:Lorg/telegram/messenger/MessagesController$SendAsPeersInfo;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$oa7pUlqCXBU_qfPY7G7uj9HoAYM(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;JLorg/telegram/messenger/MessagesController$SendAsPeersInfo;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$c5Zy_SR2HvTNFeZgfAQ3iFVyofo(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;JLorg/telegram/messenger/MessagesController$SendAsPeersInfo;)V
 
     return-void
 .end method

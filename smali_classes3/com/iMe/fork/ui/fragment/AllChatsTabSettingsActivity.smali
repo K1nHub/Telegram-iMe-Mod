@@ -1,5 +1,5 @@
 .class public final Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;
-.super Lorg/telegram/ui/ActionBar/BaseFragment;
+.super Lcom/iMe/ui/base/mvp/MvpFragment;
 .source "AllChatsTabSettingsActivity.kt"
 
 
@@ -11,8 +11,21 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAllChatsTabSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AllChatsTabSettingsActivity.kt\ncom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 ViewGroup.kt\nandroidx/core/view/ViewGroupKt\n*L\n1#1,262:1\n1#2:263\n55#3,4:264\n*S KotlinDebug\n*F\n+ 1 AllChatsTabSettingsActivity.kt\ncom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity\n*L\n59#1:264,4\n*E\n"
+    value = "SMAP\nAllChatsTabSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AllChatsTabSettingsActivity.kt\ncom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity\n+ 2 ViewGroup.kt\nandroidx/core/view/ViewGroupKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,267:1\n55#2,4:268\n1#3:272\n*S KotlinDebug\n*F\n+ 1 AllChatsTabSettingsActivity.kt\ncom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity\n*L\n64#1:268,4\n*E\n"
 .end annotation
+
+
+# static fields
+.field static final synthetic $$delegatedProperties:[Lkotlin/reflect/KProperty;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Lkotlin/reflect/KProperty<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
@@ -28,78 +41,147 @@
 
 .field private iconInsteadTitleRow:I
 
-.field private final listAdapter$delegate:Lkotlin/Lazy;
+.field private final listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-.field private final listView$delegate:Lkotlin/Lazy;
+.field private final listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-.field private final rootView$delegate:Lkotlin/Lazy;
+.field private final rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
 .field private rowCount:I
 
 
 # direct methods
-.method public static synthetic $r8$lambda$LdiV9GndJhZILcJ8_Vail1lpadw(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$4WaQT4y16SemGLsw2cfMfKsuuDQ(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->initListView$lambda$10$lambda$9(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getThemeDescriptions$lambda$2(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$wxgEm0dsha-Q-MbF6yM-LJedjas(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
+.method public static synthetic $r8$lambda$O4Ez70XnbeLxAfnMl7fdAn9pbXI(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->initListView$lambda$10$lambda$9$lambda$8(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
+    invoke-static {p0, p1}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->initListView$lambda$9$lambda$8$lambda$7(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$xGe85XmqT7_COyXIoTFkbPuWmQw(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
+.method public static synthetic $r8$lambda$oK0ZL8x_wypFCy_qzfvKKS1CXO4(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getThemeDescriptions$lambda$3(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
+    invoke-static {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->initListView$lambda$9$lambda$8(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
+
+    return-void
+.end method
+
+.method static constructor <clinit>()V
+    .locals 6
+
+    const-class v0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Lkotlin/reflect/KProperty;
+
+    .line 34
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "rootView"
+
+    const-string v4, "getRootView()Landroid/widget/FrameLayout;"
+
+    const/4 v5, 0x0
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v2
+
+    aput-object v2, v1, v5
+
+    .line 35
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "listView"
+
+    const-string v4, "getListView()Lorg/telegram/ui/Components/RecyclerListView;"
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    aput-object v2, v1, v3
+
+    .line 36
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "listAdapter"
+
+    const-string v4, "getListAdapter()Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$ListAdapter;"
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v0
+
+    const/4 v2, 0x2
+
+    aput-object v0, v1, v2
+
+    sput-object v1, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 3
 
-    .line 30
-    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
+    .line 31
+    invoke-direct {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;-><init>()V
 
-    .line 33
+    .line 34
     new-instance v0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$rootView$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$rootView$2;-><init>(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rootView$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 34
+    .line 35
     new-instance v0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$listView$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$listView$2;-><init>(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->listView$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 35
+    .line 36
     new-instance v0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$listAdapter$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$listAdapter$2;-><init>(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->listAdapter$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     return-void
 .end method
@@ -107,7 +189,7 @@
 .method public static final synthetic access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)I
     .locals 0
 
-    .line 30
+    .line 31
     iget p0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableRow:I
 
     return p0
@@ -116,7 +198,7 @@
 .method public static final synthetic access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)I
     .locals 0
 
-    .line 30
+    .line 31
     iget p0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableSectionRow:I
 
     return p0
@@ -125,7 +207,7 @@
 .method public static final synthetic access$getFabsRow$p(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)I
     .locals 0
 
-    .line 30
+    .line 31
     iget p0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->fabsRow:I
 
     return p0
@@ -134,7 +216,7 @@
 .method public static final synthetic access$getFabsSectionRow$p(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)I
     .locals 0
 
-    .line 30
+    .line 31
     iget p0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->fabsSectionRow:I
 
     return p0
@@ -143,7 +225,7 @@
 .method public static final synthetic access$getIconInsteadTitleHeaderRow$p(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)I
     .locals 0
 
-    .line 30
+    .line 31
     iget p0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->iconInsteadTitleHeaderRow:I
 
     return p0
@@ -152,7 +234,7 @@
 .method public static final synthetic access$getIconInsteadTitleRow$p(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)I
     .locals 0
 
-    .line 30
+    .line 31
     iget p0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->iconInsteadTitleRow:I
 
     return p0
@@ -161,7 +243,7 @@
 .method public static final synthetic access$getRowCount$p(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)I
     .locals 0
 
-    .line 30
+    .line 31
     iget p0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     return p0
@@ -170,7 +252,7 @@
 .method public static final synthetic access$initListView(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 30
+    .line 31
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->initListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
@@ -181,7 +263,7 @@
 .method public static final synthetic access$initRootView(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 30
+    .line 31
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->initRootView()Landroid/widget/FrameLayout;
 
     move-result-object p0
@@ -192,7 +274,7 @@
 .method public static final synthetic access$isClickableViewType(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;I)Z
     .locals 0
 
-    .line 30
+    .line 31
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->isClickableViewType(I)Z
 
     move-result p0
@@ -203,7 +285,7 @@
 .method public static final synthetic access$needDivider(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;I)Z
     .locals 0
 
-    .line 30
+    .line 31
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->needDivider(I)Z
 
     move-result p0
@@ -214,19 +296,25 @@
 .method public static final synthetic access$updateRows(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
     .locals 0
 
-    .line 30
+    .line 31
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->updateRows()V
 
     return-void
 .end method
 
 .method private final getListAdapter()Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$ListAdapter;
-    .locals 1
+    .locals 3
 
-    .line 35
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->listAdapter$delegate:Lkotlin/Lazy;
+    .line 36
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x2
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -236,12 +324,18 @@
 .end method
 
 .method private final getListView()Lorg/telegram/ui/Components/RecyclerListView;
-    .locals 1
+    .locals 3
 
-    .line 34
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->listView$delegate:Lkotlin/Lazy;
+    .line 35
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x1
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -251,12 +345,18 @@
 .end method
 
 .method private final getRootView()Landroid/widget/FrameLayout;
-    .locals 1
+    .locals 3
 
-    .line 33
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rootView$delegate:Lkotlin/Lazy;
+    .line 34
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x0
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -265,14 +365,14 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda$3(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
+.method private static final getThemeDescriptions$lambda$2(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
     .locals 4
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 59
+    .line 64
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
@@ -296,7 +396,7 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 59
+    .line 64
     instance-of v3, v2, Lcom/iMe/fork/ui/view/FabsCell;
 
     if-eqz v3, :cond_0
@@ -325,7 +425,7 @@
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 5
 
-    .line 108
+    .line 113
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -336,10 +436,10 @@
 
     const/4 v1, 0x1
 
-    .line 109
+    .line 114
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setFocusable(Z)V
 
-    .line 110
+    .line 115
     new-instance v2, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -352,14 +452,14 @@
 
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 111
+    .line 116
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$ListAdapter;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 112
+    .line 117
     new-instance v1, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
@@ -369,29 +469,29 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda$10$lambda$9(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
+.method private static final initListView$lambda$9$lambda$8(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
     .locals 2
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 114
+    .line 119
     instance-of v0, p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     if-eqz v0, :cond_2
 
-    .line 115
+    .line 120
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckbox()V
 
-    .line 116
+    .line 121
     iget v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableRow:I
 
     if-ne p2, v0, :cond_1
 
-    .line 117
+    .line 122
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object p2
@@ -404,18 +504,18 @@
 
     invoke-virtual {p2, v0}, Lcom/iMe/fork/controller/FiltersController;->setAllChatsTabEnabled(Z)V
 
-    .line 118
+    .line 123
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$ListAdapter;
 
     move-result-object p2
 
-    .line 119
+    .line 124
     iget v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
-    .line 120
+    .line 125
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->updateRows()V
 
-    .line 121
+    .line 126
     iget v1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     sub-int/2addr v0, v1
@@ -424,14 +524,14 @@
 
     move-result v0
 
-    .line 122
+    .line 127
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->isChecked()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 123
+    .line 128
     iget p1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableSectionRow:I
 
     add-int/lit8 p1, p1, 0x1
@@ -440,7 +540,7 @@
 
     goto :goto_0
 
-    .line 125
+    .line 130
     :cond_0
     iget p1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableSectionRow:I
 
@@ -448,27 +548,27 @@
 
     invoke-virtual {p2, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    .line 127
+    .line 132
     :goto_0
     iget p1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableSectionRow:I
 
     invoke-virtual {p2, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 129
+    .line 134
     invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator;->showArchiveAccessAlert(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 130
+    .line 135
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->notifySettingsChanged()V
 
     goto :goto_1
 
-    .line 131
+    .line 136
     :cond_1
     iget p1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->iconInsteadTitleRow:I
 
     if-ne p2, p1, :cond_3
 
-    .line 132
+    .line 137
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object p1
@@ -485,18 +585,18 @@
 
     invoke-virtual {p1, p2}, Lcom/iMe/fork/controller/FiltersController;->setIconInsteadAllChatsTabTitleEnabled(Z)V
 
-    .line 133
+    .line 138
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->notifySettingsChanged()V
 
     goto :goto_1
 
-    .line 136
+    .line 141
     :cond_2
     instance-of p1, p1, Lcom/iMe/fork/ui/view/FabsCell;
 
     if-eqz p1, :cond_3
 
-    .line 137
+    .line 142
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -528,14 +628,14 @@
     return-void
 .end method
 
-.method private static final initListView$lambda$10$lambda$9$lambda$8(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
+.method private static final initListView$lambda$9$lambda$8$lambda$7(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
     .locals 2
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 138
+    .line 143
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
@@ -546,7 +646,7 @@
 
     invoke-virtual {v0, p1}, Lcom/iMe/fork/controller/FiltersController;->setSelectedAllChatsTabFabs(Ljava/util/Set;)V
 
-    .line 139
+    .line 144
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$ListAdapter;
 
     move-result-object p1
@@ -555,7 +655,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 140
+    .line 145
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->notifySettingsChanged()V
 
     return-void
@@ -564,7 +664,7 @@
 .method private final initRootView()Landroid/widget/FrameLayout;
     .locals 2
 
-    .line 104
+    .line 109
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -575,7 +675,7 @@
 
     const-string v1, "windowBackgroundGray"
 
-    .line 105
+    .line 110
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
@@ -588,7 +688,7 @@
 .method private final isClickableViewType(I)Z
     .locals 1
 
-    .line 170
+    .line 175
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     if-eq p1, v0, :cond_1
@@ -615,7 +715,7 @@
 .method private final needDivider(I)Z
     .locals 1
 
-    .line 172
+    .line 177
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
     if-eq p1, v0, :cond_0
@@ -638,7 +738,7 @@
 .method private final notifySettingsChanged()V
     .locals 3
 
-    .line 167
+    .line 172
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -657,20 +757,20 @@
 .method private final setupActionBar()V
     .locals 2
 
-    .line 90
+    .line 95
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 91
+    .line 96
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 92
+    .line 97
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 93
+    .line 98
     sget v1, Lorg/telegram/messenger/R$string;->folder_tabs_all_chats_tab_settings_item_title:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -679,7 +779,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 94
+    .line 99
     new-instance v1, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$setupActionBar$1$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$setupActionBar$1$1;-><init>(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
@@ -694,26 +794,26 @@
 
     const/4 v0, 0x0
 
-    .line 148
+    .line 153
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     const/4 v1, 0x0
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 149
+    .line 154
     iput v1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableRow:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 150
+    .line 155
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     iput v1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableSectionRow:I
 
-    .line 151
+    .line 156
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
@@ -724,7 +824,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 152
+    .line 157
     iget v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -735,26 +835,26 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 153
+    .line 158
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     iput v1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->iconInsteadTitleRow:I
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 154
+    .line 159
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 155
+    .line 160
     iput v1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->fabsRow:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 156
+    .line 161
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     iput v1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->fabsSectionRow:I
@@ -764,16 +864,16 @@
     :cond_0
     const/4 v0, -0x1
 
-    .line 158
+    .line 163
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->iconInsteadTitleHeaderRow:I
 
-    .line 159
+    .line 164
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->iconInsteadTitleRow:I
 
-    .line 161
+    .line 166
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->fabsRow:I
 
-    .line 162
+    .line 167
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->fabsSectionRow:I
 
     :goto_0
@@ -782,45 +882,6 @@
 
 
 # virtual methods
-.method public bridge synthetic createView(Landroid/content/Context;)Landroid/view/View;
-    .locals 0
-
-    .line 30
-    invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->createView(Landroid/content/Context;)Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public createView(Landroid/content/Context;)Landroid/widget/FrameLayout;
-    .locals 1
-
-    const-string v0, "context"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 47
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getRootView()Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    .line 48
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->setupActionBar()V
-
-    .line 49
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
-
-    .line 50
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
-
-    return-object p1
-.end method
-
 .method public getThemeDescriptions()Ljava/util/ArrayList;
     .locals 19
     .annotation system Ldalvik/annotation/Signature;
@@ -838,14 +899,14 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 58
+    .line 63
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 57
+    .line 62
     new-instance v8, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$$ExternalSyntheticLambda1;
 
     invoke-direct {v8, v0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
@@ -860,14 +921,14 @@
 
     move-object v2, v10
 
-    .line 58
+    .line 63
     invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
 
     const/4 v2, 0x0
 
     aput-object v10, v1, v2
 
-    .line 61
+    .line 66
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -892,7 +953,7 @@
 
     aput-object v3, v1, v4
 
-    .line 62
+    .line 67
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -917,7 +978,7 @@
 
     aput-object v3, v1, v5
 
-    .line 63
+    .line 68
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -936,7 +997,7 @@
 
     aput-object v3, v1, v6
 
-    .line 64
+    .line 69
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -955,7 +1016,7 @@
 
     aput-object v3, v1, v7
 
-    .line 65
+    .line 70
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -976,7 +1037,7 @@
 
     aput-object v3, v1, v7
 
-    .line 66
+    .line 71
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -995,7 +1056,7 @@
 
     aput-object v3, v1, v7
 
-    .line 67
+    .line 72
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1028,7 +1089,7 @@
 
     aput-object v3, v1, v5
 
-    .line 68
+    .line 73
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1057,7 +1118,7 @@
 
     aput-object v3, v1, v5
 
-    .line 69
+    .line 74
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1088,7 +1149,7 @@
 
     aput-object v3, v1, v5
 
-    .line 70
+    .line 75
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1117,7 +1178,7 @@
 
     aput-object v3, v1, v5
 
-    .line 71
+    .line 76
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1150,7 +1211,7 @@
 
     aput-object v3, v1, v6
 
-    .line 72
+    .line 77
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1181,7 +1242,7 @@
 
     aput-object v3, v1, v6
 
-    .line 73
+    .line 78
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1212,7 +1273,7 @@
 
     aput-object v3, v1, v7
 
-    .line 74
+    .line 79
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1243,7 +1304,7 @@
 
     aput-object v3, v1, v7
 
-    .line 75
+    .line 80
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1270,7 +1331,7 @@
 
     aput-object v3, v1, v7
 
-    .line 76
+    .line 81
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1297,7 +1358,7 @@
 
     aput-object v3, v1, v7
 
-    .line 77
+    .line 82
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1324,7 +1385,7 @@
 
     aput-object v3, v1, v7
 
-    .line 78
+    .line 83
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1351,7 +1412,7 @@
 
     aput-object v3, v1, v6
 
-    .line 79
+    .line 84
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1380,7 +1441,7 @@
 
     aput-object v3, v1, v6
 
-    .line 80
+    .line 85
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1411,7 +1472,7 @@
 
     aput-object v3, v1, v6
 
-    .line 81
+    .line 86
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1438,7 +1499,7 @@
 
     aput-object v3, v1, v5
 
-    .line 82
+    .line 87
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1467,7 +1528,7 @@
 
     aput-object v3, v1, v2
 
-    .line 57
+    .line 62
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -1475,18 +1536,60 @@
     return-object v1
 .end method
 
+.method public bridge synthetic onCreateView(Landroid/content/Context;)Landroid/view/View;
+    .locals 0
+
+    .line 31
+    invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
+    .locals 1
+
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 48
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getRootView()Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    .line 49
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->setupActionBar()V
+
+    .line 50
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    return-object p1
+.end method
+
 .method public onFragmentDestroy()V
     .locals 1
 
-    .line 53
+    .line 58
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/iMe/fork/controller/FiltersController;->saveConfig()V
 
-    .line 54
-    invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
+    .line 59
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
+
+    return-void
+.end method
+
+.method public onViewReady()V
+    .locals 0
 
     return-void
 .end method

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
-import p035j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes.dex */
 public abstract class zzuu<MessageType extends zzuu<MessageType, BuilderType>, BuilderType extends zzb<MessageType, BuilderType>> extends zztg<MessageType, BuilderType> {
     private static Map<Object, zzuu<?, ?>> zzbsq = new ConcurrentHashMap();
@@ -40,7 +40,7 @@ public abstract class zzuu<MessageType extends zzuu<MessageType, BuilderType>, B
         private static final /* synthetic */ int[] zzbtj = {1, 2};
 
         /* renamed from: values$50KLMJ33DTMIUPRFDTJMOP9FE1P6UT3FC9QMCBQ7CLN6ASJ1EHIM8JB5EDPM2PR59HKN8P949LIN8Q3FCHA6UIBEEPNMMP9R0 */
-        public static int[] m775x126d66cb() {
+        public static int[] m761x126d66cb() {
             return (int[]) zzbtd.clone();
         }
     }

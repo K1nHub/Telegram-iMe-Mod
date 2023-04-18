@@ -5,11 +5,40 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCancellable.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Cancellable.kt\nkotlinx/coroutines/intrinsics/CancellableKt\n*L\n1#1,55:1\n49#1,6:56\n49#1,6:62\n49#1,6:68\n*S KotlinDebug\n*F\n+ 1 Cancellable.kt\nkotlinx/coroutines/intrinsics/CancellableKt\n*L\n17#1:56,6\n29#1:62,6\n38#1:68,6\n*E\n"
+    value = "SMAP\nCancellable.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Cancellable.kt\nkotlinx/coroutines/intrinsics/CancellableKt\n*L\n1#1,68:1\n49#1,6:69\n49#1,6:75\n49#1,6:81\n*S KotlinDebug\n*F\n+ 1 Cancellable.kt\nkotlinx/coroutines/intrinsics/CancellableKt\n*L\n17#1:69,6\n29#1:75,6\n38#1:81,6\n*E\n"
 .end annotation
 
 
 # direct methods
+.method private static final dispatcherFailure(Lkotlin/coroutines/Continuation;Ljava/lang/Throwable;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "*>;",
+            "Ljava/lang/Throwable;",
+            ")V"
+        }
+    .end annotation
+
+    .line 65
+    sget-object v0, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
+
+    invoke-static {p1}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {p0, v0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+
+    .line 66
+    throw p1
+.end method
+
 .method public static final startCoroutineCancellable(Lkotlin/coroutines/Continuation;Lkotlin/coroutines/Continuation;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -52,17 +81,7 @@
     move-exception p0
 
     .line 52
-    sget-object v0, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
-
-    invoke-static {p0}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-interface {p1, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+    invoke-static {p1, p0}, Lkotlinx/coroutines/intrinsics/CancellableKt;->dispatcherFailure(Lkotlin/coroutines/Continuation;Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
@@ -118,17 +137,7 @@
     move-exception p0
 
     .line 52
-    sget-object v0, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
-
-    invoke-static {p0}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-interface {p1, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+    invoke-static {p1, p0}, Lkotlinx/coroutines/intrinsics/CancellableKt;->dispatcherFailure(Lkotlin/coroutines/Continuation;Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
@@ -187,17 +196,7 @@
     move-exception p0
 
     .line 52
-    sget-object p1, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
-
-    invoke-static {p0}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-interface {p2, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+    invoke-static {p2, p0}, Lkotlinx/coroutines/intrinsics/CancellableKt;->dispatcherFailure(Lkotlin/coroutines/Continuation;Ljava/lang/Throwable;)V
 
     :goto_0
     return-void

@@ -58,26 +58,26 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 5
 
-    .line 2604
+    .line 2616
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x2
 
     new-array v0, p1, [Landroid/widget/TextView;
 
-    .line 2589
+    .line 2601
     iput-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     new-array v0, p1, [F
 
-    .line 2590
+    .line 2602
     fill-array-data v0, :array_0
 
     iput-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->clipProgress:[F
 
     const/16 v0, 0x18
 
-    .line 2591
+    .line 2603
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -86,10 +86,10 @@
 
     const/4 v0, -0x1
 
-    .line 2600
+    .line 2612
     iput v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->stableOffest:I
 
-    .line 2601
+    .line 2613
     new-instance v1, Landroid/graphics/RectF;
 
     invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
@@ -103,7 +103,7 @@
 
     if-ge v1, p1, :cond_1
 
-    .line 2606
+    .line 2618
     iget-object v3, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->createTextView()Landroid/widget/TextView;
@@ -114,7 +114,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 2608
+    .line 2620
     iget-object v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     aget-object v2, v2, v1
@@ -123,7 +123,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 2609
+    .line 2621
     iget-object v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     aget-object v2, v2, v1
@@ -132,7 +132,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2611
+    .line 2623
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
@@ -150,7 +150,7 @@
 
     goto :goto_0
 
-    .line 2613
+    .line 2625
     :cond_1
     new-instance p1, Landroid/graphics/Matrix;
 
@@ -158,14 +158,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->gradientMatrix:Landroid/graphics/Matrix;
 
-    .line 2614
+    .line 2626
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1, v2}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->gradientPaint:Landroid/graphics/Paint;
 
-    .line 2615
+    .line 2627
     new-instance v0, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->DST_IN:Landroid/graphics/PorterDuff$Mode;
@@ -174,14 +174,14 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 2616
+    .line 2628
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1, v2}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->erasePaint:Landroid/graphics/Paint;
 
-    .line 2617
+    .line 2629
     new-instance v0, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
@@ -201,10 +201,10 @@
     .end array-data
 .end method
 
-.method static synthetic access$6900(Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;)[Landroid/widget/TextView;
+.method static synthetic access$6800(Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;)[Landroid/widget/TextView;
     .locals 0
 
-    .line 2587
+    .line 2599
     iget-object p0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     return-object p0
@@ -213,7 +213,7 @@
 .method private synthetic lambda$setText$0(ILandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 2724
+    .line 2736
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->clipProgress:[F
 
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -228,7 +228,7 @@
 
     aput p2, v0, p1
 
-    .line 2725
+    .line 2737
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -237,7 +237,7 @@
 .method private synthetic lambda$setText$1(ILandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 2732
+    .line 2744
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->clipProgress:[F
 
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -252,7 +252,7 @@
 
     aput p2, v0, p1
 
-    .line 2733
+    .line 2745
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -270,7 +270,7 @@
 
     move-object/from16 v8, p1
 
-    .line 2629
+    .line 2641
     iget-object v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     const/4 v2, 0x0
@@ -290,7 +290,7 @@
     :cond_0
     move v10, v4
 
-    .line 2632
+    .line 2644
     :goto_0
     iget v3, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->stableOffest:I
 
@@ -324,7 +324,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 2633
+    .line 2645
     iget-object v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     iget v3, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->activeIndex:I
@@ -339,7 +339,7 @@
 
     move-result v1
 
-    .line 2634
+    .line 2646
     iget-object v3, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     iget v5, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->activeIndex:I
@@ -369,7 +369,7 @@
 
     if-lez v5, :cond_2
 
-    .line 2639
+    .line 2651
     iget-object v5, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -382,7 +382,7 @@
 
     goto :goto_1
 
-    .line 2641
+    .line 2653
     :cond_2
     iget-object v5, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->rectF:Landroid/graphics/RectF;
 
@@ -397,27 +397,27 @@
     :goto_1
     if-eqz v4, :cond_3
 
-    .line 2644
+    .line 2656
     iget v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->activeIndex:I
 
     if-ne v10, v1, :cond_3
 
-    .line 2645
+    .line 2657
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2646
+    .line 2658
     iget-object v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v8, v1}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/RectF;)Z
 
-    .line 2647
+    .line 2659
     iget-object v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     aget-object v1, v1, v2
 
     invoke-virtual {v1, v8}, Landroid/widget/TextView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2648
+    .line 2660
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_3
@@ -428,7 +428,7 @@
     :cond_4
     move v13, v2
 
-    .line 2651
+    .line 2663
     :goto_2
     iget-object v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->clipProgress:[F
 
@@ -442,7 +442,7 @@
 
     goto :goto_3
 
-    .line 2669
+    .line 2681
     :cond_5
     invoke-super/range {p0 .. p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -450,14 +450,14 @@
 
     goto :goto_4
 
-    .line 2652
+    .line 2664
     :cond_6
     :goto_3
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
-    .line 2653
+    .line 2665
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getHeight()I
 
     move-result v2
@@ -484,17 +484,17 @@
 
     move v5, v15
 
-    .line 2654
+    .line 2666
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayer(FFFFLandroid/graphics/Paint;I)I
 
     move-result v7
 
-    .line 2655
+    .line 2667
     invoke-super/range {p0 .. p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result v9
 
-    .line 2656
+    .line 2668
     iget-object v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->clipProgress:[F
 
     aget v1, v1, v10
@@ -503,19 +503,19 @@
 
     mul-float v2, v14, v11
 
-    .line 2657
+    .line 2669
     iget v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->gradientSize:I
 
     int-to-float v1, v1
 
     add-float v10, v2, v1
 
-    .line 2658
+    .line 2670
     iget-object v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v2, v12}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 2659
+    .line 2671
     iget-object v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->gradientShader:Landroid/graphics/LinearGradient;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->gradientMatrix:Landroid/graphics/Matrix;
@@ -524,7 +524,7 @@
 
     const/4 v3, 0x0
 
-    .line 2660
+    .line 2672
     iget-object v6, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->gradientPaint:Landroid/graphics/Paint;
 
     move-object/from16 v1, p1
@@ -539,7 +539,7 @@
 
     const/4 v3, 0x0
 
-    .line 2662
+    .line 2674
     iget-object v6, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->erasePaint:Landroid/graphics/Paint;
 
     move-object/from16 v1, p1
@@ -555,14 +555,14 @@
     :cond_7
     if-eqz v13, :cond_8
 
-    .line 2665
+    .line 2677
     iget-object v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->rectF:Landroid/graphics/RectF;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->erasePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v1, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 2667
+    .line 2679
     :cond_8
     invoke-virtual {v8, v7}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
@@ -575,7 +575,7 @@
 .method public getNextTextView()Landroid/widget/TextView;
     .locals 2
 
-    .line 2753
+    .line 2765
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     iget v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->activeIndex:I
@@ -598,7 +598,7 @@
 .method public getTextView()Landroid/widget/TextView;
     .locals 2
 
-    .line 2749
+    .line 2761
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     iget v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->activeIndex:I
@@ -611,10 +611,10 @@
 .method protected onSizeChanged(IIII)V
     .locals 8
 
-    .line 2622
+    .line 2634
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
 
-    .line 2623
+    .line 2635
     new-instance p1, Landroid/graphics/LinearGradient;
 
     iget p2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->gradientSize:I
@@ -639,7 +639,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->gradientShader:Landroid/graphics/LinearGradient;
 
-    .line 2624
+    .line 2636
     iget-object p2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->gradientPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p2, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
@@ -652,7 +652,7 @@
 
     const/4 v0, 0x1
 
-    .line 2675
+    .line 2687
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;Z)V
 
     return-void
@@ -661,7 +661,7 @@
 .method public setText(Ljava/lang/CharSequence;Z)V
     .locals 13
 
-    .line 2679
+    .line 2691
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     iget v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->activeIndex:I
@@ -672,7 +672,7 @@
 
     move-result-object v0
 
-    .line 2681
+    .line 2693
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -683,7 +683,7 @@
 
     goto/16 :goto_3
 
-    .line 2684
+    .line 2696
     :cond_0
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -696,10 +696,10 @@
     :cond_1
     const/4 p2, 0x0
 
-    .line 2688
+    .line 2700
     iput p2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->stableOffest:I
 
-    .line 2689
+    .line 2701
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
@@ -719,7 +719,7 @@
 
     if-ge v2, v1, :cond_3
 
-    .line 2691
+    .line 2703
     invoke-interface {p1, v2}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v4
@@ -732,7 +732,7 @@
 
     goto :goto_1
 
-    .line 2694
+    .line 2706
     :cond_2
     iget v4, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->stableOffest:I
 
@@ -744,7 +744,7 @@
 
     goto :goto_0
 
-    .line 2696
+    .line 2708
     :cond_3
     :goto_1
     iget v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->stableOffest:I
@@ -755,10 +755,10 @@
 
     const/4 v0, -0x1
 
-    .line 2697
+    .line 2709
     iput v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->stableOffest:I
 
-    .line 2700
+    .line 2712
     :cond_4
     iget v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->activeIndex:I
 
@@ -771,19 +771,19 @@
     :cond_5
     move v2, p2
 
-    .line 2702
+    .line 2714
     :goto_2
     iput v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->activeIndex:I
 
-    .line 2704
+    .line 2716
     iget-object v4, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->animatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v4, :cond_6
 
-    .line 2705
+    .line 2717
     invoke-virtual {v4}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 2707
+    .line 2719
     :cond_6
     new-instance v4, Landroid/animation/AnimatorSet;
 
@@ -791,28 +791,28 @@
 
     iput-object v4, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->animatorSet:Landroid/animation/AnimatorSet;
 
-    .line 2708
+    .line 2720
     new-instance v5, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher$1;
 
     invoke-direct {v5, p0, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher$1;-><init>(Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;I)V
 
     invoke-virtual {v4, v5}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2715
+    .line 2727
     iget-object v4, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     aget-object v4, v4, v2
 
     invoke-virtual {v4, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2716
+    .line 2728
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     aget-object p1, p1, v2
 
     invoke-virtual {p1}, Landroid/widget/TextView;->bringToFront()V
 
-    .line 2717
+    .line 2729
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     aget-object p1, p1, v2
@@ -823,7 +823,7 @@
 
     new-array v4, p1, [F
 
-    .line 2721
+    .line 2733
     iget-object v5, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->clipProgress:[F
 
     aget v5, v5, v0
@@ -840,10 +840,10 @@
 
     const-wide/16 v5, 0xc8
 
-    .line 2722
+    .line 2734
     invoke-virtual {v4, v5, v6}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 2723
+    .line 2735
     new-instance v7, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher$$ExternalSyntheticLambda0;
 
     invoke-direct {v7, p0, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;I)V
@@ -852,7 +852,7 @@
 
     new-array v7, p1, [F
 
-    .line 2728
+    .line 2740
     iget-object v8, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->clipProgress:[F
 
     aget v8, v8, v2
@@ -869,20 +869,20 @@
 
     const-wide/16 v9, 0x64
 
-    .line 2729
+    .line 2741
     invoke-virtual {v7, v9, v10}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 2730
+    .line 2742
     invoke-virtual {v7, v5, v6}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 2731
+    .line 2743
     new-instance v5, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher$$ExternalSyntheticLambda1;
 
     invoke-direct {v5, p0, v2}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;I)V
 
     invoke-virtual {v7, v5}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2736
+    .line 2748
     iget-object v5, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     aget-object v0, v5, v0
@@ -899,15 +899,15 @@
 
     const-wide/16 v5, 0x4b
 
-    .line 2737
+    .line 2749
     invoke-virtual {v0, v5, v6}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
     const-wide/16 v8, 0x96
 
-    .line 2738
+    .line 2750
     invoke-virtual {v0, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 2740
+    .line 2752
     iget-object v10, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;
 
     aget-object v2, v10, v2
@@ -924,13 +924,13 @@
 
     move-result-object v2
 
-    .line 2741
+    .line 2753
     invoke-virtual {v2, v5, v6}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
-    .line 2742
+    .line 2754
     invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 2744
+    .line 2756
     iget-object v5, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->animatorSet:Landroid/animation/AnimatorSet;
 
     const/4 v6, 0x4
@@ -947,14 +947,14 @@
 
     invoke-virtual {v5, v6}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2745
+    .line 2757
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->animatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
 
-    .line 2682
+    .line 2694
     :cond_7
     :goto_3
     iget-object p2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->textViews:[Landroid/widget/TextView;

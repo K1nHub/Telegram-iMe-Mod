@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/model/wallet/swap/SwapSide;)V
     .locals 1
 
-    .line 443
+    .line 461
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "setupNetworkType"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 445
+    .line 463
     iput-object p2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$SetupNetworkTypeCommand;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
-    .line 446
+    .line 464
     iput-object p3, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$SetupNetworkTypeCommand;->side:Lcom/iMe/model/wallet/swap/SwapSide;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;)V
     .locals 2
 
-    .line 451
+    .line 469
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$SetupNetworkTypeCommand;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$SetupNetworkTypeCommand;->side:Lcom/iMe/model/wallet/swap/SwapSide;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 437
+    .line 455
     check-cast p1, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$SetupNetworkTypeCommand;->apply(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;)V

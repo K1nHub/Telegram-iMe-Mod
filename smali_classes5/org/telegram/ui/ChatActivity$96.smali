@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MediaController$PhotoEntry;)V
     .locals 0
 
-    .line 17811
+    .line 17762
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$96;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$96;->val$object:Lorg/telegram/messenger/MessageObject;
@@ -59,7 +59,7 @@
 .method public closeKeyboard()Z
     .locals 2
 
-    .line 17853
+    .line 17804
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$96;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, v0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 17854
+    .line 17805
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$96;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -92,7 +92,7 @@
 .method public getEditingMessageObject()Lorg/telegram/messenger/MessageObject;
     .locals 2
 
-    .line 17841
+    .line 17792
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$96;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$5400(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
@@ -115,7 +115,7 @@
 .method public getPlaceForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;IZ)Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
     .locals 1
 
-    .line 17814
+    .line 17765
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$96;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$96;->val$object:Lorg/telegram/messenger/MessageObject;
@@ -134,7 +134,7 @@
 .method public onCaptionChanged(Ljava/lang/CharSequence;)V
     .locals 2
 
-    .line 17846
+    .line 17797
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$96;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$5400(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
@@ -145,7 +145,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 17847
+    .line 17798
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$96;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -161,7 +161,7 @@
 .method public sendButtonPressed(ILorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;Z)V
     .locals 7
 
-    .line 17819
+    .line 17770
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$96;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$5400(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
@@ -174,7 +174,7 @@
 
     return-void
 
-    .line 17822
+    .line 17773
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$96;->val$entry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
@@ -194,7 +194,7 @@
 
     goto :goto_0
 
-    .line 17825
+    .line 17776
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$96;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -204,7 +204,7 @@
 
     goto :goto_1
 
-    .line 17823
+    .line 17774
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$96;->this$0:Lorg/telegram/ui/ChatActivity;

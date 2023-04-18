@@ -8,8 +8,10 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.view.LayoutInflater;
 import androidx.appcompat.R$style;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* loaded from: classes.dex */
 public class ContextThemeWrapper extends ContextWrapper {
+    private static Configuration sEmptyConfig;
     private LayoutInflater mInflater;
     private Configuration mOverrideConfiguration;
     private Resources mResources;
@@ -51,12 +53,13 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     private Resources getResourcesInternal() {
+        int i;
         if (this.mResources == null) {
             Configuration configuration = this.mOverrideConfiguration;
-            if (configuration == null) {
+            if (configuration == null || ((i = Build.VERSION.SDK_INT) >= 26 && isEmptyConfiguration(configuration))) {
                 this.mResources = super.getResources();
-            } else if (Build.VERSION.SDK_INT >= 17) {
-                this.mResources = createConfigurationContext(configuration).getResources();
+            } else if (i >= 17) {
+                this.mResources = Api17Impl.createConfigurationContext(this, this.mOverrideConfiguration).getResources();
             } else {
                 Resources resources = super.getResources();
                 Configuration configuration2 = new Configuration(resources.getConfiguration());
@@ -122,5 +125,25 @@ public class ContextThemeWrapper extends ContextWrapper {
     @Override // android.content.ContextWrapper, android.content.Context
     public AssetManager getAssets() {
         return getResources().getAssets();
+    }
+
+    private static boolean isEmptyConfiguration(Configuration configuration) {
+        if (configuration == null) {
+            return true;
+        }
+        if (sEmptyConfig == null) {
+            Configuration configuration2 = new Configuration();
+            configuration2.fontScale = BitmapDescriptorFactory.HUE_RED;
+            sEmptyConfig = configuration2;
+        }
+        return configuration.equals(sEmptyConfig);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api17Impl {
+        static Context createConfigurationContext(ContextThemeWrapper contextThemeWrapper, Configuration configuration) {
+            return contextThemeWrapper.createConfigurationContext(configuration);
+        }
     }
 }

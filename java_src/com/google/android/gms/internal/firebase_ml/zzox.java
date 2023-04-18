@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.firebase_ml;
 
 import com.google.android.gms.internal.firebase_ml.zzlu;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseModelDownloadConditions;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseRemoteModel;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseModelDownloadConditions;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseRemoteModel;
 /* loaded from: classes.dex */
 public final class zzox {
     public static zzlu.zzy zza(FirebaseRemoteModel firebaseRemoteModel, zzor zzorVar) {

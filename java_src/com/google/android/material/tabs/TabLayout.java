@@ -241,8 +241,8 @@ public class TabLayout extends HorizontalScrollView {
         Tab createTabFromPool = createTabFromPool();
         createTabFromPool.parent = this;
         createTabFromPool.view = createTabView(createTabFromPool);
-        if (createTabFromPool.f157id != -1) {
-            createTabFromPool.view.setId(createTabFromPool.f157id);
+        if (createTabFromPool.f154id != -1) {
+            createTabFromPool.view.setId(createTabFromPool.f154id);
         }
         return createTabFromPool;
     }
@@ -965,7 +965,7 @@ public class TabLayout extends HorizontalScrollView {
         private int labelVisibilityMode = 1;
 
         /* renamed from: id */
-        private int f157id = -1;
+        private int f154id = -1;
 
         public View getCustomView() {
             return this.customView;
@@ -1056,7 +1056,7 @@ public class TabLayout extends HorizontalScrollView {
             this.parent = null;
             this.view = null;
             this.icon = null;
-            this.f157id = -1;
+            this.f154id = -1;
             this.text = null;
             this.contentDesc = null;
             this.position = -1;

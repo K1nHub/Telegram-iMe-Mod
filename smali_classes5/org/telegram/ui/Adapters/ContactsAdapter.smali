@@ -604,7 +604,7 @@
 .method private synthetic lambda$onBindViewHolder$2()V
     .locals 1
 
-    .line 662
+    .line 659
     iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->qrCodeAction:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     invoke-interface {v0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
@@ -1385,7 +1385,7 @@
 .method public getItemViewType(II)I
     .locals 9
 
-    .line 759
+    .line 755
     iget v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlyUsers:I
 
     const/4 v1, 0x2
@@ -1411,7 +1411,7 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/ContactsController;->usersSectionsDict:Ljava/util/HashMap;
 
-    .line 760
+    .line 756
     :goto_0
     iget v2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlyUsers:I
 
@@ -1436,23 +1436,23 @@
 
     iget-object v2, v2, Lorg/telegram/messenger/ContactsController;->sortedUsersSectionsArray:Ljava/util/ArrayList;
 
-    .line 762
+    .line 758
     :goto_1
     iget-boolean v3, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->needPhonebook:Z
 
     if-eqz v3, :cond_2
 
-    .line 763
+    .line 759
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/iMe/model/contacts/CollectionsFilteredContacts;
 
     move-result-object v0
 
-    .line 764
+    .line 760
     invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
 
     move-result-object v2
 
-    .line 765
+    .line 761
     invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -1463,7 +1463,7 @@
 
     move-object v0, v8
 
-    .line 768
+    .line 764
     :cond_2
     iget v3, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlyUsers:I
 
@@ -1479,14 +1479,14 @@
 
     if-nez v3, :cond_5
 
-    .line 769
+    .line 765
     iget-boolean v1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->isEmpty:Z
 
     if-eqz v1, :cond_3
 
     return v4
 
-    .line 772
+    .line 768
     :cond_3
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1498,7 +1498,7 @@
 
     check-cast p1, Ljava/util/ArrayList;
 
-    .line 773
+    .line 769
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result p1
@@ -1518,14 +1518,14 @@
 
     if-nez p1, :cond_f
 
-    .line 777
+    .line 773
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->isChooseWalletTransferRecipient:Z
 
     if-eqz p1, :cond_7
 
     if-nez p2, :cond_6
 
-    .line 779
+    .line 775
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CONTACTS_INPUT_ADDRESS:I
 
     return p1
@@ -1535,7 +1535,7 @@
 
     return v1
 
-    .line 784
+    .line 781
     :cond_7
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->isAdmin:Z
 
@@ -1545,7 +1545,7 @@
 
     return v1
 
-    .line 788
+    .line 785
     :cond_8
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->needPhonebook:Z
 
@@ -1555,7 +1555,7 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    .line 790
+    .line 787
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->hasGps:Z
 
     if-eqz p1, :cond_9
@@ -1567,7 +1567,7 @@
 
     if-ne p2, v3, :cond_c
 
-    .line 791
+    .line 788
     :cond_a
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->isEmpty:Z
 
@@ -1586,7 +1586,7 @@
     :cond_d
     if-ne p2, v6, :cond_14
 
-    .line 795
+    .line 792
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->isEmpty:Z
 
     if-eqz p1, :cond_e
@@ -1596,7 +1596,7 @@
     :cond_e
     return v1
 
-    .line 798
+    .line 795
     :cond_f
     iget-boolean v7, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->isEmpty:Z
 
@@ -1604,7 +1604,7 @@
 
     return v4
 
-    .line 801
+    .line 798
     :cond_10
     iget v4, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->sortType:I
 
@@ -1612,7 +1612,7 @@
 
     if-ne p1, v3, :cond_14
 
-    .line 803
+    .line 800
     iget-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -1632,14 +1632,14 @@
     :cond_12
     sub-int/2addr p1, v3
 
-    .line 806
+    .line 803
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     if-ge p1, v1, :cond_14
 
-    .line 807
+    .line 804
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -1650,7 +1650,7 @@
 
     check-cast p1, Ljava/util/ArrayList;
 
-    .line 808
+    .line 805
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result p1
@@ -1665,7 +1665,7 @@
     :goto_4
     return v5
 
-    .line 814
+    .line 811
     :cond_14
     :goto_5
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->needPhonebook:Z
@@ -1678,7 +1678,7 @@
 
     if-eqz p1, :cond_15
 
-    .line 815
+    .line 812
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CONTACTS_FILTER:I
 
     return p1
@@ -1690,7 +1690,7 @@
 .method public getLetter(I)Ljava/lang/String;
     .locals 3
 
-    .line 823
+    .line 820
     iget v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->sortType:I
 
     const/4 v1, 0x0
@@ -1705,7 +1705,7 @@
 
     goto :goto_1
 
-    .line 826
+    .line 823
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlyUsers:I
 
@@ -1730,13 +1730,13 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/ContactsController;->sortedUsersSectionsArray:Ljava/util/ArrayList;
 
-    .line 828
+    .line 825
     :goto_0
     iget-boolean v2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->needPhonebook:Z
 
     if-eqz v2, :cond_2
 
-    .line 829
+    .line 826
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/iMe/model/contacts/CollectionsFilteredContacts;
 
     move-result-object v0
@@ -1745,7 +1745,7 @@
 
     move-result-object v0
 
-    .line 832
+    .line 829
     :cond_2
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->getSectionForPosition(I)I
 
@@ -1755,14 +1755,14 @@
 
     if-ne p1, v2, :cond_3
 
-    .line 834
+    .line 831
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result p1
 
     add-int/lit8 p1, p1, -0x1
 
-    .line 836
+    .line 833
     :cond_3
     iget v2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlyUsers:I
 
@@ -1774,14 +1774,14 @@
 
     if-ltz p1, :cond_5
 
-    .line 837
+    .line 834
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
     if-ge p1, v2, :cond_5
 
-    .line 838
+    .line 835
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -1793,7 +1793,7 @@
     :cond_4
     if-lez p1, :cond_5
 
-    .line 841
+    .line 838
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -1802,7 +1802,7 @@
 
     add-int/lit8 p1, p1, -0x1
 
-    .line 842
+    .line 839
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -1819,7 +1819,7 @@
 .method public getPositionForScrollProgress(Lorg/telegram/ui/Components/RecyclerListView;F[I)V
     .locals 0
 
-    .line 850
+    .line 847
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->getItemCount()I
 
     move-result p1
@@ -1836,7 +1836,7 @@
 
     const/4 p1, 0x1
 
-    .line 851
+    .line 848
     aput p2, p3, p1
 
     return-void
@@ -2020,10 +2020,6 @@
 
     move-result-object v0
 
-    .line 534
-    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
-
-    .line 535
     invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -2031,20 +2027,20 @@
     :cond_2
     if-nez p2, :cond_3
 
-    .line 539
+    .line 537
     new-instance p2, Lorg/telegram/ui/Cells/LetterSectionCell;
 
     iget-object v2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p2, v2}, Lorg/telegram/ui/Cells/LetterSectionCell;-><init>(Landroid/content/Context;)V
 
-    .line 541
+    .line 539
     :cond_3
     move-object v2, p2
 
     check-cast v2, Lorg/telegram/ui/Cells/LetterSectionCell;
 
-    .line 542
+    .line 540
     iget v3, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->sortType:I
 
     const-string v4, ""
@@ -2061,7 +2057,7 @@
 
     goto :goto_2
 
-    .line 545
+    .line 543
     :cond_4
     iget v1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlyUsers:I
 
@@ -2071,14 +2067,14 @@
 
     if-nez v1, :cond_6
 
-    .line 546
+    .line 544
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     if-ge p1, v1, :cond_5
 
-    .line 547
+    .line 545
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -2089,7 +2085,7 @@
 
     goto :goto_3
 
-    .line 549
+    .line 547
     :cond_5
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Cells/LetterSectionCell;->setLetter(Ljava/lang/String;)V
 
@@ -2098,7 +2094,7 @@
     :cond_6
     if-nez p1, :cond_7
 
-    .line 553
+    .line 551
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Cells/LetterSectionCell;->setLetter(Ljava/lang/String;)V
 
     goto :goto_3
@@ -2106,14 +2102,14 @@
     :cond_7
     add-int/lit8 p1, p1, -0x1
 
-    .line 554
+    .line 552
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     if-ge p1, v1, :cond_8
 
-    .line 555
+    .line 553
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -2124,13 +2120,13 @@
 
     goto :goto_3
 
-    .line 557
+    .line 555
     :cond_8
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Cells/LetterSectionCell;->setLetter(Ljava/lang/String;)V
 
     goto :goto_3
 
-    .line 543
+    .line 541
     :cond_9
     :goto_2
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Cells/LetterSectionCell;->setLetter(Ljava/lang/String;)V
@@ -2386,7 +2382,7 @@
 .method public onBindViewHolder(IILandroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 6
 
-    .line 651
+    .line 649
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -2395,12 +2391,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 652
+    .line 650
     iget-object p1, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lcom/iMe/ui/contacts/view/TextCellWithRightImage;
 
-    .line 653
+    .line 651
     iget-boolean p3, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->needPhonebook:Z
 
     if-eqz p3, :cond_1c
@@ -2411,14 +2407,14 @@
 
     if-eqz p2, :cond_1c
 
-    .line 654
+    .line 652
     iget-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/iMe/model/contacts/ContactsFilter;
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Adapters/ContactsAdapter;->bindFilterModel(Lcom/iMe/ui/contacts/view/TextCellWithRightImage;Lcom/iMe/model/contacts/ContactsFilter;)V
 
     goto/16 :goto_6
 
-    .line 656
+    .line 654
     :cond_0
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -2432,12 +2428,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 657
+    .line 655
     iget-object p1, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
-    .line 658
+    .line 656
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p2
@@ -2446,7 +2442,7 @@
 
     invoke-virtual {p2, v3, v3, p3, v3}, Landroid/widget/EditText;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
-    .line 659
+    .line 657
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p2
@@ -2455,7 +2451,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/EditText;->setCompoundDrawablePadding(I)V
 
-    .line 660
+    .line 658
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p2
@@ -2468,7 +2464,7 @@
 
     invoke-static {p2, p3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setCompoundDrawablesColor(Landroid/widget/TextView;I)V
 
-    .line 661
+    .line 659
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p2
@@ -2479,7 +2475,7 @@
 
     invoke-static {p2, p3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setRightDrawableOnClickListener(Landroid/widget/TextView;Ljava/lang/Runnable;)V
 
-    .line 664
+    .line 660
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p1
@@ -2490,7 +2486,7 @@
 
     goto/16 :goto_6
 
-    .line 666
+    .line 662
     :cond_1
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -2506,18 +2502,18 @@
 
     goto/16 :goto_6
 
-    .line 741
+    .line 737
     :cond_2
     iget-object p1, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/GraySectionCell;
 
-    .line 743
+    .line 739
     iget-boolean p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->isChooseWalletTransferRecipient:Z
 
     if-eqz p2, :cond_3
 
-    .line 744
+    .line 740
     sget p2, Lorg/telegram/messenger/R$string;->wallet_recipient_or_choose_title:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2528,13 +2524,13 @@
 
     goto/16 :goto_6
 
-    .line 746
+    .line 742
     :cond_3
     iget p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->sortType:I
 
     if-nez p2, :cond_4
 
-    .line 747
+    .line 743
     sget p2, Lorg/telegram/messenger/R$string;->Contacts:I
 
     const-string p3, "Contacts"
@@ -2550,7 +2546,7 @@
     :cond_4
     if-ne p2, v2, :cond_5
 
-    .line 749
+    .line 745
     sget p2, Lorg/telegram/messenger/R$string;->SortedByName:I
 
     const-string p3, "SortedByName"
@@ -2563,7 +2559,7 @@
 
     goto/16 :goto_6
 
-    .line 751
+    .line 747
     :cond_5
     sget p2, Lorg/telegram/messenger/R$string;->SortedByLastSeen:I
 
@@ -2577,7 +2573,7 @@
 
     goto/16 :goto_6
 
-    .line 699
+    .line 695
     :cond_6
     iget-object p3, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -2585,14 +2581,14 @@
 
     if-nez p1, :cond_d
 
-    .line 701
+    .line 697
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->needPhonebook:Z
 
     if-eqz p1, :cond_8
 
     if-nez p2, :cond_7
 
-    .line 703
+    .line 699
     sget p1, Lorg/telegram/messenger/R$string;->InviteFriends:I
 
     const-string p2, "InviteFriends"
@@ -2605,7 +2601,7 @@
 
     invoke-virtual {p3, p1, p2, v3}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
 
-    .line 704
+    .line 700
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->hasGps:Z
 
     xor-int/2addr p1, v2
@@ -2617,7 +2613,7 @@
     :cond_7
     if-ne p2, v2, :cond_1c
 
-    .line 706
+    .line 702
     sget p1, Lorg/telegram/messenger/R$string;->AddPeopleNearby:I
 
     const-string p2, "AddPeopleNearby"
@@ -2630,25 +2626,25 @@
 
     invoke-virtual {p3, p1, p2, v3}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
 
-    .line 707
+    .line 703
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->hasGps:Z
 
     invoke-virtual {p3, p1}, Lorg/telegram/ui/Cells/TextCell;->showDivider(Z)V
 
     goto/16 :goto_6
 
-    .line 709
+    .line 705
     :cond_8
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->isAdmin:Z
 
     if-eqz p1, :cond_a
 
-    .line 710
+    .line 706
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->isChannel:Z
 
     if-eqz p1, :cond_9
 
-    .line 711
+    .line 707
     sget p1, Lorg/telegram/messenger/R$string;->ChannelInviteViaLink:I
 
     const-string p2, "ChannelInviteViaLink"
@@ -2663,7 +2659,7 @@
 
     goto/16 :goto_6
 
-    .line 713
+    .line 709
     :cond_9
     sget p1, Lorg/telegram/messenger/R$string;->InviteToGroupByLink:I
 
@@ -2682,7 +2678,7 @@
     :cond_a
     if-nez p2, :cond_b
 
-    .line 717
+    .line 713
     sget p1, Lorg/telegram/messenger/R$string;->NewGroup:I
 
     const-string p2, "NewGroup"
@@ -2700,7 +2696,7 @@
     :cond_b
     if-ne p2, v2, :cond_c
 
-    .line 719
+    .line 715
     sget p1, Lorg/telegram/messenger/R$string;->NewSecretChat:I
 
     const-string p2, "NewSecretChat"
@@ -2718,7 +2714,7 @@
     :cond_c
     if-ne p2, v1, :cond_1c
 
-    .line 721
+    .line 717
     sget p1, Lorg/telegram/messenger/R$string;->NewChannel:I
 
     const-string p2, "NewChannel"
@@ -2733,7 +2729,7 @@
 
     goto/16 :goto_6
 
-    .line 726
+    .line 722
     :cond_d
     iget p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->currentAccount:I
 
@@ -2751,7 +2747,7 @@
 
     goto/16 :goto_6
 
-    .line 730
+    .line 726
     :cond_e
     iget p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->currentAccount:I
 
@@ -2767,7 +2763,7 @@
 
     check-cast p1, Lorg/telegram/messenger/ContactsController$Contact;
 
-    .line 731
+    .line 727
     iget-object p2, p1, Lorg/telegram/messenger/ContactsController$Contact;->first_name:Ljava/lang/String;
 
     if-eqz p2, :cond_f
@@ -2776,7 +2772,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 732
+    .line 728
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2804,17 +2800,17 @@
     :cond_f
     if-eqz p2, :cond_10
 
-    .line 733
+    .line 729
     iget-object v0, p1, Lorg/telegram/messenger/ContactsController$Contact;->last_name:Ljava/lang/String;
 
     if-nez v0, :cond_10
 
-    .line 734
+    .line 730
     invoke-virtual {p3, p2, v3}, Lorg/telegram/ui/Cells/TextCell;->setText(Ljava/lang/String;Z)V
 
     goto/16 :goto_6
 
-    .line 736
+    .line 732
     :cond_10
     iget-object p1, p1, Lorg/telegram/messenger/ContactsController$Contact;->last_name:Ljava/lang/String;
 
@@ -2822,13 +2818,13 @@
 
     goto/16 :goto_6
 
-    .line 668
+    .line 664
     :cond_11
     iget-object p3, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p3, Lorg/telegram/ui/Cells/UserCell;
 
-    .line 669
+    .line 665
     iget v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->sortType:I
 
     if-eq v0, v1, :cond_13
@@ -2851,17 +2847,17 @@
     :goto_1
     invoke-virtual {p3, v0}, Lorg/telegram/ui/Cells/UserCell;->setAvatarPadding(I)V
 
-    .line 671
+    .line 667
     iget v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->sortType:I
 
     if-ne v0, v1, :cond_14
 
-    .line 672
+    .line 668
     iget-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
     goto :goto_5
 
-    .line 674
+    .line 670
     :cond_14
     iget v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlyUsers:I
 
@@ -2886,7 +2882,7 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/ContactsController;->usersSectionsDict:Ljava/util/HashMap;
 
-    .line 675
+    .line 671
     :goto_2
     iget v4, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlyUsers:I
 
@@ -2911,23 +2907,23 @@
 
     iget-object v1, v1, Lorg/telegram/messenger/ContactsController;->sortedUsersSectionsArray:Ljava/util/ArrayList;
 
-    .line 677
+    .line 673
     :goto_3
     iget-boolean v4, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->needPhonebook:Z
 
     if-eqz v4, :cond_17
 
-    .line 678
+    .line 674
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/iMe/model/contacts/CollectionsFilteredContacts;
 
     move-result-object v0
 
-    .line 679
+    .line 675
     invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
 
     move-result-object v1
 
-    .line 680
+    .line 676
     invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -2938,7 +2934,7 @@
 
     move-object v0, v5
 
-    .line 683
+    .line 679
     :cond_17
     iget v4, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlyUsers:I
 
@@ -2968,7 +2964,7 @@
 
     check-cast p1, Ljava/util/ArrayList;
 
-    .line 685
+    .line 681
     :goto_5
     iget v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->currentAccount:I
 
@@ -2994,15 +2990,15 @@
 
     const/4 p2, 0x0
 
-    .line 686
+    .line 682
     invoke-virtual {p3, p1, p2, p2, v3}, Lorg/telegram/ui/Cells/UserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)V
 
-    .line 687
+    .line 683
     iget-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->checkedMap:Landroidx/collection/LongSparseArray;
 
     if-eqz p2, :cond_1a
 
-    .line 688
+    .line 684
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-virtual {p2, v0, v1}, Landroidx/collection/LongSparseArray;->indexOfKey(J)I
@@ -3020,13 +3016,13 @@
 
     invoke-virtual {p3, v3, p2}, Lorg/telegram/ui/Cells/UserCell;->setChecked(ZZ)V
 
-    .line 690
+    .line 686
     :cond_1a
     iget-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->ignoreUsers:Landroidx/collection/LongSparseArray;
 
     if-eqz p2, :cond_1c
 
-    .line 691
+    .line 687
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-virtual {p2, v0, v1}, Landroidx/collection/LongSparseArray;->indexOfKey(J)I
@@ -3037,7 +3033,7 @@
 
     const/high16 p1, 0x3f000000    # 0.5f
 
-    .line 692
+    .line 688
     invoke-virtual {p3, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     goto :goto_6
@@ -3045,7 +3041,7 @@
     :cond_1b
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 694
+    .line 690
     invoke-virtual {p3, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     :cond_1c
@@ -3056,14 +3052,14 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 5
 
-    .line 568
+    .line 566
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->CONTACTS_FILTER:I
 
     const/4 v1, 0x0
 
     if-ne p2, v0, :cond_0
 
-    .line 569
+    .line 567
     new-instance p1, Lcom/iMe/ui/contacts/view/TextCellWithRightImage;
 
     iget-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->mContext:Landroid/content/Context;
@@ -3074,7 +3070,7 @@
 
     goto/16 :goto_1
 
-    .line 570
+    .line 568
     :cond_0
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->CONTACTS_INPUT_ADDRESS:I
 
@@ -3082,21 +3078,21 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 571
+    .line 569
     new-instance p1, Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/EditTextSettingsCell;-><init>(Landroid/content/Context;)V
 
-    .line 572
+    .line 570
     new-instance p2, Lorg/telegram/ui/Adapters/ContactsAdapter$1;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Adapters/ContactsAdapter$1;-><init>(Lorg/telegram/ui/Adapters/ContactsAdapter;Lorg/telegram/ui/Cells/EditTextSettingsCell;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->addTextWatcher(Landroid/text/TextWatcher;)V
 
-    .line 578
+    .line 576
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p2
@@ -3109,28 +3105,28 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 579
+    .line 577
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p2
 
     invoke-virtual {p2, v2}, Landroid/widget/EditText;->setTextIsSelectable(Z)V
 
-    .line 580
+    .line 578
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p2
 
     invoke-virtual {p2, v2}, Landroid/widget/EditText;->setLongClickable(Z)V
 
-    .line 581
+    .line 579
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p2
 
     invoke-virtual {p2, v2}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 582
+    .line 580
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p2
@@ -3158,14 +3154,14 @@
 
     if-eq p2, v0, :cond_2
 
-    .line 638
+    .line 636
     new-instance p1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;)V
 
-    .line 639
+    .line 637
     iget-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
@@ -3176,7 +3172,7 @@
 
     move-result-object p2
 
-    .line 640
+    .line 638
     new-instance v0, Lorg/telegram/ui/Components/CombinedDrawable;
 
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
@@ -3191,15 +3187,15 @@
 
     invoke-direct {v0, v1, p2}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 641
+    .line 639
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
 
-    .line 642
+    .line 640
     invoke-virtual {p1, v0}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_1
 
-    .line 605
+    .line 603
     :cond_2
     new-instance p2, Lorg/telegram/ui/Adapters/ContactsAdapter$2;
 
@@ -3207,7 +3203,7 @@
 
     invoke-direct {p2, p0, v0, p1}, Lorg/telegram/ui/Adapters/ContactsAdapter$2;-><init>(Lorg/telegram/ui/Adapters/ContactsAdapter;Landroid/content/Context;Landroid/view/ViewGroup;)V
 
-    .line 632
+    .line 630
     new-instance p1, Lorg/telegram/ui/Components/ContactsEmptyView;
 
     iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->mContext:Landroid/content/Context;
@@ -3218,7 +3214,7 @@
 
     const/4 v1, -0x2
 
-    .line 633
+    .line 631
     invoke-static {v1, v1, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
@@ -3229,7 +3225,7 @@
 
     goto :goto_1
 
-    .line 601
+    .line 599
     :cond_3
     new-instance p1, Lorg/telegram/ui/Cells/DividerCell;
 
@@ -3237,7 +3233,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/DividerCell;-><init>(Landroid/content/Context;)V
 
-    .line 602
+    .line 600
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v0, 0x1c
@@ -3283,7 +3279,7 @@
 
     goto :goto_1
 
-    .line 598
+    .line 596
     :cond_6
     new-instance p1, Lorg/telegram/ui/Cells/GraySectionCell;
 
@@ -3293,7 +3289,7 @@
 
     goto :goto_1
 
-    .line 595
+    .line 593
     :cond_7
     new-instance p1, Lorg/telegram/ui/Cells/TextCell;
 
@@ -3303,7 +3299,7 @@
 
     goto :goto_1
 
-    .line 587
+    .line 585
     :cond_8
     new-instance p1, Lorg/telegram/ui/Cells/UserCell;
 
@@ -3313,15 +3309,15 @@
 
     invoke-direct {p1, p2, v0, v2, v1}, Lorg/telegram/ui/Cells/UserCell;-><init>(Landroid/content/Context;IIZ)V
 
-    .line 589
+    .line 587
     iget-boolean p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->needPhonebook:Z
 
     if-eqz p2, :cond_9
 
-    .line 590
+    .line 588
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/UserCell;->changeCheckBoxMargins()V
 
-    .line 645
+    .line 643
     :cond_9
     :goto_1
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

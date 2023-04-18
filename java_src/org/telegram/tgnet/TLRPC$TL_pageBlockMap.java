@@ -6,18 +6,18 @@ public class TLRPC$TL_pageBlockMap extends TLRPC$PageBlock {
     public TLRPC$GeoPoint geo;
 
     /* renamed from: h */
-    public int f1620h;
+    public int f1545h;
 
     /* renamed from: w */
-    public int f1621w;
+    public int f1546w;
     public int zoom;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         this.geo = TLRPC$GeoPoint.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         this.zoom = abstractSerializedData.readInt32(z);
-        this.f1621w = abstractSerializedData.readInt32(z);
-        this.f1620h = abstractSerializedData.readInt32(z);
+        this.f1546w = abstractSerializedData.readInt32(z);
+        this.f1545h = abstractSerializedData.readInt32(z);
         this.caption = TLRPC$TL_pageCaption.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
     }
 
@@ -26,8 +26,8 @@ public class TLRPC$TL_pageBlockMap extends TLRPC$PageBlock {
         abstractSerializedData.writeInt32(constructor);
         this.geo.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeInt32(this.zoom);
-        abstractSerializedData.writeInt32(this.f1621w);
-        abstractSerializedData.writeInt32(this.f1620h);
+        abstractSerializedData.writeInt32(this.f1546w);
+        abstractSerializedData.writeInt32(this.f1545h);
         this.caption.serializeToStream(abstractSerializedData);
     }
 }

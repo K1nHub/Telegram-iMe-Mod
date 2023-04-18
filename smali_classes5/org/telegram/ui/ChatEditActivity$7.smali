@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatEditActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 654
+    .line 655
     invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 657
+    .line 658
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v1, 0x14

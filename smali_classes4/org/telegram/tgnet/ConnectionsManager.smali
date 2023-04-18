@@ -791,7 +791,7 @@
     .line 230
     sget v1, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION:I
 
-    const/16 v2, 0x9c
+    const/16 v2, 0x9d
 
     sget v3, Lorg/telegram/messenger/BuildVars;->APP_ID:I
 

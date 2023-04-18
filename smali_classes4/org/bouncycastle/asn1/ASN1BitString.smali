@@ -52,7 +52,7 @@
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    const-string v0, "data cannot be null"
+    const-string v0, "\'data\' cannot be null"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -99,35 +99,6 @@
     invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
-.end method
-
-.method protected static derForm([BI)[B
-    .locals 3
-
-    invoke-static {p0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object v0
-
-    if-lez p1, :cond_0
-
-    array-length p0, p0
-
-    add-int/lit8 p0, p0, -0x1
-
-    aget-byte v1, v0, p0
-
-    const/16 v2, 0xff
-
-    shl-int p1, v2, p1
-
-    and-int/2addr p1, v1
-
-    int-to-byte p1, p1
-
-    aput-byte p1, v0, p0
-
-    :cond_0
-    return-object v0
 .end method
 
 .method static fromInputStream(ILjava/io/InputStream;)Lorg/bouncycastle/asn1/ASN1BitString;
@@ -214,8 +185,8 @@
 
 
 # virtual methods
-.method protected asn1Equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
-    .locals 3
+.method asn1Equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
+    .locals 7
 
     instance-of v0, p1, Lorg/bouncycastle/asn1/ASN1BitString;
 
@@ -232,38 +203,115 @@
 
     iget v2, p1, Lorg/bouncycastle/asn1/ASN1BitString;->padBits:I
 
-    if-ne v0, v2, :cond_1
+    if-eq v0, v2, :cond_1
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1BitString;->getBytes()[B
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1BitString;->getBytes()[B
-
-    move-result-object p1
-
-    invoke-static {v0, p1}, Lorg/bouncycastle/util/Arrays;->areEqual([B[B)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    const/4 v1, 0x1
+    return v1
 
     :cond_1
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1BitString;->data:[B
+
+    iget-object p1, p1, Lorg/bouncycastle/asn1/ASN1BitString;->data:[B
+
+    array-length v2, v0
+
+    array-length v3, p1
+
+    if-eq v2, v3, :cond_2
+
+    return v1
+
+    :cond_2
+    add-int/lit8 v2, v2, -0x1
+
+    const/4 v3, 0x1
+
+    if-gez v2, :cond_3
+
+    return v3
+
+    :cond_3
+    move v4, v1
+
+    :goto_0
+    if-ge v4, v2, :cond_5
+
+    aget-byte v5, v0, v4
+
+    aget-byte v6, p1, v4
+
+    if-eq v5, v6, :cond_4
+
+    return v1
+
+    :cond_4
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_5
+    aget-byte v0, v0, v2
+
+    iget v4, p0, Lorg/bouncycastle/asn1/ASN1BitString;->padBits:I
+
+    const/16 v5, 0xff
+
+    shl-int v6, v5, v4
+
+    and-int/2addr v0, v6
+
+    int-to-byte v0, v0
+
+    aget-byte p1, p1, v2
+
+    shl-int v2, v5, v4
+
+    and-int/2addr p1, v2
+
+    int-to-byte p1, p1
+
+    if-ne v0, p1, :cond_6
+
+    move v1, v3
+
+    :cond_6
     return v1
 .end method
 
 .method public getBytes()[B
-    .locals 2
+    .locals 5
 
     iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1BitString;->data:[B
 
-    iget v1, p0, Lorg/bouncycastle/asn1/ASN1BitString;->padBits:I
+    array-length v1, v0
 
-    invoke-static {v0, v1}, Lorg/bouncycastle/asn1/ASN1BitString;->derForm([BI)[B
+    if-nez v1, :cond_0
+
+    return-object v0
+
+    :cond_0
+    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
 
     move-result-object v0
+
+    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1BitString;->data:[B
+
+    array-length v1, v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    aget-byte v2, v0, v1
+
+    const/16 v3, 0xff
+
+    iget v4, p0, Lorg/bouncycastle/asn1/ASN1BitString;->padBits:I
+
+    shl-int/2addr v3, v4
+
+    and-int/2addr v2, v3
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v0, v1
 
     return-object v0
 .end method
@@ -293,14 +341,6 @@
     throw v0
 .end method
 
-.method public getPadBits()I
-    .locals 1
-
-    iget v0, p0, Lorg/bouncycastle/asn1/ASN1BitString;->padBits:I
-
-    return v0
-.end method
-
 .method public getString()Ljava/lang/String;
     .locals 5
 
@@ -310,22 +350,12 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    new-instance v1, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    new-instance v2, Lorg/bouncycastle/asn1/ASN1OutputStream;
-
-    invoke-direct {v2, v1}, Lorg/bouncycastle/asn1/ASN1OutputStream;-><init>(Ljava/io/OutputStream;)V
-
     :try_start_0
-    invoke-virtual {v2, p0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Object;->getEncoded()[B
 
     move-result-object v1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v2, 0x0
 
@@ -394,17 +424,44 @@
 .end method
 
 .method public hashCode()I
-    .locals 2
+    .locals 5
 
-    iget v0, p0, Lorg/bouncycastle/asn1/ASN1BitString;->padBits:I
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1BitString;->data:[B
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1BitString;->getBytes()[B
+    array-length v1, v0
 
-    move-result-object v1
+    add-int/lit8 v1, v1, -0x1
 
-    invoke-static {v1}, Lorg/bouncycastle/util/Arrays;->hashCode([B)I
+    if-gez v1, :cond_0
 
-    move-result v1
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    aget-byte v2, v0, v1
+
+    const/16 v3, 0xff
+
+    iget v4, p0, Lorg/bouncycastle/asn1/ASN1BitString;->padBits:I
+
+    shl-int/2addr v3, v4
+
+    and-int/2addr v2, v3
+
+    int-to-byte v2, v2
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v3, v1}, Lorg/bouncycastle/util/Arrays;->hashCode([BII)I
+
+    move-result v0
+
+    mul-int/lit16 v0, v0, 0x101
+
+    xor-int/2addr v0, v2
+
+    iget v1, p0, Lorg/bouncycastle/asn1/ASN1BitString;->padBits:I
 
     xor-int/2addr v0, v1
 

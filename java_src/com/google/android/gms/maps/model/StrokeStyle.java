@@ -12,15 +12,15 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class StrokeStyle extends AbstractSafeParcelable {
     public static final Parcelable.Creator<StrokeStyle> CREATOR = new zzv();
-    @SafeParcelable.Field(getter = "getWidth", m789id = 2)
+    @SafeParcelable.Field(getter = "getWidth", m775id = 2)
     private final float zza;
-    @SafeParcelable.Field(getter = "getColor", m789id = 3)
+    @SafeParcelable.Field(getter = "getColor", m775id = 3)
     private final int zzb;
-    @SafeParcelable.Field(getter = "getToColor", m789id = 4)
+    @SafeParcelable.Field(getter = "getToColor", m775id = 4)
     private final int zzc;
-    @SafeParcelable.Field(getter = "isVisible", m789id = 5)
+    @SafeParcelable.Field(getter = "isVisible", m775id = 5)
     private final boolean zzd;
-    @SafeParcelable.Field(getter = "getStamp", m789id = 6)
+    @SafeParcelable.Field(getter = "getStamp", m775id = 6)
     private final StampStyle zze;
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
@@ -81,7 +81,7 @@ public final class StrokeStyle extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public StrokeStyle(@SafeParcelable.Param(m788id = 2) float f, @SafeParcelable.Param(m788id = 3) int i, @SafeParcelable.Param(m788id = 4) int i2, @SafeParcelable.Param(m788id = 5) boolean z, @SafeParcelable.Param(m788id = 6) StampStyle stampStyle) {
+    public StrokeStyle(@SafeParcelable.Param(m774id = 2) float f, @SafeParcelable.Param(m774id = 3) int i, @SafeParcelable.Param(m774id = 4) int i2, @SafeParcelable.Param(m774id = 5) boolean z, @SafeParcelable.Param(m774id = 6) StampStyle stampStyle) {
         this.zza = f;
         this.zzb = i;
         this.zzc = i2;

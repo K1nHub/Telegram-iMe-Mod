@@ -14,7 +14,7 @@
 
 
 # instance fields
-.field protected seq:Ljava/util/Vector;
+.field elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
 
 # direct methods
@@ -23,48 +23,45 @@
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    new-instance v0, Ljava/util/Vector;
+    sget-object v0, Lorg/bouncycastle/asn1/ASN1EncodableVector;->EMPTY_ELEMENTS:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
-
-    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->seq:Ljava/util/Vector;
+    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
     return-void
 .end method
 
 .method protected constructor <init>(Lorg/bouncycastle/asn1/ASN1EncodableVector;)V
-    .locals 3
+    .locals 1
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    new-instance v0, Ljava/util/Vector;
+    const-string v0, "\'elementVector\' cannot be null"
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->seq:Ljava/util/Vector;
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->takeElements()[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    const/4 v0, 0x0
+    move-result-object p1
 
-    :goto_0
-    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->size()I
+    iput-object p1, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    move-result v1
+    return-void
+.end method
 
-    if-eq v0, v1, :cond_0
+.method constructor <init>([Lorg/bouncycastle/asn1/ASN1Encodable;Z)V
+    .locals 0
 
-    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->seq:Ljava/util/Vector;
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->get(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+    if-eqz p2, :cond_0
 
-    move-result-object v2
+    invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->cloneElements([Lorg/bouncycastle/asn1/ASN1Encodable;)[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    invoke-virtual {v1, v2}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
+    move-result-object p1
 
     :cond_0
+    iput-object p1, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
+
     return-void
 .end method
 
@@ -200,22 +197,10 @@
     return-object p0
 .end method
 
-.method private getNext(Ljava/util/Enumeration;)Lorg/bouncycastle/asn1/ASN1Encodable;
-    .locals 0
-
-    invoke-interface {p1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    return-object p1
-.end method
-
 
 # virtual methods
 .method asn1Equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
-    .locals 4
+    .locals 5
 
     instance-of v0, p1, Lorg/bouncycastle/asn1/ASN1Sequence;
 
@@ -236,57 +221,48 @@
 
     move-result v2
 
-    if-eq v0, v2, :cond_1
+    if-eq v2, v0, :cond_1
 
     return v1
 
     :cond_1
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjects()Ljava/util/Enumeration;
+    move v2, v1
 
-    move-result-object v0
-
-    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjects()Ljava/util/Enumeration;
-
-    move-result-object p1
-
-    :cond_2
     :goto_0
-    invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
+    if-ge v2, v0, :cond_3
 
-    move-result v2
+    iget-object v3, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    if-eqz v2, :cond_4
-
-    invoke-direct {p0, v0}, Lorg/bouncycastle/asn1/ASN1Sequence;->getNext(Ljava/util/Enumeration;)Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    move-result-object v2
-
-    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1Sequence;->getNext(Ljava/util/Enumeration;)Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    move-result-object v3
-
-    invoke-interface {v2}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
-
-    move-result-object v2
+    aget-object v3, v3, v2
 
     invoke-interface {v3}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_2
+    iget-object v4, p1, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    invoke-virtual {v2, v3}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Ljava/lang/Object;)Z
+    aget-object v4, v4, v2
 
-    move-result v2
+    invoke-interface {v4}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
 
-    if-eqz v2, :cond_3
+    move-result-object v4
+
+    if-eq v3, v4, :cond_2
+
+    invoke-virtual {v3, v4}, Lorg/bouncycastle/asn1/ASN1Primitive;->asn1Equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    return v1
+
+    :cond_2
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     :cond_3
-    return v1
-
-    :cond_4
     const/4 p1, 0x1
 
     return p1
@@ -295,13 +271,9 @@
 .method public getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
     .locals 1
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->seq:Ljava/util/Vector;
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    invoke-virtual {v0, p1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lorg/bouncycastle/asn1/ASN1Encodable;
+    aget-object p1, v0, p1
 
     return-object p1
 .end method
@@ -309,11 +281,9 @@
 .method public getObjects()Ljava/util/Enumeration;
     .locals 1
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->seq:Ljava/util/Vector;
+    new-instance v0, Lorg/bouncycastle/asn1/ASN1Sequence$1;
 
-    invoke-virtual {v0}, Ljava/util/Vector;->elements()Ljava/util/Enumeration;
-
-    move-result-object v0
+    invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/ASN1Sequence$1;-><init>(Lorg/bouncycastle/asn1/ASN1Sequence;)V
 
     return-object v0
 .end method
@@ -321,28 +291,28 @@
 .method public hashCode()I
     .locals 3
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjects()Ljava/util/Enumeration;
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    move-result-object v0
+    array-length v0, v0
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->size()I
-
-    move-result v1
+    add-int/lit8 v1, v0, 0x1
 
     :goto_0
-    invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
+    add-int/lit8 v0, v0, -0x1
 
-    move-result v2
+    if-ltz v0, :cond_0
 
-    if-eqz v2, :cond_0
+    mul-int/lit16 v1, v1, 0x101
 
-    invoke-direct {p0, v0}, Lorg/bouncycastle/asn1/ASN1Sequence;->getNext(Ljava/util/Enumeration;)Lorg/bouncycastle/asn1/ASN1Encodable;
+    iget-object v2, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    aget-object v2, v2, v0
+
+    invoke-interface {v2}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object v2
 
-    mul-int/lit8 v1, v1, 0x11
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v2}, Lorg/bouncycastle/asn1/ASN1Object;->hashCode()I
 
     move-result v2
 
@@ -375,9 +345,7 @@
 
     new-instance v0, Lorg/bouncycastle/util/Arrays$Iterator;
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->toArray()[Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    move-result-object v1
+    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
     invoke-direct {v0, v1}, Lorg/bouncycastle/util/Arrays$Iterator;-><init>([Ljava/lang/Object;)V
 
@@ -387,83 +355,98 @@
 .method public size()I
     .locals 1
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->seq:Ljava/util/Vector;
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    invoke-virtual {v0}, Ljava/util/Vector;->size()I
-
-    move-result v0
+    array-length v0, v0
 
     return v0
 .end method
 
-.method public toArray()[Lorg/bouncycastle/asn1/ASN1Encodable;
-    .locals 3
+.method toArrayInternal()[Lorg/bouncycastle/asn1/ASN1Encodable;
+    .locals 1
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->size()I
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    move-result v0
-
-    new-array v0, v0, [Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->size()I
-
-    move-result v2
-
-    if-eq v1, v2, :cond_0
-
-    invoke-virtual {p0, v1}, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
     return-object v0
 .end method
 
 .method toDERObject()Lorg/bouncycastle/asn1/ASN1Primitive;
-    .locals 2
+    .locals 3
 
     new-instance v0, Lorg/bouncycastle/asn1/DERSequence;
 
-    invoke-direct {v0}, Lorg/bouncycastle/asn1/DERSequence;-><init>()V
+    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->seq:Ljava/util/Vector;
+    const/4 v2, 0x0
 
-    iput-object v1, v0, Lorg/bouncycastle/asn1/ASN1Sequence;->seq:Ljava/util/Vector;
+    invoke-direct {v0, v1, v2}, Lorg/bouncycastle/asn1/DERSequence;-><init>([Lorg/bouncycastle/asn1/ASN1Encodable;Z)V
 
     return-object v0
 .end method
 
 .method toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
-    .locals 2
+    .locals 3
 
     new-instance v0, Lorg/bouncycastle/asn1/DLSequence;
 
-    invoke-direct {v0}, Lorg/bouncycastle/asn1/DLSequence;-><init>()V
+    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->seq:Ljava/util/Vector;
+    const/4 v2, 0x0
 
-    iput-object v1, v0, Lorg/bouncycastle/asn1/ASN1Sequence;->seq:Ljava/util/Vector;
+    invoke-direct {v0, v1, v2}, Lorg/bouncycastle/asn1/DLSequence;-><init>([Lorg/bouncycastle/asn1/ASN1Encodable;Z)V
 
     return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 1
+    .locals 4
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->seq:Ljava/util/Vector;
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->size()I
 
-    invoke-virtual {v0}, Ljava/util/Vector;->toString()Ljava/lang/String;
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string v0, "[]"
+
+    return-object v0
+
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuffer;
+
+    invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
+
+    const/16 v2, 0x5b
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+
+    const/4 v2, 0x0
+
+    :goto_0
+    iget-object v3, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    aget-object v3, v3, v2
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
+
+    add-int/lit8 v2, v2, 0x1
+
+    if-lt v2, v0, :cond_1
+
+    const/16 v0, 0x5d
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
+
+    :cond_1
+    const-string v3, ", "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    goto :goto_0
 .end method

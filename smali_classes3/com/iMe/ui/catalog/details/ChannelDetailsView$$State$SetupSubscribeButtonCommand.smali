@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State;Z)V
     .locals 1
 
-    .line 180
+    .line 198
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "setupSubscribeButton"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 182
+    .line 200
     iput-boolean p2, p0, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$SetupSubscribeButtonCommand;->canSubscribe:Z
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/catalog/details/ChannelDetailsView;)V
     .locals 1
 
-    .line 187
+    .line 205
     iget-boolean v0, p0, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$SetupSubscribeButtonCommand;->canSubscribe:Z
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/catalog/details/ChannelDetailsView;->setupSubscribeButton(Z)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 176
+    .line 194
     check-cast p1, Lcom/iMe/ui/catalog/details/ChannelDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/details/ChannelDetailsView$$State$SetupSubscribeButtonCommand;->apply(Lcom/iMe/ui/catalog/details/ChannelDetailsView;)V

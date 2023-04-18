@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;Lorg/telegram/ui/Cells/PollEditTextCell;)V
     .locals 0
 
-    .line 971
+    .line 973
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$4;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$4;->val$cell:Lorg/telegram/ui/Cells/PollEditTextCell;
@@ -42,7 +42,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 2
 
-    .line 984
+    .line 986
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$4;->val$cell:Lorg/telegram/ui/Cells/PollEditTextCell;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -53,7 +53,7 @@
 
     return-void
 
-    .line 987
+    .line 989
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$4;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
@@ -61,7 +61,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;->access$2402(Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 988
+    .line 990
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$4;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;
@@ -84,7 +84,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 990
+    .line 992
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$4;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;
@@ -97,7 +97,7 @@
 
     invoke-static {v0, p1, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;->access$2000(Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;Landroid/view/View;I)V
 
-    .line 992
+    .line 994
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$4;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 

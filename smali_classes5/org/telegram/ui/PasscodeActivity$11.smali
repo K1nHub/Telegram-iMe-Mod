@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/PasscodeActivity$11;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroid/view/ViewOutlineProvider;
 .source "PasscodeActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/PasscodeActivity;->setCustomKeyboardVisible(ZZ)V
+    value = Lorg/telegram/ui/PasscodeActivity;->createView(Landroid/content/Context;)Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,70 +14,35 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/PasscodeActivity;
-
-.field final synthetic val$visible:Z
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/PasscodeActivity;Z)V
+.method constructor <init>(Lorg/telegram/ui/PasscodeActivity;)V
     .locals 0
 
-    .line 1159
-    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$11;->this$0:Lorg/telegram/ui/PasscodeActivity;
-
-    iput-boolean p2, p0, Lorg/telegram/ui/PasscodeActivity$11;->val$visible:Z
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    .line 1033
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
+    .locals 2
 
-    .line 1169
-    iget-boolean p1, p0, Lorg/telegram/ui/PasscodeActivity$11;->val$visible:Z
+    const/16 p1, 0x38
 
-    if-nez p1, :cond_0
+    .line 1037
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    .line 1170
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$11;->this$0:Lorg/telegram/ui/PasscodeActivity;
+    move-result v0
 
-    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$000(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result-object p1
+    move-result p1
 
-    const/16 v0, 0x8
+    const/4 v1, 0x0
 
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {p2, v1, v1, v0, p1}, Landroid/graphics/Outline;->setOval(IIII)V
 
-    :cond_0
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .locals 1
-
-    .line 1162
-    iget-boolean p1, p0, Lorg/telegram/ui/PasscodeActivity$11;->val$visible:Z
-
-    if-eqz p1, :cond_0
-
-    .line 1163
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$11;->this$0:Lorg/telegram/ui/PasscodeActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$000(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setVisibility(I)V
-
-    :cond_0
     return-void
 .end method

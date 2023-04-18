@@ -2,6 +2,7 @@ package org.bouncycastle.asn1;
 
 import java.io.IOException;
 import java.util.Enumeration;
+import java.util.NoSuchElementException;
 /* loaded from: classes4.dex */
 class LazyConstructionEnumeration implements Enumeration {
     private ASN1InputStream aIn;
@@ -27,7 +28,10 @@ class LazyConstructionEnumeration implements Enumeration {
     @Override // java.util.Enumeration
     public Object nextElement() {
         Object obj = this.nextObj;
-        this.nextObj = readObject();
-        return obj;
+        if (obj != null) {
+            this.nextObj = readObject();
+            return obj;
+        }
+        throw new NoSuchElementException();
     }
 }

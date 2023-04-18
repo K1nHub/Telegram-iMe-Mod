@@ -1,7 +1,7 @@
 package org.telegram.messenger;
 
 import java.util.Comparator;
-import org.telegram.messenger.MessagesController;
+import org.telegram.p044ui.Adapters.DialogsSearchAdapter;
 /* loaded from: classes4.dex */
 public final /* synthetic */ class MessagesStorage$$ExternalSyntheticLambda219 implements Comparator {
     public static final /* synthetic */ MessagesStorage$$ExternalSyntheticLambda219 INSTANCE = new MessagesStorage$$ExternalSyntheticLambda219();
@@ -11,8 +11,8 @@ public final /* synthetic */ class MessagesStorage$$ExternalSyntheticLambda219 i
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        int lambda$processLoadedFilterPeersInternal$58;
-        lambda$processLoadedFilterPeersInternal$58 = MessagesStorage.lambda$processLoadedFilterPeersInternal$58((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
-        return lambda$processLoadedFilterPeersInternal$58;
+        int lambda$localSearch$216;
+        lambda$localSearch$216 = MessagesStorage.lambda$localSearch$216((DialogsSearchAdapter.DialogSearchResult) obj, (DialogsSearchAdapter.DialogSearchResult) obj2);
+        return lambda$localSearch$216;
     }
 }

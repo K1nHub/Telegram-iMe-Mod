@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.clearcut;
 
 import java.util.ListIterator;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* loaded from: classes.dex */
 final class zzfb implements ListIterator<String>, Iterator {
     private ListIterator<String> zzpc;
@@ -23,12 +23,12 @@ final class zzfb implements ListIterator<String>, Iterator {
         throw new UnsupportedOperationException();
     }
 
-    @Override // p035j$.util.Iterator
+    @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
     public final boolean hasNext() {
         return this.zzpc.hasNext();
     }
@@ -38,7 +38,7 @@ final class zzfb implements ListIterator<String>, Iterator {
         return this.zzpc.hasPrevious();
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
     public final /* synthetic */ Object next() {
         return this.zzpc.next();
     }
@@ -58,7 +58,7 @@ final class zzfb implements ListIterator<String>, Iterator {
         return this.zzpc.previousIndex();
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
     public final void remove() {
         throw new UnsupportedOperationException();
     }

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;)V
     .locals 0
 
-    .line 1629
+    .line 1631
     iput-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 1
 
-    .line 1642
+    .line 1644
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->access$5100(Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;)Z
@@ -49,7 +49,7 @@
 
     return-void
 
-    .line 1645
+    .line 1647
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;
 
@@ -61,7 +61,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5202(Lorg/telegram/ui/ChatRightsEditActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 1646
+    .line 1648
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
@@ -84,7 +84,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1648
+    .line 1650
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;

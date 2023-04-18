@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$16\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n42#2,2:434\n127#3,5:436\n127#3,5:441\n127#3,5:446\n127#3,5:451\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$16\n*L\n175#1:434,2\n177#1:436,5\n178#1:441,5\n179#1:446,5\n180#1:451,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$16\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n44#2,2:434\n129#3,5:436\n129#3,5:441\n129#3,5:446\n129#3,5:451\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$16\n*L\n175#1:434,2\n177#1:436,5\n178#1:441,5\n179#1:446,5\n180#1:451,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 44
     const-class v0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -89,7 +89,7 @@
 
     check-cast v4, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;
 
-    .line 43
+    .line 45
     const-class v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -106,7 +106,7 @@
 
     check-cast v3, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -124,7 +124,7 @@
 
     check-cast v7, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -140,7 +140,7 @@
 
     check-cast v9, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -156,7 +156,7 @@
 
     check-cast v8, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -172,7 +172,7 @@
 
     check-cast v11, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -188,7 +188,7 @@
 
     check-cast v2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/storage/HintsPreferenceHelper;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -204,7 +204,7 @@
 
     check-cast v6, Lcom/iMe/storage/domain/storage/HintsPreferenceHelper;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/i_staking/StakingInteractor;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -220,7 +220,7 @@
 
     check-cast v10, Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

@@ -65,7 +65,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 229
+    .line 349
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -78,10 +78,10 @@
 .method private constructor <init>(Landroidx/emoji2/text/EmojiCompat$Config;)V
     .locals 2
 
-    .line 339
+    .line 459
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 340
+    .line 460
     new-instance v0, Ljava/util/concurrent/locks/ReentrantReadWriteLock;
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;-><init>()V
@@ -90,50 +90,50 @@
 
     const/4 v0, 0x3
 
-    .line 341
+    .line 461
     iput v0, p0, Landroidx/emoji2/text/EmojiCompat;->mLoadState:I
 
-    .line 342
+    .line 462
     iget-boolean v0, p1, Landroidx/emoji2/text/EmojiCompat$Config;->mReplaceAll:Z
 
     iput-boolean v0, p0, Landroidx/emoji2/text/EmojiCompat;->mReplaceAll:Z
 
-    .line 343
+    .line 463
     iget-boolean v0, p1, Landroidx/emoji2/text/EmojiCompat$Config;->mUseEmojiAsDefaultStyle:Z
 
     iput-boolean v0, p0, Landroidx/emoji2/text/EmojiCompat;->mUseEmojiAsDefaultStyle:Z
 
-    .line 344
+    .line 464
     iget-object v0, p1, Landroidx/emoji2/text/EmojiCompat$Config;->mEmojiAsDefaultStyleExceptions:[I
 
     iput-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mEmojiAsDefaultStyleExceptions:[I
 
-    .line 345
+    .line 465
     iget-boolean v0, p1, Landroidx/emoji2/text/EmojiCompat$Config;->mEmojiSpanIndicatorEnabled:Z
 
     iput-boolean v0, p0, Landroidx/emoji2/text/EmojiCompat;->mEmojiSpanIndicatorEnabled:Z
 
-    .line 346
+    .line 466
     iget v0, p1, Landroidx/emoji2/text/EmojiCompat$Config;->mEmojiSpanIndicatorColor:I
 
     iput v0, p0, Landroidx/emoji2/text/EmojiCompat;->mEmojiSpanIndicatorColor:I
 
-    .line 347
+    .line 467
     iget-object v0, p1, Landroidx/emoji2/text/EmojiCompat$Config;->mMetadataLoader:Landroidx/emoji2/text/EmojiCompat$MetadataRepoLoader;
 
     iput-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mMetadataLoader:Landroidx/emoji2/text/EmojiCompat$MetadataRepoLoader;
 
-    .line 348
+    .line 468
     iget v0, p1, Landroidx/emoji2/text/EmojiCompat$Config;->mMetadataLoadStrategy:I
 
     iput v0, p0, Landroidx/emoji2/text/EmojiCompat;->mMetadataLoadStrategy:I
 
-    .line 349
+    .line 469
     iget-object v0, p1, Landroidx/emoji2/text/EmojiCompat$Config;->mGlyphChecker:Landroidx/emoji2/text/EmojiCompat$GlyphChecker;
 
     iput-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mGlyphChecker:Landroidx/emoji2/text/EmojiCompat$GlyphChecker;
 
-    .line 350
+    .line 470
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -144,14 +144,14 @@
 
     iput-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mMainHandler:Landroid/os/Handler;
 
-    .line 351
+    .line 471
     new-instance v0, Landroidx/collection/ArraySet;
 
     invoke-direct {v0}, Landroidx/collection/ArraySet;-><init>()V
 
     iput-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mInitCallbacks:Ljava/util/Set;
 
-    .line 352
+    .line 472
     iget-object v1, p1, Landroidx/emoji2/text/EmojiCompat$Config;->mInitCallbacks:Ljava/util/Set;
 
     if-eqz v1, :cond_0
@@ -162,12 +162,12 @@
 
     if-nez v1, :cond_0
 
-    .line 353
+    .line 473
     iget-object p1, p1, Landroidx/emoji2/text/EmojiCompat$Config;->mInitCallbacks:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    .line 355
+    .line 475
     :cond_0
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -189,7 +189,7 @@
     :goto_0
     iput-object p1, p0, Landroidx/emoji2/text/EmojiCompat;->mHelper:Landroidx/emoji2/text/EmojiCompat$CompatInternal;
 
-    .line 357
+    .line 477
     invoke-direct {p0}, Landroidx/emoji2/text/EmojiCompat;->loadMetadata()V
 
     return-void
@@ -207,12 +207,12 @@
 .method public static get()Landroidx/emoji2/text/EmojiCompat;
     .locals 4
 
-    .line 528
+    .line 648
     sget-object v0, Landroidx/emoji2/text/EmojiCompat;->INSTANCE_LOCK:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 529
+    .line 649
     :try_start_0
     sget-object v1, Landroidx/emoji2/text/EmojiCompat;->sInstance:Landroidx/emoji2/text/EmojiCompat;
 
@@ -228,10 +228,10 @@
     :goto_0
     const-string v3, "EmojiCompat is not initialized.\n\nYou must initialize EmojiCompat prior to referencing the EmojiCompat instance.\n\nThe most likely cause of this error is disabling the EmojiCompatInitializer\neither explicitly in AndroidManifest.xml, or by including\nandroidx.emoji2:emoji2-bundled.\n\nAutomatic initialization is typically performed by EmojiCompatInitializer. If\nyou are not expecting to initialize EmojiCompat manually in your application,\nplease check to ensure it has not been removed from your APK\'s manifest. You can\ndo this in Android Studio using Build > Analyze APK.\n\nIn the APK Analyzer, ensure that the startup entry for\nEmojiCompatInitializer and InitializationProvider is present in\n AndroidManifest.xml. If it is missing or contains tools:node=\"remove\", and you\nintend to use automatic configuration, verify:\n\n  1. Your application does not include emoji2-bundled\n  2. All modules do not contain an exclusion manifest rule for\n     EmojiCompatInitializer or InitializationProvider. For more information\n     about manifest exclusions see the documentation for the androidx startup\n     library.\n\nIf you intend to use emoji2-bundled, please call EmojiCompat.init. You can\nlearn more in the documentation for BundledEmojiCompatConfig.\n\nIf you intended to perform manual configuration, it is recommended that you call\nEmojiCompat.init immediately on application startup.\n\nIf you still cannot resolve this issue, please open a bug with your specific\nconfiguration to help improve error message."
 
-    .line 530
+    .line 650
     invoke-static {v2, v3}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
 
-    .line 531
+    .line 651
     monitor-exit v0
 
     return-object v1
@@ -239,7 +239,7 @@
     :catchall_0
     move-exception v1
 
-    .line 532
+    .line 652
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -250,14 +250,14 @@
 .method public static handleDeleteSurroundingText(Landroid/view/inputmethod/InputConnection;Landroid/text/Editable;IIZ)Z
     .locals 2
 
-    .line 747
+    .line 867
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
 
     if-lt v0, v1, :cond_0
 
-    .line 748
+    .line 868
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/emoji2/text/EmojiProcessor;->handleDeleteSurroundingText(Landroid/view/inputmethod/InputConnection;Landroid/text/Editable;IIZ)Z
 
     move-result p0
@@ -273,14 +273,14 @@
 .method public static handleOnKeyDown(Landroid/text/Editable;ILandroid/view/KeyEvent;)Z
     .locals 2
 
-    .line 718
+    .line 838
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
 
     if-lt v0, v1, :cond_0
 
-    .line 719
+    .line 839
     invoke-static {p0, p1, p2}, Landroidx/emoji2/text/EmojiProcessor;->handleOnKeyDown(Landroid/text/Editable;ILandroid/view/KeyEvent;)Z
 
     move-result p0
@@ -296,31 +296,31 @@
 .method public static init(Landroidx/emoji2/text/EmojiCompat$Config;)Landroidx/emoji2/text/EmojiCompat;
     .locals 2
 
-    .line 429
+    .line 549
     sget-object v0, Landroidx/emoji2/text/EmojiCompat;->sInstance:Landroidx/emoji2/text/EmojiCompat;
 
     if-nez v0, :cond_1
 
-    .line 431
+    .line 551
     sget-object v1, Landroidx/emoji2/text/EmojiCompat;->INSTANCE_LOCK:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 432
+    .line 552
     :try_start_0
     sget-object v0, Landroidx/emoji2/text/EmojiCompat;->sInstance:Landroidx/emoji2/text/EmojiCompat;
 
     if-nez v0, :cond_0
 
-    .line 434
+    .line 554
     new-instance v0, Landroidx/emoji2/text/EmojiCompat;
 
     invoke-direct {v0, p0}, Landroidx/emoji2/text/EmojiCompat;-><init>(Landroidx/emoji2/text/EmojiCompat$Config;)V
 
-    .line 435
+    .line 555
     sput-object v0, Landroidx/emoji2/text/EmojiCompat;->sInstance:Landroidx/emoji2/text/EmojiCompat;
 
-    .line 437
+    .line 557
     :cond_0
     monitor-exit v1
 
@@ -343,7 +343,7 @@
 .method public static isConfigured()Z
     .locals 1
 
-    .line 473
+    .line 593
     sget-object v0, Landroidx/emoji2/text/EmojiCompat;->sInstance:Landroidx/emoji2/text/EmojiCompat;
 
     if-eqz v0, :cond_0
@@ -362,7 +362,7 @@
 .method private isInitialized()Z
     .locals 2
 
-    .line 675
+    .line 795
     invoke-virtual {p0}, Landroidx/emoji2/text/EmojiCompat;->getLoadState()I
 
     move-result v0
@@ -383,7 +383,7 @@
 .method private loadMetadata()V
     .locals 2
 
-    .line 568
+    .line 688
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -392,7 +392,7 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 570
+    .line 690
     :try_start_0
     iget v0, p0, Landroidx/emoji2/text/EmojiCompat;->mMetadataLoadStrategy:I
 
@@ -400,12 +400,12 @@
 
     const/4 v0, 0x0
 
-    .line 571
+    .line 691
     iput v0, p0, Landroidx/emoji2/text/EmojiCompat;->mLoadState:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 574
+    .line 694
     :cond_0
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
@@ -415,14 +415,14 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 577
+    .line 697
     invoke-virtual {p0}, Landroidx/emoji2/text/EmojiCompat;->getLoadState()I
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 578
+    .line 698
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mHelper:Landroidx/emoji2/text/EmojiCompat$CompatInternal;
 
     invoke-virtual {v0}, Landroidx/emoji2/text/EmojiCompat$CompatInternal;->loadMetadata()V
@@ -433,7 +433,7 @@
     :catchall_0
     move-exception v0
 
-    .line 574
+    .line 694
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -442,7 +442,7 @@
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 575
+    .line 695
     throw v0
 .end method
 
@@ -451,7 +451,7 @@
 .method public getEmojiSpanIndicatorColor()I
     .locals 1
 
-    .line 693
+    .line 813
     iget v0, p0, Landroidx/emoji2/text/EmojiCompat;->mEmojiSpanIndicatorColor:I
 
     return v0
@@ -460,7 +460,7 @@
 .method public getLoadState()I
     .locals 2
 
-    .line 663
+    .line 783
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/ReadWriteLock;->readLock()Ljava/util/concurrent/locks/Lock;
@@ -469,13 +469,13 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 665
+    .line 785
     :try_start_0
     iget v0, p0, Landroidx/emoji2/text/EmojiCompat;->mLoadState:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 667
+    .line 787
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/ReadWriteLock;->readLock()Ljava/util/concurrent/locks/Lock;
@@ -497,14 +497,14 @@
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 668
+    .line 788
     throw v0
 .end method
 
 .method public isEmojiSpanIndicatorEnabled()Z
     .locals 1
 
-    .line 684
+    .line 804
     iget-boolean v0, p0, Landroidx/emoji2/text/EmojiCompat;->mEmojiSpanIndicatorEnabled:Z
 
     return v0
@@ -513,7 +513,7 @@
 .method public load()V
     .locals 3
 
-    .line 552
+    .line 672
     iget v0, p0, Landroidx/emoji2/text/EmojiCompat;->mMetadataLoadStrategy:I
 
     const/4 v1, 0x0
@@ -532,7 +532,7 @@
 
     invoke-static {v2, v0}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
 
-    .line 554
+    .line 674
     invoke-direct {p0}, Landroidx/emoji2/text/EmojiCompat;->isInitialized()Z
 
     move-result v0
@@ -541,7 +541,7 @@
 
     return-void
 
-    .line 556
+    .line 676
     :cond_1
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
@@ -551,7 +551,7 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 558
+    .line 678
     :try_start_0
     iget v0, p0, Landroidx/emoji2/text/EmojiCompat;->mLoadState:I
     :try_end_0
@@ -559,7 +559,7 @@
 
     if-nez v0, :cond_2
 
-    .line 561
+    .line 681
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -570,14 +570,14 @@
 
     return-void
 
-    .line 559
+    .line 679
     :cond_2
     :try_start_1
     iput v1, p0, Landroidx/emoji2/text/EmojiCompat;->mLoadState:I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 561
+    .line 681
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -586,7 +586,7 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 564
+    .line 684
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mHelper:Landroidx/emoji2/text/EmojiCompat$CompatInternal;
 
     invoke-virtual {v0}, Landroidx/emoji2/text/EmojiCompat$CompatInternal;->loadMetadata()V
@@ -596,7 +596,7 @@
     :catchall_0
     move-exception v0
 
-    .line 561
+    .line 681
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -605,19 +605,19 @@
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 562
+    .line 682
     throw v0
 .end method
 
 .method onMetadataLoadFailed(Ljava/lang/Throwable;)V
     .locals 4
 
-    .line 599
+    .line 719
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 600
+    .line 720
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -628,23 +628,23 @@
 
     const/4 v1, 0x2
 
-    .line 602
+    .line 722
     :try_start_0
     iput v1, p0, Landroidx/emoji2/text/EmojiCompat;->mLoadState:I
 
-    .line 603
+    .line 723
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitCallbacks:Ljava/util/Set;
 
     invoke-interface {v0, v1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
 
-    .line 604
+    .line 724
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitCallbacks:Ljava/util/Set;
 
     invoke-interface {v1}, Ljava/util/Set;->clear()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 606
+    .line 726
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -653,7 +653,7 @@
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 608
+    .line 728
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mMainHandler:Landroid/os/Handler;
 
     new-instance v2, Landroidx/emoji2/text/EmojiCompat$ListenerDispatcher;
@@ -669,7 +669,7 @@
     :catchall_0
     move-exception p1
 
-    .line 606
+    .line 726
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -678,19 +678,19 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 607
+    .line 727
     throw p1
 .end method
 
 .method onMetadataLoadSuccess()V
     .locals 4
 
-    .line 584
+    .line 704
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 585
+    .line 705
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -701,23 +701,23 @@
 
     const/4 v1, 0x1
 
-    .line 587
+    .line 707
     :try_start_0
     iput v1, p0, Landroidx/emoji2/text/EmojiCompat;->mLoadState:I
 
-    .line 588
+    .line 708
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitCallbacks:Ljava/util/Set;
 
     invoke-interface {v0, v1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
 
-    .line 589
+    .line 709
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitCallbacks:Ljava/util/Set;
 
     invoke-interface {v1}, Ljava/util/Set;->clear()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 591
+    .line 711
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -726,7 +726,7 @@
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 594
+    .line 714
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mMainHandler:Landroid/os/Handler;
 
     new-instance v2, Landroidx/emoji2/text/EmojiCompat$ListenerDispatcher;
@@ -742,7 +742,7 @@
     :catchall_0
     move-exception v0
 
-    .line 591
+    .line 711
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -751,7 +751,7 @@
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 592
+    .line 712
     throw v0
 .end method
 
@@ -766,13 +766,13 @@
 
     goto :goto_0
 
-    .line 807
+    .line 956
     :cond_0
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
-    .line 808
+    .line 957
     :goto_0
     invoke-virtual {p0, p1, v0, v1}, Landroidx/emoji2/text/EmojiCompat;->process(Ljava/lang/CharSequence;II)Ljava/lang/CharSequence;
 
@@ -786,7 +786,7 @@
 
     const v0, 0x7fffffff
 
-    .line 842
+    .line 991
     invoke-virtual {p0, p1, p2, p3, v0}, Landroidx/emoji2/text/EmojiCompat;->process(Ljava/lang/CharSequence;III)Ljava/lang/CharSequence;
 
     move-result-object p1
@@ -809,7 +809,7 @@
 
     move v4, p4
 
-    .line 880
+    .line 1029
     invoke-virtual/range {v0 .. v5}, Landroidx/emoji2/text/EmojiCompat;->process(Ljava/lang/CharSequence;IIII)Ljava/lang/CharSequence;
 
     move-result-object p1
@@ -820,7 +820,7 @@
 .method public process(Ljava/lang/CharSequence;IIII)Ljava/lang/CharSequence;
     .locals 7
 
-    .line 922
+    .line 1071
     invoke-direct {p0}, Landroidx/emoji2/text/EmojiCompat;->isInitialized()Z
 
     move-result v0
@@ -831,17 +831,17 @@
 
     const-string v0, "start cannot be negative"
 
-    .line 923
+    .line 1072
     invoke-static {p2, v0}, Landroidx/core/util/Preconditions;->checkArgumentNonnegative(ILjava/lang/String;)I
 
     const-string v0, "end cannot be negative"
 
-    .line 924
+    .line 1073
     invoke-static {p3, v0}, Landroidx/core/util/Preconditions;->checkArgumentNonnegative(ILjava/lang/String;)I
 
     const-string v0, "maxEmojiCount cannot be negative"
 
-    .line 925
+    .line 1074
     invoke-static {p4, v0}, Landroidx/core/util/Preconditions;->checkArgumentNonnegative(ILjava/lang/String;)I
 
     const/4 v0, 0x0
@@ -860,7 +860,7 @@
     :goto_0
     const-string v3, "start should be <= than end"
 
-    .line 926
+    .line 1075
     invoke-static {v2, v3}, Landroidx/core/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     if-nez p1, :cond_1
@@ -869,7 +869,7 @@
 
     return-object p1
 
-    .line 933
+    .line 1082
     :cond_1
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
@@ -889,7 +889,7 @@
 
     invoke-static {v2, v3}, Landroidx/core/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 935
+    .line 1084
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
@@ -908,7 +908,7 @@
 
     invoke-static {v2, v3}, Landroidx/core/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 939
+    .line 1088
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
@@ -926,7 +926,7 @@
 
     if-eq p5, v1, :cond_5
 
-    .line 953
+    .line 1102
     iget-boolean v0, p0, Landroidx/emoji2/text/EmojiCompat;->mReplaceAll:Z
 
     :cond_5
@@ -937,7 +937,7 @@
     :cond_6
     move v6, v1
 
-    .line 957
+    .line 1106
     :goto_3
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat;->mHelper:Landroidx/emoji2/text/EmojiCompat$CompatInternal;
 
@@ -963,10 +963,10 @@
 
     const-string v0, "initCallback cannot be null"
 
-    .line 626
+    .line 746
     invoke-static {p1, v0}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 628
+    .line 748
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -975,7 +975,7 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 630
+    .line 750
     :try_start_0
     iget v0, p0, Landroidx/emoji2/text/EmojiCompat;->mLoadState:I
 
@@ -991,7 +991,7 @@
 
     goto :goto_0
 
-    .line 633
+    .line 753
     :cond_0
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mInitCallbacks:Ljava/util/Set;
 
@@ -999,7 +999,7 @@
 
     goto :goto_1
 
-    .line 631
+    .line 751
     :cond_1
     :goto_0
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mMainHandler:Landroid/os/Handler;
@@ -1014,7 +1014,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 636
+    .line 756
     :goto_1
     iget-object p1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
@@ -1037,7 +1037,7 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 637
+    .line 757
     throw p1
 .end method
 
@@ -1046,10 +1046,10 @@
 
     const-string v0, "initCallback cannot be null"
 
-    .line 646
+    .line 766
     invoke-static {p1, v0}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 647
+    .line 767
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -1058,7 +1058,7 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 649
+    .line 769
     :try_start_0
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mInitCallbacks:Ljava/util/Set;
 
@@ -1066,7 +1066,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 651
+    .line 771
     iget-object p1, p0, Landroidx/emoji2/text/EmojiCompat;->mInitLock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     invoke-interface {p1}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
@@ -1088,14 +1088,14 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 652
+    .line 772
     throw p1
 .end method
 
 .method public updateEditorInfo(Landroid/view/inputmethod/EditorInfo;)V
     .locals 1
 
-    .line 994
+    .line 1143
     invoke-direct {p0}, Landroidx/emoji2/text/EmojiCompat;->isInitialized()Z
 
     move-result v0
@@ -1106,20 +1106,20 @@
 
     goto :goto_0
 
-    .line 997
+    .line 1146
     :cond_0
     iget-object v0, p1, Landroid/view/inputmethod/EditorInfo;->extras:Landroid/os/Bundle;
 
     if-nez v0, :cond_1
 
-    .line 998
+    .line 1147
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p1, Landroid/view/inputmethod/EditorInfo;->extras:Landroid/os/Bundle;
 
-    .line 1000
+    .line 1149
     :cond_1
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat;->mHelper:Landroidx/emoji2/text/EmojiCompat$CompatInternal;
 

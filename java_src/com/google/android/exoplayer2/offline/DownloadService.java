@@ -264,7 +264,7 @@ public abstract class DownloadService extends Service {
             case 0:
                 DownloadRequest downloadRequest = (DownloadRequest) ((Intent) Assertions.checkNotNull(intent)).getParcelableExtra(KEY_DOWNLOAD_REQUEST);
                 if (downloadRequest == null) {
-                    Log.m810e(TAG, "Ignored ADD_DOWNLOAD: Missing download_request extra");
+                    Log.m796e(TAG, "Ignored ADD_DOWNLOAD: Missing download_request extra");
                     break;
                 } else {
                     downloadManager.addDownload(downloadRequest, intent.getIntExtra(KEY_STOP_REASON, 0));
@@ -282,7 +282,7 @@ public abstract class DownloadService extends Service {
             case 4:
                 Requirements requirements = (Requirements) ((Intent) Assertions.checkNotNull(intent)).getParcelableExtra(KEY_REQUIREMENTS);
                 if (requirements == null) {
-                    Log.m810e(TAG, "Ignored SET_REQUIREMENTS: Missing requirements extra");
+                    Log.m796e(TAG, "Ignored SET_REQUIREMENTS: Missing requirements extra");
                     break;
                 } else {
                     downloadManager.setRequirements(requirements);
@@ -293,7 +293,7 @@ public abstract class DownloadService extends Service {
                 break;
             case 6:
                 if (!((Intent) Assertions.checkNotNull(intent)).hasExtra(KEY_STOP_REASON)) {
-                    Log.m810e(TAG, "Ignored SET_STOP_REASON: Missing stop_reason extra");
+                    Log.m796e(TAG, "Ignored SET_STOP_REASON: Missing stop_reason extra");
                     break;
                 } else {
                     downloadManager.setStopReason(str, intent.getIntExtra(KEY_STOP_REASON, 0));
@@ -301,14 +301,14 @@ public abstract class DownloadService extends Service {
                 }
             case '\b':
                 if (str == null) {
-                    Log.m810e(TAG, "Ignored REMOVE_DOWNLOAD: Missing content_id extra");
+                    Log.m796e(TAG, "Ignored REMOVE_DOWNLOAD: Missing content_id extra");
                     break;
                 } else {
                     downloadManager.removeDownload(str);
                     break;
                 }
             default:
-                Log.m810e(TAG, "Ignored unrecognized action: " + str2);
+                Log.m796e(TAG, "Ignored unrecognized action: " + str2);
                 break;
         }
         if (Util.SDK_INT >= 26 && this.startedInForeground && (foregroundNotificationUpdater = this.foregroundNotificationUpdater) != null) {
@@ -544,7 +544,7 @@ public abstract class DownloadService extends Service {
                     this.scheduledRequirements = requirements;
                     return true;
                 }
-                Log.m806w(DownloadService.TAG, "Failed to schedule restart");
+                Log.m792w(DownloadService.TAG, "Failed to schedule restart");
                 cancelScheduler();
                 return false;
             } else {
@@ -567,7 +567,7 @@ public abstract class DownloadService extends Service {
                 downloadService.notifyDownloadChanged(download);
             }
             if (serviceMayNeedRestart() && DownloadService.needsStartedService(download.state)) {
-                Log.m806w(DownloadService.TAG, "DownloadService wasn't running. Restarting.");
+                Log.m792w(DownloadService.TAG, "DownloadService wasn't running. Restarting.");
                 restartService();
             }
         }
@@ -630,14 +630,14 @@ public abstract class DownloadService extends Service {
                     Util.startForegroundService(this.context, DownloadService.getIntent(this.context, this.serviceClass, DownloadService.ACTION_RESTART));
                     return;
                 } catch (IllegalStateException unused) {
-                    Log.m806w(DownloadService.TAG, "Failed to restart (foreground launch restriction)");
+                    Log.m792w(DownloadService.TAG, "Failed to restart (foreground launch restriction)");
                     return;
                 }
             }
             try {
                 this.context.startService(DownloadService.getIntent(this.context, this.serviceClass, DownloadService.ACTION_INIT));
             } catch (IllegalStateException unused2) {
-                Log.m806w(DownloadService.TAG, "Failed to restart (process is idle)");
+                Log.m792w(DownloadService.TAG, "Failed to restart (process is idle)");
             }
         }
     }

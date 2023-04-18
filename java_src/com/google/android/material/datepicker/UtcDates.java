@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
 import java.util.concurrent.atomic.AtomicReference;
-import p035j$.util.DesugarTimeZone;
+import p034j$.util.DesugarTimeZone;
 /* loaded from: classes3.dex */
 class UtcDates {
     static AtomicReference<TimeSource> timeSourceRef = new AtomicReference<>();

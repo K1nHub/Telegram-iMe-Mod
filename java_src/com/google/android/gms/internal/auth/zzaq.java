@@ -11,14 +11,14 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzaq extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzaq> CREATOR = new zzar();
-    @SafeParcelable.VersionField(m786id = 1)
+    @SafeParcelable.VersionField(m772id = 1)
     final int zza;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     public final String zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzaq(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) String str) {
+    public zzaq(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) String str) {
         this.zza = 1;
         this.zzb = (String) Preconditions.checkNotNull(str);
     }

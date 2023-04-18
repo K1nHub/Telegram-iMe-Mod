@@ -13,6 +13,8 @@
 # instance fields
 .field private final mList:[Ljava/util/Locale;
 
+.field private final mStringRepresentation:Ljava/lang/String;
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -66,6 +68,11 @@
     sget-object p1, Landroidx/core/os/LocaleListCompatWrapper;->sEmptyList:[Ljava/util/Locale;
 
     iput-object p1, p0, Landroidx/core/os/LocaleListCompatWrapper;->mList:[Ljava/util/Locale;
+
+    const-string p1, ""
+
+    .line 128
+    iput-object p1, p0, Landroidx/core/os/LocaleListCompatWrapper;->mStringRepresentation:Ljava/lang/String;
 
     goto :goto_1
 
@@ -178,6 +185,13 @@
     check-cast p1, [Ljava/util/Locale;
 
     iput-object p1, p0, Landroidx/core/os/LocaleListCompatWrapper;->mList:[Ljava/util/Locale;
+
+    .line 148
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Landroidx/core/os/LocaleListCompatWrapper;->mStringRepresentation:Ljava/lang/String;
 
     :goto_1
     return-void
@@ -359,6 +373,27 @@
     return v2
 .end method
 
+.method public isEmpty()Z
+    .locals 1
+
+    .line 58
+    iget-object v0, p0, Landroidx/core/os/LocaleListCompatWrapper;->mList:[Ljava/util/Locale;
+
+    array-length v0, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
 .method public size()I
     .locals 1
 
@@ -368,6 +403,15 @@
     array-length v0, v0
 
     return v0
+.end method
+
+.method public toLanguageTags()Ljava/lang/String;
+    .locals 1
+
+    .line 122
+    iget-object v0, p0, Landroidx/core/os/LocaleListCompatWrapper;->mStringRepresentation:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;

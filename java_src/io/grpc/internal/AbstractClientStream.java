@@ -2,7 +2,7 @@ package io.grpc.internal;
 
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.google.common.base.Preconditions;
-import com.google.common.p020io.ByteStreams;
+import com.google.common.p019io.ByteStreams;
 import io.grpc.CallOptions;
 import io.grpc.Compressor;
 import io.grpc.Deadline;

@@ -14,7 +14,7 @@ import java.util.List;
 /* loaded from: classes.dex */
 public class UvmEntries extends AbstractSafeParcelable {
     public static final Parcelable.Creator<UvmEntries> CREATOR = new zzau();
-    @SafeParcelable.Field(getter = "getUvmEntryList", m789id = 1)
+    @SafeParcelable.Field(getter = "getUvmEntryList", m775id = 1)
     private final List zza;
 
     /* compiled from: com.google.android.gms:play-services-fido@@19.0.0 */
@@ -43,7 +43,7 @@ public class UvmEntries extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public UvmEntries(@SafeParcelable.Param(m788id = 1) List list) {
+    public UvmEntries(@SafeParcelable.Param(m774id = 1) List list) {
         this.zza = list;
     }
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Adapters/DialogsAdapter;)V
     .locals 0
 
-    .line 442
+    .line 452
     iput-object p1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$1;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/DiffUtil$Callback;-><init>()V
@@ -35,7 +35,7 @@
 .method public areContentsTheSame(II)Z
     .locals 1
 
-    .line 460
+    .line 470
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$1;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->oldItems:Ljava/util/ArrayList;
@@ -76,7 +76,7 @@
 .method public areItemsTheSame(II)Z
     .locals 1
 
-    .line 455
+    .line 465
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$1;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->oldItems:Ljava/util/ArrayList;
@@ -107,7 +107,7 @@
 .method public getNewListSize()I
     .locals 1
 
-    .line 450
+    .line 460
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$1;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
@@ -122,7 +122,7 @@
 .method public getOldListSize()I
     .locals 1
 
-    .line 445
+    .line 455
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$1;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->oldItems:Ljava/util/ArrayList;

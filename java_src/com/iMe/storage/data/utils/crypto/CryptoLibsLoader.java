@@ -2,17 +2,14 @@ package com.iMe.storage.data.utils.crypto;
 /* compiled from: CryptoLibsLoader.kt */
 /* loaded from: classes3.dex */
 public final class CryptoLibsLoader {
-    public static final CryptoLibsLoader INSTANCE = new CryptoLibsLoader();
-    private static boolean isTrustWalletCoreInitialized;
+    static {
+        new CryptoLibsLoader();
+    }
 
     private CryptoLibsLoader() {
     }
 
-    public final void initTrustWalletCoreLibrary() {
-        if (isTrustWalletCoreInitialized) {
-            return;
-        }
+    public static final void initTrustWalletCoreLibrary() {
         System.loadLibrary("TrustWalletCore");
-        isTrustWalletCoreInitialized = true;
     }
 }

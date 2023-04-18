@@ -20,22 +20,22 @@
 .method public constructor <init>(Landroid/widget/EditText;Z)V
     .locals 2
 
-    .line 104
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-string v0, "editText cannot be null"
 
-    .line 105
+    .line 106
     invoke-static {p1, v0}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 106
+    .line 107
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
 
     if-ge v0, v1, :cond_0
 
-    .line 107
+    .line 108
     new-instance p1, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;
 
     invoke-direct {p1}, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;-><init>()V
@@ -44,7 +44,7 @@
 
     goto :goto_0
 
-    .line 109
+    .line 110
     :cond_0
     new-instance v0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal19;
 
@@ -61,7 +61,7 @@
 .method public getKeyListener(Landroid/text/method/KeyListener;)Landroid/text/method/KeyListener;
     .locals 1
 
-    .line 154
+    .line 155
     iget-object v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;->mHelper:Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;
 
     invoke-virtual {v0, p1}, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;->getKeyListener(Landroid/text/method/KeyListener;)Landroid/text/method/KeyListener;
@@ -80,7 +80,7 @@
 
     return-object p1
 
-    .line 173
+    .line 174
     :cond_0
     iget-object v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;->mHelper:Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;
 
@@ -94,7 +94,7 @@
 .method public setEnabled(Z)V
     .locals 1
 
-    .line 226
+    .line 227
     iget-object v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;->mHelper:Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;
 
     invoke-virtual {v0, p1}, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;->setEnabled(Z)V

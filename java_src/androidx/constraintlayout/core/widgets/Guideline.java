@@ -55,7 +55,7 @@ public class Guideline extends ConstraintWidget {
 
     /* renamed from: androidx.constraintlayout.core.widgets.Guideline$1 */
     /* loaded from: classes.dex */
-    static /* synthetic */ class C01061 {
+    static /* synthetic */ class C01021 {
 
         /* renamed from: $SwitchMap$androidx$constraintlayout$core$widgets$ConstraintAnchor$Type */
         static final /* synthetic */ int[] f26x6930e354;
@@ -104,7 +104,7 @@ public class Guideline extends ConstraintWidget {
 
     @Override // androidx.constraintlayout.core.widgets.ConstraintWidget
     public ConstraintAnchor getAnchor(ConstraintAnchor.Type type) {
-        int i = C01061.f26x6930e354[type.ordinal()];
+        int i = C01021.f26x6930e354[type.ordinal()];
         if (i == 1 || i == 2) {
             if (this.mOrientation == 1) {
                 return this.mAnchor;

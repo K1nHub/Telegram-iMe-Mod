@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/StickersActivity;)V
     .locals 0
 
-    .line 449
+    .line 450
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$5;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/TrendingStickersLayout$Delegate;-><init>()V
@@ -35,7 +35,7 @@
 .method public onStickerSetAdd(Lorg/telegram/tgnet/TLRPC$StickerSetCovered;Z)V
     .locals 7
 
-    .line 452
+    .line 453
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$5;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$7000(Lorg/telegram/ui/StickersActivity;)I
@@ -70,7 +70,7 @@
 .method public onStickerSetRemove(Lorg/telegram/tgnet/TLRPC$StickerSetCovered;)V
     .locals 8
 
-    .line 457
+    .line 458
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$5;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$7100(Lorg/telegram/ui/StickersActivity;)I

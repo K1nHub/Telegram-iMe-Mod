@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import androidx.appcompat.R$styleable;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuView;
@@ -69,6 +70,11 @@ public class ActionMenuItemView extends AppCompatTextView implements MenuView.It
         super.onConfigurationChanged(configuration);
         this.mAllowTextWithIcon = shouldAllowTextWithIcon();
         updateTextButtonVisibility();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public CharSequence getAccessibilityClassName() {
+        return Button.class.getName();
     }
 
     private boolean shouldAllowTextWithIcon() {

@@ -31,7 +31,7 @@
 .method constructor <init>(Landroidx/fragment/app/DefaultSpecialEffectsController;Landroidx/fragment/app/SpecialEffectsController$Operation;Landroid/view/ViewGroup;Landroid/view/View;Landroidx/fragment/app/DefaultSpecialEffectsController$AnimationInfo;)V
     .locals 0
 
-    .line 264
+    .line 286
     iput-object p2, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$4;->val$operation:Landroidx/fragment/app/SpecialEffectsController$Operation;
 
     iput-object p3, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$4;->val$container:Landroid/view/ViewGroup;
@@ -50,7 +50,7 @@
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 1
 
-    .line 278
+    .line 300
     iget-object p1, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$4;->val$container:Landroid/view/ViewGroup;
 
     new-instance v0, Landroidx/fragment/app/DefaultSpecialEffectsController$4$1;
@@ -61,14 +61,14 @@
 
     const/4 p1, 0x2
 
-    .line 285
+    .line 307
     invoke-static {p1}, Landroidx/fragment/app/FragmentManager;->isLoggingEnabled(I)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 286
+    .line 308
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -108,14 +108,14 @@
 
     const/4 p1, 0x2
 
-    .line 267
+    .line 289
     invoke-static {p1}, Landroidx/fragment/app/FragmentManager;->isLoggingEnabled(I)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 268
+    .line 290
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V

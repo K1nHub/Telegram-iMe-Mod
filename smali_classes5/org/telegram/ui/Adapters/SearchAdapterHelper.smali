@@ -233,7 +233,7 @@
 .method public constructor <init>(Z)V
     .locals 1
 
-    .line 57
+    .line 58
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;-><init>(ZI)V
@@ -244,10 +244,10 @@
 .method public constructor <init>(ZI)V
     .locals 1
 
-    .line 118
+    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
+    .line 90
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -256,82 +256,82 @@
 
     const/4 v0, 0x0
 
-    .line 90
-    iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->lastFoundUsername:Ljava/lang/String;
-
     .line 91
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
+    iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->lastFoundUsername:Ljava/lang/String;
 
     .line 92
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
+    iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
     .line 93
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
+
+    .line 94
     new-instance v0, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v0}, Landroidx/collection/LongSparseArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
-    .line 94
+    .line 95
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearch:Ljava/util/ArrayList;
 
-    .line 95
+    .line 96
     new-instance v0, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v0}, Landroidx/collection/LongSparseArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearchMap:Landroidx/collection/LongSparseArray;
 
-    .line 96
+    .line 97
     new-instance v0, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v0}, Landroidx/collection/LongSparseArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phoneSearchMap:Landroidx/collection/LongSparseArray;
 
-    .line 97
+    .line 98
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phonesSearch:Ljava/util/ArrayList;
 
-    .line 101
+    .line 102
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iput v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     const/4 v0, 0x1
 
-    .line 106
+    .line 107
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allowGlobalResults:Z
 
     const/4 v0, 0x0
 
-    .line 110
+    .line 111
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtagsLoadedFromDb:Z
 
-    .line 120
+    .line 121
     iput p2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
-    .line 121
+    .line 122
     iget-boolean p2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->crossAccountsForward:Z
 
     iput-boolean p2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->crossAccountsForward:Z
 
-    .line 123
+    .line 124
     iput-boolean p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allResultsAreGlobal:Z
 
     return-void
@@ -340,7 +340,7 @@
 .method private synthetic lambda$clearRecentHashtags$8()V
     .locals 2
 
-    .line 682
+    .line 700
     :try_start_0
     iget v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
@@ -371,7 +371,7 @@
     :catch_0
     move-exception v0
 
-    .line 684
+    .line 702
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -381,7 +381,7 @@
 .method private static synthetic lambda$loadRecentHashtags$4(Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;)I
     .locals 0
 
-    .line 457
+    .line 475
     iget p0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;->date:I
 
     iget p1, p1, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;->date:I
@@ -408,7 +408,7 @@
 .method private synthetic lambda$loadRecentHashtags$5(Ljava/util/ArrayList;Ljava/util/HashMap;)V
     .locals 0
 
-    .line 465
+    .line 483
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->setHashtags(Ljava/util/ArrayList;Ljava/util/HashMap;)V
 
     return-void
@@ -417,7 +417,7 @@
 .method private synthetic lambda$loadRecentHashtags$6()V
     .locals 6
 
-    .line 445
+    .line 463
     :try_start_0
     iget v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
@@ -439,17 +439,17 @@
 
     move-result-object v0
 
-    .line 446
+    .line 464
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 447
+    .line 465
     new-instance v3, Ljava/util/HashMap;
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 448
+    .line 466
     :goto_0
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -457,12 +457,12 @@
 
     if-eqz v4, :cond_0
 
-    .line 449
+    .line 467
     new-instance v4, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;
 
     invoke-direct {v4}, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;-><init>()V
 
-    .line 450
+    .line 468
     invoke-virtual {v0, v2}, Lorg/telegram/SQLite/SQLiteCursor;->stringValue(I)Ljava/lang/String;
 
     move-result-object v5
@@ -471,33 +471,33 @@
 
     const/4 v5, 0x1
 
-    .line 451
+    .line 469
     invoke-virtual {v0, v5}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v5
 
     iput v5, v4, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;->date:I
 
-    .line 452
+    .line 470
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 453
+    .line 471
     iget-object v5, v4, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;->hashtag:Ljava/lang/String;
 
     invoke-virtual {v3, v5, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 455
+    .line 473
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 456
+    .line 474
     sget-object v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper$$ExternalSyntheticLambda5;->INSTANCE:Lorg/telegram/ui/Adapters/SearchAdapterHelper$$ExternalSyntheticLambda5;
 
     invoke-static {v1, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 465
+    .line 483
     new-instance v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, p0, v1, v3}, Lorg/telegram/ui/Adapters/SearchAdapterHelper$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Adapters/SearchAdapterHelper;Ljava/util/ArrayList;Ljava/util/HashMap;)V
@@ -511,7 +511,7 @@
     :catch_0
     move-exception v0
 
-    .line 467
+    .line 485
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -521,7 +521,7 @@
 .method private synthetic lambda$putRecentHashtags$7(Ljava/util/ArrayList;)V
     .locals 5
 
-    .line 609
+    .line 627
     :try_start_0
     iget v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
@@ -535,7 +535,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteDatabase;->beginTransaction()V
 
-    .line 610
+    .line 628
     iget v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -554,7 +554,7 @@
 
     const/4 v1, 0x0
 
-    .line 611
+    .line 629
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -570,7 +570,7 @@
 
     goto :goto_1
 
-    .line 615
+    .line 633
     :cond_0
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -578,41 +578,41 @@
 
     check-cast v2, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;
 
-    .line 616
+    .line 634
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 617
+    .line 635
     iget-object v3, v2, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;->hashtag:Ljava/lang/String;
 
     invoke-virtual {v0, v4, v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindString(ILjava/lang/String;)V
 
     const/4 v3, 0x2
 
-    .line 618
+    .line 636
     iget v2, v2, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;->date:I
 
     invoke-virtual {v0, v3, v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 619
+    .line 637
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 621
+    .line 639
     :cond_1
     :goto_1
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 622
+    .line 640
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-le v0, v3, :cond_3
 
-    .line 623
+    .line 641
     iget v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -629,7 +629,7 @@
 
     move-result-object v0
 
-    .line 624
+    .line 642
     :goto_2
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -637,10 +637,10 @@
 
     if-ge v3, v1, :cond_2
 
-    .line 625
+    .line 643
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 626
+    .line 644
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -651,18 +651,18 @@
 
     invoke-virtual {v0, v4, v1}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindString(ILjava/lang/String;)V
 
-    .line 627
+    .line 645
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 629
+    .line 647
     :cond_2
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 631
+    .line 649
     :cond_3
     iget p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
@@ -683,7 +683,7 @@
     :catch_0
     move-exception p1
 
-    .line 633
+    .line 651
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_3
@@ -695,17 +695,17 @@
 
     if-nez p4, :cond_1
 
-    .line 176
+    .line 177
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipants;
 
-    .line 177
+    .line 178
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->lastFoundChannel:Ljava/lang/String;
 
-    .line 178
+    .line 179
     iget p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -718,7 +718,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 179
+    .line 180
     iget p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -729,24 +729,24 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
 
-    .line 180
+    .line 181
     iget-object p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearch:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 181
+    .line 182
     iget-object p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->clear()V
 
-    .line 182
+    .line 183
     iget-object p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearch:Ljava/util/ArrayList;
 
     iget-object p4, p3, Lorg/telegram/tgnet/TLRPC$channels_ChannelParticipants;->participants:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p4}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 183
+    .line 184
     iget p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -757,7 +757,7 @@
 
     move-result-wide v1
 
-    .line 184
+    .line 185
     iget-object p1, p3, Lorg/telegram/tgnet/TLRPC$channels_ChannelParticipants;->participants:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -767,7 +767,7 @@
     :goto_0
     if-ge v0, p1, :cond_1
 
-    .line 185
+    .line 186
     iget-object p4, p3, Lorg/telegram/tgnet/TLRPC$channels_ChannelParticipants;->participants:Ljava/util/ArrayList;
 
     invoke-virtual {p4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -776,7 +776,7 @@
 
     check-cast p4, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 186
+    .line 187
     iget-object v3, p4, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v3}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
@@ -789,14 +789,14 @@
 
     if-nez v5, :cond_0
 
-    .line 188
+    .line 189
     iget-object v3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p4}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 191
+    .line 192
     :cond_0
     iget-object v5, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearchMap:Landroidx/collection/LongSparseArray;
 
@@ -812,11 +812,11 @@
 .end method
 
 .method private synthetic lambda$queryServerSearch$1(IZZZZJLjava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 16
+    .locals 17
 
     move-object/from16 v0, p0
 
-    .line 209
+    .line 210
     iget-object v1, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->delegate:Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;
 
     move/from16 v2, p1
@@ -825,306 +825,606 @@
 
     move-result v1
 
-    if-eqz v1, :cond_25
-
-    if-nez p10, :cond_25
+    if-eqz v1, :cond_2b
 
     .line 211
-    move-object/from16 v1, p9
+    iget v1, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
-    check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;
+    invoke-static {v1}, Lcom/iMe/fork/controller/HiddenChatsController;->getInstance(I)Lcom/iMe/fork/controller/HiddenChatsController;
 
-    .line 212
-    iget-object v2, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+    if-nez p10, :cond_2b
 
     .line 213
-    iget-object v2, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
+    move-object/from16 v2, p9
 
-    invoke-virtual {v2}, Landroidx/collection/LongSparseArray;->clear()V
+    check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;
 
     .line 214
-    iget-object v2, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
+    iget-object v3, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+    invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
     .line 215
-    iget v2, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
+    iget-object v3, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
-    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v2
-
-    iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->chats:Ljava/util/ArrayList;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
+    invoke-virtual {v3}, Landroidx/collection/LongSparseArray;->clear()V
 
     .line 216
-    iget v2, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
+    iget-object v3, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
-    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v2
-
-    iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->users:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
+    invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
     .line 217
-    iget v2, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
+    iget v3, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
-    invoke-static {v2}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
+    invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->users:Ljava/util/ArrayList;
+    iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->chats:Ljava/util/ArrayList;
 
-    iget-object v5, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->chats:Ljava/util/ArrayList;
+    const/4 v5, 0x0
 
-    const/4 v6, 0x1
-
-    invoke-virtual {v2, v3, v5, v6, v6}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
+    invoke-virtual {v3, v4, v5}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
 
     .line 218
-    new-instance v2, Landroidx/collection/LongSparseArray;
+    iget v3, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
-    invoke-direct {v2}, Landroidx/collection/LongSparseArray;-><init>()V
+    invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->users:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v4, v5}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
     .line 219
+    iget v3, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
+
+    invoke-static {v3}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->users:Ljava/util/ArrayList;
+
+    iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->chats:Ljava/util/ArrayList;
+
+    const/4 v7, 0x1
+
+    invoke-virtual {v3, v4, v6, v7, v7}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
+
+    .line 220
     new-instance v3, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v3}, Landroidx/collection/LongSparseArray;-><init>()V
 
-    move v5, v4
-
-    .line 220
-    :goto_0
-    iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->chats:Ljava/util/ArrayList;
-
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
-
-    move-result v7
-
-    if-ge v5, v7, :cond_0
-
     .line 221
-    iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->chats:Ljava/util/ArrayList;
+    new-instance v4, Landroidx/collection/LongSparseArray;
 
-    invoke-virtual {v7, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-direct {v4}, Landroidx/collection/LongSparseArray;-><init>()V
 
-    move-result-object v7
-
-    check-cast v7, Lorg/telegram/tgnet/TLRPC$Chat;
+    move v6, v5
 
     .line 222
-    iget-wide v8, v7, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+    :goto_0
+    iget-object v8, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->chats:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v8, v9, v7}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
-    add-int/lit8 v5, v5, 0x1
+    move-result v8
+
+    if-ge v6, v8, :cond_0
+
+    .line 223
+    iget-object v8, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->chats:Ljava/util/ArrayList;
+
+    invoke-virtual {v8, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lorg/telegram/tgnet/TLRPC$Chat;
+
+    .line 224
+    iget-wide v9, v8, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    invoke-virtual {v3, v9, v10, v8}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
     :cond_0
-    move v5, v4
-
-    .line 224
-    :goto_1
-    iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->users:Ljava/util/ArrayList;
-
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
-
-    move-result v7
-
-    if-ge v5, v7, :cond_1
-
-    .line 225
-    iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->users:Ljava/util/ArrayList;
-
-    invoke-virtual {v7, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lorg/telegram/tgnet/TLRPC$User;
+    move v6, v5
 
     .line 226
-    iget-wide v8, v7, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    :goto_1
+    iget-object v8, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->users:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v8, v9, v7}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
-    add-int/lit8 v5, v5, 0x1
+    move-result v8
+
+    if-ge v6, v8, :cond_1
+
+    .line 227
+    iget-object v8, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->users:Ljava/util/ArrayList;
+
+    invoke-virtual {v8, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lorg/telegram/tgnet/TLRPC$User;
+
+    .line 228
+    iget-wide v9, v8, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    invoke-virtual {v4, v9, v10, v8}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
     :cond_1
-    move v5, v4
+    move v6, v5
 
     :goto_2
-    const/4 v7, 0x2
+    const/4 v8, 0x2
 
-    const-wide/16 v8, 0x0
+    const-wide/16 v9, 0x0
 
-    const/4 v10, 0x0
+    if-ge v6, v8, :cond_18
 
-    if-ge v5, v7, :cond_14
+    if-nez v6, :cond_3
 
-    if-nez v5, :cond_3
+    .line 233
+    iget-boolean v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allResultsAreGlobal:Z
 
-    .line 231
-    iget-boolean v7, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allResultsAreGlobal:Z
+    if-nez v8, :cond_2
 
-    if-nez v7, :cond_2
+    goto/16 :goto_a
 
-    goto/16 :goto_9
-
-    .line 234
+    .line 236
     :cond_2
-    iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->my_results:Ljava/util/ArrayList;
+    iget-object v8, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->my_results:Ljava/util/ArrayList;
 
     goto :goto_3
 
-    .line 236
+    .line 238
     :cond_3
-    iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->results:Ljava/util/ArrayList;
+    iget-object v8, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->results:Ljava/util/ArrayList;
 
     :goto_3
-    move v11, v4
+    move v12, v5
 
-    .line 238
+    .line 240
     :goto_4
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
-    move-result v12
+    move-result v13
 
-    if-ge v11, v12, :cond_13
+    if-ge v12, v13, :cond_17
 
-    .line 239
-    invoke-virtual {v7, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 241
+    invoke-virtual {v8, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v13
 
-    check-cast v12, Lorg/telegram/tgnet/TLRPC$Peer;
-
-    .line 242
-    iget-wide v13, v12, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
-
-    cmp-long v15, v13, v8
-
-    if-eqz v15, :cond_4
-
-    .line 243
-    invoke-virtual {v3, v13, v14}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
-
-    move-result-object v12
-
-    check-cast v12, Lorg/telegram/tgnet/TLRPC$User;
-
-    move-object v13, v12
-
-    move-object v12, v10
-
-    goto :goto_6
+    check-cast v13, Lorg/telegram/tgnet/TLRPC$Peer;
 
     .line 244
-    :cond_4
-    iget-wide v13, v12, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
+    iget-wide v14, v13, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    cmp-long v15, v13, v8
+    cmp-long v16, v14, v9
 
-    if-eqz v15, :cond_5
+    if-eqz v16, :cond_4
 
     .line 245
-    invoke-virtual {v2, v13, v14}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+    invoke-virtual {v4, v14, v15}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v13
 
-    check-cast v12, Lorg/telegram/tgnet/TLRPC$Chat;
+    check-cast v13, Lorg/telegram/tgnet/TLRPC$User;
 
-    :goto_5
-    move-object v13, v10
+    move-object v14, v13
+
+    const/4 v13, 0x0
 
     goto :goto_6
 
     .line 246
-    :cond_5
-    iget-wide v12, v12, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
+    :cond_4
+    iget-wide v14, v13, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    cmp-long v14, v12, v8
+    cmp-long v16, v14, v9
 
-    if-eqz v14, :cond_6
+    if-eqz v16, :cond_5
 
     .line 247
-    invoke-virtual {v2, v12, v13}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+    invoke-virtual {v3, v14, v15}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v13
 
-    check-cast v12, Lorg/telegram/tgnet/TLRPC$Chat;
+    check-cast v13, Lorg/telegram/tgnet/TLRPC$Chat;
+
+    goto :goto_5
+
+    .line 248
+    :cond_5
+    iget-wide v13, v13, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
+
+    cmp-long v15, v13, v9
+
+    if-eqz v15, :cond_6
+
+    .line 249
+    invoke-virtual {v3, v13, v14}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Lorg/telegram/tgnet/TLRPC$Chat;
 
     goto :goto_5
 
     :cond_6
-    move-object v12, v10
+    const/4 v13, 0x0
 
-    move-object v13, v12
+    :goto_5
+    const/4 v14, 0x0
 
-    .line 250
+    .line 252
     :goto_6
-    iget-boolean v14, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->topicMode:Z
+    iget-boolean v15, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->topicMode:Z
 
+    if-eqz v15, :cond_b
+
+    if-eqz v13, :cond_7
+
+    .line 255
+    iget v15, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
+
+    invoke-static {v15}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v15
+
+    iget-object v15, v15, Lorg/telegram/messenger/MessagesController;->dialogs_dict:Landroidx/collection/LongSparseArray;
+
+    iget-wide v9, v13, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    neg-long v9, v9
+
+    invoke-virtual {v15, v9, v10}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Lorg/telegram/tgnet/TLRPC$Dialog;
+
+    move v10, v12
+
+    goto :goto_8
+
+    :cond_7
     if-eqz v14, :cond_a
 
-    if-eqz v12, :cond_7
+    .line 257
+    invoke-static {v14}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
-    .line 253
-    iget v14, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
+    move-result v9
 
-    invoke-static {v14}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    if-nez v9, :cond_9
 
-    move-result-object v14
+    invoke-static {v14}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
-    iget-object v14, v14, Lorg/telegram/messenger/MessagesController;->dialogs_dict:Landroidx/collection/LongSparseArray;
+    move-result v9
 
-    iget-wide v8, v12, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+    if-nez v9, :cond_9
 
-    neg-long v8, v8
+    invoke-static {v14}, Lorg/telegram/messenger/MessagesController;->isSupportUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
-    invoke-virtual {v14, v8, v9}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+    move-result v9
 
-    move-result-object v8
-
-    check-cast v8, Lorg/telegram/tgnet/TLRPC$Dialog;
+    if-eqz v9, :cond_8
 
     goto :goto_7
 
-    :cond_7
-    if-eqz v13, :cond_9
-
-    .line 255
-    invoke-static {v13}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_12
-
-    invoke-static {v13}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_12
-
-    invoke-static {v13}, Lorg/telegram/messenger/MessagesController;->isSupportUser(Lorg/telegram/tgnet/TLRPC$User;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_8
-
-    goto/16 :goto_8
-
-    .line 258
+    .line 260
     :cond_8
+    iget v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
+
+    invoke-static {v9}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v9
+
+    iget-object v9, v9, Lorg/telegram/messenger/MessagesController;->dialogs_dict:Landroidx/collection/LongSparseArray;
+
+    move v10, v12
+
+    iget-wide v11, v14, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    invoke-virtual {v9, v11, v12}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Lorg/telegram/tgnet/TLRPC$Dialog;
+
+    goto :goto_8
+
+    :cond_9
+    :goto_7
+    move v10, v12
+
+    goto/16 :goto_9
+
+    :cond_a
+    move v10, v12
+
+    const/4 v9, 0x0
+
+    :goto_8
+    if-eqz v9, :cond_16
+
+    .line 262
+    iget v9, v9, Lorg/telegram/tgnet/TLRPC$Dialog;->folder_id:I
+
+    iget v11, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->topicModeFilterFolderId:I
+
+    if-eq v9, v11, :cond_c
+
+    goto/16 :goto_9
+
+    :cond_b
+    move v10, v12
+
+    :cond_c
+    if-eqz v13, :cond_10
+
+    .line 269
+    iget-wide v11, v13, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    neg-long v11, v11
+
+    invoke-virtual {v1, v11, v12}, Lcom/iMe/fork/controller/HiddenChatsController;->isChatHidden(J)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_d
+
+    goto/16 :goto_9
+
+    :cond_d
+    if-eqz p2, :cond_16
+
+    if-eqz p3, :cond_e
+
+    .line 273
+    invoke-static {v13}, Lorg/telegram/messenger/ChatObject;->canAddBotsToChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_16
+
+    :cond_e
+    iget-boolean v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allowGlobalResults:Z
+
+    if-nez v9, :cond_f
+
+    invoke-static {v13}, Lorg/telegram/messenger/ChatObject;->isNotInChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_f
+
+    goto :goto_9
+
+    .line 276
+    :cond_f
+    iget-object v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
+
+    invoke-virtual {v9, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 277
+    iget-object v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
+
+    iget-wide v11, v13, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    neg-long v11, v11
+
+    invoke-virtual {v9, v11, v12, v13}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+
+    goto :goto_9
+
+    :cond_10
+    if-eqz v14, :cond_16
+
+    .line 280
+    iget-wide v11, v14, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    invoke-virtual {v1, v11, v12}, Lcom/iMe/fork/controller/HiddenChatsController;->isChatHidden(J)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_11
+
+    goto :goto_9
+
+    .line 283
+    :cond_11
+    iget-boolean v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->crossAccountsForward:Z
+
+    if-eqz v9, :cond_12
+
+    iget-wide v11, v14, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    sget v9, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+
+    invoke-static {v9}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
+
+    move-result-wide v15
+
+    cmp-long v9, v11, v15
+
+    if-nez v9, :cond_12
+
+    goto :goto_9
+
+    :cond_12
+    if-nez p3, :cond_16
+
+    if-nez p4, :cond_13
+
+    .line 287
+    iget-boolean v9, v14, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
+
+    if-nez v9, :cond_16
+
+    :cond_13
+    if-nez p5, :cond_14
+
+    iget-boolean v9, v14, Lorg/telegram/tgnet/TLRPC$User;->self:Z
+
+    if-nez v9, :cond_16
+
+    :cond_14
+    iget-boolean v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allowGlobalResults:Z
+
+    if-nez v9, :cond_15
+
+    if-ne v6, v7, :cond_15
+
+    iget-boolean v9, v14, Lorg/telegram/tgnet/TLRPC$User;->contact:Z
+
+    if-nez v9, :cond_15
+
+    goto :goto_9
+
+    .line 290
+    :cond_15
+    iget-object v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
+
+    invoke-virtual {v9, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 291
+    iget-object v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
+
+    iget-wide v11, v14, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    invoke-virtual {v9, v11, v12, v14}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+
+    :cond_16
+    :goto_9
+    add-int/lit8 v12, v10, 0x1
+
+    const-wide/16 v9, 0x0
+
+    goto/16 :goto_4
+
+    :cond_17
+    :goto_a
+    add-int/lit8 v6, v6, 0x1
+
+    goto/16 :goto_2
+
+    .line 295
+    :cond_18
+    iget-boolean v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allResultsAreGlobal:Z
+
+    if-nez v6, :cond_2a
+
+    .line 296
+    :goto_b
+    iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->my_results:Ljava/util/ArrayList;
+
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+
+    move-result v6
+
+    if-ge v5, v6, :cond_2a
+
+    .line 297
+    iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->my_results:Ljava/util/ArrayList;
+
+    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lorg/telegram/tgnet/TLRPC$Peer;
+
+    .line 300
+    iget-wide v7, v6, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+
+    const-wide/16 v9, 0x0
+
+    cmp-long v11, v7, v9
+
+    if-eqz v11, :cond_19
+
+    .line 301
+    invoke-virtual {v4, v7, v8}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lorg/telegram/tgnet/TLRPC$User;
+
+    move-object v7, v6
+
+    const/4 v6, 0x0
+
+    goto :goto_d
+
+    .line 302
+    :cond_19
+    iget-wide v7, v6, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
+
+    cmp-long v11, v7, v9
+
+    if-eqz v11, :cond_1a
+
+    .line 303
+    invoke-virtual {v3, v7, v8}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lorg/telegram/tgnet/TLRPC$Chat;
+
+    goto :goto_c
+
+    .line 304
+    :cond_1a
+    iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
+
+    cmp-long v8, v6, v9
+
+    if-eqz v8, :cond_1b
+
+    .line 305
+    invoke-virtual {v3, v6, v7}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lorg/telegram/tgnet/TLRPC$Chat;
+
+    goto :goto_c
+
+    :cond_1b
+    const/4 v6, 0x0
+
+    :goto_c
+    const/4 v7, 0x0
+
+    .line 308
+    :goto_d
+    iget-boolean v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->topicMode:Z
+
+    if-eqz v8, :cond_1f
+
+    if-eqz v6, :cond_1c
+
+    .line 311
     iget v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {v8}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1133,471 +1433,239 @@
 
     iget-object v8, v8, Lorg/telegram/messenger/MessagesController;->dialogs_dict:Landroidx/collection/LongSparseArray;
 
-    iget-wide v14, v13, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    iget-wide v11, v6, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    invoke-virtual {v8, v14, v15}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+    neg-long v11, v11
+
+    invoke-virtual {v8, v11, v12}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    goto :goto_7
-
-    :cond_9
-    move-object v8, v10
-
-    :goto_7
-    if-eqz v8, :cond_12
-
-    .line 260
-    iget v8, v8, Lorg/telegram/tgnet/TLRPC$Dialog;->folder_id:I
-
-    iget v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->topicModeFilterFolderId:I
-
-    if-eq v8, v9, :cond_a
-
-    goto :goto_8
-
-    :cond_a
-    if-eqz v12, :cond_d
-
-    if-eqz p2, :cond_12
-
-    if-eqz p3, :cond_b
-
-    .line 266
-    invoke-static {v12}, Lorg/telegram/messenger/ChatObject;->canAddBotsToChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_12
-
-    :cond_b
-    iget-boolean v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allowGlobalResults:Z
-
-    if-nez v8, :cond_c
-
-    invoke-static {v12}, Lorg/telegram/messenger/ChatObject;->isNotInChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_c
-
-    goto :goto_8
-
-    .line 269
-    :cond_c
-    iget-object v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
-
-    invoke-virtual {v8, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 270
-    iget-object v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
-
-    iget-wide v13, v12, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
-
-    neg-long v13, v13
-
-    invoke-virtual {v8, v13, v14, v12}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
-
-    goto :goto_8
-
-    :cond_d
-    if-eqz v13, :cond_12
-
-    .line 273
-    iget-boolean v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->crossAccountsForward:Z
-
-    if-eqz v8, :cond_e
-
-    iget-wide v8, v13, Lorg/telegram/tgnet/TLRPC$User;->id:J
-
-    sget v12, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
-
-    invoke-static {v12}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
-
-    move-result-wide v14
-
-    cmp-long v8, v8, v14
-
-    if-nez v8, :cond_e
-
-    goto :goto_8
-
-    :cond_e
-    if-nez p3, :cond_12
-
-    if-nez p4, :cond_f
-
-    .line 277
-    iget-boolean v8, v13, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
-
-    if-nez v8, :cond_12
-
-    :cond_f
-    if-nez p5, :cond_10
-
-    iget-boolean v8, v13, Lorg/telegram/tgnet/TLRPC$User;->self:Z
-
-    if-nez v8, :cond_12
-
-    :cond_10
-    iget-boolean v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allowGlobalResults:Z
-
-    if-nez v8, :cond_11
-
-    if-ne v5, v6, :cond_11
-
-    iget-boolean v8, v13, Lorg/telegram/tgnet/TLRPC$User;->contact:Z
-
-    if-nez v8, :cond_11
-
-    goto :goto_8
-
-    .line 280
-    :cond_11
-    iget-object v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
-
-    invoke-virtual {v8, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 281
-    iget-object v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
-
-    iget-wide v14, v13, Lorg/telegram/tgnet/TLRPC$User;->id:J
-
-    invoke-virtual {v8, v14, v15, v13}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
-
-    :cond_12
-    :goto_8
-    add-int/lit8 v11, v11, 0x1
-
-    const-wide/16 v8, 0x0
-
-    goto/16 :goto_4
-
-    :cond_13
-    :goto_9
-    add-int/lit8 v5, v5, 0x1
-
-    goto/16 :goto_2
-
-    .line 285
-    :cond_14
-    iget-boolean v5, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allResultsAreGlobal:Z
-
-    if-nez v5, :cond_24
-
-    .line 286
-    :goto_a
-    iget-object v5, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->my_results:Ljava/util/ArrayList;
-
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
-
-    move-result v5
-
-    if-ge v4, v5, :cond_24
-
-    .line 287
-    iget-object v5, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->my_results:Ljava/util/ArrayList;
-
-    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lorg/telegram/tgnet/TLRPC$Peer;
-
-    .line 290
-    iget-wide v6, v5, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
-
-    const-wide/16 v8, 0x0
-
-    cmp-long v11, v6, v8
-
-    if-eqz v11, :cond_15
-
-    .line 291
-    invoke-virtual {v3, v6, v7}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lorg/telegram/tgnet/TLRPC$User;
-
-    move-object v6, v5
-
-    move-object v5, v10
-
-    goto :goto_c
-
-    .line 292
-    :cond_15
-    iget-wide v6, v5, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
-
-    cmp-long v11, v6, v8
-
-    if-eqz v11, :cond_16
-
-    .line 293
-    invoke-virtual {v2, v6, v7}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lorg/telegram/tgnet/TLRPC$Chat;
-
-    :goto_b
-    move-object v6, v10
-
-    goto :goto_c
-
-    .line 294
-    :cond_16
-    iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
-
-    cmp-long v7, v5, v8
-
-    if-eqz v7, :cond_17
-
-    .line 295
-    invoke-virtual {v2, v5, v6}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lorg/telegram/tgnet/TLRPC$Chat;
-
-    goto :goto_b
-
-    :cond_17
-    move-object v5, v10
-
-    move-object v6, v5
-
-    .line 298
-    :goto_c
-    iget-boolean v7, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->topicMode:Z
-
-    if-eqz v7, :cond_1b
-
-    if-eqz v5, :cond_18
-
-    .line 301
-    iget v7, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
-
-    invoke-static {v7}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v7
-
-    iget-object v7, v7, Lorg/telegram/messenger/MessagesController;->dialogs_dict:Landroidx/collection/LongSparseArray;
-
-    iget-wide v11, v5, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
-
-    neg-long v11, v11
-
-    invoke-virtual {v7, v11, v12}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lorg/telegram/tgnet/TLRPC$Dialog;
-
-    goto :goto_d
-
-    :cond_18
-    if-eqz v6, :cond_1a
-
-    .line 303
-    invoke-static {v6}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_23
-
-    invoke-static {v6}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_23
-
-    invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->isSupportUser(Lorg/telegram/tgnet/TLRPC$User;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_19
-
-    goto/16 :goto_e
-
-    .line 306
-    :cond_19
-    iget v7, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
-
-    invoke-static {v7}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v7
-
-    iget-object v7, v7, Lorg/telegram/messenger/MessagesController;->dialogs_dict:Landroidx/collection/LongSparseArray;
-
-    iget-wide v11, v6, Lorg/telegram/tgnet/TLRPC$User;->id:J
-
-    invoke-virtual {v7, v11, v12}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lorg/telegram/tgnet/TLRPC$Dialog;
-
-    goto :goto_d
-
-    :cond_1a
-    move-object v7, v10
-
-    :goto_d
-    if-eqz v7, :cond_23
-
-    .line 308
-    iget v7, v7, Lorg/telegram/tgnet/TLRPC$Dialog;->folder_id:I
-
-    iget v11, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->topicModeFilterFolderId:I
-
-    if-eq v7, v11, :cond_1b
-
     goto :goto_e
-
-    :cond_1b
-    if-eqz v5, :cond_1e
-
-    if-eqz p2, :cond_23
-
-    if-eqz p3, :cond_1c
-
-    .line 314
-    invoke-static {v5}, Lorg/telegram/messenger/ChatObject;->canAddBotsToChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_23
 
     :cond_1c
-    iget-wide v6, v5, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+    if-eqz v7, :cond_1e
 
-    neg-long v6, v6
+    .line 313
+    invoke-static {v7}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
-    cmp-long v6, v6, p6
+    move-result v8
 
-    if-nez v6, :cond_1d
+    if-nez v8, :cond_29
 
-    goto :goto_e
+    invoke-static {v7}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
-    .line 317
+    move-result v8
+
+    if-nez v8, :cond_29
+
+    invoke-static {v7}, Lorg/telegram/messenger/MessagesController;->isSupportUser(Lorg/telegram/tgnet/TLRPC$User;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_1d
+
+    goto/16 :goto_f
+
+    .line 316
     :cond_1d
-    iget-object v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
+    iget v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
-    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-static {v8}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    .line 318
-    iget-object v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
+    move-result-object v8
 
-    iget-wide v11, v5, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+    iget-object v8, v8, Lorg/telegram/messenger/MessagesController;->dialogs_dict:Landroidx/collection/LongSparseArray;
 
-    neg-long v11, v11
+    iget-wide v11, v7, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    invoke-virtual {v6, v11, v12, v5}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+    invoke-virtual {v8, v11, v12}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lorg/telegram/tgnet/TLRPC$Dialog;
 
     goto :goto_e
 
     :cond_1e
+    const/4 v8, 0x0
+
+    :goto_e
+    if-eqz v8, :cond_29
+
+    .line 318
+    iget v8, v8, Lorg/telegram/tgnet/TLRPC$Dialog;->folder_id:I
+
+    iget v11, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->topicModeFilterFolderId:I
+
+    if-eq v8, v11, :cond_1f
+
+    goto/16 :goto_f
+
+    :cond_1f
     if-eqz v6, :cond_23
 
-    .line 321
-    iget-boolean v5, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->crossAccountsForward:Z
+    .line 325
+    iget-wide v7, v6, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    if-eqz v5, :cond_1f
+    neg-long v7, v7
 
-    iget-wide v11, v6, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    invoke-virtual {v1, v7, v8}, Lcom/iMe/fork/controller/HiddenChatsController;->isChatHidden(J)Z
 
-    sget v5, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    move-result v7
 
-    invoke-static {v5}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    if-eqz v7, :cond_20
 
-    move-result-object v5
+    goto :goto_f
 
-    invoke-virtual {v5}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
+    :cond_20
+    if-eqz p2, :cond_29
+
+    if-eqz p3, :cond_21
+
+    .line 329
+    invoke-static {v6}, Lorg/telegram/messenger/ChatObject;->canAddBotsToChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_29
+
+    :cond_21
+    iget-wide v7, v6, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    neg-long v7, v7
+
+    cmp-long v7, v7, p6
+
+    if-nez v7, :cond_22
+
+    goto :goto_f
+
+    .line 332
+    :cond_22
+    iget-object v7, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
+
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 333
+    iget-object v7, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
+
+    iget-wide v11, v6, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    neg-long v11, v11
+
+    invoke-virtual {v7, v11, v12, v6}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+
+    goto :goto_f
+
+    :cond_23
+    if-eqz v7, :cond_29
+
+    .line 336
+    iget-wide v11, v7, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    invoke-virtual {v1, v11, v12}, Lcom/iMe/fork/controller/HiddenChatsController;->isChatHidden(J)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_24
+
+    goto :goto_f
+
+    .line 339
+    :cond_24
+    iget-boolean v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->crossAccountsForward:Z
+
+    if-eqz v6, :cond_25
+
+    iget-wide v11, v7, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    sget v6, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+
+    invoke-static {v6}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
 
     move-result-wide v13
 
-    cmp-long v5, v11, v13
+    cmp-long v6, v11, v13
 
-    if-nez v5, :cond_1f
+    if-nez v6, :cond_25
 
-    goto :goto_e
+    goto :goto_f
 
-    :cond_1f
-    if-nez p3, :cond_23
+    :cond_25
+    if-nez p3, :cond_29
 
-    if-nez p4, :cond_20
+    if-nez p4, :cond_26
 
-    .line 325
-    iget-boolean v5, v6, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
+    .line 343
+    iget-boolean v6, v7, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
-    if-nez v5, :cond_23
+    if-nez v6, :cond_29
 
-    :cond_20
-    if-nez p5, :cond_21
+    :cond_26
+    if-nez p5, :cond_27
 
-    iget-boolean v5, v6, Lorg/telegram/tgnet/TLRPC$User;->self:Z
+    iget-boolean v6, v7, Lorg/telegram/tgnet/TLRPC$User;->self:Z
 
-    if-nez v5, :cond_23
+    if-nez v6, :cond_29
 
-    :cond_21
-    iget-wide v11, v6, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    :cond_27
+    iget-wide v11, v7, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v5, v11, p6
+    cmp-long v6, v11, p6
 
-    if-nez v5, :cond_22
+    if-nez v6, :cond_28
 
-    goto :goto_e
+    goto :goto_f
 
-    .line 328
-    :cond_22
-    iget-object v5, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
+    .line 346
+    :cond_28
+    iget-object v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 329
-    iget-object v5, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
+    .line 347
+    iget-object v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
-    iget-wide v11, v6, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    iget-wide v11, v7, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    invoke-virtual {v5, v11, v12, v6}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+    invoke-virtual {v6, v11, v12, v7}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    :cond_23
-    :goto_e
-    add-int/lit8 v4, v4, 0x1
+    :cond_29
+    :goto_f
+    add-int/lit8 v5, v5, 0x1
 
-    goto/16 :goto_a
+    goto/16 :goto_b
 
-    .line 333
-    :cond_24
+    .line 351
+    :cond_2a
     invoke-virtual/range {p8 .. p8}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->lastFoundUsername:Ljava/lang/String;
 
-    :cond_25
+    :cond_2b
     return-void
 .end method
 
 .method private synthetic lambda$queryServerSearch$2(Ljava/util/ArrayList;ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/util/concurrent/atomic/AtomicInteger;Ljava/util/concurrent/atomic/AtomicInteger;Ljava/util/ArrayList;ILjava/lang/Runnable;)V
     .locals 1
 
-    .line 385
+    .line 403
     new-instance v0, Landroid/util/Pair;
 
     invoke-direct {v0, p3, p4}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {p1, p2, v0}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 386
+    .line 404
     invoke-virtual {p5}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result p2
@@ -1606,7 +1674,7 @@
 
     move-result-object p2
 
-    .line 387
+    .line 405
     iget-object p3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->pendingRequestIds:Ljava/util/ArrayList;
 
     invoke-virtual {p3, p2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -1617,13 +1685,13 @@
 
     return-void
 
-    .line 390
+    .line 408
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->pendingRequestIds:Ljava/util/ArrayList;
 
     invoke-virtual {p3, p2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 391
+    .line 409
     invoke-virtual {p6}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 
     move-result p2
@@ -1636,7 +1704,7 @@
 
     const/4 p2, 0x0
 
-    .line 392
+    .line 410
     :goto_0
     invoke-virtual {p7}, Ljava/util/ArrayList;->size()I
 
@@ -1644,7 +1712,7 @@
 
     if-ge p2, p3, :cond_2
 
-    .line 393
+    .line 411
     invoke-virtual {p7, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p3
@@ -1655,7 +1723,7 @@
 
     check-cast p3, Lorg/telegram/tgnet/RequestDelegate;
 
-    .line 394
+    .line 412
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p4
@@ -1666,7 +1734,7 @@
 
     goto :goto_1
 
-    .line 397
+    .line 415
     :cond_1
     iget-object p5, p4, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -1683,32 +1751,32 @@
 
     goto :goto_0
 
-    .line 399
+    .line 417
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->removeGroupSearchFromGlobal()V
 
-    .line 400
+    .line 418
     iget-object p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localSearchResults:Ljava/util/ArrayList;
 
     if-eqz p1, :cond_3
 
-    .line 401
+    .line 419
     iget-object p2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localRecentResults:Ljava/util/ArrayList;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->mergeResults(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    .line 403
+    .line 421
     :cond_3
     invoke-virtual {p0}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->mergeExcludeResults()V
 
-    .line 404
+    .line 422
     iget-object p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->delegate:Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;
 
     invoke-interface {p1, p8}, Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;->onDataSetChanged(I)V
 
     if-eqz p9, :cond_4
 
-    .line 406
+    .line 424
     invoke-interface {p9}, Ljava/lang/Runnable;->run()V
 
     :cond_4
@@ -1718,7 +1786,7 @@
 .method private synthetic lambda$queryServerSearch$3(Ljava/util/ArrayList;ILjava/util/concurrent/atomic/AtomicInteger;Ljava/util/concurrent/atomic/AtomicInteger;Ljava/util/ArrayList;ILjava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 12
 
-    .line 384
+    .line 402
     new-instance v11, Lorg/telegram/ui/Adapters/SearchAdapterHelper$$ExternalSyntheticLambda3;
 
     move-object v0, v11
@@ -1761,7 +1829,7 @@
         }
     .end annotation
 
-    .line 607
+    .line 625
     iget v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -1784,7 +1852,7 @@
 .method private removeGroupSearchFromGlobal()V
     .locals 6
 
-    .line 415
+    .line 433
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->size()I
@@ -1798,7 +1866,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 418
+    .line 436
     iget-object v1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v1}, Landroidx/collection/LongSparseArray;->size()I
@@ -1808,14 +1876,14 @@
     :goto_0
     if-ge v0, v1, :cond_2
 
-    .line 419
+    .line 437
     iget-object v2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v2, v0}, Landroidx/collection/LongSparseArray;->keyAt(I)J
 
     move-result-wide v2
 
-    .line 420
+    .line 438
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v4, v2, v3}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -1826,17 +1894,17 @@
 
     if-eqz v2, :cond_1
 
-    .line 422
+    .line 440
     iget-object v3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 423
+    .line 441
     iget-object v3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 424
+    .line 442
     iget-object v3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v4, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -1865,17 +1933,17 @@
         }
     .end annotation
 
-    .line 474
+    .line 492
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 475
+    .line 493
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 476
+    .line 494
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -1885,19 +1953,19 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 477
+    .line 495
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/tgnet/TLObject;
 
-    .line 478
+    .line 496
     instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$ChatParticipant;
 
     if-eqz v3, :cond_0
 
-    .line 479
+    .line 497
     iget-object v3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearchMap:Landroidx/collection/LongSparseArray;
 
     move-object v4, v2
@@ -1910,13 +1978,13 @@
 
     goto :goto_1
 
-    .line 480
+    .line 498
     :cond_0
     instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     if-eqz v3, :cond_1
 
-    .line 481
+    .line 499
     iget-object v3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearchMap:Landroidx/collection/LongSparseArray;
 
     move-object v4, v2
@@ -1937,7 +2005,7 @@
 
     goto :goto_0
 
-    .line 484
+    .line 502
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->removeGroupSearchFromGlobal()V
 
@@ -1954,12 +2022,12 @@
     :cond_0
     const-string v0, "(^|\\s)#[^0-9][\\w@.]+"
 
-    .line 576
+    .line 594
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
-    .line 577
+    .line 595
     invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v0
@@ -1968,7 +2036,7 @@
 
     move v2, v1
 
-    .line 578
+    .line 596
     :goto_0
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
@@ -1976,17 +2044,17 @@
 
     if-eqz v3, :cond_4
 
-    .line 579
+    .line 597
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->start()I
 
     move-result v2
 
-    .line 580
+    .line 598
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
 
     move-result v3
 
-    .line 581
+    .line 599
     invoke-interface {p1, v2}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v4
@@ -2005,7 +2073,7 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    .line 584
+    .line 602
     :cond_1
     invoke-interface {p1, v2, v3}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
@@ -2015,26 +2083,26 @@
 
     move-result-object v2
 
-    .line 585
+    .line 603
     iget-object v3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtagsByText:Ljava/util/HashMap;
 
     if-nez v3, :cond_2
 
-    .line 586
+    .line 604
     new-instance v3, Ljava/util/HashMap;
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
     iput-object v3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtagsByText:Ljava/util/HashMap;
 
-    .line 587
+    .line 605
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtags:Ljava/util/ArrayList;
 
-    .line 589
+    .line 607
     :cond_2
     iget-object v3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtagsByText:Ljava/util/HashMap;
 
@@ -2046,28 +2114,28 @@
 
     if-nez v3, :cond_3
 
-    .line 591
+    .line 609
     new-instance v3, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;
 
     invoke-direct {v3}, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;-><init>()V
 
-    .line 592
+    .line 610
     iput-object v2, v3, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;->hashtag:Ljava/lang/String;
 
-    .line 593
+    .line 611
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtagsByText:Ljava/util/HashMap;
 
     invoke-virtual {v4, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    .line 595
+    .line 613
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtags:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 597
+    .line 615
     :goto_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -2081,7 +2149,7 @@
 
     iput v2, v3, Lorg/telegram/ui/Adapters/SearchAdapterHelper$HashtagObject;->date:I
 
-    .line 598
+    .line 616
     iget-object v2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtags:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1, v3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
@@ -2093,7 +2161,7 @@
     :cond_4
     if-eqz v2, :cond_5
 
-    .line 602
+    .line 620
     iget-object p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtags:Ljava/util/ArrayList;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->putRecentHashtags(Ljava/util/ArrayList;)V
@@ -2105,17 +2173,17 @@
 .method public clear()V
     .locals 1
 
-    .line 430
+    .line 448
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 431
+    .line 449
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->clear()V
 
-    .line 432
+    .line 450
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
@@ -2126,21 +2194,21 @@
 .method public clearRecentHashtags()V
     .locals 2
 
-    .line 678
+    .line 696
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtags:Ljava/util/ArrayList;
 
-    .line 679
+    .line 697
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtagsByText:Ljava/util/HashMap;
 
-    .line 680
+    .line 698
     iget v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -2171,7 +2239,7 @@
         }
     .end annotation
 
-    .line 650
+    .line 668
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
 
     return-object v0
@@ -2188,7 +2256,7 @@
         }
     .end annotation
 
-    .line 662
+    .line 680
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearch:Ljava/util/ArrayList;
 
     return-object v0
@@ -2205,7 +2273,7 @@
         }
     .end annotation
 
-    .line 666
+    .line 684
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtags:Ljava/util/ArrayList;
 
     return-object v0
@@ -2214,7 +2282,7 @@
 .method public getLastFoundChannel()Ljava/lang/String;
     .locals 1
 
-    .line 674
+    .line 692
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->lastFoundChannel:Ljava/lang/String;
 
     return-object v0
@@ -2223,7 +2291,7 @@
 .method public getLastFoundUsername()Ljava/lang/String;
     .locals 1
 
-    .line 670
+    .line 688
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->lastFoundUsername:Ljava/lang/String;
 
     return-object v0
@@ -2240,7 +2308,7 @@
         }
     .end annotation
 
-    .line 658
+    .line 676
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
     return-object v0
@@ -2257,7 +2325,7 @@
         }
     .end annotation
 
-    .line 654
+    .line 672
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phonesSearch:Ljava/util/ArrayList;
 
     return-object v0
@@ -2266,7 +2334,7 @@
 .method public isSearchInProgress()Z
     .locals 1
 
-    .line 131
+    .line 132
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->pendingRequestIds:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2289,7 +2357,7 @@
 .method public loadRecentHashtags()Z
     .locals 2
 
-    .line 440
+    .line 458
     iget-boolean v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtagsLoadedFromDb:Z
 
     if-eqz v0, :cond_0
@@ -2298,7 +2366,7 @@
 
     return v0
 
-    .line 443
+    .line 461
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
@@ -2324,14 +2392,14 @@
 .method public mergeExcludeResults()V
     .locals 8
 
-    .line 540
+    .line 558
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->delegate:Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 543
+    .line 561
     :cond_0
     invoke-interface {v0}, Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;->getExcludeUsers()Landroidx/collection/LongSparseArray;
 
@@ -2341,7 +2409,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 545
+    .line 563
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->size()I
 
     move-result v2
@@ -2351,7 +2419,7 @@
     :goto_0
     if-ge v3, v2, :cond_2
 
-    .line 546
+    .line 564
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, v3}, Landroidx/collection/LongSparseArray;->keyAt(I)J
@@ -2366,17 +2434,17 @@
 
     if-eqz v4, :cond_1
 
-    .line 548
+    .line 566
     iget-object v5, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 549
+    .line 567
     iget-object v5, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 550
+    .line 568
     iget-object v5, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v6, v4, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -2388,7 +2456,7 @@
 
     goto :goto_0
 
-    .line 554
+    .line 572
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->delegate:Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;
 
@@ -2398,7 +2466,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 556
+    .line 574
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->size()I
 
     move-result v2
@@ -2406,7 +2474,7 @@
     :goto_1
     if-ge v1, v2, :cond_4
 
-    .line 557
+    .line 575
     iget-object v3, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, v1}, Landroidx/collection/LongSparseArray;->keyAt(I)J
@@ -2421,17 +2489,17 @@
 
     if-eqz v3, :cond_3
 
-    .line 559
+    .line 577
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 560
+    .line 578
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 561
+    .line 579
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -2460,7 +2528,7 @@
 
     const/4 v0, 0x0
 
-    .line 488
+    .line 506
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->mergeResults(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     return-void
@@ -2480,13 +2548,13 @@
         }
     .end annotation
 
-    .line 492
+    .line 510
     iput-object p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localSearchResults:Ljava/util/ArrayList;
 
-    .line 493
+    .line 511
     iput-object p2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localRecentResults:Ljava/util/ArrayList;
 
-    .line 494
+    .line 512
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->size()I
@@ -2510,7 +2578,7 @@
 
     goto :goto_0
 
-    .line 497
+    .line 515
     :cond_1
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -2523,7 +2591,7 @@
 
     goto :goto_1
 
-    .line 498
+    .line 516
     :cond_2
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -2537,7 +2605,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 501
+    .line 519
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -2551,39 +2619,39 @@
 
     move-result-object v3
 
-    .line 502
+    .line 520
     :goto_3
     instance-of v4, v3, Lorg/telegram/ui/Adapters/DialogsSearchAdapter$RecentSearchObject;
 
     if-eqz v4, :cond_4
 
-    .line 503
+    .line 521
     check-cast v3, Lorg/telegram/ui/Adapters/DialogsSearchAdapter$RecentSearchObject;
 
     iget-object v3, v3, Lorg/telegram/ui/Adapters/DialogsSearchAdapter$RecentSearchObject;->object:Lorg/telegram/tgnet/TLObject;
 
-    .line 505
+    .line 523
     :cond_4
     instance-of v4, v3, Lorg/telegram/ui/Components/ShareAlert$DialogSearchResult;
 
     if-eqz v4, :cond_5
 
-    .line 506
+    .line 524
     check-cast v3, Lorg/telegram/ui/Components/ShareAlert$DialogSearchResult;
 
-    .line 507
+    .line 525
     iget-object v3, v3, Lorg/telegram/ui/Components/ShareAlert$DialogSearchResult;->object:Lorg/telegram/tgnet/TLObject;
 
-    .line 509
+    .line 527
     :cond_5
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v4, :cond_8
 
-    .line 510
+    .line 528
     check-cast v3, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 511
+    .line 529
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -2596,24 +2664,24 @@
 
     if-eqz v4, :cond_6
 
-    .line 513
+    .line 531
     iget-object v5, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 514
+    .line 532
     iget-object v5, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 515
+    .line 533
     iget-object v5, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v6, v4, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-virtual {v5, v6, v7}, Landroidx/collection/LongSparseArray;->remove(J)V
 
-    .line 517
+    .line 535
     :cond_6
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearchMap:Landroidx/collection/LongSparseArray;
 
@@ -2627,19 +2695,19 @@
 
     if-eqz v4, :cond_7
 
-    .line 519
+    .line 537
     iget-object v5, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 520
+    .line 538
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-virtual {v4, v5, v6}, Landroidx/collection/LongSparseArray;->remove(J)V
 
-    .line 522
+    .line 540
     :cond_7
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phoneSearchMap:Landroidx/collection/LongSparseArray;
 
@@ -2651,12 +2719,12 @@
 
     if-eqz v4, :cond_9
 
-    .line 524
+    .line 542
     iget-object v5, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phonesSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 525
+    .line 543
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phoneSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -2665,16 +2733,16 @@
 
     goto :goto_4
 
-    .line 527
+    .line 545
     :cond_8
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v4, :cond_9
 
-    .line 528
+    .line 546
     check-cast v3, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 529
+    .line 547
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -2689,17 +2757,17 @@
 
     if-eqz v3, :cond_9
 
-    .line 531
+    .line 549
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 532
+    .line 550
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 533
+    .line 551
     iget-object v4, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -2748,7 +2816,7 @@
 
     move/from16 v11, p11
 
-    .line 134
+    .line 135
     invoke-virtual/range {v0 .. v14}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->queryServerSearch(Ljava/lang/String;ZZZZZJZIIJLjava/lang/Runnable;)V
 
     return-void
@@ -2783,7 +2851,7 @@
 
     move-wide/from16 v12, p12
 
-    .line 137
+    .line 138
     invoke-virtual/range {v0 .. v14}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->queryServerSearch(Ljava/lang/String;ZZZZZJZIIJLjava/lang/Runnable;)V
 
     return-void
@@ -2802,7 +2870,7 @@
 
     move/from16 v12, p11
 
-    .line 140
+    .line 141
     iget-object v3, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->pendingRequestIds:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -2828,7 +2896,7 @@
 
     move-result v4
 
-    .line 141
+    .line 142
     iget v5, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2839,7 +2907,7 @@
 
     goto :goto_0
 
-    .line 143
+    .line 144
     :cond_0
     iget-object v3, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->pendingRequestIds:Ljava/util/ArrayList;
 
@@ -2847,55 +2915,55 @@
 
     if-nez v11, :cond_1
 
-    .line 145
+    .line 146
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 146
+    .line 147
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->clear()V
 
-    .line 147
+    .line 148
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 148
+    .line 149
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->clear()V
 
-    .line 149
+    .line 150
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 150
+    .line 151
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phonesSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 151
+    .line 152
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phoneSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->clear()V
 
-    .line 152
+    .line 153
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->delegate:Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;
 
     invoke-interface {v0, v12}, Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;->onDataSetChanged(I)V
 
     return-void
 
-    .line 157
+    .line 158
     :cond_1
     new-instance v14, Ljava/util/ArrayList;
 
     invoke-direct {v14}, Ljava/util/ArrayList;-><init>()V
 
-    .line 158
+    .line 159
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
     move-result v3
@@ -2912,14 +2980,14 @@
 
     if-eqz v3, :cond_5
 
-    .line 160
+    .line 161
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;-><init>()V
 
     if-ne v2, v13, :cond_2
 
-    .line 162
+    .line 163
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsAdmins;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsAdmins;-><init>()V
@@ -2931,7 +2999,7 @@
     :cond_2
     if-ne v2, v15, :cond_3
 
-    .line 164
+    .line 165
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsBanned;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsBanned;-><init>()V
@@ -2943,7 +3011,7 @@
     :cond_3
     if-nez v2, :cond_4
 
-    .line 166
+    .line 167
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsKicked;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsKicked;-><init>()V
@@ -2952,7 +3020,7 @@
 
     goto :goto_1
 
-    .line 168
+    .line 169
     :cond_4
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsSearch;
 
@@ -2960,7 +3028,7 @@
 
     iput-object v2, v3, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->filter:Lorg/telegram/tgnet/TLRPC$ChannelParticipantsFilter;
 
-    .line 170
+    .line 171
     :goto_1
     iget-object v2, v3, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->filter:Lorg/telegram/tgnet/TLRPC$ChannelParticipantsFilter;
 
@@ -2968,13 +3036,13 @@
 
     const/16 v2, 0x32
 
-    .line 171
+    .line 172
     iput v2, v3, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->limit:I
 
-    .line 172
+    .line 173
     iput v9, v3, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->offset:I
 
-    .line 173
+    .line 174
     iget v2, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2987,7 +3055,7 @@
 
     iput-object v0, v3, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->channel:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
-    .line 174
+    .line 175
     new-instance v0, Landroid/util/Pair;
 
     new-instance v1, Lorg/telegram/ui/Adapters/SearchAdapterHelper$$ExternalSyntheticLambda7;
@@ -3005,7 +3073,7 @@
     :cond_5
     move/from16 v6, p5
 
-    .line 196
+    .line 197
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
@@ -3020,12 +3088,12 @@
     :cond_6
     move/from16 v6, p5
 
-    .line 199
+    .line 200
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 200
+    .line 201
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->clear()V
@@ -3035,27 +3103,27 @@
     :goto_3
     if-eqz p2, :cond_8
 
-    .line 204
+    .line 205
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
     move-result v0
 
     if-lez v0, :cond_7
 
-    .line 205
+    .line 206
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_contacts_search;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_contacts_search;-><init>()V
 
-    .line 206
+    .line 207
     iput-object v11, v7, Lorg/telegram/tgnet/TLRPC$TL_contacts_search;->q:Ljava/lang/String;
 
     const/16 v0, 0x14
 
-    .line 207
+    .line 208
     iput v0, v7, Lorg/telegram/tgnet/TLRPC$TL_contacts_search;->limit:I
 
-    .line 208
+    .line 209
     new-instance v8, Landroid/util/Pair;
 
     new-instance v5, Lorg/telegram/ui/Adapters/SearchAdapterHelper$$ExternalSyntheticLambda6;
@@ -3092,18 +3160,18 @@
 
     goto :goto_4
 
-    .line 338
+    .line 356
     :cond_7
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 339
+    .line 357
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->clear()V
 
-    .line 340
+    .line 358
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
@@ -3123,7 +3191,7 @@
 
     const-string v0, "+"
 
-    .line 344
+    .line 362
     invoke-virtual {v11, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -3138,22 +3206,22 @@
 
     if-le v0, v1, :cond_f
 
-    .line 345
+    .line 363
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phonesSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 346
+    .line 364
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phoneSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->clear()V
 
-    .line 347
+    .line 365
     invoke-static/range {p1 .. p1}, Lorg/telegram/PhoneFormat/PhoneFormat;->stripExceptNumbers(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 348
+    .line 366
     iget v1, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -3162,7 +3230,7 @@
 
     iget-object v1, v1, Lorg/telegram/messenger/ContactsController;->contacts:Ljava/util/ArrayList;
 
-    .line 350
+    .line 368
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -3174,14 +3242,14 @@
     :goto_6
     if-ge v9, v2, :cond_d
 
-    .line 351
+    .line 369
     invoke-virtual {v1, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
-    .line 352
+    .line 370
     iget v5, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -3202,7 +3270,7 @@
 
     goto :goto_8
 
-    .line 356
+    .line 374
     :cond_9
     iget-object v5, v4, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
@@ -3216,7 +3284,7 @@
 
     if-nez v3, :cond_b
 
-    .line 358
+    .line 376
     iget-object v3, v4, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     invoke-virtual {v3}, Ljava/lang/String;->length()I
@@ -3236,14 +3304,14 @@
     :cond_a
     const/4 v3, 0x0
 
-    .line 360
+    .line 378
     :cond_b
     :goto_7
     iget-object v5, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phonesSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 361
+    .line 379
     iget-object v5, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phoneSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v6, v4, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -3259,19 +3327,19 @@
     :cond_d
     if-nez v3, :cond_e
 
-    .line 365
+    .line 383
     iget-object v1, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phonesSearch:Ljava/util/ArrayList;
 
     const-string v2, "section"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 366
+    .line 384
     iget-object v1, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phonesSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 367
+    .line 385
     iget-object v1, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->phonesSearch:Ljava/util/ArrayList;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3296,7 +3364,7 @@
     :cond_f
     if-eqz v9, :cond_10
 
-    .line 373
+    .line 391
     iget-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->delegate:Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;
 
     move/from16 v1, p11
@@ -3308,7 +3376,7 @@
     :cond_10
     move/from16 v1, p11
 
-    .line 376
+    .line 394
     :goto_9
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -3316,14 +3384,14 @@
 
     invoke-direct {v0, v2}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    .line 377
+    .line 395
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     move v9, v2
 
-    .line 378
+    .line 396
     :goto_a
     invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
 
@@ -3331,29 +3399,29 @@
 
     if-ge v9, v2, :cond_11
 
-    .line 380
+    .line 398
     invoke-virtual {v14, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/util/Pair;
 
-    .line 381
+    .line 399
     iget-object v2, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v2, Lorg/telegram/tgnet/TLObject;
 
     const/4 v4, 0x0
 
-    .line 382
+    .line 400
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 383
+    .line 401
     new-instance v4, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v4}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    .line 384
+    .line 402
     iget v5, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -3388,7 +3456,7 @@
 
     invoke-virtual {v4, v2}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 410
+    .line 428
     iget-object v2, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->pendingRequestIds:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -3412,7 +3480,7 @@
 .method public removeUserId(J)V
     .locals 2
 
-    .line 639
+    .line 657
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -3421,12 +3489,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 641
+    .line 659
     iget-object v1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 643
+    .line 661
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearchMap:Landroidx/collection/LongSparseArray;
 
@@ -3436,7 +3504,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 645
+    .line 663
     iget-object p2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->groupSearch:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -3448,7 +3516,7 @@
 .method public setAllowGlobalResults(Z)V
     .locals 0
 
-    .line 127
+    .line 128
     iput-boolean p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allowGlobalResults:Z
 
     return-void
@@ -3457,7 +3525,7 @@
 .method public setDelegate(Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;)V
     .locals 0
 
-    .line 568
+    .line 586
     iput-object p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->delegate:Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;
 
     return-void
@@ -3478,18 +3546,18 @@
         }
     .end annotation
 
-    .line 690
+    .line 708
     iput-object p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtags:Ljava/util/ArrayList;
 
-    .line 691
+    .line 709
     iput-object p2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtagsByText:Ljava/util/HashMap;
 
     const/4 v0, 0x1
 
-    .line 692
+    .line 710
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtagsLoadedFromDb:Z
 
-    .line 693
+    .line 711
     iget-object v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->delegate:Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;
 
     invoke-interface {v0, p1, p2}, Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;->onSetHashtags(Ljava/util/ArrayList;Ljava/util/HashMap;)V
@@ -3502,7 +3570,7 @@
 
     const/4 v0, 0x0
 
-    .line 436
+    .line 454
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->hashtagsLoadedFromDb:Z
 
     return-void

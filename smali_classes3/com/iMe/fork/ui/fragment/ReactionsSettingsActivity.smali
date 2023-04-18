@@ -1,5 +1,5 @@
 .class public final Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
-.super Lorg/telegram/ui/ActionBar/BaseFragment;
+.super Lcom/iMe/ui/base/mvp/MvpFragment;
 .source "ReactionsSettingsActivity.kt"
 
 
@@ -11,8 +11,21 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nReactionsSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReactionsSettingsActivity.kt\ncom/iMe/fork/ui/fragment/ReactionsSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,341:1\n1#2:342\n1559#3:343\n1590#3,4:344\n177#4,2:348\n*S KotlinDebug\n*F\n+ 1 ReactionsSettingsActivity.kt\ncom/iMe/fork/ui/fragment/ReactionsSettingsActivity\n*L\n167#1:343\n167#1:344,4\n182#1:348,2\n*E\n"
+    value = "SMAP\nReactionsSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReactionsSettingsActivity.kt\ncom/iMe/fork/ui/fragment/ReactionsSettingsActivity\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,350:1\n1559#2:351\n1590#2,4:352\n177#3,2:356\n*S KotlinDebug\n*F\n+ 1 ReactionsSettingsActivity.kt\ncom/iMe/fork/ui/fragment/ReactionsSettingsActivity\n*L\n176#1:351\n176#1:352,4\n191#1:356,2\n*E\n"
 .end annotation
+
+
+# static fields
+.field static final synthetic $$delegatedProperties:[Lkotlin/reflect/KProperty;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Lkotlin/reflect/KProperty<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
@@ -20,90 +33,159 @@
 
 .field private enableSectionRow:I
 
-.field private final listAdapter$delegate:Lkotlin/Lazy;
+.field private final listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-.field private final listView$delegate:Lkotlin/Lazy;
+.field private final listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
 .field private messagePopupRow:I
 
 .field private quickReactionRow:I
 
-.field private final rootView$delegate:Lkotlin/Lazy;
+.field private final rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
 .field private rowCount:I
 
 
 # direct methods
-.method public static synthetic $r8$lambda$FfLJ7aHRBidGc44ZuJauAqSeUnM(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$9gVAbVZN2-BHvZYO8vHPphYqDMo(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$15$lambda$14(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$11$lambda$9$lambda$8(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$_w-EcVmCx6W845-AuEn6fwqvV88(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$Ez3dfwxmnQxFl7PCLXzHE3Gwo7w(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$12$lambda$10$lambda$9(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->initListView$lambda$5$lambda$4(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$dUCwWdlvTH6-P1CLvD25i0bsc4g(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$OMabMfDfO09ZisbAWXP3wBp-E-4(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$17$lambda$16(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$14$lambda$13(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$r85heTziRZ51fEwrzfv88n9tN50(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$hFMQzw14Y95EriA-eopSj4cBBe4(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->initListView$lambda$6$lambda$5(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {p0, p1, p2, p3}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$16$lambda$15(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method static constructor <clinit>()V
+    .locals 6
+
+    const-class v0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Lkotlin/reflect/KProperty;
+
+    .line 39
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "rootView"
+
+    const-string v4, "getRootView()Landroid/widget/FrameLayout;"
+
+    const/4 v5, 0x0
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v2
+
+    aput-object v2, v1, v5
+
+    .line 40
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "listView"
+
+    const-string v4, "getListView()Lorg/telegram/ui/Components/RecyclerListView;"
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    aput-object v2, v1, v3
+
+    .line 41
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "listAdapter"
+
+    const-string v4, "getListAdapter()Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;"
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v0
+
+    const/4 v2, 0x2
+
+    aput-object v0, v1, v2
+
+    sput-object v1, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 3
 
-    .line 31
-    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
+    .line 36
+    invoke-direct {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;-><init>()V
 
-    .line 34
+    .line 39
     new-instance v0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$rootView$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$rootView$2;-><init>(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->rootView$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 35
+    .line 40
     new-instance v0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$listView$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$listView$2;-><init>(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->listView$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 36
+    .line 41
     new-instance v0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$listAdapter$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$listAdapter$2;-><init>(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->listAdapter$delegate:Lkotlin/Lazy;
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     return-void
 .end method
@@ -111,7 +193,7 @@
 .method public static final synthetic access$getCurrentAccount$p$s645086140(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
     .locals 0
 
-    .line 31
+    .line 36
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
@@ -120,7 +202,7 @@
 .method public static final synthetic access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
     .locals 0
 
-    .line 31
+    .line 36
     iget p0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->enableRow:I
 
     return p0
@@ -129,7 +211,7 @@
 .method public static final synthetic access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
     .locals 0
 
-    .line 31
+    .line 36
     iget p0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->enableSectionRow:I
 
     return p0
@@ -138,7 +220,7 @@
 .method public static final synthetic access$getMessagePopupRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
     .locals 0
 
-    .line 31
+    .line 36
     iget p0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->messagePopupRow:I
 
     return p0
@@ -147,7 +229,7 @@
 .method public static final synthetic access$getRowCount$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)I
     .locals 0
 
-    .line 31
+    .line 36
     iget p0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->rowCount:I
 
     return p0
@@ -156,7 +238,7 @@
 .method public static final synthetic access$initListView(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->initListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
@@ -167,7 +249,7 @@
 .method public static final synthetic access$initRootView(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->initRootView()Landroid/widget/FrameLayout;
 
     move-result-object p0
@@ -178,7 +260,7 @@
 .method public static final synthetic access$isClickableViewType(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)Z
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->isClickableViewType(I)Z
 
     move-result p0
@@ -189,7 +271,7 @@
 .method public static final synthetic access$needDivider(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)Z
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->needDivider(I)Z
 
     move-result p0
@@ -200,7 +282,7 @@
 .method public static final synthetic access$setEnableRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)V
     .locals 0
 
-    .line 31
+    .line 36
     iput p1, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->enableRow:I
 
     return-void
@@ -209,7 +291,7 @@
 .method public static final synthetic access$setEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)V
     .locals 0
 
-    .line 31
+    .line 36
     iput p1, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->enableSectionRow:I
 
     return-void
@@ -218,7 +300,7 @@
 .method public static final synthetic access$setMessagePopupRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)V
     .locals 0
 
-    .line 31
+    .line 36
     iput p1, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->messagePopupRow:I
 
     return-void
@@ -227,7 +309,7 @@
 .method public static final synthetic access$setQuickReactionRow$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)V
     .locals 0
 
-    .line 31
+    .line 36
     iput p1, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->quickReactionRow:I
 
     return-void
@@ -236,19 +318,25 @@
 .method public static final synthetic access$setRowCount$p(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;I)V
     .locals 0
 
-    .line 31
+    .line 36
     iput p1, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->rowCount:I
 
     return-void
 .end method
 
 .method private final getListAdapter()Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;
-    .locals 1
+    .locals 3
 
-    .line 36
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->listAdapter$delegate:Lkotlin/Lazy;
+    .line 41
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x2
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -258,12 +346,18 @@
 .end method
 
 .method private final getListView()Lorg/telegram/ui/Components/RecyclerListView;
-    .locals 1
+    .locals 3
 
-    .line 35
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->listView$delegate:Lkotlin/Lazy;
+    .line 40
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x1
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -273,12 +367,18 @@
 .end method
 
 .method private final getRootView()Landroid/widget/FrameLayout;
-    .locals 1
+    .locals 3
 
-    .line 34
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->rootView$delegate:Lkotlin/Lazy;
+    .line 39
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    sget-object v1, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x0
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -290,7 +390,7 @@
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 107
+    .line 116
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -301,10 +401,10 @@
 
     const/4 v1, 0x1
 
-    .line 108
+    .line 117
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setFocusable(Z)V
 
-    .line 109
+    .line 118
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -315,14 +415,14 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 110
+    .line 119
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 111
+    .line 120
     new-instance v1, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)V
@@ -332,47 +432,47 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda$6$lambda$5(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$5$lambda$4(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
     .locals 0
 
     const-string p4, "this$0"
 
     invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 113
+    .line 122
     instance-of p4, p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     if-eqz p4, :cond_1
 
-    .line 114
+    .line 123
     iget p3, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->enableRow:I
 
     if-ne p2, p3, :cond_5
 
-    .line 115
+    .line 124
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckbox()V
 
-    .line 116
+    .line 125
     sget-boolean p2, Lorg/telegram/messenger/SharedConfig;->isReactionsEnabled:Z
 
     xor-int/lit8 p2, p2, 0x1
 
     invoke-static {p2}, Lorg/telegram/messenger/SharedConfig;->setReactionsEnabled(Z)V
 
-    .line 117
+    .line 126
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;
 
     move-result-object p2
 
-    .line 118
+    .line 127
     iget p3, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->rowCount:I
 
-    .line 119
+    .line 128
     invoke-virtual {p2}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->updateRows()V
 
-    .line 120
+    .line 129
     iget p4, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->rowCount:I
 
     sub-int/2addr p3, p4
@@ -381,14 +481,14 @@
 
     move-result p3
 
-    .line 121
+    .line 130
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->isChecked()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 122
+    .line 131
     iget p1, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->enableSectionRow:I
 
     add-int/lit8 p1, p1, 0x1
@@ -397,7 +497,7 @@
 
     goto :goto_0
 
-    .line 124
+    .line 133
     :cond_0
     iget p1, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->enableSectionRow:I
 
@@ -405,7 +505,7 @@
 
     invoke-virtual {p2, p1, p3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    .line 126
+    .line 135
     :goto_0
     iget p0, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->enableSectionRow:I
 
@@ -413,18 +513,18 @@
 
     goto :goto_2
 
-    .line 130
+    .line 139
     :cond_1
     instance-of p4, p1, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
     if-eqz p4, :cond_4
 
-    .line 131
+    .line 140
     iget p4, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->messagePopupRow:I
 
     if-ne p2, p4, :cond_5
 
-    .line 132
+    .line 141
     check-cast p1, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->checkSwitchLocation(F)Z
@@ -433,7 +533,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 133
+    .line 142
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->isChecked()Z
 
     move-result p2
@@ -442,7 +542,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setChecked(Z)V
 
-    .line 135
+    .line 144
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->isChecked()Z
 
     move-result p1
@@ -459,17 +559,17 @@
 
     goto :goto_1
 
-    .line 136
+    .line 145
     :cond_2
     invoke-static {}, Lkotlin/collections/SetsKt;->emptySet()Ljava/util/Set;
 
     move-result-object p1
 
-    .line 134
+    .line 143
     :goto_1
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setSelectedDialogTypesForMessagePopupReactions(Ljava/util/Set;)V
 
-    .line 138
+    .line 147
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;
 
     move-result-object p1
@@ -480,24 +580,24 @@
 
     goto :goto_2
 
-    .line 140
+    .line 149
     :cond_3
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet()V
 
     goto :goto_2
 
-    .line 144
+    .line 153
     :cond_4
     instance-of p1, p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
     if-eqz p1, :cond_5
 
-    .line 145
+    .line 154
     iget p1, p0, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->quickReactionRow:I
 
     if-ne p2, p1, :cond_5
 
-    .line 146
+    .line 155
     new-instance p1, Lorg/telegram/ui/ReactionsDoubleTapManageActivity;
 
     invoke-direct {p1}, Lorg/telegram/ui/ReactionsDoubleTapManageActivity;-><init>()V
@@ -512,7 +612,7 @@
 .method private final initRootView()Landroid/widget/FrameLayout;
     .locals 2
 
-    .line 103
+    .line 112
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -523,7 +623,7 @@
 
     const-string v1, "windowBackgroundGray"
 
-    .line 104
+    .line 113
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
@@ -536,7 +636,7 @@
 .method private final isClickableViewType(I)Z
     .locals 1
 
-    .line 219
+    .line 228
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
     if-eq p1, v0, :cond_0
@@ -555,7 +655,7 @@
 .method private final needDivider(I)Z
     .locals 1
 
-    .line 221
+    .line 230
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
 
     if-eq p1, v0, :cond_0
@@ -578,20 +678,20 @@
 .method private final setupActionBar()V
     .locals 3
 
-    .line 89
+    .line 98
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 90
+    .line 99
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 91
+    .line 100
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 92
+    .line 101
     sget v1, Lorg/telegram/messenger/R$string;->Reactions:I
 
     const-string v2, "Reactions"
@@ -602,7 +702,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 93
+    .line 102
     new-instance v1, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$setupActionBar$1$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$setupActionBar$1$1;-><init>(Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)V
@@ -617,7 +717,7 @@
 
     move-object/from16 v0, p0
 
-    .line 154
+    .line 163
     new-instance v1, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -626,7 +726,7 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 155
+    .line 164
     sget v2, Lorg/telegram/messenger/R$string;->settings_interface_message_popup_items:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -639,10 +739,10 @@
 
     const/4 v2, 0x0
 
-    .line 156
+    .line 165
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 158
+    .line 167
     new-instance v4, Landroid/widget/FrameLayout;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -651,10 +751,10 @@
 
     invoke-direct {v4, v5}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 159
+    .line 168
     invoke-virtual {v1, v4}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 161
+    .line 170
     new-instance v5, Landroid/widget/ScrollView;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -663,7 +763,7 @@
 
     invoke-direct {v5, v6}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 162
+    .line 171
     new-instance v6, Landroid/widget/LinearLayout;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -672,10 +772,10 @@
 
     invoke-direct {v6, v7}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 163
+    .line 172
     invoke-virtual {v6, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 166
+    .line 175
     invoke-static {}, Lcom/iMe/fork/enums/DialogType;->values()[Lcom/iMe/fork/enums/DialogType;
 
     move-result-object v7
@@ -725,7 +825,7 @@
     :cond_0
     check-cast v12, Lcom/iMe/fork/enums/DialogType;
 
-    .line 168
+    .line 177
     new-instance v15, Lorg/telegram/ui/Cells/TextCheckBoxCell;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -734,17 +834,17 @@
 
     invoke-direct {v15, v9, v3, v2}, Lorg/telegram/ui/Cells/TextCheckBoxCell;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 169
+    .line 178
     invoke-virtual {v15, v12}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 170
+    .line 179
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v9
 
     invoke-virtual {v15, v9}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 171
+    .line 180
     invoke-virtual {v12}, Lcom/iMe/fork/enums/DialogType;->getNameResId()I
 
     move-result v9
@@ -775,7 +875,7 @@
     :goto_1
     invoke-virtual {v15, v9, v2, v11}, Lorg/telegram/ui/Cells/TextCheckBoxCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 172
+    .line 181
     new-instance v2, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$$ExternalSyntheticLambda2;
 
     invoke-direct {v2, v15}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Cells/TextCheckBoxCell;)V
@@ -784,7 +884,7 @@
 
     const/16 v2, 0x32
 
-    .line 174
+    .line 183
     invoke-static {v13, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
@@ -802,7 +902,7 @@
 
     goto :goto_0
 
-    .line 178
+    .line 187
     :cond_2
     invoke-virtual {v5, v6}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
@@ -820,14 +920,14 @@
 
     const/16 v22, 0x35
 
-    .line 179
+    .line 188
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v4, v5, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 181
+    .line 190
     new-instance v2, Landroid/widget/FrameLayout;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -838,7 +938,7 @@
 
     const/16 v5, 0x8
 
-    .line 182
+    .line 191
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -846,7 +946,7 @@
     .line 177
     invoke-virtual {v2, v5, v5, v5, v5}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 184
+    .line 193
     new-instance v5, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -857,10 +957,10 @@
 
     const/16 v6, 0x11
 
-    .line 185
+    .line 194
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 186
+    .line 195
     sget v7, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v9, "Cancel"
@@ -887,7 +987,7 @@
 
     const-string v7, "fonts/rmedium.ttf"
 
-    .line 187
+    .line 196
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v11
@@ -896,12 +996,12 @@
 
     const/high16 v11, 0x41600000    # 14.0f
 
-    .line 188
+    .line 197
     invoke-virtual {v5, v3, v11}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v12, "dialogTextBlue2"
 
-    .line 189
+    .line 198
     invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v14
@@ -910,7 +1010,7 @@
 
     const/16 v14, 0xa
 
-    .line 190
+    .line 199
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v15
@@ -923,7 +1023,7 @@
 
     invoke-virtual {v5, v15, v14, v13, v14}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 191
+    .line 200
     new-instance v13, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$$ExternalSyntheticLambda1;
 
     invoke-direct {v13, v1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
@@ -936,14 +1036,14 @@
 
     const/16 v15, 0x24
 
-    .line 193
+    .line 202
     invoke-static {v14, v15, v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v13
 
     invoke-virtual {v2, v5, v13}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 194
+    .line 203
     new-instance v5, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -952,10 +1052,10 @@
 
     invoke-direct {v5, v13}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 195
+    .line 204
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 196
+    .line 205
     sget v6, Lorg/telegram/messenger/R$string;->Save:I
 
     const-string v13, "Save"
@@ -976,17 +1076,17 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 197
+    .line 206
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v6
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 198
+    .line 207
     invoke-virtual {v5, v3, v11}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 199
+    .line 208
     invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v3
@@ -995,7 +1095,7 @@
 
     const/16 v3, 0xa
 
-    .line 200
+    .line 209
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -1008,7 +1108,7 @@
 
     invoke-virtual {v5, v6, v7, v3, v7}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 201
+    .line 210
     new-instance v3, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {v3, v8, v1, v0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$$ExternalSyntheticLambda0;-><init>(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;)V
@@ -1017,14 +1117,14 @@
 
     const v3, 0x800035
 
-    .line 208
+    .line 217
     invoke-static {v14, v15, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v2, v5, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 209
+    .line 218
     new-instance v3, Landroid/view/View;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1035,7 +1135,7 @@
 
     const-string v5, "divider"
 
-    .line 210
+    .line 219
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v5
@@ -1056,7 +1156,7 @@
 
     const/16 v12, 0x34
 
-    .line 212
+    .line 221
     invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v5
@@ -1069,37 +1169,37 @@
 
     const/4 v6, -0x1
 
-    .line 213
+    .line 222
     invoke-static {v6, v3, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v4, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 214
+    .line 223
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->create()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    .line 215
+    .line 224
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCanDismissWithSwipe(Z)V
 
-    .line 214
+    .line 223
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
 .end method
 
-.method private static final showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$12$lambda$10$lambda$9(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
+.method private static final showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$11$lambda$9$lambda$8(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$this_apply"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 172
+    .line 181
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextCheckBoxCell;->isChecked()Z
 
     move-result p1
@@ -1111,14 +1211,14 @@
     return-void
 .end method
 
-.method private static final showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$15$lambda$14(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
+.method private static final showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$14$lambda$13(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$builder"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 191
+    .line 200
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -1128,7 +1228,7 @@
     return-void
 .end method
 
-.method private static final showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$17$lambda$16(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
+.method private static final showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$16$lambda$15(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
     .locals 0
 
     const-string p3, "$cells"
@@ -1143,7 +1243,7 @@
 
     invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 202
+    .line 211
     invoke-static {p0}, Lkotlin/collections/CollectionsKt;->asSequence(Ljava/lang/Iterable;)Lkotlin/sequences/Sequence;
 
     move-result-object p0
@@ -1164,17 +1264,17 @@
 
     move-result-object p0
 
-    .line 203
+    .line 212
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p1
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 204
+    .line 213
     invoke-static {p0}, Lorg/telegram/messenger/SharedConfig;->setSelectedDialogTypesForMessagePopupReactions(Ljava/util/Set;)V
 
-    .line 205
+    .line 214
     invoke-direct {p2}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;
 
     move-result-object p0
@@ -1188,45 +1288,6 @@
 
 
 # virtual methods
-.method public bridge synthetic createView(Landroid/content/Context;)Landroid/view/View;
-    .locals 0
-
-    .line 31
-    invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->createView(Landroid/content/Context;)Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public createView(Landroid/content/Context;)Landroid/widget/FrameLayout;
-    .locals 1
-
-    const-string v0, "context"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 45
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getRootView()Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    .line 46
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->setupActionBar()V
-
-    .line 47
-    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
-
-    .line 48
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
-
-    return-object p1
-.end method
-
 .method public getThemeDescriptions()Ljava/util/ArrayList;
     .locals 19
     .annotation system Ldalvik/annotation/Signature;
@@ -1244,7 +1305,7 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 56
+    .line 65
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -1269,7 +1330,7 @@
 
     aput-object v10, v1, v2
 
-    .line 57
+    .line 66
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1294,7 +1355,7 @@
 
     aput-object v3, v1, v4
 
-    .line 58
+    .line 67
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1317,7 +1378,7 @@
 
     aput-object v3, v1, v5
 
-    .line 59
+    .line 68
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1336,7 +1397,7 @@
 
     aput-object v3, v1, v6
 
-    .line 60
+    .line 69
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1355,7 +1416,7 @@
 
     aput-object v3, v1, v7
 
-    .line 61
+    .line 70
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1376,7 +1437,7 @@
 
     aput-object v3, v1, v7
 
-    .line 62
+    .line 71
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1395,7 +1456,7 @@
 
     aput-object v3, v1, v7
 
-    .line 63
+    .line 72
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1422,7 +1483,7 @@
 
     aput-object v3, v1, v7
 
-    .line 64
+    .line 73
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1457,7 +1518,7 @@
 
     aput-object v3, v1, v5
 
-    .line 65
+    .line 74
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1490,7 +1551,7 @@
 
     aput-object v3, v1, v5
 
-    .line 66
+    .line 75
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1519,7 +1580,7 @@
 
     aput-object v3, v1, v5
 
-    .line 67
+    .line 76
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1552,7 +1613,7 @@
 
     aput-object v3, v1, v6
 
-    .line 68
+    .line 77
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1583,7 +1644,7 @@
 
     aput-object v3, v1, v6
 
-    .line 69
+    .line 78
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1614,7 +1675,7 @@
 
     aput-object v3, v1, v7
 
-    .line 70
+    .line 79
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1645,7 +1706,7 @@
 
     aput-object v3, v1, v7
 
-    .line 71
+    .line 80
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1672,7 +1733,7 @@
 
     aput-object v3, v1, v7
 
-    .line 72
+    .line 81
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1699,7 +1760,7 @@
 
     aput-object v3, v1, v7
 
-    .line 73
+    .line 82
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1726,7 +1787,7 @@
 
     aput-object v3, v1, v7
 
-    .line 74
+    .line 83
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1753,7 +1814,7 @@
 
     aput-object v3, v1, v7
 
-    .line 75
+    .line 84
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1780,7 +1841,7 @@
 
     aput-object v3, v1, v7
 
-    .line 76
+    .line 85
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1807,7 +1868,7 @@
 
     aput-object v3, v1, v7
 
-    .line 77
+    .line 86
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1836,7 +1897,7 @@
 
     aput-object v3, v1, v8
 
-    .line 78
+    .line 87
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1867,7 +1928,7 @@
 
     aput-object v3, v1, v8
 
-    .line 79
+    .line 88
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1894,7 +1955,7 @@
 
     aput-object v3, v1, v6
 
-    .line 80
+    .line 89
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1925,7 +1986,7 @@
 
     aput-object v3, v1, v5
 
-    .line 81
+    .line 90
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1952,7 +2013,7 @@
 
     aput-object v3, v1, v2
 
-    .line 55
+    .line 64
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -1960,18 +2021,60 @@
     return-object v1
 .end method
 
+.method public bridge synthetic onCreateView(Landroid/content/Context;)Landroid/view/View;
+    .locals 0
+
+    .line 36
+    invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
+    .locals 1
+
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 50
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getRootView()Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    .line 51
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->setupActionBar()V
+
+    .line 52
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    return-object p1
+.end method
+
 .method public onResume()V
     .locals 1
 
-    .line 51
-    invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
+    .line 60
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onResume()V
 
-    .line 52
+    .line 61
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
+
+    return-void
+.end method
+
+.method public onViewReady()V
+    .locals 0
 
     return-void
 .end method

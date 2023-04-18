@@ -58,7 +58,7 @@ public class SubjectPublicKeyInfo extends ASN1Object {
 
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable
     public ASN1Primitive toASN1Primitive() {
-        ASN1EncodableVector aSN1EncodableVector = new ASN1EncodableVector();
+        ASN1EncodableVector aSN1EncodableVector = new ASN1EncodableVector(2);
         aSN1EncodableVector.add(this.algId);
         aSN1EncodableVector.add(this.keyData);
         return new DERSequence(aSN1EncodableVector);

@@ -815,6 +815,27 @@
     return-object p0
 .end method
 
+.method public static bridge synthetic take(Ljava/lang/Iterable;I)Ljava/util/List;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;I)",
+            "Ljava/util/List<",
+            "TT;>;"
+        }
+    .end annotation
+
+    invoke-static {p0, p1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->take(Ljava/lang/Iterable;I)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static bridge synthetic takeLast(Ljava/util/List;I)Ljava/util/List;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;

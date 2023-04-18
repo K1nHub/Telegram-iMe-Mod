@@ -1,7 +1,7 @@
 package com.iMe.bots.data.model.bot;
 
-import com.google.firebase.p021ml.custom.FirebaseModelInterpreter;
-import com.google.firebase.p021ml.custom.FirebaseModelOptions;
+import com.google.firebase.p020ml.custom.FirebaseModelInterpreter;
+import com.google.firebase.p020ml.custom.FirebaseModelOptions;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: NeuroBot.kt */

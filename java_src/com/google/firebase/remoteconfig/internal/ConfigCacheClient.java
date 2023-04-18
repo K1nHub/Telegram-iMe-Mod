@@ -1,7 +1,7 @@
 package com.google.firebase.remoteconfig.internal;
 
 import android.util.Log;
-import com.google.android.exoplayer2.offline.DefaultDownloaderFactory$$ExternalSyntheticLambda0;
+import androidx.profileinstaller.ProfileInstallReceiver$$ExternalSyntheticLambda0;
 import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,7 +24,7 @@ public class ConfigCacheClient {
     private final ExecutorService executorService;
     private final ConfigStorageClient storageClient;
     private static final Map<String, ConfigCacheClient> clientInstances = new HashMap();
-    private static final Executor DIRECT_EXECUTOR = DefaultDownloaderFactory$$ExternalSyntheticLambda0.INSTANCE;
+    private static final Executor DIRECT_EXECUTOR = ProfileInstallReceiver$$ExternalSyntheticLambda0.INSTANCE;
 
     private ConfigCacheClient(ExecutorService executorService, ConfigStorageClient configStorageClient) {
         this.executorService = executorService;

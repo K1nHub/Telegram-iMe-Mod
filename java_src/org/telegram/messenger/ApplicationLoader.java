@@ -24,12 +24,13 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.iMe.bots.usecase.AiBotsManager;
 import com.iMe.common.AppLifecycleObserver;
-import com.iMe.p024di.KoinJavaAppKt;
-import com.iMe.p032ui.shop.PurchaseHelper;
-import com.iMe.p032ui.shop.configuration.BillingConfiguration;
-import com.iMe.p032ui.shop.configuration.BillingProvider;
+import com.iMe.p023di.KoinJavaAppKt;
+import com.iMe.p031ui.shop.PurchaseHelper;
+import com.iMe.p031ui.shop.configuration.BillingConfiguration;
+import com.iMe.p031ui.shop.configuration.BillingProvider;
 import com.iMe.storage.data.manager.FlipperManager;
 import com.iMe.storage.data.manager.common.EnvironmentManager;
+import com.iMe.storage.data.utils.crypto.CryptoLibsLoader;
 import com.iMe.utils.debug.FileLogTree;
 import com.jakewharton.processphoenix.ProcessPhoenix;
 import io.reactivex.plugins.RxJavaPlugins;
@@ -38,8 +39,8 @@ import org.koin.java.KoinJavaComponent;
 import org.solovyev.android.checkout.Billing;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.p048ui.Components.ForegroundDetector;
-import org.telegram.p048ui.LauncherIconController;
+import org.telegram.p044ui.Components.ForegroundDetector;
+import org.telegram.p044ui.LauncherIconController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
@@ -94,6 +95,17 @@ public class ApplicationLoader extends Application implements BillingProvider {
     protected void startAppCenterInternal(Activity activity) {
     }
 
+    public static void checkKoinInit() {
+        try {
+            try {
+                KoinJavaComponent.getKoin();
+            } catch (Exception unused) {
+            }
+        } catch (Exception unused2) {
+            initKoin();
+        }
+    }
+
     public static String getVersionName() {
         return applicationLoaderInstance.onGetVersionName();
     }
@@ -141,16 +153,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         KoinJavaAppKt.start(applicationContext);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static void checkKoinInit() {
-        try {
-            KoinJavaComponent.getKoin();
-        } catch (Exception unused) {
-            initKoin();
-        }
-    }
-
-    @Override // com.iMe.p032ui.shop.configuration.BillingProvider
+    @Override // com.iMe.p031ui.shop.configuration.BillingProvider
     public Billing provideBilling() {
         return this.mBilling;
     }
@@ -235,6 +238,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         for (int i = 0; i < 5; i++) {
             UserConfig.getInstance(i).loadConfig();
         }
+        CryptoLibsLoader.initTrustWalletCoreLibrary();
         try {
             LocaleController.getInstance();
         } catch (Exception e) {
@@ -326,25 +330,29 @@ public class ApplicationLoader extends Application implements BillingProvider {
             applicationContext = getApplicationContext();
         }
         NativeLoader.initNativeLibs(applicationContext);
-        ConnectionsManager.native_setJava(false);
-        new ForegroundDetector(this) { // from class: org.telegram.messenger.ApplicationLoader.3
-            @Override // org.telegram.p048ui.Components.ForegroundDetector, android.app.Application.ActivityLifecycleCallbacks
-            public void onActivityStarted(Activity activity) {
-                boolean isBackground = isBackground();
-                super.onActivityStarted(activity);
-                if (isBackground) {
-                    ApplicationLoader.ensureCurrentNetworkGet(true);
+        try {
+            ConnectionsManager.native_setJava(false);
+            new ForegroundDetector(this) { // from class: org.telegram.messenger.ApplicationLoader.3
+                @Override // org.telegram.p044ui.Components.ForegroundDetector, android.app.Application.ActivityLifecycleCallbacks
+                public void onActivityStarted(Activity activity) {
+                    boolean isBackground = isBackground();
+                    super.onActivityStarted(activity);
+                    if (isBackground) {
+                        ApplicationLoader.ensureCurrentNetworkGet(true);
+                    }
                 }
+            };
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.m48d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
             }
-        };
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.m48d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
+            applicationHandler = new Handler(applicationContext.getMainLooper());
+            AndroidUtilities.runOnUIThread(ApplicationLoader$$ExternalSyntheticLambda2.INSTANCE);
+            LauncherIconController.tryFixLauncherIconIfNeeded();
+            ProxyRotationController.init();
+            FlipperManager.start(this);
+        } catch (UnsatisfiedLinkError unused2) {
+            throw new RuntimeException("can't load native libraries " + Build.CPU_ABI + " lookup folder " + NativeLoader.getAbiFolder());
         }
-        applicationHandler = new Handler(applicationContext.getMainLooper());
-        AndroidUtilities.runOnUIThread(ApplicationLoader$$ExternalSyntheticLambda2.INSTANCE);
-        LauncherIconController.tryFixLauncherIconIfNeeded();
-        ProxyRotationController.init();
-        FlipperManager.start(this);
     }
 
     public static void startPushService() {

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$59\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n127#2,5:434\n127#2,5:439\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$59\n*L\n369#1:434,5\n370#1:439,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$59\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n129#2,5:434\n129#2,5:439\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$59\n*L\n369#1:434,5\n370#1:439,5\n*E\n"
 .end annotation
 
 
@@ -75,7 +75,7 @@
     .line 368
     new-instance p2, Lcom/iMe/ui/catalog/CatalogRootPresenter;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/interactor/catalog/CatalogInteractor;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -120,7 +120,7 @@
 
     check-cast v4, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

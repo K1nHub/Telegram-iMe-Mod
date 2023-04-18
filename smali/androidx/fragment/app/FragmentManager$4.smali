@@ -3,7 +3,7 @@
 .source "FragmentManager.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroidx/fragment/app/SpecialEffectsControllerFactory;
 
 
 # annotations
@@ -17,17 +17,11 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Landroidx/fragment/app/FragmentManager;
-
-
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentManager;)V
     .locals 0
 
-    .line 485
-    iput-object p1, p0, Landroidx/fragment/app/FragmentManager$4;->this$0:Landroidx/fragment/app/FragmentManager;
-
+    .line 512
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,15 +29,13 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public createController(Landroid/view/ViewGroup;)Landroidx/fragment/app/SpecialEffectsController;
+    .locals 1
 
-    .line 488
-    iget-object v0, p0, Landroidx/fragment/app/FragmentManager$4;->this$0:Landroidx/fragment/app/FragmentManager;
+    .line 516
+    new-instance v0, Landroidx/fragment/app/DefaultSpecialEffectsController;
 
-    const/4 v1, 0x1
+    invoke-direct {v0, p1}, Landroidx/fragment/app/DefaultSpecialEffectsController;-><init>(Landroid/view/ViewGroup;)V
 
-    invoke-virtual {v0, v1}, Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z
-
-    return-void
+    return-object v0
 .end method

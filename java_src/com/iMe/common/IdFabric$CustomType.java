@@ -1,6 +1,10 @@
 package com.iMe.common;
 /* loaded from: classes3.dex */
 public class IdFabric$CustomType {
+    public static final int ACTION_HIDDEN_CHATS_UNDO_VIEW_FEW_HINT;
+    public static final int ACTION_HIDDEN_CHATS_UNDO_VIEW_HINT;
+    public static final int ACTION_HIDDEN_CHATS_UNDO_VIEW_PINNED;
+    public static final int ACTION_HIDDEN_CHATS_UNDO_VIEW_UNPINNED;
     public static final int CHAT_ATTACH_ALERT_WALLET;
     public static final int CHAT_ATTACH_ALERT_WALLET_BINANCE;
     public static final int CHAT_ATTACH_ALERT_WALLET_TEMPLATES;
@@ -16,57 +20,73 @@ public class IdFabric$CustomType {
     public static final int QR_CODE_SCANNER_CHAT_LINK;
     public static final int SHARED_MEDIA_LAYOUT_MUSIC;
     public static final int TRANSFORMABLE_LOGIN_BUTTON_SEARCH;
+    public static final int UNDO_IMAGE_COPIED;
     public static final int UNDO_MOVE_TO_FOLDER;
 
     /* renamed from: id */
-    private static int f253id = -1073741824;
+    private static int f250id = -1073741824;
 
     static {
         int i = (-1073741824) + 1;
-        f253id = i;
+        f250id = i;
         int i2 = i + 1;
-        f253id = i2;
+        f250id = i2;
         MEDIA_TAB_PLAYLIST = i;
         int i3 = i2 + 1;
-        f253id = i3;
+        f250id = i3;
         SHARED_MEDIA_LAYOUT_MUSIC = i2;
         int i4 = i3 + 1;
-        f253id = i4;
+        f250id = i4;
         LOGIN_SEARCH_BY_TEL = i3;
         int i5 = i4 + 1;
-        f253id = i5;
+        f250id = i5;
         TRANSFORMABLE_LOGIN_BUTTON_SEARCH = i4;
         int i6 = i5 + 1;
-        f253id = i6;
+        f250id = i6;
         CONTENT_TYPE_KIKLIKO = i5;
         int i7 = i6 + 1;
-        f253id = i7;
+        f250id = i7;
         CONTENT_TYPE_NFT = i6;
         int i8 = i7 + 1;
-        f253id = i8;
+        f250id = i8;
         LANGUAGE_SELECT_CATALOG = i7;
         int i9 = i8 + 1;
-        f253id = i9;
+        f250id = i9;
         CONTACTS_PRIVACY_SETTINGS = i8;
         int i10 = i9 + 1;
-        f253id = i10;
+        f250id = i10;
         CHAT_FORWARDING_EDITOR = i9;
         int i11 = i10 + 1;
-        f253id = i11;
+        f250id = i11;
         UNDO_MOVE_TO_FOLDER = i10;
         int i12 = i11 + 1;
-        f253id = i12;
-        QR_CODE_SCANNER_CHAT_LINK = i11;
+        f250id = i12;
+        UNDO_IMAGE_COPIED = i11;
         int i13 = i12 + 1;
-        f253id = i13;
-        CHAT_ATTACH_ALERT_WALLET = i12;
+        f250id = i13;
+        QR_CODE_SCANNER_CHAT_LINK = i12;
         int i14 = i13 + 1;
-        f253id = i14;
-        CHAT_ATTACH_ALERT_WALLET_BINANCE = i13;
+        f250id = i14;
+        CHAT_ATTACH_ALERT_WALLET = i13;
         int i15 = i14 + 1;
-        f253id = i15;
-        CHAT_ATTACH_ALERT_WALLET_TEMPLATES = i14;
-        f253id = i15 + 1;
-        DRAWER_USER_CELL_ACTION_BAR_ACCOUNT_SWITCH = i15;
+        f250id = i15;
+        CHAT_ATTACH_ALERT_WALLET_BINANCE = i14;
+        int i16 = i15 + 1;
+        f250id = i16;
+        CHAT_ATTACH_ALERT_WALLET_TEMPLATES = i15;
+        int i17 = i16 + 1;
+        f250id = i17;
+        DRAWER_USER_CELL_ACTION_BAR_ACCOUNT_SWITCH = i16;
+        int i18 = i17 + 1;
+        f250id = i18;
+        ACTION_HIDDEN_CHATS_UNDO_VIEW_HINT = i17;
+        int i19 = i18 + 1;
+        f250id = i19;
+        ACTION_HIDDEN_CHATS_UNDO_VIEW_FEW_HINT = i18;
+        int i20 = i19 + 1;
+        f250id = i20;
+        ACTION_HIDDEN_CHATS_UNDO_VIEW_UNPINNED = i19;
+        f250id = i20 + 1;
+        ACTION_HIDDEN_CHATS_UNDO_VIEW_PINNED = i20;
     }
 }

@@ -12,13 +12,13 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public class StreetViewPanoramaLink extends AbstractSafeParcelable {
     public static final Parcelable.Creator<StreetViewPanoramaLink> CREATOR = new zzq();
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     public final float bearing;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     public final String panoId;
 
     @SafeParcelable.Constructor
-    public StreetViewPanoramaLink(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) float f) {
+    public StreetViewPanoramaLink(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) float f) {
         this.panoId = str;
         this.bearing = (((double) f) <= 0.0d ? (f % 360.0f) + 360.0f : f) % 360.0f;
     }

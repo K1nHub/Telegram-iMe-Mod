@@ -64,7 +64,7 @@
 .method protected constructor <init>(Lorg/telegram/messenger/SendMessagesHelper;)V
     .locals 0
 
-    .line 721
+    .line 728
     iput-object p1, p0, Lorg/telegram/messenger/SendMessagesHelper$DelayedMessageSendAfterRequest;->this$0:Lorg/telegram/messenger/SendMessagesHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

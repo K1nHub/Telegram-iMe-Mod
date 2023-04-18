@@ -14,25 +14,25 @@ import java.util.Comparator;
 public final class zzi extends AbstractSafeParcelable implements Comparable<zzi> {
     public static final Parcelable.Creator<zzi> CREATOR = new zzk();
     private static final Comparator<zzi> zzai = new zzj();
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     public final String name;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     private final long zzab;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     private final boolean zzac;
-    @SafeParcelable.Field(m789id = 5)
+    @SafeParcelable.Field(m775id = 5)
     private final double zzad;
-    @SafeParcelable.Field(m789id = 6)
+    @SafeParcelable.Field(m775id = 6)
     private final String zzae;
-    @SafeParcelable.Field(m789id = 7)
+    @SafeParcelable.Field(m775id = 7)
     private final byte[] zzaf;
-    @SafeParcelable.Field(m789id = 8)
+    @SafeParcelable.Field(m775id = 8)
     private final int zzag;
-    @SafeParcelable.Field(m789id = 9)
+    @SafeParcelable.Field(m775id = 9)
     public final int zzah;
 
     @SafeParcelable.Constructor
-    public zzi(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) long j, @SafeParcelable.Param(m788id = 4) boolean z, @SafeParcelable.Param(m788id = 5) double d, @SafeParcelable.Param(m788id = 6) String str2, @SafeParcelable.Param(m788id = 7) byte[] bArr, @SafeParcelable.Param(m788id = 8) int i, @SafeParcelable.Param(m788id = 9) int i2) {
+    public zzi(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) long j, @SafeParcelable.Param(m774id = 4) boolean z, @SafeParcelable.Param(m774id = 5) double d, @SafeParcelable.Param(m774id = 6) String str2, @SafeParcelable.Param(m774id = 7) byte[] bArr, @SafeParcelable.Param(m774id = 8) int i, @SafeParcelable.Param(m774id = 9) int i2) {
         this.name = str;
         this.zzab = j;
         this.zzac = z;

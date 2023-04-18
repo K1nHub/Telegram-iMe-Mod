@@ -15,28 +15,28 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzb extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzb> CREATOR = new zzc();
-    @SafeParcelable.Field(getter = "getIntervalMillis", m789id = 1)
+    @SafeParcelable.Field(getter = "getIntervalMillis", m775id = 1)
     private final long zza;
-    @SafeParcelable.Field(getter = "getTriggerUpdate", m789id = 2)
+    @SafeParcelable.Field(getter = "getTriggerUpdate", m775id = 2)
     private final boolean zzb;
-    @SafeParcelable.Field(getter = "getWorkSource", m789id = 3)
+    @SafeParcelable.Field(getter = "getWorkSource", m775id = 3)
     private final WorkSource zzc;
-    @SafeParcelable.Field(getter = "getTag", m789id = 4)
+    @SafeParcelable.Field(getter = "getTag", m775id = 4)
     private final String zzd;
-    @SafeParcelable.Field(getter = "getNondefaultActivities", m789id = 5)
+    @SafeParcelable.Field(getter = "getNondefaultActivities", m775id = 5)
     private final int[] zze;
-    @SafeParcelable.Field(getter = "getRequestSensorData", m789id = 6)
+    @SafeParcelable.Field(getter = "getRequestSensorData", m775id = 6)
     private final boolean zzf;
-    @SafeParcelable.Field(getter = "getAccountName", m789id = 7)
+    @SafeParcelable.Field(getter = "getAccountName", m775id = 7)
     private final String zzg;
-    @SafeParcelable.Field(defaultValueUnchecked = "ActivityRecognitionRequest.DEFAULT_MAX_REPORT_LATENCY_MILLIS", getter = "getMaxReportLatencyMillis", m789id = 8)
+    @SafeParcelable.Field(defaultValueUnchecked = "ActivityRecognitionRequest.DEFAULT_MAX_REPORT_LATENCY_MILLIS", getter = "getMaxReportLatencyMillis", m775id = 8)
     private final long zzh;
-    @SafeParcelable.Field(getter = "getContextAttributionTag", m789id = 9)
+    @SafeParcelable.Field(getter = "getContextAttributionTag", m775id = 9)
     private String zzi;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzb(@SafeParcelable.Param(m788id = 1) long j, @SafeParcelable.Param(m788id = 2) boolean z, @SafeParcelable.Param(m788id = 3) WorkSource workSource, @SafeParcelable.Param(m788id = 4) String str, @SafeParcelable.Param(m788id = 5) int[] iArr, @SafeParcelable.Param(m788id = 6) boolean z2, @SafeParcelable.Param(m788id = 7) String str2, @SafeParcelable.Param(m788id = 8) long j2, @SafeParcelable.Param(m788id = 9) String str3) {
+    public zzb(@SafeParcelable.Param(m774id = 1) long j, @SafeParcelable.Param(m774id = 2) boolean z, @SafeParcelable.Param(m774id = 3) WorkSource workSource, @SafeParcelable.Param(m774id = 4) String str, @SafeParcelable.Param(m774id = 5) int[] iArr, @SafeParcelable.Param(m774id = 6) boolean z2, @SafeParcelable.Param(m774id = 7) String str2, @SafeParcelable.Param(m774id = 8) long j2, @SafeParcelable.Param(m774id = 9) String str3) {
         this.zza = j;
         this.zzb = z;
         this.zzc = workSource;

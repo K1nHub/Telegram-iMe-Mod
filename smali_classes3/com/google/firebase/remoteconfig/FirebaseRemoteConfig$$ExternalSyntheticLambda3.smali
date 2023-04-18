@@ -35,9 +35,9 @@
 .method public final then(Ljava/lang/Object;)Lcom/google/android/gms/tasks/Task;
     .locals 0
 
-    check-cast p1, Lcom/google/firebase/remoteconfig/internal/ConfigFetchHandler$FetchResponse;
+    check-cast p1, Lcom/google/firebase/remoteconfig/internal/ConfigContainer;
 
-    invoke-static {p1}, Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;->$r8$lambda$-JYPoCswQMeSK7ONQc9hg6EWz1E(Lcom/google/firebase/remoteconfig/internal/ConfigFetchHandler$FetchResponse;)Lcom/google/android/gms/tasks/Task;
+    invoke-static {p1}, Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;->$r8$lambda$Zxj7vj2VFSzqm5ULSomVu6gUxlM(Lcom/google/firebase/remoteconfig/internal/ConfigContainer;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 

@@ -42,7 +42,7 @@
 
     const-string p1, ""
 
-    .line 963
+    .line 947
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/URLSpanNoUnderline;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -57,7 +57,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 965
+    .line 949
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createClickableText$1$1;->$onClick:Lkotlin/jvm/functions/Function0;
 
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;

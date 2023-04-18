@@ -897,7 +897,7 @@
 
     const/4 v0, -0x2
 
-    const/4 v1, 0x5
+    const/4 v1, 0x1
 
     .line 96
     invoke-static {p1, v0, v1}, Lorg/telegram/ui/Components/Bulletin$Layout;->access$000(Lorg/telegram/ui/Components/Bulletin$Layout;II)V

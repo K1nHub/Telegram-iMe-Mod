@@ -1,12 +1,12 @@
 package com.iMe.model.wallet.settings;
 
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 /* compiled from: SettingMenuItem.kt */
 /* loaded from: classes3.dex */
 public enum SettingMenuItem {
-    CRYPTO_ACCOUNT(C3316R.string.wallet_settings_eth_account_title, null, C3316R.C3318drawable.msg_openprofile),
-    INTERFACE(C3316R.string.wallet_settings_interface_title, null, C3316R.C3318drawable.fork_interface_settings),
-    HELP(C3316R.string.wallet_settings_help_title, null, C3316R.C3318drawable.msg_help);
+    CRYPTO_ACCOUNT(C3242R.string.wallet_settings_eth_account_title, null, C3242R.C3244drawable.msg_openprofile),
+    INTERFACE(C3242R.string.wallet_settings_interface_title, null, C3242R.C3244drawable.fork_interface_settings),
+    HELP(C3242R.string.wallet_settings_help_title, null, C3242R.C3244drawable.msg_help);
     
     private final Integer description;
     private final int icon;

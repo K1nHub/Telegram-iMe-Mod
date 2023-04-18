@@ -12,14 +12,14 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public class IntermediatePaymentData extends AbstractSafeParcelable {
     public static final Parcelable.Creator<IntermediatePaymentData> CREATOR = new zzl();
-    @SafeParcelable.Field(m789id = 1)
+    @SafeParcelable.Field(m775id = 1)
     String zza;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     Bundle zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public IntermediatePaymentData(@SafeParcelable.Param(m788id = 1) String str, @SafeParcelable.Param(m788id = 2) Bundle bundle) {
+    public IntermediatePaymentData(@SafeParcelable.Param(m774id = 1) String str, @SafeParcelable.Param(m774id = 2) Bundle bundle) {
         this.zza = str;
         this.zzb = bundle;
     }

@@ -2,40 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;->INSTANCE:Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
+.method public final didSetColor()V
+    .locals 1
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$UDh7c8d0YKt6ZIxxQJBraFi8ASk(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
+
+    return-void
+.end method
+
+.method public synthetic onAnimationProgress(F)V
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$dIXC5yF5CStpk5LQMHZyanTkUN8(Landroid/view/View;I)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
 
     return-void
 .end method

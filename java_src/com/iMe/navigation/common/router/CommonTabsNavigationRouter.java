@@ -3,7 +3,7 @@ package com.iMe.navigation.common.router;
 import com.iMe.model.common.NavigationTab;
 import com.iMe.navigation.common.configuration.NavigationConfiguration;
 import com.iMe.navigation.common.router.base.BaseNavigationRouter;
-import com.iMe.p032ui.base.mvp.MvpFragment;
+import com.iMe.p031ui.base.mvp.MvpFragment;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -39,7 +39,7 @@ public class CommonTabsNavigationRouter<T extends MvpFragment> extends BaseNavig
                 MvpFragment fragment = navigationTab.getFragment();
                 fragment.setParentFragment(settings.getViewConfiguration().getParentFragment());
                 fragment.onViewCreated();
-                arrayList.add(TuplesKt.m94to(valueOf, fragment));
+                arrayList.add(TuplesKt.m80to(valueOf, fragment));
             }
             MapsKt__MapsKt.putAll(fragmentsStack, arrayList);
         }

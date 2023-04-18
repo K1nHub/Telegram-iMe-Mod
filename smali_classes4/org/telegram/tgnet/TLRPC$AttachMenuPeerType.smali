@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 65526
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +21,6 @@
 
     goto :goto_0
 
-    .line 65535
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuPeerTypeSameBotPM;
 
@@ -51,7 +49,6 @@
 
     goto :goto_0
 
-    .line 65532
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuPeerTypeBotPM;
 
@@ -64,7 +61,6 @@
 
     goto :goto_1
 
-    .line 65535
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 

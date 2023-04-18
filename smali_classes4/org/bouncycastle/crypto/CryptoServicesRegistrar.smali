@@ -11,7 +11,9 @@
 
 
 # static fields
-.field private static volatile defaultSecureRandom:Ljava/security/SecureRandom;
+.field private static final cacheLock:Ljava/lang/Object;
+
+.field private static defaultSecureRandom:Ljava/security/SecureRandom;
 
 .field private static final globalProperties:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
@@ -77,6 +79,12 @@
 
     sput-object v0, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->globalProperties:Ljava/util/Map;
 
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->cacheLock:Ljava/lang/Object;
+
     new-instance v0, Lorg/bouncycastle/crypto/params/DSAParameters;
 
     new-instance v1, Ljava/math/BigInteger;
@@ -103,7 +111,7 @@
 
     const-string v6, "b869c82b35d70e1b1ff91b28e37a62ecdc34409b"
 
-    invoke-static {v6}, Lorg/bouncycastle/util/encoders/Hex;->decode(Ljava/lang/String;)[B
+    invoke-static {v6}, Lorg/bouncycastle/util/encoders/Hex;->decodeStrict(Ljava/lang/String;)[B
 
     move-result-object v6
 
@@ -137,7 +145,7 @@
 
     const-string v7, "77d0f8c4dad15eb8c4f2f8d6726cefd96d5bb399"
 
-    invoke-static {v7}, Lorg/bouncycastle/util/encoders/Hex;->decode(Ljava/lang/String;)[B
+    invoke-static {v7}, Lorg/bouncycastle/util/encoders/Hex;->decodeStrict(Ljava/lang/String;)[B
 
     move-result-object v7
 
@@ -171,7 +179,7 @@
 
     const-string v8, "8d5155894229d5e689ee01e6018a237e2cae64cd"
 
-    invoke-static {v8}, Lorg/bouncycastle/util/encoders/Hex;->decode(Ljava/lang/String;)[B
+    invoke-static {v8}, Lorg/bouncycastle/util/encoders/Hex;->decodeStrict(Ljava/lang/String;)[B
 
     move-result-object v8
 
@@ -205,7 +213,7 @@
 
     const-string v8, "b0b4417601b59cbc9d8ac8f935cadaec4f5fbb2f23785609ae466748d9b5a536"
 
-    invoke-static {v8}, Lorg/bouncycastle/util/encoders/Hex;->decode(Ljava/lang/String;)[B
+    invoke-static {v8}, Lorg/bouncycastle/util/encoders/Hex;->decodeStrict(Ljava/lang/String;)[B
 
     move-result-object v8
 
@@ -273,63 +281,122 @@
 .end method
 
 .method private static chooseLowerBound(I)I
-    .locals 2
+    .locals 1
 
-    const/16 v0, 0x200
+    const/16 v0, 0x400
 
-    if-le p0, v0, :cond_2
+    if-le p0, v0, :cond_3
 
-    const/16 v1, 0x800
+    const/16 v0, 0x800
 
-    if-gt p0, v1, :cond_0
+    if-gt p0, v0, :cond_0
 
-    const/16 v0, 0xe0
+    const/16 p0, 0xe0
 
     goto :goto_0
 
     :cond_0
-    const/16 v1, 0xc00
+    const/16 v0, 0xc00
 
-    if-gt p0, v1, :cond_1
+    if-gt p0, v0, :cond_1
 
-    const/16 v0, 0x100
+    const/16 p0, 0x100
 
     goto :goto_0
 
     :cond_1
-    const/16 v1, 0x1e00
+    const/16 v0, 0x1e00
 
-    if-gt p0, v1, :cond_3
+    if-gt p0, v0, :cond_2
 
-    const/16 v0, 0x180
+    const/16 p0, 0x180
 
     goto :goto_0
 
     :cond_2
-    const/16 v0, 0xa0
+    const/16 p0, 0x200
+
+    goto :goto_0
 
     :cond_3
+    const/16 p0, 0xa0
+
     :goto_0
-    return v0
+    return p0
 .end method
 
 .method public static getSecureRandom()Ljava/security/SecureRandom;
-    .locals 1
+    .locals 3
 
-    sget-object v0, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->defaultSecureRandom:Ljava/security/SecureRandom;
+    sget-object v0, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->cacheLock:Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    monitor-enter v0
 
-    new-instance v0, Ljava/security/SecureRandom;
+    :try_start_0
+    sget-object v1, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->defaultSecureRandom:Ljava/security/SecureRandom;
 
-    invoke-direct {v0}, Ljava/security/SecureRandom;-><init>()V
+    if-eqz v1, :cond_0
 
-    return-object v0
+    monitor-exit v0
+
+    return-object v1
 
     :cond_0
-    sget-object v0, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->defaultSecureRandom:Ljava/security/SecureRandom;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    return-object v0
+    new-instance v1, Ljava/security/SecureRandom;
+
+    invoke-direct {v1}, Ljava/security/SecureRandom;-><init>()V
+
+    monitor-enter v0
+
+    :try_start_1
+    sget-object v2, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->defaultSecureRandom:Ljava/security/SecureRandom;
+
+    if-nez v2, :cond_1
+
+    sput-object v1, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->defaultSecureRandom:Ljava/security/SecureRandom;
+
+    :cond_1
+    sget-object v1, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->defaultSecureRandom:Ljava/security/SecureRandom;
+
+    monitor-exit v0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
+
+    :catchall_1
+    move-exception v1
+
+    :try_start_2
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    throw v1
+.end method
+
+.method public static getSecureRandom(Ljava/security/SecureRandom;)Ljava/security/SecureRandom;
+    .locals 0
+
+    if-nez p0, :cond_0
+
+    invoke-static {}, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->getSecureRandom()Ljava/security/SecureRandom;
+
+    move-result-object p0
+
+    :cond_0
+    return-object p0
 .end method
 
 .method private static varargs localSetGlobalProperty(Lorg/bouncycastle/crypto/CryptoServicesRegistrar$Property;[Ljava/lang/Object;)V

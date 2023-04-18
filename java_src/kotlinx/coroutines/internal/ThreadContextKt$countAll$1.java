@@ -17,7 +17,7 @@ final class ThreadContextKt$countAll$1 extends Lambda implements Function2<Objec
     public final Object invoke(Object obj, CoroutineContext.Element element) {
         if (element instanceof ThreadContextElement) {
             Integer num = obj instanceof Integer ? (Integer) obj : null;
-            int intValue = num == null ? 1 : num.intValue();
+            int intValue = num != null ? num.intValue() : 1;
             return intValue == 0 ? element : Integer.valueOf(intValue + 1);
         }
         return obj;

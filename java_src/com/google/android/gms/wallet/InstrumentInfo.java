@@ -17,11 +17,11 @@ public final class InstrumentInfo extends AbstractSafeParcelable {
     public static final int CARD_CLASS_PREPAID = 3;
     public static final int CARD_CLASS_UNKNOWN = 0;
     public static final Parcelable.Creator<InstrumentInfo> CREATOR = new zzo();
-    @SafeParcelable.Field(getter = "getInstrumentType", m789id = 2)
+    @SafeParcelable.Field(getter = "getInstrumentType", m775id = 2)
     private String zza;
-    @SafeParcelable.Field(getter = "getInstrumentDetails", m789id = 3)
+    @SafeParcelable.Field(getter = "getInstrumentDetails", m775id = 3)
     private String zzb;
-    @SafeParcelable.Field(getter = "getCardClass", m789id = 4)
+    @SafeParcelable.Field(getter = "getCardClass", m775id = 4)
     private int zzc;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
@@ -59,7 +59,7 @@ public final class InstrumentInfo extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public InstrumentInfo(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) String str2, @SafeParcelable.Param(m788id = 4) int i) {
+    public InstrumentInfo(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) int i) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = i;

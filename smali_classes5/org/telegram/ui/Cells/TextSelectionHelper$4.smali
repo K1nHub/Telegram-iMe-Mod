@@ -67,7 +67,7 @@
 .method private synthetic lambda$onActionItemClicked$2()V
     .locals 1
 
-    .line 1416
+    .line 1415
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$400(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
@@ -227,7 +227,7 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 1390
+    .line 1389
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getSelectedText()Ljava/lang/CharSequence;
@@ -236,7 +236,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1392
+    .line 1391
     iget-object p2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Lorg/telegram/ui/Cells/TextSelectionHelper$Callback;
@@ -249,7 +249,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/TextSelectionHelper$Callback;->onQuote(Ljava/lang/String;)V
 
-    .line 1393
+    .line 1392
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1200(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
@@ -257,7 +257,7 @@
     :cond_1
     return v0
 
-    .line 1398
+    .line 1397
     :cond_2
     invoke-interface {p2}, Landroid/view/MenuItem;->getItemId()I
 
@@ -275,14 +275,14 @@
 
     if-eq p1, p2, :cond_3
 
-    .line 1421
+    .line 1420
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->clear()V
 
     return v0
 
-    .line 1400
+    .line 1399
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -290,7 +290,7 @@
 
     return v0
 
-    .line 1403
+    .line 1402
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -306,37 +306,37 @@
 
     return v0
 
-    .line 1407
+    .line 1406
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iput v1, p2, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
-    .line 1408
+    .line 1407
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
 
     iput p1, p2, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
-    .line 1409
+    .line 1408
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1200(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
-    .line 1410
+    .line 1409
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->invalidate()V
 
-    .line 1411
+    .line 1410
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$400(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
     return v0
 
-    .line 1414
+    .line 1413
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -346,7 +346,7 @@
 
     if-eqz p1, :cond_7
 
-    .line 1415
+    .line 1414
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object p1
@@ -359,7 +359,7 @@
 
     move-result-object p1
 
-    .line 1416
+    .line 1415
     iget-object p2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Lorg/telegram/ui/Cells/TextSelectionHelper$OnTranslateListener;
@@ -380,7 +380,7 @@
 
     invoke-interface {p2, v1, v2, p1, v3}, Lorg/telegram/ui/Cells/TextSelectionHelper$OnTranslateListener;->run(Ljava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;)V
 
-    .line 1418
+    .line 1417
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -442,14 +442,14 @@
 .method public onDestroyActionMode(Landroid/view/ActionMode;)V
     .locals 1
 
-    .line 1428
+    .line 1427
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x17
 
     if-ge p1, v0, :cond_0
 
-    .line 1429
+    .line 1428
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->clear()V

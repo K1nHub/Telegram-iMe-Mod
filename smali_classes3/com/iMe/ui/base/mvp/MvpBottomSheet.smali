@@ -179,6 +179,14 @@
     return-object p1
 .end method
 
+.method public synthetic showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$showErrorToast(Lcom/iMe/ui/base/mvp/base/BaseView;Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+
+    return-void
+.end method
+
 .method public showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 

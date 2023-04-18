@@ -30,6 +30,6 @@ public abstract class zzc extends com.google.android.gms.internal.vision.zzb imp
         }
         IObjectWrapper.Stub.asInterface(parcel.readStrongBinder());
         Parcelable.Creator<ImageLabelerOptions> creator = ImageLabelerOptions.CREATOR;
-        throw ImageLabeler$$ExternalSyntheticThrowNSME0.m760m();
+        throw ImageLabeler$$ExternalSyntheticThrowNSME0.m746m();
     }
 }

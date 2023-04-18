@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$9\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,70:1\n127#2,5:71\n127#2,5:76\n127#2,5:81\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$9\n*L\n55#1:71,5\n56#1:76,5\n57#1:81,5\n*E\n"
+    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$9\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,70:1\n129#2,5:71\n129#2,5:76\n129#2,5:81\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$9\n*L\n55#1:71,5\n56#1:76,5\n57#1:81,5\n*E\n"
 .end annotation
 
 
@@ -75,7 +75,7 @@
     .line 54
     new-instance p2, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -125,7 +125,7 @@
 
     move-result-object v0
 
-    .line 131
+    .line 133
     const-class v5, Lokhttp3/OkHttpClient;
 
     invoke-static {v5}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -168,7 +168,7 @@
 
     check-cast v7, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

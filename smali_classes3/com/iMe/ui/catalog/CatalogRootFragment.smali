@@ -16,7 +16,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCatalogRootFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogRootFragment.kt\ncom/iMe/ui/catalog/CatalogRootFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,239:1\n13#2,4:240\n56#3,6:244\n56#3,6:250\n1855#4,2:256\n1855#4,2:258\n1855#4,2:269\n1855#4,2:271\n2634#4:273\n219#5,9:260\n1#6:274\n*S KotlinDebug\n*F\n+ 1 CatalogRootFragment.kt\ncom/iMe/ui/catalog/CatalogRootFragment\n*L\n45#1:240,4\n46#1:244,6\n47#1:250,6\n78#1:256,2\n83#1:258,2\n116#1:269,2\n138#1:271,2\n198#1:273\n87#1:260,9\n198#1:274\n*E\n"
+    value = "SMAP\nCatalogRootFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogRootFragment.kt\ncom/iMe/ui/catalog/CatalogRootFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,239:1\n13#2,4:240\n56#3,6:244\n56#3,6:250\n1855#4,2:256\n1855#4,2:258\n1855#4,2:269\n1855#4,2:271\n2634#4:273\n233#5,9:260\n1#6:274\n*S KotlinDebug\n*F\n+ 1 CatalogRootFragment.kt\ncom/iMe/ui/catalog/CatalogRootFragment\n*L\n45#1:240,4\n46#1:244,6\n47#1:250,6\n78#1:256,2\n83#1:258,2\n116#1:269,2\n138#1:271,2\n198#1:273\n87#1:260,9\n198#1:274\n*E\n"
 .end annotation
 
 
@@ -841,7 +841,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 219
+    .line 233
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v1

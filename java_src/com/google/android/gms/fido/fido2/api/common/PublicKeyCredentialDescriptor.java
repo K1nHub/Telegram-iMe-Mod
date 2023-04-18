@@ -17,11 +17,11 @@ import java.util.List;
 @SafeParcelable.Reserved({1})
 /* loaded from: classes.dex */
 public class PublicKeyCredentialDescriptor extends AbstractSafeParcelable {
-    @SafeParcelable.Field(getter = "getTypeAsString", m789id = 2, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getTypeAsString", m775id = 2, type = "java.lang.String")
     private final PublicKeyCredentialType zzb;
-    @SafeParcelable.Field(getter = "getId", m789id = 3)
+    @SafeParcelable.Field(getter = "getId", m775id = 3)
     private final byte[] zzc;
-    @SafeParcelable.Field(getter = "getTransports", m789id = 4)
+    @SafeParcelable.Field(getter = "getTransports", m775id = 4)
     private final List zzd;
     private static zzba zza = zzba.zzi(com.google.android.gms.internal.fido.zzh.zza, com.google.android.gms.internal.fido.zzh.zzb);
     public static final Parcelable.Creator<PublicKeyCredentialDescriptor> CREATOR = new zzah();
@@ -39,7 +39,7 @@ public class PublicKeyCredentialDescriptor extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public PublicKeyCredentialDescriptor(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) byte[] bArr, @SafeParcelable.Param(m788id = 4) List<Transport> list) {
+    public PublicKeyCredentialDescriptor(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) byte[] bArr, @SafeParcelable.Param(m774id = 4) List<Transport> list) {
         Preconditions.checkNotNull(str);
         try {
             this.zzb = PublicKeyCredentialType.fromString(str);

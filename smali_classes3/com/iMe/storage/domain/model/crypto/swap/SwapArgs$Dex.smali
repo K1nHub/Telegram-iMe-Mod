@@ -25,7 +25,7 @@
 
 .field private final data:Ljava/lang/String;
 
-.field private final deadline:I
+.field private final deadlineMinutes:I
 
 .field private final gasLimit:Ljava/math/BigInteger;
 
@@ -203,89 +203,89 @@
 
     move-object v10, v11
 
-    .line 41
+    .line 45
     invoke-direct/range {v0 .. v10}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;-><init>(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 23
+    .line 27
     iput-object v12, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->swapProtocol:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
-    .line 24
+    .line 28
     iput-object v13, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->amount:Ljava/math/BigDecimal;
 
-    .line 25
+    .line 29
     iput-object v14, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->inputToken:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
 
-    .line 26
+    .line 30
     iput-object v15, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->outputToken:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
 
     move-wide/from16 v1, p5
 
-    .line 27
+    .line 31
     iput-wide v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->chainId:J
 
     move-object/from16 v1, p7
 
-    .line 28
+    .line 32
     iput-object v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->nonce:Ljava/math/BigInteger;
 
     move-object/from16 v1, p8
 
-    .line 29
+    .line 33
     iput-object v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->gasPrice:Ljava/math/BigInteger;
 
     move-object/from16 v1, p9
 
-    .line 30
+    .line 34
     iput-object v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->gasLimit:Ljava/math/BigInteger;
 
     move-object/from16 v1, p10
 
-    .line 31
+    .line 35
     iput-object v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->amountOutBound:Ljava/math/BigInteger;
 
     move-object/from16 v1, p11
 
-    .line 32
+    .line 36
     iput-object v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->contractAddress:Ljava/lang/String;
 
     move-object/from16 v1, p12
 
-    .line 33
+    .line 37
     iput-object v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->swapMethod:Lcom/iMe/storage/domain/model/wallet/swap/SwapMethod;
 
     move-object/from16 v1, p13
 
-    .line 34
+    .line 38
     iput-object v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->path:Ljava/util/List;
 
     move/from16 v1, p14
 
-    .line 35
-    iput v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadline:I
+    .line 39
+    iput v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadlineMinutes:I
 
     move-object/from16 v1, p15
 
-    .line 36
+    .line 40
     iput-object v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->value:Ljava/math/BigInteger;
 
     move-object/from16 v1, p16
 
-    .line 37
+    .line 41
     iput-object v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->data:Ljava/lang/String;
 
     move-object/from16 v1, p17
 
-    .line 38
+    .line 42
     iput-object v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->quoteId:Ljava/lang/String;
 
     move-object/from16 v1, p18
 
-    .line 39
+    .line 43
     iput-object v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-object/from16 v1, p19
 
-    .line 40
+    .line 44
     iput-object v1, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->outputNetworkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     return-void
@@ -462,7 +462,7 @@
 
     if-eqz v15, :cond_c
 
-    iget v15, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadline:I
+    iget v15, v0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadlineMinutes:I
 
     goto :goto_c
 
@@ -626,7 +626,7 @@
 .method public final component13()I
     .locals 1
 
-    iget v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadline:I
+    iget v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadlineMinutes:I
 
     return v0
 .end method
@@ -1114,9 +1114,9 @@
     return v2
 
     :cond_d
-    iget v1, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadline:I
+    iget v1, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadlineMinutes:I
 
-    iget v3, p1, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadline:I
+    iget v3, p1, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadlineMinutes:I
 
     if-eq v1, v3, :cond_e
 
@@ -1186,7 +1186,7 @@
 .method public getAmount()Ljava/math/BigDecimal;
     .locals 1
 
-    .line 24
+    .line 28
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->amount:Ljava/math/BigDecimal;
 
     return-object v0
@@ -1195,7 +1195,7 @@
 .method public final getAmountOutBound()Ljava/math/BigInteger;
     .locals 1
 
-    .line 31
+    .line 35
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->amountOutBound:Ljava/math/BigInteger;
 
     return-object v0
@@ -1204,7 +1204,7 @@
 .method public getChainId()J
     .locals 2
 
-    .line 27
+    .line 31
     iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->chainId:J
 
     return-wide v0
@@ -1213,8 +1213,33 @@
 .method public final getContractAddress()Ljava/lang/String;
     .locals 1
 
-    .line 32
+    .line 36
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->contractAddress:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final getConvertedAmount()Ljava/math/BigInteger;
+    .locals 3
+
+    .line 48
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getAmount()Ljava/math/BigDecimal;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getInputToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+
+    invoke-static {v1, v2}, Lcom/iMe/storage/domain/utils/extentions/model/TokenInfoExtKt;->getWeiConvertUnit(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->convertToWei(Ljava/lang/Number;Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;)Ljava/math/BigInteger;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -1222,17 +1247,54 @@
 .method public final getData()Ljava/lang/String;
     .locals 1
 
-    .line 37
+    .line 41
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->data:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final getDeadline()I
+.method public final getDeadline()Ljava/math/BigInteger;
+    .locals 5
+
+    .line 51
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-static {}, Lcom/iMe/storage/data/utils/extentions/DateExtKt;->now()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
+
+    move-result-wide v0
+
+    sget-object v2, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+
+    iget v3, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadlineMinutes:I
+
+    int-to-long v3, v3
+
+    invoke-virtual {v2, v3, v4}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
+
+    move-result-wide v2
+
+    add-long/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    const-string v1, "valueOf(this)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public final getDeadlineMinutes()I
     .locals 1
 
-    .line 35
-    iget v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadline:I
+    .line 39
+    iget v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadlineMinutes:I
 
     return v0
 .end method
@@ -1240,7 +1302,7 @@
 .method public getGasLimit()Ljava/math/BigInteger;
     .locals 1
 
-    .line 30
+    .line 34
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->gasLimit:Ljava/math/BigInteger;
 
     return-object v0
@@ -1249,7 +1311,7 @@
 .method public getGasPrice()Ljava/math/BigInteger;
     .locals 1
 
-    .line 29
+    .line 33
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->gasPrice:Ljava/math/BigInteger;
 
     return-object v0
@@ -1258,7 +1320,7 @@
 .method public getInputToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
     .locals 1
 
-    .line 25
+    .line 29
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->inputToken:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
 
     return-object v0
@@ -1267,7 +1329,7 @@
 .method public bridge synthetic getInputToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto;
     .locals 1
 
-    .line 22
+    .line 26
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getInputToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
 
     move-result-object v0
@@ -1278,7 +1340,7 @@
 .method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
     .locals 1
 
-    .line 39
+    .line 43
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     return-object v0
@@ -1287,7 +1349,7 @@
 .method public getNonce()Ljava/math/BigInteger;
     .locals 1
 
-    .line 28
+    .line 32
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->nonce:Ljava/math/BigInteger;
 
     return-object v0
@@ -1296,7 +1358,7 @@
 .method public final getOutputNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
     .locals 1
 
-    .line 40
+    .line 44
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->outputNetworkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     return-object v0
@@ -1305,7 +1367,7 @@
 .method public getOutputToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
     .locals 1
 
-    .line 26
+    .line 30
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->outputToken:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
 
     return-object v0
@@ -1314,7 +1376,7 @@
 .method public bridge synthetic getOutputToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto;
     .locals 1
 
-    .line 22
+    .line 26
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getOutputToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
 
     move-result-object v0
@@ -1333,7 +1395,7 @@
         }
     .end annotation
 
-    .line 34
+    .line 38
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->path:Ljava/util/List;
 
     return-object v0
@@ -1342,7 +1404,7 @@
 .method public final getQuoteId()Ljava/lang/String;
     .locals 1
 
-    .line 38
+    .line 42
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->quoteId:Ljava/lang/String;
 
     return-object v0
@@ -1351,7 +1413,7 @@
 .method public final getSwapMethod()Lcom/iMe/storage/domain/model/wallet/swap/SwapMethod;
     .locals 1
 
-    .line 33
+    .line 37
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->swapMethod:Lcom/iMe/storage/domain/model/wallet/swap/SwapMethod;
 
     return-object v0
@@ -1360,7 +1422,7 @@
 .method public getSwapProtocol()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
     .locals 1
 
-    .line 23
+    .line 27
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->swapProtocol:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     return-object v0
@@ -1369,7 +1431,7 @@
 .method public final getValue()Ljava/math/BigInteger;
     .locals 1
 
-    .line 36
+    .line 40
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->value:Ljava/math/BigInteger;
 
     return-object v0
@@ -1512,7 +1574,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget v1, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadline:I
+    iget v1, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadlineMinutes:I
 
     add-int/2addr v0, v1
 
@@ -1696,11 +1758,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", deadline="
+    const-string v1, ", deadlineMinutes="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadline:I
+    iget v1, p0, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->deadlineMinutes:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

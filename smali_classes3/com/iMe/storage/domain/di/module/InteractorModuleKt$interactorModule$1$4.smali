@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,77:1\n127#2,5:78\n127#2,5:83\n127#2,5:88\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$4\n*L\n38#1:78,5\n39#1:83,5\n40#1:88,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,77:1\n129#2,5:78\n129#2,5:83\n129#2,5:88\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$4\n*L\n38#1:78,5\n39#1:83,5\n40#1:88,5\n*E\n"
 .end annotation
 
 
@@ -75,7 +75,7 @@
     .line 37
     new-instance p2, Lcom/iMe/storage/domain/interactor/notification/PushNotificationInteractor;
 
-    .line 131
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -90,7 +90,7 @@
 
     check-cast v0, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
 
-    .line 131
+    .line 133
     const-class v2, Lcom/iMe/storage/domain/repository/notification/PushNotificationRepository;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -103,7 +103,7 @@
 
     check-cast v2, Lcom/iMe/storage/domain/repository/notification/PushNotificationRepository;
 
-    .line 131
+    .line 133
     const-class v3, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

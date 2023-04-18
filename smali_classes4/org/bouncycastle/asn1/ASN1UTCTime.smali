@@ -8,13 +8,85 @@
 
 # direct methods
 .method constructor <init>([B)V
-    .locals 0
+    .locals 2
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
+    array-length v0, p1
+
+    const/4 v1, 0x2
+
+    if-lt v0, v1, :cond_1
+
     iput-object p1, p0, Lorg/bouncycastle/asn1/ASN1UTCTime;->time:[B
 
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1UTCTime;->isDigit(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1UTCTime;->isDigit(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
     return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "illegal characters in UTCTime string"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "UTCTime string too short"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method private isDigit(I)Z
+    .locals 3
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1UTCTime;->time:[B
+
+    array-length v1, v0
+
+    if-le v1, p1, :cond_0
+
+    aget-byte v1, v0, p1
+
+    const/16 v2, 0x30
+
+    if-lt v1, v2, :cond_0
+
+    aget-byte p1, v0, p1
+
+    const/16 v0, 0x39
+
+    if-gt p1, v0, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
 .end method
 
 
@@ -44,40 +116,20 @@
     return p1
 .end method
 
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
-    .locals 3
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const/16 v0, 0x17
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
-
     iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1UTCTime;->time:[B
 
-    array-length v0, v0
+    const/16 v1, 0x17
 
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeLength(I)V
+    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZI[B)V
 
-    const/4 v1, 0x0
-
-    :goto_0
-    if-eq v1, v0, :cond_0
-
-    iget-object v2, p0, Lorg/bouncycastle/asn1/ASN1UTCTime;->time:[B
-
-    aget-byte v2, v2, v1
-
-    invoke-virtual {p1, v2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
     return-void
 .end method
 

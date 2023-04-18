@@ -18,6 +18,8 @@
 
 .field private index:I
 
+.field private maxIndex:I
+
 .field private final params:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
 
 .field private privateKey:[B
@@ -30,8 +32,6 @@
 
 .field private secretKeySeed:[B
 
-.field private xmss:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
-
 
 # direct methods
 .method public constructor <init>(Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;)V
@@ -42,6 +42,10 @@
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->index:I
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->maxIndex:I
 
     const/4 v0, 0x0
 
@@ -56,8 +60,6 @@
     iput-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->bdsState:Lorg/bouncycastle/pqc/crypto/xmss/BDS;
 
     iput-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->privateKey:[B
-
-    iput-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->xmss:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
 
     iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->params:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
 
@@ -80,15 +82,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$200(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
-    .locals 0
-
-    iget-object p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->xmss:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
-
-    return-object p0
-.end method
-
-.method static synthetic access$300(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)[B
+.method static synthetic access$200(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)[B
     .locals 0
 
     iget-object p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->secretKeySeed:[B
@@ -96,7 +90,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$400(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)[B
+.method static synthetic access$300(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)[B
     .locals 0
 
     iget-object p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->secretKeyPRF:[B
@@ -104,7 +98,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$500(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)[B
+.method static synthetic access$400(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)[B
     .locals 0
 
     iget-object p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->publicSeed:[B
@@ -112,7 +106,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$600(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)[B
+.method static synthetic access$500(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)[B
     .locals 0
 
     iget-object p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->root:[B
@@ -120,7 +114,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$700(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)Lorg/bouncycastle/pqc/crypto/xmss/BDS;
+.method static synthetic access$600(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)Lorg/bouncycastle/pqc/crypto/xmss/BDS;
     .locals 0
 
     iget-object p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->bdsState:Lorg/bouncycastle/pqc/crypto/xmss/BDS;
@@ -128,10 +122,18 @@
     return-object p0
 .end method
 
-.method static synthetic access$800(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)I
+.method static synthetic access$700(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)I
     .locals 0
 
     iget p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->index:I
+
+    return p0
+.end method
+
+.method static synthetic access$800(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->maxIndex:I
 
     return p0
 .end method
@@ -162,6 +164,14 @@
     .locals 0
 
     iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->index:I
+
+    return-object p0
+.end method
+
+.method public withMaxIndex(I)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;
+    .locals 0
+
+    iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->maxIndex:I
 
     return-object p0
 .end method

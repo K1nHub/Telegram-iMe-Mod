@@ -101,9 +101,9 @@ public final class TwitterRepositoryImpl implements TwitterRepository {
         if (accessToken == null) {
             accessToken = "";
         }
-        Observable<R> map = twitterApi.getSelfTwitterProfile(new CommonTwitterAuthorizedRequest(accessToken)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1862x1630131e(this.firebaseErrorHandler, this, j)));
+        Observable<R> map = twitterApi.getSelfTwitterProfile(new CommonTwitterAuthorizedRequest(accessToken)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1849x1630131e(this.firebaseErrorHandler, this, j)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<TwitterProfileInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1861x92da0943(this.errorHandler)));
+        Observable<Result<TwitterProfileInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1848x92da0943(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -116,18 +116,18 @@ public final class TwitterRepositoryImpl implements TwitterRepository {
         if (accessToken == null) {
             accessToken = "";
         }
-        Observable<R> map = twitterApi.getSelfChatTwitterProfile(new TwitterSelfChatProfileRequest(accessToken, String.valueOf(j))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1860x8ce31916(this.firebaseErrorHandler, this, j)));
+        Observable<R> map = twitterApi.getSelfChatTwitterProfile(new TwitterSelfChatProfileRequest(accessToken, String.valueOf(j))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1847x8ce31916(this.firebaseErrorHandler, this, j)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<TwitterProfileInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1859xf287c24b(this.errorHandler)));
+        Observable<Result<TwitterProfileInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1846xf287c24b(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.iMe.storage.domain.repository.twitter.TwitterRepository
     public Observable<Result<TwitterProfileInfo>> getUserTwitterProfile(long j) {
-        Observable<R> map = this.twitterApi.getUserTwitterProfile(new TwitterProfileByTelegramIdRequest(String.valueOf(j))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1864x5151c1d(this.firebaseErrorHandler, this, j)));
+        Observable<R> map = this.twitterApi.getUserTwitterProfile(new TwitterProfileByTelegramIdRequest(String.valueOf(j))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1851x5151c1d(this.firebaseErrorHandler, this, j)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<TwitterProfileInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1863x80962024(this.errorHandler)));
+        Observable<Result<TwitterProfileInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1850x80962024(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -152,9 +152,9 @@ public final class TwitterRepositoryImpl implements TwitterRepository {
     @Override // com.iMe.storage.domain.repository.twitter.TwitterRepository
     public Observable<Result<List<TwitterUserInfo>>> searchUsersByUsername(String usernameQuery, int i) {
         Intrinsics.checkNotNullParameter(usernameQuery, "usernameQuery");
-        Observable<R> map = this.twitterApi.searchUsersByUsername(new TwitterSearchByUsernameRequest(usernameQuery, i)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1866x2fcdcf3(this.firebaseErrorHandler)));
+        Observable<R> map = this.twitterApi.searchUsersByUsername(new TwitterSearchByUsernameRequest(usernameQuery, i)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1853x2fcdcf3(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<TwitterUserInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1865x3fa67a0e(this.errorHandler)));
+        Observable<Result<List<TwitterUserInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1852x3fa67a0e(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

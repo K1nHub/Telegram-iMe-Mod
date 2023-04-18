@@ -1,5 +1,7 @@
 package org.telegram.messenger;
 
+import android.content.Context;
+import android.content.res.ColorStateList;
 import android.util.Log;
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
@@ -14,7 +16,7 @@ import java.util.HashSet;
 import java.util.Locale;
 import org.telegram.messenger.time.FastDateFormat;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.p048ui.LaunchActivity;
+import org.telegram.p044ui.LaunchActivity;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$TL_error;
 /* loaded from: classes4.dex */
@@ -106,7 +108,7 @@ public class FileLog {
     }
 
     public static void dumpUnparsedMessage(TLObject tLObject, final long j) {
-        if (BuildVars.DEBUG_PRIVATE_VERSION && BuildVars.LOGS_ENABLED && tLObject != null) {
+        if (BuildVars.DEBUG_PRIVATE_VERSION && BuildVars.LOGS_ENABLED && tLObject != null && SharedConfig.getDevicePerformanceClass() != 0) {
             try {
                 checkGson();
                 getInstance().dateFormat.format(System.currentTimeMillis());
@@ -152,19 +154,20 @@ public class FileLog {
             hashSet.add("strippedBitmap");
             hashSet.add("networkType");
             hashSet.add("disableFree");
+            hashSet.add("mContext");
             HashSet<String> hashSet2 = new HashSet<>();
             excludeRequests = hashSet2;
             hashSet2.add("TL_upload_getFile");
             excludeRequests.add("TL_upload_getWebFile");
             gson = new GsonBuilder().addSerializationExclusionStrategy(new ExclusionStrategy() { // from class: org.telegram.messenger.FileLog.1
                 @Override // com.google.gson.ExclusionStrategy
-                public boolean shouldSkipClass(Class<?> cls) {
-                    return false;
+                public boolean shouldSkipField(FieldAttributes fieldAttributes) {
+                    return hashSet.contains(fieldAttributes.getName());
                 }
 
                 @Override // com.google.gson.ExclusionStrategy
-                public boolean shouldSkipField(FieldAttributes fieldAttributes) {
-                    return hashSet.contains(fieldAttributes.getName());
+                public boolean shouldSkipClass(Class<?> cls) {
+                    return cls.isInstance(ColorStateList.class) || cls.isInstance(Context.class);
                 }
             }).create();
         }

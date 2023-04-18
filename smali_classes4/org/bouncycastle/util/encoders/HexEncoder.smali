@@ -1,9 +1,6 @@
 .class public Lorg/bouncycastle/util/encoders/HexEncoder;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lorg/bouncycastle/util/encoders/Encoder;
-
 
 # instance fields
 .field protected final decodingTable:[B
@@ -56,158 +53,82 @@
     .end array-data
 .end method
 
-.method private static ignore(C)Z
-    .locals 1
-
-    const/16 v0, 0xa
-
-    if-eq p0, v0, :cond_1
-
-    const/16 v0, 0xd
-
-    if-eq p0, v0, :cond_1
-
-    const/16 v0, 0x9
-
-    if-eq p0, v0, :cond_1
-
-    const/16 v0, 0x20
-
-    if-ne p0, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    :goto_1
-    return p0
-.end method
-
 
 # virtual methods
-.method public decode(Ljava/lang/String;Ljava/io/OutputStream;)I
-    .locals 6
+.method decodeStrict(Ljava/lang/String;II)[B
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    const-string v0, "\'str\' cannot be null"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    if-ltz p2, :cond_3
+
+    if-ltz p3, :cond_3
+
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    :goto_0
-    if-lez v0, :cond_1
+    sub-int/2addr v0, p3
 
-    add-int/lit8 v1, v0, -0x1
+    if-gt p2, v0, :cond_3
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
+    and-int/lit8 v0, p3, 0x1
 
-    move-result v1
+    if-nez v0, :cond_2
 
-    invoke-static {v1}, Lorg/bouncycastle/util/encoders/HexEncoder;->ignore(C)Z
+    ushr-int/lit8 p3, p3, 0x1
 
-    move-result v1
+    new-array v0, p3, [B
 
-    if-nez v1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
     const/4 v1, 0x0
 
-    move v2, v1
+    :goto_0
+    if-ge v1, p3, :cond_1
 
-    :goto_2
-    if-ge v1, v0, :cond_5
+    iget-object v2, p0, Lorg/bouncycastle/util/encoders/HexEncoder;->decodingTable:[B
 
-    :goto_3
-    if-ge v1, v0, :cond_2
+    add-int/lit8 v3, p2, 0x1
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, p2}, Ljava/lang/String;->charAt(I)C
+
+    move-result p2
+
+    aget-byte p2, v2, p2
+
+    iget-object v2, p0, Lorg/bouncycastle/util/encoders/HexEncoder;->decodingTable:[B
+
+    add-int/lit8 v4, v3, 0x1
+
+    invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
 
     move-result v3
 
-    invoke-static {v3}, Lorg/bouncycastle/util/encoders/HexEncoder;->ignore(C)Z
+    aget-byte v2, v2, v3
 
-    move-result v3
+    shl-int/lit8 p2, p2, 0x4
 
-    if-eqz v3, :cond_2
+    or-int/2addr p2, v2
+
+    if-ltz p2, :cond_0
+
+    int-to-byte p2, p2
+
+    aput-byte p2, v0, v1
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3
+    move p2, v4
 
-    :cond_2
-    iget-object v3, p0, Lorg/bouncycastle/util/encoders/HexEncoder;->decodingTable:[B
+    goto :goto_0
 
-    add-int/lit8 v4, v1, 0x1
-
-    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
-
-    aget-byte v1, v3, v1
-
-    :goto_4
-    if-ge v4, v0, :cond_3
-
-    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    invoke-static {v3}, Lorg/bouncycastle/util/encoders/HexEncoder;->ignore(C)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_4
-
-    :cond_3
-    iget-object v3, p0, Lorg/bouncycastle/util/encoders/HexEncoder;->decodingTable:[B
-
-    add-int/lit8 v5, v4, 0x1
-
-    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
-
-    move-result v4
-
-    aget-byte v3, v3, v4
-
-    or-int v4, v1, v3
-
-    if-ltz v4, :cond_4
-
-    shl-int/lit8 v1, v1, 0x4
-
-    or-int/2addr v1, v3
-
-    invoke-virtual {p2, v1}, Ljava/io/OutputStream;->write(I)V
-
-    add-int/lit8 v2, v2, 0x1
-
-    move v1, v5
-
-    goto :goto_2
-
-    :cond_4
+    :cond_0
     new-instance p1, Ljava/io/IOException;
 
     const-string p2, "invalid characters encountered in Hex string"
@@ -216,46 +137,72 @@
 
     throw p1
 
-    :cond_5
-    return v2
+    :cond_1
+    return-object v0
+
+    :cond_2
+    new-instance p1, Ljava/io/IOException;
+
+    const-string p2, "a hexadecimal encoding must have an even number of characters"
+
+    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_3
+    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+
+    const-string p2, "invalid offset and/or length specified"
+
+    invoke-direct {p1, p2}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 .method public encode([BIILjava/io/OutputStream;)I
-    .locals 4
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    move v0, p2
+    const/16 v0, 0x48
+
+    new-array v0, v0, [B
 
     :goto_0
-    add-int v1, p2, p3
+    if-lez p3, :cond_0
 
-    if-ge v0, v1, :cond_0
+    const/16 v1, 0x24
 
-    aget-byte v1, p1, v0
+    invoke-static {v1, p3}, Ljava/lang/Math;->min(II)I
 
-    and-int/lit16 v1, v1, 0xff
+    move-result v7
 
-    iget-object v2, p0, Lorg/bouncycastle/util/encoders/HexEncoder;->encodingTable:[B
+    const/4 v6, 0x0
 
-    ushr-int/lit8 v3, v1, 0x4
+    move-object v1, p0
 
-    aget-byte v2, v2, v3
+    move-object v2, p1
 
-    invoke-virtual {p4, v2}, Ljava/io/OutputStream;->write(I)V
+    move v3, p2
 
-    iget-object v2, p0, Lorg/bouncycastle/util/encoders/HexEncoder;->encodingTable:[B
+    move v4, v7
 
-    and-int/lit8 v1, v1, 0xf
+    move-object v5, v0
 
-    aget-byte v1, v2, v1
+    invoke-virtual/range {v1 .. v6}, Lorg/bouncycastle/util/encoders/HexEncoder;->encode([BII[BI)I
 
-    invoke-virtual {p4, v1}, Ljava/io/OutputStream;->write(I)V
+    move-result v1
 
-    add-int/lit8 v0, v0, 0x1
+    const/4 v2, 0x0
+
+    invoke-virtual {p4, v0, v2, v1}, Ljava/io/OutputStream;->write([BII)V
+
+    add-int/2addr p2, v7
+
+    sub-int/2addr p3, v7
 
     goto :goto_0
 
@@ -263,6 +210,55 @@
     mul-int/lit8 p3, p3, 0x2
 
     return p3
+.end method
+
+.method public encode([BII[BI)I
+    .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    add-int/2addr p3, p2
+
+    move v0, p5
+
+    :goto_0
+    if-ge p2, p3, :cond_0
+
+    add-int/lit8 v1, p2, 0x1
+
+    aget-byte p2, p1, p2
+
+    and-int/lit16 p2, p2, 0xff
+
+    add-int/lit8 v2, v0, 0x1
+
+    iget-object v3, p0, Lorg/bouncycastle/util/encoders/HexEncoder;->encodingTable:[B
+
+    ushr-int/lit8 v4, p2, 0x4
+
+    aget-byte v4, v3, v4
+
+    aput-byte v4, p4, v0
+
+    add-int/lit8 v0, v2, 0x1
+
+    and-int/lit8 p2, p2, 0xf
+
+    aget-byte p2, v3, p2
+
+    aput-byte p2, p4, v2
+
+    move p2, v1
+
+    goto :goto_0
+
+    :cond_0
+    sub-int/2addr v0, p5
+
+    return v0
 .end method
 
 .method protected initialiseDecodingTable()V

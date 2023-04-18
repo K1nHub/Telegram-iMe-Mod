@@ -3627,6 +3627,12 @@
 
     move-result-object v1
 
+    sget-object v2, Lcom/iMe/storage/domain/model/crypto/NetworkType;->TRON:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+
+    invoke-static {v1, v2}, Lkotlin/collections/CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
     goto :goto_0
 
     .line 106

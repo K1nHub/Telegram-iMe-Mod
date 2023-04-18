@@ -50,17 +50,17 @@
         }
     .end annotation
 
-    .line 163
+    .line 181
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openSelectLanguageScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 165
+    .line 183
     iput p2, p0, Lcom/iMe/ui/catalog/CatalogRootView$$State$OpenSelectLanguageScreenCommand;->selectedLanguageId:I
 
-    .line 166
+    .line 184
     iput-object p3, p0, Lcom/iMe/ui/catalog/CatalogRootView$$State$OpenSelectLanguageScreenCommand;->languages:Ljava/util/List;
 
     return-void
@@ -71,7 +71,7 @@
 .method public apply(Lcom/iMe/ui/catalog/CatalogRootView;)V
     .locals 2
 
-    .line 171
+    .line 189
     iget v0, p0, Lcom/iMe/ui/catalog/CatalogRootView$$State$OpenSelectLanguageScreenCommand;->selectedLanguageId:I
 
     iget-object v1, p0, Lcom/iMe/ui/catalog/CatalogRootView$$State$OpenSelectLanguageScreenCommand;->languages:Ljava/util/List;
@@ -84,7 +84,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 156
+    .line 174
     check-cast p1, Lcom/iMe/ui/catalog/CatalogRootView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/catalog/CatalogRootView$$State$OpenSelectLanguageScreenCommand;->apply(Lcom/iMe/ui/catalog/CatalogRootView;)V

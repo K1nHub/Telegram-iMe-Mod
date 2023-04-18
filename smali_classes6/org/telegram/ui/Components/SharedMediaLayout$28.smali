@@ -41,7 +41,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/ui/Components/RecyclerListView;Landroid/util/SparseBooleanArray;Landroid/view/View;I)V
     .locals 0
 
-    .line 4551
+    .line 4553
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -60,7 +60,7 @@
 .method private synthetic lambda$onPreDraw$0(ILorg/telegram/ui/Components/RecyclerListView;Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 4566
+    .line 4568
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->messageAlphaEnter:Landroid/util/SparseArray;
@@ -73,7 +73,7 @@
 
     invoke-virtual {v0, p1, p3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 4567
+    .line 4569
     invoke-virtual {p2}, Landroid/view/ViewGroup;->invalidate()V
 
     return-void
@@ -84,7 +84,7 @@
 .method public onPreDraw()Z
     .locals 13
 
-    .line 4554
+    .line 4556
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -93,14 +93,14 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 4555
+    .line 4557
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
 
-    .line 4556
+    .line 4558
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$900(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;
@@ -145,7 +145,7 @@
 
     goto/16 :goto_1
 
-    .line 4586
+    .line 4588
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -153,7 +153,7 @@
 
     move-result v0
 
-    .line 4587
+    .line 4589
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -163,14 +163,14 @@
     :goto_0
     if-ge v7, v0, :cond_3
 
-    .line 4589
+    .line 4591
     iget-object v8, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v8, v7}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v8
 
-    .line 4590
+    .line 4592
     iget-object v9, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalProgressView:Landroid/view/View;
 
     if-eq v8, v9, :cond_1
@@ -187,10 +187,10 @@
 
     if-lt v9, v10, :cond_1
 
-    .line 4591
+    .line 4593
     invoke-virtual {v8, v4}, Landroid/view/View;->setAlpha(F)V
 
-    .line 4592
+    .line 4594
     iget-object v9, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v9}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -211,7 +211,7 @@
 
     int-to-float v9, v9
 
-    .line 4593
+    .line 4595
     iget-object v10, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v10}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -226,7 +226,7 @@
 
     float-to-int v9, v9
 
-    .line 4594
+    .line 4596
     sget-object v10, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v11, v3, [F
@@ -239,22 +239,22 @@
 
     int-to-long v9, v9
 
-    .line 4595
+    .line 4597
     invoke-virtual {v8, v9, v10}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
     const-wide/16 v9, 0xc8
 
-    .line 4596
+    .line 4598
     invoke-virtual {v8, v9, v10}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
     new-array v9, v5, [Landroid/animation/Animator;
 
     aput-object v8, v9, v6
 
-    .line 4597
+    .line 4599
     invoke-virtual {v1, v9}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 4599
+    .line 4601
     :cond_1
     iget-object v8, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalProgressView:Landroid/view/View;
 
@@ -266,14 +266,14 @@
 
     if-nez v8, :cond_2
 
-    .line 4600
+    .line 4602
     iget-object v8, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v9, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalProgressView:Landroid/view/View;
 
     invoke-virtual {v8, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 4601
+    .line 4603
     iget-object v8, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v8}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
@@ -282,12 +282,12 @@
 
     if-eqz v8, :cond_2
 
-    .line 4603
+    .line 4605
     iget-object v9, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalProgressView:Landroid/view/View;
 
     invoke-virtual {v8, v9}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->ignoreView(Landroid/view/View;)V
 
-    .line 4604
+    .line 4606
     iget-object v9, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalProgressView:Landroid/view/View;
 
     sget-object v10, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -306,14 +306,14 @@
 
     move-result-object v9
 
-    .line 4605
+    .line 4607
     new-instance v10, Lorg/telegram/ui/Components/SharedMediaLayout$28$2;
 
     invoke-direct {v10, p0, v8}, Lorg/telegram/ui/Components/SharedMediaLayout$28$2;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$28;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
     invoke-virtual {v9, v10}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 4613
+    .line 4615
     invoke-virtual {v9}, Landroid/animation/Animator;->start()V
 
     :cond_2
@@ -321,20 +321,20 @@
 
     goto/16 :goto_0
 
-    .line 4617
+    .line 4619
     :cond_3
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     goto/16 :goto_3
 
-    .line 4557
+    .line 4559
     :cond_4
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$addedMesages:Landroid/util/SparseBooleanArray;
 
     if-eqz v0, :cond_6
 
-    .line 4558
+    .line 4560
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -346,14 +346,14 @@
     :goto_2
     if-ge v1, v0, :cond_6
 
-    .line 4560
+    .line 4562
     iget-object v7, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v7, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
-    .line 4561
+    .line 4563
     iget-object v8, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v8, v7}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$4800(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/view/View;)I
@@ -362,7 +362,7 @@
 
     if-eqz v8, :cond_5
 
-    .line 4562
+    .line 4564
     iget-object v9, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$addedMesages:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v9, v8, v6}, Landroid/util/SparseBooleanArray;->get(IZ)Z
@@ -371,7 +371,7 @@
 
     if-eqz v9, :cond_5
 
-    .line 4563
+    .line 4565
     iget-object v9, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget-object v9, v9, Lorg/telegram/ui/Components/SharedMediaLayout;->messageAlphaEnter:Landroid/util/SparseArray;
@@ -384,14 +384,14 @@
 
     new-array v9, v3, [F
 
-    .line 4564
+    .line 4566
     fill-array-data v9, :array_1
 
     invoke-static {v9}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v9
 
-    .line 4565
+    .line 4567
     iget-object v10, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v11, Lorg/telegram/ui/Components/SharedMediaLayout$28$$ExternalSyntheticLambda0;
@@ -400,14 +400,14 @@
 
     invoke-virtual {v9, v11}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 4569
+    .line 4571
     new-instance v10, Lorg/telegram/ui/Components/SharedMediaLayout$28$1;
 
     invoke-direct {v10, p0, v8}, Lorg/telegram/ui/Components/SharedMediaLayout$28$1;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$28;I)V
 
     invoke-virtual {v9, v10}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 4576
+    .line 4578
     iget-object v8, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v8}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -428,7 +428,7 @@
 
     int-to-float v7, v7
 
-    .line 4577
+    .line 4579
     iget-object v8, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v8}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -445,18 +445,18 @@
 
     int-to-long v7, v7
 
-    .line 4578
+    .line 4580
     invoke-virtual {v9, v7, v8}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
     const-wide/16 v7, 0xfa
 
-    .line 4579
+    .line 4581
     invoke-virtual {v9, v7, v8}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 4580
+    .line 4582
     invoke-virtual {v9}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 4582
+    .line 4584
     :cond_5
     iget-object v7, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;
 

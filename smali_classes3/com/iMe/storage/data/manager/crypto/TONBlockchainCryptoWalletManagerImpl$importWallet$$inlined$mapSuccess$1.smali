@@ -22,7 +22,7 @@
         "Lkotlin/jvm/functions/Function1<",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
-        "Lcom/iMe/storage/domain/model/crypto/Wallet;",
+        "Lcom/iMe/storage/domain/model/crypto/Wallet$TON;",
         ">;",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
@@ -32,7 +32,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$mapSuccess$1\n+ 2 TONBlockchainCryptoWalletManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl\n*L\n1#1,80:1\n37#2,4:81\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$mapSuccess$1\n+ 2 TONBlockchainCryptoWalletManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,80:1\n33#2,3:81\n37#2:85\n9#3:84\n*S KotlinDebug\n*F\n+ 1 TONBlockchainCryptoWalletManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl\n*L\n35#1:84\n*E\n"
 .end annotation
 
 
@@ -74,7 +74,7 @@
             "(",
             "Lcom/iMe/storage/domain/model/Result<",
             "+",
-            "Lcom/iMe/storage/domain/model/crypto/Wallet;",
+            "Lcom/iMe/storage/domain/model/crypto/Wallet$TON;",
             ">;)",
             "Lcom/iMe/storage/domain/model/Result<",
             "+",
@@ -92,26 +92,24 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_0
 
     .line 82
     iget-object v2, p0, Lcom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl$importWallet$$inlined$mapSuccess$1;->this$0:Lcom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl;
 
     iget-object v3, p0, Lcom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl$importWallet$$inlined$mapSuccess$1;->$guid$inlined:Ljava/lang/String;
 
-    move-object v0, p1
+    check-cast p1, Lcom/iMe/storage/domain/model/Result$Success;
 
-    check-cast v0, Lcom/iMe/storage/domain/model/Result$Success;
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/iMe/storage/domain/model/crypto/Wallet;
+    check-cast v0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->getAddress()Ljava/lang/String;
 
     move-result-object v4
 
@@ -127,13 +125,51 @@
 
     invoke-static/range {v2 .. v9}, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;->saveWalletToPrefs$default(Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)V
 
+    .line 83
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v0, p1
+
+    check-cast v0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;
+
+    iget-object v1, p0, Lcom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl$importWallet$$inlined$mapSuccess$1;->$guid$inlined:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/16 v5, 0xe
+
+    const/4 v6, 0x0
+
+    invoke-static/range {v0 .. v6}, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->copy$default(Lcom/iMe/storage/domain/model/crypto/Wallet$TON;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrinkless/org/ton/TonApi$InputKeyRegular;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/Wallet$TON;
+
+    move-result-object p1
+
+    .line 9
+    sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
+
+    invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+
+    move-result-object p1
+
+    :cond_0
+    const-string v0, "if (result is Result.Suc\u2026                        }"
+
+    .line 83
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     goto :goto_0
 
     .line 29
-    :cond_0
+    :cond_1
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
@@ -156,17 +192,16 @@
     goto :goto_0
 
     .line 30
-    :cond_1
+    :cond_2
     instance-of v0, p1, Ljava/lang/Object;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     move-object p1, v1
 
-    :cond_3
     :goto_0
     return-object p1
 .end method

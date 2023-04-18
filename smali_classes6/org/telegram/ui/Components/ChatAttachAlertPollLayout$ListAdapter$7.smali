@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;Lorg/telegram/ui/Cells/PollEditTextCell;)V
     .locals 0
 
-    .line 1110
+    .line 1112
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$7;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$7;->val$cell:Lorg/telegram/ui/Cells/PollEditTextCell;
@@ -42,7 +42,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 3
 
-    .line 1123
+    .line 1125
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$7;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;
@@ -59,12 +59,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 1125
+    .line 1127
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v0
 
-    .line 1126
+    .line 1128
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$7;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;
@@ -77,7 +77,7 @@
 
     if-ltz v1, :cond_1
 
-    .line 1127
+    .line 1129
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$7;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;
@@ -92,7 +92,7 @@
 
     goto :goto_0
 
-    .line 1130
+    .line 1132
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$7;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
@@ -108,7 +108,7 @@
 
     aput-object p1, v2, v1
 
-    .line 1131
+    .line 1133
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$7;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;
@@ -117,7 +117,7 @@
 
     invoke-static {p1, v1, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;->access$2000(Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;Landroid/view/View;I)V
 
-    .line 1132
+    .line 1134
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$7;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;

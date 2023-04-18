@@ -1,5 +1,5 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: 9.5.6+iMe+(29.03.23).apk
+apkFileName: 9.5.8+iMe+(13.04.23).apk
 compressionType: false
 doNotCompress:
 - resources.arsc
@@ -145,7 +145,6 @@ unknownFiles:
   builddef.lst: '8'
   common.properties: '8'
   core.properties: '8'
-  en-mnemonic-word-list.txt: '8'
   firebase-abt.properties: '8'
   firebase-analytics-ktx.properties: '8'
   firebase-analytics.properties: '8'
@@ -208,7 +207,6 @@ unknownFiles:
   transport-backend-cct.properties: '8'
   transport-runtime.properties: '8'
   version.txt: '8'
-  web3j-version.properties: '8'
   com/google/android/search/verification/client/R.java: '8'
   fabric/com.stripe.stripe-android.properties: '8'
   google/protobuf/any.proto: '8'
@@ -221,11 +219,6 @@ unknownFiles:
   google/protobuf/timestamp.proto: '8'
   google/protobuf/type.proto: '8'
   google/protobuf/wrappers.proto: '8'
-  jni/Darwin/libjffi-1.2.jnilib: '8'
-  jni/i386-Windows/jffi-1.2.dll: '8'
-  jni/ppc-AIX/libjffi-1.2.a: '8'
-  jni/ppc64-AIX/libjffi-1.2.a: '8'
-  jni/x86_64-Windows/jffi-1.2.dll: '8'
   okhttp3/internal/publicsuffix/NOTICE: '8'
   okhttp3/internal/publicsuffix/publicsuffixes.gz: '8'
   org/apache/commons/codec/language/dmrules.txt: '8'
@@ -358,22 +351,11 @@ unknownFiles:
   org/apache/commons/codec/language/bm/sep_rules_spanish.txt: '8'
   org/bouncycastle/x509/CertPathReviewerMessages.properties: '8'
   org/bouncycastle/x509/CertPathReviewerMessages_de.properties: '8'
-  solidity/build.sh: '8'
-  solidity/readme.txt: '8'
-  solidity/ens/AbstractENS.sol: '8'
-  solidity/ens/ENS.sol: '8'
-  solidity/ens/PublicResolver.sol: '8'
-  solidity/ens/build/AbstractENS.abi: '8'
-  solidity/ens/build/AbstractENS.bin: '8'
-  solidity/ens/build/ENS.abi: '8'
-  solidity/ens/build/ENS.bin: '8'
-  solidity/ens/build/PublicResolver.abi: '8'
-  solidity/ens/build/PublicResolver.bin: '8'
 usesFramework:
   ids:
   - 1
   tag: null
 version: 2.7.0
 versionInfo:
-  versionCode: '950609'
-  versionName: 9.5.6
+  versionCode: '950809'
+  versionName: 9.5.8

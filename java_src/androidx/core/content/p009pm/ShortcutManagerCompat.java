@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 /* renamed from: androidx.core.content.pm.ShortcutManagerCompat */
 /* loaded from: classes.dex */
 public class ShortcutManagerCompat {
@@ -103,6 +104,28 @@ public class ShortcutManagerCompat {
         return false;
     }
 
+    public static boolean addDynamicShortcuts(Context context, List<ShortcutInfoCompat> list) {
+        List<ShortcutInfoCompat> removeShortcutsExcludedFromSurface = removeShortcutsExcludedFromSurface(list, 1);
+        int i = Build.VERSION.SDK_INT;
+        if (i <= 29) {
+            convertUriIconsToBitmapIcons(context, removeShortcutsExcludedFromSurface);
+        }
+        if (i >= 25) {
+            ArrayList arrayList = new ArrayList();
+            for (ShortcutInfoCompat shortcutInfoCompat : removeShortcutsExcludedFromSurface) {
+                arrayList.add(shortcutInfoCompat.toShortcutInfo());
+            }
+            if (!((ShortcutManager) context.getSystemService(ShortcutManager.class)).addDynamicShortcuts(arrayList)) {
+                return false;
+            }
+        }
+        getShortcutInfoSaverInstance(context).addShortcuts(removeShortcutsExcludedFromSurface);
+        for (ShortcutInfoChangeListener shortcutInfoChangeListener : getShortcutInfoListeners(context)) {
+            shortcutInfoChangeListener.onShortcutAdded(list);
+        }
+        return true;
+    }
+
     public static int getMaxShortcutCountPerActivity(Context context) {
         Preconditions.checkNotNull(context);
         if (Build.VERSION.SDK_INT >= 25) {
@@ -138,6 +161,28 @@ public class ShortcutManagerCompat {
         }
     }
 
+    public static boolean updateShortcuts(Context context, List<ShortcutInfoCompat> list) {
+        List<ShortcutInfoCompat> removeShortcutsExcludedFromSurface = removeShortcutsExcludedFromSurface(list, 1);
+        int i = Build.VERSION.SDK_INT;
+        if (i <= 29) {
+            convertUriIconsToBitmapIcons(context, removeShortcutsExcludedFromSurface);
+        }
+        if (i >= 25) {
+            ArrayList arrayList = new ArrayList();
+            for (ShortcutInfoCompat shortcutInfoCompat : removeShortcutsExcludedFromSurface) {
+                arrayList.add(shortcutInfoCompat.toShortcutInfo());
+            }
+            if (!((ShortcutManager) context.getSystemService(ShortcutManager.class)).updateShortcuts(arrayList)) {
+                return false;
+            }
+        }
+        getShortcutInfoSaverInstance(context).addShortcuts(removeShortcutsExcludedFromSurface);
+        for (ShortcutInfoChangeListener shortcutInfoChangeListener : getShortcutInfoListeners(context)) {
+            shortcutInfoChangeListener.onShortcutUpdated(list);
+        }
+        return true;
+    }
+
     static boolean convertUriIconToBitmapIcon(Context context, ShortcutInfoCompat shortcutInfoCompat) {
         Bitmap decodeStream;
         IconCompat createWithBitmap;
@@ -160,6 +205,14 @@ public class ShortcutManagerCompat {
             return true;
         }
         return true;
+    }
+
+    static void convertUriIconsToBitmapIcons(Context context, List<ShortcutInfoCompat> list) {
+        for (ShortcutInfoCompat shortcutInfoCompat : new ArrayList(list)) {
+            if (!convertUriIconToBitmapIcon(context, shortcutInfoCompat)) {
+                list.remove(shortcutInfoCompat);
+            }
+        }
     }
 
     public static void removeDynamicShortcuts(Context context, List<String> list) {
@@ -333,6 +386,20 @@ public class ShortcutManagerCompat {
             return r8
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.core.content.p009pm.ShortcutManagerCompat.getShortcutInfoListeners(android.content.Context):java.util.List");
+    }
+
+    private static List<ShortcutInfoCompat> removeShortcutsExcludedFromSurface(List<ShortcutInfoCompat> list, int i) {
+        Objects.requireNonNull(list);
+        if (Build.VERSION.SDK_INT > 31) {
+            return list;
+        }
+        ArrayList arrayList = new ArrayList(list);
+        for (ShortcutInfoCompat shortcutInfoCompat : list) {
+            if (shortcutInfoCompat.isExcludedFromSurfaces(i)) {
+                arrayList.remove(shortcutInfoCompat);
+            }
+        }
+        return arrayList;
     }
 
     /* renamed from: androidx.core.content.pm.ShortcutManagerCompat$Api25Impl */

@@ -2,7 +2,7 @@ package com.iMe.manager.common;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p048ui.ActionBar.AlertDialog;
+import org.telegram.p044ui.ActionBar.AlertDialog;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MediaEditManager.kt */
 /* loaded from: classes3.dex */

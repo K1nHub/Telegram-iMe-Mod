@@ -8,18 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/PasscodeActivity;
 
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/INavigationLayout;
+.field public final synthetic f$1:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PasscodeActivity;Lorg/telegram/ui/ActionBar/INavigationLayout;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PasscodeActivity;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda26;->f$0:Lorg/telegram/ui/PasscodeActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda26;->f$1:Lorg/telegram/ui/ActionBar/INavigationLayout;
+    iput-boolean p2, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda26;->f$1:Z
 
     return-void
 .end method
@@ -31,9 +31,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda26;->f$0:Lorg/telegram/ui/PasscodeActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda26;->f$1:Lorg/telegram/ui/ActionBar/INavigationLayout;
+    iget-boolean v1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda26;->f$1:Z
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$MxWfmpbiDJ1vsovD4tAvyf9HgGk(Lorg/telegram/ui/PasscodeActivity;Lorg/telegram/ui/ActionBar/INavigationLayout;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$Nj3Tahor62RWfOfpTdWDutgdv6A(Lorg/telegram/ui/PasscodeActivity;Z)V
 
     return-void
 .end method

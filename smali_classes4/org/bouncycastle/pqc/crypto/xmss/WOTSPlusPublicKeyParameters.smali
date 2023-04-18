@@ -45,7 +45,7 @@
 
     array-length v1, v1
 
-    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->getDigestSize()I
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->getTreeDigestSize()I
 
     move-result v2
 

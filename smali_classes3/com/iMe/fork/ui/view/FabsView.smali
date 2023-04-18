@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFabsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FabsView.kt\ncom/iMe/fork/ui/view/FabsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,57:1\n1855#2,2:58\n191#3,4:60\n*S KotlinDebug\n*F\n+ 1 FabsView.kt\ncom/iMe/fork/ui/view/FabsView\n*L\n23#1:58,2\n30#1:60,4\n*E\n"
+    value = "SMAP\nFabsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FabsView.kt\ncom/iMe/fork/ui/view/FabsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,57:1\n1855#2,2:58\n205#3,4:60\n*S KotlinDebug\n*F\n+ 1 FabsView.kt\ncom/iMe/fork/ui/view/FabsView\n*L\n23#1:58,2\n30#1:60,4\n*E\n"
 .end annotation
 
 
@@ -148,7 +148,7 @@
 .method public final updateColors()V
     .locals 6
 
-    .line 191
+    .line 205
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -158,7 +158,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 192
+    .line 206
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2

@@ -3,57 +3,28 @@ package org.bouncycastle.pqc.jcajce.provider.xmss;
 import java.io.IOException;
 import java.security.PrivateKey;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
+import org.bouncycastle.asn1.ASN1Primitive;
+import org.bouncycastle.asn1.ASN1Set;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
-import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
-import org.bouncycastle.pqc.asn1.PQCObjectIdentifiers;
 import org.bouncycastle.pqc.asn1.XMSSMTKeyParams;
-import org.bouncycastle.pqc.asn1.XMSSMTPrivateKey;
-import org.bouncycastle.pqc.asn1.XMSSPrivateKey;
-import org.bouncycastle.pqc.crypto.xmss.BDSStateMap;
-import org.bouncycastle.pqc.crypto.xmss.XMSSMTParameters;
+import org.bouncycastle.pqc.crypto.util.PrivateKeyFactory;
+import org.bouncycastle.pqc.crypto.util.PrivateKeyInfoFactory;
 import org.bouncycastle.pqc.crypto.xmss.XMSSMTPrivateKeyParameters;
-import org.bouncycastle.pqc.crypto.xmss.XMSSUtil;
 import org.bouncycastle.util.Arrays;
 /* loaded from: classes4.dex */
 public class BCXMSSMTPrivateKey implements PrivateKey {
-    private final XMSSMTPrivateKeyParameters keyParams;
-    private final ASN1ObjectIdentifier treeDigest;
+    private transient ASN1Set attributes;
+    private transient XMSSMTPrivateKeyParameters keyParams;
+    private transient ASN1ObjectIdentifier treeDigest;
 
     public BCXMSSMTPrivateKey(PrivateKeyInfo privateKeyInfo) throws IOException {
-        XMSSMTKeyParams xMSSMTKeyParams = XMSSMTKeyParams.getInstance(privateKeyInfo.getPrivateKeyAlgorithm().getParameters());
-        ASN1ObjectIdentifier algorithm = xMSSMTKeyParams.getTreeDigest().getAlgorithm();
-        this.treeDigest = algorithm;
-        XMSSPrivateKey xMSSPrivateKey = XMSSPrivateKey.getInstance(privateKeyInfo.parsePrivateKey());
-        try {
-            XMSSMTPrivateKeyParameters.Builder withRoot = new XMSSMTPrivateKeyParameters.Builder(new XMSSMTParameters(xMSSMTKeyParams.getHeight(), xMSSMTKeyParams.getLayers(), DigestUtil.getDigest(algorithm))).withIndex(xMSSPrivateKey.getIndex()).withSecretKeySeed(xMSSPrivateKey.getSecretKeySeed()).withSecretKeyPRF(xMSSPrivateKey.getSecretKeyPRF()).withPublicSeed(xMSSPrivateKey.getPublicSeed()).withRoot(xMSSPrivateKey.getRoot());
-            if (xMSSPrivateKey.getBdsState() != null) {
-                withRoot.withBDSState((BDSStateMap) XMSSUtil.deserialize(xMSSPrivateKey.getBdsState(), BDSStateMap.class));
-            }
-            this.keyParams = withRoot.build();
-        } catch (ClassNotFoundException e) {
-            throw new IOException("ClassNotFoundException processing BDS state: " + e.getMessage());
-        }
+        init(privateKeyInfo);
     }
 
-    private XMSSMTPrivateKey createKeyStructure() {
-        byte[] byteArray = this.keyParams.toByteArray();
-        int digestSize = this.keyParams.getParameters().getDigestSize();
-        int height = this.keyParams.getParameters().getHeight();
-        int i = (height + 7) / 8;
-        int bytesToXBigEndian = (int) XMSSUtil.bytesToXBigEndian(byteArray, 0, i);
-        if (XMSSUtil.isIndexValid(height, bytesToXBigEndian)) {
-            int i2 = i + 0;
-            byte[] extractBytesAtOffset = XMSSUtil.extractBytesAtOffset(byteArray, i2, digestSize);
-            int i3 = i2 + digestSize;
-            byte[] extractBytesAtOffset2 = XMSSUtil.extractBytesAtOffset(byteArray, i3, digestSize);
-            int i4 = i3 + digestSize;
-            byte[] extractBytesAtOffset3 = XMSSUtil.extractBytesAtOffset(byteArray, i4, digestSize);
-            int i5 = i4 + digestSize;
-            byte[] extractBytesAtOffset4 = XMSSUtil.extractBytesAtOffset(byteArray, i5, digestSize);
-            int i6 = i5 + digestSize;
-            return new XMSSMTPrivateKey(bytesToXBigEndian, extractBytesAtOffset, extractBytesAtOffset2, extractBytesAtOffset3, extractBytesAtOffset4, XMSSUtil.extractBytesAtOffset(byteArray, i6, byteArray.length - i6));
-        }
-        throw new IllegalArgumentException("index out of bounds");
+    private void init(PrivateKeyInfo privateKeyInfo) throws IOException {
+        this.attributes = privateKeyInfo.getAttributes();
+        this.treeDigest = XMSSMTKeyParams.getInstance(privateKeyInfo.getPrivateKeyAlgorithm().getParameters()).getTreeDigest().getAlgorithm();
+        this.keyParams = (XMSSMTPrivateKeyParameters) PrivateKeyFactory.createKey(privateKeyInfo);
     }
 
     public boolean equals(Object obj) {
@@ -62,7 +33,7 @@ public class BCXMSSMTPrivateKey implements PrivateKey {
         }
         if (obj instanceof BCXMSSMTPrivateKey) {
             BCXMSSMTPrivateKey bCXMSSMTPrivateKey = (BCXMSSMTPrivateKey) obj;
-            return this.treeDigest.equals(bCXMSSMTPrivateKey.treeDigest) && Arrays.areEqual(this.keyParams.toByteArray(), bCXMSSMTPrivateKey.keyParams.toByteArray());
+            return this.treeDigest.equals((ASN1Primitive) bCXMSSMTPrivateKey.treeDigest) && Arrays.areEqual(this.keyParams.toByteArray(), bCXMSSMTPrivateKey.keyParams.toByteArray());
         }
         return false;
     }
@@ -75,7 +46,7 @@ public class BCXMSSMTPrivateKey implements PrivateKey {
     @Override // java.security.Key
     public byte[] getEncoded() {
         try {
-            return new PrivateKeyInfo(new AlgorithmIdentifier(PQCObjectIdentifiers.xmss_mt, new XMSSMTKeyParams(this.keyParams.getParameters().getHeight(), this.keyParams.getParameters().getLayers(), new AlgorithmIdentifier(this.treeDigest))), createKeyStructure()).getEncoded();
+            return PrivateKeyInfoFactory.createPrivateKeyInfo(this.keyParams, this.attributes).getEncoded();
         } catch (IOException unused) {
             return null;
         }

@@ -163,7 +163,9 @@
 
     new-instance v0, Lorg/bouncycastle/asn1/ASN1EncodableVector;
 
-    invoke-direct {v0}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>(I)V
 
     iget-object v1, p0, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->algorithm:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 

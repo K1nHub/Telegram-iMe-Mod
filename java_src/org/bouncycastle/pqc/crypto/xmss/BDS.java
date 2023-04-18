@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Stack;
 import java.util.TreeMap;
+import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.pqc.crypto.xmss.HashTreeAddress;
 import org.bouncycastle.pqc.crypto.xmss.LTreeAddress;
 import org.bouncycastle.pqc.crypto.xmss.OTSHashAddress;
@@ -17,8 +18,9 @@ public final class BDS implements Serializable {
     private int index;
 
     /* renamed from: k */
-    private int f1413k;
+    private int f1337k;
     private Map<Integer, XMSSNode> keep;
+    private transient int maxIndex;
     private Map<Integer, LinkedList<XMSSNode>> retain;
     private XMSSNode root;
     private Stack<XMSSNode> stack;
@@ -27,34 +29,98 @@ public final class BDS implements Serializable {
     private boolean used;
     private transient WOTSPlus wotsPlus;
 
-    private BDS(BDS bds, byte[] bArr, byte[] bArr2, OTSHashAddress oTSHashAddress) {
-        this.wotsPlus = bds.wotsPlus;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public BDS(BDS bds) {
+        this.wotsPlus = new WOTSPlus(bds.wotsPlus.getParams());
         this.treeHeight = bds.treeHeight;
-        this.f1413k = bds.f1413k;
+        this.f1337k = bds.f1337k;
         this.root = bds.root;
-        this.authenticationPath = new ArrayList(bds.authenticationPath);
-        this.retain = bds.retain;
-        this.stack = (Stack) bds.stack.clone();
-        this.treeHashInstances = bds.treeHashInstances;
+        ArrayList arrayList = new ArrayList();
+        this.authenticationPath = arrayList;
+        arrayList.addAll(bds.authenticationPath);
+        this.retain = new TreeMap();
+        for (Integer num : bds.retain.keySet()) {
+            this.retain.put(num, (LinkedList) bds.retain.get(num).clone());
+        }
+        Stack<XMSSNode> stack = new Stack<>();
+        this.stack = stack;
+        stack.addAll(bds.stack);
+        this.treeHashInstances = new ArrayList();
+        for (BDSTreeHash bDSTreeHash : bds.treeHashInstances) {
+            this.treeHashInstances.add(bDSTreeHash.clone());
+        }
         this.keep = new TreeMap(bds.keep);
         this.index = bds.index;
-        nextAuthenticationPath(bArr, bArr2, oTSHashAddress);
-        bds.used = true;
+        this.maxIndex = bds.maxIndex;
+        this.used = bds.used;
     }
 
-    private BDS(WOTSPlus wOTSPlus, int i, int i2) {
+    private BDS(BDS bds, ASN1ObjectIdentifier aSN1ObjectIdentifier) {
+        this.wotsPlus = new WOTSPlus(new WOTSPlusParameters(aSN1ObjectIdentifier));
+        this.treeHeight = bds.treeHeight;
+        this.f1337k = bds.f1337k;
+        this.root = bds.root;
+        ArrayList arrayList = new ArrayList();
+        this.authenticationPath = arrayList;
+        arrayList.addAll(bds.authenticationPath);
+        this.retain = new TreeMap();
+        for (Integer num : bds.retain.keySet()) {
+            this.retain.put(num, (LinkedList) bds.retain.get(num).clone());
+        }
+        Stack<XMSSNode> stack = new Stack<>();
+        this.stack = stack;
+        stack.addAll(bds.stack);
+        this.treeHashInstances = new ArrayList();
+        for (BDSTreeHash bDSTreeHash : bds.treeHashInstances) {
+            this.treeHashInstances.add(bDSTreeHash.clone());
+        }
+        this.keep = new TreeMap(bds.keep);
+        this.index = bds.index;
+        this.maxIndex = bds.maxIndex;
+        this.used = bds.used;
+        validate();
+    }
+
+    private BDS(BDS bds, byte[] bArr, byte[] bArr2, OTSHashAddress oTSHashAddress) {
+        this.wotsPlus = new WOTSPlus(bds.wotsPlus.getParams());
+        this.treeHeight = bds.treeHeight;
+        this.f1337k = bds.f1337k;
+        this.root = bds.root;
+        ArrayList arrayList = new ArrayList();
+        this.authenticationPath = arrayList;
+        arrayList.addAll(bds.authenticationPath);
+        this.retain = new TreeMap();
+        for (Integer num : bds.retain.keySet()) {
+            this.retain.put(num, (LinkedList) bds.retain.get(num).clone());
+        }
+        Stack<XMSSNode> stack = new Stack<>();
+        this.stack = stack;
+        stack.addAll(bds.stack);
+        this.treeHashInstances = new ArrayList();
+        for (BDSTreeHash bDSTreeHash : bds.treeHashInstances) {
+            this.treeHashInstances.add(bDSTreeHash.clone());
+        }
+        this.keep = new TreeMap(bds.keep);
+        this.index = bds.index;
+        this.maxIndex = bds.maxIndex;
+        this.used = false;
+        nextAuthenticationPath(bArr, bArr2, oTSHashAddress);
+    }
+
+    private BDS(WOTSPlus wOTSPlus, int i, int i2, int i3) {
         this.wotsPlus = wOTSPlus;
         this.treeHeight = i;
-        this.f1413k = i2;
+        this.maxIndex = i3;
+        this.f1337k = i2;
         if (i2 <= i && i2 >= 2) {
-            int i3 = i - i2;
-            if (i3 % 2 == 0) {
+            int i4 = i - i2;
+            if (i4 % 2 == 0) {
                 this.authenticationPath = new ArrayList();
                 this.retain = new TreeMap();
                 this.stack = new Stack<>();
                 this.treeHashInstances = new ArrayList();
-                for (int i4 = 0; i4 < i3; i4++) {
-                    this.treeHashInstances.add(new BDSTreeHash(i4));
+                for (int i5 = 0; i5 < i4; i5++) {
+                    this.treeHashInstances.add(new BDSTreeHash(i5));
                 }
                 this.keep = new TreeMap();
                 this.index = 0;
@@ -66,21 +132,22 @@ public final class BDS implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public BDS(XMSSParameters xMSSParameters, int i) {
-        this(xMSSParameters.getWOTSPlus(), xMSSParameters.getHeight(), xMSSParameters.getK());
-        this.index = i;
+    public BDS(XMSSParameters xMSSParameters, int i, int i2) {
+        this(xMSSParameters.getWOTSPlus(), xMSSParameters.getHeight(), xMSSParameters.getK(), i2);
+        this.maxIndex = i;
+        this.index = i2;
         this.used = true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public BDS(XMSSParameters xMSSParameters, byte[] bArr, byte[] bArr2, OTSHashAddress oTSHashAddress) {
-        this(xMSSParameters.getWOTSPlus(), xMSSParameters.getHeight(), xMSSParameters.getK());
+        this(xMSSParameters.getWOTSPlus(), xMSSParameters.getHeight(), xMSSParameters.getK(), (1 << xMSSParameters.getHeight()) - 1);
         initialize(bArr, bArr2, oTSHashAddress);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public BDS(XMSSParameters xMSSParameters, byte[] bArr, byte[] bArr2, OTSHashAddress oTSHashAddress, int i) {
-        this(xMSSParameters.getWOTSPlus(), xMSSParameters.getHeight(), xMSSParameters.getK());
+        this(xMSSParameters.getWOTSPlus(), xMSSParameters.getHeight(), xMSSParameters.getK(), (1 << xMSSParameters.getHeight()) - 1);
         initialize(bArr, bArr2, oTSHashAddress);
         while (this.index < i) {
             nextAuthenticationPath(bArr, bArr2, oTSHashAddress);
@@ -111,20 +178,20 @@ public final class BDS implements Serializable {
             XMSSNode lTree = XMSSNodeUtil.lTree(this.wotsPlus, publicKey, lTreeAddress);
             hashTreeAddress = (HashTreeAddress) new HashTreeAddress.Builder().withLayerAddress(hashTreeAddress.getLayerAddress()).withTreeAddress(hashTreeAddress.getTreeAddress()).withTreeIndex(i).withKeyAndMask(hashTreeAddress.getKeyAndMask()).build();
             while (!this.stack.isEmpty() && this.stack.peek().getHeight() == lTree.getHeight()) {
-                int floor = (int) Math.floor(i / (1 << lTree.getHeight()));
-                if (floor == 1) {
-                    this.authenticationPath.add(lTree.clone());
+                int height = i / (1 << lTree.getHeight());
+                if (height == 1) {
+                    this.authenticationPath.add(lTree);
                 }
-                if (floor == 3 && lTree.getHeight() < this.treeHeight - this.f1413k) {
-                    this.treeHashInstances.get(lTree.getHeight()).setNode(lTree.clone());
+                if (height == 3 && lTree.getHeight() < this.treeHeight - this.f1337k) {
+                    this.treeHashInstances.get(lTree.getHeight()).setNode(lTree);
                 }
-                if (floor >= 3 && (floor & 1) == 1 && lTree.getHeight() >= this.treeHeight - this.f1413k && lTree.getHeight() <= this.treeHeight - 2) {
+                if (height >= 3 && (height & 1) == 1 && lTree.getHeight() >= this.treeHeight - this.f1337k && lTree.getHeight() <= this.treeHeight - 2) {
                     if (this.retain.get(Integer.valueOf(lTree.getHeight())) == null) {
                         LinkedList<XMSSNode> linkedList = new LinkedList<>();
-                        linkedList.add(lTree.clone());
+                        linkedList.add(lTree);
                         this.retain.put(Integer.valueOf(lTree.getHeight()), linkedList);
                     } else {
-                        this.retain.get(Integer.valueOf(lTree.getHeight())).add(lTree.clone());
+                        this.retain.get(Integer.valueOf(lTree.getHeight())).add(lTree);
                     }
                 }
                 HashTreeAddress hashTreeAddress2 = (HashTreeAddress) new HashTreeAddress.Builder().withLayerAddress(hashTreeAddress.getLayerAddress()).withTreeAddress(hashTreeAddress.getTreeAddress()).withTreeHeight(hashTreeAddress.getTreeHeight()).withTreeIndex((hashTreeAddress.getTreeIndex() - 1) / 2).withKeyAndMask(hashTreeAddress.getKeyAndMask()).build();
@@ -145,44 +212,47 @@ public final class BDS implements Serializable {
         if (this.used) {
             throw new IllegalStateException("index already used");
         }
-        if (this.index > (1 << this.treeHeight) - 2) {
+        int i = this.index;
+        if (i > this.maxIndex - 1) {
             throw new IllegalStateException("index out of bounds");
+        }
+        int calculateTau = XMSSUtil.calculateTau(i, this.treeHeight);
+        if (((this.index >> (calculateTau + 1)) & 1) == 0 && calculateTau < this.treeHeight - 1) {
+            this.keep.put(Integer.valueOf(calculateTau), this.authenticationPath.get(calculateTau));
         }
         LTreeAddress lTreeAddress = (LTreeAddress) new LTreeAddress.Builder().withLayerAddress(oTSHashAddress.getLayerAddress()).withTreeAddress(oTSHashAddress.getTreeAddress()).build();
         HashTreeAddress hashTreeAddress = (HashTreeAddress) new HashTreeAddress.Builder().withLayerAddress(oTSHashAddress.getLayerAddress()).withTreeAddress(oTSHashAddress.getTreeAddress()).build();
-        int calculateTau = XMSSUtil.calculateTau(this.index, this.treeHeight);
-        if (((this.index >> (calculateTau + 1)) & 1) == 0 && calculateTau < this.treeHeight - 1) {
-            this.keep.put(Integer.valueOf(calculateTau), this.authenticationPath.get(calculateTau).clone());
-        }
         if (calculateTau == 0) {
             oTSHashAddress = (OTSHashAddress) new OTSHashAddress.Builder().withLayerAddress(oTSHashAddress.getLayerAddress()).withTreeAddress(oTSHashAddress.getTreeAddress()).withOTSAddress(this.index).withChainAddress(oTSHashAddress.getChainAddress()).withHashAddress(oTSHashAddress.getHashAddress()).withKeyAndMask(oTSHashAddress.getKeyAndMask()).build();
             WOTSPlus wOTSPlus = this.wotsPlus;
             wOTSPlus.importKeys(wOTSPlus.getWOTSPlusSecretKey(bArr2, oTSHashAddress), bArr);
             this.authenticationPath.set(0, XMSSNodeUtil.lTree(this.wotsPlus, this.wotsPlus.getPublicKey(oTSHashAddress), (LTreeAddress) new LTreeAddress.Builder().withLayerAddress(lTreeAddress.getLayerAddress()).withTreeAddress(lTreeAddress.getTreeAddress()).withLTreeAddress(this.index).withTreeHeight(lTreeAddress.getTreeHeight()).withTreeIndex(lTreeAddress.getTreeIndex()).withKeyAndMask(lTreeAddress.getKeyAndMask()).build()));
         } else {
-            int i = calculateTau - 1;
-            XMSSNode randomizeHash = XMSSNodeUtil.randomizeHash(this.wotsPlus, this.authenticationPath.get(i), this.keep.get(Integer.valueOf(i)), (HashTreeAddress) new HashTreeAddress.Builder().withLayerAddress(hashTreeAddress.getLayerAddress()).withTreeAddress(hashTreeAddress.getTreeAddress()).withTreeHeight(i).withTreeIndex(this.index >> calculateTau).withKeyAndMask(hashTreeAddress.getKeyAndMask()).build());
+            int i2 = calculateTau - 1;
+            WOTSPlus wOTSPlus2 = this.wotsPlus;
+            wOTSPlus2.importKeys(wOTSPlus2.getWOTSPlusSecretKey(bArr2, oTSHashAddress), bArr);
+            XMSSNode randomizeHash = XMSSNodeUtil.randomizeHash(this.wotsPlus, this.authenticationPath.get(i2), this.keep.get(Integer.valueOf(i2)), (HashTreeAddress) new HashTreeAddress.Builder().withLayerAddress(hashTreeAddress.getLayerAddress()).withTreeAddress(hashTreeAddress.getTreeAddress()).withTreeHeight(i2).withTreeIndex(this.index >> calculateTau).withKeyAndMask(hashTreeAddress.getKeyAndMask()).build());
             this.authenticationPath.set(calculateTau, new XMSSNode(randomizeHash.getHeight() + 1, randomizeHash.getValue()));
-            this.keep.remove(Integer.valueOf(i));
-            for (int i2 = 0; i2 < calculateTau; i2++) {
-                if (i2 < this.treeHeight - this.f1413k) {
+            this.keep.remove(Integer.valueOf(i2));
+            for (int i3 = 0; i3 < calculateTau; i3++) {
+                if (i3 < this.treeHeight - this.f1337k) {
                     list = this.authenticationPath;
-                    removeFirst = this.treeHashInstances.get(i2).getTailNode();
+                    removeFirst = this.treeHashInstances.get(i3).getTailNode();
                 } else {
                     list = this.authenticationPath;
-                    removeFirst = this.retain.get(Integer.valueOf(i2)).removeFirst();
+                    removeFirst = this.retain.get(Integer.valueOf(i3)).removeFirst();
                 }
-                list.set(i2, removeFirst);
+                list.set(i3, removeFirst);
             }
-            int min = Math.min(calculateTau, this.treeHeight - this.f1413k);
-            for (int i3 = 0; i3 < min; i3++) {
-                int i4 = this.index + 1 + ((1 << i3) * 3);
-                if (i4 < (1 << this.treeHeight)) {
-                    this.treeHashInstances.get(i3).initialize(i4);
+            int min = Math.min(calculateTau, this.treeHeight - this.f1337k);
+            for (int i4 = 0; i4 < min; i4++) {
+                int i5 = this.index + 1 + ((1 << i4) * 3);
+                if (i5 < (1 << this.treeHeight)) {
+                    this.treeHashInstances.get(i4).initialize(i5);
                 }
             }
         }
-        for (int i5 = 0; i5 < ((this.treeHeight - this.f1413k) >> 1); i5++) {
+        for (int i6 = 0; i6 < ((this.treeHeight - this.f1337k) >> 1); i6++) {
             BDSTreeHash bDSTreeHashInstanceForUpdate = getBDSTreeHashInstanceForUpdate();
             if (bDSTreeHashInstanceForUpdate != null) {
                 bDSTreeHashInstanceForUpdate.update(this.stack, this.wotsPlus, bArr, bArr2, oTSHashAddress);
@@ -191,25 +261,7 @@ public final class BDS implements Serializable {
         this.index++;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public int getIndex() {
-        return this.index;
-    }
-
-    public BDS getNextState(byte[] bArr, byte[] bArr2, OTSHashAddress oTSHashAddress) {
-        return new BDS(this, bArr, bArr2, oTSHashAddress);
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void setXMSS(XMSSParameters xMSSParameters) {
-        if (this.treeHeight != xMSSParameters.getHeight()) {
-            throw new IllegalStateException("wrong height");
-        }
-        this.wotsPlus = xMSSParameters.getWOTSPlus();
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void validate() {
+    private void validate() {
         if (this.authenticationPath == null) {
             throw new IllegalStateException("authenticationPath == null");
         }
@@ -228,5 +280,22 @@ public final class BDS implements Serializable {
         if (!XMSSUtil.isIndexValid(this.treeHeight, this.index)) {
             throw new IllegalStateException("index in BDS state out of bounds");
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public int getIndex() {
+        return this.index;
+    }
+
+    public int getMaxIndex() {
+        return this.maxIndex;
+    }
+
+    public BDS getNextState(byte[] bArr, byte[] bArr2, OTSHashAddress oTSHashAddress) {
+        return new BDS(this, bArr, bArr2, oTSHashAddress);
+    }
+
+    public BDS withWOTSDigest(ASN1ObjectIdentifier aSN1ObjectIdentifier) {
+        return new BDS(this, aSN1ObjectIdentifier);
     }
 }

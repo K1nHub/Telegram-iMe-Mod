@@ -3,12 +3,12 @@ package com.google.android.gms.internal.firebase_ml;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseModelManager;
-import com.google.firebase.p021ml.common.modeldownload.FirebaseRemoteModel;
-import com.google.firebase.p021ml.vision.common.FirebaseVisionImage;
-import com.google.firebase.p021ml.vision.label.FirebaseVisionImageLabel;
-import com.google.firebase.p021ml.vision.label.FirebaseVisionOnDeviceAutoMLImageLabelerOptions;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseModelManager;
+import com.google.firebase.p020ml.common.modeldownload.FirebaseRemoteModel;
+import com.google.firebase.p020ml.vision.common.FirebaseVisionImage;
+import com.google.firebase.p020ml.vision.label.FirebaseVisionImageLabel;
+import com.google.firebase.p020ml.vision.label.FirebaseVisionOnDeviceAutoMLImageLabelerOptions;
 import java.util.List;
 /* loaded from: classes.dex */
 public final class zzqx extends zzql<List<FirebaseVisionImageLabel>> {

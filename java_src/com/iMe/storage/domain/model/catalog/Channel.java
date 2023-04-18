@@ -10,7 +10,7 @@ public final class Channel {
     private final String description;
 
     /* renamed from: id */
-    private final long f321id;
+    private final long f316id;
     private final long membersCount;
     private final String photo;
     private final String shortname;
@@ -40,7 +40,7 @@ public final class Channel {
     }
 
     public final long component4() {
-        return this.f321id;
+        return this.f316id;
     }
 
     public final long component5() {
@@ -80,14 +80,14 @@ public final class Channel {
         }
         if (obj instanceof Channel) {
             Channel channel = (Channel) obj;
-            return this.chatType == channel.chatType && Intrinsics.areEqual(this.createdAt, channel.createdAt) && Intrinsics.areEqual(this.description, channel.description) && this.f321id == channel.f321id && this.membersCount == channel.membersCount && Intrinsics.areEqual(this.photo, channel.photo) && Intrinsics.areEqual(this.shortname, channel.shortname) && this.telegramId == channel.telegramId && Intrinsics.areEqual(this.title, channel.title) && Intrinsics.areEqual(this.updatedAt, channel.updatedAt) && this.verified == channel.verified;
+            return this.chatType == channel.chatType && Intrinsics.areEqual(this.createdAt, channel.createdAt) && Intrinsics.areEqual(this.description, channel.description) && this.f316id == channel.f316id && this.membersCount == channel.membersCount && Intrinsics.areEqual(this.photo, channel.photo) && Intrinsics.areEqual(this.shortname, channel.shortname) && this.telegramId == channel.telegramId && Intrinsics.areEqual(this.title, channel.title) && Intrinsics.areEqual(this.updatedAt, channel.updatedAt) && this.verified == channel.verified;
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((((((((((((((((((this.chatType.hashCode() * 31) + this.createdAt.hashCode()) * 31) + this.description.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f321id)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.membersCount)) * 31) + this.photo.hashCode()) * 31) + this.shortname.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.telegramId)) * 31) + this.title.hashCode()) * 31) + this.updatedAt.hashCode()) * 31;
+        int hashCode = ((((((((((((((((((this.chatType.hashCode() * 31) + this.createdAt.hashCode()) * 31) + this.description.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f316id)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.membersCount)) * 31) + this.photo.hashCode()) * 31) + this.shortname.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.telegramId)) * 31) + this.title.hashCode()) * 31) + this.updatedAt.hashCode()) * 31;
         boolean z = this.verified;
         int i = z;
         if (z != 0) {
@@ -97,7 +97,7 @@ public final class Channel {
     }
 
     public String toString() {
-        return "Channel(chatType=" + this.chatType + ", createdAt=" + this.createdAt + ", description=" + this.description + ", id=" + this.f321id + ", membersCount=" + this.membersCount + ", photo=" + this.photo + ", shortname=" + this.shortname + ", telegramId=" + this.telegramId + ", title=" + this.title + ", updatedAt=" + this.updatedAt + ", verified=" + this.verified + ')';
+        return "Channel(chatType=" + this.chatType + ", createdAt=" + this.createdAt + ", description=" + this.description + ", id=" + this.f316id + ", membersCount=" + this.membersCount + ", photo=" + this.photo + ", shortname=" + this.shortname + ", telegramId=" + this.telegramId + ", title=" + this.title + ", updatedAt=" + this.updatedAt + ", verified=" + this.verified + ')';
     }
 
     public Channel(ChatType chatType, String createdAt, String description, long j, long j2, String photo, String shortname, long j3, String title, String updatedAt, boolean z) {
@@ -111,7 +111,7 @@ public final class Channel {
         this.chatType = chatType;
         this.createdAt = createdAt;
         this.description = description;
-        this.f321id = j;
+        this.f316id = j;
         this.membersCount = j2;
         this.photo = photo;
         this.shortname = shortname;
@@ -134,7 +134,7 @@ public final class Channel {
     }
 
     public final long getId() {
-        return this.f321id;
+        return this.f316id;
     }
 
     public final long getMembersCount() {

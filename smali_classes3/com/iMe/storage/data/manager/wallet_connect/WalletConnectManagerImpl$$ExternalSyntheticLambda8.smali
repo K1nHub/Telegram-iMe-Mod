@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda8;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {v0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->$r8$lambda$PkNN8JJaoydgysmWZ1-0kYAakcY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    invoke-static {v0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->$r8$lambda$RaJ_C6gDKexl2ZFmB8xc3q-cMmQ(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
-    .line 3748
+    .line 3749
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$33;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BackgroundGradientDrawable$ListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onSizeReady(II)V
     .locals 4
 
-    .line 3751
+    .line 3752
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -66,7 +66,7 @@
     :goto_1
     if-ne v0, v2, :cond_2
 
-    .line 3754
+    .line 3755
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$33;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$1400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/BackupImageView;

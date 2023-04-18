@@ -16,11 +16,11 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class zzo extends AbstractSafeParcelable implements Result {
     public static final Parcelable.Creator<zzo> CREATOR = new zzp();
-    @SafeParcelable.Field(m789id = 1)
+    @SafeParcelable.Field(m775id = 1)
     public Status zza;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     public List<zzx> zzb;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     @Deprecated
     public String[] zzc;
 
@@ -43,7 +43,7 @@ public final class zzo extends AbstractSafeParcelable implements Result {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzo(@SafeParcelable.Param(m788id = 1) Status status, @SafeParcelable.Param(m788id = 2) List<zzx> list, @SafeParcelable.Param(m788id = 3) String[] strArr) {
+    public zzo(@SafeParcelable.Param(m774id = 1) Status status, @SafeParcelable.Param(m774id = 2) List<zzx> list, @SafeParcelable.Param(m774id = 3) String[] strArr) {
         this.zza = status;
         this.zzb = list;
         this.zzc = strArr;

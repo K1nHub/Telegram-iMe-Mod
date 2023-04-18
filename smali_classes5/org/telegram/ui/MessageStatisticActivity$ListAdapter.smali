@@ -40,7 +40,7 @@
 .method public getItem(I)Lorg/telegram/tgnet/TLRPC$Message;
     .locals 2
 
-    .line 828
+    .line 829
     iget-object v0, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/MessageStatisticActivity;->access$2700(Lorg/telegram/ui/MessageStatisticActivity;)I
@@ -57,7 +57,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 829
+    .line 830
     iget-object v0, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/MessageStatisticActivity;->access$400(Lorg/telegram/ui/MessageStatisticActivity;)Ljava/util/ArrayList;
@@ -102,7 +102,7 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 811
+    .line 812
     iget-object v0, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/MessageStatisticActivity;->shadowDivideCells:Landroidx/collection/ArraySet;
@@ -121,7 +121,7 @@
 
     return p1
 
-    .line 813
+    .line 814
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
@@ -141,7 +141,7 @@
 
     goto :goto_0
 
-    .line 815
+    .line 816
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
@@ -155,7 +155,7 @@
 
     return p1
 
-    .line 817
+    .line 818
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
@@ -169,7 +169,7 @@
 
     return p1
 
-    .line 819
+    .line 820
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
@@ -183,7 +183,7 @@
 
     return p1
 
-    .line 821
+    .line 822
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
@@ -242,7 +242,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 9
 
-    .line 754
+    .line 755
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -269,24 +269,24 @@
 
     goto/16 :goto_4
 
-    .line 796
+    .line 797
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/MessageStatisticActivity$OverviewCell;
 
-    .line 797
+    .line 798
     invoke-virtual {p1}, Lorg/telegram/ui/MessageStatisticActivity$OverviewCell;->setData()V
 
     goto/16 :goto_4
 
-    .line 791
+    .line 792
     :cond_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/StatisticActivity$BaseChartCell;
 
-    .line 792
+    .line 793
     iget-object p2, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/MessageStatisticActivity;->access$2100(Lorg/telegram/ui/MessageStatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -295,7 +295,7 @@
 
     invoke-virtual {p1, p2, v3}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->updateData(Lorg/telegram/ui/StatisticActivity$ChartViewData;Z)V
 
-    .line 793
+    .line 794
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x1
@@ -308,13 +308,13 @@
 
     goto/16 :goto_4
 
-    .line 783
+    .line 784
     :cond_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 784
+    .line 785
     iget-object v0, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/MessageStatisticActivity;->access$1900(Lorg/telegram/ui/MessageStatisticActivity;)I
@@ -323,7 +323,7 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 785
+    .line 786
     sget p2, Lorg/telegram/messenger/R$string;->StatisticOverview:I
 
     new-array v0, v3, [Ljava/lang/Object;
@@ -338,7 +338,7 @@
 
     goto/16 :goto_4
 
-    .line 787
+    .line 788
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
@@ -358,7 +358,7 @@
 
     goto/16 :goto_4
 
-    .line 780
+    .line 781
     :cond_4
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -376,23 +376,23 @@
 
     goto/16 :goto_4
 
-    .line 756
+    .line 757
     :cond_5
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
-    .line 757
+    .line 758
     invoke-virtual {p0, p2}, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->getItem(I)Lorg/telegram/tgnet/TLRPC$Message;
 
     move-result-object v0
 
-    .line 758
+    .line 759
     invoke-static {v0}, Lorg/telegram/messenger/MessageObject;->getDialogId(Lorg/telegram/tgnet/TLRPC$Message;)J
 
     move-result-wide v4
 
-    .line 761
+    .line 762
     invoke-static {v4, v5}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
     move-result v6
@@ -401,7 +401,7 @@
 
     if-eqz v6, :cond_6
 
-    .line 762
+    .line 763
     iget-object v0, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -418,7 +418,7 @@
 
     goto :goto_1
 
-    .line 764
+    .line 765
     :cond_6
     iget-object v6, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
@@ -436,12 +436,12 @@
 
     move-result-object v4
 
-    .line 766
+    .line 767
     iget v5, v4, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
     if-eqz v5, :cond_8
 
-    .line 767
+    .line 768
     invoke-static {v4}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v5
@@ -452,7 +452,7 @@
 
     if-nez v5, :cond_7
 
-    .line 768
+    .line 769
     iget v5, v4, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
     new-array v6, v3, [Ljava/lang/Object;
@@ -465,7 +465,7 @@
 
     goto :goto_0
 
-    .line 770
+    .line 771
     :cond_7
     iget v5, v4, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
@@ -482,7 +482,7 @@
 
     aput-object v5, v1, v3
 
-    .line 772
+    .line 773
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->views:I
 
     new-array v5, v3, [Ljava/lang/Object;
@@ -516,7 +516,7 @@
     :goto_2
     if-eqz v0, :cond_a
 
-    .line 776
+    .line 777
     iget-object v4, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->this$0:Lorg/telegram/ui/MessageStatisticActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/MessageStatisticActivity;->access$1800(Lorg/telegram/ui/MessageStatisticActivity;)I
@@ -569,7 +569,7 @@
 
     if-eq p2, p1, :cond_0
 
-    .line 746
+    .line 747
     new-instance p1, Lorg/telegram/ui/Cells/LoadingCell;
 
     iget-object p2, p0, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;->mContext:Landroid/content/Context;
@@ -590,7 +590,7 @@
 
     goto/16 :goto_0
 
-    .line 740
+    .line 741
     :cond_0
     new-instance p1, Lorg/telegram/ui/Cells/EmptyCell;
 
@@ -600,14 +600,14 @@
 
     invoke-direct {p1, p2, v0}, Lorg/telegram/ui/Cells/EmptyCell;-><init>(Landroid/content/Context;I)V
 
-    .line 741
+    .line 742
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     invoke-direct {p2, v2, v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 742
+    .line 743
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -616,7 +616,7 @@
 
     goto :goto_0
 
-    .line 735
+    .line 736
     :cond_1
     new-instance p1, Lorg/telegram/ui/MessageStatisticActivity$OverviewCell;
 
@@ -626,7 +626,7 @@
 
     invoke-direct {p1, p2, v0}, Lorg/telegram/ui/MessageStatisticActivity$OverviewCell;-><init>(Lorg/telegram/ui/MessageStatisticActivity;Landroid/content/Context;)V
 
-    .line 736
+    .line 737
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x2
@@ -635,7 +635,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 737
+    .line 738
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -662,7 +662,7 @@
 
     invoke-direct {p1, p0, p2, v2, v0}, Lorg/telegram/ui/MessageStatisticActivity$ListAdapter$1;-><init>(Lorg/telegram/ui/MessageStatisticActivity$ListAdapter;Landroid/content/Context;ILorg/telegram/ui/Charts/BaseChartView$SharedUiComponents;)V
 
-    .line 732
+    .line 733
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -732,7 +732,7 @@
 
     move-object p1, p2
 
-    .line 749
+    .line 750
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -744,14 +744,14 @@
 .method public onViewRecycled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 804
+    .line 805
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     if-eqz v0, :cond_0
 
-    .line 805
+    .line 806
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->recycle()V

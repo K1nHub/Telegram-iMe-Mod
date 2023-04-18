@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 39
+    .line 40
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment$binding$2;->invoke()Lorg/telegram/messenger/databinding/ForkFragmentBlockchainsManagementBinding;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/messenger/databinding/ForkFragmentBlockchainsManagementBinding;
     .locals 1
 
-    .line 39
+    .line 40
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment$binding$2;->this$0:Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/BaseFragmentExtKt;->getLayoutInflater(Lorg/telegram/ui/ActionBar/BaseFragment;)Landroid/view/LayoutInflater;

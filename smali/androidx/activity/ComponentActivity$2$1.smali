@@ -29,7 +29,7 @@
 .method constructor <init>(Landroidx/activity/ComponentActivity$2;ILandroidx/activity/result/contract/ActivityResultContract$SynchronousResult;)V
     .locals 0
 
-    .line 166
+    .line 191
     iput-object p1, p0, Landroidx/activity/ComponentActivity$2$1;->this$1:Landroidx/activity/ComponentActivity$2;
 
     iput p2, p0, Landroidx/activity/ComponentActivity$2$1;->val$requestCode:I
@@ -46,7 +46,7 @@
 .method public run()V
     .locals 3
 
-    .line 169
+    .line 194
     iget-object v0, p0, Landroidx/activity/ComponentActivity$2$1;->this$1:Landroidx/activity/ComponentActivity$2;
 
     iget v1, p0, Landroidx/activity/ComponentActivity$2$1;->val$requestCode:I

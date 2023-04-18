@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    .line 5683
+    .line 5507
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$24;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 5686
+    .line 5510
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$24;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2800(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2500(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p1
 
@@ -48,10 +48,10 @@
 
     if-nez p1, :cond_0
 
-    .line 5687
+    .line 5511
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$24;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2800(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2500(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p1
 

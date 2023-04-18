@@ -14,9 +14,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzau extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzau> CREATOR = new zzav();
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     String zza;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     Bundle zzb;
 
     private zzau() {
@@ -32,7 +32,7 @@ public final class zzau extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzau(@SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) Bundle bundle) {
+    public zzau(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) Bundle bundle) {
         this.zza = str;
         this.zzb = bundle;
     }

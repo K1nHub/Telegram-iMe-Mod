@@ -1,6 +1,6 @@
 package com.google.zxing.qrcode.decoder;
 
-import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.zxing.FormatException;
 import com.google.zxing.common.BitMatrix;
 import org.telegram.messenger.ImageReceiver;

@@ -16,27 +16,27 @@ import java.util.List;
 /* loaded from: classes.dex */
 public class PublicKeyCredentialCreationOptions extends RequestOptions {
     public static final Parcelable.Creator<PublicKeyCredentialCreationOptions> CREATOR = new zzaf();
-    @SafeParcelable.Field(getter = "getRp", m789id = 2)
+    @SafeParcelable.Field(getter = "getRp", m775id = 2)
     private final PublicKeyCredentialRpEntity zza;
-    @SafeParcelable.Field(getter = "getUser", m789id = 3)
+    @SafeParcelable.Field(getter = "getUser", m775id = 3)
     private final PublicKeyCredentialUserEntity zzb;
-    @SafeParcelable.Field(getter = "getChallenge", m789id = 4)
+    @SafeParcelable.Field(getter = "getChallenge", m775id = 4)
     private final byte[] zzc;
-    @SafeParcelable.Field(getter = "getParameters", m789id = 5)
+    @SafeParcelable.Field(getter = "getParameters", m775id = 5)
     private final List zzd;
-    @SafeParcelable.Field(getter = "getTimeoutSeconds", m789id = 6)
+    @SafeParcelable.Field(getter = "getTimeoutSeconds", m775id = 6)
     private final Double zze;
-    @SafeParcelable.Field(getter = "getExcludeList", m789id = 7)
+    @SafeParcelable.Field(getter = "getExcludeList", m775id = 7)
     private final List zzf;
-    @SafeParcelable.Field(getter = "getAuthenticatorSelection", m789id = 8)
+    @SafeParcelable.Field(getter = "getAuthenticatorSelection", m775id = 8)
     private final AuthenticatorSelectionCriteria zzg;
-    @SafeParcelable.Field(getter = "getRequestId", m789id = 9)
+    @SafeParcelable.Field(getter = "getRequestId", m775id = 9)
     private final Integer zzh;
-    @SafeParcelable.Field(getter = "getTokenBinding", m789id = 10)
+    @SafeParcelable.Field(getter = "getTokenBinding", m775id = 10)
     private final TokenBinding zzi;
-    @SafeParcelable.Field(getter = "getAttestationConveyancePreferenceAsString", m789id = 11, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getAttestationConveyancePreferenceAsString", m775id = 11, type = "java.lang.String")
     private final AttestationConveyancePreference zzj;
-    @SafeParcelable.Field(getter = "getAuthenticationExtensions", m789id = 12)
+    @SafeParcelable.Field(getter = "getAuthenticationExtensions", m775id = 12)
     private final AuthenticationExtensions zzk;
 
     /* compiled from: com.google.android.gms:play-services-fido@@19.0.0 */
@@ -126,7 +126,7 @@ public class PublicKeyCredentialCreationOptions extends RequestOptions {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PublicKeyCredentialCreationOptions(@SafeParcelable.Param(m788id = 2) PublicKeyCredentialRpEntity publicKeyCredentialRpEntity, @SafeParcelable.Param(m788id = 3) PublicKeyCredentialUserEntity publicKeyCredentialUserEntity, @SafeParcelable.Param(m788id = 4) byte[] bArr, @SafeParcelable.Param(m788id = 5) List list, @SafeParcelable.Param(m788id = 6) Double d, @SafeParcelable.Param(m788id = 7) List list2, @SafeParcelable.Param(m788id = 8) AuthenticatorSelectionCriteria authenticatorSelectionCriteria, @SafeParcelable.Param(m788id = 9) Integer num, @SafeParcelable.Param(m788id = 10) TokenBinding tokenBinding, @SafeParcelable.Param(m788id = 11) String str, @SafeParcelable.Param(m788id = 12) AuthenticationExtensions authenticationExtensions) {
+    public PublicKeyCredentialCreationOptions(@SafeParcelable.Param(m774id = 2) PublicKeyCredentialRpEntity publicKeyCredentialRpEntity, @SafeParcelable.Param(m774id = 3) PublicKeyCredentialUserEntity publicKeyCredentialUserEntity, @SafeParcelable.Param(m774id = 4) byte[] bArr, @SafeParcelable.Param(m774id = 5) List list, @SafeParcelable.Param(m774id = 6) Double d, @SafeParcelable.Param(m774id = 7) List list2, @SafeParcelable.Param(m774id = 8) AuthenticatorSelectionCriteria authenticatorSelectionCriteria, @SafeParcelable.Param(m774id = 9) Integer num, @SafeParcelable.Param(m774id = 10) TokenBinding tokenBinding, @SafeParcelable.Param(m774id = 11) String str, @SafeParcelable.Param(m774id = 12) AuthenticationExtensions authenticationExtensions) {
         this.zza = (PublicKeyCredentialRpEntity) Preconditions.checkNotNull(publicKeyCredentialRpEntity);
         this.zzb = (PublicKeyCredentialUserEntity) Preconditions.checkNotNull(publicKeyCredentialUserEntity);
         this.zzc = (byte[]) Preconditions.checkNotNull(bArr);

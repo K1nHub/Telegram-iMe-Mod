@@ -7,6 +7,7 @@ import com.iMe.fork.controller.DialogTranslationController;
 import com.iMe.fork.controller.FiltersController;
 import com.iMe.fork.controller.ForkCommonController;
 import com.iMe.fork.controller.ForkTopicsController;
+import com.iMe.fork.controller.HiddenChatsController;
 import com.iMe.fork.controller.LockedSectionsController;
 import com.iMe.fork.controller.MultiPanelController;
 import com.iMe.fork.controller.MusicController;
@@ -15,7 +16,7 @@ import com.iMe.fork.controller.RecentChatsController;
 import com.iMe.fork.controller.TemplatesController;
 import com.iMe.fork.controller.ToolsController;
 import com.iMe.fork.controller.WalletFingerprintController;
-import org.telegram.p048ui.Components.Paint.PersistColorPalette;
+import org.telegram.p044ui.Components.Paint.PersistColorPalette;
 import org.telegram.tgnet.ConnectionsManager;
 /* loaded from: classes4.dex */
 public class BaseController {
@@ -84,6 +85,10 @@ public class BaseController {
 
     public RecentChatsController getRecentChatsController() {
         return this.parentAccountInstance.getRecentChatsController();
+    }
+
+    public HiddenChatsController getHiddenChatsController() {
+        return this.parentAccountInstance.getHiddenChatsController();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeView$$State;)V
     .locals 1
 
-    .line 96
+    .line 114
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "onFeeReselected"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeView;)V
     .locals 0
 
-    .line 101
+    .line 119
     invoke-interface {p1}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeView;->onFeeReselected()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 94
+    .line 112
     check-cast p1, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeView$$State$OnFeeReselectedCommand;->apply(Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeView;)V

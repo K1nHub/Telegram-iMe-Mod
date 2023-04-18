@@ -2,10 +2,10 @@ package com.google.firebase.firestore.model;
 
 import com.google.firebase.firestore.util.Assert;
 import com.google.firebase.firestore.util.Util;
-import com.google.firestore.p022v1.ArrayValue;
-import com.google.firestore.p022v1.ArrayValueOrBuilder;
-import com.google.firestore.p022v1.MapValue;
-import com.google.firestore.p022v1.Value;
+import com.google.firestore.p021v1.ArrayValue;
+import com.google.firestore.p021v1.ArrayValueOrBuilder;
+import com.google.firestore.p021v1.MapValue;
+import com.google.firestore.p021v1.Value;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Timestamp;
 import com.google.type.LatLng;
@@ -22,7 +22,7 @@ public class Values {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.model.Values$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10261 {
+    public static /* synthetic */ class C10111 {
         static final /* synthetic */ int[] $SwitchMap$com$google$firestore$v1$Value$ValueTypeCase;
 
         static {
@@ -76,7 +76,7 @@ public class Values {
     }
 
     public static int typeOrder(Value value) {
-        switch (C10261.$SwitchMap$com$google$firestore$v1$Value$ValueTypeCase[value.getValueTypeCase().ordinal()]) {
+        switch (C10111.$SwitchMap$com$google$firestore$v1$Value$ValueTypeCase[value.getValueTypeCase().ordinal()]) {
             case 1:
                 return 0;
             case 2:
@@ -294,7 +294,7 @@ public class Values {
     }
 
     private static void canonifyValue(StringBuilder sb, Value value) {
-        switch (C10261.$SwitchMap$com$google$firestore$v1$Value$ValueTypeCase[value.getValueTypeCase().ordinal()]) {
+        switch (C10111.$SwitchMap$com$google$firestore$v1$Value$ValueTypeCase[value.getValueTypeCase().ordinal()]) {
             case 1:
                 sb.append("null");
                 return;

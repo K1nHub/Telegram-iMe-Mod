@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.source.hls;
 
 import android.net.Uri;
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.SeekParameters;
 import com.google.android.exoplayer2.analytics.PlayerId;
@@ -67,7 +67,7 @@ public final class HlsMediaPeriod implements MediaPeriod, HlsPlaylistTracker.Pla
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod
     public long readDiscontinuity() {
-        return C0482C.TIME_UNSET;
+        return C0470C.TIME_UNSET;
     }
 
     static /* synthetic */ int access$106(HlsMediaPeriod hlsMediaPeriod) {
@@ -562,7 +562,7 @@ public final class HlsMediaPeriod implements MediaPeriod, HlsPlaylistTracker.Pla
 
     private static Format deriveVideoFormat(Format format) {
         String codecsOfType = Util.getCodecsOfType(format.codecs, 2);
-        return new Format.Builder().setId(format.f100id).setLabel(format.label).setContainerMimeType(format.containerMimeType).setSampleMimeType(MimeTypes.getMediaMimeType(codecsOfType)).setCodecs(codecsOfType).setMetadata(format.metadata).setAverageBitrate(format.averageBitrate).setPeakBitrate(format.peakBitrate).setWidth(format.width).setHeight(format.height).setFrameRate(format.frameRate).setSelectionFlags(format.selectionFlags).setRoleFlags(format.roleFlags).build();
+        return new Format.Builder().setId(format.f97id).setLabel(format.label).setContainerMimeType(format.containerMimeType).setSampleMimeType(MimeTypes.getMediaMimeType(codecsOfType)).setCodecs(codecsOfType).setMetadata(format.metadata).setAverageBitrate(format.averageBitrate).setPeakBitrate(format.peakBitrate).setWidth(format.width).setHeight(format.height).setFrameRate(format.frameRate).setSelectionFlags(format.selectionFlags).setRoleFlags(format.roleFlags).build();
     }
 
     private static Format deriveAudioFormat(Format format, Format format2, boolean z) {
@@ -608,7 +608,7 @@ public final class HlsMediaPeriod implements MediaPeriod, HlsPlaylistTracker.Pla
                 i3 = 0;
             }
         }
-        return new Format.Builder().setId(format.f100id).setLabel(str3).setContainerMimeType(format.containerMimeType).setSampleMimeType(MimeTypes.getMediaMimeType(str2)).setCodecs(str2).setMetadata(metadata).setAverageBitrate(z ? format.averageBitrate : -1).setPeakBitrate(z ? format.peakBitrate : -1).setChannelCount(i2).setSelectionFlags(i).setRoleFlags(i3).setLanguage(str).build();
+        return new Format.Builder().setId(format.f97id).setLabel(str3).setContainerMimeType(format.containerMimeType).setSampleMimeType(MimeTypes.getMediaMimeType(str2)).setCodecs(str2).setMetadata(metadata).setAverageBitrate(z ? format.averageBitrate : -1).setPeakBitrate(z ? format.peakBitrate : -1).setChannelCount(i2).setSelectionFlags(i).setRoleFlags(i3).setLanguage(str).build();
     }
 
     /* loaded from: classes.dex */

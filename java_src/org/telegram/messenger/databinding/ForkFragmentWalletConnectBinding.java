@@ -9,10 +9,10 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p032ui.custom.BigActionButton;
-import org.telegram.messenger.C3316R;
-import org.telegram.p048ui.Cells.TextCell;
-import org.telegram.p048ui.Components.RLottieImageView;
+import com.iMe.p031ui.custom.BigActionButton;
+import org.telegram.messenger.C3242R;
+import org.telegram.p044ui.Cells.TextCell;
+import org.telegram.p044ui.Components.RLottieImageView;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletConnectBinding implements ViewBinding {
     public final BigActionButton buttonConnect;
@@ -47,7 +47,7 @@ public final class ForkFragmentWalletConnectBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletConnectBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3316R.layout.fork_fragment_wallet_connect, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3242R.layout.fork_fragment_wallet_connect, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -55,31 +55,31 @@ public final class ForkFragmentWalletConnectBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletConnectBinding bind(View view) {
-        int i = C3316R.C3319id.button_connect;
+        int i = C3242R.C3245id.button_connect;
         BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
         if (bigActionButton != null) {
-            i = C3316R.C3319id.button_disconnect_all;
+            i = C3242R.C3245id.button_disconnect_all;
             TextCell textCell = (TextCell) ViewBindings.findChildViewById(view, i);
             if (textCell != null) {
-                i = C3316R.C3319id.image_header;
+                i = C3242R.C3245id.image_header;
                 RLottieImageView rLottieImageView = (RLottieImageView) ViewBindings.findChildViewById(view, i);
                 if (rLottieImageView != null) {
-                    i = C3316R.C3319id.linear_add_session;
+                    i = C3242R.C3245id.linear_add_session;
                     LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                     if (linearLayout != null) {
-                        i = C3316R.C3319id.linear_root;
+                        i = C3242R.C3245id.linear_root;
                         LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                         if (linearLayout2 != null) {
-                            i = C3316R.C3319id.linear_sessions;
+                            i = C3242R.C3245id.linear_sessions;
                             LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                             if (linearLayout3 != null) {
-                                i = C3316R.C3319id.recycle_sessions;
+                                i = C3242R.C3245id.recycle_sessions;
                                 RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
                                 if (recyclerView != null) {
-                                    i = C3316R.C3319id.text_description;
+                                    i = C3242R.C3245id.text_description;
                                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                     if (appCompatTextView != null) {
-                                        i = C3316R.C3319id.text_sessions_title;
+                                        i = C3242R.C3245id.text_sessions_title;
                                         AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                         if (appCompatTextView2 != null) {
                                             return new ForkFragmentWalletConnectBinding((NestedScrollView) view, bigActionButton, textCell, rLottieImageView, linearLayout, linearLayout2, linearLayout3, recyclerView, appCompatTextView, appCompatTextView2);

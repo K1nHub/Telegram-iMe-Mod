@@ -16,13 +16,13 @@ public final class CreateWalletObjectsRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CreateWalletObjectsRequest> CREATOR = new zzi();
     public static final int REQUEST_IMMEDIATE_SAVE = 1;
     public static final int SHOW_SAVE_PROMPT = 0;
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     LoyaltyWalletObject zza;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     OfferWalletObject zzb;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     GiftCardWalletObject zzc;
-    @SafeParcelable.Field(m789id = 5)
+    @SafeParcelable.Field(m775id = 5)
     int zzd;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
@@ -109,7 +109,7 @@ public final class CreateWalletObjectsRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public CreateWalletObjectsRequest(@SafeParcelable.Param(m788id = 2) LoyaltyWalletObject loyaltyWalletObject, @SafeParcelable.Param(m788id = 3) OfferWalletObject offerWalletObject, @SafeParcelable.Param(m788id = 4) GiftCardWalletObject giftCardWalletObject, @SafeParcelable.Param(m788id = 5) int i) {
+    public CreateWalletObjectsRequest(@SafeParcelable.Param(m774id = 2) LoyaltyWalletObject loyaltyWalletObject, @SafeParcelable.Param(m774id = 3) OfferWalletObject offerWalletObject, @SafeParcelable.Param(m774id = 4) GiftCardWalletObject giftCardWalletObject, @SafeParcelable.Param(m774id = 5) int i) {
         this.zza = loyaltyWalletObject;
         this.zzb = offerWalletObject;
         this.zzc = giftCardWalletObject;

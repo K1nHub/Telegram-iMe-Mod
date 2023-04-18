@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSession;
-import p035j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes4.dex */
 public final class InternalChannelz {
     private final ConcurrentMap<Long, InternalInstrumented<Object>> otherSockets;
@@ -60,7 +60,7 @@ public final class InternalChannelz {
     }
 
     private static <T extends InternalInstrumented<?>> void remove(Map<Long, T> map, T t) {
-        map.remove(Long.valueOf(m695id(t)));
+        map.remove(Long.valueOf(m681id(t)));
     }
 
     /* loaded from: classes4.dex */
@@ -90,7 +90,7 @@ public final class InternalChannelz {
     }
 
     /* renamed from: id */
-    public static long m695id(InternalWithLogId internalWithLogId) {
+    public static long m681id(InternalWithLogId internalWithLogId) {
         return internalWithLogId.getLogId().getId();
     }
 }

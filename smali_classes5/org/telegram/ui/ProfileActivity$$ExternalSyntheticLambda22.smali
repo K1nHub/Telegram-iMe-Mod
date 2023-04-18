@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda22;->f$0:[Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$IgyGbL37VoeFhJqkzba88_KvtX0([Lorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$hRPt5FhoAmYkkStm0-Ozglug3kE([Lorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
 
     return-void
 .end method

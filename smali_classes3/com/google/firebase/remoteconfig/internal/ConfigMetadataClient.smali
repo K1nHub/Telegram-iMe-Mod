@@ -302,6 +302,23 @@
     return-object v0
 .end method
 
+.method public getMinimumFetchIntervalInSeconds()J
+    .locals 4
+
+    .line 86
+    iget-object v0, p0, Lcom/google/firebase/remoteconfig/internal/ConfigMetadataClient;->frcMetadata:Landroid/content/SharedPreferences;
+
+    sget-wide v1, Lcom/google/firebase/remoteconfig/internal/ConfigFetchHandler;->DEFAULT_MINIMUM_FETCH_INTERVAL_IN_SECONDS:J
+
+    const-string v3, "minimum_fetch_interval_in_seconds"
+
+    invoke-interface {v0, v3, v1, v2}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
 .method resetBackoff()V
     .locals 2
 

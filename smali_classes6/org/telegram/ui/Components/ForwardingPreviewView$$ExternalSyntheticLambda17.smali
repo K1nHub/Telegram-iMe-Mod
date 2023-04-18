@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->$r8$lambda$z_xexwFdYuug2g1gCoMw8dD6hCk(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->$r8$lambda$0IMJUPqIIHBa72oCdqtig_Vc67Y(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
 
     return-void
 .end method

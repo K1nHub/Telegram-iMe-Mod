@@ -4,22 +4,22 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.markers.KMappedMarker;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* compiled from: Sequences.kt */
 /* loaded from: classes4.dex */
-public final class FilteringSequence$iterator$1 implements Iterator<T>, KMappedMarker, p035j$.util.Iterator {
+public final class FilteringSequence$iterator$1 implements Iterator<T>, KMappedMarker, p034j$.util.Iterator {
     private final Iterator<T> iterator;
     private T nextItem;
     private int nextState;
     final /* synthetic */ FilteringSequence<T> this$0;
 
-    @Override // p035j$.util.Iterator
+    @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public void remove() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
@@ -51,7 +51,7 @@ public final class FilteringSequence$iterator$1 implements Iterator<T>, KMappedM
         this.nextState = 0;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public T next() {
         if (this.nextState == -1) {
             calcNext();
@@ -65,7 +65,7 @@ public final class FilteringSequence$iterator$1 implements Iterator<T>, KMappedM
         return t;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public boolean hasNext() {
         if (this.nextState == -1) {
             calcNext();

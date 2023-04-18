@@ -20,7 +20,7 @@
 .method private final clearView()V
     .locals 1
 
-    .line 32
+    .line 34
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -30,7 +30,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 33
+    .line 35
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-void
@@ -53,10 +53,10 @@
 .method public onDestroyView()V
     .locals 0
 
-    .line 23
+    .line 25
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onDestroyView()V
 
-    .line 24
+    .line 26
     invoke-direct {p0}, Lcom/iMe/ui/wallet/common/BottomNavigationTabFragment;->clearView()V
 
     return-void
@@ -65,10 +65,10 @@
 .method public onResume()V
     .locals 2
 
-    .line 18
+    .line 20
     invoke-super {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->onResume()V
 
-    .line 19
+    .line 21
     iget-object v0, p0, Lcom/iMe/ui/wallet/common/BottomNavigationTabFragment;->bottomNavigationDelegate:Lcom/iMe/ui/wallet/common/BottomNavigationDelegate;
 
     if-eqz v0, :cond_0

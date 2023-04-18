@@ -1,6 +1,6 @@
 package com.iMe.storage.data.mapper.music;
 
-import com.iMe.storage.data.locale.p028db.model.music.PlaylistsDb;
+import com.iMe.storage.data.locale.p027db.model.music.PlaylistsDb;
 import com.iMe.storage.domain.model.music.PlaylistModel;
 import java.util.ArrayList;
 import java.util.Collection;

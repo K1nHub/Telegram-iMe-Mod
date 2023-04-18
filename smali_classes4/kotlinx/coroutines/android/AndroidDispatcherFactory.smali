@@ -18,18 +18,7 @@
 
 
 # virtual methods
-.method public bridge synthetic createDispatcher(Ljava/util/List;)Lkotlinx/coroutines/MainCoroutineDispatcher;
-    .locals 0
-
-    .line 52
-    invoke-virtual {p0, p1}, Lkotlinx/coroutines/android/AndroidDispatcherFactory;->createDispatcher(Ljava/util/List;)Lkotlinx/coroutines/android/HandlerContext;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public createDispatcher(Ljava/util/List;)Lkotlinx/coroutines/android/HandlerContext;
+.method public createDispatcher(Ljava/util/List;)Lkotlinx/coroutines/MainCoroutineDispatcher;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -38,30 +27,43 @@
             "+",
             "Lkotlinx/coroutines/internal/MainDispatcherFactory;",
             ">;)",
-            "Lkotlinx/coroutines/android/HandlerContext;"
+            "Lkotlinx/coroutines/MainCoroutineDispatcher;"
         }
     .end annotation
 
     .line 55
-    new-instance p1, Lkotlinx/coroutines/android/HandlerContext;
-
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    move-result-object v0
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    .line 56
+    new-instance v0, Lkotlinx/coroutines/android/HandlerContext;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lkotlinx/coroutines/android/HandlerDispatcherKt;->asHandler(Landroid/os/Looper;Z)Landroid/os/Handler;
+    invoke-static {p1, v1}, Lkotlinx/coroutines/android/HandlerDispatcherKt;->asHandler(Landroid/os/Looper;Z)Landroid/os/Handler;
 
-    move-result-object v0
+    move-result-object p1
 
-    const/4 v1, 0x0
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    const/4 v2, 0x0
 
-    invoke-direct {p1, v0, v1, v2, v1}, Lkotlinx/coroutines/android/HandlerContext;-><init>(Landroid/os/Handler;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {v0, p1, v2, v1, v2}, Lkotlinx/coroutines/android/HandlerContext;-><init>(Landroid/os/Handler;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    return-object p1
+    return-object v0
+
+    .line 55
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "The main looper is not available"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 .method public getLoadPriority()I

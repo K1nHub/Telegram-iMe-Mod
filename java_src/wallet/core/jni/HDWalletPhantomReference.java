@@ -4,10 +4,9 @@ import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: HDWallet.java */
 /* loaded from: classes6.dex */
-public class HDWalletPhantomReference extends PhantomReference<HDWallet> {
+class HDWalletPhantomReference extends PhantomReference<HDWallet> {
     private long nativeHandle;
     private static Set<HDWalletPhantomReference> references = new HashSet();
     private static ReferenceQueue<HDWallet> queue = new ReferenceQueue<>();

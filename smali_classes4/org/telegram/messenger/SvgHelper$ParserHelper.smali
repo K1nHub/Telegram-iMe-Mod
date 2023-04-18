@@ -28,23 +28,23 @@
 .method public constructor <init>(Ljava/lang/CharSequence;I)V
     .locals 1
 
-    .line 1518
+    .line 1538
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1519
+    .line 1539
     iput-object p1, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->s:Ljava/lang/CharSequence;
 
-    .line 1520
+    .line 1540
     iput p2, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->pos:I
 
-    .line 1521
+    .line 1541
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->n:I
 
-    .line 1522
+    .line 1542
     invoke-interface {p1, p2}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result p1
@@ -57,7 +57,7 @@
 .method private read()C
     .locals 2
 
-    .line 1526
+    .line 1546
     iget v0, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->pos:I
 
     iget v1, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->n:I
@@ -66,10 +66,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 1527
+    .line 1547
     iput v0, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->pos:I
 
-    .line 1529
+    .line 1549
     :cond_0
     iget v0, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->pos:I
 
@@ -79,7 +79,7 @@
 
     return v0
 
-    .line 1532
+    .line 1552
     :cond_1
     iget-object v1, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->s:Ljava/lang/CharSequence;
 
@@ -93,7 +93,7 @@
 .method private reportUnexpectedCharacterError(C)V
     .locals 3
 
-    .line 1838
+    .line 1858
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -124,7 +124,7 @@
 .method public advance()V
     .locals 1
 
-    .line 1563
+    .line 1583
     invoke-direct {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->read()C
 
     move-result v0
@@ -179,7 +179,7 @@
     :cond_4
     int-to-double v0, p1
 
-    .line 1858
+    .line 1878
     invoke-static {}, Lorg/telegram/messenger/SvgHelper;->access$1200()[D
 
     move-result-object p1
@@ -214,15 +214,15 @@
 .method public nextFloat()F
     .locals 1
 
-    .line 1862
+    .line 1882
     invoke-virtual {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->skipWhitespace()V
 
-    .line 1863
+    .line 1883
     invoke-virtual {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->parseFloat()F
 
     move-result v0
 
-    .line 1864
+    .line 1884
     invoke-virtual {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->skipNumberSeparator()V
 
     return v0
@@ -231,7 +231,7 @@
 .method public parseFloat()F
     .locals 15
 
-    .line 1577
+    .line 1597
     iget-char v0, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->current:C
 
     const/16 v1, 0x2d
@@ -258,7 +258,7 @@
     :cond_1
     move v0, v3
 
-    .line 1582
+    .line 1602
     :goto_0
     invoke-direct {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->read()C
 
@@ -266,7 +266,7 @@
 
     iput-char v5, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->current:C
 
-    .line 1586
+    .line 1606
     :goto_1
     iget-char v5, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->current:C
 
@@ -287,7 +287,7 @@
 
     return v0
 
-    .line 1597
+    .line 1617
     :pswitch_1
     invoke-direct {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->read()C
 
@@ -319,7 +319,7 @@
 
     mul-int/lit8 v12, v12, 0xa
 
-    .line 1633
+    .line 1653
     iget-char v13, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->current:C
 
     add-int/lit8 v13, v13, -0x30
@@ -331,7 +331,7 @@
     :cond_2
     add-int/lit8 v11, v11, 0x1
 
-    .line 1637
+    .line 1657
     :goto_2
     invoke-direct {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->read()C
 
@@ -365,13 +365,13 @@
 
     move v13, v12
 
-    .line 1655
+    .line 1675
     :goto_3
     iget-char v14, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->current:C
 
     if-ne v14, v8, :cond_6
 
-    .line 1656
+    .line 1676
     invoke-direct {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->read()C
 
     move-result v8
@@ -382,7 +382,7 @@
 
     if-nez v13, :cond_6
 
-    .line 1663
+    .line 1683
     invoke-direct {p0, v8}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->reportUnexpectedCharacterError(C)V
 
     return v10
@@ -390,7 +390,7 @@
     :pswitch_5
     if-nez v5, :cond_4
 
-    .line 1672
+    .line 1692
     :pswitch_6
     invoke-direct {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->read()C
 
@@ -414,7 +414,7 @@
 
     mul-int/lit8 v12, v12, 0xa
 
-    .line 1707
+    .line 1727
     iget-char v8, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->current:C
 
     add-int/lit8 v8, v8, -0x30
@@ -423,7 +423,7 @@
 
     add-int/lit8 v11, v11, -0x1
 
-    .line 1710
+    .line 1730
     :cond_5
     invoke-direct {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->read()C
 
@@ -433,7 +433,7 @@
 
     packed-switch v8, :pswitch_data_5
 
-    .line 1729
+    .line 1749
     :cond_6
     iget-char v5, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->current:C
 
@@ -443,7 +443,7 @@
 
     goto :goto_4
 
-    .line 1732
+    .line 1752
     :cond_7
     invoke-direct {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->read()C
 
@@ -457,7 +457,7 @@
 
     packed-switch v5, :pswitch_data_6
 
-    .line 1735
+    .line 1755
     invoke-direct {p0, v5}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->reportUnexpectedCharacterError(C)V
 
     return v10
@@ -465,7 +465,7 @@
     :cond_8
     move v3, v4
 
-    .line 1740
+    .line 1760
     :cond_9
     invoke-direct {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->read()C
 
@@ -475,12 +475,12 @@
 
     packed-switch v1, :pswitch_data_7
 
-    .line 1743
+    .line 1763
     invoke-direct {p0, v1}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->reportUnexpectedCharacterError(C)V
 
     return v10
 
-    .line 1769
+    .line 1789
     :pswitch_8
     iget-char v1, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->current:C
 
@@ -488,7 +488,7 @@
 
     goto :goto_4
 
-    .line 1773
+    .line 1793
     :pswitch_9
     invoke-direct {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->read()C
 
@@ -512,14 +512,14 @@
 
     mul-int/lit8 v1, v1, 0xa
 
-    .line 1804
+    .line 1824
     iget-char v2, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->current:C
 
     add-int/lit8 v2, v2, -0x30
 
     add-int/2addr v1, v2
 
-    .line 1806
+    .line 1826
     :cond_a
     invoke-direct {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->read()C
 
@@ -543,7 +543,7 @@
 
     neg-int v12, v12
 
-    .line 1834
+    .line 1854
     :cond_c
     invoke-virtual {p0, v12, v4}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->buildFloat(II)F
 
@@ -713,7 +713,7 @@
 .method public skipNumberSeparator()V
     .locals 2
 
-    .line 1547
+    .line 1567
     :goto_0
     iget v0, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->pos:I
 
@@ -721,7 +721,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1548
+    .line 1568
     iget-object v1, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->s:Ljava/lang/CharSequence;
 
     invoke-interface {v1, v0}, Ljava/lang/CharSequence;->charAt(I)C
@@ -746,7 +746,7 @@
 
     return-void
 
-    .line 1554
+    .line 1574
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->advance()V
 
@@ -759,7 +759,7 @@
 .method public skipWhitespace()V
     .locals 2
 
-    .line 1537
+    .line 1557
     :goto_0
     iget v0, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->pos:I
 
@@ -767,7 +767,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1538
+    .line 1558
     iget-object v1, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->s:Ljava/lang/CharSequence;
 
     invoke-interface {v1, v0}, Ljava/lang/CharSequence;->charAt(I)C
@@ -780,7 +780,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1539
+    .line 1559
     invoke-virtual {p0}, Lorg/telegram/messenger/SvgHelper$ParserHelper;->advance()V
 
     goto :goto_0

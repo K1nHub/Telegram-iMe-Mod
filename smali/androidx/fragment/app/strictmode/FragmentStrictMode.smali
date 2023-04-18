@@ -98,10 +98,6 @@
 
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    const-string v0, "fragmentManager.strictModePolicy!!"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     return-object p1
 
     .line 53
@@ -122,12 +118,12 @@
 .method private final handlePolicyViolation(Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;Landroidx/fragment/app/strictmode/Violation;)V
     .locals 4
 
-    .line 252
+    .line 253
     invoke-virtual {p2}, Landroidx/fragment/app/strictmode/Violation;->getFragment()Landroidx/fragment/app/Fragment;
 
     move-result-object v0
 
-    .line 253
+    .line 254
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -136,7 +132,7 @@
 
     move-result-object v1
 
-    .line 254
+    .line 255
     invoke-virtual {p1}, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;->getFlags$fragment_release()Ljava/util/Set;
 
     move-result-object v2
@@ -149,10 +145,18 @@
 
     if-eqz v2, :cond_0
 
-    const-string v2, "Policy violation in "
+    .line 256
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    .line 255
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Policy violation in "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -160,7 +164,7 @@
 
     invoke-static {v3, v2, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 257
+    .line 258
     :cond_0
     invoke-virtual {p1}, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;->getListener$fragment_release()Landroidx/fragment/app/strictmode/FragmentStrictMode$OnViolationListener;
 
@@ -168,14 +172,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 258
+    .line 259
     new-instance v2, Landroidx/fragment/app/strictmode/FragmentStrictMode$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p1, p2}, Landroidx/fragment/app/strictmode/FragmentStrictMode$$ExternalSyntheticLambda0;-><init>(Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;Landroidx/fragment/app/strictmode/Violation;)V
 
     invoke-direct {p0, v0, v2}, Landroidx/fragment/app/strictmode/FragmentStrictMode;->runOnHostThread(Landroidx/fragment/app/Fragment;Ljava/lang/Runnable;)V
 
-    .line 260
+    .line 261
     :cond_1
     invoke-virtual {p1}, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;->getFlags$fragment_release()Ljava/util/Set;
 
@@ -189,7 +193,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 261
+    .line 262
     new-instance p1, Landroidx/fragment/app/strictmode/FragmentStrictMode$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, v1, p2}, Landroidx/fragment/app/strictmode/FragmentStrictMode$$ExternalSyntheticLambda1;-><init>(Ljava/lang/String;Landroidx/fragment/app/strictmode/Violation;)V
@@ -211,7 +215,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 258
+    .line 259
     invoke-virtual {p0}, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;->getListener$fragment_release()Landroidx/fragment/app/strictmode/FragmentStrictMode$OnViolationListener;
 
     move-result-object p0
@@ -222,16 +226,24 @@
 .end method
 
 .method private static final handlePolicyViolation$lambda-1(Ljava/lang/String;Landroidx/fragment/app/strictmode/Violation;)V
-    .locals 1
+    .locals 2
 
     const-string v0, "$violation"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "Policy violation with PENALTY_DEATH in "
+    .line 263
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 262
-    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Policy violation with PENALTY_DEATH in "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -239,7 +251,7 @@
 
     invoke-static {v0, p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 263
+    .line 264
     throw p1
 .end method
 
@@ -256,21 +268,29 @@
     if-eqz v0, :cond_0
 
     .line 228
-    invoke-virtual {p1}, Landroidx/fragment/app/strictmode/Violation;->getFragment()Landroidx/fragment/app/Fragment;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "StrictMode violation in "
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Landroidx/fragment/app/strictmode/Violation;->getFragment()Landroidx/fragment/app/Fragment;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -811,14 +831,14 @@
 .method private final runOnHostThread(Landroidx/fragment/app/Fragment;Ljava/lang/Runnable;)V
     .locals 2
 
-    .line 269
+    .line 270
     invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->isAdded()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 270
+    .line 271
     invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getParentFragmentManager()Landroidx/fragment/app/FragmentManager;
 
     move-result-object p1
@@ -835,7 +855,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 271
+    .line 272
     invoke-virtual {p1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -850,18 +870,18 @@
 
     if-eqz v0, :cond_0
 
-    .line 272
+    .line 273
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
 
-    .line 274
+    .line 275
     :cond_0
     invoke-virtual {p1, p2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     goto :goto_0
 
-    .line 277
+    .line 278
     :cond_1
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
@@ -887,6 +907,11 @@
     .end annotation
 
     .line 239
+    invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 240
     invoke-virtual {p1}, Landroidx/fragment/app/strictmode/FragmentStrictMode$Policy;->getMAllowedViolations$fragment_release()Ljava/util/Map;
 
     move-result-object p1
@@ -903,7 +928,7 @@
 
     return p2
 
-    .line 240
+    .line 241
     :cond_0
     invoke-virtual {p3}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
@@ -917,7 +942,7 @@
 
     if-nez v0, :cond_1
 
-    .line 241
+    .line 242
     invoke-virtual {p3}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
     move-result-object v0
@@ -932,7 +957,7 @@
 
     return p1
 
-    .line 245
+    .line 246
     :cond_1
     invoke-interface {p1, p3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 

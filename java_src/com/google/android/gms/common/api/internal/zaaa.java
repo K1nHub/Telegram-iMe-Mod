@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 import androidx.collection.ArrayMap;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailabilityLight;
 import com.google.android.gms.common.api.Api;
@@ -191,7 +191,7 @@ public final class zaaa implements zaca {
         if (this.zah == null) {
             return null;
         }
-        return PendingIntent.getActivity(this.zaa, System.identityHashCode(this.zab), this.zah.getSignInIntent(), com.google.android.gms.internal.base.zap.zaa | C0482C.BUFFER_FLAG_FIRST_SAMPLE);
+        return PendingIntent.getActivity(this.zaa, System.identityHashCode(this.zab), this.zah.getSignInIntent(), com.google.android.gms.internal.base.zap.zaa | C0470C.BUFFER_FLAG_FIRST_SAMPLE);
     }
 
     @Override // com.google.android.gms.common.api.internal.zaca

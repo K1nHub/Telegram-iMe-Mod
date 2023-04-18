@@ -10,17 +10,17 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public class DynamicLinkData extends AbstractSafeParcelable {
     public static final Parcelable.Creator<DynamicLinkData> CREATOR = new DynamicLinkDataCreator();
-    @SafeParcelable.Field(getter = "getClickTimestamp", m789id = 4)
+    @SafeParcelable.Field(getter = "getClickTimestamp", m775id = 4)
     private long clickTimestamp;
-    @SafeParcelable.Field(getter = "getDeepLink", m789id = 2)
+    @SafeParcelable.Field(getter = "getDeepLink", m775id = 2)
     private String deepLink;
-    @SafeParcelable.Field(getter = "getDynamicLink", m789id = 1)
+    @SafeParcelable.Field(getter = "getDynamicLink", m775id = 1)
     private String dynamicLink;
-    @SafeParcelable.Field(getter = "getExtensionBundle", m789id = 5)
+    @SafeParcelable.Field(getter = "getExtensionBundle", m775id = 5)
     private Bundle extensionBundle;
-    @SafeParcelable.Field(getter = "getMinVersion", m789id = 3)
+    @SafeParcelable.Field(getter = "getMinVersion", m775id = 3)
     private int minVersion;
-    @SafeParcelable.Field(getter = "getRedirectUrl", m789id = 6)
+    @SafeParcelable.Field(getter = "getRedirectUrl", m775id = 6)
     private Uri redirectUrl;
 
     public String getDynamicLink() {
@@ -53,7 +53,7 @@ public class DynamicLinkData extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public DynamicLinkData(@SafeParcelable.Param(m788id = 1) String str, @SafeParcelable.Param(m788id = 2) String str2, @SafeParcelable.Param(m788id = 3) int i, @SafeParcelable.Param(m788id = 4) long j, @SafeParcelable.Param(m788id = 5) Bundle bundle, @SafeParcelable.Param(m788id = 6) Uri uri) {
+    public DynamicLinkData(@SafeParcelable.Param(m774id = 1) String str, @SafeParcelable.Param(m774id = 2) String str2, @SafeParcelable.Param(m774id = 3) int i, @SafeParcelable.Param(m774id = 4) long j, @SafeParcelable.Param(m774id = 5) Bundle bundle, @SafeParcelable.Param(m774id = 6) Uri uri) {
         this.clickTimestamp = 0L;
         this.extensionBundle = null;
         this.dynamicLink = str;

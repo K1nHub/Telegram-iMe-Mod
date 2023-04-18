@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.fxn.BubbleTabBar;
 import com.github.mmin18.widget.RealtimeBlurView;
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletGlobalBinding implements ViewBinding {
     public final BubbleTabBar bottomNavigationWallet;
@@ -37,7 +37,7 @@ public final class ForkFragmentWalletGlobalBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletGlobalBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3316R.layout.fork_fragment_wallet_global, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3242R.layout.fork_fragment_wallet_global, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -45,16 +45,16 @@ public final class ForkFragmentWalletGlobalBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletGlobalBinding bind(View view) {
-        int i = C3316R.C3319id.bottom_navigation_wallet;
+        int i = C3242R.C3245id.bottom_navigation_wallet;
         BubbleTabBar bubbleTabBar = (BubbleTabBar) ViewBindings.findChildViewById(view, i);
         if (bubbleTabBar != null) {
-            i = C3316R.C3319id.card_bottom_navigation_wrapper;
+            i = C3242R.C3245id.card_bottom_navigation_wrapper;
             CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
             if (cardView != null) {
-                i = C3316R.C3319id.frame_fragment_container;
+                i = C3242R.C3245id.frame_fragment_container;
                 FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
                 if (frameLayout != null) {
-                    i = C3316R.C3319id.realtime_blur;
+                    i = C3242R.C3245id.realtime_blur;
                     RealtimeBlurView realtimeBlurView = (RealtimeBlurView) ViewBindings.findChildViewById(view, i);
                     if (realtimeBlurView != null) {
                         return new ForkFragmentWalletGlobalBinding((ConstraintLayout) view, bubbleTabBar, cardView, frameLayout, realtimeBlurView);

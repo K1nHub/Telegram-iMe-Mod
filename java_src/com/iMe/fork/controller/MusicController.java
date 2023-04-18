@@ -4,9 +4,9 @@ import android.content.SharedPreferences;
 import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.MusicController;
 import com.iMe.fork.models.backup.Backup;
-import com.iMe.p032ui.music.MusicTab;
-import com.iMe.storage.data.locale.p028db.dao.main.PlaylistsDao;
-import com.iMe.storage.data.locale.p028db.model.music.PlaylistsDb;
+import com.iMe.p031ui.music.MusicTab;
+import com.iMe.storage.data.locale.p027db.dao.main.PlaylistsDao;
+import com.iMe.storage.data.locale.p027db.model.music.PlaylistsDb;
 import com.iMe.storage.data.mapper.music.PlaylistsMappingKt;
 import com.iMe.storage.domain.model.music.PlaylistModel;
 import java.util.ArrayList;
@@ -29,15 +29,15 @@ import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import p035j$.util.concurrent.ConcurrentHashMap;
-import p035j$.util.concurrent.ConcurrentMap$EL;
-import p035j$.util.function.Function;
+import p034j$.util.concurrent.ConcurrentHashMap;
+import p034j$.util.concurrent.ConcurrentMap$EL;
+import p034j$.util.function.Function;
 /* compiled from: MusicController.kt */
 /* loaded from: classes3.dex */
 public final class MusicController extends BaseController implements KoinComponent {
@@ -115,8 +115,8 @@ public final class MusicController extends BaseController implements KoinCompone
         filter = SequencesKt___SequencesKt.filter(asSequence, MusicController$loadPlaylists$1.INSTANCE);
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (PlaylistsDb playlistsDb : filter) {
-            Pair m94to = TuplesKt.m94to(Long.valueOf(playlistsDb.getDialogId()), PlaylistsMappingKt.mapToDomain(playlistsDb));
-            linkedHashMap.put(m94to.getFirst(), m94to.getSecond());
+            Pair m80to = TuplesKt.m80to(Long.valueOf(playlistsDb.getDialogId()), PlaylistsMappingKt.mapToDomain(playlistsDb));
+            linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.playlists = mutableMap;
@@ -257,19 +257,19 @@ public final class MusicController extends BaseController implements KoinCompone
             Integer valueOf = Integer.valueOf(i);
             final MusicController$Companion$getInstance$1 musicController$Companion$getInstance$1 = new MusicController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.MusicController$Companion$$ExternalSyntheticLambda0
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
                     MusicController instance$lambda$0;
                     instance$lambda$0 = MusicController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p035j$.util.function.Function
+                @Override // p034j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

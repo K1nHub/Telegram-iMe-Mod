@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;ZLorg/telegram/ui/Cells/ChatActionCell$ThemeDelegate;I)V
     .locals 0
 
-    .line 7739
+    .line 7687
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$27;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Cells/ChatActionCell;-><init>(Landroid/content/Context;ZLorg/telegram/ui/Cells/ChatActionCell$ThemeDelegate;I)V
@@ -35,7 +35,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 7767
+    .line 7715
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$27;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -62,7 +62,7 @@
 
     const/4 v1, 0x4
 
-    .line 7768
+    .line 7716
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -77,7 +77,7 @@
 
     if-lez v2, :cond_0
 
-    .line 7770
+    .line 7718
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v2
@@ -88,10 +88,10 @@
 
     if-gez v2, :cond_1
 
-    .line 7771
+    .line 7719
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 7772
+    .line 7720
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v2
@@ -106,15 +106,15 @@
 
     invoke-virtual {p1, v1, v0, v2, v3}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 7773
+    .line 7721
     invoke-super {p0, p1}, Lorg/telegram/ui/Cells/ChatActionCell;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 7774
+    .line 7722
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
 
-    .line 7777
+    .line 7725
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Cells/ChatActionCell;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -126,58 +126,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 7751
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getAlpha()F
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    cmpl-float v0, v0, v1
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$27;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$25000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->isActionModeShowed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$27;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$3500(Lorg/telegram/ui/ChatActivity;)I
-
-    move-result v0
-
-    if-ltz v0, :cond_0
-
-    goto :goto_0
-
-    .line 7754
-    :cond_0
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 2
-
-    .line 7759
+    .line 7699
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getAlpha()F
 
     move-result v0
@@ -210,7 +159,58 @@
 
     goto :goto_0
 
-    .line 7762
+    .line 7702
+    :cond_0
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 2
+
+    .line 7707
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getAlpha()F
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    cmpl-float v0, v0, v1
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$27;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$25200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->isActionModeShowed()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$27;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$3500(Lorg/telegram/ui/ChatActivity;)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    goto :goto_0
+
+    .line 7710
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Cells/ChatActionCell;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -228,7 +228,7 @@
 .method public setTranslationY(F)V
     .locals 1
 
-    .line 7743
+    .line 7691
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getTranslationY()F
 
     move-result v0
@@ -237,10 +237,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 7744
+    .line 7692
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/ChatActionCell;->invalidate()V
 
-    .line 7746
+    .line 7694
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->setTranslationY(F)V
 

@@ -1,14 +1,11 @@
 .class Landroidx/fragment/app/Fragment$5;
-.super Ljava/lang/Object;
+.super Landroidx/fragment/app/FragmentContainer;
 .source "Fragment.java"
-
-# interfaces
-.implements Landroidx/lifecycle/LifecycleEventObserver;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/fragment/app/Fragment;->performCreate(Landroid/os/Bundle;)V
+    value = Landroidx/fragment/app/Fragment;->createFragmentContainer()Landroidx/fragment/app/FragmentContainer;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,34 +22,79 @@
 .method constructor <init>(Landroidx/fragment/app/Fragment;)V
     .locals 0
 
-    .line 2968
+    .line 3037
     iput-object p1, p0, Landroidx/fragment/app/Fragment$5;->this$0:Landroidx/fragment/app/Fragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroidx/fragment/app/FragmentContainer;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .locals 0
+.method public onFindViewById(I)Landroid/view/View;
+    .locals 2
 
-    .line 2972
-    sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
+    .line 3041
+    iget-object v0, p0, Landroidx/fragment/app/Fragment$5;->this$0:Landroidx/fragment/app/Fragment;
 
-    if-ne p2, p1, :cond_0
+    iget-object v0, v0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
-    .line 2973
-    iget-object p1, p0, Landroidx/fragment/app/Fragment$5;->this$0:Landroidx/fragment/app/Fragment;
+    if-eqz v0, :cond_0
 
-    iget-object p1, p1, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+    .line 3045
+    invoke-virtual {v0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    if-eqz p1, :cond_0
+    move-result-object p1
 
-    .line 2974
-    invoke-static {p1}, Landroidx/fragment/app/Fragment$Api19Impl;->cancelPendingInputEvents(Landroid/view/View;)V
+    return-object p1
+
+    .line 3042
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Fragment "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Landroidx/fragment/app/Fragment$5;->this$0:Landroidx/fragment/app/Fragment;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, " does not have a view"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public onHasView()Z
+    .locals 1
+
+    .line 3050
+    iget-object v0, p0, Landroidx/fragment/app/Fragment$5;->this$0:Landroidx/fragment/app/Fragment;
+
+    iget-object v0, v0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
 
     :cond_0
-    return-void
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
 .end method

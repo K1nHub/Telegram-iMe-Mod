@@ -61,7 +61,7 @@ public class DefaultDataSink implements DataSink {
         }
         this.mMuxerIndex = this.mMuxer.addTrack(mediaFormat);
         Logger logger = LOG;
-        logger.m698v("Added track #" + this.mMuxerIndex + " with " + mediaFormat.getString("mime") + " to muxer");
+        logger.m684v("Added track #" + this.mMuxerIndex + " with " + mediaFormat.getString("mime") + " to muxer");
         this.mMuxer.start();
         this.mMuxerStarted = true;
         drainQueue();
@@ -92,7 +92,7 @@ public class DefaultDataSink implements DataSink {
         }
         this.mQueueBuffer.flip();
         Logger logger = LOG;
-        logger.m700i("Output format determined, writing pending data into the muxer. samples:" + this.mQueue.size() + " bytes:" + this.mQueueBuffer.limit());
+        logger.m686i("Output format determined, writing pending data into the muxer. samples:" + this.mQueue.size() + " bytes:" + this.mQueueBuffer.limit());
         MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
         int i = 0;
         for (QueuedSample queuedSample : this.mQueue) {
@@ -114,7 +114,7 @@ public class DefaultDataSink implements DataSink {
         try {
             this.mMuxer.release();
         } catch (Exception e) {
-            LOG.m696w("Failed to release the muxer.", e);
+            LOG.m682w("Failed to release the muxer.", e);
         }
     }
 }

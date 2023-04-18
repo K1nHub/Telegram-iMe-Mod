@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 3450
+    .line 3444
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,27 +29,27 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 3453
+    .line 3447
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 3454
+    .line 3448
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 3455
+    .line 3449
     invoke-virtual {p0}, Landroid/widget/EditText;->clearFocus()V
 
-    .line 3456
+    .line 3450
     invoke-virtual {p0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 3459
+    .line 3453
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onTouchEvent(Landroid/view/MotionEvent;)Z
 

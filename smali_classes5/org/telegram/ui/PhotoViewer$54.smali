@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
     .locals 0
 
-    .line 8756
+    .line 8759
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/VideoPlayer;-><init>()V
@@ -35,10 +35,10 @@
 .method public pause()V
     .locals 2
 
-    .line 8765
+    .line 8768
     invoke-super {p0}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
-    .line 8766
+    .line 8769
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$2400(Lorg/telegram/ui/PhotoViewer;)I
@@ -47,7 +47,7 @@
 
     if-nez v0, :cond_0
 
-    .line 8767
+    .line 8770
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v1, 0x0
@@ -61,10 +61,10 @@
 .method public play()V
     .locals 2
 
-    .line 8759
+    .line 8762
     invoke-super {p0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
 
-    .line 8760
+    .line 8763
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v1, 0x1
@@ -77,10 +77,10 @@
 .method public seekTo(J)V
     .locals 1
 
-    .line 8773
+    .line 8776
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
 
-    .line 8774
+    .line 8777
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1700(Lorg/telegram/ui/PhotoViewer;)Z
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 8775
+    .line 8778
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0, p1, p2}, Lorg/telegram/ui/PhotoViewer;->access$23800(Lorg/telegram/ui/PhotoViewer;J)V

@@ -34,69 +34,90 @@ public final class AppInitializer {
     }
 
     public <T> T initializeComponent(Class<? extends Initializer<T>> cls) {
-        return (T) doInitialize(cls, new HashSet());
+        return (T) doInitialize(cls);
     }
 
-    <T> T doInitialize(Class<? extends Initializer<?>> cls, Set<Class<?>> set) {
+    public boolean isEagerlyInitialized(Class<? extends Initializer<?>> cls) {
+        return this.mDiscovered.contains(cls);
+    }
+
+    <T> T doInitialize(Class<? extends Initializer<?>> cls) {
         T t;
         synchronized (sLock) {
-            if (Trace.isEnabled()) {
+            t = (T) this.mInitialized.get(cls);
+            if (t == null) {
+                t = (T) doInitialize(cls, new HashSet());
+            }
+        }
+        return t;
+    }
+
+    private <T> T doInitialize(Class<? extends Initializer<?>> cls, Set<Class<?>> set) {
+        T t;
+        if (Trace.isEnabled()) {
+            try {
                 Trace.beginSection(cls.getSimpleName());
+            } finally {
+                Trace.endSection();
             }
-            if (set.contains(cls)) {
-                throw new IllegalStateException(String.format("Cannot initialize %s. Cycle detected.", cls.getName()));
-            }
-            if (!this.mInitialized.containsKey(cls)) {
-                set.add(cls);
-                try {
-                    Initializer<?> newInstance = cls.getDeclaredConstructor(new Class[0]).newInstance(new Object[0]);
-                    List<Class<? extends Initializer<?>>> dependencies = newInstance.dependencies();
-                    if (!dependencies.isEmpty()) {
-                        for (Class<? extends Initializer<?>> cls2 : dependencies) {
-                            if (!this.mInitialized.containsKey(cls2)) {
-                                doInitialize(cls2, set);
-                            }
-                        }
+        }
+        if (set.contains(cls)) {
+            throw new IllegalStateException(String.format("Cannot initialize %s. Cycle detected.", cls.getName()));
+        }
+        if (!this.mInitialized.containsKey(cls)) {
+            set.add(cls);
+            Initializer<?> newInstance = cls.getDeclaredConstructor(new Class[0]).newInstance(new Object[0]);
+            List<Class<? extends Initializer<?>>> dependencies = newInstance.dependencies();
+            if (!dependencies.isEmpty()) {
+                for (Class<? extends Initializer<?>> cls2 : dependencies) {
+                    if (!this.mInitialized.containsKey(cls2)) {
+                        doInitialize(cls2, set);
                     }
-                    t = (T) newInstance.create(this.mContext);
-                    set.remove(cls);
-                    this.mInitialized.put(cls, t);
-                } catch (Throwable th) {
-                    throw new StartupException(th);
                 }
-            } else {
-                t = (T) this.mInitialized.get(cls);
             }
-            Trace.endSection();
+            t = (T) newInstance.create(this.mContext);
+            set.remove(cls);
+            this.mInitialized.put(cls, t);
+        } else {
+            t = (T) this.mInitialized.get(cls);
         }
         return t;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Multi-variable type inference failed */
     public void discoverAndInitialize() {
         try {
             try {
                 Trace.beginSection("Startup");
-                Bundle bundle = this.mContext.getPackageManager().getProviderInfo(new ComponentName(this.mContext.getPackageName(), InitializationProvider.class.getName()), 128).metaData;
-                String string = this.mContext.getString(R$string.androidx_startup);
-                if (bundle != null) {
-                    HashSet hashSet = new HashSet();
-                    for (String str : bundle.keySet()) {
-                        if (string.equals(bundle.getString(str, null))) {
-                            Class<?> cls = Class.forName(str);
-                            if (Initializer.class.isAssignableFrom(cls)) {
-                                this.mDiscovered.add(cls);
-                                doInitialize(cls, hashSet);
-                            }
+                discoverAndInitialize(this.mContext.getPackageManager().getProviderInfo(new ComponentName(this.mContext.getPackageName(), InitializationProvider.class.getName()), 128).metaData);
+            } catch (PackageManager.NameNotFoundException e) {
+                throw new StartupException(e);
+            }
+        } finally {
+            Trace.endSection();
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    void discoverAndInitialize(Bundle bundle) {
+        String string = this.mContext.getString(R$string.androidx_startup);
+        if (bundle != null) {
+            try {
+                HashSet hashSet = new HashSet();
+                for (String str : bundle.keySet()) {
+                    if (string.equals(bundle.getString(str, null))) {
+                        Class<?> cls = Class.forName(str);
+                        if (Initializer.class.isAssignableFrom(cls)) {
+                            this.mDiscovered.add(cls);
                         }
                     }
                 }
-            } finally {
-                Trace.endSection();
+                for (Class<? extends Initializer<?>> cls2 : this.mDiscovered) {
+                    doInitialize(cls2, hashSet);
+                }
+            } catch (ClassNotFoundException e) {
+                throw new StartupException(e);
             }
-        } catch (PackageManager.NameNotFoundException | ClassNotFoundException e) {
-            throw new StartupException(e);
         }
     }
 }

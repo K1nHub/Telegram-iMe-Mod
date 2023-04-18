@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/fragment/app/Fragment;->registerForActivityResult(Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultRegistry;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
+    value = Landroidx/fragment/app/Fragment;->registerForActivityResult(Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -28,15 +28,15 @@
 
 
 # instance fields
-.field final synthetic val$registry:Landroidx/activity/result/ActivityResultRegistry;
+.field final synthetic this$0:Landroidx/fragment/app/Fragment;
 
 
 # direct methods
-.method constructor <init>(Landroidx/fragment/app/Fragment;Landroidx/activity/result/ActivityResultRegistry;)V
+.method constructor <init>(Landroidx/fragment/app/Fragment;)V
     .locals 0
 
-    .line 3464
-    iput-object p2, p0, Landroidx/fragment/app/Fragment$7;->val$registry:Landroidx/activity/result/ActivityResultRegistry;
+    .line 3551
+    iput-object p1, p0, Landroidx/fragment/app/Fragment$7;->this$0:Landroidx/fragment/app/Fragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,10 +46,35 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Void;)Landroidx/activity/result/ActivityResultRegistry;
-    .locals 0
+    .locals 2
 
-    .line 3467
-    iget-object p1, p0, Landroidx/fragment/app/Fragment$7;->val$registry:Landroidx/activity/result/ActivityResultRegistry;
+    .line 3554
+    iget-object p1, p0, Landroidx/fragment/app/Fragment$7;->this$0:Landroidx/fragment/app/Fragment;
+
+    iget-object v0, p1, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
+
+    instance-of v1, v0, Landroidx/activity/result/ActivityResultRegistryOwner;
+
+    if-eqz v1, :cond_0
+
+    .line 3555
+    check-cast v0, Landroidx/activity/result/ActivityResultRegistryOwner;
+
+    invoke-interface {v0}, Landroidx/activity/result/ActivityResultRegistryOwner;->getActivityResultRegistry()Landroidx/activity/result/ActivityResultRegistry;
+
+    move-result-object p1
+
+    return-object p1
+
+    .line 3557
+    :cond_0
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroidx/activity/ComponentActivity;->getActivityResultRegistry()Landroidx/activity/result/ActivityResultRegistry;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -57,7 +82,7 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 3464
+    .line 3551
     check-cast p1, Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment$7;->apply(Ljava/lang/Void;)Landroidx/activity/result/ActivityResultRegistry;

@@ -21,7 +21,7 @@
 
     const-string v0, "ime://binance/payAuth"
 
-    .line 182
+    .line 181
     sput-object v0, Lcom/iMe/storage/common/AppConfiguration$Binance;->AUTH_REDIRECT_URL:Ljava/lang/String;
 
     return-void
@@ -30,7 +30,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 181
+    .line 180
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public final getAUTH_REDIRECT_URL()Ljava/lang/String;
     .locals 1
 
-    .line 182
+    .line 181
     sget-object v0, Lcom/iMe/storage/common/AppConfiguration$Binance;->AUTH_REDIRECT_URL:Ljava/lang/String;
 
     return-object v0
@@ -50,7 +50,7 @@
 .method public final getProcessPayUrl()Ljava/lang/String;
     .locals 1
 
-    .line 192
+    .line 191
     sget-object v0, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
 
     invoke-virtual {v0}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/iMe/storage/domain/model/common/EnvironmentInformation;

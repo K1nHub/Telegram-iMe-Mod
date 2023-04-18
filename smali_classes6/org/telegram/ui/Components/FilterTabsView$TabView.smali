@@ -110,13 +110,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/FilterTabsView;Landroid/content/Context;)V
     .locals 0
 
-    .line 473
+    .line 474
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    .line 474
+    .line 475
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 428
+    .line 429
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -125,7 +125,7 @@
 
     const/4 p1, -0x1
 
-    .line 445
+    .line 446
     iput p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTabCount:I
 
     return-void
@@ -134,7 +134,7 @@
 .method static synthetic access$3502(Lorg/telegram/ui/Components/FilterTabsView$TabView;F)F
     .locals 0
 
-    .line 421
+    .line 422
     iput p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->locIconXOffset:F
 
     return p1
@@ -143,7 +143,7 @@
 .method static synthetic access$4400(Lorg/telegram/ui/Components/FilterTabsView$TabView;)Landroid/graphics/RectF;
     .locals 0
 
-    .line 421
+    .line 422
     iget-object p0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->rect:Landroid/graphics/RectF;
 
     return-object p0
@@ -152,7 +152,7 @@
 .method static synthetic access$4500(Lorg/telegram/ui/Components/FilterTabsView$TabView;)Lorg/telegram/ui/Components/FilterTabsView$Tab;
     .locals 0
 
-    .line 421
+    .line 422
     iget-object p0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     return-object p0
@@ -161,7 +161,7 @@
 .method static synthetic access$4600(Lorg/telegram/ui/Components/FilterTabsView$TabView;)Z
     .locals 0
 
-    .line 421
+    .line 422
     iget-boolean p0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTabWidth:Z
 
     return p0
@@ -170,7 +170,7 @@
 .method static synthetic access$4700(Lorg/telegram/ui/Components/FilterTabsView$TabView;)F
     .locals 0
 
-    .line 421
+    .line 422
     iget p0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromTabWidth:F
 
     return p0
@@ -179,7 +179,7 @@
 .method static synthetic access$4800(Lorg/telegram/ui/Components/FilterTabsView$TabView;)I
     .locals 0
 
-    .line 421
+    .line 422
     iget p0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->tabWidth:I
 
     return p0
@@ -188,7 +188,7 @@
 .method static synthetic access$4900(Lorg/telegram/ui/Components/FilterTabsView$TabView;)F
     .locals 0
 
-    .line 421
+    .line 422
     iget p0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromWidth:F
 
     return p0
@@ -197,7 +197,7 @@
 .method static synthetic access$5102(Lorg/telegram/ui/Components/FilterTabsView$TabView;F)F
     .locals 0
 
-    .line 421
+    .line 422
     iput p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->progressToLocked:F
 
     return p1
@@ -206,7 +206,7 @@
 .method private synthetic lambda$shakeLockIcon$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1036
+    .line 1037
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -219,7 +219,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->locIconXOffset:F
 
-    .line 1037
+    .line 1038
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -232,7 +232,7 @@
 
     move-object/from16 v0, p0
 
-    .line 886
+    .line 887
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget v1, v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->counter:I
@@ -245,20 +245,20 @@
 
     if-eq v1, v2, :cond_4
 
-    .line 887
+    .line 888
     iput-boolean v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTabCounter:Z
 
-    .line 888
+    .line 889
     iput v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromTabCount:I
 
-    .line 889
+    .line 890
     iget v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastCountWidth:I
 
     int-to-float v5, v5
 
     iput v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromCountWidth:F
 
-    .line 890
+    .line 891
     iget v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastCounterWidth:F
 
     iput v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromCounterWidth:F
@@ -267,12 +267,12 @@
 
     if-lez v1, :cond_3
 
-    .line 892
+    .line 893
     invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 893
+    .line 894
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget v1, v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->counter:I
@@ -281,7 +281,7 @@
 
     move-result-object v1
 
-    .line 895
+    .line 896
     invoke-virtual {v7}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -292,24 +292,24 @@
 
     if-ne v2, v5, :cond_2
 
-    .line 896
+    .line 897
     new-instance v9, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v9, v7}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 897
+    .line 898
     new-instance v2, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v2, v1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 898
+    .line 899
     new-instance v5, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v5, v1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     move v6, v3
 
-    .line 899
+    .line 900
     :goto_0
     invoke-virtual {v7}, Ljava/lang/String;->length()I
 
@@ -317,7 +317,7 @@
 
     if-ge v6, v8, :cond_1
 
-    .line 900
+    .line 901
     invoke-virtual {v7, v6}, Ljava/lang/String;->charAt(I)C
 
     move-result v8
@@ -328,7 +328,7 @@
 
     if-ne v8, v10, :cond_0
 
-    .line 901
+    .line 902
     new-instance v8, Lorg/telegram/ui/Components/EmptyStubSpan;
 
     invoke-direct {v8}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
@@ -337,7 +337,7 @@
 
     invoke-virtual {v9, v8, v6, v10, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 902
+    .line 903
     new-instance v8, Lorg/telegram/ui/Components/EmptyStubSpan;
 
     invoke-direct {v8}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
@@ -346,7 +346,7 @@
 
     goto :goto_1
 
-    .line 904
+    .line 905
     :cond_0
     new-instance v8, Lorg/telegram/ui/Components/EmptyStubSpan;
 
@@ -361,7 +361,7 @@
 
     goto :goto_0
 
-    .line 908
+    .line 909
     :cond_1
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_countTextPaint:Landroid/text/TextPaint;
 
@@ -377,7 +377,7 @@
 
     double-to-int v1, v6
 
-    .line 909
+    .line 910
     new-instance v6, Landroid/text/StaticLayout;
 
     iget-object v7, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -402,7 +402,7 @@
 
     iput-object v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->outCounter:Landroid/text/StaticLayout;
 
-    .line 910
+    .line 911
     new-instance v6, Landroid/text/StaticLayout;
 
     iget-object v7, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -429,7 +429,7 @@
 
     iput-object v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->stableCounter:Landroid/text/StaticLayout;
 
-    .line 911
+    .line 912
     new-instance v5, Landroid/text/StaticLayout;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -450,7 +450,7 @@
 
     goto :goto_2
 
-    .line 913
+    .line 914
     :cond_2
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_countTextPaint:Landroid/text/TextPaint;
 
@@ -466,7 +466,7 @@
 
     double-to-int v9, v5
 
-    .line 914
+    .line 915
     new-instance v2, Landroid/text/StaticLayout;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -489,7 +489,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->outCounter:Landroid/text/StaticLayout;
 
-    .line 915
+    .line 916
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_countTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v2, v1}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
@@ -504,7 +504,7 @@
 
     double-to-int v11, v5
 
-    .line 916
+    .line 917
     new-instance v2, Landroid/text/StaticLayout;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -538,7 +538,7 @@
     :cond_4
     move v1, v3
 
-    .line 924
+    .line 925
     :goto_3
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
@@ -550,7 +550,7 @@
 
     new-array v6, v4, [Ljava/lang/Object;
 
-    .line 925
+    .line 926
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -563,7 +563,7 @@
 
     move-result-object v2
 
-    .line 926
+    .line 927
     iget-object v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/FilterTabsView;->access$500(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -584,7 +584,7 @@
 
     const/16 v7, 0xa
 
-    .line 927
+    .line 928
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -606,7 +606,7 @@
 
     move-object v2, v5
 
-    .line 931
+    .line 932
     :goto_4
     iget-object v7, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
@@ -652,7 +652,7 @@
     :goto_6
     add-int/2addr v7, v6
 
-    .line 932
+    .line 933
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -663,22 +663,22 @@
 
     int-to-float v2, v2
 
-    .line 934
+    .line 935
     iget v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTextX:F
 
     cmpl-float v2, v2, v6
 
     if-eqz v2, :cond_8
 
-    .line 935
+    .line 936
     iput-boolean v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTextX:Z
 
-    .line 936
+    .line 937
     iput v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromTextX:F
 
     move v1, v4
 
-    .line 940
+    .line 941
     :cond_8
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTitle:Ljava/lang/String;
 
@@ -694,7 +694,7 @@
 
     if-nez v2, :cond_e
 
-    .line 944
+    .line 945
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTitle:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
@@ -711,10 +711,10 @@
 
     if-le v1, v2, :cond_9
 
-    .line 946
+    .line 947
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTitle:Ljava/lang/String;
 
-    .line 947
+    .line 948
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/FilterTabsView$Tab;->title:Ljava/lang/String;
@@ -723,18 +723,18 @@
 
     goto :goto_7
 
-    .line 950
+    .line 951
     :cond_9
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->title:Ljava/lang/String;
 
-    .line 951
+    .line 952
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTitle:Ljava/lang/String;
 
     move v6, v3
 
-    .line 953
+    .line 954
     :goto_7
     invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
@@ -746,7 +746,7 @@
 
     if-ltz v8, :cond_d
 
-    .line 955
+    .line 956
     iget-object v11, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v11}, Lorg/telegram/ui/Components/FilterTabsView;->access$1000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -767,26 +767,26 @@
 
     move-result-object v11
 
-    .line 956
+    .line 957
     new-instance v13, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v13, v11}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 957
+    .line 958
     new-instance v15, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v15, v11}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     if-eqz v8, :cond_a
 
-    .line 959
+    .line 960
     new-instance v11, Lorg/telegram/ui/Components/EmptyStubSpan;
 
     invoke-direct {v11}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
 
     invoke-virtual {v15, v11, v3, v8, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 961
+    .line 962
     :cond_a
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
@@ -800,7 +800,7 @@
 
     if-eq v11, v12, :cond_b
 
-    .line 962
+    .line 963
     new-instance v11, Lorg/telegram/ui/Components/EmptyStubSpan;
 
     invoke-direct {v11}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
@@ -817,7 +817,7 @@
 
     invoke-virtual {v15, v11, v12, v1, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 964
+    .line 965
     :cond_b
     new-instance v1, Lorg/telegram/ui/Components/EmptyStubSpan;
 
@@ -831,7 +831,7 @@
 
     invoke-virtual {v13, v1, v8, v2, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 966
+    .line 967
     new-instance v1, Landroid/text/StaticLayout;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -862,7 +862,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateInLayout:Landroid/text/StaticLayout;
 
-    .line 967
+    .line 968
     new-instance v1, Landroid/text/StaticLayout;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -891,17 +891,17 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateStableLayout:Landroid/text/StaticLayout;
 
-    .line 968
+    .line 969
     iput-boolean v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTextChange:Z
 
-    .line 969
+    .line 970
     iput-boolean v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTextChangeOut:Z
 
     if-nez v8, :cond_c
 
     goto :goto_8
 
-    .line 970
+    .line 971
     :cond_c
     invoke-virtual {v1, v8}, Landroid/text/StaticLayout;->getPrimaryHorizontal(I)F
 
@@ -912,17 +912,17 @@
     :goto_8
     iput v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleXOffset:F
 
-    .line 971
+    .line 972
     iget v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTitleWidth:I
 
     iput v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromTitleWidth:I
 
-    .line 972
+    .line 973
     iput-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateOutLayout:Landroid/text/StaticLayout;
 
     goto :goto_9
 
-    .line 975
+    .line 976
     :cond_d
     new-instance v1, Landroid/text/StaticLayout;
 
@@ -954,7 +954,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateInLayout:Landroid/text/StaticLayout;
 
-    .line 976
+    .line 977
     new-instance v1, Landroid/text/StaticLayout;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTitle:Ljava/lang/String;
@@ -985,16 +985,16 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateOutLayout:Landroid/text/StaticLayout;
 
-    .line 977
+    .line 978
     iput-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateStableLayout:Landroid/text/StaticLayout;
 
-    .line 978
+    .line 979
     iput-boolean v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTextChange:Z
 
-    .line 979
+    .line 980
     iput v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleXOffset:F
 
-    .line 980
+    .line 981
     iget v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTitleWidth:I
 
     iput v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromTitleWidth:I
@@ -1005,7 +1005,7 @@
     :cond_e
     int-to-float v2, v7
 
-    .line 985
+    .line 986
     iget v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTabWidth:F
 
     cmpl-float v2, v2, v3
@@ -1031,17 +1031,17 @@
 
     goto :goto_b
 
-    .line 986
+    .line 987
     :cond_10
     :goto_a
     iput-boolean v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTabWidth:Z
 
-    .line 987
+    .line 988
     iget v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTabWidth:F
 
     iput v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromTabWidth:F
 
-    .line 988
+    .line 989
     iget v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastWidth:F
 
     iput v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromWidth:F
@@ -1055,27 +1055,27 @@
 
     const/4 v0, 0x0
 
-    .line 1018
+    .line 1019
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateChange:Z
 
-    .line 1019
+    .line 1020
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTabCounter:Z
 
-    .line 1021
+    .line 1022
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTextChange:Z
 
-    .line 1022
+    .line 1023
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTextX:Z
 
-    .line 1023
+    .line 1024
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTabWidth:Z
 
     const/4 v0, 0x0
 
-    .line 1024
+    .line 1025
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1025
+    .line 1026
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -1084,7 +1084,7 @@
 .method public getId()I
     .locals 1
 
-    .line 485
+    .line 486
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget v0, v0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
@@ -1095,50 +1095,50 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 490
+    .line 491
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
     const/4 v0, 0x0
 
-    .line 491
+    .line 492
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateChange:Z
 
-    .line 492
+    .line 493
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTabCounter:Z
 
-    .line 494
+    .line 495
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTextChange:Z
 
-    .line 495
+    .line 496
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTextX:Z
 
-    .line 496
+    .line 497
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTabWidth:Z
 
-    .line 497
+    .line 498
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 498
+    .line 499
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 499
+    .line 500
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllUpdateListeners()V
 
-    .line 500
+    .line 501
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 501
+    .line 502
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeAnimator:Landroid/animation/ValueAnimator;
 
-    .line 503
+    .line 504
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -1152,7 +1152,7 @@
 
     move-object/from16 v7, p1
 
-    .line 517
+    .line 518
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->isDefault:Z
@@ -1166,7 +1166,7 @@
     :cond_0
     const/4 v2, 0x0
 
-    .line 519
+    .line 520
     :goto_0
     invoke-virtual {v1}, Lorg/telegram/ui/Components/FilterTabsView$Tab;->isAllowEditing()Z
 
@@ -1180,7 +1180,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 520
+    .line 521
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$1600(Lorg/telegram/ui/Components/FilterTabsView;)F
@@ -1191,10 +1191,10 @@
 
     if-eqz v1, :cond_4
 
-    .line 521
+    .line 522
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 522
+    .line 523
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$1600(Lorg/telegram/ui/Components/FilterTabsView;)F
@@ -1219,7 +1219,7 @@
     :goto_1
     mul-float/2addr v1, v11
 
-    .line 523
+    .line 524
     rem-int/2addr v6, v5
 
     int-to-float v6, v6
@@ -1242,7 +1242,7 @@
 
     double-to-float v1, v13
 
-    .line 524
+    .line 525
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v13
@@ -1279,7 +1279,7 @@
 
     float-to-double v3, v3
 
-    .line 526
+    .line 527
     invoke-static {v3, v4}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v13
@@ -1309,7 +1309,7 @@
 
     double-to-float v10, v13
 
-    .line 527
+    .line 528
     invoke-static {v3, v4}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v3
@@ -1326,14 +1326,14 @@
 
     double-to-float v3, v3
 
-    .line 525
+    .line 526
     invoke-virtual {v7, v10, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
     const v3, 0x3fb33333    # 1.4f
 
     mul-float/2addr v1, v3
 
-    .line 529
+    .line 530
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
@@ -1352,7 +1352,7 @@
 
     invoke-virtual {v7, v1, v3, v4}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 539
+    .line 540
     :cond_4
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -1364,14 +1364,14 @@
 
     if-eq v1, v3, :cond_5
 
-    .line 540
+    .line 541
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$1700(Lorg/telegram/ui/Components/FilterTabsView;)I
 
     move-result v1
 
-    .line 541
+    .line 542
     iget-object v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/FilterTabsView;->access$1800(Lorg/telegram/ui/Components/FilterTabsView;)I
@@ -1380,7 +1380,7 @@
 
     goto :goto_3
 
-    .line 543
+    .line 544
     :cond_5
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -1388,14 +1388,14 @@
 
     move-result v1
 
-    .line 544
+    .line 545
     iget-object v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/FilterTabsView;->access$1900(Lorg/telegram/ui/Components/FilterTabsView;)I
 
     move-result v4
 
-    .line 546
+    .line 547
     :goto_3
     iget-object v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
@@ -1417,28 +1417,28 @@
 
     if-ne v6, v1, :cond_7
 
-    .line 548
+    .line 549
     iget-object v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/FilterTabsView;->access$2000(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 549
+    .line 550
     iget-object v13, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v13}, Lorg/telegram/ui/Components/FilterTabsView;->access$2100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/String;
 
     move-result-object v13
 
-    .line 550
+    .line 551
     iget-object v14, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v14}, Lorg/telegram/ui/Components/FilterTabsView;->access$2200(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/String;
 
     move-result-object v14
 
-    .line 551
+    .line 552
     iget-object v15, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v15}, Lorg/telegram/ui/Components/FilterTabsView;->access$2300(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/String;
@@ -1447,7 +1447,7 @@
 
     goto :goto_5
 
-    .line 555
+    .line 556
     :cond_7
     iget-object v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -1455,21 +1455,21 @@
 
     move-result-object v6
 
-    .line 556
+    .line 557
     iget-object v13, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v13}, Lorg/telegram/ui/Components/FilterTabsView;->access$2300(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/String;
 
     move-result-object v13
 
-    .line 557
+    .line 558
     iget-object v14, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v14}, Lorg/telegram/ui/Components/FilterTabsView;->access$2000(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/String;
 
     move-result-object v14
 
-    .line 558
+    .line 559
     iget-object v15, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v15}, Lorg/telegram/ui/Components/FilterTabsView;->access$2300(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/String;
@@ -1485,7 +1485,7 @@
     :goto_5
     if-nez v13, :cond_c
 
-    .line 563
+    .line 564
     iget-object v13, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v13}, Lorg/telegram/ui/Components/FilterTabsView;->access$2400(Lorg/telegram/ui/Components/FilterTabsView;)Z
@@ -1513,7 +1513,7 @@
 
     goto :goto_6
 
-    .line 567
+    .line 568
     :cond_9
     iget-object v13, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -1529,7 +1529,7 @@
 
     goto/16 :goto_9
 
-    .line 564
+    .line 565
     :cond_a
     :goto_6
     iget-object v10, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -1558,7 +1558,7 @@
 
     invoke-virtual {v10, v6}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 565
+    .line 566
     iget-object v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget v6, v6, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
@@ -1589,18 +1589,18 @@
 
     goto/16 :goto_9
 
-    .line 570
+    .line 571
     :cond_c
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v6
 
-    .line 571
+    .line 572
     invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v13
 
-    .line 572
+    .line 573
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/FilterTabsView;->access$2400(Lorg/telegram/ui/Components/FilterTabsView;)Z
@@ -1628,7 +1628,7 @@
 
     goto :goto_8
 
-    .line 578
+    .line 579
     :cond_e
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -1650,19 +1650,19 @@
 
     goto :goto_9
 
-    .line 573
+    .line 574
     :cond_f
     :goto_8
     invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 574
+    .line 575
     invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v10
 
-    .line 575
+    .line 576
     iget-object v14, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v14}, Lorg/telegram/ui/Components/FilterTabsView;->access$1000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -1701,7 +1701,7 @@
 
     invoke-virtual {v14, v5}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 576
+    .line 577
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget v5, v5, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
@@ -1729,7 +1729,7 @@
 
     sub-float v10, v6, v5
 
-    .line 586
+    .line 587
     :goto_9
     iget v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromTabCount:I
 
@@ -1749,7 +1749,7 @@
     :goto_a
     if-lez v5, :cond_12
 
-    .line 587
+    .line 588
     iget-object v13, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget v13, v13, Lorg/telegram/ui/Components/FilterTabsView$Tab;->counter:I
@@ -1770,7 +1770,7 @@
     :goto_b
     if-lez v5, :cond_13
 
-    .line 588
+    .line 589
     iget-object v14, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget v14, v14, Lorg/telegram/ui/Components/FilterTabsView$Tab;->counter:I
@@ -1788,7 +1788,7 @@
     :cond_13
     const/4 v14, 0x0
 
-    .line 590
+    .line 591
     :goto_c
     iget-object v15, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
@@ -1821,7 +1821,7 @@
 
     new-array v9, v9, [Ljava/lang/Object;
 
-    .line 592
+    .line 593
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -1843,7 +1843,7 @@
 
     new-array v5, v9, [Ljava/lang/Object;
 
-    .line 594
+    .line 595
     invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
@@ -1854,7 +1854,7 @@
 
     move-result-object v3
 
-    .line 596
+    .line 597
     :goto_e
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -1878,7 +1878,7 @@
 
     const/16 v8, 0xa
 
-    .line 597
+    .line 598
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -1901,7 +1901,7 @@
 
     move/from16 v18, v8
 
-    .line 604
+    .line 605
     :goto_f
     iget-object v8, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -1924,7 +1924,7 @@
 
     move/from16 v3, v18
 
-    .line 613
+    .line 614
     :goto_10
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
@@ -1938,7 +1938,7 @@
 
     if-eqz v2, :cond_19
 
-    .line 614
+    .line 615
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v9}, Lorg/telegram/ui/Components/FilterTabsView;->access$800(Lorg/telegram/ui/Components/FilterTabsView;)Z
@@ -1962,7 +1962,7 @@
     :cond_18
     int-to-float v9, v3
 
-    .line 615
+    .line 616
     invoke-static/range {v18 .. v18}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v19
@@ -1986,7 +1986,7 @@
     :cond_19
     move v9, v3
 
-    .line 618
+    .line 619
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget v3, v3, Lorg/telegram/ui/Components/FilterTabsView$Tab;->titleWidth:I
@@ -2039,7 +2039,7 @@
 
     iput v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->tabWidth:I
 
-    .line 619
+    .line 620
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
@@ -2054,12 +2054,12 @@
 
     div-float/2addr v3, v13
 
-    .line 620
+    .line 621
     iget-boolean v13, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTextX:Z
 
     if-eqz v13, :cond_1c
 
-    .line 621
+    .line 622
     iget v13, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeProgress:F
 
     mul-float/2addr v3, v13
@@ -2077,7 +2077,7 @@
     :cond_1c
     move v13, v3
 
-    .line 625
+    .line 626
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     instance-of v15, v3, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;
@@ -2086,12 +2086,12 @@
 
     if-eqz v15, :cond_1d
 
-    .line 627
+    .line 628
     check-cast v3, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;
 
     move/from16 v22, v15
 
-    .line 628
+    .line 629
     new-instance v15, Landroid/graphics/PorterDuffColorFilter;
 
     move/from16 v23, v5
@@ -2112,14 +2112,14 @@
 
     invoke-direct {v15, v5, v9}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 629
+    .line 630
     invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->access$100(Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
     invoke-virtual {v5, v15}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 630
+    .line 631
     invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->access$200(Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
@@ -2128,12 +2128,12 @@
 
     mul-float v10, v10, v21
 
-    .line 631
+    .line 632
     invoke-static {v10}, Ljava/lang/Math;->round(F)I
 
     move-result v5
 
-    .line 632
+    .line 633
     invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->access$100(Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v9
@@ -2142,17 +2142,17 @@
 
     invoke-virtual {v9, v10}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 633
+    .line 634
     invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->access$200(Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v9
 
     invoke-virtual {v9, v5}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 634
+    .line 635
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 635
+    .line 636
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v5
@@ -2171,7 +2171,7 @@
 
     invoke-virtual {v7, v13, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 636
+    .line 637
     invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->access$100(Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
@@ -2184,7 +2184,7 @@
 
     invoke-virtual {v5, v10, v10, v9, v9}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 637
+    .line 638
     invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->access$200(Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
@@ -2197,21 +2197,21 @@
 
     move/from16 v5, v22
 
-    .line 638
+    .line 639
     invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->access$100(Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v9
 
     invoke-virtual {v9, v7}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 639
+    .line 640
     invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;->access$200(Lorg/telegram/ui/Components/FilterTabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
     invoke-virtual {v3, v7}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 640
+    .line 641
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_13
@@ -2228,7 +2228,7 @@
 
     if-nez v5, :cond_1e
 
-    .line 645
+    .line 646
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget-object v9, v9, Lorg/telegram/ui/Components/FilterTabsView$Tab;->title:Ljava/lang/String;
@@ -2241,14 +2241,14 @@
 
     if-nez v9, :cond_1e
 
-    .line 646
+    .line 647
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget-object v9, v9, Lorg/telegram/ui/Components/FilterTabsView$Tab;->title:Ljava/lang/String;
 
     iput-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentText:Ljava/lang/String;
 
-    .line 647
+    .line 648
     iget-object v10, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v10}, Lorg/telegram/ui/Components/FilterTabsView;->access$1000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -2269,7 +2269,7 @@
 
     move-result-object v26
 
-    .line 648
+    .line 649
     new-instance v3, Landroid/text/StaticLayout;
 
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -2298,14 +2298,14 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->textLayout:Landroid/text/StaticLayout;
 
-    .line 649
+    .line 650
     invoke-virtual {v3}, Landroid/text/StaticLayout;->getHeight()I
 
     move-result v3
 
     iput v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->textHeight:I
 
-    .line 650
+    .line 651
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->textLayout:Landroid/text/StaticLayout;
 
     const/4 v9, 0x0
@@ -2323,12 +2323,12 @@
     :cond_1e
     if-nez v5, :cond_25
 
-    .line 657
+    .line 658
     iget-boolean v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTextChange:Z
 
     if-eqz v3, :cond_24
 
-    .line 658
+    .line 659
     iget v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleXOffset:F
 
     iget-boolean v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTextChangeOut:Z
@@ -2349,15 +2349,15 @@
     :goto_14
     mul-float/2addr v3, v5
 
-    .line 659
+    .line 660
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateStableLayout:Landroid/text/StaticLayout;
 
     if-eqz v5, :cond_20
 
-    .line 660
+    .line 661
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 661
+    .line 662
     iget v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->textOffsetX:I
 
     int-to-float v5, v5
@@ -2386,24 +2386,24 @@
 
     invoke-virtual {v7, v5, v9}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 662
+    .line 663
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateStableLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v5, v7}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 663
+    .line 664
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 665
+    .line 666
     :cond_20
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateInLayout:Landroid/text/StaticLayout;
 
     if-eqz v5, :cond_22
 
-    .line 666
+    .line 667
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 667
+    .line 668
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/FilterTabsView;->access$1000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -2414,7 +2414,7 @@
 
     move-result v5
 
-    .line 668
+    .line 669
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v9}, Lorg/telegram/ui/Components/FilterTabsView;->access$1000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -2445,7 +2445,7 @@
 
     invoke-virtual {v9, v10}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 669
+    .line 670
     iget v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->textOffsetX:I
 
     int-to-float v9, v9
@@ -2474,15 +2474,15 @@
 
     invoke-virtual {v7, v9, v10}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 670
+    .line 671
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateInLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v9, v7}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 671
+    .line 672
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 672
+    .line 673
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v9}, Lorg/telegram/ui/Components/FilterTabsView;->access$1000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -2491,16 +2491,16 @@
 
     invoke-virtual {v9, v5}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 674
+    .line 675
     :cond_22
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateOutLayout:Landroid/text/StaticLayout;
 
     if-eqz v5, :cond_26
 
-    .line 675
+    .line 676
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 676
+    .line 677
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/FilterTabsView;->access$1000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -2511,7 +2511,7 @@
 
     move-result v5
 
-    .line 677
+    .line 678
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v9}, Lorg/telegram/ui/Components/FilterTabsView;->access$1000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -2542,7 +2542,7 @@
 
     invoke-virtual {v9, v10}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 678
+    .line 679
     iget v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->textOffsetX:I
 
     int-to-float v9, v9
@@ -2571,15 +2571,15 @@
 
     invoke-virtual {v7, v9, v10}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 679
+    .line 680
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateOutLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v9, v7}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 680
+    .line 681
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 681
+    .line 682
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v9}, Lorg/telegram/ui/Components/FilterTabsView;->access$1000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -2590,16 +2590,16 @@
 
     goto :goto_17
 
-    .line 684
+    .line 685
     :cond_24
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->textLayout:Landroid/text/StaticLayout;
 
     if-eqz v3, :cond_25
 
-    .line 685
+    .line 686
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 686
+    .line 687
     iget v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->textOffsetX:I
 
     int-to-float v3, v3
@@ -2626,18 +2626,18 @@
 
     invoke-virtual {v7, v3, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 687
+    .line 688
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v3, v7}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 688
+    .line 689
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_25
     const/4 v3, 0x0
 
-    .line 692
+    .line 693
     :cond_26
     :goto_17
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
@@ -2654,7 +2654,7 @@
 
     if-eqz v5, :cond_2f
 
-    .line 693
+    .line 694
     invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(Ljava/lang/String;)Z
 
     move-result v5
@@ -2667,12 +2667,12 @@
 
     if-eqz v5, :cond_2a
 
-    .line 694
+    .line 695
     invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 695
+    .line 696
     iget-object v15, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v15}, Lorg/telegram/ui/Components/FilterTabsView;->access$2400(Lorg/telegram/ui/Components/FilterTabsView;)Z
@@ -2702,7 +2702,7 @@
 
     goto :goto_18
 
-    .line 699
+    .line 700
     :cond_28
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -2714,14 +2714,14 @@
 
     goto :goto_19
 
-    .line 696
+    .line 697
     :cond_29
     :goto_18
     invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v9
 
-    .line 697
+    .line 698
     iget-object v15, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v15}, Lorg/telegram/ui/Components/FilterTabsView;->access$2900(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/graphics/Paint;
@@ -2742,7 +2742,7 @@
 
     goto :goto_19
 
-    .line 702
+    .line 703
     :cond_2a
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -2762,7 +2762,7 @@
 
     invoke-virtual {v5, v9}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 704
+    .line 705
     :goto_19
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
@@ -2793,7 +2793,7 @@
     :cond_2b
     if-nez v8, :cond_2c
 
-    .line 705
+    .line 706
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/FilterTabsView;->access$2900(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/graphics/Paint;
@@ -2816,7 +2816,7 @@
 
     goto :goto_1a
 
-    .line 707
+    .line 708
     :cond_2c
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -2828,7 +2828,7 @@
 
     invoke-virtual {v5, v9}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 710
+    .line 711
     :goto_1a
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -2840,7 +2840,7 @@
 
     if-eqz v5, :cond_2e
 
-    .line 711
+    .line 712
     sget-object v5, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
     sget-object v10, Lcom/iMe/fork/enums/FilterTabWidthMode;->MINIMUM:Lcom/iMe/fork/enums/FilterTabWidthMode;
@@ -2859,7 +2859,7 @@
     :cond_2e
     const/4 v5, 0x2
 
-    .line 715
+    .line 716
     :goto_1b
     iget-object v10, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -2875,7 +2875,7 @@
 
     move-result v5
 
-    .line 716
+    .line 717
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget v9, v9, Lorg/telegram/ui/Components/FilterTabsView$Tab;->titleWidth:I
@@ -2917,7 +2917,7 @@
 
     if-eqz v2, :cond_30
 
-    .line 720
+    .line 721
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/FilterTabsView;->access$800(Lorg/telegram/ui/Components/FilterTabsView;)Z
@@ -2947,7 +2947,7 @@
 
     goto/16 :goto_28
 
-    .line 721
+    .line 722
     :cond_31
     :goto_1c
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -2958,7 +2958,7 @@
 
     if-nez v5, :cond_32
 
-    .line 722
+    .line 723
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/FilterTabsView;->access$500(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -2979,7 +2979,7 @@
 
     goto :goto_1d
 
-    .line 724
+    .line 725
     :cond_32
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -2991,7 +2991,7 @@
 
     move-result v5
 
-    .line 725
+    .line 726
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v9}, Lorg/telegram/ui/Components/FilterTabsView;->access$3000(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/String;
@@ -3002,7 +3002,7 @@
 
     move-result v9
 
-    .line 726
+    .line 727
     iget-object v10, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v10}, Lorg/telegram/ui/Components/FilterTabsView;->access$500(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -3021,7 +3021,7 @@
 
     invoke-virtual {v10, v5}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 728
+    .line 729
     :goto_1d
     invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(Ljava/lang/String;)Z
 
@@ -3035,12 +3035,12 @@
 
     if-eqz v5, :cond_36
 
-    .line 729
+    .line 730
     invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 730
+    .line 731
     iget-object v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v9}, Lorg/telegram/ui/Components/FilterTabsView;->access$2400(Lorg/telegram/ui/Components/FilterTabsView;)Z
@@ -3070,7 +3070,7 @@
 
     goto :goto_1e
 
-    .line 734
+    .line 735
     :cond_34
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -3082,14 +3082,14 @@
 
     goto :goto_1f
 
-    .line 731
+    .line 732
     :cond_35
     :goto_1e
     invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 732
+    .line 733
     iget-object v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/FilterTabsView;->access$2900(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/graphics/Paint;
@@ -3110,7 +3110,7 @@
 
     goto :goto_1f
 
-    .line 737
+    .line 738
     :cond_36
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -3130,7 +3130,7 @@
 
     invoke-virtual {v1, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 741
+    .line 742
     :goto_1f
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
@@ -3138,12 +3138,12 @@
 
     int-to-float v4, v1
 
-    .line 742
+    .line 743
     iget-boolean v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateTextChange:Z
 
     if-eqz v5, :cond_37
 
-    .line 743
+    .line 744
     iget v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromTitleWidth:I
 
     int-to-float v4, v4
@@ -3165,12 +3165,12 @@
     :cond_37
     if-eqz v5, :cond_38
 
-    .line 745
+    .line 746
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateOutLayout:Landroid/text/StaticLayout;
 
     if-nez v1, :cond_38
 
-    .line 746
+    .line 747
     iget v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleXOffset:F
 
     sub-float v1, v13, v1
@@ -3198,7 +3198,7 @@
     :cond_38
     add-float/2addr v4, v13
 
-    .line 748
+    .line 749
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
     invoke-virtual {v1}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
@@ -3213,7 +3213,7 @@
 
     add-float/2addr v1, v4
 
-    .line 750
+    .line 751
     :goto_20
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -3229,7 +3229,7 @@
 
     div-int/2addr v3, v4
 
-    .line 753
+    .line 754
     iget-object v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/FilterTabsView$Tab;->isAllowEditing()Z
@@ -3240,7 +3240,7 @@
 
     if-eqz v2, :cond_3a
 
-    .line 754
+    .line 755
     iget-object v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/FilterTabsView;->access$800(Lorg/telegram/ui/Components/FilterTabsView;)Z
@@ -3264,7 +3264,7 @@
     :cond_39
     if-nez v8, :cond_3a
 
-    .line 755
+    .line 756
     iget-object v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/FilterTabsView;->access$2900(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/graphics/Paint;
@@ -3285,7 +3285,7 @@
 
     goto :goto_21
 
-    .line 757
+    .line 758
     :cond_3a
     iget-object v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -3301,7 +3301,7 @@
     :goto_21
     if-eqz v14, :cond_3c
 
-    .line 761
+    .line 762
     iget v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromCountWidth:F
 
     move/from16 v9, v24
@@ -3335,7 +3335,7 @@
     :goto_22
     if-eqz v14, :cond_3e
 
-    .line 763
+    .line 764
     iget v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromCounterWidth:F
 
     iget v10, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeProgress:F
@@ -3352,7 +3352,7 @@
 
     move/from16 v23, v5
 
-    .line 765
+    .line 766
     :cond_3e
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->rect:Landroid/graphics/RectF;
 
@@ -3374,11 +3374,11 @@
 
     if-eqz v20, :cond_41
 
-    .line 767
+    .line 768
     :cond_3f
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 768
+    .line 769
     iget v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeProgress:F
 
     if-eqz v6, :cond_40
@@ -3390,7 +3390,7 @@
 
     sub-float v1, v4, v1
 
-    .line 769
+    .line 770
     :goto_23
     iget-object v4, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->rect:Landroid/graphics/RectF;
 
@@ -3406,7 +3406,7 @@
 
     invoke-virtual {v7, v1, v1, v4, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 771
+    .line 772
     :cond_41
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->rect:Landroid/graphics/RectF;
 
@@ -3430,12 +3430,12 @@
 
     if-eqz v14, :cond_49
 
-    .line 775
+    .line 776
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->inCounter:Landroid/text/StaticLayout;
 
     if-eqz v1, :cond_42
 
-    .line 776
+    .line 777
     invoke-static/range {v18 .. v18}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -3472,12 +3472,12 @@
     :cond_42
     const/4 v4, 0x0
 
-    .line 777
+    .line 778
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->outCounter:Landroid/text/StaticLayout;
 
     if-eqz v1, :cond_43
 
-    .line 778
+    .line 779
     invoke-static/range {v18 .. v18}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -3496,13 +3496,13 @@
 
     goto :goto_24
 
-    .line 779
+    .line 780
     :cond_43
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->stableCounter:Landroid/text/StaticLayout;
 
     if-eqz v1, :cond_44
 
-    .line 780
+    .line 781
     invoke-static/range {v18 .. v18}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -3521,7 +3521,7 @@
 
     goto :goto_24
 
-    .line 784
+    .line 785
     :cond_44
     :goto_25
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
@@ -3534,7 +3534,7 @@
 
     if-eqz v2, :cond_45
 
-    .line 786
+    .line 787
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$900(Lorg/telegram/ui/Components/FilterTabsView;)F
@@ -3550,16 +3550,16 @@
     :cond_45
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 788
+    .line 789
     :goto_26
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->inCounter:Landroid/text/StaticLayout;
 
     if-eqz v3, :cond_46
 
-    .line 789
+    .line 790
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 790
+    .line 791
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$500(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -3576,7 +3576,7 @@
 
     invoke-virtual {v3, v4}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 791
+    .line 792
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->rect:Landroid/graphics/RectF;
 
     iget v4, v3, Landroid/graphics/RectF;->left:F
@@ -3613,24 +3613,24 @@
 
     invoke-virtual {v7, v4, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 792
+    .line 793
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->inCounter:Landroid/text/StaticLayout;
 
     invoke-virtual {v3, v7}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 793
+    .line 794
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 795
+    .line 796
     :cond_46
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->outCounter:Landroid/text/StaticLayout;
 
     if-eqz v3, :cond_47
 
-    .line 796
+    .line 797
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 797
+    .line 798
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$500(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -3651,7 +3651,7 @@
 
     invoke-virtual {v3, v4}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 798
+    .line 799
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->rect:Landroid/graphics/RectF;
 
     iget v4, v3, Landroid/graphics/RectF;->left:F
@@ -3686,24 +3686,24 @@
 
     invoke-virtual {v7, v4, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 799
+    .line 800
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->outCounter:Landroid/text/StaticLayout;
 
     invoke-virtual {v3, v7}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 800
+    .line 801
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 803
+    .line 804
     :cond_47
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->stableCounter:Landroid/text/StaticLayout;
 
     if-eqz v3, :cond_48
 
-    .line 804
+    .line 805
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 805
+    .line 806
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$500(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -3716,7 +3716,7 @@
 
     invoke-virtual {v3, v1}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 806
+    .line 807
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->rect:Landroid/graphics/RectF;
 
     iget v3, v1, Landroid/graphics/RectF;->left:F
@@ -3735,15 +3735,15 @@
 
     invoke-virtual {v7, v3, v10}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 807
+    .line 808
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->stableCounter:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, v7}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 808
+    .line 809
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 810
+    .line 811
     :cond_48
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -3760,7 +3760,7 @@
     :cond_49
     if-eqz v8, :cond_4b
 
-    .line 814
+    .line 815
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/FilterTabsView$Tab;->isAllowEditing()Z
@@ -3771,7 +3771,7 @@
 
     if-eqz v2, :cond_4a
 
-    .line 816
+    .line 817
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$500(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/text/TextPaint;
@@ -3794,7 +3794,7 @@
 
     invoke-virtual {v1, v4}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 818
+    .line 819
     :cond_4a
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->rect:Landroid/graphics/RectF;
 
@@ -3836,11 +3836,11 @@
 
     if-eqz v20, :cond_4d
 
-    .line 823
+    .line 824
     :cond_4c
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 826
+    .line 827
     :cond_4d
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
@@ -3852,7 +3852,7 @@
 
     if-eqz v2, :cond_4f
 
-    .line 827
+    .line 828
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$800(Lorg/telegram/ui/Components/FilterTabsView;)Z
@@ -3873,7 +3873,7 @@
 
     if-eqz v1, :cond_4f
 
-    .line 828
+    .line 829
     :cond_4e
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -3893,7 +3893,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 829
+    .line 830
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$3200(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/graphics/Paint;
@@ -3914,12 +3914,12 @@
 
     const/4 v1, 0x3
 
-    .line 830
+    .line 831
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    .line 831
+    .line 832
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v2}, Landroid/graphics/RectF;->centerX()F
@@ -3964,7 +3964,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 832
+    .line 833
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v1}, Landroid/graphics/RectF;->centerX()F
@@ -4010,7 +4010,7 @@
     :cond_4f
     move/from16 v5, v23
 
-    .line 836
+    .line 837
     :goto_28
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
@@ -4020,7 +4020,7 @@
 
     if-eqz v1, :cond_50
 
-    .line 837
+    .line 838
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$1600(Lorg/telegram/ui/Components/FilterTabsView;)F
@@ -4033,44 +4033,44 @@
 
     if-eqz v1, :cond_50
 
-    .line 838
+    .line 839
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 841
+    .line 842
     :cond_50
     iput v13, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTextX:F
 
-    .line 842
+    .line 843
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget v2, v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->counter:I
 
     iput v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTabCount:I
 
-    .line 844
+    .line 845
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentText:Ljava/lang/String;
 
     iput-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTitle:Ljava/lang/String;
 
-    .line 845
+    .line 846
     iget v1, v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->titleWidth:I
 
     iput v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTitleWidth:I
 
-    .line 846
+    .line 847
     iput v9, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastCountWidth:I
 
-    .line 847
+    .line 848
     iput v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastCounterWidth:F
 
-    .line 848
+    .line 849
     iget v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->tabWidth:I
 
     int-to-float v1, v1
 
     iput v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTabWidth:F
 
-    .line 849
+    .line 850
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -4079,7 +4079,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastWidth:F
 
-    .line 851
+    .line 852
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget-boolean v1, v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->isLocked:Z
@@ -4094,7 +4094,7 @@
 
     if-eqz v1, :cond_58
 
-    .line 852
+    .line 853
     :cond_51
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -4104,7 +4104,7 @@
 
     if-nez v1, :cond_52
 
-    .line 853
+    .line 854
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -4119,7 +4119,7 @@
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$3302(Lorg/telegram/ui/Components/FilterTabsView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 855
+    .line 856
     :cond_52
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
@@ -4139,7 +4139,7 @@
 
     add-float/2addr v3, v2
 
-    .line 856
+    .line 857
     iput v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->progressToLocked:F
 
     goto :goto_29
@@ -4147,14 +4147,14 @@
     :cond_53
     if-nez v1, :cond_54
 
-    .line 858
+    .line 859
     iget v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->progressToLocked:F
 
     sub-float/2addr v1, v2
 
     iput v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->progressToLocked:F
 
-    .line 860
+    .line 861
     :cond_54
     :goto_29
     iget v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->progressToLocked:F
@@ -4169,7 +4169,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->progressToLocked:F
 
-    .line 861
+    .line 862
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$2200(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/String;
@@ -4180,7 +4180,7 @@
 
     move-result v1
 
-    .line 862
+    .line 863
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$2300(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/String;
@@ -4189,7 +4189,7 @@
 
     if-eqz v2, :cond_55
 
-    .line 863
+    .line 864
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$2300(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/String;
@@ -4210,7 +4210,7 @@
 
     move-result v1
 
-    .line 865
+    .line 866
     :cond_55
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -4220,12 +4220,12 @@
 
     if-eq v2, v1, :cond_56
 
-    .line 866
+    .line 867
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v2, v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$3402(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
-    .line 867
+    .line 868
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$3300(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/graphics/drawable/Drawable;
@@ -4240,7 +4240,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 869
+    .line 870
     :cond_56
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -4270,7 +4270,7 @@
 
     float-to-int v1, v1
 
-    .line 870
+    .line 871
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v2
@@ -4283,7 +4283,7 @@
 
     sub-int/2addr v2, v3
 
-    .line 871
+    .line 872
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$3300(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/graphics/drawable/Drawable;
@@ -4316,7 +4316,7 @@
 
     invoke-virtual {v3, v1, v2, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 872
+    .line 873
     iget v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->progressToLocked:F
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -4325,10 +4325,10 @@
 
     if-eqz v1, :cond_57
 
-    .line 873
+    .line 874
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 874
+    .line 875
     iget v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->progressToLocked:F
 
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -4365,7 +4365,7 @@
 
     invoke-virtual {v7, v1, v1, v2, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 875
+    .line 876
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$3300(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/graphics/drawable/Drawable;
@@ -4374,12 +4374,12 @@
 
     invoke-virtual {v1, v7}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 876
+    .line 877
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_2a
 
-    .line 878
+    .line 879
     :cond_57
     iget-object v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -4397,10 +4397,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 5
 
-    .line 997
+    .line 998
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 998
+    .line 999
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     const/4 v1, 0x0
@@ -4441,10 +4441,10 @@
 
     const/16 v0, 0x10
 
-    .line 999
+    .line 1000
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 1000
+    .line 1001
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x15
@@ -4453,7 +4453,7 @@
 
     if-lt v0, v2, :cond_1
 
-    .line 1001
+    .line 1002
     new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrOpenMenu2:I
@@ -4470,29 +4470,29 @@
 
     goto :goto_1
 
-    .line 1003
+    .line 1004
     :cond_1
     invoke-virtual {p1, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 1005
+    .line 1006
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     if-eqz v0, :cond_4
 
-    .line 1006
+    .line 1007
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1007
+    .line 1008
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/FilterTabsView$Tab;->title:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1008
+    .line 1009
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     if-eqz v2, :cond_2
@@ -4509,21 +4509,21 @@
 
     const-string v3, "\n"
 
-    .line 1010
+    .line 1011
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     new-array v1, v1, [Ljava/lang/Object;
 
     const-string v3, "AccDescrUnreadCount"
 
-    .line 1011
+    .line 1012
     invoke-static {v3, v2, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1013
+    .line 1014
     :cond_3
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
 
@@ -4534,7 +4534,7 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 508
+    .line 509
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     const/4 v0, 0x0
@@ -4563,7 +4563,7 @@
 
     add-int/2addr p1, v0
 
-    .line 509
+    .line 510
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
@@ -4590,7 +4590,7 @@
 
     move-result p1
 
-    .line 510
+    .line 511
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
@@ -4603,18 +4603,18 @@
 .method public setTab(Lorg/telegram/ui/Components/FilterTabsView$Tab;I)V
     .locals 0
 
-    .line 478
+    .line 479
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentTab:Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
-    .line 479
+    .line 480
     iput p2, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentPosition:I
 
-    .line 480
+    .line 481
     iget-object p1, p1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->title:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 481
+    .line 482
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     return-void
@@ -4629,12 +4629,12 @@
 
     if-ne p2, v1, :cond_0
 
-    .line 1030
+    .line 1031
     iput v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->locIconXOffset:F
 
     return-void
 
-    .line 1033
+    .line 1034
     :cond_0
     new-instance v1, Landroid/animation/AnimatorSet;
 
@@ -4648,7 +4648,7 @@
 
     aput v0, v2, v3
 
-    .line 1034
+    .line 1035
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v0
@@ -4663,7 +4663,7 @@
 
     move-result-object v0
 
-    .line 1035
+    .line 1036
     new-instance v2, Lorg/telegram/ui/Components/FilterTabsView$TabView$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Components/FilterTabsView$TabView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/FilterTabsView$TabView;)V
@@ -4674,22 +4674,22 @@
 
     aput-object v0, v2, v3
 
-    .line 1039
+    .line 1040
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const-wide/16 v2, 0x32
 
-    .line 1040
+    .line 1041
     invoke-virtual {v1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1041
+    .line 1042
     new-instance v0, Lorg/telegram/ui/Components/FilterTabsView$TabView$1;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/Components/FilterTabsView$TabView$1;-><init>(Lorg/telegram/ui/Components/FilterTabsView$TabView;IF)V
 
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1049
+    .line 1050
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     return-void

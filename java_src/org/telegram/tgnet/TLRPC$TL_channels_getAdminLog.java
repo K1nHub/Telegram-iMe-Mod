@@ -13,7 +13,7 @@ public class TLRPC$TL_channels_getAdminLog extends TLObject {
     public long min_id;
 
     /* renamed from: q */
-    public String f1541q;
+    public String f1466q;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -25,7 +25,7 @@ public class TLRPC$TL_channels_getAdminLog extends TLObject {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(this.flags);
         this.channel.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeString(this.f1541q);
+        abstractSerializedData.writeString(this.f1466q);
         if ((this.flags & 1) != 0) {
             this.events_filter.serializeToStream(abstractSerializedData);
         }

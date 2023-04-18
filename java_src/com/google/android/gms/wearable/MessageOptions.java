@@ -17,11 +17,11 @@ public class MessageOptions extends AbstractSafeParcelable implements ReflectedP
     public static final Parcelable.Creator<MessageOptions> CREATOR = new zzf();
     public static final int MESSAGE_PRIORITY_HIGH = 1;
     public static final int MESSAGE_PRIORITY_LOW = 0;
-    @SafeParcelable.Field(getter = "getPriority", m789id = 2)
+    @SafeParcelable.Field(getter = "getPriority", m775id = 2)
     private final int zza;
 
     @SafeParcelable.Constructor
-    public MessageOptions(@SafeParcelable.Param(m788id = 2) int i) {
+    public MessageOptions(@SafeParcelable.Param(m774id = 2) int i) {
         this.zza = i;
     }
 

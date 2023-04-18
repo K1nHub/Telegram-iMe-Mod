@@ -3,6 +3,7 @@ package kotlin.jvm.internal;
 import kotlin.reflect.KClass;
 import kotlin.reflect.KDeclarationContainer;
 import kotlin.reflect.KFunction;
+import kotlin.reflect.KProperty0;
 import kotlin.reflect.KProperty1;
 /* loaded from: classes4.dex */
 public class Reflection {
@@ -40,6 +41,10 @@ public class Reflection {
 
     public static KFunction function(FunctionReference functionReference) {
         return factory.function(functionReference);
+    }
+
+    public static KProperty0 property0(PropertyReference0 propertyReference0) {
+        return factory.property0(propertyReference0);
     }
 
     public static KProperty1 property1(PropertyReference1 propertyReference1) {

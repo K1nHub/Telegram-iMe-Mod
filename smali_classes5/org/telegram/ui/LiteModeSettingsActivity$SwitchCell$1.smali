@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;Landroid/content/Context;Lorg/telegram/ui/LiteModeSettingsActivity;)V
     .locals 0
 
-    .line 416
+    .line 421
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 419
+    .line 424
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
@@ -38,7 +38,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 420
+    .line 425
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -55,7 +55,7 @@
 
     move-result p1
 
-    .line 422
+    .line 427
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 

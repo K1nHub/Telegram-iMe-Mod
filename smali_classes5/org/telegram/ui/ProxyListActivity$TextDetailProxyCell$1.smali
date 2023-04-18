@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;Z)V
     .locals 0
 
-    .line 266
+    .line 267
     iput-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$1;->this$1:Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$1;->val$enabled:Z
@@ -39,14 +39,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 280
+    .line 281
     iget-boolean p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$1;->val$enabled:Z
 
     const/16 v0, 0x8
 
     if-eqz p1, :cond_0
 
-    .line 281
+    .line 282
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$1;->this$1:Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->access$300(Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;)Landroid/widget/ImageView;
@@ -57,7 +57,7 @@
 
     goto :goto_0
 
-    .line 283
+    .line 284
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$1;->this$1:Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;
 
@@ -74,7 +74,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 269
+    .line 270
     iget-boolean p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$1;->val$enabled:Z
 
     const/4 v0, 0x0
@@ -83,7 +83,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 270
+    .line 271
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$1;->this$1:Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->access$200(Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;)Lorg/telegram/ui/Components/CheckBox2;
@@ -92,7 +92,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 271
+    .line 272
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$1;->this$1:Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->access$200(Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;)Lorg/telegram/ui/Components/CheckBox2;
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 273
+    .line 274
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$1;->this$1:Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;
 
@@ -113,7 +113,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 274
+    .line 275
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell$1;->this$1:Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->access$300(Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;)Landroid/widget/ImageView;

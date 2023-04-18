@@ -10,24 +10,26 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.webkit.WebView;
 import androidx.core.content.p009pm.ShortcutManagerCompat;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.audio.SilenceSkippingAudioProcessor;
 import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.FiltersController;
+import com.iMe.fork.controller.LockedSectionsController;
 import com.iMe.fork.enums.ChatProfileTelegramIdMode;
 import com.iMe.fork.enums.DialogType;
 import com.iMe.fork.enums.DrawerHolidayIconType;
 import com.iMe.fork.enums.ExtendedAvatarPreviewerItem;
 import com.iMe.fork.enums.FilterTabNotificationMode;
 import com.iMe.fork.enums.FilterTabWidthMode;
+import com.iMe.fork.enums.LockedSection;
 import com.iMe.fork.enums.PhotoViewerMenuItem;
 import com.iMe.fork.enums.StickersSize;
 import com.iMe.fork.enums.TemplatesMode;
 import com.iMe.fork.enums.TemplatesSortingType;
 import com.iMe.fork.enums.VideoVoiceCamera;
 import com.iMe.fork.models.DrawerHeaderSettings;
-import com.iMe.p032ui.drawer.DrawerAccountData;
-import com.iMe.p032ui.drawer.DrawerSwitchableItem;
+import com.iMe.p031ui.drawer.DrawerAccountData;
+import com.iMe.p031ui.drawer.DrawerSwitchableItem;
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.io.UnsupportedEncodingException;
@@ -43,9 +45,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import org.json.JSONObject;
-import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.LaunchActivity;
+import org.telegram.p044ui.ActionBar.AlertDialog;
+import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p044ui.LaunchActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC$TL_help_appUpdate;
@@ -148,10 +150,8 @@ public class SharedConfig {
     public static boolean isVibrationEnabled = false;
     public static boolean isVideoSpeakWithoutHoldEnabled = false;
     public static boolean isWaitingForPasscodeEnter = false;
-    public static boolean isWaitingForSectionPasscodeEnter = false;
     public static int ivFontSize = 0;
     public static int lastKeepMediaCheckTime = 0;
-    public static int lastLockedSectionsPauseTime = 0;
     public static int lastLogsCheckTime = 0;
     public static int lastPauseTime = 0;
     public static String lastSelectedLanguage = null;
@@ -266,16 +266,6 @@ public class SharedConfig {
 
     public static DrawerHeaderSettings getDrawerHeaderSettings() {
         return new DrawerHeaderSettings(selectedDrawerHeaderTitle, selectedDrawerHeaderSubtitle, isShowDrawerHeaderTitleEnabled, isShowDrawerHeaderSubtitleEnabled, isShowDrawerHeaderAvatarEnabled, isShowDrawerHeaderArchiveEnabled);
-    }
-
-    public static void setLastLockedSectionsPauseTime(int i) {
-        lastLockedSectionsPauseTime = i;
-        MessagesController.getGlobalMainSettings().edit().putInt(TelegramPreferenceKeys.Global.lastLockedSectionsPauseTime(), lastLockedSectionsPauseTime).apply();
-    }
-
-    public static void setWaitingForSectionPasscodeEnter(boolean z) {
-        isWaitingForSectionPasscodeEnter = z;
-        MessagesController.getGlobalMainSettings().edit().putBoolean(TelegramPreferenceKeys.Global.isWaitingForSectionPasscodeEnter(), isWaitingForSectionPasscodeEnter).apply();
     }
 
     public static void setDebugThemeSwitchEnabled(boolean z) {
@@ -606,9 +596,9 @@ public class SharedConfig {
         ImageLoader.getInstance().checkMediaPaths(SharedConfig$$ExternalSyntheticLambda2.INSTANCE);
         readOnlyStorageDirAlertShowed = true;
         AlertDialog.Builder builder = new AlertDialog.Builder(lastFragment.getParentActivity());
-        builder.setTitle(LocaleController.getString("SdCardError", C3316R.string.SdCardError));
-        builder.setSubtitle(LocaleController.getString("SdCardErrorDescription", C3316R.string.SdCardErrorDescription));
-        builder.setPositiveButton(LocaleController.getString("DoNotUseSDCard", C3316R.string.DoNotUseSDCard), SharedConfig$$ExternalSyntheticLambda0.INSTANCE);
+        builder.setTitle(LocaleController.getString("SdCardError", C3242R.string.SdCardError));
+        builder.setSubtitle(LocaleController.getString("SdCardErrorDescription", C3242R.string.SdCardErrorDescription));
+        builder.setPositiveButton(LocaleController.getString("DoNotUseSDCard", C3242R.string.DoNotUseSDCard), SharedConfig$$ExternalSyntheticLambda0.INSTANCE);
         AlertDialog create = builder.create();
         create.setCanceledOnTouchOutside(false);
         create.show();
@@ -629,7 +619,7 @@ public class SharedConfig {
         streamMkv = false;
         saveStreamMedia = true;
         pauseMusicOnRecord = false;
-        pauseMusicOnMedia = true;
+        pauseMusicOnMedia = false;
         showNotificationsForAllAccounts = true;
         fontSize = 16;
         bubbleRadius = 17;
@@ -774,19 +764,19 @@ public class SharedConfig {
         return i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x017c A[Catch: Exception -> 0x019e, all -> 0x07b8, TryCatch #1 {Exception -> 0x019e, blocks: (B:22:0x012d, B:24:0x0135, B:26:0x0145, B:27:0x0159, B:38:0x017c, B:40:0x0180, B:41:0x0182, B:43:0x0186, B:45:0x018c, B:47:0x0192, B:49:0x0196, B:36:0x0176), top: B:85:0x012d, outer: #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0180 A[Catch: Exception -> 0x019e, all -> 0x07b8, TryCatch #1 {Exception -> 0x019e, blocks: (B:22:0x012d, B:24:0x0135, B:26:0x0145, B:27:0x0159, B:38:0x017c, B:40:0x0180, B:41:0x0182, B:43:0x0186, B:45:0x018c, B:47:0x0192, B:49:0x0196, B:36:0x0176), top: B:85:0x012d, outer: #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x05fb  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x05fe  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x060e  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0610  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x017c A[Catch: Exception -> 0x019e, all -> 0x079c, TryCatch #0 {Exception -> 0x019e, blocks: (B:22:0x012d, B:24:0x0135, B:26:0x0145, B:27:0x0159, B:38:0x017c, B:40:0x0180, B:41:0x0182, B:43:0x0186, B:45:0x018c, B:47:0x0192, B:49:0x0196, B:36:0x0176), top: B:83:0x012d, outer: #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0180 A[Catch: Exception -> 0x019e, all -> 0x079c, TryCatch #0 {Exception -> 0x019e, blocks: (B:22:0x012d, B:24:0x0135, B:26:0x0145, B:27:0x0159, B:38:0x017c, B:40:0x0180, B:41:0x0182, B:43:0x0186, B:45:0x018c, B:47:0x0192, B:49:0x0196, B:36:0x0176), top: B:83:0x012d, outer: #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x05df  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x05e2  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x05f2  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x05f4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static void loadConfig() {
         /*
-            Method dump skipped, instructions count: 1979
+            Method dump skipped, instructions count: 1951
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SharedConfig.loadConfig():void");
@@ -801,26 +791,41 @@ public class SharedConfig {
         }
     }
 
-    public static void increaseBadPasscodeTries() {
-        int i = badPasscodeTries + 1;
-        badPasscodeTries = i;
-        if (i >= 3) {
-            if (i == 3) {
-                passcodeRetryInMs = 5000L;
-            } else if (i == 4) {
-                passcodeRetryInMs = 10000L;
-            } else if (i == 5) {
-                passcodeRetryInMs = C0482C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
-            } else if (i == 6) {
-                passcodeRetryInMs = SilenceSkippingAudioProcessor.DEFAULT_PADDING_SILENCE_US;
-            } else if (i == 7) {
-                passcodeRetryInMs = 25000L;
-            } else {
-                passcodeRetryInMs = 30000L;
+    public static void increaseBadPasscodeTries(int i, LockedSection lockedSection) {
+        LockedSectionsController.SectionPasscodeData sectionPasscodeData;
+        LockedSectionsController lockedSectionsController = LockedSectionsController.getInstance(i);
+        if (lockedSection != null) {
+            sectionPasscodeData = lockedSectionsController.getSectionsPasscodeData(lockedSection);
+            if (sectionPasscodeData == null) {
+                return;
             }
-            lastUptimeMillis = SystemClock.elapsedRealtime();
+        } else {
+            sectionPasscodeData = null;
         }
-        saveConfig();
+        int badPasscodeTries2 = (sectionPasscodeData != null ? sectionPasscodeData.getBadPasscodeTries() : badPasscodeTries) + 1;
+        if (badPasscodeTries2 >= 3) {
+            long j = badPasscodeTries2 != 3 ? badPasscodeTries2 != 4 ? badPasscodeTries2 != 5 ? badPasscodeTries2 != 6 ? badPasscodeTries2 != 7 ? 30000L : 25000L : SilenceSkippingAudioProcessor.DEFAULT_PADDING_SILENCE_US : C0470C.DEFAULT_SEEK_FORWARD_INCREMENT_MS : 10000L : 5000L;
+            if (sectionPasscodeData != null) {
+                sectionPasscodeData.setLastUptimeMillis(SystemClock.elapsedRealtime());
+            } else {
+                lastUptimeMillis = SystemClock.elapsedRealtime();
+            }
+            if (sectionPasscodeData != null) {
+                sectionPasscodeData.setPasscodeRetryInMs(j);
+            } else {
+                passcodeRetryInMs = j;
+            }
+        }
+        if (sectionPasscodeData != null) {
+            sectionPasscodeData.setBadPasscodeTries(badPasscodeTries2);
+        } else {
+            badPasscodeTries = badPasscodeTries2;
+        }
+        if (sectionPasscodeData != null) {
+            lockedSectionsController.saveConfig();
+        } else {
+            saveConfig();
+        }
     }
 
     public static boolean isAutoplayVideo() {
@@ -925,21 +930,44 @@ public class SharedConfig {
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SharedConfig.setNewAppVersionAvailable(org.telegram.tgnet.TLRPC$TL_help_appUpdate):boolean");
     }
 
-    public static boolean checkPasscode(String str) {
-        if (passcodeSalt.length == 0) {
-            boolean equals = Utilities.MD5(str).equals(passcodeHash);
+    public static boolean checkPasscode(String str, int i, LockedSection lockedSection) {
+        LockedSectionsController.SectionPasscodeData sectionPasscodeData;
+        LockedSectionsController lockedSectionsController = LockedSectionsController.getInstance(i);
+        if (lockedSection != null) {
+            sectionPasscodeData = lockedSectionsController.getSectionsPasscodeData(lockedSection);
+            if (sectionPasscodeData == null) {
+                return false;
+            }
+        } else {
+            sectionPasscodeData = null;
+        }
+        byte[] passcodeSalt2 = sectionPasscodeData != null ? sectionPasscodeData.getPasscodeSalt() : passcodeSalt;
+        String passcodeHash2 = sectionPasscodeData != null ? sectionPasscodeData.getPasscodeHash() : passcodeHash;
+        if (passcodeSalt2.length == 0) {
+            boolean equals = Utilities.MD5(str).equals(passcodeHash2);
             if (equals) {
                 try {
-                    passcodeSalt = new byte[16];
-                    Utilities.random.nextBytes(passcodeSalt);
+                    byte[] bArr = new byte[16];
+                    Utilities.random.nextBytes(bArr);
                     byte[] bytes = str.getBytes("UTF-8");
                     int length = bytes.length + 32;
-                    byte[] bArr = new byte[length];
-                    System.arraycopy(passcodeSalt, 0, bArr, 0, 16);
-                    System.arraycopy(bytes, 0, bArr, 16, bytes.length);
-                    System.arraycopy(passcodeSalt, 0, bArr, bytes.length + 16, 16);
-                    passcodeHash = Utilities.bytesToHex(Utilities.computeSHA256(bArr, 0, length));
-                    saveConfig();
+                    byte[] bArr2 = new byte[length];
+                    System.arraycopy(bArr, 0, bArr2, 0, 16);
+                    System.arraycopy(bytes, 0, bArr2, 16, bytes.length);
+                    System.arraycopy(bArr, 0, bArr2, bytes.length + 16, 16);
+                    String bytesToHex = Utilities.bytesToHex(Utilities.computeSHA256(bArr2, 0, length));
+                    if (sectionPasscodeData != null) {
+                        sectionPasscodeData.setPasscodeSalt(bArr);
+                        sectionPasscodeData.setPasscodeHash(bytesToHex);
+                    } else {
+                        passcodeSalt = bArr;
+                        passcodeHash = bytesToHex;
+                    }
+                    if (sectionPasscodeData != null) {
+                        lockedSectionsController.saveConfig();
+                    } else {
+                        saveConfig();
+                    }
                 } catch (Exception e) {
                     FileLog.m45e(e);
                 }
@@ -949,11 +977,11 @@ public class SharedConfig {
         try {
             byte[] bytes2 = str.getBytes("UTF-8");
             int length2 = bytes2.length + 32;
-            byte[] bArr2 = new byte[length2];
-            System.arraycopy(passcodeSalt, 0, bArr2, 0, 16);
-            System.arraycopy(bytes2, 0, bArr2, 16, bytes2.length);
-            System.arraycopy(passcodeSalt, 0, bArr2, bytes2.length + 16, 16);
-            return passcodeHash.equals(Utilities.bytesToHex(Utilities.computeSHA256(bArr2, 0, length2)));
+            byte[] bArr3 = new byte[length2];
+            System.arraycopy(passcodeSalt2, 0, bArr3, 0, 16);
+            System.arraycopy(bytes2, 0, bArr3, 16, bytes2.length);
+            System.arraycopy(passcodeSalt2, 0, bArr3, bytes2.length + 16, 16);
+            return passcodeHash2.equals(Utilities.bytesToHex(Utilities.computeSHA256(bArr3, 0, length2)));
         } catch (Exception e2) {
             FileLog.m45e(e2);
             return false;
@@ -1385,7 +1413,7 @@ public class SharedConfig {
                         ProxyInfo proxyInfo = new ProxyInfo(serializedData.readString(false), serializedData.readInt32(false), serializedData.readString(false), serializedData.readString(false), serializedData.readString(false));
                         proxyInfo.ping = serializedData.readInt64(false);
                         proxyInfo.availableCheckTime = serializedData.readInt64(false);
-                        proxyList.add(proxyInfo);
+                        proxyList.add(0, proxyInfo);
                         if (currentProxy == null && !TextUtils.isEmpty(string) && string.equals(proxyInfo.address) && i == proxyInfo.port && string2.equals(proxyInfo.username) && string3.equals(proxyInfo.password)) {
                             currentProxy = proxyInfo;
                         }
@@ -1396,7 +1424,7 @@ public class SharedConfig {
             } else {
                 for (int i3 = 0; i3 < readInt32; i3++) {
                     ProxyInfo proxyInfo2 = new ProxyInfo(serializedData.readString(false), serializedData.readInt32(false), serializedData.readString(false), serializedData.readString(false), serializedData.readString(false));
-                    proxyList.add(proxyInfo2);
+                    proxyList.add(0, proxyInfo2);
                     if (currentProxy == null && !TextUtils.isEmpty(string) && string.equals(proxyInfo2.address) && i == proxyInfo2.port && string2.equals(proxyInfo2.username) && string3.equals(proxyInfo2.password)) {
                         currentProxy = proxyInfo2;
                     }
@@ -1420,7 +1448,7 @@ public class SharedConfig {
         serializedData.writeByte(2);
         int size = arrayList.size();
         serializedData.writeInt32(size);
-        for (int i = 0; i < size; i++) {
+        for (int i = size - 1; i >= 0; i--) {
             ProxyInfo proxyInfo = (ProxyInfo) arrayList.get(i);
             String str = proxyInfo.address;
             String str2 = "";

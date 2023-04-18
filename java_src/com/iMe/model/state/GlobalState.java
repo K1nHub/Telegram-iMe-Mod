@@ -1,7 +1,7 @@
 package com.iMe.model.state;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3316R;
+import org.telegram.messenger.C3242R;
 /* compiled from: GlobalState.kt */
 /* loaded from: classes3.dex */
 public abstract class GlobalState {
@@ -53,7 +53,7 @@ public abstract class GlobalState {
         public static final NoInternet INSTANCE = new NoInternet();
 
         private NoInternet() {
-            super("no_internet_state", C3316R.C3321raw.fork_state_no_internet, C3316R.string.common_no_network_state_title, C3316R.string.common_no_network_state_description, null);
+            super("no_internet_state", C3242R.raw.fork_state_no_internet, C3242R.string.common_no_network_state_title, C3242R.string.common_no_network_state_description, null);
         }
     }
 
@@ -63,7 +63,7 @@ public abstract class GlobalState {
         public static final Unexpected INSTANCE = new Unexpected();
 
         private Unexpected() {
-            super("unexpected_error_state", C3316R.C3321raw.fork_state_unexpected, C3316R.string.common_unexpected_state_title, C3316R.string.common_unexpected_state_description, null);
+            super("unexpected_error_state", C3242R.raw.fork_state_unexpected, C3242R.string.common_unexpected_state_title, C3242R.string.common_unexpected_state_description, null);
         }
     }
 
@@ -73,7 +73,7 @@ public abstract class GlobalState {
         public static final Progress INSTANCE = new Progress();
 
         private Progress() {
-            super("progress_state", C3316R.C3321raw.fork_state_progress, C3316R.string.common_progress_state_title, C3316R.string.common_progress_state_description, null);
+            super("progress_state", C3242R.raw.fork_state_progress, C3242R.string.common_progress_state_title, C3242R.string.common_progress_state_description, null);
         }
     }
 
@@ -123,7 +123,7 @@ public abstract class GlobalState {
             public static final Common INSTANCE = new Common();
 
             private Common() {
-                super("empty_content_state", C3316R.C3321raw.fork_state_empty_common, C3316R.string.common_empty_state_title, C3316R.string.common_empty_state_description, null);
+                super("empty_content_state", C3242R.raw.fork_state_empty_common, C3242R.string.common_empty_state_title, C3242R.string.common_empty_state_description, null);
             }
         }
 
@@ -133,7 +133,7 @@ public abstract class GlobalState {
             public static final Balance INSTANCE = new Balance();
 
             private Balance() {
-                super("empty_balance_state", C3316R.C3321raw.fork_state_empty_balance, C3316R.string.common_empty_state_title, C3316R.string.common_empty_balance_state_description, null);
+                super("empty_balance_state", C3242R.raw.fork_state_empty_balance, C3242R.string.common_empty_state_title, C3242R.string.common_empty_balance_state_description, null);
             }
         }
 
@@ -143,7 +143,7 @@ public abstract class GlobalState {
             public static final Staking INSTANCE = new Staking();
 
             private Staking() {
-                super("empty_staking_state", C3316R.C3321raw.fork_state_empty_balance, C3316R.string.common_empty_state_title, C3316R.string.staking_programmes_empty_state_description, null);
+                super("empty_staking_state", C3242R.raw.fork_state_empty_balance, C3242R.string.common_empty_state_title, C3242R.string.staking_programmes_empty_state_description, null);
             }
         }
 
@@ -153,7 +153,7 @@ public abstract class GlobalState {
             public static final Twitter INSTANCE = new Twitter();
 
             private Twitter() {
-                super("empty_twitter_state", C3316R.C3321raw.fork_state_empty_common, C3316R.string.twitter_empty_state_title, C3316R.string.twitter_empty_state_subtitle, null);
+                super("empty_twitter_state", C3242R.raw.fork_state_empty_common, C3242R.string.twitter_empty_state_title, C3242R.string.twitter_empty_state_subtitle, null);
             }
         }
 
@@ -163,7 +163,7 @@ public abstract class GlobalState {
             public static final TwitterSearch INSTANCE = new TwitterSearch();
 
             private TwitterSearch() {
-                super("empty_twitter_search_state", C3316R.C3321raw.fork_state_empty_common, C3316R.string.twitter_search_title, C3316R.string.twitter_search_subtitle, null);
+                super("empty_twitter_search_state", C3242R.raw.fork_state_empty_common, C3242R.string.twitter_search_title, C3242R.string.twitter_search_subtitle, null);
             }
         }
     }

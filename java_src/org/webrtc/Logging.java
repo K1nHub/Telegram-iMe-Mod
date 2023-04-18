@@ -110,7 +110,7 @@ public class Logging {
         } else if (loggingEnabled) {
             nativeLog(severity.ordinal(), str, str2);
         } else {
-            int i = C67351.$SwitchMap$org$webrtc$Logging$Severity[severity.ordinal()];
+            int i = C66461.$SwitchMap$org$webrtc$Logging$Severity[severity.ordinal()];
             if (i == 1) {
                 level = Level.SEVERE;
             } else if (i == 2) {
@@ -128,7 +128,7 @@ public class Logging {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.webrtc.Logging$1 */
     /* loaded from: classes6.dex */
-    public static /* synthetic */ class C67351 {
+    public static /* synthetic */ class C66461 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$Logging$Severity;
 
         static {

@@ -4,7 +4,7 @@ public class TLRPC$TL_messages_reportReaction extends TLObject {
     public static int constructor = 1631726152;
 
     /* renamed from: id */
-    public int f1604id;
+    public int f1529id;
     public TLRPC$InputPeer peer;
     public TLRPC$InputUser user_id;
 
@@ -17,7 +17,7 @@ public class TLRPC$TL_messages_reportReaction extends TLObject {
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
         this.peer.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1604id);
+        abstractSerializedData.writeInt32(this.f1529id);
         this.user_id.serializeToStream(abstractSerializedData);
     }
 }

@@ -11,7 +11,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.qualifier.QualifierKt;
 import org.koin.core.qualifier.StringQualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p047mp.KoinPlatformTools;
+import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: ScopeRegistry.kt */
 /* loaded from: classes4.dex */
 public final class ScopeRegistry {
@@ -37,6 +37,12 @@ public final class ScopeRegistry {
 
     public final Scope getRootScope() {
         return this.rootScope;
+    }
+
+    public final void deleteScope$koin_core(Scope scope) {
+        Intrinsics.checkNotNullParameter(scope, "scope");
+        this._koin.getInstanceRegistry().dropScopeInstances$koin_core(scope);
+        this._scopes.remove(scope.getId());
     }
 
     private final void loadModule(Module module) {

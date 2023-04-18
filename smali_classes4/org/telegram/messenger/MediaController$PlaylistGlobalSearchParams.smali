@@ -38,22 +38,22 @@
 .method public constructor <init>(Ljava/lang/String;JJJLorg/telegram/ui/Adapters/FiltersView$MediaFilterData;)V
     .locals 0
 
-    .line 5248
+    .line 5253
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5249
+    .line 5254
     iput-object p8, p0, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->filter:Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
 
-    .line 5250
+    .line 5255
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->query:Ljava/lang/String;
 
-    .line 5251
+    .line 5256
     iput-wide p2, p0, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->dialogId:J
 
-    .line 5252
+    .line 5257
     iput-wide p4, p0, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->minDate:J
 
-    .line 5253
+    .line 5258
     iput-wide p6, p0, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->maxDate:J
 
     return-void

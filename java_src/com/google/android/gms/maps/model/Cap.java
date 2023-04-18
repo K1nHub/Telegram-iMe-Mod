@@ -15,11 +15,11 @@ import com.google.android.gms.dynamic.IObjectWrapper;
 @SafeParcelable.Reserved({1})
 /* loaded from: classes3.dex */
 public class Cap extends AbstractSafeParcelable {
-    @SafeParcelable.Field(getter = "getType", m789id = 2)
+    @SafeParcelable.Field(getter = "getType", m775id = 2)
     private final int zzb;
-    @SafeParcelable.Field(getter = "getWrappedBitmapDescriptorImplBinder", m789id = 3, type = "android.os.IBinder")
+    @SafeParcelable.Field(getter = "getWrappedBitmapDescriptorImplBinder", m775id = 3, type = "android.os.IBinder")
     private final BitmapDescriptor zzc;
-    @SafeParcelable.Field(getter = "getBitmapRefWidth", m789id = 4)
+    @SafeParcelable.Field(getter = "getBitmapRefWidth", m775id = 4)
     private final Float zzd;
     private static final String zza = Cap.class.getSimpleName();
     public static final Parcelable.Creator<Cap> CREATOR = new zzb();
@@ -83,7 +83,7 @@ public class Cap extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public Cap(@SafeParcelable.Param(m788id = 2) int i, @SafeParcelable.Param(m788id = 3) IBinder iBinder, @SafeParcelable.Param(m788id = 4) Float f) {
+    public Cap(@SafeParcelable.Param(m774id = 2) int i, @SafeParcelable.Param(m774id = 3) IBinder iBinder, @SafeParcelable.Param(m774id = 4) Float f) {
         this(i, iBinder == null ? null : new BitmapDescriptor(IObjectWrapper.Stub.asInterface(iBinder)), f);
     }
 

@@ -386,6 +386,9 @@
     iput-object p1, p0, Lcom/iMe/fork/ui/view/TabbedViewPager;->delegate:Lcom/iMe/fork/utils/TabbedViewPagerDelegate;
 
     .line 78
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->removeAllViews()V
+
+    .line 79
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/TabbedViewPager;->getPager()Lorg/telegram/ui/Components/ViewPagerFixed;
 
     move-result-object p1
@@ -410,7 +413,7 @@
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 79
+    .line 80
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/TabbedViewPager;->getTabsView()Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     move-result-object p1

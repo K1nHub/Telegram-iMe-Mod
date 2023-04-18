@@ -21,15 +21,15 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.p048ui.ActionBar.Theme;
-import org.telegram.p048ui.Cells.BotHelpCell;
-import org.telegram.p048ui.Cells.ChatMessageCell;
-import org.telegram.p048ui.ChatActivity;
-import org.telegram.p048ui.Components.ChatGreetingsView;
-import org.telegram.p048ui.Components.CubicBezierInterpolator;
-import org.telegram.p048ui.Components.RecyclerListView;
-import org.telegram.p048ui.TextMessageEnterTransition;
-import org.telegram.p048ui.VoiceMessageEnterTransition;
+import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p044ui.Cells.BotHelpCell;
+import org.telegram.p044ui.Cells.ChatMessageCell;
+import org.telegram.p044ui.ChatActivity;
+import org.telegram.p044ui.Components.ChatGreetingsView;
+import org.telegram.p044ui.Components.CubicBezierInterpolator;
+import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p044ui.TextMessageEnterTransition;
+import org.telegram.p044ui.VoiceMessageEnterTransition;
 /* loaded from: classes.dex */
 public class ChatListItemAnimator extends DefaultItemAnimator {
     public static final Interpolator DEFAULT_INTERPOLATOR = new CubicBezierInterpolator(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);

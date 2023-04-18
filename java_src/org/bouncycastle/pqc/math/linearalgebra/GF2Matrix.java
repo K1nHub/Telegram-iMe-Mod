@@ -1,6 +1,7 @@
 package org.bouncycastle.pqc.math.linearalgebra;
 
 import java.lang.reflect.Array;
+import org.bouncycastle.util.Arrays;
 /* loaded from: classes4.dex */
 public class GF2Matrix extends Matrix {
     private int length;
@@ -123,7 +124,7 @@ public class GF2Matrix extends Matrix {
     public int hashCode() {
         int i = (((this.numRows * 31) + this.numColumns) * 31) + this.length;
         for (int i2 = 0; i2 < this.numRows; i2++) {
-            i = (i * 31) + this.matrix[i2].hashCode();
+            i = (i * 31) + Arrays.hashCode(this.matrix[i2]);
         }
         return i;
     }

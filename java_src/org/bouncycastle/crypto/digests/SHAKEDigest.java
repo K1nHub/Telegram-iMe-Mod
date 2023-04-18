@@ -14,7 +14,7 @@ public class SHAKEDigest extends KeccakDigest implements Xof {
         throw new IllegalArgumentException("'bitLength' " + i + " not supported for SHAKE");
     }
 
-    @Override // org.bouncycastle.crypto.digests.KeccakDigest, org.bouncycastle.crypto.Digest
+    @Override // org.bouncycastle.crypto.Digest
     public int doFinal(byte[] bArr, int i) {
         return doFinal(bArr, i, getDigestSize());
     }
@@ -34,7 +34,7 @@ public class SHAKEDigest extends KeccakDigest implements Xof {
         return i2;
     }
 
-    @Override // org.bouncycastle.crypto.digests.KeccakDigest, org.bouncycastle.crypto.Digest
+    @Override // org.bouncycastle.crypto.Digest
     public String getAlgorithmName() {
         return "SHAKE" + this.fixedOutputLength;
     }

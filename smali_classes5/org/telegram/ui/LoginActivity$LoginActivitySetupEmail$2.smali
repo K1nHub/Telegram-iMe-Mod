@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivitySetupEmail;)V
     .locals 0
 
-    .line 5789
+    .line 5882
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySetupEmail$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySetupEmail;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
     const/4 p1, 0x0
 
-    .line 5792
+    .line 5885
     aget-object p1, p3, p1
 
     check-cast p1, Ljava/lang/Integer;
@@ -51,7 +51,7 @@
 
     const/4 p2, 0x1
 
-    .line 5793
+    .line 5886
     aget-object p2, p3, p2
 
     check-cast p2, Ljava/lang/Integer;
@@ -60,12 +60,12 @@
 
     const/4 p2, 0x2
 
-    .line 5794
+    .line 5887
     aget-object p2, p3, p2
 
     check-cast p2, Landroid/content/Intent;
 
-    .line 5795
+    .line 5888
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p3
@@ -78,7 +78,7 @@
 
     if-ne p1, p3, :cond_0
 
-    .line 5799
+    .line 5892
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySetupEmail$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySetupEmail;
 
@@ -94,9 +94,9 @@
 
     check-cast p2, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/LoginActivity$LoginActivitySetupEmail;->access$14302(Lorg/telegram/ui/LoginActivity$LoginActivitySetupEmail;Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+    invoke-static {p1, p2}, Lorg/telegram/ui/LoginActivity$LoginActivitySetupEmail;->access$14402(Lorg/telegram/ui/LoginActivity$LoginActivitySetupEmail;Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
-    .line 5800
+    .line 5893
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySetupEmail$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySetupEmail;
 
     const/4 p2, 0x0
@@ -110,7 +110,7 @@
     :catch_0
     move-exception p1
 
-    .line 5802
+    .line 5895
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0

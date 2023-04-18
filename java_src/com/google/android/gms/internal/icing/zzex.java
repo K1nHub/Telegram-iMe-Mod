@@ -3,11 +3,11 @@ package com.google.android.gms.internal.icing;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
 /* loaded from: classes.dex */
-final class zzex implements Iterator<Map.Entry>, p035j$.util.Iterator {
+final class zzex implements Iterator<Map.Entry>, p034j$.util.Iterator {
     final /* synthetic */ zzez zza;
     private int zzb = -1;
     private boolean zzc;
@@ -27,12 +27,12 @@ final class zzex implements Iterator<Map.Entry>, p035j$.util.Iterator {
         return this.zzd;
     }
 
-    @Override // p035j$.util.Iterator
+    @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final boolean hasNext() {
         List list;
         Map map;
@@ -45,7 +45,7 @@ final class zzex implements Iterator<Map.Entry>, p035j$.util.Iterator {
         return true;
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final /* bridge */ /* synthetic */ Object next() {
         List list;
         List list2;
@@ -60,7 +60,7 @@ final class zzex implements Iterator<Map.Entry>, p035j$.util.Iterator {
         return zza().next();
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final void remove() {
         List list;
         if (this.zzc) {

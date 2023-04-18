@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 165
+    .line 183
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onTokensLoaded"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 167
+    .line 185
     iput-object p2, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenView$$State$OnTokensLoadedCommand;->tokens:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenView;)V
     .locals 1
 
-    .line 172
+    .line 190
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenView$$State$OnTokensLoadedCommand;->tokens:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenView;->onTokensLoaded(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 161
+    .line 179
     check-cast p1, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenView$$State$OnTokensLoadedCommand;->apply(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenView;)V

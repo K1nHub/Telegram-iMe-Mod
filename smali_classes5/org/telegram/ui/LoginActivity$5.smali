@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/LoginActivity$5;
-.super Landroid/view/ViewOutlineProvider;
+.super Landroid/widget/FrameLayout;
 .source "LoginActivity.java"
 
 
@@ -14,35 +14,76 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/LoginActivity;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/LoginActivity;)V
+.method constructor <init>(Lorg/telegram/ui/LoginActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 742
-    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+    .line 738
+    iput-object p1, p0, Lorg/telegram/ui/LoginActivity$5;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
-    .locals 2
+.method public setAlpha(F)V
+    .locals 1
 
-    const/16 p1, 0x38
+    .line 749
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 746
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 750
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$5;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    move-result v0
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$300(Lorg/telegram/ui/LoginActivity;)Landroid/widget/TextView;
 
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    move-result-object v0
 
-    move-result p1
+    if-eqz v0, :cond_0
 
-    const/4 v1, 0x0
+    .line 751
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$5;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    invoke-virtual {p2, v1, v1, v0, p1}, Landroid/graphics/Outline;->setOval(IIII)V
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$300(Lorg/telegram/ui/LoginActivity;)Landroid/widget/TextView;
 
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setAlpha(F)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public setTranslationY(F)V
+    .locals 1
+
+    .line 741
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
+
+    .line 742
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$5;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$300(Lorg/telegram/ui/LoginActivity;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 743
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$5;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$300(Lorg/telegram/ui/LoginActivity;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTranslationY(F)V
+
+    :cond_0
     return-void
 .end method

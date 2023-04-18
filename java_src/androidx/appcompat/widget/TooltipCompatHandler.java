@@ -8,33 +8,40 @@ import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityManager;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewConfigurationCompat;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-class TooltipCompatHandler implements View.OnLongClickListener, View.OnHoverListener, View.OnAttachStateChangeListener {
+public class TooltipCompatHandler implements View.OnLongClickListener, View.OnHoverListener, View.OnAttachStateChangeListener {
     private static TooltipCompatHandler sActiveHandler;
     private static TooltipCompatHandler sPendingHandler;
     private final View mAnchor;
     private int mAnchorX;
     private int mAnchorY;
+    private boolean mForceNextChangeSignificant;
     private boolean mFromTouch;
     private final int mHoverSlop;
     private TooltipPopup mPopup;
     private final CharSequence mTooltipText;
-    private final Runnable mShowRunnable = new Runnable() { // from class: androidx.appcompat.widget.TooltipCompatHandler.1
+    private final Runnable mShowRunnable = new Runnable() { // from class: androidx.appcompat.widget.TooltipCompatHandler$$ExternalSyntheticLambda1
         @Override // java.lang.Runnable
-        public void run() {
-            TooltipCompatHandler.this.show(false);
+        public final void run() {
+            TooltipCompatHandler.this.lambda$new$0();
         }
     };
-    private final Runnable mHideRunnable = new Runnable() { // from class: androidx.appcompat.widget.TooltipCompatHandler.2
+    private final Runnable mHideRunnable = new Runnable() { // from class: androidx.appcompat.widget.TooltipCompatHandler$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
-        public void run() {
+        public final void run() {
             TooltipCompatHandler.this.hide();
         }
     };
 
     @Override // android.view.View.OnAttachStateChangeListener
     public void onViewAttachedToWindow(View view) {
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0() {
+        show(false);
     }
 
     public static void setTooltipText(View view, CharSequence charSequence) {
@@ -59,7 +66,7 @@ class TooltipCompatHandler implements View.OnLongClickListener, View.OnHoverList
         this.mAnchor = view;
         this.mTooltipText = charSequence;
         this.mHoverSlop = ViewConfigurationCompat.getScaledHoverSlop(ViewConfiguration.get(view.getContext()));
-        clearAnchorPos();
+        forceNextChangeSignificant();
         view.setOnLongClickListener(this);
         view.setOnHoverListener(this);
     }
@@ -82,7 +89,7 @@ class TooltipCompatHandler implements View.OnLongClickListener, View.OnHoverList
             int action = motionEvent.getAction();
             if (action != 7) {
                 if (action == 10) {
-                    clearAnchorPos();
+                    forceNextChangeSignificant();
                     hide();
                 }
             } else if (this.mAnchor.isEnabled() && this.mPopup == null && updateAnchorPos(motionEvent)) {
@@ -118,10 +125,10 @@ class TooltipCompatHandler implements View.OnLongClickListener, View.OnHoverList
                 j2 = 2500;
             } else {
                 if ((ViewCompat.getWindowSystemUiVisibility(this.mAnchor) & 1) == 1) {
-                    j = C0482C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
+                    j = C0470C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
                     longPressTimeout = ViewConfiguration.getLongPressTimeout();
                 } else {
-                    j = C0482C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
+                    j = C0470C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
                     longPressTimeout = ViewConfiguration.getLongPressTimeout();
                 }
                 j2 = j - longPressTimeout;
@@ -131,14 +138,15 @@ class TooltipCompatHandler implements View.OnLongClickListener, View.OnHoverList
         }
     }
 
-    void hide() {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void hide() {
         if (sActiveHandler == this) {
             sActiveHandler = null;
             TooltipPopup tooltipPopup = this.mPopup;
             if (tooltipPopup != null) {
                 tooltipPopup.hide();
                 this.mPopup = null;
-                clearAnchorPos();
+                forceNextChangeSignificant();
                 this.mAnchor.removeOnAttachStateChangeListener(this);
             } else {
                 Log.e("TooltipCompatHandler", "sActiveHandler.mPopup == null");
@@ -172,16 +180,16 @@ class TooltipCompatHandler implements View.OnLongClickListener, View.OnHoverList
     private boolean updateAnchorPos(MotionEvent motionEvent) {
         int x = (int) motionEvent.getX();
         int y = (int) motionEvent.getY();
-        if (Math.abs(x - this.mAnchorX) > this.mHoverSlop || Math.abs(y - this.mAnchorY) > this.mHoverSlop) {
+        if (this.mForceNextChangeSignificant || Math.abs(x - this.mAnchorX) > this.mHoverSlop || Math.abs(y - this.mAnchorY) > this.mHoverSlop) {
             this.mAnchorX = x;
             this.mAnchorY = y;
+            this.mForceNextChangeSignificant = false;
             return true;
         }
         return false;
     }
 
-    private void clearAnchorPos() {
-        this.mAnchorX = Integer.MAX_VALUE;
-        this.mAnchorY = Integer.MAX_VALUE;
+    private void forceNextChangeSignificant() {
+        this.mForceNextChangeSignificant = true;
     }
 }

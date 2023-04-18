@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InstantCameraView;Landroid/content/Context;)V
     .locals 0
 
-    .line 271
+    .line 272
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$2;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;-><init>(Lorg/telegram/ui/Components/InstantCameraView;Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setAlpha(F)V
     .locals 0
 
-    .line 280
+    .line 281
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 281
+    .line 282
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$2;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -49,10 +49,10 @@
 .method public setScaleX(F)V
     .locals 0
 
-    .line 274
+    .line 275
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 275
+    .line 276
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$2;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

@@ -1,6 +1,6 @@
 package com.google.firebase.firestore.model;
 
-import com.google.firestore.p022v1.Value;
+import com.google.firestore.p021v1.Value;
 import java.util.Comparator;
 /* loaded from: classes3.dex */
 public interface Document {

@@ -46,13 +46,13 @@
 
     const/4 v0, 0x0
 
-    .line 27
+    .line 33
     invoke-direct {p0, v0}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 25
+    .line 31
     iput-object p1, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;->address:Ljava/lang/String;
 
-    .line 26
+    .line 32
     iput-object p2, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;->password:Ljava/lang/String;
 
     return-void
@@ -76,7 +76,7 @@
 
     move-object p2, v0
 
-    .line 24
+    .line 30
     :cond_1
     invoke-direct {p0, p1, p2}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -88,7 +88,7 @@
 .method public final getAddress()Ljava/lang/String;
     .locals 1
 
-    .line 25
+    .line 31
     iget-object v0, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;->address:Ljava/lang/String;
 
     return-object v0
@@ -97,7 +97,7 @@
 .method public final getPassword()Ljava/lang/String;
     .locals 1
 
-    .line 26
+    .line 32
     iget-object v0, p0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;->password:Ljava/lang/String;
 
     return-object v0

@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State;ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 228
+    .line 246
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showLoadingDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 230
+    .line 248
     iput-boolean p2, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowLoadingDialogCommand;->show:Z
 
-    .line 231
+    .line 249
     iput-boolean p3, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowLoadingDialogCommand;->cancellable:Z
 
-    .line 232
+    .line 250
     iput-object p4, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowLoadingDialogCommand;->actionToCancel:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;)V
     .locals 3
 
-    .line 237
+    .line 255
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowLoadingDialogCommand;->show:Z
 
     iget-boolean v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowLoadingDialogCommand;->cancellable:Z
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 220
+    .line 238
     check-cast p1, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowLoadingDialogCommand;->apply(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;)V

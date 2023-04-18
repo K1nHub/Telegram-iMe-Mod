@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/twitter/TwitterView$$State;Z)V
     .locals 1
 
-    .line 409
+    .line 445
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "showRefreshing"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 411
+    .line 447
     iput-boolean p2, p0, Lcom/iMe/ui/twitter/TwitterView$$State$ShowRefreshingCommand;->show:Z
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/twitter/TwitterView;)V
     .locals 1
 
-    .line 416
+    .line 452
     iget-boolean v0, p0, Lcom/iMe/ui/twitter/TwitterView$$State$ShowRefreshingCommand;->show:Z
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/SwipeRefreshView;->showRefreshing(Z)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 405
+    .line 441
     check-cast p1, Lcom/iMe/ui/twitter/TwitterView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/twitter/TwitterView$$State$ShowRefreshingCommand;->apply(Lcom/iMe/ui/twitter/TwitterView;)V

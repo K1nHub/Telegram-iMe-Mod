@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/messenger/TopicsController;JI)V
     .locals 0
 
-    .line 519
+    .line 535
     iput-object p1, p0, Lorg/telegram/messenger/TopicsController$1;->this$0:Lorg/telegram/messenger/TopicsController;
 
     iput-wide p2, p0, Lorg/telegram/messenger/TopicsController$1;->val$chatId:J
@@ -48,10 +48,10 @@
 
     if-nez p2, :cond_0
 
-    .line 523
+    .line 539
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_messages_affectedHistory;
 
-    .line 524
+    .line 540
     iget-object p2, p0, Lorg/telegram/messenger/TopicsController$1;->this$0:Lorg/telegram/messenger/TopicsController;
 
     invoke-virtual {p2}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -66,12 +66,12 @@
 
     invoke-virtual {p2, v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->processNewChannelDifferenceParams(IIJ)V
 
-    .line 525
+    .line 541
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_affectedHistory;->offset:I
 
     if-lez p1, :cond_0
 
-    .line 526
+    .line 542
     iget-object p2, p0, Lorg/telegram/messenger/TopicsController$1;->this$0:Lorg/telegram/messenger/TopicsController;
 
     iget-wide v0, p0, Lorg/telegram/messenger/TopicsController$1;->val$chatId:J

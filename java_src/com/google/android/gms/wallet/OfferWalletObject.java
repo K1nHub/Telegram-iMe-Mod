@@ -19,13 +19,13 @@ import java.util.Collection;
 /* loaded from: classes3.dex */
 public final class OfferWalletObject extends AbstractSafeParcelable {
     public static final Parcelable.Creator<OfferWalletObject> CREATOR = new zzv();
-    @SafeParcelable.Field(m789id = 2)
+    @SafeParcelable.Field(m775id = 2)
     String zza;
-    @SafeParcelable.Field(m789id = 3)
+    @SafeParcelable.Field(m775id = 3)
     String zzb;
-    @SafeParcelable.Field(m789id = 4)
+    @SafeParcelable.Field(m775id = 4)
     CommonWalletObject zzc;
-    @SafeParcelable.VersionField(getter = "getVersionCode", m786id = 1)
+    @SafeParcelable.VersionField(getter = "getVersionCode", m772id = 1)
     private final int zzd;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
@@ -283,7 +283,7 @@ public final class OfferWalletObject extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public OfferWalletObject(@SafeParcelable.Param(m788id = 1) int i, @SafeParcelable.Param(m788id = 2) String str, @SafeParcelable.Param(m788id = 3) String str2, @SafeParcelable.Param(m788id = 4) CommonWalletObject commonWalletObject) {
+    public OfferWalletObject(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) CommonWalletObject commonWalletObject) {
         this.zzd = i;
         this.zzb = str2;
         if (i >= 3) {

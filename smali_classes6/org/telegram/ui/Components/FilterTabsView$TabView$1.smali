@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FilterTabsView$TabView;IF)V
     .locals 0
 
-    .line 1041
+    .line 1042
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView$1;->this$1:Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     iput p2, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView$1;->val$num:I
@@ -43,7 +43,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 1044
+    .line 1045
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView$1;->this$1:Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     iget v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView$1;->val$num:I
@@ -68,12 +68,12 @@
 
     invoke-virtual {p1, v2, v0}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->shakeLockIcon(FI)V
 
-    .line 1045
+    .line 1046
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView$1;->this$1:Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->access$3502(Lorg/telegram/ui/Components/FilterTabsView$TabView;F)F
 
-    .line 1046
+    .line 1047
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TabView$1;->this$1:Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V

@@ -125,7 +125,7 @@ public abstract class EnvironmentInformation {
         public static final Production INSTANCE = new Production();
 
         private Production() {
-            super(Environment.PRODUCTION, AppConfiguration$Common.INSTANCE.getProdGoogleServices(), "https://api.imem.app/api/", "iMeWalletBot", 1076186499L, "https://etherscan.io/", "https://bscscan.com/", "https://polygonscan.com/", "https://ftmscan.com/", "https://tronscan.io/", "https://tonscan.org/", "imelikebot", 1399580637L, "https://binance.pay.imem.app/", "global-config-wallet.json", 3, null);
+            super(Environment.PRODUCTION, AppConfiguration$Common.INSTANCE.getProdGoogleServices(), "https://api.imem.app/api/", "ime_official_bot", 5840555707L, "https://etherscan.io/", "https://bscscan.com/", "https://polygonscan.com/", "https://ftmscan.com/", "https://tronscan.io/", "https://tonscan.org/", "imelikebot", 1399580637L, "https://binance.pay.imem.app/", "global-config-wallet.json", 3, null);
         }
     }
 
@@ -135,7 +135,7 @@ public abstract class EnvironmentInformation {
         public static final Stage INSTANCE = new Stage();
 
         private Stage() {
-            super(Environment.STAGE, AppConfiguration$Common.INSTANCE.getStageGoogleServices(), "https://api.stage.imem.app/api/", "iMeWalletStageBot", 995696546L, "https://ropsten.etherscan.io/", "https://testnet.bscscan.com/", "https://mumbai.polygonscan.com/", "https://testnet.ftmscan.com/", "https://nile.tronscan.org/", "https://tonscan.org/", "iMeLikeStageBot", 1338223875L, "https://binance.pay.stage.imem.app/", "testnet-global.config.json", Integer.MAX_VALUE, null);
+            super(Environment.STAGE, AppConfiguration$Common.INSTANCE.getStageGoogleServices(), "https://api.stage.imem.app/api/", "ime_official_stage_bot", 5825001942L, "https://ropsten.etherscan.io/", "https://testnet.bscscan.com/", "https://mumbai.polygonscan.com/", "https://testnet.ftmscan.com/", "https://nile.tronscan.org/", "https://tonscan.org/", "iMeLikeStageBot", 1338223875L, "https://binance.pay.stage.imem.app/", "testnet-global.config.json", Integer.MAX_VALUE, null);
         }
     }
 
@@ -145,7 +145,7 @@ public abstract class EnvironmentInformation {
         public static final Development INSTANCE = new Development();
 
         private Development() {
-            super(Environment.DEVELOPMENT, AppConfiguration$Common.INSTANCE.getStageGoogleServices(), "https://api.stage.imem.app/api/", "iMeWalletStageBot", 995696546L, "https://ropsten.etherscan.io/", "https://testnet.bscscan.com/", "https://mumbai.polygonscan.com/", "https://testnet.ftmscan.com/", "https://nile.tronscan.org/", "https://tonscan.org/", "iMeLikeStageBot", 1338223875L, "https://binance.pay.stage.imem.app/", "testnet-global.config.json", Integer.MAX_VALUE, null);
+            super(Environment.DEVELOPMENT, AppConfiguration$Common.INSTANCE.getStageGoogleServices(), "https://api.stage.imem.app/api/", "ime_official_stage_bot", 5825001942L, "https://ropsten.etherscan.io/", "https://testnet.bscscan.com/", "https://mumbai.polygonscan.com/", "https://testnet.ftmscan.com/", "https://nile.tronscan.org/", "https://tonscan.org/", "iMeLikeStageBot", 1338223875L, "https://binance.pay.stage.imem.app/", "testnet-global.config.json", Integer.MAX_VALUE, null);
         }
     }
 

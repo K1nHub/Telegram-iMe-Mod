@@ -20,10 +20,7 @@ public class ISO10126d2Padding implements BlockCipherPadding {
 
     @Override // org.bouncycastle.crypto.paddings.BlockCipherPadding
     public void init(SecureRandom secureRandom) throws IllegalArgumentException {
-        if (secureRandom == null) {
-            secureRandom = CryptoServicesRegistrar.getSecureRandom();
-        }
-        this.random = secureRandom;
+        this.random = CryptoServicesRegistrar.getSecureRandom(secureRandom);
     }
 
     @Override // org.bouncycastle.crypto.paddings.BlockCipherPadding

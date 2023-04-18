@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->lambda$createView$91(Landroid/content/Context;Landroid/view/View;)V
+    value = Lorg/telegram/ui/ChatActivity;->lambda$createView$86(Landroid/content/Context;Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;I)V
     .locals 0
 
-    .line 9080
+    .line 9028
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/ReportAlert;-><init>(Landroid/content/Context;I)V
@@ -35,7 +35,7 @@
 .method protected onSend(ILjava/lang/String;)V
     .locals 3
 
-    .line 9083
+    .line 9031
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -44,7 +44,7 @@
 
     move v1, v0
 
-    .line 9084
+    .line 9032
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -60,7 +60,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 9085
+    .line 9033
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$4000(Lorg/telegram/ui/ChatActivity;)[Landroid/util/SparseArray;
@@ -83,7 +83,7 @@
 
     goto :goto_0
 
-    .line 9087
+    .line 9035
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -104,7 +104,7 @@
 
     move-result-object v0
 
-    .line 9088
+    .line 9036
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -114,12 +114,12 @@
 
     invoke-static {v0, v1, p2, p1}, Lorg/telegram/ui/Components/AlertsCreator;->sendReport(Lorg/telegram/tgnet/TLRPC$InputPeer;ILjava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 9089
+    .line 9037
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->finishFragment()V
 
-    .line 9090
+    .line 9038
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$12000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;

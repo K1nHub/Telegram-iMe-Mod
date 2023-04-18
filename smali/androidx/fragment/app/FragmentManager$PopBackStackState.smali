@@ -31,18 +31,18 @@
 .method constructor <init>(Landroidx/fragment/app/FragmentManager;Ljava/lang/String;II)V
     .locals 0
 
-    .line 3263
+    .line 3445
     iput-object p1, p0, Landroidx/fragment/app/FragmentManager$PopBackStackState;->this$0:Landroidx/fragment/app/FragmentManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3264
+    .line 3446
     iput-object p2, p0, Landroidx/fragment/app/FragmentManager$PopBackStackState;->mName:Ljava/lang/String;
 
-    .line 3265
+    .line 3447
     iput p3, p0, Landroidx/fragment/app/FragmentManager$PopBackStackState;->mId:I
 
-    .line 3266
+    .line 3448
     iput p4, p0, Landroidx/fragment/app/FragmentManager$PopBackStackState;->mFlags:I
 
     return-void
@@ -64,7 +64,7 @@
         }
     .end annotation
 
-    .line 3272
+    .line 3454
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$PopBackStackState;->this$0:Landroidx/fragment/app/FragmentManager;
 
     iget-object v0, v0, Landroidx/fragment/app/FragmentManager;->mPrimaryNav:Landroidx/fragment/app/Fragment;
@@ -79,12 +79,12 @@
 
     if-nez v1, :cond_0
 
-    .line 3275
+    .line 3457
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/FragmentManager;
 
     move-result-object v0
 
-    .line 3276
+    .line 3458
     invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->popBackStackImmediate()Z
 
     move-result v0
@@ -95,7 +95,7 @@
 
     return p1
 
-    .line 3282
+    .line 3464
     :cond_0
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$PopBackStackState;->this$0:Landroidx/fragment/app/FragmentManager;
 

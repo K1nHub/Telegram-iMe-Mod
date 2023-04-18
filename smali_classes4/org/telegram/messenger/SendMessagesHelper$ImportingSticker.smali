@@ -32,7 +32,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 371
+    .line 378
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,34 +43,34 @@
 .method public uploadMedia(ILorg/telegram/tgnet/TLRPC$InputFile;Ljava/lang/Runnable;)V
     .locals 2
 
-    .line 380
+    .line 387
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_uploadMedia;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_uploadMedia;-><init>()V
 
-    .line 381
+    .line 388
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPeerSelf;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputPeerSelf;-><init>()V
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_uploadMedia;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 382
+    .line 389
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputMediaUploadedDocument;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputMediaUploadedDocument;-><init>()V
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_uploadMedia;->media:Lorg/telegram/tgnet/TLRPC$InputMedia;
 
-    .line 383
+    .line 390
     iput-object p2, v1, Lorg/telegram/tgnet/TLRPC$InputMedia;->file:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    .line 384
+    .line 391
     iget-object p2, p0, Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;->mimeType:Ljava/lang/String;
 
     iput-object p2, v1, Lorg/telegram/tgnet/TLRPC$InputMedia;->mime_type:Ljava/lang/String;
 
-    .line 386
+    .line 393
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p1

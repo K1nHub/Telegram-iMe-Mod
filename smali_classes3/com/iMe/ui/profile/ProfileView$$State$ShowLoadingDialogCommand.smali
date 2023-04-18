@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/profile/ProfileView$$State;ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 479
+    .line 497
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showLoadingDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 481
+    .line 499
     iput-boolean p2, p0, Lcom/iMe/ui/profile/ProfileView$$State$ShowLoadingDialogCommand;->show:Z
 
-    .line 482
+    .line 500
     iput-boolean p3, p0, Lcom/iMe/ui/profile/ProfileView$$State$ShowLoadingDialogCommand;->cancellable:Z
 
-    .line 483
+    .line 501
     iput-object p4, p0, Lcom/iMe/ui/profile/ProfileView$$State$ShowLoadingDialogCommand;->actionToCancel:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/profile/ProfileView;)V
     .locals 3
 
-    .line 488
+    .line 506
     iget-boolean v0, p0, Lcom/iMe/ui/profile/ProfileView$$State$ShowLoadingDialogCommand;->show:Z
 
     iget-boolean v1, p0, Lcom/iMe/ui/profile/ProfileView$$State$ShowLoadingDialogCommand;->cancellable:Z
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 471
+    .line 489
     check-cast p1, Lcom/iMe/ui/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/profile/ProfileView$$State$ShowLoadingDialogCommand;->apply(Lcom/iMe/ui/profile/ProfileView;)V

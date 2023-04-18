@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;I)V
     .locals 0
 
-    .line 4646
+    .line 4648
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$29;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iput p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$29;->val$num:I
@@ -42,7 +42,7 @@
 .method public onPreDraw()Z
     .locals 2
 
-    .line 4649
+    .line 4651
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$29;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$400(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -59,7 +59,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 4650
+    .line 4652
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$29;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$29;->val$num:I

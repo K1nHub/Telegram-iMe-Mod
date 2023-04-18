@@ -44,7 +44,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 46
+    .line 47
     sget-object v5, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     const/4 v6, 0x0
@@ -57,19 +57,19 @@
 
     move-object v4, p3
 
-    .line 42
+    .line 43
     invoke-direct/range {v1 .. v6}, Lcom/iMe/storage/domain/model/crypto/Wallet;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 38
+    .line 39
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->guid:Ljava/lang/String;
 
-    .line 39
+    .line 40
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->mnemonic:Ljava/lang/String;
 
-    .line 40
+    .line 41
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->address:Ljava/lang/String;
 
-    .line 41
+    .line 42
     iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->inputKey:Ldrinkless/org/ton/TonApi$InputKeyRegular;
 
     return-void
@@ -276,7 +276,7 @@
 .method public getAddress()Ljava/lang/String;
     .locals 1
 
-    .line 40
+    .line 41
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->address:Ljava/lang/String;
 
     return-object v0
@@ -285,7 +285,7 @@
 .method public getGuid()Ljava/lang/String;
     .locals 1
 
-    .line 38
+    .line 39
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->guid:Ljava/lang/String;
 
     return-object v0
@@ -294,7 +294,7 @@
 .method public final getInputKey()Ldrinkless/org/ton/TonApi$InputKeyRegular;
     .locals 1
 
-    .line 41
+    .line 42
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->inputKey:Ldrinkless/org/ton/TonApi$InputKeyRegular;
 
     return-object v0
@@ -303,7 +303,7 @@
 .method public getMnemonic()Ljava/lang/String;
     .locals 1
 
-    .line 39
+    .line 40
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->mnemonic:Ljava/lang/String;
 
     return-object v0

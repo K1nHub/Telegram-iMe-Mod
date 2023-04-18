@@ -14,7 +14,7 @@ public final class WalletConnectTransaction {
     private final BigInteger nonce;
 
     /* renamed from: to */
-    private final String f333to;
+    private final String f328to;
     private final String value;
 
     public WalletConnectTransaction(String from, String to, String value, String data, BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, NetworkType networkType) {
@@ -24,7 +24,7 @@ public final class WalletConnectTransaction {
         Intrinsics.checkNotNullParameter(data, "data");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         this.from = from;
-        this.f333to = to;
+        this.f328to = to;
         this.value = value;
         this.data = data;
         this.gas = bigInteger;
@@ -38,7 +38,7 @@ public final class WalletConnectTransaction {
     }
 
     public final String getTo() {
-        return this.f333to;
+        return this.f328to;
     }
 
     public final String getValue() {

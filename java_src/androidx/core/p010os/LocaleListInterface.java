@@ -8,5 +8,9 @@ interface LocaleListInterface {
 
     Object getLocaleList();
 
+    boolean isEmpty();
+
     int size();
+
+    String toLanguageTags();
 }

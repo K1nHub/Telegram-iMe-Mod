@@ -43,26 +43,26 @@ public final /* synthetic */ class BuildersKt__Builders_commonKt {
         Object result;
         Object coroutine_suspended;
         CoroutineContext context = continuation.getContext();
-        CoroutineContext plus = context.plus(coroutineContext);
-        JobKt.ensureActive(plus);
-        if (plus == context) {
-            ScopeCoroutine scopeCoroutine = new ScopeCoroutine(plus, continuation);
+        CoroutineContext newCoroutineContext = CoroutineContextKt.newCoroutineContext(context, coroutineContext);
+        JobKt.ensureActive(newCoroutineContext);
+        if (newCoroutineContext == context) {
+            ScopeCoroutine scopeCoroutine = new ScopeCoroutine(newCoroutineContext, continuation);
             result = UndispatchedKt.startUndispatchedOrReturn(scopeCoroutine, scopeCoroutine, function2);
         } else {
             ContinuationInterceptor.Key key = ContinuationInterceptor.Key;
-            if (Intrinsics.areEqual(plus.get(key), context.get(key))) {
-                UndispatchedCoroutine undispatchedCoroutine = new UndispatchedCoroutine(plus, continuation);
-                Object updateThreadContext = ThreadContextKt.updateThreadContext(plus, null);
+            if (Intrinsics.areEqual(newCoroutineContext.get(key), context.get(key))) {
+                UndispatchedCoroutine undispatchedCoroutine = new UndispatchedCoroutine(newCoroutineContext, continuation);
+                Object updateThreadContext = ThreadContextKt.updateThreadContext(newCoroutineContext, null);
                 try {
                     Object startUndispatchedOrReturn = UndispatchedKt.startUndispatchedOrReturn(undispatchedCoroutine, undispatchedCoroutine, function2);
-                    ThreadContextKt.restoreThreadContext(plus, updateThreadContext);
+                    ThreadContextKt.restoreThreadContext(newCoroutineContext, updateThreadContext);
                     result = startUndispatchedOrReturn;
                 } catch (Throwable th) {
-                    ThreadContextKt.restoreThreadContext(plus, updateThreadContext);
+                    ThreadContextKt.restoreThreadContext(newCoroutineContext, updateThreadContext);
                     throw th;
                 }
             } else {
-                DispatchedCoroutine dispatchedCoroutine = new DispatchedCoroutine(plus, continuation);
+                DispatchedCoroutine dispatchedCoroutine = new DispatchedCoroutine(newCoroutineContext, continuation);
                 CancellableKt.startCoroutineCancellable$default(function2, dispatchedCoroutine, dispatchedCoroutine, null, 4, null);
                 result = dispatchedCoroutine.getResult();
             }

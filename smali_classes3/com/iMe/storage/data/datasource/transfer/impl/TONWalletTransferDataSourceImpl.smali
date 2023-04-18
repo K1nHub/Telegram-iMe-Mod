@@ -252,19 +252,7 @@
     move-result-object v2
 
     .line 55
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getAmount()D
-
-    move-result-wide v3
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->convertToWei(Ljava/lang/Number;Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;)Ljava/math/BigInteger;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;->getConvertedAmount()Ljava/math/BigInteger;
 
     move-result-object v3
 

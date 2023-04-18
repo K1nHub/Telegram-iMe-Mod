@@ -12,17 +12,17 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class GetSignInIntentRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GetSignInIntentRequest> CREATOR = new zbf();
-    @SafeParcelable.Field(getter = "getServerClientId", m789id = 1)
+    @SafeParcelable.Field(getter = "getServerClientId", m775id = 1)
     private final String zba;
-    @SafeParcelable.Field(getter = "getHostedDomainFilter", m789id = 2)
+    @SafeParcelable.Field(getter = "getHostedDomainFilter", m775id = 2)
     private final String zbb;
-    @SafeParcelable.Field(getter = "getSessionId", m789id = 3)
+    @SafeParcelable.Field(getter = "getSessionId", m775id = 3)
     private String zbc;
-    @SafeParcelable.Field(getter = "getNonce", m789id = 4)
+    @SafeParcelable.Field(getter = "getNonce", m775id = 4)
     private final String zbd;
-    @SafeParcelable.Field(getter = "requestVerifiedPhoneNumber", m789id = 5)
+    @SafeParcelable.Field(getter = "requestVerifiedPhoneNumber", m775id = 5)
     private final boolean zbe;
-    @SafeParcelable.Field(getter = "getTheme", m789id = 6)
+    @SafeParcelable.Field(getter = "getTheme", m775id = 6)
     private final int zbf;
 
     /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
@@ -73,7 +73,7 @@ public class GetSignInIntentRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public GetSignInIntentRequest(@SafeParcelable.Param(m788id = 1) String str, @SafeParcelable.Param(m788id = 2) String str2, @SafeParcelable.Param(m788id = 3) String str3, @SafeParcelable.Param(m788id = 4) String str4, @SafeParcelable.Param(m788id = 5) boolean z, @SafeParcelable.Param(m788id = 6) int i) {
+    public GetSignInIntentRequest(@SafeParcelable.Param(m774id = 1) String str, @SafeParcelable.Param(m774id = 2) String str2, @SafeParcelable.Param(m774id = 3) String str3, @SafeParcelable.Param(m774id = 4) String str4, @SafeParcelable.Param(m774id = 5) boolean z, @SafeParcelable.Param(m774id = 6) int i) {
         Preconditions.checkNotNull(str);
         this.zba = str;
         this.zbb = str2;

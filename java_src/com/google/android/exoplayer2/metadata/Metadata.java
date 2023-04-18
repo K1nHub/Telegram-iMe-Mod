@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.metadata;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.MediaMetadata;
 import com.google.android.exoplayer2.util.Util;
@@ -58,7 +58,7 @@ public final class Metadata implements Parcelable {
     }
 
     public Metadata(Entry... entryArr) {
-        this((long) C0482C.TIME_UNSET, entryArr);
+        this((long) C0470C.TIME_UNSET, entryArr);
     }
 
     public Metadata(long j, Entry... entryArr) {
@@ -129,7 +129,7 @@ public final class Metadata implements Parcelable {
         StringBuilder sb = new StringBuilder();
         sb.append("entries=");
         sb.append(Arrays.toString(this.entries));
-        if (this.presentationTimeUs == C0482C.TIME_UNSET) {
+        if (this.presentationTimeUs == C0470C.TIME_UNSET) {
             str = "";
         } else {
             str = ", presentationTimeUs=" + this.presentationTimeUs;

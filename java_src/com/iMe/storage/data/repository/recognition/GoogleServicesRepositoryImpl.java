@@ -20,7 +20,7 @@ import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.p036io.FilesKt__FileReadWriteKt;
+import kotlin.p035io.FilesKt__FileReadWriteKt;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -77,16 +77,16 @@ public final class GoogleServicesRepositoryImpl implements GoogleServicesReposit
     public Observable<Result<List<RecognizedImageModel>>> getPhotoObjects(Bitmap photo) {
         Intrinsics.checkNotNullParameter(photo, "photo");
         Pair<MultipartBody.Part, File> convertBitmapToMultipart = convertBitmapToMultipart(photo);
-        Observable<R> map = this.googleServicesApi.getPhotoObjects(convertBitmapToMultipart.component1()).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1855xab083842(this.firebaseErrorHandler, convertBitmapToMultipart.component2())));
+        Observable<R> map = this.googleServicesApi.getPhotoObjects(convertBitmapToMultipart.component1()).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1842xab083842(this.firebaseErrorHandler, convertBitmapToMultipart.component2())));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<RecognizedImageModel>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1854x9906889f(this.errorHandler)));
+        Observable<Result<List<RecognizedImageModel>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1841x9906889f(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     private final Pair<MultipartBody.Part, File> convertBitmapToMultipart(Bitmap bitmap) {
         File tempFile$default = BitmapExtKt.toTempFile$default(bitmap, this.cachePath, null, 2, null);
-        return TuplesKt.m94to(MultipartBody.Part.Companion.createFormData("image", tempFile$default.getName(), RequestBody.Companion.create(tempFile$default, MediaType.Companion.parse(MimeTypes.IMAGE_JPEG))), tempFile$default);
+        return TuplesKt.m80to(MultipartBody.Part.Companion.createFormData("image", tempFile$default.getName(), RequestBody.Companion.create(tempFile$default, MediaType.Companion.parse(MimeTypes.IMAGE_JPEG))), tempFile$default);
     }
 
     /* compiled from: GoogleServicesRepositoryImpl.kt */

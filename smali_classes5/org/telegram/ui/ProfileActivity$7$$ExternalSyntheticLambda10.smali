@@ -2,44 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity$7;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/UserConfig;
-
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$Photo;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$User;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity$7;Lorg/telegram/messenger/UserConfig;Lorg/telegram/tgnet/TLRPC$Photo;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity$7;Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/ProfileActivity$7;
 
-    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda10;->f$1:Lorg/telegram/messenger/UserConfig;
-
-    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda10;->f$2:Lorg/telegram/tgnet/TLRPC$Photo;
+    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda10;->f$1:Lorg/telegram/tgnet/TLRPC$User;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 3
+.method public final run(Z)V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/ProfileActivity$7;
 
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda10;->f$1:Lorg/telegram/messenger/UserConfig;
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda10;->f$1:Lorg/telegram/tgnet/TLRPC$User;
 
-    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda10;->f$2:Lorg/telegram/tgnet/TLRPC$Photo;
-
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/ProfileActivity$7;->$r8$lambda$NUyfkdJ70UOuyPxk7YJylFyf9H8(Lorg/telegram/ui/ProfileActivity$7;Lorg/telegram/messenger/UserConfig;Lorg/telegram/tgnet/TLRPC$Photo;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ProfileActivity$7;->$r8$lambda$vKm2PDM7tJvFHVu9C4IXU9tQfBg(Lorg/telegram/ui/ProfileActivity$7;Lorg/telegram/tgnet/TLRPC$User;Z)V
 
     return-void
 .end method

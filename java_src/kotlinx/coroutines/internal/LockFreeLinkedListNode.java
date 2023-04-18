@@ -2,6 +2,8 @@ package kotlinx.coroutines.internal;
 
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.PropertyReference0Impl;
+import kotlinx.coroutines.DebugStringsKt;
 /* compiled from: LockFreeLinkedList.kt */
 /* loaded from: classes4.dex */
 public class LockFreeLinkedListNode {
@@ -187,11 +189,12 @@ public class LockFreeLinkedListNode {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append((Object) getClass().getSimpleName());
-        sb.append('@');
-        sb.append((Object) Integer.toHexString(System.identityHashCode(this)));
-        return sb.toString();
+        return new PropertyReference0Impl(this) { // from class: kotlinx.coroutines.internal.LockFreeLinkedListNode$toString$1
+            @Override // kotlin.reflect.KProperty0
+            public Object get() {
+                return DebugStringsKt.getClassSimpleName(this.receiver);
+            }
+        } + '@' + DebugStringsKt.getHexAddress(this);
     }
 
     public final Object getNext() {

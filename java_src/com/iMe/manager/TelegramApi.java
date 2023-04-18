@@ -23,6 +23,8 @@ public interface TelegramApi {
 
     Observable<TLRPC$TL_exportedMessageLink> getMessageLinkPattern(MessageObject messageObject, TLRPC$Chat tLRPC$Chat);
 
+    Observable<TLRPC$User> getUserInfoByUsername(String str);
+
     Observable<List<TLRPC$User>> getUsersByIds(List<Long> list);
 
     Observable<TLRPC$Chat> subscribeToChannel(TLRPC$Chat tLRPC$Chat);

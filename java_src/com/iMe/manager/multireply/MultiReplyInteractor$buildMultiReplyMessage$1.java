@@ -43,7 +43,7 @@ public final class MultiReplyInteractor$buildMultiReplyMessage$1 extends Lambda 
             buildMultiReplyMessageForMessageObject = multiReplyInteractor.buildMultiReplyMessageForMessageObject((MessageObject) obj, pattern);
             repeat = StringsKt__StringsJVMKt.repeat("\n", 2);
             charSequence = TextUtils.concat(charSequence, buildMultiReplyMessageForMessageObject, repeat);
-            Intrinsics.checkNotNullExpressionValue(charSequence, "concat(\n                …                        )");
+            Intrinsics.checkNotNullExpressionValue(charSequence, "concat(totalMessage, bui…mbols.NEW_LINE.repeat(2))");
             i = i2;
         }
         return Result.Companion.success(charSequence);

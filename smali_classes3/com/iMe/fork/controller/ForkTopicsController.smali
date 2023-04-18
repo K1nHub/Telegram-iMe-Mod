@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nForkTopicsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ForkTopicsController.kt\ncom/iMe/fork/controller/ForkTopicsController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 CollectionExt.kt\ncom/iMe/utils/extentions/common/CollectionExtKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,342:1\n56#2,6:343\n1559#3:349\n1590#3,4:350\n1855#3,2:354\n766#3:367\n857#3,2:368\n1045#3:370\n766#3:371\n857#3,2:372\n1045#3:374\n766#3:375\n857#3,2:376\n1045#3:378\n766#3:379\n857#3,2:380\n1549#3:382\n1620#3,2:383\n1622#3:386\n1963#3,14:387\n1963#3,14:401\n1549#3:415\n1620#3,3:416\n1179#3,2:419\n1253#3,4:421\n766#3:425\n857#3,2:426\n1855#3:428\n1549#3:429\n1620#3,3:430\n766#3:433\n857#3:434\n1726#3,3:435\n858#3:438\n1856#3:439\n1549#3:440\n1620#3,3:441\n10#4,3:356\n10#4,6:359\n14#4,2:365\n1#5:385\n*S KotlinDebug\n*F\n+ 1 ForkTopicsController.kt\ncom/iMe/fork/controller/ForkTopicsController\n*L\n29#1:343,6\n87#1:349\n87#1:350,4\n99#1:354,2\n186#1:367\n186#1:368,2\n187#1:370\n190#1:371\n190#1:372,2\n191#1:374\n203#1:375\n203#1:376,2\n203#1:378\n204#1:379\n204#1:380,2\n205#1:382\n205#1:383,2\n205#1:386\n231#1:387,14\n233#1:401,14\n235#1:415\n235#1:416,3\n242#1:419,2\n242#1:421,4\n251#1:425\n251#1:426,2\n253#1:428\n256#1:429\n256#1:430,3\n256#1:433\n256#1:434\n256#1:435,3\n256#1:438\n253#1:439\n323#1:440\n323#1:441,3\n153#1:356,3\n156#1:359,6\n153#1:365,2\n*E\n"
+    value = "SMAP\nForkTopicsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ForkTopicsController.kt\ncom/iMe/fork/controller/ForkTopicsController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 CollectionExt.kt\ncom/iMe/utils/extentions/common/CollectionExtKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,344:1\n56#2,6:345\n1559#3:351\n1590#3,4:352\n1855#3,2:356\n766#3:369\n857#3,2:370\n1045#3:372\n766#3:373\n857#3,2:374\n1045#3:376\n766#3:377\n857#3,2:378\n1045#3:380\n766#3:381\n857#3,2:382\n1549#3:384\n1620#3,2:385\n1622#3:388\n1963#3,14:389\n1963#3,14:403\n1549#3:417\n1620#3,3:418\n1179#3,2:421\n1253#3,4:423\n766#3:427\n857#3,2:428\n1855#3:430\n1549#3:431\n1620#3,3:432\n766#3:435\n857#3:436\n1726#3,3:437\n858#3:440\n1856#3:441\n1549#3:442\n1620#3,3:443\n10#4,3:358\n10#4,6:361\n14#4,2:367\n1#5:387\n*S KotlinDebug\n*F\n+ 1 ForkTopicsController.kt\ncom/iMe/fork/controller/ForkTopicsController\n*L\n29#1:345,6\n87#1:351\n87#1:352,4\n99#1:356,2\n188#1:369\n188#1:370,2\n189#1:372\n192#1:373\n192#1:374,2\n193#1:376\n205#1:377\n205#1:378,2\n205#1:380\n206#1:381\n206#1:382,2\n207#1:384\n207#1:385,2\n207#1:388\n233#1:389,14\n235#1:403,14\n237#1:417\n237#1:418,3\n244#1:421,2\n244#1:423,4\n253#1:427\n253#1:428,2\n255#1:430\n258#1:431\n258#1:432,3\n258#1:435\n258#1:436\n258#1:437,3\n258#1:440\n255#1:441\n325#1:442\n325#1:443,3\n153#1:358,3\n156#1:361,6\n153#1:367,2\n*E\n"
 .end annotation
 
 
@@ -110,7 +110,7 @@
 
     sput-object v0, Lcom/iMe/fork/controller/ForkTopicsController;->Companion:Lcom/iMe/fork/controller/ForkTopicsController$Companion;
 
-    .line 337
+    .line 339
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
     const/4 v1, 0x5
@@ -225,7 +225,7 @@
 
     if-eqz p6, :cond_0
 
-    .line 281
+    .line 283
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->calcNextId()J
 
     move-result-wide p2
@@ -254,7 +254,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 180
+    .line 182
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -308,7 +308,7 @@
         }
     .end annotation
 
-    .line 322
+    .line 324
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lcom/iMe/fork/controller/ForkTopicsController$$ExternalSyntheticLambda3;
@@ -331,7 +331,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 323
+    .line 325
     invoke-direct {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/TopicsDao;
 
     move-result-object v0
@@ -366,7 +366,7 @@
     .line 1621
     check-cast v2, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 323
+    .line 325
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v3
@@ -382,7 +382,7 @@
 
     goto :goto_0
 
-    .line 323
+    .line 325
     :cond_0
     invoke-interface {v0, v1}, Lcom/iMe/storage/data/locale/db/dao/base/BaseDao;->insert(Ljava/util/List;)V
 
@@ -392,7 +392,7 @@
 .method private final needSkipAutoUpdateCatalog()Z
     .locals 6
 
-    .line 328
+    .line 330
     sget-object v0, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
 
     iget-object v1, p0, Lcom/iMe/fork/controller/ForkTopicsController;->selectedAutoUpdateTopicsCatalogInterval:Lcom/iMe/fork/enums/Interval;
@@ -407,7 +407,7 @@
 
     move-result-wide v0
 
-    .line 329
+    .line 331
     invoke-static {}, Lcom/iMe/storage/data/utils/extentions/DateExtKt;->now()J
 
     move-result-wide v2
@@ -434,7 +434,7 @@
 .method private final putTopic(Lcom/iMe/storage/domain/model/topics/TopicModel;)V
     .locals 3
 
-    .line 296
+    .line 298
     iget-object v0, p0, Lcom/iMe/fork/controller/ForkTopicsController;->topics:Ljava/util/Map;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getTopicId()J
@@ -457,7 +457,7 @@
 
     return-void
 
-    .line 301
+    .line 303
     :cond_0
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getPresets()Ljava/util/Set;
 
@@ -469,7 +469,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 302
+    .line 304
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getDialogs()Ljava/util/Set;
 
     move-result-object v0
@@ -480,7 +480,7 @@
 
     invoke-interface {v0, p2}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 303
+    .line 305
     invoke-direct {p0, p1}, Lcom/iMe/fork/controller/ForkTopicsController;->saveTopic(Lcom/iMe/storage/domain/model/topics/TopicModel;)V
 
     return-void
@@ -489,7 +489,7 @@
 .method private final saveTopic(Lcom/iMe/storage/domain/model/topics/TopicModel;)V
     .locals 4
 
-    .line 307
+    .line 309
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getDialogs()Ljava/util/Set;
 
     move-result-object v0
@@ -520,7 +520,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 309
+    .line 311
     iget-object v1, p0, Lcom/iMe/fork/controller/ForkTopicsController;->topics:Ljava/util/Map;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getTopicId()J
@@ -533,13 +533,13 @@
 
     invoke-interface {v1, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 311
+    .line 313
     :cond_1
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->filterTopics()V
 
     if-eqz v0, :cond_2
 
-    .line 313
+    .line 315
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lcom/iMe/fork/controller/ForkTopicsController$$ExternalSyntheticLambda2;
@@ -550,7 +550,7 @@
 
     goto :goto_1
 
-    .line 317
+    .line 319
     :cond_2
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
@@ -573,7 +573,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 314
+    .line 316
     invoke-direct {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/TopicsDao;
 
     move-result-object v0
@@ -600,7 +600,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 272
+    .line 274
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -799,7 +799,7 @@
 .method public final calcNextId()J
     .locals 8
 
-    .line 231
+    .line 233
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->getTopicsList()Ljava/util/Collection;
 
     move-result-object v0
@@ -844,7 +844,7 @@
 
     check-cast v2, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 231
+    .line 233
     invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getTopicId()J
 
     move-result-wide v2
@@ -860,7 +860,7 @@
 
     check-cast v5, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 231
+    .line 233
     invoke-virtual {v5}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getTopicId()J
 
     move-result-wide v5
@@ -883,7 +883,7 @@
 
     goto :goto_0
 
-    .line 231
+    .line 233
     :goto_1
     check-cast v0, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
@@ -909,7 +909,7 @@
 .method public final calcNextOrder()I
     .locals 5
 
-    .line 233
+    .line 235
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->getTopicsList()Ljava/util/Collection;
 
     move-result-object v0
@@ -954,7 +954,7 @@
 
     check-cast v2, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 233
+    .line 235
     invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getOrder()I
 
     move-result v2
@@ -970,7 +970,7 @@
 
     check-cast v4, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 233
+    .line 235
     invoke-virtual {v4}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getOrder()I
 
     move-result v4
@@ -991,7 +991,7 @@
 
     goto :goto_0
 
-    .line 233
+    .line 235
     :goto_1
     check-cast v0, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
@@ -1017,15 +1017,15 @@
 
     const/4 v0, 0x0
 
-    .line 286
+    .line 288
     iput v0, p0, Lcom/iMe/fork/controller/ForkTopicsController;->lastTopicsCount:I
 
     const-wide/16 v0, -0x1
 
-    .line 287
+    .line 289
     iput-wide v0, p0, Lcom/iMe/fork/controller/ForkTopicsController;->selectedMainTopicId:J
 
-    .line 288
+    .line 290
     iput-wide v0, p0, Lcom/iMe/fork/controller/ForkTopicsController;->selectedArchiveTopicId:J
 
     return-void
@@ -1034,7 +1034,7 @@
 .method public final createNewTopic(Lcom/iMe/storage/data/repository/topics/Topic;JI)Lcom/iMe/storage/domain/model/topics/TopicModel;
     .locals 13
 
-    .line 282
+    .line 284
     new-instance v12, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
     new-instance v6, Ljava/util/LinkedHashSet;
@@ -1071,7 +1071,7 @@
 .end method
 
 .method public final filterTopics()V
-    .locals 10
+    .locals 13
 
     .line 147
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->getTopicsList()Ljava/util/Collection;
@@ -1186,11 +1186,24 @@
     if-eqz v9, :cond_2
 
     .line 158
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getHiddenChatsController()Lcom/iMe/fork/controller/HiddenChatsController;
+
+    move-result-object v10
+
+    iget-wide v11, v9, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
+
+    invoke-virtual {v10, v11, v12}, Lcom/iMe/fork/controller/HiddenChatsController;->isChatHidden(J)Z
+
+    move-result v10
+
+    if-nez v10, :cond_2
+
+    .line 159
     iget v9, v9, Lorg/telegram/tgnet/TLRPC$Dialog;->folder_id:I
 
     if-nez v9, :cond_3
 
-    .line 159
+    .line 160
     invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v7
@@ -1199,7 +1212,7 @@
 
     goto :goto_2
 
-    .line 161
+    .line 162
     :cond_3
     invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -1209,54 +1222,54 @@
 
     goto :goto_2
 
-    .line 165
+    .line 167
     :cond_4
     invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getFilterDialogs()Ljava/util/Set;
 
     move-result-object v6
 
-    .line 166
+    .line 168
     invoke-static {v6, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v7
 
     if-nez v7, :cond_5
 
-    .line 167
+    .line 169
     invoke-interface {v6}, Ljava/util/Set;->clear()V
 
-    .line 168
+    .line 170
     invoke-interface {v6, v4}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     move v1, v3
 
-    .line 171
+    .line 173
     :cond_5
     invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getFilterArchivedDialogs()Ljava/util/Set;
 
     move-result-object v2
 
-    .line 172
+    .line 174
     invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v4
 
     if-nez v4, :cond_1
 
-    .line 173
+    .line 175
     invoke-interface {v2}, Ljava/util/Set;->clear()V
 
-    .line 174
+    .line 176
     invoke-interface {v2, v5}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     move v1, v3
 
-    goto :goto_1
+    goto/16 :goto_1
 
     :cond_6
     if-eqz v1, :cond_7
 
-    .line 179
+    .line 181
     new-instance v0, Lcom/iMe/fork/controller/ForkTopicsController$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/controller/ForkTopicsController$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/controller/ForkTopicsController;)V
@@ -1278,7 +1291,7 @@
         }
     .end annotation
 
-    .line 202
+    .line 204
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->getTopicsList()Ljava/util/Collection;
 
     move-result-object v0
@@ -1309,7 +1322,7 @@
 
     check-cast v4, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 203
+    .line 205
     invoke-virtual {v4}, Lcom/iMe/storage/domain/model/topics/TopicModel;->isUserTopic()Z
 
     move-result v4
@@ -1359,7 +1372,7 @@
 
     check-cast v5, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 204
+    .line 206
     invoke-virtual {v5}, Lcom/iMe/storage/domain/model/topics/TopicModel;->isUserTopic()Z
 
     move-result v5
@@ -1373,7 +1386,7 @@
 
     goto :goto_1
 
-    .line 205
+    .line 207
     :cond_3
     sget-object v0, Lcom/iMe/storage/data/repository/topics/Topic;->Companion:Lcom/iMe/storage/data/repository/topics/Topic$Companion;
 
@@ -1413,7 +1426,7 @@
 
     check-cast v7, Lcom/iMe/storage/data/repository/topics/Topic;
 
-    .line 206
+    .line 208
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
@@ -1469,7 +1482,7 @@
 
     move-object v6, p0
 
-    .line 207
+    .line 209
     invoke-static/range {v6 .. v12}, Lcom/iMe/fork/controller/ForkTopicsController;->createNewTopic$default(Lcom/iMe/fork/controller/ForkTopicsController;Lcom/iMe/storage/data/repository/topics/Topic;JIILjava/lang/Object;)Lcom/iMe/storage/domain/model/topics/TopicModel;
 
     move-result-object v6
@@ -1480,7 +1493,7 @@
 
     goto :goto_2
 
-    .line 205
+    .line 207
     :cond_8
     invoke-static {v1, v3}, Lkotlin/collections/CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
 
@@ -1500,7 +1513,7 @@
         }
     .end annotation
 
-    .line 189
+    .line 191
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->getTopicsList()Ljava/util/Collection;
 
     move-result-object v0
@@ -1531,7 +1544,7 @@
 
     check-cast v3, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 190
+    .line 192
     invoke-virtual {v3}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getFilterArchivedDialogs()Ljava/util/Set;
 
     move-result-object v4
@@ -1610,7 +1623,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 227
+    .line 229
     iget-wide v0, p0, Lcom/iMe/fork/controller/ForkTopicsController;->selectedArchiveTopicId:J
 
     goto :goto_0
@@ -1625,7 +1638,7 @@
 .method public final getTopic(J)Lcom/iMe/storage/domain/model/topics/TopicModel;
     .locals 1
 
-    .line 239
+    .line 241
     iget-object v0, p0, Lcom/iMe/fork/controller/ForkTopicsController;->topics:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1644,7 +1657,7 @@
 .method public final getTopicForDialog(J)Lcom/iMe/storage/domain/model/topics/TopicModel;
     .locals 4
 
-    .line 193
+    .line 195
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->getTopicsList()Ljava/util/Collection;
 
     move-result-object v0
@@ -1668,7 +1681,7 @@
 
     check-cast v2, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 194
+    .line 196
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v3
@@ -1679,7 +1692,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 195
+    .line 197
     invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getFilterArchivedDialogs()Ljava/util/Set;
 
     move-result-object v2
@@ -1694,7 +1707,7 @@
 
     goto :goto_0
 
-    .line 197
+    .line 199
     :cond_1
     invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getFilterDialogs()Ljava/util/Set;
 
@@ -1716,7 +1729,7 @@
     :cond_2
     const/4 v1, 0x0
 
-    .line 193
+    .line 195
     :goto_1
     check-cast v1, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
@@ -1734,7 +1747,7 @@
         }
     .end annotation
 
-    .line 235
+    .line 237
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->getTopicsList()Ljava/util/Collection;
 
     move-result-object v0
@@ -1769,7 +1782,7 @@
     .line 1621
     check-cast v2, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 235
+    .line 237
     invoke-static {v2}, Lcom/iMe/fork/models/backup/BackupMappingKt;->mapToBackup(Lcom/iMe/storage/domain/model/topics/TopicModel;)Lcom/iMe/fork/models/backup/TopicBackup;
 
     move-result-object v2
@@ -1779,7 +1792,7 @@
 
     goto :goto_0
 
-    .line 235
+    .line 237
     :cond_0
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
@@ -1799,7 +1812,7 @@
         }
     .end annotation
 
-    .line 237
+    .line 239
     iget-object v0, p0, Lcom/iMe/fork/controller/ForkTopicsController;->topics:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1820,7 +1833,7 @@
         }
     .end annotation
 
-    .line 185
+    .line 187
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->getTopicsList()Ljava/util/Collection;
 
     move-result-object v0
@@ -1857,7 +1870,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 186
+    .line 188
     invoke-virtual {v3}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getFilterArchivedDialogs()Ljava/util/Set;
 
     move-result-object v3
@@ -1910,7 +1923,7 @@
 .method public final hasSelectedTopic(Z)Z
     .locals 4
 
-    .line 229
+    .line 231
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/ForkTopicsController;->getSelectedTopicId(Z)J
 
     move-result-wide v0
@@ -2172,7 +2185,7 @@
 .method public final resetLastAutoUpdateCatalogTime()V
     .locals 2
 
-    .line 278
+    .line 280
     invoke-static {}, Lcom/iMe/storage/data/utils/extentions/DateExtKt;->now()J
 
     move-result-wide v0
@@ -2473,7 +2486,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 213
+    .line 215
     iget-wide v0, p0, Lcom/iMe/fork/controller/ForkTopicsController;->selectedArchiveTopicId:J
 
     cmp-long p1, p2, v0
@@ -2482,13 +2495,13 @@
 
     return-void
 
-    .line 216
+    .line 218
     :cond_0
     iput-wide p2, p0, Lcom/iMe/fork/controller/ForkTopicsController;->selectedArchiveTopicId:J
 
     goto :goto_0
 
-    .line 218
+    .line 220
     :cond_1
     iget-wide v0, p0, Lcom/iMe/fork/controller/ForkTopicsController;->selectedMainTopicId:J
 
@@ -2498,11 +2511,11 @@
 
     return-void
 
-    .line 221
+    .line 223
     :cond_2
     iput-wide p2, p0, Lcom/iMe/fork/controller/ForkTopicsController;->selectedMainTopicId:J
 
-    .line 223
+    .line 225
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -2512,7 +2525,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/MessagesController;->sortDialogs(Landroidx/collection/LongSparseArray;)V
 
-    .line 224
+    .line 226
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -2615,7 +2628,7 @@
     .line 1254
     check-cast v0, Lcom/iMe/storage/data/locale/db/model/topics/TopicDb;
 
-    .line 242
+    .line 244
     invoke-virtual {v0}, Lcom/iMe/storage/data/locale/db/model/topics/TopicDb;->getTopicId()J
 
     move-result-wide v2
@@ -2645,7 +2658,7 @@
 
     goto :goto_0
 
-    .line 242
+    .line 244
     :cond_0
     invoke-static {v1}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -2653,7 +2666,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/controller/ForkTopicsController;->topics:Ljava/util/Map;
 
-    .line 243
+    .line 245
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ForkTopicsController;->filterTopics()V
 
     return-void
@@ -2749,7 +2762,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 247
+    .line 249
     iget-boolean v0, v7, Lcom/iMe/fork/controller/ForkTopicsController;->isAutoUpdateTopicsCatalogEnabled:Z
 
     if-eqz v0, :cond_0
@@ -2763,13 +2776,13 @@
     :cond_0
     return-void
 
-    .line 250
+    .line 252
     :cond_1
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    .line 251
+    .line 253
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/fork/controller/ForkTopicsController;->getTopicsList()Ljava/util/Collection;
 
     move-result-object v0
@@ -2800,7 +2813,7 @@
 
     check-cast v2, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 251
+    .line 253
     invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->isAutoTopic()Z
 
     move-result v2
@@ -2812,7 +2825,7 @@
 
     goto :goto_0
 
-    .line 253
+    .line 255
     :cond_3
     sget-object v0, Lcom/iMe/storage/data/repository/topics/Topic;->Companion:Lcom/iMe/storage/data/repository/topics/Topic$Companion;
 
@@ -2843,7 +2856,7 @@
 
     check-cast v14, Lcom/iMe/storage/data/repository/topics/Topic;
 
-    .line 254
+    .line 256
     invoke-interface {v10}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -2907,7 +2920,7 @@
 
     move-result-object v1
 
-    .line 256
+    .line 258
     :cond_8
     invoke-virtual {v14}, Lcom/iMe/storage/data/repository/topics/Topic;->getPresets()Ljava/util/List;
 
@@ -2951,7 +2964,7 @@
 
     neg-long v3, v3
 
-    .line 256
+    .line 258
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
@@ -2992,7 +3005,7 @@
 
     move-result-wide v4
 
-    .line 256
+    .line 258
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/fork/controller/ForkTopicsController;->getTopicsList()Ljava/util/Collection;
 
     move-result-object v6
@@ -3032,7 +3045,7 @@
 
     check-cast v14, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 256
+    .line 258
     invoke-virtual {v14}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getDialogs()Ljava/util/Set;
 
     move-result-object v14
@@ -3059,7 +3072,7 @@
 
     goto :goto_5
 
-    .line 256
+    .line 258
     :cond_e
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->sorted(Ljava/lang/Iterable;)Ljava/util/List;
 
@@ -3067,13 +3080,13 @@
 
     if-nez v0, :cond_10
 
-    .line 257
+    .line 259
     :cond_f
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 258
+    .line 260
     :cond_10
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getPresets()Ljava/util/Set;
 
@@ -3089,40 +3102,40 @@
 
     if-nez v2, :cond_4
 
-    .line 259
+    .line 261
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getPresets()Ljava/util/Set;
 
     move-result-object v2
 
     invoke-interface {v2}, Ljava/util/Set;->clear()V
 
-    .line 260
+    .line 262
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getPresets()Ljava/util/Set;
 
     move-result-object v2
 
     invoke-interface {v2, v0}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    .line 261
+    .line 263
     invoke-direct {v7, v1}, Lcom/iMe/fork/controller/ForkTopicsController;->putTopic(Lcom/iMe/storage/domain/model/topics/TopicModel;)V
 
-    .line 262
+    .line 264
     invoke-interface {v9, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     move v13, v15
 
     goto/16 :goto_1
 
-    .line 267
+    .line 269
     :cond_11
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/fork/controller/ForkTopicsController;->filterTopics()V
 
-    .line 268
+    .line 270
     invoke-direct {v7, v9}, Lcom/iMe/fork/controller/ForkTopicsController;->insertTopics(Ljava/util/List;)V
 
     if-eqz v8, :cond_12
 
-    .line 269
+    .line 271
     invoke-static {v13}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3132,7 +3145,7 @@
     :cond_12
     if-eqz v13, :cond_13
 
-    .line 271
+    .line 273
     new-instance v0, Lcom/iMe/fork/controller/ForkTopicsController$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, v7}, Lcom/iMe/fork/controller/ForkTopicsController$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/controller/ForkTopicsController;)V

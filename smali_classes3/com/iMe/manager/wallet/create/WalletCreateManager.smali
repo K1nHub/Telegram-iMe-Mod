@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletCreateManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletCreateManager.kt\ncom/iMe/manager/wallet/create/WalletCreateManager\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,288:1\n39#2,8:289\n39#2,8:297\n39#2,8:305\n1855#3,2:313\n1549#3:315\n1620#3,3:316\n37#4,2:319\n*S KotlinDebug\n*F\n+ 1 WalletCreateManager.kt\ncom/iMe/manager/wallet/create/WalletCreateManager\n*L\n119#1:289,8\n141#1:297,8\n160#1:305,8\n222#1:313,2\n93#1:315\n93#1:316,3\n95#1:319,2\n*E\n"
+    value = "SMAP\nWalletCreateManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletCreateManager.kt\ncom/iMe/manager/wallet/create/WalletCreateManager\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,288:1\n39#2,8:289\n39#2,8:297\n39#2,8:305\n1855#3,2:313\n1549#3:315\n1620#3,3:316\n37#4,2:319\n*S KotlinDebug\n*F\n+ 1 WalletCreateManager.kt\ncom/iMe/manager/wallet/create/WalletCreateManager\n*L\n119#1:289,8\n141#1:297,8\n157#1:305,8\n222#1:313,2\n93#1:315\n93#1:316,3\n95#1:319,2\n*E\n"
 .end annotation
 
 
@@ -165,11 +165,11 @@
     return-object p0
 .end method
 
-.method public static final synthetic access$openScreenByWalletCreationType(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Ljava/util/List;Ljava/lang/String;)V
+.method public static final synthetic access$openScreenByWalletCreationType(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
     .locals 0
 
     .line 30
-    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->openScreenByWalletCreationType(Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Ljava/util/List;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->openScreenByWalletCreationType(Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -866,47 +866,41 @@
     throw p1
 .end method
 
-.method private final openScreenByWalletCreationType(Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Ljava/util/List;Ljava/lang/String;)V
+.method private final openScreenByWalletCreationType(Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;",
-            "Ljava/lang/String;",
-            ")V"
-        }
-    .end annotation
 
-    .line 187
+    .line 184
     invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getViewState()Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
 
     move-result-object v0
 
-    .line 189
+    .line 186
     sget-object v1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Create;->INSTANCE:Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Create;
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
-    invoke-interface {v0, p2, p3}, Lcom/iMe/manager/wallet/create/WalletCreateManagerView;->openCreateWalletScreen(Ljava/util/List;Ljava/lang/String;)V
+    if-nez p2, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-interface {v0, p2, p3}, Lcom/iMe/manager/wallet/create/WalletCreateManagerView;->openCreateWalletScreen(Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 190
-    :cond_0
+    :cond_1
     sget-object p2, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Import;->INSTANCE:Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Import;
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_1
+    if-eqz p2, :cond_2
 
     const/4 p1, 0x2
 
@@ -917,14 +911,14 @@
     goto :goto_0
 
     .line 191
-    :cond_1
+    :cond_2
     sget-object p2, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Restore;->INSTANCE:Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Restore;
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_3
 
     invoke-virtual {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getLinkedCryptoWalletAddress()Ljava/lang/String;
 
@@ -932,22 +926,19 @@
 
     invoke-interface {v0, p3, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManagerView;->openImportWalletScreen(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_2
+    :cond_3
     :goto_0
     return-void
 .end method
 
-.method static synthetic openScreenByWalletCreationType$default(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Ljava/util/List;Ljava/lang/String;ILjava/lang/Object;)V
+.method static synthetic openScreenByWalletCreationType$default(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;ILjava/lang/Object;)V
     .locals 0
 
     and-int/lit8 p5, p4, 0x2
 
     if-eqz p5, :cond_0
 
-    .line 184
-    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
-
-    move-result-object p2
+    const/4 p2, 0x0
 
     :cond_0
     and-int/lit8 p4, p4, 0x4
@@ -956,9 +947,9 @@
 
     const-string p3, ""
 
-    .line 182
+    .line 179
     :cond_1
-    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->openScreenByWalletCreationType(Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Ljava/util/List;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->openScreenByWalletCreationType(Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -984,19 +975,16 @@
 
     iget-object v0, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->cryptoWalletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 155
-    iget-object v1, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
-    invoke-interface {v1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getLastLoggedInGuid()Ljava/lang/String;
+    .line 154
+    invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v1
 
-    .line 154
-    invoke-virtual {v0, v1, v4}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->generateMnemonic(Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+    invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->createLocalWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 158
+    .line 155
     iget-object v1, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1011,7 +999,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 159
+    .line 156
     invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getViewState()Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
 
     move-result-object v1
@@ -1026,7 +1014,7 @@
 
     move-result-object v0
 
-    .line 160
+    .line 157
     iget-object v1, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->viewState:Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
 
     .line 44
@@ -1057,14 +1045,14 @@
     .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 173
+    .line 170
     iget-object v0, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {p1, v0}, Lcom/iMe/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
 
     goto :goto_1
 
-    .line 174
+    .line 171
     :cond_0
     sget-object v0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Import;->INSTANCE:Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Import;
 
@@ -1078,7 +1066,7 @@
 
     goto :goto_0
 
-    .line 175
+    .line 172
     :cond_1
     sget-object v0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Restore;->INSTANCE:Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Restore;
 
@@ -1099,7 +1087,7 @@
 
     move-object v2, p1
 
-    invoke-static/range {v1 .. v6}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->openScreenByWalletCreationType$default(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Ljava/util/List;Ljava/lang/String;ILjava/lang/Object;)V
+    invoke-static/range {v1 .. v6}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->openScreenByWalletCreationType$default(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;ILjava/lang/Object;)V
 
     :cond_2
     :goto_1

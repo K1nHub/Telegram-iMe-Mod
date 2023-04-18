@@ -40,10 +40,10 @@
 .method private constructor <init>(Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 394
+    .line 388
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$PageBlock;-><init>()V
 
-    .line 396
+    .line 390
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -56,7 +56,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$1;)V
     .locals 0
 
-    .line 394
+    .line 388
     invoke-direct {p0, p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;-><init>(Lorg/telegram/ui/ArticleViewer;)V
 
     return-void
@@ -65,7 +65,7 @@
 .method static synthetic access$12200(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;)I
     .locals 0
 
-    .line 394
+    .line 388
     iget p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->level:I
 
     return p0
@@ -74,7 +74,7 @@
 .method static synthetic access$12202(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;I)I
     .locals 0
 
-    .line 394
+    .line 388
     iput p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->level:I
 
     return p1
@@ -83,7 +83,7 @@
 .method static synthetic access$12500(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 394
+    .line 388
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->items:Ljava/util/ArrayList;
 
     return-object p0
@@ -92,7 +92,7 @@
 .method static synthetic access$18800(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;)I
     .locals 0
 
-    .line 394
+    .line 388
     iget p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->lastMaxNumCalcWidth:I
 
     return p0
@@ -101,7 +101,7 @@
 .method static synthetic access$18802(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;I)I
     .locals 0
 
-    .line 394
+    .line 388
     iput p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->lastMaxNumCalcWidth:I
 
     return p1
@@ -110,7 +110,7 @@
 .method static synthetic access$18900(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;)I
     .locals 0
 
-    .line 394
+    .line 388
     iget p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->lastFontSize:I
 
     return p0
@@ -119,7 +119,7 @@
 .method static synthetic access$18902(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;I)I
     .locals 0
 
-    .line 394
+    .line 388
     iput p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->lastFontSize:I
 
     return p1
@@ -128,7 +128,7 @@
 .method static synthetic access$19000(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;)I
     .locals 0
 
-    .line 394
+    .line 388
     iget p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->maxNumWidth:I
 
     return p0
@@ -137,7 +137,7 @@
 .method static synthetic access$19002(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;I)I
     .locals 0
 
-    .line 394
+    .line 388
     iput p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->maxNumWidth:I
 
     return p1
@@ -146,7 +146,7 @@
 .method static synthetic access$8700(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;
     .locals 0
 
-    .line 394
+    .line 388
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->pageBlockList:Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;
 
     return-object p0
@@ -155,7 +155,7 @@
 .method static synthetic access$8702(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;
     .locals 0
 
-    .line 394
+    .line 388
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;->pageBlockList:Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;
 
     return-object p1

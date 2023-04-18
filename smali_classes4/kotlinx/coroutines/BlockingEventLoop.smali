@@ -11,10 +11,10 @@
 .method public constructor <init>(Ljava/lang/Thread;)V
     .locals 0
 
-    .line 24
+    .line 23
     invoke-direct {p0}, Lkotlinx/coroutines/EventLoopImplBase;-><init>()V
 
-    .line 23
+    .line 22
     iput-object p1, p0, Lkotlinx/coroutines/BlockingEventLoop;->thread:Ljava/lang/Thread;
 
     return-void
@@ -25,7 +25,7 @@
 .method protected getThread()Ljava/lang/Thread;
     .locals 1
 
-    .line 23
+    .line 22
     iget-object v0, p0, Lkotlinx/coroutines/BlockingEventLoop;->thread:Ljava/lang/Thread;
 
     return-object v0

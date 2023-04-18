@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,26:1\n127#2,5:27\n127#2,5:32\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1$2\n*L\n12#1:27,5\n13#1:32,5\n*E\n"
+    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,26:1\n129#2,5:27\n129#2,5:32\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/iMe/di/module/ManagerModuleKt$presentationManagerModule$1$2\n*L\n12#1:27,5\n13#1:32,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -90,7 +90,7 @@
 
     check-cast v7, Lcom/iMe/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -106,7 +106,7 @@
 
     check-cast v6, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -122,7 +122,7 @@
 
     check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/manager/TelegramApi;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -138,7 +138,7 @@
 
     check-cast v3, Lcom/iMe/manager/TelegramApi;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -154,7 +154,7 @@
 
     check-cast v4, Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
-    .line 131
+    .line 133
     const-class p2, Lcom/iMe/gateway/TelegramControllersGateway;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;

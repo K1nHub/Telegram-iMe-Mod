@@ -91,9 +91,8 @@ final class CompletedContinuation {
             cancellableContinuationImpl.callCancelHandler(cancelHandler, th);
         }
         Function1<Throwable, Unit> function1 = this.onCancellation;
-        if (function1 == null) {
-            return;
+        if (function1 != null) {
+            cancellableContinuationImpl.callOnCancellation(function1, th);
         }
-        cancellableContinuationImpl.callOnCancellation(function1, th);
     }
 }

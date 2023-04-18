@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nKoinExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KoinExt.kt\norg/koin/android/ext/koin/KoinExtKt\n+ 2 Koin.kt\norg/koin/core/Koin\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,104:1\n100#2,4:105\n131#3:109\n1#4:110\n*S KotlinDebug\n*F\n+ 1 KoinExt.kt\norg/koin/android/ext/koin/KoinExtKt\n*L\n81#1:105,4\n81#1:109\n*E\n"
+    value = "SMAP\nKoinExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KoinExt.kt\norg/koin/android/ext/koin/KoinExtKt\n+ 2 Logger.kt\norg/koin/core/logger/Logger\n+ 3 Koin.kt\norg/koin/core/Koin\n+ 4 Scope.kt\norg/koin/core/scope/Scope\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,108:1\n32#2:109\n46#2,2:110\n33#2:112\n32#2:119\n46#2,2:120\n33#2:122\n40#2,8:123\n32#2:131\n46#2,2:132\n33#2:134\n40#2,8:135\n104#3,4:113\n133#4:117\n1#5:118\n*S KotlinDebug\n*F\n+ 1 KoinExt.kt\norg/koin/android/ext/koin/KoinExtKt\n*L\n58#1:109\n58#1:110,2\n58#1:112\n93#1:119\n93#1:120,2\n93#1:122\n96#1:123,8\n100#1:131\n100#1:132,2\n100#1:134\n104#1:135,8\n85#1:113,4\n85#1:117\n*E\n"
 .end annotation
 
 
@@ -21,7 +21,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 54
+    .line 57
     invoke-virtual {p0}, Lorg/koin/core/KoinApplication;->getKoin()Lorg/koin/core/Koin;
 
     move-result-object v0
@@ -38,7 +38,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 55
+    .line 58
     invoke-virtual {p0}, Lorg/koin/core/KoinApplication;->getKoin()Lorg/koin/core/Koin;
 
     move-result-object v0
@@ -47,11 +47,18 @@
 
     move-result-object v0
 
-    const-string v1, "[init] declare Android Context"
+    .line 46
+    invoke-virtual {v0, v1}, Lorg/koin/core/logger/Logger;->isAt(Lorg/koin/core/logger/Level;)Z
 
-    invoke-virtual {v0, v1}, Lorg/koin/core/logger/Logger;->info(Ljava/lang/String;)V
+    move-result v2
 
-    .line 58
+    if-eqz v2, :cond_0
+
+    const-string v2, "[init] declare Android Context"
+
+    invoke-virtual {v0, v1, v2}, Lorg/koin/core/logger/Logger;->display(Lorg/koin/core/logger/Level;Ljava/lang/String;)V
+
+    .line 61
     :cond_0
     instance-of v0, p1, Landroid/app/Application;
 
@@ -65,7 +72,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 59
+    .line 62
     invoke-virtual {p0}, Lorg/koin/core/KoinApplication;->getKoin()Lorg/koin/core/Koin;
 
     move-result-object v0
@@ -86,7 +93,7 @@
 
     goto :goto_0
 
-    .line 63
+    .line 66
     :cond_1
     invoke-virtual {p0}, Lorg/koin/core/KoinApplication;->getKoin()Lorg/koin/core/Koin;
 
@@ -121,7 +128,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 45
+    .line 47
     invoke-virtual {p0}, Lorg/koin/core/KoinApplication;->getKoin()Lorg/koin/core/Koin;
 
     move-result-object v0
@@ -142,10 +149,10 @@
 
     if-eqz p2, :cond_0
 
-    .line 43
+    .line 45
     sget-object p1, Lorg/koin/core/logger/Level;->INFO:Lorg/koin/core/logger/Level;
 
-    .line 42
+    .line 44
     :cond_0
     invoke-static {p0, p1}, Lorg/koin/android/ext/koin/KoinExtKt;->androidLogger(Lorg/koin/core/KoinApplication;Lorg/koin/core/logger/Level;)Lorg/koin/core/KoinApplication;
 

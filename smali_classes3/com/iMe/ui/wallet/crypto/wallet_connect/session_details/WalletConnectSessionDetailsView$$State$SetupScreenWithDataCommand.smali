@@ -40,29 +40,29 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 111
+    .line 129
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "setupScreenWithData"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 113
+    .line 131
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$SetupScreenWithDataCommand;->iconUrl:Ljava/lang/String;
 
-    .line 114
+    .line 132
     iput-object p3, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$SetupScreenWithDataCommand;->name:Ljava/lang/String;
 
-    .line 115
+    .line 133
     iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$SetupScreenWithDataCommand;->url:Ljava/lang/String;
 
-    .line 116
+    .line 134
     iput-object p5, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$SetupScreenWithDataCommand;->connectedDate:Ljava/lang/String;
 
-    .line 117
+    .line 135
     iput-object p6, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$SetupScreenWithDataCommand;->address:Ljava/lang/String;
 
-    .line 118
+    .line 136
     iput-object p7, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$SetupScreenWithDataCommand;->network:Ljava/lang/String;
 
     return-void
@@ -73,7 +73,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView;)V
     .locals 7
 
-    .line 123
+    .line 141
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$SetupScreenWithDataCommand;->iconUrl:Ljava/lang/String;
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$SetupScreenWithDataCommand;->name:Ljava/lang/String;
@@ -96,7 +96,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 96
+    .line 114
     check-cast p1, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$SetupScreenWithDataCommand;->apply(Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView;)V

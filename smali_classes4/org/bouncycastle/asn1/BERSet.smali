@@ -29,19 +29,17 @@
     return-void
 .end method
 
-.method public constructor <init>([Lorg/bouncycastle/asn1/ASN1Encodable;)V
-    .locals 1
+.method constructor <init>(Z[Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    .locals 0
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lorg/bouncycastle/asn1/ASN1Set;-><init>([Lorg/bouncycastle/asn1/ASN1Encodable;Z)V
+    invoke-direct {p0, p1, p2}, Lorg/bouncycastle/asn1/ASN1Set;-><init>(Z[Lorg/bouncycastle/asn1/ASN1Encodable;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;)V
+.method encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -49,88 +47,56 @@
         }
     .end annotation
 
-    const/16 v0, 0x31
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
+    const/16 v1, 0x31
 
-    const/16 v0, 0x80
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
-
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Set;->getObjects()Ljava/util/Enumeration;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    invoke-virtual {p1, v1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
-
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
+    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncodedIndef(ZI[Lorg/bouncycastle/asn1/ASN1Encodable;)V
 
     return-void
 .end method
 
 .method encodedLength()I
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Set;->getObjects()Ljava/util/Enumeration;
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    move-result-object v0
+    array-length v0, v0
 
     const/4 v1, 0x0
 
+    move v2, v1
+
     :goto_0
-    invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
+    if-ge v1, v0, :cond_0
 
-    move-result v2
+    iget-object v3, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    if-eqz v2, :cond_0
+    aget-object v3, v3, v1
 
-    invoke-interface {v0}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+    invoke-interface {v3}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Lorg/bouncycastle/asn1/ASN1Encodable;
+    invoke-virtual {v3}, Lorg/bouncycastle/asn1/ASN1Primitive;->encodedLength()I
 
-    invoke-interface {v2}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+    move-result v3
 
-    move-result-object v2
+    add-int/2addr v2, v3
 
-    invoke-virtual {v2}, Lorg/bouncycastle/asn1/ASN1Primitive;->encodedLength()I
-
-    move-result v2
-
-    add-int/2addr v1, v2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    add-int/lit8 v1, v1, 0x2
+    add-int/lit8 v2, v2, 0x2
 
-    add-int/lit8 v1, v1, 0x2
+    add-int/lit8 v2, v2, 0x2
 
-    return v1
+    return v2
 .end method

@@ -35,7 +35,7 @@
 .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$mmTVgh6DHM66pdcZO1Pw4pwCI-M(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$ChibvQbD1Im-etAu95y87ECy_xg(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

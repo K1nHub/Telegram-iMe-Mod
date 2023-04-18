@@ -65,7 +65,7 @@ public final class WalletConnectTransactionArgs implements TransactionArgs {
     }
 
     public int hashCode() {
-        return (((((((((((this.recipientAddress.hashCode() * 31) + this.amount.hashCode()) * 31) + this.data.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode();
+        return (((((((((((this.recipientAddress.hashCode() * 31) + this.amount.hashCode()) * 31) + this.data.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode();
     }
 
     public String toString() {

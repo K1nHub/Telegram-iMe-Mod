@@ -14,9 +14,9 @@
 
 
 # instance fields
-.field private isSorted:Z
+.field protected final elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-.field private set:Ljava/util/Vector;
+.field protected final isSorted:Z
 
 
 # direct methods
@@ -25,13 +25,11 @@
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    new-instance v0, Ljava/util/Vector;
+    sget-object v0, Lorg/bouncycastle/asn1/ASN1EncodableVector;->EMPTY_ELEMENTS:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
+    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->isSorted:Z
 
@@ -39,133 +37,277 @@
 .end method
 
 .method protected constructor <init>(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-    .locals 2
+    .locals 3
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    new-instance v0, Ljava/util/Vector;
+    const-string v0, "\'element\' cannot be null"
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
+    const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    new-array v1, v0, [Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    iput-boolean v1, p0, Lorg/bouncycastle/asn1/ASN1Set;->isSorted:Z
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, p1}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
+    aput-object p1, v1, v2
+
+    iput-object v1, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    iput-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->isSorted:Z
 
     return-void
 .end method
 
 .method protected constructor <init>(Lorg/bouncycastle/asn1/ASN1EncodableVector;Z)V
-    .locals 3
+    .locals 2
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    new-instance v0, Ljava/util/Vector;
+    const-string v0, "\'elementVector\' cannot be null"
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
+    const/4 v0, 0x2
 
-    const/4 v0, 0x0
+    if-eqz p2, :cond_0
 
-    iput-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->isSorted:Z
-
-    :goto_0
     invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->size()I
 
     move-result v1
 
-    if-eq v0, v1, :cond_0
+    if-lt v1, v0, :cond_0
 
-    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->copyElements()[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->get(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+    move-result-object p1
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
-
-    add-int/lit8 v0, v0, 0x1
+    invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1Set;->sort([Lorg/bouncycastle/asn1/ASN1Encodable;)V
 
     goto :goto_0
 
     :cond_0
-    if-eqz p2, :cond_1
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->takeElements()[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Set;->sort()V
+    move-result-object p1
+
+    :goto_0
+    iput-object p1, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    if-nez p2, :cond_2
+
+    array-length p1, p1
+
+    if-ge p1, v0, :cond_1
+
+    goto :goto_1
 
     :cond_1
+    const/4 p1, 0x0
+
+    goto :goto_2
+
+    :cond_2
+    :goto_1
+    const/4 p1, 0x1
+
+    :goto_2
+    iput-boolean p1, p0, Lorg/bouncycastle/asn1/ASN1Set;->isSorted:Z
+
     return-void
 .end method
 
-.method protected constructor <init>([Lorg/bouncycastle/asn1/ASN1Encodable;Z)V
-    .locals 3
+.method constructor <init>(Z[Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    .locals 0
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    new-instance v0, Ljava/util/Vector;
+    iput-object p2, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
+    if-nez p1, :cond_1
 
-    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
+    array-length p1, p2
 
-    const/4 v0, 0x0
+    const/4 p2, 0x2
 
-    iput-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->isSorted:Z
-
-    :goto_0
-    array-length v1, p1
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    aget-object v2, p1, v0
-
-    invoke-virtual {v1, v2}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
-
-    add-int/lit8 v0, v0, 0x1
+    if-ge p1, p2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    if-eqz p2, :cond_1
+    const/4 p1, 0x0
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Set;->sort()V
+    goto :goto_1
 
     :cond_1
+    :goto_0
+    const/4 p1, 0x1
+
+    :goto_1
+    iput-boolean p1, p0, Lorg/bouncycastle/asn1/ASN1Set;->isSorted:Z
+
     return-void
 .end method
 
-.method private getDEREncoded(Lorg/bouncycastle/asn1/ASN1Encodable;)[B
+.method private static getDEREncoded(Lorg/bouncycastle/asn1/ASN1Encodable;)[B
     .locals 1
 
     :try_start_0
-    invoke-interface {p1}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+    invoke-interface {p0}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
 
-    move-result-object p1
+    move-result-object p0
 
     const-string v0, "DER"
 
-    invoke-virtual {p1, v0}, Lorg/bouncycastle/asn1/ASN1Object;->getEncoded(Ljava/lang/String;)[B
+    invoke-virtual {p0, v0}, Lorg/bouncycastle/asn1/ASN1Object;->getEncoded(Ljava/lang/String;)[B
 
-    move-result-object p1
+    move-result-object p0
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object p1
+    return-object p0
 
     :catch_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "cannot encode object added to SET"
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw p0
+.end method
+
+.method public static getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1Set;
+    .locals 3
+
+    if-eqz p0, :cond_4
+
+    instance-of v0, p0, Lorg/bouncycastle/asn1/ASN1Set;
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    instance-of v0, p0, Lorg/bouncycastle/asn1/ASN1SetParser;
+
+    if-eqz v0, :cond_1
+
+    check-cast p0, Lorg/bouncycastle/asn1/ASN1SetParser;
+
+    invoke-interface {p0}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1Set;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1Set;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    instance-of v0, p0, [B
+
+    if-eqz v0, :cond_2
+
+    :try_start_0
+    check-cast p0, [B
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;->fromByteArray([B)Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1Set;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1Set;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "failed to construct set from byte[]: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_2
+    instance-of v0, p0, Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    if-eqz v0, :cond_3
+
+    move-object v0, p0
+
+    check-cast v0, Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    invoke-interface {v0}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lorg/bouncycastle/asn1/ASN1Set;
+
+    if-eqz v1, :cond_3
+
+    check-cast v0, Lorg/bouncycastle/asn1/ASN1Set;
+
+    return-object v0
+
+    :cond_3
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "unknown object in getInstance: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_4
+    :goto_0
+    check-cast p0, Lorg/bouncycastle/asn1/ASN1Set;
+
+    return-object p0
 .end method
 
 .method public static getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/ASN1Set;
@@ -183,7 +325,9 @@
 
     move-result-object p0
 
-    check-cast p0, Lorg/bouncycastle/asn1/ASN1Set;
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1Set;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1Set;
+
+    move-result-object p0
 
     return-object p0
 
@@ -227,45 +371,56 @@
     :cond_3
     instance-of v0, p1, Lorg/bouncycastle/asn1/ASN1Set;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     check-cast p1, Lorg/bouncycastle/asn1/ASN1Set;
+
+    instance-of p0, p0, Lorg/bouncycastle/asn1/BERTaggedObject;
+
+    if-eqz p0, :cond_4
 
     return-object p1
 
     :cond_4
-    instance-of v0, p1, Lorg/bouncycastle/asn1/ASN1Sequence;
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1Set;->toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
 
-    if-eqz v0, :cond_6
+    move-result-object p0
 
-    check-cast p1, Lorg/bouncycastle/asn1/ASN1Sequence;
-
-    instance-of p0, p0, Lorg/bouncycastle/asn1/BERTaggedObject;
-
-    if-eqz p0, :cond_5
-
-    new-instance p0, Lorg/bouncycastle/asn1/BERSet;
-
-    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1Sequence;->toArray()[Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/BERSet;-><init>([Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    check-cast p0, Lorg/bouncycastle/asn1/ASN1Set;
 
     return-object p0
 
     :cond_5
-    new-instance p0, Lorg/bouncycastle/asn1/DLSet;
+    instance-of v0, p1, Lorg/bouncycastle/asn1/ASN1Sequence;
 
-    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1Sequence;->toArray()[Lorg/bouncycastle/asn1/ASN1Encodable;
+    if-eqz v0, :cond_7
+
+    check-cast p1, Lorg/bouncycastle/asn1/ASN1Sequence;
+
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1Sequence;->toArrayInternal()[Lorg/bouncycastle/asn1/ASN1Encodable;
 
     move-result-object p1
 
-    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/DLSet;-><init>([Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    instance-of p0, p0, Lorg/bouncycastle/asn1/BERTaggedObject;
+
+    const/4 v0, 0x0
+
+    if-eqz p0, :cond_6
+
+    new-instance p0, Lorg/bouncycastle/asn1/BERSet;
+
+    invoke-direct {p0, v0, p1}, Lorg/bouncycastle/asn1/BERSet;-><init>(Z[Lorg/bouncycastle/asn1/ASN1Encodable;)V
 
     return-object p0
 
     :cond_6
+    new-instance p0, Lorg/bouncycastle/asn1/DLSet;
+
+    invoke-direct {p0, v0, p1}, Lorg/bouncycastle/asn1/DLSet;-><init>(Z[Lorg/bouncycastle/asn1/ASN1Encodable;)V
+
+    return-object p0
+
+    :cond_7
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -295,84 +450,236 @@
     throw p1
 .end method
 
-.method private getNext(Ljava/util/Enumeration;)Lorg/bouncycastle/asn1/ASN1Encodable;
-    .locals 0
-
-    invoke-interface {p1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    if-nez p1, :cond_0
-
-    sget-object p1, Lorg/bouncycastle/asn1/DERNull;->INSTANCE:Lorg/bouncycastle/asn1/DERNull;
-
-    :cond_0
-    return-object p1
-.end method
-
-.method private lessThanOrEqual([B[B)Z
+.method private static lessThanOrEqual([B[B)Z
     .locals 6
 
-    array-length v0, p1
+    const/4 v0, 0x0
 
-    array-length v1, p2
+    aget-byte v1, p0, v0
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    and-int/lit8 v1, v1, -0x21
 
-    move-result v0
+    aget-byte v2, p1, v0
 
-    const/4 v1, 0x0
+    and-int/lit8 v2, v2, -0x21
 
-    move v2, v1
-
-    :goto_0
     const/4 v3, 0x1
 
-    if-eq v2, v0, :cond_2
+    if-eq v1, v2, :cond_1
 
-    aget-byte v4, p1, v2
+    if-ge v1, v2, :cond_0
 
-    aget-byte v5, p2, v2
+    move v0, v3
 
-    if-eq v4, v5, :cond_1
+    :cond_0
+    return v0
+
+    :cond_1
+    array-length v1, p0
+
+    array-length v2, p1
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    sub-int/2addr v1, v3
+
+    move v2, v3
+
+    :goto_0
+    if-ge v2, v1, :cond_4
+
+    aget-byte v4, p0, v2
+
+    aget-byte v5, p1, v2
+
+    if-eq v4, v5, :cond_3
+
+    aget-byte p0, p0, v2
+
+    and-int/lit16 p0, p0, 0xff
 
     aget-byte p1, p1, v2
 
     and-int/lit16 p1, p1, 0xff
 
-    aget-byte p2, p2, v2
+    if-ge p0, p1, :cond_2
 
-    and-int/lit16 p2, p2, 0xff
+    move v0, v3
 
-    if-ge p1, p2, :cond_0
+    :cond_2
+    return v0
 
-    move v1, v3
-
-    :cond_0
-    return v1
-
-    :cond_1
+    :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    :cond_4
+    aget-byte p0, p0, v1
+
+    and-int/lit16 p0, p0, 0xff
+
+    aget-byte p1, p1, v1
+
+    and-int/lit16 p1, p1, 0xff
+
+    if-gt p0, p1, :cond_5
+
+    move v0, v3
+
+    :cond_5
+    return v0
+.end method
+
+.method private static sort([Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    .locals 14
+
+    array-length v0, p0
+
+    const/4 v1, 0x2
+
+    if-ge v0, v1, :cond_0
+
+    return-void
+
+    :cond_0
+    const/4 v2, 0x0
+
+    aget-object v2, p0, v2
+
+    const/4 v3, 0x1
+
+    aget-object v4, p0, v3
+
+    invoke-static {v2}, Lorg/bouncycastle/asn1/ASN1Set;->getDEREncoded(Lorg/bouncycastle/asn1/ASN1Encodable;)[B
+
+    move-result-object v5
+
+    invoke-static {v4}, Lorg/bouncycastle/asn1/ASN1Set;->getDEREncoded(Lorg/bouncycastle/asn1/ASN1Encodable;)[B
+
+    move-result-object v6
+
+    invoke-static {v6, v5}, Lorg/bouncycastle/asn1/ASN1Set;->lessThanOrEqual([B[B)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    move-object v12, v4
+
+    move-object v4, v2
+
+    move-object v2, v12
+
+    move-object v13, v6
+
+    move-object v6, v5
+
+    move-object v5, v13
+
+    :cond_1
+    :goto_0
+    if-ge v1, v0, :cond_6
+
+    aget-object v7, p0, v1
+
+    invoke-static {v7}, Lorg/bouncycastle/asn1/ASN1Set;->getDEREncoded(Lorg/bouncycastle/asn1/ASN1Encodable;)[B
+
+    move-result-object v8
+
+    invoke-static {v6, v8}, Lorg/bouncycastle/asn1/ASN1Set;->lessThanOrEqual([B[B)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_2
+
+    add-int/lit8 v5, v1, -0x2
+
+    aput-object v2, p0, v5
+
+    move-object v2, v4
+
+    move-object v5, v6
+
+    move-object v4, v7
+
+    move-object v6, v8
+
+    goto :goto_3
+
     :cond_2
-    array-length p1, p1
+    invoke-static {v5, v8}, Lorg/bouncycastle/asn1/ASN1Set;->lessThanOrEqual([B[B)Z
 
-    if-ne v0, p1, :cond_3
+    move-result v9
 
-    move v1, v3
+    if-eqz v9, :cond_3
+
+    add-int/lit8 v5, v1, -0x2
+
+    aput-object v2, p0, v5
+
+    move-object v2, v7
+
+    move-object v5, v8
+
+    goto :goto_3
 
     :cond_3
-    return v1
+    add-int/lit8 v9, v1, -0x1
+
+    :goto_1
+    add-int/lit8 v9, v9, -0x1
+
+    if-lez v9, :cond_5
+
+    add-int/lit8 v10, v9, -0x1
+
+    aget-object v10, p0, v10
+
+    invoke-static {v10}, Lorg/bouncycastle/asn1/ASN1Set;->getDEREncoded(Lorg/bouncycastle/asn1/ASN1Encodable;)[B
+
+    move-result-object v11
+
+    invoke-static {v11, v8}, Lorg/bouncycastle/asn1/ASN1Set;->lessThanOrEqual([B[B)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    aput-object v10, p0, v9
+
+    goto :goto_1
+
+    :cond_5
+    :goto_2
+    aput-object v7, p0, v9
+
+    :goto_3
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_6
+    add-int/lit8 v1, v0, -0x2
+
+    aput-object v2, p0, v1
+
+    sub-int/2addr v0, v3
+
+    aput-object v4, p0, v0
+
+    return-void
 .end method
 
 
 # virtual methods
 .method asn1Equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
-    .locals 4
+    .locals 6
 
     instance-of v0, p1, Lorg/bouncycastle/asn1/ASN1Set;
 
@@ -393,84 +700,71 @@
 
     move-result v2
 
-    if-eq v0, v2, :cond_1
+    if-eq v2, v0, :cond_1
 
     return v1
 
     :cond_1
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Set;->getObjects()Ljava/util/Enumeration;
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Set;->toDERObject()Lorg/bouncycastle/asn1/ASN1Primitive;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1Set;->getObjects()Ljava/util/Enumeration;
+    check-cast v2, Lorg/bouncycastle/asn1/DERSet;
+
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1Set;->toDERObject()Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object p1
 
-    :cond_2
+    check-cast p1, Lorg/bouncycastle/asn1/DERSet;
+
+    move v3, v1
+
     :goto_0
-    invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
+    if-ge v3, v0, :cond_3
 
-    move-result v2
+    iget-object v4, v2, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    if-eqz v2, :cond_4
+    aget-object v4, v4, v3
 
-    invoke-direct {p0, v0}, Lorg/bouncycastle/asn1/ASN1Set;->getNext(Ljava/util/Enumeration;)Lorg/bouncycastle/asn1/ASN1Encodable;
+    invoke-interface {v4}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1Set;->getNext(Ljava/util/Enumeration;)Lorg/bouncycastle/asn1/ASN1Encodable;
+    iget-object v5, p1, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    move-result-object v3
+    aget-object v5, v5, v3
 
-    invoke-interface {v2}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+    invoke-interface {v5}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-interface {v3}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+    if-eq v4, v5, :cond_2
 
-    move-result-object v3
+    invoke-virtual {v4, v5}, Lorg/bouncycastle/asn1/ASN1Primitive;->asn1Equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
 
-    if-eq v2, v3, :cond_2
+    move-result v4
 
-    invoke-virtual {v2, v3}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Ljava/lang/Object;)Z
+    if-nez v4, :cond_2
 
-    move-result v2
+    return v1
 
-    if-eqz v2, :cond_3
+    :cond_2
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     :cond_3
-    return v1
-
-    :cond_4
     const/4 p1, 0x1
 
     return p1
 .end method
 
-.method public getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
-    .locals 1
-
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    invoke-virtual {v0, p1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    return-object p1
-.end method
-
 .method public getObjects()Ljava/util/Enumeration;
     .locals 1
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
+    new-instance v0, Lorg/bouncycastle/asn1/ASN1Set$1;
 
-    invoke-virtual {v0}, Ljava/util/Vector;->elements()Ljava/util/Enumeration;
-
-    move-result-object v0
+    invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/ASN1Set$1;-><init>(Lorg/bouncycastle/asn1/ASN1Set;)V
 
     return-object v0
 .end method
@@ -478,32 +772,30 @@
 .method public hashCode()I
     .locals 3
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Set;->getObjects()Ljava/util/Enumeration;
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    move-result-object v0
+    array-length v0, v0
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Set;->size()I
-
-    move-result v1
+    add-int/lit8 v1, v0, 0x1
 
     :goto_0
-    invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
+    add-int/lit8 v0, v0, -0x1
 
-    move-result v2
+    if-ltz v0, :cond_0
 
-    if-eqz v2, :cond_0
+    iget-object v2, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    invoke-direct {p0, v0}, Lorg/bouncycastle/asn1/ASN1Set;->getNext(Ljava/util/Enumeration;)Lorg/bouncycastle/asn1/ASN1Encodable;
+    aget-object v2, v2, v0
+
+    invoke-interface {v2}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object v2
 
-    mul-int/lit8 v1, v1, 0x11
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v2}, Lorg/bouncycastle/asn1/ASN1Object;->hashCode()I
 
     move-result v2
 
-    xor-int/2addr v1, v2
+    add-int/2addr v1, v2
 
     goto :goto_0
 
@@ -544,160 +836,22 @@
 .method public size()I
     .locals 1
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    invoke-virtual {v0}, Ljava/util/Vector;->size()I
-
-    move-result v0
+    array-length v0, v0
 
     return v0
 .end method
 
-.method protected sort()V
-    .locals 9
-
-    iget-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->isSorted:Z
-
-    if-nez v0, :cond_2
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->isSorted:Z
-
-    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    invoke-virtual {v1}, Ljava/util/Vector;->size()I
-
-    move-result v1
-
-    if-le v1, v0, :cond_2
-
-    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    invoke-virtual {v1}, Ljava/util/Vector;->size()I
-
-    move-result v1
-
-    sub-int/2addr v1, v0
-
-    move v2, v0
-
-    :goto_0
-    if-eqz v2, :cond_2
-
-    iget-object v2, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    invoke-direct {p0, v2}, Lorg/bouncycastle/asn1/ASN1Set;->getDEREncoded(Lorg/bouncycastle/asn1/ASN1Encodable;)[B
-
-    move-result-object v2
-
-    move-object v4, v2
-
-    move v2, v3
-
-    move v5, v2
-
-    :goto_1
-    if-eq v5, v1, :cond_1
-
-    iget-object v6, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    add-int/lit8 v7, v5, 0x1
-
-    invoke-virtual {v6, v7}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    invoke-direct {p0, v6}, Lorg/bouncycastle/asn1/ASN1Set;->getDEREncoded(Lorg/bouncycastle/asn1/ASN1Encodable;)[B
-
-    move-result-object v6
-
-    invoke-direct {p0, v4, v6}, Lorg/bouncycastle/asn1/ASN1Set;->lessThanOrEqual([B[B)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_0
-
-    move-object v4, v6
-
-    goto :goto_2
-
-    :cond_0
-    iget-object v2, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    invoke-virtual {v2, v5}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    invoke-virtual {v3, v7}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    invoke-virtual {v3, v6, v5}, Ljava/util/Vector;->setElementAt(Ljava/lang/Object;I)V
-
-    iget-object v3, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    invoke-virtual {v3, v2, v7}, Ljava/util/Vector;->setElementAt(Ljava/lang/Object;I)V
-
-    move v2, v0
-
-    move v3, v5
-
-    :goto_2
-    move v5, v7
-
-    goto :goto_1
-
-    :cond_1
-    move v1, v3
-
-    goto :goto_0
-
-    :cond_2
-    return-void
-.end method
-
 .method public toArray()[Lorg/bouncycastle/asn1/ASN1Encodable;
-    .locals 3
+    .locals 1
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Set;->size()I
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    move-result v0
+    invoke-static {v0}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->cloneElements([Lorg/bouncycastle/asn1/ASN1Encodable;)[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    new-array v0, v0, [Lorg/bouncycastle/asn1/ASN1Encodable;
+    move-result-object v0
 
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Set;->size()I
-
-    move-result v2
-
-    if-eq v1, v2, :cond_0
-
-    invoke-virtual {p0, v1}, Lorg/bouncycastle/asn1/ASN1Set;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
     return-object v0
 .end method
 
@@ -708,78 +862,94 @@
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Lorg/bouncycastle/asn1/DERSet;
-
-    invoke-direct {v0}, Lorg/bouncycastle/asn1/DERSet;-><init>()V
-
-    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    iput-object v1, v0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/util/Vector;
-
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
-
-    const/4 v1, 0x0
-
-    :goto_0
-    iget-object v2, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    invoke-virtual {v2}, Ljava/util/Vector;->size()I
-
-    move-result v2
-
-    if-eq v1, v2, :cond_1
-
-    iget-object v2, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    invoke-virtual {v2, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
-
-    add-int/lit8 v1, v1, 0x1
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    invoke-virtual {v0}, [Lorg/bouncycastle/asn1/ASN1Encodable;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    invoke-static {v0}, Lorg/bouncycastle/asn1/ASN1Set;->sort([Lorg/bouncycastle/asn1/ASN1Encodable;)V
+
+    :goto_0
     new-instance v1, Lorg/bouncycastle/asn1/DERSet;
 
-    invoke-direct {v1}, Lorg/bouncycastle/asn1/DERSet;-><init>()V
+    const/4 v2, 0x1
 
-    iput-object v0, v1, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
-
-    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Set;->sort()V
+    invoke-direct {v1, v2, v0}, Lorg/bouncycastle/asn1/DERSet;-><init>(Z[Lorg/bouncycastle/asn1/ASN1Encodable;)V
 
     return-object v1
 .end method
 
 .method toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
-    .locals 2
+    .locals 3
 
     new-instance v0, Lorg/bouncycastle/asn1/DLSet;
 
-    invoke-direct {v0}, Lorg/bouncycastle/asn1/DLSet;-><init>()V
+    iget-boolean v1, p0, Lorg/bouncycastle/asn1/ASN1Set;->isSorted:Z
 
-    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
+    iget-object v2, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    iput-object v1, v0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
+    invoke-direct {v0, v1, v2}, Lorg/bouncycastle/asn1/DLSet;-><init>(Z[Lorg/bouncycastle/asn1/ASN1Encodable;)V
 
     return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 1
+    .locals 4
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Set;->set:Ljava/util/Vector;
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Set;->size()I
 
-    invoke-virtual {v0}, Ljava/util/Vector;->toString()Ljava/lang/String;
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string v0, "[]"
+
+    return-object v0
+
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuffer;
+
+    invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
+
+    const/16 v2, 0x5b
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+
+    const/4 v2, 0x0
+
+    :goto_0
+    iget-object v3, p0, Lorg/bouncycastle/asn1/ASN1Set;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    aget-object v3, v3, v2
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
+
+    add-int/lit8 v2, v2, 0x1
+
+    if-lt v2, v0, :cond_1
+
+    const/16 v0, 0x5d
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
+
+    :cond_1
+    const-string v3, ", "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    goto :goto_0
 .end method

@@ -9,8 +9,8 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p032ui.custom.CoinTickerView;
-import org.telegram.messenger.C3316R;
+import com.iMe.p031ui.custom.CoinTickerView;
+import org.telegram.messenger.C3242R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletTokenBalanceBinding implements ViewBinding {
     public final ConstraintLayout constraintTradeInfo;
@@ -41,7 +41,7 @@ public final class ForkRecycleItemWalletTokenBalanceBinding implements ViewBindi
     }
 
     public static ForkRecycleItemWalletTokenBalanceBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3316R.layout.fork_recycle_item_wallet_token_balance, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3242R.layout.fork_recycle_item_wallet_token_balance, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -50,61 +50,61 @@ public final class ForkRecycleItemWalletTokenBalanceBinding implements ViewBindi
 
     public static ForkRecycleItemWalletTokenBalanceBinding bind(View view) {
         ConstraintLayout constraintLayout = (ConstraintLayout) view;
-        int i = C3316R.C3319id.constraint_trade_info;
+        int i = C3242R.C3245id.constraint_trade_info;
         ConstraintLayout constraintLayout2 = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
         if (constraintLayout2 != null) {
-            i = C3316R.C3319id.image_coin_icon;
+            i = C3242R.C3245id.image_coin_icon;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3316R.C3319id.image_network_icon;
+                i = C3242R.C3245id.image_network_icon;
                 AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView2 != null) {
-                    i = C3316R.C3319id.image_price_direction;
+                    i = C3242R.C3245id.image_price_direction;
                     AppCompatImageView appCompatImageView3 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                     if (appCompatImageView3 != null) {
-                        i = C3316R.C3319id.image_trade;
+                        i = C3242R.C3245id.image_trade;
                         AppCompatImageView appCompatImageView4 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                         if (appCompatImageView4 != null) {
-                            i = C3316R.C3319id.staking_info;
+                            i = C3242R.C3245id.staking_info;
                             LinearLayoutCompat linearLayoutCompat = (LinearLayoutCompat) ViewBindings.findChildViewById(view, i);
                             if (linearLayoutCompat != null) {
-                                i = C3316R.C3319id.text_account_balance;
+                                i = C3242R.C3245id.text_account_balance;
                                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatTextView != null) {
-                                    i = C3316R.C3319id.text_account_balance_in_dollars;
+                                    i = C3242R.C3245id.text_account_balance_in_dollars;
                                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                     if (appCompatTextView2 != null) {
-                                        i = C3316R.C3319id.text_account_title;
+                                        i = C3242R.C3245id.text_account_title;
                                         AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                         if (appCompatTextView3 != null) {
-                                            i = C3316R.C3319id.text_apr_title;
+                                            i = C3242R.C3245id.text_apr_title;
                                             AppCompatTextView appCompatTextView4 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                             if (appCompatTextView4 != null) {
-                                                i = C3316R.C3319id.text_apr_value;
+                                                i = C3242R.C3245id.text_apr_value;
                                                 AppCompatTextView appCompatTextView5 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                 if (appCompatTextView5 != null) {
-                                                    i = C3316R.C3319id.text_apy_title;
+                                                    i = C3242R.C3245id.text_apy_title;
                                                     AppCompatTextView appCompatTextView6 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                     if (appCompatTextView6 != null) {
-                                                        i = C3316R.C3319id.text_apy_value;
+                                                        i = C3242R.C3245id.text_apy_value;
                                                         AppCompatTextView appCompatTextView7 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                         if (appCompatTextView7 != null) {
-                                                            i = C3316R.C3319id.text_coin_ticker;
+                                                            i = C3242R.C3245id.text_coin_ticker;
                                                             CoinTickerView coinTickerView = (CoinTickerView) ViewBindings.findChildViewById(view, i);
                                                             if (coinTickerView != null) {
-                                                                i = C3316R.C3319id.text_staking_end_title;
+                                                                i = C3242R.C3245id.text_staking_end_title;
                                                                 AppCompatTextView appCompatTextView8 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                 if (appCompatTextView8 != null) {
-                                                                    i = C3316R.C3319id.text_staking_end_value;
+                                                                    i = C3242R.C3245id.text_staking_end_value;
                                                                     AppCompatTextView appCompatTextView9 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                     if (appCompatTextView9 != null) {
-                                                                        i = C3316R.C3319id.text_trade_pair;
+                                                                        i = C3242R.C3245id.text_trade_pair;
                                                                         AppCompatTextView appCompatTextView10 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                         if (appCompatTextView10 != null) {
-                                                                            i = C3316R.C3319id.text_trade_percent;
+                                                                            i = C3242R.C3245id.text_trade_percent;
                                                                             AppCompatTextView appCompatTextView11 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                             if (appCompatTextView11 != null) {
-                                                                                i = C3316R.C3319id.text_trade_price;
+                                                                                i = C3242R.C3245id.text_trade_price;
                                                                                 AppCompatTextView appCompatTextView12 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                 if (appCompatTextView12 != null) {
                                                                                     return new ForkRecycleItemWalletTokenBalanceBinding(constraintLayout, constraintLayout, constraintLayout2, appCompatImageView, appCompatImageView2, appCompatImageView3, appCompatImageView4, linearLayoutCompat, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4, appCompatTextView5, appCompatTextView6, appCompatTextView7, coinTickerView, appCompatTextView8, appCompatTextView9, appCompatTextView10, appCompatTextView11, appCompatTextView12);

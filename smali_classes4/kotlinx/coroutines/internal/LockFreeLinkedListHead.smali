@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 634
+    .line 638
     invoke-direct {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;-><init>()V
 
     return-void

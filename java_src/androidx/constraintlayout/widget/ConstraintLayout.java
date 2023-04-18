@@ -17,7 +17,7 @@ import androidx.constraintlayout.core.widgets.ConstraintWidget;
 import androidx.constraintlayout.core.widgets.ConstraintWidgetContainer;
 import androidx.constraintlayout.core.widgets.Optimizer;
 import androidx.constraintlayout.core.widgets.analyzer.BasicMeasure;
-import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -187,7 +187,7 @@ public class ConstraintLayout extends ViewGroup {
                 int i6 = this.paddingTop + this.paddingBottom;
                 int i7 = this.paddingWidth;
                 View view = (View) widget.getCompanionWidget();
-                int[] iArr = C01131.f35x6d00e4a2;
+                int[] iArr = C01091.f35x6d00e4a2;
                 int i8 = iArr[dimensionBehaviour.ordinal()];
                 if (i8 == 1) {
                     makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i4, 1073741824);
@@ -350,7 +350,7 @@ public class ConstraintLayout extends ViewGroup {
 
     /* renamed from: androidx.constraintlayout.widget.ConstraintLayout$1 */
     /* loaded from: classes.dex */
-    static /* synthetic */ class C01131 {
+    static /* synthetic */ class C01091 {
 
         /* renamed from: $SwitchMap$androidx$constraintlayout$core$widgets$ConstraintWidget$DimensionBehaviour */
         static final /* synthetic */ int[] f35x6d00e4a2;

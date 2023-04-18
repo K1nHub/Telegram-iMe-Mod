@@ -20,11 +20,9 @@
 
 .field public final synthetic f$6:Z
 
-.field public final synthetic f$7:Lorg/telegram/tgnet/TLRPC$InputUser;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesController$ErrorDelegate;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLObject;ZZLorg/telegram/tgnet/TLRPC$InputUser;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesController$ErrorDelegate;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLObject;ZZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,15 +41,13 @@
 
     iput-boolean p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda141;->f$6:Z
 
-    iput-object p8, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda141;->f$7:Lorg/telegram/tgnet/TLRPC$InputUser;
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 8
+    .locals 7
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda141;->f$0:Lorg/telegram/messenger/MessagesController;
 
@@ -67,9 +63,7 @@
 
     iget-boolean v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda141;->f$6:Z
 
-    iget-object v7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda141;->f$7:Lorg/telegram/tgnet/TLRPC$InputUser;
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$CKINkY84I-iGDtU5UymkGVXZeak(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesController$ErrorDelegate;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLObject;ZZLorg/telegram/tgnet/TLRPC$InputUser;)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$g-onfsF6znmF2hP7NBWQ_tgtIFQ(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesController$ErrorDelegate;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLObject;ZZ)V
 
     return-void
 .end method

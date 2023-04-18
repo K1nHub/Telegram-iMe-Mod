@@ -1,6 +1,6 @@
 package com.google.firebase.firestore.model;
 
-import com.google.firestore.p022v1.Value;
+import com.google.firestore.p021v1.Value;
 /* loaded from: classes3.dex */
 public final class MutableDocument implements Document, Cloneable {
     private DocumentState documentState;
@@ -141,8 +141,8 @@ public final class MutableDocument implements Document, Cloneable {
     }
 
     /* renamed from: clone */
-    public MutableDocument m1085clone() {
-        return new MutableDocument(this.key, this.documentType, this.version, this.value.m1086clone(), this.documentState);
+    public MutableDocument m1079clone() {
+        return new MutableDocument(this.key, this.documentType, this.version, this.value.m1080clone(), this.documentState);
     }
 
     public boolean equals(Object obj) {

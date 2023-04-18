@@ -3,10 +3,10 @@ package com.google.android.gms.internal.firebase_ml;
 import java.lang.reflect.Array;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import p035j$.util.Iterator;
-import p035j$.util.function.Consumer;
+import p034j$.util.Iterator;
+import p034j$.util.function.Consumer;
 /* loaded from: classes.dex */
-final class zzig implements Iterator<T>, p035j$.util.Iterator {
+final class zzig implements Iterator<T>, p034j$.util.Iterator {
     private int index = 0;
     private final int length;
     private final /* synthetic */ zzid zzzz;
@@ -17,18 +17,18 @@ final class zzig implements Iterator<T>, p035j$.util.Iterator {
         this.length = Array.getLength(zzidVar.zzzy);
     }
 
-    @Override // p035j$.util.Iterator
+    @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final boolean hasNext() {
         return this.index < this.length;
     }
 
     /* JADX WARN: Type inference failed for: r0v4, types: [T, java.lang.Object] */
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final T next() {
         if (!hasNext()) {
             throw new NoSuchElementException();
@@ -39,7 +39,7 @@ final class zzig implements Iterator<T>, p035j$.util.Iterator {
         return Array.get(obj, i);
     }
 
-    @Override // java.util.Iterator, p035j$.util.Iterator
+    @Override // java.util.Iterator, p034j$.util.Iterator
     public final void remove() {
         throw new UnsupportedOperationException();
     }

@@ -26,18 +26,18 @@
 .method public constructor <init>(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/VideoEditedInfo;)V
     .locals 0
 
-    .line 557
+    .line 562
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 558
+    .line 563
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 559
+    .line 564
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     iput p1, p0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->currentAccount:I
 
-    .line 560
+    .line 565
     iput-object p2, p0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     return-void

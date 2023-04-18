@@ -16,7 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
 import kotlin.ranges.IntProgression;
 import kotlin.ranges.IntRange;
-import kotlin.ranges.RangesKt;
+import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt;
 import okhttp3.internal.Util;
 /* compiled from: Headers.kt */
@@ -26,8 +26,8 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
     private final String[] namesAndValues;
 
     /* renamed from: of */
-    public static final Headers m86of(String... strArr) {
-        return Companion.m85of(strArr);
+    public static final Headers m72of(String... strArr) {
+        return Companion.m71of(strArr);
     }
 
     private Headers(String[] strArr) {
@@ -80,7 +80,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
         int size = size();
         Pair[] pairArr = new Pair[size];
         for (int i = 0; i < size; i++) {
-            pairArr[i] = TuplesKt.m94to(name(i), value(i));
+            pairArr[i] = TuplesKt.m80to(name(i), value(i));
         }
         return ArrayIteratorKt.iterator(pairArr);
     }
@@ -198,8 +198,11 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
         }
 
         public final String get(String name) {
+            IntProgression downTo;
+            IntProgression step;
             Intrinsics.checkNotNullParameter(name, "name");
-            IntProgression step = RangesKt.step(RangesKt.downTo(this.namesAndValues.size() - 2, 0), 2);
+            downTo = RangesKt___RangesKt.downTo(this.namesAndValues.size() - 2, 0);
+            step = RangesKt___RangesKt.step(downTo, 2);
             int first = step.getFirst();
             int last = step.getLast();
             int step2 = step.getStep();
@@ -238,7 +241,10 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
 
         /* JADX INFO: Access modifiers changed from: private */
         public final String get(String[] strArr, String str) {
-            IntProgression step = RangesKt.step(RangesKt.downTo(strArr.length - 2, 0), 2);
+            IntProgression downTo;
+            IntProgression step;
+            downTo = RangesKt___RangesKt.downTo(strArr.length - 2, 0);
+            step = RangesKt___RangesKt.step(downTo, 2);
             int first = step.getFirst();
             int last = step.getLast();
             int step2 = step.getStep();
@@ -259,8 +265,9 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
         }
 
         /* renamed from: of */
-        public final Headers m85of(String... namesAndValues) {
+        public final Headers m71of(String... namesAndValues) {
             IntRange indices;
+            IntProgression step;
             Intrinsics.checkNotNullParameter(namesAndValues, "namesAndValues");
             if (!(namesAndValues.length % 2 == 0)) {
                 throw new IllegalArgumentException("Expected alternating header names and values".toString());
@@ -278,7 +285,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
                 strArr[i] = StringsKt.trim(str).toString();
             }
             indices = ArraysKt___ArraysKt.getIndices(strArr);
-            IntProgression step = RangesKt.step(indices, 2);
+            step = RangesKt___RangesKt.step(indices, 2);
             int first = step.getFirst();
             int last = step.getLast();
             int step2 = step.getStep();

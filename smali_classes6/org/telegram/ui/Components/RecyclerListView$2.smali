@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/RecyclerListView;)V
     .locals 0
 
-    .line 1375
+    .line 1362
     iput-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$2;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$AdapterDataObserver;-><init>()V
@@ -35,14 +35,14 @@
 .method public onChanged()V
     .locals 2
 
-    .line 1378
+    .line 1365
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$2;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->access$2100(Lorg/telegram/ui/Components/RecyclerListView;Z)V
 
-    .line 1379
+    .line 1366
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$2;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RecyclerListView;->access$2200(Lorg/telegram/ui/Components/RecyclerListView;)Z
@@ -51,14 +51,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 1380
+    .line 1367
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$2;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, -0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->access$2302(Lorg/telegram/ui/Components/RecyclerListView;I)I
 
-    .line 1381
+    .line 1368
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$2;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RecyclerListView;->access$2400(Lorg/telegram/ui/Components/RecyclerListView;)Ljava/lang/Runnable;
@@ -67,14 +67,14 @@
 
     if-nez v0, :cond_0
 
-    .line 1382
+    .line 1369
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$2;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView;->selectorRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
 
-    .line 1385
+    .line 1372
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$2;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -86,14 +86,14 @@
 .method public onItemRangeInserted(II)V
     .locals 0
 
-    .line 1390
+    .line 1377
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$2;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 p2, 0x1
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->access$2100(Lorg/telegram/ui/Components/RecyclerListView;Z)V
 
-    .line 1391
+    .line 1378
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$2;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/RecyclerListView;->access$2500(Lorg/telegram/ui/Components/RecyclerListView;)Landroid/view/View;
@@ -118,14 +118,14 @@
 
     if-nez p1, :cond_0
 
-    .line 1392
+    .line 1379
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$2;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 p2, -0x1
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->access$2302(Lorg/telegram/ui/Components/RecyclerListView;I)I
 
-    .line 1393
+    .line 1380
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$2;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->invalidateViews()V
@@ -137,7 +137,7 @@
 .method public onItemRangeRemoved(II)V
     .locals 0
 
-    .line 1399
+    .line 1386
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$2;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 p2, 0x1

@@ -2,46 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda13;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Components/PasscodeView;
+
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda13;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda13;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda13;->INSTANCE:Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda13;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/PasscodeView;ZLorg/telegram/ui/Components/MotionBackgroundDrawable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/Components/PasscodeView;
+
+    iput-boolean p2, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda13;->f$1:Z
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda13;->f$2:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public final run()V
+    .locals 3
 
-    check-cast p1, Ljava/lang/Integer;
+    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/Components/PasscodeView;
 
-    check-cast p2, Ljava/lang/Integer;
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda13;->f$1:Z
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/PasscodeView;->$r8$lambda$mHW3YnTrlFFjNAO6vUiMdx263gk(Ljava/lang/Integer;Ljava/lang/Integer;)I
+    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda13;->f$2:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    move-result p1
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/PasscodeView;->$r8$lambda$NpDeo84mqvTH9w1mMqVKlG5wH-g(Lorg/telegram/ui/Components/PasscodeView;ZLorg/telegram/ui/Components/MotionBackgroundDrawable;)V
 
-    return p1
+    return-void
 .end method

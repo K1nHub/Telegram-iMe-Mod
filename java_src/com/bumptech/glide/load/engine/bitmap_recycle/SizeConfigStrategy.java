@@ -205,7 +205,7 @@ public class SizeConfigStrategy implements LruPoolStrategy {
         if (Build.VERSION.SDK_INT >= 26 && Bitmap.Config.RGBA_F16.equals(config)) {
             return RGBA_F16_IN_CONFIGS;
         }
-        int i = C04221.$SwitchMap$android$graphics$Bitmap$Config[config.ordinal()];
+        int i = C04141.$SwitchMap$android$graphics$Bitmap$Config[config.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
@@ -221,7 +221,7 @@ public class SizeConfigStrategy implements LruPoolStrategy {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.bumptech.glide.load.engine.bitmap_recycle.SizeConfigStrategy$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C04221 {
+    public static /* synthetic */ class C04141 {
         static final /* synthetic */ int[] $SwitchMap$android$graphics$Bitmap$Config;
 
         static {

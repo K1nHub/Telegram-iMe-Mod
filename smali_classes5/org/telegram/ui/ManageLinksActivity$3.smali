@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 765
+    .line 766
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$3;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method private synthetic lambda$didSetRights$0(Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 1
 
-    .line 771
+    .line 772
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$3;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BulletinFactory;->canShowBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
@@ -53,7 +53,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 772
+    .line 773
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$3;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
@@ -79,7 +79,7 @@
 .method public didSetRights(ILorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;)V
     .locals 0
 
-    .line 768
+    .line 769
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$3;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -100,7 +100,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 770
+    .line 771
     new-instance p2, Lorg/telegram/ui/ManageLinksActivity$3$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/ManageLinksActivity$3$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ManageLinksActivity$3;Lorg/telegram/tgnet/TLRPC$User;)V

@@ -35,7 +35,7 @@
 .method public final onSuccess()V
     .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$lTNsYXxynObWvIrx9VAkSn5n7FY()V
+    invoke-static {}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$IuJOJajWSFIs_j4T5x_RmAdJO5s()V
 
     return-void
 .end method

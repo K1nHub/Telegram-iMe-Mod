@@ -8,7 +8,7 @@ import com.google.android.gms.common.annotation.KeepForSdk;
 public abstract class ActivityLifecycleObserver {
     @KeepForSdk
     /* renamed from: of */
-    public static final ActivityLifecycleObserver m800of(Activity activity) {
+    public static final ActivityLifecycleObserver m786of(Activity activity) {
         return new zab(zaa.zaa(activity));
     }
 

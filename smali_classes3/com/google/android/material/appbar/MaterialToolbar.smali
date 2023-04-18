@@ -506,7 +506,7 @@
     .locals 0
 
     .line 183
-    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
+    invoke-super {p0}, Landroidx/appcompat/widget/Toolbar;->onAttachedToWindow()V
 
     .line 185
     invoke-static {p0}, Lcom/google/android/material/shape/MaterialShapeUtils;->setParentAbsoluteElevation(Landroid/view/View;)V

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nScopeRegistry.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ScopeRegistry.kt\norg/koin/core/registry/ScopeRegistry\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,109:1\n1#2:110\n1849#3,2:111\n1849#3,2:113\n*S KotlinDebug\n*F\n+ 1 ScopeRegistry.kt\norg/koin/core/registry/ScopeRegistry\n*L\n89#1:111,2\n95#1:113,2\n*E\n"
+    value = "SMAP\nScopeRegistry.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ScopeRegistry.kt\norg/koin/core/registry/ScopeRegistry\n+ 2 Logger.kt\norg/koin/core/logger/Logger\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,111:1\n28#2:112\n46#2,2:113\n29#2:115\n36#2,12:116\n1#3:128\n1855#4,2:129\n1855#4,2:131\n*S KotlinDebug\n*F\n+ 1 ScopeRegistry.kt\norg/koin/core/registry/ScopeRegistry\n*L\n60#1:112\n60#1:113,2\n60#1:115\n62#1:116,12\n91#1:129,2\n97#1:131,2\n*E\n"
 .end annotation
 
 
@@ -62,7 +62,7 @@
 
     const-string v0, "_root_"
 
-    .line 107
+    .line 109
     invoke-static {v0}, Lorg/koin/core/qualifier/QualifierKt;->_q(Ljava/lang/String;)Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -79,20 +79,20 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 35
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
+    .line 37
     iput-object p1, p0, Lorg/koin/core/registry/ScopeRegistry;->_koin:Lorg/koin/core/Koin;
 
-    .line 38
+    .line 39
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lorg/koin/core/registry/ScopeRegistry;->_scopeDefinitions:Ljava/util/HashSet;
 
-    .line 42
+    .line 43
     sget-object v1, Lorg/koin/mp/KoinPlatformTools;->INSTANCE:Lorg/koin/mp/KoinPlatformTools;
 
     invoke-virtual {v1}, Lorg/koin/mp/KoinPlatformTools;->safeHashMap()Ljava/util/Map;
@@ -101,7 +101,7 @@
 
     iput-object v1, p0, Lorg/koin/core/registry/ScopeRegistry;->_scopes:Ljava/util/Map;
 
-    .line 45
+    .line 46
     new-instance v2, Lorg/koin/core/scope/Scope;
 
     sget-object v3, Lorg/koin/core/registry/ScopeRegistry;->rootScopeQualifier:Lorg/koin/core/qualifier/StringQualifier;
@@ -114,14 +114,14 @@
 
     iput-object v2, p0, Lorg/koin/core/registry/ScopeRegistry;->rootScope:Lorg/koin/core/scope/Scope;
 
-    .line 48
+    .line 49
     invoke-virtual {v2}, Lorg/koin/core/scope/Scope;->getScopeQualifier()Lorg/koin/core/qualifier/Qualifier;
 
     move-result-object p1
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 49
+    .line 50
     invoke-virtual {v2}, Lorg/koin/core/scope/Scope;->getId()Ljava/lang/String;
 
     move-result-object p1
@@ -134,7 +134,7 @@
 .method public static final synthetic access$getRootScopeQualifier$cp()Lorg/koin/core/qualifier/StringQualifier;
     .locals 1
 
-    .line 35
+    .line 36
     sget-object v0, Lorg/koin/core/registry/ScopeRegistry;->rootScopeQualifier:Lorg/koin/core/qualifier/StringQualifier;
 
     return-object v0
@@ -143,7 +143,7 @@
 .method private final loadModule(Lorg/koin/core/module/Module;)V
     .locals 1
 
-    .line 101
+    .line 103
     iget-object v0, p0, Lorg/koin/core/registry/ScopeRegistry;->_scopeDefinitions:Ljava/util/HashSet;
 
     invoke-virtual {p1}, Lorg/koin/core/module/Module;->getScopes()Ljava/util/HashSet;
@@ -157,10 +157,38 @@
 
 
 # virtual methods
+.method public final deleteScope$koin_core(Lorg/koin/core/scope/Scope;)V
+    .locals 1
+
+    const-string v0, "scope"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 80
+    iget-object v0, p0, Lorg/koin/core/registry/ScopeRegistry;->_koin:Lorg/koin/core/Koin;
+
+    invoke-virtual {v0}, Lorg/koin/core/Koin;->getInstanceRegistry()Lorg/koin/core/registry/InstanceRegistry;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lorg/koin/core/registry/InstanceRegistry;->dropScopeInstances$koin_core(Lorg/koin/core/scope/Scope;)V
+
+    .line 81
+    iget-object v0, p0, Lorg/koin/core/registry/ScopeRegistry;->_scopes:Ljava/util/Map;
+
+    invoke-virtual {p1}, Lorg/koin/core/scope/Scope;->getId()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
 .method public final getRootScope()Lorg/koin/core/scope/Scope;
     .locals 1
 
-    .line 45
+    .line 46
     iget-object v0, p0, Lorg/koin/core/registry/ScopeRegistry;->rootScope:Lorg/koin/core/scope/Scope;
 
     return-object v0
@@ -181,7 +209,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 113
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -199,7 +227,7 @@
 
     check-cast v0, Lorg/koin/core/module/Module;
 
-    .line 96
+    .line 98
     invoke-direct {p0, v0}, Lorg/koin/core/registry/ScopeRegistry;->loadModule(Lorg/koin/core/module/Module;)V
 
     goto :goto_0

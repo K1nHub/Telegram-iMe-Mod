@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;Z)V
     .locals 0
 
-    .line 2172
+    .line 2170
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView$2;->val$select:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2175
+    .line 2173
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;
 
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView$2;->val$select:Z
@@ -56,7 +56,7 @@
     :goto_0
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->access$2002(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;F)F
 
-    .line 2176
+    .line 2174
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->access$1800(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;)V

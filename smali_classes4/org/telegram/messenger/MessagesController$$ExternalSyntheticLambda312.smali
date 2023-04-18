@@ -12,11 +12,15 @@
 
 .field public final synthetic f$2:I
 
-.field public final synthetic f$3:J
+.field public final synthetic f$3:I
+
+.field public final synthetic f$4:J
+
+.field public final synthetic f$5:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JIJ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JIIJLjava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +31,11 @@
 
     iput p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda312;->f$2:I
 
-    iput-wide p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda312;->f$3:J
+    iput p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda312;->f$3:I
+
+    iput-wide p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda312;->f$4:J
+
+    iput-object p8, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda312;->f$5:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -35,7 +43,7 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 8
+    .locals 10
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda312;->f$0:Lorg/telegram/messenger/MessagesController;
 
@@ -43,13 +51,17 @@
 
     iget v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda312;->f$2:I
 
-    iget-wide v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda312;->f$3:J
+    iget v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda312;->f$3:I
 
-    move-object v6, p1
+    iget-wide v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda312;->f$4:J
 
-    move-object v7, p2
+    iget-object v7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda312;->f$5:Ljava/lang/Runnable;
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$wY1VM0vP4pVTDjfrAwggDh_z9rQ(Lorg/telegram/messenger/MessagesController;JIJLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    move-object v8, p1
+
+    move-object v9, p2
+
+    invoke-static/range {v0 .. v9}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$dlI48HA9ua6uTOVlhno8faKyX9E(Lorg/telegram/messenger/MessagesController;JIIJLjava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

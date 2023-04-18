@@ -5,8 +5,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.android.gms.vision.Frame;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.p021ml.common.FirebaseMLException;
-import com.google.firebase.p021ml.vision.common.FirebaseVisionImage;
+import com.google.firebase.p020ml.common.FirebaseMLException;
+import com.google.firebase.p020ml.vision.common.FirebaseVisionImage;
 import java.io.Closeable;
 import java.io.IOException;
 /* loaded from: classes.dex */

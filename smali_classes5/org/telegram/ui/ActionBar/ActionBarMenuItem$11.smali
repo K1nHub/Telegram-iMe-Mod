@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
     .locals 0
 
-    .line 1504
+    .line 1502
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$11;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 1512
+    .line 1510
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$11;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$1200(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)Z
@@ -59,7 +59,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1513
+    .line 1511
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$11;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const/4 p2, 0x0
@@ -68,7 +68,7 @@
 
     return-void
 
-    .line 1516
+    .line 1514
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$11;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
@@ -76,20 +76,20 @@
 
     if-eqz p2, :cond_1
 
-    .line 1517
+    .line 1515
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$300(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p1
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;->onTextChanged(Landroid/widget/EditText;)V
 
-    .line 1519
+    .line 1517
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$11;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$1300(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
 
-    .line 1520
+    .line 1518
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$11;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$1100(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)Ljava/util/ArrayList;
@@ -102,7 +102,7 @@
 
     if-nez p1, :cond_2
 
-    .line 1521
+    .line 1519
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$11;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$300(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -127,14 +127,14 @@
 
     if-ltz p1, :cond_2
 
-    .line 1522
+    .line 1520
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$11;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const/4 p2, -0x1
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$1402(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;I)I
 
-    .line 1523
+    .line 1521
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$11;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$1500(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)V

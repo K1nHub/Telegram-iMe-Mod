@@ -53,7 +53,7 @@ public class TransportRuntime implements TransportInternal {
         if (destination instanceof EncodedDestination) {
             return Collections.unmodifiableSet(((EncodedDestination) destination).getSupportedEncodings());
         }
-        return Collections.singleton(Encoding.m821of("proto"));
+        return Collections.singleton(Encoding.m807of("proto"));
     }
 
     public Uploader getUploader() {

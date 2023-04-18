@@ -148,23 +148,6 @@
     return-object p0
 .end method
 
-.method public static decodeToString([B)Ljava/lang/String;
-    .locals 2
-
-    const-string v0, "<this>"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 221
-    new-instance v0, Ljava/lang/String;
-
-    sget-object v1, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
-
-    invoke-direct {v0, p0, v1}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
-
-    return-object v0
-.end method
-
 .method public static final endsWith(Ljava/lang/String;Ljava/lang/String;Z)Z
     .locals 7
 

@@ -5,14 +5,14 @@ public class TLRPC$TL_chatForbidden extends TLRPC$Chat {
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1502id = abstractSerializedData.readInt64(z);
+        this.f1427id = abstractSerializedData.readInt64(z);
         this.title = abstractSerializedData.readString(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1502id);
+        abstractSerializedData.writeInt64(this.f1427id);
         abstractSerializedData.writeString(this.title);
     }
 }

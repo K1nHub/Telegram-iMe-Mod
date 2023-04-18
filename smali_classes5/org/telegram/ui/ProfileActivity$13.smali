@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 3481
+    .line 3510
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public scrollVerticallyBy(ILandroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)I
     .locals 4
 
-    .line 3490
+    .line 3519
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$8300(Lorg/telegram/ui/ProfileActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -50,16 +50,16 @@
 
     if-eqz v0, :cond_4
 
-    .line 3491
+    .line 3520
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$14100(Lorg/telegram/ui/ProfileActivity;)Z
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$14200(Lorg/telegram/ui/ProfileActivity;)Z
 
     move-result v2
 
     if-nez v2, :cond_4
 
-    .line 3492
+    .line 3521
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
     move-result v0
@@ -72,7 +72,7 @@
 
     sub-int/2addr v0, v2
 
-    .line 3493
+    .line 3522
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$7500(Lorg/telegram/ui/ProfileActivity;)Z
@@ -85,7 +85,7 @@
 
     if-le v0, p1, :cond_1
 
-    .line 3495
+    .line 3524
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$1800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -134,7 +134,7 @@
 
     if-nez p1, :cond_2
 
-    .line 3496
+    .line 3525
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$7700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$FileLocation;
@@ -150,7 +150,7 @@
 
     goto :goto_0
 
-    .line 3498
+    .line 3527
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -162,7 +162,7 @@
 
     if-lt p1, v0, :cond_3
 
-    .line 3501
+    .line 3530
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/ProfileActivity;->access$7502(Lorg/telegram/ui/ProfileActivity;Z)Z
@@ -173,7 +173,7 @@
 
     goto :goto_1
 
-    .line 3502
+    .line 3531
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -187,7 +187,7 @@
 
     if-ne v0, v3, :cond_4
 
-    .line 3503
+    .line 3532
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$4200(Lorg/telegram/ui/ProfileActivity;)Z
@@ -196,10 +196,10 @@
 
     if-nez v0, :cond_4
 
-    .line 3504
+    .line 3533
     div-int/lit8 p1, p1, 0x2
 
-    .line 3509
+    .line 3538
     :cond_4
     :goto_1
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollVerticallyBy(ILandroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)I
@@ -212,7 +212,7 @@
 .method public supportsPredictiveItemAnimations()Z
     .locals 1
 
-    .line 3485
+    .line 3514
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$600(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/ImageUpdater;

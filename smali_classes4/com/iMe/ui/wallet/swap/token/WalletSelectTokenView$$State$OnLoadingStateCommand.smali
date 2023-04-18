@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenView$$State;)V
     .locals 1
 
-    .line 272
+    .line 308
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onLoadingState"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenView;)V
     .locals 0
 
-    .line 277
+    .line 313
     invoke-interface {p1}, Lcom/iMe/ui/custom/state/GlobalStateView;->onLoadingState()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 270
+    .line 306
     check-cast p1, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenView$$State$OnLoadingStateCommand;->apply(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenView;)V

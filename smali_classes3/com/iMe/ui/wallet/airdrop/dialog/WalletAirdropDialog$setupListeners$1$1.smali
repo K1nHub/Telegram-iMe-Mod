@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 207
+    .line 204
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$setupListeners$1$1;->invoke(Landroid/view/View;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 207
+    .line 204
     iget-object p1, p0, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$setupListeners$1$1;->this$0:Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;
 
     invoke-virtual {p1}, Lcom/iMe/ui/base/mvp/MvpAlertDialog;->finishScreen()V

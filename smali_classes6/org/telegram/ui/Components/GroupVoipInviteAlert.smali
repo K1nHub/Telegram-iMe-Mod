@@ -1985,7 +1985,7 @@
 .method protected onSearchViewTouched(Landroid/view/MotionEvent;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
     .locals 1
 
-    .line 958
+    .line 963
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->delegate:Lorg/telegram/ui/Components/GroupVoipInviteAlert$GroupVoipInviteAlertDelegate;
 
     invoke-interface {v0, p1, p2}, Lorg/telegram/ui/Components/GroupVoipInviteAlert$GroupVoipInviteAlertDelegate;->needOpenSearch(Landroid/view/MotionEvent;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
@@ -1996,7 +1996,7 @@
 .method protected search(Ljava/lang/String;)V
     .locals 1
 
-    .line 953
+    .line 958
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->searchAdapter:Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/GroupVoipInviteAlert$SearchAdapter;->searchUsers(Ljava/lang/String;)V

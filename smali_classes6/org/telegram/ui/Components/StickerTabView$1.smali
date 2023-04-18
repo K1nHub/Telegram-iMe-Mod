@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickerTabView;Landroid/content/Context;)V
     .locals 0
 
-    .line 86
+    .line 84
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
     .locals 0
 
-    .line 89
+    .line 87
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
     return-void

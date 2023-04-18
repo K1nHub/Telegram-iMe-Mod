@@ -25,11 +25,11 @@ public class zzcr implements zzcv.zzb {
         StringBuilder sb = new StringBuilder(valueOf.length() + 30);
         sb.append("Logging FirebaseMlSdkLogEvent ");
         sb.append(valueOf);
-        gmsLogger.m799d("ClearcutTransport", sb.toString());
+        gmsLogger.m785d("ClearcutTransport", sb.toString());
         try {
             this.zzc.newEvent(zzadVar.zzf()).log();
         } catch (SecurityException e) {
-            zzb.m796e("ClearcutTransport", "Exception thrown from the logging side", e);
+            zzb.m782e("ClearcutTransport", "Exception thrown from the logging side", e);
         }
     }
 }

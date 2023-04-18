@@ -1,6 +1,6 @@
-.class interface abstract Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;
+.class public interface abstract Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;
 .super Ljava/lang/Object;
-.source "ReportFragment.java"
+.source "ReportFragment.kt"
 
 
 # annotations
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x608
+    accessFlags = 0x609
     name = "ActivityInitializationListener"
 .end annotation
 

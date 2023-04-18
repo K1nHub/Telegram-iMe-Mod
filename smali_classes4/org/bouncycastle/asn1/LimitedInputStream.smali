@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method getRemaining()I
+.method getLimit()I
     .locals 1
 
     iget v0, p0, Lorg/bouncycastle/asn1/LimitedInputStream;->_limit:I

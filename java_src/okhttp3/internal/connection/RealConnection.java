@@ -49,7 +49,7 @@ import okhttp3.internal.http2.Http2ExchangeCodec;
 import okhttp3.internal.http2.Http2Stream;
 import okhttp3.internal.http2.Settings;
 import okhttp3.internal.http2.StreamResetException;
-import okhttp3.internal.p039ws.RealWebSocket;
+import okhttp3.internal.p038ws.RealWebSocket;
 import okhttp3.internal.platform.Platform;
 import okhttp3.internal.tls.OkHostnameVerifier;
 import okio.BufferedSink;

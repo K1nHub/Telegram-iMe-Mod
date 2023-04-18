@@ -44,15 +44,15 @@ public final class GlProgramLocation {
         this.name = str;
         int i2 = WhenMappings.$EnumSwitchMapping$0[type.ordinal()];
         if (i2 == 1) {
-            glGetAttribLocation = GLES20.glGetAttribLocation(UInt.m1575constructorimpl(i), str);
+            glGetAttribLocation = GLES20.glGetAttribLocation(UInt.m1559constructorimpl(i), str);
         } else if (i2 != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            glGetAttribLocation = GLES20.glGetUniformLocation(UInt.m1575constructorimpl(i), str);
+            glGetAttribLocation = GLES20.glGetUniformLocation(UInt.m1559constructorimpl(i), str);
         }
         this.value = glGetAttribLocation;
         Egloo.checkGlProgramLocation(glGetAttribLocation, str);
-        this.uvalue = UInt.m1575constructorimpl(glGetAttribLocation);
+        this.uvalue = UInt.m1559constructorimpl(glGetAttribLocation);
     }
 
     public final int getValue() {
@@ -60,7 +60,7 @@ public final class GlProgramLocation {
     }
 
     /* renamed from: getUvalue-pVg5ArA$library_release  reason: not valid java name */
-    public final int m1562getUvaluepVg5ArA$library_release() {
+    public final int m1546getUvaluepVg5ArA$library_release() {
         return this.uvalue;
     }
 

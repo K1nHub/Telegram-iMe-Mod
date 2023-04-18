@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.crypto.CryptoWalletInfo;
 import com.iMe.storage.domain.model.crypto.permission.PermissionAction;
 import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import com.iMe.storage.domain.repository.crypto.permission.CryptoPermissionRepository;
-import com.iMe.storage.domain.utils.p031rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
@@ -24,7 +24,7 @@ public final class CryptoPermissionInteractor {
     }
 
     public final Observable<Result<CryptoWalletInfo>> getCryptoPrivacySettings(boolean z) {
-        Observable<Result<CryptoWalletInfo>> subscribeOn = this.cryptoPermissionRepository.getPermissionSettings(z).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<CryptoWalletInfo>> subscribeOn = this.cryptoPermissionRepository.getPermissionSettings(z).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoPermissionReposito…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -39,21 +39,21 @@ public final class CryptoPermissionInteractor {
     public final Observable<Result<Boolean>> manageCryptoPrivacySettings(TokenCode type, boolean z, List<Long> whitelistUsers) {
         Intrinsics.checkNotNullParameter(type, "type");
         Intrinsics.checkNotNullParameter(whitelistUsers, "whitelistUsers");
-        Observable<Result<Boolean>> subscribeOn = this.cryptoPermissionRepository.managePermissionSettings(type, z, whitelistUsers).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Boolean>> subscribeOn = this.cryptoPermissionRepository.managePermissionSettings(type, z, whitelistUsers).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoPermissionReposito…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<AccountInfo>> getAddressInfo(String userId) {
         Intrinsics.checkNotNullParameter(userId, "userId");
-        Observable<Result<AccountInfo>> subscribeOn = this.cryptoPermissionRepository.getAccountInfo(userId).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<AccountInfo>> subscribeOn = this.cryptoPermissionRepository.getAccountInfo(userId).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoPermissionReposito…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<String>> requestAllAddressesPermission(String userId) {
         Intrinsics.checkNotNullParameter(userId, "userId");
-        Observable<Result<String>> subscribeOn = this.cryptoPermissionRepository.requestPermission(userId, PermissionAction.GET_ETHER_WALLET_ADDRESS).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<String>> subscribeOn = this.cryptoPermissionRepository.requestPermission(userId, PermissionAction.GET_ETHER_WALLET_ADDRESS).subscribeOn(this.schedulersProvider.mo694io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoPermissionReposito…(schedulersProvider.io())");
         return subscribeOn;
     }

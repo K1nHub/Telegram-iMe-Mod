@@ -2645,6 +2645,10 @@
 
     if-eqz v0, :cond_c
 
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
+
+    if-eqz v0, :cond_c
+
     .line 2086
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 

@@ -166,6 +166,14 @@ class ResourcesFlusher {
             Log.e("ResourcesFlusher", "Could not retrieve value from ThemedResourceCache#mUnthemedEntries", e3);
         }
         if (longSparseArray != null) {
+            Api16Impl.clear(longSparseArray);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api16Impl {
+        static void clear(LongSparseArray longSparseArray) {
             longSparseArray.clear();
         }
     }

@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.extractor.mp4;
 
 import android.util.Pair;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.audio.Ac4Util;
@@ -454,9 +454,9 @@ public final class Mp4Extractor implements Extractor, SeekMap {
         Atom.ContainerAtom containerAtomOfType = containerAtom.getContainerAtomOfType(Atom.TYPE_meta);
         Metadata parseMdtaFromMeta = containerAtomOfType != null ? AtomParsers.parseMdtaFromMeta(containerAtomOfType) : null;
         boolean z2 = (this.flags & 1) != 0;
-        long j = C0482C.TIME_UNSET;
+        long j = C0470C.TIME_UNSET;
         Metadata metadata5 = parseMdtaFromMeta;
-        List<TrackSampleTable> parseTraks = AtomParsers.parseTraks(containerAtom, gaplessInfoHolder, C0482C.TIME_UNSET, null, z2, z, Mp4Extractor$$ExternalSyntheticLambda1.INSTANCE);
+        List<TrackSampleTable> parseTraks = AtomParsers.parseTraks(containerAtom, gaplessInfoHolder, C0470C.TIME_UNSET, null, z2, z, Mp4Extractor$$ExternalSyntheticLambda1.INSTANCE);
         int size = parseTraks.size();
         long j2 = -9223372036854775807L;
         int i4 = 0;
@@ -502,7 +502,7 @@ public final class Mp4Extractor implements Extractor, SeekMap {
             i4++;
             parseTraks = list;
             size = i;
-            j = C0482C.TIME_UNSET;
+            j = C0470C.TIME_UNSET;
         }
         this.firstVideoTrackIndex = i5;
         this.durationUs = j2;
@@ -673,7 +673,7 @@ public final class Mp4Extractor implements Extractor, SeekMap {
         }
         this.extractorOutput.track(0, 4).format(new Format.Builder().setMetadata(this.motionPhotoMetadata == null ? null : new Metadata(this.motionPhotoMetadata)).build());
         this.extractorOutput.endTracks();
-        this.extractorOutput.seekMap(new SeekMap.Unseekable(C0482C.TIME_UNSET));
+        this.extractorOutput.seekMap(new SeekMap.Unseekable(C0470C.TIME_UNSET));
     }
 
     private void maybeSkipRemainingMetaAtomHeaderBytes(ExtractorInput extractorInput) throws IOException {
@@ -687,7 +687,7 @@ public final class Mp4Extractor implements Extractor, SeekMap {
     private void processUnparsedAtom(long j) {
         if (this.atomType == 1836086884) {
             int i = this.atomHeaderBytesRead;
-            this.motionPhotoMetadata = new MotionPhotoMetadata(0L, j, C0482C.TIME_UNSET, j + i, this.atomSize - i);
+            this.motionPhotoMetadata = new MotionPhotoMetadata(0L, j, C0470C.TIME_UNSET, j + i, this.atomSize - i);
         }
     }
 

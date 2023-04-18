@@ -25,6 +25,8 @@
 # instance fields
 .field private final cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
+.field private isApproved:Z
+
 .field private final message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
 
 .field private final requestId:J
@@ -87,7 +89,7 @@
 .method private final getAddressText()Ljava/lang/String;
     .locals 4
 
-    .line 58
+    .line 64
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getEVMWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
@@ -114,7 +116,7 @@
 
     if-nez v0, :cond_1
 
-    .line 59
+    .line 65
     :cond_0
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
@@ -133,7 +135,12 @@
 .method public final approveSign()V
     .locals 5
 
-    .line 35
+    const/4 v0, 0x1
+
+    .line 38
+    iput-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->isApproved:Z
+
+    .line 39
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->walletConnectManager:Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectManager;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->sessionItem:Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;
@@ -154,10 +161,10 @@
 .method public final getSendConfirmationDialogModel()Lcom/iMe/model/dialog/DialogModel;
     .locals 6
 
-    .line 27
+    .line 30
     new-instance v0, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 28
+    .line 31
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_connect_message_sign_confirm_title:I
@@ -166,7 +173,7 @@
 
     move-result-object v1
 
-    .line 29
+    .line 32
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->wallet_connect_message_sign_confirm_description:I
@@ -175,7 +182,7 @@
 
     move-result-object v2
 
-    .line 30
+    .line 33
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -184,7 +191,7 @@
 
     move-result-object v3
 
-    .line 31
+    .line 34
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->wallet_connect_transaction_button_sign:I
@@ -193,23 +200,23 @@
 
     move-result-object v4
 
-    .line 27
+    .line 30
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
 .end method
 
 .method protected onFirstViewAttach()V
-    .locals 4
+    .locals 5
 
-    .line 47
+    .line 53
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignView;
 
-    .line 48
+    .line 54
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
 
     invoke-virtual {v1}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;->getType()Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage$WCSignType;
@@ -228,22 +235,28 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 49
-    sget-object v1, Lcom/iMe/storage/data/utils/crypto/CryptoEVMUtils;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/CryptoEVMUtils;
+    .line 55
+    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
 
-    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
+    invoke-virtual {v1}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;->getData()Ljava/lang/String;
 
-    invoke-virtual {v2}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;->getData()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Lcom/iMe/storage/data/utils/crypto/CryptoEVMUtils;->decodeHexMessageToString(Ljava/lang/String;)Ljava/lang/String;
+    const/4 v4, 0x0
+
+    invoke-static {v1, v3, v2, v4}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->hexToByteArray$default(Ljava/lang/String;ZILjava/lang/Object;)[B
+
+    move-result-object v1
+
+    invoke-virtual {v1}, [B->toString()Ljava/lang/String;
 
     move-result-object v1
 
     goto :goto_0
 
-    .line 50
+    .line 56
     :cond_0
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
 
@@ -251,20 +264,20 @@
 
     move-result-object v1
 
-    .line 52
+    .line 58
     :goto_0
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->getAddressText()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 53
+    .line 59
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->sessionItem:Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;
 
     invoke-virtual {v3}, Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;->getPeerUrl()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 47
+    .line 53
     invoke-interface {v0, v1, v2, v3}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignView;->setupScreenWithData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -273,7 +286,12 @@
 .method public final rejectSign()V
     .locals 4
 
-    .line 39
+    .line 43
+    iget-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->isApproved:Z
+
+    if-nez v0, :cond_0
+
+    .line 44
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->walletConnectManager:Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectManager;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->sessionItem:Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;
@@ -286,5 +304,6 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectManager;->rejectRequest(Ljava/lang/String;J)V
 
+    :cond_0
     return-void
 .end method

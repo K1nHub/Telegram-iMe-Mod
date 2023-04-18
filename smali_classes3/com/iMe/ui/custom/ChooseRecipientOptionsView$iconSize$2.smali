@@ -60,7 +60,7 @@
 
     const/16 v0, 0x10
 
-    .line 35
+    .line 33
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -75,7 +75,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 35
+    .line 33
     invoke-virtual {p0}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$iconSize$2;->invoke()Ljava/lang/Integer;
 
     move-result-object v0

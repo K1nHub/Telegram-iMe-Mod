@@ -39,7 +39,7 @@
         }
     .end annotation
 
-    .line 283
+    .line 289
     invoke-direct {p0, p1, p2}, Landroidx/arch/core/internal/SafeIterableMap$ListIterator;-><init>(Landroidx/arch/core/internal/SafeIterableMap$Entry;Landroidx/arch/core/internal/SafeIterableMap$Entry;)V
 
     return-void
@@ -59,7 +59,7 @@
         }
     .end annotation
 
-    .line 293
+    .line 299
     iget-object p1, p1, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mPrevious:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     return-object p1
@@ -77,7 +77,7 @@
         }
     .end annotation
 
-    .line 288
+    .line 294
     iget-object p1, p1, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mNext:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     return-object p1

@@ -13,12 +13,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import androidx.activity.ViewTreeOnBackPressedDispatcherOwner;
 import androidx.activity.contextaware.OnContextAvailableListener;
 import androidx.appcompat.view.ActionMode;
 import androidx.appcompat.widget.VectorEnabledTintResources;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NavUtils;
 import androidx.core.app.TaskStackBuilder;
+import androidx.core.p010os.LocaleListCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewTreeLifecycleOwner;
 import androidx.lifecycle.ViewTreeViewModelStoreOwner;
@@ -28,6 +30,10 @@ import androidx.savedstate.ViewTreeSavedStateRegistryOwner;
 public class AppCompatActivity extends FragmentActivity implements AppCompatCallback, TaskStackBuilder.SupportParentable {
     private AppCompatDelegate mDelegate;
     private Resources mResources;
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void onLocalesChanged(LocaleListCompat localeListCompat) {
+    }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void onNightModeChanged(int i) {
@@ -130,15 +136,16 @@ public class AppCompatActivity extends FragmentActivity implements AppCompatCall
         ViewTreeLifecycleOwner.set(getWindow().getDecorView(), this);
         ViewTreeViewModelStoreOwner.set(getWindow().getDecorView(), this);
         ViewTreeSavedStateRegistryOwner.set(getWindow().getDecorView(), this);
+        ViewTreeOnBackPressedDispatcherOwner.set(getWindow().getDecorView(), this);
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, android.app.Activity, android.content.ComponentCallbacks
+    @Override // androidx.activity.ComponentActivity, android.app.Activity, android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        if (this.mResources != null) {
-            this.mResources.updateConfiguration(configuration, super.getResources().getDisplayMetrics());
-        }
         getDelegate().onConfigurationChanged(configuration);
+        if (this.mResources != null) {
+            this.mResources.updateConfiguration(super.getResources().getConfiguration(), super.getResources().getDisplayMetrics());
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -167,7 +174,7 @@ public class AppCompatActivity extends FragmentActivity implements AppCompatCall
         return (T) getDelegate().findViewById(i);
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, android.app.Activity, android.view.Window.Callback
+    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, android.app.Activity, android.view.Window.Callback
     public final boolean onMenuItemSelected(int i, MenuItem menuItem) {
         if (super.onMenuItemSelected(i, menuItem)) {
             return true;
@@ -251,7 +258,7 @@ public class AppCompatActivity extends FragmentActivity implements AppCompatCall
         return super.onMenuOpened(i, menu);
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, android.app.Activity, android.view.Window.Callback
+    @Override // androidx.activity.ComponentActivity, android.app.Activity, android.view.Window.Callback
     public void onPanelClosed(int i, Menu menu) {
         super.onPanelClosed(i, menu);
     }

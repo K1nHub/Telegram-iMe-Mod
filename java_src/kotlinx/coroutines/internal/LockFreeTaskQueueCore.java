@@ -72,7 +72,7 @@ public final class LockFreeTaskQueueCore<E> {
                 lockFreeTaskQueueCore.array.set(lockFreeTaskQueueCore.mask & i, obj);
                 i++;
             } else {
-                lockFreeTaskQueueCore._state = Companion.m88wo(j, 1152921504606846976L);
+                lockFreeTaskQueueCore._state = Companion.m74wo(j, 1152921504606846976L);
                 return lockFreeTaskQueueCore;
             }
         }
@@ -100,7 +100,7 @@ public final class LockFreeTaskQueueCore<E> {
         }
 
         /* renamed from: wo */
-        public final long m88wo(long j, long j2) {
+        public final long m74wo(long j, long j2) {
             return j & (~j2);
         }
 
@@ -108,11 +108,11 @@ public final class LockFreeTaskQueueCore<E> {
         }
 
         public final long updateHead(long j, int i) {
-            return m88wo(j, 1073741823L) | (i << 0);
+            return m74wo(j, 1073741823L) | (i << 0);
         }
 
         public final long updateTail(long j, int i) {
-            return m88wo(j, 1152921503533105152L) | (i << 30);
+            return m74wo(j, 1152921503533105152L) | (i << 30);
         }
     }
 
@@ -205,13 +205,11 @@ public final class LockFreeTaskQueueCore<E> {
             r3 = 1152921504606846976(0x1000000000000000, double:1.2882297539194267E-231)
             long r1 = r1 & r3
             int r1 = (r1 > r6 ? 1 : (r1 == r6 ? 0 : -1))
-            if (r1 != 0) goto L73
-            goto L7d
-        L73:
+            if (r1 == 0) goto L7c
             kotlinx.coroutines.internal.LockFreeTaskQueueCore r0 = r0.next()
             kotlinx.coroutines.internal.LockFreeTaskQueueCore r0 = r0.fillPlaceholder(r9, r14)
             if (r0 != 0) goto L69
-        L7d:
+        L7c:
             return r8
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.internal.LockFreeTaskQueueCore.addLast(java.lang.Object):int");

@@ -1,6 +1,6 @@
 package com.iMe.bots.data.model.bot;
 
-import com.google.firebase.p021ml.custom.FirebaseModelOutputs;
+import com.google.firebase.p020ml.custom.FirebaseModelOutputs;
 import kotlin.Result;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -30,6 +30,6 @@ final class NeuroBot$getOutputsFromModel$2$1 extends Lambda implements Function1
         Intrinsics.checkNotNullParameter(result, "result");
         Continuation<Object> continuation = this.$continuation;
         Result.Companion companion = Result.Companion;
-        continuation.resumeWith(Result.m1571constructorimpl(result.getOutput(0)));
+        continuation.resumeWith(Result.m1555constructorimpl(result.getOutput(0)));
     }
 }

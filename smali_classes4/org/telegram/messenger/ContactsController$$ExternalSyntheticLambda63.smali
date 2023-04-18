@@ -8,18 +8,58 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/ContactsController;
 
-.field public final synthetic f$1:Ljava/lang/Runnable;
+.field public final synthetic f$1:Ljava/util/HashMap;
+
+.field public final synthetic f$10:Ljava/util/ArrayList;
+
+.field public final synthetic f$11:Ljava/util/HashMap;
+
+.field public final synthetic f$2:Landroid/util/SparseArray;
+
+.field public final synthetic f$3:[Z
+
+.field public final synthetic f$4:Ljava/util/HashMap;
+
+.field public final synthetic f$5:Lorg/telegram/tgnet/TLRPC$TL_contacts_importContacts;
+
+.field public final synthetic f$6:I
+
+.field public final synthetic f$7:Ljava/util/HashMap;
+
+.field public final synthetic f$8:Z
+
+.field public final synthetic f$9:Ljava/util/HashMap;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;Landroid/util/SparseArray;[ZLjava/util/HashMap;Lorg/telegram/tgnet/TLRPC$TL_contacts_importContacts;ILjava/util/HashMap;ZLjava/util/HashMap;Ljava/util/ArrayList;Ljava/util/HashMap;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/messenger/ContactsController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$1:Ljava/lang/Runnable;
+    iput-object p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$1:Ljava/util/HashMap;
+
+    iput-object p3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$2:Landroid/util/SparseArray;
+
+    iput-object p4, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$3:[Z
+
+    iput-object p5, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$4:Ljava/util/HashMap;
+
+    iput-object p6, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$5:Lorg/telegram/tgnet/TLRPC$TL_contacts_importContacts;
+
+    iput p7, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$6:I
+
+    iput-object p8, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$7:Ljava/util/HashMap;
+
+    iput-boolean p9, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$8:Z
+
+    iput-object p10, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$9:Ljava/util/HashMap;
+
+    iput-object p11, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$10:Ljava/util/ArrayList;
+
+    iput-object p12, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$11:Ljava/util/HashMap;
 
     return-void
 .end method
@@ -27,13 +67,39 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 2
+    .locals 15
 
-    iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/messenger/ContactsController;
+    move-object v0, p0
 
-    iget-object v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$1:Ljava/lang/Runnable;
+    iget-object v1, v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/messenger/ContactsController;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$CWwEbX_ZC8DQhx6B7MDCMdis36I(Lorg/telegram/messenger/ContactsController;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v2, v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$1:Ljava/util/HashMap;
+
+    iget-object v3, v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$2:Landroid/util/SparseArray;
+
+    iget-object v4, v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$3:[Z
+
+    iget-object v5, v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$4:Ljava/util/HashMap;
+
+    iget-object v6, v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$5:Lorg/telegram/tgnet/TLRPC$TL_contacts_importContacts;
+
+    iget v7, v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$6:I
+
+    iget-object v8, v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$7:Ljava/util/HashMap;
+
+    iget-boolean v9, v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$8:Z
+
+    iget-object v10, v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$9:Ljava/util/HashMap;
+
+    iget-object v11, v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$10:Ljava/util/ArrayList;
+
+    iget-object v12, v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda63;->f$11:Ljava/util/HashMap;
+
+    move-object/from16 v13, p1
+
+    move-object/from16 v14, p2
+
+    invoke-static/range {v1 .. v14}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$D2jv02gPK-qU8Eh0O7BEvw8910c(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;Landroid/util/SparseArray;[ZLjava/util/HashMap;Lorg/telegram/tgnet/TLRPC$TL_contacts_importContacts;ILjava/util/HashMap;ZLjava/util/HashMap;Ljava/util/ArrayList;Ljava/util/HashMap;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

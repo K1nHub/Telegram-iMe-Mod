@@ -9,6 +9,7 @@ import org.koin.android.logger.AndroidLogger;
 import org.koin.core.Koin;
 import org.koin.core.KoinApplication;
 import org.koin.core.logger.Level;
+import org.koin.core.logger.Logger;
 import org.koin.dsl.ModuleDSLKt;
 /* compiled from: KoinExt.kt */
 /* loaded from: classes4.dex */
@@ -32,8 +33,13 @@ public final class KoinExtKt {
         List listOf2;
         Intrinsics.checkNotNullParameter(koinApplication, "<this>");
         Intrinsics.checkNotNullParameter(androidContext, "androidContext");
-        if (koinApplication.getKoin().getLogger().isAt(Level.INFO)) {
-            koinApplication.getKoin().getLogger().info("[init] declare Android Context");
+        Logger logger = koinApplication.getKoin().getLogger();
+        Level level = Level.INFO;
+        if (logger.isAt(level)) {
+            Logger logger2 = koinApplication.getKoin().getLogger();
+            if (logger2.isAt(level)) {
+                logger2.display(level, "[init] declare Android Context");
+            }
         }
         if (androidContext instanceof Application) {
             Koin koin = koinApplication.getKoin();

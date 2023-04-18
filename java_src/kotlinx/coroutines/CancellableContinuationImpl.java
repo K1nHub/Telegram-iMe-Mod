@@ -8,7 +8,6 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.internal.DispatchedContinuation;
 import kotlinx.coroutines.internal.StackTraceRecoveryKt;
 /* compiled from: CancellableContinuationImpl.kt */
@@ -51,8 +50,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
     }
 
     private final boolean isReusable() {
-        Continuation<T> continuation = this.delegate;
-        return (continuation instanceof DispatchedContinuation) && ((DispatchedContinuation) continuation).isReusable(this);
+        return DispatchedTaskKt.isReusableMode(this.resumeMode) && ((DispatchedContinuation) this.delegate).isReusable();
     }
 
     @Override // kotlin.coroutines.jvm.internal.CoroutineStackFrame
@@ -73,7 +71,8 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         try {
             cancelHandler.invoke(th);
         } catch (Throwable th2) {
-            CoroutineExceptionHandlerKt.handleCoroutineException(getContext(), new CompletionHandlerException(Intrinsics.stringPlus("Exception in invokeOnCancellation handler for ", this), th2));
+            CoroutineContext context = getContext();
+            CoroutineExceptionHandlerKt.handleCoroutineException(context, new CompletionHandlerException("Exception in invokeOnCancellation handler for " + this, th2));
         }
     }
 
@@ -81,7 +80,8 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         try {
             function1.invoke(th);
         } catch (Throwable th2) {
-            CoroutineExceptionHandlerKt.handleCoroutineException(getContext(), new CompletionHandlerException(Intrinsics.stringPlus("Exception in resume onCancellation handler for ", this), th2));
+            CoroutineContext context = getContext();
+            CoroutineExceptionHandlerKt.handleCoroutineException(context, new CompletionHandlerException("Exception in resume onCancellation handler for " + this, th2));
         }
     }
 
@@ -133,7 +133,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
     }
 
     private final Void alreadyResumedError(Object obj) {
-        throw new IllegalStateException(Intrinsics.stringPlus("Already resumed, but proposed with update ", obj).toString());
+        throw new IllegalStateException(("Already resumed, but proposed with update " + obj).toString());
     }
 
     private final void detachChildIfNonResuable() {
@@ -162,15 +162,15 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
     public Throwable getExceptionalResult$kotlinx_coroutines_core(Object obj) {
         Throwable recoverFromStackFrame;
         Throwable exceptionalResult$kotlinx_coroutines_core = super.getExceptionalResult$kotlinx_coroutines_core(obj);
-        if (exceptionalResult$kotlinx_coroutines_core == null) {
-            return null;
+        if (exceptionalResult$kotlinx_coroutines_core != null) {
+            Continuation<T> continuation = this.delegate;
+            if (DebugKt.getRECOVER_STACK_TRACES() && (continuation instanceof CoroutineStackFrame)) {
+                recoverFromStackFrame = StackTraceRecoveryKt.recoverFromStackFrame(exceptionalResult$kotlinx_coroutines_core, (CoroutineStackFrame) continuation);
+                return recoverFromStackFrame;
+            }
+            return exceptionalResult$kotlinx_coroutines_core;
         }
-        Continuation<T> delegate$kotlinx_coroutines_core = getDelegate$kotlinx_coroutines_core();
-        if (DebugKt.getRECOVER_STACK_TRACES() && (delegate$kotlinx_coroutines_core instanceof CoroutineStackFrame)) {
-            recoverFromStackFrame = StackTraceRecoveryKt.recoverFromStackFrame(exceptionalResult$kotlinx_coroutines_core, (CoroutineStackFrame) delegate$kotlinx_coroutines_core);
-            return recoverFromStackFrame;
-        }
-        return exceptionalResult$kotlinx_coroutines_core;
+        return null;
     }
 
     public String toString() {
@@ -224,10 +224,10 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
                 if (obj2 instanceof CancelledContinuation) {
                     CancelledContinuation cancelledContinuation = (CancelledContinuation) obj2;
                     if (cancelledContinuation.makeResumed()) {
-                        if (function1 == null) {
+                        if (function1 != null) {
+                            callOnCancellation(function1, cancelledContinuation.cause);
                             return;
                         }
-                        callOnCancellation(function1, cancelledContinuation.cause);
                         return;
                     }
                 }

@@ -15,27 +15,27 @@ import java.util.List;
 /* loaded from: classes3.dex */
 public final class PolygonOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PolygonOptions> CREATOR = new zzl();
-    @SafeParcelable.Field(getter = "getPoints", m789id = 2)
+    @SafeParcelable.Field(getter = "getPoints", m775id = 2)
     private final List zza;
-    @SafeParcelable.Field(getter = "getHolesForParcel", m789id = 3, type = "java.util.List")
+    @SafeParcelable.Field(getter = "getHolesForParcel", m775id = 3, type = "java.util.List")
     private final List zzb;
-    @SafeParcelable.Field(getter = "getStrokeWidth", m789id = 4)
+    @SafeParcelable.Field(getter = "getStrokeWidth", m775id = 4)
     private float zzc;
-    @SafeParcelable.Field(getter = "getStrokeColor", m789id = 5)
+    @SafeParcelable.Field(getter = "getStrokeColor", m775id = 5)
     private int zzd;
-    @SafeParcelable.Field(getter = "getFillColor", m789id = 6)
+    @SafeParcelable.Field(getter = "getFillColor", m775id = 6)
     private int zze;
-    @SafeParcelable.Field(getter = "getZIndex", m789id = 7)
+    @SafeParcelable.Field(getter = "getZIndex", m775id = 7)
     private float zzf;
-    @SafeParcelable.Field(getter = "isVisible", m789id = 8)
+    @SafeParcelable.Field(getter = "isVisible", m775id = 8)
     private boolean zzg;
-    @SafeParcelable.Field(getter = "isGeodesic", m789id = 9)
+    @SafeParcelable.Field(getter = "isGeodesic", m775id = 9)
     private boolean zzh;
-    @SafeParcelable.Field(getter = "isClickable", m789id = 10)
+    @SafeParcelable.Field(getter = "isClickable", m775id = 10)
     private boolean zzi;
-    @SafeParcelable.Field(getter = "getStrokeJointType", m789id = 11)
+    @SafeParcelable.Field(getter = "getStrokeJointType", m775id = 11)
     private int zzj;
-    @SafeParcelable.Field(getter = "getStrokePattern", m789id = 12)
+    @SafeParcelable.Field(getter = "getStrokePattern", m775id = 12)
     private List zzk;
 
     public PolygonOptions() {
@@ -190,7 +190,7 @@ public final class PolygonOptions extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PolygonOptions(@SafeParcelable.Param(m788id = 2) List list, @SafeParcelable.Param(m788id = 3) List list2, @SafeParcelable.Param(m788id = 4) float f, @SafeParcelable.Param(m788id = 5) int i, @SafeParcelable.Param(m788id = 6) int i2, @SafeParcelable.Param(m788id = 7) float f2, @SafeParcelable.Param(m788id = 8) boolean z, @SafeParcelable.Param(m788id = 9) boolean z2, @SafeParcelable.Param(m788id = 10) boolean z3, @SafeParcelable.Param(m788id = 11) int i3, @SafeParcelable.Param(m788id = 12) List list3) {
+    public PolygonOptions(@SafeParcelable.Param(m774id = 2) List list, @SafeParcelable.Param(m774id = 3) List list2, @SafeParcelable.Param(m774id = 4) float f, @SafeParcelable.Param(m774id = 5) int i, @SafeParcelable.Param(m774id = 6) int i2, @SafeParcelable.Param(m774id = 7) float f2, @SafeParcelable.Param(m774id = 8) boolean z, @SafeParcelable.Param(m774id = 9) boolean z2, @SafeParcelable.Param(m774id = 10) boolean z3, @SafeParcelable.Param(m774id = 11) int i3, @SafeParcelable.Param(m774id = 12) List list3) {
         this.zza = list;
         this.zzb = list2;
         this.zzc = f;

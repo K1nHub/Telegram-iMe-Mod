@@ -48,9 +48,9 @@
 
     const-string v3, "https://api.imem.app/api/"
 
-    const-string v4, "iMeWalletBot"
+    const-string v4, "ime_official_bot"
 
-    const-wide/32 v5, 0x40254d83
+    const-wide v5, 0x15c1fcebbL
 
     const-string v7, "https://etherscan.io/"
 

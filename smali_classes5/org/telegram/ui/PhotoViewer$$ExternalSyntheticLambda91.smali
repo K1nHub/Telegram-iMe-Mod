@@ -2,42 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+.implements Lorg/telegram/ui/Components/NumberPicker$Formatter;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;
+
+    invoke-direct {v0}, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;->INSTANCE:Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;->f$0:Lorg/telegram/ui/PhotoViewer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDate(ZILjava/lang/String;)V
-    .locals 1
+.method public final format(I)Ljava/lang/String;
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;->f$0:Lorg/telegram/ui/PhotoViewer;
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$BtI2LrbN-8iVgW0IQZPHcUGwlE0(I)Ljava/lang/String;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$QEU1Fa0biBgdSfsUDSeOauUeHK8(Lorg/telegram/ui/PhotoViewer;ZILjava/lang/String;)V
+    move-result-object p1
 
-    return-void
-.end method
-
-.method public synthetic getSelectedDialogs()Ljava/util/ArrayList;
-    .locals 1
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate$-CC;->$default$getSelectedDialogs(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    return-object v0
+    return-object p1
 .end method

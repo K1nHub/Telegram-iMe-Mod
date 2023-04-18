@@ -25,7 +25,7 @@ public abstract class BaseMenuWrapper {
             if (this.mMenuItems == null) {
                 this.mMenuItems = new SimpleArrayMap<>();
             }
-            MenuItem menuItem2 = this.mMenuItems.get(menuItem);
+            MenuItem menuItem2 = this.mMenuItems.get(supportMenuItem);
             if (menuItem2 == null) {
                 MenuItemWrapperICS menuItemWrapperICS = new MenuItemWrapperICS(this.mContext, supportMenuItem);
                 this.mMenuItems.put(supportMenuItem, menuItemWrapperICS);

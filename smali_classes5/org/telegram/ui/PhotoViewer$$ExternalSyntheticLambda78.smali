@@ -8,22 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
-
-.field public final synthetic f$2:Ljava/lang/String;
+.field public final synthetic f$1:Lorg/telegram/ui/Components/ShareAlert;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/messenger/ImageReceiver$BitmapHolder;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda78;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda78;->f$1:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
-
-    iput-object p3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda78;->f$2:Ljava/lang/String;
+    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda78;->f$1:Lorg/telegram/ui/Components/ShareAlert;
 
     return-void
 .end method
@@ -31,15 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda78;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda78;->f$1:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
+    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda78;->f$1:Lorg/telegram/ui/Components/ShareAlert;
 
-    iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda78;->f$2:Ljava/lang/String;
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$YqVLEZIGsLAxRDJ6lVzY127j0Ic(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/messenger/ImageReceiver$BitmapHolder;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$-SA7JIgBHDkiAzM28HK4GOusTUA(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/Components/ShareAlert;)V
 
     return-void
 .end method

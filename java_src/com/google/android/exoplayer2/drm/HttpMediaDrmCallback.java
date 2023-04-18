@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.drm;
 
 import android.net.Uri;
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.drm.ExoMediaDrm;
 import com.google.android.exoplayer2.source.rtsp.RtspHeaders;
 import com.google.android.exoplayer2.upstream.DataSource;
@@ -72,14 +72,14 @@ public final class HttpMediaDrmCallback implements MediaDrmCallback {
             licenseServerUrl = this.defaultLicenseUrl;
         }
         if (TextUtils.isEmpty(licenseServerUrl)) {
-            throw new MediaDrmCallbackException(new DataSpec.Builder().setUri(Uri.EMPTY).build(), Uri.EMPTY, ImmutableMap.m747of(), 0L, new IllegalStateException("No license URL"));
+            throw new MediaDrmCallbackException(new DataSpec.Builder().setUri(Uri.EMPTY).build(), Uri.EMPTY, ImmutableMap.m733of(), 0L, new IllegalStateException("No license URL"));
         }
         HashMap hashMap = new HashMap();
-        UUID uuid2 = C0482C.PLAYREADY_UUID;
+        UUID uuid2 = C0470C.PLAYREADY_UUID;
         if (uuid2.equals(uuid)) {
             str = "text/xml";
         } else {
-            str = C0482C.CLEARKEY_UUID.equals(uuid) ? "application/json" : "application/octet-stream";
+            str = C0470C.CLEARKEY_UUID.equals(uuid) ? "application/json" : "application/octet-stream";
         }
         hashMap.put(RtspHeaders.CONTENT_TYPE, str);
         if (uuid2.equals(uuid)) {

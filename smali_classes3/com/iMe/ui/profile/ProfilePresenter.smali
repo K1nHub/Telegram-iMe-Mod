@@ -1681,7 +1681,7 @@
     if-eqz v0, :cond_0
 
     .line 237
-    invoke-static {}, Lcom/iMe/utils/helper/wallet/WalletHelper;->isWalletAuthorized()Z
+    invoke-static {}, Lcom/iMe/utils/helper/wallet/WalletHelper;->isAuthorized()Z
 
     move-result v0
 

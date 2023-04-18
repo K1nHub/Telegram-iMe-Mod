@@ -399,7 +399,7 @@
     sget v14, Lorg/telegram/messenger/R$string;->wallet_banner_slide_staking_long_description:I
 
     .line 76
-    sget v16, Lorg/telegram/messenger/R$raw;->fork_staking_banner:I
+    sget v16, Lorg/telegram/messenger/R$raw;->fork_staking_profit:I
 
     const-string v10, "STAKING"
 

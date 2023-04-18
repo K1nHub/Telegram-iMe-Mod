@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lkotlinx/coroutines/internal/ThreadContextKt;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lkotlinx/coroutines/internal/ThreadContextKt;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -93,16 +93,16 @@
     :goto_0
     const/4 v0, 0x1
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_1
 
-    move p1, v0
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
+    move p1, v0
 
     :goto_1
     if-nez p1, :cond_2

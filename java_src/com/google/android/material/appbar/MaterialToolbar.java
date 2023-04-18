@@ -66,9 +66,8 @@ public class MaterialToolbar extends Toolbar {
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.material.appbar.MaterialToolbar.<init>(android.content.Context, android.util.AttributeSet, int):void");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.appcompat.widget.Toolbar, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         maybeCenterTitleViews();
     }
@@ -124,7 +123,7 @@ public class MaterialToolbar extends Toolbar {
         view.layout(i, view.getTop(), i2, view.getBottom());
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // androidx.appcompat.widget.Toolbar, android.view.ViewGroup, android.view.View
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         MaterialShapeUtils.setParentAbsoluteElevation(this);

@@ -9,7 +9,7 @@ public class TLRPC$TL_messages_translateText extends TLObject {
     public String to_lang;
 
     /* renamed from: id */
-    public ArrayList<Integer> f1612id = new ArrayList<>();
+    public ArrayList<Integer> f1537id = new ArrayList<>();
     public ArrayList<TLRPC$TL_textWithEntities> text = new ArrayList<>();
 
     @Override // org.telegram.tgnet.TLObject
@@ -26,10 +26,10 @@ public class TLRPC$TL_messages_translateText extends TLObject {
         }
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt32(481674261);
-            int size = this.f1612id.size();
+            int size = this.f1537id.size();
             abstractSerializedData.writeInt32(size);
             for (int i = 0; i < size; i++) {
-                abstractSerializedData.writeInt32(this.f1612id.get(i).intValue());
+                abstractSerializedData.writeInt32(this.f1537id.get(i).intValue());
             }
         }
         if ((this.flags & 2) != 0) {

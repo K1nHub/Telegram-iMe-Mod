@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/Components/PasscodeView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/PasscodeView;->$r8$lambda$j_aC1QE-GCFhrfA6Fef0awunpRc(Lorg/telegram/ui/Components/PasscodeView;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/PasscodeView;->$r8$lambda$A4i2Cz7h8PrK6Jb5wtIKCkEDMU8(Lorg/telegram/ui/Components/PasscodeView;)V
 
     return-void
 .end method

@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/String;
+.field public final synthetic f$0:Lorg/telegram/messenger/ContactsController;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda2;->f$0:Ljava/lang/String;
+    iput-object p1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/ContactsController;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda2;->f$0:Ljava/lang/String;
+    iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/ContactsController;
 
-    invoke-static {v0}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$XIU66-mW8-kSgXWS-g8wU2Ms1K0(Ljava/lang/String;)V
+    invoke-static {v0}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$43Fq0ffVa_d4GSfEbNf-GT-wMqo(Lorg/telegram/messenger/ContactsController;)V
 
     return-void
 .end method

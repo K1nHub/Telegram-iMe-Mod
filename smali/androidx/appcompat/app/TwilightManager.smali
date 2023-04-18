@@ -264,7 +264,7 @@
     .line 153
     invoke-virtual/range {v2 .. v8}, Landroidx/appcompat/app/TwilightCalculator;->calculateTwilight(JDD)V
 
-    .line 158
+    .line 157
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v5
@@ -277,7 +277,7 @@
 
     invoke-virtual/range {v2 .. v8}, Landroidx/appcompat/app/TwilightCalculator;->calculateTwilight(JDD)V
 
-    .line 159
+    .line 158
     iget v2, v11, Landroidx/appcompat/app/TwilightCalculator;->state:I
 
     const/4 v3, 0x1
@@ -292,15 +292,15 @@
     :goto_0
     move v14, v3
 
-    .line 160
+    .line 159
     iget-wide v7, v11, Landroidx/appcompat/app/TwilightCalculator;->sunrise:J
 
-    .line 161
+    .line 160
     iget-wide v5, v11, Landroidx/appcompat/app/TwilightCalculator;->sunset:J
 
     add-long v3, v9, v12
 
-    .line 165
+    .line 164
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v12
@@ -319,10 +319,10 @@
 
     move-wide v7, v15
 
-    .line 164
+    .line 163
     invoke-virtual/range {v2 .. v8}, Landroidx/appcompat/app/TwilightCalculator;->calculateTwilight(JDD)V
 
-    .line 166
+    .line 165
     iget-wide v2, v11, Landroidx/appcompat/app/TwilightCalculator;->sunrise:J
 
     const-wide/16 v4, 0x0
@@ -373,11 +373,11 @@
 
     add-long/2addr v2, v9
 
-    .line 186
+    .line 185
     :goto_3
     iput-boolean v14, v1, Landroidx/appcompat/app/TwilightManager$TwilightState;->isNight:Z
 
-    .line 191
+    .line 186
     iput-wide v2, v1, Landroidx/appcompat/app/TwilightManager$TwilightState;->nextUpdate:J
 
     return-void

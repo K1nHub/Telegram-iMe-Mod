@@ -111,17 +111,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 42960
+    .line 42972
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 43011
+    .line 43023
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->restriction_reason:Ljava/util/ArrayList;
 
-    .line 43021
+    .line 43033
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -136,7 +136,7 @@
 
     const/4 v0, 0x1
 
-    .line 43024
+    .line 43036
     invoke-static {p0, p1, p2, v0}, Lorg/telegram/tgnet/TLRPC$Chat;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZZ)Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object p0
@@ -153,7 +153,7 @@
 
     goto/16 :goto_0
 
-    .line 43082
+    .line 43094
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chat_old2;
 
@@ -161,7 +161,7 @@
 
     goto/16 :goto_0
 
-    .line 43097
+    .line 43109
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chat_old;
 
@@ -169,7 +169,7 @@
 
     goto/16 :goto_0
 
-    .line 43058
+    .line 43070
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channel_old;
 
@@ -177,7 +177,7 @@
 
     goto/16 :goto_0
 
-    .line 43100
+    .line 43112
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatForbidden;
 
@@ -185,7 +185,7 @@
 
     goto/16 :goto_0
 
-    .line 43040
+    .line 43052
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channel_layer104;
 
@@ -193,7 +193,7 @@
 
     goto/16 :goto_0
 
-    .line 43055
+    .line 43067
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channel_layer48;
 
@@ -201,7 +201,7 @@
 
     goto/16 :goto_0
 
-    .line 43043
+    .line 43055
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channel_layer77;
 
@@ -209,7 +209,7 @@
 
     goto/16 :goto_0
 
-    .line 43049
+    .line 43061
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chat;
 
@@ -217,7 +217,7 @@
 
     goto/16 :goto_0
 
-    .line 43076
+    .line 43088
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chat_layer131;
 
@@ -225,7 +225,7 @@
 
     goto :goto_0
 
-    .line 43031
+    .line 43043
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelForbidden_layer52;
 
@@ -233,7 +233,7 @@
 
     goto :goto_0
 
-    .line 43046
+    .line 43058
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatEmpty;
 
@@ -241,7 +241,7 @@
 
     goto :goto_0
 
-    .line 43079
+    .line 43091
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelForbidden_layer131;
 
@@ -249,7 +249,7 @@
 
     goto :goto_0
 
-    .line 43073
+    .line 43085
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelForbidden;
 
@@ -257,7 +257,7 @@
 
     goto :goto_0
 
-    .line 43061
+    .line 43073
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channel_layer72;
 
@@ -265,7 +265,7 @@
 
     goto :goto_0
 
-    .line 43037
+    .line 43049
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatForbidden_layer131;
 
@@ -273,7 +273,7 @@
 
     goto :goto_0
 
-    .line 43094
+    .line 43106
     :sswitch_f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatForbidden_old;
 
@@ -281,7 +281,7 @@
 
     goto :goto_0
 
-    .line 43067
+    .line 43079
     :sswitch_10
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chat_layer92;
 
@@ -289,7 +289,7 @@
 
     goto :goto_0
 
-    .line 43052
+    .line 43064
     :sswitch_11
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channel_layer131;
 
@@ -297,7 +297,7 @@
 
     goto :goto_0
 
-    .line 43070
+    .line 43082
     :sswitch_12
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channel_layer92;
 
@@ -305,7 +305,7 @@
 
     goto :goto_0
 
-    .line 43085
+    .line 43097
     :sswitch_13
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channel_layer67;
 
@@ -313,7 +313,7 @@
 
     goto :goto_0
 
-    .line 43034
+    .line 43046
     :sswitch_14
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatEmpty_layer131;
 
@@ -321,7 +321,7 @@
 
     goto :goto_0
 
-    .line 43064
+    .line 43076
     :sswitch_15
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelForbidden_layer67;
 
@@ -329,7 +329,7 @@
 
     goto :goto_0
 
-    .line 43088
+    .line 43100
     :sswitch_16
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channel;
 
@@ -337,7 +337,7 @@
 
     goto :goto_0
 
-    .line 43091
+    .line 43103
     :sswitch_17
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channel_layer147;
 
@@ -350,7 +350,7 @@
 
     goto :goto_1
 
-    .line 43104
+    .line 43116
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -380,7 +380,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 43107
+    .line 43119
     invoke-direct {v0, p0, p2, p3}, Lorg/telegram/tgnet/TLRPC$Chat;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;ZZ)V
 
     :cond_2
@@ -424,48 +424,48 @@
 
     return-object p0
 
-    .line 43141
+    .line 43153
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;-><init>()V
 
-    .line 43142
+    .line 43154
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->change_info:Z
 
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->change_info:Z
 
-    .line 43143
+    .line 43155
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->post_messages:Z
 
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->post_messages:Z
 
-    .line 43144
+    .line 43156
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->edit_messages:Z
 
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->edit_messages:Z
 
-    .line 43145
+    .line 43157
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->delete_messages:Z
 
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->delete_messages:Z
 
-    .line 43146
+    .line 43158
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->ban_users:Z
 
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->ban_users:Z
 
-    .line 43147
+    .line 43159
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->invite_users:Z
 
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->invite_users:Z
 
-    .line 43148
+    .line 43160
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->pin_messages:Z
 
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->pin_messages:Z
 
-    .line 43149
+    .line 43161
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->add_admins:Z
 
     iput-boolean p0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->add_admins:Z
@@ -482,67 +482,67 @@
 
     return-object p0
 
-    .line 43120
+    .line 43132
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;-><init>()V
 
-    .line 43121
+    .line 43133
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->view_messages:Z
 
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->view_messages:Z
 
-    .line 43122
+    .line 43134
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_messages:Z
 
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_messages:Z
 
-    .line 43123
+    .line 43135
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_media:Z
 
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_media:Z
 
-    .line 43124
+    .line 43136
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_stickers:Z
 
     iput-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_stickers:Z
 
-    .line 43125
+    .line 43137
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_gifs:Z
 
     iput-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_gifs:Z
 
-    .line 43126
+    .line 43138
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_games:Z
 
     iput-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_games:Z
 
-    .line 43127
+    .line 43139
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_inline:Z
 
     iput-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_inline:Z
 
-    .line 43128
+    .line 43140
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->embed_links:Z
 
     iput-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->embed_links:Z
 
-    .line 43129
+    .line 43141
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_polls:Z
 
     const/4 v1, 0x1
 
-    .line 43130
+    .line 43142
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->change_info:Z
 
-    .line 43131
+    .line 43143
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->invite_users:Z
 
-    .line 43132
+    .line 43144
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->pin_messages:Z
 
-    .line 43133
+    .line 43145
     iget p0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->until_date:I
 
     iput p0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->until_date:I
@@ -553,7 +553,7 @@
 .method private readParams(Lorg/telegram/tgnet/AbstractSerializedData;ZZ)V
     .locals 0
 
-    .line 43113
+    .line 43125
     invoke-virtual {p0, p1, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-void
@@ -564,7 +564,7 @@
 .method public isChannel()Z
     .locals 1
 
-    .line 42967
+    .line 42979
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
@@ -589,7 +589,7 @@
 .method public isGroup()Z
     .locals 1
 
-    .line 42971
+    .line 42983
     invoke-virtual {p0}, Lorg/telegram/tgnet/TLRPC$Chat;->isChannel()Z
 
     move-result v0

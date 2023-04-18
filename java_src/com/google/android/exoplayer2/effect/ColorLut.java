@@ -21,7 +21,7 @@ public interface ColorLut extends GlEffect {
     /* loaded from: classes.dex */
     public final /* synthetic */ class CC {
         /* renamed from: $default$toGlTextureProcessor  reason: collision with other method in class */
-        public static SingleFrameGlTextureProcessor m985$default$toGlTextureProcessor(ColorLut _this, Context context, boolean z) throws FrameProcessingException {
+        public static SingleFrameGlTextureProcessor m979$default$toGlTextureProcessor(ColorLut _this, Context context, boolean z) throws FrameProcessingException {
             return new ColorLutProcessor(context, _this, z);
         }
     }

@@ -33,7 +33,7 @@
 .method constructor <init>(Landroidx/activity/result/ActivityResultRegistry;Ljava/lang/String;Landroidx/activity/result/contract/ActivityResultContract;)V
     .locals 0
 
-    .line 162
+    .line 163
     iput-object p1, p0, Landroidx/activity/result/ActivityResultRegistry$2;->this$0:Landroidx/activity/result/ActivityResultRegistry;
 
     iput-object p2, p0, Landroidx/activity/result/ActivityResultRegistry$2;->val$key:Ljava/lang/String;
@@ -57,7 +57,7 @@
         }
     .end annotation
 
-    .line 165
+    .line 166
     iget-object v0, p0, Landroidx/activity/result/ActivityResultRegistry$2;->this$0:Landroidx/activity/result/ActivityResultRegistry;
 
     iget-object v0, v0, Landroidx/activity/result/ActivityResultRegistry;->mKeyToRc:Ljava/util/Map;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 172
+    .line 173
     iget-object v1, p0, Landroidx/activity/result/ActivityResultRegistry$2;->this$0:Landroidx/activity/result/ActivityResultRegistry;
 
     iget-object v1, v1, Landroidx/activity/result/ActivityResultRegistry;->mLaunchedKeys:Ljava/util/ArrayList;
@@ -81,7 +81,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 174
+    .line 175
     :try_start_0
     iget-object v1, p0, Landroidx/activity/result/ActivityResultRegistry$2;->this$0:Landroidx/activity/result/ActivityResultRegistry;
 
@@ -100,7 +100,7 @@
     :catch_0
     move-exception p1
 
-    .line 176
+    .line 177
     iget-object p2, p0, Landroidx/activity/result/ActivityResultRegistry$2;->this$0:Landroidx/activity/result/ActivityResultRegistry;
 
     iget-object p2, p2, Landroidx/activity/result/ActivityResultRegistry;->mLaunchedKeys:Ljava/util/ArrayList;
@@ -109,10 +109,10 @@
 
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 177
+    .line 178
     throw p1
 
-    .line 167
+    .line 168
     :cond_0
     new-instance p2, Ljava/lang/IllegalStateException;
 
@@ -150,7 +150,7 @@
 .method public unregister()V
     .locals 2
 
-    .line 183
+    .line 184
     iget-object v0, p0, Landroidx/activity/result/ActivityResultRegistry$2;->this$0:Landroidx/activity/result/ActivityResultRegistry;
 
     iget-object v1, p0, Landroidx/activity/result/ActivityResultRegistry$2;->val$key:Ljava/lang/String;

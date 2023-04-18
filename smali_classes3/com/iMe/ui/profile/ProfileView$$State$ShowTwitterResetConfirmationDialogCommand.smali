@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/profile/ProfileView$$State;Lcom/iMe/model/dialog/DialogModel;)V
     .locals 1
 
-    .line 430
+    .line 448
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showTwitterResetConfirmationDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 432
+    .line 450
     iput-object p2, p0, Lcom/iMe/ui/profile/ProfileView$$State$ShowTwitterResetConfirmationDialogCommand;->dialogModel:Lcom/iMe/model/dialog/DialogModel;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/profile/ProfileView;)V
     .locals 1
 
-    .line 437
+    .line 455
     iget-object v0, p0, Lcom/iMe/ui/profile/ProfileView$$State$ShowTwitterResetConfirmationDialogCommand;->dialogModel:Lcom/iMe/model/dialog/DialogModel;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/profile/ProfileView;->showTwitterResetConfirmationDialog(Lcom/iMe/model/dialog/DialogModel;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 426
+    .line 444
     check-cast p1, Lcom/iMe/ui/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/profile/ProfileView$$State$ShowTwitterResetConfirmationDialogCommand;->apply(Lcom/iMe/ui/profile/ProfileView;)V

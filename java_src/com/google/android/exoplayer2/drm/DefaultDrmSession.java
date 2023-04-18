@@ -7,7 +7,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0482C;
+import com.google.android.exoplayer2.C0470C;
 import com.google.android.exoplayer2.analytics.PlayerId;
 import com.google.android.exoplayer2.decoder.CryptoConfig;
 import com.google.android.exoplayer2.drm.DrmInitData;
@@ -186,7 +186,7 @@ public class DefaultDrmSession implements DrmSession {
     @Override // com.google.android.exoplayer2.drm.DrmSession
     public void acquire(DrmSessionEventListener.EventDispatcher eventDispatcher) {
         if (this.referenceCount < 0) {
-            Log.m810e(TAG, "Session reference count less than zero: " + this.referenceCount);
+            Log.m796e(TAG, "Session reference count less than zero: " + this.referenceCount);
             this.referenceCount = 0;
         }
         if (eventDispatcher != null) {
@@ -213,7 +213,7 @@ public class DefaultDrmSession implements DrmSession {
     public void release(DrmSessionEventListener.EventDispatcher eventDispatcher) {
         int i = this.referenceCount;
         if (i <= 0) {
-            Log.m810e(TAG, "release() called on a session that's already fully released.");
+            Log.m796e(TAG, "release() called on a session that's already fully released.");
             return;
         }
         int i2 = i - 1;
@@ -320,7 +320,7 @@ public class DefaultDrmSession implements DrmSession {
                 dispatchEvent(DefaultDrmSession$$ExternalSyntheticLambda4.INSTANCE);
                 return;
             }
-            Log.m812d(TAG, "Offline license has expired or will expire soon. Remaining seconds: " + licenseDurationRemainingSec);
+            Log.m798d(TAG, "Offline license has expired or will expire soon. Remaining seconds: " + licenseDurationRemainingSec);
             postKeyRequest(bArr, 2, z);
         }
     }
@@ -336,7 +336,7 @@ public class DefaultDrmSession implements DrmSession {
     }
 
     private long getLicenseDurationRemainingSec() {
-        if (C0482C.WIDEVINE_UUID.equals(this.uuid)) {
+        if (C0470C.WIDEVINE_UUID.equals(this.uuid)) {
             Pair pair = (Pair) Assertions.checkNotNull(WidevineUtil.getLicenseDurationRemainingSec(this));
             return Math.min(((Long) pair.first).longValue(), ((Long) pair.second).longValue());
         }
@@ -397,7 +397,7 @@ public class DefaultDrmSession implements DrmSession {
 
     private void onError(final Exception exc, int i) {
         this.lastException = new DrmSession.DrmSessionException(exc, DrmUtil.getErrorCodeForMediaDrmException(exc, i));
-        Log.m809e(TAG, "DRM session error", exc);
+        Log.m795e(TAG, "DRM session error", exc);
         dispatchEvent(new Consumer() { // from class: com.google.android.exoplayer2.drm.DefaultDrmSession$$ExternalSyntheticLambda1
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
@@ -478,7 +478,7 @@ public class DefaultDrmSession implements DrmSession {
                     return;
                 }
             } catch (Exception e2) {
-                Log.m805w(DefaultDrmSession.TAG, "Key/provisioning request produced an unexpected exception. Not retrying.", e2);
+                Log.m791w(DefaultDrmSession.TAG, "Key/provisioning request produced an unexpected exception. Not retrying.", e2);
                 bArr = e2;
             }
             DefaultDrmSession.this.loadErrorHandlingPolicy.onLoadTaskConcluded(requestTask.taskId);
@@ -506,7 +506,7 @@ public class DefaultDrmSession implements DrmSession {
                     unexpectedDrmSessionException = new UnexpectedDrmSessionException(mediaDrmCallbackException.getCause());
                 }
                 long retryDelayMsFor = DefaultDrmSession.this.loadErrorHandlingPolicy.getRetryDelayMsFor(new LoadErrorHandlingPolicy.LoadErrorInfo(loadEventInfo, mediaLoadData, unexpectedDrmSessionException, requestTask.errorCount));
-                if (retryDelayMsFor == C0482C.TIME_UNSET) {
+                if (retryDelayMsFor == C0470C.TIME_UNSET) {
                     return false;
                 }
                 synchronized (this) {

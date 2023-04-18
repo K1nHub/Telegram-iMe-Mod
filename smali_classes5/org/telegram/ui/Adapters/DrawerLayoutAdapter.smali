@@ -95,54 +95,54 @@
 .method public constructor <init>(Landroid/content/Context;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;)V
     .locals 2
 
-    .line 117
+    .line 119
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
-
-    .line 64
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
-
-    .line 65
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     .line 66
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
+    iput-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
+
+    .line 67
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     .line 68
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    iput-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
+
+    .line 70
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
     iput-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
-    .line 111
+    .line 113
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
-    .line 118
+    .line 120
     iput-object p1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->mContext:Landroid/content/Context;
 
-    .line 119
+    .line 121
     iput-object p3, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->mDrawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
 
-    .line 120
+    .line 122
     iput-object p2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->itemAnimator:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
 
-    .line 121
+    .line 123
     invoke-static {}, Lorg/telegram/messenger/UserConfig;->getActivatedAccountsCount()I
 
     move-result p2
@@ -173,13 +173,13 @@
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
-    .line 122
+    .line 124
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->createCommonDialogResources(Landroid/content/Context;)V
 
-    .line 123
+    .line 125
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->resetItems()V
 
-    .line 125
+    .line 127
     :try_start_0
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -199,7 +199,7 @@
 
     goto :goto_1
 
-    .line 127
+    .line 129
     :catchall_0
     iput-boolean p3, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->hasGps:Z
 
@@ -210,7 +210,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;)Landroid/view/View$OnClickListener;
     .locals 0
 
-    .line 45
+    .line 47
     iget-object p0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->onPremiumDrawableClick:Landroid/view/View$OnClickListener;
 
     return-object p0
@@ -219,7 +219,7 @@
 .method private getAccountRowsCount()I
     .locals 3
 
-    .line 132
+    .line 134
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -228,7 +228,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 133
+    .line 135
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -248,7 +248,7 @@
 .method private static synthetic lambda$resetItems$0(Ljava/lang/Integer;Ljava/lang/Integer;)I
     .locals 2
 
-    .line 384
+    .line 386
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
@@ -261,7 +261,7 @@
 
     int-to-long v0, p0
 
-    .line 385
+    .line 387
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
@@ -300,7 +300,7 @@
 
     move-object/from16 v0, p0
 
-    .line 377
+    .line 379
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
@@ -312,7 +312,7 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 379
+    .line 381
     invoke-static {v2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v3
@@ -323,7 +323,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 380
+    .line 382
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -337,7 +337,7 @@
 
     goto :goto_0
 
-    .line 383
+    .line 385
     :cond_1
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
@@ -345,27 +345,27 @@
 
     invoke-static {v2, v3}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 394
+    .line 396
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 396
+    .line 398
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 397
+    .line 399
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 398
+    .line 400
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 400
+    .line 402
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -380,7 +380,7 @@
 
     return-void
 
-    .line 403
+    .line 405
     :cond_2
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getEventType()I
 
@@ -390,46 +390,46 @@
 
     if-nez v2, :cond_3
 
-    .line 424
+    .line 426
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_groups_ny:I
 
-    .line 427
+    .line 429
     sget v4, Lorg/telegram/messenger/R$drawable;->msg_contacts_ny:I
 
-    .line 428
+    .line 430
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_calls_ny:I
 
-    .line 429
+    .line 431
     sget v6, Lorg/telegram/messenger/R$drawable;->msg_saved_ny:I
 
-    .line 430
+    .line 432
     sget v7, Lorg/telegram/messenger/R$drawable;->msg_settings_ny:I
 
-    .line 433
+    .line 435
     sget v8, Lorg/telegram/messenger/R$drawable;->msg_nearby_ny:I
 
-    .line 435
+    .line 437
     sget v9, Lorg/telegram/messenger/R$drawable;->fork_drawer_wallet_ny:I
 
-    .line 437
+    .line 439
     sget v10, Lorg/telegram/messenger/R$drawable;->fork_drawer_catalog_ny:I
 
-    .line 438
+    .line 440
     sget v11, Lorg/telegram/messenger/R$drawable;->fork_drawer_management_ny:I
 
-    .line 439
+    .line 441
     sget v12, Lorg/telegram/messenger/R$drawable;->fork_drawer_music_ny:I
 
-    .line 440
+    .line 442
     sget v13, Lorg/telegram/messenger/R$drawable;->fork_drawer_create_expandable_ny:I
 
-    .line 441
+    .line 443
     sget v14, Lorg/telegram/messenger/R$drawable;->msg_secret_ny:I
 
-    .line 442
+    .line 444
     sget v15, Lorg/telegram/messenger/R$drawable;->fork_drawer_channel_ny:I
 
-    .line 443
+    .line 445
     sget v16, Lorg/telegram/messenger/R$drawable;->fork_drawer_albums_ny:I
 
     :goto_1
@@ -442,43 +442,43 @@
 
     if-ne v2, v4, :cond_4
 
-    .line 446
+    .line 448
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_groups_14:I
 
-    .line 449
+    .line 451
     sget v4, Lorg/telegram/messenger/R$drawable;->msg_contacts_14:I
 
-    .line 450
+    .line 452
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_calls_14:I
 
-    .line 451
+    .line 453
     sget v6, Lorg/telegram/messenger/R$drawable;->msg_saved_14:I
 
-    .line 452
+    .line 454
     sget v7, Lorg/telegram/messenger/R$drawable;->msg_settings_14:I
 
-    .line 455
+    .line 457
     sget v8, Lorg/telegram/messenger/R$drawable;->msg_secret_14:I
 
-    .line 457
+    .line 459
     sget v9, Lorg/telegram/messenger/R$drawable;->fork_drawer_wallet_14:I
 
-    .line 459
+    .line 461
     sget v10, Lorg/telegram/messenger/R$drawable;->fork_drawer_catalog_14:I
 
-    .line 460
+    .line 462
     sget v11, Lorg/telegram/messenger/R$drawable;->fork_drawer_management_14:I
 
-    .line 461
+    .line 463
     sget v12, Lorg/telegram/messenger/R$drawable;->fork_drawer_music_14:I
 
-    .line 462
+    .line 464
     sget v13, Lorg/telegram/messenger/R$drawable;->fork_drawer_create_expandable_14:I
 
-    .line 464
+    .line 466
     sget v15, Lorg/telegram/messenger/R$drawable;->fork_drawer_channel_14:I
 
-    .line 465
+    .line 467
     sget v16, Lorg/telegram/messenger/R$drawable;->fork_drawer_albums_14:I
 
     :goto_2
@@ -489,93 +489,93 @@
     :cond_4
     if-ne v2, v3, :cond_5
 
-    .line 468
+    .line 470
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_groups_hw:I
 
-    .line 471
+    .line 473
     sget v4, Lorg/telegram/messenger/R$drawable;->msg_contacts_hw:I
 
-    .line 472
+    .line 474
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_calls_hw:I
 
-    .line 473
+    .line 475
     sget v6, Lorg/telegram/messenger/R$drawable;->msg_saved_hw:I
 
-    .line 474
+    .line 476
     sget v7, Lorg/telegram/messenger/R$drawable;->msg_settings_hw:I
 
-    .line 477
+    .line 479
     sget v8, Lorg/telegram/messenger/R$drawable;->msg_secret_hw:I
 
-    .line 479
+    .line 481
     sget v9, Lorg/telegram/messenger/R$drawable;->fork_drawer_wallet_hw:I
 
-    .line 481
+    .line 483
     sget v10, Lorg/telegram/messenger/R$drawable;->fork_drawer_catalog_hw:I
 
-    .line 482
+    .line 484
     sget v11, Lorg/telegram/messenger/R$drawable;->fork_drawer_management_hw:I
 
-    .line 483
+    .line 485
     sget v12, Lorg/telegram/messenger/R$drawable;->fork_drawer_music_hw:I
 
-    .line 484
+    .line 486
     sget v13, Lorg/telegram/messenger/R$drawable;->fork_drawer_create_expandable_hw:I
 
-    .line 486
+    .line 488
     sget v15, Lorg/telegram/messenger/R$drawable;->fork_drawer_channel_hw:I
 
-    .line 487
+    .line 489
     sget v16, Lorg/telegram/messenger/R$drawable;->fork_drawer_albums_hw:I
 
     goto :goto_2
 
-    .line 490
+    .line 492
     :cond_5
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_groups:I
 
-    .line 493
+    .line 495
     sget v4, Lorg/telegram/messenger/R$drawable;->msg_contacts:I
 
-    .line 494
+    .line 496
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_calls:I
 
-    .line 496
+    .line 498
     sget v7, Lorg/telegram/messenger/R$drawable;->msg_settings_old:I
 
-    .line 499
+    .line 501
     sget v8, Lorg/telegram/messenger/R$drawable;->msg_nearby:I
 
-    .line 501
+    .line 503
     sget v9, Lorg/telegram/messenger/R$drawable;->fork_drawer_wallet:I
 
-    .line 503
+    .line 505
     sget v10, Lorg/telegram/messenger/R$drawable;->fork_drawer_catalog:I
 
-    .line 504
+    .line 506
     sget v11, Lorg/telegram/messenger/R$drawable;->fork_drawer_management:I
 
-    .line 505
+    .line 507
     sget v12, Lorg/telegram/messenger/R$drawable;->fork_drawer_music:I
 
-    .line 506
+    .line 508
     sget v13, Lorg/telegram/messenger/R$drawable;->fork_drawer_create_expandable:I
 
-    .line 507
+    .line 509
     sget v14, Lorg/telegram/messenger/R$drawable;->msg_secret:I
 
-    .line 508
+    .line 510
     sget v15, Lorg/telegram/messenger/R$drawable;->msg_channel:I
 
-    .line 509
+    .line 511
     sget v6, Lorg/telegram/messenger/R$drawable;->fork_drawer_cloud:I
 
-    .line 510
+    .line 512
     sget v16, Lorg/telegram/messenger/R$drawable;->fork_drawer_albums:I
 
     goto :goto_1
 
-    .line 513
+    .line 515
     :goto_3
     sget v16, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -585,7 +585,7 @@
 
     if-eqz v16, :cond_8
 
-    .line 514
+    .line 516
     invoke-virtual/range {v16 .. v16}, Lorg/telegram/messenger/UserConfig;->isPremium()Z
 
     move-result v18
@@ -616,7 +616,7 @@
 
     if-eqz v18, :cond_8
 
-    .line 515
+    .line 517
     :cond_6
     invoke-virtual/range {v16 .. v16}, Lorg/telegram/messenger/UserConfig;->getEmojiStatus()Ljava/lang/Long;
 
@@ -624,7 +624,7 @@
 
     if-eqz v16, :cond_7
 
-    .line 516
+    .line 518
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v3, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -670,7 +670,7 @@
 
     const/16 v8, 0xf
 
-    .line 518
+    .line 520
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v3, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -689,7 +689,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 520
+    .line 522
     :goto_4
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
@@ -708,7 +708,7 @@
 
     move/from16 v21, v8
 
-    .line 526
+    .line 530
     :goto_5
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
@@ -716,7 +716,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 527
+    .line 531
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
     sget-object v3, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->WALLET:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
@@ -727,7 +727,7 @@
 
     if-eqz v1, :cond_9
 
-    .line 528
+    .line 532
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -738,7 +738,7 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 530
+    .line 534
     :cond_9
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
@@ -750,7 +750,7 @@
 
     if-eqz v1, :cond_a
 
-    .line 531
+    .line 535
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -761,7 +761,7 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 533
+    .line 537
     :cond_a
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
@@ -773,7 +773,7 @@
 
     if-eqz v1, :cond_b
 
-    .line 534
+    .line 538
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -784,7 +784,7 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 536
+    .line 540
     :cond_b
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
@@ -796,7 +796,7 @@
 
     if-eqz v1, :cond_c
 
-    .line 537
+    .line 541
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -807,7 +807,7 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 539
+    .line 543
     :cond_c
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
@@ -817,14 +817,14 @@
 
     if-nez v1, :cond_d
 
-    .line 540
+    .line 544
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     const/4 v3, 0x0
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 542
+    .line 546
     :cond_d
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
@@ -844,7 +844,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 543
+    .line 547
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -863,7 +863,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 544
+    .line 548
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -882,7 +882,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 545
+    .line 549
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -899,14 +899,14 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 546
+    .line 550
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 549
+    .line 553
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
     sget-object v2, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CONTACTS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
@@ -917,7 +917,7 @@
 
     if-eqz v1, :cond_e
 
-    .line 550
+    .line 554
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -936,7 +936,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 552
+    .line 556
     :cond_e
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
@@ -948,7 +948,7 @@
 
     if-eqz v1, :cond_f
 
-    .line 553
+    .line 557
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -969,7 +969,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 555
+    .line 559
     :cond_f
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
@@ -981,12 +981,12 @@
 
     if-eqz v1, :cond_10
 
-    .line 556
+    .line 560
     iget-boolean v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->hasGps:Z
 
     if-eqz v1, :cond_10
 
-    .line 557
+    .line 561
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -1007,7 +1007,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 560
+    .line 564
     :cond_10
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
@@ -1019,7 +1019,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 561
+    .line 565
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -1040,7 +1040,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 563
+    .line 567
     :cond_11
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
@@ -1052,7 +1052,7 @@
 
     if-eqz v1, :cond_12
 
-    .line 564
+    .line 568
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
@@ -1071,7 +1071,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 567
+    .line 571
     :cond_12
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
@@ -1101,7 +1101,7 @@
 .method public getFirstAccountPosition()I
     .locals 1
 
-    .line 616
+    .line 623
     iget-boolean v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
     if-nez v0, :cond_0
@@ -1121,12 +1121,12 @@
 
     add-int/lit8 p1, p1, -0x2
 
-    .line 577
+    .line 584
     iget-boolean v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
     if-eqz v0, :cond_0
 
-    .line 578
+    .line 585
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->getAccountRowsCount()I
 
     move-result v0
@@ -1140,7 +1140,7 @@
 
     return v0
 
-    .line 584
+    .line 591
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
@@ -1150,7 +1150,7 @@
 
     if-lt p1, v1, :cond_7
 
-    .line 585
+    .line 592
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1159,7 +1159,7 @@
 
     sub-int/2addr p1, v1
 
-    .line 586
+    .line 593
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1168,7 +1168,7 @@
 
     if-ge p1, v1, :cond_3
 
-    .line 587
+    .line 594
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1181,13 +1181,13 @@
 
     return v0
 
-    .line 591
+    .line 598
     :cond_2
     iget p1, p1, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->id:I
 
     return p1
 
-    .line 593
+    .line 600
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
@@ -1199,7 +1199,7 @@
 
     if-nez p1, :cond_4
 
-    .line 595
+    .line 602
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_GROUP_CREATE:I
 
     return p1
@@ -1207,12 +1207,12 @@
     :cond_4
     add-int/2addr p1, v0
 
-    .line 598
+    .line 605
     iget-boolean v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->isCreateGroupExpanded:Z
 
     if-eqz v1, :cond_6
 
-    .line 599
+    .line 606
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1221,7 +1221,7 @@
 
     if-ge p1, v1, :cond_5
 
-    .line 600
+    .line 607
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1234,7 +1234,7 @@
 
     return p1
 
-    .line 602
+    .line 609
     :cond_5
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
@@ -1247,7 +1247,7 @@
     :cond_6
     add-int/lit8 p1, p1, 0x1
 
-    .line 605
+    .line 612
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1259,7 +1259,7 @@
     :cond_7
     if-ltz p1, :cond_9
 
-    .line 608
+    .line 615
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1270,7 +1270,7 @@
 
     goto :goto_0
 
-    .line 611
+    .line 618
     :cond_8
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
@@ -1282,7 +1282,7 @@
 
     if-eqz p1, :cond_9
 
-    .line 612
+    .line 619
     iget v0, p1, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->id:I
 
     :cond_9
@@ -1293,7 +1293,7 @@
 .method public getItemCount()I
     .locals 2
 
-    .line 141
+    .line 143
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1302,19 +1302,19 @@
 
     add-int/lit8 v0, v0, 0x2
 
-    .line 142
+    .line 144
     iget-boolean v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
     if-eqz v1, :cond_0
 
-    .line 143
+    .line 145
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->getAccountRowsCount()I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 146
+    .line 148
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
@@ -1324,12 +1324,12 @@
 
     add-int/2addr v0, v1
 
-    .line 147
+    .line 149
     iget-boolean v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->isCreateGroupExpanded:Z
 
     if-eqz v1, :cond_1
 
-    .line 148
+    .line 150
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1361,14 +1361,14 @@
     :cond_1
     add-int/lit8 p1, p1, -0x2
 
-    .line 311
+    .line 313
     iget-boolean v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
     const/4 v2, 0x2
 
     if-eqz v1, :cond_6
 
-    .line 312
+    .line 314
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1381,7 +1381,7 @@
 
     return p1
 
-    .line 315
+    .line 317
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
@@ -1393,7 +1393,7 @@
 
     if-ge v1, v3, :cond_4
 
-    .line 316
+    .line 318
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1404,7 +1404,7 @@
 
     return v3
 
-    .line 318
+    .line 320
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
@@ -1418,7 +1418,7 @@
 
     return v2
 
-    .line 322
+    .line 324
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
@@ -1430,7 +1430,7 @@
 
     return v2
 
-    .line 327
+    .line 329
     :cond_5
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->getAccountRowsCount()I
 
@@ -1438,7 +1438,7 @@
 
     sub-int/2addr p1, v1
 
-    .line 330
+    .line 332
     :cond_6
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
@@ -1448,7 +1448,7 @@
 
     if-lt p1, v1, :cond_c
 
-    .line 331
+    .line 333
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1457,7 +1457,7 @@
 
     sub-int/2addr p1, v1
 
-    .line 332
+    .line 334
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1466,7 +1466,7 @@
 
     if-ge p1, v1, :cond_8
 
-    .line 333
+    .line 335
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1482,7 +1482,7 @@
 
     return p1
 
-    .line 338
+    .line 340
     :cond_8
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
@@ -1501,12 +1501,12 @@
     :cond_9
     add-int/lit8 p1, p1, -0x1
 
-    .line 343
+    .line 345
     iget-boolean v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->isCreateGroupExpanded:Z
 
     if-eqz v1, :cond_b
 
-    .line 344
+    .line 346
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1519,7 +1519,7 @@
 
     return p1
 
-    .line 347
+    .line 349
     :cond_a
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
@@ -1532,7 +1532,7 @@
     :cond_b
     add-int/2addr p1, v0
 
-    .line 350
+    .line 352
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1544,7 +1544,7 @@
     :cond_c
     if-ltz p1, :cond_e
 
-    .line 353
+    .line 355
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1576,7 +1576,7 @@
 .method public getLastAccountPosition()I
     .locals 1
 
-    .line 623
+    .line 630
     iget-boolean v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
     if-nez v0, :cond_0
@@ -1585,7 +1585,7 @@
 
     return v0
 
-    .line 626
+    .line 633
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
@@ -1601,7 +1601,7 @@
 .method public isAccountsShown()Z
     .locals 1
 
-    .line 176
+    .line 178
     iget-boolean v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
     return v0
@@ -1610,7 +1610,7 @@
 .method public isCreateGroupItemPosition(I)Z
     .locals 1
 
-    .line 73
+    .line 75
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->getId(I)I
 
     move-result p1
@@ -1645,7 +1645,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 2
 
-    .line 192
+    .line 194
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -1696,10 +1696,10 @@
 .method public notifyDataSetChanged()V
     .locals 0
 
-    .line 186
+    .line 188
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->resetItems()V
 
-    .line 187
+    .line 189
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
@@ -1708,7 +1708,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 2
 
-    .line 245
+    .line 247
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -1717,26 +1717,26 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 246
+    .line 248
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/DrawerActionCell;
 
     add-int/lit8 p2, p2, -0x2
 
-    .line 248
+    .line 250
     iget-boolean v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
     if-eqz v0, :cond_0
 
-    .line 249
+    .line 251
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->getAccountRowsCount()I
 
     move-result v0
 
     sub-int/2addr p2, v0
 
-    .line 251
+    .line 253
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
@@ -1746,7 +1746,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 252
+    .line 254
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1759,7 +1759,7 @@
 
     goto/16 :goto_0
 
-    .line 253
+    .line 255
     :cond_1
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -1769,12 +1769,12 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 254
+    .line 256
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lcom/iMe/fork/ui/view/DrawerExpandableCell;
 
-    .line 255
+    .line 257
     iget-object p2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
@@ -1789,21 +1789,21 @@
 
     check-cast p2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
 
-    .line 256
+    .line 258
     iget-object v0, p2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->text:Ljava/lang/String;
 
     iget p2, p2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->icon:I
 
     invoke-virtual {p1, v0, p2}, Lcom/iMe/fork/ui/view/DrawerExpandableCell;->setTextAndIcon(Ljava/lang/String;I)V
 
-    .line 257
+    .line 259
     iget-boolean p2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->isCreateGroupExpanded:Z
 
     invoke-virtual {p1, p2}, Lcom/iMe/fork/ui/view/DrawerExpandableCell;->setExpandedState(Z)V
 
     goto/16 :goto_0
 
-    .line 258
+    .line 260
     :cond_2
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -1813,26 +1813,26 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 259
+    .line 261
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/DrawerActionCell;
 
     add-int/lit8 p2, p2, -0x2
 
-    .line 261
+    .line 263
     iget-boolean v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
     if-eqz v0, :cond_3
 
-    .line 262
+    .line 264
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->getAccountRowsCount()I
 
     move-result v0
 
     sub-int/2addr p2, v0
 
-    .line 264
+    .line 266
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
@@ -1842,7 +1842,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 265
+    .line 267
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1853,7 +1853,7 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    .line 267
+    .line 269
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1866,7 +1866,7 @@
 
     goto/16 :goto_0
 
-    .line 269
+    .line 271
     :cond_4
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -1884,13 +1884,13 @@
 
     goto/16 :goto_0
 
-    .line 296
+    .line 298
     :cond_5
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/DrawerUserCell;
 
-    .line 297
+    .line 299
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
     add-int/lit8 p2, p2, -0x2
@@ -1909,7 +1909,7 @@
 
     goto :goto_0
 
-    .line 276
+    .line 278
     :cond_6
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -1917,19 +1917,19 @@
 
     add-int/lit8 p2, p2, -0x2
 
-    .line 278
+    .line 280
     iget-boolean v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
     if-eqz v0, :cond_7
 
-    .line 279
+    .line 281
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->getAccountRowsCount()I
 
     move-result v0
 
     sub-int/2addr p2, v0
 
-    .line 282
+    .line 284
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
@@ -1939,7 +1939,7 @@
 
     if-lt p2, v0, :cond_9
 
-    .line 283
+    .line 285
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1948,7 +1948,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 284
+    .line 286
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1957,12 +1957,12 @@
 
     sub-int/2addr p2, v0
 
-    .line 285
+    .line 287
     iget-boolean v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->isCreateGroupExpanded:Z
 
     if-eqz v0, :cond_8
 
-    .line 286
+    .line 288
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1971,7 +1971,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 288
+    .line 290
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
@@ -1981,7 +1981,7 @@
 
     add-int/2addr p2, v0
 
-    .line 291
+    .line 293
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
 
@@ -1995,18 +1995,18 @@
 
     const/4 p2, 0x0
 
-    .line 292
+    .line 294
     invoke-virtual {p1, p2, p2, p2, p2}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
     goto :goto_0
 
-    .line 271
+    .line 273
     :cond_a
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/DrawerProfileCell;
 
-    .line 272
+    .line 274
     sget p2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2046,7 +2046,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 206
+    .line 208
     new-instance p1, Lcom/iMe/fork/ui/view/DrawerExpandableCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->mContext:Landroid/content/Context;
@@ -2087,7 +2087,7 @@
 
     if-eq p2, p1, :cond_2
 
-    .line 235
+    .line 237
     new-instance p1, Lorg/telegram/ui/Cells/EmptyCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->mContext:Landroid/content/Context;
@@ -2102,7 +2102,7 @@
 
     goto :goto_1
 
-    .line 231
+    .line 233
     :cond_2
     new-instance p1, Lorg/telegram/ui/Cells/DrawerAddCell;
 
@@ -2112,7 +2112,7 @@
 
     goto :goto_1
 
-    .line 228
+    .line 230
     :cond_3
     new-instance p1, Lorg/telegram/ui/Cells/DrawerUserCell;
 
@@ -2122,7 +2122,7 @@
 
     goto :goto_1
 
-    .line 225
+    .line 227
     :cond_4
     new-instance p1, Lorg/telegram/ui/Cells/DrawerActionCell;
 
@@ -2132,7 +2132,7 @@
 
     goto :goto_1
 
-    .line 222
+    .line 224
     :cond_5
     new-instance p1, Lorg/telegram/ui/Cells/DividerCell;
 
@@ -2142,7 +2142,7 @@
 
     goto :goto_1
 
-    .line 212
+    .line 214
     :cond_6
     new-instance p1, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$1;
 
@@ -2158,7 +2158,7 @@
 
     goto :goto_1
 
-    .line 208
+    .line 210
     :cond_7
     :goto_0
     new-instance p1, Lorg/telegram/ui/Cells/DrawerActionCell;
@@ -2167,7 +2167,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/DrawerActionCell;-><init>(Landroid/content/Context;)V
 
-    .line 238
+    .line 240
     :goto_1
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -2179,7 +2179,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 239
+    .line 241
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -2190,7 +2190,7 @@
 .method public setAccountsShown(ZZ)V
     .locals 2
 
-    .line 155
+    .line 157
     iget-boolean v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
     if-eq v0, p1, :cond_4
@@ -2205,19 +2205,19 @@
 
     goto :goto_0
 
-    .line 158
+    .line 160
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
-    .line 159
+    .line 161
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->profileCell:Lorg/telegram/ui/Cells/DrawerProfileCell;
 
     if-eqz v0, :cond_1
 
-    .line 160
+    .line 162
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Cells/DrawerProfileCell;->setAccountsShown(ZZ)V
 
-    .line 162
+    .line 164
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
@@ -2239,14 +2239,14 @@
 
     if-eqz p2, :cond_3
 
-    .line 165
+    .line 167
     iget-boolean p1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
     const/4 p2, 0x2
 
     if-eqz p1, :cond_2
 
-    .line 166
+    .line 168
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->getAccountRowsCount()I
 
     move-result p1
@@ -2255,7 +2255,7 @@
 
     goto :goto_0
 
-    .line 168
+    .line 170
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->getAccountRowsCount()I
 
@@ -2265,7 +2265,7 @@
 
     goto :goto_0
 
-    .line 171
+    .line 173
     :cond_3
     invoke-virtual {p0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->notifyDataSetChanged()V
 
@@ -2277,7 +2277,7 @@
 .method public setOnPremiumDrawableClick(Landroid/view/View$OnClickListener;)V
     .locals 0
 
-    .line 181
+    .line 183
     iput-object p1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->onPremiumDrawableClick:Landroid/view/View$OnClickListener;
 
     return-void
@@ -2294,7 +2294,7 @@
 
     if-ltz v1, :cond_1
 
-    .line 362
+    .line 364
     iget-object v2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -2313,7 +2313,7 @@
 
     goto :goto_0
 
-    .line 365
+    .line 367
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
@@ -2331,7 +2331,7 @@
 
     move-result-object v2
 
-    .line 366
+    .line 368
     iget-object v3, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2348,31 +2348,31 @@
 
     move-result-object v3
 
-    .line 367
+    .line 369
     iget v4, v2, Lorg/telegram/messenger/UserConfig;->loginTime:I
 
-    .line 368
+    .line 370
     iget v5, v3, Lorg/telegram/messenger/UserConfig;->loginTime:I
 
     iput v5, v2, Lorg/telegram/messenger/UserConfig;->loginTime:I
 
-    .line 369
+    .line 371
     iput v4, v3, Lorg/telegram/messenger/UserConfig;->loginTime:I
 
     const/4 v4, 0x0
 
-    .line 370
+    .line 372
     invoke-virtual {v2, v4}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 371
+    .line 373
     invoke-virtual {v3, v4}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 372
+    .line 374
     iget-object v2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountNumbers:Ljava/util/ArrayList;
 
     invoke-static {v2, v0, v1}, Ljava/util/Collections;->swap(Ljava/util/List;II)V
 
-    .line 373
+    .line 375
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 
     :cond_1
@@ -2383,7 +2383,7 @@
 .method public toggleCreateButtonExpanded()V
     .locals 3
 
-    .line 78
+    .line 80
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->itemAnimator:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->isRunning()Z
@@ -2397,19 +2397,19 @@
     :cond_0
     const/4 v0, 0x2
 
-    .line 82
+    .line 84
     iget-boolean v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
 
     if-eqz v1, :cond_1
 
-    .line 83
+    .line 85
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->getAccountRowsCount()I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 85
+    .line 87
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->prefixItems:Ljava/util/ArrayList;
 
@@ -2419,7 +2419,7 @@
 
     add-int/2addr v0, v1
 
-    .line 86
+    .line 88
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->rectIconItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -2432,7 +2432,7 @@
 
     add-int/2addr v0, v1
 
-    .line 88
+    .line 90
     iget-boolean v2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->isCreateGroupExpanded:Z
 
     xor-int/2addr v2, v1
@@ -2441,12 +2441,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 90
+    .line 92
     iget-object v2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createButton:Lcom/iMe/fork/ui/view/DrawerExpandableCell;
 
     invoke-virtual {v2, v1}, Lcom/iMe/fork/ui/view/DrawerExpandableCell;->setExpandedState(Z)V
 
-    .line 91
+    .line 93
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -2457,7 +2457,7 @@
 
     goto :goto_0
 
-    .line 93
+    .line 95
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createButton:Lcom/iMe/fork/ui/view/DrawerExpandableCell;
 
@@ -2465,7 +2465,7 @@
 
     invoke-virtual {v1, v2}, Lcom/iMe/fork/ui/view/DrawerExpandableCell;->setExpandedState(Z)V
 
-    .line 94
+    .line 96
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I

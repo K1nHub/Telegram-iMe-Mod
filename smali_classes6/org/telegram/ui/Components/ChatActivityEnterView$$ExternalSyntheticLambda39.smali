@@ -2,42 +2,64 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+.field public final synthetic f$1:Landroid/app/Dialog;
+
+.field public final synthetic f$2:Lorg/telegram/ui/Components/SimpleAvatarView;
+
+.field public final synthetic f$3:F
+
+.field public final synthetic f$4:F
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;->INSTANCE:Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/app/Dialog;Lorg/telegram/ui/Components/SimpleAvatarView;FF)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;->f$1:Landroid/app/Dialog;
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;->f$2:Lorg/telegram/ui/Components/SimpleAvatarView;
+
+    iput p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;->f$3:F
+
+    iput p5, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;->f$4:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 0
+.method public final onAnimationEnd(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+    .locals 9
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$9kwaes-u_fzDlFY_WGNxsVSNGOI(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    move-result p1
+    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;->f$1:Landroid/app/Dialog;
 
-    return p1
+    iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;->f$2:Lorg/telegram/ui/Components/SimpleAvatarView;
+
+    iget v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;->f$3:F
+
+    iget v4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda39;->f$4:F
+
+    move-object v5, p1
+
+    move v6, p2
+
+    move v7, p3
+
+    move v8, p4
+
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$Tp0xQgWlPXvKrLWyqiEs70r7waE(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/app/Dialog;Lorg/telegram/ui/Components/SimpleAvatarView;FFLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+
+    return-void
 .end method

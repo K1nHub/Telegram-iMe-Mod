@@ -31,7 +31,7 @@ public final class zzj implements zzk {
         }
         if (zzby.zzb(zza)) {
             logger = zzl.zzd;
-            logger.m779w("isUserRecoverableError status: ".concat(String.valueOf(zza)), new Object[0]);
+            logger.m765w("isUserRecoverableError status: ".concat(String.valueOf(zza)), new Object[0]);
             throw new UserRecoverableAuthException(string, intent);
         }
         throw new GoogleAuthException(string);

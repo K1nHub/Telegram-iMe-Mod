@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;F)V
     .locals 0
 
-    .line 875
+    .line 880
     iput-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$5;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     iput p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$5;->val$activeT:F
@@ -39,21 +39,21 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
 
-    .line 878
+    .line 883
     iget-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$5;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     iget-object p1, p1, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->rightTextView:Landroid/widget/TextView;
 
     const-string v0, "windowBackgroundWhiteGrayText"
 
-    .line 879
+    .line 884
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
     const-string v1, "windowBackgroundWhiteBlueText"
 
-    .line 880
+    .line 885
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
@@ -62,12 +62,12 @@
 
     iget v3, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$5;->val$activeT:F
 
-    .line 881
+    .line 886
     invoke-static {v2, v3}, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->access$602(Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;F)F
 
     move-result v2
 
-    .line 878
+    .line 883
     invoke-static {v0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v0

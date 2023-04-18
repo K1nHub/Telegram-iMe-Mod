@@ -2,7 +2,7 @@ package kotlinx.coroutines.internal;
 /* compiled from: Symbol.kt */
 /* loaded from: classes4.dex */
 public final class Symbol {
-    private final String symbol;
+    public final String symbol;
 
     public Symbol(String str) {
         this.symbol = str;

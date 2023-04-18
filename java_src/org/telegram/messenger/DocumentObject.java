@@ -5,7 +5,7 @@ import android.graphics.Path;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.SvgHelper;
-import org.telegram.p048ui.ActionBar.Theme;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$DocumentAttribute;
 import org.telegram.tgnet.TLRPC$PhotoSize;
@@ -35,7 +35,7 @@ public class DocumentObject {
             if (tLRPC$WallPaper instanceof TLRPC$TL_wallPaper) {
                 TLRPC$Document tLRPC$Document = ((TLRPC$TL_wallPaper) tLRPC$WallPaper).document;
                 this.wallpaper = tLRPC$Document;
-                this.f1510id = tLRPC$Document.f1510id;
+                this.f1435id = tLRPC$Document.f1435id;
                 this.access_hash = tLRPC$Document.access_hash;
                 this.file_reference = tLRPC$Document.file_reference;
                 this.user_id = tLRPC$Document.user_id;
@@ -47,11 +47,11 @@ public class DocumentObject {
                 this.version = tLRPC$Document.version;
                 this.dc_id = tLRPC$Document.dc_id;
                 this.key = tLRPC$Document.key;
-                this.f1511iv = tLRPC$Document.f1511iv;
+                this.f1436iv = tLRPC$Document.f1436iv;
                 this.attributes = tLRPC$Document.attributes;
                 return;
             }
-            this.f1510id = -2147483648L;
+            this.f1435id = -2147483648L;
             this.dc_id = Integer.MIN_VALUE;
         }
     }
@@ -66,8 +66,8 @@ public class DocumentObject {
             if (tLRPC$PhotoSize instanceof TLRPC$TL_photoPathSize) {
                 tLRPC$TL_photoPathSize = (TLRPC$TL_photoPathSize) tLRPC$PhotoSize;
             } else {
-                i = tLRPC$PhotoSize.f1533w;
-                i2 = tLRPC$PhotoSize.f1532h;
+                i = tLRPC$PhotoSize.f1458w;
+                i2 = tLRPC$PhotoSize.f1457h;
             }
             if (tLRPC$TL_photoPathSize != null && i != 0 && i2 != 0) {
                 SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(tLRPC$TL_photoPathSize.svgPath, i, i2);
@@ -147,8 +147,8 @@ public class DocumentObject {
                     }
                     i4++;
                 }
-                int i5 = tLRPC$DocumentAttribute.f1513w;
-                int i6 = tLRPC$DocumentAttribute.f1512h;
+                int i5 = tLRPC$DocumentAttribute.f1438w;
+                int i6 = tLRPC$DocumentAttribute.f1437h;
                 i = i5;
                 i2 = i6;
                 if (i != 0 && i2 != 0 && (svgDrawable = SvgHelper.getDrawableByPath(((TLRPC$TL_photoPathSize) tLRPC$PhotoSize).svgPath, (int) (i * f2), (int) (i2 * f2))) != null) {

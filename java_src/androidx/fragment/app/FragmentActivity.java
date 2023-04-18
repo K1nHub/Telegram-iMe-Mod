@@ -7,7 +7,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -18,7 +17,16 @@ import androidx.activity.contextaware.OnContextAvailableListener;
 import androidx.activity.result.ActivityResultRegistry;
 import androidx.activity.result.ActivityResultRegistryOwner;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.MultiWindowModeChangedInfo;
+import androidx.core.app.OnMultiWindowModeChangedProvider;
+import androidx.core.app.OnPictureInPictureModeChangedProvider;
+import androidx.core.app.PictureInPictureModeChangedInfo;
 import androidx.core.app.SharedElementCallback;
+import androidx.core.content.OnConfigurationChangedProvider;
+import androidx.core.content.OnTrimMemoryProvider;
+import androidx.core.util.Consumer;
+import androidx.core.view.MenuHost;
+import androidx.core.view.MenuProvider;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleRegistry;
 import androidx.lifecycle.ViewModelStore;
@@ -62,7 +70,7 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
     }
 
     private void init() {
-        getSavedStateRegistry().registerSavedStateProvider(LIFECYCLE_TAG, new SavedStateRegistry.SavedStateProvider() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda1
+        getSavedStateRegistry().registerSavedStateProvider(LIFECYCLE_TAG, new SavedStateRegistry.SavedStateProvider() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda3
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
                 Bundle lambda$init$0;
@@ -70,10 +78,22 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
                 return lambda$init$0;
             }
         });
+        addOnConfigurationChangedListener(new Consumer() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda2
+            @Override // androidx.core.util.Consumer
+            public final void accept(Object obj) {
+                FragmentActivity.this.lambda$init$1((Configuration) obj);
+            }
+        });
+        addOnNewIntentListener(new Consumer() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda1
+            @Override // androidx.core.util.Consumer
+            public final void accept(Object obj) {
+                FragmentActivity.this.lambda$init$2((Intent) obj);
+            }
+        });
         addOnContextAvailableListener(new OnContextAvailableListener() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda0
             @Override // androidx.activity.contextaware.OnContextAvailableListener
             public final void onContextAvailable(Context context) {
-                FragmentActivity.this.lambda$init$1(context);
+                FragmentActivity.this.lambda$init$3(context);
             }
         });
     }
@@ -86,7 +106,17 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$1(Context context) {
+    public /* synthetic */ void lambda$init$1(Configuration configuration) {
+        this.mFragments.noteStateNotSaved();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$init$2(Intent intent) {
+        this.mFragments.noteStateNotSaved();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$init$3(Context context) {
         this.mFragments.attachHost(null);
     }
 
@@ -117,37 +147,12 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
         ActivityCompat.startPostponedEnterTransition(this);
     }
 
-    @Override // android.app.Activity
-    public void onMultiWindowModeChanged(boolean z) {
-        this.mFragments.dispatchMultiWindowModeChanged(z);
-    }
-
-    @Override // android.app.Activity
-    public void onPictureInPictureModeChanged(boolean z) {
-        this.mFragments.dispatchPictureInPictureModeChanged(z);
-    }
-
-    @Override // android.app.Activity, android.content.ComponentCallbacks
-    public void onConfigurationChanged(Configuration configuration) {
-        this.mFragments.noteStateNotSaved();
-        super.onConfigurationChanged(configuration);
-        this.mFragments.dispatchConfigurationChanged(configuration);
-    }
-
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.mFragmentLifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_CREATE);
         this.mFragments.dispatchCreate();
-    }
-
-    @Override // android.app.Activity, android.view.Window.Callback
-    public boolean onCreatePanelMenu(int i, Menu menu) {
-        if (i == 0) {
-            return super.onCreatePanelMenu(i, menu) | this.mFragments.dispatchCreateOptionsMenu(menu, getMenuInflater());
-        }
-        return super.onCreatePanelMenu(i, menu);
     }
 
     @Override // android.app.Activity, android.view.LayoutInflater.Factory2
@@ -174,32 +179,15 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
         this.mFragmentLifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY);
     }
 
-    @Override // android.app.Activity, android.content.ComponentCallbacks
-    public void onLowMemory() {
-        super.onLowMemory();
-        this.mFragments.dispatchLowMemory();
-    }
-
-    @Override // android.app.Activity, android.view.Window.Callback
+    @Override // androidx.activity.ComponentActivity, android.app.Activity, android.view.Window.Callback
     public boolean onMenuItemSelected(int i, MenuItem menuItem) {
         if (super.onMenuItemSelected(i, menuItem)) {
             return true;
         }
-        if (i != 0) {
-            if (i != 6) {
-                return false;
-            }
+        if (i == 6) {
             return this.mFragments.dispatchContextItemSelected(menuItem);
         }
-        return this.mFragments.dispatchOptionsItemSelected(menuItem);
-    }
-
-    @Override // android.app.Activity, android.view.Window.Callback
-    public void onPanelClosed(int i, Menu menu) {
-        if (i == 0) {
-            this.mFragments.dispatchOptionsMenuClosed(menu);
-        }
-        super.onPanelClosed(i, menu);
+        return false;
     }
 
     @Override // android.app.Activity
@@ -208,12 +196,6 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
         this.mResumed = false;
         this.mFragments.dispatchPause();
         this.mFragmentLifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_PAUSE);
-    }
-
-    @Override // android.app.Activity
-    protected void onNewIntent(Intent intent) {
-        this.mFragments.noteStateNotSaved();
-        super.onNewIntent(intent);
     }
 
     @Override // android.app.Activity
@@ -239,19 +221,6 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
     protected void onResumeFragments() {
         this.mFragmentLifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_RESUME);
         this.mFragments.dispatchResume();
-    }
-
-    @Override // android.app.Activity, android.view.Window.Callback
-    public boolean onPreparePanel(int i, View view, Menu menu) {
-        if (i == 0) {
-            return onPrepareOptionsPanel(view, menu) | this.mFragments.dispatchPrepareOptionsMenu(menu);
-        }
-        return super.onPreparePanel(i, view, menu);
-    }
-
-    @Deprecated
-    protected boolean onPrepareOptionsPanel(View view, Menu menu) {
-        return super.onPreparePanel(0, view, menu);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -287,22 +256,24 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
     @Override // android.app.Activity
     public void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
         super.dump(str, fileDescriptor, printWriter, strArr);
-        printWriter.print(str);
-        printWriter.print("Local FragmentActivity ");
-        printWriter.print(Integer.toHexString(System.identityHashCode(this)));
-        printWriter.println(" State:");
-        String str2 = str + "  ";
-        printWriter.print(str2);
-        printWriter.print("mCreated=");
-        printWriter.print(this.mCreated);
-        printWriter.print(" mResumed=");
-        printWriter.print(this.mResumed);
-        printWriter.print(" mStopped=");
-        printWriter.print(this.mStopped);
-        if (getApplication() != null) {
-            LoaderManager.getInstance(this).dump(str2, fileDescriptor, printWriter, strArr);
+        if (shouldDumpInternalState(strArr)) {
+            printWriter.print(str);
+            printWriter.print("Local FragmentActivity ");
+            printWriter.print(Integer.toHexString(System.identityHashCode(this)));
+            printWriter.println(" State:");
+            String str2 = str + "  ";
+            printWriter.print(str2);
+            printWriter.print("mCreated=");
+            printWriter.print(this.mCreated);
+            printWriter.print(" mResumed=");
+            printWriter.print(this.mResumed);
+            printWriter.print(" mStopped=");
+            printWriter.print(this.mStopped);
+            if (getApplication() != null) {
+                LoaderManager.getInstance(this).dump(str2, fileDescriptor, printWriter, strArr);
+            }
+            this.mFragments.getSupportFragmentManager().dump(str, fileDescriptor, printWriter, strArr);
         }
-        this.mFragments.getSupportFragmentManager().dump(str, fileDescriptor, printWriter, strArr);
     }
 
     public FragmentManager getSupportFragmentManager() {
@@ -342,7 +313,7 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
     }
 
     /* loaded from: classes.dex */
-    class HostCallbacks extends FragmentHostCallback<FragmentActivity> implements ViewModelStoreOwner, OnBackPressedDispatcherOwner, ActivityResultRegistryOwner, SavedStateRegistryOwner, FragmentOnAttachListener {
+    class HostCallbacks extends FragmentHostCallback<FragmentActivity> implements OnConfigurationChangedProvider, OnTrimMemoryProvider, OnMultiWindowModeChangedProvider, OnPictureInPictureModeChangedProvider, ViewModelStoreOwner, OnBackPressedDispatcherOwner, ActivityResultRegistryOwner, SavedStateRegistryOwner, FragmentOnAttachListener, MenuHost {
         public HostCallbacks() {
             super(FragmentActivity.this);
         }
@@ -363,6 +334,11 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
         }
 
         @Override // androidx.fragment.app.FragmentHostCallback
+        public void onDump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+            FragmentActivity.this.dump(str, fileDescriptor, printWriter, strArr);
+        }
+
+        @Override // androidx.fragment.app.FragmentHostCallback
         public LayoutInflater onGetLayoutInflater() {
             return FragmentActivity.this.getLayoutInflater().cloneInContext(FragmentActivity.this);
         }
@@ -375,7 +351,7 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
 
         @Override // androidx.fragment.app.FragmentHostCallback
         public void onSupportInvalidateOptionsMenu() {
-            FragmentActivity.this.supportInvalidateOptionsMenu();
+            invalidateMenu();
         }
 
         @Override // androidx.fragment.app.FragmentHostCallback
@@ -407,6 +383,60 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
         @Override // androidx.savedstate.SavedStateRegistryOwner
         public SavedStateRegistry getSavedStateRegistry() {
             return FragmentActivity.this.getSavedStateRegistry();
+        }
+
+        @Override // androidx.core.content.OnConfigurationChangedProvider
+        public void addOnConfigurationChangedListener(Consumer<Configuration> consumer) {
+            FragmentActivity.this.addOnConfigurationChangedListener(consumer);
+        }
+
+        @Override // androidx.core.content.OnConfigurationChangedProvider
+        public void removeOnConfigurationChangedListener(Consumer<Configuration> consumer) {
+            FragmentActivity.this.removeOnConfigurationChangedListener(consumer);
+        }
+
+        @Override // androidx.core.content.OnTrimMemoryProvider
+        public void addOnTrimMemoryListener(Consumer<Integer> consumer) {
+            FragmentActivity.this.addOnTrimMemoryListener(consumer);
+        }
+
+        @Override // androidx.core.content.OnTrimMemoryProvider
+        public void removeOnTrimMemoryListener(Consumer<Integer> consumer) {
+            FragmentActivity.this.removeOnTrimMemoryListener(consumer);
+        }
+
+        @Override // androidx.core.app.OnMultiWindowModeChangedProvider
+        public void addOnMultiWindowModeChangedListener(Consumer<MultiWindowModeChangedInfo> consumer) {
+            FragmentActivity.this.addOnMultiWindowModeChangedListener(consumer);
+        }
+
+        @Override // androidx.core.app.OnMultiWindowModeChangedProvider
+        public void removeOnMultiWindowModeChangedListener(Consumer<MultiWindowModeChangedInfo> consumer) {
+            FragmentActivity.this.removeOnMultiWindowModeChangedListener(consumer);
+        }
+
+        @Override // androidx.core.app.OnPictureInPictureModeChangedProvider
+        public void addOnPictureInPictureModeChangedListener(Consumer<PictureInPictureModeChangedInfo> consumer) {
+            FragmentActivity.this.addOnPictureInPictureModeChangedListener(consumer);
+        }
+
+        @Override // androidx.core.app.OnPictureInPictureModeChangedProvider
+        public void removeOnPictureInPictureModeChangedListener(Consumer<PictureInPictureModeChangedInfo> consumer) {
+            FragmentActivity.this.removeOnPictureInPictureModeChangedListener(consumer);
+        }
+
+        @Override // androidx.core.view.MenuHost
+        public void addMenuProvider(MenuProvider menuProvider) {
+            FragmentActivity.this.addMenuProvider(menuProvider);
+        }
+
+        @Override // androidx.core.view.MenuHost
+        public void removeMenuProvider(MenuProvider menuProvider) {
+            FragmentActivity.this.removeMenuProvider(menuProvider);
+        }
+
+        public void invalidateMenu() {
+            FragmentActivity.this.invalidateOptionsMenu();
         }
     }
 

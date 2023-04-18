@@ -60,7 +60,7 @@
 
     const/high16 v0, 0x40800000    # 4.0f
 
-    .line 24
+    .line 25
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v0
@@ -75,7 +75,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 24
+    .line 25
     invoke-virtual {p0}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$cornerRadius$2;->invoke()Ljava/lang/Integer;
 
     move-result-object v0

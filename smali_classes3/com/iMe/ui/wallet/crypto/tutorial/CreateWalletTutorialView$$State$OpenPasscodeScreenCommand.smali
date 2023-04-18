@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView$$State;)V
     .locals 1
 
-    .line 147
+    .line 165
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openPasscodeScreen"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView;)V
     .locals 0
 
-    .line 152
+    .line 170
     invoke-interface {p1}, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView;->openPasscodeScreen()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 145
+    .line 163
     check-cast p1, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView$$State$OpenPasscodeScreenCommand;->apply(Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialView;)V

@@ -1,8 +1,6 @@
 package kotlinx.coroutines;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
-import java.util.Objects;
-import kotlin.Unit;
 import kotlin.coroutines.AbstractCoroutineContextElement;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -14,21 +12,21 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
     public static final Key Key = new Key(null);
 
     /* renamed from: id */
-    private final long f1223id;
+    private final long f1218id;
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof CoroutineId) && this.f1223id == ((CoroutineId) obj).f1223id;
+        return (obj instanceof CoroutineId) && this.f1218id == ((CoroutineId) obj).f1218id;
     }
 
     public int hashCode() {
-        return BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f1223id);
+        return BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f1218id);
     }
 
     public final long getId() {
-        return this.f1223id;
+        return this.f1218id;
     }
 
     /* compiled from: CoroutineContext.kt */
@@ -44,42 +42,36 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
 
     public CoroutineId(long j) {
         super(Key);
-        this.f1223id = j;
+        this.f1218id = j;
     }
 
     public String toString() {
-        return "CoroutineId(" + this.f1223id + ')';
+        return "CoroutineId(" + this.f1218id + ')';
     }
 
     @Override // kotlinx.coroutines.ThreadContextElement
     public String updateThreadContext(CoroutineContext coroutineContext) {
         int lastIndexOf$default;
-        String name;
         CoroutineName coroutineName = (CoroutineName) coroutineContext.get(CoroutineName.Key);
-        String str = "coroutine";
-        if (coroutineName != null && (name = coroutineName.getName()) != null) {
-            str = name;
-        }
+        String str = (coroutineName == null || (str = coroutineName.getName()) == null) ? "coroutine" : "coroutine";
         Thread currentThread = Thread.currentThread();
-        String name2 = currentThread.getName();
-        lastIndexOf$default = StringsKt__StringsKt.lastIndexOf$default((CharSequence) name2, " @", 0, false, 6, (Object) null);
+        String name = currentThread.getName();
+        lastIndexOf$default = StringsKt__StringsKt.lastIndexOf$default((CharSequence) name, " @", 0, false, 6, (Object) null);
         if (lastIndexOf$default < 0) {
-            lastIndexOf$default = name2.length();
+            lastIndexOf$default = name.length();
         }
         StringBuilder sb = new StringBuilder(str.length() + lastIndexOf$default + 10);
-        Objects.requireNonNull(name2, "null cannot be cast to non-null type java.lang.String");
-        String substring = name2.substring(0, lastIndexOf$default);
-        Intrinsics.checkNotNullExpressionValue(substring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
+        String substring = name.substring(0, lastIndexOf$default);
+        Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
         sb.append(substring);
         sb.append(" @");
         sb.append(str);
         sb.append('#');
-        sb.append(getId());
-        Unit unit = Unit.INSTANCE;
+        sb.append(this.f1218id);
         String sb2 = sb.toString();
         Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder(capacity).…builderAction).toString()");
         currentThread.setName(sb2);
-        return name2;
+        return name;
     }
 
     @Override // kotlinx.coroutines.ThreadContextElement

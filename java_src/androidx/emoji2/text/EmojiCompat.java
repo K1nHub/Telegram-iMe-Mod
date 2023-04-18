@@ -10,7 +10,6 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import androidx.collection.ArraySet;
 import androidx.core.util.Preconditions;
-import androidx.emoji2.text.EmojiProcessor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -297,7 +296,7 @@ public class EmojiCompat {
         boolean mUseEmojiAsDefaultStyle;
         int mEmojiSpanIndicatorColor = -16711936;
         int mMetadataLoadStrategy = 0;
-        GlyphChecker mGlyphChecker = new EmojiProcessor.DefaultGlyphChecker();
+        GlyphChecker mGlyphChecker = new DefaultGlyphChecker();
 
         /* JADX INFO: Access modifiers changed from: protected */
         public Config(MetadataRepoLoader metadataRepoLoader) {

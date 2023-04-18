@@ -105,7 +105,7 @@ public class WindowCallbackWrapper implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public boolean onSearchRequested(SearchEvent searchEvent) {
-        return this.mWrapped.onSearchRequested(searchEvent);
+        return Api23Impl.onSearchRequested(this.mWrapped, searchEvent);
     }
 
     @Override // android.view.Window.Callback
@@ -120,7 +120,7 @@ public class WindowCallbackWrapper implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public android.view.ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int i) {
-        return this.mWrapped.onWindowStartingActionMode(callback, i);
+        return Api23Impl.onWindowStartingActionMode(this.mWrapped, callback, i);
     }
 
     @Override // android.view.Window.Callback
@@ -135,15 +135,40 @@ public class WindowCallbackWrapper implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public void onProvideKeyboardShortcuts(List<KeyboardShortcutGroup> list, Menu menu, int i) {
-        this.mWrapped.onProvideKeyboardShortcuts(list, menu, i);
+        Api24Impl.onProvideKeyboardShortcuts(this.mWrapped, list, menu, i);
     }
 
     @Override // android.view.Window.Callback
     public void onPointerCaptureChanged(boolean z) {
-        this.mWrapped.onPointerCaptureChanged(z);
+        Api26Impl.onPointerCaptureChanged(this.mWrapped, z);
     }
 
     public final Window.Callback getWrapped() {
         return this.mWrapped;
+    }
+
+    /* loaded from: classes.dex */
+    static class Api23Impl {
+        static boolean onSearchRequested(Window.Callback callback, SearchEvent searchEvent) {
+            return callback.onSearchRequested(searchEvent);
+        }
+
+        static android.view.ActionMode onWindowStartingActionMode(Window.Callback callback, ActionMode.Callback callback2, int i) {
+            return callback.onWindowStartingActionMode(callback2, i);
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api24Impl {
+        static void onProvideKeyboardShortcuts(Window.Callback callback, List<KeyboardShortcutGroup> list, Menu menu, int i) {
+            callback.onProvideKeyboardShortcuts(list, menu, i);
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api26Impl {
+        static void onPointerCaptureChanged(Window.Callback callback, boolean z) {
+            callback.onPointerCaptureChanged(z);
+        }
     }
 }

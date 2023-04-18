@@ -189,15 +189,15 @@ public abstract class Timeline implements Bundleable {
                 bundle.putBundle(FIELD_MEDIA_ITEM, this.mediaItem.toBundle());
             }
             long j = this.presentationStartTimeMs;
-            if (j != C0482C.TIME_UNSET) {
+            if (j != C0470C.TIME_UNSET) {
                 bundle.putLong(FIELD_PRESENTATION_START_TIME_MS, j);
             }
             long j2 = this.windowStartTimeMs;
-            if (j2 != C0482C.TIME_UNSET) {
+            if (j2 != C0470C.TIME_UNSET) {
                 bundle.putLong(FIELD_WINDOW_START_TIME_MS, j2);
             }
             long j3 = this.elapsedRealtimeEpochOffsetMs;
-            if (j3 != C0482C.TIME_UNSET) {
+            if (j3 != C0470C.TIME_UNSET) {
                 bundle.putLong(FIELD_ELAPSED_REALTIME_EPOCH_OFFSET_MS, j3);
             }
             boolean z = this.isSeekable;
@@ -221,7 +221,7 @@ public abstract class Timeline implements Bundleable {
                 bundle.putLong(FIELD_DEFAULT_POSITION_US, j4);
             }
             long j5 = this.durationUs;
-            if (j5 != C0482C.TIME_UNSET) {
+            if (j5 != C0470C.TIME_UNSET) {
                 bundle.putLong(FIELD_DURATION_US, j5);
             }
             int i = this.firstPeriodIndex;
@@ -243,16 +243,16 @@ public abstract class Timeline implements Bundleable {
         public static Window fromBundle(Bundle bundle) {
             Bundle bundle2 = bundle.getBundle(FIELD_MEDIA_ITEM);
             MediaItem fromBundle = bundle2 != null ? MediaItem.CREATOR.fromBundle(bundle2) : MediaItem.EMPTY;
-            long j = bundle.getLong(FIELD_PRESENTATION_START_TIME_MS, C0482C.TIME_UNSET);
-            long j2 = bundle.getLong(FIELD_WINDOW_START_TIME_MS, C0482C.TIME_UNSET);
-            long j3 = bundle.getLong(FIELD_ELAPSED_REALTIME_EPOCH_OFFSET_MS, C0482C.TIME_UNSET);
+            long j = bundle.getLong(FIELD_PRESENTATION_START_TIME_MS, C0470C.TIME_UNSET);
+            long j2 = bundle.getLong(FIELD_WINDOW_START_TIME_MS, C0470C.TIME_UNSET);
+            long j3 = bundle.getLong(FIELD_ELAPSED_REALTIME_EPOCH_OFFSET_MS, C0470C.TIME_UNSET);
             boolean z = bundle.getBoolean(FIELD_IS_SEEKABLE, false);
             boolean z2 = bundle.getBoolean(FIELD_IS_DYNAMIC, false);
             Bundle bundle3 = bundle.getBundle(FIELD_LIVE_CONFIGURATION);
             MediaItem.LiveConfiguration fromBundle2 = bundle3 != null ? MediaItem.LiveConfiguration.CREATOR.fromBundle(bundle3) : null;
             boolean z3 = bundle.getBoolean(FIELD_IS_PLACEHOLDER, false);
             long j4 = bundle.getLong(FIELD_DEFAULT_POSITION_US, 0L);
-            long j5 = bundle.getLong(FIELD_DURATION_US, C0482C.TIME_UNSET);
+            long j5 = bundle.getLong(FIELD_DURATION_US, C0470C.TIME_UNSET);
             int i = bundle.getInt(FIELD_FIRST_PERIOD_INDEX, 0);
             int i2 = bundle.getInt(FIELD_LAST_PERIOD_INDEX, 0);
             long j6 = bundle.getLong(FIELD_POSITION_IN_FIRST_PERIOD_US, 0L);
@@ -269,7 +269,7 @@ public abstract class Timeline implements Bundleable {
         public long durationUs;
 
         /* renamed from: id */
-        public Object f106id;
+        public Object f103id;
         public boolean isPlaceholder;
         public long positionInWindowUs;
         public Object uid;
@@ -286,7 +286,7 @@ public abstract class Timeline implements Bundleable {
         }
 
         public Period set(Object obj, Object obj2, int i, long j, long j2, AdPlaybackState adPlaybackState, boolean z) {
-            this.f106id = obj;
+            this.f103id = obj;
             this.uid = obj2;
             this.windowIndex = i;
             this.durationUs = j;
@@ -354,7 +354,7 @@ public abstract class Timeline implements Bundleable {
 
         public long getAdDurationUs(int i, int i2) {
             AdPlaybackState.AdGroup adGroup = this.adPlaybackState.getAdGroup(i);
-            return adGroup.count != -1 ? adGroup.durationsUs[i2] : C0482C.TIME_UNSET;
+            return adGroup.count != -1 ? adGroup.durationsUs[i2] : C0470C.TIME_UNSET;
         }
 
         public int getAdState(int i, int i2) {
@@ -385,11 +385,11 @@ public abstract class Timeline implements Bundleable {
                 return false;
             }
             Period period = (Period) obj;
-            return Util.areEqual(this.f106id, period.f106id) && Util.areEqual(this.uid, period.uid) && this.windowIndex == period.windowIndex && this.durationUs == period.durationUs && this.positionInWindowUs == period.positionInWindowUs && this.isPlaceholder == period.isPlaceholder && Util.areEqual(this.adPlaybackState, period.adPlaybackState);
+            return Util.areEqual(this.f103id, period.f103id) && Util.areEqual(this.uid, period.uid) && this.windowIndex == period.windowIndex && this.durationUs == period.durationUs && this.positionInWindowUs == period.positionInWindowUs && this.isPlaceholder == period.isPlaceholder && Util.areEqual(this.adPlaybackState, period.adPlaybackState);
         }
 
         public int hashCode() {
-            Object obj = this.f106id;
+            Object obj = this.f103id;
             int hashCode = (217 + (obj == null ? 0 : obj.hashCode())) * 31;
             Object obj2 = this.uid;
             int hashCode2 = obj2 != null ? obj2.hashCode() : 0;
@@ -406,7 +406,7 @@ public abstract class Timeline implements Bundleable {
                 bundle.putInt(FIELD_WINDOW_INDEX, i);
             }
             long j = this.durationUs;
-            if (j != C0482C.TIME_UNSET) {
+            if (j != C0470C.TIME_UNSET) {
                 bundle.putLong(FIELD_DURATION_US, j);
             }
             long j2 = this.positionInWindowUs;
@@ -427,7 +427,7 @@ public abstract class Timeline implements Bundleable {
         public static Period fromBundle(Bundle bundle) {
             AdPlaybackState adPlaybackState;
             int i = bundle.getInt(FIELD_WINDOW_INDEX, 0);
-            long j = bundle.getLong(FIELD_DURATION_US, C0482C.TIME_UNSET);
+            long j = bundle.getLong(FIELD_DURATION_US, C0470C.TIME_UNSET);
             long j2 = bundle.getLong(FIELD_POSITION_IN_WINDOW_US, 0L);
             boolean z = bundle.getBoolean(FIELD_PLACEHOLDER, false);
             Bundle bundle2 = bundle.getBundle(FIELD_AD_PLAYBACK_STATE);
@@ -527,9 +527,9 @@ public abstract class Timeline implements Bundleable {
     public final Pair<Object, Long> getPeriodPositionUs(Window window, Period period, int i, long j, long j2) {
         Assertions.checkIndex(i, 0, getWindowCount());
         getWindow(i, window, j2);
-        if (j == C0482C.TIME_UNSET) {
+        if (j == C0470C.TIME_UNSET) {
             j = window.getDefaultPositionUs();
-            if (j == C0482C.TIME_UNSET) {
+            if (j == C0470C.TIME_UNSET) {
                 return null;
             }
         }
@@ -545,7 +545,7 @@ public abstract class Timeline implements Bundleable {
         getPeriod(i2, period, true);
         long j3 = j - period.positionInWindowUs;
         long j4 = period.durationUs;
-        if (j4 != C0482C.TIME_UNSET) {
+        if (j4 != C0470C.TIME_UNSET) {
             j3 = Math.min(j3, j4 - 1);
         }
         return Pair.create(Assertions.checkNotNull(period.uid), Long.valueOf(Math.max(0L, j3)));
@@ -663,7 +663,7 @@ public abstract class Timeline implements Bundleable {
                 window.firstPeriodIndex = 0;
                 Bundle bundle = window.toBundle();
                 Bundle bundle2 = new Bundle();
-                BundleUtil.putBinder(bundle2, FIELD_WINDOWS, new BundleListRetriever(ImmutableList.m753of(bundle)));
+                BundleUtil.putBinder(bundle2, FIELD_WINDOWS, new BundleListRetriever(ImmutableList.m739of(bundle)));
                 BundleUtil.putBinder(bundle2, FIELD_PERIODS, new BundleListRetriever(arrayList));
                 bundle2.putIntArray(FIELD_SHUFFLED_WINDOW_INDICES, new int[]{0});
                 return bundle2;
@@ -684,7 +684,7 @@ public abstract class Timeline implements Bundleable {
 
     private static <T extends Bundleable> ImmutableList<T> fromBundleListRetriever(Bundleable.Creator<T> creator, IBinder iBinder) {
         if (iBinder == null) {
-            return ImmutableList.m754of();
+            return ImmutableList.m740of();
         }
         ImmutableList.Builder builder = new ImmutableList.Builder();
         ImmutableList<Bundle> list = BundleListRetriever.getList(iBinder);
@@ -791,7 +791,7 @@ public abstract class Timeline implements Bundleable {
         @Override // com.google.android.exoplayer2.Timeline
         public Period getPeriod(int i, Period period, boolean z) {
             Period period2 = this.periods.get(i);
-            period.set(period2.f106id, period2.uid, period2.windowIndex, period2.durationUs, period2.positionInWindowUs, period2.adPlaybackState, period2.isPlaceholder);
+            period.set(period2.f103id, period2.uid, period2.windowIndex, period2.durationUs, period2.positionInWindowUs, period2.adPlaybackState, period2.isPlaceholder);
             return period;
         }
 

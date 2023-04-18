@@ -10,8 +10,9 @@ public class DERVideotexString extends ASN1Primitive {
         this.string = Arrays.clone(bArr);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    boolean asn1Equals(ASN1Primitive aSN1Primitive) {
+    public boolean asn1Equals(ASN1Primitive aSN1Primitive) {
         if (aSN1Primitive instanceof DERVideotexString) {
             return Arrays.areEqual(this.string, ((DERVideotexString) aSN1Primitive).string);
         }
@@ -20,8 +21,8 @@ public class DERVideotexString extends ASN1Primitive {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive
-    public void encode(ASN1OutputStream aSN1OutputStream) throws IOException {
-        aSN1OutputStream.writeEncoded(21, this.string);
+    public void encode(ASN1OutputStream aSN1OutputStream, boolean z) throws IOException {
+        aSN1OutputStream.writeEncoded(z, 21, this.string);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

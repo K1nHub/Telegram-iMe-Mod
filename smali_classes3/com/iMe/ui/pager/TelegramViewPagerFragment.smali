@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramViewPagerFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/iMe/ui/pager/TelegramViewPagerFragment\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 5 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,655:1\n13579#2,2:656\n13644#2,3:659\n13644#2,3:662\n1#3:658\n191#4,4:665\n262#5,2:669\n*S KotlinDebug\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/iMe/ui/pager/TelegramViewPagerFragment\n*L\n90#1:656,2\n171#1:659,3\n221#1:662,3\n241#1:665,4\n254#1:669,2\n*E\n"
+    value = "SMAP\nTelegramViewPagerFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/iMe/ui/pager/TelegramViewPagerFragment\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 5 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,655:1\n13579#2,2:656\n13644#2,3:659\n13644#2,3:662\n1#3:658\n205#4,4:665\n262#5,2:669\n*S KotlinDebug\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/iMe/ui/pager/TelegramViewPagerFragment\n*L\n90#1:656,2\n171#1:659,3\n221#1:662,3\n241#1:665,4\n254#1:669,2\n*E\n"
 .end annotation
 
 
@@ -408,7 +408,7 @@
 .method private final checkScroll(Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 6
 
-    .line 191
+    .line 205
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -424,7 +424,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 192
+    .line 206
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4

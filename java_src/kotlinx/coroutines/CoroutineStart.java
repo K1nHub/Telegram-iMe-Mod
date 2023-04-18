@@ -1,6 +1,5 @@
 package kotlinx.coroutines;
 
-import java.util.Arrays;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.ContinuationKt;
@@ -22,7 +21,7 @@ public enum CoroutineStart {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
-            int[] iArr = new int[CoroutineStart.valuesCustom().length];
+            int[] iArr = new int[CoroutineStart.values().length];
             iArr[CoroutineStart.DEFAULT.ordinal()] = 1;
             iArr[CoroutineStart.ATOMIC.ordinal()] = 2;
             iArr[CoroutineStart.UNDISPATCHED.ordinal()] = 3;
@@ -62,11 +61,5 @@ public enum CoroutineStart {
 
     public final boolean isLazy() {
         return this == LAZY;
-    }
-
-    /* renamed from: values  reason: to resolve conflict with enum method */
-    public static CoroutineStart[] valuesCustom() {
-        CoroutineStart[] valuesCustom = values();
-        return (CoroutineStart[]) Arrays.copyOf(valuesCustom, valuesCustom.length);
     }
 }
